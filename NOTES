@@ -1,0 +1,22 @@
+https://github.com/google/snappy.git
+
+g++ snappytest.cpp -L/usr/local/lib -lsnappy
+g++ -std=c++11 filetest.cpp
+g++ -std=c++11 parser.cpp -L/usr/local/lib -lsnappy -lprotobuf
+
+g++ -o parser -std=c++11 -L/usr/local/lib parser.cpp protobufs/demo.pb.cc protobufs/google.pb.cc -lprotobuf -lsnappy
+g++ -o parser -std=c++11 -L/usr/local/lib parser.cpp protobufs/demo.pb.cc protobufs/netmessages.pb.cc protobufs/networkbasetypes.pb.cc protobufs/network_connection.pb.cc -lprotobuf -lsnappy
+
+g++ -o parser -std=c++11 -L/usr/local/lib parser.cpp bitstream.cpp protobufs/demo.pb.cc protobufs/netmessages.pb.cc protobufs/networkbasetypes.pb.cc protobufs/network_connection.pb.cc -lprotobuf -lsnappy
+
+g++ -o parser -std=c++11 -L/usr/local/lib parser.cpp property_decoder.cpp bitstream.cpp protobufs/demo.pb.cc protobufs/netmessages.pb.cc protobufs/networkbasetypes.pb.cc protobufs/network_connection.pb.cc -lprotobuf -lsnappy
+
+g++ -o parser -std=c++11 -L/usr/local/lib parser.cpp huffman.cpp fieldpath.cpp property_decoder.cpp bitstream.cpp protobufs/demo.pb.cc protobufs/netmessages.pb.cc protobufs/networkbasetypes.pb.cc protobufs/network_connection.pb.cc -lprotobuf -lsnappy
+
+g++ -o parser -std=c++11 -L/usr/local/lib parser.cpp huffman.cpp fieldpath.cpp quantizedfloat.cpp property_decoder.cpp bitstream.cpp protobufs/demo.pb.cc protobufs/netmessages.pb.cc protobufs/networkbasetypes.pb.cc protobufs/network_connection.pb.cc -lprotobuf -lsnappy
+
+g++ -o parser -std=c++11 -L/usr/local/lib parser.cpp huffman.cpp fieldpath.cpp quantizedfloat.cpp property.cpp property_decoder.cpp bitstream.cpp protobufs/demo.pb.cc protobufs/netmessages.pb.cc protobufs/networkbasetypes.pb.cc protobufs/network_connection.pb.cc -lprotobuf -lsnappy 2> test.txt
+
+g++ -o parser -std=c++11 -L/usr/local/lib parser.cpp huffman.cpp property_serializers.cpp string_table.cpp class_info.cpp flattened_serializers.cpp fieldpath.cpp quantizedfloat.cpp property.cpp property_decoder.cpp bitstream.cpp protobufs/demo.pb.cc protobufs/netmessages.pb.cc protobufs/networkbasetypes.pb.cc protobufs/network_connection.pb.cc -lprotobuf -lsnappy
+
+g++ -o parser -std=c++11 -L/usr/local/lib parser.cpp message_lookup.cpp huffman.cpp property_serializers.cpp string_table.cpp class_info.cpp flattened_serializers.cpp fieldpath.cpp quantizedfloat.cpp property.cpp property_decoder.cpp bitstream.cpp protobufs/demo.pb.cc protobufs/netmessages.pb.cc protobufs/networkbasetypes.pb.cc protobufs/network_connection.pb.cc -lprotobuf -lsnappy
