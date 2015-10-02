@@ -3,7 +3,7 @@
 int main ()
 {
   std::cout << "HELLO WORLD!\n";
-  parser p;
+  Parser p;
   StringTables string_tables;
   p.stringTables = string_tables;
   char* buffer;
@@ -76,7 +76,7 @@ int main ()
   // read dem messages
   while (stream.good())
   {
-    readMessage(stream, &p);
+    p.readMessage(stream);
   }
 
   std::cout << "File length: " << std::to_string(length) << "\n";
@@ -84,7 +84,7 @@ int main ()
   std::cout << "File closed.\n";
 }
 
-uint32_t readMessage(std::ifstream &stream, parser* p) {
+uint32_t Parser::readMessage(std::ifstream &stream) {
   char* buffer;
   char* uBuffer;
   uint32_t cmd;
@@ -117,7 +117,7 @@ uint32_t readMessage(std::ifstream &stream, parser* p) {
       uBuffer = new char[uSize];
       if (snappy::RawUncompress(buffer, size, uBuffer)) {
         std::cout << "uncompressed success, size: " << std::to_string(uSize) << "\n";
-        parseMessage(cmd, tick, uSize, uBuffer, p);
+        parseMessage(cmd, tick, uSize, uBuffer);
       }
       else {
         std::cout << "uncompress fail\n";
@@ -131,24 +131,24 @@ uint32_t readMessage(std::ifstream &stream, parser* p) {
     }
   }
   else {
-    parseMessage(cmd, tick, size, buffer, p);
+    parseMessage(cmd, tick, size, buffer);
   }
   
   delete buffer;
 }
 
-uint32_t parseMessage(int cmd, int tick, int size, char* buffer, parser* p) {
+uint32_t Parser::parseMessage(int cmd, int tick, int size, char* buffer) {
   if (cmd == 4) {
     std::cout << "type: DEM_SendTables\n";
     CDemoSendTables sendTables;
     sendTables.ParseFromArray(buffer, size);
-    parseSendTables(&sendTables, getDefaultPropertySerializerTable(), p);
+    parseSendTables(&sendTables, getDefaultPropertySerializerTable());
   }
   else if (cmd == 5) {
     std::cout << "type: DEM_ClassInfo\n";
     CDemoClassInfo classInfo;
     classInfo.ParseFromArray(buffer, size);
-    parseClassInfo(&classInfo, p);
+    parseClassInfo(&classInfo);
   }
   else if (cmd == 6) {
     std::cout << "type: DEM_StringTables\n";
@@ -160,7 +160,7 @@ uint32_t parseMessage(int cmd, int tick, int size, char* buffer, parser* p) {
     std::cout << "type: DEM_Packet\n";
     CDemoPacket packet;
     packet.ParseFromArray(buffer, size);
-    parsePacket(&packet, tick, p);
+    parsePacket(&packet, tick);
     /*do
     {
       std::cout << "Press a key to continue...\n";
@@ -170,7 +170,7 @@ uint32_t parseMessage(int cmd, int tick, int size, char* buffer, parser* p) {
     std::cout << "type: DEM_SignonPacket\n";
     CDemoPacket packet;
     packet.ParseFromArray(buffer, size);
-    parsePacket(&packet, tick, p);
+    parsePacket(&packet, tick);
     /*do
     {
       std::cout << "Press a key to continue...\n";
@@ -180,22 +180,22 @@ uint32_t parseMessage(int cmd, int tick, int size, char* buffer, parser* p) {
     std::cout << "type: DEM_FullPacket\n";
     CDemoFullPacket packet;
     packet.ParseFromArray(buffer, size);
-    parseFullPacket(&packet, tick, p);
+    parseFullPacket(&packet, tick);
   }
   return 0;
 }
 
-uint32_t parseClassInfo(CDemoClassInfo* classInfo, parser* p) {
-  for (int i = 0; i < classInfo->classes_size(); ++i) {
-    CDemoClassInfo_class_t c = classInfo->classes(i);
-    p->classInfo[c.class_id()] = c.network_name();
+uint32_t Parser::parseClassInfo(CDemoClassInfo* _classInfo) {
+  for (int i = 0; i < _classInfo->classes_size(); ++i) {
+    CDemoClassInfo_class_t c = _classInfo->classes(i);
+    classInfo[c.class_id()] = c.network_name();
   }
-  p->hasClassInfo = true;
-  updateInstanceBaseline(p);
+  hasClassInfo = true;
+  updateInstanceBaseline();
   return 0;
 }
 
-uint32_t parseStringTables(const CDemoStringTables* stringTables, parser* p) {
+uint32_t Parser::parseStringTables(const CDemoStringTables* stringTables) {
   for (int i = 0; i < stringTables->tables_size(); ++i) {
     CDemoStringTables_table_t t = stringTables->tables(i);
     std::cout << "table_name: " << t.table_name() << "\n";
@@ -257,7 +257,7 @@ bool compare_packet_priority(pendingMessage i,pendingMessage j) {
   return packet_priority(i.type) < packet_priority(j.type);
 }
 
-uint32_t parsePacket(const CDemoPacket* packet, int tick, parser* p) {
+uint32_t Parser::parsePacket(const CDemoPacket* packet, int tick) {
   dota::bitstream stream(packet->data());
   uint32_t ret;
   int type;
@@ -279,12 +279,12 @@ uint32_t parsePacket(const CDemoPacket* packet, int tick, parser* p) {
   std::stable_sort(pendingMessages.begin(), pendingMessages.end(), compare_packet_priority);
   for (std::vector<pendingMessage>::iterator it = pendingMessages.begin(); it != pendingMessages.end(); ++it) {
     //std::cout << "priority: " << std::to_string(packet_priority(it->type)) << "\n";
-    parsePendingMessage(&*it, p);
+    parsePendingMessage(&*it);
   }
 }
 
-uint32_t parseFullPacket(CDemoFullPacket* packet, int tick, parser* p) {
+uint32_t Parser::parseFullPacket(CDemoFullPacket* packet, int tick) {
   //parseStringTables(&(packet->string_table()), p);
-  parsePacket(&(packet->packet()), tick, p);
+  parsePacket(&(packet->packet()), tick);
   return 0;
 }

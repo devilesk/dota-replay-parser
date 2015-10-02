@@ -36,13 +36,6 @@
 
 uint32_t readVarUInt32(std::ifstream &stream);
 uint32_t readVarUInt32(const char*, int*);
-uint32_t readMessage(std::ifstream &stream, parser* p);
-uint32_t parseMessage(int cmd, int tick, int size, char* buffer, parser* p);
-uint32_t parseClassInfo(CDemoClassInfo*, parser*);
-uint32_t parseStringTables(const CDemoStringTables*, parser*);
-uint32_t parsePacket(const CDemoPacket* packet, int tick, parser* p);
-uint32_t parseFullPacket(CDemoFullPacket* packet, int tick, parser* p);
-uint32_t parsePendingMessage(pendingMessage* msg, parser* p);
 int packet_priority(int type);
 bool compare_packet_priority(pendingMessage i,pendingMessage j);
 

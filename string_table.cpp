@@ -1,44 +1,46 @@
 #include "string_table.hpp"
 
-uint32_t onCSVCMsg_CreateStringTable(CSVCMsg_CreateStringTable* data, parser* p) {
-  std::cout << "nextIndex: " << std::to_string(p->stringTables.nextIndex) << "\n";
-  std::cout << "name: " << data->name() << "\n";
-  std::cout << "user_data_fixed_size: " << std::to_string(data->user_data_fixed_size()) << "\n";
-  std::cout << "user_data_size: " << std::to_string(data->user_data_size()) << "\n";
+void Parser::onCSVCMsg_CreateStringTable(std::string raw_data) {
+  CSVCMsg_CreateStringTable data;
+  data.ParseFromString(raw_data);
+      
+  std::cout << "nextIndex: " << std::to_string(stringTables.nextIndex) << "\n";
+  std::cout << "name: " << data.name() << "\n";
+  std::cout << "user_data_fixed_size: " << std::to_string(data.user_data_fixed_size()) << "\n";
+  std::cout << "user_data_size: " << std::to_string(data.user_data_size()) << "\n";
   std::map<int, StringTableItem> stringTableItems;
   StringTable string_table = {
-    p->stringTables.nextIndex,
-    data->name(),
+    stringTables.nextIndex,
+    data.name(),
     stringTableItems,
-    data->user_data_fixed_size(),
-    data->user_data_size()
+    data.user_data_fixed_size(),
+    data.user_data_size()
   };
-  p->stringTables.nextIndex += 1;
-  std::string buffer = data->string_data();
-  std::cout << "is_compressed: " << std::to_string(data->data_compressed()) << "\n";
+  stringTables.nextIndex += 1;
+  std::string buffer = data.string_data();
+  std::cout << "is_compressed: " << std::to_string(data.data_compressed()) << "\n";
   std::vector<StringTableItem> items;
-  if (data->data_compressed()) {
+  if (data.data_compressed()) {
     std::size_t uSize;
     if (snappy::GetUncompressedLength(buffer.c_str(), buffer.length(), &uSize)) {
       char uBuffer[uSize];
       if (snappy::RawUncompress(buffer.c_str(), buffer.length(), uBuffer)) {
         std::cout << "uncompressed success, size: " << std::to_string(uSize) << "\n";
-        items = parseStringTable(uBuffer, uSize, data->num_entries(), string_table.userDataFixedSize, string_table.userDataSize);
+        items = parseStringTable(uBuffer, uSize, data.num_entries(), string_table.userDataFixedSize, string_table.userDataSize);
       }
     }
   }
   else {
-    items = parseStringTable(buffer.c_str(), buffer.length(), data->num_entries(), string_table.userDataFixedSize, string_table.userDataSize);
+    items = parseStringTable(buffer.c_str(), buffer.length(), data.num_entries(), string_table.userDataFixedSize, string_table.userDataSize);
   }
   for (std::vector<StringTableItem>::iterator it = items.begin(); it != items.end(); ++it) {
     string_table.items[it->index] = *it;
   }
-  p->stringTables.tables[string_table.index] = string_table;
-  p->stringTables.nameIndex[string_table.name] = string_table.index;
+  stringTables.tables[string_table.index] = string_table;
+  stringTables.nameIndex[string_table.name] = string_table.index;
   if (string_table.name.compare("instancebaseline") == 0) {
-    updateInstanceBaseline(p);
+    updateInstanceBaseline();
   }
-  return 0;
 }
 
 std::vector<StringTableItem> parseStringTable(const char* buffer, int buffer_size, int num_updates, bool userDataFixed, int userDataSize) {

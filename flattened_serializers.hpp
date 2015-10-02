@@ -18,6 +18,6 @@ struct flattened_serializers {
 };
 
 int recurseTable(flattened_serializers*, dt*, CSVCMsg_FlattenedSerializer*, ProtoFlattenedSerializer_t*);
-uint32_t parseSendTables(CDemoSendTables* sendTables, PropertySerializerTable pst, parser* p);
+//uint32_t parseSendTables(CDemoSendTables* sendTables, PropertySerializerTable pst, parser* p);
 
 #endif /* _FLATTENED_SERIALIZERS_HPP_ */

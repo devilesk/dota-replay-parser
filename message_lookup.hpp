@@ -19,6 +19,9 @@
 #include "protobufs/dota_usermessages.pb.h"
 #include "protobufs/gameevents.pb.h"
 
-uint32_t parsePendingMessage(pendingMessage* msg, parser* p);
+//uint32_t parsePendingMessage(pendingMessage* msg, parser* p);
+extern std::map<int, void (Parser::*)(std::string data)> handlers;
+
+std::map<int, void (Parser::*)(std::string data)> initHandlers();
 
 #endif /* _MESSAGE_LOOKUP_HPP_ */

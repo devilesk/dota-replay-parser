@@ -135,7 +135,7 @@ int recurseTable(flattened_serializers* sers, dt* datatable, CSVCMsg_FlattenedSe
   return 0;
 }
 
-uint32_t parseSendTables(CDemoSendTables* sendTables, PropertySerializerTable pst, parser* p) {
+uint32_t Parser::parseSendTables(CDemoSendTables* sendTables, PropertySerializerTable pst) {
   std::cout << "parsing DEM_SendTables\n";
   uint32_t size;
   const std::string &data = sendTables->data();
@@ -157,7 +157,7 @@ uint32_t parseSendTables(CDemoSendTables* sendTables, PropertySerializerTable ps
     serializers,
     &msg,
     pst,
-    p->GameBuild
+    GameBuild
   };
   //fs.proto = &msg;
   //fs.build = ;
@@ -187,6 +187,6 @@ uint32_t parseSendTables(CDemoSendTables* sendTables, PropertySerializerTable ps
   }
   std::cout << "symbols_size: " << std::to_string(msg.symbols_size()) << "\n";
   std::cout << "fields_size: " << std::to_string(msg.fields_size()) << "\n";
-  p->serializers = fs.serializers;
+  serializers = fs.serializers;
   return 0;
 }
