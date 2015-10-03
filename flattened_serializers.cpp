@@ -152,9 +152,9 @@ uint32_t Parser::parseSendTables(CDemoSendTables* sendTables, PropertySerializer
   msg.ParseFromArray(&data[pos], size);
   std::cout << "# serializers: " << std::to_string(msg.serializers_size()) << "\n";
   
-  std::map< std::string, std::map<int, dt> > serializers;
+  //std::map< std::string, std::map<int, dt> > serializers;
   flattened_serializers fs = {
-    serializers,
+    std::map< std::string, std::map<int, dt> >(),
     &msg,
     pst,
     GameBuild
@@ -179,6 +179,7 @@ uint32_t Parser::parseSendTables(CDemoSendTables* sendTables, PropertySerializer
     std::cout << "serializer_name_sym: " << std::to_string(serializer.serializer_name_sym()) << ", " << msg.symbols(serializer.serializer_name_sym()) << "\n";
     std::cout << "serializer_version: " << std::to_string(serializer.serializer_version()) << "\n";
     std::cout << "fields_index_size: " << std::to_string(serializer.fields_index_size()) << "\n";
+    std::cout << "datatable properties size: " << std::to_string(datatable.properties.size()) << "\n";
     /*for (int j = 0; j < serializer.fields_index_size(); ++j) {
       std::cout << "field_index: " << std::to_string(serializer.fields_index(j)) << "\n";
       ProtoFlattenedSerializerField_t field = msg.fields(serializer.fields_index(j));
@@ -188,5 +189,6 @@ uint32_t Parser::parseSendTables(CDemoSendTables* sendTables, PropertySerializer
   std::cout << "symbols_size: " << std::to_string(msg.symbols_size()) << "\n";
   std::cout << "fields_size: " << std::to_string(msg.fields_size()) << "\n";
   serializers = fs.serializers;
+  //std::cout << "serializers: " << std::to_string(serializers["CWorld"][0].properties.size()) << "\n";
   return 0;
 }
