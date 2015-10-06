@@ -1,30 +1,30 @@
 #include "packet_entity.hpp"
 
-bool PacketEntity::fetch(std::string k, value_type& v) {
+bool PacketEntity::fetch(const std::string &k, value_type& v) {
   if (properties.fetch(k, v)) return true;
   return classBaseline.fetch(k, v);
 }
-bool PacketEntity::fetchBool(std::string k, bool& v) {
+bool PacketEntity::fetchBool(const std::string &k, bool& v) {
   if (properties.fetchBool(k, v)) return true;
   return classBaseline.fetchBool(k, v);
 }
-bool PacketEntity::fetchInt32(std::string k, int32_t& v) {
+bool PacketEntity::fetchInt32(const std::string &k, int32_t& v) {
   if (properties.fetchInt32(k, v)) return true;
   return classBaseline.fetchInt32(k, v);
 }
-bool PacketEntity::fetchUint32(std::string k, uint32_t& v) {
+bool PacketEntity::fetchUint32(const std::string &k, uint32_t& v) {
   if (properties.fetchUint32(k, v)) return true;
   return classBaseline.fetchUint32(k, v);
 }
-bool PacketEntity::fetchUint64(std::string k, uint64_t& v) {
+bool PacketEntity::fetchUint64(const std::string &k, uint64_t& v) {
   if (properties.fetchUint64(k, v)) return true;
   return classBaseline.fetchUint64(k, v);
 }
-bool PacketEntity::fetchFloat32(std::string k, float& v) {
+bool PacketEntity::fetchFloat32(const std::string &k, float& v) {
   if (properties.fetchFloat32(k, v)) return true;
   return classBaseline.fetchFloat32(k, v);
 }
-bool PacketEntity::fetchString(std::string k, std::string& v) {
+bool PacketEntity::fetchString(const std::string &k, std::string& v) {
   if (properties.fetchString(k, v)) return true;
   return classBaseline.fetchString(k, v);
 }

@@ -52,14 +52,14 @@ void Properties::merge(Properties* p2) {
     KV[iter->first] = iter->second;
   }
 }
-bool Properties::fetch(std::string k, value_type& v) {
+bool Properties::fetch(const std::string &k, value_type& v) {
   if (KV.find(k) != KV.end()) {
     v = KV[k];
     return true;
   }
   return false;
 }
-bool Properties::fetchBool(std::string k, bool& v) {
+bool Properties::fetchBool(const std::string &k, bool& v) {
   if (KV.find(k) != KV.end()) {
     v = boost::get<bool>(KV[k]);
     return true;
@@ -67,7 +67,7 @@ bool Properties::fetchBool(std::string k, bool& v) {
   v = false;
   return false;
 }
-bool Properties::fetchInt32(std::string k, int32_t& v) {
+bool Properties::fetchInt32(const std::string &k, int32_t& v) {
   if (KV.find(k) != KV.end()) {
     v = boost::get<int32_t>(KV[k]);
     return true;
@@ -75,7 +75,7 @@ bool Properties::fetchInt32(std::string k, int32_t& v) {
   v = 0;
   return false;
 }
-bool Properties::fetchUint32(std::string k, uint32_t& v) {
+bool Properties::fetchUint32(const std::string &k, uint32_t& v) {
   if (KV.find(k) != KV.end()) {
     v = boost::get<uint32_t>(KV[k]);
     return true;
@@ -83,7 +83,7 @@ bool Properties::fetchUint32(std::string k, uint32_t& v) {
   v = 0;
   return false;
 }
-bool Properties::fetchUint64(std::string k, uint64_t& v) {
+bool Properties::fetchUint64(const std::string &k, uint64_t& v) {
   if (KV.find(k) != KV.end()) {
     v = boost::get<uint64_t>(KV[k]);
     return true;
@@ -91,7 +91,7 @@ bool Properties::fetchUint64(std::string k, uint64_t& v) {
   v = 0;
   return false;
 }
-bool Properties::fetchFloat32(std::string k, float& v) {
+bool Properties::fetchFloat32(const std::string &k, float& v) {
   if (KV.find(k) != KV.end()) {
     v = boost::get<float>(KV[k]);
     return true;
@@ -99,7 +99,7 @@ bool Properties::fetchFloat32(std::string k, float& v) {
   v = 0.0;
   return false;
 }
-bool Properties::fetchString(std::string k, std::string& v) {
+bool Properties::fetchString(const std::string &k, std::string& v) {
   if (KV.find(k) != KV.end()) {
     v = boost::get<std::string>(KV[k]);
     return true;

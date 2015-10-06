@@ -64,13 +64,13 @@ class Properties {
     std::map<std::string, value_type> KV;
   
     void merge(Properties* p2);
-    bool fetch(std::string k, value_type& v);
-    bool fetchBool(std::string k, bool& v);
-    bool fetchInt32(std::string k, int32_t& v);
-    bool fetchUint32(std::string k, uint32_t& v);
-    bool fetchUint64(std::string k, uint64_t& v);
-    bool fetchFloat32(std::string k, float& v);
-    bool fetchString(std::string k, std::string& v);
+    bool fetch(const std::string &k, value_type& v);
+    bool fetchBool(const std::string &k, bool& v);
+    bool fetchInt32(const std::string &k, int32_t& v);
+    bool fetchUint32(const std::string &k, uint32_t& v);
+    bool fetchUint64(const std::string &k, uint64_t& v);
+    bool fetchFloat32(const std::string &k, float& v);
+    bool fetchString(const std::string &k, std::string& v);
 };
 
 struct PropertySerializer {
@@ -171,13 +171,13 @@ class PacketEntity {
     int serial;
     dt* flatTbl;
     
-    bool fetch(std::string k, value_type& v);
-    bool fetchBool(std::string k, bool& v);
-    bool fetchInt32(std::string k, int32_t& v);
-    bool fetchUint32(std::string k, uint32_t& v);
-    bool fetchUint64(std::string k, uint64_t& v);
-    bool fetchFloat32(std::string k, float& v);
-    bool fetchString(std::string k, std::string& v);
+    bool fetch(const std::string &k, value_type& v);
+    bool fetchBool(const std::string &k, bool& v);
+    bool fetchInt32(const std::string &k, int32_t& v);
+    bool fetchUint32(const std::string &k, uint32_t& v);
+    bool fetchUint64(const std::string &k, uint64_t& v);
+    bool fetchFloat32(const std::string &k, float& v);
+    bool fetchString(const std::string &k, std::string& v);
 };
 
 enum EntityEventType {
@@ -235,7 +235,7 @@ class Parser {
     uint32_t parsePendingMessage(pendingMessage* msg);
     
     void onCDemoPacket(const CDemoPacket* packet, int tick);
-    void onCDemoFullPacket(CDemoFullPacket* packet, int tick);
+    void onCDemoFullPacket(const CDemoFullPacket* packet, int tick);
 /*
     void onCDemoStop(CDemoStop* data);
     void onCDemoFileHeader(CDemoFileHeader* data);

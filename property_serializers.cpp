@@ -45,7 +45,7 @@ void fillSerializer(PropertySerializerTable* pst, dt_field* field) {
   field->serializer = GetPropertySerializerByName(pst, field->type);
 }
 
-PropertySerializer GetPropertySerializerByName(PropertySerializerTable* pst, std::string name) {
+PropertySerializer GetPropertySerializerByName(PropertySerializerTable* pst, const std::string &name) {
   if (pst->serializers.find(name) != pst->serializers.end()) {
     return pst->serializers[name];
   }

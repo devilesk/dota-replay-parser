@@ -287,7 +287,7 @@ void Parser::onCDemoPacket(const CDemoPacket* packet, int tick) {
   }
 }
 
-void Parser::onCDemoFullPacket(CDemoFullPacket* packet, int tick) {
+void Parser::onCDemoFullPacket(const CDemoFullPacket* packet, int tick) {
   //parseStringTables(&(packet->string_table()), p);
   onCDemoPacket(&(packet->packet()), tick);
 }
