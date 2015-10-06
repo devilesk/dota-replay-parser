@@ -66,7 +66,7 @@ value_type decodeQuantized(dota::bitstream &stream, dt_field* f) {
   q = qmap[f];
   
   // Decode value
-  std::cout << "Bitcount: " << std::to_string(q.bitcount) << ", Low: " << std::to_string(q.low) << ", High: " << std::to_string(q.high) << ", Flags: " << std::to_string(q.flags) << "\n";
+  //std::cout << "Bitcount: " << std::to_string(q.bitcount) << ", Low: " << std::to_string(q.low) << ", High: " << std::to_string(q.high) << ", Flags: " << std::to_string(q.flags) << "\n";
   
   return decode(&q, stream);
 }
@@ -100,7 +100,7 @@ value_type decodeNop(dota::bitstream &stream, dt_field* f) {
 value_type decodePointer(dota::bitstream &stream, dt_field* f) {
 	// Seems to be encoded as a single bit, not sure what to make of it
 	if (stream.read(1) == 0) {
-		std::cout << "Figure out how this works\n";
+		//std::cout << "Figure out how this works\n";
 	}
 
 	return 0;
@@ -111,7 +111,7 @@ value_type decodeQAngle(dota::bitstream &stream, dt_field* f) {
   // Parse specific encoders
   if (f->encoder.compare("qangle_pitch_yaw") == 0) {
     if (f->has_bit_count && f->has_flags && (f->flags & 0x20 != 0)) {
-      std::cout << "Special Case: Unknown for now\n";
+      //std::cout << "Special Case: Unknown for now\n";
     }
     
     ret[0] = stream.nReadAngle((uint32_t)f->bit_count);
@@ -121,7 +121,7 @@ value_type decodeQAngle(dota::bitstream &stream, dt_field* f) {
   
   // Parse a standard angle
   if (f->has_bit_count && f->bit_count == 32) {
-    std::cout << "Special Case: Unknown for now\n";
+    //std::cout << "Special Case: Unknown for now\n";
   }
   else if (f->has_bit_count && f->bit_count != 0) {
     ret[0] = stream.nReadAngle((uint32_t)f->bit_count);
@@ -150,11 +150,11 @@ value_type decodeQAngle(dota::bitstream &stream, dt_field* f) {
     return ret;
   }
   
-  std::cout << "No valid encoding determined\n";
+  //std::cout << "No valid encoding determined\n";
   return ret;
 }
 value_type decodeComponent(dota::bitstream &stream, dt_field* f) {
-	std::cout << "Bitcount: " << std::to_string(f->bit_count) << ", Low: " << std::to_string(f->low_value) << ", High: " << std::to_string(f->high_value) << ", Flags: " << std::to_string(f->flags) << "\n";
+	//std::cout << "Bitcount: " << std::to_string(f->bit_count) << ", Low: " << std::to_string(f->low_value) << ", High: " << std::to_string(f->high_value) << ", Flags: " << std::to_string(f->flags) << "\n";
 
 	return stream.read(1);
 }

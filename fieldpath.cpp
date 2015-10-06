@@ -22,44 +22,44 @@ void walk(dota::bitstream &r, fieldpath* fp) {
   while (!fp->finished) {
     ++cnt;
     if (r.read(1) == 1) {
-      std::cout << "if true\n";
+      //std::cout << "if true\n";
       HuffmanTree* i = (*node).right;
       if (i->isLeaf) {
-        std::cout << "is leaf\n";
+        //std::cout << "is leaf\n";
         node = root;
-        std::cout << "i.Value(): " << std::to_string(i->value) << "\n";
-        std::cout << "fieldpathOp: " << fieldpathLookup[i->value].name << "\n";
+        //std::cout << "i.Value(): " << std::to_string(i->value) << "\n";
+        //std::cout << "fieldpathOp: " << fieldpathLookup[i->value].name << "\n";
         fieldpathLookup[i->value].fn(r, fp);
         if (!(fp->finished)) {
           addField(fp);
-          std::cout << "Reached in " << std::to_string(cnt) << " bits, " << fp->fields[fp->fields.size() - 1].name << ", " << std::to_string(r.position()) << "\n";
+          //std::cout << "Reached in " << std::to_string(cnt) << " bits, " << fp->fields[fp->fields.size() - 1].name << ", " << std::to_string(r.position()) << "\n";
         }
         
         cnt = 0;
       }
       else {
-        std::cout << "not leaf\n";
+        //std::cout << "not leaf\n";
         node = i;
       }
     }
     else {
-      std::cout << "if false\n";
+      //std::cout << "if false\n";
       HuffmanTree* i = (*node).left;
       if (i->isLeaf) {
-        std::cout << "is leaf\n";
+        //std::cout << "is leaf\n";
         node = root;
-        std::cout << "i.Value(): " << std::to_string(i->value) << "\n";
-        std::cout << "fieldpathOp: " << fieldpathLookup[i->value].name << "\n";
+        //std::cout << "i.Value(): " << std::to_string(i->value) << "\n";
+        //std::cout << "fieldpathOp: " << fieldpathLookup[i->value].name << "\n";
         fieldpathLookup[i->value].fn(r, fp);
         if (!(fp->finished)) {
           addField(fp);
-          std::cout << "Reached in " << std::to_string(cnt) << " bits, " << fp->fields[fp->fields.size() - 1].name << ", " << std::to_string(r.position()) << "\n";
+          //std::cout << "Reached in " << std::to_string(cnt) << " bits, " << fp->fields[fp->fields.size() - 1].name << ", " << std::to_string(r.position()) << "\n";
         }
         
         cnt = 0;
       }
       else {
-        std::cout << "not leaf\n";
+        //std::cout << "not leaf\n";
         node = i;
       }
     }
@@ -78,31 +78,31 @@ void addField(fieldpath* fp) {
       path += std::to_string(fp->index[i]) + "/";
     }
     
-    std::cout << "Adding field with path: " << path << fp->index[fp->fields.size() - 1] << "\n";
+    //std::cout << "Adding field with path: " << path << fp->index[fp->fields.size() - 1] << "\n";
   }*/
-  std::cout << "fp->index.size(): " << std::to_string(fp->index.size()) << "\n";
+  //std::cout << "fp->index.size(): " << std::to_string(fp->index.size()) << "\n";
   for (i = 0; i < fp->index.size() - 1; ++i) {
-    std::cout << "i: " << std::to_string(i) << "\n";
-    std::cout << "cDt name: " << cDt->name << "\n";
-    std::cout << "fp.index[i]: " << std::to_string(fp->index[i]) << "\n";
-    std::cout << "cDt.Properties len: " << std::to_string(cDt->properties.size()) << "\n";
+    //std::cout << "i: " << std::to_string(i) << "\n";
+    //std::cout << "cDt name: " << cDt->name << "\n";
+    //std::cout << "fp.index[i]: " << std::to_string(fp->index[i]) << "\n";
+    //std::cout << "cDt.Properties len: " << std::to_string(cDt->properties.size()) << "\n";
     if (cDt->properties[fp->index[i]].table != nullptr) {
-      std::cout << "table name: " << cDt->properties[fp->index[i]].table->name << "\n";
+      //std::cout << "table name: " << cDt->properties[fp->index[i]].table->name << "\n";
       cDt = cDt->properties[fp->index[i]].table;
       name += cDt->name + ".";
     }
     else {
-      //std::cout << "i: " << std::to_string(i) << "\n";
-      //std::cout << "cDt->properties size: " << std::to_string(cDt->properties.size()) << "\n";
-      //std::cout << "fp->index[i]: " << std::to_string(fp->index[i]) << "\n";
-      std::cout << "expected table in fp properties: " << std::to_string(i) << ", " << cDt->properties[fp->index[i]].field.name << ", " << cDt->properties[fp->index[i]].field.type << "\n";
+      ////std::cout << "i: " << std::to_string(i) << "\n";
+      ////std::cout << "cDt->properties size: " << std::to_string(cDt->properties.size()) << "\n";
+      ////std::cout << "fp->index[i]: " << std::to_string(fp->index[i]) << "\n";
+      //std::cout << "expected table in fp properties: " << std::to_string(i) << ", " << cDt->properties[fp->index[i]].field.name << ", " << cDt->properties[fp->index[i]].field.type << "\n";
     }
   }
-  std::cout << "cDt->properties size: " << std::to_string(cDt->properties.size()) << "\n";
-  std::cout << "i: " << std::to_string(i) << "\n";
-  std::cout << "name: " << name << "\n";
-  std::cout << "fp->index[i]: " << std::to_string(fp->index[i]) << "\n";
-  std::cout << "cDt.Properties[fp.index[i]].Field.Name: " << cDt->properties[fp->index[i]].field.name << "\n";
+  //std::cout << "cDt->properties size: " << std::to_string(cDt->properties.size()) << "\n";
+  //std::cout << "i: " << std::to_string(i) << "\n";
+  //std::cout << "name: " << name << "\n";
+  //std::cout << "fp->index[i]: " << std::to_string(fp->index[i]) << "\n";
+  //std::cout << "cDt.Properties[fp.index[i]].Field.Name: " << cDt->properties[fp->index[i]].field.name << "\n";
   fieldpath_field new_fieldpath_field = {
     name + cDt->properties[fp->index[i]].field.name,
     &(cDt->properties[fp->index[i]].field)
@@ -276,16 +276,16 @@ void PopAllButOnePlusNPack6Bits(dota::bitstream &r, fieldpath* fp) {
   fp->index[fp->index.size() - 1] += (int)r.read(6) + 1;
 }
 void PopNPlusOne(dota::bitstream &r, fieldpath* fp) {
-  std::cout << "PopNPlusOne\n";
+  //std::cout << "PopNPlusOne\n";
   int i = (int)r.nReadUBitVarFP();
-  std::cout << "i: " << std::to_string(i) << "\n";
-  std::cout << "fp index size: " << std::to_string(fp->index.size()) << "\n";
+  //std::cout << "i: " << std::to_string(i) << "\n";
+  //std::cout << "fp index size: " << std::to_string(fp->index.size()) << "\n";
   std::vector<int> new_index(fp->index.begin(), fp->index.end() - i);
-  std::cout << "fp index size: " << std::to_string(fp->index.size()) << "\n";
+  //std::cout << "fp index size: " << std::to_string(fp->index.size()) << "\n";
   fp->index = new_index;
-  std::cout << "PopNPlusOne 1\n";
+  //std::cout << "PopNPlusOne 1\n";
   ++(fp->index[fp->index.size() - 1]);
-  std::cout << "PopNPlusOne end\n";
+  //std::cout << "PopNPlusOne end\n";
 }
 void PopNPlusN(dota::bitstream &r, fieldpath* fp) {
   std::vector<int> new_index(fp->index.begin(), fp->index.end() - (int)r.nReadUBitVarFP());
@@ -293,20 +293,20 @@ void PopNPlusN(dota::bitstream &r, fieldpath* fp) {
   fp->index[fp->index.size() - 1] += (int)r.nReadVarSInt32();
 }
 void PopNAndNonTopographical(dota::bitstream &r, fieldpath* fp) {
-  std::cout << "PopNAndNonTopographical\n";
+  //std::cout << "PopNAndNonTopographical\n";
   int i = (int)r.nReadUBitVarFP();
-  std::cout << "i: " << std::to_string(i) << "\n";
-  std::cout << "fp index size: " << std::to_string(fp->index.size()) << "\n";
+  //std::cout << "i: " << std::to_string(i) << "\n";
+  //std::cout << "fp index size: " << std::to_string(fp->index.size()) << "\n";
   std::vector<int> new_index(fp->index.begin(), fp->index.end() - i);
-  std::cout << "fp index size: " << std::to_string(fp->index.size()) << "\n";
+  //std::cout << "fp index size: " << std::to_string(fp->index.size()) << "\n";
   fp->index = new_index;
-  std::cout << "PopNAndNonTopographical 1\n";
+  //std::cout << "PopNAndNonTopographical 1\n";
   for (int i = 0; i < fp->index.size(); ++i) {
     if (r.read(1) != 0) {
       fp->index[i] += (int)r.nReadVarSInt32();
     }
   }
-  std::cout << "end fp index size: " << std::to_string(fp->index.size()) << "\n";
+  //std::cout << "end fp index size: " << std::to_string(fp->index.size()) << "\n";
 }
 void NonTopoComplex(dota::bitstream &r, fieldpath* fp) {
   for (int i = 0; i < fp->index.size(); ++i) {

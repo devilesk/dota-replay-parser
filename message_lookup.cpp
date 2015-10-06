@@ -14,14 +14,14 @@ std::map<int, void (Parser::*)(std::string data)> initHandlers() {
 uint32_t Parser::parsePendingMessage(pendingMessage* msg) {
   /*switch(msg->type) {
     case SVC_Messages::svc_CreateStringTable: {
-      std::cout << "svc_CreateStringTable\n";
+      //std::cout << "svc_CreateStringTable\n";
       CSVCMsg_CreateStringTable data;
       data.ParseFromString(msg->data);
       onCSVCMsg_CreateStringTable(&data);
     }
     break;
     case SVC_Messages::svc_ServerInfo: {
-      std::cout << "svc_ServerInfo\n";
+      //std::cout << "svc_ServerInfo\n";
       CSVCMsg_ServerInfo data;
       data.ParseFromString(msg->data);
       onCSVCMsg_ServerInfo(&data);
@@ -29,7 +29,7 @@ uint32_t Parser::parsePendingMessage(pendingMessage* msg) {
     break;
   }*/
   //handlers[msg->type](msg->data);
-  std::cout << "pendingMessage type: " << std::to_string(msg->type) << "\n";
+  //std::cout << "pendingMessage type: " << std::to_string(msg->type) << "\n";
   if (handlers.find(msg->type) != handlers.end()) (this->*handlers[msg->type])(msg->data);
   return 0;
 }

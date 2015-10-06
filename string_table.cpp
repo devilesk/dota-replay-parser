@@ -4,10 +4,10 @@ void Parser::onCSVCMsg_CreateStringTable(std::string raw_data) {
   CSVCMsg_CreateStringTable data;
   data.ParseFromString(raw_data);
       
-  std::cout << "nextIndex: " << std::to_string(stringTables.nextIndex) << "\n";
-  std::cout << "name: " << data.name() << "\n";
-  std::cout << "user_data_fixed_size: " << std::to_string(data.user_data_fixed_size()) << "\n";
-  std::cout << "user_data_size: " << std::to_string(data.user_data_size()) << "\n";
+  //std::cout << "nextIndex: " << std::to_string(stringTables.nextIndex) << "\n";
+  //std::cout << "name: " << data.name() << "\n";
+  //std::cout << "user_data_fixed_size: " << std::to_string(data.user_data_fixed_size()) << "\n";
+  //std::cout << "user_data_size: " << std::to_string(data.user_data_size()) << "\n";
   std::map<int, StringTableItem> stringTableItems;
   StringTable string_table = {
     stringTables.nextIndex,
@@ -18,14 +18,14 @@ void Parser::onCSVCMsg_CreateStringTable(std::string raw_data) {
   };
   stringTables.nextIndex += 1;
   std::string buffer = data.string_data();
-  std::cout << "is_compressed: " << std::to_string(data.data_compressed()) << "\n";
+  //std::cout << "is_compressed: " << std::to_string(data.data_compressed()) << "\n";
   std::vector<StringTableItem> items;
   if (data.data_compressed()) {
     std::size_t uSize;
     if (snappy::GetUncompressedLength(buffer.c_str(), buffer.length(), &uSize)) {
       char uBuffer[uSize];
       if (snappy::RawUncompress(buffer.c_str(), buffer.length(), uBuffer)) {
-        std::cout << "uncompressed success, size: " << std::to_string(uSize) << "\n";
+        //std::cout << "uncompressed success, size: " << std::to_string(uSize) << "\n";
         items = parseStringTable(uBuffer, uSize, data.num_entries(), string_table.userDataFixedSize, string_table.userDataSize);
       }
     }
@@ -53,10 +53,10 @@ void Parser::onCSVCMsg_UpdateStringTable(std::string raw_data) {
     t = stringTables.tables[data.table_id()];
   }
   else {
-    std::cout << "missing string table " << std::to_string(data.table_id()) << "\n";
+    //std::cout << "missing string table " << std::to_string(data.table_id()) << "\n";
   }
   
-  std::cout << "tick=" << std::to_string(tick) << " name=" << t.name << " changedEntries=" << std::to_string(data.num_changed_entries()) << " bufflen=" << std::to_string(data.string_data().length()) << "\n";
+  //std::cout << "tick=" << std::to_string(tick) << " name=" << t.name << " changedEntries=" << std::to_string(data.num_changed_entries()) << " bufflen=" << std::to_string(data.string_data().length()) << "\n";
   
   std::vector<StringTableItem> items = parseStringTable(data.string_data().c_str(), data.string_data().length(), data.num_changed_entries(), t.userDataFixedSize, t.userDataSize);
   
@@ -66,16 +66,16 @@ void Parser::onCSVCMsg_UpdateStringTable(std::string raw_data) {
     if (t.items.find(index) != t.items.end()) {
       // XXX TODO: Sometimes ActiveModifiers change keys, which is suspicous...
       if (it->key.compare("") != 0 && it->key.compare(t.items[index].key) != 0) {
-        std::cout << "tick=" << std::to_string(tick) << " name=" << t.name << " index=" << std::to_string(index) << " key=" << t.items[index].key << " update key -> " << it->key << "\n";
+        //std::cout << "tick=" << std::to_string(tick) << " name=" << t.name << " index=" << std::to_string(index) << " key=" << t.items[index].key << " update key -> " << it->key << "\n";
         t.items[index].key = it->key;
       }
       if (it->value.length() > 0) {
-        std::cout << "tick=" << std::to_string(tick) << " name=" << t.name << " index=" << std::to_string(index) << " key=" << t.items[index].key << " update value len " << std::to_string(t.items[index].value.length()) << " -> " << std::to_string(it->value.length()) << "\n";
+        //std::cout << "tick=" << std::to_string(tick) << " name=" << t.name << " index=" << std::to_string(index) << " key=" << t.items[index].key << " update value len " << std::to_string(t.items[index].value.length()) << " -> " << std::to_string(it->value.length()) << "\n";
         t.items[index].value = it->value;
       }
     }
     else {
-      std::cout << "tick=" << std::to_string(tick) << " name=" << t.name << " insert new item " << std::to_string(index) << " key " << it->key << "\n";
+      //std::cout << "tick=" << std::to_string(tick) << " name=" << t.name << " insert new item " << std::to_string(index) << " key " << it->key << "\n";
       t.items[index] = *it;
     }
   }
@@ -117,11 +117,11 @@ std::vector<StringTableItem> parseStringTable(const char* buffer, int buffer_siz
     else {
       index = stream.nReadVarUInt32() + 1;
     }
-    std::cout << "index: " << std::to_string(index) << "\n";
+    //std::cout << "index: " << std::to_string(index) << "\n";
     
     // Some values have keys, some don't.
     bool hasKey = stream.read(1);
-    std::cout << "hasKey: " << std::to_string(hasKey) << "\n";
+    //std::cout << "hasKey: " << std::to_string(hasKey) << "\n";
     if (hasKey) {
 			// Some entries use reference a position in the key history for
 			// part of the key. If referencing the history, read the position
@@ -129,7 +129,7 @@ std::vector<StringTableItem> parseStringTable(const char* buffer, int buffer_siz
 			// combined with an extra string read (null terminated).
 			// Alternatively, just read the string.
       bool useHistory = stream.read(1);
-      std::cout << "useHistory: " << std::to_string(useHistory) << "\n";
+      //std::cout << "useHistory: " << std::to_string(useHistory) << "\n";
       char tmpBuf[1024];
       if (useHistory) {
         uint32_t pos = stream.read(5);
@@ -156,13 +156,13 @@ std::vector<StringTableItem> parseStringTable(const char* buffer, int buffer_siz
       if (keys.size() >= 32) {
         keys.erase(keys.begin());
       }
-      std::cout << "key: " << key << "\n";
+      //std::cout << "key: " << key << "\n";
       keys.push_back(key);
     }
     
     // Some entries have a value.
     bool hasValue = stream.read(1);
-    std::cout << "hasValue: " << std::to_string(hasValue) << "\n";
+    //std::cout << "hasValue: " << std::to_string(hasValue) << "\n";
     if (hasValue) {
 			// Values can be either fixed size (with a size specified in
 			// bits during table creation, or have a variable size with
@@ -174,13 +174,13 @@ std::vector<StringTableItem> parseStringTable(const char* buffer, int buffer_siz
       }
       else {
         uint32_t size = stream.read(14);
-        std::cout << "value size: " << std::to_string(size) << "\n";
+        //std::cout << "value size: " << std::to_string(size) << "\n";
         stream.read(3);
         char tmpBuf[size];
         stream.readBits(tmpBuf, size * 8);
         value = std::string(tmpBuf, size);
       }
-      std::cout << "value: " << value << "\n";
+      //std::cout << "value: " << value << "\n";
     }
     StringTableItem item = {
       (int)index,

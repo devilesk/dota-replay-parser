@@ -52,12 +52,12 @@ int recurseTable(flattened_serializers* sers, dt* datatable, CSVCMsg_FlattenedSe
         0,
         std::vector<dt_property>()
       };
-      std::cout << "isArray prop.field.name: " << prop.field.name << "\n";
+      //std::cout << "isArray prop.field.name: " << prop.field.name << "\n";
       for (int i = 0; i < prop.field.serializer.length; ++i) {
         char buf[4];
         sprintf(buf, "%04d", i);
         std::string n = std::string(buf, 4);
-        std::cout << "n: " << n << "\n";
+        //std::cout << "n: " << n << "\n";
         dt_property new_prop;
         if (prop.field.serializer.arraySerializer != NULL) {
           new_prop = {
@@ -113,17 +113,17 @@ int recurseTable(flattened_serializers* sers, dt* datatable, CSVCMsg_FlattenedSe
         }
         tmpDt.properties.push_back(new_prop);
         if (prop.table != nullptr) {
-          std::cout << "prop.table != nullptr\n";
-          std::cout << "prop.table.name" << prop.table->name << "\n";
+          //std::cout << "prop.table != nullptr\n";
+          //std::cout << "prop.table.name" << prop.table->name << "\n";
           dt* nTable = new dt();
           *nTable = *prop.table;
           char buf2[4];
           sprintf(buf2, "%04d", i);
           std::string n = std::string(buf2, 4);
           nTable->name = n;
-          std::cout << "nTable.name: " << n << "\n";
+          //std::cout << "nTable.name: " << n << "\n";
           tmpDt.properties[tmpDt.properties.size() - 1].table = nTable;
-          std::cout << "tmpDt.properties[tmpDt.properties.size() - 1].table.name" << tmpDt.properties[tmpDt.properties.size() - 1].table->name << "\n";
+          //std::cout << "tmpDt.properties[tmpDt.properties.size() - 1].table.name" << tmpDt.properties[tmpDt.properties.size() - 1].table->name << "\n";
         }
       }
       dt* t = new dt();
@@ -136,7 +136,7 @@ int recurseTable(flattened_serializers* sers, dt* datatable, CSVCMsg_FlattenedSe
 }
 
 flattened_serializers Parser::parseSendTables(CDemoSendTables* sendTables, PropertySerializerTable pst) {
-  std::cout << "parsing DEM_SendTables\n";
+  //std::cout << "parsing DEM_SendTables\n";
   uint32_t size;
   const std::string &data = sendTables->data();
   int pos = 0;
@@ -146,11 +146,11 @@ flattened_serializers Parser::parseSendTables(CDemoSendTables* sendTables, Prope
   //dota::bitstream stream(data);
   //size = stream.nReadVarUInt32();
   
-  std::cout << "data length: " << data.length() << "\n";
-  std::cout << "size: " << std::to_string(size) << " pos: " << std::to_string(pos) << "\n";
+  //std::cout << "data length: " << data.length() << "\n";
+  //std::cout << "size: " << std::to_string(size) << " pos: " << std::to_string(pos) << "\n";
   CSVCMsg_FlattenedSerializer msg;
   msg.ParseFromArray(&data[pos], size);
-  std::cout << "# serializers: " << std::to_string(msg.serializers_size()) << "\n";
+  //std::cout << "# serializers: " << std::to_string(msg.serializers_size()) << "\n";
   
   //std::map< std::string, std::map<int, dt> > serializers;
   flattened_serializers fs = {
@@ -172,24 +172,24 @@ flattened_serializers Parser::parseSendTables(CDemoSendTables* sendTables, Prope
     }
     dt datatable;
     recurseTable(&fs, &datatable, &msg, &serializer);
-    std::cout << "add table named to fs.serializers: " << datatable.name << "\n";
+    //std::cout << "add table named to fs.serializers: " << datatable.name << "\n";
     fs.serializers[sName][sVer] = datatable;
   
-    std::cout << "serializer index: " << std::to_string(i) << "\n";
-    std::cout << "serializer_name_sym: " << std::to_string(serializer.serializer_name_sym()) << ", " << msg.symbols(serializer.serializer_name_sym()) << "\n";
-    std::cout << "serializer_version: " << std::to_string(serializer.serializer_version()) << "\n";
-    std::cout << "fields_index_size: " << std::to_string(serializer.fields_index_size()) << "\n";
-    std::cout << "datatable properties size: " << std::to_string(datatable.properties.size()) << "\n";
+    //std::cout << "serializer index: " << std::to_string(i) << "\n";
+    //std::cout << "serializer_name_sym: " << std::to_string(serializer.serializer_name_sym()) << ", " << msg.symbols(serializer.serializer_name_sym()) << "\n";
+    //std::cout << "serializer_version: " << std::to_string(serializer.serializer_version()) << "\n";
+    //std::cout << "fields_index_size: " << std::to_string(serializer.fields_index_size()) << "\n";
+    //std::cout << "datatable properties size: " << std::to_string(datatable.properties.size()) << "\n";
     /*for (int j = 0; j < serializer.fields_index_size(); ++j) {
-      std::cout << "field_index: " << std::to_string(serializer.fields_index(j)) << "\n";
+      //std::cout << "field_index: " << std::to_string(serializer.fields_index(j)) << "\n";
       ProtoFlattenedSerializerField_t field = msg.fields(serializer.fields_index(j));
-      std::cout << "var_name_sym: " << std::to_string(field.var_name_sym()) << ", " << msg.symbols(field.var_name_sym()) << "\n";
+      //std::cout << "var_name_sym: " << std::to_string(field.var_name_sym()) << ", " << msg.symbols(field.var_name_sym()) << "\n";
     }*/
   }
-  std::cout << "symbols_size: " << std::to_string(msg.symbols_size()) << "\n";
-  std::cout << "fields_size: " << std::to_string(msg.fields_size()) << "\n";
+  //std::cout << "symbols_size: " << std::to_string(msg.symbols_size()) << "\n";
+  //std::cout << "fields_size: " << std::to_string(msg.fields_size()) << "\n";
   //serializers = fs.serializers;
-  //std::cout << "serializers: " << std::to_string(serializers["CWorld"][0].properties.size()) << "\n";
+  ////std::cout << "serializers: " << std::to_string(serializers["CWorld"][0].properties.size()) << "\n";
   //return 0;
   return fs;
 }

@@ -108,11 +108,11 @@ PropertySerializer GetPropertySerializerByName(PropertySerializerTable* pst, std
         decoder = GetPropertySerializerByName(pst, match[1]).decode;
       }
       else {
-        std::cout << "Unable to read vector type for: " << name << "\n";
+        //std::cout << "Unable to read vector type for: " << name << "\n";
       }
     }
     else {
-      std::cout << "no decoder for type: " << name << "\n";
+      //std::cout << "no decoder for type: " << name << "\n";
     }
   }
   
@@ -123,8 +123,8 @@ PropertySerializer GetPropertySerializerByName(PropertySerializerTable* pst, std
   
   std::smatch match;
   if (std::regex_search (name, match, matchArray)) {
-    for (auto x:match) std::cout << x << " ";
-    std::cout << std::endl;
+    //for (auto x:match) std::cout << x << " ";
+    //std::cout << std::endl;
     
     std::string typeName = match[1];
     uint32_t length = std::stoi(match[2], nullptr);
@@ -148,8 +148,8 @@ PropertySerializer GetPropertySerializerByName(PropertySerializerTable* pst, std
   }
   
   if (std::regex_search (name, match, matchVector)) {
-    for (auto x:match) std::cout << x << " ";
-    std::cout << std::endl;
+    //for (auto x:match) std::cout << x << " ";
+    //std::cout << std::endl;
     
     PropertySerializer ps = {
       decoder,

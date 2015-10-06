@@ -36,7 +36,7 @@ void Parser::onCSVCMsg_PacketEntities(std::string raw_data) {
   CSVCMsg_PacketEntities data;
   data.ParseFromString(raw_data);
   
-  std::cout << "pTick=" << std::to_string(tick) << " isDelta=" << std::to_string(data.is_delta()) << " deltaFrom=" << std::to_string(data.delta_from()) << " updateEntries=" << std::to_string(data.updated_entries()) << " maxEntries=" << std::to_string(data.max_entries()) << " baseline=" << std::to_string(data.baseline()) << " updateBaseline=" << std::to_string(data.update_baseline()) << "\n";
+  //std::cout << "pTick=" << std::to_string(tick) << " isDelta=" << std::to_string(data.is_delta()) << " deltaFrom=" << std::to_string(data.delta_from()) << " updateEntries=" << std::to_string(data.updated_entries()) << " maxEntries=" << std::to_string(data.max_entries()) << " baseline=" << std::to_string(data.baseline()) << " updateBaseline=" << std::to_string(data.update_baseline()) << "\n";
   
   // Skip processing full updates after the first. We'll process deltas instead.
   if (data.is_delta() && packetEntityFullPackets > 0) return;
@@ -56,7 +56,7 @@ void Parser::onCSVCMsg_PacketEntities(std::string raw_data) {
     uint32_t delta = stream.nReadUBitVar();
     index += (int)(delta) + 1;
     
-    std::cout << "index delta is " << std::to_string(delta) << " to " << std::to_string(index) << "\n";
+    //std::cout << "index delta is " << std::to_string(delta) << " to " << std::to_string(index) << "\n";
     
 		// Read the type of update based on two booleans.
 		// This appears to be backwards from source 1:
@@ -80,7 +80,7 @@ void Parser::onCSVCMsg_PacketEntities(std::string raw_data) {
       }
     }
     
-    std::cout << "update type is " << std::to_string(eventType) << " to " << std::to_string(index) << "\n";
+    //std::cout << "update type is " << std::to_string(eventType) << " to " << std::to_string(index) << "\n";
     
     Properties props;
     
@@ -92,7 +92,7 @@ void Parser::onCSVCMsg_PacketEntities(std::string raw_data) {
         pe->index = index;
         pe->classId = (int)(stream.read(classIdSize));
         pe->serial = (int)(stream.read(17));
-        std::cout << "classIdSize " << std::to_string(classIdSize) << "\n";
+        //std::cout << "classIdSize " << std::to_string(classIdSize) << "\n";
         
         // We don't know what this is used for.
         stream.nReadVarUInt32();
@@ -102,7 +102,7 @@ void Parser::onCSVCMsg_PacketEntities(std::string raw_data) {
           pe->className = classInfo[pe->classId];
         }
         else {
-          std::cout << "unable to find class " << std::to_string(pe->classId) << "\n";
+          //std::cout << "unable to find class " << std::to_string(pe->classId) << "\n";
         }
         
         // Get the associated baseline
@@ -110,7 +110,7 @@ void Parser::onCSVCMsg_PacketEntities(std::string raw_data) {
           pe->classBaseline = classBaselines[pe->classId];
         }
         else {
-          std::cout << "unable to find class baseline " << std::to_string(pe->classId) << "\n";
+          //std::cout << "unable to find class baseline " << std::to_string(pe->classId) << "\n";
         }
         
         // Get the associated serializer
@@ -118,7 +118,7 @@ void Parser::onCSVCMsg_PacketEntities(std::string raw_data) {
           pe->flatTbl = &serializers[pe->className][0];
         }
         else {
-          std::cout << "unable to find serializer for class " << pe->className << "\n";
+          //std::cout << "unable to find serializer for class " << pe->className << "\n";
         }
         
         // Register the packetEntity with the parser.
@@ -135,7 +135,7 @@ void Parser::onCSVCMsg_PacketEntities(std::string raw_data) {
           pe = packetEntities[index];
         }
         else {
-          std::cout << "unable to find packet entity " << std::to_string(index) << " for update\n";
+          //std::cout << "unable to find packet entity " << std::to_string(index) << " for update\n";
         }
         
         // Read properties and update the packetEntity
@@ -145,7 +145,7 @@ void Parser::onCSVCMsg_PacketEntities(std::string raw_data) {
         break;
       case EntityEventType_Delete:
         if (packetEntities.find(index) == packetEntities.end()) {
-          std::cout << "unable to find packet entity " << std::to_string(index) << " for delete\n";
+          //std::cout << "unable to find packet entity " << std::to_string(index) << " for delete\n";
         }
         
         delete packetEntities[index];
