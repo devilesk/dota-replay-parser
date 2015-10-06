@@ -60,13 +60,14 @@ void assignMultipliers(QuantizedFloatDecoder* qfd, uint32_t steps) {
   }
   
   float highMul = (float)0.0;
-  if ((double)abs(range) <= 0.0) {
+  if (abs((double)range) <= 0.0) {
     highMul = (float)high;
   }
   else {
     highMul = (float)high / range;
   }
   
+  // Adjust precision
   if ((highMul * range > (float)high) || ((double)(highMul * range) > (double)high)) {
     float multipliers[5] = { 0.9999, 0.99, 0.9, 0.8, 0.7 };
     
@@ -96,18 +97,24 @@ float quantize(QuantizedFloatDecoder* qfd, float val) {
     if (((uint32_t)(qfd->field->flags) & qff_roundup) == 0) {
       std::cout << "Field tried to quantize an out of range value\n";
     }
-    
+    std::cout << "quantize returning low " << std::to_string(qfd->low) << "\n";
     return qfd->low;
   }
-  else {
+  else if (val > qfd->high) {
     if (((uint32_t)(qfd->field->flags) & qff_rounddown) == 0) {
       std::cout << "Field tried to quantize an out of range value\n";
     }
-    
+    std::cout << "quantize returning high " << std::to_string(val) << "\n";
+    std::cout << "quantize returning high " << std::to_string(qfd->low) << "\n";
+    std::cout << "quantize returning high " << std::to_string(qfd->high) << "\n";
     return qfd->high;
   }
   
   uint32_t i = (uint32_t)((val - qfd->low) * qfd->highLowMul);
+  std::cout << "quantize HighLowMul " << std::to_string(qfd->highLowMul) << "\n";
+  std::cout << "quantize val - qfd.Low " << std::to_string(val - qfd->low) << "\n";
+  std::cout << "quantize i " << std::to_string(i) << "\n";
+  std::cout << "quantize " << std::to_string(qfd->low + (qfd->high - qfd->low) * ((float)(i) * qfd->decMul)) << "\n";
   return qfd->low + (qfd->high - qfd->low) * ((float)(i) * qfd->decMul);
 }
 
@@ -158,6 +165,7 @@ QuantizedFloatDecoder initQFD(dt_field* f) {
       qfd.high = 1.0;
     }
   }
+  std::cout << "initQFD high value %s " << std::to_string(qfd.high) << "\n";
   
   // Validate flags
   validateFlags(&qfd);
@@ -165,12 +173,16 @@ QuantizedFloatDecoder initQFD(dt_field* f) {
   // Handle Round Up, Round Down
   uint32_t steps = (1 << (uint32_t)qfd.bitcount);
   
+  std::cout << "initQFD bitcount %s " << std::to_string(qfd.bitcount) << "\n";
+  std::cout << "initQFD steps %s " << std::to_string(steps) << "\n";
+  
   float range = 0;
   
-  if ((qfd.flags & qff_encode_integers) != 0) {
+  if ((qfd.flags & qff_rounddown) != 0) {
     range = qfd.high - qfd.low;
     qfd.offset = (range / (float)steps);
     qfd.high -= qfd.offset;
+    std::cout << "initQFD add offset to high %s " << std::to_string(qfd.offset) << "\n";
   }
   else if ((qfd.flags & qff_roundup) != 0) {
     range = qfd.high - qfd.low;
@@ -216,18 +228,21 @@ QuantizedFloatDecoder initQFD(dt_field* f) {
   if ((qfd.flags & qff_rounddown) != 0) {
     if (quantize(&qfd, qfd.low) == qfd.low) {
       qfd.flags &= qfd.flags ^ qff_rounddown;
+      std::cout << "initQFD remove rounddown\n";
     }
   }
   
   if ((qfd.flags & qff_roundup) != 0) {
     if (quantize(&qfd, qfd.high) == qfd.high) {
       qfd.flags &= qfd.flags ^ qff_roundup;
+      std::cout << "initQFD remove roundup\n";
     }
   }
   
   if ((qfd.flags & qff_encode_zero) != 0) {
     if (quantize(&qfd, 0.0) == 0.0) {
       qfd.flags &= qfd.flags ^ qff_encode_zero;
+      std::cout << "initQFD remove qff_encode_zero\n";
     }
   }
   

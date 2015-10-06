@@ -33,6 +33,7 @@
 #include "class_info.hpp"
 #include "string_table.hpp"
 #include "message_lookup.hpp"
+#include "packet_entity.hpp"
 
 uint32_t readVarUInt32(std::ifstream &stream);
 uint32_t readVarUInt32(const char*, int*);

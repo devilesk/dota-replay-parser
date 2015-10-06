@@ -59,8 +59,18 @@ typedef boost::variant<
 
 struct dt_field;
 
-struct Properties {
-  std::map<std::string, value_type> KV;
+class Properties {
+  public:
+    std::map<std::string, value_type> KV;
+  
+    void merge(Properties* p2);
+    bool fetch(std::string k, value_type& v);
+    bool fetchBool(std::string k, bool& v);
+    bool fetchInt32(std::string k, int32_t& v);
+    bool fetchUint32(std::string k, uint32_t& v);
+    bool fetchUint64(std::string k, uint64_t& v);
+    bool fetchFloat32(std::string k, float& v);
+    bool fetchString(std::string k, std::string& v);
 };
 
 struct PropertySerializer {
@@ -143,11 +153,54 @@ struct fieldpathOp {
 	int weight;
 };
 
+// The flattened serializers object
+struct flattened_serializers {
+  std::map< std::string, std::map<int, dt> > serializers;
+  CSVCMsg_FlattenedSerializer* proto;
+  PropertySerializerTable pst;
+  uint32_t build;
+};
+
+class PacketEntity {
+  public:
+    int index;
+    int classId;
+    std::string className;
+    Properties classBaseline;
+    Properties properties;
+    int serial;
+    dt* flatTbl;
+    
+    bool fetch(std::string k, value_type& v);
+    bool fetchBool(std::string k, bool& v);
+    bool fetchInt32(std::string k, int32_t& v);
+    bool fetchUint32(std::string k, uint32_t& v);
+    bool fetchUint64(std::string k, uint64_t& v);
+    bool fetchFloat32(std::string k, float& v);
+    bool fetchString(std::string k, std::string& v);
+};
+
+enum EntityEventType {
+  EntityEventType_None,
+  EntityEventType_Create,
+  EntityEventType_Update,
+  EntityEventType_Delete,
+  EntityEventType_Leave
+};
+
+struct packetEntityUpdate {
+  PacketEntity* pe;
+  EntityEventType t;
+};
+
 struct pendingMessage {
   uint32_t tick;
   int type;
   std::string data;
 };
+
+// A function that can handle a game event.
+typedef void (*packetEntityHandler)(PacketEntity* , EntityEventType);
 
 class Parser {
   public:
@@ -155,25 +208,34 @@ class Parser {
     std::map<int, struct Properties> classBaselines;
     bool hasClassInfo;
     std::map< std::string, std::map<int, dt> > serializers;
+    std::map< int, PacketEntity* > packetEntities;
+    std::vector< packetEntityHandler > packetEntityHandlers;
     StringTables stringTables;
     uint32_t GameBuild;
+    uint32_t tick;
+    int packetEntityFullPackets;
     int classIdSize;
+    bool processPacketEntities;
     
     Parser() {
+      tick = 0;
+      packetEntityFullPackets = 0;
       hasClassInfo = false;
+      processPacketEntities = true;
     };
     //uint32_t onCSVCMsg_CreateStringTable(CSVCMsg_CreateStringTable* data);
     //uint32_t onCSVCMsg_ServerInfo(CSVCMsg_ServerInfo* data);
     uint32_t updateInstanceBaseline();
     uint32_t updateInstanceBaselineItem(StringTableItem item);
-    uint32_t parseSendTables(CDemoSendTables* sendTables, PropertySerializerTable pst);
+    flattened_serializers parseSendTables(CDemoSendTables* sendTables, PropertySerializerTable pst);
     uint32_t readMessage(std::ifstream &stream);
     uint32_t parseMessage(int cmd, int tick, int size, char* buffer);
     uint32_t parseClassInfo(CDemoClassInfo*);
     uint32_t parseStringTables(const CDemoStringTables*);
-    uint32_t parsePacket(const CDemoPacket* packet, int tick);
-    uint32_t parseFullPacket(CDemoFullPacket* packet, int tick);
     uint32_t parsePendingMessage(pendingMessage* msg);
+    
+    void onCDemoPacket(const CDemoPacket* packet, int tick);
+    void onCDemoFullPacket(CDemoFullPacket* packet, int tick);
 /*
     void onCDemoStop(CDemoStop* data);
     void onCDemoFileHeader(CDemoFileHeader* data);

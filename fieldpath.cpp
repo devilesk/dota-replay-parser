@@ -80,7 +80,7 @@ void addField(fieldpath* fp) {
     
     std::cout << "Adding field with path: " << path << fp->index[fp->fields.size() - 1] << "\n";
   }*/
-
+  std::cout << "fp->index.size(): " << std::to_string(fp->index.size()) << "\n";
   for (i = 0; i < fp->index.size() - 1; ++i) {
     std::cout << "i: " << std::to_string(i) << "\n";
     std::cout << "cDt name: " << cDt->name << "\n";

@@ -137,12 +137,15 @@ uint32_t Parser::readMessage(std::ifstream &stream) {
   delete buffer;
 }
 
-uint32_t Parser::parseMessage(int cmd, int tick, int size, char* buffer) {
+uint32_t Parser::parseMessage(int cmd, int _tick, int size, char* buffer) {
+  tick = _tick;
   if (cmd == 4) {
     std::cout << "type: DEM_SendTables\n";
-    CDemoSendTables sendTables;
-    sendTables.ParseFromArray(buffer, size);
-    parseSendTables(&sendTables, getDefaultPropertySerializerTable());
+    //CDemoSendTables sendTables;
+    //sendTables.ParseFromArray(buffer, size);
+    //parseSendTables(&sendTables, getDefaultPropertySerializerTable());
+    std::string data(buffer, size);
+    onCDemoSendTables(data);
   }
   else if (cmd == 5) {
     std::cout << "type: DEM_ClassInfo\n";
@@ -160,7 +163,7 @@ uint32_t Parser::parseMessage(int cmd, int tick, int size, char* buffer) {
     std::cout << "type: DEM_Packet\n";
     CDemoPacket packet;
     packet.ParseFromArray(buffer, size);
-    parsePacket(&packet, tick);
+    onCDemoPacket(&packet, _tick);
     /*do
     {
       std::cout << "Press a key to continue...\n";
@@ -170,7 +173,7 @@ uint32_t Parser::parseMessage(int cmd, int tick, int size, char* buffer) {
     std::cout << "type: DEM_SignonPacket\n";
     CDemoPacket packet;
     packet.ParseFromArray(buffer, size);
-    parsePacket(&packet, tick);
+    onCDemoPacket(&packet, _tick);
     /*do
     {
       std::cout << "Press a key to continue...\n";
@@ -180,7 +183,7 @@ uint32_t Parser::parseMessage(int cmd, int tick, int size, char* buffer) {
     std::cout << "type: DEM_FullPacket\n";
     CDemoFullPacket packet;
     packet.ParseFromArray(buffer, size);
-    parseFullPacket(&packet, tick);
+    onCDemoFullPacket(&packet, _tick);
   }
   return 0;
 }
@@ -257,7 +260,7 @@ bool compare_packet_priority(pendingMessage i,pendingMessage j) {
   return packet_priority(i.type) < packet_priority(j.type);
 }
 
-uint32_t Parser::parsePacket(const CDemoPacket* packet, int tick) {
+void Parser::onCDemoPacket(const CDemoPacket* packet, int tick) {
   dota::bitstream stream(packet->data());
   uint32_t ret;
   int type;
@@ -279,12 +282,12 @@ uint32_t Parser::parsePacket(const CDemoPacket* packet, int tick) {
   std::stable_sort(pendingMessages.begin(), pendingMessages.end(), compare_packet_priority);
   for (std::vector<pendingMessage>::iterator it = pendingMessages.begin(); it != pendingMessages.end(); ++it) {
     //std::cout << "priority: " << std::to_string(packet_priority(it->type)) << "\n";
+    std::cout << "TICK: " << std::to_string(tick) << "\n";
     parsePendingMessage(&*it);
   }
 }
 
-uint32_t Parser::parseFullPacket(CDemoFullPacket* packet, int tick) {
+void Parser::onCDemoFullPacket(CDemoFullPacket* packet, int tick) {
   //parseStringTables(&(packet->string_table()), p);
-  parsePacket(&(packet->packet()), tick);
-  return 0;
+  onCDemoPacket(&(packet->packet()), tick);
 }

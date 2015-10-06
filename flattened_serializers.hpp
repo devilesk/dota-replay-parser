@@ -9,14 +9,6 @@
 #include "protobufs/demo.pb.h"
 #include "protobufs/netmessages.pb.h"
 
-// The flattened serializers object
-struct flattened_serializers {
-  std::map< std::string, std::map<int, dt> > serializers;
-  CSVCMsg_FlattenedSerializer* proto;
-  PropertySerializerTable pst;
-  uint32_t build;
-};
-
 int recurseTable(flattened_serializers*, dt*, CSVCMsg_FlattenedSerializer*, ProtoFlattenedSerializer_t*);
 //uint32_t parseSendTables(CDemoSendTables* sendTables, PropertySerializerTable pst, parser* p);
 

@@ -21,4 +21,6 @@ g++ -o parser -std=c++11 -L/usr/local/lib parser.cpp huffman.cpp property_serial
 
 g++ -o parser -std=c++11 -L/usr/local/lib parser.cpp message_lookup.cpp huffman.cpp property_serializers.cpp string_table.cpp class_info.cpp flattened_serializers.cpp fieldpath.cpp quantizedfloat.cpp property.cpp property_decoder.cpp bitstream.cpp protobufs/demo.pb.cc protobufs/netmessages.pb.cc protobufs/networkbasetypes.pb.cc protobufs/network_connection.pb.cc -lprotobuf -lsnappy
 
+g++ -o parser -std=c++11 -L/usr/local/lib parser.cpp packet_entity.cpp message_lookup.cpp huffman.cpp property_serializers.cpp string_table.cpp class_info.cpp flattened_serializers.cpp fieldpath.cpp quantizedfloat.cpp property.cpp property_decoder.cpp bitstream.cpp protobufs/demo.pb.cc protobufs/netmessages.pb.cc protobufs/networkbasetypes.pb.cc protobufs/network_connection.pb.cc -lprotobuf -lsnappy
+
 (.*?)\s*\[\]func\(\*dota\.(.*?)\) error\r\n

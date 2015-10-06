@@ -135,7 +135,7 @@ int recurseTable(flattened_serializers* sers, dt* datatable, CSVCMsg_FlattenedSe
   return 0;
 }
 
-uint32_t Parser::parseSendTables(CDemoSendTables* sendTables, PropertySerializerTable pst) {
+flattened_serializers Parser::parseSendTables(CDemoSendTables* sendTables, PropertySerializerTable pst) {
   std::cout << "parsing DEM_SendTables\n";
   uint32_t size;
   const std::string &data = sendTables->data();
@@ -188,7 +188,14 @@ uint32_t Parser::parseSendTables(CDemoSendTables* sendTables, PropertySerializer
   }
   std::cout << "symbols_size: " << std::to_string(msg.symbols_size()) << "\n";
   std::cout << "fields_size: " << std::to_string(msg.fields_size()) << "\n";
-  serializers = fs.serializers;
+  //serializers = fs.serializers;
   //std::cout << "serializers: " << std::to_string(serializers["CWorld"][0].properties.size()) << "\n";
-  return 0;
+  //return 0;
+  return fs;
+}
+
+void Parser::onCDemoSendTables(std::string raw_data) {
+  CDemoSendTables data;
+  data.ParseFromString(raw_data);
+  serializers = parseSendTables(&data, getDefaultPropertySerializerTable()).serializers;
 }

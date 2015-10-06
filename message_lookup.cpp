@@ -5,6 +5,8 @@ std::map<int, void (Parser::*)(std::string data)> handlers = initHandlers();
 std::map<int, void (Parser::*)(std::string data)> initHandlers() {
   std::map<int, void (Parser::*)(std::string data)> handlers;
   handlers[SVC_Messages::svc_CreateStringTable] = &Parser::onCSVCMsg_CreateStringTable;
+  handlers[SVC_Messages::svc_PacketEntities] = &Parser::onCSVCMsg_PacketEntities;
+  handlers[SVC_Messages::svc_UpdateStringTable] = &Parser::onCSVCMsg_UpdateStringTable;
   handlers[SVC_Messages::svc_ServerInfo] = &Parser::onCSVCMsg_ServerInfo;
   return handlers;
 }
