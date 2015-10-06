@@ -20,8 +20,8 @@
 #include "protobufs/gameevents.pb.h"
 
 //uint32_t parsePendingMessage(pendingMessage* msg, parser* p);
-extern std::map<int, void (Parser::*)(std::string data)> handlers;
+extern std::map<int, Callback> handlers;
 
-std::map<int, void (Parser::*)(std::string data)> initHandlers();
+std::map<int, Callback> initHandlers();
 
 #endif /* _MESSAGE_LOOKUP_HPP_ */

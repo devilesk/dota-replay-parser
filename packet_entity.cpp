@@ -29,7 +29,7 @@ bool PacketEntity::fetchString(std::string k, std::string& v) {
   return classBaseline.fetchString(k, v);
 }
 
-void Parser::onCSVCMsg_PacketEntities(std::string raw_data) {
+void Parser::onCSVCMsg_PacketEntities(const std::string &raw_data) {
   // Skip processing if we're configured not to.
   if (!processPacketEntities) return;
   

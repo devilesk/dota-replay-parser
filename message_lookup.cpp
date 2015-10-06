@@ -1,9 +1,9 @@
 #include "message_lookup.hpp"
 
-std::map<int, void (Parser::*)(std::string data)> handlers = initHandlers();
+std::map<int, Callback> handlers = initHandlers();
 
-std::map<int, void (Parser::*)(std::string data)> initHandlers() {
-  std::map<int, void (Parser::*)(std::string data)> handlers;
+std::map<int, Callback> initHandlers() {
+  std::map<int, Callback> handlers;
   handlers[SVC_Messages::svc_CreateStringTable] = &Parser::onCSVCMsg_CreateStringTable;
   handlers[SVC_Messages::svc_PacketEntities] = &Parser::onCSVCMsg_PacketEntities;
   handlers[SVC_Messages::svc_UpdateStringTable] = &Parser::onCSVCMsg_UpdateStringTable;

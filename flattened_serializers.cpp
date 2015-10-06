@@ -194,7 +194,7 @@ flattened_serializers Parser::parseSendTables(CDemoSendTables* sendTables, Prope
   return fs;
 }
 
-void Parser::onCDemoSendTables(std::string raw_data) {
+void Parser::onCDemoSendTables(const std::string &raw_data) {
   CDemoSendTables data;
   data.ParseFromString(raw_data);
   serializers = parseSendTables(&data, getDefaultPropertySerializerTable()).serializers;

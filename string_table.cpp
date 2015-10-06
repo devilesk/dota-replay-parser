@@ -1,6 +1,6 @@
 #include "string_table.hpp"
 
-void Parser::onCSVCMsg_CreateStringTable(std::string raw_data) {
+void Parser::onCSVCMsg_CreateStringTable(const std::string &raw_data) {
   CSVCMsg_CreateStringTable data;
   data.ParseFromString(raw_data);
       
@@ -43,7 +43,7 @@ void Parser::onCSVCMsg_CreateStringTable(std::string raw_data) {
   }
 }
 
-void Parser::onCSVCMsg_UpdateStringTable(std::string raw_data) {
+void Parser::onCSVCMsg_UpdateStringTable(const std::string &raw_data) {
   CSVCMsg_UpdateStringTable data;
   data.ParseFromString(raw_data);
   

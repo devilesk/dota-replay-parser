@@ -2,7 +2,7 @@
 
 std::regex gameBuildRegexp = std::regex("/dota_v(\\d+)/");
 
-void Parser::onCSVCMsg_ServerInfo(std::string raw_data) {
+void Parser::onCSVCMsg_ServerInfo(const std::string &raw_data) {
   CSVCMsg_ServerInfo data;
   data.ParseFromString(raw_data);
   
@@ -20,7 +20,7 @@ void Parser::onCSVCMsg_ServerInfo(std::string raw_data) {
   GameBuild = build;
 }
 
-void Parser::onCDemoClassInfo(std::string raw_data) {
+void Parser::onCDemoClassInfo(const std::string &raw_data) {
   CDemoClassInfo data;
   data.ParseFromString(raw_data);
   
