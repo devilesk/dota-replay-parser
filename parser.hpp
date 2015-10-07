@@ -38,6 +38,6 @@
 uint32_t readVarUInt32(std::ifstream &stream);
 uint32_t readVarUInt32(const char*, int*);
 int packet_priority(int type);
-bool compare_packet_priority(pendingMessage i,pendingMessage j);
+bool compare_packet_priority(pendingMessage i, pendingMessage j);
 
 #endif /* _PARSER_HPP_ */

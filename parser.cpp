@@ -4,8 +4,8 @@ int main ()
 {
   //std::cout << "HELLO WORLD!\n";
   Parser p;
-  StringTables string_tables;
-  p.stringTables = string_tables;
+  //StringTables string_tables;
+  //p.stringTables = string_tables;
   char* buffer;
   std::ifstream stream;
   std::string path = "testfiles/1781962623_source2.dem";

@@ -34,7 +34,7 @@ int recurseTable(flattened_serializers* sers, dt* datatable, CSVCMsg_FlattenedSe
     }
     else {
       // TODO:
-
+      
     }
 
     if (pField.has_field_serializer_name_sym()) {
