@@ -3,6 +3,7 @@
 
 #include <string>
 #include <map>
+#include <unordered_map>
 #include "boost/variant.hpp"
 #include "bitstream.hpp"
 
