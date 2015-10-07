@@ -18,30 +18,30 @@
 #include "protobufs/dota_usermessages.pb.h"
 #include "protobufs/gameevents.pb.h"
 
-// Holds and maintains the string table information for an
-// instance of the Parser.
-struct StringTables {
-  std::map<int, struct StringTable> tables;
-  std::map<std::string, int> nameIndex;
-	int nextIndex;
-  StringTables() {
-    nextIndex = 0;
-  }
+struct StringTableItem {
+  int index;
+  std::string key;
+  std::string value;
 };
 
 // Holds and maintains the information for a string table.
 struct StringTable {
 	int index;
 	std::string name;
-	std::map<int, struct StringTableItem> items;
+	std::unordered_map<int, struct StringTableItem> items;
 	bool userDataFixedSize;
 	int userDataSize;
 };
 
-struct StringTableItem {
-  int index;
-  std::string key;
-  std::string value;
+// Holds and maintains the string table information for an
+// instance of the Parser.
+struct StringTables {
+  std::unordered_map<int, struct StringTable> tables;
+  std::unordered_map<std::string, int> nameIndex;
+	int nextIndex;
+  StringTables() {
+    nextIndex = 0;
+  }
 };
 
 typedef boost::variant<
@@ -62,7 +62,7 @@ struct dt_field;
 
 class Properties {
   public:
-    std::map<std::string, value_type> KV;
+    std::unordered_map<std::string, value_type> KV;
   
     void merge(Properties* p2);
     bool fetch(const std::string &k, value_type& v);
@@ -88,7 +88,7 @@ struct PropertySerializer {
 };
 
 struct PropertySerializerTable {
-  std::map< std::string, PropertySerializer> serializers;
+  std::unordered_map< std::string, PropertySerializer> serializers;
 };
 
 // A datatable field
@@ -156,7 +156,7 @@ struct fieldpathOp {
 
 // The flattened serializers object
 struct flattened_serializers {
-  std::map< std::string, std::map<int, dt> > serializers;
+  std::unordered_map< std::string, std::unordered_map<int, dt> > serializers;
   CSVCMsg_FlattenedSerializer* proto;
   PropertySerializerTable pst;
   uint32_t build;
@@ -205,11 +205,11 @@ typedef void (*packetEntityHandler)(PacketEntity* , EntityEventType);
 
 class Parser {
   public:
-    std::map<int, std::string> classInfo;
-    std::map<int, struct Properties> classBaselines;
+    std::unordered_map<int, std::string> classInfo;
+    std::unordered_map<int, struct Properties> classBaselines;
     bool hasClassInfo;
-    std::map< std::string, std::map<int, dt> > serializers;
-    std::map< int, PacketEntity* > packetEntities;
+    std::unordered_map< std::string, std::unordered_map<int, dt> > serializers;
+    std::unordered_map< int, PacketEntity* > packetEntities;
     std::vector< packetEntityHandler > packetEntityHandlers;
     StringTables stringTables;
     uint32_t GameBuild;

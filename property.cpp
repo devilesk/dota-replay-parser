@@ -45,7 +45,7 @@ Properties readProperties(dota::bitstream &stream, dt &serializer) {
 }
 
 void Properties::merge(Properties* p2) {
-  for(std::map<std::string, value_type>::iterator iter = p2->KV.begin(); iter != p2->KV.end(); ++iter)
+  for(std::unordered_map<std::string, value_type>::iterator iter = p2->KV.begin(); iter != p2->KV.end(); ++iter)
   {
     //std::string k =  iter->first;
     //value_type v = iter->second;

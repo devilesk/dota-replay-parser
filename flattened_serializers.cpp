@@ -152,9 +152,9 @@ flattened_serializers Parser::parseSendTables(CDemoSendTables* sendTables, Prope
   msg.ParseFromArray(&data[pos], size);
   //std::cout << "# serializers: " << std::to_string(msg.serializers_size()) << "\n";
   
-  //std::map< std::string, std::map<int, dt> > serializers;
+  //std::unordered_map< std::string, std::unordered_map<int, dt> > serializers;
   flattened_serializers fs = {
-    std::map< std::string, std::map<int, dt> >(),
+    std::unordered_map< std::string, std::unordered_map<int, dt> >(),
     &msg,
     pst,
     GameBuild
@@ -167,7 +167,7 @@ flattened_serializers Parser::parseSendTables(CDemoSendTables* sendTables, Prope
     std::string sName = msg.symbols(serializer.serializer_name_sym());
     int sVer = serializer.serializer_version();
     if (fs.serializers.find(sName) == fs.serializers.end()) {
-      std::map<int, dt> new_dt_map;
+      std::unordered_map<int, dt> new_dt_map;
       fs.serializers[sName] = new_dt_map;
     }
     dt datatable;

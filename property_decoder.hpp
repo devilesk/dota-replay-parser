@@ -7,7 +7,7 @@
 #include "quantizedfloat.hpp"
 #include "parser_types.hpp"
 
-extern std::map<dt_field*, QuantizedFloatDecoder> qmap;
+extern std::unordered_map<dt_field*, QuantizedFloatDecoder> qmap;
 
 value_type decodeLeUint64(dota::bitstream &stream, dt_field* f);
 value_type decodeHandle(dota::bitstream &stream, dt_field* f);

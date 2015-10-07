@@ -60,7 +60,7 @@ uint32_t Parser::updateInstanceBaselineItem(StringTableItem item) {
     //p->classBaselines[classId] = //new properties
     //std::cout << "new properties: " << std::to_string(classId) << "\n";
   }
-  std::map<int, dt> serializer = serializers[className];
+  std::unordered_map<int, dt> serializer = serializers[className];
   //std::cout << "serializer name: " << serializer[0].name << "\n";
   if (item.value.length() > 0) {
     //std::cout << "item.value.length(): " << std::to_string(item.value.length()) << "\n";

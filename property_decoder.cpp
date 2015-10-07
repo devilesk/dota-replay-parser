@@ -54,7 +54,7 @@ value_type decodeFloatNoscale(dota::bitstream &stream, dt_field* f) {
   return ret;
 }
 
-std::map<dt_field*, QuantizedFloatDecoder> qmap;
+std::unordered_map<dt_field*, QuantizedFloatDecoder> qmap;
 
 value_type decodeQuantized(dota::bitstream &stream, dt_field* f) {
   QuantizedFloatDecoder q;

@@ -8,7 +8,7 @@ void Parser::onCSVCMsg_CreateStringTable(const std::string &raw_data) {
   //std::cout << "name: " << data.name() << "\n";
   //std::cout << "user_data_fixed_size: " << std::to_string(data.user_data_fixed_size()) << "\n";
   //std::cout << "user_data_size: " << std::to_string(data.user_data_size()) << "\n";
-  std::map<int, StringTableItem> stringTableItems;
+  std::unordered_map<int, StringTableItem> stringTableItems;
   StringTable string_table = {
     stringTables.nextIndex,
     data.name(),

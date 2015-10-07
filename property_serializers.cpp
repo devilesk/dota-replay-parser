@@ -2,7 +2,7 @@
 
 PropertySerializerTable getDefaultPropertySerializerTable() {
   PropertySerializerTable pst = {
-    std::map< std::string, PropertySerializer>()
+    std::unordered_map< std::string, PropertySerializer>()
   };
   return pst;
 }
