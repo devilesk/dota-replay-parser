@@ -230,13 +230,13 @@ class Parser {
     uint32_t updateInstanceBaselineItem(StringTableItem item);
     flattened_serializers parseSendTables(CDemoSendTables* sendTables, PropertySerializerTable pst);
     uint32_t readMessage(std::ifstream &stream);
-    uint32_t parseMessage(int cmd, int tick, int size, char* buffer);
-    uint32_t parseClassInfo(CDemoClassInfo*);
+    void parseMessage(int cmd, int tick, int size, char* buffer);
+    //uint32_t parseClassInfo(CDemoClassInfo*);
     uint32_t parseStringTables(const CDemoStringTables*);
     uint32_t parsePendingMessage(pendingMessage* msg);
     
-    void onCDemoPacket(const CDemoPacket* packet, int tick);
-    void onCDemoFullPacket(const CDemoFullPacket* packet, int tick);
+    void onCDemoPacket(const CDemoPacket* packet);
+    void onCDemoFullPacket(const CDemoFullPacket* packet);
 /*
     void onCDemoStop(CDemoStop* data);
     void onCDemoFileHeader(CDemoFileHeader* data);
