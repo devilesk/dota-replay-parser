@@ -53,10 +53,10 @@ int recurseTable(flattened_serializers* sers, dt* datatable, CSVCMsg_FlattenedSe
         std::vector<dt_property>()
       };
       //std::cout << "isArray prop.field.name: " << prop.field.name << "\n";
-      for (int i = 0; i < prop.field.serializer.length; ++i) {
-        char buf[4];
+      for (int i = 0; i < (int)prop.field.serializer.length; ++i) {
+        char buf[5];
         sprintf(buf, "%04d", i);
-        std::string n = std::string(buf, 4);
+        std::string n = std::string(buf, 5);
         //std::cout << "n: " << n << "\n";
         dt_property new_prop;
         if (prop.field.serializer.arraySerializer != NULL) {
@@ -117,9 +117,9 @@ int recurseTable(flattened_serializers* sers, dt* datatable, CSVCMsg_FlattenedSe
           //std::cout << "prop.table.name" << prop.table->name << "\n";
           dt* nTable = new dt();
           *nTable = *prop.table;
-          char buf2[4];
+          char buf2[5];
           sprintf(buf2, "%04d", i);
-          std::string n = std::string(buf2, 4);
+          std::string n = std::string(buf2, 5);
           nTable->name = n;
           //std::cout << "nTable.name: " << n << "\n";
           tmpDt.properties[tmpDt.properties.size() - 1].table = nTable;
@@ -140,7 +140,6 @@ flattened_serializers Parser::parseSendTables(CDemoSendTables* sendTables, Prope
   uint32_t size;
   const std::string &data = sendTables->data();
   int pos = 0;
-  uint32_t type;
   
   size = readVarUInt32(data.c_str(), &pos);
   //dota::bitstream stream(data);
