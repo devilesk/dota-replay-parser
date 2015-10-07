@@ -46,7 +46,7 @@ void Parser::onCSVCMsg_PacketEntities(const std::string &raw_data) {
   
   dota::bitstream stream(data.entity_data());
   int index = -1;
-  PacketEntity* pe;
+  PacketEntity* pe = nullptr;
   bool ok = false;
   
   // Iterate over all entries
@@ -154,6 +154,8 @@ void Parser::onCSVCMsg_PacketEntities(const std::string &raw_data) {
         break;
       case EntityEventType_Leave:
         // TODO: Decide how we want to handle this
+        break;
+      case EntityEventType_None:
         break;
     }
     

@@ -81,7 +81,7 @@ void addField(fieldpath* fp) {
     //std::cout << "Adding field with path: " << path << fp->index[fp->fields.size() - 1] << "\n";
   }*/
   //std::cout << "fp->index.size(): " << std::to_string(fp->index.size()) << "\n";
-  for (i = 0; i < fp->index.size() - 1; ++i) {
+  for (i = 0; i < (int)fp->index.size() - 1; ++i) {
     //std::cout << "i: " << std::to_string(i) << "\n";
     //std::cout << "cDt name: " << cDt->name << "\n";
     //std::cout << "fp.index[i]: " << std::to_string(fp->index[i]) << "\n";
@@ -112,7 +112,7 @@ void addField(fieldpath* fp) {
 
 HuffmanTree newFieldpathHuffman() {
   int huffmanlist[fieldpathLookup.size()];
-  for (int i = 0; i < fieldpathLookup.size(); ++i) {
+  for (int i = 0; i < (int)fieldpathLookup.size(); ++i) {
     huffmanlist[i] = fieldpathLookup[i].weight;
   }
   return buildTree(huffmanlist, fieldpathLookup.size());
@@ -233,7 +233,7 @@ void PushN(dota::bitstream &r, fieldpath* fp) {
   }
 }
 void PushNAndNonTopological(dota::bitstream &r, fieldpath* fp) {
-  for (int i = 0; i < fp->index.size(); ++i) {
+  for (int i = 0; i < (int)fp->index.size(); ++i) {
     if (r.read(1) != 0) {
       fp->index[i] += (int)r.nReadVarSInt32() + 1;
     }
@@ -301,7 +301,7 @@ void PopNAndNonTopographical(dota::bitstream &r, fieldpath* fp) {
   //std::cout << "fp index size: " << std::to_string(fp->index.size()) << "\n";
   fp->index = new_index;
   //std::cout << "PopNAndNonTopographical 1\n";
-  for (int i = 0; i < fp->index.size(); ++i) {
+  for (int i = 0; i < (int)fp->index.size(); ++i) {
     if (r.read(1) != 0) {
       fp->index[i] += (int)r.nReadVarSInt32();
     }
@@ -309,7 +309,7 @@ void PopNAndNonTopographical(dota::bitstream &r, fieldpath* fp) {
   //std::cout << "end fp index size: " << std::to_string(fp->index.size()) << "\n";
 }
 void NonTopoComplex(dota::bitstream &r, fieldpath* fp) {
-  for (int i = 0; i < fp->index.size(); ++i) {
+  for (int i = 0; i < (int)fp->index.size(); ++i) {
     if (r.read(1) != 0) {
       fp->index[i] += (int)r.nReadVarSInt32();
     }
@@ -319,7 +319,7 @@ void NonTopoPenultimatePlusOne(dota::bitstream &r, fieldpath* fp) {
   ++(fp->index[fp->index.size() - 2]);
 }
 void NonTopoComplexPack4Bits(dota::bitstream &r, fieldpath* fp) {
-  for (int i = 0; i < fp->index.size(); ++i) {
+  for (int i = 0; i < (int)fp->index.size(); ++i) {
     if (r.read(1) != 0) {
       fp->index[i] += (int)r.read(4) - 7;
     }

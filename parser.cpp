@@ -84,7 +84,7 @@ int main ()
   //std::cout << "File closed.\n";
 }
 
-uint32_t Parser::readMessage(std::ifstream &stream) {
+void Parser::readMessage(std::ifstream &stream) {
   char* buffer;
   char* uBuffer;
   uint32_t cmd;
@@ -235,7 +235,6 @@ bool compare_packet_priority(pendingMessage i,pendingMessage j) {
 
 void Parser::onCDemoPacket(const CDemoPacket* packet) {
   dota::bitstream stream(packet->data());
-  uint32_t ret;
   int type;
   uint32_t size;
   std::vector<pendingMessage> pendingMessages;

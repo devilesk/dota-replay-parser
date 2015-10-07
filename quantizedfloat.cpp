@@ -42,7 +42,7 @@ void validateFlags(QuantizedFloatDecoder* qfd) {
   }
   
   // Verify that we don;t have roundup / rounddown set
-  if (qfd->flags & (qff_rounddown | qff_roundup) == (qff_rounddown | qff_roundup)) {
+  if ((qfd->flags & (qff_rounddown | qff_roundup)) == (qff_rounddown | qff_roundup)) {
     // throw exception
   }
 }
