@@ -85,8 +85,8 @@ void Parser::readMessage(const char* buffer, int &pos) {
   char* uBuffer;
   uint32_t cmd;
   cmd = readVarUInt32(buffer, pos);
-  const bool compressed = cmd & 112;
-  cmd = (cmd & ~112);
+  const bool compressed = (cmd & EDemoCommands::DEM_IsCompressed) == EDemoCommands::DEM_IsCompressed;
+  cmd = (cmd & ~EDemoCommands::DEM_IsCompressed);
   //std::cout << "command: " << std::to_string(cmd) << " compressed: " << std::to_string(compressed) << "\n";
 
   uint32_t tick;
