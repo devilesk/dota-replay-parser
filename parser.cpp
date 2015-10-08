@@ -70,6 +70,8 @@ int main ()
   demo_header.ParseFromArray(&buffer[pos], size);
   //std::cout << "map_name: " << demo_header.map_name() << "\n";
 
+  pos += size;
+  
   // read dem messages
   while (pos < length)
   {
@@ -79,6 +81,8 @@ int main ()
   //std::cout << "File length: " << std::to_string(length) << "\n";
   delete[] buffer;
   //std::cout << "File closed.\n";
+  
+  std::cout << "Last tick: " << std::to_string(p.tick) << "\n";
 }
 
 void Parser::readMessage(const char* buffer, int &pos) {
@@ -103,7 +107,8 @@ void Parser::readMessage(const char* buffer, int &pos) {
   size = readVarUInt32(buffer, pos);
   //std::cout << "size: " << std::to_string(size) << "\n";
 
-  if (compressed && snappy::IsValidCompressedBuffer(&buffer[pos], size)) {
+  //if (compressed && snappy::IsValidCompressedBuffer(&buffer[pos], size)) {
+  if (compressed) {
     //std::cout << "valid snappy compressed buffer\n";
     std::size_t uSize;
     if (snappy::GetUncompressedLength(&buffer[pos], size, &uSize)) {
@@ -126,6 +131,8 @@ void Parser::readMessage(const char* buffer, int &pos) {
   else {
     parseMessage(cmd, tick, size, &buffer[pos]);
   }
+  
+  pos += size;
 }
 
 void Parser::parseMessage(int cmd, int _tick, int size, const char* buffer) {
