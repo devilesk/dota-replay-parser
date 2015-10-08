@@ -141,7 +141,7 @@ flattened_serializers Parser::parseSendTables(CDemoSendTables* sendTables, Prope
   const std::string &data = sendTables->data();
   int pos = 0;
   
-  size = readVarUInt32(data.c_str(), &pos);
+  size = readVarUInt32(data.c_str(), pos);
   //dota::bitstream stream(data);
   //size = stream.nReadVarUInt32();
   

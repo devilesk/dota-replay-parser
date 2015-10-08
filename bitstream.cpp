@@ -423,7 +423,7 @@ uint32_t readVarUInt32(std::ifstream &stream) {
   return value;
 }
 
-uint32_t readVarUInt32(const char* buffer, int* pos) {
+uint32_t readVarUInt32(const char* buffer, int &pos) {
   uint32_t i = 0;
   uint32_t value = 0;
   unsigned char b;
@@ -432,6 +432,6 @@ uint32_t readVarUInt32(const char* buffer, int* pos) {
     value |= ((int)b & 0x7F) << (7 * i);
     ++i;
   } while (b & 0x80 && i < 5);
-  (*pos) += i;
+  pos += i;
   return value;
 }

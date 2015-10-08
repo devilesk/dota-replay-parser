@@ -6,7 +6,6 @@ int main ()
   Parser p;
   //StringTables string_tables;
   //p.stringTables = string_tables;
-  char* buffer;
   std::ifstream stream;
   std::string path = "testfiles/1781962623_source2.dem";
   //std::string path = "testfiles/1698148651_source2.dem";
@@ -24,10 +23,14 @@ int main ()
   int length = stream.tellg();
   stream.seekg(0, stream.beg);
 
-  buffer = new char[1];
-  char* header = new char[8];
+  char * buffer = new char[length];
+  
+  stream.read(buffer, length);
+  stream.close();
+  
+  char header[8];
 
-  stream.read(header, sizeof(header));
+  std::copy(buffer, &buffer[7], header);
   std::string demheader = "PBDEMS2";
   //std::cout << std::to_string(sizeof(header)) << "\n";
   //std::cout << header << "\n";
@@ -39,19 +42,18 @@ int main ()
     //std::cout << "Valid header.\n";
   }
 
-  delete buffer;
-  delete header;
+  int pos = 8;
 
   // Skip the next 8 bytes, which appear to be two int32s related to the size
   // of the demo file. We may need them in the future, but not so far.
-  stream.seekg(8, stream.cur);
+  pos += 8;
 
   uint32_t cmd;
-  cmd = readVarUInt32(stream);
+  cmd = readVarUInt32(buffer, pos);
   //std::cout << "command: " << std::to_string(cmd) << "\n";
 
   uint32_t tick;
-  tick = readVarUInt32(stream);
+  tick = readVarUInt32(buffer, pos);
 
   // This appears to actually be an int32, where a -1 means pre-game.
   if (tick == 4294967295) {
@@ -61,40 +63,34 @@ int main ()
   //std::cout << "tick: " << std::to_string(tick) << "\n";
 
   uint32_t size;
-  size = readVarUInt32(stream);
+  size = readVarUInt32(buffer, pos);
   //std::cout << "size: " << std::to_string(size) << "\n";
 
-  buffer = new char[size];
-  stream.read(buffer, size);
-
   CDemoFileHeader demo_header;
-  demo_header.ParseFromArray(buffer, size);
+  demo_header.ParseFromArray(&buffer[pos], size);
   //std::cout << "map_name: " << demo_header.map_name() << "\n";
 
-  delete buffer;
-
   // read dem messages
-  while (stream.good())
+  while (pos < length)
   {
-    p.readMessage(stream);
+    p.readMessage(buffer, pos);
   }
 
   //std::cout << "File length: " << std::to_string(length) << "\n";
-  stream.close();
+  delete[] buffer;
   //std::cout << "File closed.\n";
 }
 
-void Parser::readMessage(std::ifstream &stream) {
-  char* buffer;
+void Parser::readMessage(const char* buffer, int &pos) {
   char* uBuffer;
   uint32_t cmd;
-  cmd = readVarUInt32(stream);
+  cmd = readVarUInt32(buffer, pos);
   const bool compressed = cmd & 112;
   cmd = (cmd & ~112);
   //std::cout << "command: " << std::to_string(cmd) << " compressed: " << std::to_string(compressed) << "\n";
 
   uint32_t tick;
-  tick = readVarUInt32(stream);
+  tick = readVarUInt32(buffer, pos);
 
   // This appears to actually be an int32, where a -1 means pre-game.
   if (tick == 4294967295) {
@@ -104,18 +100,15 @@ void Parser::readMessage(std::ifstream &stream) {
   //std::cout << "tick: " << std::to_string(tick) << "\n";
 
   uint32_t size;
-  size = readVarUInt32(stream);
+  size = readVarUInt32(buffer, pos);
   //std::cout << "size: " << std::to_string(size) << "\n";
 
-  buffer = new char[size];
-  stream.read(buffer, size);
-
-  if (compressed && snappy::IsValidCompressedBuffer(buffer, size)) {
+  if (compressed && snappy::IsValidCompressedBuffer(&buffer[pos], size)) {
     //std::cout << "valid snappy compressed buffer\n";
     std::size_t uSize;
-    if (snappy::GetUncompressedLength(buffer, size, &uSize)) {
+    if (snappy::GetUncompressedLength(&buffer[pos], size, &uSize)) {
       uBuffer = new char[uSize];
-      if (snappy::RawUncompress(buffer, size, uBuffer)) {
+      if (snappy::RawUncompress(&buffer[pos], size, uBuffer)) {
         //std::cout << "uncompressed success, size: " << std::to_string(uSize) << "\n";
         parseMessage(cmd, tick, uSize, uBuffer);
       }
@@ -131,13 +124,11 @@ void Parser::readMessage(std::ifstream &stream) {
     }
   }
   else {
-    parseMessage(cmd, tick, size, buffer);
+    parseMessage(cmd, tick, size, &buffer[pos]);
   }
-  
-  delete buffer;
 }
 
-void Parser::parseMessage(int cmd, int _tick, int size, char* buffer) {
+void Parser::parseMessage(int cmd, int _tick, int size, const char* buffer) {
   tick = _tick;
   std::string data(buffer, size);
   CDemoPacket packet;
@@ -180,7 +171,7 @@ uint32_t Parser::parseStringTables(const CDemoStringTables* stringTables) {
       //std::cout << "str: " << item.str() << "\n";
       uint32_t size;
       int pos = 0;
-      size = readVarUInt32(item.data().c_str(), &pos);
+      size = readVarUInt32(item.data().c_str(), pos);
       //std::cout << "data size: " << std::to_string(size) << "\n";
       if (size > 4) {
         //std::cout << "data: ";
