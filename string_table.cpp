@@ -26,13 +26,13 @@ void Parser::onCSVCMsg_CreateStringTable(const char* buffer, int size) {
       char * ubuffer2 = new char[uSize];
       if (snappy::RawUncompress(buffer2.c_str(), buffer2.length(), ubuffer2)) {
         //std::cout << "uncompressed success, size: " << std::to_string(uSize) << "\n";
-        items = parseStringTable(ubuffer2, uSize, data.num_entries(), string_table.userDataFixedSize, string_table.userDataSize);
+        parseStringTable(ubuffer2, uSize, data.num_entries(), string_table.userDataFixedSize, string_table.userDataSize, items);
       }
       delete[] ubuffer2;
     }
   }
   else {
-    items = parseStringTable(buffer2.c_str(), buffer2.length(), data.num_entries(), string_table.userDataFixedSize, string_table.userDataSize);
+    parseStringTable(buffer2.c_str(), buffer2.length(), data.num_entries(), string_table.userDataFixedSize, string_table.userDataSize, items);
   }
   for (std::vector<StringTableItem>::iterator it = items.begin(); it != items.end(); ++it) {
     string_table.items[it->index] = *it;
@@ -59,7 +59,8 @@ void Parser::onCSVCMsg_UpdateStringTable(const char* buffer, int size) {
   
   //std::cout << "tick=" << std::to_string(tick) << " name=" << t->name << " changedEntries=" << std::to_string(data.num_changed_entries()) << " bufflen=" << std::to_string(data.string_data().length()) << "\n";
   
-  std::vector<StringTableItem> items = parseStringTable(data.string_data().c_str(), data.string_data().length(), data.num_changed_entries(), t->userDataFixedSize, t->userDataSize);
+  std::vector<StringTableItem> items;
+  parseStringTable(data.string_data().c_str(), data.string_data().length(), data.num_changed_entries(), t->userDataFixedSize, t->userDataSize, items);
   
   for (std::vector<StringTableItem>::iterator it = items.begin(); it != items.end(); ++it) {
     int index = it->index;
@@ -87,9 +88,8 @@ void Parser::onCSVCMsg_UpdateStringTable(const char* buffer, int size) {
   }
 }
 
-std::vector<StringTableItem> parseStringTable(const char* buffer, int buffer_size, int num_updates, bool userDataFixed, int userDataSize) {
-  std::vector<StringTableItem> items;
-  if (buffer_size == 0) return items;
+void parseStringTable(const char* buffer, int buffer_size, int num_updates, bool userDataFixed, int userDataSize, std::vector<StringTableItem> &items) {
+  if (buffer_size == 0) return;
   dota::bitstream stream(std::string(buffer, buffer_size));
   uint32_t index = -1;
   std::vector<std::string> keys;
@@ -192,5 +192,4 @@ std::vector<StringTableItem> parseStringTable(const char* buffer, int buffer_siz
     };
     items.push_back(item);
   }
-  return items;
 }
