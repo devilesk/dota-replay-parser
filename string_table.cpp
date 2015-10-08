@@ -23,11 +23,12 @@ void Parser::onCSVCMsg_CreateStringTable(const std::string &raw_data) {
   if (data.data_compressed()) {
     std::size_t uSize;
     if (snappy::GetUncompressedLength(buffer.c_str(), buffer.length(), &uSize)) {
-      char uBuffer[uSize];
+      char * uBuffer = new char[uSize];
       if (snappy::RawUncompress(buffer.c_str(), buffer.length(), uBuffer)) {
         //std::cout << "uncompressed success, size: " << std::to_string(uSize) << "\n";
         items = parseStringTable(uBuffer, uSize, data.num_entries(), string_table.userDataFixedSize, string_table.userDataSize);
       }
+      delete[] uBuffer;
     }
   }
   else {
@@ -167,8 +168,9 @@ std::vector<StringTableItem> parseStringTable(const char* buffer, int buffer_siz
 			// Values can be either fixed size (with a size specified in
 			// bits during table creation, or have a variable size with
 			// a 14-bit prefixed size.
+      char * tmpBuf;
       if (userDataFixed) {
-        char tmpBuf[(int)ceil(userDataSize / 8)];
+        tmpBuf = new char[(int)ceil(userDataSize / 8)];
         stream.readBits(tmpBuf, userDataSize);
         value = std::string(tmpBuf, (int)ceil(userDataSize / 8));
       }
@@ -176,10 +178,11 @@ std::vector<StringTableItem> parseStringTable(const char* buffer, int buffer_siz
         uint32_t size = stream.read(14);
         //std::cout << "value size: " << std::to_string(size) << "\n";
         stream.read(3);
-        char tmpBuf[size];
+        tmpBuf = new char[size];
         stream.readBits(tmpBuf, size * 8);
         value = std::string(tmpBuf, size);
       }
+      delete[] tmpBuf;
       //std::cout << "value: " << value << "\n";
     }
     StringTableItem item = {

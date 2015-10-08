@@ -107,7 +107,7 @@ void Parser::readMessage(const char* buffer, int &pos) {
     //std::cout << "valid snappy compressed buffer\n";
     std::size_t uSize;
     if (snappy::GetUncompressedLength(&buffer[pos], size, &uSize)) {
-      uBuffer = new char[uSize];
+      char * uBuffer = new char[uSize];
       if (snappy::RawUncompress(&buffer[pos], size, uBuffer)) {
         //std::cout << "uncompressed success, size: " << std::to_string(uSize) << "\n";
         parseMessage(cmd, tick, uSize, uBuffer);
@@ -234,12 +234,13 @@ void Parser::onCDemoPacket(const CDemoPacket* packet) {
     size = stream.nReadVarUInt32();
     ////std::cout << "type: " << std::to_string(type) << "\n";
     ////std::cout << "size: " << std::to_string(size) << "\n";
-    char buffer[8 * size];
+    char * buffer = new char[8 * size];
     stream.readBits(buffer, 8 * size);
     pendingMessage msg;
     msg.type = type;
     msg.tick = tick;
     msg.data = std::string(&buffer[0], size);
+    delete[] buffer;
     pendingMessages.push_back(msg);
   }
   std::stable_sort(pendingMessages.begin(), pendingMessages.end(), compare_packet_priority);
