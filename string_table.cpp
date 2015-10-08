@@ -48,41 +48,41 @@ void Parser::onCSVCMsg_UpdateStringTable(const char* buffer, int size) {
   CSVCMsg_UpdateStringTable data;
   data.ParseFromArray(buffer, size);
   
-  StringTable t;
+  StringTable* t;
   // TODO: integrate
   if (stringTables.tables.find(data.table_id()) != stringTables.tables.end()) {
-    t = stringTables.tables[data.table_id()];
+    t = &stringTables.tables[data.table_id()];
   }
   else {
     //std::cout << "missing string table " << std::to_string(data.table_id()) << "\n";
   }
   
-  //std::cout << "tick=" << std::to_string(tick) << " name=" << t.name << " changedEntries=" << std::to_string(data.num_changed_entries()) << " bufflen=" << std::to_string(data.string_data().length()) << "\n";
+  //std::cout << "tick=" << std::to_string(tick) << " name=" << t->name << " changedEntries=" << std::to_string(data.num_changed_entries()) << " bufflen=" << std::to_string(data.string_data().length()) << "\n";
   
-  std::vector<StringTableItem> items = parseStringTable(data.string_data().c_str(), data.string_data().length(), data.num_changed_entries(), t.userDataFixedSize, t.userDataSize);
+  std::vector<StringTableItem> items = parseStringTable(data.string_data().c_str(), data.string_data().length(), data.num_changed_entries(), t->userDataFixedSize, t->userDataSize);
   
   for (std::vector<StringTableItem>::iterator it = items.begin(); it != items.end(); ++it) {
     int index = it->index;
     
-    if (t.items.find(index) != t.items.end()) {
+    if (t->items.find(index) != t->items.end()) {
       // XXX TODO: Sometimes ActiveModifiers change keys, which is suspicous...
-      if (it->key.compare("") != 0 && it->key.compare(t.items[index].key) != 0) {
-        //std::cout << "tick=" << std::to_string(tick) << " name=" << t.name << " index=" << std::to_string(index) << " key=" << t.items[index].key << " update key -> " << it->key << "\n";
-        t.items[index].key = it->key;
+      if (it->key.compare("") != 0 && it->key.compare(t->items[index].key) != 0) {
+        //std::cout << "tick=" << std::to_string(tick) << " name=" << t->name << " index=" << std::to_string(index) << " key=" << t->items[index].key << " update key -> " << it->key << "\n";
+        t->items[index].key = it->key;
       }
       if (it->value.length() > 0) {
-        //std::cout << "tick=" << std::to_string(tick) << " name=" << t.name << " index=" << std::to_string(index) << " key=" << t.items[index].key << " update value len " << std::to_string(t.items[index].value.length()) << " -> " << std::to_string(it->value.length()) << "\n";
-        t.items[index].value = it->value;
+        //std::cout << "tick=" << std::to_string(tick) << " name=" << t->name << " index=" << std::to_string(index) << " key=" << t->items[index].key << " update value len " << std::to_string(t->items[index].value.length()) << " -> " << std::to_string(it->value.length()) << "\n";
+        t->items[index].value = it->value;
       }
     }
     else {
-      //std::cout << "tick=" << std::to_string(tick) << " name=" << t.name << " insert new item " << std::to_string(index) << " key " << it->key << "\n";
-      t.items[index] = *it;
+      //std::cout << "tick=" << std::to_string(tick) << " name=" << t->name << " insert new item " << std::to_string(index) << " key " << it->key << "\n";
+      t->items[index] = *it;
     }
   }
   
   // Apply the updates to baseline state
-  if (t.name.compare("instancebaseline") == 0) {
+  if (t->name.compare("instancebaseline") == 0) {
     updateInstanceBaseline();
   }
 }
