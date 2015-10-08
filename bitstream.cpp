@@ -428,7 +428,7 @@ uint32_t readVarUInt32(const char* buffer, int &pos) {
   uint32_t value = 0;
   unsigned char b;
   do {
-    b = buffer[i+pos];
+    b = buffer[i];
     value |= ((int)b & 0x7F) << (7 * i);
     ++i;
   } while (b & 0x80 && i < 5);

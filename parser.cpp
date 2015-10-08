@@ -49,11 +49,11 @@ int main ()
   pos += 8;
 
   uint32_t cmd;
-  cmd = readVarUInt32(buffer, pos);
+  cmd = readVarUInt32(&buffer[pos], pos);
   //std::cout << "command: " << std::to_string(cmd) << "\n";
 
   uint32_t tick;
-  tick = readVarUInt32(buffer, pos);
+  tick = readVarUInt32(&buffer[pos], pos);
 
   // This appears to actually be an int32, where a -1 means pre-game.
   if (tick == 4294967295) {
@@ -63,7 +63,7 @@ int main ()
   //std::cout << "tick: " << std::to_string(tick) << "\n";
 
   uint32_t size;
-  size = readVarUInt32(buffer, pos);
+  size = readVarUInt32(&buffer[pos], pos);
   //std::cout << "size: " << std::to_string(size) << "\n";
 
   CDemoFileHeader demo_header;
@@ -88,13 +88,13 @@ int main ()
 void Parser::readMessage(const char* buffer, int &pos) {
   char* uBuffer;
   uint32_t cmd;
-  cmd = readVarUInt32(buffer, pos);
+  cmd = readVarUInt32(&buffer[pos], pos);
   const bool compressed = (cmd & EDemoCommands::DEM_IsCompressed) == EDemoCommands::DEM_IsCompressed;
   cmd = (cmd & ~EDemoCommands::DEM_IsCompressed);
   //std::cout << "command: " << std::to_string(cmd) << " compressed: " << std::to_string(compressed) << "\n";
 
   uint32_t tick;
-  tick = readVarUInt32(buffer, pos);
+  tick = readVarUInt32(&buffer[pos], pos);
 
   // This appears to actually be an int32, where a -1 means pre-game.
   if (tick == 4294967295) {
@@ -104,7 +104,7 @@ void Parser::readMessage(const char* buffer, int &pos) {
   //std::cout << "tick: " << std::to_string(tick) << "\n";
 
   uint32_t size;
-  size = readVarUInt32(buffer, pos);
+  size = readVarUInt32(&buffer[pos], pos);
   //std::cout << "size: " << std::to_string(size) << "\n";
 
   //if (compressed && snappy::IsValidCompressedBuffer(&buffer[pos], size)) {
