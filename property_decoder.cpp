@@ -57,18 +57,18 @@ value_type decodeFloatNoscale(dota::bitstream &stream, dt_field* f) {
 std::unordered_map<dt_field*, QuantizedFloatDecoder> qmap;
 
 value_type decodeQuantized(dota::bitstream &stream, dt_field* f) {
-  QuantizedFloatDecoder q;
+  QuantizedFloatDecoder* q;
   
   // Get the correct decoder
   if (qmap.find(f) == qmap.end()) {
     qmap[f] = initQFD(f);
   }
-  q = qmap[f];
+  q = &qmap[f];
   
   // Decode value
   //std::cout << "Bitcount: " << std::to_string(q.bitcount) << ", Low: " << std::to_string(q.low) << ", High: " << std::to_string(q.high) << ", Flags: " << std::to_string(q.flags) << "\n";
   
-  return decode(&q, stream);
+  return decode(q, stream);
 }
 value_type decodeSimTime(dota::bitstream &stream, dt_field* f) {
   return (float)(stream.nReadVarUInt32()) * (1.0 / 30);
