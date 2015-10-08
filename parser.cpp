@@ -116,7 +116,7 @@ void Parser::readMessage(const char* buffer, int &pos) {
         //std::cout << "uncompress fail\n";
         exit(0);
       }
-      delete uBuffer;
+      delete[] uBuffer;
     }
     else {
       //std::cout << "get uncompressed length fail\n";
