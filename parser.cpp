@@ -130,16 +130,15 @@ void Parser::readMessage(const char* buffer, int &pos) {
 
 void Parser::parseMessage(int cmd, int _tick, int size, const char* buffer) {
   tick = _tick;
-  std::string data(buffer, size);
   CDemoPacket packet;
   switch(cmd) {
     case 4:
       //std::cout << "type: DEM_SendTables\n";
-      onCDemoSendTables(data);
+      onCDemoSendTables(buffer, size);
     break;
     case 5:
       //std::cout << "type: DEM_ClassInfo\n";
-      onCDemoClassInfo(data);
+      onCDemoClassInfo(buffer, size);
     break;
     case 6:
       //std::cout << "type: DEM_StringTables\n";

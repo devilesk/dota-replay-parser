@@ -2,9 +2,9 @@
 
 std::regex gameBuildRegexp = std::regex("/dota_v(\\d+)/");
 
-void Parser::onCSVCMsg_ServerInfo(const std::string &raw_data) {
+void Parser::onCSVCMsg_ServerInfo(const char* buffer, int size) {
   CSVCMsg_ServerInfo data;
-  data.ParseFromString(raw_data);
+  data.ParseFromArray(buffer, size);
   
   // from log2 util.go
   classIdSize = (int)(log((double)data.max_classes())/log(2)) + 1;
@@ -20,9 +20,9 @@ void Parser::onCSVCMsg_ServerInfo(const std::string &raw_data) {
   GameBuild = build;
 }
 
-void Parser::onCDemoClassInfo(const std::string &raw_data) {
+void Parser::onCDemoClassInfo(const char* buffer, int size) {
   CDemoClassInfo data;
-  data.ParseFromString(raw_data);
+  data.ParseFromArray(buffer, size);
   
   // Iterate through items, storing the mapping in the parser state
   for (int i = 0; i < data.classes_size(); ++i) {

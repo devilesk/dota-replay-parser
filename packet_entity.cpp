@@ -29,12 +29,12 @@ bool PacketEntity::fetchString(const std::string &k, std::string& v) {
   return classBaseline.fetchString(k, v);
 }
 
-void Parser::onCSVCMsg_PacketEntities(const std::string &raw_data) {
+void Parser::onCSVCMsg_PacketEntities(const char* buffer, int size) {
   // Skip processing if we're configured not to.
   if (!processPacketEntities) return;
   
   CSVCMsg_PacketEntities data;
-  data.ParseFromString(raw_data);
+  data.ParseFromArray(buffer, size);
   
   //std::cout << "pTick=" << std::to_string(tick) << " isDelta=" << std::to_string(data.is_delta()) << " deltaFrom=" << std::to_string(data.delta_from()) << " updateEntries=" << std::to_string(data.updated_entries()) << " maxEntries=" << std::to_string(data.max_entries()) << " baseline=" << std::to_string(data.baseline()) << " updateBaseline=" << std::to_string(data.update_baseline()) << "\n";
   

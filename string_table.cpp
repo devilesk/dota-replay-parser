@@ -1,8 +1,8 @@
 #include "string_table.hpp"
 
-void Parser::onCSVCMsg_CreateStringTable(const std::string &raw_data) {
+void Parser::onCSVCMsg_CreateStringTable(const char* buffer, int size) {
   CSVCMsg_CreateStringTable data;
-  data.ParseFromString(raw_data);
+  data.ParseFromArray(buffer, size);
       
   //std::cout << "nextIndex: " << std::to_string(stringTables.nextIndex) << "\n";
   //std::cout << "name: " << data.name() << "\n";
@@ -17,22 +17,22 @@ void Parser::onCSVCMsg_CreateStringTable(const std::string &raw_data) {
     data.user_data_size()
   };
   stringTables.nextIndex += 1;
-  std::string buffer = data.string_data();
+  std::string buffer2 = data.string_data();
   //std::cout << "is_compressed: " << std::to_string(data.data_compressed()) << "\n";
   std::vector<StringTableItem> items;
   if (data.data_compressed()) {
     std::size_t uSize;
-    if (snappy::GetUncompressedLength(buffer.c_str(), buffer.length(), &uSize)) {
-      char * uBuffer = new char[uSize];
-      if (snappy::RawUncompress(buffer.c_str(), buffer.length(), uBuffer)) {
+    if (snappy::GetUncompressedLength(buffer2.c_str(), buffer2.length(), &uSize)) {
+      char * ubuffer2 = new char[uSize];
+      if (snappy::RawUncompress(buffer2.c_str(), buffer2.length(), ubuffer2)) {
         //std::cout << "uncompressed success, size: " << std::to_string(uSize) << "\n";
-        items = parseStringTable(uBuffer, uSize, data.num_entries(), string_table.userDataFixedSize, string_table.userDataSize);
+        items = parseStringTable(ubuffer2, uSize, data.num_entries(), string_table.userDataFixedSize, string_table.userDataSize);
       }
-      delete[] uBuffer;
+      delete[] ubuffer2;
     }
   }
   else {
-    items = parseStringTable(buffer.c_str(), buffer.length(), data.num_entries(), string_table.userDataFixedSize, string_table.userDataSize);
+    items = parseStringTable(buffer2.c_str(), buffer2.length(), data.num_entries(), string_table.userDataFixedSize, string_table.userDataSize);
   }
   for (std::vector<StringTableItem>::iterator it = items.begin(); it != items.end(); ++it) {
     string_table.items[it->index] = *it;
@@ -44,9 +44,9 @@ void Parser::onCSVCMsg_CreateStringTable(const std::string &raw_data) {
   }
 }
 
-void Parser::onCSVCMsg_UpdateStringTable(const std::string &raw_data) {
+void Parser::onCSVCMsg_UpdateStringTable(const char* buffer, int size) {
   CSVCMsg_UpdateStringTable data;
-  data.ParseFromString(raw_data);
+  data.ParseFromArray(buffer, size);
   
   StringTable t;
   // TODO: integrate

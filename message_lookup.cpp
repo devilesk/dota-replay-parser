@@ -30,6 +30,6 @@ uint32_t Parser::parsePendingMessage(pendingMessage* msg) {
   }*/
   //handlers[msg->type](msg->data);
   //std::cout << "pendingMessage type: " << std::to_string(msg->type) << "\n";
-  if (handlers.find(msg->type) != handlers.end()) (this->*handlers[msg->type])(msg->data);
+  if (handlers.find(msg->type) != handlers.end()) (this->*handlers[msg->type])(msg->data.c_str(), msg->data.length());
   return 0;
 }
