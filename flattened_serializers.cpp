@@ -1,7 +1,7 @@
 #include "flattened_serializers.hpp"
 
 // NOT FULLY IMPLEMENTED
-int recurseTable(flattened_serializers* sers, dt* datatable, CSVCMsg_FlattenedSerializer* msg, ProtoFlattenedSerializer_t* serializer) {
+void recurseTable(flattened_serializers* sers, dt* datatable, CSVCMsg_FlattenedSerializer* msg, ProtoFlattenedSerializer_t* serializer) {
   datatable->name = msg->symbols(serializer->serializer_name_sym());
   datatable->version = serializer->serializer_version();
   datatable->properties = std::vector<dt_property>();
@@ -132,7 +132,6 @@ int recurseTable(flattened_serializers* sers, dt* datatable, CSVCMsg_FlattenedSe
     }
     datatable->properties.push_back(prop);
   }
-  return 0;
 }
 
 flattened_serializers Parser::parseSendTables(CDemoSendTables* sendTables, PropertySerializerTable pst) {
