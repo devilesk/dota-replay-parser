@@ -411,7 +411,7 @@ namespace dota {
     /// @}
 }
 
-uint32_t readVarUInt32(std::ifstream &stream);
+//uint32_t readVarUInt32(std::ifstream &stream);
 
 uint32_t readVarUInt32(const char*, int &pos);
 

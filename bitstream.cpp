@@ -410,7 +410,7 @@ namespace dota {
         }
     }
 }
-
+/*
 uint32_t readVarUInt32(std::ifstream &stream) {
   uint32_t i = 0;
   uint32_t value = 0;
@@ -422,7 +422,7 @@ uint32_t readVarUInt32(std::ifstream &stream) {
   } while (b & 0x80 && i < 35);
   return value;
 }
-
+*/
 uint32_t readVarUInt32(const char* buffer, int &pos) {
   uint32_t i = 0;
   uint32_t value = 0;
