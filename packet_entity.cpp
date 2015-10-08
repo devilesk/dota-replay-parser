@@ -125,7 +125,7 @@ void Parser::onCSVCMsg_PacketEntities(const char* buffer, int size) {
         packetEntities[index] = pe;
         
         // Read properties
-        props = readProperties(stream, *(pe->flatTbl));
+        readProperties(stream, *(pe->flatTbl), props);
         pe->properties.merge(&props);
         
         break;
@@ -139,7 +139,7 @@ void Parser::onCSVCMsg_PacketEntities(const char* buffer, int size) {
         }
         
         // Read properties and update the packetEntity
-        props = readProperties(stream, *(pe->flatTbl));
+        readProperties(stream, *(pe->flatTbl), props);
         pe->properties.merge(&props);
         
         break;

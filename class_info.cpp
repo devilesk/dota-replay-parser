@@ -58,6 +58,7 @@ uint32_t Parser::updateInstanceBaselineItem(StringTableItem item) {
   //std::cout << "className: " << className << "\n";
   if (classBaselines.find(classId) == classBaselines.end()) {
     //p->classBaselines[classId] = //new properties
+    classBaselines[classId] = Properties();
     //std::cout << "new properties: " << std::to_string(classId) << "\n";
   }
   std::unordered_map<int, dt> serializer = serializers[className];
@@ -66,7 +67,7 @@ uint32_t Parser::updateInstanceBaselineItem(StringTableItem item) {
     //std::cout << "item.value.length(): " << std::to_string(item.value.length()) << "\n";
     dota::bitstream stream(item.value);
     //std::cout << "stream size: " << std::to_string(stream.end()) << "\n";
-    classBaselines[classId] = readProperties(stream, serializer[0]);
+    readProperties(stream, serializer[0], classBaselines[classId]);
   }
   return 0;
 }
