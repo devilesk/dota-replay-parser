@@ -247,7 +247,7 @@ void Parser::onCDemoPacket(const CDemoPacket* packet) {
     msg.tick = tick;
     msg.data = std::string(&buffer[0], size);
     delete[] buffer;
-    pendingMessages.push_back(msg);
+    pendingMessages.push_back(std::move(msg));
   }
   std::stable_sort(pendingMessages.begin(), pendingMessages.end(), compare_packet_priority);
   for (std::vector<pendingMessage>::iterator it = pendingMessages.begin(); it != pendingMessages.end(); ++it) {

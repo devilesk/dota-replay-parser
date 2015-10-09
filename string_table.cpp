@@ -190,6 +190,6 @@ void parseStringTable(const char* buffer, int buffer_size, int num_updates, bool
       key,
       value
     };
-    items.push_back(item);
+    items.push_back(std::move(item));
   }
 }

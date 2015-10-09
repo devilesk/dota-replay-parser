@@ -107,7 +107,7 @@ void addField(fieldpath* fp) {
     name + cDt->properties[fp->index[i]].field.name,
     &(cDt->properties[fp->index[i]].field)
   };
-  fp->fields.push_back(new_fieldpath_field);
+  fp->fields.push_back(std::move(new_fieldpath_field));
 }
 
 HuffmanTree newFieldpathHuffman() {

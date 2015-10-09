@@ -164,7 +164,7 @@ void Parser::onCSVCMsg_PacketEntities(const char* buffer, int size) {
       pe,
       eventType
     };
-    updates.push_back(pu);
+    updates.push_back(std::move(pu));
   }
   
   // Update the full packet count.

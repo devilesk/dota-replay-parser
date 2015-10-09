@@ -111,7 +111,7 @@ void recurseTable(flattened_serializers* sers, dt* datatable, CSVCMsg_FlattenedS
             prop.table
           };
         }
-        tmpDt.properties.push_back(new_prop);
+        tmpDt.properties.push_back(std::move(new_prop));
         if (prop.table != nullptr) {
           //std::cout << "prop.table != nullptr\n";
           //std::cout << "prop.table.name" << prop.table->name << "\n";
@@ -122,7 +122,7 @@ void recurseTable(flattened_serializers* sers, dt* datatable, CSVCMsg_FlattenedS
           std::string n = std::string(buf2, 5);
           nTable->name = n;
           //std::cout << "nTable.name: " << n << "\n";
-          tmpDt.properties[tmpDt.properties.size() - 1].table = nTable;
+          tmpDt.properties.back().table = nTable;
           //std::cout << "tmpDt.properties[tmpDt.properties.size() - 1].table.name" << tmpDt.properties[tmpDt.properties.size() - 1].table->name << "\n";
         }
       }
@@ -130,7 +130,7 @@ void recurseTable(flattened_serializers* sers, dt* datatable, CSVCMsg_FlattenedS
       *t = tmpDt;
       prop.table = t;
     }
-    datatable->properties.push_back(prop);
+    datatable->properties.push_back(std::move(prop));
   }
 }
 

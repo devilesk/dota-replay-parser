@@ -25,7 +25,7 @@ HuffmanTree buildTree(int symFreqs[], int size) {
       NULL,
       NULL
     };
-    trees.push_back(new_leaf);
+    trees.push_back(std::move(new_leaf));
   }
   
   int n = size;
@@ -55,7 +55,7 @@ HuffmanTree buildTree(int symFreqs[], int size) {
       a,
       b
     };
-    trees.push_back(new_node);
+    trees.push_back(std::move(new_node));
     std::push_heap(trees.begin(), trees.end(), compare_tree);
     //std::cout << "while after push " << std::to_string(trees.size()) << "\n";
     ++n;
