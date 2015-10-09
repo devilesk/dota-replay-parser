@@ -70,6 +70,7 @@ void walk(dota::bitstream &r, fieldpath* fp) {
 void addField(fieldpath* fp) {
   dt* cDt = fp->parent;
   std::string name;
+  int i;
   
   /*if debugLevel >= 6 {
     std::string path;
@@ -80,7 +81,7 @@ void addField(fieldpath* fp) {
     //std::cout << "Adding field with path: " << path << fp->index[fp->fields.size() - 1] << "\n";
   }*/
   //std::cout << "fp->index.size(): " << std::to_string(fp->index.size()) << "\n";
-  for (int i = 0; i < (int)fp->index.size() - 1; ++i) {
+  for (i = 0; i < (int)fp->index.size() - 1; ++i) {
     //std::cout << "i: " << std::to_string(i) << "\n";
     //std::cout << "cDt name: " << cDt->name << "\n";
     //std::cout << "fp.index[i]: " << std::to_string(fp->index[i]) << "\n";
