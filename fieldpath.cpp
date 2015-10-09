@@ -16,9 +16,9 @@ fieldpath newFieldpath(dt* parentTbl, HuffmanTree* huf) {
 void walk(dota::bitstream &r, fieldpath* fp) {
   int cnt = 0;
   HuffmanTree* root = fp->tree;
-  print_node(root);
+  //print_node(root);
   HuffmanTree* node = root;
-  print_node(node);
+  //print_node(node);
   while (!fp->finished) {
     ++cnt;
     if (r.read(1) == 1) {
@@ -119,19 +119,19 @@ HuffmanTree newFieldpathHuffman() {
 }
 
 void PlusOne(dota::bitstream &r, fieldpath* fp) {
-  fp->index[fp->index.size() - 1] += 1;
+  fp->index.back() += 1;
 }
 void PlusTwo(dota::bitstream &r, fieldpath* fp) {
-  fp->index[fp->index.size() - 1] += 2;
+  fp->index.back() += 2;
 }
 void PlusThree(dota::bitstream &r, fieldpath* fp) {
-  fp->index[fp->index.size() - 1] += 3;
+  fp->index.back() += 3;
 }
 void PlusFour(dota::bitstream &r, fieldpath* fp) {
-  fp->index[fp->index.size() - 1] += 4;
+  fp->index.back() += 4;
 }
 void PlusN(dota::bitstream &r, fieldpath* fp) {
-  fp->index[fp->index.size() - 1] += (int)r.nReadUBitVarFP() + 5;
+  fp->index.back() += (int)r.nReadUBitVarFP() + 5;
 }
 void PushOneLeftDeltaZeroRightZero(dota::bitstream &r, fieldpath* fp) {
   fp->index.push_back(0);
@@ -140,27 +140,27 @@ void PushOneLeftDeltaZeroRightNonZero(dota::bitstream &r, fieldpath* fp) {
   fp->index.push_back((int)r.nReadUBitVarFP());
 }
 void PushOneLeftDeltaOneRightZero(dota::bitstream &r, fieldpath* fp) {
-  fp->index[fp->index.size() - 1] += 1;
+  fp->index.back() += 1;
   fp->index.push_back(0);
 }
 void PushOneLeftDeltaOneRightNonZero(dota::bitstream &r, fieldpath* fp) {
-  fp->index[fp->index.size() - 1] += 1;
+  fp->index.back() += 1;
   fp->index.push_back((int)r.nReadUBitVarFP());
 }
 void PushOneLeftDeltaNRightZero(dota::bitstream &r, fieldpath* fp) {
-  fp->index[fp->index.size() - 1] += (int)r.nReadUBitVarFP();
+  fp->index.back() += (int)r.nReadUBitVarFP();
   fp->index.push_back(0);
 }
 void PushOneLeftDeltaNRightNonZero(dota::bitstream &r, fieldpath* fp) {
-  fp->index[fp->index.size() - 1] += (int)r.nReadUBitVarFP() + 2;
+  fp->index.back() += (int)r.nReadUBitVarFP() + 2;
   fp->index.push_back((int)r.nReadUBitVarFP() + 1);
 }
 void PushOneLeftDeltaNRightNonZeroPack6Bits(dota::bitstream &r, fieldpath* fp) {
-  fp->index[fp->index.size() - 1] += (int)r.read(3) + 2;
+  fp->index.back() += (int)r.read(3) + 2;
   fp->index.push_back((int)r.read(3) + 1);
 }
 void PushOneLeftDeltaNRightNonZeroPack8Bits(dota::bitstream &r, fieldpath* fp) {
-  fp->index[fp->index.size() - 1] += (int)r.read(4) + 2;
+  fp->index.back() += (int)r.read(4) + 2;
   fp->index.push_back((int)r.read(4) + 1);
 }
 void PushTwoLeftDeltaZero(dota::bitstream &r, fieldpath* fp) {
@@ -168,12 +168,12 @@ void PushTwoLeftDeltaZero(dota::bitstream &r, fieldpath* fp) {
   fp->index.push_back((int)r.nReadUBitVarFP());
 }
 void PushTwoLeftDeltaOne(dota::bitstream &r, fieldpath* fp) {
-  ++(fp->index[fp->index.size() - 1]);
+  ++(fp->index.back());
   fp->index.push_back((int)r.nReadUBitVarFP());
   fp->index.push_back((int)r.nReadUBitVarFP());
 }
 void PushTwoLeftDeltaN(dota::bitstream &r, fieldpath* fp) {
-  fp->index[fp->index.size() - 1] += (int)r.nReadUBitVar() + 2;
+  fp->index.back() += (int)r.nReadUBitVar() + 2;
   fp->index.push_back((int)r.nReadUBitVarFP());
   fp->index.push_back((int)r.nReadUBitVarFP());
 }
@@ -182,12 +182,12 @@ void PushTwoPack5LeftDeltaZero(dota::bitstream &r, fieldpath* fp) {
   fp->index.push_back((int)r.read(5));
 }
 void PushTwoPack5LeftDeltaOne(dota::bitstream &r, fieldpath* fp) {
-  ++(fp->index[fp->index.size() - 1]);
+  ++(fp->index.back());
   fp->index.push_back((int)r.read(5));
   fp->index.push_back((int)r.read(5));
 }
 void PushTwoPack5LeftDeltaN(dota::bitstream &r, fieldpath* fp) {
-  fp->index[fp->index.size() - 1] += (int)r.nReadUBitVar() + 2;
+  fp->index.back() += (int)r.nReadUBitVar() + 2;
   fp->index.push_back((int)r.read(5));
   fp->index.push_back((int)r.read(5));
 }
@@ -197,13 +197,13 @@ void PushThreeLeftDeltaZero(dota::bitstream &r, fieldpath* fp) {
   fp->index.push_back((int)r.nReadUBitVarFP());
 }
 void PushThreeLeftDeltaOne(dota::bitstream &r, fieldpath* fp) {
-  ++(fp->index[fp->index.size() - 1]);
+  ++(fp->index.back());
   fp->index.push_back((int)r.nReadUBitVarFP());
   fp->index.push_back((int)r.nReadUBitVarFP());
   fp->index.push_back((int)r.nReadUBitVarFP());
 }
 void PushThreeLeftDeltaN(dota::bitstream &r, fieldpath* fp) {
-  fp->index[fp->index.size() - 1] += (int)r.nReadUBitVar() + 2;
+  fp->index.back() += (int)r.nReadUBitVar() + 2;
   fp->index.push_back((int)r.nReadUBitVarFP());
   fp->index.push_back((int)r.nReadUBitVarFP());
   fp->index.push_back((int)r.nReadUBitVarFP());
@@ -214,20 +214,20 @@ void PushThreePack5LeftDeltaZero(dota::bitstream &r, fieldpath* fp) {
   fp->index.push_back((int)r.read(5));
 }
 void PushThreePack5LeftDeltaOne(dota::bitstream &r, fieldpath* fp) {
-  ++(fp->index[fp->index.size() - 1]);
+  ++(fp->index.back());
   fp->index.push_back((int)r.read(5));
   fp->index.push_back((int)r.read(5));
   fp->index.push_back((int)r.read(5));
 }
 void PushThreePack5LeftDeltaN(dota::bitstream &r, fieldpath* fp) {
-  fp->index[fp->index.size() - 1] += (int)r.nReadUBitVar() + 2;
+  fp->index.back() += (int)r.nReadUBitVar() + 2;
   fp->index.push_back((int)r.read(5));
   fp->index.push_back((int)r.read(5));
   fp->index.push_back((int)r.read(5));
 }
 void PushN(dota::bitstream &r, fieldpath* fp) {
   int n = (int)r.nReadUBitVar();
-  fp->index[fp->index.size() - 1] += (int)r.nReadUBitVar();
+  fp->index.back() += (int)r.nReadUBitVar();
   for (int i = 0; i < n; ++i) {
     fp->index.push_back((int)r.nReadUBitVarFP());
   }
@@ -246,21 +246,21 @@ void PushNAndNonTopological(dota::bitstream &r, fieldpath* fp) {
 }
 void PopOnePlusOne(dota::bitstream &r, fieldpath* fp) {
   fp->index.pop_back();
-  ++(fp->index[fp->index.size() - 1]);
+  ++(fp->index.back());
 }
 void PopOnePlusN(dota::bitstream &r, fieldpath* fp) {
   fp->index.pop_back();
-  fp->index[fp->index.size() - 1] += (int)r.nReadUBitVarFP() + 1;
+  fp->index.back() += (int)r.nReadUBitVarFP() + 1;
 }
 void PopAllButOnePlusOne(dota::bitstream &r, fieldpath* fp) {
   std::vector<int> new_index {fp->index[0]};
   fp->index = new_index;
-  ++(fp->index[fp->index.size() - 1]);
+  ++(fp->index.back());
 }
 void PopAllButOnePlusN(dota::bitstream &r, fieldpath* fp) {
   std::vector<int> new_index {fp->index[0]};
   fp->index = new_index;
-  fp->index[fp->index.size() - 1] += (int)r.nReadUBitVarFP() + 1;
+  fp->index.back() += (int)r.nReadUBitVarFP() + 1;
 }
 
 void PopAllButOnePlusNPackN(dota::bitstream &r, fieldpath* fp) {}
@@ -268,12 +268,12 @@ void PopAllButOnePlusNPackN(dota::bitstream &r, fieldpath* fp) {}
 void PopAllButOnePlusNPack3Bits(dota::bitstream &r, fieldpath* fp) {
   std::vector<int> new_index {fp->index[0]};
   fp->index = new_index;
-  fp->index[fp->index.size() - 1] += (int)r.read(3) + 1;
+  fp->index.back() += (int)r.read(3) + 1;
 }
 void PopAllButOnePlusNPack6Bits(dota::bitstream &r, fieldpath* fp) {
   std::vector<int> new_index {fp->index[0]};
   fp->index = new_index;
-  fp->index[fp->index.size() - 1] += (int)r.read(6) + 1;
+  fp->index.back() += (int)r.read(6) + 1;
 }
 void PopNPlusOne(dota::bitstream &r, fieldpath* fp) {
   //std::cout << "PopNPlusOne\n";
@@ -284,13 +284,13 @@ void PopNPlusOne(dota::bitstream &r, fieldpath* fp) {
   //std::cout << "fp index size: " << std::to_string(fp->index.size()) << "\n";
   fp->index = new_index;
   //std::cout << "PopNPlusOne 1\n";
-  ++(fp->index[fp->index.size() - 1]);
+  ++(fp->index.back());
   //std::cout << "PopNPlusOne end\n";
 }
 void PopNPlusN(dota::bitstream &r, fieldpath* fp) {
   std::vector<int> new_index(fp->index.begin(), fp->index.end() - (int)r.nReadUBitVarFP());
   fp->index = new_index;
-  fp->index[fp->index.size() - 1] += (int)r.nReadVarSInt32();
+  fp->index.back() += (int)r.nReadVarSInt32();
 }
 void PopNAndNonTopographical(dota::bitstream &r, fieldpath* fp) {
   //std::cout << "PopNAndNonTopographical\n";

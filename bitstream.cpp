@@ -133,7 +133,7 @@ namespace dota {
     
     // TODO: check endian order
     uint64_t bitstream::nReadLeUInt64() {
-      char buf[64];
+      char buf[8];
       readBits(buf, 64);
       uint64_t value = 
         static_cast<uint64_t>(buf[0]) |
@@ -157,7 +157,7 @@ namespace dota {
     
     // TODO: check endian order
     uint64_t bitstream::nReadBeUInt64() {
-      char buf[64];
+      char buf[8];
       readBits(buf, 64);
       uint64_t value = 
         static_cast<uint64_t>(buf[7]) |
