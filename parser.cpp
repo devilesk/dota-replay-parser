@@ -224,7 +224,7 @@ int packet_priority(int type) {
   return 0;
 }
 
-bool compare_packet_priority(pendingMessage i,pendingMessage j) {
+bool compare_packet_priority(const pendingMessage &i, const pendingMessage &j) {
   if (i.tick > j.tick) return false;
   if (i.tick < j.tick) return true;
   return packet_priority(i.type) < packet_priority(j.type);
