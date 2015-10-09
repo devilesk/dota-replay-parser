@@ -6,7 +6,7 @@ void recurseTable(flattened_serializers* sers, dt* datatable, CSVCMsg_FlattenedS
   datatable->version = serializer->serializer_version();
   datatable->properties = std::vector<dt_property>();
   for (int i = 0; i < serializer->fields_index_size(); ++i) {
-    ProtoFlattenedSerializerField_t pField = msg->fields(serializer->fields_index(i));
+    const ProtoFlattenedSerializerField_t &pField = msg->fields(serializer->fields_index(i));
     dt_property prop;
     dt_field propField;
     prop.table = nullptr;

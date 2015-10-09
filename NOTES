@@ -26,3 +26,5 @@ g++ -o parser -std=c++11 -L/usr/local/lib parser.cpp packet_entity.cpp message_l
 (.*?)\s*\[\]func\(\*dota\.(.*?)\) error\r\n
 
 time for i in {1..10}; do ./parser; done
+
+{ time for i in {1..10}; do ./parser7c0cd9; done } 2>> benchmark.log && { time for i in {1..10}; do ./parserf637aa; done } 2>> benchmark.log && { time for i in {1..10}; do ./parser7c0cd9; done } 2>> benchmark.log && { time for i in {1..10}; do ./parserf637aa; done } 2>> benchmark.log
