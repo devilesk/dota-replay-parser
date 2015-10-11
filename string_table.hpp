@@ -10,6 +10,6 @@
 #include "protobufs/netmessages.pb.h"
 
 //uint32_t Parser::onCSVCMsg_CreateStringTable(CSVCMsg_CreateStringTable* data);
-void parseStringTable(const char* buffer, int size, int num_updates, bool userDataFixed, int userDataSize, std::vector<StringTableItem> &items);
+void parseStringTable(const char* buffer, int size, int num_updates, bool userDataFixed, int userDataSize, std::vector<StringTableItem*> &items);
 
 #endif /* _STRING_TABLE_HPP_ */

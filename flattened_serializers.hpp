@@ -9,7 +9,7 @@
 #include "protobufs/demo.pb.h"
 #include "protobufs/netmessages.pb.h"
 
-void recurseTable(flattened_serializers*, dt*, CSVCMsg_FlattenedSerializer*, ProtoFlattenedSerializer_t*);
+dt* recurseTable(flattened_serializers*, CSVCMsg_FlattenedSerializer*, const ProtoFlattenedSerializer_t*);
 //uint32_t parseSendTables(CDemoSendTables* sendTables, PropertySerializerTable pst, parser* p);
 
 #endif /* _FLATTENED_SERIALIZERS_HPP_ */

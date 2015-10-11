@@ -83,6 +83,6 @@ class propertyToString : public boost::static_visitor<> {
 
 std::string asString(value_type value);
 
-void readProperties(dota::bitstream &stream, dt &serializer, Properties &props);
+Properties* readProperties(dota::bitstream &stream, dt* serializer);
 
 #endif /* _PROPERTY_HPP_ */

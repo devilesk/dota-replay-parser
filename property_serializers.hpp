@@ -10,7 +10,7 @@
 #include "property_decoder.hpp"
 
 void fillSerializer(PropertySerializerTable* pst, dt_field* field);
-PropertySerializer GetPropertySerializerByName(PropertySerializerTable* pst, const std::string &name);
-PropertySerializerTable getDefaultPropertySerializerTable();
+PropertySerializer* GetPropertySerializerByName(PropertySerializerTable* pst, const std::string &name);
+PropertySerializerTable* getDefaultPropertySerializerTable();
 
 #endif /* _PROPERTY_SERIALIZERS_HPP_ */

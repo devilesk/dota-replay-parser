@@ -1,140 +1,114 @@
 #include "flattened_serializers.hpp"
 
 // NOT FULLY IMPLEMENTED
-void recurseTable(flattened_serializers* sers, dt* datatable, CSVCMsg_FlattenedSerializer* msg, ProtoFlattenedSerializer_t* serializer) {
+dt* recurseTable(flattened_serializers* sers, CSVCMsg_FlattenedSerializer* msg, const ProtoFlattenedSerializer_t* serializer) {
+  dt* datatable = new dt();
   datatable->name = msg->symbols(serializer->serializer_name_sym());
   datatable->version = serializer->serializer_version();
-  datatable->properties = std::vector<dt_property>();
+  datatable->properties = std::vector<dt_property*>();
   for (int i = 0; i < serializer->fields_index_size(); ++i) {
     const ProtoFlattenedSerializerField_t &pField = msg->fields(serializer->fields_index(i));
-    dt_property prop;
-    dt_field propField;
-    prop.table = nullptr;
-    prop.field = propField;
-    prop.field.name = msg->symbols(pField.var_name_sym());
-    prop.field.index = -1;
-    prop.field.flags = pField.encode_flags();
-    prop.field.has_flags = pField.has_encode_flags();
-    prop.field.bit_count = pField.bit_count();
-    prop.field.has_bit_count = pField.has_bit_count();
-    prop.field.low_value = pField.low_value();
-    prop.field.has_low_value = pField.has_low_value();
-    prop.field.high_value = pField.high_value();
-    prop.field.has_high_value = pField.has_high_value();
-    prop.field.type = msg->symbols(pField.var_type_sym());
-    prop.field.version = pField.field_serializer_version();
-    prop.field.build = sers->build;
+    dt_property* prop = new dt_property {
+      nullptr,
+      nullptr
+    };
+    prop->field = new dt_field {
+      msg->symbols(pField.var_name_sym()),
+      "",
+      msg->symbols(pField.var_type_sym()),
+      -1,
+      pField.encode_flags(),
+      pField.has_encode_flags(),
+      pField.bit_count(),
+      pField.has_bit_count(),
+      pField.low_value(),
+      pField.has_low_value(),
+      pField.high_value(),
+      pField.has_high_value(),
+      pField.field_serializer_version(),
+      nullptr,
+      sers->build
+    };
 
     // Fill the serializer
     //sers.pst.FillSerializer(prop.Field)
-    fillSerializer(&(sers->pst), &(prop.field));
+    fillSerializer(sers->pst, prop->field);
     
+    // Optional: Attach encoder
     if (pField.has_var_encoder_sym()) {
-      prop.field.encoder = sers->proto->symbols(pField.var_encoder_sym());
+      prop->field->encoder = msg->symbols(pField.var_encoder_sym());
     }
     else {
       // TODO:
       
     }
 
+    // Optional: Attach the serializer version for the property if applicable
     if (pField.has_field_serializer_name_sym()) {
-      std::string pFieldName = sers->proto->symbols(pField.field_serializer_name_sym());
-      int pFieldVersion = pField.field_serializer_version();
-      dt* pSerializer = new dt();
-      *pSerializer = sers->serializers[pFieldName][pFieldVersion];
-      prop.table = pSerializer;
+      prop->table = sers->serializers[msg->symbols(pField.field_serializer_name_sym())][pField.field_serializer_version()];
     }
 
-    if (prop.field.serializer.isArray) {
-      dt tmpDt = {
-        prop.field.name,
+    // Optional: Adjust array fields
+    if (prop->field->serializer->isArray) {
+      dt* tmpDt = new dt {
+        prop->field->name,
+        -1,
         0,
-        0,
-        std::vector<dt_property>()
+        std::vector<dt_property*>()
       };
       //std::cout << "isArray prop.field.name: " << prop.field.name << "\n";
-      for (int i = 0; i < (int)prop.field.serializer.length; ++i) {
+      
+      // Add each array field to the table
+      for (int i = 0; i < (int)prop->field->serializer->length; ++i) {
         char buf[5];
         sprintf(buf, "%04d", i);
         std::string n = std::string(buf, 5);
         //std::cout << "n: " << n << "\n";
-        dt_property new_prop;
-        if (prop.field.serializer.arraySerializer != NULL) {
-          new_prop = {
-            {
-              n,
-              prop.field.encoder,
-              prop.field.serializer.name,
-              i,
-              prop.field.flags,
-              prop.field.has_flags,
-              prop.field.bit_count,
-              prop.field.has_bit_count,
-              prop.field.low_value,
-              prop.field.has_low_value,
-              prop.field.high_value,
-              prop.field.has_high_value,
-              prop.field.version,
-              *prop.field.serializer.arraySerializer,
-              prop.field.build
-            },
-            prop.table
-          };
-          //new_prop.field.serializer = *prop.field.serializer.arraySerializer;
-        }
-        else {
-          new_prop = {
-            {
-              n,
-              prop.field.encoder,
-              prop.field.serializer.name,
-              i,
-              prop.field.flags,
-              prop.field.has_flags,
-              prop.field.bit_count,
-              prop.field.has_bit_count,
-              prop.field.low_value,
-              prop.field.has_low_value,
-              prop.field.high_value,
-              prop.field.has_high_value,
-              prop.field.version,
-              {
-                nullptr,
-                nullptr,
-                0,
-                0,
-                nullptr,
-                ""
-              },
-              prop.field.build
-            },
-            prop.table
-          };
-        }
-        tmpDt.properties.push_back(std::move(new_prop));
-        if (prop.table != nullptr) {
-          //std::cout << "prop.table != nullptr\n";
-          //std::cout << "prop.table.name" << prop.table->name << "\n";
+        
+        tmpDt->properties.push_back(new dt_property {
+          new dt_field {
+            n,
+            prop->field->encoder,
+            prop->field->serializer->name,
+            i,
+            prop->field->flags,
+            prop->field->has_flags,
+            prop->field->bit_count,
+            prop->field->has_bit_count,
+            prop->field->low_value,
+            prop->field->has_low_value,
+            prop->field->high_value,
+            prop->field->has_high_value,
+            prop->field->version,
+            prop->field->serializer->arraySerializer,
+            prop->field->build
+          },
+          prop->table // This carries on the actual table instead of overriding it
+        });
+        
+        // Copy parent prop to rename it's name according to the array index
+        if (prop->table != nullptr) {
+          //std::cout << "prop->table != nullptr\n";
+          //std::cout << "prop->table->name" << prop->table->name << "\n";
           dt* nTable = new dt();
-          *nTable = *prop.table;
+          *nTable = *prop->table;
           char buf2[5];
           sprintf(buf2, "%04d", i);
           std::string n = std::string(buf2, 5);
           nTable->name = n;
-          //std::cout << "nTable.name: " << n << "\n";
-          tmpDt.properties.back().table = nTable;
-          //std::cout << "tmpDt.properties[tmpDt.properties.size() - 1].table.name" << tmpDt.properties[tmpDt.properties.size() - 1].table->name << "\n";
+          //std::cout << "nTable->name: " << n << "\n";
+          tmpDt->properties.back()->table = nTable;
+          //std::cout << "tmpDt->properties[tmpDt->properties.size() - 1]->table->name" << tmpDt->properties[tmpDt->properties.size() - 1]->table->name << "\n";
         }
       }
-      dt* t = new dt();
-      *t = tmpDt;
-      prop.table = t;
+      prop->table = tmpDt;
     }
-    datatable->properties.push_back(std::move(prop));
+    datatable->properties.push_back(prop);
   }
+  return datatable;
 }
 
-flattened_serializers Parser::parseSendTables(CDemoSendTables* sendTables, PropertySerializerTable pst) {
+flattened_serializers Parser::parseSendTables(CDemoSendTables* sendTables, PropertySerializerTable* pst) {
   //std::cout << "parsing DEM_SendTables\n";
   uint32_t size;
   const std::string &data = sendTables->data();
@@ -152,8 +126,7 @@ flattened_serializers Parser::parseSendTables(CDemoSendTables* sendTables, Prope
   
   //std::unordered_map< std::string, std::unordered_map<int, dt> > serializers;
   flattened_serializers fs = {
-    std::unordered_map< std::string, std::unordered_map<int, dt> >(),
-    &msg,
+    std::unordered_map< std::string, std::unordered_map<int, dt*> >(),
     pst,
     GameBuild
   };
@@ -161,17 +134,14 @@ flattened_serializers Parser::parseSendTables(CDemoSendTables* sendTables, Prope
   //fs.build = ;
   
   for (int i = 0; i < msg.serializers_size(); ++i) {
-    ProtoFlattenedSerializer_t serializer = msg.serializers(i);
+    const ProtoFlattenedSerializer_t &serializer = msg.serializers(i);
     std::string sName = msg.symbols(serializer.serializer_name_sym());
     int sVer = serializer.serializer_version();
     if (fs.serializers.find(sName) == fs.serializers.end()) {
-      std::unordered_map<int, dt> new_dt_map;
-      fs.serializers[sName] = new_dt_map;
+      fs.serializers[sName] = std::unordered_map<int, dt*>();
     }
-    dt datatable;
-    recurseTable(&fs, &datatable, &msg, &serializer);
     //std::cout << "add table named to fs.serializers: " << datatable.name << "\n";
-    fs.serializers[sName][sVer] = datatable;
+    fs.serializers[sName][sVer] = recurseTable(&fs, &msg, &serializer);
   
     //std::cout << "serializer index: " << std::to_string(i) << "\n";
     //std::cout << "serializer_name_sym: " << std::to_string(serializer.serializer_name_sym()) << ", " << msg.symbols(serializer.serializer_name_sym()) << "\n";

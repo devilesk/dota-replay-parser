@@ -28,7 +28,7 @@ struct StringTableItem {
 struct StringTable {
 	int index;
 	std::string name;
-	std::unordered_map<int, struct StringTableItem> items;
+	std::unordered_map<int, StringTableItem*> items;
 	bool userDataFixedSize;
 	int userDataSize;
 };
@@ -36,7 +36,7 @@ struct StringTable {
 // Holds and maintains the string table information for an
 // instance of the Parser.
 struct StringTables {
-  std::unordered_map<int, struct StringTable> tables;
+  std::unordered_map<int, StringTable*> tables;
   std::unordered_map<std::string, int> nameIndex;
 	int nextIndex;
   StringTables() {
@@ -88,7 +88,7 @@ struct PropertySerializer {
 };
 
 struct PropertySerializerTable {
-  std::unordered_map< std::string, PropertySerializer> serializers;
+  std::unordered_map< std::string, PropertySerializer*> serializers;
 };
 
 // A datatable field
@@ -106,13 +106,13 @@ struct dt_field {
   float high_value;
   bool has_high_value;
   int version;
-  PropertySerializer serializer;
+  PropertySerializer* serializer;
   uint32_t build;
 };
 
 // Field is always filled, table only for sub-tables
 struct dt_property {
-  struct dt_field field;
+  struct dt_field* field;
   struct dt* table;
 };
 
@@ -121,7 +121,7 @@ struct dt {
   std::string name;
   int flags;
   int version;
-  std::vector<dt_property> properties;
+  std::vector<dt_property*> properties;
 };
 
 struct HuffmanTree {
@@ -141,7 +141,7 @@ struct fieldpath_field {
 // A fieldpath, used to walk through the flattened table hierarchy
 struct fieldpath {
   dt* parent;
-	std::vector<fieldpath_field> fields;
+	std::vector<fieldpath_field*> fields;
 	std::vector<int> index;
 	HuffmanTree* tree;
 	bool finished;
@@ -156,9 +156,8 @@ struct fieldpathOp {
 
 // The flattened serializers object
 struct flattened_serializers {
-  std::unordered_map< std::string, std::unordered_map<int, dt> > serializers;
-  CSVCMsg_FlattenedSerializer* proto;
-  PropertySerializerTable pst;
+  std::unordered_map< std::string, std::unordered_map<int, dt*> > serializers;
+  PropertySerializerTable* pst;
   uint32_t build;
 };
 
@@ -167,8 +166,8 @@ class PacketEntity {
     int index;
     int classId;
     std::string className;
-    Properties classBaseline;
-    Properties properties;
+    Properties* classBaseline;
+    Properties* properties;
     int serial;
     dt* flatTbl;
     
@@ -206,9 +205,9 @@ typedef void (*packetEntityHandler)(PacketEntity* , EntityEventType);
 class Parser {
   public:
     std::unordered_map<int, std::string> classInfo;
-    std::unordered_map<int, struct Properties> classBaselines;
+    std::unordered_map<int, Properties*> classBaselines;
     bool hasClassInfo;
-    std::unordered_map< std::string, std::unordered_map<int, dt> > serializers;
+    std::unordered_map< std::string, std::unordered_map<int, dt*> > serializers;
     std::unordered_map< int, PacketEntity* > packetEntities;
     std::vector< packetEntityHandler > packetEntityHandlers;
     StringTables stringTables;
@@ -227,8 +226,8 @@ class Parser {
     //uint32_t onCSVCMsg_CreateStringTable(CSVCMsg_CreateStringTable* data);
     //uint32_t onCSVCMsg_ServerInfo(CSVCMsg_ServerInfo* data);
     uint32_t updateInstanceBaseline();
-    uint32_t updateInstanceBaselineItem(StringTableItem item);
-    flattened_serializers parseSendTables(CDemoSendTables* sendTables, PropertySerializerTable pst);
+    uint32_t updateInstanceBaselineItem(StringTableItem* item);
+    flattened_serializers parseSendTables(CDemoSendTables* sendTables, PropertySerializerTable* pst);
     void readMessage(const char* buffer, int &pos);
     void parseMessage(int cmd, int tick, int size, const char* buffer);
     //uint32_t parseClassInfo(CDemoClassInfo*);

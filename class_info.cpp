@@ -42,32 +42,37 @@ void Parser::onCDemoClassInfo(const char* buffer, int size) {
 
 uint32_t Parser::updateInstanceBaseline() {
   //std::cout << "updateInstanceBaseline\n";
-  StringTable stringTable = stringTables.tables[stringTables.nameIndex["instancebaseline"]];
+  StringTable* stringTable = stringTables.tables[stringTables.nameIndex["instancebaseline"]];
   if (!hasClassInfo) return 0;
-  for(auto const &ent : stringTable.items) {
+  for(auto const &ent : stringTable->items) {
     updateInstanceBaselineItem(ent.second);
   }
   return 0;
 }
 
-uint32_t Parser::updateInstanceBaselineItem(StringTableItem item) {
+uint32_t Parser::updateInstanceBaselineItem(StringTableItem* item) {
   //std::cout << "updateInstanceBaselineItem\n";
-  int classId = std::stoi(item.key);
+  int classId = std::stoi(item->key);
   //std::cout << "classId: " << std::to_string(classId) << "\n";
   std::string className = classInfo[classId];
   //std::cout << "className: " << className << "\n";
-  if (classBaselines.find(classId) == classBaselines.end()) {
+  /*if (classBaselines.find(classId) == classBaselines.end()) {
     //p->classBaselines[classId] = //new properties
     classBaselines[classId] = Properties();
     //std::cout << "new properties: " << std::to_string(classId) << "\n";
-  }
-  std::unordered_map<int, dt> serializer = serializers[className];
+  }*/
   //std::cout << "serializer name: " << serializer[0].name << "\n";
-  if (item.value.length() > 0) {
-    //std::cout << "item.value.length(): " << std::to_string(item.value.length()) << "\n";
-    dota::bitstream stream(item.value);
+  if (item->value.length() > 0) {
+    //std::cout << "item.value.length(): " << std::to_string(item->value.length()) << "\n";
+    dota::bitstream stream(item->value);
     //std::cout << "stream size: " << std::to_string(stream.end()) << "\n";
-    readProperties(stream, serializer[0], classBaselines[classId]);
+    if (classBaselines.find(classId) == classBaselines.end()) {
+      delete classBaselines[classId];
+    }
+    classBaselines[classId] = readProperties(stream, serializers[className][0]);
+  }
+  else if (classBaselines.find(classId) == classBaselines.end()) {
+    classBaselines[classId] = new Properties();
   }
   return 0;
 }

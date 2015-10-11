@@ -1,32 +1,32 @@
 #include "packet_entity.hpp"
 
 bool PacketEntity::fetch(const std::string &k, value_type& v) {
-  if (properties.fetch(k, v)) return true;
-  return classBaseline.fetch(k, v);
+  if (properties->fetch(k, v)) return true;
+  return classBaseline->fetch(k, v);
 }
 bool PacketEntity::fetchBool(const std::string &k, bool& v) {
-  if (properties.fetchBool(k, v)) return true;
-  return classBaseline.fetchBool(k, v);
+  if (properties->fetchBool(k, v)) return true;
+  return classBaseline->fetchBool(k, v);
 }
 bool PacketEntity::fetchInt32(const std::string &k, int32_t& v) {
-  if (properties.fetchInt32(k, v)) return true;
-  return classBaseline.fetchInt32(k, v);
+  if (properties->fetchInt32(k, v)) return true;
+  return classBaseline->fetchInt32(k, v);
 }
 bool PacketEntity::fetchUint32(const std::string &k, uint32_t& v) {
-  if (properties.fetchUint32(k, v)) return true;
-  return classBaseline.fetchUint32(k, v);
+  if (properties->fetchUint32(k, v)) return true;
+  return classBaseline->fetchUint32(k, v);
 }
 bool PacketEntity::fetchUint64(const std::string &k, uint64_t& v) {
-  if (properties.fetchUint64(k, v)) return true;
-  return classBaseline.fetchUint64(k, v);
+  if (properties->fetchUint64(k, v)) return true;
+  return classBaseline->fetchUint64(k, v);
 }
 bool PacketEntity::fetchFloat32(const std::string &k, float& v) {
-  if (properties.fetchFloat32(k, v)) return true;
-  return classBaseline.fetchFloat32(k, v);
+  if (properties->fetchFloat32(k, v)) return true;
+  return classBaseline->fetchFloat32(k, v);
 }
 bool PacketEntity::fetchString(const std::string &k, std::string& v) {
-  if (properties.fetchString(k, v)) return true;
-  return classBaseline.fetchString(k, v);
+  if (properties->fetchString(k, v)) return true;
+  return classBaseline->fetchString(k, v);
 }
 
 void Parser::onCSVCMsg_PacketEntities(const char* buffer, int size) {
@@ -82,7 +82,7 @@ void Parser::onCSVCMsg_PacketEntities(const char* buffer, int size) {
     
     //std::cout << "update type is " << std::to_string(eventType) << " to " << std::to_string(index) << "\n";
     
-    Properties props;
+    Properties* props;
     
     // Proceed based on the update type
     switch(eventType){
@@ -91,6 +91,7 @@ void Parser::onCSVCMsg_PacketEntities(const char* buffer, int size) {
         pe = new PacketEntity();
         pe->index = index;
         pe->classId = (int)(stream.read(classIdSize));
+        pe->properties = new Properties();
         pe->serial = (int)(stream.read(17));
         //std::cout << "classIdSize " << std::to_string(classIdSize) << "\n";
         
@@ -115,7 +116,7 @@ void Parser::onCSVCMsg_PacketEntities(const char* buffer, int size) {
         
         // Get the associated serializer
         if (serializers.find(pe->className) != serializers.end()) {
-          pe->flatTbl = &serializers[pe->className][0];
+          pe->flatTbl = serializers[pe->className][0];
         }
         else {
           //std::cout << "unable to find serializer for class " << pe->className << "\n";
@@ -125,9 +126,9 @@ void Parser::onCSVCMsg_PacketEntities(const char* buffer, int size) {
         packetEntities[index] = pe;
         
         // Read properties
-        readProperties(stream, *(pe->flatTbl), props);
-        pe->properties.merge(&props);
-        
+        props = readProperties(stream, pe->flatTbl);
+        pe->properties->merge(props);
+        delete props;
         break;
       case EntityEventType_Update:
         // Find the existing packetEntity
@@ -139,9 +140,9 @@ void Parser::onCSVCMsg_PacketEntities(const char* buffer, int size) {
         }
         
         // Read properties and update the packetEntity
-        readProperties(stream, *(pe->flatTbl), props);
-        pe->properties.merge(&props);
-        
+        props = readProperties(stream, pe->flatTbl);
+        pe->properties->merge(props);
+        delete props;
         break;
       case EntityEventType_Delete:
         if (packetEntities.find(index) == packetEntities.end()) {

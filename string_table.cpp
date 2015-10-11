@@ -8,38 +8,37 @@ void Parser::onCSVCMsg_CreateStringTable(const char* buffer, int size) {
   //std::cout << "name: " << data.name() << "\n";
   //std::cout << "user_data_fixed_size: " << std::to_string(data.user_data_fixed_size()) << "\n";
   //std::cout << "user_data_size: " << std::to_string(data.user_data_size()) << "\n";
-  std::unordered_map<int, StringTableItem> stringTableItems;
-  StringTable string_table = {
+  StringTable* string_table = new StringTable {
     stringTables.nextIndex,
     data.name(),
-    stringTableItems,
+    std::unordered_map<int, StringTableItem*>(),
     data.user_data_fixed_size(),
     data.user_data_size()
   };
   stringTables.nextIndex += 1;
-  std::string buffer2 = data.string_data();
+  const std::string &buffer2 = data.string_data();
   //std::cout << "is_compressed: " << std::to_string(data.data_compressed()) << "\n";
-  std::vector<StringTableItem> items;
+  std::vector<StringTableItem*> items;
   if (data.data_compressed()) {
     std::size_t uSize;
     if (snappy::GetUncompressedLength(buffer2.c_str(), buffer2.length(), &uSize)) {
       char * ubuffer2 = new char[uSize];
       if (snappy::RawUncompress(buffer2.c_str(), buffer2.length(), ubuffer2)) {
         //std::cout << "uncompressed success, size: " << std::to_string(uSize) << "\n";
-        parseStringTable(ubuffer2, uSize, data.num_entries(), string_table.userDataFixedSize, string_table.userDataSize, items);
+        parseStringTable(ubuffer2, uSize, data.num_entries(), string_table->userDataFixedSize, string_table->userDataSize, items);
       }
       delete[] ubuffer2;
     }
   }
   else {
-    parseStringTable(buffer2.c_str(), buffer2.length(), data.num_entries(), string_table.userDataFixedSize, string_table.userDataSize, items);
+    parseStringTable(buffer2.c_str(), buffer2.length(), data.num_entries(), string_table->userDataFixedSize, string_table->userDataSize, items);
   }
-  for (std::vector<StringTableItem>::iterator it = items.begin(); it != items.end(); ++it) {
-    string_table.items[it->index] = *it;
+  for (auto& item: items) {
+    string_table->items[item->index] = item;
   }
-  stringTables.tables[string_table.index] = string_table;
-  stringTables.nameIndex[string_table.name] = string_table.index;
-  if (string_table.name.compare("instancebaseline") == 0) {
+  stringTables.tables[string_table->index] = string_table;
+  stringTables.nameIndex[string_table->name] = string_table->index;
+  if (string_table->name.compare("instancebaseline") == 0) {
     updateInstanceBaseline();
   }
 }
@@ -51,7 +50,7 @@ void Parser::onCSVCMsg_UpdateStringTable(const char* buffer, int size) {
   StringTable* t;
   // TODO: integrate
   if (stringTables.tables.find(data.table_id()) != stringTables.tables.end()) {
-    t = &stringTables.tables[data.table_id()];
+    t = stringTables.tables[data.table_id()];
   }
   else {
     //std::cout << "missing string table " << std::to_string(data.table_id()) << "\n";
@@ -59,26 +58,27 @@ void Parser::onCSVCMsg_UpdateStringTable(const char* buffer, int size) {
   
   //std::cout << "tick=" << std::to_string(tick) << " name=" << t->name << " changedEntries=" << std::to_string(data.num_changed_entries()) << " bufflen=" << std::to_string(data.string_data().length()) << "\n";
   
-  std::vector<StringTableItem> items;
+  std::vector<StringTableItem*> items;
   parseStringTable(data.string_data().c_str(), data.string_data().length(), data.num_changed_entries(), t->userDataFixedSize, t->userDataSize, items);
   
-  for (std::vector<StringTableItem>::iterator it = items.begin(); it != items.end(); ++it) {
-    int index = it->index;
+  for (auto& item: items) {
+    int index = item->index;
     
     if (t->items.find(index) != t->items.end()) {
       // XXX TODO: Sometimes ActiveModifiers change keys, which is suspicous...
-      if (it->key.compare("") != 0 && it->key.compare(t->items[index].key) != 0) {
+      if (item->key.compare("") != 0 && item->key.compare(t->items[index]->key) != 0) {
         //std::cout << "tick=" << std::to_string(tick) << " name=" << t->name << " index=" << std::to_string(index) << " key=" << t->items[index].key << " update key -> " << it->key << "\n";
-        t->items[index].key = it->key;
+        t->items[index]->key = item->key;
       }
-      if (it->value.length() > 0) {
+      if (item->value.length() > 0) {
         //std::cout << "tick=" << std::to_string(tick) << " name=" << t->name << " index=" << std::to_string(index) << " key=" << t->items[index].key << " update value len " << std::to_string(t->items[index].value.length()) << " -> " << std::to_string(it->value.length()) << "\n";
-        t->items[index].value = it->value;
+        t->items[index]->value = item->value;
       }
+      delete item;
     }
     else {
       //std::cout << "tick=" << std::to_string(tick) << " name=" << t->name << " insert new item " << std::to_string(index) << " key " << it->key << "\n";
-      t->items[index] = *it;
+      t->items[index] = item;
     }
   }
   
@@ -88,7 +88,7 @@ void Parser::onCSVCMsg_UpdateStringTable(const char* buffer, int size) {
   }
 }
 
-void parseStringTable(const char* buffer, int buffer_size, int num_updates, bool userDataFixed, int userDataSize, std::vector<StringTableItem> &items) {
+void parseStringTable(const char* buffer, int buffer_size, int num_updates, bool userDataFixed, int userDataSize, std::vector<StringTableItem*> &items) {
   if (buffer_size == 0) return;
   dota::bitstream stream(std::string(buffer, buffer_size));
   uint32_t index = -1;
@@ -185,11 +185,10 @@ void parseStringTable(const char* buffer, int buffer_size, int num_updates, bool
       delete[] tmpBuf;
       //std::cout << "value: " << value << "\n";
     }
-    StringTableItem item = {
+    items.push_back(new StringTableItem {
       (int)index,
       key,
       value
-    };
-    items.push_back(std::move(item));
+    });
   }
 }

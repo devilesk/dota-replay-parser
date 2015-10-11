@@ -8,35 +8,34 @@ std::string asString(value_type value) {
     return ret;
 }
 
-void readProperties(dota::bitstream &stream, dt &serializer, Properties &props) {  
+Properties* readProperties(dota::bitstream &stream, dt* serializer) {  
+  // Return type
+  Properties* result = new Properties();
+  
   // Create fieldpath
-  fieldpath fp = newFieldpath(&serializer, &huf);
+  fieldpath fp = newFieldpath(serializer, &huf);
   
   // Get a list of the included fields
   walk(stream, &fp);
   
   // iterate all the fields and set their corresponding values
-  for (int i = 0; i < fp.fields.size(); ++i) {
-    //std::cout << "Decoding field: " << stream.position() << " " << fp.fields[i].field->name << " " << fp.fields[i].field->type << " " << fp.fields[i].field->encoder << "\n";
-    if (fp.fields[i].field->serializer.decodeContainer != nullptr) {
-      //std::cout << "Decoding container: " << fp.fields[i].field->name << "\n";
-      props.KV[fp.fields[i].field->name] = fp.fields[i].field->serializer.decodeContainer(stream, fp.fields[i].field);
+  for (auto& f: fp.fields) {
+    //std::cout << "f->name: " << f->name << "\n";
+    //std::cout << "f->field->name: " << f->field->name << "\n";
+    //std::cout << "f->field->serializer->name: " << f->field->serializer->name << "\n";
+    if (f->field->serializer->decodeContainer != nullptr) {
+      result->KV[f->name] = f->field->serializer->decodeContainer(stream, f->field);
     }
-    else if (fp.fields[i].field->serializer.decode == nullptr) {
-      props.KV[fp.fields[i].field->name] = stream.nReadVarUInt32();
-      //////std::cout << "Decoded default: " << stream.position() << " " << fp.fields[i].field->name << " " << fp.fields[i].field->type << " " << props.KV[fp.fields[i].field->name] << "\n";
-      
-      //std::cout << "Decoded default: " << stream.position() << " " << fp.fields[i].field->name << " " << fp.fields[i].field->type << " " << asString(props.KV[fp.fields[i].field->name]) << "\n";
-      continue;
+    else if (f->field->serializer->decode == nullptr) {
+      result->KV[f->name] = stream.nReadVarUInt32();
     }
     else {
-      props.KV[fp.fields[i].field->name] = fp.fields[i].field->serializer.decode(stream, fp.fields[i].field);
+      result->KV[f->name] = f->field->serializer->decode(stream, f->field);
     }
-    
-    //////std::cout << "Decoded: " << stream.position() << " " << fp.fields[i].field->name << " " << fp.fields[i].field->type << " " << props.KV[fp.fields[i].field->name] << "\n";
-    
-    //std::cout << "Decoded: " << stream.position() << " " << fp.fields[i].field->name << " " << fp.fields[i].field->type << " " << asString(props.KV[fp.fields[i].field->name]) << "\n";
+    delete f;
   }
+  
+  return result;
 }
 
 void Properties::merge(Properties* p2) {
@@ -44,6 +43,7 @@ void Properties::merge(Properties* p2) {
   {
     //std::string k =  iter->first;
     //value_type v = iter->second;
+    //std::cout << "k: " << iter->first << " v: " << asString(iter->second) << "\n";
     KV[iter->first] = iter->second;
   }
 }

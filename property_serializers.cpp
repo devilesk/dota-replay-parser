@@ -1,8 +1,8 @@
 #include "property_serializers.hpp"
 
-PropertySerializerTable getDefaultPropertySerializerTable() {
-  PropertySerializerTable pst = {
-    std::unordered_map< std::string, PropertySerializer>()
+PropertySerializerTable* getDefaultPropertySerializerTable() {
+  PropertySerializerTable* pst = new PropertySerializerTable {
+    std::unordered_map< std::string, PropertySerializer*>()
   };
   return pst;
 }
@@ -12,7 +12,7 @@ std::regex matchVector = std::regex("CUtlVector\\<\\s(.*)\\s>$");
 
 void fillSerializer(PropertySerializerTable* pst, dt_field* field) {
   if (field->name.compare("m_flSimulationTime") == 0) {
-    field->serializer = {
+    field->serializer = new PropertySerializer {
       decodeSimTime,
       nullptr,
       false,
@@ -23,7 +23,7 @@ void fillSerializer(PropertySerializerTable* pst, dt_field* field) {
     return;
   }
   else if (field->name.compare("m_flAnimTime") == 0) {
-    field->serializer = {
+    field->serializer = new PropertySerializer {
       decodeSimTime,
       nullptr,
       false,
@@ -45,11 +45,12 @@ void fillSerializer(PropertySerializerTable* pst, dt_field* field) {
   field->serializer = GetPropertySerializerByName(pst, field->type);
 }
 
-PropertySerializer GetPropertySerializerByName(PropertySerializerTable* pst, const std::string &name) {
+PropertySerializer* GetPropertySerializerByName(PropertySerializerTable* pst, const std::string &name) {
   if (pst->serializers.find(name) != pst->serializers.end()) {
     return pst->serializers[name];
   }
   
+  //std::cout << "name: " << name << " comp:" << std::to_string(name.compare("uint16") == 0) << "\n";
   // TODO: decoder stuff
   value_type (*decoder)(dota::bitstream &stream, dt_field* f) = nullptr;
   value_type (*decoderContainer)(dota::bitstream &stream, dt_field* f) = nullptr;
@@ -105,7 +106,7 @@ PropertySerializer GetPropertySerializerByName(PropertySerializerTable* pst, con
       std::smatch match;
       if (std::regex_search (name, match, matchVector)) {
         decoderContainer = decodeVector;
-        decoder = GetPropertySerializerByName(pst, match[1]).decode;
+        decoder = GetPropertySerializerByName(pst, match[1])->decode;
       }
       else {
         //std::cout << "Unable to read vector type for: " << name << "\n";
@@ -123,22 +124,20 @@ PropertySerializer GetPropertySerializerByName(PropertySerializerTable* pst, con
   
   std::smatch match;
   if (std::regex_search (name, match, matchArray)) {
-    //for (auto x:match) std::cout << x << " ";
-    //std::cout << std::endl;
-    
     std::string typeName = match[1];
     uint32_t length = std::stoi(match[2], nullptr);
     
     if (pst->serializers.find(typeName) == pst->serializers.end()) {
-      pst->serializers[typeName] = GetPropertySerializerByName(pst, typeName);
+      PropertySerializer* serializer = GetPropertySerializerByName(pst, typeName);
+      pst->serializers[typeName] = serializer;
     }
     
-    PropertySerializer ps = {
-      pst->serializers[typeName].decode,
+    PropertySerializer* ps = new PropertySerializer {
+      pst->serializers[typeName]->decode,
       decoderContainer,
       true,
       length,
-      &(pst->serializers[typeName]),
+      pst->serializers[typeName],
       typeName
     };
     
@@ -148,15 +147,12 @@ PropertySerializer GetPropertySerializerByName(PropertySerializerTable* pst, con
   }
   
   if (std::regex_search (name, match, matchVector)) {
-    //for (auto x:match) std::cout << x << " ";
-    //std::cout << std::endl;
-    
-    PropertySerializer ps = {
+    PropertySerializer* ps = new PropertySerializer {
       decoder,
       decoderContainer,
       true,
       1024,
-      nullptr,
+      new PropertySerializer(),
       ""
     };
     
@@ -169,15 +165,16 @@ PropertySerializer GetPropertySerializerByName(PropertySerializerTable* pst, con
     std::string typeName = "C_DOTA_ItemStockInfo";
     
     if (pst->serializers.find(typeName) == pst->serializers.end()) {
-      pst->serializers[typeName] = GetPropertySerializerByName(pst, typeName);
+      PropertySerializer* serializer = GetPropertySerializerByName(pst, typeName);
+      pst->serializers[typeName] = serializer;
     }
     
-    PropertySerializer ps = {
-      pst->serializers[typeName].decode,
+    PropertySerializer* ps = new PropertySerializer {
+      pst->serializers[typeName]->decode,
       decoderContainer,
       true,
       8,
-      &(pst->serializers[typeName]),
+      pst->serializers[typeName],
       typeName
     };
     
@@ -190,15 +187,16 @@ PropertySerializer GetPropertySerializerByName(PropertySerializerTable* pst, con
     std::string typeName = "CDOTA_AbilityDraftAbilityState";
     
     if (pst->serializers.find(typeName) == pst->serializers.end()) {
-      pst->serializers[typeName] = GetPropertySerializerByName(pst, typeName);
+      PropertySerializer* serializer = GetPropertySerializerByName(pst, typeName);
+      pst->serializers[typeName] = serializer;
     }
     
-    PropertySerializer ps = {
-      pst->serializers[typeName].decode,
+    PropertySerializer* ps = new PropertySerializer {
+      pst->serializers[typeName]->decode,
       decoderContainer,
       true,
       48,
-      &(pst->serializers[typeName]),
+      pst->serializers[typeName],
       typeName
     };
     
@@ -210,7 +208,7 @@ PropertySerializer GetPropertySerializerByName(PropertySerializerTable* pst, con
   if (name.compare("m_SpeechBubbles") == 0) {
     std::string typeName = "m_SpeechBubbles";
     
-    PropertySerializer ps = {
+    PropertySerializer* ps = new PropertySerializer {
       decoder,
       decoderContainer,
       true,
@@ -227,7 +225,7 @@ PropertySerializer GetPropertySerializerByName(PropertySerializerTable* pst, con
   if (name.compare("DOTA_PlayerChallengeInfo") == 0) {
     std::string typeName = "DOTA_PlayerChallengeInfo";
     
-    PropertySerializer ps = {
+    PropertySerializer* ps = new PropertySerializer {
       decoder,
       decoderContainer,
       true,
@@ -241,14 +239,15 @@ PropertySerializer GetPropertySerializerByName(PropertySerializerTable* pst, con
     return pst->serializers[name];
   }
   
-  PropertySerializer ps = {
+  // potential memory leak?
+  PropertySerializer* ps = new PropertySerializer {
     decoder,
     decoderContainer,
     false,
     0,
     nullptr,
-    "unkown"
+    "unknown"
   };
-
+  
   return ps;
 }

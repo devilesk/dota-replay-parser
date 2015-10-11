@@ -3,7 +3,7 @@
 fieldpath newFieldpath(dt* parentTbl, HuffmanTree* huf) {
   fieldpath fp = {
     parentTbl,
-    std::vector<fieldpath_field>(),
+    std::vector<fieldpath_field*>(),
     std::vector<int>(),
     huf,
     false
@@ -86,9 +86,9 @@ void addField(fieldpath* fp) {
     //std::cout << "cDt name: " << cDt->name << "\n";
     //std::cout << "fp.index[i]: " << std::to_string(fp->index[i]) << "\n";
     //std::cout << "cDt.Properties len: " << std::to_string(cDt->properties.size()) << "\n";
-    if (cDt->properties[fp->index[i]].table != nullptr) {
+    if (cDt->properties[fp->index[i]]->table != nullptr) {
       //std::cout << "table name: " << cDt->properties[fp->index[i]].table->name << "\n";
-      cDt = cDt->properties[fp->index[i]].table;
+      cDt = cDt->properties[fp->index[i]]->table;
       name += cDt->name + ".";
     }
     /*else {
@@ -103,11 +103,10 @@ void addField(fieldpath* fp) {
   //std::cout << "name: " << name << "\n";
   //std::cout << "fp->index[i]: " << std::to_string(fp->index[i]) << "\n";
   //std::cout << "cDt.Properties[fp.index[i]].Field.Name: " << cDt->properties[fp->index[i]].field.name << "\n";
-  fieldpath_field new_fieldpath_field = {
-    name + cDt->properties[fp->index[i]].field.name,
-    &(cDt->properties[fp->index[i]].field)
-  };
-  fp->fields.push_back(std::move(new_fieldpath_field));
+  fp->fields.push_back(new fieldpath_field {
+    name + cDt->properties[fp->index[i]]->field->name,
+    cDt->properties[fp->index[i]]->field
+  });
 }
 
 HuffmanTree newFieldpathHuffman() {
