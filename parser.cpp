@@ -261,3 +261,9 @@ void Parser::onCDemoFullPacket(const CDemoFullPacket* packet) {
   //parseStringTables(&(packet->string_table()), p);
   onCDemoPacket(&(packet->packet()));
 }
+
+void Parser::onCUserMessageSayText2(const char* buffer, int size) {
+  CUserMessageSayText2 data;
+  data.ParseFromArray(buffer, size);
+  std::cout << data.messagename() << " | " << data.param1() << ": " << data.param2() << "\n";
+}

@@ -8,6 +8,7 @@ std::unordered_map<int, Callback> initHandlers() {
   handlers[SVC_Messages::svc_PacketEntities] = &Parser::onCSVCMsg_PacketEntities;
   handlers[SVC_Messages::svc_UpdateStringTable] = &Parser::onCSVCMsg_UpdateStringTable;
   handlers[SVC_Messages::svc_ServerInfo] = &Parser::onCSVCMsg_ServerInfo;
+  handlers[EBaseUserMessages::UM_SayText2] = &Parser::onCUserMessageSayText2;
   return handlers;
 }
 
