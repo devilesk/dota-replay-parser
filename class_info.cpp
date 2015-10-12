@@ -16,7 +16,7 @@ void Parser::onCSVCMsg_ServerInfo(const char* buffer, int size) {
   //std::cout << "The following matches gameBuildRegexp: " << data.game_dir() << std::endl;
   std::regex_search (data.game_dir(), match, gameBuildRegexp);
   uint32_t build = (uint32_t)std::stoul(match[1], nullptr);
-  //std::cout << "build: " << std::to_string(build) << std::endl;
+  std::cout << "build: " << std::to_string(build) << std::endl;
   GameBuild = build;
 }
 

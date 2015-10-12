@@ -4,10 +4,11 @@ int main ()
 {
   //std::cout << "HELLO WORLD!\n";
   Parser p;
+  p.packetEntityHandlers.push_back(entityHandler);
   //StringTables string_tables;
   //p.stringTables = string_tables;
   std::ifstream stream;
-  std::string path = "testfiles/1781962623_source2.dem";
+  std::string path = "testfiles/1858267282.dem";
   //std::string path = "testfiles/1698148651_source2.dem";
   // std::ifstream::in and std::ifstream::binary are mode flags for input and binary
   stream.open(path.c_str(), std::ifstream::in | std::ifstream::binary);
@@ -266,4 +267,15 @@ void Parser::onCUserMessageSayText2(const char* buffer, int size) {
   CUserMessageSayText2 data;
   data.ParseFromArray(buffer, size);
   std::cout << data.messagename() << " | " << data.param1() << ": " << data.param2() << "\n";
+}
+
+void entityHandler(PacketEntity* pe, EntityEventType t) {
+  //std::cout << "entity className: " << pe->className << " " << std::to_string(t) << " entity id: " << pe->index << "\n";
+  if (pe->className.compare("CDOTA_NPC_Observer_Ward") == 0 || isPrefix(pe->className, "CDOTA_Unit_Hero_")) {
+    std::cout << "entity className: " << pe->className << " " << std::to_string(t) << " entity id: " << pe->index << "\n";
+    for (auto const& p : pe->properties->KV)
+    {
+        std::cout << "\t" << p.first << " " << asString(p.second) << "\n";
+    }
+  }
 }

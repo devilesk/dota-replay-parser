@@ -40,4 +40,10 @@
 int packet_priority(int type);
 bool compare_packet_priority(const pendingMessage &i, const pendingMessage &j);
 
+inline bool isPrefix(std::string const &s1, std::string const &s2) {
+  return (0==s1.compare(0, min(s1.length(), s2.length()), s2,0,min(s1.length(),s2.length())));
+}
+
+void entityHandler(PacketEntity* pe, EntityEventType t);
+
 #endif /* _PARSER_HPP_ */
