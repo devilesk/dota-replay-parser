@@ -39,10 +39,13 @@ void Parser::onCSVCMsg_PacketEntities(const char* buffer, int size) {
   //std::cout << "pTick=" << std::to_string(tick) << " isDelta=" << std::to_string(data.is_delta()) << " deltaFrom=" << std::to_string(data.delta_from()) << " updateEntries=" << std::to_string(data.updated_entries()) << " maxEntries=" << std::to_string(data.max_entries()) << " baseline=" << std::to_string(data.baseline()) << " updateBaseline=" << std::to_string(data.update_baseline()) << "\n";
   
   // Skip processing full updates after the first. We'll process deltas instead.
-  if (data.is_delta() && packetEntityFullPackets > 0) return;
+  if (!data.is_delta() && packetEntityFullPackets > 0) return;
   
   // Updates pending
   std::vector<packetEntityUpdate> updates;
+  
+  // deleted entities
+  std::vector<PacketEntity*> deletes;
   
   dota::bitstream stream(data.entity_data());
   int index = -1;
@@ -145,11 +148,15 @@ void Parser::onCSVCMsg_PacketEntities(const char* buffer, int size) {
         delete props;
         break;
       case EntityEventType_Delete:
-        if (packetEntities.find(index) == packetEntities.end()) {
-          //std::cout << "unable to find packet entity " << std::to_string(index) << " for delete\n";
+        /*if (packetEntities.find(index) == packetEntities.end()) {
+          std::cout << "unable to find packet entity " << std::to_string(index) << " for delete\n";
         }
-        
-        delete packetEntities[index];
+        std::cout << "deleting packet entity " << std::to_string(index) << "\n";*/
+        if (packetEntities.find(index) != packetEntities.end()) {
+          pe = packetEntities[index];
+        }
+        deletes.push_back(pe);
+        //delete packetEntities[index];
         packetEntities.erase(index);
         
         break;
@@ -161,6 +168,7 @@ void Parser::onCSVCMsg_PacketEntities(const char* buffer, int size) {
     }
     
     // Add the update to the list of pending updates.
+    //std::cout << "adding packet entity update" << std::to_string(index) << " for " << std::to_string(eventType) << "\n";
     packetEntityUpdate pu {
       pe,
       eventType
@@ -179,5 +187,10 @@ void Parser::onCSVCMsg_PacketEntities(const char* buffer, int size) {
     for(std::vector<packetEntityHandler>::iterator fn = packetEntityHandlers.begin(); fn != packetEntityHandlers.end(); ++fn) {
         (*fn)(it->pe, it->t);
     }
+  }
+  
+  // free deleted entities
+  for (auto & p : deletes) {
+      delete p;
   }
 }
