@@ -272,10 +272,10 @@ void Parser::onCUserMessageSayText2(const char* buffer, int size) {
 void entityHandler(PacketEntity* pe, EntityEventType t) {
   //std::cout << "entity className: " << pe->className << " " << std::to_string(t) << " entity id: " << pe->index << "\n";
   if (pe->className.compare("CDOTA_NPC_Observer_Ward") == 0 || isPrefix(pe->className, "CDOTA_Unit_Hero_")) {
-    std::cout << "entity className: " << pe->className << " " << std::to_string(t) << " entity id: " << pe->index << "\n";
+    //std::cout << "entity className: " << pe->className << " " << std::to_string(t) << " entity id: " << pe->index << "\n";
     for (auto const& p : pe->properties->KV)
     {
-        std::cout << "\t" << p.first << " " << asString(p.second) << "\n";
+        //std::cout << "\t" << p.first << " " << asString(p.second) << "\n";
     }
   }
 }

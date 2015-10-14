@@ -2,7 +2,7 @@
 #define _PARSER_HPP_
 
 #include <snappy.h>
-
+#include <SDL2/SDL.h>
 #include <stdio.h>
 #include <algorithm>
 #include <math.h>
