@@ -8,7 +8,7 @@ int main ()
   //StringTables string_tables;
   //p.stringTables = string_tables;
   std::ifstream stream;
-  std::string path = "testfiles/1858267282.dem";
+  std::string path = "1858267282.dem";
   //std::string path = "testfiles/1698148651_source2.dem";
   // std::ifstream::in and std::ifstream::binary are mode flags for input and binary
   stream.open(path.c_str(), std::ifstream::in | std::ifstream::binary);
