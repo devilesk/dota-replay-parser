@@ -110,7 +110,7 @@ value_type decodeQAngle(dota::bitstream &stream, dt_field* f) {
   
   // Parse specific encoders
   if (f->encoder.compare("qangle_pitch_yaw") == 0) {
-    if (f->has_bit_count && f->has_flags && (f->flags & 0x20 != 0)) {
+    if (f->has_bit_count && f->has_flags && ((f->flags & 0x20) != 0)) {
       //std::cout << "Special Case: Unknown for now\n";
     }
     

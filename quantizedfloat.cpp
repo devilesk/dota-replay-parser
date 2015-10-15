@@ -60,7 +60,7 @@ void assignMultipliers(QuantizedFloatDecoder* qfd, uint32_t steps) {
   }
   
   float highMul = (float)0.0;
-  if (abs((double)range) <= 0.0) {
+  if (std::abs((double)range) <= 0.0) {
     highMul = (float)high;
   }
   else {
