@@ -1,20 +1,19 @@
 #include <snappy.h>
 
-#include <string.h>
 #include <string>
 #include <sstream>
 #include <iostream>
 #include <fstream>
 
 // Protobuf objects
-#include "protobufs/ai_activity.pb.h"
-#include "protobufs/demo.pb.h"
-#include "protobufs/dota_commonmessages.pb.h"
-#include "protobufs/dota_modifiers.pb.h"
-#include "protobufs/usermessages.pb.h"
-#include "protobufs/netmessages.pb.h"
-#include "protobufs/networkbasetypes.pb.h"
-#include "protobufs/usermessages.pb.h"
+#include "../protobufs/ai_activity.pb.h"
+#include "../protobufs/demo.pb.h"
+#include "../protobufs/dota_commonmessages.pb.h"
+#include "../protobufs/dota_modifiers.pb.h"
+#include "../protobufs/usermessages.pb.h"
+#include "../protobufs/netmessages.pb.h"
+#include "../protobufs/networkbasetypes.pb.h"
+#include "../protobufs/usermessages.pb.h"
 
 uint32_t readVarUInt32(std::ifstream &stream);
 uint32_t readMessage(std::ifstream &stream);
@@ -23,7 +22,7 @@ int main ()
 {
   char* buffer;
   std::ifstream stream;
-  std::string path = "testfiles/1781962623_source2.dem";
+  std::string path = "1781962623_source2.dem";
   // std::ifstream::in and std::ifstream::binary are mode flags for input and binary
   stream.open(path.c_str(), std::ifstream::in | std::ifstream::binary);
   if (!stream.is_open()) {
@@ -41,7 +40,7 @@ int main ()
   buffer = new char[1];
   char* header = new char[8];
 
-  stream.read(header, sizeof(header));
+  stream.read(header, 8);
   std::string demheader = "PBDEMS2";
   std::cout << std::to_string(sizeof(header)) << "\n";
   std::cout << header << "\n";
@@ -93,6 +92,7 @@ int main ()
 }
 
 uint32_t readMessage(std::ifstream &stream) {
+  std::cout << "readMessage\n";
   char* buffer;
   uint32_t cmd;
   cmd = readVarUInt32(stream);
@@ -116,12 +116,18 @@ uint32_t readMessage(std::ifstream &stream) {
 
   buffer = new char[size];
   stream.read(buffer, size);
+  std::cout << "size2: " << std::to_string(size) << "\n";
 
   if (compressed && snappy::IsValidCompressedBuffer(buffer, size)) {
+    std::cout << "size3: " << std::to_string(size) << "\n";
+
     std::cout << "valid snappy compressed buffer\n";
   }
+  std::cout << "size4: " << std::to_string(size) << "\n";
 
   delete buffer;
+  std::cout << "size5: " << std::to_string(size) << "\n";
+  return 0;
 }
 
 uint32_t readVarUInt32(std::ifstream &stream) {
