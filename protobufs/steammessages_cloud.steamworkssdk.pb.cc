@@ -60,47 +60,47 @@ void protobuf_AssignDesc_steammessages_5fcloud_2esteamworkssdk_2eproto() {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CCloud_GetUploadServerInfo_Request, appid_),
   };
   CCloud_GetUploadServerInfo_Request_reflection_ =
-    ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
+    new ::google::protobuf::internal::GeneratedMessageReflection(
       CCloud_GetUploadServerInfo_Request_descriptor_,
       CCloud_GetUploadServerInfo_Request::default_instance_,
       CCloud_GetUploadServerInfo_Request_offsets_,
       GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CCloud_GetUploadServerInfo_Request, _has_bits_[0]),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CCloud_GetUploadServerInfo_Request, _unknown_fields_),
       -1,
-      -1,
-      sizeof(CCloud_GetUploadServerInfo_Request),
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CCloud_GetUploadServerInfo_Request, _internal_metadata_),
-      -1);
+      ::google::protobuf::DescriptorPool::generated_pool(),
+      ::google::protobuf::MessageFactory::generated_factory(),
+      sizeof(CCloud_GetUploadServerInfo_Request));
   CCloud_GetUploadServerInfo_Response_descriptor_ = file->message_type(1);
   static const int CCloud_GetUploadServerInfo_Response_offsets_[1] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CCloud_GetUploadServerInfo_Response, server_url_),
   };
   CCloud_GetUploadServerInfo_Response_reflection_ =
-    ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
+    new ::google::protobuf::internal::GeneratedMessageReflection(
       CCloud_GetUploadServerInfo_Response_descriptor_,
       CCloud_GetUploadServerInfo_Response::default_instance_,
       CCloud_GetUploadServerInfo_Response_offsets_,
       GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CCloud_GetUploadServerInfo_Response, _has_bits_[0]),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CCloud_GetUploadServerInfo_Response, _unknown_fields_),
       -1,
-      -1,
-      sizeof(CCloud_GetUploadServerInfo_Response),
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CCloud_GetUploadServerInfo_Response, _internal_metadata_),
-      -1);
+      ::google::protobuf::DescriptorPool::generated_pool(),
+      ::google::protobuf::MessageFactory::generated_factory(),
+      sizeof(CCloud_GetUploadServerInfo_Response));
   CCloud_GetFileDetails_Request_descriptor_ = file->message_type(2);
   static const int CCloud_GetFileDetails_Request_offsets_[2] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CCloud_GetFileDetails_Request, ugcid_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CCloud_GetFileDetails_Request, appid_),
   };
   CCloud_GetFileDetails_Request_reflection_ =
-    ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
+    new ::google::protobuf::internal::GeneratedMessageReflection(
       CCloud_GetFileDetails_Request_descriptor_,
       CCloud_GetFileDetails_Request::default_instance_,
       CCloud_GetFileDetails_Request_offsets_,
       GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CCloud_GetFileDetails_Request, _has_bits_[0]),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CCloud_GetFileDetails_Request, _unknown_fields_),
       -1,
-      -1,
-      sizeof(CCloud_GetFileDetails_Request),
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CCloud_GetFileDetails_Request, _internal_metadata_),
-      -1);
+      ::google::protobuf::DescriptorPool::generated_pool(),
+      ::google::protobuf::MessageFactory::generated_factory(),
+      sizeof(CCloud_GetFileDetails_Request));
   CCloud_UserFile_descriptor_ = file->message_type(3);
   static const int CCloud_UserFile_offsets_[7] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CCloud_UserFile, appid_),
@@ -112,31 +112,31 @@ void protobuf_AssignDesc_steammessages_5fcloud_2esteamworkssdk_2eproto() {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CCloud_UserFile, steamid_creator_),
   };
   CCloud_UserFile_reflection_ =
-    ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
+    new ::google::protobuf::internal::GeneratedMessageReflection(
       CCloud_UserFile_descriptor_,
       CCloud_UserFile::default_instance_,
       CCloud_UserFile_offsets_,
       GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CCloud_UserFile, _has_bits_[0]),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CCloud_UserFile, _unknown_fields_),
       -1,
-      -1,
-      sizeof(CCloud_UserFile),
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CCloud_UserFile, _internal_metadata_),
-      -1);
+      ::google::protobuf::DescriptorPool::generated_pool(),
+      ::google::protobuf::MessageFactory::generated_factory(),
+      sizeof(CCloud_UserFile));
   CCloud_GetFileDetails_Response_descriptor_ = file->message_type(4);
   static const int CCloud_GetFileDetails_Response_offsets_[1] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CCloud_GetFileDetails_Response, details_),
   };
   CCloud_GetFileDetails_Response_reflection_ =
-    ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
+    new ::google::protobuf::internal::GeneratedMessageReflection(
       CCloud_GetFileDetails_Response_descriptor_,
       CCloud_GetFileDetails_Response::default_instance_,
       CCloud_GetFileDetails_Response_offsets_,
       GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CCloud_GetFileDetails_Response, _has_bits_[0]),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CCloud_GetFileDetails_Response, _unknown_fields_),
       -1,
-      -1,
-      sizeof(CCloud_GetFileDetails_Response),
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CCloud_GetFileDetails_Response, _internal_metadata_),
-      -1);
+      ::google::protobuf::DescriptorPool::generated_pool(),
+      ::google::protobuf::MessageFactory::generated_factory(),
+      sizeof(CCloud_GetFileDetails_Response));
   CCloud_EnumerateUserFiles_Request_descriptor_ = file->message_type(5);
   static const int CCloud_EnumerateUserFiles_Request_offsets_[4] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CCloud_EnumerateUserFiles_Request, appid_),
@@ -145,62 +145,62 @@ void protobuf_AssignDesc_steammessages_5fcloud_2esteamworkssdk_2eproto() {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CCloud_EnumerateUserFiles_Request, start_index_),
   };
   CCloud_EnumerateUserFiles_Request_reflection_ =
-    ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
+    new ::google::protobuf::internal::GeneratedMessageReflection(
       CCloud_EnumerateUserFiles_Request_descriptor_,
       CCloud_EnumerateUserFiles_Request::default_instance_,
       CCloud_EnumerateUserFiles_Request_offsets_,
       GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CCloud_EnumerateUserFiles_Request, _has_bits_[0]),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CCloud_EnumerateUserFiles_Request, _unknown_fields_),
       -1,
-      -1,
-      sizeof(CCloud_EnumerateUserFiles_Request),
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CCloud_EnumerateUserFiles_Request, _internal_metadata_),
-      -1);
+      ::google::protobuf::DescriptorPool::generated_pool(),
+      ::google::protobuf::MessageFactory::generated_factory(),
+      sizeof(CCloud_EnumerateUserFiles_Request));
   CCloud_EnumerateUserFiles_Response_descriptor_ = file->message_type(6);
   static const int CCloud_EnumerateUserFiles_Response_offsets_[2] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CCloud_EnumerateUserFiles_Response, files_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CCloud_EnumerateUserFiles_Response, total_files_),
   };
   CCloud_EnumerateUserFiles_Response_reflection_ =
-    ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
+    new ::google::protobuf::internal::GeneratedMessageReflection(
       CCloud_EnumerateUserFiles_Response_descriptor_,
       CCloud_EnumerateUserFiles_Response::default_instance_,
       CCloud_EnumerateUserFiles_Response_offsets_,
       GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CCloud_EnumerateUserFiles_Response, _has_bits_[0]),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CCloud_EnumerateUserFiles_Response, _unknown_fields_),
       -1,
-      -1,
-      sizeof(CCloud_EnumerateUserFiles_Response),
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CCloud_EnumerateUserFiles_Response, _internal_metadata_),
-      -1);
+      ::google::protobuf::DescriptorPool::generated_pool(),
+      ::google::protobuf::MessageFactory::generated_factory(),
+      sizeof(CCloud_EnumerateUserFiles_Response));
   CCloud_Delete_Request_descriptor_ = file->message_type(7);
   static const int CCloud_Delete_Request_offsets_[2] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CCloud_Delete_Request, filename_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CCloud_Delete_Request, appid_),
   };
   CCloud_Delete_Request_reflection_ =
-    ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
+    new ::google::protobuf::internal::GeneratedMessageReflection(
       CCloud_Delete_Request_descriptor_,
       CCloud_Delete_Request::default_instance_,
       CCloud_Delete_Request_offsets_,
       GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CCloud_Delete_Request, _has_bits_[0]),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CCloud_Delete_Request, _unknown_fields_),
       -1,
-      -1,
-      sizeof(CCloud_Delete_Request),
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CCloud_Delete_Request, _internal_metadata_),
-      -1);
+      ::google::protobuf::DescriptorPool::generated_pool(),
+      ::google::protobuf::MessageFactory::generated_factory(),
+      sizeof(CCloud_Delete_Request));
   CCloud_Delete_Response_descriptor_ = file->message_type(8);
   static const int CCloud_Delete_Response_offsets_[1] = {
   };
   CCloud_Delete_Response_reflection_ =
-    ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
+    new ::google::protobuf::internal::GeneratedMessageReflection(
       CCloud_Delete_Response_descriptor_,
       CCloud_Delete_Response::default_instance_,
       CCloud_Delete_Response_offsets_,
       GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CCloud_Delete_Response, _has_bits_[0]),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CCloud_Delete_Response, _unknown_fields_),
       -1,
-      -1,
-      sizeof(CCloud_Delete_Response),
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CCloud_Delete_Response, _internal_metadata_),
-      -1);
+      ::google::protobuf::DescriptorPool::generated_pool(),
+      ::google::protobuf::MessageFactory::generated_factory(),
+      sizeof(CCloud_Delete_Response));
 }
 
 namespace {
@@ -214,23 +214,23 @@ inline void protobuf_AssignDescriptorsOnce() {
 void protobuf_RegisterTypes(const ::std::string&) {
   protobuf_AssignDescriptorsOnce();
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
-      CCloud_GetUploadServerInfo_Request_descriptor_, &CCloud_GetUploadServerInfo_Request::default_instance());
+    CCloud_GetUploadServerInfo_Request_descriptor_, &CCloud_GetUploadServerInfo_Request::default_instance());
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
-      CCloud_GetUploadServerInfo_Response_descriptor_, &CCloud_GetUploadServerInfo_Response::default_instance());
+    CCloud_GetUploadServerInfo_Response_descriptor_, &CCloud_GetUploadServerInfo_Response::default_instance());
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
-      CCloud_GetFileDetails_Request_descriptor_, &CCloud_GetFileDetails_Request::default_instance());
+    CCloud_GetFileDetails_Request_descriptor_, &CCloud_GetFileDetails_Request::default_instance());
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
-      CCloud_UserFile_descriptor_, &CCloud_UserFile::default_instance());
+    CCloud_UserFile_descriptor_, &CCloud_UserFile::default_instance());
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
-      CCloud_GetFileDetails_Response_descriptor_, &CCloud_GetFileDetails_Response::default_instance());
+    CCloud_GetFileDetails_Response_descriptor_, &CCloud_GetFileDetails_Response::default_instance());
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
-      CCloud_EnumerateUserFiles_Request_descriptor_, &CCloud_EnumerateUserFiles_Request::default_instance());
+    CCloud_EnumerateUserFiles_Request_descriptor_, &CCloud_EnumerateUserFiles_Request::default_instance());
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
-      CCloud_EnumerateUserFiles_Response_descriptor_, &CCloud_EnumerateUserFiles_Response::default_instance());
+    CCloud_EnumerateUserFiles_Response_descriptor_, &CCloud_EnumerateUserFiles_Response::default_instance());
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
-      CCloud_Delete_Request_descriptor_, &CCloud_Delete_Request::default_instance());
+    CCloud_Delete_Request_descriptor_, &CCloud_Delete_Request::default_instance());
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
-      CCloud_Delete_Response_descriptor_, &CCloud_Delete_Response::default_instance());
+    CCloud_Delete_Response_descriptor_, &CCloud_Delete_Response::default_instance());
 }
 
 }  // namespace
@@ -343,16 +343,6 @@ struct StaticDescriptorInitializer_steammessages_5fcloud_2esteamworkssdk_2eproto
   }
 } static_descriptor_initializer_steammessages_5fcloud_2esteamworkssdk_2eproto_;
 
-namespace {
-
-static void MergeFromFail(int line) GOOGLE_ATTRIBUTE_COLD;
-static void MergeFromFail(int line) {
-  GOOGLE_CHECK(false) << __FILE__ << ":" << line;
-}
-
-}  // namespace
-
-
 // ===================================================================
 
 #ifndef _MSC_VER
@@ -360,7 +350,7 @@ const int CCloud_GetUploadServerInfo_Request::kAppidFieldNumber;
 #endif  // !_MSC_VER
 
 CCloud_GetUploadServerInfo_Request::CCloud_GetUploadServerInfo_Request()
-  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  : ::google::protobuf::Message() {
   SharedCtor();
   // @@protoc_insertion_point(constructor:CCloud_GetUploadServerInfo_Request)
 }
@@ -369,8 +359,7 @@ void CCloud_GetUploadServerInfo_Request::InitAsDefaultInstance() {
 }
 
 CCloud_GetUploadServerInfo_Request::CCloud_GetUploadServerInfo_Request(const CCloud_GetUploadServerInfo_Request& from)
-  : ::google::protobuf::Message(),
-    _internal_metadata_(NULL) {
+  : ::google::protobuf::Message() {
   SharedCtor();
   MergeFrom(from);
   // @@protoc_insertion_point(copy_constructor:CCloud_GetUploadServerInfo_Request)
@@ -409,20 +398,14 @@ const CCloud_GetUploadServerInfo_Request& CCloud_GetUploadServerInfo_Request::de
 
 CCloud_GetUploadServerInfo_Request* CCloud_GetUploadServerInfo_Request::default_instance_ = NULL;
 
-CCloud_GetUploadServerInfo_Request* CCloud_GetUploadServerInfo_Request::New(::google::protobuf::Arena* arena) const {
-  CCloud_GetUploadServerInfo_Request* n = new CCloud_GetUploadServerInfo_Request;
-  if (arena != NULL) {
-    arena->Own(n);
-  }
-  return n;
+CCloud_GetUploadServerInfo_Request* CCloud_GetUploadServerInfo_Request::New() const {
+  return new CCloud_GetUploadServerInfo_Request;
 }
 
 void CCloud_GetUploadServerInfo_Request::Clear() {
   appid_ = 0u;
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
-  if (_internal_metadata_.have_unknown_fields()) {
-    mutable_unknown_fields()->Clear();
-  }
+  mutable_unknown_fields()->Clear();
 }
 
 bool CCloud_GetUploadServerInfo_Request::MergePartialFromCodedStream(
@@ -479,7 +462,7 @@ void CCloud_GetUploadServerInfo_Request::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteUInt32(1, this->appid(), output);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
   }
@@ -494,7 +477,7 @@ void CCloud_GetUploadServerInfo_Request::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(1, this->appid(), target);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
   }
@@ -505,14 +488,16 @@ void CCloud_GetUploadServerInfo_Request::SerializeWithCachedSizes(
 int CCloud_GetUploadServerInfo_Request::ByteSize() const {
   int total_size = 0;
 
-  // optional uint32 appid = 1;
-  if (has_appid()) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::UInt32Size(
-        this->appid());
-  }
+  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    // optional uint32 appid = 1;
+    if (has_appid()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::UInt32Size(
+          this->appid());
+    }
 
-  if (_internal_metadata_.have_unknown_fields()) {
+  }
+  if (!unknown_fields().empty()) {
     total_size +=
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         unknown_fields());
@@ -524,10 +509,10 @@ int CCloud_GetUploadServerInfo_Request::ByteSize() const {
 }
 
 void CCloud_GetUploadServerInfo_Request::MergeFrom(const ::google::protobuf::Message& from) {
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
-  const CCloud_GetUploadServerInfo_Request* source = 
-      ::google::protobuf::internal::DynamicCastToGenerated<const CCloud_GetUploadServerInfo_Request>(
-          &from);
+  GOOGLE_CHECK_NE(&from, this);
+  const CCloud_GetUploadServerInfo_Request* source =
+    ::google::protobuf::internal::dynamic_cast_if_available<const CCloud_GetUploadServerInfo_Request*>(
+      &from);
   if (source == NULL) {
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
   } else {
@@ -536,15 +521,13 @@ void CCloud_GetUploadServerInfo_Request::MergeFrom(const ::google::protobuf::Mes
 }
 
 void CCloud_GetUploadServerInfo_Request::MergeFrom(const CCloud_GetUploadServerInfo_Request& from) {
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  GOOGLE_CHECK_NE(&from, this);
   if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (from.has_appid()) {
       set_appid(from.appid());
     }
   }
-  if (from._internal_metadata_.have_unknown_fields()) {
-    mutable_unknown_fields()->MergeFrom(from.unknown_fields());
-  }
+  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
 }
 
 void CCloud_GetUploadServerInfo_Request::CopyFrom(const ::google::protobuf::Message& from) {
@@ -565,14 +548,12 @@ bool CCloud_GetUploadServerInfo_Request::IsInitialized() const {
 }
 
 void CCloud_GetUploadServerInfo_Request::Swap(CCloud_GetUploadServerInfo_Request* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
-void CCloud_GetUploadServerInfo_Request::InternalSwap(CCloud_GetUploadServerInfo_Request* other) {
-  std::swap(appid_, other->appid_);
-  std::swap(_has_bits_[0], other->_has_bits_[0]);
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  std::swap(_cached_size_, other->_cached_size_);
+  if (other != this) {
+    std::swap(appid_, other->appid_);
+    std::swap(_has_bits_[0], other->_has_bits_[0]);
+    _unknown_fields_.Swap(&other->_unknown_fields_);
+    std::swap(_cached_size_, other->_cached_size_);
+  }
 }
 
 ::google::protobuf::Metadata CCloud_GetUploadServerInfo_Request::GetMetadata() const {
@@ -583,34 +564,6 @@ void CCloud_GetUploadServerInfo_Request::InternalSwap(CCloud_GetUploadServerInfo
   return metadata;
 }
 
-#if PROTOBUF_INLINE_NOT_IN_HEADERS
-// CCloud_GetUploadServerInfo_Request
-
-// optional uint32 appid = 1;
-bool CCloud_GetUploadServerInfo_Request::has_appid() const {
-  return (_has_bits_[0] & 0x00000001u) != 0;
-}
-void CCloud_GetUploadServerInfo_Request::set_has_appid() {
-  _has_bits_[0] |= 0x00000001u;
-}
-void CCloud_GetUploadServerInfo_Request::clear_has_appid() {
-  _has_bits_[0] &= ~0x00000001u;
-}
-void CCloud_GetUploadServerInfo_Request::clear_appid() {
-  appid_ = 0u;
-  clear_has_appid();
-}
- ::google::protobuf::uint32 CCloud_GetUploadServerInfo_Request::appid() const {
-  // @@protoc_insertion_point(field_get:CCloud_GetUploadServerInfo_Request.appid)
-  return appid_;
-}
- void CCloud_GetUploadServerInfo_Request::set_appid(::google::protobuf::uint32 value) {
-  set_has_appid();
-  appid_ = value;
-  // @@protoc_insertion_point(field_set:CCloud_GetUploadServerInfo_Request.appid)
-}
-
-#endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
 
 // ===================================================================
 
@@ -619,7 +572,7 @@ const int CCloud_GetUploadServerInfo_Response::kServerUrlFieldNumber;
 #endif  // !_MSC_VER
 
 CCloud_GetUploadServerInfo_Response::CCloud_GetUploadServerInfo_Response()
-  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  : ::google::protobuf::Message() {
   SharedCtor();
   // @@protoc_insertion_point(constructor:CCloud_GetUploadServerInfo_Response)
 }
@@ -628,8 +581,7 @@ void CCloud_GetUploadServerInfo_Response::InitAsDefaultInstance() {
 }
 
 CCloud_GetUploadServerInfo_Response::CCloud_GetUploadServerInfo_Response(const CCloud_GetUploadServerInfo_Response& from)
-  : ::google::protobuf::Message(),
-    _internal_metadata_(NULL) {
+  : ::google::protobuf::Message() {
   SharedCtor();
   MergeFrom(from);
   // @@protoc_insertion_point(copy_constructor:CCloud_GetUploadServerInfo_Response)
@@ -638,7 +590,7 @@ CCloud_GetUploadServerInfo_Response::CCloud_GetUploadServerInfo_Response(const C
 void CCloud_GetUploadServerInfo_Response::SharedCtor() {
   ::google::protobuf::internal::GetEmptyString();
   _cached_size_ = 0;
-  server_url_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  server_url_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
 
@@ -648,7 +600,9 @@ CCloud_GetUploadServerInfo_Response::~CCloud_GetUploadServerInfo_Response() {
 }
 
 void CCloud_GetUploadServerInfo_Response::SharedDtor() {
-  server_url_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (server_url_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete server_url_;
+  }
   if (this != default_instance_) {
   }
 }
@@ -670,22 +624,18 @@ const CCloud_GetUploadServerInfo_Response& CCloud_GetUploadServerInfo_Response::
 
 CCloud_GetUploadServerInfo_Response* CCloud_GetUploadServerInfo_Response::default_instance_ = NULL;
 
-CCloud_GetUploadServerInfo_Response* CCloud_GetUploadServerInfo_Response::New(::google::protobuf::Arena* arena) const {
-  CCloud_GetUploadServerInfo_Response* n = new CCloud_GetUploadServerInfo_Response;
-  if (arena != NULL) {
-    arena->Own(n);
-  }
-  return n;
+CCloud_GetUploadServerInfo_Response* CCloud_GetUploadServerInfo_Response::New() const {
+  return new CCloud_GetUploadServerInfo_Response;
 }
 
 void CCloud_GetUploadServerInfo_Response::Clear() {
   if (has_server_url()) {
-    server_url_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    if (server_url_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+      server_url_->clear();
+    }
   }
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
-  if (_internal_metadata_.have_unknown_fields()) {
-    mutable_unknown_fields()->Clear();
-  }
+  mutable_unknown_fields()->Clear();
 }
 
 bool CCloud_GetUploadServerInfo_Response::MergePartialFromCodedStream(
@@ -706,7 +656,7 @@ bool CCloud_GetUploadServerInfo_Response::MergePartialFromCodedStream(
           ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
             this->server_url().data(), this->server_url().length(),
             ::google::protobuf::internal::WireFormat::PARSE,
-            "CCloud_GetUploadServerInfo_Response.server_url");
+            "server_url");
         } else {
           goto handle_unusual;
         }
@@ -744,12 +694,12 @@ void CCloud_GetUploadServerInfo_Response::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
       this->server_url().data(), this->server_url().length(),
       ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "CCloud_GetUploadServerInfo_Response.server_url");
+      "server_url");
     ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
       1, this->server_url(), output);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
   }
@@ -764,13 +714,13 @@ void CCloud_GetUploadServerInfo_Response::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
       this->server_url().data(), this->server_url().length(),
       ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "CCloud_GetUploadServerInfo_Response.server_url");
+      "server_url");
     target =
       ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
         1, this->server_url(), target);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
   }
@@ -781,14 +731,16 @@ void CCloud_GetUploadServerInfo_Response::SerializeWithCachedSizes(
 int CCloud_GetUploadServerInfo_Response::ByteSize() const {
   int total_size = 0;
 
-  // optional string server_url = 1;
-  if (has_server_url()) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::StringSize(
-        this->server_url());
-  }
+  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    // optional string server_url = 1;
+    if (has_server_url()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::StringSize(
+          this->server_url());
+    }
 
-  if (_internal_metadata_.have_unknown_fields()) {
+  }
+  if (!unknown_fields().empty()) {
     total_size +=
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         unknown_fields());
@@ -800,10 +752,10 @@ int CCloud_GetUploadServerInfo_Response::ByteSize() const {
 }
 
 void CCloud_GetUploadServerInfo_Response::MergeFrom(const ::google::protobuf::Message& from) {
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
-  const CCloud_GetUploadServerInfo_Response* source = 
-      ::google::protobuf::internal::DynamicCastToGenerated<const CCloud_GetUploadServerInfo_Response>(
-          &from);
+  GOOGLE_CHECK_NE(&from, this);
+  const CCloud_GetUploadServerInfo_Response* source =
+    ::google::protobuf::internal::dynamic_cast_if_available<const CCloud_GetUploadServerInfo_Response*>(
+      &from);
   if (source == NULL) {
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
   } else {
@@ -812,16 +764,13 @@ void CCloud_GetUploadServerInfo_Response::MergeFrom(const ::google::protobuf::Me
 }
 
 void CCloud_GetUploadServerInfo_Response::MergeFrom(const CCloud_GetUploadServerInfo_Response& from) {
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  GOOGLE_CHECK_NE(&from, this);
   if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (from.has_server_url()) {
-      set_has_server_url();
-      server_url_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.server_url_);
+      set_server_url(from.server_url());
     }
   }
-  if (from._internal_metadata_.have_unknown_fields()) {
-    mutable_unknown_fields()->MergeFrom(from.unknown_fields());
-  }
+  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
 }
 
 void CCloud_GetUploadServerInfo_Response::CopyFrom(const ::google::protobuf::Message& from) {
@@ -842,14 +791,12 @@ bool CCloud_GetUploadServerInfo_Response::IsInitialized() const {
 }
 
 void CCloud_GetUploadServerInfo_Response::Swap(CCloud_GetUploadServerInfo_Response* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
-void CCloud_GetUploadServerInfo_Response::InternalSwap(CCloud_GetUploadServerInfo_Response* other) {
-  server_url_.Swap(&other->server_url_);
-  std::swap(_has_bits_[0], other->_has_bits_[0]);
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  std::swap(_cached_size_, other->_cached_size_);
+  if (other != this) {
+    std::swap(server_url_, other->server_url_);
+    std::swap(_has_bits_[0], other->_has_bits_[0]);
+    _unknown_fields_.Swap(&other->_unknown_fields_);
+    std::swap(_cached_size_, other->_cached_size_);
+  }
 }
 
 ::google::protobuf::Metadata CCloud_GetUploadServerInfo_Response::GetMetadata() const {
@@ -860,63 +807,6 @@ void CCloud_GetUploadServerInfo_Response::InternalSwap(CCloud_GetUploadServerInf
   return metadata;
 }
 
-#if PROTOBUF_INLINE_NOT_IN_HEADERS
-// CCloud_GetUploadServerInfo_Response
-
-// optional string server_url = 1;
-bool CCloud_GetUploadServerInfo_Response::has_server_url() const {
-  return (_has_bits_[0] & 0x00000001u) != 0;
-}
-void CCloud_GetUploadServerInfo_Response::set_has_server_url() {
-  _has_bits_[0] |= 0x00000001u;
-}
-void CCloud_GetUploadServerInfo_Response::clear_has_server_url() {
-  _has_bits_[0] &= ~0x00000001u;
-}
-void CCloud_GetUploadServerInfo_Response::clear_server_url() {
-  server_url_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  clear_has_server_url();
-}
- const ::std::string& CCloud_GetUploadServerInfo_Response::server_url() const {
-  // @@protoc_insertion_point(field_get:CCloud_GetUploadServerInfo_Response.server_url)
-  return server_url_.GetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
- void CCloud_GetUploadServerInfo_Response::set_server_url(const ::std::string& value) {
-  set_has_server_url();
-  server_url_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:CCloud_GetUploadServerInfo_Response.server_url)
-}
- void CCloud_GetUploadServerInfo_Response::set_server_url(const char* value) {
-  set_has_server_url();
-  server_url_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:CCloud_GetUploadServerInfo_Response.server_url)
-}
- void CCloud_GetUploadServerInfo_Response::set_server_url(const char* value, size_t size) {
-  set_has_server_url();
-  server_url_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-      ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:CCloud_GetUploadServerInfo_Response.server_url)
-}
- ::std::string* CCloud_GetUploadServerInfo_Response::mutable_server_url() {
-  set_has_server_url();
-  // @@protoc_insertion_point(field_mutable:CCloud_GetUploadServerInfo_Response.server_url)
-  return server_url_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
- ::std::string* CCloud_GetUploadServerInfo_Response::release_server_url() {
-  clear_has_server_url();
-  return server_url_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
- void CCloud_GetUploadServerInfo_Response::set_allocated_server_url(::std::string* server_url) {
-  if (server_url != NULL) {
-    set_has_server_url();
-  } else {
-    clear_has_server_url();
-  }
-  server_url_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), server_url);
-  // @@protoc_insertion_point(field_set_allocated:CCloud_GetUploadServerInfo_Response.server_url)
-}
-
-#endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
 
 // ===================================================================
 
@@ -926,7 +816,7 @@ const int CCloud_GetFileDetails_Request::kAppidFieldNumber;
 #endif  // !_MSC_VER
 
 CCloud_GetFileDetails_Request::CCloud_GetFileDetails_Request()
-  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  : ::google::protobuf::Message() {
   SharedCtor();
   // @@protoc_insertion_point(constructor:CCloud_GetFileDetails_Request)
 }
@@ -935,8 +825,7 @@ void CCloud_GetFileDetails_Request::InitAsDefaultInstance() {
 }
 
 CCloud_GetFileDetails_Request::CCloud_GetFileDetails_Request(const CCloud_GetFileDetails_Request& from)
-  : ::google::protobuf::Message(),
-    _internal_metadata_(NULL) {
+  : ::google::protobuf::Message() {
   SharedCtor();
   MergeFrom(from);
   // @@protoc_insertion_point(copy_constructor:CCloud_GetFileDetails_Request)
@@ -976,32 +865,28 @@ const CCloud_GetFileDetails_Request& CCloud_GetFileDetails_Request::default_inst
 
 CCloud_GetFileDetails_Request* CCloud_GetFileDetails_Request::default_instance_ = NULL;
 
-CCloud_GetFileDetails_Request* CCloud_GetFileDetails_Request::New(::google::protobuf::Arena* arena) const {
-  CCloud_GetFileDetails_Request* n = new CCloud_GetFileDetails_Request;
-  if (arena != NULL) {
-    arena->Own(n);
-  }
-  return n;
+CCloud_GetFileDetails_Request* CCloud_GetFileDetails_Request::New() const {
+  return new CCloud_GetFileDetails_Request;
 }
 
 void CCloud_GetFileDetails_Request::Clear() {
-#define ZR_HELPER_(f) reinterpret_cast<char*>(\
-  &reinterpret_cast<CCloud_GetFileDetails_Request*>(16)->f)
+#define OFFSET_OF_FIELD_(f) (reinterpret_cast<char*>(      \
+  &reinterpret_cast<CCloud_GetFileDetails_Request*>(16)->f) - \
+   reinterpret_cast<char*>(16))
 
-#define ZR_(first, last) do {\
-  ::memset(&first, 0,\
-           ZR_HELPER_(last) - ZR_HELPER_(first) + sizeof(last));\
-} while (0)
+#define ZR_(first, last) do {                              \
+    size_t f = OFFSET_OF_FIELD_(first);                    \
+    size_t n = OFFSET_OF_FIELD_(last) - f + sizeof(last);  \
+    ::memset(&first, 0, n);                                \
+  } while (0)
 
   ZR_(ugcid_, appid_);
 
-#undef ZR_HELPER_
+#undef OFFSET_OF_FIELD_
 #undef ZR_
 
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
-  if (_internal_metadata_.have_unknown_fields()) {
-    mutable_unknown_fields()->Clear();
-  }
+  mutable_unknown_fields()->Clear();
 }
 
 bool CCloud_GetFileDetails_Request::MergePartialFromCodedStream(
@@ -1078,7 +963,7 @@ void CCloud_GetFileDetails_Request::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteUInt32(2, this->appid(), output);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
   }
@@ -1098,7 +983,7 @@ void CCloud_GetFileDetails_Request::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(2, this->appid(), target);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
   }
@@ -1109,7 +994,7 @@ void CCloud_GetFileDetails_Request::SerializeWithCachedSizes(
 int CCloud_GetFileDetails_Request::ByteSize() const {
   int total_size = 0;
 
-  if (_has_bits_[0 / 32] & 3u) {
+  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     // optional uint64 ugcid = 1;
     if (has_ugcid()) {
       total_size += 1 +
@@ -1125,7 +1010,7 @@ int CCloud_GetFileDetails_Request::ByteSize() const {
     }
 
   }
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     total_size +=
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         unknown_fields());
@@ -1137,10 +1022,10 @@ int CCloud_GetFileDetails_Request::ByteSize() const {
 }
 
 void CCloud_GetFileDetails_Request::MergeFrom(const ::google::protobuf::Message& from) {
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
-  const CCloud_GetFileDetails_Request* source = 
-      ::google::protobuf::internal::DynamicCastToGenerated<const CCloud_GetFileDetails_Request>(
-          &from);
+  GOOGLE_CHECK_NE(&from, this);
+  const CCloud_GetFileDetails_Request* source =
+    ::google::protobuf::internal::dynamic_cast_if_available<const CCloud_GetFileDetails_Request*>(
+      &from);
   if (source == NULL) {
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
   } else {
@@ -1149,7 +1034,7 @@ void CCloud_GetFileDetails_Request::MergeFrom(const ::google::protobuf::Message&
 }
 
 void CCloud_GetFileDetails_Request::MergeFrom(const CCloud_GetFileDetails_Request& from) {
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  GOOGLE_CHECK_NE(&from, this);
   if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (from.has_ugcid()) {
       set_ugcid(from.ugcid());
@@ -1158,9 +1043,7 @@ void CCloud_GetFileDetails_Request::MergeFrom(const CCloud_GetFileDetails_Reques
       set_appid(from.appid());
     }
   }
-  if (from._internal_metadata_.have_unknown_fields()) {
-    mutable_unknown_fields()->MergeFrom(from.unknown_fields());
-  }
+  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
 }
 
 void CCloud_GetFileDetails_Request::CopyFrom(const ::google::protobuf::Message& from) {
@@ -1181,15 +1064,13 @@ bool CCloud_GetFileDetails_Request::IsInitialized() const {
 }
 
 void CCloud_GetFileDetails_Request::Swap(CCloud_GetFileDetails_Request* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
-void CCloud_GetFileDetails_Request::InternalSwap(CCloud_GetFileDetails_Request* other) {
-  std::swap(ugcid_, other->ugcid_);
-  std::swap(appid_, other->appid_);
-  std::swap(_has_bits_[0], other->_has_bits_[0]);
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  std::swap(_cached_size_, other->_cached_size_);
+  if (other != this) {
+    std::swap(ugcid_, other->ugcid_);
+    std::swap(appid_, other->appid_);
+    std::swap(_has_bits_[0], other->_has_bits_[0]);
+    _unknown_fields_.Swap(&other->_unknown_fields_);
+    std::swap(_cached_size_, other->_cached_size_);
+  }
 }
 
 ::google::protobuf::Metadata CCloud_GetFileDetails_Request::GetMetadata() const {
@@ -1200,58 +1081,6 @@ void CCloud_GetFileDetails_Request::InternalSwap(CCloud_GetFileDetails_Request* 
   return metadata;
 }
 
-#if PROTOBUF_INLINE_NOT_IN_HEADERS
-// CCloud_GetFileDetails_Request
-
-// optional uint64 ugcid = 1;
-bool CCloud_GetFileDetails_Request::has_ugcid() const {
-  return (_has_bits_[0] & 0x00000001u) != 0;
-}
-void CCloud_GetFileDetails_Request::set_has_ugcid() {
-  _has_bits_[0] |= 0x00000001u;
-}
-void CCloud_GetFileDetails_Request::clear_has_ugcid() {
-  _has_bits_[0] &= ~0x00000001u;
-}
-void CCloud_GetFileDetails_Request::clear_ugcid() {
-  ugcid_ = GOOGLE_ULONGLONG(0);
-  clear_has_ugcid();
-}
- ::google::protobuf::uint64 CCloud_GetFileDetails_Request::ugcid() const {
-  // @@protoc_insertion_point(field_get:CCloud_GetFileDetails_Request.ugcid)
-  return ugcid_;
-}
- void CCloud_GetFileDetails_Request::set_ugcid(::google::protobuf::uint64 value) {
-  set_has_ugcid();
-  ugcid_ = value;
-  // @@protoc_insertion_point(field_set:CCloud_GetFileDetails_Request.ugcid)
-}
-
-// optional uint32 appid = 2;
-bool CCloud_GetFileDetails_Request::has_appid() const {
-  return (_has_bits_[0] & 0x00000002u) != 0;
-}
-void CCloud_GetFileDetails_Request::set_has_appid() {
-  _has_bits_[0] |= 0x00000002u;
-}
-void CCloud_GetFileDetails_Request::clear_has_appid() {
-  _has_bits_[0] &= ~0x00000002u;
-}
-void CCloud_GetFileDetails_Request::clear_appid() {
-  appid_ = 0u;
-  clear_has_appid();
-}
- ::google::protobuf::uint32 CCloud_GetFileDetails_Request::appid() const {
-  // @@protoc_insertion_point(field_get:CCloud_GetFileDetails_Request.appid)
-  return appid_;
-}
- void CCloud_GetFileDetails_Request::set_appid(::google::protobuf::uint32 value) {
-  set_has_appid();
-  appid_ = value;
-  // @@protoc_insertion_point(field_set:CCloud_GetFileDetails_Request.appid)
-}
-
-#endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
 
 // ===================================================================
 
@@ -1266,7 +1095,7 @@ const int CCloud_UserFile::kSteamidCreatorFieldNumber;
 #endif  // !_MSC_VER
 
 CCloud_UserFile::CCloud_UserFile()
-  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  : ::google::protobuf::Message() {
   SharedCtor();
   // @@protoc_insertion_point(constructor:CCloud_UserFile)
 }
@@ -1275,8 +1104,7 @@ void CCloud_UserFile::InitAsDefaultInstance() {
 }
 
 CCloud_UserFile::CCloud_UserFile(const CCloud_UserFile& from)
-  : ::google::protobuf::Message(),
-    _internal_metadata_(NULL) {
+  : ::google::protobuf::Message() {
   SharedCtor();
   MergeFrom(from);
   // @@protoc_insertion_point(copy_constructor:CCloud_UserFile)
@@ -1287,10 +1115,10 @@ void CCloud_UserFile::SharedCtor() {
   _cached_size_ = 0;
   appid_ = 0u;
   ugcid_ = GOOGLE_ULONGLONG(0);
-  filename_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  filename_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   timestamp_ = GOOGLE_ULONGLONG(0);
   file_size_ = 0u;
-  url_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  url_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   steamid_creator_ = GOOGLE_ULONGLONG(0);
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
@@ -1301,8 +1129,12 @@ CCloud_UserFile::~CCloud_UserFile() {
 }
 
 void CCloud_UserFile::SharedDtor() {
-  filename_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  url_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (filename_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete filename_;
+  }
+  if (url_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete url_;
+  }
   if (this != default_instance_) {
   }
 }
@@ -1324,42 +1156,42 @@ const CCloud_UserFile& CCloud_UserFile::default_instance() {
 
 CCloud_UserFile* CCloud_UserFile::default_instance_ = NULL;
 
-CCloud_UserFile* CCloud_UserFile::New(::google::protobuf::Arena* arena) const {
-  CCloud_UserFile* n = new CCloud_UserFile;
-  if (arena != NULL) {
-    arena->Own(n);
-  }
-  return n;
+CCloud_UserFile* CCloud_UserFile::New() const {
+  return new CCloud_UserFile;
 }
 
 void CCloud_UserFile::Clear() {
-#define ZR_HELPER_(f) reinterpret_cast<char*>(\
-  &reinterpret_cast<CCloud_UserFile*>(16)->f)
+#define OFFSET_OF_FIELD_(f) (reinterpret_cast<char*>(      \
+  &reinterpret_cast<CCloud_UserFile*>(16)->f) - \
+   reinterpret_cast<char*>(16))
 
-#define ZR_(first, last) do {\
-  ::memset(&first, 0,\
-           ZR_HELPER_(last) - ZR_HELPER_(first) + sizeof(last));\
-} while (0)
+#define ZR_(first, last) do {                              \
+    size_t f = OFFSET_OF_FIELD_(first);                    \
+    size_t n = OFFSET_OF_FIELD_(last) - f + sizeof(last);  \
+    ::memset(&first, 0, n);                                \
+  } while (0)
 
-  if (_has_bits_[0 / 32] & 127u) {
+  if (_has_bits_[0 / 32] & 127) {
     ZR_(appid_, timestamp_);
     ugcid_ = GOOGLE_ULONGLONG(0);
     if (has_filename()) {
-      filename_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+      if (filename_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+        filename_->clear();
+      }
     }
     if (has_url()) {
-      url_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+      if (url_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+        url_->clear();
+      }
     }
     steamid_creator_ = GOOGLE_ULONGLONG(0);
   }
 
-#undef ZR_HELPER_
+#undef OFFSET_OF_FIELD_
 #undef ZR_
 
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
-  if (_internal_metadata_.have_unknown_fields()) {
-    mutable_unknown_fields()->Clear();
-  }
+  mutable_unknown_fields()->Clear();
 }
 
 bool CCloud_UserFile::MergePartialFromCodedStream(
@@ -1410,7 +1242,7 @@ bool CCloud_UserFile::MergePartialFromCodedStream(
           ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
             this->filename().data(), this->filename().length(),
             ::google::protobuf::internal::WireFormat::PARSE,
-            "CCloud_UserFile.filename");
+            "filename");
         } else {
           goto handle_unusual;
         }
@@ -1457,7 +1289,7 @@ bool CCloud_UserFile::MergePartialFromCodedStream(
           ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
             this->url().data(), this->url().length(),
             ::google::protobuf::internal::WireFormat::PARSE,
-            "CCloud_UserFile.url");
+            "url");
         } else {
           goto handle_unusual;
         }
@@ -1520,7 +1352,7 @@ void CCloud_UserFile::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
       this->filename().data(), this->filename().length(),
       ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "CCloud_UserFile.filename");
+      "filename");
     ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
       3, this->filename(), output);
   }
@@ -1540,7 +1372,7 @@ void CCloud_UserFile::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
       this->url().data(), this->url().length(),
       ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "CCloud_UserFile.url");
+      "url");
     ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
       6, this->url(), output);
   }
@@ -1550,7 +1382,7 @@ void CCloud_UserFile::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteFixed64(7, this->steamid_creator(), output);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
   }
@@ -1575,7 +1407,7 @@ void CCloud_UserFile::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
       this->filename().data(), this->filename().length(),
       ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "CCloud_UserFile.filename");
+      "filename");
     target =
       ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
         3, this->filename(), target);
@@ -1596,7 +1428,7 @@ void CCloud_UserFile::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
       this->url().data(), this->url().length(),
       ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "CCloud_UserFile.url");
+      "url");
     target =
       ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
         6, this->url(), target);
@@ -1607,7 +1439,7 @@ void CCloud_UserFile::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteFixed64ToArray(7, this->steamid_creator(), target);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
   }
@@ -1618,7 +1450,7 @@ void CCloud_UserFile::SerializeWithCachedSizes(
 int CCloud_UserFile::ByteSize() const {
   int total_size = 0;
 
-  if (_has_bits_[0 / 32] & 127u) {
+  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     // optional uint32 appid = 1;
     if (has_appid()) {
       total_size += 1 +
@@ -1667,7 +1499,7 @@ int CCloud_UserFile::ByteSize() const {
     }
 
   }
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     total_size +=
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         unknown_fields());
@@ -1679,10 +1511,10 @@ int CCloud_UserFile::ByteSize() const {
 }
 
 void CCloud_UserFile::MergeFrom(const ::google::protobuf::Message& from) {
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
-  const CCloud_UserFile* source = 
-      ::google::protobuf::internal::DynamicCastToGenerated<const CCloud_UserFile>(
-          &from);
+  GOOGLE_CHECK_NE(&from, this);
+  const CCloud_UserFile* source =
+    ::google::protobuf::internal::dynamic_cast_if_available<const CCloud_UserFile*>(
+      &from);
   if (source == NULL) {
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
   } else {
@@ -1691,7 +1523,7 @@ void CCloud_UserFile::MergeFrom(const ::google::protobuf::Message& from) {
 }
 
 void CCloud_UserFile::MergeFrom(const CCloud_UserFile& from) {
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  GOOGLE_CHECK_NE(&from, this);
   if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (from.has_appid()) {
       set_appid(from.appid());
@@ -1700,8 +1532,7 @@ void CCloud_UserFile::MergeFrom(const CCloud_UserFile& from) {
       set_ugcid(from.ugcid());
     }
     if (from.has_filename()) {
-      set_has_filename();
-      filename_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.filename_);
+      set_filename(from.filename());
     }
     if (from.has_timestamp()) {
       set_timestamp(from.timestamp());
@@ -1710,16 +1541,13 @@ void CCloud_UserFile::MergeFrom(const CCloud_UserFile& from) {
       set_file_size(from.file_size());
     }
     if (from.has_url()) {
-      set_has_url();
-      url_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.url_);
+      set_url(from.url());
     }
     if (from.has_steamid_creator()) {
       set_steamid_creator(from.steamid_creator());
     }
   }
-  if (from._internal_metadata_.have_unknown_fields()) {
-    mutable_unknown_fields()->MergeFrom(from.unknown_fields());
-  }
+  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
 }
 
 void CCloud_UserFile::CopyFrom(const ::google::protobuf::Message& from) {
@@ -1740,20 +1568,18 @@ bool CCloud_UserFile::IsInitialized() const {
 }
 
 void CCloud_UserFile::Swap(CCloud_UserFile* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
-void CCloud_UserFile::InternalSwap(CCloud_UserFile* other) {
-  std::swap(appid_, other->appid_);
-  std::swap(ugcid_, other->ugcid_);
-  filename_.Swap(&other->filename_);
-  std::swap(timestamp_, other->timestamp_);
-  std::swap(file_size_, other->file_size_);
-  url_.Swap(&other->url_);
-  std::swap(steamid_creator_, other->steamid_creator_);
-  std::swap(_has_bits_[0], other->_has_bits_[0]);
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  std::swap(_cached_size_, other->_cached_size_);
+  if (other != this) {
+    std::swap(appid_, other->appid_);
+    std::swap(ugcid_, other->ugcid_);
+    std::swap(filename_, other->filename_);
+    std::swap(timestamp_, other->timestamp_);
+    std::swap(file_size_, other->file_size_);
+    std::swap(url_, other->url_);
+    std::swap(steamid_creator_, other->steamid_creator_);
+    std::swap(_has_bits_[0], other->_has_bits_[0]);
+    _unknown_fields_.Swap(&other->_unknown_fields_);
+    std::swap(_cached_size_, other->_cached_size_);
+  }
 }
 
 ::google::protobuf::Metadata CCloud_UserFile::GetMetadata() const {
@@ -1764,236 +1590,6 @@ void CCloud_UserFile::InternalSwap(CCloud_UserFile* other) {
   return metadata;
 }
 
-#if PROTOBUF_INLINE_NOT_IN_HEADERS
-// CCloud_UserFile
-
-// optional uint32 appid = 1;
-bool CCloud_UserFile::has_appid() const {
-  return (_has_bits_[0] & 0x00000001u) != 0;
-}
-void CCloud_UserFile::set_has_appid() {
-  _has_bits_[0] |= 0x00000001u;
-}
-void CCloud_UserFile::clear_has_appid() {
-  _has_bits_[0] &= ~0x00000001u;
-}
-void CCloud_UserFile::clear_appid() {
-  appid_ = 0u;
-  clear_has_appid();
-}
- ::google::protobuf::uint32 CCloud_UserFile::appid() const {
-  // @@protoc_insertion_point(field_get:CCloud_UserFile.appid)
-  return appid_;
-}
- void CCloud_UserFile::set_appid(::google::protobuf::uint32 value) {
-  set_has_appid();
-  appid_ = value;
-  // @@protoc_insertion_point(field_set:CCloud_UserFile.appid)
-}
-
-// optional uint64 ugcid = 2;
-bool CCloud_UserFile::has_ugcid() const {
-  return (_has_bits_[0] & 0x00000002u) != 0;
-}
-void CCloud_UserFile::set_has_ugcid() {
-  _has_bits_[0] |= 0x00000002u;
-}
-void CCloud_UserFile::clear_has_ugcid() {
-  _has_bits_[0] &= ~0x00000002u;
-}
-void CCloud_UserFile::clear_ugcid() {
-  ugcid_ = GOOGLE_ULONGLONG(0);
-  clear_has_ugcid();
-}
- ::google::protobuf::uint64 CCloud_UserFile::ugcid() const {
-  // @@protoc_insertion_point(field_get:CCloud_UserFile.ugcid)
-  return ugcid_;
-}
- void CCloud_UserFile::set_ugcid(::google::protobuf::uint64 value) {
-  set_has_ugcid();
-  ugcid_ = value;
-  // @@protoc_insertion_point(field_set:CCloud_UserFile.ugcid)
-}
-
-// optional string filename = 3;
-bool CCloud_UserFile::has_filename() const {
-  return (_has_bits_[0] & 0x00000004u) != 0;
-}
-void CCloud_UserFile::set_has_filename() {
-  _has_bits_[0] |= 0x00000004u;
-}
-void CCloud_UserFile::clear_has_filename() {
-  _has_bits_[0] &= ~0x00000004u;
-}
-void CCloud_UserFile::clear_filename() {
-  filename_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  clear_has_filename();
-}
- const ::std::string& CCloud_UserFile::filename() const {
-  // @@protoc_insertion_point(field_get:CCloud_UserFile.filename)
-  return filename_.GetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
- void CCloud_UserFile::set_filename(const ::std::string& value) {
-  set_has_filename();
-  filename_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:CCloud_UserFile.filename)
-}
- void CCloud_UserFile::set_filename(const char* value) {
-  set_has_filename();
-  filename_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:CCloud_UserFile.filename)
-}
- void CCloud_UserFile::set_filename(const char* value, size_t size) {
-  set_has_filename();
-  filename_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-      ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:CCloud_UserFile.filename)
-}
- ::std::string* CCloud_UserFile::mutable_filename() {
-  set_has_filename();
-  // @@protoc_insertion_point(field_mutable:CCloud_UserFile.filename)
-  return filename_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
- ::std::string* CCloud_UserFile::release_filename() {
-  clear_has_filename();
-  return filename_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
- void CCloud_UserFile::set_allocated_filename(::std::string* filename) {
-  if (filename != NULL) {
-    set_has_filename();
-  } else {
-    clear_has_filename();
-  }
-  filename_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), filename);
-  // @@protoc_insertion_point(field_set_allocated:CCloud_UserFile.filename)
-}
-
-// optional uint64 timestamp = 4;
-bool CCloud_UserFile::has_timestamp() const {
-  return (_has_bits_[0] & 0x00000008u) != 0;
-}
-void CCloud_UserFile::set_has_timestamp() {
-  _has_bits_[0] |= 0x00000008u;
-}
-void CCloud_UserFile::clear_has_timestamp() {
-  _has_bits_[0] &= ~0x00000008u;
-}
-void CCloud_UserFile::clear_timestamp() {
-  timestamp_ = GOOGLE_ULONGLONG(0);
-  clear_has_timestamp();
-}
- ::google::protobuf::uint64 CCloud_UserFile::timestamp() const {
-  // @@protoc_insertion_point(field_get:CCloud_UserFile.timestamp)
-  return timestamp_;
-}
- void CCloud_UserFile::set_timestamp(::google::protobuf::uint64 value) {
-  set_has_timestamp();
-  timestamp_ = value;
-  // @@protoc_insertion_point(field_set:CCloud_UserFile.timestamp)
-}
-
-// optional uint32 file_size = 5;
-bool CCloud_UserFile::has_file_size() const {
-  return (_has_bits_[0] & 0x00000010u) != 0;
-}
-void CCloud_UserFile::set_has_file_size() {
-  _has_bits_[0] |= 0x00000010u;
-}
-void CCloud_UserFile::clear_has_file_size() {
-  _has_bits_[0] &= ~0x00000010u;
-}
-void CCloud_UserFile::clear_file_size() {
-  file_size_ = 0u;
-  clear_has_file_size();
-}
- ::google::protobuf::uint32 CCloud_UserFile::file_size() const {
-  // @@protoc_insertion_point(field_get:CCloud_UserFile.file_size)
-  return file_size_;
-}
- void CCloud_UserFile::set_file_size(::google::protobuf::uint32 value) {
-  set_has_file_size();
-  file_size_ = value;
-  // @@protoc_insertion_point(field_set:CCloud_UserFile.file_size)
-}
-
-// optional string url = 6;
-bool CCloud_UserFile::has_url() const {
-  return (_has_bits_[0] & 0x00000020u) != 0;
-}
-void CCloud_UserFile::set_has_url() {
-  _has_bits_[0] |= 0x00000020u;
-}
-void CCloud_UserFile::clear_has_url() {
-  _has_bits_[0] &= ~0x00000020u;
-}
-void CCloud_UserFile::clear_url() {
-  url_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  clear_has_url();
-}
- const ::std::string& CCloud_UserFile::url() const {
-  // @@protoc_insertion_point(field_get:CCloud_UserFile.url)
-  return url_.GetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
- void CCloud_UserFile::set_url(const ::std::string& value) {
-  set_has_url();
-  url_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:CCloud_UserFile.url)
-}
- void CCloud_UserFile::set_url(const char* value) {
-  set_has_url();
-  url_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:CCloud_UserFile.url)
-}
- void CCloud_UserFile::set_url(const char* value, size_t size) {
-  set_has_url();
-  url_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-      ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:CCloud_UserFile.url)
-}
- ::std::string* CCloud_UserFile::mutable_url() {
-  set_has_url();
-  // @@protoc_insertion_point(field_mutable:CCloud_UserFile.url)
-  return url_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
- ::std::string* CCloud_UserFile::release_url() {
-  clear_has_url();
-  return url_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
- void CCloud_UserFile::set_allocated_url(::std::string* url) {
-  if (url != NULL) {
-    set_has_url();
-  } else {
-    clear_has_url();
-  }
-  url_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), url);
-  // @@protoc_insertion_point(field_set_allocated:CCloud_UserFile.url)
-}
-
-// optional fixed64 steamid_creator = 7;
-bool CCloud_UserFile::has_steamid_creator() const {
-  return (_has_bits_[0] & 0x00000040u) != 0;
-}
-void CCloud_UserFile::set_has_steamid_creator() {
-  _has_bits_[0] |= 0x00000040u;
-}
-void CCloud_UserFile::clear_has_steamid_creator() {
-  _has_bits_[0] &= ~0x00000040u;
-}
-void CCloud_UserFile::clear_steamid_creator() {
-  steamid_creator_ = GOOGLE_ULONGLONG(0);
-  clear_has_steamid_creator();
-}
- ::google::protobuf::uint64 CCloud_UserFile::steamid_creator() const {
-  // @@protoc_insertion_point(field_get:CCloud_UserFile.steamid_creator)
-  return steamid_creator_;
-}
- void CCloud_UserFile::set_steamid_creator(::google::protobuf::uint64 value) {
-  set_has_steamid_creator();
-  steamid_creator_ = value;
-  // @@protoc_insertion_point(field_set:CCloud_UserFile.steamid_creator)
-}
-
-#endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
 
 // ===================================================================
 
@@ -2002,7 +1598,7 @@ const int CCloud_GetFileDetails_Response::kDetailsFieldNumber;
 #endif  // !_MSC_VER
 
 CCloud_GetFileDetails_Response::CCloud_GetFileDetails_Response()
-  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  : ::google::protobuf::Message() {
   SharedCtor();
   // @@protoc_insertion_point(constructor:CCloud_GetFileDetails_Response)
 }
@@ -2012,8 +1608,7 @@ void CCloud_GetFileDetails_Response::InitAsDefaultInstance() {
 }
 
 CCloud_GetFileDetails_Response::CCloud_GetFileDetails_Response(const CCloud_GetFileDetails_Response& from)
-  : ::google::protobuf::Message(),
-    _internal_metadata_(NULL) {
+  : ::google::protobuf::Message() {
   SharedCtor();
   MergeFrom(from);
   // @@protoc_insertion_point(copy_constructor:CCloud_GetFileDetails_Response)
@@ -2053,12 +1648,8 @@ const CCloud_GetFileDetails_Response& CCloud_GetFileDetails_Response::default_in
 
 CCloud_GetFileDetails_Response* CCloud_GetFileDetails_Response::default_instance_ = NULL;
 
-CCloud_GetFileDetails_Response* CCloud_GetFileDetails_Response::New(::google::protobuf::Arena* arena) const {
-  CCloud_GetFileDetails_Response* n = new CCloud_GetFileDetails_Response;
-  if (arena != NULL) {
-    arena->Own(n);
-  }
-  return n;
+CCloud_GetFileDetails_Response* CCloud_GetFileDetails_Response::New() const {
+  return new CCloud_GetFileDetails_Response;
 }
 
 void CCloud_GetFileDetails_Response::Clear() {
@@ -2066,9 +1657,7 @@ void CCloud_GetFileDetails_Response::Clear() {
     if (details_ != NULL) details_->::CCloud_UserFile::Clear();
   }
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
-  if (_internal_metadata_.have_unknown_fields()) {
-    mutable_unknown_fields()->Clear();
-  }
+  mutable_unknown_fields()->Clear();
 }
 
 bool CCloud_GetFileDetails_Response::MergePartialFromCodedStream(
@@ -2121,10 +1710,10 @@ void CCloud_GetFileDetails_Response::SerializeWithCachedSizes(
   // optional .CCloud_UserFile details = 1;
   if (has_details()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      1, *this->details_, output);
+      1, this->details(), output);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
   }
@@ -2138,10 +1727,10 @@ void CCloud_GetFileDetails_Response::SerializeWithCachedSizes(
   if (has_details()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
-        1, *this->details_, target);
+        1, this->details(), target);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
   }
@@ -2152,14 +1741,16 @@ void CCloud_GetFileDetails_Response::SerializeWithCachedSizes(
 int CCloud_GetFileDetails_Response::ByteSize() const {
   int total_size = 0;
 
-  // optional .CCloud_UserFile details = 1;
-  if (has_details()) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
-        *this->details_);
-  }
+  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    // optional .CCloud_UserFile details = 1;
+    if (has_details()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+          this->details());
+    }
 
-  if (_internal_metadata_.have_unknown_fields()) {
+  }
+  if (!unknown_fields().empty()) {
     total_size +=
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         unknown_fields());
@@ -2171,10 +1762,10 @@ int CCloud_GetFileDetails_Response::ByteSize() const {
 }
 
 void CCloud_GetFileDetails_Response::MergeFrom(const ::google::protobuf::Message& from) {
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
-  const CCloud_GetFileDetails_Response* source = 
-      ::google::protobuf::internal::DynamicCastToGenerated<const CCloud_GetFileDetails_Response>(
-          &from);
+  GOOGLE_CHECK_NE(&from, this);
+  const CCloud_GetFileDetails_Response* source =
+    ::google::protobuf::internal::dynamic_cast_if_available<const CCloud_GetFileDetails_Response*>(
+      &from);
   if (source == NULL) {
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
   } else {
@@ -2183,15 +1774,13 @@ void CCloud_GetFileDetails_Response::MergeFrom(const ::google::protobuf::Message
 }
 
 void CCloud_GetFileDetails_Response::MergeFrom(const CCloud_GetFileDetails_Response& from) {
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  GOOGLE_CHECK_NE(&from, this);
   if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (from.has_details()) {
       mutable_details()->::CCloud_UserFile::MergeFrom(from.details());
     }
   }
-  if (from._internal_metadata_.have_unknown_fields()) {
-    mutable_unknown_fields()->MergeFrom(from.unknown_fields());
-  }
+  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
 }
 
 void CCloud_GetFileDetails_Response::CopyFrom(const ::google::protobuf::Message& from) {
@@ -2212,14 +1801,12 @@ bool CCloud_GetFileDetails_Response::IsInitialized() const {
 }
 
 void CCloud_GetFileDetails_Response::Swap(CCloud_GetFileDetails_Response* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
-void CCloud_GetFileDetails_Response::InternalSwap(CCloud_GetFileDetails_Response* other) {
-  std::swap(details_, other->details_);
-  std::swap(_has_bits_[0], other->_has_bits_[0]);
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  std::swap(_cached_size_, other->_cached_size_);
+  if (other != this) {
+    std::swap(details_, other->details_);
+    std::swap(_has_bits_[0], other->_has_bits_[0]);
+    _unknown_fields_.Swap(&other->_unknown_fields_);
+    std::swap(_cached_size_, other->_cached_size_);
+  }
 }
 
 ::google::protobuf::Metadata CCloud_GetFileDetails_Response::GetMetadata() const {
@@ -2230,53 +1817,6 @@ void CCloud_GetFileDetails_Response::InternalSwap(CCloud_GetFileDetails_Response
   return metadata;
 }
 
-#if PROTOBUF_INLINE_NOT_IN_HEADERS
-// CCloud_GetFileDetails_Response
-
-// optional .CCloud_UserFile details = 1;
-bool CCloud_GetFileDetails_Response::has_details() const {
-  return (_has_bits_[0] & 0x00000001u) != 0;
-}
-void CCloud_GetFileDetails_Response::set_has_details() {
-  _has_bits_[0] |= 0x00000001u;
-}
-void CCloud_GetFileDetails_Response::clear_has_details() {
-  _has_bits_[0] &= ~0x00000001u;
-}
-void CCloud_GetFileDetails_Response::clear_details() {
-  if (details_ != NULL) details_->::CCloud_UserFile::Clear();
-  clear_has_details();
-}
-const ::CCloud_UserFile& CCloud_GetFileDetails_Response::details() const {
-  // @@protoc_insertion_point(field_get:CCloud_GetFileDetails_Response.details)
-  return details_ != NULL ? *details_ : *default_instance_->details_;
-}
-::CCloud_UserFile* CCloud_GetFileDetails_Response::mutable_details() {
-  set_has_details();
-  if (details_ == NULL) {
-    details_ = new ::CCloud_UserFile;
-  }
-  // @@protoc_insertion_point(field_mutable:CCloud_GetFileDetails_Response.details)
-  return details_;
-}
-::CCloud_UserFile* CCloud_GetFileDetails_Response::release_details() {
-  clear_has_details();
-  ::CCloud_UserFile* temp = details_;
-  details_ = NULL;
-  return temp;
-}
-void CCloud_GetFileDetails_Response::set_allocated_details(::CCloud_UserFile* details) {
-  delete details_;
-  details_ = details;
-  if (details) {
-    set_has_details();
-  } else {
-    clear_has_details();
-  }
-  // @@protoc_insertion_point(field_set_allocated:CCloud_GetFileDetails_Response.details)
-}
-
-#endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
 
 // ===================================================================
 
@@ -2288,7 +1828,7 @@ const int CCloud_EnumerateUserFiles_Request::kStartIndexFieldNumber;
 #endif  // !_MSC_VER
 
 CCloud_EnumerateUserFiles_Request::CCloud_EnumerateUserFiles_Request()
-  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  : ::google::protobuf::Message() {
   SharedCtor();
   // @@protoc_insertion_point(constructor:CCloud_EnumerateUserFiles_Request)
 }
@@ -2297,8 +1837,7 @@ void CCloud_EnumerateUserFiles_Request::InitAsDefaultInstance() {
 }
 
 CCloud_EnumerateUserFiles_Request::CCloud_EnumerateUserFiles_Request(const CCloud_EnumerateUserFiles_Request& from)
-  : ::google::protobuf::Message(),
-    _internal_metadata_(NULL) {
+  : ::google::protobuf::Message() {
   SharedCtor();
   MergeFrom(from);
   // @@protoc_insertion_point(copy_constructor:CCloud_EnumerateUserFiles_Request)
@@ -2340,32 +1879,28 @@ const CCloud_EnumerateUserFiles_Request& CCloud_EnumerateUserFiles_Request::defa
 
 CCloud_EnumerateUserFiles_Request* CCloud_EnumerateUserFiles_Request::default_instance_ = NULL;
 
-CCloud_EnumerateUserFiles_Request* CCloud_EnumerateUserFiles_Request::New(::google::protobuf::Arena* arena) const {
-  CCloud_EnumerateUserFiles_Request* n = new CCloud_EnumerateUserFiles_Request;
-  if (arena != NULL) {
-    arena->Own(n);
-  }
-  return n;
+CCloud_EnumerateUserFiles_Request* CCloud_EnumerateUserFiles_Request::New() const {
+  return new CCloud_EnumerateUserFiles_Request;
 }
 
 void CCloud_EnumerateUserFiles_Request::Clear() {
-#define ZR_HELPER_(f) reinterpret_cast<char*>(\
-  &reinterpret_cast<CCloud_EnumerateUserFiles_Request*>(16)->f)
+#define OFFSET_OF_FIELD_(f) (reinterpret_cast<char*>(      \
+  &reinterpret_cast<CCloud_EnumerateUserFiles_Request*>(16)->f) - \
+   reinterpret_cast<char*>(16))
 
-#define ZR_(first, last) do {\
-  ::memset(&first, 0,\
-           ZR_HELPER_(last) - ZR_HELPER_(first) + sizeof(last));\
-} while (0)
+#define ZR_(first, last) do {                              \
+    size_t f = OFFSET_OF_FIELD_(first);                    \
+    size_t n = OFFSET_OF_FIELD_(last) - f + sizeof(last);  \
+    ::memset(&first, 0, n);                                \
+  } while (0)
 
   ZR_(appid_, start_index_);
 
-#undef ZR_HELPER_
+#undef OFFSET_OF_FIELD_
 #undef ZR_
 
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
-  if (_internal_metadata_.have_unknown_fields()) {
-    mutable_unknown_fields()->Clear();
-  }
+  mutable_unknown_fields()->Clear();
 }
 
 bool CCloud_EnumerateUserFiles_Request::MergePartialFromCodedStream(
@@ -2482,7 +2017,7 @@ void CCloud_EnumerateUserFiles_Request::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteUInt32(4, this->start_index(), output);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
   }
@@ -2512,7 +2047,7 @@ void CCloud_EnumerateUserFiles_Request::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(4, this->start_index(), target);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
   }
@@ -2523,7 +2058,7 @@ void CCloud_EnumerateUserFiles_Request::SerializeWithCachedSizes(
 int CCloud_EnumerateUserFiles_Request::ByteSize() const {
   int total_size = 0;
 
-  if (_has_bits_[0 / 32] & 15u) {
+  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     // optional uint32 appid = 1;
     if (has_appid()) {
       total_size += 1 +
@@ -2551,7 +2086,7 @@ int CCloud_EnumerateUserFiles_Request::ByteSize() const {
     }
 
   }
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     total_size +=
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         unknown_fields());
@@ -2563,10 +2098,10 @@ int CCloud_EnumerateUserFiles_Request::ByteSize() const {
 }
 
 void CCloud_EnumerateUserFiles_Request::MergeFrom(const ::google::protobuf::Message& from) {
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
-  const CCloud_EnumerateUserFiles_Request* source = 
-      ::google::protobuf::internal::DynamicCastToGenerated<const CCloud_EnumerateUserFiles_Request>(
-          &from);
+  GOOGLE_CHECK_NE(&from, this);
+  const CCloud_EnumerateUserFiles_Request* source =
+    ::google::protobuf::internal::dynamic_cast_if_available<const CCloud_EnumerateUserFiles_Request*>(
+      &from);
   if (source == NULL) {
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
   } else {
@@ -2575,7 +2110,7 @@ void CCloud_EnumerateUserFiles_Request::MergeFrom(const ::google::protobuf::Mess
 }
 
 void CCloud_EnumerateUserFiles_Request::MergeFrom(const CCloud_EnumerateUserFiles_Request& from) {
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  GOOGLE_CHECK_NE(&from, this);
   if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (from.has_appid()) {
       set_appid(from.appid());
@@ -2590,9 +2125,7 @@ void CCloud_EnumerateUserFiles_Request::MergeFrom(const CCloud_EnumerateUserFile
       set_start_index(from.start_index());
     }
   }
-  if (from._internal_metadata_.have_unknown_fields()) {
-    mutable_unknown_fields()->MergeFrom(from.unknown_fields());
-  }
+  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
 }
 
 void CCloud_EnumerateUserFiles_Request::CopyFrom(const ::google::protobuf::Message& from) {
@@ -2613,17 +2146,15 @@ bool CCloud_EnumerateUserFiles_Request::IsInitialized() const {
 }
 
 void CCloud_EnumerateUserFiles_Request::Swap(CCloud_EnumerateUserFiles_Request* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
-void CCloud_EnumerateUserFiles_Request::InternalSwap(CCloud_EnumerateUserFiles_Request* other) {
-  std::swap(appid_, other->appid_);
-  std::swap(extended_details_, other->extended_details_);
-  std::swap(count_, other->count_);
-  std::swap(start_index_, other->start_index_);
-  std::swap(_has_bits_[0], other->_has_bits_[0]);
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  std::swap(_cached_size_, other->_cached_size_);
+  if (other != this) {
+    std::swap(appid_, other->appid_);
+    std::swap(extended_details_, other->extended_details_);
+    std::swap(count_, other->count_);
+    std::swap(start_index_, other->start_index_);
+    std::swap(_has_bits_[0], other->_has_bits_[0]);
+    _unknown_fields_.Swap(&other->_unknown_fields_);
+    std::swap(_cached_size_, other->_cached_size_);
+  }
 }
 
 ::google::protobuf::Metadata CCloud_EnumerateUserFiles_Request::GetMetadata() const {
@@ -2634,106 +2165,6 @@ void CCloud_EnumerateUserFiles_Request::InternalSwap(CCloud_EnumerateUserFiles_R
   return metadata;
 }
 
-#if PROTOBUF_INLINE_NOT_IN_HEADERS
-// CCloud_EnumerateUserFiles_Request
-
-// optional uint32 appid = 1;
-bool CCloud_EnumerateUserFiles_Request::has_appid() const {
-  return (_has_bits_[0] & 0x00000001u) != 0;
-}
-void CCloud_EnumerateUserFiles_Request::set_has_appid() {
-  _has_bits_[0] |= 0x00000001u;
-}
-void CCloud_EnumerateUserFiles_Request::clear_has_appid() {
-  _has_bits_[0] &= ~0x00000001u;
-}
-void CCloud_EnumerateUserFiles_Request::clear_appid() {
-  appid_ = 0u;
-  clear_has_appid();
-}
- ::google::protobuf::uint32 CCloud_EnumerateUserFiles_Request::appid() const {
-  // @@protoc_insertion_point(field_get:CCloud_EnumerateUserFiles_Request.appid)
-  return appid_;
-}
- void CCloud_EnumerateUserFiles_Request::set_appid(::google::protobuf::uint32 value) {
-  set_has_appid();
-  appid_ = value;
-  // @@protoc_insertion_point(field_set:CCloud_EnumerateUserFiles_Request.appid)
-}
-
-// optional bool extended_details = 2;
-bool CCloud_EnumerateUserFiles_Request::has_extended_details() const {
-  return (_has_bits_[0] & 0x00000002u) != 0;
-}
-void CCloud_EnumerateUserFiles_Request::set_has_extended_details() {
-  _has_bits_[0] |= 0x00000002u;
-}
-void CCloud_EnumerateUserFiles_Request::clear_has_extended_details() {
-  _has_bits_[0] &= ~0x00000002u;
-}
-void CCloud_EnumerateUserFiles_Request::clear_extended_details() {
-  extended_details_ = false;
-  clear_has_extended_details();
-}
- bool CCloud_EnumerateUserFiles_Request::extended_details() const {
-  // @@protoc_insertion_point(field_get:CCloud_EnumerateUserFiles_Request.extended_details)
-  return extended_details_;
-}
- void CCloud_EnumerateUserFiles_Request::set_extended_details(bool value) {
-  set_has_extended_details();
-  extended_details_ = value;
-  // @@protoc_insertion_point(field_set:CCloud_EnumerateUserFiles_Request.extended_details)
-}
-
-// optional uint32 count = 3;
-bool CCloud_EnumerateUserFiles_Request::has_count() const {
-  return (_has_bits_[0] & 0x00000004u) != 0;
-}
-void CCloud_EnumerateUserFiles_Request::set_has_count() {
-  _has_bits_[0] |= 0x00000004u;
-}
-void CCloud_EnumerateUserFiles_Request::clear_has_count() {
-  _has_bits_[0] &= ~0x00000004u;
-}
-void CCloud_EnumerateUserFiles_Request::clear_count() {
-  count_ = 0u;
-  clear_has_count();
-}
- ::google::protobuf::uint32 CCloud_EnumerateUserFiles_Request::count() const {
-  // @@protoc_insertion_point(field_get:CCloud_EnumerateUserFiles_Request.count)
-  return count_;
-}
- void CCloud_EnumerateUserFiles_Request::set_count(::google::protobuf::uint32 value) {
-  set_has_count();
-  count_ = value;
-  // @@protoc_insertion_point(field_set:CCloud_EnumerateUserFiles_Request.count)
-}
-
-// optional uint32 start_index = 4;
-bool CCloud_EnumerateUserFiles_Request::has_start_index() const {
-  return (_has_bits_[0] & 0x00000008u) != 0;
-}
-void CCloud_EnumerateUserFiles_Request::set_has_start_index() {
-  _has_bits_[0] |= 0x00000008u;
-}
-void CCloud_EnumerateUserFiles_Request::clear_has_start_index() {
-  _has_bits_[0] &= ~0x00000008u;
-}
-void CCloud_EnumerateUserFiles_Request::clear_start_index() {
-  start_index_ = 0u;
-  clear_has_start_index();
-}
- ::google::protobuf::uint32 CCloud_EnumerateUserFiles_Request::start_index() const {
-  // @@protoc_insertion_point(field_get:CCloud_EnumerateUserFiles_Request.start_index)
-  return start_index_;
-}
- void CCloud_EnumerateUserFiles_Request::set_start_index(::google::protobuf::uint32 value) {
-  set_has_start_index();
-  start_index_ = value;
-  // @@protoc_insertion_point(field_set:CCloud_EnumerateUserFiles_Request.start_index)
-}
-
-#endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
 
 // ===================================================================
 
@@ -2743,7 +2174,7 @@ const int CCloud_EnumerateUserFiles_Response::kTotalFilesFieldNumber;
 #endif  // !_MSC_VER
 
 CCloud_EnumerateUserFiles_Response::CCloud_EnumerateUserFiles_Response()
-  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  : ::google::protobuf::Message() {
   SharedCtor();
   // @@protoc_insertion_point(constructor:CCloud_EnumerateUserFiles_Response)
 }
@@ -2752,8 +2183,7 @@ void CCloud_EnumerateUserFiles_Response::InitAsDefaultInstance() {
 }
 
 CCloud_EnumerateUserFiles_Response::CCloud_EnumerateUserFiles_Response(const CCloud_EnumerateUserFiles_Response& from)
-  : ::google::protobuf::Message(),
-    _internal_metadata_(NULL) {
+  : ::google::protobuf::Message() {
   SharedCtor();
   MergeFrom(from);
   // @@protoc_insertion_point(copy_constructor:CCloud_EnumerateUserFiles_Response)
@@ -2792,21 +2222,15 @@ const CCloud_EnumerateUserFiles_Response& CCloud_EnumerateUserFiles_Response::de
 
 CCloud_EnumerateUserFiles_Response* CCloud_EnumerateUserFiles_Response::default_instance_ = NULL;
 
-CCloud_EnumerateUserFiles_Response* CCloud_EnumerateUserFiles_Response::New(::google::protobuf::Arena* arena) const {
-  CCloud_EnumerateUserFiles_Response* n = new CCloud_EnumerateUserFiles_Response;
-  if (arena != NULL) {
-    arena->Own(n);
-  }
-  return n;
+CCloud_EnumerateUserFiles_Response* CCloud_EnumerateUserFiles_Response::New() const {
+  return new CCloud_EnumerateUserFiles_Response;
 }
 
 void CCloud_EnumerateUserFiles_Response::Clear() {
   total_files_ = 0u;
   files_.Clear();
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
-  if (_internal_metadata_.have_unknown_fields()) {
-    mutable_unknown_fields()->Clear();
-  }
+  mutable_unknown_fields()->Clear();
 }
 
 bool CCloud_EnumerateUserFiles_Response::MergePartialFromCodedStream(
@@ -2822,15 +2246,13 @@ bool CCloud_EnumerateUserFiles_Response::MergePartialFromCodedStream(
       // repeated .CCloud_UserFile files = 1;
       case 1: {
         if (tag == 10) {
-          DO_(input->IncrementRecursionDepth());
-         parse_loop_files:
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtualNoRecursionDepth(
+         parse_files:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
                 input, add_files()));
         } else {
           goto handle_unusual;
         }
-        if (input->ExpectTag(10)) goto parse_loop_files;
-        input->UnsafeDecrementRecursionDepth();
+        if (input->ExpectTag(10)) goto parse_files;
         if (input->ExpectTag(16)) goto parse_total_files;
         break;
       }
@@ -2876,7 +2298,7 @@ void CCloud_EnumerateUserFiles_Response::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
   // @@protoc_insertion_point(serialize_start:CCloud_EnumerateUserFiles_Response)
   // repeated .CCloud_UserFile files = 1;
-  for (unsigned int i = 0, n = this->files_size(); i < n; i++) {
+  for (int i = 0; i < this->files_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       1, this->files(i), output);
   }
@@ -2886,7 +2308,7 @@ void CCloud_EnumerateUserFiles_Response::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteUInt32(2, this->total_files(), output);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
   }
@@ -2897,7 +2319,7 @@ void CCloud_EnumerateUserFiles_Response::SerializeWithCachedSizes(
     ::google::protobuf::uint8* target) const {
   // @@protoc_insertion_point(serialize_to_array_start:CCloud_EnumerateUserFiles_Response)
   // repeated .CCloud_UserFile files = 1;
-  for (unsigned int i = 0, n = this->files_size(); i < n; i++) {
+  for (int i = 0; i < this->files_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
         1, this->files(i), target);
@@ -2908,7 +2330,7 @@ void CCloud_EnumerateUserFiles_Response::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(2, this->total_files(), target);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
   }
@@ -2919,13 +2341,15 @@ void CCloud_EnumerateUserFiles_Response::SerializeWithCachedSizes(
 int CCloud_EnumerateUserFiles_Response::ByteSize() const {
   int total_size = 0;
 
-  // optional uint32 total_files = 2;
-  if (has_total_files()) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::UInt32Size(
-        this->total_files());
-  }
+  if (_has_bits_[1 / 32] & (0xffu << (1 % 32))) {
+    // optional uint32 total_files = 2;
+    if (has_total_files()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::UInt32Size(
+          this->total_files());
+    }
 
+  }
   // repeated .CCloud_UserFile files = 1;
   total_size += 1 * this->files_size();
   for (int i = 0; i < this->files_size(); i++) {
@@ -2934,7 +2358,7 @@ int CCloud_EnumerateUserFiles_Response::ByteSize() const {
         this->files(i));
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     total_size +=
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         unknown_fields());
@@ -2946,10 +2370,10 @@ int CCloud_EnumerateUserFiles_Response::ByteSize() const {
 }
 
 void CCloud_EnumerateUserFiles_Response::MergeFrom(const ::google::protobuf::Message& from) {
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
-  const CCloud_EnumerateUserFiles_Response* source = 
-      ::google::protobuf::internal::DynamicCastToGenerated<const CCloud_EnumerateUserFiles_Response>(
-          &from);
+  GOOGLE_CHECK_NE(&from, this);
+  const CCloud_EnumerateUserFiles_Response* source =
+    ::google::protobuf::internal::dynamic_cast_if_available<const CCloud_EnumerateUserFiles_Response*>(
+      &from);
   if (source == NULL) {
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
   } else {
@@ -2958,16 +2382,14 @@ void CCloud_EnumerateUserFiles_Response::MergeFrom(const ::google::protobuf::Mes
 }
 
 void CCloud_EnumerateUserFiles_Response::MergeFrom(const CCloud_EnumerateUserFiles_Response& from) {
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  GOOGLE_CHECK_NE(&from, this);
   files_.MergeFrom(from.files_);
   if (from._has_bits_[1 / 32] & (0xffu << (1 % 32))) {
     if (from.has_total_files()) {
       set_total_files(from.total_files());
     }
   }
-  if (from._internal_metadata_.have_unknown_fields()) {
-    mutable_unknown_fields()->MergeFrom(from.unknown_fields());
-  }
+  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
 }
 
 void CCloud_EnumerateUserFiles_Response::CopyFrom(const ::google::protobuf::Message& from) {
@@ -2988,15 +2410,13 @@ bool CCloud_EnumerateUserFiles_Response::IsInitialized() const {
 }
 
 void CCloud_EnumerateUserFiles_Response::Swap(CCloud_EnumerateUserFiles_Response* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
-void CCloud_EnumerateUserFiles_Response::InternalSwap(CCloud_EnumerateUserFiles_Response* other) {
-  files_.UnsafeArenaSwap(&other->files_);
-  std::swap(total_files_, other->total_files_);
-  std::swap(_has_bits_[0], other->_has_bits_[0]);
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  std::swap(_cached_size_, other->_cached_size_);
+  if (other != this) {
+    files_.Swap(&other->files_);
+    std::swap(total_files_, other->total_files_);
+    std::swap(_has_bits_[0], other->_has_bits_[0]);
+    _unknown_fields_.Swap(&other->_unknown_fields_);
+    std::swap(_cached_size_, other->_cached_size_);
+  }
 }
 
 ::google::protobuf::Metadata CCloud_EnumerateUserFiles_Response::GetMetadata() const {
@@ -3007,64 +2427,6 @@ void CCloud_EnumerateUserFiles_Response::InternalSwap(CCloud_EnumerateUserFiles_
   return metadata;
 }
 
-#if PROTOBUF_INLINE_NOT_IN_HEADERS
-// CCloud_EnumerateUserFiles_Response
-
-// repeated .CCloud_UserFile files = 1;
-int CCloud_EnumerateUserFiles_Response::files_size() const {
-  return files_.size();
-}
-void CCloud_EnumerateUserFiles_Response::clear_files() {
-  files_.Clear();
-}
-const ::CCloud_UserFile& CCloud_EnumerateUserFiles_Response::files(int index) const {
-  // @@protoc_insertion_point(field_get:CCloud_EnumerateUserFiles_Response.files)
-  return files_.Get(index);
-}
-::CCloud_UserFile* CCloud_EnumerateUserFiles_Response::mutable_files(int index) {
-  // @@protoc_insertion_point(field_mutable:CCloud_EnumerateUserFiles_Response.files)
-  return files_.Mutable(index);
-}
-::CCloud_UserFile* CCloud_EnumerateUserFiles_Response::add_files() {
-  // @@protoc_insertion_point(field_add:CCloud_EnumerateUserFiles_Response.files)
-  return files_.Add();
-}
-::google::protobuf::RepeatedPtrField< ::CCloud_UserFile >*
-CCloud_EnumerateUserFiles_Response::mutable_files() {
-  // @@protoc_insertion_point(field_mutable_list:CCloud_EnumerateUserFiles_Response.files)
-  return &files_;
-}
-const ::google::protobuf::RepeatedPtrField< ::CCloud_UserFile >&
-CCloud_EnumerateUserFiles_Response::files() const {
-  // @@protoc_insertion_point(field_list:CCloud_EnumerateUserFiles_Response.files)
-  return files_;
-}
-
-// optional uint32 total_files = 2;
-bool CCloud_EnumerateUserFiles_Response::has_total_files() const {
-  return (_has_bits_[0] & 0x00000002u) != 0;
-}
-void CCloud_EnumerateUserFiles_Response::set_has_total_files() {
-  _has_bits_[0] |= 0x00000002u;
-}
-void CCloud_EnumerateUserFiles_Response::clear_has_total_files() {
-  _has_bits_[0] &= ~0x00000002u;
-}
-void CCloud_EnumerateUserFiles_Response::clear_total_files() {
-  total_files_ = 0u;
-  clear_has_total_files();
-}
- ::google::protobuf::uint32 CCloud_EnumerateUserFiles_Response::total_files() const {
-  // @@protoc_insertion_point(field_get:CCloud_EnumerateUserFiles_Response.total_files)
-  return total_files_;
-}
- void CCloud_EnumerateUserFiles_Response::set_total_files(::google::protobuf::uint32 value) {
-  set_has_total_files();
-  total_files_ = value;
-  // @@protoc_insertion_point(field_set:CCloud_EnumerateUserFiles_Response.total_files)
-}
-
-#endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
 
 // ===================================================================
 
@@ -3074,7 +2436,7 @@ const int CCloud_Delete_Request::kAppidFieldNumber;
 #endif  // !_MSC_VER
 
 CCloud_Delete_Request::CCloud_Delete_Request()
-  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  : ::google::protobuf::Message() {
   SharedCtor();
   // @@protoc_insertion_point(constructor:CCloud_Delete_Request)
 }
@@ -3083,8 +2445,7 @@ void CCloud_Delete_Request::InitAsDefaultInstance() {
 }
 
 CCloud_Delete_Request::CCloud_Delete_Request(const CCloud_Delete_Request& from)
-  : ::google::protobuf::Message(),
-    _internal_metadata_(NULL) {
+  : ::google::protobuf::Message() {
   SharedCtor();
   MergeFrom(from);
   // @@protoc_insertion_point(copy_constructor:CCloud_Delete_Request)
@@ -3093,7 +2454,7 @@ CCloud_Delete_Request::CCloud_Delete_Request(const CCloud_Delete_Request& from)
 void CCloud_Delete_Request::SharedCtor() {
   ::google::protobuf::internal::GetEmptyString();
   _cached_size_ = 0;
-  filename_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  filename_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   appid_ = 0u;
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
@@ -3104,7 +2465,9 @@ CCloud_Delete_Request::~CCloud_Delete_Request() {
 }
 
 void CCloud_Delete_Request::SharedDtor() {
-  filename_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (filename_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete filename_;
+  }
   if (this != default_instance_) {
   }
 }
@@ -3126,25 +2489,21 @@ const CCloud_Delete_Request& CCloud_Delete_Request::default_instance() {
 
 CCloud_Delete_Request* CCloud_Delete_Request::default_instance_ = NULL;
 
-CCloud_Delete_Request* CCloud_Delete_Request::New(::google::protobuf::Arena* arena) const {
-  CCloud_Delete_Request* n = new CCloud_Delete_Request;
-  if (arena != NULL) {
-    arena->Own(n);
-  }
-  return n;
+CCloud_Delete_Request* CCloud_Delete_Request::New() const {
+  return new CCloud_Delete_Request;
 }
 
 void CCloud_Delete_Request::Clear() {
-  if (_has_bits_[0 / 32] & 3u) {
+  if (_has_bits_[0 / 32] & 3) {
     if (has_filename()) {
-      filename_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+      if (filename_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+        filename_->clear();
+      }
     }
     appid_ = 0u;
   }
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
-  if (_internal_metadata_.have_unknown_fields()) {
-    mutable_unknown_fields()->Clear();
-  }
+  mutable_unknown_fields()->Clear();
 }
 
 bool CCloud_Delete_Request::MergePartialFromCodedStream(
@@ -3165,7 +2524,7 @@ bool CCloud_Delete_Request::MergePartialFromCodedStream(
           ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
             this->filename().data(), this->filename().length(),
             ::google::protobuf::internal::WireFormat::PARSE,
-            "CCloud_Delete_Request.filename");
+            "filename");
         } else {
           goto handle_unusual;
         }
@@ -3218,7 +2577,7 @@ void CCloud_Delete_Request::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
       this->filename().data(), this->filename().length(),
       ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "CCloud_Delete_Request.filename");
+      "filename");
     ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
       1, this->filename(), output);
   }
@@ -3228,7 +2587,7 @@ void CCloud_Delete_Request::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteUInt32(2, this->appid(), output);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
   }
@@ -3243,7 +2602,7 @@ void CCloud_Delete_Request::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
       this->filename().data(), this->filename().length(),
       ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "CCloud_Delete_Request.filename");
+      "filename");
     target =
       ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
         1, this->filename(), target);
@@ -3254,7 +2613,7 @@ void CCloud_Delete_Request::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(2, this->appid(), target);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
   }
@@ -3265,7 +2624,7 @@ void CCloud_Delete_Request::SerializeWithCachedSizes(
 int CCloud_Delete_Request::ByteSize() const {
   int total_size = 0;
 
-  if (_has_bits_[0 / 32] & 3u) {
+  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     // optional string filename = 1;
     if (has_filename()) {
       total_size += 1 +
@@ -3281,7 +2640,7 @@ int CCloud_Delete_Request::ByteSize() const {
     }
 
   }
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     total_size +=
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         unknown_fields());
@@ -3293,10 +2652,10 @@ int CCloud_Delete_Request::ByteSize() const {
 }
 
 void CCloud_Delete_Request::MergeFrom(const ::google::protobuf::Message& from) {
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
-  const CCloud_Delete_Request* source = 
-      ::google::protobuf::internal::DynamicCastToGenerated<const CCloud_Delete_Request>(
-          &from);
+  GOOGLE_CHECK_NE(&from, this);
+  const CCloud_Delete_Request* source =
+    ::google::protobuf::internal::dynamic_cast_if_available<const CCloud_Delete_Request*>(
+      &from);
   if (source == NULL) {
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
   } else {
@@ -3305,19 +2664,16 @@ void CCloud_Delete_Request::MergeFrom(const ::google::protobuf::Message& from) {
 }
 
 void CCloud_Delete_Request::MergeFrom(const CCloud_Delete_Request& from) {
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  GOOGLE_CHECK_NE(&from, this);
   if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (from.has_filename()) {
-      set_has_filename();
-      filename_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.filename_);
+      set_filename(from.filename());
     }
     if (from.has_appid()) {
       set_appid(from.appid());
     }
   }
-  if (from._internal_metadata_.have_unknown_fields()) {
-    mutable_unknown_fields()->MergeFrom(from.unknown_fields());
-  }
+  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
 }
 
 void CCloud_Delete_Request::CopyFrom(const ::google::protobuf::Message& from) {
@@ -3338,15 +2694,13 @@ bool CCloud_Delete_Request::IsInitialized() const {
 }
 
 void CCloud_Delete_Request::Swap(CCloud_Delete_Request* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
-void CCloud_Delete_Request::InternalSwap(CCloud_Delete_Request* other) {
-  filename_.Swap(&other->filename_);
-  std::swap(appid_, other->appid_);
-  std::swap(_has_bits_[0], other->_has_bits_[0]);
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  std::swap(_cached_size_, other->_cached_size_);
+  if (other != this) {
+    std::swap(filename_, other->filename_);
+    std::swap(appid_, other->appid_);
+    std::swap(_has_bits_[0], other->_has_bits_[0]);
+    _unknown_fields_.Swap(&other->_unknown_fields_);
+    std::swap(_cached_size_, other->_cached_size_);
+  }
 }
 
 ::google::protobuf::Metadata CCloud_Delete_Request::GetMetadata() const {
@@ -3357,87 +2711,6 @@ void CCloud_Delete_Request::InternalSwap(CCloud_Delete_Request* other) {
   return metadata;
 }
 
-#if PROTOBUF_INLINE_NOT_IN_HEADERS
-// CCloud_Delete_Request
-
-// optional string filename = 1;
-bool CCloud_Delete_Request::has_filename() const {
-  return (_has_bits_[0] & 0x00000001u) != 0;
-}
-void CCloud_Delete_Request::set_has_filename() {
-  _has_bits_[0] |= 0x00000001u;
-}
-void CCloud_Delete_Request::clear_has_filename() {
-  _has_bits_[0] &= ~0x00000001u;
-}
-void CCloud_Delete_Request::clear_filename() {
-  filename_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  clear_has_filename();
-}
- const ::std::string& CCloud_Delete_Request::filename() const {
-  // @@protoc_insertion_point(field_get:CCloud_Delete_Request.filename)
-  return filename_.GetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
- void CCloud_Delete_Request::set_filename(const ::std::string& value) {
-  set_has_filename();
-  filename_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:CCloud_Delete_Request.filename)
-}
- void CCloud_Delete_Request::set_filename(const char* value) {
-  set_has_filename();
-  filename_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:CCloud_Delete_Request.filename)
-}
- void CCloud_Delete_Request::set_filename(const char* value, size_t size) {
-  set_has_filename();
-  filename_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-      ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:CCloud_Delete_Request.filename)
-}
- ::std::string* CCloud_Delete_Request::mutable_filename() {
-  set_has_filename();
-  // @@protoc_insertion_point(field_mutable:CCloud_Delete_Request.filename)
-  return filename_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
- ::std::string* CCloud_Delete_Request::release_filename() {
-  clear_has_filename();
-  return filename_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
- void CCloud_Delete_Request::set_allocated_filename(::std::string* filename) {
-  if (filename != NULL) {
-    set_has_filename();
-  } else {
-    clear_has_filename();
-  }
-  filename_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), filename);
-  // @@protoc_insertion_point(field_set_allocated:CCloud_Delete_Request.filename)
-}
-
-// optional uint32 appid = 2;
-bool CCloud_Delete_Request::has_appid() const {
-  return (_has_bits_[0] & 0x00000002u) != 0;
-}
-void CCloud_Delete_Request::set_has_appid() {
-  _has_bits_[0] |= 0x00000002u;
-}
-void CCloud_Delete_Request::clear_has_appid() {
-  _has_bits_[0] &= ~0x00000002u;
-}
-void CCloud_Delete_Request::clear_appid() {
-  appid_ = 0u;
-  clear_has_appid();
-}
- ::google::protobuf::uint32 CCloud_Delete_Request::appid() const {
-  // @@protoc_insertion_point(field_get:CCloud_Delete_Request.appid)
-  return appid_;
-}
- void CCloud_Delete_Request::set_appid(::google::protobuf::uint32 value) {
-  set_has_appid();
-  appid_ = value;
-  // @@protoc_insertion_point(field_set:CCloud_Delete_Request.appid)
-}
-
-#endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
 
 // ===================================================================
 
@@ -3445,7 +2718,7 @@ void CCloud_Delete_Request::clear_appid() {
 #endif  // !_MSC_VER
 
 CCloud_Delete_Response::CCloud_Delete_Response()
-  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  : ::google::protobuf::Message() {
   SharedCtor();
   // @@protoc_insertion_point(constructor:CCloud_Delete_Response)
 }
@@ -3454,8 +2727,7 @@ void CCloud_Delete_Response::InitAsDefaultInstance() {
 }
 
 CCloud_Delete_Response::CCloud_Delete_Response(const CCloud_Delete_Response& from)
-  : ::google::protobuf::Message(),
-    _internal_metadata_(NULL) {
+  : ::google::protobuf::Message() {
   SharedCtor();
   MergeFrom(from);
   // @@protoc_insertion_point(copy_constructor:CCloud_Delete_Response)
@@ -3493,19 +2765,13 @@ const CCloud_Delete_Response& CCloud_Delete_Response::default_instance() {
 
 CCloud_Delete_Response* CCloud_Delete_Response::default_instance_ = NULL;
 
-CCloud_Delete_Response* CCloud_Delete_Response::New(::google::protobuf::Arena* arena) const {
-  CCloud_Delete_Response* n = new CCloud_Delete_Response;
-  if (arena != NULL) {
-    arena->Own(n);
-  }
-  return n;
+CCloud_Delete_Response* CCloud_Delete_Response::New() const {
+  return new CCloud_Delete_Response;
 }
 
 void CCloud_Delete_Response::Clear() {
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
-  if (_internal_metadata_.have_unknown_fields()) {
-    mutable_unknown_fields()->Clear();
-  }
+  mutable_unknown_fields()->Clear();
 }
 
 bool CCloud_Delete_Response::MergePartialFromCodedStream(
@@ -3538,7 +2804,7 @@ failure:
 void CCloud_Delete_Response::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
   // @@protoc_insertion_point(serialize_start:CCloud_Delete_Response)
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
   }
@@ -3548,7 +2814,7 @@ void CCloud_Delete_Response::SerializeWithCachedSizes(
 ::google::protobuf::uint8* CCloud_Delete_Response::SerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
   // @@protoc_insertion_point(serialize_to_array_start:CCloud_Delete_Response)
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
   }
@@ -3559,7 +2825,7 @@ void CCloud_Delete_Response::SerializeWithCachedSizes(
 int CCloud_Delete_Response::ByteSize() const {
   int total_size = 0;
 
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     total_size +=
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         unknown_fields());
@@ -3571,10 +2837,10 @@ int CCloud_Delete_Response::ByteSize() const {
 }
 
 void CCloud_Delete_Response::MergeFrom(const ::google::protobuf::Message& from) {
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
-  const CCloud_Delete_Response* source = 
-      ::google::protobuf::internal::DynamicCastToGenerated<const CCloud_Delete_Response>(
-          &from);
+  GOOGLE_CHECK_NE(&from, this);
+  const CCloud_Delete_Response* source =
+    ::google::protobuf::internal::dynamic_cast_if_available<const CCloud_Delete_Response*>(
+      &from);
   if (source == NULL) {
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
   } else {
@@ -3583,10 +2849,8 @@ void CCloud_Delete_Response::MergeFrom(const ::google::protobuf::Message& from) 
 }
 
 void CCloud_Delete_Response::MergeFrom(const CCloud_Delete_Response& from) {
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
-  if (from._internal_metadata_.have_unknown_fields()) {
-    mutable_unknown_fields()->MergeFrom(from.unknown_fields());
-  }
+  GOOGLE_CHECK_NE(&from, this);
+  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
 }
 
 void CCloud_Delete_Response::CopyFrom(const ::google::protobuf::Message& from) {
@@ -3607,12 +2871,10 @@ bool CCloud_Delete_Response::IsInitialized() const {
 }
 
 void CCloud_Delete_Response::Swap(CCloud_Delete_Response* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
-void CCloud_Delete_Response::InternalSwap(CCloud_Delete_Response* other) {
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  std::swap(_cached_size_, other->_cached_size_);
+  if (other != this) {
+    _unknown_fields_.Swap(&other->_unknown_fields_);
+    std::swap(_cached_size_, other->_cached_size_);
+  }
 }
 
 ::google::protobuf::Metadata CCloud_Delete_Response::GetMetadata() const {
@@ -3623,10 +2885,6 @@ void CCloud_Delete_Response::InternalSwap(CCloud_Delete_Response* other) {
   return metadata;
 }
 
-#if PROTOBUF_INLINE_NOT_IN_HEADERS
-// CCloud_Delete_Response
-
-#endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
 
 // @@protoc_insertion_point(namespace_scope)
 

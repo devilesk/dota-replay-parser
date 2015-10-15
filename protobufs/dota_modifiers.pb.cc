@@ -71,32 +71,32 @@ void protobuf_AssignDesc_dota_5fmodifiers_2eproto() {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CDOTAModifierBuffTableEntry, lua_name_),
   };
   CDOTAModifierBuffTableEntry_reflection_ =
-    ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
+    new ::google::protobuf::internal::GeneratedMessageReflection(
       CDOTAModifierBuffTableEntry_descriptor_,
       CDOTAModifierBuffTableEntry::default_instance_,
       CDOTAModifierBuffTableEntry_offsets_,
       GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CDOTAModifierBuffTableEntry, _has_bits_[0]),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CDOTAModifierBuffTableEntry, _unknown_fields_),
       -1,
-      -1,
-      sizeof(CDOTAModifierBuffTableEntry),
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CDOTAModifierBuffTableEntry, _internal_metadata_),
-      -1);
+      ::google::protobuf::DescriptorPool::generated_pool(),
+      ::google::protobuf::MessageFactory::generated_factory(),
+      sizeof(CDOTAModifierBuffTableEntry));
   CDOTALuaModifierEntry_descriptor_ = file->message_type(1);
   static const int CDOTALuaModifierEntry_offsets_[2] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CDOTALuaModifierEntry, modifier_type_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CDOTALuaModifierEntry, modifier_filename_),
   };
   CDOTALuaModifierEntry_reflection_ =
-    ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
+    new ::google::protobuf::internal::GeneratedMessageReflection(
       CDOTALuaModifierEntry_descriptor_,
       CDOTALuaModifierEntry::default_instance_,
       CDOTALuaModifierEntry_offsets_,
       GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CDOTALuaModifierEntry, _has_bits_[0]),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CDOTALuaModifierEntry, _unknown_fields_),
       -1,
-      -1,
-      sizeof(CDOTALuaModifierEntry),
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CDOTALuaModifierEntry, _internal_metadata_),
-      -1);
+      ::google::protobuf::DescriptorPool::generated_pool(),
+      ::google::protobuf::MessageFactory::generated_factory(),
+      sizeof(CDOTALuaModifierEntry));
   DOTA_MODIFIER_ENTRY_TYPE_descriptor_ = file->enum_type(0);
 }
 
@@ -111,9 +111,9 @@ inline void protobuf_AssignDescriptorsOnce() {
 void protobuf_RegisterTypes(const ::std::string&) {
   protobuf_AssignDescriptorsOnce();
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
-      CDOTAModifierBuffTableEntry_descriptor_, &CDOTAModifierBuffTableEntry::default_instance());
+    CDOTAModifierBuffTableEntry_descriptor_, &CDOTAModifierBuffTableEntry::default_instance());
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
-      CDOTALuaModifierEntry_descriptor_, &CDOTALuaModifierEntry::default_instance());
+    CDOTALuaModifierEntry_descriptor_, &CDOTALuaModifierEntry::default_instance());
 }
 
 }  // namespace
@@ -189,16 +189,6 @@ bool DOTA_MODIFIER_ENTRY_TYPE_IsValid(int value) {
 }
 
 
-namespace {
-
-static void MergeFromFail(int line) GOOGLE_ATTRIBUTE_COLD;
-static void MergeFromFail(int line) {
-  GOOGLE_CHECK(false) << __FILE__ << ":" << line;
-}
-
-}  // namespace
-
-
 // ===================================================================
 
 #ifndef _MSC_VER
@@ -237,7 +227,7 @@ const int CDOTAModifierBuffTableEntry::kLuaNameFieldNumber;
 #endif  // !_MSC_VER
 
 CDOTAModifierBuffTableEntry::CDOTAModifierBuffTableEntry()
-  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  : ::google::protobuf::Message() {
   SharedCtor();
   // @@protoc_insertion_point(constructor:CDOTAModifierBuffTableEntry)
 }
@@ -248,8 +238,7 @@ void CDOTAModifierBuffTableEntry::InitAsDefaultInstance() {
 }
 
 CDOTAModifierBuffTableEntry::CDOTAModifierBuffTableEntry(const CDOTAModifierBuffTableEntry& from)
-  : ::google::protobuf::Message(),
-    _internal_metadata_(NULL) {
+  : ::google::protobuf::Message() {
   SharedCtor();
   MergeFrom(from);
   // @@protoc_insertion_point(copy_constructor:CDOTAModifierBuffTableEntry)
@@ -275,10 +264,10 @@ void CDOTAModifierBuffTableEntry::SharedCtor() {
   channel_time_ = 0;
   v_start_ = NULL;
   v_end_ = NULL;
-  portal_loop_appear_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  portal_loop_disappear_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  hero_loop_appear_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  hero_loop_disappear_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  portal_loop_appear_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  portal_loop_disappear_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  hero_loop_appear_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  hero_loop_disappear_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   movement_speed_ = 0;
   aura_ = false;
   activity_ = 0;
@@ -286,10 +275,10 @@ void CDOTAModifierBuffTableEntry::SharedCtor() {
   range_ = 0;
   dd_modifier_index_ = 0;
   dd_ability_index_ = 0;
-  illusion_label_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  illusion_label_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   active_ = false;
-  player_ids_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  lua_name_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  player_ids_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  lua_name_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
 
@@ -299,13 +288,27 @@ CDOTAModifierBuffTableEntry::~CDOTAModifierBuffTableEntry() {
 }
 
 void CDOTAModifierBuffTableEntry::SharedDtor() {
-  portal_loop_appear_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  portal_loop_disappear_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  hero_loop_appear_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  hero_loop_disappear_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  illusion_label_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  player_ids_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  lua_name_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (portal_loop_appear_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete portal_loop_appear_;
+  }
+  if (portal_loop_disappear_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete portal_loop_disappear_;
+  }
+  if (hero_loop_appear_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete hero_loop_appear_;
+  }
+  if (hero_loop_disappear_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete hero_loop_disappear_;
+  }
+  if (illusion_label_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete illusion_label_;
+  }
+  if (player_ids_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete player_ids_;
+  }
+  if (lua_name_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete lua_name_;
+  }
   if (this != default_instance_) {
     delete v_start_;
     delete v_end_;
@@ -329,28 +332,26 @@ const CDOTAModifierBuffTableEntry& CDOTAModifierBuffTableEntry::default_instance
 
 CDOTAModifierBuffTableEntry* CDOTAModifierBuffTableEntry::default_instance_ = NULL;
 
-CDOTAModifierBuffTableEntry* CDOTAModifierBuffTableEntry::New(::google::protobuf::Arena* arena) const {
-  CDOTAModifierBuffTableEntry* n = new CDOTAModifierBuffTableEntry;
-  if (arena != NULL) {
-    arena->Own(n);
-  }
-  return n;
+CDOTAModifierBuffTableEntry* CDOTAModifierBuffTableEntry::New() const {
+  return new CDOTAModifierBuffTableEntry;
 }
 
 void CDOTAModifierBuffTableEntry::Clear() {
-#define ZR_HELPER_(f) reinterpret_cast<char*>(\
-  &reinterpret_cast<CDOTAModifierBuffTableEntry*>(16)->f)
+#define OFFSET_OF_FIELD_(f) (reinterpret_cast<char*>(      \
+  &reinterpret_cast<CDOTAModifierBuffTableEntry*>(16)->f) - \
+   reinterpret_cast<char*>(16))
 
-#define ZR_(first, last) do {\
-  ::memset(&first, 0,\
-           ZR_HELPER_(last) - ZR_HELPER_(first) + sizeof(last));\
-} while (0)
+#define ZR_(first, last) do {                              \
+    size_t f = OFFSET_OF_FIELD_(first);                    \
+    size_t n = OFFSET_OF_FIELD_(last) - f + sizeof(last);  \
+    ::memset(&first, 0, n);                                \
+  } while (0)
 
-  if (_has_bits_[0 / 32] & 255u) {
+  if (_has_bits_[0 / 32] & 255) {
     ZR_(parent_, creation_time_);
     entry_type_ = 1;
   }
-  if (_has_bits_[8 / 32] & 65280u) {
+  if (_has_bits_[8 / 32] & 65280) {
     ZR_(caster_, channel_time_);
     duration_ = -1;
     subtle_ = false;
@@ -358,48 +359,60 @@ void CDOTAModifierBuffTableEntry::Clear() {
       if (v_start_ != NULL) v_start_->::CMsgVector::Clear();
     }
   }
-  if (_has_bits_[16 / 32] & 16711680u) {
+  if (_has_bits_[16 / 32] & 16711680) {
     if (has_v_end()) {
       if (v_end_ != NULL) v_end_->::CMsgVector::Clear();
     }
     if (has_portal_loop_appear()) {
-      portal_loop_appear_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+      if (portal_loop_appear_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+        portal_loop_appear_->clear();
+      }
     }
     if (has_portal_loop_disappear()) {
-      portal_loop_disappear_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+      if (portal_loop_disappear_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+        portal_loop_disappear_->clear();
+      }
     }
     if (has_hero_loop_appear()) {
-      hero_loop_appear_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+      if (hero_loop_appear_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+        hero_loop_appear_->clear();
+      }
     }
     if (has_hero_loop_disappear()) {
-      hero_loop_disappear_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+      if (hero_loop_disappear_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+        hero_loop_disappear_->clear();
+      }
     }
     movement_speed_ = 0;
     aura_ = false;
     activity_ = 0;
   }
-  if (_has_bits_[24 / 32] & 4278190080u) {
+  if (_has_bits_[24 / 32] & 4278190080) {
     ZR_(damage_, dd_modifier_index_);
     dd_ability_index_ = 0;
     if (has_illusion_label()) {
-      illusion_label_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+      if (illusion_label_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+        illusion_label_->clear();
+      }
     }
     active_ = false;
     if (has_player_ids()) {
-      player_ids_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+      if (player_ids_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+        player_ids_->clear();
+      }
     }
     if (has_lua_name()) {
-      lua_name_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+      if (lua_name_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+        lua_name_->clear();
+      }
     }
   }
 
-#undef ZR_HELPER_
+#undef OFFSET_OF_FIELD_
 #undef ZR_
 
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
-  if (_internal_metadata_.have_unknown_fields()) {
-    mutable_unknown_fields()->Clear();
-  }
+  mutable_unknown_fields()->Clear();
 }
 
 bool CDOTAModifierBuffTableEntry::MergePartialFromCodedStream(
@@ -676,7 +689,7 @@ bool CDOTAModifierBuffTableEntry::MergePartialFromCodedStream(
           ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
             this->portal_loop_appear().data(), this->portal_loop_appear().length(),
             ::google::protobuf::internal::WireFormat::PARSE,
-            "CDOTAModifierBuffTableEntry.portal_loop_appear");
+            "portal_loop_appear");
         } else {
           goto handle_unusual;
         }
@@ -693,7 +706,7 @@ bool CDOTAModifierBuffTableEntry::MergePartialFromCodedStream(
           ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
             this->portal_loop_disappear().data(), this->portal_loop_disappear().length(),
             ::google::protobuf::internal::WireFormat::PARSE,
-            "CDOTAModifierBuffTableEntry.portal_loop_disappear");
+            "portal_loop_disappear");
         } else {
           goto handle_unusual;
         }
@@ -710,7 +723,7 @@ bool CDOTAModifierBuffTableEntry::MergePartialFromCodedStream(
           ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
             this->hero_loop_appear().data(), this->hero_loop_appear().length(),
             ::google::protobuf::internal::WireFormat::PARSE,
-            "CDOTAModifierBuffTableEntry.hero_loop_appear");
+            "hero_loop_appear");
         } else {
           goto handle_unusual;
         }
@@ -727,7 +740,7 @@ bool CDOTAModifierBuffTableEntry::MergePartialFromCodedStream(
           ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
             this->hero_loop_disappear().data(), this->hero_loop_disappear().length(),
             ::google::protobuf::internal::WireFormat::PARSE,
-            "CDOTAModifierBuffTableEntry.hero_loop_disappear");
+            "hero_loop_disappear");
         } else {
           goto handle_unusual;
         }
@@ -849,7 +862,7 @@ bool CDOTAModifierBuffTableEntry::MergePartialFromCodedStream(
           ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
             this->illusion_label().data(), this->illusion_label().length(),
             ::google::protobuf::internal::WireFormat::PARSE,
-            "CDOTAModifierBuffTableEntry.illusion_label");
+            "illusion_label");
         } else {
           goto handle_unusual;
         }
@@ -881,7 +894,7 @@ bool CDOTAModifierBuffTableEntry::MergePartialFromCodedStream(
           ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
             this->player_ids().data(), this->player_ids().length(),
             ::google::protobuf::internal::WireFormat::PARSE,
-            "CDOTAModifierBuffTableEntry.player_ids");
+            "player_ids");
         } else {
           goto handle_unusual;
         }
@@ -898,7 +911,7 @@ bool CDOTAModifierBuffTableEntry::MergePartialFromCodedStream(
           ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
             this->lua_name().data(), this->lua_name().length(),
             ::google::protobuf::internal::WireFormat::PARSE,
-            "CDOTAModifierBuffTableEntry.lua_name");
+            "lua_name");
         } else {
           goto handle_unusual;
         }
@@ -1010,13 +1023,13 @@ void CDOTAModifierBuffTableEntry::SerializeWithCachedSizes(
   // optional .CMsgVector v_start = 16;
   if (has_v_start()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      16, *this->v_start_, output);
+      16, this->v_start(), output);
   }
 
   // optional .CMsgVector v_end = 17;
   if (has_v_end()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      17, *this->v_end_, output);
+      17, this->v_end(), output);
   }
 
   // optional string portal_loop_appear = 18;
@@ -1024,7 +1037,7 @@ void CDOTAModifierBuffTableEntry::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
       this->portal_loop_appear().data(), this->portal_loop_appear().length(),
       ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "CDOTAModifierBuffTableEntry.portal_loop_appear");
+      "portal_loop_appear");
     ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
       18, this->portal_loop_appear(), output);
   }
@@ -1034,7 +1047,7 @@ void CDOTAModifierBuffTableEntry::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
       this->portal_loop_disappear().data(), this->portal_loop_disappear().length(),
       ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "CDOTAModifierBuffTableEntry.portal_loop_disappear");
+      "portal_loop_disappear");
     ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
       19, this->portal_loop_disappear(), output);
   }
@@ -1044,7 +1057,7 @@ void CDOTAModifierBuffTableEntry::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
       this->hero_loop_appear().data(), this->hero_loop_appear().length(),
       ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "CDOTAModifierBuffTableEntry.hero_loop_appear");
+      "hero_loop_appear");
     ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
       20, this->hero_loop_appear(), output);
   }
@@ -1054,7 +1067,7 @@ void CDOTAModifierBuffTableEntry::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
       this->hero_loop_disappear().data(), this->hero_loop_disappear().length(),
       ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "CDOTAModifierBuffTableEntry.hero_loop_disappear");
+      "hero_loop_disappear");
     ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
       21, this->hero_loop_disappear(), output);
   }
@@ -1099,7 +1112,7 @@ void CDOTAModifierBuffTableEntry::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
       this->illusion_label().data(), this->illusion_label().length(),
       ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "CDOTAModifierBuffTableEntry.illusion_label");
+      "illusion_label");
     ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
       29, this->illusion_label(), output);
   }
@@ -1114,7 +1127,7 @@ void CDOTAModifierBuffTableEntry::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
       this->player_ids().data(), this->player_ids().length(),
       ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "CDOTAModifierBuffTableEntry.player_ids");
+      "player_ids");
     ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
       31, this->player_ids(), output);
   }
@@ -1124,12 +1137,12 @@ void CDOTAModifierBuffTableEntry::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
       this->lua_name().data(), this->lua_name().length(),
       ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "CDOTAModifierBuffTableEntry.lua_name");
+      "lua_name");
     ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
       32, this->lua_name(), output);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
   }
@@ -1219,14 +1232,14 @@ void CDOTAModifierBuffTableEntry::SerializeWithCachedSizes(
   if (has_v_start()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
-        16, *this->v_start_, target);
+        16, this->v_start(), target);
   }
 
   // optional .CMsgVector v_end = 17;
   if (has_v_end()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
-        17, *this->v_end_, target);
+        17, this->v_end(), target);
   }
 
   // optional string portal_loop_appear = 18;
@@ -1234,7 +1247,7 @@ void CDOTAModifierBuffTableEntry::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
       this->portal_loop_appear().data(), this->portal_loop_appear().length(),
       ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "CDOTAModifierBuffTableEntry.portal_loop_appear");
+      "portal_loop_appear");
     target =
       ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
         18, this->portal_loop_appear(), target);
@@ -1245,7 +1258,7 @@ void CDOTAModifierBuffTableEntry::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
       this->portal_loop_disappear().data(), this->portal_loop_disappear().length(),
       ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "CDOTAModifierBuffTableEntry.portal_loop_disappear");
+      "portal_loop_disappear");
     target =
       ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
         19, this->portal_loop_disappear(), target);
@@ -1256,7 +1269,7 @@ void CDOTAModifierBuffTableEntry::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
       this->hero_loop_appear().data(), this->hero_loop_appear().length(),
       ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "CDOTAModifierBuffTableEntry.hero_loop_appear");
+      "hero_loop_appear");
     target =
       ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
         20, this->hero_loop_appear(), target);
@@ -1267,7 +1280,7 @@ void CDOTAModifierBuffTableEntry::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
       this->hero_loop_disappear().data(), this->hero_loop_disappear().length(),
       ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "CDOTAModifierBuffTableEntry.hero_loop_disappear");
+      "hero_loop_disappear");
     target =
       ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
         21, this->hero_loop_disappear(), target);
@@ -1313,7 +1326,7 @@ void CDOTAModifierBuffTableEntry::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
       this->illusion_label().data(), this->illusion_label().length(),
       ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "CDOTAModifierBuffTableEntry.illusion_label");
+      "illusion_label");
     target =
       ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
         29, this->illusion_label(), target);
@@ -1329,7 +1342,7 @@ void CDOTAModifierBuffTableEntry::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
       this->player_ids().data(), this->player_ids().length(),
       ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "CDOTAModifierBuffTableEntry.player_ids");
+      "player_ids");
     target =
       ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
         31, this->player_ids(), target);
@@ -1340,13 +1353,13 @@ void CDOTAModifierBuffTableEntry::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
       this->lua_name().data(), this->lua_name().length(),
       ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "CDOTAModifierBuffTableEntry.lua_name");
+      "lua_name");
     target =
       ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
         32, this->lua_name(), target);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
   }
@@ -1354,65 +1367,37 @@ void CDOTAModifierBuffTableEntry::SerializeWithCachedSizes(
   return target;
 }
 
-int CDOTAModifierBuffTableEntry::RequiredFieldsByteSizeFallback() const {
-  int total_size = 0;
-
-  if (has_entry_type()) {
-    // required .DOTA_MODIFIER_ENTRY_TYPE entry_type = 1 [default = DOTA_MODIFIER_ENTRY_TYPE_ACTIVE];
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::EnumSize(this->entry_type());
-  }
-
-  if (has_parent()) {
-    // required int32 parent = 2;
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::Int32Size(
-        this->parent());
-  }
-
-  if (has_index()) {
-    // required int32 index = 3;
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::Int32Size(
-        this->index());
-  }
-
-  if (has_serial_num()) {
-    // required int32 serial_num = 4;
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::Int32Size(
-        this->serial_num());
-  }
-
-  return total_size;
-}
 int CDOTAModifierBuffTableEntry::ByteSize() const {
   int total_size = 0;
 
-  if (((_has_bits_[0] & 0x0000000f) ^ 0x0000000f) == 0) {  // All required fields are present.
+  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     // required .DOTA_MODIFIER_ENTRY_TYPE entry_type = 1 [default = DOTA_MODIFIER_ENTRY_TYPE_ACTIVE];
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::EnumSize(this->entry_type());
+    if (has_entry_type()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::EnumSize(this->entry_type());
+    }
 
     // required int32 parent = 2;
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::Int32Size(
-        this->parent());
+    if (has_parent()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::Int32Size(
+          this->parent());
+    }
 
     // required int32 index = 3;
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::Int32Size(
-        this->index());
+    if (has_index()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::Int32Size(
+          this->index());
+    }
 
     // required int32 serial_num = 4;
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::Int32Size(
-        this->serial_num());
+    if (has_serial_num()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::Int32Size(
+          this->serial_num());
+    }
 
-  } else {
-    total_size += RequiredFieldsByteSizeFallback();
-  }
-  if (_has_bits_[4 / 32] & 240u) {
     // optional int32 modifier_class = 5;
     if (has_modifier_class()) {
       total_size += 1 +
@@ -1440,7 +1425,7 @@ int CDOTAModifierBuffTableEntry::ByteSize() const {
     }
 
   }
-  if (_has_bits_[8 / 32] & 65280u) {
+  if (_has_bits_[8 / 32] & (0xffu << (8 % 32))) {
     // optional float duration = 9 [default = -1];
     if (has_duration()) {
       total_size += 1 + 4;
@@ -1486,16 +1471,16 @@ int CDOTAModifierBuffTableEntry::ByteSize() const {
     if (has_v_start()) {
       total_size += 2 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
-          *this->v_start_);
+          this->v_start());
     }
 
   }
-  if (_has_bits_[16 / 32] & 16711680u) {
+  if (_has_bits_[16 / 32] & (0xffu << (16 % 32))) {
     // optional .CMsgVector v_end = 17;
     if (has_v_end()) {
       total_size += 2 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
-          *this->v_end_);
+          this->v_end());
     }
 
     // optional string portal_loop_appear = 18;
@@ -1546,7 +1531,7 @@ int CDOTAModifierBuffTableEntry::ByteSize() const {
     }
 
   }
-  if (_has_bits_[24 / 32] & 4278190080u) {
+  if (_has_bits_[24 / 32] & (0xffu << (24 % 32))) {
     // optional int32 damage = 25;
     if (has_damage()) {
       total_size += 2 +
@@ -1602,7 +1587,7 @@ int CDOTAModifierBuffTableEntry::ByteSize() const {
     }
 
   }
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     total_size +=
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         unknown_fields());
@@ -1614,10 +1599,10 @@ int CDOTAModifierBuffTableEntry::ByteSize() const {
 }
 
 void CDOTAModifierBuffTableEntry::MergeFrom(const ::google::protobuf::Message& from) {
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
-  const CDOTAModifierBuffTableEntry* source = 
-      ::google::protobuf::internal::DynamicCastToGenerated<const CDOTAModifierBuffTableEntry>(
-          &from);
+  GOOGLE_CHECK_NE(&from, this);
+  const CDOTAModifierBuffTableEntry* source =
+    ::google::protobuf::internal::dynamic_cast_if_available<const CDOTAModifierBuffTableEntry*>(
+      &from);
   if (source == NULL) {
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
   } else {
@@ -1626,7 +1611,7 @@ void CDOTAModifierBuffTableEntry::MergeFrom(const ::google::protobuf::Message& f
 }
 
 void CDOTAModifierBuffTableEntry::MergeFrom(const CDOTAModifierBuffTableEntry& from) {
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  GOOGLE_CHECK_NE(&from, this);
   if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (from.has_entry_type()) {
       set_entry_type(from.entry_type());
@@ -1684,20 +1669,16 @@ void CDOTAModifierBuffTableEntry::MergeFrom(const CDOTAModifierBuffTableEntry& f
       mutable_v_end()->::CMsgVector::MergeFrom(from.v_end());
     }
     if (from.has_portal_loop_appear()) {
-      set_has_portal_loop_appear();
-      portal_loop_appear_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.portal_loop_appear_);
+      set_portal_loop_appear(from.portal_loop_appear());
     }
     if (from.has_portal_loop_disappear()) {
-      set_has_portal_loop_disappear();
-      portal_loop_disappear_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.portal_loop_disappear_);
+      set_portal_loop_disappear(from.portal_loop_disappear());
     }
     if (from.has_hero_loop_appear()) {
-      set_has_hero_loop_appear();
-      hero_loop_appear_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.hero_loop_appear_);
+      set_hero_loop_appear(from.hero_loop_appear());
     }
     if (from.has_hero_loop_disappear()) {
-      set_has_hero_loop_disappear();
-      hero_loop_disappear_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.hero_loop_disappear_);
+      set_hero_loop_disappear(from.hero_loop_disappear());
     }
     if (from.has_movement_speed()) {
       set_movement_speed(from.movement_speed());
@@ -1723,24 +1704,19 @@ void CDOTAModifierBuffTableEntry::MergeFrom(const CDOTAModifierBuffTableEntry& f
       set_dd_ability_index(from.dd_ability_index());
     }
     if (from.has_illusion_label()) {
-      set_has_illusion_label();
-      illusion_label_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.illusion_label_);
+      set_illusion_label(from.illusion_label());
     }
     if (from.has_active()) {
       set_active(from.active());
     }
     if (from.has_player_ids()) {
-      set_has_player_ids();
-      player_ids_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.player_ids_);
+      set_player_ids(from.player_ids());
     }
     if (from.has_lua_name()) {
-      set_has_lua_name();
-      lua_name_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.lua_name_);
+      set_lua_name(from.lua_name());
     }
   }
-  if (from._internal_metadata_.have_unknown_fields()) {
-    mutable_unknown_fields()->MergeFrom(from.unknown_fields());
-  }
+  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
 }
 
 void CDOTAModifierBuffTableEntry::CopyFrom(const ::google::protobuf::Message& from) {
@@ -1762,45 +1738,43 @@ bool CDOTAModifierBuffTableEntry::IsInitialized() const {
 }
 
 void CDOTAModifierBuffTableEntry::Swap(CDOTAModifierBuffTableEntry* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
-void CDOTAModifierBuffTableEntry::InternalSwap(CDOTAModifierBuffTableEntry* other) {
-  std::swap(entry_type_, other->entry_type_);
-  std::swap(parent_, other->parent_);
-  std::swap(index_, other->index_);
-  std::swap(serial_num_, other->serial_num_);
-  std::swap(modifier_class_, other->modifier_class_);
-  std::swap(ability_level_, other->ability_level_);
-  std::swap(stack_count_, other->stack_count_);
-  std::swap(creation_time_, other->creation_time_);
-  std::swap(duration_, other->duration_);
-  std::swap(caster_, other->caster_);
-  std::swap(ability_, other->ability_);
-  std::swap(armor_, other->armor_);
-  std::swap(fade_time_, other->fade_time_);
-  std::swap(subtle_, other->subtle_);
-  std::swap(channel_time_, other->channel_time_);
-  std::swap(v_start_, other->v_start_);
-  std::swap(v_end_, other->v_end_);
-  portal_loop_appear_.Swap(&other->portal_loop_appear_);
-  portal_loop_disappear_.Swap(&other->portal_loop_disappear_);
-  hero_loop_appear_.Swap(&other->hero_loop_appear_);
-  hero_loop_disappear_.Swap(&other->hero_loop_disappear_);
-  std::swap(movement_speed_, other->movement_speed_);
-  std::swap(aura_, other->aura_);
-  std::swap(activity_, other->activity_);
-  std::swap(damage_, other->damage_);
-  std::swap(range_, other->range_);
-  std::swap(dd_modifier_index_, other->dd_modifier_index_);
-  std::swap(dd_ability_index_, other->dd_ability_index_);
-  illusion_label_.Swap(&other->illusion_label_);
-  std::swap(active_, other->active_);
-  player_ids_.Swap(&other->player_ids_);
-  lua_name_.Swap(&other->lua_name_);
-  std::swap(_has_bits_[0], other->_has_bits_[0]);
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  std::swap(_cached_size_, other->_cached_size_);
+  if (other != this) {
+    std::swap(entry_type_, other->entry_type_);
+    std::swap(parent_, other->parent_);
+    std::swap(index_, other->index_);
+    std::swap(serial_num_, other->serial_num_);
+    std::swap(modifier_class_, other->modifier_class_);
+    std::swap(ability_level_, other->ability_level_);
+    std::swap(stack_count_, other->stack_count_);
+    std::swap(creation_time_, other->creation_time_);
+    std::swap(duration_, other->duration_);
+    std::swap(caster_, other->caster_);
+    std::swap(ability_, other->ability_);
+    std::swap(armor_, other->armor_);
+    std::swap(fade_time_, other->fade_time_);
+    std::swap(subtle_, other->subtle_);
+    std::swap(channel_time_, other->channel_time_);
+    std::swap(v_start_, other->v_start_);
+    std::swap(v_end_, other->v_end_);
+    std::swap(portal_loop_appear_, other->portal_loop_appear_);
+    std::swap(portal_loop_disappear_, other->portal_loop_disappear_);
+    std::swap(hero_loop_appear_, other->hero_loop_appear_);
+    std::swap(hero_loop_disappear_, other->hero_loop_disappear_);
+    std::swap(movement_speed_, other->movement_speed_);
+    std::swap(aura_, other->aura_);
+    std::swap(activity_, other->activity_);
+    std::swap(damage_, other->damage_);
+    std::swap(range_, other->range_);
+    std::swap(dd_modifier_index_, other->dd_modifier_index_);
+    std::swap(dd_ability_index_, other->dd_ability_index_);
+    std::swap(illusion_label_, other->illusion_label_);
+    std::swap(active_, other->active_);
+    std::swap(player_ids_, other->player_ids_);
+    std::swap(lua_name_, other->lua_name_);
+    std::swap(_has_bits_[0], other->_has_bits_[0]);
+    _unknown_fields_.Swap(&other->_unknown_fields_);
+    std::swap(_cached_size_, other->_cached_size_);
+  }
 }
 
 ::google::protobuf::Metadata CDOTAModifierBuffTableEntry::GetMetadata() const {
@@ -1811,1020 +1785,6 @@ void CDOTAModifierBuffTableEntry::InternalSwap(CDOTAModifierBuffTableEntry* othe
   return metadata;
 }
 
-#if PROTOBUF_INLINE_NOT_IN_HEADERS
-// CDOTAModifierBuffTableEntry
-
-// required .DOTA_MODIFIER_ENTRY_TYPE entry_type = 1 [default = DOTA_MODIFIER_ENTRY_TYPE_ACTIVE];
-bool CDOTAModifierBuffTableEntry::has_entry_type() const {
-  return (_has_bits_[0] & 0x00000001u) != 0;
-}
-void CDOTAModifierBuffTableEntry::set_has_entry_type() {
-  _has_bits_[0] |= 0x00000001u;
-}
-void CDOTAModifierBuffTableEntry::clear_has_entry_type() {
-  _has_bits_[0] &= ~0x00000001u;
-}
-void CDOTAModifierBuffTableEntry::clear_entry_type() {
-  entry_type_ = 1;
-  clear_has_entry_type();
-}
- ::DOTA_MODIFIER_ENTRY_TYPE CDOTAModifierBuffTableEntry::entry_type() const {
-  // @@protoc_insertion_point(field_get:CDOTAModifierBuffTableEntry.entry_type)
-  return static_cast< ::DOTA_MODIFIER_ENTRY_TYPE >(entry_type_);
-}
- void CDOTAModifierBuffTableEntry::set_entry_type(::DOTA_MODIFIER_ENTRY_TYPE value) {
-  assert(::DOTA_MODIFIER_ENTRY_TYPE_IsValid(value));
-  set_has_entry_type();
-  entry_type_ = value;
-  // @@protoc_insertion_point(field_set:CDOTAModifierBuffTableEntry.entry_type)
-}
-
-// required int32 parent = 2;
-bool CDOTAModifierBuffTableEntry::has_parent() const {
-  return (_has_bits_[0] & 0x00000002u) != 0;
-}
-void CDOTAModifierBuffTableEntry::set_has_parent() {
-  _has_bits_[0] |= 0x00000002u;
-}
-void CDOTAModifierBuffTableEntry::clear_has_parent() {
-  _has_bits_[0] &= ~0x00000002u;
-}
-void CDOTAModifierBuffTableEntry::clear_parent() {
-  parent_ = 0;
-  clear_has_parent();
-}
- ::google::protobuf::int32 CDOTAModifierBuffTableEntry::parent() const {
-  // @@protoc_insertion_point(field_get:CDOTAModifierBuffTableEntry.parent)
-  return parent_;
-}
- void CDOTAModifierBuffTableEntry::set_parent(::google::protobuf::int32 value) {
-  set_has_parent();
-  parent_ = value;
-  // @@protoc_insertion_point(field_set:CDOTAModifierBuffTableEntry.parent)
-}
-
-// required int32 index = 3;
-bool CDOTAModifierBuffTableEntry::has_index() const {
-  return (_has_bits_[0] & 0x00000004u) != 0;
-}
-void CDOTAModifierBuffTableEntry::set_has_index() {
-  _has_bits_[0] |= 0x00000004u;
-}
-void CDOTAModifierBuffTableEntry::clear_has_index() {
-  _has_bits_[0] &= ~0x00000004u;
-}
-void CDOTAModifierBuffTableEntry::clear_index() {
-  index_ = 0;
-  clear_has_index();
-}
- ::google::protobuf::int32 CDOTAModifierBuffTableEntry::index() const {
-  // @@protoc_insertion_point(field_get:CDOTAModifierBuffTableEntry.index)
-  return index_;
-}
- void CDOTAModifierBuffTableEntry::set_index(::google::protobuf::int32 value) {
-  set_has_index();
-  index_ = value;
-  // @@protoc_insertion_point(field_set:CDOTAModifierBuffTableEntry.index)
-}
-
-// required int32 serial_num = 4;
-bool CDOTAModifierBuffTableEntry::has_serial_num() const {
-  return (_has_bits_[0] & 0x00000008u) != 0;
-}
-void CDOTAModifierBuffTableEntry::set_has_serial_num() {
-  _has_bits_[0] |= 0x00000008u;
-}
-void CDOTAModifierBuffTableEntry::clear_has_serial_num() {
-  _has_bits_[0] &= ~0x00000008u;
-}
-void CDOTAModifierBuffTableEntry::clear_serial_num() {
-  serial_num_ = 0;
-  clear_has_serial_num();
-}
- ::google::protobuf::int32 CDOTAModifierBuffTableEntry::serial_num() const {
-  // @@protoc_insertion_point(field_get:CDOTAModifierBuffTableEntry.serial_num)
-  return serial_num_;
-}
- void CDOTAModifierBuffTableEntry::set_serial_num(::google::protobuf::int32 value) {
-  set_has_serial_num();
-  serial_num_ = value;
-  // @@protoc_insertion_point(field_set:CDOTAModifierBuffTableEntry.serial_num)
-}
-
-// optional int32 modifier_class = 5;
-bool CDOTAModifierBuffTableEntry::has_modifier_class() const {
-  return (_has_bits_[0] & 0x00000010u) != 0;
-}
-void CDOTAModifierBuffTableEntry::set_has_modifier_class() {
-  _has_bits_[0] |= 0x00000010u;
-}
-void CDOTAModifierBuffTableEntry::clear_has_modifier_class() {
-  _has_bits_[0] &= ~0x00000010u;
-}
-void CDOTAModifierBuffTableEntry::clear_modifier_class() {
-  modifier_class_ = 0;
-  clear_has_modifier_class();
-}
- ::google::protobuf::int32 CDOTAModifierBuffTableEntry::modifier_class() const {
-  // @@protoc_insertion_point(field_get:CDOTAModifierBuffTableEntry.modifier_class)
-  return modifier_class_;
-}
- void CDOTAModifierBuffTableEntry::set_modifier_class(::google::protobuf::int32 value) {
-  set_has_modifier_class();
-  modifier_class_ = value;
-  // @@protoc_insertion_point(field_set:CDOTAModifierBuffTableEntry.modifier_class)
-}
-
-// optional int32 ability_level = 6;
-bool CDOTAModifierBuffTableEntry::has_ability_level() const {
-  return (_has_bits_[0] & 0x00000020u) != 0;
-}
-void CDOTAModifierBuffTableEntry::set_has_ability_level() {
-  _has_bits_[0] |= 0x00000020u;
-}
-void CDOTAModifierBuffTableEntry::clear_has_ability_level() {
-  _has_bits_[0] &= ~0x00000020u;
-}
-void CDOTAModifierBuffTableEntry::clear_ability_level() {
-  ability_level_ = 0;
-  clear_has_ability_level();
-}
- ::google::protobuf::int32 CDOTAModifierBuffTableEntry::ability_level() const {
-  // @@protoc_insertion_point(field_get:CDOTAModifierBuffTableEntry.ability_level)
-  return ability_level_;
-}
- void CDOTAModifierBuffTableEntry::set_ability_level(::google::protobuf::int32 value) {
-  set_has_ability_level();
-  ability_level_ = value;
-  // @@protoc_insertion_point(field_set:CDOTAModifierBuffTableEntry.ability_level)
-}
-
-// optional int32 stack_count = 7;
-bool CDOTAModifierBuffTableEntry::has_stack_count() const {
-  return (_has_bits_[0] & 0x00000040u) != 0;
-}
-void CDOTAModifierBuffTableEntry::set_has_stack_count() {
-  _has_bits_[0] |= 0x00000040u;
-}
-void CDOTAModifierBuffTableEntry::clear_has_stack_count() {
-  _has_bits_[0] &= ~0x00000040u;
-}
-void CDOTAModifierBuffTableEntry::clear_stack_count() {
-  stack_count_ = 0;
-  clear_has_stack_count();
-}
- ::google::protobuf::int32 CDOTAModifierBuffTableEntry::stack_count() const {
-  // @@protoc_insertion_point(field_get:CDOTAModifierBuffTableEntry.stack_count)
-  return stack_count_;
-}
- void CDOTAModifierBuffTableEntry::set_stack_count(::google::protobuf::int32 value) {
-  set_has_stack_count();
-  stack_count_ = value;
-  // @@protoc_insertion_point(field_set:CDOTAModifierBuffTableEntry.stack_count)
-}
-
-// optional float creation_time = 8;
-bool CDOTAModifierBuffTableEntry::has_creation_time() const {
-  return (_has_bits_[0] & 0x00000080u) != 0;
-}
-void CDOTAModifierBuffTableEntry::set_has_creation_time() {
-  _has_bits_[0] |= 0x00000080u;
-}
-void CDOTAModifierBuffTableEntry::clear_has_creation_time() {
-  _has_bits_[0] &= ~0x00000080u;
-}
-void CDOTAModifierBuffTableEntry::clear_creation_time() {
-  creation_time_ = 0;
-  clear_has_creation_time();
-}
- float CDOTAModifierBuffTableEntry::creation_time() const {
-  // @@protoc_insertion_point(field_get:CDOTAModifierBuffTableEntry.creation_time)
-  return creation_time_;
-}
- void CDOTAModifierBuffTableEntry::set_creation_time(float value) {
-  set_has_creation_time();
-  creation_time_ = value;
-  // @@protoc_insertion_point(field_set:CDOTAModifierBuffTableEntry.creation_time)
-}
-
-// optional float duration = 9 [default = -1];
-bool CDOTAModifierBuffTableEntry::has_duration() const {
-  return (_has_bits_[0] & 0x00000100u) != 0;
-}
-void CDOTAModifierBuffTableEntry::set_has_duration() {
-  _has_bits_[0] |= 0x00000100u;
-}
-void CDOTAModifierBuffTableEntry::clear_has_duration() {
-  _has_bits_[0] &= ~0x00000100u;
-}
-void CDOTAModifierBuffTableEntry::clear_duration() {
-  duration_ = -1;
-  clear_has_duration();
-}
- float CDOTAModifierBuffTableEntry::duration() const {
-  // @@protoc_insertion_point(field_get:CDOTAModifierBuffTableEntry.duration)
-  return duration_;
-}
- void CDOTAModifierBuffTableEntry::set_duration(float value) {
-  set_has_duration();
-  duration_ = value;
-  // @@protoc_insertion_point(field_set:CDOTAModifierBuffTableEntry.duration)
-}
-
-// optional int32 caster = 10;
-bool CDOTAModifierBuffTableEntry::has_caster() const {
-  return (_has_bits_[0] & 0x00000200u) != 0;
-}
-void CDOTAModifierBuffTableEntry::set_has_caster() {
-  _has_bits_[0] |= 0x00000200u;
-}
-void CDOTAModifierBuffTableEntry::clear_has_caster() {
-  _has_bits_[0] &= ~0x00000200u;
-}
-void CDOTAModifierBuffTableEntry::clear_caster() {
-  caster_ = 0;
-  clear_has_caster();
-}
- ::google::protobuf::int32 CDOTAModifierBuffTableEntry::caster() const {
-  // @@protoc_insertion_point(field_get:CDOTAModifierBuffTableEntry.caster)
-  return caster_;
-}
- void CDOTAModifierBuffTableEntry::set_caster(::google::protobuf::int32 value) {
-  set_has_caster();
-  caster_ = value;
-  // @@protoc_insertion_point(field_set:CDOTAModifierBuffTableEntry.caster)
-}
-
-// optional int32 ability = 11;
-bool CDOTAModifierBuffTableEntry::has_ability() const {
-  return (_has_bits_[0] & 0x00000400u) != 0;
-}
-void CDOTAModifierBuffTableEntry::set_has_ability() {
-  _has_bits_[0] |= 0x00000400u;
-}
-void CDOTAModifierBuffTableEntry::clear_has_ability() {
-  _has_bits_[0] &= ~0x00000400u;
-}
-void CDOTAModifierBuffTableEntry::clear_ability() {
-  ability_ = 0;
-  clear_has_ability();
-}
- ::google::protobuf::int32 CDOTAModifierBuffTableEntry::ability() const {
-  // @@protoc_insertion_point(field_get:CDOTAModifierBuffTableEntry.ability)
-  return ability_;
-}
- void CDOTAModifierBuffTableEntry::set_ability(::google::protobuf::int32 value) {
-  set_has_ability();
-  ability_ = value;
-  // @@protoc_insertion_point(field_set:CDOTAModifierBuffTableEntry.ability)
-}
-
-// optional int32 armor = 12;
-bool CDOTAModifierBuffTableEntry::has_armor() const {
-  return (_has_bits_[0] & 0x00000800u) != 0;
-}
-void CDOTAModifierBuffTableEntry::set_has_armor() {
-  _has_bits_[0] |= 0x00000800u;
-}
-void CDOTAModifierBuffTableEntry::clear_has_armor() {
-  _has_bits_[0] &= ~0x00000800u;
-}
-void CDOTAModifierBuffTableEntry::clear_armor() {
-  armor_ = 0;
-  clear_has_armor();
-}
- ::google::protobuf::int32 CDOTAModifierBuffTableEntry::armor() const {
-  // @@protoc_insertion_point(field_get:CDOTAModifierBuffTableEntry.armor)
-  return armor_;
-}
- void CDOTAModifierBuffTableEntry::set_armor(::google::protobuf::int32 value) {
-  set_has_armor();
-  armor_ = value;
-  // @@protoc_insertion_point(field_set:CDOTAModifierBuffTableEntry.armor)
-}
-
-// optional float fade_time = 13;
-bool CDOTAModifierBuffTableEntry::has_fade_time() const {
-  return (_has_bits_[0] & 0x00001000u) != 0;
-}
-void CDOTAModifierBuffTableEntry::set_has_fade_time() {
-  _has_bits_[0] |= 0x00001000u;
-}
-void CDOTAModifierBuffTableEntry::clear_has_fade_time() {
-  _has_bits_[0] &= ~0x00001000u;
-}
-void CDOTAModifierBuffTableEntry::clear_fade_time() {
-  fade_time_ = 0;
-  clear_has_fade_time();
-}
- float CDOTAModifierBuffTableEntry::fade_time() const {
-  // @@protoc_insertion_point(field_get:CDOTAModifierBuffTableEntry.fade_time)
-  return fade_time_;
-}
- void CDOTAModifierBuffTableEntry::set_fade_time(float value) {
-  set_has_fade_time();
-  fade_time_ = value;
-  // @@protoc_insertion_point(field_set:CDOTAModifierBuffTableEntry.fade_time)
-}
-
-// optional bool subtle = 14;
-bool CDOTAModifierBuffTableEntry::has_subtle() const {
-  return (_has_bits_[0] & 0x00002000u) != 0;
-}
-void CDOTAModifierBuffTableEntry::set_has_subtle() {
-  _has_bits_[0] |= 0x00002000u;
-}
-void CDOTAModifierBuffTableEntry::clear_has_subtle() {
-  _has_bits_[0] &= ~0x00002000u;
-}
-void CDOTAModifierBuffTableEntry::clear_subtle() {
-  subtle_ = false;
-  clear_has_subtle();
-}
- bool CDOTAModifierBuffTableEntry::subtle() const {
-  // @@protoc_insertion_point(field_get:CDOTAModifierBuffTableEntry.subtle)
-  return subtle_;
-}
- void CDOTAModifierBuffTableEntry::set_subtle(bool value) {
-  set_has_subtle();
-  subtle_ = value;
-  // @@protoc_insertion_point(field_set:CDOTAModifierBuffTableEntry.subtle)
-}
-
-// optional float channel_time = 15;
-bool CDOTAModifierBuffTableEntry::has_channel_time() const {
-  return (_has_bits_[0] & 0x00004000u) != 0;
-}
-void CDOTAModifierBuffTableEntry::set_has_channel_time() {
-  _has_bits_[0] |= 0x00004000u;
-}
-void CDOTAModifierBuffTableEntry::clear_has_channel_time() {
-  _has_bits_[0] &= ~0x00004000u;
-}
-void CDOTAModifierBuffTableEntry::clear_channel_time() {
-  channel_time_ = 0;
-  clear_has_channel_time();
-}
- float CDOTAModifierBuffTableEntry::channel_time() const {
-  // @@protoc_insertion_point(field_get:CDOTAModifierBuffTableEntry.channel_time)
-  return channel_time_;
-}
- void CDOTAModifierBuffTableEntry::set_channel_time(float value) {
-  set_has_channel_time();
-  channel_time_ = value;
-  // @@protoc_insertion_point(field_set:CDOTAModifierBuffTableEntry.channel_time)
-}
-
-// optional .CMsgVector v_start = 16;
-bool CDOTAModifierBuffTableEntry::has_v_start() const {
-  return (_has_bits_[0] & 0x00008000u) != 0;
-}
-void CDOTAModifierBuffTableEntry::set_has_v_start() {
-  _has_bits_[0] |= 0x00008000u;
-}
-void CDOTAModifierBuffTableEntry::clear_has_v_start() {
-  _has_bits_[0] &= ~0x00008000u;
-}
-void CDOTAModifierBuffTableEntry::clear_v_start() {
-  if (v_start_ != NULL) v_start_->::CMsgVector::Clear();
-  clear_has_v_start();
-}
-const ::CMsgVector& CDOTAModifierBuffTableEntry::v_start() const {
-  // @@protoc_insertion_point(field_get:CDOTAModifierBuffTableEntry.v_start)
-  return v_start_ != NULL ? *v_start_ : *default_instance_->v_start_;
-}
-::CMsgVector* CDOTAModifierBuffTableEntry::mutable_v_start() {
-  set_has_v_start();
-  if (v_start_ == NULL) {
-    v_start_ = new ::CMsgVector;
-  }
-  // @@protoc_insertion_point(field_mutable:CDOTAModifierBuffTableEntry.v_start)
-  return v_start_;
-}
-::CMsgVector* CDOTAModifierBuffTableEntry::release_v_start() {
-  clear_has_v_start();
-  ::CMsgVector* temp = v_start_;
-  v_start_ = NULL;
-  return temp;
-}
-void CDOTAModifierBuffTableEntry::set_allocated_v_start(::CMsgVector* v_start) {
-  delete v_start_;
-  v_start_ = v_start;
-  if (v_start) {
-    set_has_v_start();
-  } else {
-    clear_has_v_start();
-  }
-  // @@protoc_insertion_point(field_set_allocated:CDOTAModifierBuffTableEntry.v_start)
-}
-
-// optional .CMsgVector v_end = 17;
-bool CDOTAModifierBuffTableEntry::has_v_end() const {
-  return (_has_bits_[0] & 0x00010000u) != 0;
-}
-void CDOTAModifierBuffTableEntry::set_has_v_end() {
-  _has_bits_[0] |= 0x00010000u;
-}
-void CDOTAModifierBuffTableEntry::clear_has_v_end() {
-  _has_bits_[0] &= ~0x00010000u;
-}
-void CDOTAModifierBuffTableEntry::clear_v_end() {
-  if (v_end_ != NULL) v_end_->::CMsgVector::Clear();
-  clear_has_v_end();
-}
-const ::CMsgVector& CDOTAModifierBuffTableEntry::v_end() const {
-  // @@protoc_insertion_point(field_get:CDOTAModifierBuffTableEntry.v_end)
-  return v_end_ != NULL ? *v_end_ : *default_instance_->v_end_;
-}
-::CMsgVector* CDOTAModifierBuffTableEntry::mutable_v_end() {
-  set_has_v_end();
-  if (v_end_ == NULL) {
-    v_end_ = new ::CMsgVector;
-  }
-  // @@protoc_insertion_point(field_mutable:CDOTAModifierBuffTableEntry.v_end)
-  return v_end_;
-}
-::CMsgVector* CDOTAModifierBuffTableEntry::release_v_end() {
-  clear_has_v_end();
-  ::CMsgVector* temp = v_end_;
-  v_end_ = NULL;
-  return temp;
-}
-void CDOTAModifierBuffTableEntry::set_allocated_v_end(::CMsgVector* v_end) {
-  delete v_end_;
-  v_end_ = v_end;
-  if (v_end) {
-    set_has_v_end();
-  } else {
-    clear_has_v_end();
-  }
-  // @@protoc_insertion_point(field_set_allocated:CDOTAModifierBuffTableEntry.v_end)
-}
-
-// optional string portal_loop_appear = 18;
-bool CDOTAModifierBuffTableEntry::has_portal_loop_appear() const {
-  return (_has_bits_[0] & 0x00020000u) != 0;
-}
-void CDOTAModifierBuffTableEntry::set_has_portal_loop_appear() {
-  _has_bits_[0] |= 0x00020000u;
-}
-void CDOTAModifierBuffTableEntry::clear_has_portal_loop_appear() {
-  _has_bits_[0] &= ~0x00020000u;
-}
-void CDOTAModifierBuffTableEntry::clear_portal_loop_appear() {
-  portal_loop_appear_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  clear_has_portal_loop_appear();
-}
- const ::std::string& CDOTAModifierBuffTableEntry::portal_loop_appear() const {
-  // @@protoc_insertion_point(field_get:CDOTAModifierBuffTableEntry.portal_loop_appear)
-  return portal_loop_appear_.GetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
- void CDOTAModifierBuffTableEntry::set_portal_loop_appear(const ::std::string& value) {
-  set_has_portal_loop_appear();
-  portal_loop_appear_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:CDOTAModifierBuffTableEntry.portal_loop_appear)
-}
- void CDOTAModifierBuffTableEntry::set_portal_loop_appear(const char* value) {
-  set_has_portal_loop_appear();
-  portal_loop_appear_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:CDOTAModifierBuffTableEntry.portal_loop_appear)
-}
- void CDOTAModifierBuffTableEntry::set_portal_loop_appear(const char* value, size_t size) {
-  set_has_portal_loop_appear();
-  portal_loop_appear_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-      ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:CDOTAModifierBuffTableEntry.portal_loop_appear)
-}
- ::std::string* CDOTAModifierBuffTableEntry::mutable_portal_loop_appear() {
-  set_has_portal_loop_appear();
-  // @@protoc_insertion_point(field_mutable:CDOTAModifierBuffTableEntry.portal_loop_appear)
-  return portal_loop_appear_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
- ::std::string* CDOTAModifierBuffTableEntry::release_portal_loop_appear() {
-  clear_has_portal_loop_appear();
-  return portal_loop_appear_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
- void CDOTAModifierBuffTableEntry::set_allocated_portal_loop_appear(::std::string* portal_loop_appear) {
-  if (portal_loop_appear != NULL) {
-    set_has_portal_loop_appear();
-  } else {
-    clear_has_portal_loop_appear();
-  }
-  portal_loop_appear_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), portal_loop_appear);
-  // @@protoc_insertion_point(field_set_allocated:CDOTAModifierBuffTableEntry.portal_loop_appear)
-}
-
-// optional string portal_loop_disappear = 19;
-bool CDOTAModifierBuffTableEntry::has_portal_loop_disappear() const {
-  return (_has_bits_[0] & 0x00040000u) != 0;
-}
-void CDOTAModifierBuffTableEntry::set_has_portal_loop_disappear() {
-  _has_bits_[0] |= 0x00040000u;
-}
-void CDOTAModifierBuffTableEntry::clear_has_portal_loop_disappear() {
-  _has_bits_[0] &= ~0x00040000u;
-}
-void CDOTAModifierBuffTableEntry::clear_portal_loop_disappear() {
-  portal_loop_disappear_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  clear_has_portal_loop_disappear();
-}
- const ::std::string& CDOTAModifierBuffTableEntry::portal_loop_disappear() const {
-  // @@protoc_insertion_point(field_get:CDOTAModifierBuffTableEntry.portal_loop_disappear)
-  return portal_loop_disappear_.GetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
- void CDOTAModifierBuffTableEntry::set_portal_loop_disappear(const ::std::string& value) {
-  set_has_portal_loop_disappear();
-  portal_loop_disappear_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:CDOTAModifierBuffTableEntry.portal_loop_disappear)
-}
- void CDOTAModifierBuffTableEntry::set_portal_loop_disappear(const char* value) {
-  set_has_portal_loop_disappear();
-  portal_loop_disappear_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:CDOTAModifierBuffTableEntry.portal_loop_disappear)
-}
- void CDOTAModifierBuffTableEntry::set_portal_loop_disappear(const char* value, size_t size) {
-  set_has_portal_loop_disappear();
-  portal_loop_disappear_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-      ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:CDOTAModifierBuffTableEntry.portal_loop_disappear)
-}
- ::std::string* CDOTAModifierBuffTableEntry::mutable_portal_loop_disappear() {
-  set_has_portal_loop_disappear();
-  // @@protoc_insertion_point(field_mutable:CDOTAModifierBuffTableEntry.portal_loop_disappear)
-  return portal_loop_disappear_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
- ::std::string* CDOTAModifierBuffTableEntry::release_portal_loop_disappear() {
-  clear_has_portal_loop_disappear();
-  return portal_loop_disappear_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
- void CDOTAModifierBuffTableEntry::set_allocated_portal_loop_disappear(::std::string* portal_loop_disappear) {
-  if (portal_loop_disappear != NULL) {
-    set_has_portal_loop_disappear();
-  } else {
-    clear_has_portal_loop_disappear();
-  }
-  portal_loop_disappear_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), portal_loop_disappear);
-  // @@protoc_insertion_point(field_set_allocated:CDOTAModifierBuffTableEntry.portal_loop_disappear)
-}
-
-// optional string hero_loop_appear = 20;
-bool CDOTAModifierBuffTableEntry::has_hero_loop_appear() const {
-  return (_has_bits_[0] & 0x00080000u) != 0;
-}
-void CDOTAModifierBuffTableEntry::set_has_hero_loop_appear() {
-  _has_bits_[0] |= 0x00080000u;
-}
-void CDOTAModifierBuffTableEntry::clear_has_hero_loop_appear() {
-  _has_bits_[0] &= ~0x00080000u;
-}
-void CDOTAModifierBuffTableEntry::clear_hero_loop_appear() {
-  hero_loop_appear_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  clear_has_hero_loop_appear();
-}
- const ::std::string& CDOTAModifierBuffTableEntry::hero_loop_appear() const {
-  // @@protoc_insertion_point(field_get:CDOTAModifierBuffTableEntry.hero_loop_appear)
-  return hero_loop_appear_.GetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
- void CDOTAModifierBuffTableEntry::set_hero_loop_appear(const ::std::string& value) {
-  set_has_hero_loop_appear();
-  hero_loop_appear_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:CDOTAModifierBuffTableEntry.hero_loop_appear)
-}
- void CDOTAModifierBuffTableEntry::set_hero_loop_appear(const char* value) {
-  set_has_hero_loop_appear();
-  hero_loop_appear_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:CDOTAModifierBuffTableEntry.hero_loop_appear)
-}
- void CDOTAModifierBuffTableEntry::set_hero_loop_appear(const char* value, size_t size) {
-  set_has_hero_loop_appear();
-  hero_loop_appear_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-      ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:CDOTAModifierBuffTableEntry.hero_loop_appear)
-}
- ::std::string* CDOTAModifierBuffTableEntry::mutable_hero_loop_appear() {
-  set_has_hero_loop_appear();
-  // @@protoc_insertion_point(field_mutable:CDOTAModifierBuffTableEntry.hero_loop_appear)
-  return hero_loop_appear_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
- ::std::string* CDOTAModifierBuffTableEntry::release_hero_loop_appear() {
-  clear_has_hero_loop_appear();
-  return hero_loop_appear_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
- void CDOTAModifierBuffTableEntry::set_allocated_hero_loop_appear(::std::string* hero_loop_appear) {
-  if (hero_loop_appear != NULL) {
-    set_has_hero_loop_appear();
-  } else {
-    clear_has_hero_loop_appear();
-  }
-  hero_loop_appear_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), hero_loop_appear);
-  // @@protoc_insertion_point(field_set_allocated:CDOTAModifierBuffTableEntry.hero_loop_appear)
-}
-
-// optional string hero_loop_disappear = 21;
-bool CDOTAModifierBuffTableEntry::has_hero_loop_disappear() const {
-  return (_has_bits_[0] & 0x00100000u) != 0;
-}
-void CDOTAModifierBuffTableEntry::set_has_hero_loop_disappear() {
-  _has_bits_[0] |= 0x00100000u;
-}
-void CDOTAModifierBuffTableEntry::clear_has_hero_loop_disappear() {
-  _has_bits_[0] &= ~0x00100000u;
-}
-void CDOTAModifierBuffTableEntry::clear_hero_loop_disappear() {
-  hero_loop_disappear_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  clear_has_hero_loop_disappear();
-}
- const ::std::string& CDOTAModifierBuffTableEntry::hero_loop_disappear() const {
-  // @@protoc_insertion_point(field_get:CDOTAModifierBuffTableEntry.hero_loop_disappear)
-  return hero_loop_disappear_.GetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
- void CDOTAModifierBuffTableEntry::set_hero_loop_disappear(const ::std::string& value) {
-  set_has_hero_loop_disappear();
-  hero_loop_disappear_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:CDOTAModifierBuffTableEntry.hero_loop_disappear)
-}
- void CDOTAModifierBuffTableEntry::set_hero_loop_disappear(const char* value) {
-  set_has_hero_loop_disappear();
-  hero_loop_disappear_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:CDOTAModifierBuffTableEntry.hero_loop_disappear)
-}
- void CDOTAModifierBuffTableEntry::set_hero_loop_disappear(const char* value, size_t size) {
-  set_has_hero_loop_disappear();
-  hero_loop_disappear_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-      ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:CDOTAModifierBuffTableEntry.hero_loop_disappear)
-}
- ::std::string* CDOTAModifierBuffTableEntry::mutable_hero_loop_disappear() {
-  set_has_hero_loop_disappear();
-  // @@protoc_insertion_point(field_mutable:CDOTAModifierBuffTableEntry.hero_loop_disappear)
-  return hero_loop_disappear_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
- ::std::string* CDOTAModifierBuffTableEntry::release_hero_loop_disappear() {
-  clear_has_hero_loop_disappear();
-  return hero_loop_disappear_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
- void CDOTAModifierBuffTableEntry::set_allocated_hero_loop_disappear(::std::string* hero_loop_disappear) {
-  if (hero_loop_disappear != NULL) {
-    set_has_hero_loop_disappear();
-  } else {
-    clear_has_hero_loop_disappear();
-  }
-  hero_loop_disappear_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), hero_loop_disappear);
-  // @@protoc_insertion_point(field_set_allocated:CDOTAModifierBuffTableEntry.hero_loop_disappear)
-}
-
-// optional int32 movement_speed = 22;
-bool CDOTAModifierBuffTableEntry::has_movement_speed() const {
-  return (_has_bits_[0] & 0x00200000u) != 0;
-}
-void CDOTAModifierBuffTableEntry::set_has_movement_speed() {
-  _has_bits_[0] |= 0x00200000u;
-}
-void CDOTAModifierBuffTableEntry::clear_has_movement_speed() {
-  _has_bits_[0] &= ~0x00200000u;
-}
-void CDOTAModifierBuffTableEntry::clear_movement_speed() {
-  movement_speed_ = 0;
-  clear_has_movement_speed();
-}
- ::google::protobuf::int32 CDOTAModifierBuffTableEntry::movement_speed() const {
-  // @@protoc_insertion_point(field_get:CDOTAModifierBuffTableEntry.movement_speed)
-  return movement_speed_;
-}
- void CDOTAModifierBuffTableEntry::set_movement_speed(::google::protobuf::int32 value) {
-  set_has_movement_speed();
-  movement_speed_ = value;
-  // @@protoc_insertion_point(field_set:CDOTAModifierBuffTableEntry.movement_speed)
-}
-
-// optional bool aura = 23;
-bool CDOTAModifierBuffTableEntry::has_aura() const {
-  return (_has_bits_[0] & 0x00400000u) != 0;
-}
-void CDOTAModifierBuffTableEntry::set_has_aura() {
-  _has_bits_[0] |= 0x00400000u;
-}
-void CDOTAModifierBuffTableEntry::clear_has_aura() {
-  _has_bits_[0] &= ~0x00400000u;
-}
-void CDOTAModifierBuffTableEntry::clear_aura() {
-  aura_ = false;
-  clear_has_aura();
-}
- bool CDOTAModifierBuffTableEntry::aura() const {
-  // @@protoc_insertion_point(field_get:CDOTAModifierBuffTableEntry.aura)
-  return aura_;
-}
- void CDOTAModifierBuffTableEntry::set_aura(bool value) {
-  set_has_aura();
-  aura_ = value;
-  // @@protoc_insertion_point(field_set:CDOTAModifierBuffTableEntry.aura)
-}
-
-// optional int32 activity = 24;
-bool CDOTAModifierBuffTableEntry::has_activity() const {
-  return (_has_bits_[0] & 0x00800000u) != 0;
-}
-void CDOTAModifierBuffTableEntry::set_has_activity() {
-  _has_bits_[0] |= 0x00800000u;
-}
-void CDOTAModifierBuffTableEntry::clear_has_activity() {
-  _has_bits_[0] &= ~0x00800000u;
-}
-void CDOTAModifierBuffTableEntry::clear_activity() {
-  activity_ = 0;
-  clear_has_activity();
-}
- ::google::protobuf::int32 CDOTAModifierBuffTableEntry::activity() const {
-  // @@protoc_insertion_point(field_get:CDOTAModifierBuffTableEntry.activity)
-  return activity_;
-}
- void CDOTAModifierBuffTableEntry::set_activity(::google::protobuf::int32 value) {
-  set_has_activity();
-  activity_ = value;
-  // @@protoc_insertion_point(field_set:CDOTAModifierBuffTableEntry.activity)
-}
-
-// optional int32 damage = 25;
-bool CDOTAModifierBuffTableEntry::has_damage() const {
-  return (_has_bits_[0] & 0x01000000u) != 0;
-}
-void CDOTAModifierBuffTableEntry::set_has_damage() {
-  _has_bits_[0] |= 0x01000000u;
-}
-void CDOTAModifierBuffTableEntry::clear_has_damage() {
-  _has_bits_[0] &= ~0x01000000u;
-}
-void CDOTAModifierBuffTableEntry::clear_damage() {
-  damage_ = 0;
-  clear_has_damage();
-}
- ::google::protobuf::int32 CDOTAModifierBuffTableEntry::damage() const {
-  // @@protoc_insertion_point(field_get:CDOTAModifierBuffTableEntry.damage)
-  return damage_;
-}
- void CDOTAModifierBuffTableEntry::set_damage(::google::protobuf::int32 value) {
-  set_has_damage();
-  damage_ = value;
-  // @@protoc_insertion_point(field_set:CDOTAModifierBuffTableEntry.damage)
-}
-
-// optional int32 range = 26;
-bool CDOTAModifierBuffTableEntry::has_range() const {
-  return (_has_bits_[0] & 0x02000000u) != 0;
-}
-void CDOTAModifierBuffTableEntry::set_has_range() {
-  _has_bits_[0] |= 0x02000000u;
-}
-void CDOTAModifierBuffTableEntry::clear_has_range() {
-  _has_bits_[0] &= ~0x02000000u;
-}
-void CDOTAModifierBuffTableEntry::clear_range() {
-  range_ = 0;
-  clear_has_range();
-}
- ::google::protobuf::int32 CDOTAModifierBuffTableEntry::range() const {
-  // @@protoc_insertion_point(field_get:CDOTAModifierBuffTableEntry.range)
-  return range_;
-}
- void CDOTAModifierBuffTableEntry::set_range(::google::protobuf::int32 value) {
-  set_has_range();
-  range_ = value;
-  // @@protoc_insertion_point(field_set:CDOTAModifierBuffTableEntry.range)
-}
-
-// optional int32 dd_modifier_index = 27;
-bool CDOTAModifierBuffTableEntry::has_dd_modifier_index() const {
-  return (_has_bits_[0] & 0x04000000u) != 0;
-}
-void CDOTAModifierBuffTableEntry::set_has_dd_modifier_index() {
-  _has_bits_[0] |= 0x04000000u;
-}
-void CDOTAModifierBuffTableEntry::clear_has_dd_modifier_index() {
-  _has_bits_[0] &= ~0x04000000u;
-}
-void CDOTAModifierBuffTableEntry::clear_dd_modifier_index() {
-  dd_modifier_index_ = 0;
-  clear_has_dd_modifier_index();
-}
- ::google::protobuf::int32 CDOTAModifierBuffTableEntry::dd_modifier_index() const {
-  // @@protoc_insertion_point(field_get:CDOTAModifierBuffTableEntry.dd_modifier_index)
-  return dd_modifier_index_;
-}
- void CDOTAModifierBuffTableEntry::set_dd_modifier_index(::google::protobuf::int32 value) {
-  set_has_dd_modifier_index();
-  dd_modifier_index_ = value;
-  // @@protoc_insertion_point(field_set:CDOTAModifierBuffTableEntry.dd_modifier_index)
-}
-
-// optional int32 dd_ability_index = 28;
-bool CDOTAModifierBuffTableEntry::has_dd_ability_index() const {
-  return (_has_bits_[0] & 0x08000000u) != 0;
-}
-void CDOTAModifierBuffTableEntry::set_has_dd_ability_index() {
-  _has_bits_[0] |= 0x08000000u;
-}
-void CDOTAModifierBuffTableEntry::clear_has_dd_ability_index() {
-  _has_bits_[0] &= ~0x08000000u;
-}
-void CDOTAModifierBuffTableEntry::clear_dd_ability_index() {
-  dd_ability_index_ = 0;
-  clear_has_dd_ability_index();
-}
- ::google::protobuf::int32 CDOTAModifierBuffTableEntry::dd_ability_index() const {
-  // @@protoc_insertion_point(field_get:CDOTAModifierBuffTableEntry.dd_ability_index)
-  return dd_ability_index_;
-}
- void CDOTAModifierBuffTableEntry::set_dd_ability_index(::google::protobuf::int32 value) {
-  set_has_dd_ability_index();
-  dd_ability_index_ = value;
-  // @@protoc_insertion_point(field_set:CDOTAModifierBuffTableEntry.dd_ability_index)
-}
-
-// optional string illusion_label = 29;
-bool CDOTAModifierBuffTableEntry::has_illusion_label() const {
-  return (_has_bits_[0] & 0x10000000u) != 0;
-}
-void CDOTAModifierBuffTableEntry::set_has_illusion_label() {
-  _has_bits_[0] |= 0x10000000u;
-}
-void CDOTAModifierBuffTableEntry::clear_has_illusion_label() {
-  _has_bits_[0] &= ~0x10000000u;
-}
-void CDOTAModifierBuffTableEntry::clear_illusion_label() {
-  illusion_label_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  clear_has_illusion_label();
-}
- const ::std::string& CDOTAModifierBuffTableEntry::illusion_label() const {
-  // @@protoc_insertion_point(field_get:CDOTAModifierBuffTableEntry.illusion_label)
-  return illusion_label_.GetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
- void CDOTAModifierBuffTableEntry::set_illusion_label(const ::std::string& value) {
-  set_has_illusion_label();
-  illusion_label_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:CDOTAModifierBuffTableEntry.illusion_label)
-}
- void CDOTAModifierBuffTableEntry::set_illusion_label(const char* value) {
-  set_has_illusion_label();
-  illusion_label_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:CDOTAModifierBuffTableEntry.illusion_label)
-}
- void CDOTAModifierBuffTableEntry::set_illusion_label(const char* value, size_t size) {
-  set_has_illusion_label();
-  illusion_label_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-      ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:CDOTAModifierBuffTableEntry.illusion_label)
-}
- ::std::string* CDOTAModifierBuffTableEntry::mutable_illusion_label() {
-  set_has_illusion_label();
-  // @@protoc_insertion_point(field_mutable:CDOTAModifierBuffTableEntry.illusion_label)
-  return illusion_label_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
- ::std::string* CDOTAModifierBuffTableEntry::release_illusion_label() {
-  clear_has_illusion_label();
-  return illusion_label_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
- void CDOTAModifierBuffTableEntry::set_allocated_illusion_label(::std::string* illusion_label) {
-  if (illusion_label != NULL) {
-    set_has_illusion_label();
-  } else {
-    clear_has_illusion_label();
-  }
-  illusion_label_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), illusion_label);
-  // @@protoc_insertion_point(field_set_allocated:CDOTAModifierBuffTableEntry.illusion_label)
-}
-
-// optional bool active = 30;
-bool CDOTAModifierBuffTableEntry::has_active() const {
-  return (_has_bits_[0] & 0x20000000u) != 0;
-}
-void CDOTAModifierBuffTableEntry::set_has_active() {
-  _has_bits_[0] |= 0x20000000u;
-}
-void CDOTAModifierBuffTableEntry::clear_has_active() {
-  _has_bits_[0] &= ~0x20000000u;
-}
-void CDOTAModifierBuffTableEntry::clear_active() {
-  active_ = false;
-  clear_has_active();
-}
- bool CDOTAModifierBuffTableEntry::active() const {
-  // @@protoc_insertion_point(field_get:CDOTAModifierBuffTableEntry.active)
-  return active_;
-}
- void CDOTAModifierBuffTableEntry::set_active(bool value) {
-  set_has_active();
-  active_ = value;
-  // @@protoc_insertion_point(field_set:CDOTAModifierBuffTableEntry.active)
-}
-
-// optional string player_ids = 31;
-bool CDOTAModifierBuffTableEntry::has_player_ids() const {
-  return (_has_bits_[0] & 0x40000000u) != 0;
-}
-void CDOTAModifierBuffTableEntry::set_has_player_ids() {
-  _has_bits_[0] |= 0x40000000u;
-}
-void CDOTAModifierBuffTableEntry::clear_has_player_ids() {
-  _has_bits_[0] &= ~0x40000000u;
-}
-void CDOTAModifierBuffTableEntry::clear_player_ids() {
-  player_ids_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  clear_has_player_ids();
-}
- const ::std::string& CDOTAModifierBuffTableEntry::player_ids() const {
-  // @@protoc_insertion_point(field_get:CDOTAModifierBuffTableEntry.player_ids)
-  return player_ids_.GetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
- void CDOTAModifierBuffTableEntry::set_player_ids(const ::std::string& value) {
-  set_has_player_ids();
-  player_ids_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:CDOTAModifierBuffTableEntry.player_ids)
-}
- void CDOTAModifierBuffTableEntry::set_player_ids(const char* value) {
-  set_has_player_ids();
-  player_ids_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:CDOTAModifierBuffTableEntry.player_ids)
-}
- void CDOTAModifierBuffTableEntry::set_player_ids(const char* value, size_t size) {
-  set_has_player_ids();
-  player_ids_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-      ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:CDOTAModifierBuffTableEntry.player_ids)
-}
- ::std::string* CDOTAModifierBuffTableEntry::mutable_player_ids() {
-  set_has_player_ids();
-  // @@protoc_insertion_point(field_mutable:CDOTAModifierBuffTableEntry.player_ids)
-  return player_ids_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
- ::std::string* CDOTAModifierBuffTableEntry::release_player_ids() {
-  clear_has_player_ids();
-  return player_ids_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
- void CDOTAModifierBuffTableEntry::set_allocated_player_ids(::std::string* player_ids) {
-  if (player_ids != NULL) {
-    set_has_player_ids();
-  } else {
-    clear_has_player_ids();
-  }
-  player_ids_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), player_ids);
-  // @@protoc_insertion_point(field_set_allocated:CDOTAModifierBuffTableEntry.player_ids)
-}
-
-// optional string lua_name = 32;
-bool CDOTAModifierBuffTableEntry::has_lua_name() const {
-  return (_has_bits_[0] & 0x80000000u) != 0;
-}
-void CDOTAModifierBuffTableEntry::set_has_lua_name() {
-  _has_bits_[0] |= 0x80000000u;
-}
-void CDOTAModifierBuffTableEntry::clear_has_lua_name() {
-  _has_bits_[0] &= ~0x80000000u;
-}
-void CDOTAModifierBuffTableEntry::clear_lua_name() {
-  lua_name_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  clear_has_lua_name();
-}
- const ::std::string& CDOTAModifierBuffTableEntry::lua_name() const {
-  // @@protoc_insertion_point(field_get:CDOTAModifierBuffTableEntry.lua_name)
-  return lua_name_.GetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
- void CDOTAModifierBuffTableEntry::set_lua_name(const ::std::string& value) {
-  set_has_lua_name();
-  lua_name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:CDOTAModifierBuffTableEntry.lua_name)
-}
- void CDOTAModifierBuffTableEntry::set_lua_name(const char* value) {
-  set_has_lua_name();
-  lua_name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:CDOTAModifierBuffTableEntry.lua_name)
-}
- void CDOTAModifierBuffTableEntry::set_lua_name(const char* value, size_t size) {
-  set_has_lua_name();
-  lua_name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-      ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:CDOTAModifierBuffTableEntry.lua_name)
-}
- ::std::string* CDOTAModifierBuffTableEntry::mutable_lua_name() {
-  set_has_lua_name();
-  // @@protoc_insertion_point(field_mutable:CDOTAModifierBuffTableEntry.lua_name)
-  return lua_name_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
- ::std::string* CDOTAModifierBuffTableEntry::release_lua_name() {
-  clear_has_lua_name();
-  return lua_name_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
- void CDOTAModifierBuffTableEntry::set_allocated_lua_name(::std::string* lua_name) {
-  if (lua_name != NULL) {
-    set_has_lua_name();
-  } else {
-    clear_has_lua_name();
-  }
-  lua_name_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), lua_name);
-  // @@protoc_insertion_point(field_set_allocated:CDOTAModifierBuffTableEntry.lua_name)
-}
-
-#endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
 
 // ===================================================================
 
@@ -2834,7 +1794,7 @@ const int CDOTALuaModifierEntry::kModifierFilenameFieldNumber;
 #endif  // !_MSC_VER
 
 CDOTALuaModifierEntry::CDOTALuaModifierEntry()
-  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  : ::google::protobuf::Message() {
   SharedCtor();
   // @@protoc_insertion_point(constructor:CDOTALuaModifierEntry)
 }
@@ -2843,8 +1803,7 @@ void CDOTALuaModifierEntry::InitAsDefaultInstance() {
 }
 
 CDOTALuaModifierEntry::CDOTALuaModifierEntry(const CDOTALuaModifierEntry& from)
-  : ::google::protobuf::Message(),
-    _internal_metadata_(NULL) {
+  : ::google::protobuf::Message() {
   SharedCtor();
   MergeFrom(from);
   // @@protoc_insertion_point(copy_constructor:CDOTALuaModifierEntry)
@@ -2854,7 +1813,7 @@ void CDOTALuaModifierEntry::SharedCtor() {
   ::google::protobuf::internal::GetEmptyString();
   _cached_size_ = 0;
   modifier_type_ = 0;
-  modifier_filename_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  modifier_filename_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
 
@@ -2864,7 +1823,9 @@ CDOTALuaModifierEntry::~CDOTALuaModifierEntry() {
 }
 
 void CDOTALuaModifierEntry::SharedDtor() {
-  modifier_filename_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (modifier_filename_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete modifier_filename_;
+  }
   if (this != default_instance_) {
   }
 }
@@ -2886,25 +1847,21 @@ const CDOTALuaModifierEntry& CDOTALuaModifierEntry::default_instance() {
 
 CDOTALuaModifierEntry* CDOTALuaModifierEntry::default_instance_ = NULL;
 
-CDOTALuaModifierEntry* CDOTALuaModifierEntry::New(::google::protobuf::Arena* arena) const {
-  CDOTALuaModifierEntry* n = new CDOTALuaModifierEntry;
-  if (arena != NULL) {
-    arena->Own(n);
-  }
-  return n;
+CDOTALuaModifierEntry* CDOTALuaModifierEntry::New() const {
+  return new CDOTALuaModifierEntry;
 }
 
 void CDOTALuaModifierEntry::Clear() {
-  if (_has_bits_[0 / 32] & 3u) {
+  if (_has_bits_[0 / 32] & 3) {
     modifier_type_ = 0;
     if (has_modifier_filename()) {
-      modifier_filename_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+      if (modifier_filename_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+        modifier_filename_->clear();
+      }
     }
   }
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
-  if (_internal_metadata_.have_unknown_fields()) {
-    mutable_unknown_fields()->Clear();
-  }
+  mutable_unknown_fields()->Clear();
 }
 
 bool CDOTALuaModifierEntry::MergePartialFromCodedStream(
@@ -2940,7 +1897,7 @@ bool CDOTALuaModifierEntry::MergePartialFromCodedStream(
           ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
             this->modifier_filename().data(), this->modifier_filename().length(),
             ::google::protobuf::internal::WireFormat::PARSE,
-            "CDOTALuaModifierEntry.modifier_filename");
+            "modifier_filename");
         } else {
           goto handle_unusual;
         }
@@ -2983,12 +1940,12 @@ void CDOTALuaModifierEntry::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
       this->modifier_filename().data(), this->modifier_filename().length(),
       ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "CDOTALuaModifierEntry.modifier_filename");
+      "modifier_filename");
     ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
       2, this->modifier_filename(), output);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
   }
@@ -3008,13 +1965,13 @@ void CDOTALuaModifierEntry::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
       this->modifier_filename().data(), this->modifier_filename().length(),
       ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "CDOTALuaModifierEntry.modifier_filename");
+      "modifier_filename");
     target =
       ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
         2, this->modifier_filename(), target);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
   }
@@ -3022,43 +1979,26 @@ void CDOTALuaModifierEntry::SerializeWithCachedSizes(
   return target;
 }
 
-int CDOTALuaModifierEntry::RequiredFieldsByteSizeFallback() const {
-  int total_size = 0;
-
-  if (has_modifier_type()) {
-    // required int32 modifier_type = 1;
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::Int32Size(
-        this->modifier_type());
-  }
-
-  if (has_modifier_filename()) {
-    // required string modifier_filename = 2;
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::StringSize(
-        this->modifier_filename());
-  }
-
-  return total_size;
-}
 int CDOTALuaModifierEntry::ByteSize() const {
   int total_size = 0;
 
-  if (((_has_bits_[0] & 0x00000003) ^ 0x00000003) == 0) {  // All required fields are present.
+  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     // required int32 modifier_type = 1;
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::Int32Size(
-        this->modifier_type());
+    if (has_modifier_type()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::Int32Size(
+          this->modifier_type());
+    }
 
     // required string modifier_filename = 2;
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::StringSize(
-        this->modifier_filename());
+    if (has_modifier_filename()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::StringSize(
+          this->modifier_filename());
+    }
 
-  } else {
-    total_size += RequiredFieldsByteSizeFallback();
   }
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     total_size +=
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         unknown_fields());
@@ -3070,10 +2010,10 @@ int CDOTALuaModifierEntry::ByteSize() const {
 }
 
 void CDOTALuaModifierEntry::MergeFrom(const ::google::protobuf::Message& from) {
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
-  const CDOTALuaModifierEntry* source = 
-      ::google::protobuf::internal::DynamicCastToGenerated<const CDOTALuaModifierEntry>(
-          &from);
+  GOOGLE_CHECK_NE(&from, this);
+  const CDOTALuaModifierEntry* source =
+    ::google::protobuf::internal::dynamic_cast_if_available<const CDOTALuaModifierEntry*>(
+      &from);
   if (source == NULL) {
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
   } else {
@@ -3082,19 +2022,16 @@ void CDOTALuaModifierEntry::MergeFrom(const ::google::protobuf::Message& from) {
 }
 
 void CDOTALuaModifierEntry::MergeFrom(const CDOTALuaModifierEntry& from) {
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  GOOGLE_CHECK_NE(&from, this);
   if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (from.has_modifier_type()) {
       set_modifier_type(from.modifier_type());
     }
     if (from.has_modifier_filename()) {
-      set_has_modifier_filename();
-      modifier_filename_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.modifier_filename_);
+      set_modifier_filename(from.modifier_filename());
     }
   }
-  if (from._internal_metadata_.have_unknown_fields()) {
-    mutable_unknown_fields()->MergeFrom(from.unknown_fields());
-  }
+  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
 }
 
 void CDOTALuaModifierEntry::CopyFrom(const ::google::protobuf::Message& from) {
@@ -3116,15 +2053,13 @@ bool CDOTALuaModifierEntry::IsInitialized() const {
 }
 
 void CDOTALuaModifierEntry::Swap(CDOTALuaModifierEntry* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
-void CDOTALuaModifierEntry::InternalSwap(CDOTALuaModifierEntry* other) {
-  std::swap(modifier_type_, other->modifier_type_);
-  modifier_filename_.Swap(&other->modifier_filename_);
-  std::swap(_has_bits_[0], other->_has_bits_[0]);
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  std::swap(_cached_size_, other->_cached_size_);
+  if (other != this) {
+    std::swap(modifier_type_, other->modifier_type_);
+    std::swap(modifier_filename_, other->modifier_filename_);
+    std::swap(_has_bits_[0], other->_has_bits_[0]);
+    _unknown_fields_.Swap(&other->_unknown_fields_);
+    std::swap(_cached_size_, other->_cached_size_);
+  }
 }
 
 ::google::protobuf::Metadata CDOTALuaModifierEntry::GetMetadata() const {
@@ -3135,87 +2070,6 @@ void CDOTALuaModifierEntry::InternalSwap(CDOTALuaModifierEntry* other) {
   return metadata;
 }
 
-#if PROTOBUF_INLINE_NOT_IN_HEADERS
-// CDOTALuaModifierEntry
-
-// required int32 modifier_type = 1;
-bool CDOTALuaModifierEntry::has_modifier_type() const {
-  return (_has_bits_[0] & 0x00000001u) != 0;
-}
-void CDOTALuaModifierEntry::set_has_modifier_type() {
-  _has_bits_[0] |= 0x00000001u;
-}
-void CDOTALuaModifierEntry::clear_has_modifier_type() {
-  _has_bits_[0] &= ~0x00000001u;
-}
-void CDOTALuaModifierEntry::clear_modifier_type() {
-  modifier_type_ = 0;
-  clear_has_modifier_type();
-}
- ::google::protobuf::int32 CDOTALuaModifierEntry::modifier_type() const {
-  // @@protoc_insertion_point(field_get:CDOTALuaModifierEntry.modifier_type)
-  return modifier_type_;
-}
- void CDOTALuaModifierEntry::set_modifier_type(::google::protobuf::int32 value) {
-  set_has_modifier_type();
-  modifier_type_ = value;
-  // @@protoc_insertion_point(field_set:CDOTALuaModifierEntry.modifier_type)
-}
-
-// required string modifier_filename = 2;
-bool CDOTALuaModifierEntry::has_modifier_filename() const {
-  return (_has_bits_[0] & 0x00000002u) != 0;
-}
-void CDOTALuaModifierEntry::set_has_modifier_filename() {
-  _has_bits_[0] |= 0x00000002u;
-}
-void CDOTALuaModifierEntry::clear_has_modifier_filename() {
-  _has_bits_[0] &= ~0x00000002u;
-}
-void CDOTALuaModifierEntry::clear_modifier_filename() {
-  modifier_filename_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  clear_has_modifier_filename();
-}
- const ::std::string& CDOTALuaModifierEntry::modifier_filename() const {
-  // @@protoc_insertion_point(field_get:CDOTALuaModifierEntry.modifier_filename)
-  return modifier_filename_.GetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
- void CDOTALuaModifierEntry::set_modifier_filename(const ::std::string& value) {
-  set_has_modifier_filename();
-  modifier_filename_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:CDOTALuaModifierEntry.modifier_filename)
-}
- void CDOTALuaModifierEntry::set_modifier_filename(const char* value) {
-  set_has_modifier_filename();
-  modifier_filename_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:CDOTALuaModifierEntry.modifier_filename)
-}
- void CDOTALuaModifierEntry::set_modifier_filename(const char* value, size_t size) {
-  set_has_modifier_filename();
-  modifier_filename_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-      ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:CDOTALuaModifierEntry.modifier_filename)
-}
- ::std::string* CDOTALuaModifierEntry::mutable_modifier_filename() {
-  set_has_modifier_filename();
-  // @@protoc_insertion_point(field_mutable:CDOTALuaModifierEntry.modifier_filename)
-  return modifier_filename_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
- ::std::string* CDOTALuaModifierEntry::release_modifier_filename() {
-  clear_has_modifier_filename();
-  return modifier_filename_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
- void CDOTALuaModifierEntry::set_allocated_modifier_filename(::std::string* modifier_filename) {
-  if (modifier_filename != NULL) {
-    set_has_modifier_filename();
-  } else {
-    clear_has_modifier_filename();
-  }
-  modifier_filename_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), modifier_filename);
-  // @@protoc_insertion_point(field_set_allocated:CDOTALuaModifierEntry.modifier_filename)
-}
-
-#endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
 
 // @@protoc_insertion_point(namespace_scope)
 

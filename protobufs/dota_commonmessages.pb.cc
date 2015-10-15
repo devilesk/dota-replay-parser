@@ -36,6 +36,9 @@ const ::google::protobuf::internal::GeneratedMessageReflection*
 const ::google::protobuf::Descriptor* CDOTAMsg_CoachHUDPing_descriptor_ = NULL;
 const ::google::protobuf::internal::GeneratedMessageReflection*
   CDOTAMsg_CoachHUDPing_reflection_ = NULL;
+const ::google::protobuf::Descriptor* CDOTAMsg_UnitOrder_descriptor_ = NULL;
+const ::google::protobuf::internal::GeneratedMessageReflection*
+  CDOTAMsg_UnitOrder_reflection_ = NULL;
 const ::google::protobuf::EnumDescriptor* EDOTAChatWheelMessage_descriptor_ = NULL;
 const ::google::protobuf::EnumDescriptor* EDOTAStatPopupTypes_descriptor_ = NULL;
 const ::google::protobuf::EnumDescriptor* dotaunitorder_t_descriptor_ = NULL;
@@ -58,16 +61,16 @@ void protobuf_AssignDesc_dota_5fcommonmessages_2eproto() {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CDOTAMsg_LocationPing, type_),
   };
   CDOTAMsg_LocationPing_reflection_ =
-    ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
+    new ::google::protobuf::internal::GeneratedMessageReflection(
       CDOTAMsg_LocationPing_descriptor_,
       CDOTAMsg_LocationPing::default_instance_,
       CDOTAMsg_LocationPing_offsets_,
       GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CDOTAMsg_LocationPing, _has_bits_[0]),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CDOTAMsg_LocationPing, _unknown_fields_),
       -1,
-      -1,
-      sizeof(CDOTAMsg_LocationPing),
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CDOTAMsg_LocationPing, _internal_metadata_),
-      -1);
+      ::google::protobuf::DescriptorPool::generated_pool(),
+      ::google::protobuf::MessageFactory::generated_factory(),
+      sizeof(CDOTAMsg_LocationPing));
   CDOTAMsg_ItemAlert_descriptor_ = file->message_type(1);
   static const int CDOTAMsg_ItemAlert_offsets_[3] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CDOTAMsg_ItemAlert, x_),
@@ -75,16 +78,16 @@ void protobuf_AssignDesc_dota_5fcommonmessages_2eproto() {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CDOTAMsg_ItemAlert, itemid_),
   };
   CDOTAMsg_ItemAlert_reflection_ =
-    ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
+    new ::google::protobuf::internal::GeneratedMessageReflection(
       CDOTAMsg_ItemAlert_descriptor_,
       CDOTAMsg_ItemAlert::default_instance_,
       CDOTAMsg_ItemAlert_offsets_,
       GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CDOTAMsg_ItemAlert, _has_bits_[0]),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CDOTAMsg_ItemAlert, _unknown_fields_),
       -1,
-      -1,
-      sizeof(CDOTAMsg_ItemAlert),
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CDOTAMsg_ItemAlert, _internal_metadata_),
-      -1);
+      ::google::protobuf::DescriptorPool::generated_pool(),
+      ::google::protobuf::MessageFactory::generated_factory(),
+      sizeof(CDOTAMsg_ItemAlert));
   CDOTAMsg_MapLine_descriptor_ = file->message_type(2);
   static const int CDOTAMsg_MapLine_offsets_[3] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CDOTAMsg_MapLine, x_),
@@ -92,16 +95,16 @@ void protobuf_AssignDesc_dota_5fcommonmessages_2eproto() {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CDOTAMsg_MapLine, initial_),
   };
   CDOTAMsg_MapLine_reflection_ =
-    ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
+    new ::google::protobuf::internal::GeneratedMessageReflection(
       CDOTAMsg_MapLine_descriptor_,
       CDOTAMsg_MapLine::default_instance_,
       CDOTAMsg_MapLine_offsets_,
       GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CDOTAMsg_MapLine, _has_bits_[0]),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CDOTAMsg_MapLine, _unknown_fields_),
       -1,
-      -1,
-      sizeof(CDOTAMsg_MapLine),
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CDOTAMsg_MapLine, _internal_metadata_),
-      -1);
+      ::google::protobuf::DescriptorPool::generated_pool(),
+      ::google::protobuf::MessageFactory::generated_factory(),
+      sizeof(CDOTAMsg_MapLine));
   CDOTAMsg_WorldLine_descriptor_ = file->message_type(3);
   static const int CDOTAMsg_WorldLine_offsets_[5] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CDOTAMsg_WorldLine, x_),
@@ -111,16 +114,16 @@ void protobuf_AssignDesc_dota_5fcommonmessages_2eproto() {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CDOTAMsg_WorldLine, end_),
   };
   CDOTAMsg_WorldLine_reflection_ =
-    ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
+    new ::google::protobuf::internal::GeneratedMessageReflection(
       CDOTAMsg_WorldLine_descriptor_,
       CDOTAMsg_WorldLine::default_instance_,
       CDOTAMsg_WorldLine_offsets_,
       GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CDOTAMsg_WorldLine, _has_bits_[0]),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CDOTAMsg_WorldLine, _unknown_fields_),
       -1,
-      -1,
-      sizeof(CDOTAMsg_WorldLine),
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CDOTAMsg_WorldLine, _internal_metadata_),
-      -1);
+      ::google::protobuf::DescriptorPool::generated_pool(),
+      ::google::protobuf::MessageFactory::generated_factory(),
+      sizeof(CDOTAMsg_WorldLine));
   CDOTAMsg_SendStatPopup_descriptor_ = file->message_type(4);
   static const int CDOTAMsg_SendStatPopup_offsets_[3] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CDOTAMsg_SendStatPopup, style_),
@@ -128,16 +131,16 @@ void protobuf_AssignDesc_dota_5fcommonmessages_2eproto() {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CDOTAMsg_SendStatPopup, stat_images_),
   };
   CDOTAMsg_SendStatPopup_reflection_ =
-    ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
+    new ::google::protobuf::internal::GeneratedMessageReflection(
       CDOTAMsg_SendStatPopup_descriptor_,
       CDOTAMsg_SendStatPopup::default_instance_,
       CDOTAMsg_SendStatPopup_offsets_,
       GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CDOTAMsg_SendStatPopup, _has_bits_[0]),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CDOTAMsg_SendStatPopup, _unknown_fields_),
       -1,
-      -1,
-      sizeof(CDOTAMsg_SendStatPopup),
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CDOTAMsg_SendStatPopup, _internal_metadata_),
-      -1);
+      ::google::protobuf::DescriptorPool::generated_pool(),
+      ::google::protobuf::MessageFactory::generated_factory(),
+      sizeof(CDOTAMsg_SendStatPopup));
   CDOTAMsg_CoachHUDPing_descriptor_ = file->message_type(5);
   static const int CDOTAMsg_CoachHUDPing_offsets_[3] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CDOTAMsg_CoachHUDPing, x_),
@@ -145,16 +148,38 @@ void protobuf_AssignDesc_dota_5fcommonmessages_2eproto() {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CDOTAMsg_CoachHUDPing, tgtpath_),
   };
   CDOTAMsg_CoachHUDPing_reflection_ =
-    ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
+    new ::google::protobuf::internal::GeneratedMessageReflection(
       CDOTAMsg_CoachHUDPing_descriptor_,
       CDOTAMsg_CoachHUDPing::default_instance_,
       CDOTAMsg_CoachHUDPing_offsets_,
       GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CDOTAMsg_CoachHUDPing, _has_bits_[0]),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CDOTAMsg_CoachHUDPing, _unknown_fields_),
       -1,
+      ::google::protobuf::DescriptorPool::generated_pool(),
+      ::google::protobuf::MessageFactory::generated_factory(),
+      sizeof(CDOTAMsg_CoachHUDPing));
+  CDOTAMsg_UnitOrder_descriptor_ = file->message_type(6);
+  static const int CDOTAMsg_UnitOrder_offsets_[8] = {
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CDOTAMsg_UnitOrder, issuer_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CDOTAMsg_UnitOrder, order_type_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CDOTAMsg_UnitOrder, units_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CDOTAMsg_UnitOrder, target_index_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CDOTAMsg_UnitOrder, ability_index_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CDOTAMsg_UnitOrder, position_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CDOTAMsg_UnitOrder, queue_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CDOTAMsg_UnitOrder, sequence_number_),
+  };
+  CDOTAMsg_UnitOrder_reflection_ =
+    new ::google::protobuf::internal::GeneratedMessageReflection(
+      CDOTAMsg_UnitOrder_descriptor_,
+      CDOTAMsg_UnitOrder::default_instance_,
+      CDOTAMsg_UnitOrder_offsets_,
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CDOTAMsg_UnitOrder, _has_bits_[0]),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CDOTAMsg_UnitOrder, _unknown_fields_),
       -1,
-      sizeof(CDOTAMsg_CoachHUDPing),
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CDOTAMsg_CoachHUDPing, _internal_metadata_),
-      -1);
+      ::google::protobuf::DescriptorPool::generated_pool(),
+      ::google::protobuf::MessageFactory::generated_factory(),
+      sizeof(CDOTAMsg_UnitOrder));
   EDOTAChatWheelMessage_descriptor_ = file->enum_type(0);
   EDOTAStatPopupTypes_descriptor_ = file->enum_type(1);
   dotaunitorder_t_descriptor_ = file->enum_type(2);
@@ -171,17 +196,19 @@ inline void protobuf_AssignDescriptorsOnce() {
 void protobuf_RegisterTypes(const ::std::string&) {
   protobuf_AssignDescriptorsOnce();
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
-      CDOTAMsg_LocationPing_descriptor_, &CDOTAMsg_LocationPing::default_instance());
+    CDOTAMsg_LocationPing_descriptor_, &CDOTAMsg_LocationPing::default_instance());
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
-      CDOTAMsg_ItemAlert_descriptor_, &CDOTAMsg_ItemAlert::default_instance());
+    CDOTAMsg_ItemAlert_descriptor_, &CDOTAMsg_ItemAlert::default_instance());
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
-      CDOTAMsg_MapLine_descriptor_, &CDOTAMsg_MapLine::default_instance());
+    CDOTAMsg_MapLine_descriptor_, &CDOTAMsg_MapLine::default_instance());
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
-      CDOTAMsg_WorldLine_descriptor_, &CDOTAMsg_WorldLine::default_instance());
+    CDOTAMsg_WorldLine_descriptor_, &CDOTAMsg_WorldLine::default_instance());
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
-      CDOTAMsg_SendStatPopup_descriptor_, &CDOTAMsg_SendStatPopup::default_instance());
+    CDOTAMsg_SendStatPopup_descriptor_, &CDOTAMsg_SendStatPopup::default_instance());
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
-      CDOTAMsg_CoachHUDPing_descriptor_, &CDOTAMsg_CoachHUDPing::default_instance());
+    CDOTAMsg_CoachHUDPing_descriptor_, &CDOTAMsg_CoachHUDPing::default_instance());
+  ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
+    CDOTAMsg_UnitOrder_descriptor_, &CDOTAMsg_UnitOrder::default_instance());
 }
 
 }  // namespace
@@ -199,6 +226,8 @@ void protobuf_ShutdownFile_dota_5fcommonmessages_2eproto() {
   delete CDOTAMsg_SendStatPopup_reflection_;
   delete CDOTAMsg_CoachHUDPing::default_instance_;
   delete CDOTAMsg_CoachHUDPing_reflection_;
+  delete CDOTAMsg_UnitOrder::default_instance_;
+  delete CDOTAMsg_UnitOrder_reflection_;
 }
 
 void protobuf_AddDesc_dota_5fcommonmessages_2eproto() {
@@ -207,105 +236,112 @@ void protobuf_AddDesc_dota_5fcommonmessages_2eproto() {
   already_here = true;
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
+  ::protobuf_AddDesc_networkbasetypes_2eproto();
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-    "\n\031dota_commonmessages.proto\"`\n\025CDOTAMsg_"
-    "LocationPing\022\t\n\001x\030\001 \001(\005\022\t\n\001y\030\002 \001(\005\022\016\n\006ta"
-    "rget\030\003 \001(\005\022\023\n\013direct_ping\030\004 \001(\010\022\014\n\004type\030"
-    "\005 \001(\005\":\n\022CDOTAMsg_ItemAlert\022\t\n\001x\030\001 \001(\005\022\t"
-    "\n\001y\030\002 \001(\005\022\016\n\006itemid\030\003 \001(\005\"9\n\020CDOTAMsg_Ma"
-    "pLine\022\t\n\001x\030\001 \001(\005\022\t\n\001y\030\002 \001(\005\022\017\n\007initial\030\003"
-    " \001(\010\"S\n\022CDOTAMsg_WorldLine\022\t\n\001x\030\001 \001(\005\022\t\n"
-    "\001y\030\002 \001(\005\022\t\n\001z\030\003 \001(\005\022\017\n\007initial\030\004 \001(\010\022\013\n\003"
-    "end\030\005 \001(\010\"~\n\026CDOTAMsg_SendStatPopup\0229\n\005s"
-    "tyle\030\001 \001(\0162\024.EDOTAStatPopupTypes:\024k_EDOT"
-    "A_SPT_Textline\022\024\n\014stat_strings\030\002 \003(\t\022\023\n\013"
-    "stat_images\030\003 \003(\005\">\n\025CDOTAMsg_CoachHUDPi"
-    "ng\022\t\n\001x\030\001 \001(\r\022\t\n\001y\030\002 \001(\r\022\017\n\007tgtpath\030\003 \001("
-    "\t*\305\021\n\025EDOTAChatWheelMessage\022\021\n\rk_EDOTA_C"
-    "W_Ok\020\000\022\023\n\017k_EDOTA_CW_Care\020\001\022\026\n\022k_EDOTA_C"
-    "W_GetBack\020\002\022\030\n\024k_EDOTA_CW_NeedWards\020\003\022\023\n"
-    "\017k_EDOTA_CW_Stun\020\004\022\023\n\017k_EDOTA_CW_Help\020\005\022"
-    "\023\n\017k_EDOTA_CW_Push\020\006\022\026\n\022k_EDOTA_CW_GoodJ"
-    "ob\020\007\022\026\n\022k_EDOTA_CW_Missing\020\010\022\032\n\026k_EDOTA_"
-    "CW_Missing_Top\020\t\022\032\n\026k_EDOTA_CW_Missing_M"
-    "id\020\n\022\035\n\031k_EDOTA_CW_Missing_Bottom\020\013\022\021\n\rk"
-    "_EDOTA_CW_Go\020\014\022\027\n\023k_EDOTA_CW_Initiate\020\r\022"
-    "\025\n\021k_EDOTA_CW_Follow\020\016\022\027\n\023k_EDOTA_CW_Gro"
-    "up_Up\020\017\022\031\n\025k_EDOTA_CW_Spread_Out\020\020\022\031\n\025k_"
-    "EDOTA_CW_Split_Farm\020\021\022\025\n\021k_EDOTA_CW_Atta"
-    "ck\020\022\022\022\n\016k_EDOTA_CW_BRB\020\023\022\023\n\017k_EDOTA_CW_D"
-    "ive\020\024\022\022\n\016k_EDOTA_CW_OMW\020\025\022\030\n\024k_EDOTA_CW_"
-    "Get_Ready\020\026\022\023\n\017k_EDOTA_CW_Bait\020\027\022\023\n\017k_ED"
-    "OTA_CW_Heal\020\030\022\023\n\017k_EDOTA_CW_Mana\020\031\022\022\n\016k_"
-    "EDOTA_CW_OOM\020\032\022\035\n\031k_EDOTA_CW_Skill_Coold"
-    "own\020\033\022\031\n\025k_EDOTA_CW_Ulti_Ready\020\034\022\035\n\031k_ED"
-    "OTA_CW_Enemy_Returned\020\035\022\032\n\026k_EDOTA_CW_Al"
-    "l_Missing\020\036\022\035\n\031k_EDOTA_CW_Enemy_Incoming"
-    "\020\037\022\032\n\026k_EDOTA_CW_Invis_Enemy\020 \022\035\n\031k_EDOT"
-    "A_CW_Enemy_Had_Rune\020!\022\031\n\025k_EDOTA_CW_Spli"
-    "t_Push\020\"\022\035\n\031k_EDOTA_CW_Coming_To_Gank\020#\022"
-    "\033\n\027k_EDOTA_CW_Request_Gank\020$\022 \n\034k_EDOTA_"
-    "CW_Fight_Under_Tower\020%\022\031\n\025k_EDOTA_CW_Den"
-    "y_Tower\020&\022\032\n\026k_EDOTA_CW_Buy_Courier\020\'\022\036\n"
-    "\032k_EDOTA_CW_Upgrade_Courier\020(\022\035\n\031k_EDOTA"
-    "_CW_Need_Detection\020)\022\"\n\036k_EDOTA_CW_They_"
-    "Have_Detection\020*\022\025\n\021k_EDOTA_CW_Buy_TP\020+\022"
-    "\034\n\030k_EDOTA_CW_Reuse_Courier\020,\022\025\n\021k_EDOTA"
-    "_CW_Deward\020-\022\033\n\027k_EDOTA_CW_Building_Mek\020"
-    ".\022\034\n\030k_EDOTA_CW_Building_Pipe\020/\022\035\n\031k_EDO"
-    "TA_CW_Stack_And_Pull\0200\022\023\n\017k_EDOTA_CW_Pul"
-    "l\0201\022\026\n\022k_EDOTA_CW_Pulling\0202\022\024\n\020k_EDOTA_C"
-    "W_Stack\0203\022\027\n\023k_EDOTA_CW_Jungling\0204\022\025\n\021k_"
-    "EDOTA_CW_Roshan\0205\022\032\n\026k_EDOTA_CW_Affirmat"
-    "ive\0206\022\023\n\017k_EDOTA_CW_Wait\0207\022\024\n\020k_EDOTA_CW"
-    "_Pause\0208\022\033\n\027k_EDOTA_CW_Current_Time\0209\022\032\n"
-    "\026k_EDOTA_CW_Check_Runes\020:\022\031\n\025k_EDOTA_CW_"
-    "Smoke_Gank\020;\022\023\n\017k_EDOTA_CW_GLHF\020<\022\023\n\017k_E"
-    "DOTA_CW_Nice\020=\022\025\n\021k_EDOTA_CW_Thanks\020>\022\024\n"
-    "\020k_EDOTA_CW_Sorry\020\?\022\031\n\025k_EDOTA_CW_No_Giv"
-    "e_Up\020@\022\034\n\030k_EDOTA_CW_Just_Happened\020A\022\033\n\027"
-    "k_EDOTA_CW_Game_Is_Hard\020B\022\027\n\023k_EDOTA_CW_"
-    "New_Meta\020C\022\025\n\021k_EDOTA_CW_My_Bad\020D\022\025\n\021k_E"
-    "DOTA_CW_Regret\020E\022\024\n\020k_EDOTA_CW_Relax\020F\022\032"
-    "\n\026k_EDOTA_CW_MissingHero\020G\022\033\n\027k_EDOTA_CW"
-    "_ReturnedHero\020H\022\021\n\rk_EDOTA_CW_GG\020I\022\023\n\017k_"
-    "EDOTA_CW_GGWP\020J\022\025\n\021k_EDOTA_CW_All_GG\020K\022\027"
-    "\n\023k_EDOTA_CW_All_GGWP\020L\022\032\n\026k_EDOTA_CW_Wh"
-    "at_To_Buy\020M\022\034\n\030k_EDOTA_CW_Im_Retreating\020"
-    "N\022\034\n\030k_EDOTA_CW_Space_Created\020O\022\025\n\021k_EDO"
-    "TA_CW_Whoops\020P\022\036\n\032k_EDOTA_CW_Tower_then_"
-    "Back\020Q\022!\n\035k_EDOTA_CW_Barracks_then_Back\020"
-    "R\022\037\n\033k_EDOTA_CW_Ward_Bottom_Rune\020S\022\034\n\030k_"
-    "EDOTA_CW_Ward_Top_Rune\020T\022\027\n\023k_EDOTA_CW_Z"
-    "eus_Ult\020U*r\n\023EDOTAStatPopupTypes\022\030\n\024k_ED"
-    "OTA_SPT_Textline\020\000\022\025\n\021k_EDOTA_SPT_Basic\020"
-    "\001\022\024\n\020k_EDOTA_SPT_Poll\020\002\022\024\n\020k_EDOTA_SPT_G"
-    "rid\020\003*\333\007\n\017dotaunitorder_t\022\030\n\024DOTA_UNIT_O"
-    "RDER_NONE\020\000\022$\n DOTA_UNIT_ORDER_MOVE_TO_P"
-    "OSITION\020\001\022\"\n\036DOTA_UNIT_ORDER_MOVE_TO_TAR"
-    "GET\020\002\022\037\n\033DOTA_UNIT_ORDER_ATTACK_MOVE\020\003\022!"
-    "\n\035DOTA_UNIT_ORDER_ATTACK_TARGET\020\004\022!\n\035DOT"
-    "A_UNIT_ORDER_CAST_POSITION\020\005\022\037\n\033DOTA_UNI"
-    "T_ORDER_CAST_TARGET\020\006\022$\n DOTA_UNIT_ORDER"
-    "_CAST_TARGET_TREE\020\007\022\"\n\036DOTA_UNIT_ORDER_C"
-    "AST_NO_TARGET\020\010\022\037\n\033DOTA_UNIT_ORDER_CAST_"
-    "TOGGLE\020\t\022!\n\035DOTA_UNIT_ORDER_HOLD_POSITIO"
-    "N\020\n\022!\n\035DOTA_UNIT_ORDER_TRAIN_ABILITY\020\013\022\035"
-    "\n\031DOTA_UNIT_ORDER_DROP_ITEM\020\014\022\035\n\031DOTA_UN"
-    "IT_ORDER_GIVE_ITEM\020\r\022\037\n\033DOTA_UNIT_ORDER_"
-    "PICKUP_ITEM\020\016\022\037\n\033DOTA_UNIT_ORDER_PICKUP_"
-    "RUNE\020\017\022!\n\035DOTA_UNIT_ORDER_PURCHASE_ITEM\020"
-    "\020\022\035\n\031DOTA_UNIT_ORDER_SELL_ITEM\020\021\022$\n DOTA"
-    "_UNIT_ORDER_DISASSEMBLE_ITEM\020\022\022\035\n\031DOTA_U"
-    "NIT_ORDER_MOVE_ITEM\020\023\022$\n DOTA_UNIT_ORDER"
-    "_CAST_TOGGLE_AUTO\020\024\022\030\n\024DOTA_UNIT_ORDER_S"
-    "TOP\020\025\022\031\n\025DOTA_UNIT_ORDER_TAUNT\020\026\022\033\n\027DOTA"
-    "_UNIT_ORDER_BUYBACK\020\027\022\031\n\025DOTA_UNIT_ORDER"
-    "_GLYPH\020\030\022)\n%DOTA_UNIT_ORDER_EJECT_ITEM_F"
-    "ROM_STASH\020\031\022\035\n\031DOTA_UNIT_ORDER_CAST_RUNE"
-    "\020\032\022 \n\034DOTA_UNIT_ORDER_PING_ABILITY\020\033\022%\n!"
-    "DOTA_UNIT_ORDER_MOVE_TO_DIRECTION\020\034B\005H\001\200"
-    "\001\000", 3882);
+    "\n\031dota_commonmessages.proto\032\026networkbase"
+    "types.proto\"`\n\025CDOTAMsg_LocationPing\022\t\n\001"
+    "x\030\001 \001(\005\022\t\n\001y\030\002 \001(\005\022\016\n\006target\030\003 \001(\005\022\023\n\013di"
+    "rect_ping\030\004 \001(\010\022\014\n\004type\030\005 \001(\005\":\n\022CDOTAMs"
+    "g_ItemAlert\022\t\n\001x\030\001 \001(\005\022\t\n\001y\030\002 \001(\005\022\016\n\006ite"
+    "mid\030\003 \001(\005\"9\n\020CDOTAMsg_MapLine\022\t\n\001x\030\001 \001(\005"
+    "\022\t\n\001y\030\002 \001(\005\022\017\n\007initial\030\003 \001(\010\"S\n\022CDOTAMsg"
+    "_WorldLine\022\t\n\001x\030\001 \001(\005\022\t\n\001y\030\002 \001(\005\022\t\n\001z\030\003 "
+    "\001(\005\022\017\n\007initial\030\004 \001(\010\022\013\n\003end\030\005 \001(\010\"~\n\026CDO"
+    "TAMsg_SendStatPopup\0229\n\005style\030\001 \001(\0162\024.EDO"
+    "TAStatPopupTypes:\024k_EDOTA_SPT_Textline\022\024"
+    "\n\014stat_strings\030\002 \003(\t\022\023\n\013stat_images\030\003 \003("
+    "\005\">\n\025CDOTAMsg_CoachHUDPing\022\t\n\001x\030\001 \001(\r\022\t\n"
+    "\001y\030\002 \001(\r\022\017\n\007tgtpath\030\003 \001(\t\"\347\001\n\022CDOTAMsg_U"
+    "nitOrder\022\022\n\006issuer\030\001 \001(\021:\002-1\022:\n\norder_ty"
+    "pe\030\002 \001(\0162\020.dotaunitorder_t:\024DOTA_UNIT_OR"
+    "DER_NONE\022\r\n\005units\030\003 \003(\005\022\024\n\014target_index\030"
+    "\004 \001(\005\022\025\n\rability_index\030\005 \001(\005\022\035\n\010position"
+    "\030\006 \001(\0132\013.CMsgVector\022\r\n\005queue\030\007 \001(\010\022\027\n\017se"
+    "quence_number\030\010 \001(\005*\305\021\n\025EDOTAChatWheelMe"
+    "ssage\022\021\n\rk_EDOTA_CW_Ok\020\000\022\023\n\017k_EDOTA_CW_C"
+    "are\020\001\022\026\n\022k_EDOTA_CW_GetBack\020\002\022\030\n\024k_EDOTA"
+    "_CW_NeedWards\020\003\022\023\n\017k_EDOTA_CW_Stun\020\004\022\023\n\017"
+    "k_EDOTA_CW_Help\020\005\022\023\n\017k_EDOTA_CW_Push\020\006\022\026"
+    "\n\022k_EDOTA_CW_GoodJob\020\007\022\026\n\022k_EDOTA_CW_Mis"
+    "sing\020\010\022\032\n\026k_EDOTA_CW_Missing_Top\020\t\022\032\n\026k_"
+    "EDOTA_CW_Missing_Mid\020\n\022\035\n\031k_EDOTA_CW_Mis"
+    "sing_Bottom\020\013\022\021\n\rk_EDOTA_CW_Go\020\014\022\027\n\023k_ED"
+    "OTA_CW_Initiate\020\r\022\025\n\021k_EDOTA_CW_Follow\020\016"
+    "\022\027\n\023k_EDOTA_CW_Group_Up\020\017\022\031\n\025k_EDOTA_CW_"
+    "Spread_Out\020\020\022\031\n\025k_EDOTA_CW_Split_Farm\020\021\022"
+    "\025\n\021k_EDOTA_CW_Attack\020\022\022\022\n\016k_EDOTA_CW_BRB"
+    "\020\023\022\023\n\017k_EDOTA_CW_Dive\020\024\022\022\n\016k_EDOTA_CW_OM"
+    "W\020\025\022\030\n\024k_EDOTA_CW_Get_Ready\020\026\022\023\n\017k_EDOTA"
+    "_CW_Bait\020\027\022\023\n\017k_EDOTA_CW_Heal\020\030\022\023\n\017k_EDO"
+    "TA_CW_Mana\020\031\022\022\n\016k_EDOTA_CW_OOM\020\032\022\035\n\031k_ED"
+    "OTA_CW_Skill_Cooldown\020\033\022\031\n\025k_EDOTA_CW_Ul"
+    "ti_Ready\020\034\022\035\n\031k_EDOTA_CW_Enemy_Returned\020"
+    "\035\022\032\n\026k_EDOTA_CW_All_Missing\020\036\022\035\n\031k_EDOTA"
+    "_CW_Enemy_Incoming\020\037\022\032\n\026k_EDOTA_CW_Invis"
+    "_Enemy\020 \022\035\n\031k_EDOTA_CW_Enemy_Had_Rune\020!\022"
+    "\031\n\025k_EDOTA_CW_Split_Push\020\"\022\035\n\031k_EDOTA_CW"
+    "_Coming_To_Gank\020#\022\033\n\027k_EDOTA_CW_Request_"
+    "Gank\020$\022 \n\034k_EDOTA_CW_Fight_Under_Tower\020%"
+    "\022\031\n\025k_EDOTA_CW_Deny_Tower\020&\022\032\n\026k_EDOTA_C"
+    "W_Buy_Courier\020\'\022\036\n\032k_EDOTA_CW_Upgrade_Co"
+    "urier\020(\022\035\n\031k_EDOTA_CW_Need_Detection\020)\022\""
+    "\n\036k_EDOTA_CW_They_Have_Detection\020*\022\025\n\021k_"
+    "EDOTA_CW_Buy_TP\020+\022\034\n\030k_EDOTA_CW_Reuse_Co"
+    "urier\020,\022\025\n\021k_EDOTA_CW_Deward\020-\022\033\n\027k_EDOT"
+    "A_CW_Building_Mek\020.\022\034\n\030k_EDOTA_CW_Buildi"
+    "ng_Pipe\020/\022\035\n\031k_EDOTA_CW_Stack_And_Pull\0200"
+    "\022\023\n\017k_EDOTA_CW_Pull\0201\022\026\n\022k_EDOTA_CW_Pull"
+    "ing\0202\022\024\n\020k_EDOTA_CW_Stack\0203\022\027\n\023k_EDOTA_C"
+    "W_Jungling\0204\022\025\n\021k_EDOTA_CW_Roshan\0205\022\032\n\026k"
+    "_EDOTA_CW_Affirmative\0206\022\023\n\017k_EDOTA_CW_Wa"
+    "it\0207\022\024\n\020k_EDOTA_CW_Pause\0208\022\033\n\027k_EDOTA_CW"
+    "_Current_Time\0209\022\032\n\026k_EDOTA_CW_Check_Rune"
+    "s\020:\022\031\n\025k_EDOTA_CW_Smoke_Gank\020;\022\023\n\017k_EDOT"
+    "A_CW_GLHF\020<\022\023\n\017k_EDOTA_CW_Nice\020=\022\025\n\021k_ED"
+    "OTA_CW_Thanks\020>\022\024\n\020k_EDOTA_CW_Sorry\020\?\022\031\n"
+    "\025k_EDOTA_CW_No_Give_Up\020@\022\034\n\030k_EDOTA_CW_J"
+    "ust_Happened\020A\022\033\n\027k_EDOTA_CW_Game_Is_Har"
+    "d\020B\022\027\n\023k_EDOTA_CW_New_Meta\020C\022\025\n\021k_EDOTA_"
+    "CW_My_Bad\020D\022\025\n\021k_EDOTA_CW_Regret\020E\022\024\n\020k_"
+    "EDOTA_CW_Relax\020F\022\032\n\026k_EDOTA_CW_MissingHe"
+    "ro\020G\022\033\n\027k_EDOTA_CW_ReturnedHero\020H\022\021\n\rk_E"
+    "DOTA_CW_GG\020I\022\023\n\017k_EDOTA_CW_GGWP\020J\022\025\n\021k_E"
+    "DOTA_CW_All_GG\020K\022\027\n\023k_EDOTA_CW_All_GGWP\020"
+    "L\022\032\n\026k_EDOTA_CW_What_To_Buy\020M\022\034\n\030k_EDOTA"
+    "_CW_Im_Retreating\020N\022\034\n\030k_EDOTA_CW_Space_"
+    "Created\020O\022\025\n\021k_EDOTA_CW_Whoops\020P\022\036\n\032k_ED"
+    "OTA_CW_Tower_then_Back\020Q\022!\n\035k_EDOTA_CW_B"
+    "arracks_then_Back\020R\022\037\n\033k_EDOTA_CW_Ward_B"
+    "ottom_Rune\020S\022\034\n\030k_EDOTA_CW_Ward_Top_Rune"
+    "\020T\022\027\n\023k_EDOTA_CW_Zeus_Ult\020U*r\n\023EDOTAStat"
+    "PopupTypes\022\030\n\024k_EDOTA_SPT_Textline\020\000\022\025\n\021"
+    "k_EDOTA_SPT_Basic\020\001\022\024\n\020k_EDOTA_SPT_Poll\020"
+    "\002\022\024\n\020k_EDOTA_SPT_Grid\020\003*\333\007\n\017dotaunitorde"
+    "r_t\022\030\n\024DOTA_UNIT_ORDER_NONE\020\000\022$\n DOTA_UN"
+    "IT_ORDER_MOVE_TO_POSITION\020\001\022\"\n\036DOTA_UNIT"
+    "_ORDER_MOVE_TO_TARGET\020\002\022\037\n\033DOTA_UNIT_ORD"
+    "ER_ATTACK_MOVE\020\003\022!\n\035DOTA_UNIT_ORDER_ATTA"
+    "CK_TARGET\020\004\022!\n\035DOTA_UNIT_ORDER_CAST_POSI"
+    "TION\020\005\022\037\n\033DOTA_UNIT_ORDER_CAST_TARGET\020\006\022"
+    "$\n DOTA_UNIT_ORDER_CAST_TARGET_TREE\020\007\022\"\n"
+    "\036DOTA_UNIT_ORDER_CAST_NO_TARGET\020\010\022\037\n\033DOT"
+    "A_UNIT_ORDER_CAST_TOGGLE\020\t\022!\n\035DOTA_UNIT_"
+    "ORDER_HOLD_POSITION\020\n\022!\n\035DOTA_UNIT_ORDER"
+    "_TRAIN_ABILITY\020\013\022\035\n\031DOTA_UNIT_ORDER_DROP"
+    "_ITEM\020\014\022\035\n\031DOTA_UNIT_ORDER_GIVE_ITEM\020\r\022\037"
+    "\n\033DOTA_UNIT_ORDER_PICKUP_ITEM\020\016\022\037\n\033DOTA_"
+    "UNIT_ORDER_PICKUP_RUNE\020\017\022!\n\035DOTA_UNIT_OR"
+    "DER_PURCHASE_ITEM\020\020\022\035\n\031DOTA_UNIT_ORDER_S"
+    "ELL_ITEM\020\021\022$\n DOTA_UNIT_ORDER_DISASSEMBL"
+    "E_ITEM\020\022\022\035\n\031DOTA_UNIT_ORDER_MOVE_ITEM\020\023\022"
+    "$\n DOTA_UNIT_ORDER_CAST_TOGGLE_AUTO\020\024\022\030\n"
+    "\024DOTA_UNIT_ORDER_STOP\020\025\022\031\n\025DOTA_UNIT_ORD"
+    "ER_TAUNT\020\026\022\033\n\027DOTA_UNIT_ORDER_BUYBACK\020\027\022"
+    "\031\n\025DOTA_UNIT_ORDER_GLYPH\020\030\022)\n%DOTA_UNIT_"
+    "ORDER_EJECT_ITEM_FROM_STASH\020\031\022\035\n\031DOTA_UN"
+    "IT_ORDER_CAST_RUNE\020\032\022 \n\034DOTA_UNIT_ORDER_"
+    "PING_ABILITY\020\033\022%\n!DOTA_UNIT_ORDER_MOVE_T"
+    "O_DIRECTION\020\034B\005H\001\200\001\000", 4140);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "dota_commonmessages.proto", &protobuf_RegisterTypes);
   CDOTAMsg_LocationPing::default_instance_ = new CDOTAMsg_LocationPing();
@@ -314,12 +350,14 @@ void protobuf_AddDesc_dota_5fcommonmessages_2eproto() {
   CDOTAMsg_WorldLine::default_instance_ = new CDOTAMsg_WorldLine();
   CDOTAMsg_SendStatPopup::default_instance_ = new CDOTAMsg_SendStatPopup();
   CDOTAMsg_CoachHUDPing::default_instance_ = new CDOTAMsg_CoachHUDPing();
+  CDOTAMsg_UnitOrder::default_instance_ = new CDOTAMsg_UnitOrder();
   CDOTAMsg_LocationPing::default_instance_->InitAsDefaultInstance();
   CDOTAMsg_ItemAlert::default_instance_->InitAsDefaultInstance();
   CDOTAMsg_MapLine::default_instance_->InitAsDefaultInstance();
   CDOTAMsg_WorldLine::default_instance_->InitAsDefaultInstance();
   CDOTAMsg_SendStatPopup::default_instance_->InitAsDefaultInstance();
   CDOTAMsg_CoachHUDPing::default_instance_->InitAsDefaultInstance();
+  CDOTAMsg_UnitOrder::default_instance_->InitAsDefaultInstance();
   ::google::protobuf::internal::OnShutdown(&protobuf_ShutdownFile_dota_5fcommonmessages_2eproto);
 }
 
@@ -485,16 +523,6 @@ bool dotaunitorder_t_IsValid(int value) {
 }
 
 
-namespace {
-
-static void MergeFromFail(int line) GOOGLE_ATTRIBUTE_COLD;
-static void MergeFromFail(int line) {
-  GOOGLE_CHECK(false) << __FILE__ << ":" << line;
-}
-
-}  // namespace
-
-
 // ===================================================================
 
 #ifndef _MSC_VER
@@ -506,7 +534,7 @@ const int CDOTAMsg_LocationPing::kTypeFieldNumber;
 #endif  // !_MSC_VER
 
 CDOTAMsg_LocationPing::CDOTAMsg_LocationPing()
-  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  : ::google::protobuf::Message() {
   SharedCtor();
   // @@protoc_insertion_point(constructor:CDOTAMsg_LocationPing)
 }
@@ -515,8 +543,7 @@ void CDOTAMsg_LocationPing::InitAsDefaultInstance() {
 }
 
 CDOTAMsg_LocationPing::CDOTAMsg_LocationPing(const CDOTAMsg_LocationPing& from)
-  : ::google::protobuf::Message(),
-    _internal_metadata_(NULL) {
+  : ::google::protobuf::Message() {
   SharedCtor();
   MergeFrom(from);
   // @@protoc_insertion_point(copy_constructor:CDOTAMsg_LocationPing)
@@ -559,34 +586,30 @@ const CDOTAMsg_LocationPing& CDOTAMsg_LocationPing::default_instance() {
 
 CDOTAMsg_LocationPing* CDOTAMsg_LocationPing::default_instance_ = NULL;
 
-CDOTAMsg_LocationPing* CDOTAMsg_LocationPing::New(::google::protobuf::Arena* arena) const {
-  CDOTAMsg_LocationPing* n = new CDOTAMsg_LocationPing;
-  if (arena != NULL) {
-    arena->Own(n);
-  }
-  return n;
+CDOTAMsg_LocationPing* CDOTAMsg_LocationPing::New() const {
+  return new CDOTAMsg_LocationPing;
 }
 
 void CDOTAMsg_LocationPing::Clear() {
-#define ZR_HELPER_(f) reinterpret_cast<char*>(\
-  &reinterpret_cast<CDOTAMsg_LocationPing*>(16)->f)
+#define OFFSET_OF_FIELD_(f) (reinterpret_cast<char*>(      \
+  &reinterpret_cast<CDOTAMsg_LocationPing*>(16)->f) - \
+   reinterpret_cast<char*>(16))
 
-#define ZR_(first, last) do {\
-  ::memset(&first, 0,\
-           ZR_HELPER_(last) - ZR_HELPER_(first) + sizeof(last));\
-} while (0)
+#define ZR_(first, last) do {                              \
+    size_t f = OFFSET_OF_FIELD_(first);                    \
+    size_t n = OFFSET_OF_FIELD_(last) - f + sizeof(last);  \
+    ::memset(&first, 0, n);                                \
+  } while (0)
 
-  if (_has_bits_[0 / 32] & 31u) {
+  if (_has_bits_[0 / 32] & 31) {
     ZR_(x_, type_);
   }
 
-#undef ZR_HELPER_
+#undef OFFSET_OF_FIELD_
 #undef ZR_
 
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
-  if (_internal_metadata_.have_unknown_fields()) {
-    mutable_unknown_fields()->Clear();
-  }
+  mutable_unknown_fields()->Clear();
 }
 
 bool CDOTAMsg_LocationPing::MergePartialFromCodedStream(
@@ -723,7 +746,7 @@ void CDOTAMsg_LocationPing::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt32(5, this->type(), output);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
   }
@@ -758,7 +781,7 @@ void CDOTAMsg_LocationPing::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(5, this->type(), target);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
   }
@@ -769,7 +792,7 @@ void CDOTAMsg_LocationPing::SerializeWithCachedSizes(
 int CDOTAMsg_LocationPing::ByteSize() const {
   int total_size = 0;
 
-  if (_has_bits_[0 / 32] & 31u) {
+  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     // optional int32 x = 1;
     if (has_x()) {
       total_size += 1 +
@@ -804,7 +827,7 @@ int CDOTAMsg_LocationPing::ByteSize() const {
     }
 
   }
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     total_size +=
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         unknown_fields());
@@ -816,10 +839,10 @@ int CDOTAMsg_LocationPing::ByteSize() const {
 }
 
 void CDOTAMsg_LocationPing::MergeFrom(const ::google::protobuf::Message& from) {
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
-  const CDOTAMsg_LocationPing* source = 
-      ::google::protobuf::internal::DynamicCastToGenerated<const CDOTAMsg_LocationPing>(
-          &from);
+  GOOGLE_CHECK_NE(&from, this);
+  const CDOTAMsg_LocationPing* source =
+    ::google::protobuf::internal::dynamic_cast_if_available<const CDOTAMsg_LocationPing*>(
+      &from);
   if (source == NULL) {
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
   } else {
@@ -828,7 +851,7 @@ void CDOTAMsg_LocationPing::MergeFrom(const ::google::protobuf::Message& from) {
 }
 
 void CDOTAMsg_LocationPing::MergeFrom(const CDOTAMsg_LocationPing& from) {
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  GOOGLE_CHECK_NE(&from, this);
   if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (from.has_x()) {
       set_x(from.x());
@@ -846,9 +869,7 @@ void CDOTAMsg_LocationPing::MergeFrom(const CDOTAMsg_LocationPing& from) {
       set_type(from.type());
     }
   }
-  if (from._internal_metadata_.have_unknown_fields()) {
-    mutable_unknown_fields()->MergeFrom(from.unknown_fields());
-  }
+  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
 }
 
 void CDOTAMsg_LocationPing::CopyFrom(const ::google::protobuf::Message& from) {
@@ -869,18 +890,16 @@ bool CDOTAMsg_LocationPing::IsInitialized() const {
 }
 
 void CDOTAMsg_LocationPing::Swap(CDOTAMsg_LocationPing* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
-void CDOTAMsg_LocationPing::InternalSwap(CDOTAMsg_LocationPing* other) {
-  std::swap(x_, other->x_);
-  std::swap(y_, other->y_);
-  std::swap(target_, other->target_);
-  std::swap(direct_ping_, other->direct_ping_);
-  std::swap(type_, other->type_);
-  std::swap(_has_bits_[0], other->_has_bits_[0]);
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  std::swap(_cached_size_, other->_cached_size_);
+  if (other != this) {
+    std::swap(x_, other->x_);
+    std::swap(y_, other->y_);
+    std::swap(target_, other->target_);
+    std::swap(direct_ping_, other->direct_ping_);
+    std::swap(type_, other->type_);
+    std::swap(_has_bits_[0], other->_has_bits_[0]);
+    _unknown_fields_.Swap(&other->_unknown_fields_);
+    std::swap(_cached_size_, other->_cached_size_);
+  }
 }
 
 ::google::protobuf::Metadata CDOTAMsg_LocationPing::GetMetadata() const {
@@ -891,130 +910,6 @@ void CDOTAMsg_LocationPing::InternalSwap(CDOTAMsg_LocationPing* other) {
   return metadata;
 }
 
-#if PROTOBUF_INLINE_NOT_IN_HEADERS
-// CDOTAMsg_LocationPing
-
-// optional int32 x = 1;
-bool CDOTAMsg_LocationPing::has_x() const {
-  return (_has_bits_[0] & 0x00000001u) != 0;
-}
-void CDOTAMsg_LocationPing::set_has_x() {
-  _has_bits_[0] |= 0x00000001u;
-}
-void CDOTAMsg_LocationPing::clear_has_x() {
-  _has_bits_[0] &= ~0x00000001u;
-}
-void CDOTAMsg_LocationPing::clear_x() {
-  x_ = 0;
-  clear_has_x();
-}
- ::google::protobuf::int32 CDOTAMsg_LocationPing::x() const {
-  // @@protoc_insertion_point(field_get:CDOTAMsg_LocationPing.x)
-  return x_;
-}
- void CDOTAMsg_LocationPing::set_x(::google::protobuf::int32 value) {
-  set_has_x();
-  x_ = value;
-  // @@protoc_insertion_point(field_set:CDOTAMsg_LocationPing.x)
-}
-
-// optional int32 y = 2;
-bool CDOTAMsg_LocationPing::has_y() const {
-  return (_has_bits_[0] & 0x00000002u) != 0;
-}
-void CDOTAMsg_LocationPing::set_has_y() {
-  _has_bits_[0] |= 0x00000002u;
-}
-void CDOTAMsg_LocationPing::clear_has_y() {
-  _has_bits_[0] &= ~0x00000002u;
-}
-void CDOTAMsg_LocationPing::clear_y() {
-  y_ = 0;
-  clear_has_y();
-}
- ::google::protobuf::int32 CDOTAMsg_LocationPing::y() const {
-  // @@protoc_insertion_point(field_get:CDOTAMsg_LocationPing.y)
-  return y_;
-}
- void CDOTAMsg_LocationPing::set_y(::google::protobuf::int32 value) {
-  set_has_y();
-  y_ = value;
-  // @@protoc_insertion_point(field_set:CDOTAMsg_LocationPing.y)
-}
-
-// optional int32 target = 3;
-bool CDOTAMsg_LocationPing::has_target() const {
-  return (_has_bits_[0] & 0x00000004u) != 0;
-}
-void CDOTAMsg_LocationPing::set_has_target() {
-  _has_bits_[0] |= 0x00000004u;
-}
-void CDOTAMsg_LocationPing::clear_has_target() {
-  _has_bits_[0] &= ~0x00000004u;
-}
-void CDOTAMsg_LocationPing::clear_target() {
-  target_ = 0;
-  clear_has_target();
-}
- ::google::protobuf::int32 CDOTAMsg_LocationPing::target() const {
-  // @@protoc_insertion_point(field_get:CDOTAMsg_LocationPing.target)
-  return target_;
-}
- void CDOTAMsg_LocationPing::set_target(::google::protobuf::int32 value) {
-  set_has_target();
-  target_ = value;
-  // @@protoc_insertion_point(field_set:CDOTAMsg_LocationPing.target)
-}
-
-// optional bool direct_ping = 4;
-bool CDOTAMsg_LocationPing::has_direct_ping() const {
-  return (_has_bits_[0] & 0x00000008u) != 0;
-}
-void CDOTAMsg_LocationPing::set_has_direct_ping() {
-  _has_bits_[0] |= 0x00000008u;
-}
-void CDOTAMsg_LocationPing::clear_has_direct_ping() {
-  _has_bits_[0] &= ~0x00000008u;
-}
-void CDOTAMsg_LocationPing::clear_direct_ping() {
-  direct_ping_ = false;
-  clear_has_direct_ping();
-}
- bool CDOTAMsg_LocationPing::direct_ping() const {
-  // @@protoc_insertion_point(field_get:CDOTAMsg_LocationPing.direct_ping)
-  return direct_ping_;
-}
- void CDOTAMsg_LocationPing::set_direct_ping(bool value) {
-  set_has_direct_ping();
-  direct_ping_ = value;
-  // @@protoc_insertion_point(field_set:CDOTAMsg_LocationPing.direct_ping)
-}
-
-// optional int32 type = 5;
-bool CDOTAMsg_LocationPing::has_type() const {
-  return (_has_bits_[0] & 0x00000010u) != 0;
-}
-void CDOTAMsg_LocationPing::set_has_type() {
-  _has_bits_[0] |= 0x00000010u;
-}
-void CDOTAMsg_LocationPing::clear_has_type() {
-  _has_bits_[0] &= ~0x00000010u;
-}
-void CDOTAMsg_LocationPing::clear_type() {
-  type_ = 0;
-  clear_has_type();
-}
- ::google::protobuf::int32 CDOTAMsg_LocationPing::type() const {
-  // @@protoc_insertion_point(field_get:CDOTAMsg_LocationPing.type)
-  return type_;
-}
- void CDOTAMsg_LocationPing::set_type(::google::protobuf::int32 value) {
-  set_has_type();
-  type_ = value;
-  // @@protoc_insertion_point(field_set:CDOTAMsg_LocationPing.type)
-}
-
-#endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
 
 // ===================================================================
 
@@ -1025,7 +920,7 @@ const int CDOTAMsg_ItemAlert::kItemidFieldNumber;
 #endif  // !_MSC_VER
 
 CDOTAMsg_ItemAlert::CDOTAMsg_ItemAlert()
-  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  : ::google::protobuf::Message() {
   SharedCtor();
   // @@protoc_insertion_point(constructor:CDOTAMsg_ItemAlert)
 }
@@ -1034,8 +929,7 @@ void CDOTAMsg_ItemAlert::InitAsDefaultInstance() {
 }
 
 CDOTAMsg_ItemAlert::CDOTAMsg_ItemAlert(const CDOTAMsg_ItemAlert& from)
-  : ::google::protobuf::Message(),
-    _internal_metadata_(NULL) {
+  : ::google::protobuf::Message() {
   SharedCtor();
   MergeFrom(from);
   // @@protoc_insertion_point(copy_constructor:CDOTAMsg_ItemAlert)
@@ -1076,32 +970,28 @@ const CDOTAMsg_ItemAlert& CDOTAMsg_ItemAlert::default_instance() {
 
 CDOTAMsg_ItemAlert* CDOTAMsg_ItemAlert::default_instance_ = NULL;
 
-CDOTAMsg_ItemAlert* CDOTAMsg_ItemAlert::New(::google::protobuf::Arena* arena) const {
-  CDOTAMsg_ItemAlert* n = new CDOTAMsg_ItemAlert;
-  if (arena != NULL) {
-    arena->Own(n);
-  }
-  return n;
+CDOTAMsg_ItemAlert* CDOTAMsg_ItemAlert::New() const {
+  return new CDOTAMsg_ItemAlert;
 }
 
 void CDOTAMsg_ItemAlert::Clear() {
-#define ZR_HELPER_(f) reinterpret_cast<char*>(\
-  &reinterpret_cast<CDOTAMsg_ItemAlert*>(16)->f)
+#define OFFSET_OF_FIELD_(f) (reinterpret_cast<char*>(      \
+  &reinterpret_cast<CDOTAMsg_ItemAlert*>(16)->f) - \
+   reinterpret_cast<char*>(16))
 
-#define ZR_(first, last) do {\
-  ::memset(&first, 0,\
-           ZR_HELPER_(last) - ZR_HELPER_(first) + sizeof(last));\
-} while (0)
+#define ZR_(first, last) do {                              \
+    size_t f = OFFSET_OF_FIELD_(first);                    \
+    size_t n = OFFSET_OF_FIELD_(last) - f + sizeof(last);  \
+    ::memset(&first, 0, n);                                \
+  } while (0)
 
   ZR_(x_, itemid_);
 
-#undef ZR_HELPER_
+#undef OFFSET_OF_FIELD_
 #undef ZR_
 
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
-  if (_internal_metadata_.have_unknown_fields()) {
-    mutable_unknown_fields()->Clear();
-  }
+  mutable_unknown_fields()->Clear();
 }
 
 bool CDOTAMsg_ItemAlert::MergePartialFromCodedStream(
@@ -1198,7 +1088,7 @@ void CDOTAMsg_ItemAlert::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt32(3, this->itemid(), output);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
   }
@@ -1223,7 +1113,7 @@ void CDOTAMsg_ItemAlert::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(3, this->itemid(), target);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
   }
@@ -1234,7 +1124,7 @@ void CDOTAMsg_ItemAlert::SerializeWithCachedSizes(
 int CDOTAMsg_ItemAlert::ByteSize() const {
   int total_size = 0;
 
-  if (_has_bits_[0 / 32] & 7u) {
+  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     // optional int32 x = 1;
     if (has_x()) {
       total_size += 1 +
@@ -1257,7 +1147,7 @@ int CDOTAMsg_ItemAlert::ByteSize() const {
     }
 
   }
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     total_size +=
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         unknown_fields());
@@ -1269,10 +1159,10 @@ int CDOTAMsg_ItemAlert::ByteSize() const {
 }
 
 void CDOTAMsg_ItemAlert::MergeFrom(const ::google::protobuf::Message& from) {
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
-  const CDOTAMsg_ItemAlert* source = 
-      ::google::protobuf::internal::DynamicCastToGenerated<const CDOTAMsg_ItemAlert>(
-          &from);
+  GOOGLE_CHECK_NE(&from, this);
+  const CDOTAMsg_ItemAlert* source =
+    ::google::protobuf::internal::dynamic_cast_if_available<const CDOTAMsg_ItemAlert*>(
+      &from);
   if (source == NULL) {
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
   } else {
@@ -1281,7 +1171,7 @@ void CDOTAMsg_ItemAlert::MergeFrom(const ::google::protobuf::Message& from) {
 }
 
 void CDOTAMsg_ItemAlert::MergeFrom(const CDOTAMsg_ItemAlert& from) {
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  GOOGLE_CHECK_NE(&from, this);
   if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (from.has_x()) {
       set_x(from.x());
@@ -1293,9 +1183,7 @@ void CDOTAMsg_ItemAlert::MergeFrom(const CDOTAMsg_ItemAlert& from) {
       set_itemid(from.itemid());
     }
   }
-  if (from._internal_metadata_.have_unknown_fields()) {
-    mutable_unknown_fields()->MergeFrom(from.unknown_fields());
-  }
+  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
 }
 
 void CDOTAMsg_ItemAlert::CopyFrom(const ::google::protobuf::Message& from) {
@@ -1316,16 +1204,14 @@ bool CDOTAMsg_ItemAlert::IsInitialized() const {
 }
 
 void CDOTAMsg_ItemAlert::Swap(CDOTAMsg_ItemAlert* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
-void CDOTAMsg_ItemAlert::InternalSwap(CDOTAMsg_ItemAlert* other) {
-  std::swap(x_, other->x_);
-  std::swap(y_, other->y_);
-  std::swap(itemid_, other->itemid_);
-  std::swap(_has_bits_[0], other->_has_bits_[0]);
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  std::swap(_cached_size_, other->_cached_size_);
+  if (other != this) {
+    std::swap(x_, other->x_);
+    std::swap(y_, other->y_);
+    std::swap(itemid_, other->itemid_);
+    std::swap(_has_bits_[0], other->_has_bits_[0]);
+    _unknown_fields_.Swap(&other->_unknown_fields_);
+    std::swap(_cached_size_, other->_cached_size_);
+  }
 }
 
 ::google::protobuf::Metadata CDOTAMsg_ItemAlert::GetMetadata() const {
@@ -1336,82 +1222,6 @@ void CDOTAMsg_ItemAlert::InternalSwap(CDOTAMsg_ItemAlert* other) {
   return metadata;
 }
 
-#if PROTOBUF_INLINE_NOT_IN_HEADERS
-// CDOTAMsg_ItemAlert
-
-// optional int32 x = 1;
-bool CDOTAMsg_ItemAlert::has_x() const {
-  return (_has_bits_[0] & 0x00000001u) != 0;
-}
-void CDOTAMsg_ItemAlert::set_has_x() {
-  _has_bits_[0] |= 0x00000001u;
-}
-void CDOTAMsg_ItemAlert::clear_has_x() {
-  _has_bits_[0] &= ~0x00000001u;
-}
-void CDOTAMsg_ItemAlert::clear_x() {
-  x_ = 0;
-  clear_has_x();
-}
- ::google::protobuf::int32 CDOTAMsg_ItemAlert::x() const {
-  // @@protoc_insertion_point(field_get:CDOTAMsg_ItemAlert.x)
-  return x_;
-}
- void CDOTAMsg_ItemAlert::set_x(::google::protobuf::int32 value) {
-  set_has_x();
-  x_ = value;
-  // @@protoc_insertion_point(field_set:CDOTAMsg_ItemAlert.x)
-}
-
-// optional int32 y = 2;
-bool CDOTAMsg_ItemAlert::has_y() const {
-  return (_has_bits_[0] & 0x00000002u) != 0;
-}
-void CDOTAMsg_ItemAlert::set_has_y() {
-  _has_bits_[0] |= 0x00000002u;
-}
-void CDOTAMsg_ItemAlert::clear_has_y() {
-  _has_bits_[0] &= ~0x00000002u;
-}
-void CDOTAMsg_ItemAlert::clear_y() {
-  y_ = 0;
-  clear_has_y();
-}
- ::google::protobuf::int32 CDOTAMsg_ItemAlert::y() const {
-  // @@protoc_insertion_point(field_get:CDOTAMsg_ItemAlert.y)
-  return y_;
-}
- void CDOTAMsg_ItemAlert::set_y(::google::protobuf::int32 value) {
-  set_has_y();
-  y_ = value;
-  // @@protoc_insertion_point(field_set:CDOTAMsg_ItemAlert.y)
-}
-
-// optional int32 itemid = 3;
-bool CDOTAMsg_ItemAlert::has_itemid() const {
-  return (_has_bits_[0] & 0x00000004u) != 0;
-}
-void CDOTAMsg_ItemAlert::set_has_itemid() {
-  _has_bits_[0] |= 0x00000004u;
-}
-void CDOTAMsg_ItemAlert::clear_has_itemid() {
-  _has_bits_[0] &= ~0x00000004u;
-}
-void CDOTAMsg_ItemAlert::clear_itemid() {
-  itemid_ = 0;
-  clear_has_itemid();
-}
- ::google::protobuf::int32 CDOTAMsg_ItemAlert::itemid() const {
-  // @@protoc_insertion_point(field_get:CDOTAMsg_ItemAlert.itemid)
-  return itemid_;
-}
- void CDOTAMsg_ItemAlert::set_itemid(::google::protobuf::int32 value) {
-  set_has_itemid();
-  itemid_ = value;
-  // @@protoc_insertion_point(field_set:CDOTAMsg_ItemAlert.itemid)
-}
-
-#endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
 
 // ===================================================================
 
@@ -1422,7 +1232,7 @@ const int CDOTAMsg_MapLine::kInitialFieldNumber;
 #endif  // !_MSC_VER
 
 CDOTAMsg_MapLine::CDOTAMsg_MapLine()
-  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  : ::google::protobuf::Message() {
   SharedCtor();
   // @@protoc_insertion_point(constructor:CDOTAMsg_MapLine)
 }
@@ -1431,8 +1241,7 @@ void CDOTAMsg_MapLine::InitAsDefaultInstance() {
 }
 
 CDOTAMsg_MapLine::CDOTAMsg_MapLine(const CDOTAMsg_MapLine& from)
-  : ::google::protobuf::Message(),
-    _internal_metadata_(NULL) {
+  : ::google::protobuf::Message() {
   SharedCtor();
   MergeFrom(from);
   // @@protoc_insertion_point(copy_constructor:CDOTAMsg_MapLine)
@@ -1473,32 +1282,28 @@ const CDOTAMsg_MapLine& CDOTAMsg_MapLine::default_instance() {
 
 CDOTAMsg_MapLine* CDOTAMsg_MapLine::default_instance_ = NULL;
 
-CDOTAMsg_MapLine* CDOTAMsg_MapLine::New(::google::protobuf::Arena* arena) const {
-  CDOTAMsg_MapLine* n = new CDOTAMsg_MapLine;
-  if (arena != NULL) {
-    arena->Own(n);
-  }
-  return n;
+CDOTAMsg_MapLine* CDOTAMsg_MapLine::New() const {
+  return new CDOTAMsg_MapLine;
 }
 
 void CDOTAMsg_MapLine::Clear() {
-#define ZR_HELPER_(f) reinterpret_cast<char*>(\
-  &reinterpret_cast<CDOTAMsg_MapLine*>(16)->f)
+#define OFFSET_OF_FIELD_(f) (reinterpret_cast<char*>(      \
+  &reinterpret_cast<CDOTAMsg_MapLine*>(16)->f) - \
+   reinterpret_cast<char*>(16))
 
-#define ZR_(first, last) do {\
-  ::memset(&first, 0,\
-           ZR_HELPER_(last) - ZR_HELPER_(first) + sizeof(last));\
-} while (0)
+#define ZR_(first, last) do {                              \
+    size_t f = OFFSET_OF_FIELD_(first);                    \
+    size_t n = OFFSET_OF_FIELD_(last) - f + sizeof(last);  \
+    ::memset(&first, 0, n);                                \
+  } while (0)
 
   ZR_(x_, initial_);
 
-#undef ZR_HELPER_
+#undef OFFSET_OF_FIELD_
 #undef ZR_
 
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
-  if (_internal_metadata_.have_unknown_fields()) {
-    mutable_unknown_fields()->Clear();
-  }
+  mutable_unknown_fields()->Clear();
 }
 
 bool CDOTAMsg_MapLine::MergePartialFromCodedStream(
@@ -1595,7 +1400,7 @@ void CDOTAMsg_MapLine::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteBool(3, this->initial(), output);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
   }
@@ -1620,7 +1425,7 @@ void CDOTAMsg_MapLine::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(3, this->initial(), target);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
   }
@@ -1631,7 +1436,7 @@ void CDOTAMsg_MapLine::SerializeWithCachedSizes(
 int CDOTAMsg_MapLine::ByteSize() const {
   int total_size = 0;
 
-  if (_has_bits_[0 / 32] & 7u) {
+  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     // optional int32 x = 1;
     if (has_x()) {
       total_size += 1 +
@@ -1652,7 +1457,7 @@ int CDOTAMsg_MapLine::ByteSize() const {
     }
 
   }
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     total_size +=
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         unknown_fields());
@@ -1664,10 +1469,10 @@ int CDOTAMsg_MapLine::ByteSize() const {
 }
 
 void CDOTAMsg_MapLine::MergeFrom(const ::google::protobuf::Message& from) {
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
-  const CDOTAMsg_MapLine* source = 
-      ::google::protobuf::internal::DynamicCastToGenerated<const CDOTAMsg_MapLine>(
-          &from);
+  GOOGLE_CHECK_NE(&from, this);
+  const CDOTAMsg_MapLine* source =
+    ::google::protobuf::internal::dynamic_cast_if_available<const CDOTAMsg_MapLine*>(
+      &from);
   if (source == NULL) {
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
   } else {
@@ -1676,7 +1481,7 @@ void CDOTAMsg_MapLine::MergeFrom(const ::google::protobuf::Message& from) {
 }
 
 void CDOTAMsg_MapLine::MergeFrom(const CDOTAMsg_MapLine& from) {
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  GOOGLE_CHECK_NE(&from, this);
   if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (from.has_x()) {
       set_x(from.x());
@@ -1688,9 +1493,7 @@ void CDOTAMsg_MapLine::MergeFrom(const CDOTAMsg_MapLine& from) {
       set_initial(from.initial());
     }
   }
-  if (from._internal_metadata_.have_unknown_fields()) {
-    mutable_unknown_fields()->MergeFrom(from.unknown_fields());
-  }
+  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
 }
 
 void CDOTAMsg_MapLine::CopyFrom(const ::google::protobuf::Message& from) {
@@ -1711,16 +1514,14 @@ bool CDOTAMsg_MapLine::IsInitialized() const {
 }
 
 void CDOTAMsg_MapLine::Swap(CDOTAMsg_MapLine* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
-void CDOTAMsg_MapLine::InternalSwap(CDOTAMsg_MapLine* other) {
-  std::swap(x_, other->x_);
-  std::swap(y_, other->y_);
-  std::swap(initial_, other->initial_);
-  std::swap(_has_bits_[0], other->_has_bits_[0]);
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  std::swap(_cached_size_, other->_cached_size_);
+  if (other != this) {
+    std::swap(x_, other->x_);
+    std::swap(y_, other->y_);
+    std::swap(initial_, other->initial_);
+    std::swap(_has_bits_[0], other->_has_bits_[0]);
+    _unknown_fields_.Swap(&other->_unknown_fields_);
+    std::swap(_cached_size_, other->_cached_size_);
+  }
 }
 
 ::google::protobuf::Metadata CDOTAMsg_MapLine::GetMetadata() const {
@@ -1731,82 +1532,6 @@ void CDOTAMsg_MapLine::InternalSwap(CDOTAMsg_MapLine* other) {
   return metadata;
 }
 
-#if PROTOBUF_INLINE_NOT_IN_HEADERS
-// CDOTAMsg_MapLine
-
-// optional int32 x = 1;
-bool CDOTAMsg_MapLine::has_x() const {
-  return (_has_bits_[0] & 0x00000001u) != 0;
-}
-void CDOTAMsg_MapLine::set_has_x() {
-  _has_bits_[0] |= 0x00000001u;
-}
-void CDOTAMsg_MapLine::clear_has_x() {
-  _has_bits_[0] &= ~0x00000001u;
-}
-void CDOTAMsg_MapLine::clear_x() {
-  x_ = 0;
-  clear_has_x();
-}
- ::google::protobuf::int32 CDOTAMsg_MapLine::x() const {
-  // @@protoc_insertion_point(field_get:CDOTAMsg_MapLine.x)
-  return x_;
-}
- void CDOTAMsg_MapLine::set_x(::google::protobuf::int32 value) {
-  set_has_x();
-  x_ = value;
-  // @@protoc_insertion_point(field_set:CDOTAMsg_MapLine.x)
-}
-
-// optional int32 y = 2;
-bool CDOTAMsg_MapLine::has_y() const {
-  return (_has_bits_[0] & 0x00000002u) != 0;
-}
-void CDOTAMsg_MapLine::set_has_y() {
-  _has_bits_[0] |= 0x00000002u;
-}
-void CDOTAMsg_MapLine::clear_has_y() {
-  _has_bits_[0] &= ~0x00000002u;
-}
-void CDOTAMsg_MapLine::clear_y() {
-  y_ = 0;
-  clear_has_y();
-}
- ::google::protobuf::int32 CDOTAMsg_MapLine::y() const {
-  // @@protoc_insertion_point(field_get:CDOTAMsg_MapLine.y)
-  return y_;
-}
- void CDOTAMsg_MapLine::set_y(::google::protobuf::int32 value) {
-  set_has_y();
-  y_ = value;
-  // @@protoc_insertion_point(field_set:CDOTAMsg_MapLine.y)
-}
-
-// optional bool initial = 3;
-bool CDOTAMsg_MapLine::has_initial() const {
-  return (_has_bits_[0] & 0x00000004u) != 0;
-}
-void CDOTAMsg_MapLine::set_has_initial() {
-  _has_bits_[0] |= 0x00000004u;
-}
-void CDOTAMsg_MapLine::clear_has_initial() {
-  _has_bits_[0] &= ~0x00000004u;
-}
-void CDOTAMsg_MapLine::clear_initial() {
-  initial_ = false;
-  clear_has_initial();
-}
- bool CDOTAMsg_MapLine::initial() const {
-  // @@protoc_insertion_point(field_get:CDOTAMsg_MapLine.initial)
-  return initial_;
-}
- void CDOTAMsg_MapLine::set_initial(bool value) {
-  set_has_initial();
-  initial_ = value;
-  // @@protoc_insertion_point(field_set:CDOTAMsg_MapLine.initial)
-}
-
-#endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
 
 // ===================================================================
 
@@ -1819,7 +1544,7 @@ const int CDOTAMsg_WorldLine::kEndFieldNumber;
 #endif  // !_MSC_VER
 
 CDOTAMsg_WorldLine::CDOTAMsg_WorldLine()
-  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  : ::google::protobuf::Message() {
   SharedCtor();
   // @@protoc_insertion_point(constructor:CDOTAMsg_WorldLine)
 }
@@ -1828,8 +1553,7 @@ void CDOTAMsg_WorldLine::InitAsDefaultInstance() {
 }
 
 CDOTAMsg_WorldLine::CDOTAMsg_WorldLine(const CDOTAMsg_WorldLine& from)
-  : ::google::protobuf::Message(),
-    _internal_metadata_(NULL) {
+  : ::google::protobuf::Message() {
   SharedCtor();
   MergeFrom(from);
   // @@protoc_insertion_point(copy_constructor:CDOTAMsg_WorldLine)
@@ -1872,34 +1596,30 @@ const CDOTAMsg_WorldLine& CDOTAMsg_WorldLine::default_instance() {
 
 CDOTAMsg_WorldLine* CDOTAMsg_WorldLine::default_instance_ = NULL;
 
-CDOTAMsg_WorldLine* CDOTAMsg_WorldLine::New(::google::protobuf::Arena* arena) const {
-  CDOTAMsg_WorldLine* n = new CDOTAMsg_WorldLine;
-  if (arena != NULL) {
-    arena->Own(n);
-  }
-  return n;
+CDOTAMsg_WorldLine* CDOTAMsg_WorldLine::New() const {
+  return new CDOTAMsg_WorldLine;
 }
 
 void CDOTAMsg_WorldLine::Clear() {
-#define ZR_HELPER_(f) reinterpret_cast<char*>(\
-  &reinterpret_cast<CDOTAMsg_WorldLine*>(16)->f)
+#define OFFSET_OF_FIELD_(f) (reinterpret_cast<char*>(      \
+  &reinterpret_cast<CDOTAMsg_WorldLine*>(16)->f) - \
+   reinterpret_cast<char*>(16))
 
-#define ZR_(first, last) do {\
-  ::memset(&first, 0,\
-           ZR_HELPER_(last) - ZR_HELPER_(first) + sizeof(last));\
-} while (0)
+#define ZR_(first, last) do {                              \
+    size_t f = OFFSET_OF_FIELD_(first);                    \
+    size_t n = OFFSET_OF_FIELD_(last) - f + sizeof(last);  \
+    ::memset(&first, 0, n);                                \
+  } while (0)
 
-  if (_has_bits_[0 / 32] & 31u) {
+  if (_has_bits_[0 / 32] & 31) {
     ZR_(x_, end_);
   }
 
-#undef ZR_HELPER_
+#undef OFFSET_OF_FIELD_
 #undef ZR_
 
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
-  if (_internal_metadata_.have_unknown_fields()) {
-    mutable_unknown_fields()->Clear();
-  }
+  mutable_unknown_fields()->Clear();
 }
 
 bool CDOTAMsg_WorldLine::MergePartialFromCodedStream(
@@ -2036,7 +1756,7 @@ void CDOTAMsg_WorldLine::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteBool(5, this->end(), output);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
   }
@@ -2071,7 +1791,7 @@ void CDOTAMsg_WorldLine::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(5, this->end(), target);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
   }
@@ -2082,7 +1802,7 @@ void CDOTAMsg_WorldLine::SerializeWithCachedSizes(
 int CDOTAMsg_WorldLine::ByteSize() const {
   int total_size = 0;
 
-  if (_has_bits_[0 / 32] & 31u) {
+  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     // optional int32 x = 1;
     if (has_x()) {
       total_size += 1 +
@@ -2115,7 +1835,7 @@ int CDOTAMsg_WorldLine::ByteSize() const {
     }
 
   }
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     total_size +=
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         unknown_fields());
@@ -2127,10 +1847,10 @@ int CDOTAMsg_WorldLine::ByteSize() const {
 }
 
 void CDOTAMsg_WorldLine::MergeFrom(const ::google::protobuf::Message& from) {
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
-  const CDOTAMsg_WorldLine* source = 
-      ::google::protobuf::internal::DynamicCastToGenerated<const CDOTAMsg_WorldLine>(
-          &from);
+  GOOGLE_CHECK_NE(&from, this);
+  const CDOTAMsg_WorldLine* source =
+    ::google::protobuf::internal::dynamic_cast_if_available<const CDOTAMsg_WorldLine*>(
+      &from);
   if (source == NULL) {
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
   } else {
@@ -2139,7 +1859,7 @@ void CDOTAMsg_WorldLine::MergeFrom(const ::google::protobuf::Message& from) {
 }
 
 void CDOTAMsg_WorldLine::MergeFrom(const CDOTAMsg_WorldLine& from) {
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  GOOGLE_CHECK_NE(&from, this);
   if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (from.has_x()) {
       set_x(from.x());
@@ -2157,9 +1877,7 @@ void CDOTAMsg_WorldLine::MergeFrom(const CDOTAMsg_WorldLine& from) {
       set_end(from.end());
     }
   }
-  if (from._internal_metadata_.have_unknown_fields()) {
-    mutable_unknown_fields()->MergeFrom(from.unknown_fields());
-  }
+  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
 }
 
 void CDOTAMsg_WorldLine::CopyFrom(const ::google::protobuf::Message& from) {
@@ -2180,18 +1898,16 @@ bool CDOTAMsg_WorldLine::IsInitialized() const {
 }
 
 void CDOTAMsg_WorldLine::Swap(CDOTAMsg_WorldLine* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
-void CDOTAMsg_WorldLine::InternalSwap(CDOTAMsg_WorldLine* other) {
-  std::swap(x_, other->x_);
-  std::swap(y_, other->y_);
-  std::swap(z_, other->z_);
-  std::swap(initial_, other->initial_);
-  std::swap(end_, other->end_);
-  std::swap(_has_bits_[0], other->_has_bits_[0]);
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  std::swap(_cached_size_, other->_cached_size_);
+  if (other != this) {
+    std::swap(x_, other->x_);
+    std::swap(y_, other->y_);
+    std::swap(z_, other->z_);
+    std::swap(initial_, other->initial_);
+    std::swap(end_, other->end_);
+    std::swap(_has_bits_[0], other->_has_bits_[0]);
+    _unknown_fields_.Swap(&other->_unknown_fields_);
+    std::swap(_cached_size_, other->_cached_size_);
+  }
 }
 
 ::google::protobuf::Metadata CDOTAMsg_WorldLine::GetMetadata() const {
@@ -2202,130 +1918,6 @@ void CDOTAMsg_WorldLine::InternalSwap(CDOTAMsg_WorldLine* other) {
   return metadata;
 }
 
-#if PROTOBUF_INLINE_NOT_IN_HEADERS
-// CDOTAMsg_WorldLine
-
-// optional int32 x = 1;
-bool CDOTAMsg_WorldLine::has_x() const {
-  return (_has_bits_[0] & 0x00000001u) != 0;
-}
-void CDOTAMsg_WorldLine::set_has_x() {
-  _has_bits_[0] |= 0x00000001u;
-}
-void CDOTAMsg_WorldLine::clear_has_x() {
-  _has_bits_[0] &= ~0x00000001u;
-}
-void CDOTAMsg_WorldLine::clear_x() {
-  x_ = 0;
-  clear_has_x();
-}
- ::google::protobuf::int32 CDOTAMsg_WorldLine::x() const {
-  // @@protoc_insertion_point(field_get:CDOTAMsg_WorldLine.x)
-  return x_;
-}
- void CDOTAMsg_WorldLine::set_x(::google::protobuf::int32 value) {
-  set_has_x();
-  x_ = value;
-  // @@protoc_insertion_point(field_set:CDOTAMsg_WorldLine.x)
-}
-
-// optional int32 y = 2;
-bool CDOTAMsg_WorldLine::has_y() const {
-  return (_has_bits_[0] & 0x00000002u) != 0;
-}
-void CDOTAMsg_WorldLine::set_has_y() {
-  _has_bits_[0] |= 0x00000002u;
-}
-void CDOTAMsg_WorldLine::clear_has_y() {
-  _has_bits_[0] &= ~0x00000002u;
-}
-void CDOTAMsg_WorldLine::clear_y() {
-  y_ = 0;
-  clear_has_y();
-}
- ::google::protobuf::int32 CDOTAMsg_WorldLine::y() const {
-  // @@protoc_insertion_point(field_get:CDOTAMsg_WorldLine.y)
-  return y_;
-}
- void CDOTAMsg_WorldLine::set_y(::google::protobuf::int32 value) {
-  set_has_y();
-  y_ = value;
-  // @@protoc_insertion_point(field_set:CDOTAMsg_WorldLine.y)
-}
-
-// optional int32 z = 3;
-bool CDOTAMsg_WorldLine::has_z() const {
-  return (_has_bits_[0] & 0x00000004u) != 0;
-}
-void CDOTAMsg_WorldLine::set_has_z() {
-  _has_bits_[0] |= 0x00000004u;
-}
-void CDOTAMsg_WorldLine::clear_has_z() {
-  _has_bits_[0] &= ~0x00000004u;
-}
-void CDOTAMsg_WorldLine::clear_z() {
-  z_ = 0;
-  clear_has_z();
-}
- ::google::protobuf::int32 CDOTAMsg_WorldLine::z() const {
-  // @@protoc_insertion_point(field_get:CDOTAMsg_WorldLine.z)
-  return z_;
-}
- void CDOTAMsg_WorldLine::set_z(::google::protobuf::int32 value) {
-  set_has_z();
-  z_ = value;
-  // @@protoc_insertion_point(field_set:CDOTAMsg_WorldLine.z)
-}
-
-// optional bool initial = 4;
-bool CDOTAMsg_WorldLine::has_initial() const {
-  return (_has_bits_[0] & 0x00000008u) != 0;
-}
-void CDOTAMsg_WorldLine::set_has_initial() {
-  _has_bits_[0] |= 0x00000008u;
-}
-void CDOTAMsg_WorldLine::clear_has_initial() {
-  _has_bits_[0] &= ~0x00000008u;
-}
-void CDOTAMsg_WorldLine::clear_initial() {
-  initial_ = false;
-  clear_has_initial();
-}
- bool CDOTAMsg_WorldLine::initial() const {
-  // @@protoc_insertion_point(field_get:CDOTAMsg_WorldLine.initial)
-  return initial_;
-}
- void CDOTAMsg_WorldLine::set_initial(bool value) {
-  set_has_initial();
-  initial_ = value;
-  // @@protoc_insertion_point(field_set:CDOTAMsg_WorldLine.initial)
-}
-
-// optional bool end = 5;
-bool CDOTAMsg_WorldLine::has_end() const {
-  return (_has_bits_[0] & 0x00000010u) != 0;
-}
-void CDOTAMsg_WorldLine::set_has_end() {
-  _has_bits_[0] |= 0x00000010u;
-}
-void CDOTAMsg_WorldLine::clear_has_end() {
-  _has_bits_[0] &= ~0x00000010u;
-}
-void CDOTAMsg_WorldLine::clear_end() {
-  end_ = false;
-  clear_has_end();
-}
- bool CDOTAMsg_WorldLine::end() const {
-  // @@protoc_insertion_point(field_get:CDOTAMsg_WorldLine.end)
-  return end_;
-}
- void CDOTAMsg_WorldLine::set_end(bool value) {
-  set_has_end();
-  end_ = value;
-  // @@protoc_insertion_point(field_set:CDOTAMsg_WorldLine.end)
-}
-
-#endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
 
 // ===================================================================
 
@@ -2336,7 +1928,7 @@ const int CDOTAMsg_SendStatPopup::kStatImagesFieldNumber;
 #endif  // !_MSC_VER
 
 CDOTAMsg_SendStatPopup::CDOTAMsg_SendStatPopup()
-  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  : ::google::protobuf::Message() {
   SharedCtor();
   // @@protoc_insertion_point(constructor:CDOTAMsg_SendStatPopup)
 }
@@ -2345,8 +1937,7 @@ void CDOTAMsg_SendStatPopup::InitAsDefaultInstance() {
 }
 
 CDOTAMsg_SendStatPopup::CDOTAMsg_SendStatPopup(const CDOTAMsg_SendStatPopup& from)
-  : ::google::protobuf::Message(),
-    _internal_metadata_(NULL) {
+  : ::google::protobuf::Message() {
   SharedCtor();
   MergeFrom(from);
   // @@protoc_insertion_point(copy_constructor:CDOTAMsg_SendStatPopup)
@@ -2386,12 +1977,8 @@ const CDOTAMsg_SendStatPopup& CDOTAMsg_SendStatPopup::default_instance() {
 
 CDOTAMsg_SendStatPopup* CDOTAMsg_SendStatPopup::default_instance_ = NULL;
 
-CDOTAMsg_SendStatPopup* CDOTAMsg_SendStatPopup::New(::google::protobuf::Arena* arena) const {
-  CDOTAMsg_SendStatPopup* n = new CDOTAMsg_SendStatPopup;
-  if (arena != NULL) {
-    arena->Own(n);
-  }
-  return n;
+CDOTAMsg_SendStatPopup* CDOTAMsg_SendStatPopup::New() const {
+  return new CDOTAMsg_SendStatPopup;
 }
 
 void CDOTAMsg_SendStatPopup::Clear() {
@@ -2399,9 +1986,7 @@ void CDOTAMsg_SendStatPopup::Clear() {
   stat_strings_.Clear();
   stat_images_.Clear();
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
-  if (_internal_metadata_.have_unknown_fields()) {
-    mutable_unknown_fields()->Clear();
-  }
+  mutable_unknown_fields()->Clear();
 }
 
 bool CDOTAMsg_SendStatPopup::MergePartialFromCodedStream(
@@ -2443,7 +2028,7 @@ bool CDOTAMsg_SendStatPopup::MergePartialFromCodedStream(
             this->stat_strings(this->stat_strings_size() - 1).data(),
             this->stat_strings(this->stat_strings_size() - 1).length(),
             ::google::protobuf::internal::WireFormat::PARSE,
-            "CDOTAMsg_SendStatPopup.stat_strings");
+            "stat_strings");
         } else {
           goto handle_unusual;
         }
@@ -2504,10 +2089,10 @@ void CDOTAMsg_SendStatPopup::SerializeWithCachedSizes(
 
   // repeated string stat_strings = 2;
   for (int i = 0; i < this->stat_strings_size(); i++) {
-    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-      this->stat_strings(i).data(), this->stat_strings(i).length(),
-      ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "CDOTAMsg_SendStatPopup.stat_strings");
+  ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+    this->stat_strings(i).data(), this->stat_strings(i).length(),
+    ::google::protobuf::internal::WireFormat::SERIALIZE,
+    "stat_strings");
     ::google::protobuf::internal::WireFormatLite::WriteString(
       2, this->stat_strings(i), output);
   }
@@ -2518,7 +2103,7 @@ void CDOTAMsg_SendStatPopup::SerializeWithCachedSizes(
       3, this->stat_images(i), output);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
   }
@@ -2539,7 +2124,7 @@ void CDOTAMsg_SendStatPopup::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
       this->stat_strings(i).data(), this->stat_strings(i).length(),
       ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "CDOTAMsg_SendStatPopup.stat_strings");
+      "stat_strings");
     target = ::google::protobuf::internal::WireFormatLite::
       WriteStringToArray(2, this->stat_strings(i), target);
   }
@@ -2550,7 +2135,7 @@ void CDOTAMsg_SendStatPopup::SerializeWithCachedSizes(
       WriteInt32ToArray(3, this->stat_images(i), target);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
   }
@@ -2561,12 +2146,14 @@ void CDOTAMsg_SendStatPopup::SerializeWithCachedSizes(
 int CDOTAMsg_SendStatPopup::ByteSize() const {
   int total_size = 0;
 
-  // optional .EDOTAStatPopupTypes style = 1 [default = k_EDOTA_SPT_Textline];
-  if (has_style()) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::EnumSize(this->style());
-  }
+  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    // optional .EDOTAStatPopupTypes style = 1 [default = k_EDOTA_SPT_Textline];
+    if (has_style()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::EnumSize(this->style());
+    }
 
+  }
   // repeated string stat_strings = 2;
   total_size += 1 * this->stat_strings_size();
   for (int i = 0; i < this->stat_strings_size(); i++) {
@@ -2584,7 +2171,7 @@ int CDOTAMsg_SendStatPopup::ByteSize() const {
     total_size += 1 * this->stat_images_size() + data_size;
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     total_size +=
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         unknown_fields());
@@ -2596,10 +2183,10 @@ int CDOTAMsg_SendStatPopup::ByteSize() const {
 }
 
 void CDOTAMsg_SendStatPopup::MergeFrom(const ::google::protobuf::Message& from) {
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
-  const CDOTAMsg_SendStatPopup* source = 
-      ::google::protobuf::internal::DynamicCastToGenerated<const CDOTAMsg_SendStatPopup>(
-          &from);
+  GOOGLE_CHECK_NE(&from, this);
+  const CDOTAMsg_SendStatPopup* source =
+    ::google::protobuf::internal::dynamic_cast_if_available<const CDOTAMsg_SendStatPopup*>(
+      &from);
   if (source == NULL) {
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
   } else {
@@ -2608,7 +2195,7 @@ void CDOTAMsg_SendStatPopup::MergeFrom(const ::google::protobuf::Message& from) 
 }
 
 void CDOTAMsg_SendStatPopup::MergeFrom(const CDOTAMsg_SendStatPopup& from) {
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  GOOGLE_CHECK_NE(&from, this);
   stat_strings_.MergeFrom(from.stat_strings_);
   stat_images_.MergeFrom(from.stat_images_);
   if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
@@ -2616,9 +2203,7 @@ void CDOTAMsg_SendStatPopup::MergeFrom(const CDOTAMsg_SendStatPopup& from) {
       set_style(from.style());
     }
   }
-  if (from._internal_metadata_.have_unknown_fields()) {
-    mutable_unknown_fields()->MergeFrom(from.unknown_fields());
-  }
+  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
 }
 
 void CDOTAMsg_SendStatPopup::CopyFrom(const ::google::protobuf::Message& from) {
@@ -2639,16 +2224,14 @@ bool CDOTAMsg_SendStatPopup::IsInitialized() const {
 }
 
 void CDOTAMsg_SendStatPopup::Swap(CDOTAMsg_SendStatPopup* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
-void CDOTAMsg_SendStatPopup::InternalSwap(CDOTAMsg_SendStatPopup* other) {
-  std::swap(style_, other->style_);
-  stat_strings_.UnsafeArenaSwap(&other->stat_strings_);
-  stat_images_.UnsafeArenaSwap(&other->stat_images_);
-  std::swap(_has_bits_[0], other->_has_bits_[0]);
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  std::swap(_cached_size_, other->_cached_size_);
+  if (other != this) {
+    std::swap(style_, other->style_);
+    stat_strings_.Swap(&other->stat_strings_);
+    stat_images_.Swap(&other->stat_images_);
+    std::swap(_has_bits_[0], other->_has_bits_[0]);
+    _unknown_fields_.Swap(&other->_unknown_fields_);
+    std::swap(_cached_size_, other->_cached_size_);
+  }
 }
 
 ::google::protobuf::Metadata CDOTAMsg_SendStatPopup::GetMetadata() const {
@@ -2659,119 +2242,6 @@ void CDOTAMsg_SendStatPopup::InternalSwap(CDOTAMsg_SendStatPopup* other) {
   return metadata;
 }
 
-#if PROTOBUF_INLINE_NOT_IN_HEADERS
-// CDOTAMsg_SendStatPopup
-
-// optional .EDOTAStatPopupTypes style = 1 [default = k_EDOTA_SPT_Textline];
-bool CDOTAMsg_SendStatPopup::has_style() const {
-  return (_has_bits_[0] & 0x00000001u) != 0;
-}
-void CDOTAMsg_SendStatPopup::set_has_style() {
-  _has_bits_[0] |= 0x00000001u;
-}
-void CDOTAMsg_SendStatPopup::clear_has_style() {
-  _has_bits_[0] &= ~0x00000001u;
-}
-void CDOTAMsg_SendStatPopup::clear_style() {
-  style_ = 0;
-  clear_has_style();
-}
- ::EDOTAStatPopupTypes CDOTAMsg_SendStatPopup::style() const {
-  // @@protoc_insertion_point(field_get:CDOTAMsg_SendStatPopup.style)
-  return static_cast< ::EDOTAStatPopupTypes >(style_);
-}
- void CDOTAMsg_SendStatPopup::set_style(::EDOTAStatPopupTypes value) {
-  assert(::EDOTAStatPopupTypes_IsValid(value));
-  set_has_style();
-  style_ = value;
-  // @@protoc_insertion_point(field_set:CDOTAMsg_SendStatPopup.style)
-}
-
-// repeated string stat_strings = 2;
-int CDOTAMsg_SendStatPopup::stat_strings_size() const {
-  return stat_strings_.size();
-}
-void CDOTAMsg_SendStatPopup::clear_stat_strings() {
-  stat_strings_.Clear();
-}
- const ::std::string& CDOTAMsg_SendStatPopup::stat_strings(int index) const {
-  // @@protoc_insertion_point(field_get:CDOTAMsg_SendStatPopup.stat_strings)
-  return stat_strings_.Get(index);
-}
- ::std::string* CDOTAMsg_SendStatPopup::mutable_stat_strings(int index) {
-  // @@protoc_insertion_point(field_mutable:CDOTAMsg_SendStatPopup.stat_strings)
-  return stat_strings_.Mutable(index);
-}
- void CDOTAMsg_SendStatPopup::set_stat_strings(int index, const ::std::string& value) {
-  // @@protoc_insertion_point(field_set:CDOTAMsg_SendStatPopup.stat_strings)
-  stat_strings_.Mutable(index)->assign(value);
-}
- void CDOTAMsg_SendStatPopup::set_stat_strings(int index, const char* value) {
-  stat_strings_.Mutable(index)->assign(value);
-  // @@protoc_insertion_point(field_set_char:CDOTAMsg_SendStatPopup.stat_strings)
-}
- void CDOTAMsg_SendStatPopup::set_stat_strings(int index, const char* value, size_t size) {
-  stat_strings_.Mutable(index)->assign(
-    reinterpret_cast<const char*>(value), size);
-  // @@protoc_insertion_point(field_set_pointer:CDOTAMsg_SendStatPopup.stat_strings)
-}
- ::std::string* CDOTAMsg_SendStatPopup::add_stat_strings() {
-  return stat_strings_.Add();
-}
- void CDOTAMsg_SendStatPopup::add_stat_strings(const ::std::string& value) {
-  stat_strings_.Add()->assign(value);
-  // @@protoc_insertion_point(field_add:CDOTAMsg_SendStatPopup.stat_strings)
-}
- void CDOTAMsg_SendStatPopup::add_stat_strings(const char* value) {
-  stat_strings_.Add()->assign(value);
-  // @@protoc_insertion_point(field_add_char:CDOTAMsg_SendStatPopup.stat_strings)
-}
- void CDOTAMsg_SendStatPopup::add_stat_strings(const char* value, size_t size) {
-  stat_strings_.Add()->assign(reinterpret_cast<const char*>(value), size);
-  // @@protoc_insertion_point(field_add_pointer:CDOTAMsg_SendStatPopup.stat_strings)
-}
- const ::google::protobuf::RepeatedPtrField< ::std::string>&
-CDOTAMsg_SendStatPopup::stat_strings() const {
-  // @@protoc_insertion_point(field_list:CDOTAMsg_SendStatPopup.stat_strings)
-  return stat_strings_;
-}
- ::google::protobuf::RepeatedPtrField< ::std::string>*
-CDOTAMsg_SendStatPopup::mutable_stat_strings() {
-  // @@protoc_insertion_point(field_mutable_list:CDOTAMsg_SendStatPopup.stat_strings)
-  return &stat_strings_;
-}
-
-// repeated int32 stat_images = 3;
-int CDOTAMsg_SendStatPopup::stat_images_size() const {
-  return stat_images_.size();
-}
-void CDOTAMsg_SendStatPopup::clear_stat_images() {
-  stat_images_.Clear();
-}
- ::google::protobuf::int32 CDOTAMsg_SendStatPopup::stat_images(int index) const {
-  // @@protoc_insertion_point(field_get:CDOTAMsg_SendStatPopup.stat_images)
-  return stat_images_.Get(index);
-}
- void CDOTAMsg_SendStatPopup::set_stat_images(int index, ::google::protobuf::int32 value) {
-  stat_images_.Set(index, value);
-  // @@protoc_insertion_point(field_set:CDOTAMsg_SendStatPopup.stat_images)
-}
- void CDOTAMsg_SendStatPopup::add_stat_images(::google::protobuf::int32 value) {
-  stat_images_.Add(value);
-  // @@protoc_insertion_point(field_add:CDOTAMsg_SendStatPopup.stat_images)
-}
- const ::google::protobuf::RepeatedField< ::google::protobuf::int32 >&
-CDOTAMsg_SendStatPopup::stat_images() const {
-  // @@protoc_insertion_point(field_list:CDOTAMsg_SendStatPopup.stat_images)
-  return stat_images_;
-}
- ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
-CDOTAMsg_SendStatPopup::mutable_stat_images() {
-  // @@protoc_insertion_point(field_mutable_list:CDOTAMsg_SendStatPopup.stat_images)
-  return &stat_images_;
-}
-
-#endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
 
 // ===================================================================
 
@@ -2782,7 +2252,7 @@ const int CDOTAMsg_CoachHUDPing::kTgtpathFieldNumber;
 #endif  // !_MSC_VER
 
 CDOTAMsg_CoachHUDPing::CDOTAMsg_CoachHUDPing()
-  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  : ::google::protobuf::Message() {
   SharedCtor();
   // @@protoc_insertion_point(constructor:CDOTAMsg_CoachHUDPing)
 }
@@ -2791,8 +2261,7 @@ void CDOTAMsg_CoachHUDPing::InitAsDefaultInstance() {
 }
 
 CDOTAMsg_CoachHUDPing::CDOTAMsg_CoachHUDPing(const CDOTAMsg_CoachHUDPing& from)
-  : ::google::protobuf::Message(),
-    _internal_metadata_(NULL) {
+  : ::google::protobuf::Message() {
   SharedCtor();
   MergeFrom(from);
   // @@protoc_insertion_point(copy_constructor:CDOTAMsg_CoachHUDPing)
@@ -2803,7 +2272,7 @@ void CDOTAMsg_CoachHUDPing::SharedCtor() {
   _cached_size_ = 0;
   x_ = 0u;
   y_ = 0u;
-  tgtpath_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  tgtpath_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
 
@@ -2813,7 +2282,9 @@ CDOTAMsg_CoachHUDPing::~CDOTAMsg_CoachHUDPing() {
 }
 
 void CDOTAMsg_CoachHUDPing::SharedDtor() {
-  tgtpath_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (tgtpath_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete tgtpath_;
+  }
   if (this != default_instance_) {
   }
 }
@@ -2835,37 +2306,35 @@ const CDOTAMsg_CoachHUDPing& CDOTAMsg_CoachHUDPing::default_instance() {
 
 CDOTAMsg_CoachHUDPing* CDOTAMsg_CoachHUDPing::default_instance_ = NULL;
 
-CDOTAMsg_CoachHUDPing* CDOTAMsg_CoachHUDPing::New(::google::protobuf::Arena* arena) const {
-  CDOTAMsg_CoachHUDPing* n = new CDOTAMsg_CoachHUDPing;
-  if (arena != NULL) {
-    arena->Own(n);
-  }
-  return n;
+CDOTAMsg_CoachHUDPing* CDOTAMsg_CoachHUDPing::New() const {
+  return new CDOTAMsg_CoachHUDPing;
 }
 
 void CDOTAMsg_CoachHUDPing::Clear() {
-#define ZR_HELPER_(f) reinterpret_cast<char*>(\
-  &reinterpret_cast<CDOTAMsg_CoachHUDPing*>(16)->f)
+#define OFFSET_OF_FIELD_(f) (reinterpret_cast<char*>(      \
+  &reinterpret_cast<CDOTAMsg_CoachHUDPing*>(16)->f) - \
+   reinterpret_cast<char*>(16))
 
-#define ZR_(first, last) do {\
-  ::memset(&first, 0,\
-           ZR_HELPER_(last) - ZR_HELPER_(first) + sizeof(last));\
-} while (0)
+#define ZR_(first, last) do {                              \
+    size_t f = OFFSET_OF_FIELD_(first);                    \
+    size_t n = OFFSET_OF_FIELD_(last) - f + sizeof(last);  \
+    ::memset(&first, 0, n);                                \
+  } while (0)
 
-  if (_has_bits_[0 / 32] & 7u) {
+  if (_has_bits_[0 / 32] & 7) {
     ZR_(x_, y_);
     if (has_tgtpath()) {
-      tgtpath_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+      if (tgtpath_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+        tgtpath_->clear();
+      }
     }
   }
 
-#undef ZR_HELPER_
+#undef OFFSET_OF_FIELD_
 #undef ZR_
 
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
-  if (_internal_metadata_.have_unknown_fields()) {
-    mutable_unknown_fields()->Clear();
-  }
+  mutable_unknown_fields()->Clear();
 }
 
 bool CDOTAMsg_CoachHUDPing::MergePartialFromCodedStream(
@@ -2916,7 +2385,7 @@ bool CDOTAMsg_CoachHUDPing::MergePartialFromCodedStream(
           ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
             this->tgtpath().data(), this->tgtpath().length(),
             ::google::protobuf::internal::WireFormat::PARSE,
-            "CDOTAMsg_CoachHUDPing.tgtpath");
+            "tgtpath");
         } else {
           goto handle_unusual;
         }
@@ -2964,12 +2433,12 @@ void CDOTAMsg_CoachHUDPing::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
       this->tgtpath().data(), this->tgtpath().length(),
       ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "CDOTAMsg_CoachHUDPing.tgtpath");
+      "tgtpath");
     ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
       3, this->tgtpath(), output);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
   }
@@ -2994,13 +2463,13 @@ void CDOTAMsg_CoachHUDPing::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
       this->tgtpath().data(), this->tgtpath().length(),
       ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "CDOTAMsg_CoachHUDPing.tgtpath");
+      "tgtpath");
     target =
       ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
         3, this->tgtpath(), target);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
   }
@@ -3011,7 +2480,7 @@ void CDOTAMsg_CoachHUDPing::SerializeWithCachedSizes(
 int CDOTAMsg_CoachHUDPing::ByteSize() const {
   int total_size = 0;
 
-  if (_has_bits_[0 / 32] & 7u) {
+  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     // optional uint32 x = 1;
     if (has_x()) {
       total_size += 1 +
@@ -3034,7 +2503,7 @@ int CDOTAMsg_CoachHUDPing::ByteSize() const {
     }
 
   }
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     total_size +=
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         unknown_fields());
@@ -3046,10 +2515,10 @@ int CDOTAMsg_CoachHUDPing::ByteSize() const {
 }
 
 void CDOTAMsg_CoachHUDPing::MergeFrom(const ::google::protobuf::Message& from) {
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
-  const CDOTAMsg_CoachHUDPing* source = 
-      ::google::protobuf::internal::DynamicCastToGenerated<const CDOTAMsg_CoachHUDPing>(
-          &from);
+  GOOGLE_CHECK_NE(&from, this);
+  const CDOTAMsg_CoachHUDPing* source =
+    ::google::protobuf::internal::dynamic_cast_if_available<const CDOTAMsg_CoachHUDPing*>(
+      &from);
   if (source == NULL) {
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
   } else {
@@ -3058,7 +2527,7 @@ void CDOTAMsg_CoachHUDPing::MergeFrom(const ::google::protobuf::Message& from) {
 }
 
 void CDOTAMsg_CoachHUDPing::MergeFrom(const CDOTAMsg_CoachHUDPing& from) {
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  GOOGLE_CHECK_NE(&from, this);
   if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (from.has_x()) {
       set_x(from.x());
@@ -3067,13 +2536,10 @@ void CDOTAMsg_CoachHUDPing::MergeFrom(const CDOTAMsg_CoachHUDPing& from) {
       set_y(from.y());
     }
     if (from.has_tgtpath()) {
-      set_has_tgtpath();
-      tgtpath_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.tgtpath_);
+      set_tgtpath(from.tgtpath());
     }
   }
-  if (from._internal_metadata_.have_unknown_fields()) {
-    mutable_unknown_fields()->MergeFrom(from.unknown_fields());
-  }
+  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
 }
 
 void CDOTAMsg_CoachHUDPing::CopyFrom(const ::google::protobuf::Message& from) {
@@ -3094,16 +2560,14 @@ bool CDOTAMsg_CoachHUDPing::IsInitialized() const {
 }
 
 void CDOTAMsg_CoachHUDPing::Swap(CDOTAMsg_CoachHUDPing* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
-void CDOTAMsg_CoachHUDPing::InternalSwap(CDOTAMsg_CoachHUDPing* other) {
-  std::swap(x_, other->x_);
-  std::swap(y_, other->y_);
-  tgtpath_.Swap(&other->tgtpath_);
-  std::swap(_has_bits_[0], other->_has_bits_[0]);
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  std::swap(_cached_size_, other->_cached_size_);
+  if (other != this) {
+    std::swap(x_, other->x_);
+    std::swap(y_, other->y_);
+    std::swap(tgtpath_, other->tgtpath_);
+    std::swap(_has_bits_[0], other->_has_bits_[0]);
+    _unknown_fields_.Swap(&other->_unknown_fields_);
+    std::swap(_cached_size_, other->_cached_size_);
+  }
 }
 
 ::google::protobuf::Metadata CDOTAMsg_CoachHUDPing::GetMetadata() const {
@@ -3114,111 +2578,530 @@ void CDOTAMsg_CoachHUDPing::InternalSwap(CDOTAMsg_CoachHUDPing* other) {
   return metadata;
 }
 
-#if PROTOBUF_INLINE_NOT_IN_HEADERS
-// CDOTAMsg_CoachHUDPing
 
-// optional uint32 x = 1;
-bool CDOTAMsg_CoachHUDPing::has_x() const {
-  return (_has_bits_[0] & 0x00000001u) != 0;
-}
-void CDOTAMsg_CoachHUDPing::set_has_x() {
-  _has_bits_[0] |= 0x00000001u;
-}
-void CDOTAMsg_CoachHUDPing::clear_has_x() {
-  _has_bits_[0] &= ~0x00000001u;
-}
-void CDOTAMsg_CoachHUDPing::clear_x() {
-  x_ = 0u;
-  clear_has_x();
-}
- ::google::protobuf::uint32 CDOTAMsg_CoachHUDPing::x() const {
-  // @@protoc_insertion_point(field_get:CDOTAMsg_CoachHUDPing.x)
-  return x_;
-}
- void CDOTAMsg_CoachHUDPing::set_x(::google::protobuf::uint32 value) {
-  set_has_x();
-  x_ = value;
-  // @@protoc_insertion_point(field_set:CDOTAMsg_CoachHUDPing.x)
+// ===================================================================
+
+#ifndef _MSC_VER
+const int CDOTAMsg_UnitOrder::kIssuerFieldNumber;
+const int CDOTAMsg_UnitOrder::kOrderTypeFieldNumber;
+const int CDOTAMsg_UnitOrder::kUnitsFieldNumber;
+const int CDOTAMsg_UnitOrder::kTargetIndexFieldNumber;
+const int CDOTAMsg_UnitOrder::kAbilityIndexFieldNumber;
+const int CDOTAMsg_UnitOrder::kPositionFieldNumber;
+const int CDOTAMsg_UnitOrder::kQueueFieldNumber;
+const int CDOTAMsg_UnitOrder::kSequenceNumberFieldNumber;
+#endif  // !_MSC_VER
+
+CDOTAMsg_UnitOrder::CDOTAMsg_UnitOrder()
+  : ::google::protobuf::Message() {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:CDOTAMsg_UnitOrder)
 }
 
-// optional uint32 y = 2;
-bool CDOTAMsg_CoachHUDPing::has_y() const {
-  return (_has_bits_[0] & 0x00000002u) != 0;
-}
-void CDOTAMsg_CoachHUDPing::set_has_y() {
-  _has_bits_[0] |= 0x00000002u;
-}
-void CDOTAMsg_CoachHUDPing::clear_has_y() {
-  _has_bits_[0] &= ~0x00000002u;
-}
-void CDOTAMsg_CoachHUDPing::clear_y() {
-  y_ = 0u;
-  clear_has_y();
-}
- ::google::protobuf::uint32 CDOTAMsg_CoachHUDPing::y() const {
-  // @@protoc_insertion_point(field_get:CDOTAMsg_CoachHUDPing.y)
-  return y_;
-}
- void CDOTAMsg_CoachHUDPing::set_y(::google::protobuf::uint32 value) {
-  set_has_y();
-  y_ = value;
-  // @@protoc_insertion_point(field_set:CDOTAMsg_CoachHUDPing.y)
+void CDOTAMsg_UnitOrder::InitAsDefaultInstance() {
+  position_ = const_cast< ::CMsgVector*>(&::CMsgVector::default_instance());
 }
 
-// optional string tgtpath = 3;
-bool CDOTAMsg_CoachHUDPing::has_tgtpath() const {
-  return (_has_bits_[0] & 0x00000004u) != 0;
+CDOTAMsg_UnitOrder::CDOTAMsg_UnitOrder(const CDOTAMsg_UnitOrder& from)
+  : ::google::protobuf::Message() {
+  SharedCtor();
+  MergeFrom(from);
+  // @@protoc_insertion_point(copy_constructor:CDOTAMsg_UnitOrder)
 }
-void CDOTAMsg_CoachHUDPing::set_has_tgtpath() {
-  _has_bits_[0] |= 0x00000004u;
+
+void CDOTAMsg_UnitOrder::SharedCtor() {
+  _cached_size_ = 0;
+  issuer_ = -1;
+  order_type_ = 0;
+  target_index_ = 0;
+  ability_index_ = 0;
+  position_ = NULL;
+  queue_ = false;
+  sequence_number_ = 0;
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
-void CDOTAMsg_CoachHUDPing::clear_has_tgtpath() {
-  _has_bits_[0] &= ~0x00000004u;
+
+CDOTAMsg_UnitOrder::~CDOTAMsg_UnitOrder() {
+  // @@protoc_insertion_point(destructor:CDOTAMsg_UnitOrder)
+  SharedDtor();
 }
-void CDOTAMsg_CoachHUDPing::clear_tgtpath() {
-  tgtpath_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  clear_has_tgtpath();
-}
- const ::std::string& CDOTAMsg_CoachHUDPing::tgtpath() const {
-  // @@protoc_insertion_point(field_get:CDOTAMsg_CoachHUDPing.tgtpath)
-  return tgtpath_.GetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
- void CDOTAMsg_CoachHUDPing::set_tgtpath(const ::std::string& value) {
-  set_has_tgtpath();
-  tgtpath_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:CDOTAMsg_CoachHUDPing.tgtpath)
-}
- void CDOTAMsg_CoachHUDPing::set_tgtpath(const char* value) {
-  set_has_tgtpath();
-  tgtpath_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:CDOTAMsg_CoachHUDPing.tgtpath)
-}
- void CDOTAMsg_CoachHUDPing::set_tgtpath(const char* value, size_t size) {
-  set_has_tgtpath();
-  tgtpath_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-      ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:CDOTAMsg_CoachHUDPing.tgtpath)
-}
- ::std::string* CDOTAMsg_CoachHUDPing::mutable_tgtpath() {
-  set_has_tgtpath();
-  // @@protoc_insertion_point(field_mutable:CDOTAMsg_CoachHUDPing.tgtpath)
-  return tgtpath_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
- ::std::string* CDOTAMsg_CoachHUDPing::release_tgtpath() {
-  clear_has_tgtpath();
-  return tgtpath_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
- void CDOTAMsg_CoachHUDPing::set_allocated_tgtpath(::std::string* tgtpath) {
-  if (tgtpath != NULL) {
-    set_has_tgtpath();
-  } else {
-    clear_has_tgtpath();
+
+void CDOTAMsg_UnitOrder::SharedDtor() {
+  if (this != default_instance_) {
+    delete position_;
   }
-  tgtpath_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), tgtpath);
-  // @@protoc_insertion_point(field_set_allocated:CDOTAMsg_CoachHUDPing.tgtpath)
 }
 
-#endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
+void CDOTAMsg_UnitOrder::SetCachedSize(int size) const {
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+}
+const ::google::protobuf::Descriptor* CDOTAMsg_UnitOrder::descriptor() {
+  protobuf_AssignDescriptorsOnce();
+  return CDOTAMsg_UnitOrder_descriptor_;
+}
+
+const CDOTAMsg_UnitOrder& CDOTAMsg_UnitOrder::default_instance() {
+  if (default_instance_ == NULL) protobuf_AddDesc_dota_5fcommonmessages_2eproto();
+  return *default_instance_;
+}
+
+CDOTAMsg_UnitOrder* CDOTAMsg_UnitOrder::default_instance_ = NULL;
+
+CDOTAMsg_UnitOrder* CDOTAMsg_UnitOrder::New() const {
+  return new CDOTAMsg_UnitOrder;
+}
+
+void CDOTAMsg_UnitOrder::Clear() {
+#define OFFSET_OF_FIELD_(f) (reinterpret_cast<char*>(      \
+  &reinterpret_cast<CDOTAMsg_UnitOrder*>(16)->f) - \
+   reinterpret_cast<char*>(16))
+
+#define ZR_(first, last) do {                              \
+    size_t f = OFFSET_OF_FIELD_(first);                    \
+    size_t n = OFFSET_OF_FIELD_(last) - f + sizeof(last);  \
+    ::memset(&first, 0, n);                                \
+  } while (0)
+
+  if (_has_bits_[0 / 32] & 251) {
+    ZR_(target_index_, ability_index_);
+    ZR_(queue_, sequence_number_);
+    issuer_ = -1;
+    order_type_ = 0;
+    if (has_position()) {
+      if (position_ != NULL) position_->::CMsgVector::Clear();
+    }
+  }
+
+#undef OFFSET_OF_FIELD_
+#undef ZR_
+
+  units_.Clear();
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+  mutable_unknown_fields()->Clear();
+}
+
+bool CDOTAMsg_UnitOrder::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:CDOTAMsg_UnitOrder)
+  for (;;) {
+    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoff(127);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // optional sint32 issuer = 1 [default = -1];
+      case 1: {
+        if (tag == 8) {
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_SINT32>(
+                 input, &issuer_)));
+          set_has_issuer();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(16)) goto parse_order_type;
+        break;
+      }
+
+      // optional .dotaunitorder_t order_type = 2 [default = DOTA_UNIT_ORDER_NONE];
+      case 2: {
+        if (tag == 16) {
+         parse_order_type:
+          int value;
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
+                 input, &value)));
+          if (::dotaunitorder_t_IsValid(value)) {
+            set_order_type(static_cast< ::dotaunitorder_t >(value));
+          } else {
+            mutable_unknown_fields()->AddVarint(2, value);
+          }
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(24)) goto parse_units;
+        break;
+      }
+
+      // repeated int32 units = 3;
+      case 3: {
+        if (tag == 24) {
+         parse_units:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadRepeatedPrimitive<
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
+                 1, 24, input, this->mutable_units())));
+        } else if (tag == 26) {
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPackedPrimitiveNoInline<
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
+                 input, this->mutable_units())));
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(24)) goto parse_units;
+        if (input->ExpectTag(32)) goto parse_target_index;
+        break;
+      }
+
+      // optional int32 target_index = 4;
+      case 4: {
+        if (tag == 32) {
+         parse_target_index:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
+                 input, &target_index_)));
+          set_has_target_index();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(40)) goto parse_ability_index;
+        break;
+      }
+
+      // optional int32 ability_index = 5;
+      case 5: {
+        if (tag == 40) {
+         parse_ability_index:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
+                 input, &ability_index_)));
+          set_has_ability_index();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(50)) goto parse_position;
+        break;
+      }
+
+      // optional .CMsgVector position = 6;
+      case 6: {
+        if (tag == 50) {
+         parse_position:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+               input, mutable_position()));
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(56)) goto parse_queue;
+        break;
+      }
+
+      // optional bool queue = 7;
+      case 7: {
+        if (tag == 56) {
+         parse_queue:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   bool, ::google::protobuf::internal::WireFormatLite::TYPE_BOOL>(
+                 input, &queue_)));
+          set_has_queue();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(64)) goto parse_sequence_number;
+        break;
+      }
+
+      // optional int32 sequence_number = 8;
+      case 8: {
+        if (tag == 64) {
+         parse_sequence_number:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
+                 input, &sequence_number_)));
+          set_has_sequence_number();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectAtEnd()) goto success;
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0 ||
+            ::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, mutable_unknown_fields()));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:CDOTAMsg_UnitOrder)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:CDOTAMsg_UnitOrder)
+  return false;
+#undef DO_
+}
+
+void CDOTAMsg_UnitOrder::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:CDOTAMsg_UnitOrder)
+  // optional sint32 issuer = 1 [default = -1];
+  if (has_issuer()) {
+    ::google::protobuf::internal::WireFormatLite::WriteSInt32(1, this->issuer(), output);
+  }
+
+  // optional .dotaunitorder_t order_type = 2 [default = DOTA_UNIT_ORDER_NONE];
+  if (has_order_type()) {
+    ::google::protobuf::internal::WireFormatLite::WriteEnum(
+      2, this->order_type(), output);
+  }
+
+  // repeated int32 units = 3;
+  for (int i = 0; i < this->units_size(); i++) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(
+      3, this->units(i), output);
+  }
+
+  // optional int32 target_index = 4;
+  if (has_target_index()) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(4, this->target_index(), output);
+  }
+
+  // optional int32 ability_index = 5;
+  if (has_ability_index()) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(5, this->ability_index(), output);
+  }
+
+  // optional .CMsgVector position = 6;
+  if (has_position()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      6, this->position(), output);
+  }
+
+  // optional bool queue = 7;
+  if (has_queue()) {
+    ::google::protobuf::internal::WireFormatLite::WriteBool(7, this->queue(), output);
+  }
+
+  // optional int32 sequence_number = 8;
+  if (has_sequence_number()) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(8, this->sequence_number(), output);
+  }
+
+  if (!unknown_fields().empty()) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        unknown_fields(), output);
+  }
+  // @@protoc_insertion_point(serialize_end:CDOTAMsg_UnitOrder)
+}
+
+::google::protobuf::uint8* CDOTAMsg_UnitOrder::SerializeWithCachedSizesToArray(
+    ::google::protobuf::uint8* target) const {
+  // @@protoc_insertion_point(serialize_to_array_start:CDOTAMsg_UnitOrder)
+  // optional sint32 issuer = 1 [default = -1];
+  if (has_issuer()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteSInt32ToArray(1, this->issuer(), target);
+  }
+
+  // optional .dotaunitorder_t order_type = 2 [default = DOTA_UNIT_ORDER_NONE];
+  if (has_order_type()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
+      2, this->order_type(), target);
+  }
+
+  // repeated int32 units = 3;
+  for (int i = 0; i < this->units_size(); i++) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      WriteInt32ToArray(3, this->units(i), target);
+  }
+
+  // optional int32 target_index = 4;
+  if (has_target_index()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(4, this->target_index(), target);
+  }
+
+  // optional int32 ability_index = 5;
+  if (has_ability_index()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(5, this->ability_index(), target);
+  }
+
+  // optional .CMsgVector position = 6;
+  if (has_position()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      WriteMessageNoVirtualToArray(
+        6, this->position(), target);
+  }
+
+  // optional bool queue = 7;
+  if (has_queue()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(7, this->queue(), target);
+  }
+
+  // optional int32 sequence_number = 8;
+  if (has_sequence_number()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(8, this->sequence_number(), target);
+  }
+
+  if (!unknown_fields().empty()) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        unknown_fields(), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:CDOTAMsg_UnitOrder)
+  return target;
+}
+
+int CDOTAMsg_UnitOrder::ByteSize() const {
+  int total_size = 0;
+
+  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    // optional sint32 issuer = 1 [default = -1];
+    if (has_issuer()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::SInt32Size(
+          this->issuer());
+    }
+
+    // optional .dotaunitorder_t order_type = 2 [default = DOTA_UNIT_ORDER_NONE];
+    if (has_order_type()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::EnumSize(this->order_type());
+    }
+
+    // optional int32 target_index = 4;
+    if (has_target_index()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::Int32Size(
+          this->target_index());
+    }
+
+    // optional int32 ability_index = 5;
+    if (has_ability_index()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::Int32Size(
+          this->ability_index());
+    }
+
+    // optional .CMsgVector position = 6;
+    if (has_position()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+          this->position());
+    }
+
+    // optional bool queue = 7;
+    if (has_queue()) {
+      total_size += 1 + 1;
+    }
+
+    // optional int32 sequence_number = 8;
+    if (has_sequence_number()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::Int32Size(
+          this->sequence_number());
+    }
+
+  }
+  // repeated int32 units = 3;
+  {
+    int data_size = 0;
+    for (int i = 0; i < this->units_size(); i++) {
+      data_size += ::google::protobuf::internal::WireFormatLite::
+        Int32Size(this->units(i));
+    }
+    total_size += 1 * this->units_size() + data_size;
+  }
+
+  if (!unknown_fields().empty()) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        unknown_fields());
+  }
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = total_size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+  return total_size;
+}
+
+void CDOTAMsg_UnitOrder::MergeFrom(const ::google::protobuf::Message& from) {
+  GOOGLE_CHECK_NE(&from, this);
+  const CDOTAMsg_UnitOrder* source =
+    ::google::protobuf::internal::dynamic_cast_if_available<const CDOTAMsg_UnitOrder*>(
+      &from);
+  if (source == NULL) {
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+    MergeFrom(*source);
+  }
+}
+
+void CDOTAMsg_UnitOrder::MergeFrom(const CDOTAMsg_UnitOrder& from) {
+  GOOGLE_CHECK_NE(&from, this);
+  units_.MergeFrom(from.units_);
+  if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    if (from.has_issuer()) {
+      set_issuer(from.issuer());
+    }
+    if (from.has_order_type()) {
+      set_order_type(from.order_type());
+    }
+    if (from.has_target_index()) {
+      set_target_index(from.target_index());
+    }
+    if (from.has_ability_index()) {
+      set_ability_index(from.ability_index());
+    }
+    if (from.has_position()) {
+      mutable_position()->::CMsgVector::MergeFrom(from.position());
+    }
+    if (from.has_queue()) {
+      set_queue(from.queue());
+    }
+    if (from.has_sequence_number()) {
+      set_sequence_number(from.sequence_number());
+    }
+  }
+  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
+}
+
+void CDOTAMsg_UnitOrder::CopyFrom(const ::google::protobuf::Message& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void CDOTAMsg_UnitOrder::CopyFrom(const CDOTAMsg_UnitOrder& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool CDOTAMsg_UnitOrder::IsInitialized() const {
+
+  return true;
+}
+
+void CDOTAMsg_UnitOrder::Swap(CDOTAMsg_UnitOrder* other) {
+  if (other != this) {
+    std::swap(issuer_, other->issuer_);
+    std::swap(order_type_, other->order_type_);
+    units_.Swap(&other->units_);
+    std::swap(target_index_, other->target_index_);
+    std::swap(ability_index_, other->ability_index_);
+    std::swap(position_, other->position_);
+    std::swap(queue_, other->queue_);
+    std::swap(sequence_number_, other->sequence_number_);
+    std::swap(_has_bits_[0], other->_has_bits_[0]);
+    _unknown_fields_.Swap(&other->_unknown_fields_);
+    std::swap(_cached_size_, other->_cached_size_);
+  }
+}
+
+::google::protobuf::Metadata CDOTAMsg_UnitOrder::GetMetadata() const {
+  protobuf_AssignDescriptorsOnce();
+  ::google::protobuf::Metadata metadata;
+  metadata.descriptor = CDOTAMsg_UnitOrder_descriptor_;
+  metadata.reflection = CDOTAMsg_UnitOrder_reflection_;
+  return metadata;
+}
+
 
 // @@protoc_insertion_point(namespace_scope)
 

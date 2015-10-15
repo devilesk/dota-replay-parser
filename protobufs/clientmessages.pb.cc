@@ -41,31 +41,31 @@ void protobuf_AssignDesc_clientmessages_2eproto() {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CClientMsg_CustomGameEvent, data_),
   };
   CClientMsg_CustomGameEvent_reflection_ =
-    ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
+    new ::google::protobuf::internal::GeneratedMessageReflection(
       CClientMsg_CustomGameEvent_descriptor_,
       CClientMsg_CustomGameEvent::default_instance_,
       CClientMsg_CustomGameEvent_offsets_,
       GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CClientMsg_CustomGameEvent, _has_bits_[0]),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CClientMsg_CustomGameEvent, _unknown_fields_),
       -1,
-      -1,
-      sizeof(CClientMsg_CustomGameEvent),
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CClientMsg_CustomGameEvent, _internal_metadata_),
-      -1);
+      ::google::protobuf::DescriptorPool::generated_pool(),
+      ::google::protobuf::MessageFactory::generated_factory(),
+      sizeof(CClientMsg_CustomGameEvent));
   CClientMsg_TrackedControllerInput_descriptor_ = file->message_type(1);
   static const int CClientMsg_TrackedControllerInput_offsets_[1] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CClientMsg_TrackedControllerInput, data_),
   };
   CClientMsg_TrackedControllerInput_reflection_ =
-    ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
+    new ::google::protobuf::internal::GeneratedMessageReflection(
       CClientMsg_TrackedControllerInput_descriptor_,
       CClientMsg_TrackedControllerInput::default_instance_,
       CClientMsg_TrackedControllerInput_offsets_,
       GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CClientMsg_TrackedControllerInput, _has_bits_[0]),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CClientMsg_TrackedControllerInput, _unknown_fields_),
       -1,
-      -1,
-      sizeof(CClientMsg_TrackedControllerInput),
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CClientMsg_TrackedControllerInput, _internal_metadata_),
-      -1);
+      ::google::protobuf::DescriptorPool::generated_pool(),
+      ::google::protobuf::MessageFactory::generated_factory(),
+      sizeof(CClientMsg_TrackedControllerInput));
   EBaseClientMessages_descriptor_ = file->enum_type(0);
 }
 
@@ -80,9 +80,9 @@ inline void protobuf_AssignDescriptorsOnce() {
 void protobuf_RegisterTypes(const ::std::string&) {
   protobuf_AssignDescriptorsOnce();
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
-      CClientMsg_CustomGameEvent_descriptor_, &CClientMsg_CustomGameEvent::default_instance());
+    CClientMsg_CustomGameEvent_descriptor_, &CClientMsg_CustomGameEvent::default_instance());
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
-      CClientMsg_TrackedControllerInput_descriptor_, &CClientMsg_TrackedControllerInput::default_instance());
+    CClientMsg_TrackedControllerInput_descriptor_, &CClientMsg_TrackedControllerInput::default_instance());
 }
 
 }  // namespace
@@ -139,16 +139,6 @@ bool EBaseClientMessages_IsValid(int value) {
 }
 
 
-namespace {
-
-static void MergeFromFail(int line) GOOGLE_ATTRIBUTE_COLD;
-static void MergeFromFail(int line) {
-  GOOGLE_CHECK(false) << __FILE__ << ":" << line;
-}
-
-}  // namespace
-
-
 // ===================================================================
 
 #ifndef _MSC_VER
@@ -157,7 +147,7 @@ const int CClientMsg_CustomGameEvent::kDataFieldNumber;
 #endif  // !_MSC_VER
 
 CClientMsg_CustomGameEvent::CClientMsg_CustomGameEvent()
-  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  : ::google::protobuf::Message() {
   SharedCtor();
   // @@protoc_insertion_point(constructor:CClientMsg_CustomGameEvent)
 }
@@ -166,8 +156,7 @@ void CClientMsg_CustomGameEvent::InitAsDefaultInstance() {
 }
 
 CClientMsg_CustomGameEvent::CClientMsg_CustomGameEvent(const CClientMsg_CustomGameEvent& from)
-  : ::google::protobuf::Message(),
-    _internal_metadata_(NULL) {
+  : ::google::protobuf::Message() {
   SharedCtor();
   MergeFrom(from);
   // @@protoc_insertion_point(copy_constructor:CClientMsg_CustomGameEvent)
@@ -176,8 +165,8 @@ CClientMsg_CustomGameEvent::CClientMsg_CustomGameEvent(const CClientMsg_CustomGa
 void CClientMsg_CustomGameEvent::SharedCtor() {
   ::google::protobuf::internal::GetEmptyString();
   _cached_size_ = 0;
-  event_name_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  data_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  event_name_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  data_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
 
@@ -187,8 +176,12 @@ CClientMsg_CustomGameEvent::~CClientMsg_CustomGameEvent() {
 }
 
 void CClientMsg_CustomGameEvent::SharedDtor() {
-  event_name_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  data_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (event_name_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete event_name_;
+  }
+  if (data_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete data_;
+  }
   if (this != default_instance_) {
   }
 }
@@ -210,27 +203,25 @@ const CClientMsg_CustomGameEvent& CClientMsg_CustomGameEvent::default_instance()
 
 CClientMsg_CustomGameEvent* CClientMsg_CustomGameEvent::default_instance_ = NULL;
 
-CClientMsg_CustomGameEvent* CClientMsg_CustomGameEvent::New(::google::protobuf::Arena* arena) const {
-  CClientMsg_CustomGameEvent* n = new CClientMsg_CustomGameEvent;
-  if (arena != NULL) {
-    arena->Own(n);
-  }
-  return n;
+CClientMsg_CustomGameEvent* CClientMsg_CustomGameEvent::New() const {
+  return new CClientMsg_CustomGameEvent;
 }
 
 void CClientMsg_CustomGameEvent::Clear() {
-  if (_has_bits_[0 / 32] & 3u) {
+  if (_has_bits_[0 / 32] & 3) {
     if (has_event_name()) {
-      event_name_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+      if (event_name_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+        event_name_->clear();
+      }
     }
     if (has_data()) {
-      data_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+      if (data_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+        data_->clear();
+      }
     }
   }
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
-  if (_internal_metadata_.have_unknown_fields()) {
-    mutable_unknown_fields()->Clear();
-  }
+  mutable_unknown_fields()->Clear();
 }
 
 bool CClientMsg_CustomGameEvent::MergePartialFromCodedStream(
@@ -251,7 +242,7 @@ bool CClientMsg_CustomGameEvent::MergePartialFromCodedStream(
           ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
             this->event_name().data(), this->event_name().length(),
             ::google::protobuf::internal::WireFormat::PARSE,
-            "CClientMsg_CustomGameEvent.event_name");
+            "event_name");
         } else {
           goto handle_unusual;
         }
@@ -302,7 +293,7 @@ void CClientMsg_CustomGameEvent::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
       this->event_name().data(), this->event_name().length(),
       ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "CClientMsg_CustomGameEvent.event_name");
+      "event_name");
     ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
       1, this->event_name(), output);
   }
@@ -313,7 +304,7 @@ void CClientMsg_CustomGameEvent::SerializeWithCachedSizes(
       2, this->data(), output);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
   }
@@ -328,7 +319,7 @@ void CClientMsg_CustomGameEvent::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
       this->event_name().data(), this->event_name().length(),
       ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "CClientMsg_CustomGameEvent.event_name");
+      "event_name");
     target =
       ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
         1, this->event_name(), target);
@@ -341,7 +332,7 @@ void CClientMsg_CustomGameEvent::SerializeWithCachedSizes(
         2, this->data(), target);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
   }
@@ -352,7 +343,7 @@ void CClientMsg_CustomGameEvent::SerializeWithCachedSizes(
 int CClientMsg_CustomGameEvent::ByteSize() const {
   int total_size = 0;
 
-  if (_has_bits_[0 / 32] & 3u) {
+  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     // optional string event_name = 1;
     if (has_event_name()) {
       total_size += 1 +
@@ -368,7 +359,7 @@ int CClientMsg_CustomGameEvent::ByteSize() const {
     }
 
   }
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     total_size +=
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         unknown_fields());
@@ -380,10 +371,10 @@ int CClientMsg_CustomGameEvent::ByteSize() const {
 }
 
 void CClientMsg_CustomGameEvent::MergeFrom(const ::google::protobuf::Message& from) {
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
-  const CClientMsg_CustomGameEvent* source = 
-      ::google::protobuf::internal::DynamicCastToGenerated<const CClientMsg_CustomGameEvent>(
-          &from);
+  GOOGLE_CHECK_NE(&from, this);
+  const CClientMsg_CustomGameEvent* source =
+    ::google::protobuf::internal::dynamic_cast_if_available<const CClientMsg_CustomGameEvent*>(
+      &from);
   if (source == NULL) {
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
   } else {
@@ -392,20 +383,16 @@ void CClientMsg_CustomGameEvent::MergeFrom(const ::google::protobuf::Message& fr
 }
 
 void CClientMsg_CustomGameEvent::MergeFrom(const CClientMsg_CustomGameEvent& from) {
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  GOOGLE_CHECK_NE(&from, this);
   if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (from.has_event_name()) {
-      set_has_event_name();
-      event_name_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.event_name_);
+      set_event_name(from.event_name());
     }
     if (from.has_data()) {
-      set_has_data();
-      data_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.data_);
+      set_data(from.data());
     }
   }
-  if (from._internal_metadata_.have_unknown_fields()) {
-    mutable_unknown_fields()->MergeFrom(from.unknown_fields());
-  }
+  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
 }
 
 void CClientMsg_CustomGameEvent::CopyFrom(const ::google::protobuf::Message& from) {
@@ -426,15 +413,13 @@ bool CClientMsg_CustomGameEvent::IsInitialized() const {
 }
 
 void CClientMsg_CustomGameEvent::Swap(CClientMsg_CustomGameEvent* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
-void CClientMsg_CustomGameEvent::InternalSwap(CClientMsg_CustomGameEvent* other) {
-  event_name_.Swap(&other->event_name_);
-  data_.Swap(&other->data_);
-  std::swap(_has_bits_[0], other->_has_bits_[0]);
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  std::swap(_cached_size_, other->_cached_size_);
+  if (other != this) {
+    std::swap(event_name_, other->event_name_);
+    std::swap(data_, other->data_);
+    std::swap(_has_bits_[0], other->_has_bits_[0]);
+    _unknown_fields_.Swap(&other->_unknown_fields_);
+    std::swap(_cached_size_, other->_cached_size_);
+  }
 }
 
 ::google::protobuf::Metadata CClientMsg_CustomGameEvent::GetMetadata() const {
@@ -445,116 +430,6 @@ void CClientMsg_CustomGameEvent::InternalSwap(CClientMsg_CustomGameEvent* other)
   return metadata;
 }
 
-#if PROTOBUF_INLINE_NOT_IN_HEADERS
-// CClientMsg_CustomGameEvent
-
-// optional string event_name = 1;
-bool CClientMsg_CustomGameEvent::has_event_name() const {
-  return (_has_bits_[0] & 0x00000001u) != 0;
-}
-void CClientMsg_CustomGameEvent::set_has_event_name() {
-  _has_bits_[0] |= 0x00000001u;
-}
-void CClientMsg_CustomGameEvent::clear_has_event_name() {
-  _has_bits_[0] &= ~0x00000001u;
-}
-void CClientMsg_CustomGameEvent::clear_event_name() {
-  event_name_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  clear_has_event_name();
-}
- const ::std::string& CClientMsg_CustomGameEvent::event_name() const {
-  // @@protoc_insertion_point(field_get:CClientMsg_CustomGameEvent.event_name)
-  return event_name_.GetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
- void CClientMsg_CustomGameEvent::set_event_name(const ::std::string& value) {
-  set_has_event_name();
-  event_name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:CClientMsg_CustomGameEvent.event_name)
-}
- void CClientMsg_CustomGameEvent::set_event_name(const char* value) {
-  set_has_event_name();
-  event_name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:CClientMsg_CustomGameEvent.event_name)
-}
- void CClientMsg_CustomGameEvent::set_event_name(const char* value, size_t size) {
-  set_has_event_name();
-  event_name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-      ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:CClientMsg_CustomGameEvent.event_name)
-}
- ::std::string* CClientMsg_CustomGameEvent::mutable_event_name() {
-  set_has_event_name();
-  // @@protoc_insertion_point(field_mutable:CClientMsg_CustomGameEvent.event_name)
-  return event_name_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
- ::std::string* CClientMsg_CustomGameEvent::release_event_name() {
-  clear_has_event_name();
-  return event_name_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
- void CClientMsg_CustomGameEvent::set_allocated_event_name(::std::string* event_name) {
-  if (event_name != NULL) {
-    set_has_event_name();
-  } else {
-    clear_has_event_name();
-  }
-  event_name_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), event_name);
-  // @@protoc_insertion_point(field_set_allocated:CClientMsg_CustomGameEvent.event_name)
-}
-
-// optional bytes data = 2;
-bool CClientMsg_CustomGameEvent::has_data() const {
-  return (_has_bits_[0] & 0x00000002u) != 0;
-}
-void CClientMsg_CustomGameEvent::set_has_data() {
-  _has_bits_[0] |= 0x00000002u;
-}
-void CClientMsg_CustomGameEvent::clear_has_data() {
-  _has_bits_[0] &= ~0x00000002u;
-}
-void CClientMsg_CustomGameEvent::clear_data() {
-  data_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  clear_has_data();
-}
- const ::std::string& CClientMsg_CustomGameEvent::data() const {
-  // @@protoc_insertion_point(field_get:CClientMsg_CustomGameEvent.data)
-  return data_.GetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
- void CClientMsg_CustomGameEvent::set_data(const ::std::string& value) {
-  set_has_data();
-  data_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:CClientMsg_CustomGameEvent.data)
-}
- void CClientMsg_CustomGameEvent::set_data(const char* value) {
-  set_has_data();
-  data_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:CClientMsg_CustomGameEvent.data)
-}
- void CClientMsg_CustomGameEvent::set_data(const void* value, size_t size) {
-  set_has_data();
-  data_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-      ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:CClientMsg_CustomGameEvent.data)
-}
- ::std::string* CClientMsg_CustomGameEvent::mutable_data() {
-  set_has_data();
-  // @@protoc_insertion_point(field_mutable:CClientMsg_CustomGameEvent.data)
-  return data_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
- ::std::string* CClientMsg_CustomGameEvent::release_data() {
-  clear_has_data();
-  return data_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
- void CClientMsg_CustomGameEvent::set_allocated_data(::std::string* data) {
-  if (data != NULL) {
-    set_has_data();
-  } else {
-    clear_has_data();
-  }
-  data_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), data);
-  // @@protoc_insertion_point(field_set_allocated:CClientMsg_CustomGameEvent.data)
-}
-
-#endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
 
 // ===================================================================
 
@@ -563,7 +438,7 @@ const int CClientMsg_TrackedControllerInput::kDataFieldNumber;
 #endif  // !_MSC_VER
 
 CClientMsg_TrackedControllerInput::CClientMsg_TrackedControllerInput()
-  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  : ::google::protobuf::Message() {
   SharedCtor();
   // @@protoc_insertion_point(constructor:CClientMsg_TrackedControllerInput)
 }
@@ -572,8 +447,7 @@ void CClientMsg_TrackedControllerInput::InitAsDefaultInstance() {
 }
 
 CClientMsg_TrackedControllerInput::CClientMsg_TrackedControllerInput(const CClientMsg_TrackedControllerInput& from)
-  : ::google::protobuf::Message(),
-    _internal_metadata_(NULL) {
+  : ::google::protobuf::Message() {
   SharedCtor();
   MergeFrom(from);
   // @@protoc_insertion_point(copy_constructor:CClientMsg_TrackedControllerInput)
@@ -582,7 +456,7 @@ CClientMsg_TrackedControllerInput::CClientMsg_TrackedControllerInput(const CClie
 void CClientMsg_TrackedControllerInput::SharedCtor() {
   ::google::protobuf::internal::GetEmptyString();
   _cached_size_ = 0;
-  data_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  data_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
 
@@ -592,7 +466,9 @@ CClientMsg_TrackedControllerInput::~CClientMsg_TrackedControllerInput() {
 }
 
 void CClientMsg_TrackedControllerInput::SharedDtor() {
-  data_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (data_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete data_;
+  }
   if (this != default_instance_) {
   }
 }
@@ -614,22 +490,18 @@ const CClientMsg_TrackedControllerInput& CClientMsg_TrackedControllerInput::defa
 
 CClientMsg_TrackedControllerInput* CClientMsg_TrackedControllerInput::default_instance_ = NULL;
 
-CClientMsg_TrackedControllerInput* CClientMsg_TrackedControllerInput::New(::google::protobuf::Arena* arena) const {
-  CClientMsg_TrackedControllerInput* n = new CClientMsg_TrackedControllerInput;
-  if (arena != NULL) {
-    arena->Own(n);
-  }
-  return n;
+CClientMsg_TrackedControllerInput* CClientMsg_TrackedControllerInput::New() const {
+  return new CClientMsg_TrackedControllerInput;
 }
 
 void CClientMsg_TrackedControllerInput::Clear() {
   if (has_data()) {
-    data_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    if (data_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+      data_->clear();
+    }
   }
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
-  if (_internal_metadata_.have_unknown_fields()) {
-    mutable_unknown_fields()->Clear();
-  }
+  mutable_unknown_fields()->Clear();
 }
 
 bool CClientMsg_TrackedControllerInput::MergePartialFromCodedStream(
@@ -685,7 +557,7 @@ void CClientMsg_TrackedControllerInput::SerializeWithCachedSizes(
       1, this->data(), output);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
   }
@@ -702,7 +574,7 @@ void CClientMsg_TrackedControllerInput::SerializeWithCachedSizes(
         1, this->data(), target);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
   }
@@ -713,14 +585,16 @@ void CClientMsg_TrackedControllerInput::SerializeWithCachedSizes(
 int CClientMsg_TrackedControllerInput::ByteSize() const {
   int total_size = 0;
 
-  // optional bytes data = 1;
-  if (has_data()) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::BytesSize(
-        this->data());
-  }
+  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    // optional bytes data = 1;
+    if (has_data()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::BytesSize(
+          this->data());
+    }
 
-  if (_internal_metadata_.have_unknown_fields()) {
+  }
+  if (!unknown_fields().empty()) {
     total_size +=
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         unknown_fields());
@@ -732,10 +606,10 @@ int CClientMsg_TrackedControllerInput::ByteSize() const {
 }
 
 void CClientMsg_TrackedControllerInput::MergeFrom(const ::google::protobuf::Message& from) {
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
-  const CClientMsg_TrackedControllerInput* source = 
-      ::google::protobuf::internal::DynamicCastToGenerated<const CClientMsg_TrackedControllerInput>(
-          &from);
+  GOOGLE_CHECK_NE(&from, this);
+  const CClientMsg_TrackedControllerInput* source =
+    ::google::protobuf::internal::dynamic_cast_if_available<const CClientMsg_TrackedControllerInput*>(
+      &from);
   if (source == NULL) {
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
   } else {
@@ -744,16 +618,13 @@ void CClientMsg_TrackedControllerInput::MergeFrom(const ::google::protobuf::Mess
 }
 
 void CClientMsg_TrackedControllerInput::MergeFrom(const CClientMsg_TrackedControllerInput& from) {
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  GOOGLE_CHECK_NE(&from, this);
   if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (from.has_data()) {
-      set_has_data();
-      data_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.data_);
+      set_data(from.data());
     }
   }
-  if (from._internal_metadata_.have_unknown_fields()) {
-    mutable_unknown_fields()->MergeFrom(from.unknown_fields());
-  }
+  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
 }
 
 void CClientMsg_TrackedControllerInput::CopyFrom(const ::google::protobuf::Message& from) {
@@ -774,14 +645,12 @@ bool CClientMsg_TrackedControllerInput::IsInitialized() const {
 }
 
 void CClientMsg_TrackedControllerInput::Swap(CClientMsg_TrackedControllerInput* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
-void CClientMsg_TrackedControllerInput::InternalSwap(CClientMsg_TrackedControllerInput* other) {
-  data_.Swap(&other->data_);
-  std::swap(_has_bits_[0], other->_has_bits_[0]);
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  std::swap(_cached_size_, other->_cached_size_);
+  if (other != this) {
+    std::swap(data_, other->data_);
+    std::swap(_has_bits_[0], other->_has_bits_[0]);
+    _unknown_fields_.Swap(&other->_unknown_fields_);
+    std::swap(_cached_size_, other->_cached_size_);
+  }
 }
 
 ::google::protobuf::Metadata CClientMsg_TrackedControllerInput::GetMetadata() const {
@@ -792,63 +661,6 @@ void CClientMsg_TrackedControllerInput::InternalSwap(CClientMsg_TrackedControlle
   return metadata;
 }
 
-#if PROTOBUF_INLINE_NOT_IN_HEADERS
-// CClientMsg_TrackedControllerInput
-
-// optional bytes data = 1;
-bool CClientMsg_TrackedControllerInput::has_data() const {
-  return (_has_bits_[0] & 0x00000001u) != 0;
-}
-void CClientMsg_TrackedControllerInput::set_has_data() {
-  _has_bits_[0] |= 0x00000001u;
-}
-void CClientMsg_TrackedControllerInput::clear_has_data() {
-  _has_bits_[0] &= ~0x00000001u;
-}
-void CClientMsg_TrackedControllerInput::clear_data() {
-  data_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  clear_has_data();
-}
- const ::std::string& CClientMsg_TrackedControllerInput::data() const {
-  // @@protoc_insertion_point(field_get:CClientMsg_TrackedControllerInput.data)
-  return data_.GetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
- void CClientMsg_TrackedControllerInput::set_data(const ::std::string& value) {
-  set_has_data();
-  data_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:CClientMsg_TrackedControllerInput.data)
-}
- void CClientMsg_TrackedControllerInput::set_data(const char* value) {
-  set_has_data();
-  data_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:CClientMsg_TrackedControllerInput.data)
-}
- void CClientMsg_TrackedControllerInput::set_data(const void* value, size_t size) {
-  set_has_data();
-  data_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-      ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:CClientMsg_TrackedControllerInput.data)
-}
- ::std::string* CClientMsg_TrackedControllerInput::mutable_data() {
-  set_has_data();
-  // @@protoc_insertion_point(field_mutable:CClientMsg_TrackedControllerInput.data)
-  return data_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
- ::std::string* CClientMsg_TrackedControllerInput::release_data() {
-  clear_has_data();
-  return data_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
- void CClientMsg_TrackedControllerInput::set_allocated_data(::std::string* data) {
-  if (data != NULL) {
-    set_has_data();
-  } else {
-    clear_has_data();
-  }
-  data_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), data);
-  // @@protoc_insertion_point(field_set_allocated:CClientMsg_TrackedControllerInput.data)
-}
-
-#endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
 
 // @@protoc_insertion_point(namespace_scope)
 

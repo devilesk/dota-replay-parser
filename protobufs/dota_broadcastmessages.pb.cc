@@ -47,30 +47,30 @@ void protobuf_AssignDesc_dota_5fbroadcastmessages_2eproto() {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CDOTABroadcastMsg, msg_),
   };
   CDOTABroadcastMsg_reflection_ =
-    ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
+    new ::google::protobuf::internal::GeneratedMessageReflection(
       CDOTABroadcastMsg_descriptor_,
       CDOTABroadcastMsg::default_instance_,
       CDOTABroadcastMsg_offsets_,
       GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CDOTABroadcastMsg, _has_bits_[0]),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CDOTABroadcastMsg, _unknown_fields_),
       -1,
-      -1,
-      sizeof(CDOTABroadcastMsg),
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CDOTABroadcastMsg, _internal_metadata_),
-      -1);
+      ::google::protobuf::DescriptorPool::generated_pool(),
+      ::google::protobuf::MessageFactory::generated_factory(),
+      sizeof(CDOTABroadcastMsg));
   CDOTABroadcastMsg_LANLobbyRequest_descriptor_ = file->message_type(1);
   static const int CDOTABroadcastMsg_LANLobbyRequest_offsets_[1] = {
   };
   CDOTABroadcastMsg_LANLobbyRequest_reflection_ =
-    ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
+    new ::google::protobuf::internal::GeneratedMessageReflection(
       CDOTABroadcastMsg_LANLobbyRequest_descriptor_,
       CDOTABroadcastMsg_LANLobbyRequest::default_instance_,
       CDOTABroadcastMsg_LANLobbyRequest_offsets_,
       GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CDOTABroadcastMsg_LANLobbyRequest, _has_bits_[0]),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CDOTABroadcastMsg_LANLobbyRequest, _unknown_fields_),
       -1,
-      -1,
-      sizeof(CDOTABroadcastMsg_LANLobbyRequest),
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CDOTABroadcastMsg_LANLobbyRequest, _internal_metadata_),
-      -1);
+      ::google::protobuf::DescriptorPool::generated_pool(),
+      ::google::protobuf::MessageFactory::generated_factory(),
+      sizeof(CDOTABroadcastMsg_LANLobbyRequest));
   CDOTABroadcastMsg_LANLobbyReply_descriptor_ = file->message_type(2);
   static const int CDOTABroadcastMsg_LANLobbyReply_offsets_[9] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CDOTABroadcastMsg_LANLobbyReply, id_),
@@ -84,32 +84,32 @@ void protobuf_AssignDesc_dota_5fbroadcastmessages_2eproto() {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CDOTABroadcastMsg_LANLobbyReply, players_),
   };
   CDOTABroadcastMsg_LANLobbyReply_reflection_ =
-    ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
+    new ::google::protobuf::internal::GeneratedMessageReflection(
       CDOTABroadcastMsg_LANLobbyReply_descriptor_,
       CDOTABroadcastMsg_LANLobbyReply::default_instance_,
       CDOTABroadcastMsg_LANLobbyReply_offsets_,
       GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CDOTABroadcastMsg_LANLobbyReply, _has_bits_[0]),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CDOTABroadcastMsg_LANLobbyReply, _unknown_fields_),
       -1,
-      -1,
-      sizeof(CDOTABroadcastMsg_LANLobbyReply),
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CDOTABroadcastMsg_LANLobbyReply, _internal_metadata_),
-      -1);
+      ::google::protobuf::DescriptorPool::generated_pool(),
+      ::google::protobuf::MessageFactory::generated_factory(),
+      sizeof(CDOTABroadcastMsg_LANLobbyReply));
   CDOTABroadcastMsg_LANLobbyReply_CLobbyMember_descriptor_ = CDOTABroadcastMsg_LANLobbyReply_descriptor_->nested_type(0);
   static const int CDOTABroadcastMsg_LANLobbyReply_CLobbyMember_offsets_[2] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CDOTABroadcastMsg_LANLobbyReply_CLobbyMember, account_id_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CDOTABroadcastMsg_LANLobbyReply_CLobbyMember, player_name_),
   };
   CDOTABroadcastMsg_LANLobbyReply_CLobbyMember_reflection_ =
-    ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
+    new ::google::protobuf::internal::GeneratedMessageReflection(
       CDOTABroadcastMsg_LANLobbyReply_CLobbyMember_descriptor_,
       CDOTABroadcastMsg_LANLobbyReply_CLobbyMember::default_instance_,
       CDOTABroadcastMsg_LANLobbyReply_CLobbyMember_offsets_,
       GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CDOTABroadcastMsg_LANLobbyReply_CLobbyMember, _has_bits_[0]),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CDOTABroadcastMsg_LANLobbyReply_CLobbyMember, _unknown_fields_),
       -1,
-      -1,
-      sizeof(CDOTABroadcastMsg_LANLobbyReply_CLobbyMember),
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CDOTABroadcastMsg_LANLobbyReply_CLobbyMember, _internal_metadata_),
-      -1);
+      ::google::protobuf::DescriptorPool::generated_pool(),
+      ::google::protobuf::MessageFactory::generated_factory(),
+      sizeof(CDOTABroadcastMsg_LANLobbyReply_CLobbyMember));
   EDotaBroadcastMessages_descriptor_ = file->enum_type(0);
 }
 
@@ -124,13 +124,13 @@ inline void protobuf_AssignDescriptorsOnce() {
 void protobuf_RegisterTypes(const ::std::string&) {
   protobuf_AssignDescriptorsOnce();
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
-      CDOTABroadcastMsg_descriptor_, &CDOTABroadcastMsg::default_instance());
+    CDOTABroadcastMsg_descriptor_, &CDOTABroadcastMsg::default_instance());
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
-      CDOTABroadcastMsg_LANLobbyRequest_descriptor_, &CDOTABroadcastMsg_LANLobbyRequest::default_instance());
+    CDOTABroadcastMsg_LANLobbyRequest_descriptor_, &CDOTABroadcastMsg_LANLobbyRequest::default_instance());
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
-      CDOTABroadcastMsg_LANLobbyReply_descriptor_, &CDOTABroadcastMsg_LANLobbyReply::default_instance());
+    CDOTABroadcastMsg_LANLobbyReply_descriptor_, &CDOTABroadcastMsg_LANLobbyReply::default_instance());
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
-      CDOTABroadcastMsg_LANLobbyReply_CLobbyMember_descriptor_, &CDOTABroadcastMsg_LANLobbyReply_CLobbyMember::default_instance());
+    CDOTABroadcastMsg_LANLobbyReply_CLobbyMember_descriptor_, &CDOTABroadcastMsg_LANLobbyReply_CLobbyMember::default_instance());
 }
 
 }  // namespace
@@ -202,16 +202,6 @@ bool EDotaBroadcastMessages_IsValid(int value) {
 }
 
 
-namespace {
-
-static void MergeFromFail(int line) GOOGLE_ATTRIBUTE_COLD;
-static void MergeFromFail(int line) {
-  GOOGLE_CHECK(false) << __FILE__ << ":" << line;
-}
-
-}  // namespace
-
-
 // ===================================================================
 
 #ifndef _MSC_VER
@@ -220,7 +210,7 @@ const int CDOTABroadcastMsg::kMsgFieldNumber;
 #endif  // !_MSC_VER
 
 CDOTABroadcastMsg::CDOTABroadcastMsg()
-  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  : ::google::protobuf::Message() {
   SharedCtor();
   // @@protoc_insertion_point(constructor:CDOTABroadcastMsg)
 }
@@ -229,8 +219,7 @@ void CDOTABroadcastMsg::InitAsDefaultInstance() {
 }
 
 CDOTABroadcastMsg::CDOTABroadcastMsg(const CDOTABroadcastMsg& from)
-  : ::google::protobuf::Message(),
-    _internal_metadata_(NULL) {
+  : ::google::protobuf::Message() {
   SharedCtor();
   MergeFrom(from);
   // @@protoc_insertion_point(copy_constructor:CDOTABroadcastMsg)
@@ -240,7 +229,7 @@ void CDOTABroadcastMsg::SharedCtor() {
   ::google::protobuf::internal::GetEmptyString();
   _cached_size_ = 0;
   type_ = 1;
-  msg_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  msg_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
 
@@ -250,7 +239,9 @@ CDOTABroadcastMsg::~CDOTABroadcastMsg() {
 }
 
 void CDOTABroadcastMsg::SharedDtor() {
-  msg_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (msg_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete msg_;
+  }
   if (this != default_instance_) {
   }
 }
@@ -272,25 +263,21 @@ const CDOTABroadcastMsg& CDOTABroadcastMsg::default_instance() {
 
 CDOTABroadcastMsg* CDOTABroadcastMsg::default_instance_ = NULL;
 
-CDOTABroadcastMsg* CDOTABroadcastMsg::New(::google::protobuf::Arena* arena) const {
-  CDOTABroadcastMsg* n = new CDOTABroadcastMsg;
-  if (arena != NULL) {
-    arena->Own(n);
-  }
-  return n;
+CDOTABroadcastMsg* CDOTABroadcastMsg::New() const {
+  return new CDOTABroadcastMsg;
 }
 
 void CDOTABroadcastMsg::Clear() {
-  if (_has_bits_[0 / 32] & 3u) {
+  if (_has_bits_[0 / 32] & 3) {
     type_ = 1;
     if (has_msg()) {
-      msg_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+      if (msg_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+        msg_->clear();
+      }
     }
   }
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
-  if (_internal_metadata_.have_unknown_fields()) {
-    mutable_unknown_fields()->Clear();
-  }
+  mutable_unknown_fields()->Clear();
 }
 
 bool CDOTABroadcastMsg::MergePartialFromCodedStream(
@@ -372,7 +359,7 @@ void CDOTABroadcastMsg::SerializeWithCachedSizes(
       2, this->msg(), output);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
   }
@@ -395,7 +382,7 @@ void CDOTABroadcastMsg::SerializeWithCachedSizes(
         2, this->msg(), target);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
   }
@@ -406,19 +393,22 @@ void CDOTABroadcastMsg::SerializeWithCachedSizes(
 int CDOTABroadcastMsg::ByteSize() const {
   int total_size = 0;
 
-  // required .EDotaBroadcastMessages type = 1 [default = DOTA_BM_LANLobbyRequest];
-  if (has_type()) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::EnumSize(this->type());
-  }
-  // optional bytes msg = 2;
-  if (has_msg()) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::BytesSize(
-        this->msg());
-  }
+  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    // required .EDotaBroadcastMessages type = 1 [default = DOTA_BM_LANLobbyRequest];
+    if (has_type()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::EnumSize(this->type());
+    }
 
-  if (_internal_metadata_.have_unknown_fields()) {
+    // optional bytes msg = 2;
+    if (has_msg()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::BytesSize(
+          this->msg());
+    }
+
+  }
+  if (!unknown_fields().empty()) {
     total_size +=
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         unknown_fields());
@@ -430,10 +420,10 @@ int CDOTABroadcastMsg::ByteSize() const {
 }
 
 void CDOTABroadcastMsg::MergeFrom(const ::google::protobuf::Message& from) {
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
-  const CDOTABroadcastMsg* source = 
-      ::google::protobuf::internal::DynamicCastToGenerated<const CDOTABroadcastMsg>(
-          &from);
+  GOOGLE_CHECK_NE(&from, this);
+  const CDOTABroadcastMsg* source =
+    ::google::protobuf::internal::dynamic_cast_if_available<const CDOTABroadcastMsg*>(
+      &from);
   if (source == NULL) {
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
   } else {
@@ -442,19 +432,16 @@ void CDOTABroadcastMsg::MergeFrom(const ::google::protobuf::Message& from) {
 }
 
 void CDOTABroadcastMsg::MergeFrom(const CDOTABroadcastMsg& from) {
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  GOOGLE_CHECK_NE(&from, this);
   if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (from.has_type()) {
       set_type(from.type());
     }
     if (from.has_msg()) {
-      set_has_msg();
-      msg_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.msg_);
+      set_msg(from.msg());
     }
   }
-  if (from._internal_metadata_.have_unknown_fields()) {
-    mutable_unknown_fields()->MergeFrom(from.unknown_fields());
-  }
+  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
 }
 
 void CDOTABroadcastMsg::CopyFrom(const ::google::protobuf::Message& from) {
@@ -476,15 +463,13 @@ bool CDOTABroadcastMsg::IsInitialized() const {
 }
 
 void CDOTABroadcastMsg::Swap(CDOTABroadcastMsg* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
-void CDOTABroadcastMsg::InternalSwap(CDOTABroadcastMsg* other) {
-  std::swap(type_, other->type_);
-  msg_.Swap(&other->msg_);
-  std::swap(_has_bits_[0], other->_has_bits_[0]);
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  std::swap(_cached_size_, other->_cached_size_);
+  if (other != this) {
+    std::swap(type_, other->type_);
+    std::swap(msg_, other->msg_);
+    std::swap(_has_bits_[0], other->_has_bits_[0]);
+    _unknown_fields_.Swap(&other->_unknown_fields_);
+    std::swap(_cached_size_, other->_cached_size_);
+  }
 }
 
 ::google::protobuf::Metadata CDOTABroadcastMsg::GetMetadata() const {
@@ -495,88 +480,6 @@ void CDOTABroadcastMsg::InternalSwap(CDOTABroadcastMsg* other) {
   return metadata;
 }
 
-#if PROTOBUF_INLINE_NOT_IN_HEADERS
-// CDOTABroadcastMsg
-
-// required .EDotaBroadcastMessages type = 1 [default = DOTA_BM_LANLobbyRequest];
-bool CDOTABroadcastMsg::has_type() const {
-  return (_has_bits_[0] & 0x00000001u) != 0;
-}
-void CDOTABroadcastMsg::set_has_type() {
-  _has_bits_[0] |= 0x00000001u;
-}
-void CDOTABroadcastMsg::clear_has_type() {
-  _has_bits_[0] &= ~0x00000001u;
-}
-void CDOTABroadcastMsg::clear_type() {
-  type_ = 1;
-  clear_has_type();
-}
- ::EDotaBroadcastMessages CDOTABroadcastMsg::type() const {
-  // @@protoc_insertion_point(field_get:CDOTABroadcastMsg.type)
-  return static_cast< ::EDotaBroadcastMessages >(type_);
-}
- void CDOTABroadcastMsg::set_type(::EDotaBroadcastMessages value) {
-  assert(::EDotaBroadcastMessages_IsValid(value));
-  set_has_type();
-  type_ = value;
-  // @@protoc_insertion_point(field_set:CDOTABroadcastMsg.type)
-}
-
-// optional bytes msg = 2;
-bool CDOTABroadcastMsg::has_msg() const {
-  return (_has_bits_[0] & 0x00000002u) != 0;
-}
-void CDOTABroadcastMsg::set_has_msg() {
-  _has_bits_[0] |= 0x00000002u;
-}
-void CDOTABroadcastMsg::clear_has_msg() {
-  _has_bits_[0] &= ~0x00000002u;
-}
-void CDOTABroadcastMsg::clear_msg() {
-  msg_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  clear_has_msg();
-}
- const ::std::string& CDOTABroadcastMsg::msg() const {
-  // @@protoc_insertion_point(field_get:CDOTABroadcastMsg.msg)
-  return msg_.GetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
- void CDOTABroadcastMsg::set_msg(const ::std::string& value) {
-  set_has_msg();
-  msg_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:CDOTABroadcastMsg.msg)
-}
- void CDOTABroadcastMsg::set_msg(const char* value) {
-  set_has_msg();
-  msg_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:CDOTABroadcastMsg.msg)
-}
- void CDOTABroadcastMsg::set_msg(const void* value, size_t size) {
-  set_has_msg();
-  msg_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-      ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:CDOTABroadcastMsg.msg)
-}
- ::std::string* CDOTABroadcastMsg::mutable_msg() {
-  set_has_msg();
-  // @@protoc_insertion_point(field_mutable:CDOTABroadcastMsg.msg)
-  return msg_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
- ::std::string* CDOTABroadcastMsg::release_msg() {
-  clear_has_msg();
-  return msg_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
- void CDOTABroadcastMsg::set_allocated_msg(::std::string* msg) {
-  if (msg != NULL) {
-    set_has_msg();
-  } else {
-    clear_has_msg();
-  }
-  msg_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), msg);
-  // @@protoc_insertion_point(field_set_allocated:CDOTABroadcastMsg.msg)
-}
-
-#endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
 
 // ===================================================================
 
@@ -584,7 +487,7 @@ void CDOTABroadcastMsg::clear_msg() {
 #endif  // !_MSC_VER
 
 CDOTABroadcastMsg_LANLobbyRequest::CDOTABroadcastMsg_LANLobbyRequest()
-  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  : ::google::protobuf::Message() {
   SharedCtor();
   // @@protoc_insertion_point(constructor:CDOTABroadcastMsg_LANLobbyRequest)
 }
@@ -593,8 +496,7 @@ void CDOTABroadcastMsg_LANLobbyRequest::InitAsDefaultInstance() {
 }
 
 CDOTABroadcastMsg_LANLobbyRequest::CDOTABroadcastMsg_LANLobbyRequest(const CDOTABroadcastMsg_LANLobbyRequest& from)
-  : ::google::protobuf::Message(),
-    _internal_metadata_(NULL) {
+  : ::google::protobuf::Message() {
   SharedCtor();
   MergeFrom(from);
   // @@protoc_insertion_point(copy_constructor:CDOTABroadcastMsg_LANLobbyRequest)
@@ -632,19 +534,13 @@ const CDOTABroadcastMsg_LANLobbyRequest& CDOTABroadcastMsg_LANLobbyRequest::defa
 
 CDOTABroadcastMsg_LANLobbyRequest* CDOTABroadcastMsg_LANLobbyRequest::default_instance_ = NULL;
 
-CDOTABroadcastMsg_LANLobbyRequest* CDOTABroadcastMsg_LANLobbyRequest::New(::google::protobuf::Arena* arena) const {
-  CDOTABroadcastMsg_LANLobbyRequest* n = new CDOTABroadcastMsg_LANLobbyRequest;
-  if (arena != NULL) {
-    arena->Own(n);
-  }
-  return n;
+CDOTABroadcastMsg_LANLobbyRequest* CDOTABroadcastMsg_LANLobbyRequest::New() const {
+  return new CDOTABroadcastMsg_LANLobbyRequest;
 }
 
 void CDOTABroadcastMsg_LANLobbyRequest::Clear() {
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
-  if (_internal_metadata_.have_unknown_fields()) {
-    mutable_unknown_fields()->Clear();
-  }
+  mutable_unknown_fields()->Clear();
 }
 
 bool CDOTABroadcastMsg_LANLobbyRequest::MergePartialFromCodedStream(
@@ -677,7 +573,7 @@ failure:
 void CDOTABroadcastMsg_LANLobbyRequest::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
   // @@protoc_insertion_point(serialize_start:CDOTABroadcastMsg_LANLobbyRequest)
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
   }
@@ -687,7 +583,7 @@ void CDOTABroadcastMsg_LANLobbyRequest::SerializeWithCachedSizes(
 ::google::protobuf::uint8* CDOTABroadcastMsg_LANLobbyRequest::SerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
   // @@protoc_insertion_point(serialize_to_array_start:CDOTABroadcastMsg_LANLobbyRequest)
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
   }
@@ -698,7 +594,7 @@ void CDOTABroadcastMsg_LANLobbyRequest::SerializeWithCachedSizes(
 int CDOTABroadcastMsg_LANLobbyRequest::ByteSize() const {
   int total_size = 0;
 
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     total_size +=
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         unknown_fields());
@@ -710,10 +606,10 @@ int CDOTABroadcastMsg_LANLobbyRequest::ByteSize() const {
 }
 
 void CDOTABroadcastMsg_LANLobbyRequest::MergeFrom(const ::google::protobuf::Message& from) {
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
-  const CDOTABroadcastMsg_LANLobbyRequest* source = 
-      ::google::protobuf::internal::DynamicCastToGenerated<const CDOTABroadcastMsg_LANLobbyRequest>(
-          &from);
+  GOOGLE_CHECK_NE(&from, this);
+  const CDOTABroadcastMsg_LANLobbyRequest* source =
+    ::google::protobuf::internal::dynamic_cast_if_available<const CDOTABroadcastMsg_LANLobbyRequest*>(
+      &from);
   if (source == NULL) {
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
   } else {
@@ -722,10 +618,8 @@ void CDOTABroadcastMsg_LANLobbyRequest::MergeFrom(const ::google::protobuf::Mess
 }
 
 void CDOTABroadcastMsg_LANLobbyRequest::MergeFrom(const CDOTABroadcastMsg_LANLobbyRequest& from) {
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
-  if (from._internal_metadata_.have_unknown_fields()) {
-    mutable_unknown_fields()->MergeFrom(from.unknown_fields());
-  }
+  GOOGLE_CHECK_NE(&from, this);
+  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
 }
 
 void CDOTABroadcastMsg_LANLobbyRequest::CopyFrom(const ::google::protobuf::Message& from) {
@@ -746,12 +640,10 @@ bool CDOTABroadcastMsg_LANLobbyRequest::IsInitialized() const {
 }
 
 void CDOTABroadcastMsg_LANLobbyRequest::Swap(CDOTABroadcastMsg_LANLobbyRequest* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
-void CDOTABroadcastMsg_LANLobbyRequest::InternalSwap(CDOTABroadcastMsg_LANLobbyRequest* other) {
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  std::swap(_cached_size_, other->_cached_size_);
+  if (other != this) {
+    _unknown_fields_.Swap(&other->_unknown_fields_);
+    std::swap(_cached_size_, other->_cached_size_);
+  }
 }
 
 ::google::protobuf::Metadata CDOTABroadcastMsg_LANLobbyRequest::GetMetadata() const {
@@ -762,10 +654,6 @@ void CDOTABroadcastMsg_LANLobbyRequest::InternalSwap(CDOTABroadcastMsg_LANLobbyR
   return metadata;
 }
 
-#if PROTOBUF_INLINE_NOT_IN_HEADERS
-// CDOTABroadcastMsg_LANLobbyRequest
-
-#endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
 
 // ===================================================================
 
@@ -775,7 +663,7 @@ const int CDOTABroadcastMsg_LANLobbyReply_CLobbyMember::kPlayerNameFieldNumber;
 #endif  // !_MSC_VER
 
 CDOTABroadcastMsg_LANLobbyReply_CLobbyMember::CDOTABroadcastMsg_LANLobbyReply_CLobbyMember()
-  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  : ::google::protobuf::Message() {
   SharedCtor();
   // @@protoc_insertion_point(constructor:CDOTABroadcastMsg_LANLobbyReply.CLobbyMember)
 }
@@ -784,8 +672,7 @@ void CDOTABroadcastMsg_LANLobbyReply_CLobbyMember::InitAsDefaultInstance() {
 }
 
 CDOTABroadcastMsg_LANLobbyReply_CLobbyMember::CDOTABroadcastMsg_LANLobbyReply_CLobbyMember(const CDOTABroadcastMsg_LANLobbyReply_CLobbyMember& from)
-  : ::google::protobuf::Message(),
-    _internal_metadata_(NULL) {
+  : ::google::protobuf::Message() {
   SharedCtor();
   MergeFrom(from);
   // @@protoc_insertion_point(copy_constructor:CDOTABroadcastMsg_LANLobbyReply.CLobbyMember)
@@ -795,7 +682,7 @@ void CDOTABroadcastMsg_LANLobbyReply_CLobbyMember::SharedCtor() {
   ::google::protobuf::internal::GetEmptyString();
   _cached_size_ = 0;
   account_id_ = 0u;
-  player_name_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  player_name_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
 
@@ -805,7 +692,9 @@ CDOTABroadcastMsg_LANLobbyReply_CLobbyMember::~CDOTABroadcastMsg_LANLobbyReply_C
 }
 
 void CDOTABroadcastMsg_LANLobbyReply_CLobbyMember::SharedDtor() {
-  player_name_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (player_name_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete player_name_;
+  }
   if (this != default_instance_) {
   }
 }
@@ -827,25 +716,21 @@ const CDOTABroadcastMsg_LANLobbyReply_CLobbyMember& CDOTABroadcastMsg_LANLobbyRe
 
 CDOTABroadcastMsg_LANLobbyReply_CLobbyMember* CDOTABroadcastMsg_LANLobbyReply_CLobbyMember::default_instance_ = NULL;
 
-CDOTABroadcastMsg_LANLobbyReply_CLobbyMember* CDOTABroadcastMsg_LANLobbyReply_CLobbyMember::New(::google::protobuf::Arena* arena) const {
-  CDOTABroadcastMsg_LANLobbyReply_CLobbyMember* n = new CDOTABroadcastMsg_LANLobbyReply_CLobbyMember;
-  if (arena != NULL) {
-    arena->Own(n);
-  }
-  return n;
+CDOTABroadcastMsg_LANLobbyReply_CLobbyMember* CDOTABroadcastMsg_LANLobbyReply_CLobbyMember::New() const {
+  return new CDOTABroadcastMsg_LANLobbyReply_CLobbyMember;
 }
 
 void CDOTABroadcastMsg_LANLobbyReply_CLobbyMember::Clear() {
-  if (_has_bits_[0 / 32] & 3u) {
+  if (_has_bits_[0 / 32] & 3) {
     account_id_ = 0u;
     if (has_player_name()) {
-      player_name_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+      if (player_name_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+        player_name_->clear();
+      }
     }
   }
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
-  if (_internal_metadata_.have_unknown_fields()) {
-    mutable_unknown_fields()->Clear();
-  }
+  mutable_unknown_fields()->Clear();
 }
 
 bool CDOTABroadcastMsg_LANLobbyReply_CLobbyMember::MergePartialFromCodedStream(
@@ -881,7 +766,7 @@ bool CDOTABroadcastMsg_LANLobbyReply_CLobbyMember::MergePartialFromCodedStream(
           ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
             this->player_name().data(), this->player_name().length(),
             ::google::protobuf::internal::WireFormat::PARSE,
-            "CDOTABroadcastMsg_LANLobbyReply.CLobbyMember.player_name");
+            "player_name");
         } else {
           goto handle_unusual;
         }
@@ -924,12 +809,12 @@ void CDOTABroadcastMsg_LANLobbyReply_CLobbyMember::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
       this->player_name().data(), this->player_name().length(),
       ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "CDOTABroadcastMsg_LANLobbyReply.CLobbyMember.player_name");
+      "player_name");
     ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
       2, this->player_name(), output);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
   }
@@ -949,13 +834,13 @@ void CDOTABroadcastMsg_LANLobbyReply_CLobbyMember::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
       this->player_name().data(), this->player_name().length(),
       ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "CDOTABroadcastMsg_LANLobbyReply.CLobbyMember.player_name");
+      "player_name");
     target =
       ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
         2, this->player_name(), target);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
   }
@@ -966,7 +851,7 @@ void CDOTABroadcastMsg_LANLobbyReply_CLobbyMember::SerializeWithCachedSizes(
 int CDOTABroadcastMsg_LANLobbyReply_CLobbyMember::ByteSize() const {
   int total_size = 0;
 
-  if (_has_bits_[0 / 32] & 3u) {
+  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     // optional uint32 account_id = 1;
     if (has_account_id()) {
       total_size += 1 +
@@ -982,7 +867,7 @@ int CDOTABroadcastMsg_LANLobbyReply_CLobbyMember::ByteSize() const {
     }
 
   }
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     total_size +=
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         unknown_fields());
@@ -994,10 +879,10 @@ int CDOTABroadcastMsg_LANLobbyReply_CLobbyMember::ByteSize() const {
 }
 
 void CDOTABroadcastMsg_LANLobbyReply_CLobbyMember::MergeFrom(const ::google::protobuf::Message& from) {
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
-  const CDOTABroadcastMsg_LANLobbyReply_CLobbyMember* source = 
-      ::google::protobuf::internal::DynamicCastToGenerated<const CDOTABroadcastMsg_LANLobbyReply_CLobbyMember>(
-          &from);
+  GOOGLE_CHECK_NE(&from, this);
+  const CDOTABroadcastMsg_LANLobbyReply_CLobbyMember* source =
+    ::google::protobuf::internal::dynamic_cast_if_available<const CDOTABroadcastMsg_LANLobbyReply_CLobbyMember*>(
+      &from);
   if (source == NULL) {
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
   } else {
@@ -1006,19 +891,16 @@ void CDOTABroadcastMsg_LANLobbyReply_CLobbyMember::MergeFrom(const ::google::pro
 }
 
 void CDOTABroadcastMsg_LANLobbyReply_CLobbyMember::MergeFrom(const CDOTABroadcastMsg_LANLobbyReply_CLobbyMember& from) {
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  GOOGLE_CHECK_NE(&from, this);
   if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (from.has_account_id()) {
       set_account_id(from.account_id());
     }
     if (from.has_player_name()) {
-      set_has_player_name();
-      player_name_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.player_name_);
+      set_player_name(from.player_name());
     }
   }
-  if (from._internal_metadata_.have_unknown_fields()) {
-    mutable_unknown_fields()->MergeFrom(from.unknown_fields());
-  }
+  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
 }
 
 void CDOTABroadcastMsg_LANLobbyReply_CLobbyMember::CopyFrom(const ::google::protobuf::Message& from) {
@@ -1039,15 +921,13 @@ bool CDOTABroadcastMsg_LANLobbyReply_CLobbyMember::IsInitialized() const {
 }
 
 void CDOTABroadcastMsg_LANLobbyReply_CLobbyMember::Swap(CDOTABroadcastMsg_LANLobbyReply_CLobbyMember* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
-void CDOTABroadcastMsg_LANLobbyReply_CLobbyMember::InternalSwap(CDOTABroadcastMsg_LANLobbyReply_CLobbyMember* other) {
-  std::swap(account_id_, other->account_id_);
-  player_name_.Swap(&other->player_name_);
-  std::swap(_has_bits_[0], other->_has_bits_[0]);
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  std::swap(_cached_size_, other->_cached_size_);
+  if (other != this) {
+    std::swap(account_id_, other->account_id_);
+    std::swap(player_name_, other->player_name_);
+    std::swap(_has_bits_[0], other->_has_bits_[0]);
+    _unknown_fields_.Swap(&other->_unknown_fields_);
+    std::swap(_cached_size_, other->_cached_size_);
+  }
 }
 
 ::google::protobuf::Metadata CDOTABroadcastMsg_LANLobbyReply_CLobbyMember::GetMetadata() const {
@@ -1074,7 +954,7 @@ const int CDOTABroadcastMsg_LANLobbyReply::kPlayersFieldNumber;
 #endif  // !_MSC_VER
 
 CDOTABroadcastMsg_LANLobbyReply::CDOTABroadcastMsg_LANLobbyReply()
-  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  : ::google::protobuf::Message() {
   SharedCtor();
   // @@protoc_insertion_point(constructor:CDOTABroadcastMsg_LANLobbyReply)
 }
@@ -1083,8 +963,7 @@ void CDOTABroadcastMsg_LANLobbyReply::InitAsDefaultInstance() {
 }
 
 CDOTABroadcastMsg_LANLobbyReply::CDOTABroadcastMsg_LANLobbyReply(const CDOTABroadcastMsg_LANLobbyReply& from)
-  : ::google::protobuf::Message(),
-    _internal_metadata_(NULL) {
+  : ::google::protobuf::Message() {
   SharedCtor();
   MergeFrom(from);
   // @@protoc_insertion_point(copy_constructor:CDOTABroadcastMsg_LANLobbyReply)
@@ -1099,7 +978,7 @@ void CDOTABroadcastMsg_LANLobbyReply::SharedCtor() {
   requires_pass_key_ = false;
   leader_account_id_ = 0u;
   game_mode_ = 0u;
-  name_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  name_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   players_ = 0u;
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
@@ -1110,7 +989,9 @@ CDOTABroadcastMsg_LANLobbyReply::~CDOTABroadcastMsg_LANLobbyReply() {
 }
 
 void CDOTABroadcastMsg_LANLobbyReply::SharedDtor() {
-  name_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (name_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete name_;
+  }
   if (this != default_instance_) {
   }
 }
@@ -1132,41 +1013,39 @@ const CDOTABroadcastMsg_LANLobbyReply& CDOTABroadcastMsg_LANLobbyReply::default_
 
 CDOTABroadcastMsg_LANLobbyReply* CDOTABroadcastMsg_LANLobbyReply::default_instance_ = NULL;
 
-CDOTABroadcastMsg_LANLobbyReply* CDOTABroadcastMsg_LANLobbyReply::New(::google::protobuf::Arena* arena) const {
-  CDOTABroadcastMsg_LANLobbyReply* n = new CDOTABroadcastMsg_LANLobbyReply;
-  if (arena != NULL) {
-    arena->Own(n);
-  }
-  return n;
+CDOTABroadcastMsg_LANLobbyReply* CDOTABroadcastMsg_LANLobbyReply::New() const {
+  return new CDOTABroadcastMsg_LANLobbyReply;
 }
 
 void CDOTABroadcastMsg_LANLobbyReply::Clear() {
-#define ZR_HELPER_(f) reinterpret_cast<char*>(\
-  &reinterpret_cast<CDOTABroadcastMsg_LANLobbyReply*>(16)->f)
+#define OFFSET_OF_FIELD_(f) (reinterpret_cast<char*>(      \
+  &reinterpret_cast<CDOTABroadcastMsg_LANLobbyReply*>(16)->f) - \
+   reinterpret_cast<char*>(16))
 
-#define ZR_(first, last) do {\
-  ::memset(&first, 0,\
-           ZR_HELPER_(last) - ZR_HELPER_(first) + sizeof(last));\
-} while (0)
+#define ZR_(first, last) do {                              \
+    size_t f = OFFSET_OF_FIELD_(first);                    \
+    size_t n = OFFSET_OF_FIELD_(last) - f + sizeof(last);  \
+    ::memset(&first, 0, n);                                \
+  } while (0)
 
-  if (_has_bits_[0 / 32] & 247u) {
+  if (_has_bits_[0 / 32] & 247) {
     ZR_(id_, tournament_game_id_);
     ZR_(requires_pass_key_, leader_account_id_);
     game_mode_ = 0u;
     if (has_name()) {
-      name_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+      if (name_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+        name_->clear();
+      }
     }
   }
   players_ = 0u;
 
-#undef ZR_HELPER_
+#undef OFFSET_OF_FIELD_
 #undef ZR_
 
   members_.Clear();
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
-  if (_internal_metadata_.have_unknown_fields()) {
-    mutable_unknown_fields()->Clear();
-  }
+  mutable_unknown_fields()->Clear();
 }
 
 bool CDOTABroadcastMsg_LANLobbyReply::MergePartialFromCodedStream(
@@ -1227,15 +1106,12 @@ bool CDOTABroadcastMsg_LANLobbyReply::MergePartialFromCodedStream(
       case 4: {
         if (tag == 34) {
          parse_members:
-          DO_(input->IncrementRecursionDepth());
-         parse_loop_members:
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtualNoRecursionDepth(
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
                 input, add_members()));
         } else {
           goto handle_unusual;
         }
-        if (input->ExpectTag(34)) goto parse_loop_members;
-        input->UnsafeDecrementRecursionDepth();
+        if (input->ExpectTag(34)) goto parse_members;
         if (input->ExpectTag(40)) goto parse_requires_pass_key;
         break;
       }
@@ -1294,7 +1170,7 @@ bool CDOTABroadcastMsg_LANLobbyReply::MergePartialFromCodedStream(
           ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
             this->name().data(), this->name().length(),
             ::google::protobuf::internal::WireFormat::PARSE,
-            "CDOTABroadcastMsg_LANLobbyReply.name");
+            "name");
         } else {
           goto handle_unusual;
         }
@@ -1358,7 +1234,7 @@ void CDOTABroadcastMsg_LANLobbyReply::SerializeWithCachedSizes(
   }
 
   // repeated .CDOTABroadcastMsg_LANLobbyReply.CLobbyMember members = 4;
-  for (unsigned int i = 0, n = this->members_size(); i < n; i++) {
+  for (int i = 0; i < this->members_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       4, this->members(i), output);
   }
@@ -1383,7 +1259,7 @@ void CDOTABroadcastMsg_LANLobbyReply::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
       this->name().data(), this->name().length(),
       ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "CDOTABroadcastMsg_LANLobbyReply.name");
+      "name");
     ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
       8, this->name(), output);
   }
@@ -1393,7 +1269,7 @@ void CDOTABroadcastMsg_LANLobbyReply::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteUInt32(9, this->players(), output);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
   }
@@ -1419,7 +1295,7 @@ void CDOTABroadcastMsg_LANLobbyReply::SerializeWithCachedSizes(
   }
 
   // repeated .CDOTABroadcastMsg_LANLobbyReply.CLobbyMember members = 4;
-  for (unsigned int i = 0, n = this->members_size(); i < n; i++) {
+  for (int i = 0; i < this->members_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
         4, this->members(i), target);
@@ -1445,7 +1321,7 @@ void CDOTABroadcastMsg_LANLobbyReply::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
       this->name().data(), this->name().length(),
       ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "CDOTABroadcastMsg_LANLobbyReply.name");
+      "name");
     target =
       ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
         8, this->name(), target);
@@ -1456,7 +1332,7 @@ void CDOTABroadcastMsg_LANLobbyReply::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(9, this->players(), target);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
   }
@@ -1467,7 +1343,7 @@ void CDOTABroadcastMsg_LANLobbyReply::SerializeWithCachedSizes(
 int CDOTABroadcastMsg_LANLobbyReply::ByteSize() const {
   int total_size = 0;
 
-  if (_has_bits_[0 / 32] & 247u) {
+  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     // optional uint64 id = 1;
     if (has_id()) {
       total_size += 1 +
@@ -1516,13 +1392,15 @@ int CDOTABroadcastMsg_LANLobbyReply::ByteSize() const {
     }
 
   }
-  // optional uint32 players = 9;
-  if (has_players()) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::UInt32Size(
-        this->players());
-  }
+  if (_has_bits_[8 / 32] & (0xffu << (8 % 32))) {
+    // optional uint32 players = 9;
+    if (has_players()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::UInt32Size(
+          this->players());
+    }
 
+  }
   // repeated .CDOTABroadcastMsg_LANLobbyReply.CLobbyMember members = 4;
   total_size += 1 * this->members_size();
   for (int i = 0; i < this->members_size(); i++) {
@@ -1531,7 +1409,7 @@ int CDOTABroadcastMsg_LANLobbyReply::ByteSize() const {
         this->members(i));
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     total_size +=
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         unknown_fields());
@@ -1543,10 +1421,10 @@ int CDOTABroadcastMsg_LANLobbyReply::ByteSize() const {
 }
 
 void CDOTABroadcastMsg_LANLobbyReply::MergeFrom(const ::google::protobuf::Message& from) {
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
-  const CDOTABroadcastMsg_LANLobbyReply* source = 
-      ::google::protobuf::internal::DynamicCastToGenerated<const CDOTABroadcastMsg_LANLobbyReply>(
-          &from);
+  GOOGLE_CHECK_NE(&from, this);
+  const CDOTABroadcastMsg_LANLobbyReply* source =
+    ::google::protobuf::internal::dynamic_cast_if_available<const CDOTABroadcastMsg_LANLobbyReply*>(
+      &from);
   if (source == NULL) {
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
   } else {
@@ -1555,7 +1433,7 @@ void CDOTABroadcastMsg_LANLobbyReply::MergeFrom(const ::google::protobuf::Messag
 }
 
 void CDOTABroadcastMsg_LANLobbyReply::MergeFrom(const CDOTABroadcastMsg_LANLobbyReply& from) {
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  GOOGLE_CHECK_NE(&from, this);
   members_.MergeFrom(from.members_);
   if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (from.has_id()) {
@@ -1577,8 +1455,7 @@ void CDOTABroadcastMsg_LANLobbyReply::MergeFrom(const CDOTABroadcastMsg_LANLobby
       set_game_mode(from.game_mode());
     }
     if (from.has_name()) {
-      set_has_name();
-      name_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.name_);
+      set_name(from.name());
     }
   }
   if (from._has_bits_[8 / 32] & (0xffu << (8 % 32))) {
@@ -1586,9 +1463,7 @@ void CDOTABroadcastMsg_LANLobbyReply::MergeFrom(const CDOTABroadcastMsg_LANLobby
       set_players(from.players());
     }
   }
-  if (from._internal_metadata_.have_unknown_fields()) {
-    mutable_unknown_fields()->MergeFrom(from.unknown_fields());
-  }
+  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
 }
 
 void CDOTABroadcastMsg_LANLobbyReply::CopyFrom(const ::google::protobuf::Message& from) {
@@ -1609,22 +1484,20 @@ bool CDOTABroadcastMsg_LANLobbyReply::IsInitialized() const {
 }
 
 void CDOTABroadcastMsg_LANLobbyReply::Swap(CDOTABroadcastMsg_LANLobbyReply* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
-void CDOTABroadcastMsg_LANLobbyReply::InternalSwap(CDOTABroadcastMsg_LANLobbyReply* other) {
-  std::swap(id_, other->id_);
-  std::swap(tournament_id_, other->tournament_id_);
-  std::swap(tournament_game_id_, other->tournament_game_id_);
-  members_.UnsafeArenaSwap(&other->members_);
-  std::swap(requires_pass_key_, other->requires_pass_key_);
-  std::swap(leader_account_id_, other->leader_account_id_);
-  std::swap(game_mode_, other->game_mode_);
-  name_.Swap(&other->name_);
-  std::swap(players_, other->players_);
-  std::swap(_has_bits_[0], other->_has_bits_[0]);
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  std::swap(_cached_size_, other->_cached_size_);
+  if (other != this) {
+    std::swap(id_, other->id_);
+    std::swap(tournament_id_, other->tournament_id_);
+    std::swap(tournament_game_id_, other->tournament_game_id_);
+    members_.Swap(&other->members_);
+    std::swap(requires_pass_key_, other->requires_pass_key_);
+    std::swap(leader_account_id_, other->leader_account_id_);
+    std::swap(game_mode_, other->game_mode_);
+    std::swap(name_, other->name_);
+    std::swap(players_, other->players_);
+    std::swap(_has_bits_[0], other->_has_bits_[0]);
+    _unknown_fields_.Swap(&other->_unknown_fields_);
+    std::swap(_cached_size_, other->_cached_size_);
+  }
 }
 
 ::google::protobuf::Metadata CDOTABroadcastMsg_LANLobbyReply::GetMetadata() const {
@@ -1635,342 +1508,6 @@ void CDOTABroadcastMsg_LANLobbyReply::InternalSwap(CDOTABroadcastMsg_LANLobbyRep
   return metadata;
 }
 
-#if PROTOBUF_INLINE_NOT_IN_HEADERS
-// CDOTABroadcastMsg_LANLobbyReply_CLobbyMember
-
-// optional uint32 account_id = 1;
-bool CDOTABroadcastMsg_LANLobbyReply_CLobbyMember::has_account_id() const {
-  return (_has_bits_[0] & 0x00000001u) != 0;
-}
-void CDOTABroadcastMsg_LANLobbyReply_CLobbyMember::set_has_account_id() {
-  _has_bits_[0] |= 0x00000001u;
-}
-void CDOTABroadcastMsg_LANLobbyReply_CLobbyMember::clear_has_account_id() {
-  _has_bits_[0] &= ~0x00000001u;
-}
-void CDOTABroadcastMsg_LANLobbyReply_CLobbyMember::clear_account_id() {
-  account_id_ = 0u;
-  clear_has_account_id();
-}
- ::google::protobuf::uint32 CDOTABroadcastMsg_LANLobbyReply_CLobbyMember::account_id() const {
-  // @@protoc_insertion_point(field_get:CDOTABroadcastMsg_LANLobbyReply.CLobbyMember.account_id)
-  return account_id_;
-}
- void CDOTABroadcastMsg_LANLobbyReply_CLobbyMember::set_account_id(::google::protobuf::uint32 value) {
-  set_has_account_id();
-  account_id_ = value;
-  // @@protoc_insertion_point(field_set:CDOTABroadcastMsg_LANLobbyReply.CLobbyMember.account_id)
-}
-
-// optional string player_name = 2;
-bool CDOTABroadcastMsg_LANLobbyReply_CLobbyMember::has_player_name() const {
-  return (_has_bits_[0] & 0x00000002u) != 0;
-}
-void CDOTABroadcastMsg_LANLobbyReply_CLobbyMember::set_has_player_name() {
-  _has_bits_[0] |= 0x00000002u;
-}
-void CDOTABroadcastMsg_LANLobbyReply_CLobbyMember::clear_has_player_name() {
-  _has_bits_[0] &= ~0x00000002u;
-}
-void CDOTABroadcastMsg_LANLobbyReply_CLobbyMember::clear_player_name() {
-  player_name_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  clear_has_player_name();
-}
- const ::std::string& CDOTABroadcastMsg_LANLobbyReply_CLobbyMember::player_name() const {
-  // @@protoc_insertion_point(field_get:CDOTABroadcastMsg_LANLobbyReply.CLobbyMember.player_name)
-  return player_name_.GetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
- void CDOTABroadcastMsg_LANLobbyReply_CLobbyMember::set_player_name(const ::std::string& value) {
-  set_has_player_name();
-  player_name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:CDOTABroadcastMsg_LANLobbyReply.CLobbyMember.player_name)
-}
- void CDOTABroadcastMsg_LANLobbyReply_CLobbyMember::set_player_name(const char* value) {
-  set_has_player_name();
-  player_name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:CDOTABroadcastMsg_LANLobbyReply.CLobbyMember.player_name)
-}
- void CDOTABroadcastMsg_LANLobbyReply_CLobbyMember::set_player_name(const char* value, size_t size) {
-  set_has_player_name();
-  player_name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-      ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:CDOTABroadcastMsg_LANLobbyReply.CLobbyMember.player_name)
-}
- ::std::string* CDOTABroadcastMsg_LANLobbyReply_CLobbyMember::mutable_player_name() {
-  set_has_player_name();
-  // @@protoc_insertion_point(field_mutable:CDOTABroadcastMsg_LANLobbyReply.CLobbyMember.player_name)
-  return player_name_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
- ::std::string* CDOTABroadcastMsg_LANLobbyReply_CLobbyMember::release_player_name() {
-  clear_has_player_name();
-  return player_name_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
- void CDOTABroadcastMsg_LANLobbyReply_CLobbyMember::set_allocated_player_name(::std::string* player_name) {
-  if (player_name != NULL) {
-    set_has_player_name();
-  } else {
-    clear_has_player_name();
-  }
-  player_name_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), player_name);
-  // @@protoc_insertion_point(field_set_allocated:CDOTABroadcastMsg_LANLobbyReply.CLobbyMember.player_name)
-}
-
-// -------------------------------------------------------------------
-
-// CDOTABroadcastMsg_LANLobbyReply
-
-// optional uint64 id = 1;
-bool CDOTABroadcastMsg_LANLobbyReply::has_id() const {
-  return (_has_bits_[0] & 0x00000001u) != 0;
-}
-void CDOTABroadcastMsg_LANLobbyReply::set_has_id() {
-  _has_bits_[0] |= 0x00000001u;
-}
-void CDOTABroadcastMsg_LANLobbyReply::clear_has_id() {
-  _has_bits_[0] &= ~0x00000001u;
-}
-void CDOTABroadcastMsg_LANLobbyReply::clear_id() {
-  id_ = GOOGLE_ULONGLONG(0);
-  clear_has_id();
-}
- ::google::protobuf::uint64 CDOTABroadcastMsg_LANLobbyReply::id() const {
-  // @@protoc_insertion_point(field_get:CDOTABroadcastMsg_LANLobbyReply.id)
-  return id_;
-}
- void CDOTABroadcastMsg_LANLobbyReply::set_id(::google::protobuf::uint64 value) {
-  set_has_id();
-  id_ = value;
-  // @@protoc_insertion_point(field_set:CDOTABroadcastMsg_LANLobbyReply.id)
-}
-
-// optional uint32 tournament_id = 2;
-bool CDOTABroadcastMsg_LANLobbyReply::has_tournament_id() const {
-  return (_has_bits_[0] & 0x00000002u) != 0;
-}
-void CDOTABroadcastMsg_LANLobbyReply::set_has_tournament_id() {
-  _has_bits_[0] |= 0x00000002u;
-}
-void CDOTABroadcastMsg_LANLobbyReply::clear_has_tournament_id() {
-  _has_bits_[0] &= ~0x00000002u;
-}
-void CDOTABroadcastMsg_LANLobbyReply::clear_tournament_id() {
-  tournament_id_ = 0u;
-  clear_has_tournament_id();
-}
- ::google::protobuf::uint32 CDOTABroadcastMsg_LANLobbyReply::tournament_id() const {
-  // @@protoc_insertion_point(field_get:CDOTABroadcastMsg_LANLobbyReply.tournament_id)
-  return tournament_id_;
-}
- void CDOTABroadcastMsg_LANLobbyReply::set_tournament_id(::google::protobuf::uint32 value) {
-  set_has_tournament_id();
-  tournament_id_ = value;
-  // @@protoc_insertion_point(field_set:CDOTABroadcastMsg_LANLobbyReply.tournament_id)
-}
-
-// optional uint32 tournament_game_id = 3;
-bool CDOTABroadcastMsg_LANLobbyReply::has_tournament_game_id() const {
-  return (_has_bits_[0] & 0x00000004u) != 0;
-}
-void CDOTABroadcastMsg_LANLobbyReply::set_has_tournament_game_id() {
-  _has_bits_[0] |= 0x00000004u;
-}
-void CDOTABroadcastMsg_LANLobbyReply::clear_has_tournament_game_id() {
-  _has_bits_[0] &= ~0x00000004u;
-}
-void CDOTABroadcastMsg_LANLobbyReply::clear_tournament_game_id() {
-  tournament_game_id_ = 0u;
-  clear_has_tournament_game_id();
-}
- ::google::protobuf::uint32 CDOTABroadcastMsg_LANLobbyReply::tournament_game_id() const {
-  // @@protoc_insertion_point(field_get:CDOTABroadcastMsg_LANLobbyReply.tournament_game_id)
-  return tournament_game_id_;
-}
- void CDOTABroadcastMsg_LANLobbyReply::set_tournament_game_id(::google::protobuf::uint32 value) {
-  set_has_tournament_game_id();
-  tournament_game_id_ = value;
-  // @@protoc_insertion_point(field_set:CDOTABroadcastMsg_LANLobbyReply.tournament_game_id)
-}
-
-// repeated .CDOTABroadcastMsg_LANLobbyReply.CLobbyMember members = 4;
-int CDOTABroadcastMsg_LANLobbyReply::members_size() const {
-  return members_.size();
-}
-void CDOTABroadcastMsg_LANLobbyReply::clear_members() {
-  members_.Clear();
-}
-const ::CDOTABroadcastMsg_LANLobbyReply_CLobbyMember& CDOTABroadcastMsg_LANLobbyReply::members(int index) const {
-  // @@protoc_insertion_point(field_get:CDOTABroadcastMsg_LANLobbyReply.members)
-  return members_.Get(index);
-}
-::CDOTABroadcastMsg_LANLobbyReply_CLobbyMember* CDOTABroadcastMsg_LANLobbyReply::mutable_members(int index) {
-  // @@protoc_insertion_point(field_mutable:CDOTABroadcastMsg_LANLobbyReply.members)
-  return members_.Mutable(index);
-}
-::CDOTABroadcastMsg_LANLobbyReply_CLobbyMember* CDOTABroadcastMsg_LANLobbyReply::add_members() {
-  // @@protoc_insertion_point(field_add:CDOTABroadcastMsg_LANLobbyReply.members)
-  return members_.Add();
-}
-::google::protobuf::RepeatedPtrField< ::CDOTABroadcastMsg_LANLobbyReply_CLobbyMember >*
-CDOTABroadcastMsg_LANLobbyReply::mutable_members() {
-  // @@protoc_insertion_point(field_mutable_list:CDOTABroadcastMsg_LANLobbyReply.members)
-  return &members_;
-}
-const ::google::protobuf::RepeatedPtrField< ::CDOTABroadcastMsg_LANLobbyReply_CLobbyMember >&
-CDOTABroadcastMsg_LANLobbyReply::members() const {
-  // @@protoc_insertion_point(field_list:CDOTABroadcastMsg_LANLobbyReply.members)
-  return members_;
-}
-
-// optional bool requires_pass_key = 5;
-bool CDOTABroadcastMsg_LANLobbyReply::has_requires_pass_key() const {
-  return (_has_bits_[0] & 0x00000010u) != 0;
-}
-void CDOTABroadcastMsg_LANLobbyReply::set_has_requires_pass_key() {
-  _has_bits_[0] |= 0x00000010u;
-}
-void CDOTABroadcastMsg_LANLobbyReply::clear_has_requires_pass_key() {
-  _has_bits_[0] &= ~0x00000010u;
-}
-void CDOTABroadcastMsg_LANLobbyReply::clear_requires_pass_key() {
-  requires_pass_key_ = false;
-  clear_has_requires_pass_key();
-}
- bool CDOTABroadcastMsg_LANLobbyReply::requires_pass_key() const {
-  // @@protoc_insertion_point(field_get:CDOTABroadcastMsg_LANLobbyReply.requires_pass_key)
-  return requires_pass_key_;
-}
- void CDOTABroadcastMsg_LANLobbyReply::set_requires_pass_key(bool value) {
-  set_has_requires_pass_key();
-  requires_pass_key_ = value;
-  // @@protoc_insertion_point(field_set:CDOTABroadcastMsg_LANLobbyReply.requires_pass_key)
-}
-
-// optional uint32 leader_account_id = 6;
-bool CDOTABroadcastMsg_LANLobbyReply::has_leader_account_id() const {
-  return (_has_bits_[0] & 0x00000020u) != 0;
-}
-void CDOTABroadcastMsg_LANLobbyReply::set_has_leader_account_id() {
-  _has_bits_[0] |= 0x00000020u;
-}
-void CDOTABroadcastMsg_LANLobbyReply::clear_has_leader_account_id() {
-  _has_bits_[0] &= ~0x00000020u;
-}
-void CDOTABroadcastMsg_LANLobbyReply::clear_leader_account_id() {
-  leader_account_id_ = 0u;
-  clear_has_leader_account_id();
-}
- ::google::protobuf::uint32 CDOTABroadcastMsg_LANLobbyReply::leader_account_id() const {
-  // @@protoc_insertion_point(field_get:CDOTABroadcastMsg_LANLobbyReply.leader_account_id)
-  return leader_account_id_;
-}
- void CDOTABroadcastMsg_LANLobbyReply::set_leader_account_id(::google::protobuf::uint32 value) {
-  set_has_leader_account_id();
-  leader_account_id_ = value;
-  // @@protoc_insertion_point(field_set:CDOTABroadcastMsg_LANLobbyReply.leader_account_id)
-}
-
-// optional uint32 game_mode = 7;
-bool CDOTABroadcastMsg_LANLobbyReply::has_game_mode() const {
-  return (_has_bits_[0] & 0x00000040u) != 0;
-}
-void CDOTABroadcastMsg_LANLobbyReply::set_has_game_mode() {
-  _has_bits_[0] |= 0x00000040u;
-}
-void CDOTABroadcastMsg_LANLobbyReply::clear_has_game_mode() {
-  _has_bits_[0] &= ~0x00000040u;
-}
-void CDOTABroadcastMsg_LANLobbyReply::clear_game_mode() {
-  game_mode_ = 0u;
-  clear_has_game_mode();
-}
- ::google::protobuf::uint32 CDOTABroadcastMsg_LANLobbyReply::game_mode() const {
-  // @@protoc_insertion_point(field_get:CDOTABroadcastMsg_LANLobbyReply.game_mode)
-  return game_mode_;
-}
- void CDOTABroadcastMsg_LANLobbyReply::set_game_mode(::google::protobuf::uint32 value) {
-  set_has_game_mode();
-  game_mode_ = value;
-  // @@protoc_insertion_point(field_set:CDOTABroadcastMsg_LANLobbyReply.game_mode)
-}
-
-// optional string name = 8;
-bool CDOTABroadcastMsg_LANLobbyReply::has_name() const {
-  return (_has_bits_[0] & 0x00000080u) != 0;
-}
-void CDOTABroadcastMsg_LANLobbyReply::set_has_name() {
-  _has_bits_[0] |= 0x00000080u;
-}
-void CDOTABroadcastMsg_LANLobbyReply::clear_has_name() {
-  _has_bits_[0] &= ~0x00000080u;
-}
-void CDOTABroadcastMsg_LANLobbyReply::clear_name() {
-  name_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  clear_has_name();
-}
- const ::std::string& CDOTABroadcastMsg_LANLobbyReply::name() const {
-  // @@protoc_insertion_point(field_get:CDOTABroadcastMsg_LANLobbyReply.name)
-  return name_.GetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
- void CDOTABroadcastMsg_LANLobbyReply::set_name(const ::std::string& value) {
-  set_has_name();
-  name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:CDOTABroadcastMsg_LANLobbyReply.name)
-}
- void CDOTABroadcastMsg_LANLobbyReply::set_name(const char* value) {
-  set_has_name();
-  name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:CDOTABroadcastMsg_LANLobbyReply.name)
-}
- void CDOTABroadcastMsg_LANLobbyReply::set_name(const char* value, size_t size) {
-  set_has_name();
-  name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-      ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:CDOTABroadcastMsg_LANLobbyReply.name)
-}
- ::std::string* CDOTABroadcastMsg_LANLobbyReply::mutable_name() {
-  set_has_name();
-  // @@protoc_insertion_point(field_mutable:CDOTABroadcastMsg_LANLobbyReply.name)
-  return name_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
- ::std::string* CDOTABroadcastMsg_LANLobbyReply::release_name() {
-  clear_has_name();
-  return name_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
- void CDOTABroadcastMsg_LANLobbyReply::set_allocated_name(::std::string* name) {
-  if (name != NULL) {
-    set_has_name();
-  } else {
-    clear_has_name();
-  }
-  name_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), name);
-  // @@protoc_insertion_point(field_set_allocated:CDOTABroadcastMsg_LANLobbyReply.name)
-}
-
-// optional uint32 players = 9;
-bool CDOTABroadcastMsg_LANLobbyReply::has_players() const {
-  return (_has_bits_[0] & 0x00000100u) != 0;
-}
-void CDOTABroadcastMsg_LANLobbyReply::set_has_players() {
-  _has_bits_[0] |= 0x00000100u;
-}
-void CDOTABroadcastMsg_LANLobbyReply::clear_has_players() {
-  _has_bits_[0] &= ~0x00000100u;
-}
-void CDOTABroadcastMsg_LANLobbyReply::clear_players() {
-  players_ = 0u;
-  clear_has_players();
-}
- ::google::protobuf::uint32 CDOTABroadcastMsg_LANLobbyReply::players() const {
-  // @@protoc_insertion_point(field_get:CDOTABroadcastMsg_LANLobbyReply.players)
-  return players_;
-}
- void CDOTABroadcastMsg_LANLobbyReply::set_players(::google::protobuf::uint32 value) {
-  set_has_players();
-  players_ = value;
-  // @@protoc_insertion_point(field_set:CDOTABroadcastMsg_LANLobbyReply.players)
-}
-
-#endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
 
 // @@protoc_insertion_point(namespace_scope)
 

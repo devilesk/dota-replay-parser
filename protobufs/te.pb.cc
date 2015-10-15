@@ -122,16 +122,16 @@ void protobuf_AssignDesc_te_2eproto() {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgTEArmorRicochet, dir_),
   };
   CMsgTEArmorRicochet_reflection_ =
-    ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
+    new ::google::protobuf::internal::GeneratedMessageReflection(
       CMsgTEArmorRicochet_descriptor_,
       CMsgTEArmorRicochet::default_instance_,
       CMsgTEArmorRicochet_offsets_,
       GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgTEArmorRicochet, _has_bits_[0]),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgTEArmorRicochet, _unknown_fields_),
       -1,
-      -1,
-      sizeof(CMsgTEArmorRicochet),
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgTEArmorRicochet, _internal_metadata_),
-      -1);
+      ::google::protobuf::DescriptorPool::generated_pool(),
+      ::google::protobuf::MessageFactory::generated_factory(),
+      sizeof(CMsgTEArmorRicochet));
   CMsgTEBaseBeam_descriptor_ = file->message_type(1);
   static const int CMsgTEBaseBeam_offsets_[12] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgTEBaseBeam, modelindex_),
@@ -148,16 +148,16 @@ void protobuf_AssignDesc_te_2eproto() {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgTEBaseBeam, flags_),
   };
   CMsgTEBaseBeam_reflection_ =
-    ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
+    new ::google::protobuf::internal::GeneratedMessageReflection(
       CMsgTEBaseBeam_descriptor_,
       CMsgTEBaseBeam::default_instance_,
       CMsgTEBaseBeam_offsets_,
       GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgTEBaseBeam, _has_bits_[0]),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgTEBaseBeam, _unknown_fields_),
       -1,
-      -1,
-      sizeof(CMsgTEBaseBeam),
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgTEBaseBeam, _internal_metadata_),
-      -1);
+      ::google::protobuf::DescriptorPool::generated_pool(),
+      ::google::protobuf::MessageFactory::generated_factory(),
+      sizeof(CMsgTEBaseBeam));
   CMsgTEBeamEntPoint_descriptor_ = file->message_type(2);
   static const int CMsgTEBeamEntPoint_offsets_[5] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgTEBeamEntPoint, base_),
@@ -167,16 +167,16 @@ void protobuf_AssignDesc_te_2eproto() {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgTEBeamEntPoint, end_),
   };
   CMsgTEBeamEntPoint_reflection_ =
-    ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
+    new ::google::protobuf::internal::GeneratedMessageReflection(
       CMsgTEBeamEntPoint_descriptor_,
       CMsgTEBeamEntPoint::default_instance_,
       CMsgTEBeamEntPoint_offsets_,
       GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgTEBeamEntPoint, _has_bits_[0]),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgTEBeamEntPoint, _unknown_fields_),
       -1,
-      -1,
-      sizeof(CMsgTEBeamEntPoint),
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgTEBeamEntPoint, _internal_metadata_),
-      -1);
+      ::google::protobuf::DescriptorPool::generated_pool(),
+      ::google::protobuf::MessageFactory::generated_factory(),
+      sizeof(CMsgTEBeamEntPoint));
   CMsgTEBeamEnts_descriptor_ = file->message_type(3);
   static const int CMsgTEBeamEnts_offsets_[3] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgTEBeamEnts, base_),
@@ -184,16 +184,16 @@ void protobuf_AssignDesc_te_2eproto() {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgTEBeamEnts, endentity_),
   };
   CMsgTEBeamEnts_reflection_ =
-    ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
+    new ::google::protobuf::internal::GeneratedMessageReflection(
       CMsgTEBeamEnts_descriptor_,
       CMsgTEBeamEnts::default_instance_,
       CMsgTEBeamEnts_offsets_,
       GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgTEBeamEnts, _has_bits_[0]),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgTEBeamEnts, _unknown_fields_),
       -1,
-      -1,
-      sizeof(CMsgTEBeamEnts),
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgTEBeamEnts, _internal_metadata_),
-      -1);
+      ::google::protobuf::DescriptorPool::generated_pool(),
+      ::google::protobuf::MessageFactory::generated_factory(),
+      sizeof(CMsgTEBeamEnts));
   CMsgTEBeamPoints_descriptor_ = file->message_type(4);
   static const int CMsgTEBeamPoints_offsets_[3] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgTEBeamPoints, base_),
@@ -201,16 +201,16 @@ void protobuf_AssignDesc_te_2eproto() {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgTEBeamPoints, end_),
   };
   CMsgTEBeamPoints_reflection_ =
-    ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
+    new ::google::protobuf::internal::GeneratedMessageReflection(
       CMsgTEBeamPoints_descriptor_,
       CMsgTEBeamPoints::default_instance_,
       CMsgTEBeamPoints_offsets_,
       GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgTEBeamPoints, _has_bits_[0]),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgTEBeamPoints, _unknown_fields_),
       -1,
-      -1,
-      sizeof(CMsgTEBeamPoints),
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgTEBeamPoints, _internal_metadata_),
-      -1);
+      ::google::protobuf::DescriptorPool::generated_pool(),
+      ::google::protobuf::MessageFactory::generated_factory(),
+      sizeof(CMsgTEBeamPoints));
   CMsgTEBeamRing_descriptor_ = file->message_type(5);
   static const int CMsgTEBeamRing_offsets_[3] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgTEBeamRing, base_),
@@ -218,16 +218,16 @@ void protobuf_AssignDesc_te_2eproto() {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgTEBeamRing, endentity_),
   };
   CMsgTEBeamRing_reflection_ =
-    ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
+    new ::google::protobuf::internal::GeneratedMessageReflection(
       CMsgTEBeamRing_descriptor_,
       CMsgTEBeamRing::default_instance_,
       CMsgTEBeamRing_offsets_,
       GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgTEBeamRing, _has_bits_[0]),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgTEBeamRing, _unknown_fields_),
       -1,
-      -1,
-      sizeof(CMsgTEBeamRing),
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgTEBeamRing, _internal_metadata_),
-      -1);
+      ::google::protobuf::DescriptorPool::generated_pool(),
+      ::google::protobuf::MessageFactory::generated_factory(),
+      sizeof(CMsgTEBeamRing));
   CMsgTEBreakModel_descriptor_ = file->message_type(6);
   static const int CMsgTEBreakModel_offsets_[9] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgTEBreakModel, origin_),
@@ -241,16 +241,16 @@ void protobuf_AssignDesc_te_2eproto() {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgTEBreakModel, flags_),
   };
   CMsgTEBreakModel_reflection_ =
-    ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
+    new ::google::protobuf::internal::GeneratedMessageReflection(
       CMsgTEBreakModel_descriptor_,
       CMsgTEBreakModel::default_instance_,
       CMsgTEBreakModel_offsets_,
       GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgTEBreakModel, _has_bits_[0]),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgTEBreakModel, _unknown_fields_),
       -1,
-      -1,
-      sizeof(CMsgTEBreakModel),
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgTEBreakModel, _internal_metadata_),
-      -1);
+      ::google::protobuf::DescriptorPool::generated_pool(),
+      ::google::protobuf::MessageFactory::generated_factory(),
+      sizeof(CMsgTEBreakModel));
   CMsgTEBSPDecal_descriptor_ = file->message_type(7);
   static const int CMsgTEBSPDecal_offsets_[5] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgTEBSPDecal, origin_),
@@ -260,16 +260,16 @@ void protobuf_AssignDesc_te_2eproto() {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgTEBSPDecal, index_),
   };
   CMsgTEBSPDecal_reflection_ =
-    ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
+    new ::google::protobuf::internal::GeneratedMessageReflection(
       CMsgTEBSPDecal_descriptor_,
       CMsgTEBSPDecal::default_instance_,
       CMsgTEBSPDecal_offsets_,
       GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgTEBSPDecal, _has_bits_[0]),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgTEBSPDecal, _unknown_fields_),
       -1,
-      -1,
-      sizeof(CMsgTEBSPDecal),
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgTEBSPDecal, _internal_metadata_),
-      -1);
+      ::google::protobuf::DescriptorPool::generated_pool(),
+      ::google::protobuf::MessageFactory::generated_factory(),
+      sizeof(CMsgTEBSPDecal));
   CMsgTEBubbles_descriptor_ = file->message_type(8);
   static const int CMsgTEBubbles_offsets_[5] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgTEBubbles, mins_),
@@ -279,16 +279,16 @@ void protobuf_AssignDesc_te_2eproto() {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgTEBubbles, speed_),
   };
   CMsgTEBubbles_reflection_ =
-    ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
+    new ::google::protobuf::internal::GeneratedMessageReflection(
       CMsgTEBubbles_descriptor_,
       CMsgTEBubbles::default_instance_,
       CMsgTEBubbles_offsets_,
       GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgTEBubbles, _has_bits_[0]),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgTEBubbles, _unknown_fields_),
       -1,
-      -1,
-      sizeof(CMsgTEBubbles),
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgTEBubbles, _internal_metadata_),
-      -1);
+      ::google::protobuf::DescriptorPool::generated_pool(),
+      ::google::protobuf::MessageFactory::generated_factory(),
+      sizeof(CMsgTEBubbles));
   CMsgTEBubbleTrail_descriptor_ = file->message_type(9);
   static const int CMsgTEBubbleTrail_offsets_[5] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgTEBubbleTrail, mins_),
@@ -298,16 +298,16 @@ void protobuf_AssignDesc_te_2eproto() {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgTEBubbleTrail, speed_),
   };
   CMsgTEBubbleTrail_reflection_ =
-    ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
+    new ::google::protobuf::internal::GeneratedMessageReflection(
       CMsgTEBubbleTrail_descriptor_,
       CMsgTEBubbleTrail::default_instance_,
       CMsgTEBubbleTrail_offsets_,
       GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgTEBubbleTrail, _has_bits_[0]),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgTEBubbleTrail, _unknown_fields_),
       -1,
-      -1,
-      sizeof(CMsgTEBubbleTrail),
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgTEBubbleTrail, _internal_metadata_),
-      -1);
+      ::google::protobuf::DescriptorPool::generated_pool(),
+      ::google::protobuf::MessageFactory::generated_factory(),
+      sizeof(CMsgTEBubbleTrail));
   CMsgTEDecal_descriptor_ = file->message_type(10);
   static const int CMsgTEDecal_offsets_[5] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgTEDecal, origin_),
@@ -317,16 +317,16 @@ void protobuf_AssignDesc_te_2eproto() {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgTEDecal, index_),
   };
   CMsgTEDecal_reflection_ =
-    ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
+    new ::google::protobuf::internal::GeneratedMessageReflection(
       CMsgTEDecal_descriptor_,
       CMsgTEDecal::default_instance_,
       CMsgTEDecal_offsets_,
       GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgTEDecal, _has_bits_[0]),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgTEDecal, _unknown_fields_),
       -1,
-      -1,
-      sizeof(CMsgTEDecal),
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgTEDecal, _internal_metadata_),
-      -1);
+      ::google::protobuf::DescriptorPool::generated_pool(),
+      ::google::protobuf::MessageFactory::generated_factory(),
+      sizeof(CMsgTEDecal));
   CMsgEffectData_descriptor_ = file->message_type(11);
   static const int CMsgEffectData_offsets_[19] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgEffectData, origin_),
@@ -350,31 +350,31 @@ void protobuf_AssignDesc_te_2eproto() {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgEffectData, attachmentname_),
   };
   CMsgEffectData_reflection_ =
-    ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
+    new ::google::protobuf::internal::GeneratedMessageReflection(
       CMsgEffectData_descriptor_,
       CMsgEffectData::default_instance_,
       CMsgEffectData_offsets_,
       GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgEffectData, _has_bits_[0]),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgEffectData, _unknown_fields_),
       -1,
-      -1,
-      sizeof(CMsgEffectData),
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgEffectData, _internal_metadata_),
-      -1);
+      ::google::protobuf::DescriptorPool::generated_pool(),
+      ::google::protobuf::MessageFactory::generated_factory(),
+      sizeof(CMsgEffectData));
   CMsgTEEffectDispatch_descriptor_ = file->message_type(12);
   static const int CMsgTEEffectDispatch_offsets_[1] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgTEEffectDispatch, effectdata_),
   };
   CMsgTEEffectDispatch_reflection_ =
-    ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
+    new ::google::protobuf::internal::GeneratedMessageReflection(
       CMsgTEEffectDispatch_descriptor_,
       CMsgTEEffectDispatch::default_instance_,
       CMsgTEEffectDispatch_offsets_,
       GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgTEEffectDispatch, _has_bits_[0]),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgTEEffectDispatch, _unknown_fields_),
       -1,
-      -1,
-      sizeof(CMsgTEEffectDispatch),
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgTEEffectDispatch, _internal_metadata_),
-      -1);
+      ::google::protobuf::DescriptorPool::generated_pool(),
+      ::google::protobuf::MessageFactory::generated_factory(),
+      sizeof(CMsgTEEffectDispatch));
   CMsgTEEnergySplash_descriptor_ = file->message_type(13);
   static const int CMsgTEEnergySplash_offsets_[3] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgTEEnergySplash, pos_),
@@ -382,16 +382,16 @@ void protobuf_AssignDesc_te_2eproto() {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgTEEnergySplash, explosive_),
   };
   CMsgTEEnergySplash_reflection_ =
-    ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
+    new ::google::protobuf::internal::GeneratedMessageReflection(
       CMsgTEEnergySplash_descriptor_,
       CMsgTEEnergySplash::default_instance_,
       CMsgTEEnergySplash_offsets_,
       GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgTEEnergySplash, _has_bits_[0]),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgTEEnergySplash, _unknown_fields_),
       -1,
-      -1,
-      sizeof(CMsgTEEnergySplash),
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgTEEnergySplash, _internal_metadata_),
-      -1);
+      ::google::protobuf::DescriptorPool::generated_pool(),
+      ::google::protobuf::MessageFactory::generated_factory(),
+      sizeof(CMsgTEEnergySplash));
   CMsgTEFizz_descriptor_ = file->message_type(14);
   static const int CMsgTEFizz_offsets_[3] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgTEFizz, entity_),
@@ -399,16 +399,16 @@ void protobuf_AssignDesc_te_2eproto() {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgTEFizz, current_),
   };
   CMsgTEFizz_reflection_ =
-    ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
+    new ::google::protobuf::internal::GeneratedMessageReflection(
       CMsgTEFizz_descriptor_,
       CMsgTEFizz::default_instance_,
       CMsgTEFizz_offsets_,
       GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgTEFizz, _has_bits_[0]),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgTEFizz, _unknown_fields_),
       -1,
-      -1,
-      sizeof(CMsgTEFizz),
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgTEFizz, _internal_metadata_),
-      -1);
+      ::google::protobuf::DescriptorPool::generated_pool(),
+      ::google::protobuf::MessageFactory::generated_factory(),
+      sizeof(CMsgTEFizz));
   CMsgTEShatterSurface_descriptor_ = file->message_type(15);
   static const int CMsgTEShatterSurface_offsets_[10] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgTEShatterSurface, origin_),
@@ -423,16 +423,16 @@ void protobuf_AssignDesc_te_2eproto() {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgTEShatterSurface, backcolor_),
   };
   CMsgTEShatterSurface_reflection_ =
-    ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
+    new ::google::protobuf::internal::GeneratedMessageReflection(
       CMsgTEShatterSurface_descriptor_,
       CMsgTEShatterSurface::default_instance_,
       CMsgTEShatterSurface_offsets_,
       GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgTEShatterSurface, _has_bits_[0]),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgTEShatterSurface, _unknown_fields_),
       -1,
-      -1,
-      sizeof(CMsgTEShatterSurface),
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgTEShatterSurface, _internal_metadata_),
-      -1);
+      ::google::protobuf::DescriptorPool::generated_pool(),
+      ::google::protobuf::MessageFactory::generated_factory(),
+      sizeof(CMsgTEShatterSurface));
   CMsgTEGlowSprite_descriptor_ = file->message_type(16);
   static const int CMsgTEGlowSprite_offsets_[4] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgTEGlowSprite, origin_),
@@ -441,16 +441,16 @@ void protobuf_AssignDesc_te_2eproto() {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgTEGlowSprite, brightness_),
   };
   CMsgTEGlowSprite_reflection_ =
-    ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
+    new ::google::protobuf::internal::GeneratedMessageReflection(
       CMsgTEGlowSprite_descriptor_,
       CMsgTEGlowSprite::default_instance_,
       CMsgTEGlowSprite_offsets_,
       GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgTEGlowSprite, _has_bits_[0]),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgTEGlowSprite, _unknown_fields_),
       -1,
-      -1,
-      sizeof(CMsgTEGlowSprite),
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgTEGlowSprite, _internal_metadata_),
-      -1);
+      ::google::protobuf::DescriptorPool::generated_pool(),
+      ::google::protobuf::MessageFactory::generated_factory(),
+      sizeof(CMsgTEGlowSprite));
   CMsgTEImpact_descriptor_ = file->message_type(17);
   static const int CMsgTEImpact_offsets_[3] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgTEImpact, origin_),
@@ -458,16 +458,16 @@ void protobuf_AssignDesc_te_2eproto() {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgTEImpact, type_),
   };
   CMsgTEImpact_reflection_ =
-    ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
+    new ::google::protobuf::internal::GeneratedMessageReflection(
       CMsgTEImpact_descriptor_,
       CMsgTEImpact::default_instance_,
       CMsgTEImpact_offsets_,
       GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgTEImpact, _has_bits_[0]),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgTEImpact, _unknown_fields_),
       -1,
-      -1,
-      sizeof(CMsgTEImpact),
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgTEImpact, _internal_metadata_),
-      -1);
+      ::google::protobuf::DescriptorPool::generated_pool(),
+      ::google::protobuf::MessageFactory::generated_factory(),
+      sizeof(CMsgTEImpact));
   CMsgTEMuzzleFlash_descriptor_ = file->message_type(18);
   static const int CMsgTEMuzzleFlash_offsets_[4] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgTEMuzzleFlash, origin_),
@@ -476,16 +476,16 @@ void protobuf_AssignDesc_te_2eproto() {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgTEMuzzleFlash, type_),
   };
   CMsgTEMuzzleFlash_reflection_ =
-    ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
+    new ::google::protobuf::internal::GeneratedMessageReflection(
       CMsgTEMuzzleFlash_descriptor_,
       CMsgTEMuzzleFlash::default_instance_,
       CMsgTEMuzzleFlash_offsets_,
       GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgTEMuzzleFlash, _has_bits_[0]),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgTEMuzzleFlash, _unknown_fields_),
       -1,
-      -1,
-      sizeof(CMsgTEMuzzleFlash),
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgTEMuzzleFlash, _internal_metadata_),
-      -1);
+      ::google::protobuf::DescriptorPool::generated_pool(),
+      ::google::protobuf::MessageFactory::generated_factory(),
+      sizeof(CMsgTEMuzzleFlash));
   CMsgTEBloodStream_descriptor_ = file->message_type(19);
   static const int CMsgTEBloodStream_offsets_[4] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgTEBloodStream, origin_),
@@ -494,16 +494,16 @@ void protobuf_AssignDesc_te_2eproto() {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgTEBloodStream, amount_),
   };
   CMsgTEBloodStream_reflection_ =
-    ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
+    new ::google::protobuf::internal::GeneratedMessageReflection(
       CMsgTEBloodStream_descriptor_,
       CMsgTEBloodStream::default_instance_,
       CMsgTEBloodStream_offsets_,
       GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgTEBloodStream, _has_bits_[0]),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgTEBloodStream, _unknown_fields_),
       -1,
-      -1,
-      sizeof(CMsgTEBloodStream),
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgTEBloodStream, _internal_metadata_),
-      -1);
+      ::google::protobuf::DescriptorPool::generated_pool(),
+      ::google::protobuf::MessageFactory::generated_factory(),
+      sizeof(CMsgTEBloodStream));
   CMsgTEExplosion_descriptor_ = file->message_type(20);
   static const int CMsgTEExplosion_offsets_[9] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgTEExplosion, origin_),
@@ -517,16 +517,16 @@ void protobuf_AssignDesc_te_2eproto() {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgTEExplosion, affect_ragdolls_),
   };
   CMsgTEExplosion_reflection_ =
-    ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
+    new ::google::protobuf::internal::GeneratedMessageReflection(
       CMsgTEExplosion_descriptor_,
       CMsgTEExplosion::default_instance_,
       CMsgTEExplosion_offsets_,
       GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgTEExplosion, _has_bits_[0]),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgTEExplosion, _unknown_fields_),
       -1,
-      -1,
-      sizeof(CMsgTEExplosion),
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgTEExplosion, _internal_metadata_),
-      -1);
+      ::google::protobuf::DescriptorPool::generated_pool(),
+      ::google::protobuf::MessageFactory::generated_factory(),
+      sizeof(CMsgTEExplosion));
   CMsgTEDust_descriptor_ = file->message_type(21);
   static const int CMsgTEDust_offsets_[4] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgTEDust, origin_),
@@ -535,32 +535,32 @@ void protobuf_AssignDesc_te_2eproto() {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgTEDust, direction_),
   };
   CMsgTEDust_reflection_ =
-    ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
+    new ::google::protobuf::internal::GeneratedMessageReflection(
       CMsgTEDust_descriptor_,
       CMsgTEDust::default_instance_,
       CMsgTEDust_offsets_,
       GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgTEDust, _has_bits_[0]),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgTEDust, _unknown_fields_),
       -1,
-      -1,
-      sizeof(CMsgTEDust),
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgTEDust, _internal_metadata_),
-      -1);
+      ::google::protobuf::DescriptorPool::generated_pool(),
+      ::google::protobuf::MessageFactory::generated_factory(),
+      sizeof(CMsgTEDust));
   CMsgTELargeFunnel_descriptor_ = file->message_type(22);
   static const int CMsgTELargeFunnel_offsets_[2] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgTELargeFunnel, origin_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgTELargeFunnel, reversed_),
   };
   CMsgTELargeFunnel_reflection_ =
-    ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
+    new ::google::protobuf::internal::GeneratedMessageReflection(
       CMsgTELargeFunnel_descriptor_,
       CMsgTELargeFunnel::default_instance_,
       CMsgTELargeFunnel_offsets_,
       GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgTELargeFunnel, _has_bits_[0]),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgTELargeFunnel, _unknown_fields_),
       -1,
-      -1,
-      sizeof(CMsgTELargeFunnel),
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgTELargeFunnel, _internal_metadata_),
-      -1);
+      ::google::protobuf::DescriptorPool::generated_pool(),
+      ::google::protobuf::MessageFactory::generated_factory(),
+      sizeof(CMsgTELargeFunnel));
   CMsgTESparks_descriptor_ = file->message_type(23);
   static const int CMsgTESparks_offsets_[4] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgTESparks, origin_),
@@ -569,16 +569,16 @@ void protobuf_AssignDesc_te_2eproto() {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgTESparks, direction_),
   };
   CMsgTESparks_reflection_ =
-    ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
+    new ::google::protobuf::internal::GeneratedMessageReflection(
       CMsgTESparks_descriptor_,
       CMsgTESparks::default_instance_,
       CMsgTESparks_offsets_,
       GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgTESparks, _has_bits_[0]),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgTESparks, _unknown_fields_),
       -1,
-      -1,
-      sizeof(CMsgTESparks),
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgTESparks, _internal_metadata_),
-      -1);
+      ::google::protobuf::DescriptorPool::generated_pool(),
+      ::google::protobuf::MessageFactory::generated_factory(),
+      sizeof(CMsgTESparks));
   CMsgTEPhysicsProp_descriptor_ = file->message_type(24);
   static const int CMsgTEPhysicsProp_offsets_[10] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgTEPhysicsProp, origin_),
@@ -593,16 +593,16 @@ void protobuf_AssignDesc_te_2eproto() {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgTEPhysicsProp, scale_),
   };
   CMsgTEPhysicsProp_reflection_ =
-    ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
+    new ::google::protobuf::internal::GeneratedMessageReflection(
       CMsgTEPhysicsProp_descriptor_,
       CMsgTEPhysicsProp::default_instance_,
       CMsgTEPhysicsProp_offsets_,
       GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgTEPhysicsProp, _has_bits_[0]),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgTEPhysicsProp, _unknown_fields_),
       -1,
-      -1,
-      sizeof(CMsgTEPhysicsProp),
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgTEPhysicsProp, _internal_metadata_),
-      -1);
+      ::google::protobuf::DescriptorPool::generated_pool(),
+      ::google::protobuf::MessageFactory::generated_factory(),
+      sizeof(CMsgTEPhysicsProp));
   CMsgTEPlayerDecal_descriptor_ = file->message_type(25);
   static const int CMsgTEPlayerDecal_offsets_[3] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgTEPlayerDecal, origin_),
@@ -610,16 +610,16 @@ void protobuf_AssignDesc_te_2eproto() {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgTEPlayerDecal, entity_),
   };
   CMsgTEPlayerDecal_reflection_ =
-    ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
+    new ::google::protobuf::internal::GeneratedMessageReflection(
       CMsgTEPlayerDecal_descriptor_,
       CMsgTEPlayerDecal::default_instance_,
       CMsgTEPlayerDecal_offsets_,
       GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgTEPlayerDecal, _has_bits_[0]),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgTEPlayerDecal, _unknown_fields_),
       -1,
-      -1,
-      sizeof(CMsgTEPlayerDecal),
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgTEPlayerDecal, _internal_metadata_),
-      -1);
+      ::google::protobuf::DescriptorPool::generated_pool(),
+      ::google::protobuf::MessageFactory::generated_factory(),
+      sizeof(CMsgTEPlayerDecal));
   CMsgTEProjectedDecal_descriptor_ = file->message_type(26);
   static const int CMsgTEProjectedDecal_offsets_[4] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgTEProjectedDecal, origin_),
@@ -628,32 +628,32 @@ void protobuf_AssignDesc_te_2eproto() {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgTEProjectedDecal, distance_),
   };
   CMsgTEProjectedDecal_reflection_ =
-    ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
+    new ::google::protobuf::internal::GeneratedMessageReflection(
       CMsgTEProjectedDecal_descriptor_,
       CMsgTEProjectedDecal::default_instance_,
       CMsgTEProjectedDecal_offsets_,
       GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgTEProjectedDecal, _has_bits_[0]),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgTEProjectedDecal, _unknown_fields_),
       -1,
-      -1,
-      sizeof(CMsgTEProjectedDecal),
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgTEProjectedDecal, _internal_metadata_),
-      -1);
+      ::google::protobuf::DescriptorPool::generated_pool(),
+      ::google::protobuf::MessageFactory::generated_factory(),
+      sizeof(CMsgTEProjectedDecal));
   CMsgTESmoke_descriptor_ = file->message_type(27);
   static const int CMsgTESmoke_offsets_[2] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgTESmoke, origin_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgTESmoke, scale_),
   };
   CMsgTESmoke_reflection_ =
-    ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
+    new ::google::protobuf::internal::GeneratedMessageReflection(
       CMsgTESmoke_descriptor_,
       CMsgTESmoke::default_instance_,
       CMsgTESmoke_offsets_,
       GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgTESmoke, _has_bits_[0]),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgTESmoke, _unknown_fields_),
       -1,
-      -1,
-      sizeof(CMsgTESmoke),
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgTESmoke, _internal_metadata_),
-      -1);
+      ::google::protobuf::DescriptorPool::generated_pool(),
+      ::google::protobuf::MessageFactory::generated_factory(),
+      sizeof(CMsgTESmoke));
   CMsgTEWorldDecal_descriptor_ = file->message_type(28);
   static const int CMsgTEWorldDecal_offsets_[3] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgTEWorldDecal, origin_),
@@ -661,16 +661,16 @@ void protobuf_AssignDesc_te_2eproto() {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgTEWorldDecal, index_),
   };
   CMsgTEWorldDecal_reflection_ =
-    ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
+    new ::google::protobuf::internal::GeneratedMessageReflection(
       CMsgTEWorldDecal_descriptor_,
       CMsgTEWorldDecal::default_instance_,
       CMsgTEWorldDecal_offsets_,
       GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgTEWorldDecal, _has_bits_[0]),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgTEWorldDecal, _unknown_fields_),
       -1,
-      -1,
-      sizeof(CMsgTEWorldDecal),
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgTEWorldDecal, _internal_metadata_),
-      -1);
+      ::google::protobuf::DescriptorPool::generated_pool(),
+      ::google::protobuf::MessageFactory::generated_factory(),
+      sizeof(CMsgTEWorldDecal));
   ETEProtobufIds_descriptor_ = file->enum_type(0);
 }
 
@@ -685,63 +685,63 @@ inline void protobuf_AssignDescriptorsOnce() {
 void protobuf_RegisterTypes(const ::std::string&) {
   protobuf_AssignDescriptorsOnce();
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
-      CMsgTEArmorRicochet_descriptor_, &CMsgTEArmorRicochet::default_instance());
+    CMsgTEArmorRicochet_descriptor_, &CMsgTEArmorRicochet::default_instance());
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
-      CMsgTEBaseBeam_descriptor_, &CMsgTEBaseBeam::default_instance());
+    CMsgTEBaseBeam_descriptor_, &CMsgTEBaseBeam::default_instance());
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
-      CMsgTEBeamEntPoint_descriptor_, &CMsgTEBeamEntPoint::default_instance());
+    CMsgTEBeamEntPoint_descriptor_, &CMsgTEBeamEntPoint::default_instance());
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
-      CMsgTEBeamEnts_descriptor_, &CMsgTEBeamEnts::default_instance());
+    CMsgTEBeamEnts_descriptor_, &CMsgTEBeamEnts::default_instance());
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
-      CMsgTEBeamPoints_descriptor_, &CMsgTEBeamPoints::default_instance());
+    CMsgTEBeamPoints_descriptor_, &CMsgTEBeamPoints::default_instance());
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
-      CMsgTEBeamRing_descriptor_, &CMsgTEBeamRing::default_instance());
+    CMsgTEBeamRing_descriptor_, &CMsgTEBeamRing::default_instance());
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
-      CMsgTEBreakModel_descriptor_, &CMsgTEBreakModel::default_instance());
+    CMsgTEBreakModel_descriptor_, &CMsgTEBreakModel::default_instance());
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
-      CMsgTEBSPDecal_descriptor_, &CMsgTEBSPDecal::default_instance());
+    CMsgTEBSPDecal_descriptor_, &CMsgTEBSPDecal::default_instance());
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
-      CMsgTEBubbles_descriptor_, &CMsgTEBubbles::default_instance());
+    CMsgTEBubbles_descriptor_, &CMsgTEBubbles::default_instance());
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
-      CMsgTEBubbleTrail_descriptor_, &CMsgTEBubbleTrail::default_instance());
+    CMsgTEBubbleTrail_descriptor_, &CMsgTEBubbleTrail::default_instance());
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
-      CMsgTEDecal_descriptor_, &CMsgTEDecal::default_instance());
+    CMsgTEDecal_descriptor_, &CMsgTEDecal::default_instance());
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
-      CMsgEffectData_descriptor_, &CMsgEffectData::default_instance());
+    CMsgEffectData_descriptor_, &CMsgEffectData::default_instance());
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
-      CMsgTEEffectDispatch_descriptor_, &CMsgTEEffectDispatch::default_instance());
+    CMsgTEEffectDispatch_descriptor_, &CMsgTEEffectDispatch::default_instance());
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
-      CMsgTEEnergySplash_descriptor_, &CMsgTEEnergySplash::default_instance());
+    CMsgTEEnergySplash_descriptor_, &CMsgTEEnergySplash::default_instance());
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
-      CMsgTEFizz_descriptor_, &CMsgTEFizz::default_instance());
+    CMsgTEFizz_descriptor_, &CMsgTEFizz::default_instance());
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
-      CMsgTEShatterSurface_descriptor_, &CMsgTEShatterSurface::default_instance());
+    CMsgTEShatterSurface_descriptor_, &CMsgTEShatterSurface::default_instance());
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
-      CMsgTEGlowSprite_descriptor_, &CMsgTEGlowSprite::default_instance());
+    CMsgTEGlowSprite_descriptor_, &CMsgTEGlowSprite::default_instance());
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
-      CMsgTEImpact_descriptor_, &CMsgTEImpact::default_instance());
+    CMsgTEImpact_descriptor_, &CMsgTEImpact::default_instance());
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
-      CMsgTEMuzzleFlash_descriptor_, &CMsgTEMuzzleFlash::default_instance());
+    CMsgTEMuzzleFlash_descriptor_, &CMsgTEMuzzleFlash::default_instance());
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
-      CMsgTEBloodStream_descriptor_, &CMsgTEBloodStream::default_instance());
+    CMsgTEBloodStream_descriptor_, &CMsgTEBloodStream::default_instance());
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
-      CMsgTEExplosion_descriptor_, &CMsgTEExplosion::default_instance());
+    CMsgTEExplosion_descriptor_, &CMsgTEExplosion::default_instance());
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
-      CMsgTEDust_descriptor_, &CMsgTEDust::default_instance());
+    CMsgTEDust_descriptor_, &CMsgTEDust::default_instance());
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
-      CMsgTELargeFunnel_descriptor_, &CMsgTELargeFunnel::default_instance());
+    CMsgTELargeFunnel_descriptor_, &CMsgTELargeFunnel::default_instance());
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
-      CMsgTESparks_descriptor_, &CMsgTESparks::default_instance());
+    CMsgTESparks_descriptor_, &CMsgTESparks::default_instance());
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
-      CMsgTEPhysicsProp_descriptor_, &CMsgTEPhysicsProp::default_instance());
+    CMsgTEPhysicsProp_descriptor_, &CMsgTEPhysicsProp::default_instance());
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
-      CMsgTEPlayerDecal_descriptor_, &CMsgTEPlayerDecal::default_instance());
+    CMsgTEPlayerDecal_descriptor_, &CMsgTEPlayerDecal::default_instance());
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
-      CMsgTEProjectedDecal_descriptor_, &CMsgTEProjectedDecal::default_instance());
+    CMsgTEProjectedDecal_descriptor_, &CMsgTEProjectedDecal::default_instance());
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
-      CMsgTESmoke_descriptor_, &CMsgTESmoke::default_instance());
+    CMsgTESmoke_descriptor_, &CMsgTESmoke::default_instance());
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
-      CMsgTEWorldDecal_descriptor_, &CMsgTEWorldDecal::default_instance());
+    CMsgTEWorldDecal_descriptor_, &CMsgTEWorldDecal::default_instance());
 }
 
 }  // namespace
@@ -1036,16 +1036,6 @@ bool ETEProtobufIds_IsValid(int value) {
 }
 
 
-namespace {
-
-static void MergeFromFail(int line) GOOGLE_ATTRIBUTE_COLD;
-static void MergeFromFail(int line) {
-  GOOGLE_CHECK(false) << __FILE__ << ":" << line;
-}
-
-}  // namespace
-
-
 // ===================================================================
 
 #ifndef _MSC_VER
@@ -1054,7 +1044,7 @@ const int CMsgTEArmorRicochet::kDirFieldNumber;
 #endif  // !_MSC_VER
 
 CMsgTEArmorRicochet::CMsgTEArmorRicochet()
-  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  : ::google::protobuf::Message() {
   SharedCtor();
   // @@protoc_insertion_point(constructor:CMsgTEArmorRicochet)
 }
@@ -1065,8 +1055,7 @@ void CMsgTEArmorRicochet::InitAsDefaultInstance() {
 }
 
 CMsgTEArmorRicochet::CMsgTEArmorRicochet(const CMsgTEArmorRicochet& from)
-  : ::google::protobuf::Message(),
-    _internal_metadata_(NULL) {
+  : ::google::protobuf::Message() {
   SharedCtor();
   MergeFrom(from);
   // @@protoc_insertion_point(copy_constructor:CMsgTEArmorRicochet)
@@ -1108,16 +1097,12 @@ const CMsgTEArmorRicochet& CMsgTEArmorRicochet::default_instance() {
 
 CMsgTEArmorRicochet* CMsgTEArmorRicochet::default_instance_ = NULL;
 
-CMsgTEArmorRicochet* CMsgTEArmorRicochet::New(::google::protobuf::Arena* arena) const {
-  CMsgTEArmorRicochet* n = new CMsgTEArmorRicochet;
-  if (arena != NULL) {
-    arena->Own(n);
-  }
-  return n;
+CMsgTEArmorRicochet* CMsgTEArmorRicochet::New() const {
+  return new CMsgTEArmorRicochet;
 }
 
 void CMsgTEArmorRicochet::Clear() {
-  if (_has_bits_[0 / 32] & 3u) {
+  if (_has_bits_[0 / 32] & 3) {
     if (has_pos()) {
       if (pos_ != NULL) pos_->::CMsgVector::Clear();
     }
@@ -1126,9 +1111,7 @@ void CMsgTEArmorRicochet::Clear() {
     }
   }
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
-  if (_internal_metadata_.have_unknown_fields()) {
-    mutable_unknown_fields()->Clear();
-  }
+  mutable_unknown_fields()->Clear();
 }
 
 bool CMsgTEArmorRicochet::MergePartialFromCodedStream(
@@ -1194,16 +1177,16 @@ void CMsgTEArmorRicochet::SerializeWithCachedSizes(
   // optional .CMsgVector pos = 1;
   if (has_pos()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      1, *this->pos_, output);
+      1, this->pos(), output);
   }
 
   // optional .CMsgVector dir = 2;
   if (has_dir()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      2, *this->dir_, output);
+      2, this->dir(), output);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
   }
@@ -1217,17 +1200,17 @@ void CMsgTEArmorRicochet::SerializeWithCachedSizes(
   if (has_pos()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
-        1, *this->pos_, target);
+        1, this->pos(), target);
   }
 
   // optional .CMsgVector dir = 2;
   if (has_dir()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
-        2, *this->dir_, target);
+        2, this->dir(), target);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
   }
@@ -1238,23 +1221,23 @@ void CMsgTEArmorRicochet::SerializeWithCachedSizes(
 int CMsgTEArmorRicochet::ByteSize() const {
   int total_size = 0;
 
-  if (_has_bits_[0 / 32] & 3u) {
+  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     // optional .CMsgVector pos = 1;
     if (has_pos()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
-          *this->pos_);
+          this->pos());
     }
 
     // optional .CMsgVector dir = 2;
     if (has_dir()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
-          *this->dir_);
+          this->dir());
     }
 
   }
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     total_size +=
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         unknown_fields());
@@ -1266,10 +1249,10 @@ int CMsgTEArmorRicochet::ByteSize() const {
 }
 
 void CMsgTEArmorRicochet::MergeFrom(const ::google::protobuf::Message& from) {
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
-  const CMsgTEArmorRicochet* source = 
-      ::google::protobuf::internal::DynamicCastToGenerated<const CMsgTEArmorRicochet>(
-          &from);
+  GOOGLE_CHECK_NE(&from, this);
+  const CMsgTEArmorRicochet* source =
+    ::google::protobuf::internal::dynamic_cast_if_available<const CMsgTEArmorRicochet*>(
+      &from);
   if (source == NULL) {
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
   } else {
@@ -1278,7 +1261,7 @@ void CMsgTEArmorRicochet::MergeFrom(const ::google::protobuf::Message& from) {
 }
 
 void CMsgTEArmorRicochet::MergeFrom(const CMsgTEArmorRicochet& from) {
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  GOOGLE_CHECK_NE(&from, this);
   if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (from.has_pos()) {
       mutable_pos()->::CMsgVector::MergeFrom(from.pos());
@@ -1287,9 +1270,7 @@ void CMsgTEArmorRicochet::MergeFrom(const CMsgTEArmorRicochet& from) {
       mutable_dir()->::CMsgVector::MergeFrom(from.dir());
     }
   }
-  if (from._internal_metadata_.have_unknown_fields()) {
-    mutable_unknown_fields()->MergeFrom(from.unknown_fields());
-  }
+  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
 }
 
 void CMsgTEArmorRicochet::CopyFrom(const ::google::protobuf::Message& from) {
@@ -1310,15 +1291,13 @@ bool CMsgTEArmorRicochet::IsInitialized() const {
 }
 
 void CMsgTEArmorRicochet::Swap(CMsgTEArmorRicochet* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
-void CMsgTEArmorRicochet::InternalSwap(CMsgTEArmorRicochet* other) {
-  std::swap(pos_, other->pos_);
-  std::swap(dir_, other->dir_);
-  std::swap(_has_bits_[0], other->_has_bits_[0]);
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  std::swap(_cached_size_, other->_cached_size_);
+  if (other != this) {
+    std::swap(pos_, other->pos_);
+    std::swap(dir_, other->dir_);
+    std::swap(_has_bits_[0], other->_has_bits_[0]);
+    _unknown_fields_.Swap(&other->_unknown_fields_);
+    std::swap(_cached_size_, other->_cached_size_);
+  }
 }
 
 ::google::protobuf::Metadata CMsgTEArmorRicochet::GetMetadata() const {
@@ -1329,96 +1308,6 @@ void CMsgTEArmorRicochet::InternalSwap(CMsgTEArmorRicochet* other) {
   return metadata;
 }
 
-#if PROTOBUF_INLINE_NOT_IN_HEADERS
-// CMsgTEArmorRicochet
-
-// optional .CMsgVector pos = 1;
-bool CMsgTEArmorRicochet::has_pos() const {
-  return (_has_bits_[0] & 0x00000001u) != 0;
-}
-void CMsgTEArmorRicochet::set_has_pos() {
-  _has_bits_[0] |= 0x00000001u;
-}
-void CMsgTEArmorRicochet::clear_has_pos() {
-  _has_bits_[0] &= ~0x00000001u;
-}
-void CMsgTEArmorRicochet::clear_pos() {
-  if (pos_ != NULL) pos_->::CMsgVector::Clear();
-  clear_has_pos();
-}
-const ::CMsgVector& CMsgTEArmorRicochet::pos() const {
-  // @@protoc_insertion_point(field_get:CMsgTEArmorRicochet.pos)
-  return pos_ != NULL ? *pos_ : *default_instance_->pos_;
-}
-::CMsgVector* CMsgTEArmorRicochet::mutable_pos() {
-  set_has_pos();
-  if (pos_ == NULL) {
-    pos_ = new ::CMsgVector;
-  }
-  // @@protoc_insertion_point(field_mutable:CMsgTEArmorRicochet.pos)
-  return pos_;
-}
-::CMsgVector* CMsgTEArmorRicochet::release_pos() {
-  clear_has_pos();
-  ::CMsgVector* temp = pos_;
-  pos_ = NULL;
-  return temp;
-}
-void CMsgTEArmorRicochet::set_allocated_pos(::CMsgVector* pos) {
-  delete pos_;
-  pos_ = pos;
-  if (pos) {
-    set_has_pos();
-  } else {
-    clear_has_pos();
-  }
-  // @@protoc_insertion_point(field_set_allocated:CMsgTEArmorRicochet.pos)
-}
-
-// optional .CMsgVector dir = 2;
-bool CMsgTEArmorRicochet::has_dir() const {
-  return (_has_bits_[0] & 0x00000002u) != 0;
-}
-void CMsgTEArmorRicochet::set_has_dir() {
-  _has_bits_[0] |= 0x00000002u;
-}
-void CMsgTEArmorRicochet::clear_has_dir() {
-  _has_bits_[0] &= ~0x00000002u;
-}
-void CMsgTEArmorRicochet::clear_dir() {
-  if (dir_ != NULL) dir_->::CMsgVector::Clear();
-  clear_has_dir();
-}
-const ::CMsgVector& CMsgTEArmorRicochet::dir() const {
-  // @@protoc_insertion_point(field_get:CMsgTEArmorRicochet.dir)
-  return dir_ != NULL ? *dir_ : *default_instance_->dir_;
-}
-::CMsgVector* CMsgTEArmorRicochet::mutable_dir() {
-  set_has_dir();
-  if (dir_ == NULL) {
-    dir_ = new ::CMsgVector;
-  }
-  // @@protoc_insertion_point(field_mutable:CMsgTEArmorRicochet.dir)
-  return dir_;
-}
-::CMsgVector* CMsgTEArmorRicochet::release_dir() {
-  clear_has_dir();
-  ::CMsgVector* temp = dir_;
-  dir_ = NULL;
-  return temp;
-}
-void CMsgTEArmorRicochet::set_allocated_dir(::CMsgVector* dir) {
-  delete dir_;
-  dir_ = dir;
-  if (dir) {
-    set_has_dir();
-  } else {
-    clear_has_dir();
-  }
-  // @@protoc_insertion_point(field_set_allocated:CMsgTEArmorRicochet.dir)
-}
-
-#endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
 
 // ===================================================================
 
@@ -1438,7 +1327,7 @@ const int CMsgTEBaseBeam::kFlagsFieldNumber;
 #endif  // !_MSC_VER
 
 CMsgTEBaseBeam::CMsgTEBaseBeam()
-  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  : ::google::protobuf::Message() {
   SharedCtor();
   // @@protoc_insertion_point(constructor:CMsgTEBaseBeam)
 }
@@ -1447,8 +1336,7 @@ void CMsgTEBaseBeam::InitAsDefaultInstance() {
 }
 
 CMsgTEBaseBeam::CMsgTEBaseBeam(const CMsgTEBaseBeam& from)
-  : ::google::protobuf::Message(),
-    _internal_metadata_(NULL) {
+  : ::google::protobuf::Message() {
   SharedCtor();
   MergeFrom(from);
   // @@protoc_insertion_point(copy_constructor:CMsgTEBaseBeam)
@@ -1498,35 +1386,31 @@ const CMsgTEBaseBeam& CMsgTEBaseBeam::default_instance() {
 
 CMsgTEBaseBeam* CMsgTEBaseBeam::default_instance_ = NULL;
 
-CMsgTEBaseBeam* CMsgTEBaseBeam::New(::google::protobuf::Arena* arena) const {
-  CMsgTEBaseBeam* n = new CMsgTEBaseBeam;
-  if (arena != NULL) {
-    arena->Own(n);
-  }
-  return n;
+CMsgTEBaseBeam* CMsgTEBaseBeam::New() const {
+  return new CMsgTEBaseBeam;
 }
 
 void CMsgTEBaseBeam::Clear() {
-#define ZR_HELPER_(f) reinterpret_cast<char*>(\
-  &reinterpret_cast<CMsgTEBaseBeam*>(16)->f)
+#define OFFSET_OF_FIELD_(f) (reinterpret_cast<char*>(      \
+  &reinterpret_cast<CMsgTEBaseBeam*>(16)->f) - \
+   reinterpret_cast<char*>(16))
 
-#define ZR_(first, last) do {\
-  ::memset(&first, 0,\
-           ZR_HELPER_(last) - ZR_HELPER_(first) + sizeof(last));\
-} while (0)
+#define ZR_(first, last) do {                              \
+    size_t f = OFFSET_OF_FIELD_(first);                    \
+    size_t n = OFFSET_OF_FIELD_(last) - f + sizeof(last);  \
+    ::memset(&first, 0, n);                                \
+  } while (0)
 
-  if (_has_bits_[0 / 32] & 255u) {
+  if (_has_bits_[0 / 32] & 255) {
     ZR_(modelindex_, fadelength_);
   }
   ZR_(amplitude_, flags_);
 
-#undef ZR_HELPER_
+#undef OFFSET_OF_FIELD_
 #undef ZR_
 
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
-  if (_internal_metadata_.have_unknown_fields()) {
-    mutable_unknown_fields()->Clear();
-  }
+  mutable_unknown_fields()->Clear();
 }
 
 bool CMsgTEBaseBeam::MergePartialFromCodedStream(
@@ -1803,7 +1687,7 @@ void CMsgTEBaseBeam::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteUInt32(12, this->flags(), output);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
   }
@@ -1873,7 +1757,7 @@ void CMsgTEBaseBeam::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(12, this->flags(), target);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
   }
@@ -1884,7 +1768,7 @@ void CMsgTEBaseBeam::SerializeWithCachedSizes(
 int CMsgTEBaseBeam::ByteSize() const {
   int total_size = 0;
 
-  if (_has_bits_[0 / 32] & 255u) {
+  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     // optional fixed64 modelindex = 1;
     if (has_modelindex()) {
       total_size += 1 + 8;
@@ -1932,7 +1816,7 @@ int CMsgTEBaseBeam::ByteSize() const {
     }
 
   }
-  if (_has_bits_[8 / 32] & 3840u) {
+  if (_has_bits_[8 / 32] & (0xffu << (8 % 32))) {
     // optional float amplitude = 9;
     if (has_amplitude()) {
       total_size += 1 + 4;
@@ -1958,7 +1842,7 @@ int CMsgTEBaseBeam::ByteSize() const {
     }
 
   }
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     total_size +=
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         unknown_fields());
@@ -1970,10 +1854,10 @@ int CMsgTEBaseBeam::ByteSize() const {
 }
 
 void CMsgTEBaseBeam::MergeFrom(const ::google::protobuf::Message& from) {
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
-  const CMsgTEBaseBeam* source = 
-      ::google::protobuf::internal::DynamicCastToGenerated<const CMsgTEBaseBeam>(
-          &from);
+  GOOGLE_CHECK_NE(&from, this);
+  const CMsgTEBaseBeam* source =
+    ::google::protobuf::internal::dynamic_cast_if_available<const CMsgTEBaseBeam*>(
+      &from);
   if (source == NULL) {
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
   } else {
@@ -1982,7 +1866,7 @@ void CMsgTEBaseBeam::MergeFrom(const ::google::protobuf::Message& from) {
 }
 
 void CMsgTEBaseBeam::MergeFrom(const CMsgTEBaseBeam& from) {
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  GOOGLE_CHECK_NE(&from, this);
   if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (from.has_modelindex()) {
       set_modelindex(from.modelindex());
@@ -2023,9 +1907,7 @@ void CMsgTEBaseBeam::MergeFrom(const CMsgTEBaseBeam& from) {
       set_flags(from.flags());
     }
   }
-  if (from._internal_metadata_.have_unknown_fields()) {
-    mutable_unknown_fields()->MergeFrom(from.unknown_fields());
-  }
+  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
 }
 
 void CMsgTEBaseBeam::CopyFrom(const ::google::protobuf::Message& from) {
@@ -2046,25 +1928,23 @@ bool CMsgTEBaseBeam::IsInitialized() const {
 }
 
 void CMsgTEBaseBeam::Swap(CMsgTEBaseBeam* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
-void CMsgTEBaseBeam::InternalSwap(CMsgTEBaseBeam* other) {
-  std::swap(modelindex_, other->modelindex_);
-  std::swap(haloindex_, other->haloindex_);
-  std::swap(startframe_, other->startframe_);
-  std::swap(framerate_, other->framerate_);
-  std::swap(life_, other->life_);
-  std::swap(width_, other->width_);
-  std::swap(endwidth_, other->endwidth_);
-  std::swap(fadelength_, other->fadelength_);
-  std::swap(amplitude_, other->amplitude_);
-  std::swap(color_, other->color_);
-  std::swap(speed_, other->speed_);
-  std::swap(flags_, other->flags_);
-  std::swap(_has_bits_[0], other->_has_bits_[0]);
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  std::swap(_cached_size_, other->_cached_size_);
+  if (other != this) {
+    std::swap(modelindex_, other->modelindex_);
+    std::swap(haloindex_, other->haloindex_);
+    std::swap(startframe_, other->startframe_);
+    std::swap(framerate_, other->framerate_);
+    std::swap(life_, other->life_);
+    std::swap(width_, other->width_);
+    std::swap(endwidth_, other->endwidth_);
+    std::swap(fadelength_, other->fadelength_);
+    std::swap(amplitude_, other->amplitude_);
+    std::swap(color_, other->color_);
+    std::swap(speed_, other->speed_);
+    std::swap(flags_, other->flags_);
+    std::swap(_has_bits_[0], other->_has_bits_[0]);
+    _unknown_fields_.Swap(&other->_unknown_fields_);
+    std::swap(_cached_size_, other->_cached_size_);
+  }
 }
 
 ::google::protobuf::Metadata CMsgTEBaseBeam::GetMetadata() const {
@@ -2075,298 +1955,6 @@ void CMsgTEBaseBeam::InternalSwap(CMsgTEBaseBeam* other) {
   return metadata;
 }
 
-#if PROTOBUF_INLINE_NOT_IN_HEADERS
-// CMsgTEBaseBeam
-
-// optional fixed64 modelindex = 1;
-bool CMsgTEBaseBeam::has_modelindex() const {
-  return (_has_bits_[0] & 0x00000001u) != 0;
-}
-void CMsgTEBaseBeam::set_has_modelindex() {
-  _has_bits_[0] |= 0x00000001u;
-}
-void CMsgTEBaseBeam::clear_has_modelindex() {
-  _has_bits_[0] &= ~0x00000001u;
-}
-void CMsgTEBaseBeam::clear_modelindex() {
-  modelindex_ = GOOGLE_ULONGLONG(0);
-  clear_has_modelindex();
-}
- ::google::protobuf::uint64 CMsgTEBaseBeam::modelindex() const {
-  // @@protoc_insertion_point(field_get:CMsgTEBaseBeam.modelindex)
-  return modelindex_;
-}
- void CMsgTEBaseBeam::set_modelindex(::google::protobuf::uint64 value) {
-  set_has_modelindex();
-  modelindex_ = value;
-  // @@protoc_insertion_point(field_set:CMsgTEBaseBeam.modelindex)
-}
-
-// optional fixed64 haloindex = 2;
-bool CMsgTEBaseBeam::has_haloindex() const {
-  return (_has_bits_[0] & 0x00000002u) != 0;
-}
-void CMsgTEBaseBeam::set_has_haloindex() {
-  _has_bits_[0] |= 0x00000002u;
-}
-void CMsgTEBaseBeam::clear_has_haloindex() {
-  _has_bits_[0] &= ~0x00000002u;
-}
-void CMsgTEBaseBeam::clear_haloindex() {
-  haloindex_ = GOOGLE_ULONGLONG(0);
-  clear_has_haloindex();
-}
- ::google::protobuf::uint64 CMsgTEBaseBeam::haloindex() const {
-  // @@protoc_insertion_point(field_get:CMsgTEBaseBeam.haloindex)
-  return haloindex_;
-}
- void CMsgTEBaseBeam::set_haloindex(::google::protobuf::uint64 value) {
-  set_has_haloindex();
-  haloindex_ = value;
-  // @@protoc_insertion_point(field_set:CMsgTEBaseBeam.haloindex)
-}
-
-// optional uint32 startframe = 3;
-bool CMsgTEBaseBeam::has_startframe() const {
-  return (_has_bits_[0] & 0x00000004u) != 0;
-}
-void CMsgTEBaseBeam::set_has_startframe() {
-  _has_bits_[0] |= 0x00000004u;
-}
-void CMsgTEBaseBeam::clear_has_startframe() {
-  _has_bits_[0] &= ~0x00000004u;
-}
-void CMsgTEBaseBeam::clear_startframe() {
-  startframe_ = 0u;
-  clear_has_startframe();
-}
- ::google::protobuf::uint32 CMsgTEBaseBeam::startframe() const {
-  // @@protoc_insertion_point(field_get:CMsgTEBaseBeam.startframe)
-  return startframe_;
-}
- void CMsgTEBaseBeam::set_startframe(::google::protobuf::uint32 value) {
-  set_has_startframe();
-  startframe_ = value;
-  // @@protoc_insertion_point(field_set:CMsgTEBaseBeam.startframe)
-}
-
-// optional uint32 framerate = 4;
-bool CMsgTEBaseBeam::has_framerate() const {
-  return (_has_bits_[0] & 0x00000008u) != 0;
-}
-void CMsgTEBaseBeam::set_has_framerate() {
-  _has_bits_[0] |= 0x00000008u;
-}
-void CMsgTEBaseBeam::clear_has_framerate() {
-  _has_bits_[0] &= ~0x00000008u;
-}
-void CMsgTEBaseBeam::clear_framerate() {
-  framerate_ = 0u;
-  clear_has_framerate();
-}
- ::google::protobuf::uint32 CMsgTEBaseBeam::framerate() const {
-  // @@protoc_insertion_point(field_get:CMsgTEBaseBeam.framerate)
-  return framerate_;
-}
- void CMsgTEBaseBeam::set_framerate(::google::protobuf::uint32 value) {
-  set_has_framerate();
-  framerate_ = value;
-  // @@protoc_insertion_point(field_set:CMsgTEBaseBeam.framerate)
-}
-
-// optional float life = 5;
-bool CMsgTEBaseBeam::has_life() const {
-  return (_has_bits_[0] & 0x00000010u) != 0;
-}
-void CMsgTEBaseBeam::set_has_life() {
-  _has_bits_[0] |= 0x00000010u;
-}
-void CMsgTEBaseBeam::clear_has_life() {
-  _has_bits_[0] &= ~0x00000010u;
-}
-void CMsgTEBaseBeam::clear_life() {
-  life_ = 0;
-  clear_has_life();
-}
- float CMsgTEBaseBeam::life() const {
-  // @@protoc_insertion_point(field_get:CMsgTEBaseBeam.life)
-  return life_;
-}
- void CMsgTEBaseBeam::set_life(float value) {
-  set_has_life();
-  life_ = value;
-  // @@protoc_insertion_point(field_set:CMsgTEBaseBeam.life)
-}
-
-// optional float width = 6;
-bool CMsgTEBaseBeam::has_width() const {
-  return (_has_bits_[0] & 0x00000020u) != 0;
-}
-void CMsgTEBaseBeam::set_has_width() {
-  _has_bits_[0] |= 0x00000020u;
-}
-void CMsgTEBaseBeam::clear_has_width() {
-  _has_bits_[0] &= ~0x00000020u;
-}
-void CMsgTEBaseBeam::clear_width() {
-  width_ = 0;
-  clear_has_width();
-}
- float CMsgTEBaseBeam::width() const {
-  // @@protoc_insertion_point(field_get:CMsgTEBaseBeam.width)
-  return width_;
-}
- void CMsgTEBaseBeam::set_width(float value) {
-  set_has_width();
-  width_ = value;
-  // @@protoc_insertion_point(field_set:CMsgTEBaseBeam.width)
-}
-
-// optional float endwidth = 7;
-bool CMsgTEBaseBeam::has_endwidth() const {
-  return (_has_bits_[0] & 0x00000040u) != 0;
-}
-void CMsgTEBaseBeam::set_has_endwidth() {
-  _has_bits_[0] |= 0x00000040u;
-}
-void CMsgTEBaseBeam::clear_has_endwidth() {
-  _has_bits_[0] &= ~0x00000040u;
-}
-void CMsgTEBaseBeam::clear_endwidth() {
-  endwidth_ = 0;
-  clear_has_endwidth();
-}
- float CMsgTEBaseBeam::endwidth() const {
-  // @@protoc_insertion_point(field_get:CMsgTEBaseBeam.endwidth)
-  return endwidth_;
-}
- void CMsgTEBaseBeam::set_endwidth(float value) {
-  set_has_endwidth();
-  endwidth_ = value;
-  // @@protoc_insertion_point(field_set:CMsgTEBaseBeam.endwidth)
-}
-
-// optional uint32 fadelength = 8;
-bool CMsgTEBaseBeam::has_fadelength() const {
-  return (_has_bits_[0] & 0x00000080u) != 0;
-}
-void CMsgTEBaseBeam::set_has_fadelength() {
-  _has_bits_[0] |= 0x00000080u;
-}
-void CMsgTEBaseBeam::clear_has_fadelength() {
-  _has_bits_[0] &= ~0x00000080u;
-}
-void CMsgTEBaseBeam::clear_fadelength() {
-  fadelength_ = 0u;
-  clear_has_fadelength();
-}
- ::google::protobuf::uint32 CMsgTEBaseBeam::fadelength() const {
-  // @@protoc_insertion_point(field_get:CMsgTEBaseBeam.fadelength)
-  return fadelength_;
-}
- void CMsgTEBaseBeam::set_fadelength(::google::protobuf::uint32 value) {
-  set_has_fadelength();
-  fadelength_ = value;
-  // @@protoc_insertion_point(field_set:CMsgTEBaseBeam.fadelength)
-}
-
-// optional float amplitude = 9;
-bool CMsgTEBaseBeam::has_amplitude() const {
-  return (_has_bits_[0] & 0x00000100u) != 0;
-}
-void CMsgTEBaseBeam::set_has_amplitude() {
-  _has_bits_[0] |= 0x00000100u;
-}
-void CMsgTEBaseBeam::clear_has_amplitude() {
-  _has_bits_[0] &= ~0x00000100u;
-}
-void CMsgTEBaseBeam::clear_amplitude() {
-  amplitude_ = 0;
-  clear_has_amplitude();
-}
- float CMsgTEBaseBeam::amplitude() const {
-  // @@protoc_insertion_point(field_get:CMsgTEBaseBeam.amplitude)
-  return amplitude_;
-}
- void CMsgTEBaseBeam::set_amplitude(float value) {
-  set_has_amplitude();
-  amplitude_ = value;
-  // @@protoc_insertion_point(field_set:CMsgTEBaseBeam.amplitude)
-}
-
-// optional fixed32 color = 10;
-bool CMsgTEBaseBeam::has_color() const {
-  return (_has_bits_[0] & 0x00000200u) != 0;
-}
-void CMsgTEBaseBeam::set_has_color() {
-  _has_bits_[0] |= 0x00000200u;
-}
-void CMsgTEBaseBeam::clear_has_color() {
-  _has_bits_[0] &= ~0x00000200u;
-}
-void CMsgTEBaseBeam::clear_color() {
-  color_ = 0u;
-  clear_has_color();
-}
- ::google::protobuf::uint32 CMsgTEBaseBeam::color() const {
-  // @@protoc_insertion_point(field_get:CMsgTEBaseBeam.color)
-  return color_;
-}
- void CMsgTEBaseBeam::set_color(::google::protobuf::uint32 value) {
-  set_has_color();
-  color_ = value;
-  // @@protoc_insertion_point(field_set:CMsgTEBaseBeam.color)
-}
-
-// optional uint32 speed = 11;
-bool CMsgTEBaseBeam::has_speed() const {
-  return (_has_bits_[0] & 0x00000400u) != 0;
-}
-void CMsgTEBaseBeam::set_has_speed() {
-  _has_bits_[0] |= 0x00000400u;
-}
-void CMsgTEBaseBeam::clear_has_speed() {
-  _has_bits_[0] &= ~0x00000400u;
-}
-void CMsgTEBaseBeam::clear_speed() {
-  speed_ = 0u;
-  clear_has_speed();
-}
- ::google::protobuf::uint32 CMsgTEBaseBeam::speed() const {
-  // @@protoc_insertion_point(field_get:CMsgTEBaseBeam.speed)
-  return speed_;
-}
- void CMsgTEBaseBeam::set_speed(::google::protobuf::uint32 value) {
-  set_has_speed();
-  speed_ = value;
-  // @@protoc_insertion_point(field_set:CMsgTEBaseBeam.speed)
-}
-
-// optional uint32 flags = 12;
-bool CMsgTEBaseBeam::has_flags() const {
-  return (_has_bits_[0] & 0x00000800u) != 0;
-}
-void CMsgTEBaseBeam::set_has_flags() {
-  _has_bits_[0] |= 0x00000800u;
-}
-void CMsgTEBaseBeam::clear_has_flags() {
-  _has_bits_[0] &= ~0x00000800u;
-}
-void CMsgTEBaseBeam::clear_flags() {
-  flags_ = 0u;
-  clear_has_flags();
-}
- ::google::protobuf::uint32 CMsgTEBaseBeam::flags() const {
-  // @@protoc_insertion_point(field_get:CMsgTEBaseBeam.flags)
-  return flags_;
-}
- void CMsgTEBaseBeam::set_flags(::google::protobuf::uint32 value) {
-  set_has_flags();
-  flags_ = value;
-  // @@protoc_insertion_point(field_set:CMsgTEBaseBeam.flags)
-}
-
-#endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
 
 // ===================================================================
 
@@ -2379,7 +1967,7 @@ const int CMsgTEBeamEntPoint::kEndFieldNumber;
 #endif  // !_MSC_VER
 
 CMsgTEBeamEntPoint::CMsgTEBeamEntPoint()
-  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  : ::google::protobuf::Message() {
   SharedCtor();
   // @@protoc_insertion_point(constructor:CMsgTEBeamEntPoint)
 }
@@ -2391,8 +1979,7 @@ void CMsgTEBeamEntPoint::InitAsDefaultInstance() {
 }
 
 CMsgTEBeamEntPoint::CMsgTEBeamEntPoint(const CMsgTEBeamEntPoint& from)
-  : ::google::protobuf::Message(),
-    _internal_metadata_(NULL) {
+  : ::google::protobuf::Message() {
   SharedCtor();
   MergeFrom(from);
   // @@protoc_insertion_point(copy_constructor:CMsgTEBeamEntPoint)
@@ -2438,24 +2025,22 @@ const CMsgTEBeamEntPoint& CMsgTEBeamEntPoint::default_instance() {
 
 CMsgTEBeamEntPoint* CMsgTEBeamEntPoint::default_instance_ = NULL;
 
-CMsgTEBeamEntPoint* CMsgTEBeamEntPoint::New(::google::protobuf::Arena* arena) const {
-  CMsgTEBeamEntPoint* n = new CMsgTEBeamEntPoint;
-  if (arena != NULL) {
-    arena->Own(n);
-  }
-  return n;
+CMsgTEBeamEntPoint* CMsgTEBeamEntPoint::New() const {
+  return new CMsgTEBeamEntPoint;
 }
 
 void CMsgTEBeamEntPoint::Clear() {
-#define ZR_HELPER_(f) reinterpret_cast<char*>(\
-  &reinterpret_cast<CMsgTEBeamEntPoint*>(16)->f)
+#define OFFSET_OF_FIELD_(f) (reinterpret_cast<char*>(      \
+  &reinterpret_cast<CMsgTEBeamEntPoint*>(16)->f) - \
+   reinterpret_cast<char*>(16))
 
-#define ZR_(first, last) do {\
-  ::memset(&first, 0,\
-           ZR_HELPER_(last) - ZR_HELPER_(first) + sizeof(last));\
-} while (0)
+#define ZR_(first, last) do {                              \
+    size_t f = OFFSET_OF_FIELD_(first);                    \
+    size_t n = OFFSET_OF_FIELD_(last) - f + sizeof(last);  \
+    ::memset(&first, 0, n);                                \
+  } while (0)
 
-  if (_has_bits_[0 / 32] & 31u) {
+  if (_has_bits_[0 / 32] & 31) {
     ZR_(startentity_, endentity_);
     if (has_base()) {
       if (base_ != NULL) base_->::CMsgTEBaseBeam::Clear();
@@ -2468,13 +2053,11 @@ void CMsgTEBeamEntPoint::Clear() {
     }
   }
 
-#undef ZR_HELPER_
+#undef OFFSET_OF_FIELD_
 #undef ZR_
 
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
-  if (_internal_metadata_.have_unknown_fields()) {
-    mutable_unknown_fields()->Clear();
-  }
+  mutable_unknown_fields()->Clear();
 }
 
 bool CMsgTEBeamEntPoint::MergePartialFromCodedStream(
@@ -2583,7 +2166,7 @@ void CMsgTEBeamEntPoint::SerializeWithCachedSizes(
   // optional .CMsgTEBaseBeam base = 1;
   if (has_base()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      1, *this->base_, output);
+      1, this->base(), output);
   }
 
   // optional uint32 startentity = 2;
@@ -2599,16 +2182,16 @@ void CMsgTEBeamEntPoint::SerializeWithCachedSizes(
   // optional .CMsgVector start = 4;
   if (has_start()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      4, *this->start_, output);
+      4, this->start(), output);
   }
 
   // optional .CMsgVector end = 5;
   if (has_end()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      5, *this->end_, output);
+      5, this->end(), output);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
   }
@@ -2622,7 +2205,7 @@ void CMsgTEBeamEntPoint::SerializeWithCachedSizes(
   if (has_base()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
-        1, *this->base_, target);
+        1, this->base(), target);
   }
 
   // optional uint32 startentity = 2;
@@ -2639,17 +2222,17 @@ void CMsgTEBeamEntPoint::SerializeWithCachedSizes(
   if (has_start()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
-        4, *this->start_, target);
+        4, this->start(), target);
   }
 
   // optional .CMsgVector end = 5;
   if (has_end()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
-        5, *this->end_, target);
+        5, this->end(), target);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
   }
@@ -2660,12 +2243,12 @@ void CMsgTEBeamEntPoint::SerializeWithCachedSizes(
 int CMsgTEBeamEntPoint::ByteSize() const {
   int total_size = 0;
 
-  if (_has_bits_[0 / 32] & 31u) {
+  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     // optional .CMsgTEBaseBeam base = 1;
     if (has_base()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
-          *this->base_);
+          this->base());
     }
 
     // optional uint32 startentity = 2;
@@ -2686,18 +2269,18 @@ int CMsgTEBeamEntPoint::ByteSize() const {
     if (has_start()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
-          *this->start_);
+          this->start());
     }
 
     // optional .CMsgVector end = 5;
     if (has_end()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
-          *this->end_);
+          this->end());
     }
 
   }
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     total_size +=
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         unknown_fields());
@@ -2709,10 +2292,10 @@ int CMsgTEBeamEntPoint::ByteSize() const {
 }
 
 void CMsgTEBeamEntPoint::MergeFrom(const ::google::protobuf::Message& from) {
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
-  const CMsgTEBeamEntPoint* source = 
-      ::google::protobuf::internal::DynamicCastToGenerated<const CMsgTEBeamEntPoint>(
-          &from);
+  GOOGLE_CHECK_NE(&from, this);
+  const CMsgTEBeamEntPoint* source =
+    ::google::protobuf::internal::dynamic_cast_if_available<const CMsgTEBeamEntPoint*>(
+      &from);
   if (source == NULL) {
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
   } else {
@@ -2721,7 +2304,7 @@ void CMsgTEBeamEntPoint::MergeFrom(const ::google::protobuf::Message& from) {
 }
 
 void CMsgTEBeamEntPoint::MergeFrom(const CMsgTEBeamEntPoint& from) {
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  GOOGLE_CHECK_NE(&from, this);
   if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (from.has_base()) {
       mutable_base()->::CMsgTEBaseBeam::MergeFrom(from.base());
@@ -2739,9 +2322,7 @@ void CMsgTEBeamEntPoint::MergeFrom(const CMsgTEBeamEntPoint& from) {
       mutable_end()->::CMsgVector::MergeFrom(from.end());
     }
   }
-  if (from._internal_metadata_.have_unknown_fields()) {
-    mutable_unknown_fields()->MergeFrom(from.unknown_fields());
-  }
+  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
 }
 
 void CMsgTEBeamEntPoint::CopyFrom(const ::google::protobuf::Message& from) {
@@ -2762,18 +2343,16 @@ bool CMsgTEBeamEntPoint::IsInitialized() const {
 }
 
 void CMsgTEBeamEntPoint::Swap(CMsgTEBeamEntPoint* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
-void CMsgTEBeamEntPoint::InternalSwap(CMsgTEBeamEntPoint* other) {
-  std::swap(base_, other->base_);
-  std::swap(startentity_, other->startentity_);
-  std::swap(endentity_, other->endentity_);
-  std::swap(start_, other->start_);
-  std::swap(end_, other->end_);
-  std::swap(_has_bits_[0], other->_has_bits_[0]);
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  std::swap(_cached_size_, other->_cached_size_);
+  if (other != this) {
+    std::swap(base_, other->base_);
+    std::swap(startentity_, other->startentity_);
+    std::swap(endentity_, other->endentity_);
+    std::swap(start_, other->start_);
+    std::swap(end_, other->end_);
+    std::swap(_has_bits_[0], other->_has_bits_[0]);
+    _unknown_fields_.Swap(&other->_unknown_fields_);
+    std::swap(_cached_size_, other->_cached_size_);
+  }
 }
 
 ::google::protobuf::Metadata CMsgTEBeamEntPoint::GetMetadata() const {
@@ -2784,187 +2363,6 @@ void CMsgTEBeamEntPoint::InternalSwap(CMsgTEBeamEntPoint* other) {
   return metadata;
 }
 
-#if PROTOBUF_INLINE_NOT_IN_HEADERS
-// CMsgTEBeamEntPoint
-
-// optional .CMsgTEBaseBeam base = 1;
-bool CMsgTEBeamEntPoint::has_base() const {
-  return (_has_bits_[0] & 0x00000001u) != 0;
-}
-void CMsgTEBeamEntPoint::set_has_base() {
-  _has_bits_[0] |= 0x00000001u;
-}
-void CMsgTEBeamEntPoint::clear_has_base() {
-  _has_bits_[0] &= ~0x00000001u;
-}
-void CMsgTEBeamEntPoint::clear_base() {
-  if (base_ != NULL) base_->::CMsgTEBaseBeam::Clear();
-  clear_has_base();
-}
-const ::CMsgTEBaseBeam& CMsgTEBeamEntPoint::base() const {
-  // @@protoc_insertion_point(field_get:CMsgTEBeamEntPoint.base)
-  return base_ != NULL ? *base_ : *default_instance_->base_;
-}
-::CMsgTEBaseBeam* CMsgTEBeamEntPoint::mutable_base() {
-  set_has_base();
-  if (base_ == NULL) {
-    base_ = new ::CMsgTEBaseBeam;
-  }
-  // @@protoc_insertion_point(field_mutable:CMsgTEBeamEntPoint.base)
-  return base_;
-}
-::CMsgTEBaseBeam* CMsgTEBeamEntPoint::release_base() {
-  clear_has_base();
-  ::CMsgTEBaseBeam* temp = base_;
-  base_ = NULL;
-  return temp;
-}
-void CMsgTEBeamEntPoint::set_allocated_base(::CMsgTEBaseBeam* base) {
-  delete base_;
-  base_ = base;
-  if (base) {
-    set_has_base();
-  } else {
-    clear_has_base();
-  }
-  // @@protoc_insertion_point(field_set_allocated:CMsgTEBeamEntPoint.base)
-}
-
-// optional uint32 startentity = 2;
-bool CMsgTEBeamEntPoint::has_startentity() const {
-  return (_has_bits_[0] & 0x00000002u) != 0;
-}
-void CMsgTEBeamEntPoint::set_has_startentity() {
-  _has_bits_[0] |= 0x00000002u;
-}
-void CMsgTEBeamEntPoint::clear_has_startentity() {
-  _has_bits_[0] &= ~0x00000002u;
-}
-void CMsgTEBeamEntPoint::clear_startentity() {
-  startentity_ = 0u;
-  clear_has_startentity();
-}
- ::google::protobuf::uint32 CMsgTEBeamEntPoint::startentity() const {
-  // @@protoc_insertion_point(field_get:CMsgTEBeamEntPoint.startentity)
-  return startentity_;
-}
- void CMsgTEBeamEntPoint::set_startentity(::google::protobuf::uint32 value) {
-  set_has_startentity();
-  startentity_ = value;
-  // @@protoc_insertion_point(field_set:CMsgTEBeamEntPoint.startentity)
-}
-
-// optional uint32 endentity = 3;
-bool CMsgTEBeamEntPoint::has_endentity() const {
-  return (_has_bits_[0] & 0x00000004u) != 0;
-}
-void CMsgTEBeamEntPoint::set_has_endentity() {
-  _has_bits_[0] |= 0x00000004u;
-}
-void CMsgTEBeamEntPoint::clear_has_endentity() {
-  _has_bits_[0] &= ~0x00000004u;
-}
-void CMsgTEBeamEntPoint::clear_endentity() {
-  endentity_ = 0u;
-  clear_has_endentity();
-}
- ::google::protobuf::uint32 CMsgTEBeamEntPoint::endentity() const {
-  // @@protoc_insertion_point(field_get:CMsgTEBeamEntPoint.endentity)
-  return endentity_;
-}
- void CMsgTEBeamEntPoint::set_endentity(::google::protobuf::uint32 value) {
-  set_has_endentity();
-  endentity_ = value;
-  // @@protoc_insertion_point(field_set:CMsgTEBeamEntPoint.endentity)
-}
-
-// optional .CMsgVector start = 4;
-bool CMsgTEBeamEntPoint::has_start() const {
-  return (_has_bits_[0] & 0x00000008u) != 0;
-}
-void CMsgTEBeamEntPoint::set_has_start() {
-  _has_bits_[0] |= 0x00000008u;
-}
-void CMsgTEBeamEntPoint::clear_has_start() {
-  _has_bits_[0] &= ~0x00000008u;
-}
-void CMsgTEBeamEntPoint::clear_start() {
-  if (start_ != NULL) start_->::CMsgVector::Clear();
-  clear_has_start();
-}
-const ::CMsgVector& CMsgTEBeamEntPoint::start() const {
-  // @@protoc_insertion_point(field_get:CMsgTEBeamEntPoint.start)
-  return start_ != NULL ? *start_ : *default_instance_->start_;
-}
-::CMsgVector* CMsgTEBeamEntPoint::mutable_start() {
-  set_has_start();
-  if (start_ == NULL) {
-    start_ = new ::CMsgVector;
-  }
-  // @@protoc_insertion_point(field_mutable:CMsgTEBeamEntPoint.start)
-  return start_;
-}
-::CMsgVector* CMsgTEBeamEntPoint::release_start() {
-  clear_has_start();
-  ::CMsgVector* temp = start_;
-  start_ = NULL;
-  return temp;
-}
-void CMsgTEBeamEntPoint::set_allocated_start(::CMsgVector* start) {
-  delete start_;
-  start_ = start;
-  if (start) {
-    set_has_start();
-  } else {
-    clear_has_start();
-  }
-  // @@protoc_insertion_point(field_set_allocated:CMsgTEBeamEntPoint.start)
-}
-
-// optional .CMsgVector end = 5;
-bool CMsgTEBeamEntPoint::has_end() const {
-  return (_has_bits_[0] & 0x00000010u) != 0;
-}
-void CMsgTEBeamEntPoint::set_has_end() {
-  _has_bits_[0] |= 0x00000010u;
-}
-void CMsgTEBeamEntPoint::clear_has_end() {
-  _has_bits_[0] &= ~0x00000010u;
-}
-void CMsgTEBeamEntPoint::clear_end() {
-  if (end_ != NULL) end_->::CMsgVector::Clear();
-  clear_has_end();
-}
-const ::CMsgVector& CMsgTEBeamEntPoint::end() const {
-  // @@protoc_insertion_point(field_get:CMsgTEBeamEntPoint.end)
-  return end_ != NULL ? *end_ : *default_instance_->end_;
-}
-::CMsgVector* CMsgTEBeamEntPoint::mutable_end() {
-  set_has_end();
-  if (end_ == NULL) {
-    end_ = new ::CMsgVector;
-  }
-  // @@protoc_insertion_point(field_mutable:CMsgTEBeamEntPoint.end)
-  return end_;
-}
-::CMsgVector* CMsgTEBeamEntPoint::release_end() {
-  clear_has_end();
-  ::CMsgVector* temp = end_;
-  end_ = NULL;
-  return temp;
-}
-void CMsgTEBeamEntPoint::set_allocated_end(::CMsgVector* end) {
-  delete end_;
-  end_ = end;
-  if (end) {
-    set_has_end();
-  } else {
-    clear_has_end();
-  }
-  // @@protoc_insertion_point(field_set_allocated:CMsgTEBeamEntPoint.end)
-}
-
-#endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
 
 // ===================================================================
 
@@ -2975,7 +2373,7 @@ const int CMsgTEBeamEnts::kEndentityFieldNumber;
 #endif  // !_MSC_VER
 
 CMsgTEBeamEnts::CMsgTEBeamEnts()
-  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  : ::google::protobuf::Message() {
   SharedCtor();
   // @@protoc_insertion_point(constructor:CMsgTEBeamEnts)
 }
@@ -2985,8 +2383,7 @@ void CMsgTEBeamEnts::InitAsDefaultInstance() {
 }
 
 CMsgTEBeamEnts::CMsgTEBeamEnts(const CMsgTEBeamEnts& from)
-  : ::google::protobuf::Message(),
-    _internal_metadata_(NULL) {
+  : ::google::protobuf::Message() {
   SharedCtor();
   MergeFrom(from);
   // @@protoc_insertion_point(copy_constructor:CMsgTEBeamEnts)
@@ -3028,37 +2425,33 @@ const CMsgTEBeamEnts& CMsgTEBeamEnts::default_instance() {
 
 CMsgTEBeamEnts* CMsgTEBeamEnts::default_instance_ = NULL;
 
-CMsgTEBeamEnts* CMsgTEBeamEnts::New(::google::protobuf::Arena* arena) const {
-  CMsgTEBeamEnts* n = new CMsgTEBeamEnts;
-  if (arena != NULL) {
-    arena->Own(n);
-  }
-  return n;
+CMsgTEBeamEnts* CMsgTEBeamEnts::New() const {
+  return new CMsgTEBeamEnts;
 }
 
 void CMsgTEBeamEnts::Clear() {
-#define ZR_HELPER_(f) reinterpret_cast<char*>(\
-  &reinterpret_cast<CMsgTEBeamEnts*>(16)->f)
+#define OFFSET_OF_FIELD_(f) (reinterpret_cast<char*>(      \
+  &reinterpret_cast<CMsgTEBeamEnts*>(16)->f) - \
+   reinterpret_cast<char*>(16))
 
-#define ZR_(first, last) do {\
-  ::memset(&first, 0,\
-           ZR_HELPER_(last) - ZR_HELPER_(first) + sizeof(last));\
-} while (0)
+#define ZR_(first, last) do {                              \
+    size_t f = OFFSET_OF_FIELD_(first);                    \
+    size_t n = OFFSET_OF_FIELD_(last) - f + sizeof(last);  \
+    ::memset(&first, 0, n);                                \
+  } while (0)
 
-  if (_has_bits_[0 / 32] & 7u) {
+  if (_has_bits_[0 / 32] & 7) {
     ZR_(startentity_, endentity_);
     if (has_base()) {
       if (base_ != NULL) base_->::CMsgTEBaseBeam::Clear();
     }
   }
 
-#undef ZR_HELPER_
+#undef OFFSET_OF_FIELD_
 #undef ZR_
 
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
-  if (_internal_metadata_.have_unknown_fields()) {
-    mutable_unknown_fields()->Clear();
-  }
+  mutable_unknown_fields()->Clear();
 }
 
 bool CMsgTEBeamEnts::MergePartialFromCodedStream(
@@ -3141,7 +2534,7 @@ void CMsgTEBeamEnts::SerializeWithCachedSizes(
   // optional .CMsgTEBaseBeam base = 1;
   if (has_base()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      1, *this->base_, output);
+      1, this->base(), output);
   }
 
   // optional uint32 startentity = 2;
@@ -3154,7 +2547,7 @@ void CMsgTEBeamEnts::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteUInt32(3, this->endentity(), output);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
   }
@@ -3168,7 +2561,7 @@ void CMsgTEBeamEnts::SerializeWithCachedSizes(
   if (has_base()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
-        1, *this->base_, target);
+        1, this->base(), target);
   }
 
   // optional uint32 startentity = 2;
@@ -3181,7 +2574,7 @@ void CMsgTEBeamEnts::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(3, this->endentity(), target);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
   }
@@ -3192,12 +2585,12 @@ void CMsgTEBeamEnts::SerializeWithCachedSizes(
 int CMsgTEBeamEnts::ByteSize() const {
   int total_size = 0;
 
-  if (_has_bits_[0 / 32] & 7u) {
+  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     // optional .CMsgTEBaseBeam base = 1;
     if (has_base()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
-          *this->base_);
+          this->base());
     }
 
     // optional uint32 startentity = 2;
@@ -3215,7 +2608,7 @@ int CMsgTEBeamEnts::ByteSize() const {
     }
 
   }
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     total_size +=
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         unknown_fields());
@@ -3227,10 +2620,10 @@ int CMsgTEBeamEnts::ByteSize() const {
 }
 
 void CMsgTEBeamEnts::MergeFrom(const ::google::protobuf::Message& from) {
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
-  const CMsgTEBeamEnts* source = 
-      ::google::protobuf::internal::DynamicCastToGenerated<const CMsgTEBeamEnts>(
-          &from);
+  GOOGLE_CHECK_NE(&from, this);
+  const CMsgTEBeamEnts* source =
+    ::google::protobuf::internal::dynamic_cast_if_available<const CMsgTEBeamEnts*>(
+      &from);
   if (source == NULL) {
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
   } else {
@@ -3239,7 +2632,7 @@ void CMsgTEBeamEnts::MergeFrom(const ::google::protobuf::Message& from) {
 }
 
 void CMsgTEBeamEnts::MergeFrom(const CMsgTEBeamEnts& from) {
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  GOOGLE_CHECK_NE(&from, this);
   if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (from.has_base()) {
       mutable_base()->::CMsgTEBaseBeam::MergeFrom(from.base());
@@ -3251,9 +2644,7 @@ void CMsgTEBeamEnts::MergeFrom(const CMsgTEBeamEnts& from) {
       set_endentity(from.endentity());
     }
   }
-  if (from._internal_metadata_.have_unknown_fields()) {
-    mutable_unknown_fields()->MergeFrom(from.unknown_fields());
-  }
+  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
 }
 
 void CMsgTEBeamEnts::CopyFrom(const ::google::protobuf::Message& from) {
@@ -3274,16 +2665,14 @@ bool CMsgTEBeamEnts::IsInitialized() const {
 }
 
 void CMsgTEBeamEnts::Swap(CMsgTEBeamEnts* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
-void CMsgTEBeamEnts::InternalSwap(CMsgTEBeamEnts* other) {
-  std::swap(base_, other->base_);
-  std::swap(startentity_, other->startentity_);
-  std::swap(endentity_, other->endentity_);
-  std::swap(_has_bits_[0], other->_has_bits_[0]);
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  std::swap(_cached_size_, other->_cached_size_);
+  if (other != this) {
+    std::swap(base_, other->base_);
+    std::swap(startentity_, other->startentity_);
+    std::swap(endentity_, other->endentity_);
+    std::swap(_has_bits_[0], other->_has_bits_[0]);
+    _unknown_fields_.Swap(&other->_unknown_fields_);
+    std::swap(_cached_size_, other->_cached_size_);
+  }
 }
 
 ::google::protobuf::Metadata CMsgTEBeamEnts::GetMetadata() const {
@@ -3294,101 +2683,6 @@ void CMsgTEBeamEnts::InternalSwap(CMsgTEBeamEnts* other) {
   return metadata;
 }
 
-#if PROTOBUF_INLINE_NOT_IN_HEADERS
-// CMsgTEBeamEnts
-
-// optional .CMsgTEBaseBeam base = 1;
-bool CMsgTEBeamEnts::has_base() const {
-  return (_has_bits_[0] & 0x00000001u) != 0;
-}
-void CMsgTEBeamEnts::set_has_base() {
-  _has_bits_[0] |= 0x00000001u;
-}
-void CMsgTEBeamEnts::clear_has_base() {
-  _has_bits_[0] &= ~0x00000001u;
-}
-void CMsgTEBeamEnts::clear_base() {
-  if (base_ != NULL) base_->::CMsgTEBaseBeam::Clear();
-  clear_has_base();
-}
-const ::CMsgTEBaseBeam& CMsgTEBeamEnts::base() const {
-  // @@protoc_insertion_point(field_get:CMsgTEBeamEnts.base)
-  return base_ != NULL ? *base_ : *default_instance_->base_;
-}
-::CMsgTEBaseBeam* CMsgTEBeamEnts::mutable_base() {
-  set_has_base();
-  if (base_ == NULL) {
-    base_ = new ::CMsgTEBaseBeam;
-  }
-  // @@protoc_insertion_point(field_mutable:CMsgTEBeamEnts.base)
-  return base_;
-}
-::CMsgTEBaseBeam* CMsgTEBeamEnts::release_base() {
-  clear_has_base();
-  ::CMsgTEBaseBeam* temp = base_;
-  base_ = NULL;
-  return temp;
-}
-void CMsgTEBeamEnts::set_allocated_base(::CMsgTEBaseBeam* base) {
-  delete base_;
-  base_ = base;
-  if (base) {
-    set_has_base();
-  } else {
-    clear_has_base();
-  }
-  // @@protoc_insertion_point(field_set_allocated:CMsgTEBeamEnts.base)
-}
-
-// optional uint32 startentity = 2;
-bool CMsgTEBeamEnts::has_startentity() const {
-  return (_has_bits_[0] & 0x00000002u) != 0;
-}
-void CMsgTEBeamEnts::set_has_startentity() {
-  _has_bits_[0] |= 0x00000002u;
-}
-void CMsgTEBeamEnts::clear_has_startentity() {
-  _has_bits_[0] &= ~0x00000002u;
-}
-void CMsgTEBeamEnts::clear_startentity() {
-  startentity_ = 0u;
-  clear_has_startentity();
-}
- ::google::protobuf::uint32 CMsgTEBeamEnts::startentity() const {
-  // @@protoc_insertion_point(field_get:CMsgTEBeamEnts.startentity)
-  return startentity_;
-}
- void CMsgTEBeamEnts::set_startentity(::google::protobuf::uint32 value) {
-  set_has_startentity();
-  startentity_ = value;
-  // @@protoc_insertion_point(field_set:CMsgTEBeamEnts.startentity)
-}
-
-// optional uint32 endentity = 3;
-bool CMsgTEBeamEnts::has_endentity() const {
-  return (_has_bits_[0] & 0x00000004u) != 0;
-}
-void CMsgTEBeamEnts::set_has_endentity() {
-  _has_bits_[0] |= 0x00000004u;
-}
-void CMsgTEBeamEnts::clear_has_endentity() {
-  _has_bits_[0] &= ~0x00000004u;
-}
-void CMsgTEBeamEnts::clear_endentity() {
-  endentity_ = 0u;
-  clear_has_endentity();
-}
- ::google::protobuf::uint32 CMsgTEBeamEnts::endentity() const {
-  // @@protoc_insertion_point(field_get:CMsgTEBeamEnts.endentity)
-  return endentity_;
-}
- void CMsgTEBeamEnts::set_endentity(::google::protobuf::uint32 value) {
-  set_has_endentity();
-  endentity_ = value;
-  // @@protoc_insertion_point(field_set:CMsgTEBeamEnts.endentity)
-}
-
-#endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
 
 // ===================================================================
 
@@ -3399,7 +2693,7 @@ const int CMsgTEBeamPoints::kEndFieldNumber;
 #endif  // !_MSC_VER
 
 CMsgTEBeamPoints::CMsgTEBeamPoints()
-  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  : ::google::protobuf::Message() {
   SharedCtor();
   // @@protoc_insertion_point(constructor:CMsgTEBeamPoints)
 }
@@ -3411,8 +2705,7 @@ void CMsgTEBeamPoints::InitAsDefaultInstance() {
 }
 
 CMsgTEBeamPoints::CMsgTEBeamPoints(const CMsgTEBeamPoints& from)
-  : ::google::protobuf::Message(),
-    _internal_metadata_(NULL) {
+  : ::google::protobuf::Message() {
   SharedCtor();
   MergeFrom(from);
   // @@protoc_insertion_point(copy_constructor:CMsgTEBeamPoints)
@@ -3456,16 +2749,12 @@ const CMsgTEBeamPoints& CMsgTEBeamPoints::default_instance() {
 
 CMsgTEBeamPoints* CMsgTEBeamPoints::default_instance_ = NULL;
 
-CMsgTEBeamPoints* CMsgTEBeamPoints::New(::google::protobuf::Arena* arena) const {
-  CMsgTEBeamPoints* n = new CMsgTEBeamPoints;
-  if (arena != NULL) {
-    arena->Own(n);
-  }
-  return n;
+CMsgTEBeamPoints* CMsgTEBeamPoints::New() const {
+  return new CMsgTEBeamPoints;
 }
 
 void CMsgTEBeamPoints::Clear() {
-  if (_has_bits_[0 / 32] & 7u) {
+  if (_has_bits_[0 / 32] & 7) {
     if (has_base()) {
       if (base_ != NULL) base_->::CMsgTEBaseBeam::Clear();
     }
@@ -3477,9 +2766,7 @@ void CMsgTEBeamPoints::Clear() {
     }
   }
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
-  if (_internal_metadata_.have_unknown_fields()) {
-    mutable_unknown_fields()->Clear();
-  }
+  mutable_unknown_fields()->Clear();
 }
 
 bool CMsgTEBeamPoints::MergePartialFromCodedStream(
@@ -3558,22 +2845,22 @@ void CMsgTEBeamPoints::SerializeWithCachedSizes(
   // optional .CMsgTEBaseBeam base = 1;
   if (has_base()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      1, *this->base_, output);
+      1, this->base(), output);
   }
 
   // optional .CMsgVector start = 2;
   if (has_start()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      2, *this->start_, output);
+      2, this->start(), output);
   }
 
   // optional .CMsgVector end = 3;
   if (has_end()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      3, *this->end_, output);
+      3, this->end(), output);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
   }
@@ -3587,24 +2874,24 @@ void CMsgTEBeamPoints::SerializeWithCachedSizes(
   if (has_base()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
-        1, *this->base_, target);
+        1, this->base(), target);
   }
 
   // optional .CMsgVector start = 2;
   if (has_start()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
-        2, *this->start_, target);
+        2, this->start(), target);
   }
 
   // optional .CMsgVector end = 3;
   if (has_end()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
-        3, *this->end_, target);
+        3, this->end(), target);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
   }
@@ -3615,30 +2902,30 @@ void CMsgTEBeamPoints::SerializeWithCachedSizes(
 int CMsgTEBeamPoints::ByteSize() const {
   int total_size = 0;
 
-  if (_has_bits_[0 / 32] & 7u) {
+  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     // optional .CMsgTEBaseBeam base = 1;
     if (has_base()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
-          *this->base_);
+          this->base());
     }
 
     // optional .CMsgVector start = 2;
     if (has_start()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
-          *this->start_);
+          this->start());
     }
 
     // optional .CMsgVector end = 3;
     if (has_end()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
-          *this->end_);
+          this->end());
     }
 
   }
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     total_size +=
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         unknown_fields());
@@ -3650,10 +2937,10 @@ int CMsgTEBeamPoints::ByteSize() const {
 }
 
 void CMsgTEBeamPoints::MergeFrom(const ::google::protobuf::Message& from) {
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
-  const CMsgTEBeamPoints* source = 
-      ::google::protobuf::internal::DynamicCastToGenerated<const CMsgTEBeamPoints>(
-          &from);
+  GOOGLE_CHECK_NE(&from, this);
+  const CMsgTEBeamPoints* source =
+    ::google::protobuf::internal::dynamic_cast_if_available<const CMsgTEBeamPoints*>(
+      &from);
   if (source == NULL) {
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
   } else {
@@ -3662,7 +2949,7 @@ void CMsgTEBeamPoints::MergeFrom(const ::google::protobuf::Message& from) {
 }
 
 void CMsgTEBeamPoints::MergeFrom(const CMsgTEBeamPoints& from) {
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  GOOGLE_CHECK_NE(&from, this);
   if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (from.has_base()) {
       mutable_base()->::CMsgTEBaseBeam::MergeFrom(from.base());
@@ -3674,9 +2961,7 @@ void CMsgTEBeamPoints::MergeFrom(const CMsgTEBeamPoints& from) {
       mutable_end()->::CMsgVector::MergeFrom(from.end());
     }
   }
-  if (from._internal_metadata_.have_unknown_fields()) {
-    mutable_unknown_fields()->MergeFrom(from.unknown_fields());
-  }
+  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
 }
 
 void CMsgTEBeamPoints::CopyFrom(const ::google::protobuf::Message& from) {
@@ -3697,16 +2982,14 @@ bool CMsgTEBeamPoints::IsInitialized() const {
 }
 
 void CMsgTEBeamPoints::Swap(CMsgTEBeamPoints* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
-void CMsgTEBeamPoints::InternalSwap(CMsgTEBeamPoints* other) {
-  std::swap(base_, other->base_);
-  std::swap(start_, other->start_);
-  std::swap(end_, other->end_);
-  std::swap(_has_bits_[0], other->_has_bits_[0]);
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  std::swap(_cached_size_, other->_cached_size_);
+  if (other != this) {
+    std::swap(base_, other->base_);
+    std::swap(start_, other->start_);
+    std::swap(end_, other->end_);
+    std::swap(_has_bits_[0], other->_has_bits_[0]);
+    _unknown_fields_.Swap(&other->_unknown_fields_);
+    std::swap(_cached_size_, other->_cached_size_);
+  }
 }
 
 ::google::protobuf::Metadata CMsgTEBeamPoints::GetMetadata() const {
@@ -3717,139 +3000,6 @@ void CMsgTEBeamPoints::InternalSwap(CMsgTEBeamPoints* other) {
   return metadata;
 }
 
-#if PROTOBUF_INLINE_NOT_IN_HEADERS
-// CMsgTEBeamPoints
-
-// optional .CMsgTEBaseBeam base = 1;
-bool CMsgTEBeamPoints::has_base() const {
-  return (_has_bits_[0] & 0x00000001u) != 0;
-}
-void CMsgTEBeamPoints::set_has_base() {
-  _has_bits_[0] |= 0x00000001u;
-}
-void CMsgTEBeamPoints::clear_has_base() {
-  _has_bits_[0] &= ~0x00000001u;
-}
-void CMsgTEBeamPoints::clear_base() {
-  if (base_ != NULL) base_->::CMsgTEBaseBeam::Clear();
-  clear_has_base();
-}
-const ::CMsgTEBaseBeam& CMsgTEBeamPoints::base() const {
-  // @@protoc_insertion_point(field_get:CMsgTEBeamPoints.base)
-  return base_ != NULL ? *base_ : *default_instance_->base_;
-}
-::CMsgTEBaseBeam* CMsgTEBeamPoints::mutable_base() {
-  set_has_base();
-  if (base_ == NULL) {
-    base_ = new ::CMsgTEBaseBeam;
-  }
-  // @@protoc_insertion_point(field_mutable:CMsgTEBeamPoints.base)
-  return base_;
-}
-::CMsgTEBaseBeam* CMsgTEBeamPoints::release_base() {
-  clear_has_base();
-  ::CMsgTEBaseBeam* temp = base_;
-  base_ = NULL;
-  return temp;
-}
-void CMsgTEBeamPoints::set_allocated_base(::CMsgTEBaseBeam* base) {
-  delete base_;
-  base_ = base;
-  if (base) {
-    set_has_base();
-  } else {
-    clear_has_base();
-  }
-  // @@protoc_insertion_point(field_set_allocated:CMsgTEBeamPoints.base)
-}
-
-// optional .CMsgVector start = 2;
-bool CMsgTEBeamPoints::has_start() const {
-  return (_has_bits_[0] & 0x00000002u) != 0;
-}
-void CMsgTEBeamPoints::set_has_start() {
-  _has_bits_[0] |= 0x00000002u;
-}
-void CMsgTEBeamPoints::clear_has_start() {
-  _has_bits_[0] &= ~0x00000002u;
-}
-void CMsgTEBeamPoints::clear_start() {
-  if (start_ != NULL) start_->::CMsgVector::Clear();
-  clear_has_start();
-}
-const ::CMsgVector& CMsgTEBeamPoints::start() const {
-  // @@protoc_insertion_point(field_get:CMsgTEBeamPoints.start)
-  return start_ != NULL ? *start_ : *default_instance_->start_;
-}
-::CMsgVector* CMsgTEBeamPoints::mutable_start() {
-  set_has_start();
-  if (start_ == NULL) {
-    start_ = new ::CMsgVector;
-  }
-  // @@protoc_insertion_point(field_mutable:CMsgTEBeamPoints.start)
-  return start_;
-}
-::CMsgVector* CMsgTEBeamPoints::release_start() {
-  clear_has_start();
-  ::CMsgVector* temp = start_;
-  start_ = NULL;
-  return temp;
-}
-void CMsgTEBeamPoints::set_allocated_start(::CMsgVector* start) {
-  delete start_;
-  start_ = start;
-  if (start) {
-    set_has_start();
-  } else {
-    clear_has_start();
-  }
-  // @@protoc_insertion_point(field_set_allocated:CMsgTEBeamPoints.start)
-}
-
-// optional .CMsgVector end = 3;
-bool CMsgTEBeamPoints::has_end() const {
-  return (_has_bits_[0] & 0x00000004u) != 0;
-}
-void CMsgTEBeamPoints::set_has_end() {
-  _has_bits_[0] |= 0x00000004u;
-}
-void CMsgTEBeamPoints::clear_has_end() {
-  _has_bits_[0] &= ~0x00000004u;
-}
-void CMsgTEBeamPoints::clear_end() {
-  if (end_ != NULL) end_->::CMsgVector::Clear();
-  clear_has_end();
-}
-const ::CMsgVector& CMsgTEBeamPoints::end() const {
-  // @@protoc_insertion_point(field_get:CMsgTEBeamPoints.end)
-  return end_ != NULL ? *end_ : *default_instance_->end_;
-}
-::CMsgVector* CMsgTEBeamPoints::mutable_end() {
-  set_has_end();
-  if (end_ == NULL) {
-    end_ = new ::CMsgVector;
-  }
-  // @@protoc_insertion_point(field_mutable:CMsgTEBeamPoints.end)
-  return end_;
-}
-::CMsgVector* CMsgTEBeamPoints::release_end() {
-  clear_has_end();
-  ::CMsgVector* temp = end_;
-  end_ = NULL;
-  return temp;
-}
-void CMsgTEBeamPoints::set_allocated_end(::CMsgVector* end) {
-  delete end_;
-  end_ = end;
-  if (end) {
-    set_has_end();
-  } else {
-    clear_has_end();
-  }
-  // @@protoc_insertion_point(field_set_allocated:CMsgTEBeamPoints.end)
-}
-
-#endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
 
 // ===================================================================
 
@@ -3860,7 +3010,7 @@ const int CMsgTEBeamRing::kEndentityFieldNumber;
 #endif  // !_MSC_VER
 
 CMsgTEBeamRing::CMsgTEBeamRing()
-  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  : ::google::protobuf::Message() {
   SharedCtor();
   // @@protoc_insertion_point(constructor:CMsgTEBeamRing)
 }
@@ -3870,8 +3020,7 @@ void CMsgTEBeamRing::InitAsDefaultInstance() {
 }
 
 CMsgTEBeamRing::CMsgTEBeamRing(const CMsgTEBeamRing& from)
-  : ::google::protobuf::Message(),
-    _internal_metadata_(NULL) {
+  : ::google::protobuf::Message() {
   SharedCtor();
   MergeFrom(from);
   // @@protoc_insertion_point(copy_constructor:CMsgTEBeamRing)
@@ -3913,37 +3062,33 @@ const CMsgTEBeamRing& CMsgTEBeamRing::default_instance() {
 
 CMsgTEBeamRing* CMsgTEBeamRing::default_instance_ = NULL;
 
-CMsgTEBeamRing* CMsgTEBeamRing::New(::google::protobuf::Arena* arena) const {
-  CMsgTEBeamRing* n = new CMsgTEBeamRing;
-  if (arena != NULL) {
-    arena->Own(n);
-  }
-  return n;
+CMsgTEBeamRing* CMsgTEBeamRing::New() const {
+  return new CMsgTEBeamRing;
 }
 
 void CMsgTEBeamRing::Clear() {
-#define ZR_HELPER_(f) reinterpret_cast<char*>(\
-  &reinterpret_cast<CMsgTEBeamRing*>(16)->f)
+#define OFFSET_OF_FIELD_(f) (reinterpret_cast<char*>(      \
+  &reinterpret_cast<CMsgTEBeamRing*>(16)->f) - \
+   reinterpret_cast<char*>(16))
 
-#define ZR_(first, last) do {\
-  ::memset(&first, 0,\
-           ZR_HELPER_(last) - ZR_HELPER_(first) + sizeof(last));\
-} while (0)
+#define ZR_(first, last) do {                              \
+    size_t f = OFFSET_OF_FIELD_(first);                    \
+    size_t n = OFFSET_OF_FIELD_(last) - f + sizeof(last);  \
+    ::memset(&first, 0, n);                                \
+  } while (0)
 
-  if (_has_bits_[0 / 32] & 7u) {
+  if (_has_bits_[0 / 32] & 7) {
     ZR_(startentity_, endentity_);
     if (has_base()) {
       if (base_ != NULL) base_->::CMsgTEBaseBeam::Clear();
     }
   }
 
-#undef ZR_HELPER_
+#undef OFFSET_OF_FIELD_
 #undef ZR_
 
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
-  if (_internal_metadata_.have_unknown_fields()) {
-    mutable_unknown_fields()->Clear();
-  }
+  mutable_unknown_fields()->Clear();
 }
 
 bool CMsgTEBeamRing::MergePartialFromCodedStream(
@@ -4026,7 +3171,7 @@ void CMsgTEBeamRing::SerializeWithCachedSizes(
   // optional .CMsgTEBaseBeam base = 1;
   if (has_base()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      1, *this->base_, output);
+      1, this->base(), output);
   }
 
   // optional uint32 startentity = 2;
@@ -4039,7 +3184,7 @@ void CMsgTEBeamRing::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteUInt32(3, this->endentity(), output);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
   }
@@ -4053,7 +3198,7 @@ void CMsgTEBeamRing::SerializeWithCachedSizes(
   if (has_base()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
-        1, *this->base_, target);
+        1, this->base(), target);
   }
 
   // optional uint32 startentity = 2;
@@ -4066,7 +3211,7 @@ void CMsgTEBeamRing::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(3, this->endentity(), target);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
   }
@@ -4077,12 +3222,12 @@ void CMsgTEBeamRing::SerializeWithCachedSizes(
 int CMsgTEBeamRing::ByteSize() const {
   int total_size = 0;
 
-  if (_has_bits_[0 / 32] & 7u) {
+  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     // optional .CMsgTEBaseBeam base = 1;
     if (has_base()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
-          *this->base_);
+          this->base());
     }
 
     // optional uint32 startentity = 2;
@@ -4100,7 +3245,7 @@ int CMsgTEBeamRing::ByteSize() const {
     }
 
   }
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     total_size +=
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         unknown_fields());
@@ -4112,10 +3257,10 @@ int CMsgTEBeamRing::ByteSize() const {
 }
 
 void CMsgTEBeamRing::MergeFrom(const ::google::protobuf::Message& from) {
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
-  const CMsgTEBeamRing* source = 
-      ::google::protobuf::internal::DynamicCastToGenerated<const CMsgTEBeamRing>(
-          &from);
+  GOOGLE_CHECK_NE(&from, this);
+  const CMsgTEBeamRing* source =
+    ::google::protobuf::internal::dynamic_cast_if_available<const CMsgTEBeamRing*>(
+      &from);
   if (source == NULL) {
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
   } else {
@@ -4124,7 +3269,7 @@ void CMsgTEBeamRing::MergeFrom(const ::google::protobuf::Message& from) {
 }
 
 void CMsgTEBeamRing::MergeFrom(const CMsgTEBeamRing& from) {
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  GOOGLE_CHECK_NE(&from, this);
   if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (from.has_base()) {
       mutable_base()->::CMsgTEBaseBeam::MergeFrom(from.base());
@@ -4136,9 +3281,7 @@ void CMsgTEBeamRing::MergeFrom(const CMsgTEBeamRing& from) {
       set_endentity(from.endentity());
     }
   }
-  if (from._internal_metadata_.have_unknown_fields()) {
-    mutable_unknown_fields()->MergeFrom(from.unknown_fields());
-  }
+  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
 }
 
 void CMsgTEBeamRing::CopyFrom(const ::google::protobuf::Message& from) {
@@ -4159,16 +3302,14 @@ bool CMsgTEBeamRing::IsInitialized() const {
 }
 
 void CMsgTEBeamRing::Swap(CMsgTEBeamRing* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
-void CMsgTEBeamRing::InternalSwap(CMsgTEBeamRing* other) {
-  std::swap(base_, other->base_);
-  std::swap(startentity_, other->startentity_);
-  std::swap(endentity_, other->endentity_);
-  std::swap(_has_bits_[0], other->_has_bits_[0]);
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  std::swap(_cached_size_, other->_cached_size_);
+  if (other != this) {
+    std::swap(base_, other->base_);
+    std::swap(startentity_, other->startentity_);
+    std::swap(endentity_, other->endentity_);
+    std::swap(_has_bits_[0], other->_has_bits_[0]);
+    _unknown_fields_.Swap(&other->_unknown_fields_);
+    std::swap(_cached_size_, other->_cached_size_);
+  }
 }
 
 ::google::protobuf::Metadata CMsgTEBeamRing::GetMetadata() const {
@@ -4179,101 +3320,6 @@ void CMsgTEBeamRing::InternalSwap(CMsgTEBeamRing* other) {
   return metadata;
 }
 
-#if PROTOBUF_INLINE_NOT_IN_HEADERS
-// CMsgTEBeamRing
-
-// optional .CMsgTEBaseBeam base = 1;
-bool CMsgTEBeamRing::has_base() const {
-  return (_has_bits_[0] & 0x00000001u) != 0;
-}
-void CMsgTEBeamRing::set_has_base() {
-  _has_bits_[0] |= 0x00000001u;
-}
-void CMsgTEBeamRing::clear_has_base() {
-  _has_bits_[0] &= ~0x00000001u;
-}
-void CMsgTEBeamRing::clear_base() {
-  if (base_ != NULL) base_->::CMsgTEBaseBeam::Clear();
-  clear_has_base();
-}
-const ::CMsgTEBaseBeam& CMsgTEBeamRing::base() const {
-  // @@protoc_insertion_point(field_get:CMsgTEBeamRing.base)
-  return base_ != NULL ? *base_ : *default_instance_->base_;
-}
-::CMsgTEBaseBeam* CMsgTEBeamRing::mutable_base() {
-  set_has_base();
-  if (base_ == NULL) {
-    base_ = new ::CMsgTEBaseBeam;
-  }
-  // @@protoc_insertion_point(field_mutable:CMsgTEBeamRing.base)
-  return base_;
-}
-::CMsgTEBaseBeam* CMsgTEBeamRing::release_base() {
-  clear_has_base();
-  ::CMsgTEBaseBeam* temp = base_;
-  base_ = NULL;
-  return temp;
-}
-void CMsgTEBeamRing::set_allocated_base(::CMsgTEBaseBeam* base) {
-  delete base_;
-  base_ = base;
-  if (base) {
-    set_has_base();
-  } else {
-    clear_has_base();
-  }
-  // @@protoc_insertion_point(field_set_allocated:CMsgTEBeamRing.base)
-}
-
-// optional uint32 startentity = 2;
-bool CMsgTEBeamRing::has_startentity() const {
-  return (_has_bits_[0] & 0x00000002u) != 0;
-}
-void CMsgTEBeamRing::set_has_startentity() {
-  _has_bits_[0] |= 0x00000002u;
-}
-void CMsgTEBeamRing::clear_has_startentity() {
-  _has_bits_[0] &= ~0x00000002u;
-}
-void CMsgTEBeamRing::clear_startentity() {
-  startentity_ = 0u;
-  clear_has_startentity();
-}
- ::google::protobuf::uint32 CMsgTEBeamRing::startentity() const {
-  // @@protoc_insertion_point(field_get:CMsgTEBeamRing.startentity)
-  return startentity_;
-}
- void CMsgTEBeamRing::set_startentity(::google::protobuf::uint32 value) {
-  set_has_startentity();
-  startentity_ = value;
-  // @@protoc_insertion_point(field_set:CMsgTEBeamRing.startentity)
-}
-
-// optional uint32 endentity = 3;
-bool CMsgTEBeamRing::has_endentity() const {
-  return (_has_bits_[0] & 0x00000004u) != 0;
-}
-void CMsgTEBeamRing::set_has_endentity() {
-  _has_bits_[0] |= 0x00000004u;
-}
-void CMsgTEBeamRing::clear_has_endentity() {
-  _has_bits_[0] &= ~0x00000004u;
-}
-void CMsgTEBeamRing::clear_endentity() {
-  endentity_ = 0u;
-  clear_has_endentity();
-}
- ::google::protobuf::uint32 CMsgTEBeamRing::endentity() const {
-  // @@protoc_insertion_point(field_get:CMsgTEBeamRing.endentity)
-  return endentity_;
-}
- void CMsgTEBeamRing::set_endentity(::google::protobuf::uint32 value) {
-  set_has_endentity();
-  endentity_ = value;
-  // @@protoc_insertion_point(field_set:CMsgTEBeamRing.endentity)
-}
-
-#endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
 
 // ===================================================================
 
@@ -4290,7 +3336,7 @@ const int CMsgTEBreakModel::kFlagsFieldNumber;
 #endif  // !_MSC_VER
 
 CMsgTEBreakModel::CMsgTEBreakModel()
-  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  : ::google::protobuf::Message() {
   SharedCtor();
   // @@protoc_insertion_point(constructor:CMsgTEBreakModel)
 }
@@ -4303,8 +3349,7 @@ void CMsgTEBreakModel::InitAsDefaultInstance() {
 }
 
 CMsgTEBreakModel::CMsgTEBreakModel(const CMsgTEBreakModel& from)
-  : ::google::protobuf::Message(),
-    _internal_metadata_(NULL) {
+  : ::google::protobuf::Message() {
   SharedCtor();
   MergeFrom(from);
   // @@protoc_insertion_point(copy_constructor:CMsgTEBreakModel)
@@ -4355,24 +3400,22 @@ const CMsgTEBreakModel& CMsgTEBreakModel::default_instance() {
 
 CMsgTEBreakModel* CMsgTEBreakModel::default_instance_ = NULL;
 
-CMsgTEBreakModel* CMsgTEBreakModel::New(::google::protobuf::Arena* arena) const {
-  CMsgTEBreakModel* n = new CMsgTEBreakModel;
-  if (arena != NULL) {
-    arena->Own(n);
-  }
-  return n;
+CMsgTEBreakModel* CMsgTEBreakModel::New() const {
+  return new CMsgTEBreakModel;
 }
 
 void CMsgTEBreakModel::Clear() {
-#define ZR_HELPER_(f) reinterpret_cast<char*>(\
-  &reinterpret_cast<CMsgTEBreakModel*>(16)->f)
+#define OFFSET_OF_FIELD_(f) (reinterpret_cast<char*>(      \
+  &reinterpret_cast<CMsgTEBreakModel*>(16)->f) - \
+   reinterpret_cast<char*>(16))
 
-#define ZR_(first, last) do {\
-  ::memset(&first, 0,\
-           ZR_HELPER_(last) - ZR_HELPER_(first) + sizeof(last));\
-} while (0)
+#define ZR_(first, last) do {                              \
+    size_t f = OFFSET_OF_FIELD_(first);                    \
+    size_t n = OFFSET_OF_FIELD_(last) - f + sizeof(last);  \
+    ::memset(&first, 0, n);                                \
+  } while (0)
 
-  if (_has_bits_[0 / 32] & 255u) {
+  if (_has_bits_[0 / 32] & 255) {
     ZR_(modelindex_, time_);
     if (has_origin()) {
       if (origin_ != NULL) origin_->::CMsgVector::Clear();
@@ -4389,13 +3432,11 @@ void CMsgTEBreakModel::Clear() {
   }
   flags_ = 0u;
 
-#undef ZR_HELPER_
+#undef OFFSET_OF_FIELD_
 #undef ZR_
 
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
-  if (_internal_metadata_.have_unknown_fields()) {
-    mutable_unknown_fields()->Clear();
-  }
+  mutable_unknown_fields()->Clear();
 }
 
 bool CMsgTEBreakModel::MergePartialFromCodedStream(
@@ -4562,25 +3603,25 @@ void CMsgTEBreakModel::SerializeWithCachedSizes(
   // optional .CMsgVector origin = 1;
   if (has_origin()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      1, *this->origin_, output);
+      1, this->origin(), output);
   }
 
   // optional .CMsgQAngle angles = 2;
   if (has_angles()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      2, *this->angles_, output);
+      2, this->angles(), output);
   }
 
   // optional .CMsgVector size = 3;
   if (has_size()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      3, *this->size_, output);
+      3, this->size(), output);
   }
 
   // optional .CMsgVector velocity = 4;
   if (has_velocity()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      4, *this->velocity_, output);
+      4, this->velocity(), output);
   }
 
   // optional uint32 randomization = 5;
@@ -4608,7 +3649,7 @@ void CMsgTEBreakModel::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteUInt32(9, this->flags(), output);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
   }
@@ -4622,28 +3663,28 @@ void CMsgTEBreakModel::SerializeWithCachedSizes(
   if (has_origin()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
-        1, *this->origin_, target);
+        1, this->origin(), target);
   }
 
   // optional .CMsgQAngle angles = 2;
   if (has_angles()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
-        2, *this->angles_, target);
+        2, this->angles(), target);
   }
 
   // optional .CMsgVector size = 3;
   if (has_size()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
-        3, *this->size_, target);
+        3, this->size(), target);
   }
 
   // optional .CMsgVector velocity = 4;
   if (has_velocity()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
-        4, *this->velocity_, target);
+        4, this->velocity(), target);
   }
 
   // optional uint32 randomization = 5;
@@ -4671,7 +3712,7 @@ void CMsgTEBreakModel::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(9, this->flags(), target);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
   }
@@ -4682,33 +3723,33 @@ void CMsgTEBreakModel::SerializeWithCachedSizes(
 int CMsgTEBreakModel::ByteSize() const {
   int total_size = 0;
 
-  if (_has_bits_[0 / 32] & 255u) {
+  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     // optional .CMsgVector origin = 1;
     if (has_origin()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
-          *this->origin_);
+          this->origin());
     }
 
     // optional .CMsgQAngle angles = 2;
     if (has_angles()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
-          *this->angles_);
+          this->angles());
     }
 
     // optional .CMsgVector size = 3;
     if (has_size()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
-          *this->size_);
+          this->size());
     }
 
     // optional .CMsgVector velocity = 4;
     if (has_velocity()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
-          *this->velocity_);
+          this->velocity());
     }
 
     // optional uint32 randomization = 5;
@@ -4736,14 +3777,16 @@ int CMsgTEBreakModel::ByteSize() const {
     }
 
   }
-  // optional uint32 flags = 9;
-  if (has_flags()) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::UInt32Size(
-        this->flags());
-  }
+  if (_has_bits_[8 / 32] & (0xffu << (8 % 32))) {
+    // optional uint32 flags = 9;
+    if (has_flags()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::UInt32Size(
+          this->flags());
+    }
 
-  if (_internal_metadata_.have_unknown_fields()) {
+  }
+  if (!unknown_fields().empty()) {
     total_size +=
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         unknown_fields());
@@ -4755,10 +3798,10 @@ int CMsgTEBreakModel::ByteSize() const {
 }
 
 void CMsgTEBreakModel::MergeFrom(const ::google::protobuf::Message& from) {
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
-  const CMsgTEBreakModel* source = 
-      ::google::protobuf::internal::DynamicCastToGenerated<const CMsgTEBreakModel>(
-          &from);
+  GOOGLE_CHECK_NE(&from, this);
+  const CMsgTEBreakModel* source =
+    ::google::protobuf::internal::dynamic_cast_if_available<const CMsgTEBreakModel*>(
+      &from);
   if (source == NULL) {
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
   } else {
@@ -4767,7 +3810,7 @@ void CMsgTEBreakModel::MergeFrom(const ::google::protobuf::Message& from) {
 }
 
 void CMsgTEBreakModel::MergeFrom(const CMsgTEBreakModel& from) {
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  GOOGLE_CHECK_NE(&from, this);
   if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (from.has_origin()) {
       mutable_origin()->::CMsgVector::MergeFrom(from.origin());
@@ -4799,9 +3842,7 @@ void CMsgTEBreakModel::MergeFrom(const CMsgTEBreakModel& from) {
       set_flags(from.flags());
     }
   }
-  if (from._internal_metadata_.have_unknown_fields()) {
-    mutable_unknown_fields()->MergeFrom(from.unknown_fields());
-  }
+  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
 }
 
 void CMsgTEBreakModel::CopyFrom(const ::google::protobuf::Message& from) {
@@ -4822,22 +3863,20 @@ bool CMsgTEBreakModel::IsInitialized() const {
 }
 
 void CMsgTEBreakModel::Swap(CMsgTEBreakModel* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
-void CMsgTEBreakModel::InternalSwap(CMsgTEBreakModel* other) {
-  std::swap(origin_, other->origin_);
-  std::swap(angles_, other->angles_);
-  std::swap(size_, other->size_);
-  std::swap(velocity_, other->velocity_);
-  std::swap(randomization_, other->randomization_);
-  std::swap(modelindex_, other->modelindex_);
-  std::swap(count_, other->count_);
-  std::swap(time_, other->time_);
-  std::swap(flags_, other->flags_);
-  std::swap(_has_bits_[0], other->_has_bits_[0]);
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  std::swap(_cached_size_, other->_cached_size_);
+  if (other != this) {
+    std::swap(origin_, other->origin_);
+    std::swap(angles_, other->angles_);
+    std::swap(size_, other->size_);
+    std::swap(velocity_, other->velocity_);
+    std::swap(randomization_, other->randomization_);
+    std::swap(modelindex_, other->modelindex_);
+    std::swap(count_, other->count_);
+    std::swap(time_, other->time_);
+    std::swap(flags_, other->flags_);
+    std::swap(_has_bits_[0], other->_has_bits_[0]);
+    _unknown_fields_.Swap(&other->_unknown_fields_);
+    std::swap(_cached_size_, other->_cached_size_);
+  }
 }
 
 ::google::protobuf::Metadata CMsgTEBreakModel::GetMetadata() const {
@@ -4848,302 +3887,6 @@ void CMsgTEBreakModel::InternalSwap(CMsgTEBreakModel* other) {
   return metadata;
 }
 
-#if PROTOBUF_INLINE_NOT_IN_HEADERS
-// CMsgTEBreakModel
-
-// optional .CMsgVector origin = 1;
-bool CMsgTEBreakModel::has_origin() const {
-  return (_has_bits_[0] & 0x00000001u) != 0;
-}
-void CMsgTEBreakModel::set_has_origin() {
-  _has_bits_[0] |= 0x00000001u;
-}
-void CMsgTEBreakModel::clear_has_origin() {
-  _has_bits_[0] &= ~0x00000001u;
-}
-void CMsgTEBreakModel::clear_origin() {
-  if (origin_ != NULL) origin_->::CMsgVector::Clear();
-  clear_has_origin();
-}
-const ::CMsgVector& CMsgTEBreakModel::origin() const {
-  // @@protoc_insertion_point(field_get:CMsgTEBreakModel.origin)
-  return origin_ != NULL ? *origin_ : *default_instance_->origin_;
-}
-::CMsgVector* CMsgTEBreakModel::mutable_origin() {
-  set_has_origin();
-  if (origin_ == NULL) {
-    origin_ = new ::CMsgVector;
-  }
-  // @@protoc_insertion_point(field_mutable:CMsgTEBreakModel.origin)
-  return origin_;
-}
-::CMsgVector* CMsgTEBreakModel::release_origin() {
-  clear_has_origin();
-  ::CMsgVector* temp = origin_;
-  origin_ = NULL;
-  return temp;
-}
-void CMsgTEBreakModel::set_allocated_origin(::CMsgVector* origin) {
-  delete origin_;
-  origin_ = origin;
-  if (origin) {
-    set_has_origin();
-  } else {
-    clear_has_origin();
-  }
-  // @@protoc_insertion_point(field_set_allocated:CMsgTEBreakModel.origin)
-}
-
-// optional .CMsgQAngle angles = 2;
-bool CMsgTEBreakModel::has_angles() const {
-  return (_has_bits_[0] & 0x00000002u) != 0;
-}
-void CMsgTEBreakModel::set_has_angles() {
-  _has_bits_[0] |= 0x00000002u;
-}
-void CMsgTEBreakModel::clear_has_angles() {
-  _has_bits_[0] &= ~0x00000002u;
-}
-void CMsgTEBreakModel::clear_angles() {
-  if (angles_ != NULL) angles_->::CMsgQAngle::Clear();
-  clear_has_angles();
-}
-const ::CMsgQAngle& CMsgTEBreakModel::angles() const {
-  // @@protoc_insertion_point(field_get:CMsgTEBreakModel.angles)
-  return angles_ != NULL ? *angles_ : *default_instance_->angles_;
-}
-::CMsgQAngle* CMsgTEBreakModel::mutable_angles() {
-  set_has_angles();
-  if (angles_ == NULL) {
-    angles_ = new ::CMsgQAngle;
-  }
-  // @@protoc_insertion_point(field_mutable:CMsgTEBreakModel.angles)
-  return angles_;
-}
-::CMsgQAngle* CMsgTEBreakModel::release_angles() {
-  clear_has_angles();
-  ::CMsgQAngle* temp = angles_;
-  angles_ = NULL;
-  return temp;
-}
-void CMsgTEBreakModel::set_allocated_angles(::CMsgQAngle* angles) {
-  delete angles_;
-  angles_ = angles;
-  if (angles) {
-    set_has_angles();
-  } else {
-    clear_has_angles();
-  }
-  // @@protoc_insertion_point(field_set_allocated:CMsgTEBreakModel.angles)
-}
-
-// optional .CMsgVector size = 3;
-bool CMsgTEBreakModel::has_size() const {
-  return (_has_bits_[0] & 0x00000004u) != 0;
-}
-void CMsgTEBreakModel::set_has_size() {
-  _has_bits_[0] |= 0x00000004u;
-}
-void CMsgTEBreakModel::clear_has_size() {
-  _has_bits_[0] &= ~0x00000004u;
-}
-void CMsgTEBreakModel::clear_size() {
-  if (size_ != NULL) size_->::CMsgVector::Clear();
-  clear_has_size();
-}
-const ::CMsgVector& CMsgTEBreakModel::size() const {
-  // @@protoc_insertion_point(field_get:CMsgTEBreakModel.size)
-  return size_ != NULL ? *size_ : *default_instance_->size_;
-}
-::CMsgVector* CMsgTEBreakModel::mutable_size() {
-  set_has_size();
-  if (size_ == NULL) {
-    size_ = new ::CMsgVector;
-  }
-  // @@protoc_insertion_point(field_mutable:CMsgTEBreakModel.size)
-  return size_;
-}
-::CMsgVector* CMsgTEBreakModel::release_size() {
-  clear_has_size();
-  ::CMsgVector* temp = size_;
-  size_ = NULL;
-  return temp;
-}
-void CMsgTEBreakModel::set_allocated_size(::CMsgVector* size) {
-  delete size_;
-  size_ = size;
-  if (size) {
-    set_has_size();
-  } else {
-    clear_has_size();
-  }
-  // @@protoc_insertion_point(field_set_allocated:CMsgTEBreakModel.size)
-}
-
-// optional .CMsgVector velocity = 4;
-bool CMsgTEBreakModel::has_velocity() const {
-  return (_has_bits_[0] & 0x00000008u) != 0;
-}
-void CMsgTEBreakModel::set_has_velocity() {
-  _has_bits_[0] |= 0x00000008u;
-}
-void CMsgTEBreakModel::clear_has_velocity() {
-  _has_bits_[0] &= ~0x00000008u;
-}
-void CMsgTEBreakModel::clear_velocity() {
-  if (velocity_ != NULL) velocity_->::CMsgVector::Clear();
-  clear_has_velocity();
-}
-const ::CMsgVector& CMsgTEBreakModel::velocity() const {
-  // @@protoc_insertion_point(field_get:CMsgTEBreakModel.velocity)
-  return velocity_ != NULL ? *velocity_ : *default_instance_->velocity_;
-}
-::CMsgVector* CMsgTEBreakModel::mutable_velocity() {
-  set_has_velocity();
-  if (velocity_ == NULL) {
-    velocity_ = new ::CMsgVector;
-  }
-  // @@protoc_insertion_point(field_mutable:CMsgTEBreakModel.velocity)
-  return velocity_;
-}
-::CMsgVector* CMsgTEBreakModel::release_velocity() {
-  clear_has_velocity();
-  ::CMsgVector* temp = velocity_;
-  velocity_ = NULL;
-  return temp;
-}
-void CMsgTEBreakModel::set_allocated_velocity(::CMsgVector* velocity) {
-  delete velocity_;
-  velocity_ = velocity;
-  if (velocity) {
-    set_has_velocity();
-  } else {
-    clear_has_velocity();
-  }
-  // @@protoc_insertion_point(field_set_allocated:CMsgTEBreakModel.velocity)
-}
-
-// optional uint32 randomization = 5;
-bool CMsgTEBreakModel::has_randomization() const {
-  return (_has_bits_[0] & 0x00000010u) != 0;
-}
-void CMsgTEBreakModel::set_has_randomization() {
-  _has_bits_[0] |= 0x00000010u;
-}
-void CMsgTEBreakModel::clear_has_randomization() {
-  _has_bits_[0] &= ~0x00000010u;
-}
-void CMsgTEBreakModel::clear_randomization() {
-  randomization_ = 0u;
-  clear_has_randomization();
-}
- ::google::protobuf::uint32 CMsgTEBreakModel::randomization() const {
-  // @@protoc_insertion_point(field_get:CMsgTEBreakModel.randomization)
-  return randomization_;
-}
- void CMsgTEBreakModel::set_randomization(::google::protobuf::uint32 value) {
-  set_has_randomization();
-  randomization_ = value;
-  // @@protoc_insertion_point(field_set:CMsgTEBreakModel.randomization)
-}
-
-// optional fixed64 modelindex = 6;
-bool CMsgTEBreakModel::has_modelindex() const {
-  return (_has_bits_[0] & 0x00000020u) != 0;
-}
-void CMsgTEBreakModel::set_has_modelindex() {
-  _has_bits_[0] |= 0x00000020u;
-}
-void CMsgTEBreakModel::clear_has_modelindex() {
-  _has_bits_[0] &= ~0x00000020u;
-}
-void CMsgTEBreakModel::clear_modelindex() {
-  modelindex_ = GOOGLE_ULONGLONG(0);
-  clear_has_modelindex();
-}
- ::google::protobuf::uint64 CMsgTEBreakModel::modelindex() const {
-  // @@protoc_insertion_point(field_get:CMsgTEBreakModel.modelindex)
-  return modelindex_;
-}
- void CMsgTEBreakModel::set_modelindex(::google::protobuf::uint64 value) {
-  set_has_modelindex();
-  modelindex_ = value;
-  // @@protoc_insertion_point(field_set:CMsgTEBreakModel.modelindex)
-}
-
-// optional uint32 count = 7;
-bool CMsgTEBreakModel::has_count() const {
-  return (_has_bits_[0] & 0x00000040u) != 0;
-}
-void CMsgTEBreakModel::set_has_count() {
-  _has_bits_[0] |= 0x00000040u;
-}
-void CMsgTEBreakModel::clear_has_count() {
-  _has_bits_[0] &= ~0x00000040u;
-}
-void CMsgTEBreakModel::clear_count() {
-  count_ = 0u;
-  clear_has_count();
-}
- ::google::protobuf::uint32 CMsgTEBreakModel::count() const {
-  // @@protoc_insertion_point(field_get:CMsgTEBreakModel.count)
-  return count_;
-}
- void CMsgTEBreakModel::set_count(::google::protobuf::uint32 value) {
-  set_has_count();
-  count_ = value;
-  // @@protoc_insertion_point(field_set:CMsgTEBreakModel.count)
-}
-
-// optional float time = 8;
-bool CMsgTEBreakModel::has_time() const {
-  return (_has_bits_[0] & 0x00000080u) != 0;
-}
-void CMsgTEBreakModel::set_has_time() {
-  _has_bits_[0] |= 0x00000080u;
-}
-void CMsgTEBreakModel::clear_has_time() {
-  _has_bits_[0] &= ~0x00000080u;
-}
-void CMsgTEBreakModel::clear_time() {
-  time_ = 0;
-  clear_has_time();
-}
- float CMsgTEBreakModel::time() const {
-  // @@protoc_insertion_point(field_get:CMsgTEBreakModel.time)
-  return time_;
-}
- void CMsgTEBreakModel::set_time(float value) {
-  set_has_time();
-  time_ = value;
-  // @@protoc_insertion_point(field_set:CMsgTEBreakModel.time)
-}
-
-// optional uint32 flags = 9;
-bool CMsgTEBreakModel::has_flags() const {
-  return (_has_bits_[0] & 0x00000100u) != 0;
-}
-void CMsgTEBreakModel::set_has_flags() {
-  _has_bits_[0] |= 0x00000100u;
-}
-void CMsgTEBreakModel::clear_has_flags() {
-  _has_bits_[0] &= ~0x00000100u;
-}
-void CMsgTEBreakModel::clear_flags() {
-  flags_ = 0u;
-  clear_has_flags();
-}
- ::google::protobuf::uint32 CMsgTEBreakModel::flags() const {
-  // @@protoc_insertion_point(field_get:CMsgTEBreakModel.flags)
-  return flags_;
-}
- void CMsgTEBreakModel::set_flags(::google::protobuf::uint32 value) {
-  set_has_flags();
-  flags_ = value;
-  // @@protoc_insertion_point(field_set:CMsgTEBreakModel.flags)
-}
-
-#endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
 
 // ===================================================================
 
@@ -5156,7 +3899,7 @@ const int CMsgTEBSPDecal::kIndexFieldNumber;
 #endif  // !_MSC_VER
 
 CMsgTEBSPDecal::CMsgTEBSPDecal()
-  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  : ::google::protobuf::Message() {
   SharedCtor();
   // @@protoc_insertion_point(constructor:CMsgTEBSPDecal)
 }
@@ -5168,8 +3911,7 @@ void CMsgTEBSPDecal::InitAsDefaultInstance() {
 }
 
 CMsgTEBSPDecal::CMsgTEBSPDecal(const CMsgTEBSPDecal& from)
-  : ::google::protobuf::Message(),
-    _internal_metadata_(NULL) {
+  : ::google::protobuf::Message() {
   SharedCtor();
   MergeFrom(from);
   // @@protoc_insertion_point(copy_constructor:CMsgTEBSPDecal)
@@ -5215,24 +3957,22 @@ const CMsgTEBSPDecal& CMsgTEBSPDecal::default_instance() {
 
 CMsgTEBSPDecal* CMsgTEBSPDecal::default_instance_ = NULL;
 
-CMsgTEBSPDecal* CMsgTEBSPDecal::New(::google::protobuf::Arena* arena) const {
-  CMsgTEBSPDecal* n = new CMsgTEBSPDecal;
-  if (arena != NULL) {
-    arena->Own(n);
-  }
-  return n;
+CMsgTEBSPDecal* CMsgTEBSPDecal::New() const {
+  return new CMsgTEBSPDecal;
 }
 
 void CMsgTEBSPDecal::Clear() {
-#define ZR_HELPER_(f) reinterpret_cast<char*>(\
-  &reinterpret_cast<CMsgTEBSPDecal*>(16)->f)
+#define OFFSET_OF_FIELD_(f) (reinterpret_cast<char*>(      \
+  &reinterpret_cast<CMsgTEBSPDecal*>(16)->f) - \
+   reinterpret_cast<char*>(16))
 
-#define ZR_(first, last) do {\
-  ::memset(&first, 0,\
-           ZR_HELPER_(last) - ZR_HELPER_(first) + sizeof(last));\
-} while (0)
+#define ZR_(first, last) do {                              \
+    size_t f = OFFSET_OF_FIELD_(first);                    \
+    size_t n = OFFSET_OF_FIELD_(last) - f + sizeof(last);  \
+    ::memset(&first, 0, n);                                \
+  } while (0)
 
-  if (_has_bits_[0 / 32] & 31u) {
+  if (_has_bits_[0 / 32] & 31) {
     ZR_(entity_, index_);
     if (has_origin()) {
       if (origin_ != NULL) origin_->::CMsgVector::Clear();
@@ -5245,13 +3985,11 @@ void CMsgTEBSPDecal::Clear() {
     }
   }
 
-#undef ZR_HELPER_
+#undef OFFSET_OF_FIELD_
 #undef ZR_
 
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
-  if (_internal_metadata_.have_unknown_fields()) {
-    mutable_unknown_fields()->Clear();
-  }
+  mutable_unknown_fields()->Clear();
 }
 
 bool CMsgTEBSPDecal::MergePartialFromCodedStream(
@@ -5360,19 +4098,19 @@ void CMsgTEBSPDecal::SerializeWithCachedSizes(
   // optional .CMsgVector origin = 1;
   if (has_origin()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      1, *this->origin_, output);
+      1, this->origin(), output);
   }
 
   // optional .CMsgVector normal = 2;
   if (has_normal()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      2, *this->normal_, output);
+      2, this->normal(), output);
   }
 
   // optional .CMsgVector saxis = 3;
   if (has_saxis()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      3, *this->saxis_, output);
+      3, this->saxis(), output);
   }
 
   // optional uint32 entity = 4;
@@ -5385,7 +4123,7 @@ void CMsgTEBSPDecal::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteUInt32(5, this->index(), output);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
   }
@@ -5399,21 +4137,21 @@ void CMsgTEBSPDecal::SerializeWithCachedSizes(
   if (has_origin()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
-        1, *this->origin_, target);
+        1, this->origin(), target);
   }
 
   // optional .CMsgVector normal = 2;
   if (has_normal()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
-        2, *this->normal_, target);
+        2, this->normal(), target);
   }
 
   // optional .CMsgVector saxis = 3;
   if (has_saxis()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
-        3, *this->saxis_, target);
+        3, this->saxis(), target);
   }
 
   // optional uint32 entity = 4;
@@ -5426,7 +4164,7 @@ void CMsgTEBSPDecal::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(5, this->index(), target);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
   }
@@ -5437,26 +4175,26 @@ void CMsgTEBSPDecal::SerializeWithCachedSizes(
 int CMsgTEBSPDecal::ByteSize() const {
   int total_size = 0;
 
-  if (_has_bits_[0 / 32] & 31u) {
+  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     // optional .CMsgVector origin = 1;
     if (has_origin()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
-          *this->origin_);
+          this->origin());
     }
 
     // optional .CMsgVector normal = 2;
     if (has_normal()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
-          *this->normal_);
+          this->normal());
     }
 
     // optional .CMsgVector saxis = 3;
     if (has_saxis()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
-          *this->saxis_);
+          this->saxis());
     }
 
     // optional uint32 entity = 4;
@@ -5474,7 +4212,7 @@ int CMsgTEBSPDecal::ByteSize() const {
     }
 
   }
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     total_size +=
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         unknown_fields());
@@ -5486,10 +4224,10 @@ int CMsgTEBSPDecal::ByteSize() const {
 }
 
 void CMsgTEBSPDecal::MergeFrom(const ::google::protobuf::Message& from) {
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
-  const CMsgTEBSPDecal* source = 
-      ::google::protobuf::internal::DynamicCastToGenerated<const CMsgTEBSPDecal>(
-          &from);
+  GOOGLE_CHECK_NE(&from, this);
+  const CMsgTEBSPDecal* source =
+    ::google::protobuf::internal::dynamic_cast_if_available<const CMsgTEBSPDecal*>(
+      &from);
   if (source == NULL) {
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
   } else {
@@ -5498,7 +4236,7 @@ void CMsgTEBSPDecal::MergeFrom(const ::google::protobuf::Message& from) {
 }
 
 void CMsgTEBSPDecal::MergeFrom(const CMsgTEBSPDecal& from) {
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  GOOGLE_CHECK_NE(&from, this);
   if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (from.has_origin()) {
       mutable_origin()->::CMsgVector::MergeFrom(from.origin());
@@ -5516,9 +4254,7 @@ void CMsgTEBSPDecal::MergeFrom(const CMsgTEBSPDecal& from) {
       set_index(from.index());
     }
   }
-  if (from._internal_metadata_.have_unknown_fields()) {
-    mutable_unknown_fields()->MergeFrom(from.unknown_fields());
-  }
+  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
 }
 
 void CMsgTEBSPDecal::CopyFrom(const ::google::protobuf::Message& from) {
@@ -5539,18 +4275,16 @@ bool CMsgTEBSPDecal::IsInitialized() const {
 }
 
 void CMsgTEBSPDecal::Swap(CMsgTEBSPDecal* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
-void CMsgTEBSPDecal::InternalSwap(CMsgTEBSPDecal* other) {
-  std::swap(origin_, other->origin_);
-  std::swap(normal_, other->normal_);
-  std::swap(saxis_, other->saxis_);
-  std::swap(entity_, other->entity_);
-  std::swap(index_, other->index_);
-  std::swap(_has_bits_[0], other->_has_bits_[0]);
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  std::swap(_cached_size_, other->_cached_size_);
+  if (other != this) {
+    std::swap(origin_, other->origin_);
+    std::swap(normal_, other->normal_);
+    std::swap(saxis_, other->saxis_);
+    std::swap(entity_, other->entity_);
+    std::swap(index_, other->index_);
+    std::swap(_has_bits_[0], other->_has_bits_[0]);
+    _unknown_fields_.Swap(&other->_unknown_fields_);
+    std::swap(_cached_size_, other->_cached_size_);
+  }
 }
 
 ::google::protobuf::Metadata CMsgTEBSPDecal::GetMetadata() const {
@@ -5561,187 +4295,6 @@ void CMsgTEBSPDecal::InternalSwap(CMsgTEBSPDecal* other) {
   return metadata;
 }
 
-#if PROTOBUF_INLINE_NOT_IN_HEADERS
-// CMsgTEBSPDecal
-
-// optional .CMsgVector origin = 1;
-bool CMsgTEBSPDecal::has_origin() const {
-  return (_has_bits_[0] & 0x00000001u) != 0;
-}
-void CMsgTEBSPDecal::set_has_origin() {
-  _has_bits_[0] |= 0x00000001u;
-}
-void CMsgTEBSPDecal::clear_has_origin() {
-  _has_bits_[0] &= ~0x00000001u;
-}
-void CMsgTEBSPDecal::clear_origin() {
-  if (origin_ != NULL) origin_->::CMsgVector::Clear();
-  clear_has_origin();
-}
-const ::CMsgVector& CMsgTEBSPDecal::origin() const {
-  // @@protoc_insertion_point(field_get:CMsgTEBSPDecal.origin)
-  return origin_ != NULL ? *origin_ : *default_instance_->origin_;
-}
-::CMsgVector* CMsgTEBSPDecal::mutable_origin() {
-  set_has_origin();
-  if (origin_ == NULL) {
-    origin_ = new ::CMsgVector;
-  }
-  // @@protoc_insertion_point(field_mutable:CMsgTEBSPDecal.origin)
-  return origin_;
-}
-::CMsgVector* CMsgTEBSPDecal::release_origin() {
-  clear_has_origin();
-  ::CMsgVector* temp = origin_;
-  origin_ = NULL;
-  return temp;
-}
-void CMsgTEBSPDecal::set_allocated_origin(::CMsgVector* origin) {
-  delete origin_;
-  origin_ = origin;
-  if (origin) {
-    set_has_origin();
-  } else {
-    clear_has_origin();
-  }
-  // @@protoc_insertion_point(field_set_allocated:CMsgTEBSPDecal.origin)
-}
-
-// optional .CMsgVector normal = 2;
-bool CMsgTEBSPDecal::has_normal() const {
-  return (_has_bits_[0] & 0x00000002u) != 0;
-}
-void CMsgTEBSPDecal::set_has_normal() {
-  _has_bits_[0] |= 0x00000002u;
-}
-void CMsgTEBSPDecal::clear_has_normal() {
-  _has_bits_[0] &= ~0x00000002u;
-}
-void CMsgTEBSPDecal::clear_normal() {
-  if (normal_ != NULL) normal_->::CMsgVector::Clear();
-  clear_has_normal();
-}
-const ::CMsgVector& CMsgTEBSPDecal::normal() const {
-  // @@protoc_insertion_point(field_get:CMsgTEBSPDecal.normal)
-  return normal_ != NULL ? *normal_ : *default_instance_->normal_;
-}
-::CMsgVector* CMsgTEBSPDecal::mutable_normal() {
-  set_has_normal();
-  if (normal_ == NULL) {
-    normal_ = new ::CMsgVector;
-  }
-  // @@protoc_insertion_point(field_mutable:CMsgTEBSPDecal.normal)
-  return normal_;
-}
-::CMsgVector* CMsgTEBSPDecal::release_normal() {
-  clear_has_normal();
-  ::CMsgVector* temp = normal_;
-  normal_ = NULL;
-  return temp;
-}
-void CMsgTEBSPDecal::set_allocated_normal(::CMsgVector* normal) {
-  delete normal_;
-  normal_ = normal;
-  if (normal) {
-    set_has_normal();
-  } else {
-    clear_has_normal();
-  }
-  // @@protoc_insertion_point(field_set_allocated:CMsgTEBSPDecal.normal)
-}
-
-// optional .CMsgVector saxis = 3;
-bool CMsgTEBSPDecal::has_saxis() const {
-  return (_has_bits_[0] & 0x00000004u) != 0;
-}
-void CMsgTEBSPDecal::set_has_saxis() {
-  _has_bits_[0] |= 0x00000004u;
-}
-void CMsgTEBSPDecal::clear_has_saxis() {
-  _has_bits_[0] &= ~0x00000004u;
-}
-void CMsgTEBSPDecal::clear_saxis() {
-  if (saxis_ != NULL) saxis_->::CMsgVector::Clear();
-  clear_has_saxis();
-}
-const ::CMsgVector& CMsgTEBSPDecal::saxis() const {
-  // @@protoc_insertion_point(field_get:CMsgTEBSPDecal.saxis)
-  return saxis_ != NULL ? *saxis_ : *default_instance_->saxis_;
-}
-::CMsgVector* CMsgTEBSPDecal::mutable_saxis() {
-  set_has_saxis();
-  if (saxis_ == NULL) {
-    saxis_ = new ::CMsgVector;
-  }
-  // @@protoc_insertion_point(field_mutable:CMsgTEBSPDecal.saxis)
-  return saxis_;
-}
-::CMsgVector* CMsgTEBSPDecal::release_saxis() {
-  clear_has_saxis();
-  ::CMsgVector* temp = saxis_;
-  saxis_ = NULL;
-  return temp;
-}
-void CMsgTEBSPDecal::set_allocated_saxis(::CMsgVector* saxis) {
-  delete saxis_;
-  saxis_ = saxis;
-  if (saxis) {
-    set_has_saxis();
-  } else {
-    clear_has_saxis();
-  }
-  // @@protoc_insertion_point(field_set_allocated:CMsgTEBSPDecal.saxis)
-}
-
-// optional uint32 entity = 4;
-bool CMsgTEBSPDecal::has_entity() const {
-  return (_has_bits_[0] & 0x00000008u) != 0;
-}
-void CMsgTEBSPDecal::set_has_entity() {
-  _has_bits_[0] |= 0x00000008u;
-}
-void CMsgTEBSPDecal::clear_has_entity() {
-  _has_bits_[0] &= ~0x00000008u;
-}
-void CMsgTEBSPDecal::clear_entity() {
-  entity_ = 0u;
-  clear_has_entity();
-}
- ::google::protobuf::uint32 CMsgTEBSPDecal::entity() const {
-  // @@protoc_insertion_point(field_get:CMsgTEBSPDecal.entity)
-  return entity_;
-}
- void CMsgTEBSPDecal::set_entity(::google::protobuf::uint32 value) {
-  set_has_entity();
-  entity_ = value;
-  // @@protoc_insertion_point(field_set:CMsgTEBSPDecal.entity)
-}
-
-// optional uint32 index = 5;
-bool CMsgTEBSPDecal::has_index() const {
-  return (_has_bits_[0] & 0x00000010u) != 0;
-}
-void CMsgTEBSPDecal::set_has_index() {
-  _has_bits_[0] |= 0x00000010u;
-}
-void CMsgTEBSPDecal::clear_has_index() {
-  _has_bits_[0] &= ~0x00000010u;
-}
-void CMsgTEBSPDecal::clear_index() {
-  index_ = 0u;
-  clear_has_index();
-}
- ::google::protobuf::uint32 CMsgTEBSPDecal::index() const {
-  // @@protoc_insertion_point(field_get:CMsgTEBSPDecal.index)
-  return index_;
-}
- void CMsgTEBSPDecal::set_index(::google::protobuf::uint32 value) {
-  set_has_index();
-  index_ = value;
-  // @@protoc_insertion_point(field_set:CMsgTEBSPDecal.index)
-}
-
-#endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
 
 // ===================================================================
 
@@ -5754,7 +4307,7 @@ const int CMsgTEBubbles::kSpeedFieldNumber;
 #endif  // !_MSC_VER
 
 CMsgTEBubbles::CMsgTEBubbles()
-  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  : ::google::protobuf::Message() {
   SharedCtor();
   // @@protoc_insertion_point(constructor:CMsgTEBubbles)
 }
@@ -5765,8 +4318,7 @@ void CMsgTEBubbles::InitAsDefaultInstance() {
 }
 
 CMsgTEBubbles::CMsgTEBubbles(const CMsgTEBubbles& from)
-  : ::google::protobuf::Message(),
-    _internal_metadata_(NULL) {
+  : ::google::protobuf::Message() {
   SharedCtor();
   MergeFrom(from);
   // @@protoc_insertion_point(copy_constructor:CMsgTEBubbles)
@@ -5811,24 +4363,22 @@ const CMsgTEBubbles& CMsgTEBubbles::default_instance() {
 
 CMsgTEBubbles* CMsgTEBubbles::default_instance_ = NULL;
 
-CMsgTEBubbles* CMsgTEBubbles::New(::google::protobuf::Arena* arena) const {
-  CMsgTEBubbles* n = new CMsgTEBubbles;
-  if (arena != NULL) {
-    arena->Own(n);
-  }
-  return n;
+CMsgTEBubbles* CMsgTEBubbles::New() const {
+  return new CMsgTEBubbles;
 }
 
 void CMsgTEBubbles::Clear() {
-#define ZR_HELPER_(f) reinterpret_cast<char*>(\
-  &reinterpret_cast<CMsgTEBubbles*>(16)->f)
+#define OFFSET_OF_FIELD_(f) (reinterpret_cast<char*>(      \
+  &reinterpret_cast<CMsgTEBubbles*>(16)->f) - \
+   reinterpret_cast<char*>(16))
 
-#define ZR_(first, last) do {\
-  ::memset(&first, 0,\
-           ZR_HELPER_(last) - ZR_HELPER_(first) + sizeof(last));\
-} while (0)
+#define ZR_(first, last) do {                              \
+    size_t f = OFFSET_OF_FIELD_(first);                    \
+    size_t n = OFFSET_OF_FIELD_(last) - f + sizeof(last);  \
+    ::memset(&first, 0, n);                                \
+  } while (0)
 
-  if (_has_bits_[0 / 32] & 31u) {
+  if (_has_bits_[0 / 32] & 31) {
     ZR_(height_, speed_);
     if (has_mins()) {
       if (mins_ != NULL) mins_->::CMsgVector::Clear();
@@ -5838,13 +4388,11 @@ void CMsgTEBubbles::Clear() {
     }
   }
 
-#undef ZR_HELPER_
+#undef OFFSET_OF_FIELD_
 #undef ZR_
 
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
-  if (_internal_metadata_.have_unknown_fields()) {
-    mutable_unknown_fields()->Clear();
-  }
+  mutable_unknown_fields()->Clear();
 }
 
 bool CMsgTEBubbles::MergePartialFromCodedStream(
@@ -5955,13 +4503,13 @@ void CMsgTEBubbles::SerializeWithCachedSizes(
   // optional .CMsgVector mins = 1;
   if (has_mins()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      1, *this->mins_, output);
+      1, this->mins(), output);
   }
 
   // optional .CMsgVector maxs = 2;
   if (has_maxs()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      2, *this->maxs_, output);
+      2, this->maxs(), output);
   }
 
   // optional float height = 3;
@@ -5979,7 +4527,7 @@ void CMsgTEBubbles::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteFloat(5, this->speed(), output);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
   }
@@ -5993,14 +4541,14 @@ void CMsgTEBubbles::SerializeWithCachedSizes(
   if (has_mins()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
-        1, *this->mins_, target);
+        1, this->mins(), target);
   }
 
   // optional .CMsgVector maxs = 2;
   if (has_maxs()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
-        2, *this->maxs_, target);
+        2, this->maxs(), target);
   }
 
   // optional float height = 3;
@@ -6018,7 +4566,7 @@ void CMsgTEBubbles::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(5, this->speed(), target);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
   }
@@ -6029,19 +4577,19 @@ void CMsgTEBubbles::SerializeWithCachedSizes(
 int CMsgTEBubbles::ByteSize() const {
   int total_size = 0;
 
-  if (_has_bits_[0 / 32] & 31u) {
+  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     // optional .CMsgVector mins = 1;
     if (has_mins()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
-          *this->mins_);
+          this->mins());
     }
 
     // optional .CMsgVector maxs = 2;
     if (has_maxs()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
-          *this->maxs_);
+          this->maxs());
     }
 
     // optional float height = 3;
@@ -6062,7 +4610,7 @@ int CMsgTEBubbles::ByteSize() const {
     }
 
   }
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     total_size +=
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         unknown_fields());
@@ -6074,10 +4622,10 @@ int CMsgTEBubbles::ByteSize() const {
 }
 
 void CMsgTEBubbles::MergeFrom(const ::google::protobuf::Message& from) {
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
-  const CMsgTEBubbles* source = 
-      ::google::protobuf::internal::DynamicCastToGenerated<const CMsgTEBubbles>(
-          &from);
+  GOOGLE_CHECK_NE(&from, this);
+  const CMsgTEBubbles* source =
+    ::google::protobuf::internal::dynamic_cast_if_available<const CMsgTEBubbles*>(
+      &from);
   if (source == NULL) {
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
   } else {
@@ -6086,7 +4634,7 @@ void CMsgTEBubbles::MergeFrom(const ::google::protobuf::Message& from) {
 }
 
 void CMsgTEBubbles::MergeFrom(const CMsgTEBubbles& from) {
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  GOOGLE_CHECK_NE(&from, this);
   if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (from.has_mins()) {
       mutable_mins()->::CMsgVector::MergeFrom(from.mins());
@@ -6104,9 +4652,7 @@ void CMsgTEBubbles::MergeFrom(const CMsgTEBubbles& from) {
       set_speed(from.speed());
     }
   }
-  if (from._internal_metadata_.have_unknown_fields()) {
-    mutable_unknown_fields()->MergeFrom(from.unknown_fields());
-  }
+  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
 }
 
 void CMsgTEBubbles::CopyFrom(const ::google::protobuf::Message& from) {
@@ -6127,18 +4673,16 @@ bool CMsgTEBubbles::IsInitialized() const {
 }
 
 void CMsgTEBubbles::Swap(CMsgTEBubbles* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
-void CMsgTEBubbles::InternalSwap(CMsgTEBubbles* other) {
-  std::swap(mins_, other->mins_);
-  std::swap(maxs_, other->maxs_);
-  std::swap(height_, other->height_);
-  std::swap(count_, other->count_);
-  std::swap(speed_, other->speed_);
-  std::swap(_has_bits_[0], other->_has_bits_[0]);
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  std::swap(_cached_size_, other->_cached_size_);
+  if (other != this) {
+    std::swap(mins_, other->mins_);
+    std::swap(maxs_, other->maxs_);
+    std::swap(height_, other->height_);
+    std::swap(count_, other->count_);
+    std::swap(speed_, other->speed_);
+    std::swap(_has_bits_[0], other->_has_bits_[0]);
+    _unknown_fields_.Swap(&other->_unknown_fields_);
+    std::swap(_cached_size_, other->_cached_size_);
+  }
 }
 
 ::google::protobuf::Metadata CMsgTEBubbles::GetMetadata() const {
@@ -6149,168 +4693,6 @@ void CMsgTEBubbles::InternalSwap(CMsgTEBubbles* other) {
   return metadata;
 }
 
-#if PROTOBUF_INLINE_NOT_IN_HEADERS
-// CMsgTEBubbles
-
-// optional .CMsgVector mins = 1;
-bool CMsgTEBubbles::has_mins() const {
-  return (_has_bits_[0] & 0x00000001u) != 0;
-}
-void CMsgTEBubbles::set_has_mins() {
-  _has_bits_[0] |= 0x00000001u;
-}
-void CMsgTEBubbles::clear_has_mins() {
-  _has_bits_[0] &= ~0x00000001u;
-}
-void CMsgTEBubbles::clear_mins() {
-  if (mins_ != NULL) mins_->::CMsgVector::Clear();
-  clear_has_mins();
-}
-const ::CMsgVector& CMsgTEBubbles::mins() const {
-  // @@protoc_insertion_point(field_get:CMsgTEBubbles.mins)
-  return mins_ != NULL ? *mins_ : *default_instance_->mins_;
-}
-::CMsgVector* CMsgTEBubbles::mutable_mins() {
-  set_has_mins();
-  if (mins_ == NULL) {
-    mins_ = new ::CMsgVector;
-  }
-  // @@protoc_insertion_point(field_mutable:CMsgTEBubbles.mins)
-  return mins_;
-}
-::CMsgVector* CMsgTEBubbles::release_mins() {
-  clear_has_mins();
-  ::CMsgVector* temp = mins_;
-  mins_ = NULL;
-  return temp;
-}
-void CMsgTEBubbles::set_allocated_mins(::CMsgVector* mins) {
-  delete mins_;
-  mins_ = mins;
-  if (mins) {
-    set_has_mins();
-  } else {
-    clear_has_mins();
-  }
-  // @@protoc_insertion_point(field_set_allocated:CMsgTEBubbles.mins)
-}
-
-// optional .CMsgVector maxs = 2;
-bool CMsgTEBubbles::has_maxs() const {
-  return (_has_bits_[0] & 0x00000002u) != 0;
-}
-void CMsgTEBubbles::set_has_maxs() {
-  _has_bits_[0] |= 0x00000002u;
-}
-void CMsgTEBubbles::clear_has_maxs() {
-  _has_bits_[0] &= ~0x00000002u;
-}
-void CMsgTEBubbles::clear_maxs() {
-  if (maxs_ != NULL) maxs_->::CMsgVector::Clear();
-  clear_has_maxs();
-}
-const ::CMsgVector& CMsgTEBubbles::maxs() const {
-  // @@protoc_insertion_point(field_get:CMsgTEBubbles.maxs)
-  return maxs_ != NULL ? *maxs_ : *default_instance_->maxs_;
-}
-::CMsgVector* CMsgTEBubbles::mutable_maxs() {
-  set_has_maxs();
-  if (maxs_ == NULL) {
-    maxs_ = new ::CMsgVector;
-  }
-  // @@protoc_insertion_point(field_mutable:CMsgTEBubbles.maxs)
-  return maxs_;
-}
-::CMsgVector* CMsgTEBubbles::release_maxs() {
-  clear_has_maxs();
-  ::CMsgVector* temp = maxs_;
-  maxs_ = NULL;
-  return temp;
-}
-void CMsgTEBubbles::set_allocated_maxs(::CMsgVector* maxs) {
-  delete maxs_;
-  maxs_ = maxs;
-  if (maxs) {
-    set_has_maxs();
-  } else {
-    clear_has_maxs();
-  }
-  // @@protoc_insertion_point(field_set_allocated:CMsgTEBubbles.maxs)
-}
-
-// optional float height = 3;
-bool CMsgTEBubbles::has_height() const {
-  return (_has_bits_[0] & 0x00000004u) != 0;
-}
-void CMsgTEBubbles::set_has_height() {
-  _has_bits_[0] |= 0x00000004u;
-}
-void CMsgTEBubbles::clear_has_height() {
-  _has_bits_[0] &= ~0x00000004u;
-}
-void CMsgTEBubbles::clear_height() {
-  height_ = 0;
-  clear_has_height();
-}
- float CMsgTEBubbles::height() const {
-  // @@protoc_insertion_point(field_get:CMsgTEBubbles.height)
-  return height_;
-}
- void CMsgTEBubbles::set_height(float value) {
-  set_has_height();
-  height_ = value;
-  // @@protoc_insertion_point(field_set:CMsgTEBubbles.height)
-}
-
-// optional uint32 count = 4;
-bool CMsgTEBubbles::has_count() const {
-  return (_has_bits_[0] & 0x00000008u) != 0;
-}
-void CMsgTEBubbles::set_has_count() {
-  _has_bits_[0] |= 0x00000008u;
-}
-void CMsgTEBubbles::clear_has_count() {
-  _has_bits_[0] &= ~0x00000008u;
-}
-void CMsgTEBubbles::clear_count() {
-  count_ = 0u;
-  clear_has_count();
-}
- ::google::protobuf::uint32 CMsgTEBubbles::count() const {
-  // @@protoc_insertion_point(field_get:CMsgTEBubbles.count)
-  return count_;
-}
- void CMsgTEBubbles::set_count(::google::protobuf::uint32 value) {
-  set_has_count();
-  count_ = value;
-  // @@protoc_insertion_point(field_set:CMsgTEBubbles.count)
-}
-
-// optional float speed = 5;
-bool CMsgTEBubbles::has_speed() const {
-  return (_has_bits_[0] & 0x00000010u) != 0;
-}
-void CMsgTEBubbles::set_has_speed() {
-  _has_bits_[0] |= 0x00000010u;
-}
-void CMsgTEBubbles::clear_has_speed() {
-  _has_bits_[0] &= ~0x00000010u;
-}
-void CMsgTEBubbles::clear_speed() {
-  speed_ = 0;
-  clear_has_speed();
-}
- float CMsgTEBubbles::speed() const {
-  // @@protoc_insertion_point(field_get:CMsgTEBubbles.speed)
-  return speed_;
-}
- void CMsgTEBubbles::set_speed(float value) {
-  set_has_speed();
-  speed_ = value;
-  // @@protoc_insertion_point(field_set:CMsgTEBubbles.speed)
-}
-
-#endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
 
 // ===================================================================
 
@@ -6323,7 +4705,7 @@ const int CMsgTEBubbleTrail::kSpeedFieldNumber;
 #endif  // !_MSC_VER
 
 CMsgTEBubbleTrail::CMsgTEBubbleTrail()
-  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  : ::google::protobuf::Message() {
   SharedCtor();
   // @@protoc_insertion_point(constructor:CMsgTEBubbleTrail)
 }
@@ -6334,8 +4716,7 @@ void CMsgTEBubbleTrail::InitAsDefaultInstance() {
 }
 
 CMsgTEBubbleTrail::CMsgTEBubbleTrail(const CMsgTEBubbleTrail& from)
-  : ::google::protobuf::Message(),
-    _internal_metadata_(NULL) {
+  : ::google::protobuf::Message() {
   SharedCtor();
   MergeFrom(from);
   // @@protoc_insertion_point(copy_constructor:CMsgTEBubbleTrail)
@@ -6380,24 +4761,22 @@ const CMsgTEBubbleTrail& CMsgTEBubbleTrail::default_instance() {
 
 CMsgTEBubbleTrail* CMsgTEBubbleTrail::default_instance_ = NULL;
 
-CMsgTEBubbleTrail* CMsgTEBubbleTrail::New(::google::protobuf::Arena* arena) const {
-  CMsgTEBubbleTrail* n = new CMsgTEBubbleTrail;
-  if (arena != NULL) {
-    arena->Own(n);
-  }
-  return n;
+CMsgTEBubbleTrail* CMsgTEBubbleTrail::New() const {
+  return new CMsgTEBubbleTrail;
 }
 
 void CMsgTEBubbleTrail::Clear() {
-#define ZR_HELPER_(f) reinterpret_cast<char*>(\
-  &reinterpret_cast<CMsgTEBubbleTrail*>(16)->f)
+#define OFFSET_OF_FIELD_(f) (reinterpret_cast<char*>(      \
+  &reinterpret_cast<CMsgTEBubbleTrail*>(16)->f) - \
+   reinterpret_cast<char*>(16))
 
-#define ZR_(first, last) do {\
-  ::memset(&first, 0,\
-           ZR_HELPER_(last) - ZR_HELPER_(first) + sizeof(last));\
-} while (0)
+#define ZR_(first, last) do {                              \
+    size_t f = OFFSET_OF_FIELD_(first);                    \
+    size_t n = OFFSET_OF_FIELD_(last) - f + sizeof(last);  \
+    ::memset(&first, 0, n);                                \
+  } while (0)
 
-  if (_has_bits_[0 / 32] & 31u) {
+  if (_has_bits_[0 / 32] & 31) {
     ZR_(waterz_, speed_);
     if (has_mins()) {
       if (mins_ != NULL) mins_->::CMsgVector::Clear();
@@ -6407,13 +4786,11 @@ void CMsgTEBubbleTrail::Clear() {
     }
   }
 
-#undef ZR_HELPER_
+#undef OFFSET_OF_FIELD_
 #undef ZR_
 
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
-  if (_internal_metadata_.have_unknown_fields()) {
-    mutable_unknown_fields()->Clear();
-  }
+  mutable_unknown_fields()->Clear();
 }
 
 bool CMsgTEBubbleTrail::MergePartialFromCodedStream(
@@ -6524,13 +4901,13 @@ void CMsgTEBubbleTrail::SerializeWithCachedSizes(
   // optional .CMsgVector mins = 1;
   if (has_mins()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      1, *this->mins_, output);
+      1, this->mins(), output);
   }
 
   // optional .CMsgVector maxs = 2;
   if (has_maxs()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      2, *this->maxs_, output);
+      2, this->maxs(), output);
   }
 
   // optional float waterz = 3;
@@ -6548,7 +4925,7 @@ void CMsgTEBubbleTrail::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteFloat(5, this->speed(), output);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
   }
@@ -6562,14 +4939,14 @@ void CMsgTEBubbleTrail::SerializeWithCachedSizes(
   if (has_mins()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
-        1, *this->mins_, target);
+        1, this->mins(), target);
   }
 
   // optional .CMsgVector maxs = 2;
   if (has_maxs()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
-        2, *this->maxs_, target);
+        2, this->maxs(), target);
   }
 
   // optional float waterz = 3;
@@ -6587,7 +4964,7 @@ void CMsgTEBubbleTrail::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(5, this->speed(), target);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
   }
@@ -6598,19 +4975,19 @@ void CMsgTEBubbleTrail::SerializeWithCachedSizes(
 int CMsgTEBubbleTrail::ByteSize() const {
   int total_size = 0;
 
-  if (_has_bits_[0 / 32] & 31u) {
+  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     // optional .CMsgVector mins = 1;
     if (has_mins()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
-          *this->mins_);
+          this->mins());
     }
 
     // optional .CMsgVector maxs = 2;
     if (has_maxs()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
-          *this->maxs_);
+          this->maxs());
     }
 
     // optional float waterz = 3;
@@ -6631,7 +5008,7 @@ int CMsgTEBubbleTrail::ByteSize() const {
     }
 
   }
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     total_size +=
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         unknown_fields());
@@ -6643,10 +5020,10 @@ int CMsgTEBubbleTrail::ByteSize() const {
 }
 
 void CMsgTEBubbleTrail::MergeFrom(const ::google::protobuf::Message& from) {
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
-  const CMsgTEBubbleTrail* source = 
-      ::google::protobuf::internal::DynamicCastToGenerated<const CMsgTEBubbleTrail>(
-          &from);
+  GOOGLE_CHECK_NE(&from, this);
+  const CMsgTEBubbleTrail* source =
+    ::google::protobuf::internal::dynamic_cast_if_available<const CMsgTEBubbleTrail*>(
+      &from);
   if (source == NULL) {
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
   } else {
@@ -6655,7 +5032,7 @@ void CMsgTEBubbleTrail::MergeFrom(const ::google::protobuf::Message& from) {
 }
 
 void CMsgTEBubbleTrail::MergeFrom(const CMsgTEBubbleTrail& from) {
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  GOOGLE_CHECK_NE(&from, this);
   if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (from.has_mins()) {
       mutable_mins()->::CMsgVector::MergeFrom(from.mins());
@@ -6673,9 +5050,7 @@ void CMsgTEBubbleTrail::MergeFrom(const CMsgTEBubbleTrail& from) {
       set_speed(from.speed());
     }
   }
-  if (from._internal_metadata_.have_unknown_fields()) {
-    mutable_unknown_fields()->MergeFrom(from.unknown_fields());
-  }
+  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
 }
 
 void CMsgTEBubbleTrail::CopyFrom(const ::google::protobuf::Message& from) {
@@ -6696,18 +5071,16 @@ bool CMsgTEBubbleTrail::IsInitialized() const {
 }
 
 void CMsgTEBubbleTrail::Swap(CMsgTEBubbleTrail* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
-void CMsgTEBubbleTrail::InternalSwap(CMsgTEBubbleTrail* other) {
-  std::swap(mins_, other->mins_);
-  std::swap(maxs_, other->maxs_);
-  std::swap(waterz_, other->waterz_);
-  std::swap(count_, other->count_);
-  std::swap(speed_, other->speed_);
-  std::swap(_has_bits_[0], other->_has_bits_[0]);
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  std::swap(_cached_size_, other->_cached_size_);
+  if (other != this) {
+    std::swap(mins_, other->mins_);
+    std::swap(maxs_, other->maxs_);
+    std::swap(waterz_, other->waterz_);
+    std::swap(count_, other->count_);
+    std::swap(speed_, other->speed_);
+    std::swap(_has_bits_[0], other->_has_bits_[0]);
+    _unknown_fields_.Swap(&other->_unknown_fields_);
+    std::swap(_cached_size_, other->_cached_size_);
+  }
 }
 
 ::google::protobuf::Metadata CMsgTEBubbleTrail::GetMetadata() const {
@@ -6718,168 +5091,6 @@ void CMsgTEBubbleTrail::InternalSwap(CMsgTEBubbleTrail* other) {
   return metadata;
 }
 
-#if PROTOBUF_INLINE_NOT_IN_HEADERS
-// CMsgTEBubbleTrail
-
-// optional .CMsgVector mins = 1;
-bool CMsgTEBubbleTrail::has_mins() const {
-  return (_has_bits_[0] & 0x00000001u) != 0;
-}
-void CMsgTEBubbleTrail::set_has_mins() {
-  _has_bits_[0] |= 0x00000001u;
-}
-void CMsgTEBubbleTrail::clear_has_mins() {
-  _has_bits_[0] &= ~0x00000001u;
-}
-void CMsgTEBubbleTrail::clear_mins() {
-  if (mins_ != NULL) mins_->::CMsgVector::Clear();
-  clear_has_mins();
-}
-const ::CMsgVector& CMsgTEBubbleTrail::mins() const {
-  // @@protoc_insertion_point(field_get:CMsgTEBubbleTrail.mins)
-  return mins_ != NULL ? *mins_ : *default_instance_->mins_;
-}
-::CMsgVector* CMsgTEBubbleTrail::mutable_mins() {
-  set_has_mins();
-  if (mins_ == NULL) {
-    mins_ = new ::CMsgVector;
-  }
-  // @@protoc_insertion_point(field_mutable:CMsgTEBubbleTrail.mins)
-  return mins_;
-}
-::CMsgVector* CMsgTEBubbleTrail::release_mins() {
-  clear_has_mins();
-  ::CMsgVector* temp = mins_;
-  mins_ = NULL;
-  return temp;
-}
-void CMsgTEBubbleTrail::set_allocated_mins(::CMsgVector* mins) {
-  delete mins_;
-  mins_ = mins;
-  if (mins) {
-    set_has_mins();
-  } else {
-    clear_has_mins();
-  }
-  // @@protoc_insertion_point(field_set_allocated:CMsgTEBubbleTrail.mins)
-}
-
-// optional .CMsgVector maxs = 2;
-bool CMsgTEBubbleTrail::has_maxs() const {
-  return (_has_bits_[0] & 0x00000002u) != 0;
-}
-void CMsgTEBubbleTrail::set_has_maxs() {
-  _has_bits_[0] |= 0x00000002u;
-}
-void CMsgTEBubbleTrail::clear_has_maxs() {
-  _has_bits_[0] &= ~0x00000002u;
-}
-void CMsgTEBubbleTrail::clear_maxs() {
-  if (maxs_ != NULL) maxs_->::CMsgVector::Clear();
-  clear_has_maxs();
-}
-const ::CMsgVector& CMsgTEBubbleTrail::maxs() const {
-  // @@protoc_insertion_point(field_get:CMsgTEBubbleTrail.maxs)
-  return maxs_ != NULL ? *maxs_ : *default_instance_->maxs_;
-}
-::CMsgVector* CMsgTEBubbleTrail::mutable_maxs() {
-  set_has_maxs();
-  if (maxs_ == NULL) {
-    maxs_ = new ::CMsgVector;
-  }
-  // @@protoc_insertion_point(field_mutable:CMsgTEBubbleTrail.maxs)
-  return maxs_;
-}
-::CMsgVector* CMsgTEBubbleTrail::release_maxs() {
-  clear_has_maxs();
-  ::CMsgVector* temp = maxs_;
-  maxs_ = NULL;
-  return temp;
-}
-void CMsgTEBubbleTrail::set_allocated_maxs(::CMsgVector* maxs) {
-  delete maxs_;
-  maxs_ = maxs;
-  if (maxs) {
-    set_has_maxs();
-  } else {
-    clear_has_maxs();
-  }
-  // @@protoc_insertion_point(field_set_allocated:CMsgTEBubbleTrail.maxs)
-}
-
-// optional float waterz = 3;
-bool CMsgTEBubbleTrail::has_waterz() const {
-  return (_has_bits_[0] & 0x00000004u) != 0;
-}
-void CMsgTEBubbleTrail::set_has_waterz() {
-  _has_bits_[0] |= 0x00000004u;
-}
-void CMsgTEBubbleTrail::clear_has_waterz() {
-  _has_bits_[0] &= ~0x00000004u;
-}
-void CMsgTEBubbleTrail::clear_waterz() {
-  waterz_ = 0;
-  clear_has_waterz();
-}
- float CMsgTEBubbleTrail::waterz() const {
-  // @@protoc_insertion_point(field_get:CMsgTEBubbleTrail.waterz)
-  return waterz_;
-}
- void CMsgTEBubbleTrail::set_waterz(float value) {
-  set_has_waterz();
-  waterz_ = value;
-  // @@protoc_insertion_point(field_set:CMsgTEBubbleTrail.waterz)
-}
-
-// optional uint32 count = 4;
-bool CMsgTEBubbleTrail::has_count() const {
-  return (_has_bits_[0] & 0x00000008u) != 0;
-}
-void CMsgTEBubbleTrail::set_has_count() {
-  _has_bits_[0] |= 0x00000008u;
-}
-void CMsgTEBubbleTrail::clear_has_count() {
-  _has_bits_[0] &= ~0x00000008u;
-}
-void CMsgTEBubbleTrail::clear_count() {
-  count_ = 0u;
-  clear_has_count();
-}
- ::google::protobuf::uint32 CMsgTEBubbleTrail::count() const {
-  // @@protoc_insertion_point(field_get:CMsgTEBubbleTrail.count)
-  return count_;
-}
- void CMsgTEBubbleTrail::set_count(::google::protobuf::uint32 value) {
-  set_has_count();
-  count_ = value;
-  // @@protoc_insertion_point(field_set:CMsgTEBubbleTrail.count)
-}
-
-// optional float speed = 5;
-bool CMsgTEBubbleTrail::has_speed() const {
-  return (_has_bits_[0] & 0x00000010u) != 0;
-}
-void CMsgTEBubbleTrail::set_has_speed() {
-  _has_bits_[0] |= 0x00000010u;
-}
-void CMsgTEBubbleTrail::clear_has_speed() {
-  _has_bits_[0] &= ~0x00000010u;
-}
-void CMsgTEBubbleTrail::clear_speed() {
-  speed_ = 0;
-  clear_has_speed();
-}
- float CMsgTEBubbleTrail::speed() const {
-  // @@protoc_insertion_point(field_get:CMsgTEBubbleTrail.speed)
-  return speed_;
-}
- void CMsgTEBubbleTrail::set_speed(float value) {
-  set_has_speed();
-  speed_ = value;
-  // @@protoc_insertion_point(field_set:CMsgTEBubbleTrail.speed)
-}
-
-#endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
 
 // ===================================================================
 
@@ -6892,7 +5103,7 @@ const int CMsgTEDecal::kIndexFieldNumber;
 #endif  // !_MSC_VER
 
 CMsgTEDecal::CMsgTEDecal()
-  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  : ::google::protobuf::Message() {
   SharedCtor();
   // @@protoc_insertion_point(constructor:CMsgTEDecal)
 }
@@ -6903,8 +5114,7 @@ void CMsgTEDecal::InitAsDefaultInstance() {
 }
 
 CMsgTEDecal::CMsgTEDecal(const CMsgTEDecal& from)
-  : ::google::protobuf::Message(),
-    _internal_metadata_(NULL) {
+  : ::google::protobuf::Message() {
   SharedCtor();
   MergeFrom(from);
   // @@protoc_insertion_point(copy_constructor:CMsgTEDecal)
@@ -6949,24 +5159,22 @@ const CMsgTEDecal& CMsgTEDecal::default_instance() {
 
 CMsgTEDecal* CMsgTEDecal::default_instance_ = NULL;
 
-CMsgTEDecal* CMsgTEDecal::New(::google::protobuf::Arena* arena) const {
-  CMsgTEDecal* n = new CMsgTEDecal;
-  if (arena != NULL) {
-    arena->Own(n);
-  }
-  return n;
+CMsgTEDecal* CMsgTEDecal::New() const {
+  return new CMsgTEDecal;
 }
 
 void CMsgTEDecal::Clear() {
-#define ZR_HELPER_(f) reinterpret_cast<char*>(\
-  &reinterpret_cast<CMsgTEDecal*>(16)->f)
+#define OFFSET_OF_FIELD_(f) (reinterpret_cast<char*>(      \
+  &reinterpret_cast<CMsgTEDecal*>(16)->f) - \
+   reinterpret_cast<char*>(16))
 
-#define ZR_(first, last) do {\
-  ::memset(&first, 0,\
-           ZR_HELPER_(last) - ZR_HELPER_(first) + sizeof(last));\
-} while (0)
+#define ZR_(first, last) do {                              \
+    size_t f = OFFSET_OF_FIELD_(first);                    \
+    size_t n = OFFSET_OF_FIELD_(last) - f + sizeof(last);  \
+    ::memset(&first, 0, n);                                \
+  } while (0)
 
-  if (_has_bits_[0 / 32] & 31u) {
+  if (_has_bits_[0 / 32] & 31) {
     ZR_(entity_, index_);
     if (has_origin()) {
       if (origin_ != NULL) origin_->::CMsgVector::Clear();
@@ -6976,13 +5184,11 @@ void CMsgTEDecal::Clear() {
     }
   }
 
-#undef ZR_HELPER_
+#undef OFFSET_OF_FIELD_
 #undef ZR_
 
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
-  if (_internal_metadata_.have_unknown_fields()) {
-    mutable_unknown_fields()->Clear();
-  }
+  mutable_unknown_fields()->Clear();
 }
 
 bool CMsgTEDecal::MergePartialFromCodedStream(
@@ -7093,13 +5299,13 @@ void CMsgTEDecal::SerializeWithCachedSizes(
   // optional .CMsgVector origin = 1;
   if (has_origin()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      1, *this->origin_, output);
+      1, this->origin(), output);
   }
 
   // optional .CMsgVector start = 2;
   if (has_start()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      2, *this->start_, output);
+      2, this->start(), output);
   }
 
   // optional uint32 entity = 3;
@@ -7117,7 +5323,7 @@ void CMsgTEDecal::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteUInt32(5, this->index(), output);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
   }
@@ -7131,14 +5337,14 @@ void CMsgTEDecal::SerializeWithCachedSizes(
   if (has_origin()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
-        1, *this->origin_, target);
+        1, this->origin(), target);
   }
 
   // optional .CMsgVector start = 2;
   if (has_start()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
-        2, *this->start_, target);
+        2, this->start(), target);
   }
 
   // optional uint32 entity = 3;
@@ -7156,7 +5362,7 @@ void CMsgTEDecal::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(5, this->index(), target);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
   }
@@ -7167,19 +5373,19 @@ void CMsgTEDecal::SerializeWithCachedSizes(
 int CMsgTEDecal::ByteSize() const {
   int total_size = 0;
 
-  if (_has_bits_[0 / 32] & 31u) {
+  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     // optional .CMsgVector origin = 1;
     if (has_origin()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
-          *this->origin_);
+          this->origin());
     }
 
     // optional .CMsgVector start = 2;
     if (has_start()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
-          *this->start_);
+          this->start());
     }
 
     // optional uint32 entity = 3;
@@ -7204,7 +5410,7 @@ int CMsgTEDecal::ByteSize() const {
     }
 
   }
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     total_size +=
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         unknown_fields());
@@ -7216,10 +5422,10 @@ int CMsgTEDecal::ByteSize() const {
 }
 
 void CMsgTEDecal::MergeFrom(const ::google::protobuf::Message& from) {
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
-  const CMsgTEDecal* source = 
-      ::google::protobuf::internal::DynamicCastToGenerated<const CMsgTEDecal>(
-          &from);
+  GOOGLE_CHECK_NE(&from, this);
+  const CMsgTEDecal* source =
+    ::google::protobuf::internal::dynamic_cast_if_available<const CMsgTEDecal*>(
+      &from);
   if (source == NULL) {
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
   } else {
@@ -7228,7 +5434,7 @@ void CMsgTEDecal::MergeFrom(const ::google::protobuf::Message& from) {
 }
 
 void CMsgTEDecal::MergeFrom(const CMsgTEDecal& from) {
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  GOOGLE_CHECK_NE(&from, this);
   if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (from.has_origin()) {
       mutable_origin()->::CMsgVector::MergeFrom(from.origin());
@@ -7246,9 +5452,7 @@ void CMsgTEDecal::MergeFrom(const CMsgTEDecal& from) {
       set_index(from.index());
     }
   }
-  if (from._internal_metadata_.have_unknown_fields()) {
-    mutable_unknown_fields()->MergeFrom(from.unknown_fields());
-  }
+  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
 }
 
 void CMsgTEDecal::CopyFrom(const ::google::protobuf::Message& from) {
@@ -7269,18 +5473,16 @@ bool CMsgTEDecal::IsInitialized() const {
 }
 
 void CMsgTEDecal::Swap(CMsgTEDecal* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
-void CMsgTEDecal::InternalSwap(CMsgTEDecal* other) {
-  std::swap(origin_, other->origin_);
-  std::swap(start_, other->start_);
-  std::swap(entity_, other->entity_);
-  std::swap(hitbox_, other->hitbox_);
-  std::swap(index_, other->index_);
-  std::swap(_has_bits_[0], other->_has_bits_[0]);
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  std::swap(_cached_size_, other->_cached_size_);
+  if (other != this) {
+    std::swap(origin_, other->origin_);
+    std::swap(start_, other->start_);
+    std::swap(entity_, other->entity_);
+    std::swap(hitbox_, other->hitbox_);
+    std::swap(index_, other->index_);
+    std::swap(_has_bits_[0], other->_has_bits_[0]);
+    _unknown_fields_.Swap(&other->_unknown_fields_);
+    std::swap(_cached_size_, other->_cached_size_);
+  }
 }
 
 ::google::protobuf::Metadata CMsgTEDecal::GetMetadata() const {
@@ -7291,168 +5493,6 @@ void CMsgTEDecal::InternalSwap(CMsgTEDecal* other) {
   return metadata;
 }
 
-#if PROTOBUF_INLINE_NOT_IN_HEADERS
-// CMsgTEDecal
-
-// optional .CMsgVector origin = 1;
-bool CMsgTEDecal::has_origin() const {
-  return (_has_bits_[0] & 0x00000001u) != 0;
-}
-void CMsgTEDecal::set_has_origin() {
-  _has_bits_[0] |= 0x00000001u;
-}
-void CMsgTEDecal::clear_has_origin() {
-  _has_bits_[0] &= ~0x00000001u;
-}
-void CMsgTEDecal::clear_origin() {
-  if (origin_ != NULL) origin_->::CMsgVector::Clear();
-  clear_has_origin();
-}
-const ::CMsgVector& CMsgTEDecal::origin() const {
-  // @@protoc_insertion_point(field_get:CMsgTEDecal.origin)
-  return origin_ != NULL ? *origin_ : *default_instance_->origin_;
-}
-::CMsgVector* CMsgTEDecal::mutable_origin() {
-  set_has_origin();
-  if (origin_ == NULL) {
-    origin_ = new ::CMsgVector;
-  }
-  // @@protoc_insertion_point(field_mutable:CMsgTEDecal.origin)
-  return origin_;
-}
-::CMsgVector* CMsgTEDecal::release_origin() {
-  clear_has_origin();
-  ::CMsgVector* temp = origin_;
-  origin_ = NULL;
-  return temp;
-}
-void CMsgTEDecal::set_allocated_origin(::CMsgVector* origin) {
-  delete origin_;
-  origin_ = origin;
-  if (origin) {
-    set_has_origin();
-  } else {
-    clear_has_origin();
-  }
-  // @@protoc_insertion_point(field_set_allocated:CMsgTEDecal.origin)
-}
-
-// optional .CMsgVector start = 2;
-bool CMsgTEDecal::has_start() const {
-  return (_has_bits_[0] & 0x00000002u) != 0;
-}
-void CMsgTEDecal::set_has_start() {
-  _has_bits_[0] |= 0x00000002u;
-}
-void CMsgTEDecal::clear_has_start() {
-  _has_bits_[0] &= ~0x00000002u;
-}
-void CMsgTEDecal::clear_start() {
-  if (start_ != NULL) start_->::CMsgVector::Clear();
-  clear_has_start();
-}
-const ::CMsgVector& CMsgTEDecal::start() const {
-  // @@protoc_insertion_point(field_get:CMsgTEDecal.start)
-  return start_ != NULL ? *start_ : *default_instance_->start_;
-}
-::CMsgVector* CMsgTEDecal::mutable_start() {
-  set_has_start();
-  if (start_ == NULL) {
-    start_ = new ::CMsgVector;
-  }
-  // @@protoc_insertion_point(field_mutable:CMsgTEDecal.start)
-  return start_;
-}
-::CMsgVector* CMsgTEDecal::release_start() {
-  clear_has_start();
-  ::CMsgVector* temp = start_;
-  start_ = NULL;
-  return temp;
-}
-void CMsgTEDecal::set_allocated_start(::CMsgVector* start) {
-  delete start_;
-  start_ = start;
-  if (start) {
-    set_has_start();
-  } else {
-    clear_has_start();
-  }
-  // @@protoc_insertion_point(field_set_allocated:CMsgTEDecal.start)
-}
-
-// optional uint32 entity = 3;
-bool CMsgTEDecal::has_entity() const {
-  return (_has_bits_[0] & 0x00000004u) != 0;
-}
-void CMsgTEDecal::set_has_entity() {
-  _has_bits_[0] |= 0x00000004u;
-}
-void CMsgTEDecal::clear_has_entity() {
-  _has_bits_[0] &= ~0x00000004u;
-}
-void CMsgTEDecal::clear_entity() {
-  entity_ = 0u;
-  clear_has_entity();
-}
- ::google::protobuf::uint32 CMsgTEDecal::entity() const {
-  // @@protoc_insertion_point(field_get:CMsgTEDecal.entity)
-  return entity_;
-}
- void CMsgTEDecal::set_entity(::google::protobuf::uint32 value) {
-  set_has_entity();
-  entity_ = value;
-  // @@protoc_insertion_point(field_set:CMsgTEDecal.entity)
-}
-
-// optional uint32 hitbox = 4;
-bool CMsgTEDecal::has_hitbox() const {
-  return (_has_bits_[0] & 0x00000008u) != 0;
-}
-void CMsgTEDecal::set_has_hitbox() {
-  _has_bits_[0] |= 0x00000008u;
-}
-void CMsgTEDecal::clear_has_hitbox() {
-  _has_bits_[0] &= ~0x00000008u;
-}
-void CMsgTEDecal::clear_hitbox() {
-  hitbox_ = 0u;
-  clear_has_hitbox();
-}
- ::google::protobuf::uint32 CMsgTEDecal::hitbox() const {
-  // @@protoc_insertion_point(field_get:CMsgTEDecal.hitbox)
-  return hitbox_;
-}
- void CMsgTEDecal::set_hitbox(::google::protobuf::uint32 value) {
-  set_has_hitbox();
-  hitbox_ = value;
-  // @@protoc_insertion_point(field_set:CMsgTEDecal.hitbox)
-}
-
-// optional uint32 index = 5;
-bool CMsgTEDecal::has_index() const {
-  return (_has_bits_[0] & 0x00000010u) != 0;
-}
-void CMsgTEDecal::set_has_index() {
-  _has_bits_[0] |= 0x00000010u;
-}
-void CMsgTEDecal::clear_has_index() {
-  _has_bits_[0] &= ~0x00000010u;
-}
-void CMsgTEDecal::clear_index() {
-  index_ = 0u;
-  clear_has_index();
-}
- ::google::protobuf::uint32 CMsgTEDecal::index() const {
-  // @@protoc_insertion_point(field_get:CMsgTEDecal.index)
-  return index_;
-}
- void CMsgTEDecal::set_index(::google::protobuf::uint32 value) {
-  set_has_index();
-  index_ = value;
-  // @@protoc_insertion_point(field_set:CMsgTEDecal.index)
-}
-
-#endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
 
 // ===================================================================
 
@@ -7479,7 +5519,7 @@ const int CMsgEffectData::kAttachmentnameFieldNumber;
 #endif  // !_MSC_VER
 
 CMsgEffectData::CMsgEffectData()
-  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  : ::google::protobuf::Message() {
   SharedCtor();
   // @@protoc_insertion_point(constructor:CMsgEffectData)
 }
@@ -7492,8 +5532,7 @@ void CMsgEffectData::InitAsDefaultInstance() {
 }
 
 CMsgEffectData::CMsgEffectData(const CMsgEffectData& from)
-  : ::google::protobuf::Message(),
-    _internal_metadata_(NULL) {
+  : ::google::protobuf::Message() {
   SharedCtor();
   MergeFrom(from);
   // @@protoc_insertion_point(copy_constructor:CMsgEffectData)
@@ -7554,24 +5593,22 @@ const CMsgEffectData& CMsgEffectData::default_instance() {
 
 CMsgEffectData* CMsgEffectData::default_instance_ = NULL;
 
-CMsgEffectData* CMsgEffectData::New(::google::protobuf::Arena* arena) const {
-  CMsgEffectData* n = new CMsgEffectData;
-  if (arena != NULL) {
-    arena->Own(n);
-  }
-  return n;
+CMsgEffectData* CMsgEffectData::New() const {
+  return new CMsgEffectData;
 }
 
 void CMsgEffectData::Clear() {
-#define ZR_HELPER_(f) reinterpret_cast<char*>(\
-  &reinterpret_cast<CMsgEffectData*>(16)->f)
+#define OFFSET_OF_FIELD_(f) (reinterpret_cast<char*>(      \
+  &reinterpret_cast<CMsgEffectData*>(16)->f) - \
+   reinterpret_cast<char*>(16))
 
-#define ZR_(first, last) do {\
-  ::memset(&first, 0,\
-           ZR_HELPER_(last) - ZR_HELPER_(first) + sizeof(last));\
-} while (0)
+#define ZR_(first, last) do {                              \
+    size_t f = OFFSET_OF_FIELD_(first);                    \
+    size_t n = OFFSET_OF_FIELD_(last) - f + sizeof(last);  \
+    ::memset(&first, 0, n);                                \
+  } while (0)
 
-  if (_has_bits_[0 / 32] & 255u) {
+  if (_has_bits_[0 / 32] & 255) {
     ZR_(entity_, magnitude_);
     if (has_origin()) {
       if (origin_ != NULL) origin_->::CMsgVector::Clear();
@@ -7586,18 +5623,16 @@ void CMsgEffectData::Clear() {
       if (angles_ != NULL) angles_->::CMsgQAngle::Clear();
     }
   }
-  if (_has_bits_[8 / 32] & 65280u) {
+  if (_has_bits_[8 / 32] & 65280) {
     ZR_(radius_, flags_);
   }
   ZR_(attachmentindex_, attachmentname_);
 
-#undef ZR_HELPER_
+#undef OFFSET_OF_FIELD_
 #undef ZR_
 
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
-  if (_internal_metadata_.have_unknown_fields()) {
-    mutable_unknown_fields()->Clear();
-  }
+  mutable_unknown_fields()->Clear();
 }
 
 bool CMsgEffectData::MergePartialFromCodedStream(
@@ -7914,25 +5949,25 @@ void CMsgEffectData::SerializeWithCachedSizes(
   // optional .CMsgVector origin = 1;
   if (has_origin()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      1, *this->origin_, output);
+      1, this->origin(), output);
   }
 
   // optional .CMsgVector start = 2;
   if (has_start()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      2, *this->start_, output);
+      2, this->start(), output);
   }
 
   // optional .CMsgVector normal = 3;
   if (has_normal()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      3, *this->normal_, output);
+      3, this->normal(), output);
   }
 
   // optional .CMsgQAngle angles = 4;
   if (has_angles()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      4, *this->angles_, output);
+      4, this->angles(), output);
   }
 
   // optional fixed32 entity = 5;
@@ -8010,7 +6045,7 @@ void CMsgEffectData::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteUInt32(19, this->attachmentname(), output);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
   }
@@ -8024,28 +6059,28 @@ void CMsgEffectData::SerializeWithCachedSizes(
   if (has_origin()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
-        1, *this->origin_, target);
+        1, this->origin(), target);
   }
 
   // optional .CMsgVector start = 2;
   if (has_start()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
-        2, *this->start_, target);
+        2, this->start(), target);
   }
 
   // optional .CMsgVector normal = 3;
   if (has_normal()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
-        3, *this->normal_, target);
+        3, this->normal(), target);
   }
 
   // optional .CMsgQAngle angles = 4;
   if (has_angles()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
-        4, *this->angles_, target);
+        4, this->angles(), target);
   }
 
   // optional fixed32 entity = 5;
@@ -8123,7 +6158,7 @@ void CMsgEffectData::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(19, this->attachmentname(), target);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
   }
@@ -8134,33 +6169,33 @@ void CMsgEffectData::SerializeWithCachedSizes(
 int CMsgEffectData::ByteSize() const {
   int total_size = 0;
 
-  if (_has_bits_[0 / 32] & 255u) {
+  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     // optional .CMsgVector origin = 1;
     if (has_origin()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
-          *this->origin_);
+          this->origin());
     }
 
     // optional .CMsgVector start = 2;
     if (has_start()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
-          *this->start_);
+          this->start());
     }
 
     // optional .CMsgVector normal = 3;
     if (has_normal()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
-          *this->normal_);
+          this->normal());
     }
 
     // optional .CMsgQAngle angles = 4;
     if (has_angles()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
-          *this->angles_);
+          this->angles());
     }
 
     // optional fixed32 entity = 5;
@@ -8184,7 +6219,7 @@ int CMsgEffectData::ByteSize() const {
     }
 
   }
-  if (_has_bits_[8 / 32] & 65280u) {
+  if (_has_bits_[8 / 32] & (0xffu << (8 % 32))) {
     // optional float radius = 9;
     if (has_radius()) {
       total_size += 1 + 4;
@@ -8236,7 +6271,7 @@ int CMsgEffectData::ByteSize() const {
     }
 
   }
-  if (_has_bits_[16 / 32] & 458752u) {
+  if (_has_bits_[16 / 32] & (0xffu << (16 % 32))) {
     // optional int32 attachmentindex = 17;
     if (has_attachmentindex()) {
       total_size += 2 +
@@ -8259,7 +6294,7 @@ int CMsgEffectData::ByteSize() const {
     }
 
   }
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     total_size +=
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         unknown_fields());
@@ -8271,10 +6306,10 @@ int CMsgEffectData::ByteSize() const {
 }
 
 void CMsgEffectData::MergeFrom(const ::google::protobuf::Message& from) {
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
-  const CMsgEffectData* source = 
-      ::google::protobuf::internal::DynamicCastToGenerated<const CMsgEffectData>(
-          &from);
+  GOOGLE_CHECK_NE(&from, this);
+  const CMsgEffectData* source =
+    ::google::protobuf::internal::dynamic_cast_if_available<const CMsgEffectData*>(
+      &from);
   if (source == NULL) {
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
   } else {
@@ -8283,7 +6318,7 @@ void CMsgEffectData::MergeFrom(const ::google::protobuf::Message& from) {
 }
 
 void CMsgEffectData::MergeFrom(const CMsgEffectData& from) {
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  GOOGLE_CHECK_NE(&from, this);
   if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (from.has_origin()) {
       mutable_origin()->::CMsgVector::MergeFrom(from.origin());
@@ -8347,9 +6382,7 @@ void CMsgEffectData::MergeFrom(const CMsgEffectData& from) {
       set_attachmentname(from.attachmentname());
     }
   }
-  if (from._internal_metadata_.have_unknown_fields()) {
-    mutable_unknown_fields()->MergeFrom(from.unknown_fields());
-  }
+  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
 }
 
 void CMsgEffectData::CopyFrom(const ::google::protobuf::Message& from) {
@@ -8370,32 +6403,30 @@ bool CMsgEffectData::IsInitialized() const {
 }
 
 void CMsgEffectData::Swap(CMsgEffectData* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
-void CMsgEffectData::InternalSwap(CMsgEffectData* other) {
-  std::swap(origin_, other->origin_);
-  std::swap(start_, other->start_);
-  std::swap(normal_, other->normal_);
-  std::swap(angles_, other->angles_);
-  std::swap(entity_, other->entity_);
-  std::swap(otherentity_, other->otherentity_);
-  std::swap(scale_, other->scale_);
-  std::swap(magnitude_, other->magnitude_);
-  std::swap(radius_, other->radius_);
-  std::swap(surfaceprop_, other->surfaceprop_);
-  std::swap(effectindex_, other->effectindex_);
-  std::swap(damagetype_, other->damagetype_);
-  std::swap(material_, other->material_);
-  std::swap(hitbox_, other->hitbox_);
-  std::swap(color_, other->color_);
-  std::swap(flags_, other->flags_);
-  std::swap(attachmentindex_, other->attachmentindex_);
-  std::swap(effectname_, other->effectname_);
-  std::swap(attachmentname_, other->attachmentname_);
-  std::swap(_has_bits_[0], other->_has_bits_[0]);
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  std::swap(_cached_size_, other->_cached_size_);
+  if (other != this) {
+    std::swap(origin_, other->origin_);
+    std::swap(start_, other->start_);
+    std::swap(normal_, other->normal_);
+    std::swap(angles_, other->angles_);
+    std::swap(entity_, other->entity_);
+    std::swap(otherentity_, other->otherentity_);
+    std::swap(scale_, other->scale_);
+    std::swap(magnitude_, other->magnitude_);
+    std::swap(radius_, other->radius_);
+    std::swap(surfaceprop_, other->surfaceprop_);
+    std::swap(effectindex_, other->effectindex_);
+    std::swap(damagetype_, other->damagetype_);
+    std::swap(material_, other->material_);
+    std::swap(hitbox_, other->hitbox_);
+    std::swap(color_, other->color_);
+    std::swap(flags_, other->flags_);
+    std::swap(attachmentindex_, other->attachmentindex_);
+    std::swap(effectname_, other->effectname_);
+    std::swap(attachmentname_, other->attachmentname_);
+    std::swap(_has_bits_[0], other->_has_bits_[0]);
+    _unknown_fields_.Swap(&other->_unknown_fields_);
+    std::swap(_cached_size_, other->_cached_size_);
+  }
 }
 
 ::google::protobuf::Metadata CMsgEffectData::GetMetadata() const {
@@ -8406,542 +6437,6 @@ void CMsgEffectData::InternalSwap(CMsgEffectData* other) {
   return metadata;
 }
 
-#if PROTOBUF_INLINE_NOT_IN_HEADERS
-// CMsgEffectData
-
-// optional .CMsgVector origin = 1;
-bool CMsgEffectData::has_origin() const {
-  return (_has_bits_[0] & 0x00000001u) != 0;
-}
-void CMsgEffectData::set_has_origin() {
-  _has_bits_[0] |= 0x00000001u;
-}
-void CMsgEffectData::clear_has_origin() {
-  _has_bits_[0] &= ~0x00000001u;
-}
-void CMsgEffectData::clear_origin() {
-  if (origin_ != NULL) origin_->::CMsgVector::Clear();
-  clear_has_origin();
-}
-const ::CMsgVector& CMsgEffectData::origin() const {
-  // @@protoc_insertion_point(field_get:CMsgEffectData.origin)
-  return origin_ != NULL ? *origin_ : *default_instance_->origin_;
-}
-::CMsgVector* CMsgEffectData::mutable_origin() {
-  set_has_origin();
-  if (origin_ == NULL) {
-    origin_ = new ::CMsgVector;
-  }
-  // @@protoc_insertion_point(field_mutable:CMsgEffectData.origin)
-  return origin_;
-}
-::CMsgVector* CMsgEffectData::release_origin() {
-  clear_has_origin();
-  ::CMsgVector* temp = origin_;
-  origin_ = NULL;
-  return temp;
-}
-void CMsgEffectData::set_allocated_origin(::CMsgVector* origin) {
-  delete origin_;
-  origin_ = origin;
-  if (origin) {
-    set_has_origin();
-  } else {
-    clear_has_origin();
-  }
-  // @@protoc_insertion_point(field_set_allocated:CMsgEffectData.origin)
-}
-
-// optional .CMsgVector start = 2;
-bool CMsgEffectData::has_start() const {
-  return (_has_bits_[0] & 0x00000002u) != 0;
-}
-void CMsgEffectData::set_has_start() {
-  _has_bits_[0] |= 0x00000002u;
-}
-void CMsgEffectData::clear_has_start() {
-  _has_bits_[0] &= ~0x00000002u;
-}
-void CMsgEffectData::clear_start() {
-  if (start_ != NULL) start_->::CMsgVector::Clear();
-  clear_has_start();
-}
-const ::CMsgVector& CMsgEffectData::start() const {
-  // @@protoc_insertion_point(field_get:CMsgEffectData.start)
-  return start_ != NULL ? *start_ : *default_instance_->start_;
-}
-::CMsgVector* CMsgEffectData::mutable_start() {
-  set_has_start();
-  if (start_ == NULL) {
-    start_ = new ::CMsgVector;
-  }
-  // @@protoc_insertion_point(field_mutable:CMsgEffectData.start)
-  return start_;
-}
-::CMsgVector* CMsgEffectData::release_start() {
-  clear_has_start();
-  ::CMsgVector* temp = start_;
-  start_ = NULL;
-  return temp;
-}
-void CMsgEffectData::set_allocated_start(::CMsgVector* start) {
-  delete start_;
-  start_ = start;
-  if (start) {
-    set_has_start();
-  } else {
-    clear_has_start();
-  }
-  // @@protoc_insertion_point(field_set_allocated:CMsgEffectData.start)
-}
-
-// optional .CMsgVector normal = 3;
-bool CMsgEffectData::has_normal() const {
-  return (_has_bits_[0] & 0x00000004u) != 0;
-}
-void CMsgEffectData::set_has_normal() {
-  _has_bits_[0] |= 0x00000004u;
-}
-void CMsgEffectData::clear_has_normal() {
-  _has_bits_[0] &= ~0x00000004u;
-}
-void CMsgEffectData::clear_normal() {
-  if (normal_ != NULL) normal_->::CMsgVector::Clear();
-  clear_has_normal();
-}
-const ::CMsgVector& CMsgEffectData::normal() const {
-  // @@protoc_insertion_point(field_get:CMsgEffectData.normal)
-  return normal_ != NULL ? *normal_ : *default_instance_->normal_;
-}
-::CMsgVector* CMsgEffectData::mutable_normal() {
-  set_has_normal();
-  if (normal_ == NULL) {
-    normal_ = new ::CMsgVector;
-  }
-  // @@protoc_insertion_point(field_mutable:CMsgEffectData.normal)
-  return normal_;
-}
-::CMsgVector* CMsgEffectData::release_normal() {
-  clear_has_normal();
-  ::CMsgVector* temp = normal_;
-  normal_ = NULL;
-  return temp;
-}
-void CMsgEffectData::set_allocated_normal(::CMsgVector* normal) {
-  delete normal_;
-  normal_ = normal;
-  if (normal) {
-    set_has_normal();
-  } else {
-    clear_has_normal();
-  }
-  // @@protoc_insertion_point(field_set_allocated:CMsgEffectData.normal)
-}
-
-// optional .CMsgQAngle angles = 4;
-bool CMsgEffectData::has_angles() const {
-  return (_has_bits_[0] & 0x00000008u) != 0;
-}
-void CMsgEffectData::set_has_angles() {
-  _has_bits_[0] |= 0x00000008u;
-}
-void CMsgEffectData::clear_has_angles() {
-  _has_bits_[0] &= ~0x00000008u;
-}
-void CMsgEffectData::clear_angles() {
-  if (angles_ != NULL) angles_->::CMsgQAngle::Clear();
-  clear_has_angles();
-}
-const ::CMsgQAngle& CMsgEffectData::angles() const {
-  // @@protoc_insertion_point(field_get:CMsgEffectData.angles)
-  return angles_ != NULL ? *angles_ : *default_instance_->angles_;
-}
-::CMsgQAngle* CMsgEffectData::mutable_angles() {
-  set_has_angles();
-  if (angles_ == NULL) {
-    angles_ = new ::CMsgQAngle;
-  }
-  // @@protoc_insertion_point(field_mutable:CMsgEffectData.angles)
-  return angles_;
-}
-::CMsgQAngle* CMsgEffectData::release_angles() {
-  clear_has_angles();
-  ::CMsgQAngle* temp = angles_;
-  angles_ = NULL;
-  return temp;
-}
-void CMsgEffectData::set_allocated_angles(::CMsgQAngle* angles) {
-  delete angles_;
-  angles_ = angles;
-  if (angles) {
-    set_has_angles();
-  } else {
-    clear_has_angles();
-  }
-  // @@protoc_insertion_point(field_set_allocated:CMsgEffectData.angles)
-}
-
-// optional fixed32 entity = 5;
-bool CMsgEffectData::has_entity() const {
-  return (_has_bits_[0] & 0x00000010u) != 0;
-}
-void CMsgEffectData::set_has_entity() {
-  _has_bits_[0] |= 0x00000010u;
-}
-void CMsgEffectData::clear_has_entity() {
-  _has_bits_[0] &= ~0x00000010u;
-}
-void CMsgEffectData::clear_entity() {
-  entity_ = 0u;
-  clear_has_entity();
-}
- ::google::protobuf::uint32 CMsgEffectData::entity() const {
-  // @@protoc_insertion_point(field_get:CMsgEffectData.entity)
-  return entity_;
-}
- void CMsgEffectData::set_entity(::google::protobuf::uint32 value) {
-  set_has_entity();
-  entity_ = value;
-  // @@protoc_insertion_point(field_set:CMsgEffectData.entity)
-}
-
-// optional fixed32 otherentity = 6;
-bool CMsgEffectData::has_otherentity() const {
-  return (_has_bits_[0] & 0x00000020u) != 0;
-}
-void CMsgEffectData::set_has_otherentity() {
-  _has_bits_[0] |= 0x00000020u;
-}
-void CMsgEffectData::clear_has_otherentity() {
-  _has_bits_[0] &= ~0x00000020u;
-}
-void CMsgEffectData::clear_otherentity() {
-  otherentity_ = 0u;
-  clear_has_otherentity();
-}
- ::google::protobuf::uint32 CMsgEffectData::otherentity() const {
-  // @@protoc_insertion_point(field_get:CMsgEffectData.otherentity)
-  return otherentity_;
-}
- void CMsgEffectData::set_otherentity(::google::protobuf::uint32 value) {
-  set_has_otherentity();
-  otherentity_ = value;
-  // @@protoc_insertion_point(field_set:CMsgEffectData.otherentity)
-}
-
-// optional float scale = 7;
-bool CMsgEffectData::has_scale() const {
-  return (_has_bits_[0] & 0x00000040u) != 0;
-}
-void CMsgEffectData::set_has_scale() {
-  _has_bits_[0] |= 0x00000040u;
-}
-void CMsgEffectData::clear_has_scale() {
-  _has_bits_[0] &= ~0x00000040u;
-}
-void CMsgEffectData::clear_scale() {
-  scale_ = 0;
-  clear_has_scale();
-}
- float CMsgEffectData::scale() const {
-  // @@protoc_insertion_point(field_get:CMsgEffectData.scale)
-  return scale_;
-}
- void CMsgEffectData::set_scale(float value) {
-  set_has_scale();
-  scale_ = value;
-  // @@protoc_insertion_point(field_set:CMsgEffectData.scale)
-}
-
-// optional float magnitude = 8;
-bool CMsgEffectData::has_magnitude() const {
-  return (_has_bits_[0] & 0x00000080u) != 0;
-}
-void CMsgEffectData::set_has_magnitude() {
-  _has_bits_[0] |= 0x00000080u;
-}
-void CMsgEffectData::clear_has_magnitude() {
-  _has_bits_[0] &= ~0x00000080u;
-}
-void CMsgEffectData::clear_magnitude() {
-  magnitude_ = 0;
-  clear_has_magnitude();
-}
- float CMsgEffectData::magnitude() const {
-  // @@protoc_insertion_point(field_get:CMsgEffectData.magnitude)
-  return magnitude_;
-}
- void CMsgEffectData::set_magnitude(float value) {
-  set_has_magnitude();
-  magnitude_ = value;
-  // @@protoc_insertion_point(field_set:CMsgEffectData.magnitude)
-}
-
-// optional float radius = 9;
-bool CMsgEffectData::has_radius() const {
-  return (_has_bits_[0] & 0x00000100u) != 0;
-}
-void CMsgEffectData::set_has_radius() {
-  _has_bits_[0] |= 0x00000100u;
-}
-void CMsgEffectData::clear_has_radius() {
-  _has_bits_[0] &= ~0x00000100u;
-}
-void CMsgEffectData::clear_radius() {
-  radius_ = 0;
-  clear_has_radius();
-}
- float CMsgEffectData::radius() const {
-  // @@protoc_insertion_point(field_get:CMsgEffectData.radius)
-  return radius_;
-}
- void CMsgEffectData::set_radius(float value) {
-  set_has_radius();
-  radius_ = value;
-  // @@protoc_insertion_point(field_set:CMsgEffectData.radius)
-}
-
-// optional fixed32 surfaceprop = 10;
-bool CMsgEffectData::has_surfaceprop() const {
-  return (_has_bits_[0] & 0x00000200u) != 0;
-}
-void CMsgEffectData::set_has_surfaceprop() {
-  _has_bits_[0] |= 0x00000200u;
-}
-void CMsgEffectData::clear_has_surfaceprop() {
-  _has_bits_[0] &= ~0x00000200u;
-}
-void CMsgEffectData::clear_surfaceprop() {
-  surfaceprop_ = 0u;
-  clear_has_surfaceprop();
-}
- ::google::protobuf::uint32 CMsgEffectData::surfaceprop() const {
-  // @@protoc_insertion_point(field_get:CMsgEffectData.surfaceprop)
-  return surfaceprop_;
-}
- void CMsgEffectData::set_surfaceprop(::google::protobuf::uint32 value) {
-  set_has_surfaceprop();
-  surfaceprop_ = value;
-  // @@protoc_insertion_point(field_set:CMsgEffectData.surfaceprop)
-}
-
-// optional fixed64 effectindex = 11;
-bool CMsgEffectData::has_effectindex() const {
-  return (_has_bits_[0] & 0x00000400u) != 0;
-}
-void CMsgEffectData::set_has_effectindex() {
-  _has_bits_[0] |= 0x00000400u;
-}
-void CMsgEffectData::clear_has_effectindex() {
-  _has_bits_[0] &= ~0x00000400u;
-}
-void CMsgEffectData::clear_effectindex() {
-  effectindex_ = GOOGLE_ULONGLONG(0);
-  clear_has_effectindex();
-}
- ::google::protobuf::uint64 CMsgEffectData::effectindex() const {
-  // @@protoc_insertion_point(field_get:CMsgEffectData.effectindex)
-  return effectindex_;
-}
- void CMsgEffectData::set_effectindex(::google::protobuf::uint64 value) {
-  set_has_effectindex();
-  effectindex_ = value;
-  // @@protoc_insertion_point(field_set:CMsgEffectData.effectindex)
-}
-
-// optional uint32 damagetype = 12;
-bool CMsgEffectData::has_damagetype() const {
-  return (_has_bits_[0] & 0x00000800u) != 0;
-}
-void CMsgEffectData::set_has_damagetype() {
-  _has_bits_[0] |= 0x00000800u;
-}
-void CMsgEffectData::clear_has_damagetype() {
-  _has_bits_[0] &= ~0x00000800u;
-}
-void CMsgEffectData::clear_damagetype() {
-  damagetype_ = 0u;
-  clear_has_damagetype();
-}
- ::google::protobuf::uint32 CMsgEffectData::damagetype() const {
-  // @@protoc_insertion_point(field_get:CMsgEffectData.damagetype)
-  return damagetype_;
-}
- void CMsgEffectData::set_damagetype(::google::protobuf::uint32 value) {
-  set_has_damagetype();
-  damagetype_ = value;
-  // @@protoc_insertion_point(field_set:CMsgEffectData.damagetype)
-}
-
-// optional uint32 material = 13;
-bool CMsgEffectData::has_material() const {
-  return (_has_bits_[0] & 0x00001000u) != 0;
-}
-void CMsgEffectData::set_has_material() {
-  _has_bits_[0] |= 0x00001000u;
-}
-void CMsgEffectData::clear_has_material() {
-  _has_bits_[0] &= ~0x00001000u;
-}
-void CMsgEffectData::clear_material() {
-  material_ = 0u;
-  clear_has_material();
-}
- ::google::protobuf::uint32 CMsgEffectData::material() const {
-  // @@protoc_insertion_point(field_get:CMsgEffectData.material)
-  return material_;
-}
- void CMsgEffectData::set_material(::google::protobuf::uint32 value) {
-  set_has_material();
-  material_ = value;
-  // @@protoc_insertion_point(field_set:CMsgEffectData.material)
-}
-
-// optional uint32 hitbox = 14;
-bool CMsgEffectData::has_hitbox() const {
-  return (_has_bits_[0] & 0x00002000u) != 0;
-}
-void CMsgEffectData::set_has_hitbox() {
-  _has_bits_[0] |= 0x00002000u;
-}
-void CMsgEffectData::clear_has_hitbox() {
-  _has_bits_[0] &= ~0x00002000u;
-}
-void CMsgEffectData::clear_hitbox() {
-  hitbox_ = 0u;
-  clear_has_hitbox();
-}
- ::google::protobuf::uint32 CMsgEffectData::hitbox() const {
-  // @@protoc_insertion_point(field_get:CMsgEffectData.hitbox)
-  return hitbox_;
-}
- void CMsgEffectData::set_hitbox(::google::protobuf::uint32 value) {
-  set_has_hitbox();
-  hitbox_ = value;
-  // @@protoc_insertion_point(field_set:CMsgEffectData.hitbox)
-}
-
-// optional uint32 color = 15;
-bool CMsgEffectData::has_color() const {
-  return (_has_bits_[0] & 0x00004000u) != 0;
-}
-void CMsgEffectData::set_has_color() {
-  _has_bits_[0] |= 0x00004000u;
-}
-void CMsgEffectData::clear_has_color() {
-  _has_bits_[0] &= ~0x00004000u;
-}
-void CMsgEffectData::clear_color() {
-  color_ = 0u;
-  clear_has_color();
-}
- ::google::protobuf::uint32 CMsgEffectData::color() const {
-  // @@protoc_insertion_point(field_get:CMsgEffectData.color)
-  return color_;
-}
- void CMsgEffectData::set_color(::google::protobuf::uint32 value) {
-  set_has_color();
-  color_ = value;
-  // @@protoc_insertion_point(field_set:CMsgEffectData.color)
-}
-
-// optional uint32 flags = 16;
-bool CMsgEffectData::has_flags() const {
-  return (_has_bits_[0] & 0x00008000u) != 0;
-}
-void CMsgEffectData::set_has_flags() {
-  _has_bits_[0] |= 0x00008000u;
-}
-void CMsgEffectData::clear_has_flags() {
-  _has_bits_[0] &= ~0x00008000u;
-}
-void CMsgEffectData::clear_flags() {
-  flags_ = 0u;
-  clear_has_flags();
-}
- ::google::protobuf::uint32 CMsgEffectData::flags() const {
-  // @@protoc_insertion_point(field_get:CMsgEffectData.flags)
-  return flags_;
-}
- void CMsgEffectData::set_flags(::google::protobuf::uint32 value) {
-  set_has_flags();
-  flags_ = value;
-  // @@protoc_insertion_point(field_set:CMsgEffectData.flags)
-}
-
-// optional int32 attachmentindex = 17;
-bool CMsgEffectData::has_attachmentindex() const {
-  return (_has_bits_[0] & 0x00010000u) != 0;
-}
-void CMsgEffectData::set_has_attachmentindex() {
-  _has_bits_[0] |= 0x00010000u;
-}
-void CMsgEffectData::clear_has_attachmentindex() {
-  _has_bits_[0] &= ~0x00010000u;
-}
-void CMsgEffectData::clear_attachmentindex() {
-  attachmentindex_ = 0;
-  clear_has_attachmentindex();
-}
- ::google::protobuf::int32 CMsgEffectData::attachmentindex() const {
-  // @@protoc_insertion_point(field_get:CMsgEffectData.attachmentindex)
-  return attachmentindex_;
-}
- void CMsgEffectData::set_attachmentindex(::google::protobuf::int32 value) {
-  set_has_attachmentindex();
-  attachmentindex_ = value;
-  // @@protoc_insertion_point(field_set:CMsgEffectData.attachmentindex)
-}
-
-// optional uint32 effectname = 18;
-bool CMsgEffectData::has_effectname() const {
-  return (_has_bits_[0] & 0x00020000u) != 0;
-}
-void CMsgEffectData::set_has_effectname() {
-  _has_bits_[0] |= 0x00020000u;
-}
-void CMsgEffectData::clear_has_effectname() {
-  _has_bits_[0] &= ~0x00020000u;
-}
-void CMsgEffectData::clear_effectname() {
-  effectname_ = 0u;
-  clear_has_effectname();
-}
- ::google::protobuf::uint32 CMsgEffectData::effectname() const {
-  // @@protoc_insertion_point(field_get:CMsgEffectData.effectname)
-  return effectname_;
-}
- void CMsgEffectData::set_effectname(::google::protobuf::uint32 value) {
-  set_has_effectname();
-  effectname_ = value;
-  // @@protoc_insertion_point(field_set:CMsgEffectData.effectname)
-}
-
-// optional uint32 attachmentname = 19;
-bool CMsgEffectData::has_attachmentname() const {
-  return (_has_bits_[0] & 0x00040000u) != 0;
-}
-void CMsgEffectData::set_has_attachmentname() {
-  _has_bits_[0] |= 0x00040000u;
-}
-void CMsgEffectData::clear_has_attachmentname() {
-  _has_bits_[0] &= ~0x00040000u;
-}
-void CMsgEffectData::clear_attachmentname() {
-  attachmentname_ = 0u;
-  clear_has_attachmentname();
-}
- ::google::protobuf::uint32 CMsgEffectData::attachmentname() const {
-  // @@protoc_insertion_point(field_get:CMsgEffectData.attachmentname)
-  return attachmentname_;
-}
- void CMsgEffectData::set_attachmentname(::google::protobuf::uint32 value) {
-  set_has_attachmentname();
-  attachmentname_ = value;
-  // @@protoc_insertion_point(field_set:CMsgEffectData.attachmentname)
-}
-
-#endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
 
 // ===================================================================
 
@@ -8950,7 +6445,7 @@ const int CMsgTEEffectDispatch::kEffectdataFieldNumber;
 #endif  // !_MSC_VER
 
 CMsgTEEffectDispatch::CMsgTEEffectDispatch()
-  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  : ::google::protobuf::Message() {
   SharedCtor();
   // @@protoc_insertion_point(constructor:CMsgTEEffectDispatch)
 }
@@ -8960,8 +6455,7 @@ void CMsgTEEffectDispatch::InitAsDefaultInstance() {
 }
 
 CMsgTEEffectDispatch::CMsgTEEffectDispatch(const CMsgTEEffectDispatch& from)
-  : ::google::protobuf::Message(),
-    _internal_metadata_(NULL) {
+  : ::google::protobuf::Message() {
   SharedCtor();
   MergeFrom(from);
   // @@protoc_insertion_point(copy_constructor:CMsgTEEffectDispatch)
@@ -9001,12 +6495,8 @@ const CMsgTEEffectDispatch& CMsgTEEffectDispatch::default_instance() {
 
 CMsgTEEffectDispatch* CMsgTEEffectDispatch::default_instance_ = NULL;
 
-CMsgTEEffectDispatch* CMsgTEEffectDispatch::New(::google::protobuf::Arena* arena) const {
-  CMsgTEEffectDispatch* n = new CMsgTEEffectDispatch;
-  if (arena != NULL) {
-    arena->Own(n);
-  }
-  return n;
+CMsgTEEffectDispatch* CMsgTEEffectDispatch::New() const {
+  return new CMsgTEEffectDispatch;
 }
 
 void CMsgTEEffectDispatch::Clear() {
@@ -9014,9 +6504,7 @@ void CMsgTEEffectDispatch::Clear() {
     if (effectdata_ != NULL) effectdata_->::CMsgEffectData::Clear();
   }
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
-  if (_internal_metadata_.have_unknown_fields()) {
-    mutable_unknown_fields()->Clear();
-  }
+  mutable_unknown_fields()->Clear();
 }
 
 bool CMsgTEEffectDispatch::MergePartialFromCodedStream(
@@ -9069,10 +6557,10 @@ void CMsgTEEffectDispatch::SerializeWithCachedSizes(
   // optional .CMsgEffectData effectdata = 1;
   if (has_effectdata()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      1, *this->effectdata_, output);
+      1, this->effectdata(), output);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
   }
@@ -9086,10 +6574,10 @@ void CMsgTEEffectDispatch::SerializeWithCachedSizes(
   if (has_effectdata()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
-        1, *this->effectdata_, target);
+        1, this->effectdata(), target);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
   }
@@ -9100,14 +6588,16 @@ void CMsgTEEffectDispatch::SerializeWithCachedSizes(
 int CMsgTEEffectDispatch::ByteSize() const {
   int total_size = 0;
 
-  // optional .CMsgEffectData effectdata = 1;
-  if (has_effectdata()) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
-        *this->effectdata_);
-  }
+  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    // optional .CMsgEffectData effectdata = 1;
+    if (has_effectdata()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+          this->effectdata());
+    }
 
-  if (_internal_metadata_.have_unknown_fields()) {
+  }
+  if (!unknown_fields().empty()) {
     total_size +=
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         unknown_fields());
@@ -9119,10 +6609,10 @@ int CMsgTEEffectDispatch::ByteSize() const {
 }
 
 void CMsgTEEffectDispatch::MergeFrom(const ::google::protobuf::Message& from) {
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
-  const CMsgTEEffectDispatch* source = 
-      ::google::protobuf::internal::DynamicCastToGenerated<const CMsgTEEffectDispatch>(
-          &from);
+  GOOGLE_CHECK_NE(&from, this);
+  const CMsgTEEffectDispatch* source =
+    ::google::protobuf::internal::dynamic_cast_if_available<const CMsgTEEffectDispatch*>(
+      &from);
   if (source == NULL) {
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
   } else {
@@ -9131,15 +6621,13 @@ void CMsgTEEffectDispatch::MergeFrom(const ::google::protobuf::Message& from) {
 }
 
 void CMsgTEEffectDispatch::MergeFrom(const CMsgTEEffectDispatch& from) {
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  GOOGLE_CHECK_NE(&from, this);
   if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (from.has_effectdata()) {
       mutable_effectdata()->::CMsgEffectData::MergeFrom(from.effectdata());
     }
   }
-  if (from._internal_metadata_.have_unknown_fields()) {
-    mutable_unknown_fields()->MergeFrom(from.unknown_fields());
-  }
+  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
 }
 
 void CMsgTEEffectDispatch::CopyFrom(const ::google::protobuf::Message& from) {
@@ -9160,14 +6648,12 @@ bool CMsgTEEffectDispatch::IsInitialized() const {
 }
 
 void CMsgTEEffectDispatch::Swap(CMsgTEEffectDispatch* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
-void CMsgTEEffectDispatch::InternalSwap(CMsgTEEffectDispatch* other) {
-  std::swap(effectdata_, other->effectdata_);
-  std::swap(_has_bits_[0], other->_has_bits_[0]);
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  std::swap(_cached_size_, other->_cached_size_);
+  if (other != this) {
+    std::swap(effectdata_, other->effectdata_);
+    std::swap(_has_bits_[0], other->_has_bits_[0]);
+    _unknown_fields_.Swap(&other->_unknown_fields_);
+    std::swap(_cached_size_, other->_cached_size_);
+  }
 }
 
 ::google::protobuf::Metadata CMsgTEEffectDispatch::GetMetadata() const {
@@ -9178,53 +6664,6 @@ void CMsgTEEffectDispatch::InternalSwap(CMsgTEEffectDispatch* other) {
   return metadata;
 }
 
-#if PROTOBUF_INLINE_NOT_IN_HEADERS
-// CMsgTEEffectDispatch
-
-// optional .CMsgEffectData effectdata = 1;
-bool CMsgTEEffectDispatch::has_effectdata() const {
-  return (_has_bits_[0] & 0x00000001u) != 0;
-}
-void CMsgTEEffectDispatch::set_has_effectdata() {
-  _has_bits_[0] |= 0x00000001u;
-}
-void CMsgTEEffectDispatch::clear_has_effectdata() {
-  _has_bits_[0] &= ~0x00000001u;
-}
-void CMsgTEEffectDispatch::clear_effectdata() {
-  if (effectdata_ != NULL) effectdata_->::CMsgEffectData::Clear();
-  clear_has_effectdata();
-}
-const ::CMsgEffectData& CMsgTEEffectDispatch::effectdata() const {
-  // @@protoc_insertion_point(field_get:CMsgTEEffectDispatch.effectdata)
-  return effectdata_ != NULL ? *effectdata_ : *default_instance_->effectdata_;
-}
-::CMsgEffectData* CMsgTEEffectDispatch::mutable_effectdata() {
-  set_has_effectdata();
-  if (effectdata_ == NULL) {
-    effectdata_ = new ::CMsgEffectData;
-  }
-  // @@protoc_insertion_point(field_mutable:CMsgTEEffectDispatch.effectdata)
-  return effectdata_;
-}
-::CMsgEffectData* CMsgTEEffectDispatch::release_effectdata() {
-  clear_has_effectdata();
-  ::CMsgEffectData* temp = effectdata_;
-  effectdata_ = NULL;
-  return temp;
-}
-void CMsgTEEffectDispatch::set_allocated_effectdata(::CMsgEffectData* effectdata) {
-  delete effectdata_;
-  effectdata_ = effectdata;
-  if (effectdata) {
-    set_has_effectdata();
-  } else {
-    clear_has_effectdata();
-  }
-  // @@protoc_insertion_point(field_set_allocated:CMsgTEEffectDispatch.effectdata)
-}
-
-#endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
 
 // ===================================================================
 
@@ -9235,7 +6674,7 @@ const int CMsgTEEnergySplash::kExplosiveFieldNumber;
 #endif  // !_MSC_VER
 
 CMsgTEEnergySplash::CMsgTEEnergySplash()
-  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  : ::google::protobuf::Message() {
   SharedCtor();
   // @@protoc_insertion_point(constructor:CMsgTEEnergySplash)
 }
@@ -9246,8 +6685,7 @@ void CMsgTEEnergySplash::InitAsDefaultInstance() {
 }
 
 CMsgTEEnergySplash::CMsgTEEnergySplash(const CMsgTEEnergySplash& from)
-  : ::google::protobuf::Message(),
-    _internal_metadata_(NULL) {
+  : ::google::protobuf::Message() {
   SharedCtor();
   MergeFrom(from);
   // @@protoc_insertion_point(copy_constructor:CMsgTEEnergySplash)
@@ -9290,16 +6728,12 @@ const CMsgTEEnergySplash& CMsgTEEnergySplash::default_instance() {
 
 CMsgTEEnergySplash* CMsgTEEnergySplash::default_instance_ = NULL;
 
-CMsgTEEnergySplash* CMsgTEEnergySplash::New(::google::protobuf::Arena* arena) const {
-  CMsgTEEnergySplash* n = new CMsgTEEnergySplash;
-  if (arena != NULL) {
-    arena->Own(n);
-  }
-  return n;
+CMsgTEEnergySplash* CMsgTEEnergySplash::New() const {
+  return new CMsgTEEnergySplash;
 }
 
 void CMsgTEEnergySplash::Clear() {
-  if (_has_bits_[0 / 32] & 7u) {
+  if (_has_bits_[0 / 32] & 7) {
     if (has_pos()) {
       if (pos_ != NULL) pos_->::CMsgVector::Clear();
     }
@@ -9309,9 +6743,7 @@ void CMsgTEEnergySplash::Clear() {
     explosive_ = false;
   }
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
-  if (_internal_metadata_.have_unknown_fields()) {
-    mutable_unknown_fields()->Clear();
-  }
+  mutable_unknown_fields()->Clear();
 }
 
 bool CMsgTEEnergySplash::MergePartialFromCodedStream(
@@ -9392,13 +6824,13 @@ void CMsgTEEnergySplash::SerializeWithCachedSizes(
   // optional .CMsgVector pos = 1;
   if (has_pos()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      1, *this->pos_, output);
+      1, this->pos(), output);
   }
 
   // optional .CMsgVector dir = 2;
   if (has_dir()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      2, *this->dir_, output);
+      2, this->dir(), output);
   }
 
   // optional bool explosive = 3;
@@ -9406,7 +6838,7 @@ void CMsgTEEnergySplash::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteBool(3, this->explosive(), output);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
   }
@@ -9420,14 +6852,14 @@ void CMsgTEEnergySplash::SerializeWithCachedSizes(
   if (has_pos()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
-        1, *this->pos_, target);
+        1, this->pos(), target);
   }
 
   // optional .CMsgVector dir = 2;
   if (has_dir()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
-        2, *this->dir_, target);
+        2, this->dir(), target);
   }
 
   // optional bool explosive = 3;
@@ -9435,7 +6867,7 @@ void CMsgTEEnergySplash::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(3, this->explosive(), target);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
   }
@@ -9446,19 +6878,19 @@ void CMsgTEEnergySplash::SerializeWithCachedSizes(
 int CMsgTEEnergySplash::ByteSize() const {
   int total_size = 0;
 
-  if (_has_bits_[0 / 32] & 7u) {
+  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     // optional .CMsgVector pos = 1;
     if (has_pos()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
-          *this->pos_);
+          this->pos());
     }
 
     // optional .CMsgVector dir = 2;
     if (has_dir()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
-          *this->dir_);
+          this->dir());
     }
 
     // optional bool explosive = 3;
@@ -9467,7 +6899,7 @@ int CMsgTEEnergySplash::ByteSize() const {
     }
 
   }
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     total_size +=
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         unknown_fields());
@@ -9479,10 +6911,10 @@ int CMsgTEEnergySplash::ByteSize() const {
 }
 
 void CMsgTEEnergySplash::MergeFrom(const ::google::protobuf::Message& from) {
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
-  const CMsgTEEnergySplash* source = 
-      ::google::protobuf::internal::DynamicCastToGenerated<const CMsgTEEnergySplash>(
-          &from);
+  GOOGLE_CHECK_NE(&from, this);
+  const CMsgTEEnergySplash* source =
+    ::google::protobuf::internal::dynamic_cast_if_available<const CMsgTEEnergySplash*>(
+      &from);
   if (source == NULL) {
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
   } else {
@@ -9491,7 +6923,7 @@ void CMsgTEEnergySplash::MergeFrom(const ::google::protobuf::Message& from) {
 }
 
 void CMsgTEEnergySplash::MergeFrom(const CMsgTEEnergySplash& from) {
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  GOOGLE_CHECK_NE(&from, this);
   if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (from.has_pos()) {
       mutable_pos()->::CMsgVector::MergeFrom(from.pos());
@@ -9503,9 +6935,7 @@ void CMsgTEEnergySplash::MergeFrom(const CMsgTEEnergySplash& from) {
       set_explosive(from.explosive());
     }
   }
-  if (from._internal_metadata_.have_unknown_fields()) {
-    mutable_unknown_fields()->MergeFrom(from.unknown_fields());
-  }
+  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
 }
 
 void CMsgTEEnergySplash::CopyFrom(const ::google::protobuf::Message& from) {
@@ -9526,16 +6956,14 @@ bool CMsgTEEnergySplash::IsInitialized() const {
 }
 
 void CMsgTEEnergySplash::Swap(CMsgTEEnergySplash* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
-void CMsgTEEnergySplash::InternalSwap(CMsgTEEnergySplash* other) {
-  std::swap(pos_, other->pos_);
-  std::swap(dir_, other->dir_);
-  std::swap(explosive_, other->explosive_);
-  std::swap(_has_bits_[0], other->_has_bits_[0]);
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  std::swap(_cached_size_, other->_cached_size_);
+  if (other != this) {
+    std::swap(pos_, other->pos_);
+    std::swap(dir_, other->dir_);
+    std::swap(explosive_, other->explosive_);
+    std::swap(_has_bits_[0], other->_has_bits_[0]);
+    _unknown_fields_.Swap(&other->_unknown_fields_);
+    std::swap(_cached_size_, other->_cached_size_);
+  }
 }
 
 ::google::protobuf::Metadata CMsgTEEnergySplash::GetMetadata() const {
@@ -9546,120 +6974,6 @@ void CMsgTEEnergySplash::InternalSwap(CMsgTEEnergySplash* other) {
   return metadata;
 }
 
-#if PROTOBUF_INLINE_NOT_IN_HEADERS
-// CMsgTEEnergySplash
-
-// optional .CMsgVector pos = 1;
-bool CMsgTEEnergySplash::has_pos() const {
-  return (_has_bits_[0] & 0x00000001u) != 0;
-}
-void CMsgTEEnergySplash::set_has_pos() {
-  _has_bits_[0] |= 0x00000001u;
-}
-void CMsgTEEnergySplash::clear_has_pos() {
-  _has_bits_[0] &= ~0x00000001u;
-}
-void CMsgTEEnergySplash::clear_pos() {
-  if (pos_ != NULL) pos_->::CMsgVector::Clear();
-  clear_has_pos();
-}
-const ::CMsgVector& CMsgTEEnergySplash::pos() const {
-  // @@protoc_insertion_point(field_get:CMsgTEEnergySplash.pos)
-  return pos_ != NULL ? *pos_ : *default_instance_->pos_;
-}
-::CMsgVector* CMsgTEEnergySplash::mutable_pos() {
-  set_has_pos();
-  if (pos_ == NULL) {
-    pos_ = new ::CMsgVector;
-  }
-  // @@protoc_insertion_point(field_mutable:CMsgTEEnergySplash.pos)
-  return pos_;
-}
-::CMsgVector* CMsgTEEnergySplash::release_pos() {
-  clear_has_pos();
-  ::CMsgVector* temp = pos_;
-  pos_ = NULL;
-  return temp;
-}
-void CMsgTEEnergySplash::set_allocated_pos(::CMsgVector* pos) {
-  delete pos_;
-  pos_ = pos;
-  if (pos) {
-    set_has_pos();
-  } else {
-    clear_has_pos();
-  }
-  // @@protoc_insertion_point(field_set_allocated:CMsgTEEnergySplash.pos)
-}
-
-// optional .CMsgVector dir = 2;
-bool CMsgTEEnergySplash::has_dir() const {
-  return (_has_bits_[0] & 0x00000002u) != 0;
-}
-void CMsgTEEnergySplash::set_has_dir() {
-  _has_bits_[0] |= 0x00000002u;
-}
-void CMsgTEEnergySplash::clear_has_dir() {
-  _has_bits_[0] &= ~0x00000002u;
-}
-void CMsgTEEnergySplash::clear_dir() {
-  if (dir_ != NULL) dir_->::CMsgVector::Clear();
-  clear_has_dir();
-}
-const ::CMsgVector& CMsgTEEnergySplash::dir() const {
-  // @@protoc_insertion_point(field_get:CMsgTEEnergySplash.dir)
-  return dir_ != NULL ? *dir_ : *default_instance_->dir_;
-}
-::CMsgVector* CMsgTEEnergySplash::mutable_dir() {
-  set_has_dir();
-  if (dir_ == NULL) {
-    dir_ = new ::CMsgVector;
-  }
-  // @@protoc_insertion_point(field_mutable:CMsgTEEnergySplash.dir)
-  return dir_;
-}
-::CMsgVector* CMsgTEEnergySplash::release_dir() {
-  clear_has_dir();
-  ::CMsgVector* temp = dir_;
-  dir_ = NULL;
-  return temp;
-}
-void CMsgTEEnergySplash::set_allocated_dir(::CMsgVector* dir) {
-  delete dir_;
-  dir_ = dir;
-  if (dir) {
-    set_has_dir();
-  } else {
-    clear_has_dir();
-  }
-  // @@protoc_insertion_point(field_set_allocated:CMsgTEEnergySplash.dir)
-}
-
-// optional bool explosive = 3;
-bool CMsgTEEnergySplash::has_explosive() const {
-  return (_has_bits_[0] & 0x00000004u) != 0;
-}
-void CMsgTEEnergySplash::set_has_explosive() {
-  _has_bits_[0] |= 0x00000004u;
-}
-void CMsgTEEnergySplash::clear_has_explosive() {
-  _has_bits_[0] &= ~0x00000004u;
-}
-void CMsgTEEnergySplash::clear_explosive() {
-  explosive_ = false;
-  clear_has_explosive();
-}
- bool CMsgTEEnergySplash::explosive() const {
-  // @@protoc_insertion_point(field_get:CMsgTEEnergySplash.explosive)
-  return explosive_;
-}
- void CMsgTEEnergySplash::set_explosive(bool value) {
-  set_has_explosive();
-  explosive_ = value;
-  // @@protoc_insertion_point(field_set:CMsgTEEnergySplash.explosive)
-}
-
-#endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
 
 // ===================================================================
 
@@ -9670,7 +6984,7 @@ const int CMsgTEFizz::kCurrentFieldNumber;
 #endif  // !_MSC_VER
 
 CMsgTEFizz::CMsgTEFizz()
-  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  : ::google::protobuf::Message() {
   SharedCtor();
   // @@protoc_insertion_point(constructor:CMsgTEFizz)
 }
@@ -9679,8 +6993,7 @@ void CMsgTEFizz::InitAsDefaultInstance() {
 }
 
 CMsgTEFizz::CMsgTEFizz(const CMsgTEFizz& from)
-  : ::google::protobuf::Message(),
-    _internal_metadata_(NULL) {
+  : ::google::protobuf::Message() {
   SharedCtor();
   MergeFrom(from);
   // @@protoc_insertion_point(copy_constructor:CMsgTEFizz)
@@ -9721,32 +7034,28 @@ const CMsgTEFizz& CMsgTEFizz::default_instance() {
 
 CMsgTEFizz* CMsgTEFizz::default_instance_ = NULL;
 
-CMsgTEFizz* CMsgTEFizz::New(::google::protobuf::Arena* arena) const {
-  CMsgTEFizz* n = new CMsgTEFizz;
-  if (arena != NULL) {
-    arena->Own(n);
-  }
-  return n;
+CMsgTEFizz* CMsgTEFizz::New() const {
+  return new CMsgTEFizz;
 }
 
 void CMsgTEFizz::Clear() {
-#define ZR_HELPER_(f) reinterpret_cast<char*>(\
-  &reinterpret_cast<CMsgTEFizz*>(16)->f)
+#define OFFSET_OF_FIELD_(f) (reinterpret_cast<char*>(      \
+  &reinterpret_cast<CMsgTEFizz*>(16)->f) - \
+   reinterpret_cast<char*>(16))
 
-#define ZR_(first, last) do {\
-  ::memset(&first, 0,\
-           ZR_HELPER_(last) - ZR_HELPER_(first) + sizeof(last));\
-} while (0)
+#define ZR_(first, last) do {                              \
+    size_t f = OFFSET_OF_FIELD_(first);                    \
+    size_t n = OFFSET_OF_FIELD_(last) - f + sizeof(last);  \
+    ::memset(&first, 0, n);                                \
+  } while (0)
 
   ZR_(entity_, current_);
 
-#undef ZR_HELPER_
+#undef OFFSET_OF_FIELD_
 #undef ZR_
 
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
-  if (_internal_metadata_.have_unknown_fields()) {
-    mutable_unknown_fields()->Clear();
-  }
+  mutable_unknown_fields()->Clear();
 }
 
 bool CMsgTEFizz::MergePartialFromCodedStream(
@@ -9843,7 +7152,7 @@ void CMsgTEFizz::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt32(3, this->current(), output);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
   }
@@ -9868,7 +7177,7 @@ void CMsgTEFizz::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(3, this->current(), target);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
   }
@@ -9879,7 +7188,7 @@ void CMsgTEFizz::SerializeWithCachedSizes(
 int CMsgTEFizz::ByteSize() const {
   int total_size = 0;
 
-  if (_has_bits_[0 / 32] & 7u) {
+  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     // optional uint32 entity = 1;
     if (has_entity()) {
       total_size += 1 +
@@ -9902,7 +7211,7 @@ int CMsgTEFizz::ByteSize() const {
     }
 
   }
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     total_size +=
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         unknown_fields());
@@ -9914,10 +7223,10 @@ int CMsgTEFizz::ByteSize() const {
 }
 
 void CMsgTEFizz::MergeFrom(const ::google::protobuf::Message& from) {
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
-  const CMsgTEFizz* source = 
-      ::google::protobuf::internal::DynamicCastToGenerated<const CMsgTEFizz>(
-          &from);
+  GOOGLE_CHECK_NE(&from, this);
+  const CMsgTEFizz* source =
+    ::google::protobuf::internal::dynamic_cast_if_available<const CMsgTEFizz*>(
+      &from);
   if (source == NULL) {
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
   } else {
@@ -9926,7 +7235,7 @@ void CMsgTEFizz::MergeFrom(const ::google::protobuf::Message& from) {
 }
 
 void CMsgTEFizz::MergeFrom(const CMsgTEFizz& from) {
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  GOOGLE_CHECK_NE(&from, this);
   if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (from.has_entity()) {
       set_entity(from.entity());
@@ -9938,9 +7247,7 @@ void CMsgTEFizz::MergeFrom(const CMsgTEFizz& from) {
       set_current(from.current());
     }
   }
-  if (from._internal_metadata_.have_unknown_fields()) {
-    mutable_unknown_fields()->MergeFrom(from.unknown_fields());
-  }
+  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
 }
 
 void CMsgTEFizz::CopyFrom(const ::google::protobuf::Message& from) {
@@ -9961,16 +7268,14 @@ bool CMsgTEFizz::IsInitialized() const {
 }
 
 void CMsgTEFizz::Swap(CMsgTEFizz* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
-void CMsgTEFizz::InternalSwap(CMsgTEFizz* other) {
-  std::swap(entity_, other->entity_);
-  std::swap(density_, other->density_);
-  std::swap(current_, other->current_);
-  std::swap(_has_bits_[0], other->_has_bits_[0]);
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  std::swap(_cached_size_, other->_cached_size_);
+  if (other != this) {
+    std::swap(entity_, other->entity_);
+    std::swap(density_, other->density_);
+    std::swap(current_, other->current_);
+    std::swap(_has_bits_[0], other->_has_bits_[0]);
+    _unknown_fields_.Swap(&other->_unknown_fields_);
+    std::swap(_cached_size_, other->_cached_size_);
+  }
 }
 
 ::google::protobuf::Metadata CMsgTEFizz::GetMetadata() const {
@@ -9981,82 +7286,6 @@ void CMsgTEFizz::InternalSwap(CMsgTEFizz* other) {
   return metadata;
 }
 
-#if PROTOBUF_INLINE_NOT_IN_HEADERS
-// CMsgTEFizz
-
-// optional uint32 entity = 1;
-bool CMsgTEFizz::has_entity() const {
-  return (_has_bits_[0] & 0x00000001u) != 0;
-}
-void CMsgTEFizz::set_has_entity() {
-  _has_bits_[0] |= 0x00000001u;
-}
-void CMsgTEFizz::clear_has_entity() {
-  _has_bits_[0] &= ~0x00000001u;
-}
-void CMsgTEFizz::clear_entity() {
-  entity_ = 0u;
-  clear_has_entity();
-}
- ::google::protobuf::uint32 CMsgTEFizz::entity() const {
-  // @@protoc_insertion_point(field_get:CMsgTEFizz.entity)
-  return entity_;
-}
- void CMsgTEFizz::set_entity(::google::protobuf::uint32 value) {
-  set_has_entity();
-  entity_ = value;
-  // @@protoc_insertion_point(field_set:CMsgTEFizz.entity)
-}
-
-// optional uint32 density = 2;
-bool CMsgTEFizz::has_density() const {
-  return (_has_bits_[0] & 0x00000002u) != 0;
-}
-void CMsgTEFizz::set_has_density() {
-  _has_bits_[0] |= 0x00000002u;
-}
-void CMsgTEFizz::clear_has_density() {
-  _has_bits_[0] &= ~0x00000002u;
-}
-void CMsgTEFizz::clear_density() {
-  density_ = 0u;
-  clear_has_density();
-}
- ::google::protobuf::uint32 CMsgTEFizz::density() const {
-  // @@protoc_insertion_point(field_get:CMsgTEFizz.density)
-  return density_;
-}
- void CMsgTEFizz::set_density(::google::protobuf::uint32 value) {
-  set_has_density();
-  density_ = value;
-  // @@protoc_insertion_point(field_set:CMsgTEFizz.density)
-}
-
-// optional int32 current = 3;
-bool CMsgTEFizz::has_current() const {
-  return (_has_bits_[0] & 0x00000004u) != 0;
-}
-void CMsgTEFizz::set_has_current() {
-  _has_bits_[0] |= 0x00000004u;
-}
-void CMsgTEFizz::clear_has_current() {
-  _has_bits_[0] &= ~0x00000004u;
-}
-void CMsgTEFizz::clear_current() {
-  current_ = 0;
-  clear_has_current();
-}
- ::google::protobuf::int32 CMsgTEFizz::current() const {
-  // @@protoc_insertion_point(field_get:CMsgTEFizz.current)
-  return current_;
-}
- void CMsgTEFizz::set_current(::google::protobuf::int32 value) {
-  set_has_current();
-  current_ = value;
-  // @@protoc_insertion_point(field_set:CMsgTEFizz.current)
-}
-
-#endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
 
 // ===================================================================
 
@@ -10074,7 +7303,7 @@ const int CMsgTEShatterSurface::kBackcolorFieldNumber;
 #endif  // !_MSC_VER
 
 CMsgTEShatterSurface::CMsgTEShatterSurface()
-  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  : ::google::protobuf::Message() {
   SharedCtor();
   // @@protoc_insertion_point(constructor:CMsgTEShatterSurface)
 }
@@ -10087,8 +7316,7 @@ void CMsgTEShatterSurface::InitAsDefaultInstance() {
 }
 
 CMsgTEShatterSurface::CMsgTEShatterSurface(const CMsgTEShatterSurface& from)
-  : ::google::protobuf::Message(),
-    _internal_metadata_(NULL) {
+  : ::google::protobuf::Message() {
   SharedCtor();
   MergeFrom(from);
   // @@protoc_insertion_point(copy_constructor:CMsgTEShatterSurface)
@@ -10140,24 +7368,22 @@ const CMsgTEShatterSurface& CMsgTEShatterSurface::default_instance() {
 
 CMsgTEShatterSurface* CMsgTEShatterSurface::default_instance_ = NULL;
 
-CMsgTEShatterSurface* CMsgTEShatterSurface::New(::google::protobuf::Arena* arena) const {
-  CMsgTEShatterSurface* n = new CMsgTEShatterSurface;
-  if (arena != NULL) {
-    arena->Own(n);
-  }
-  return n;
+CMsgTEShatterSurface* CMsgTEShatterSurface::New() const {
+  return new CMsgTEShatterSurface;
 }
 
 void CMsgTEShatterSurface::Clear() {
-#define ZR_HELPER_(f) reinterpret_cast<char*>(\
-  &reinterpret_cast<CMsgTEShatterSurface*>(16)->f)
+#define OFFSET_OF_FIELD_(f) (reinterpret_cast<char*>(      \
+  &reinterpret_cast<CMsgTEShatterSurface*>(16)->f) - \
+   reinterpret_cast<char*>(16))
 
-#define ZR_(first, last) do {\
-  ::memset(&first, 0,\
-           ZR_HELPER_(last) - ZR_HELPER_(first) + sizeof(last));\
-} while (0)
+#define ZR_(first, last) do {                              \
+    size_t f = OFFSET_OF_FIELD_(first);                    \
+    size_t n = OFFSET_OF_FIELD_(last) - f + sizeof(last);  \
+    ::memset(&first, 0, n);                                \
+  } while (0)
 
-  if (_has_bits_[0 / 32] & 255u) {
+  if (_has_bits_[0 / 32] & 255) {
     ZR_(width_, surfacetype_);
     if (has_origin()) {
       if (origin_ != NULL) origin_->::CMsgVector::Clear();
@@ -10174,13 +7400,11 @@ void CMsgTEShatterSurface::Clear() {
   }
   ZR_(frontcolor_, backcolor_);
 
-#undef ZR_HELPER_
+#undef OFFSET_OF_FIELD_
 #undef ZR_
 
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
-  if (_internal_metadata_.have_unknown_fields()) {
-    mutable_unknown_fields()->Clear();
-  }
+  mutable_unknown_fields()->Clear();
 }
 
 bool CMsgTEShatterSurface::MergePartialFromCodedStream(
@@ -10362,25 +7586,25 @@ void CMsgTEShatterSurface::SerializeWithCachedSizes(
   // optional .CMsgVector origin = 1;
   if (has_origin()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      1, *this->origin_, output);
+      1, this->origin(), output);
   }
 
   // optional .CMsgQAngle angles = 2;
   if (has_angles()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      2, *this->angles_, output);
+      2, this->angles(), output);
   }
 
   // optional .CMsgVector force = 3;
   if (has_force()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      3, *this->force_, output);
+      3, this->force(), output);
   }
 
   // optional .CMsgVector forcepos = 4;
   if (has_forcepos()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      4, *this->forcepos_, output);
+      4, this->forcepos(), output);
   }
 
   // optional float width = 5;
@@ -10413,7 +7637,7 @@ void CMsgTEShatterSurface::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteFixed32(10, this->backcolor(), output);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
   }
@@ -10427,28 +7651,28 @@ void CMsgTEShatterSurface::SerializeWithCachedSizes(
   if (has_origin()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
-        1, *this->origin_, target);
+        1, this->origin(), target);
   }
 
   // optional .CMsgQAngle angles = 2;
   if (has_angles()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
-        2, *this->angles_, target);
+        2, this->angles(), target);
   }
 
   // optional .CMsgVector force = 3;
   if (has_force()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
-        3, *this->force_, target);
+        3, this->force(), target);
   }
 
   // optional .CMsgVector forcepos = 4;
   if (has_forcepos()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
-        4, *this->forcepos_, target);
+        4, this->forcepos(), target);
   }
 
   // optional float width = 5;
@@ -10481,7 +7705,7 @@ void CMsgTEShatterSurface::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteFixed32ToArray(10, this->backcolor(), target);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
   }
@@ -10492,33 +7716,33 @@ void CMsgTEShatterSurface::SerializeWithCachedSizes(
 int CMsgTEShatterSurface::ByteSize() const {
   int total_size = 0;
 
-  if (_has_bits_[0 / 32] & 255u) {
+  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     // optional .CMsgVector origin = 1;
     if (has_origin()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
-          *this->origin_);
+          this->origin());
     }
 
     // optional .CMsgQAngle angles = 2;
     if (has_angles()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
-          *this->angles_);
+          this->angles());
     }
 
     // optional .CMsgVector force = 3;
     if (has_force()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
-          *this->force_);
+          this->force());
     }
 
     // optional .CMsgVector forcepos = 4;
     if (has_forcepos()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
-          *this->forcepos_);
+          this->forcepos());
     }
 
     // optional float width = 5;
@@ -10544,7 +7768,7 @@ int CMsgTEShatterSurface::ByteSize() const {
     }
 
   }
-  if (_has_bits_[8 / 32] & 768u) {
+  if (_has_bits_[8 / 32] & (0xffu << (8 % 32))) {
     // optional fixed32 frontcolor = 9;
     if (has_frontcolor()) {
       total_size += 1 + 4;
@@ -10556,7 +7780,7 @@ int CMsgTEShatterSurface::ByteSize() const {
     }
 
   }
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     total_size +=
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         unknown_fields());
@@ -10568,10 +7792,10 @@ int CMsgTEShatterSurface::ByteSize() const {
 }
 
 void CMsgTEShatterSurface::MergeFrom(const ::google::protobuf::Message& from) {
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
-  const CMsgTEShatterSurface* source = 
-      ::google::protobuf::internal::DynamicCastToGenerated<const CMsgTEShatterSurface>(
-          &from);
+  GOOGLE_CHECK_NE(&from, this);
+  const CMsgTEShatterSurface* source =
+    ::google::protobuf::internal::dynamic_cast_if_available<const CMsgTEShatterSurface*>(
+      &from);
   if (source == NULL) {
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
   } else {
@@ -10580,7 +7804,7 @@ void CMsgTEShatterSurface::MergeFrom(const ::google::protobuf::Message& from) {
 }
 
 void CMsgTEShatterSurface::MergeFrom(const CMsgTEShatterSurface& from) {
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  GOOGLE_CHECK_NE(&from, this);
   if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (from.has_origin()) {
       mutable_origin()->::CMsgVector::MergeFrom(from.origin());
@@ -10615,9 +7839,7 @@ void CMsgTEShatterSurface::MergeFrom(const CMsgTEShatterSurface& from) {
       set_backcolor(from.backcolor());
     }
   }
-  if (from._internal_metadata_.have_unknown_fields()) {
-    mutable_unknown_fields()->MergeFrom(from.unknown_fields());
-  }
+  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
 }
 
 void CMsgTEShatterSurface::CopyFrom(const ::google::protobuf::Message& from) {
@@ -10638,23 +7860,21 @@ bool CMsgTEShatterSurface::IsInitialized() const {
 }
 
 void CMsgTEShatterSurface::Swap(CMsgTEShatterSurface* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
-void CMsgTEShatterSurface::InternalSwap(CMsgTEShatterSurface* other) {
-  std::swap(origin_, other->origin_);
-  std::swap(angles_, other->angles_);
-  std::swap(force_, other->force_);
-  std::swap(forcepos_, other->forcepos_);
-  std::swap(width_, other->width_);
-  std::swap(height_, other->height_);
-  std::swap(shardsize_, other->shardsize_);
-  std::swap(surfacetype_, other->surfacetype_);
-  std::swap(frontcolor_, other->frontcolor_);
-  std::swap(backcolor_, other->backcolor_);
-  std::swap(_has_bits_[0], other->_has_bits_[0]);
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  std::swap(_cached_size_, other->_cached_size_);
+  if (other != this) {
+    std::swap(origin_, other->origin_);
+    std::swap(angles_, other->angles_);
+    std::swap(force_, other->force_);
+    std::swap(forcepos_, other->forcepos_);
+    std::swap(width_, other->width_);
+    std::swap(height_, other->height_);
+    std::swap(shardsize_, other->shardsize_);
+    std::swap(surfacetype_, other->surfacetype_);
+    std::swap(frontcolor_, other->frontcolor_);
+    std::swap(backcolor_, other->backcolor_);
+    std::swap(_has_bits_[0], other->_has_bits_[0]);
+    _unknown_fields_.Swap(&other->_unknown_fields_);
+    std::swap(_cached_size_, other->_cached_size_);
+  }
 }
 
 ::google::protobuf::Metadata CMsgTEShatterSurface::GetMetadata() const {
@@ -10665,326 +7885,6 @@ void CMsgTEShatterSurface::InternalSwap(CMsgTEShatterSurface* other) {
   return metadata;
 }
 
-#if PROTOBUF_INLINE_NOT_IN_HEADERS
-// CMsgTEShatterSurface
-
-// optional .CMsgVector origin = 1;
-bool CMsgTEShatterSurface::has_origin() const {
-  return (_has_bits_[0] & 0x00000001u) != 0;
-}
-void CMsgTEShatterSurface::set_has_origin() {
-  _has_bits_[0] |= 0x00000001u;
-}
-void CMsgTEShatterSurface::clear_has_origin() {
-  _has_bits_[0] &= ~0x00000001u;
-}
-void CMsgTEShatterSurface::clear_origin() {
-  if (origin_ != NULL) origin_->::CMsgVector::Clear();
-  clear_has_origin();
-}
-const ::CMsgVector& CMsgTEShatterSurface::origin() const {
-  // @@protoc_insertion_point(field_get:CMsgTEShatterSurface.origin)
-  return origin_ != NULL ? *origin_ : *default_instance_->origin_;
-}
-::CMsgVector* CMsgTEShatterSurface::mutable_origin() {
-  set_has_origin();
-  if (origin_ == NULL) {
-    origin_ = new ::CMsgVector;
-  }
-  // @@protoc_insertion_point(field_mutable:CMsgTEShatterSurface.origin)
-  return origin_;
-}
-::CMsgVector* CMsgTEShatterSurface::release_origin() {
-  clear_has_origin();
-  ::CMsgVector* temp = origin_;
-  origin_ = NULL;
-  return temp;
-}
-void CMsgTEShatterSurface::set_allocated_origin(::CMsgVector* origin) {
-  delete origin_;
-  origin_ = origin;
-  if (origin) {
-    set_has_origin();
-  } else {
-    clear_has_origin();
-  }
-  // @@protoc_insertion_point(field_set_allocated:CMsgTEShatterSurface.origin)
-}
-
-// optional .CMsgQAngle angles = 2;
-bool CMsgTEShatterSurface::has_angles() const {
-  return (_has_bits_[0] & 0x00000002u) != 0;
-}
-void CMsgTEShatterSurface::set_has_angles() {
-  _has_bits_[0] |= 0x00000002u;
-}
-void CMsgTEShatterSurface::clear_has_angles() {
-  _has_bits_[0] &= ~0x00000002u;
-}
-void CMsgTEShatterSurface::clear_angles() {
-  if (angles_ != NULL) angles_->::CMsgQAngle::Clear();
-  clear_has_angles();
-}
-const ::CMsgQAngle& CMsgTEShatterSurface::angles() const {
-  // @@protoc_insertion_point(field_get:CMsgTEShatterSurface.angles)
-  return angles_ != NULL ? *angles_ : *default_instance_->angles_;
-}
-::CMsgQAngle* CMsgTEShatterSurface::mutable_angles() {
-  set_has_angles();
-  if (angles_ == NULL) {
-    angles_ = new ::CMsgQAngle;
-  }
-  // @@protoc_insertion_point(field_mutable:CMsgTEShatterSurface.angles)
-  return angles_;
-}
-::CMsgQAngle* CMsgTEShatterSurface::release_angles() {
-  clear_has_angles();
-  ::CMsgQAngle* temp = angles_;
-  angles_ = NULL;
-  return temp;
-}
-void CMsgTEShatterSurface::set_allocated_angles(::CMsgQAngle* angles) {
-  delete angles_;
-  angles_ = angles;
-  if (angles) {
-    set_has_angles();
-  } else {
-    clear_has_angles();
-  }
-  // @@protoc_insertion_point(field_set_allocated:CMsgTEShatterSurface.angles)
-}
-
-// optional .CMsgVector force = 3;
-bool CMsgTEShatterSurface::has_force() const {
-  return (_has_bits_[0] & 0x00000004u) != 0;
-}
-void CMsgTEShatterSurface::set_has_force() {
-  _has_bits_[0] |= 0x00000004u;
-}
-void CMsgTEShatterSurface::clear_has_force() {
-  _has_bits_[0] &= ~0x00000004u;
-}
-void CMsgTEShatterSurface::clear_force() {
-  if (force_ != NULL) force_->::CMsgVector::Clear();
-  clear_has_force();
-}
-const ::CMsgVector& CMsgTEShatterSurface::force() const {
-  // @@protoc_insertion_point(field_get:CMsgTEShatterSurface.force)
-  return force_ != NULL ? *force_ : *default_instance_->force_;
-}
-::CMsgVector* CMsgTEShatterSurface::mutable_force() {
-  set_has_force();
-  if (force_ == NULL) {
-    force_ = new ::CMsgVector;
-  }
-  // @@protoc_insertion_point(field_mutable:CMsgTEShatterSurface.force)
-  return force_;
-}
-::CMsgVector* CMsgTEShatterSurface::release_force() {
-  clear_has_force();
-  ::CMsgVector* temp = force_;
-  force_ = NULL;
-  return temp;
-}
-void CMsgTEShatterSurface::set_allocated_force(::CMsgVector* force) {
-  delete force_;
-  force_ = force;
-  if (force) {
-    set_has_force();
-  } else {
-    clear_has_force();
-  }
-  // @@protoc_insertion_point(field_set_allocated:CMsgTEShatterSurface.force)
-}
-
-// optional .CMsgVector forcepos = 4;
-bool CMsgTEShatterSurface::has_forcepos() const {
-  return (_has_bits_[0] & 0x00000008u) != 0;
-}
-void CMsgTEShatterSurface::set_has_forcepos() {
-  _has_bits_[0] |= 0x00000008u;
-}
-void CMsgTEShatterSurface::clear_has_forcepos() {
-  _has_bits_[0] &= ~0x00000008u;
-}
-void CMsgTEShatterSurface::clear_forcepos() {
-  if (forcepos_ != NULL) forcepos_->::CMsgVector::Clear();
-  clear_has_forcepos();
-}
-const ::CMsgVector& CMsgTEShatterSurface::forcepos() const {
-  // @@protoc_insertion_point(field_get:CMsgTEShatterSurface.forcepos)
-  return forcepos_ != NULL ? *forcepos_ : *default_instance_->forcepos_;
-}
-::CMsgVector* CMsgTEShatterSurface::mutable_forcepos() {
-  set_has_forcepos();
-  if (forcepos_ == NULL) {
-    forcepos_ = new ::CMsgVector;
-  }
-  // @@protoc_insertion_point(field_mutable:CMsgTEShatterSurface.forcepos)
-  return forcepos_;
-}
-::CMsgVector* CMsgTEShatterSurface::release_forcepos() {
-  clear_has_forcepos();
-  ::CMsgVector* temp = forcepos_;
-  forcepos_ = NULL;
-  return temp;
-}
-void CMsgTEShatterSurface::set_allocated_forcepos(::CMsgVector* forcepos) {
-  delete forcepos_;
-  forcepos_ = forcepos;
-  if (forcepos) {
-    set_has_forcepos();
-  } else {
-    clear_has_forcepos();
-  }
-  // @@protoc_insertion_point(field_set_allocated:CMsgTEShatterSurface.forcepos)
-}
-
-// optional float width = 5;
-bool CMsgTEShatterSurface::has_width() const {
-  return (_has_bits_[0] & 0x00000010u) != 0;
-}
-void CMsgTEShatterSurface::set_has_width() {
-  _has_bits_[0] |= 0x00000010u;
-}
-void CMsgTEShatterSurface::clear_has_width() {
-  _has_bits_[0] &= ~0x00000010u;
-}
-void CMsgTEShatterSurface::clear_width() {
-  width_ = 0;
-  clear_has_width();
-}
- float CMsgTEShatterSurface::width() const {
-  // @@protoc_insertion_point(field_get:CMsgTEShatterSurface.width)
-  return width_;
-}
- void CMsgTEShatterSurface::set_width(float value) {
-  set_has_width();
-  width_ = value;
-  // @@protoc_insertion_point(field_set:CMsgTEShatterSurface.width)
-}
-
-// optional float height = 6;
-bool CMsgTEShatterSurface::has_height() const {
-  return (_has_bits_[0] & 0x00000020u) != 0;
-}
-void CMsgTEShatterSurface::set_has_height() {
-  _has_bits_[0] |= 0x00000020u;
-}
-void CMsgTEShatterSurface::clear_has_height() {
-  _has_bits_[0] &= ~0x00000020u;
-}
-void CMsgTEShatterSurface::clear_height() {
-  height_ = 0;
-  clear_has_height();
-}
- float CMsgTEShatterSurface::height() const {
-  // @@protoc_insertion_point(field_get:CMsgTEShatterSurface.height)
-  return height_;
-}
- void CMsgTEShatterSurface::set_height(float value) {
-  set_has_height();
-  height_ = value;
-  // @@protoc_insertion_point(field_set:CMsgTEShatterSurface.height)
-}
-
-// optional float shardsize = 7;
-bool CMsgTEShatterSurface::has_shardsize() const {
-  return (_has_bits_[0] & 0x00000040u) != 0;
-}
-void CMsgTEShatterSurface::set_has_shardsize() {
-  _has_bits_[0] |= 0x00000040u;
-}
-void CMsgTEShatterSurface::clear_has_shardsize() {
-  _has_bits_[0] &= ~0x00000040u;
-}
-void CMsgTEShatterSurface::clear_shardsize() {
-  shardsize_ = 0;
-  clear_has_shardsize();
-}
- float CMsgTEShatterSurface::shardsize() const {
-  // @@protoc_insertion_point(field_get:CMsgTEShatterSurface.shardsize)
-  return shardsize_;
-}
- void CMsgTEShatterSurface::set_shardsize(float value) {
-  set_has_shardsize();
-  shardsize_ = value;
-  // @@protoc_insertion_point(field_set:CMsgTEShatterSurface.shardsize)
-}
-
-// optional uint32 surfacetype = 8;
-bool CMsgTEShatterSurface::has_surfacetype() const {
-  return (_has_bits_[0] & 0x00000080u) != 0;
-}
-void CMsgTEShatterSurface::set_has_surfacetype() {
-  _has_bits_[0] |= 0x00000080u;
-}
-void CMsgTEShatterSurface::clear_has_surfacetype() {
-  _has_bits_[0] &= ~0x00000080u;
-}
-void CMsgTEShatterSurface::clear_surfacetype() {
-  surfacetype_ = 0u;
-  clear_has_surfacetype();
-}
- ::google::protobuf::uint32 CMsgTEShatterSurface::surfacetype() const {
-  // @@protoc_insertion_point(field_get:CMsgTEShatterSurface.surfacetype)
-  return surfacetype_;
-}
- void CMsgTEShatterSurface::set_surfacetype(::google::protobuf::uint32 value) {
-  set_has_surfacetype();
-  surfacetype_ = value;
-  // @@protoc_insertion_point(field_set:CMsgTEShatterSurface.surfacetype)
-}
-
-// optional fixed32 frontcolor = 9;
-bool CMsgTEShatterSurface::has_frontcolor() const {
-  return (_has_bits_[0] & 0x00000100u) != 0;
-}
-void CMsgTEShatterSurface::set_has_frontcolor() {
-  _has_bits_[0] |= 0x00000100u;
-}
-void CMsgTEShatterSurface::clear_has_frontcolor() {
-  _has_bits_[0] &= ~0x00000100u;
-}
-void CMsgTEShatterSurface::clear_frontcolor() {
-  frontcolor_ = 0u;
-  clear_has_frontcolor();
-}
- ::google::protobuf::uint32 CMsgTEShatterSurface::frontcolor() const {
-  // @@protoc_insertion_point(field_get:CMsgTEShatterSurface.frontcolor)
-  return frontcolor_;
-}
- void CMsgTEShatterSurface::set_frontcolor(::google::protobuf::uint32 value) {
-  set_has_frontcolor();
-  frontcolor_ = value;
-  // @@protoc_insertion_point(field_set:CMsgTEShatterSurface.frontcolor)
-}
-
-// optional fixed32 backcolor = 10;
-bool CMsgTEShatterSurface::has_backcolor() const {
-  return (_has_bits_[0] & 0x00000200u) != 0;
-}
-void CMsgTEShatterSurface::set_has_backcolor() {
-  _has_bits_[0] |= 0x00000200u;
-}
-void CMsgTEShatterSurface::clear_has_backcolor() {
-  _has_bits_[0] &= ~0x00000200u;
-}
-void CMsgTEShatterSurface::clear_backcolor() {
-  backcolor_ = 0u;
-  clear_has_backcolor();
-}
- ::google::protobuf::uint32 CMsgTEShatterSurface::backcolor() const {
-  // @@protoc_insertion_point(field_get:CMsgTEShatterSurface.backcolor)
-  return backcolor_;
-}
- void CMsgTEShatterSurface::set_backcolor(::google::protobuf::uint32 value) {
-  set_has_backcolor();
-  backcolor_ = value;
-  // @@protoc_insertion_point(field_set:CMsgTEShatterSurface.backcolor)
-}
-
-#endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
 
 // ===================================================================
 
@@ -10996,7 +7896,7 @@ const int CMsgTEGlowSprite::kBrightnessFieldNumber;
 #endif  // !_MSC_VER
 
 CMsgTEGlowSprite::CMsgTEGlowSprite()
-  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  : ::google::protobuf::Message() {
   SharedCtor();
   // @@protoc_insertion_point(constructor:CMsgTEGlowSprite)
 }
@@ -11006,8 +7906,7 @@ void CMsgTEGlowSprite::InitAsDefaultInstance() {
 }
 
 CMsgTEGlowSprite::CMsgTEGlowSprite(const CMsgTEGlowSprite& from)
-  : ::google::protobuf::Message(),
-    _internal_metadata_(NULL) {
+  : ::google::protobuf::Message() {
   SharedCtor();
   MergeFrom(from);
   // @@protoc_insertion_point(copy_constructor:CMsgTEGlowSprite)
@@ -11050,37 +7949,33 @@ const CMsgTEGlowSprite& CMsgTEGlowSprite::default_instance() {
 
 CMsgTEGlowSprite* CMsgTEGlowSprite::default_instance_ = NULL;
 
-CMsgTEGlowSprite* CMsgTEGlowSprite::New(::google::protobuf::Arena* arena) const {
-  CMsgTEGlowSprite* n = new CMsgTEGlowSprite;
-  if (arena != NULL) {
-    arena->Own(n);
-  }
-  return n;
+CMsgTEGlowSprite* CMsgTEGlowSprite::New() const {
+  return new CMsgTEGlowSprite;
 }
 
 void CMsgTEGlowSprite::Clear() {
-#define ZR_HELPER_(f) reinterpret_cast<char*>(\
-  &reinterpret_cast<CMsgTEGlowSprite*>(16)->f)
+#define OFFSET_OF_FIELD_(f) (reinterpret_cast<char*>(      \
+  &reinterpret_cast<CMsgTEGlowSprite*>(16)->f) - \
+   reinterpret_cast<char*>(16))
 
-#define ZR_(first, last) do {\
-  ::memset(&first, 0,\
-           ZR_HELPER_(last) - ZR_HELPER_(first) + sizeof(last));\
-} while (0)
+#define ZR_(first, last) do {                              \
+    size_t f = OFFSET_OF_FIELD_(first);                    \
+    size_t n = OFFSET_OF_FIELD_(last) - f + sizeof(last);  \
+    ::memset(&first, 0, n);                                \
+  } while (0)
 
-  if (_has_bits_[0 / 32] & 15u) {
+  if (_has_bits_[0 / 32] & 15) {
     ZR_(scale_, brightness_);
     if (has_origin()) {
       if (origin_ != NULL) origin_->::CMsgVector::Clear();
     }
   }
 
-#undef ZR_HELPER_
+#undef OFFSET_OF_FIELD_
 #undef ZR_
 
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
-  if (_internal_metadata_.have_unknown_fields()) {
-    mutable_unknown_fields()->Clear();
-  }
+  mutable_unknown_fields()->Clear();
 }
 
 bool CMsgTEGlowSprite::MergePartialFromCodedStream(
@@ -11178,7 +8073,7 @@ void CMsgTEGlowSprite::SerializeWithCachedSizes(
   // optional .CMsgVector origin = 1;
   if (has_origin()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      1, *this->origin_, output);
+      1, this->origin(), output);
   }
 
   // optional float scale = 2;
@@ -11196,7 +8091,7 @@ void CMsgTEGlowSprite::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteUInt32(4, this->brightness(), output);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
   }
@@ -11210,7 +8105,7 @@ void CMsgTEGlowSprite::SerializeWithCachedSizes(
   if (has_origin()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
-        1, *this->origin_, target);
+        1, this->origin(), target);
   }
 
   // optional float scale = 2;
@@ -11228,7 +8123,7 @@ void CMsgTEGlowSprite::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(4, this->brightness(), target);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
   }
@@ -11239,12 +8134,12 @@ void CMsgTEGlowSprite::SerializeWithCachedSizes(
 int CMsgTEGlowSprite::ByteSize() const {
   int total_size = 0;
 
-  if (_has_bits_[0 / 32] & 15u) {
+  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     // optional .CMsgVector origin = 1;
     if (has_origin()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
-          *this->origin_);
+          this->origin());
     }
 
     // optional float scale = 2;
@@ -11265,7 +8160,7 @@ int CMsgTEGlowSprite::ByteSize() const {
     }
 
   }
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     total_size +=
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         unknown_fields());
@@ -11277,10 +8172,10 @@ int CMsgTEGlowSprite::ByteSize() const {
 }
 
 void CMsgTEGlowSprite::MergeFrom(const ::google::protobuf::Message& from) {
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
-  const CMsgTEGlowSprite* source = 
-      ::google::protobuf::internal::DynamicCastToGenerated<const CMsgTEGlowSprite>(
-          &from);
+  GOOGLE_CHECK_NE(&from, this);
+  const CMsgTEGlowSprite* source =
+    ::google::protobuf::internal::dynamic_cast_if_available<const CMsgTEGlowSprite*>(
+      &from);
   if (source == NULL) {
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
   } else {
@@ -11289,7 +8184,7 @@ void CMsgTEGlowSprite::MergeFrom(const ::google::protobuf::Message& from) {
 }
 
 void CMsgTEGlowSprite::MergeFrom(const CMsgTEGlowSprite& from) {
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  GOOGLE_CHECK_NE(&from, this);
   if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (from.has_origin()) {
       mutable_origin()->::CMsgVector::MergeFrom(from.origin());
@@ -11304,9 +8199,7 @@ void CMsgTEGlowSprite::MergeFrom(const CMsgTEGlowSprite& from) {
       set_brightness(from.brightness());
     }
   }
-  if (from._internal_metadata_.have_unknown_fields()) {
-    mutable_unknown_fields()->MergeFrom(from.unknown_fields());
-  }
+  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
 }
 
 void CMsgTEGlowSprite::CopyFrom(const ::google::protobuf::Message& from) {
@@ -11327,17 +8220,15 @@ bool CMsgTEGlowSprite::IsInitialized() const {
 }
 
 void CMsgTEGlowSprite::Swap(CMsgTEGlowSprite* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
-void CMsgTEGlowSprite::InternalSwap(CMsgTEGlowSprite* other) {
-  std::swap(origin_, other->origin_);
-  std::swap(scale_, other->scale_);
-  std::swap(life_, other->life_);
-  std::swap(brightness_, other->brightness_);
-  std::swap(_has_bits_[0], other->_has_bits_[0]);
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  std::swap(_cached_size_, other->_cached_size_);
+  if (other != this) {
+    std::swap(origin_, other->origin_);
+    std::swap(scale_, other->scale_);
+    std::swap(life_, other->life_);
+    std::swap(brightness_, other->brightness_);
+    std::swap(_has_bits_[0], other->_has_bits_[0]);
+    _unknown_fields_.Swap(&other->_unknown_fields_);
+    std::swap(_cached_size_, other->_cached_size_);
+  }
 }
 
 ::google::protobuf::Metadata CMsgTEGlowSprite::GetMetadata() const {
@@ -11348,125 +8239,6 @@ void CMsgTEGlowSprite::InternalSwap(CMsgTEGlowSprite* other) {
   return metadata;
 }
 
-#if PROTOBUF_INLINE_NOT_IN_HEADERS
-// CMsgTEGlowSprite
-
-// optional .CMsgVector origin = 1;
-bool CMsgTEGlowSprite::has_origin() const {
-  return (_has_bits_[0] & 0x00000001u) != 0;
-}
-void CMsgTEGlowSprite::set_has_origin() {
-  _has_bits_[0] |= 0x00000001u;
-}
-void CMsgTEGlowSprite::clear_has_origin() {
-  _has_bits_[0] &= ~0x00000001u;
-}
-void CMsgTEGlowSprite::clear_origin() {
-  if (origin_ != NULL) origin_->::CMsgVector::Clear();
-  clear_has_origin();
-}
-const ::CMsgVector& CMsgTEGlowSprite::origin() const {
-  // @@protoc_insertion_point(field_get:CMsgTEGlowSprite.origin)
-  return origin_ != NULL ? *origin_ : *default_instance_->origin_;
-}
-::CMsgVector* CMsgTEGlowSprite::mutable_origin() {
-  set_has_origin();
-  if (origin_ == NULL) {
-    origin_ = new ::CMsgVector;
-  }
-  // @@protoc_insertion_point(field_mutable:CMsgTEGlowSprite.origin)
-  return origin_;
-}
-::CMsgVector* CMsgTEGlowSprite::release_origin() {
-  clear_has_origin();
-  ::CMsgVector* temp = origin_;
-  origin_ = NULL;
-  return temp;
-}
-void CMsgTEGlowSprite::set_allocated_origin(::CMsgVector* origin) {
-  delete origin_;
-  origin_ = origin;
-  if (origin) {
-    set_has_origin();
-  } else {
-    clear_has_origin();
-  }
-  // @@protoc_insertion_point(field_set_allocated:CMsgTEGlowSprite.origin)
-}
-
-// optional float scale = 2;
-bool CMsgTEGlowSprite::has_scale() const {
-  return (_has_bits_[0] & 0x00000002u) != 0;
-}
-void CMsgTEGlowSprite::set_has_scale() {
-  _has_bits_[0] |= 0x00000002u;
-}
-void CMsgTEGlowSprite::clear_has_scale() {
-  _has_bits_[0] &= ~0x00000002u;
-}
-void CMsgTEGlowSprite::clear_scale() {
-  scale_ = 0;
-  clear_has_scale();
-}
- float CMsgTEGlowSprite::scale() const {
-  // @@protoc_insertion_point(field_get:CMsgTEGlowSprite.scale)
-  return scale_;
-}
- void CMsgTEGlowSprite::set_scale(float value) {
-  set_has_scale();
-  scale_ = value;
-  // @@protoc_insertion_point(field_set:CMsgTEGlowSprite.scale)
-}
-
-// optional float life = 3;
-bool CMsgTEGlowSprite::has_life() const {
-  return (_has_bits_[0] & 0x00000004u) != 0;
-}
-void CMsgTEGlowSprite::set_has_life() {
-  _has_bits_[0] |= 0x00000004u;
-}
-void CMsgTEGlowSprite::clear_has_life() {
-  _has_bits_[0] &= ~0x00000004u;
-}
-void CMsgTEGlowSprite::clear_life() {
-  life_ = 0;
-  clear_has_life();
-}
- float CMsgTEGlowSprite::life() const {
-  // @@protoc_insertion_point(field_get:CMsgTEGlowSprite.life)
-  return life_;
-}
- void CMsgTEGlowSprite::set_life(float value) {
-  set_has_life();
-  life_ = value;
-  // @@protoc_insertion_point(field_set:CMsgTEGlowSprite.life)
-}
-
-// optional uint32 brightness = 4;
-bool CMsgTEGlowSprite::has_brightness() const {
-  return (_has_bits_[0] & 0x00000008u) != 0;
-}
-void CMsgTEGlowSprite::set_has_brightness() {
-  _has_bits_[0] |= 0x00000008u;
-}
-void CMsgTEGlowSprite::clear_has_brightness() {
-  _has_bits_[0] &= ~0x00000008u;
-}
-void CMsgTEGlowSprite::clear_brightness() {
-  brightness_ = 0u;
-  clear_has_brightness();
-}
- ::google::protobuf::uint32 CMsgTEGlowSprite::brightness() const {
-  // @@protoc_insertion_point(field_get:CMsgTEGlowSprite.brightness)
-  return brightness_;
-}
- void CMsgTEGlowSprite::set_brightness(::google::protobuf::uint32 value) {
-  set_has_brightness();
-  brightness_ = value;
-  // @@protoc_insertion_point(field_set:CMsgTEGlowSprite.brightness)
-}
-
-#endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
 
 // ===================================================================
 
@@ -11477,7 +8249,7 @@ const int CMsgTEImpact::kTypeFieldNumber;
 #endif  // !_MSC_VER
 
 CMsgTEImpact::CMsgTEImpact()
-  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  : ::google::protobuf::Message() {
   SharedCtor();
   // @@protoc_insertion_point(constructor:CMsgTEImpact)
 }
@@ -11488,8 +8260,7 @@ void CMsgTEImpact::InitAsDefaultInstance() {
 }
 
 CMsgTEImpact::CMsgTEImpact(const CMsgTEImpact& from)
-  : ::google::protobuf::Message(),
-    _internal_metadata_(NULL) {
+  : ::google::protobuf::Message() {
   SharedCtor();
   MergeFrom(from);
   // @@protoc_insertion_point(copy_constructor:CMsgTEImpact)
@@ -11532,16 +8303,12 @@ const CMsgTEImpact& CMsgTEImpact::default_instance() {
 
 CMsgTEImpact* CMsgTEImpact::default_instance_ = NULL;
 
-CMsgTEImpact* CMsgTEImpact::New(::google::protobuf::Arena* arena) const {
-  CMsgTEImpact* n = new CMsgTEImpact;
-  if (arena != NULL) {
-    arena->Own(n);
-  }
-  return n;
+CMsgTEImpact* CMsgTEImpact::New() const {
+  return new CMsgTEImpact;
 }
 
 void CMsgTEImpact::Clear() {
-  if (_has_bits_[0 / 32] & 7u) {
+  if (_has_bits_[0 / 32] & 7) {
     if (has_origin()) {
       if (origin_ != NULL) origin_->::CMsgVector::Clear();
     }
@@ -11551,9 +8318,7 @@ void CMsgTEImpact::Clear() {
     type_ = 0u;
   }
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
-  if (_internal_metadata_.have_unknown_fields()) {
-    mutable_unknown_fields()->Clear();
-  }
+  mutable_unknown_fields()->Clear();
 }
 
 bool CMsgTEImpact::MergePartialFromCodedStream(
@@ -11634,13 +8399,13 @@ void CMsgTEImpact::SerializeWithCachedSizes(
   // optional .CMsgVector origin = 1;
   if (has_origin()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      1, *this->origin_, output);
+      1, this->origin(), output);
   }
 
   // optional .CMsgVector normal = 2;
   if (has_normal()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      2, *this->normal_, output);
+      2, this->normal(), output);
   }
 
   // optional uint32 type = 3;
@@ -11648,7 +8413,7 @@ void CMsgTEImpact::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteUInt32(3, this->type(), output);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
   }
@@ -11662,14 +8427,14 @@ void CMsgTEImpact::SerializeWithCachedSizes(
   if (has_origin()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
-        1, *this->origin_, target);
+        1, this->origin(), target);
   }
 
   // optional .CMsgVector normal = 2;
   if (has_normal()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
-        2, *this->normal_, target);
+        2, this->normal(), target);
   }
 
   // optional uint32 type = 3;
@@ -11677,7 +8442,7 @@ void CMsgTEImpact::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(3, this->type(), target);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
   }
@@ -11688,19 +8453,19 @@ void CMsgTEImpact::SerializeWithCachedSizes(
 int CMsgTEImpact::ByteSize() const {
   int total_size = 0;
 
-  if (_has_bits_[0 / 32] & 7u) {
+  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     // optional .CMsgVector origin = 1;
     if (has_origin()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
-          *this->origin_);
+          this->origin());
     }
 
     // optional .CMsgVector normal = 2;
     if (has_normal()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
-          *this->normal_);
+          this->normal());
     }
 
     // optional uint32 type = 3;
@@ -11711,7 +8476,7 @@ int CMsgTEImpact::ByteSize() const {
     }
 
   }
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     total_size +=
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         unknown_fields());
@@ -11723,10 +8488,10 @@ int CMsgTEImpact::ByteSize() const {
 }
 
 void CMsgTEImpact::MergeFrom(const ::google::protobuf::Message& from) {
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
-  const CMsgTEImpact* source = 
-      ::google::protobuf::internal::DynamicCastToGenerated<const CMsgTEImpact>(
-          &from);
+  GOOGLE_CHECK_NE(&from, this);
+  const CMsgTEImpact* source =
+    ::google::protobuf::internal::dynamic_cast_if_available<const CMsgTEImpact*>(
+      &from);
   if (source == NULL) {
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
   } else {
@@ -11735,7 +8500,7 @@ void CMsgTEImpact::MergeFrom(const ::google::protobuf::Message& from) {
 }
 
 void CMsgTEImpact::MergeFrom(const CMsgTEImpact& from) {
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  GOOGLE_CHECK_NE(&from, this);
   if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (from.has_origin()) {
       mutable_origin()->::CMsgVector::MergeFrom(from.origin());
@@ -11747,9 +8512,7 @@ void CMsgTEImpact::MergeFrom(const CMsgTEImpact& from) {
       set_type(from.type());
     }
   }
-  if (from._internal_metadata_.have_unknown_fields()) {
-    mutable_unknown_fields()->MergeFrom(from.unknown_fields());
-  }
+  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
 }
 
 void CMsgTEImpact::CopyFrom(const ::google::protobuf::Message& from) {
@@ -11770,16 +8533,14 @@ bool CMsgTEImpact::IsInitialized() const {
 }
 
 void CMsgTEImpact::Swap(CMsgTEImpact* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
-void CMsgTEImpact::InternalSwap(CMsgTEImpact* other) {
-  std::swap(origin_, other->origin_);
-  std::swap(normal_, other->normal_);
-  std::swap(type_, other->type_);
-  std::swap(_has_bits_[0], other->_has_bits_[0]);
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  std::swap(_cached_size_, other->_cached_size_);
+  if (other != this) {
+    std::swap(origin_, other->origin_);
+    std::swap(normal_, other->normal_);
+    std::swap(type_, other->type_);
+    std::swap(_has_bits_[0], other->_has_bits_[0]);
+    _unknown_fields_.Swap(&other->_unknown_fields_);
+    std::swap(_cached_size_, other->_cached_size_);
+  }
 }
 
 ::google::protobuf::Metadata CMsgTEImpact::GetMetadata() const {
@@ -11790,120 +8551,6 @@ void CMsgTEImpact::InternalSwap(CMsgTEImpact* other) {
   return metadata;
 }
 
-#if PROTOBUF_INLINE_NOT_IN_HEADERS
-// CMsgTEImpact
-
-// optional .CMsgVector origin = 1;
-bool CMsgTEImpact::has_origin() const {
-  return (_has_bits_[0] & 0x00000001u) != 0;
-}
-void CMsgTEImpact::set_has_origin() {
-  _has_bits_[0] |= 0x00000001u;
-}
-void CMsgTEImpact::clear_has_origin() {
-  _has_bits_[0] &= ~0x00000001u;
-}
-void CMsgTEImpact::clear_origin() {
-  if (origin_ != NULL) origin_->::CMsgVector::Clear();
-  clear_has_origin();
-}
-const ::CMsgVector& CMsgTEImpact::origin() const {
-  // @@protoc_insertion_point(field_get:CMsgTEImpact.origin)
-  return origin_ != NULL ? *origin_ : *default_instance_->origin_;
-}
-::CMsgVector* CMsgTEImpact::mutable_origin() {
-  set_has_origin();
-  if (origin_ == NULL) {
-    origin_ = new ::CMsgVector;
-  }
-  // @@protoc_insertion_point(field_mutable:CMsgTEImpact.origin)
-  return origin_;
-}
-::CMsgVector* CMsgTEImpact::release_origin() {
-  clear_has_origin();
-  ::CMsgVector* temp = origin_;
-  origin_ = NULL;
-  return temp;
-}
-void CMsgTEImpact::set_allocated_origin(::CMsgVector* origin) {
-  delete origin_;
-  origin_ = origin;
-  if (origin) {
-    set_has_origin();
-  } else {
-    clear_has_origin();
-  }
-  // @@protoc_insertion_point(field_set_allocated:CMsgTEImpact.origin)
-}
-
-// optional .CMsgVector normal = 2;
-bool CMsgTEImpact::has_normal() const {
-  return (_has_bits_[0] & 0x00000002u) != 0;
-}
-void CMsgTEImpact::set_has_normal() {
-  _has_bits_[0] |= 0x00000002u;
-}
-void CMsgTEImpact::clear_has_normal() {
-  _has_bits_[0] &= ~0x00000002u;
-}
-void CMsgTEImpact::clear_normal() {
-  if (normal_ != NULL) normal_->::CMsgVector::Clear();
-  clear_has_normal();
-}
-const ::CMsgVector& CMsgTEImpact::normal() const {
-  // @@protoc_insertion_point(field_get:CMsgTEImpact.normal)
-  return normal_ != NULL ? *normal_ : *default_instance_->normal_;
-}
-::CMsgVector* CMsgTEImpact::mutable_normal() {
-  set_has_normal();
-  if (normal_ == NULL) {
-    normal_ = new ::CMsgVector;
-  }
-  // @@protoc_insertion_point(field_mutable:CMsgTEImpact.normal)
-  return normal_;
-}
-::CMsgVector* CMsgTEImpact::release_normal() {
-  clear_has_normal();
-  ::CMsgVector* temp = normal_;
-  normal_ = NULL;
-  return temp;
-}
-void CMsgTEImpact::set_allocated_normal(::CMsgVector* normal) {
-  delete normal_;
-  normal_ = normal;
-  if (normal) {
-    set_has_normal();
-  } else {
-    clear_has_normal();
-  }
-  // @@protoc_insertion_point(field_set_allocated:CMsgTEImpact.normal)
-}
-
-// optional uint32 type = 3;
-bool CMsgTEImpact::has_type() const {
-  return (_has_bits_[0] & 0x00000004u) != 0;
-}
-void CMsgTEImpact::set_has_type() {
-  _has_bits_[0] |= 0x00000004u;
-}
-void CMsgTEImpact::clear_has_type() {
-  _has_bits_[0] &= ~0x00000004u;
-}
-void CMsgTEImpact::clear_type() {
-  type_ = 0u;
-  clear_has_type();
-}
- ::google::protobuf::uint32 CMsgTEImpact::type() const {
-  // @@protoc_insertion_point(field_get:CMsgTEImpact.type)
-  return type_;
-}
- void CMsgTEImpact::set_type(::google::protobuf::uint32 value) {
-  set_has_type();
-  type_ = value;
-  // @@protoc_insertion_point(field_set:CMsgTEImpact.type)
-}
-
-#endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
 
 // ===================================================================
 
@@ -11915,7 +8562,7 @@ const int CMsgTEMuzzleFlash::kTypeFieldNumber;
 #endif  // !_MSC_VER
 
 CMsgTEMuzzleFlash::CMsgTEMuzzleFlash()
-  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  : ::google::protobuf::Message() {
   SharedCtor();
   // @@protoc_insertion_point(constructor:CMsgTEMuzzleFlash)
 }
@@ -11926,8 +8573,7 @@ void CMsgTEMuzzleFlash::InitAsDefaultInstance() {
 }
 
 CMsgTEMuzzleFlash::CMsgTEMuzzleFlash(const CMsgTEMuzzleFlash& from)
-  : ::google::protobuf::Message(),
-    _internal_metadata_(NULL) {
+  : ::google::protobuf::Message() {
   SharedCtor();
   MergeFrom(from);
   // @@protoc_insertion_point(copy_constructor:CMsgTEMuzzleFlash)
@@ -11971,24 +8617,22 @@ const CMsgTEMuzzleFlash& CMsgTEMuzzleFlash::default_instance() {
 
 CMsgTEMuzzleFlash* CMsgTEMuzzleFlash::default_instance_ = NULL;
 
-CMsgTEMuzzleFlash* CMsgTEMuzzleFlash::New(::google::protobuf::Arena* arena) const {
-  CMsgTEMuzzleFlash* n = new CMsgTEMuzzleFlash;
-  if (arena != NULL) {
-    arena->Own(n);
-  }
-  return n;
+CMsgTEMuzzleFlash* CMsgTEMuzzleFlash::New() const {
+  return new CMsgTEMuzzleFlash;
 }
 
 void CMsgTEMuzzleFlash::Clear() {
-#define ZR_HELPER_(f) reinterpret_cast<char*>(\
-  &reinterpret_cast<CMsgTEMuzzleFlash*>(16)->f)
+#define OFFSET_OF_FIELD_(f) (reinterpret_cast<char*>(      \
+  &reinterpret_cast<CMsgTEMuzzleFlash*>(16)->f) - \
+   reinterpret_cast<char*>(16))
 
-#define ZR_(first, last) do {\
-  ::memset(&first, 0,\
-           ZR_HELPER_(last) - ZR_HELPER_(first) + sizeof(last));\
-} while (0)
+#define ZR_(first, last) do {                              \
+    size_t f = OFFSET_OF_FIELD_(first);                    \
+    size_t n = OFFSET_OF_FIELD_(last) - f + sizeof(last);  \
+    ::memset(&first, 0, n);                                \
+  } while (0)
 
-  if (_has_bits_[0 / 32] & 15u) {
+  if (_has_bits_[0 / 32] & 15) {
     ZR_(scale_, type_);
     if (has_origin()) {
       if (origin_ != NULL) origin_->::CMsgVector::Clear();
@@ -11998,13 +8642,11 @@ void CMsgTEMuzzleFlash::Clear() {
     }
   }
 
-#undef ZR_HELPER_
+#undef OFFSET_OF_FIELD_
 #undef ZR_
 
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
-  if (_internal_metadata_.have_unknown_fields()) {
-    mutable_unknown_fields()->Clear();
-  }
+  mutable_unknown_fields()->Clear();
 }
 
 bool CMsgTEMuzzleFlash::MergePartialFromCodedStream(
@@ -12100,13 +8742,13 @@ void CMsgTEMuzzleFlash::SerializeWithCachedSizes(
   // optional .CMsgVector origin = 1;
   if (has_origin()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      1, *this->origin_, output);
+      1, this->origin(), output);
   }
 
   // optional .CMsgQAngle angles = 2;
   if (has_angles()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      2, *this->angles_, output);
+      2, this->angles(), output);
   }
 
   // optional float scale = 3;
@@ -12119,7 +8761,7 @@ void CMsgTEMuzzleFlash::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteUInt32(4, this->type(), output);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
   }
@@ -12133,14 +8775,14 @@ void CMsgTEMuzzleFlash::SerializeWithCachedSizes(
   if (has_origin()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
-        1, *this->origin_, target);
+        1, this->origin(), target);
   }
 
   // optional .CMsgQAngle angles = 2;
   if (has_angles()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
-        2, *this->angles_, target);
+        2, this->angles(), target);
   }
 
   // optional float scale = 3;
@@ -12153,7 +8795,7 @@ void CMsgTEMuzzleFlash::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(4, this->type(), target);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
   }
@@ -12164,19 +8806,19 @@ void CMsgTEMuzzleFlash::SerializeWithCachedSizes(
 int CMsgTEMuzzleFlash::ByteSize() const {
   int total_size = 0;
 
-  if (_has_bits_[0 / 32] & 15u) {
+  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     // optional .CMsgVector origin = 1;
     if (has_origin()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
-          *this->origin_);
+          this->origin());
     }
 
     // optional .CMsgQAngle angles = 2;
     if (has_angles()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
-          *this->angles_);
+          this->angles());
     }
 
     // optional float scale = 3;
@@ -12192,7 +8834,7 @@ int CMsgTEMuzzleFlash::ByteSize() const {
     }
 
   }
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     total_size +=
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         unknown_fields());
@@ -12204,10 +8846,10 @@ int CMsgTEMuzzleFlash::ByteSize() const {
 }
 
 void CMsgTEMuzzleFlash::MergeFrom(const ::google::protobuf::Message& from) {
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
-  const CMsgTEMuzzleFlash* source = 
-      ::google::protobuf::internal::DynamicCastToGenerated<const CMsgTEMuzzleFlash>(
-          &from);
+  GOOGLE_CHECK_NE(&from, this);
+  const CMsgTEMuzzleFlash* source =
+    ::google::protobuf::internal::dynamic_cast_if_available<const CMsgTEMuzzleFlash*>(
+      &from);
   if (source == NULL) {
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
   } else {
@@ -12216,7 +8858,7 @@ void CMsgTEMuzzleFlash::MergeFrom(const ::google::protobuf::Message& from) {
 }
 
 void CMsgTEMuzzleFlash::MergeFrom(const CMsgTEMuzzleFlash& from) {
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  GOOGLE_CHECK_NE(&from, this);
   if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (from.has_origin()) {
       mutable_origin()->::CMsgVector::MergeFrom(from.origin());
@@ -12231,9 +8873,7 @@ void CMsgTEMuzzleFlash::MergeFrom(const CMsgTEMuzzleFlash& from) {
       set_type(from.type());
     }
   }
-  if (from._internal_metadata_.have_unknown_fields()) {
-    mutable_unknown_fields()->MergeFrom(from.unknown_fields());
-  }
+  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
 }
 
 void CMsgTEMuzzleFlash::CopyFrom(const ::google::protobuf::Message& from) {
@@ -12254,17 +8894,15 @@ bool CMsgTEMuzzleFlash::IsInitialized() const {
 }
 
 void CMsgTEMuzzleFlash::Swap(CMsgTEMuzzleFlash* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
-void CMsgTEMuzzleFlash::InternalSwap(CMsgTEMuzzleFlash* other) {
-  std::swap(origin_, other->origin_);
-  std::swap(angles_, other->angles_);
-  std::swap(scale_, other->scale_);
-  std::swap(type_, other->type_);
-  std::swap(_has_bits_[0], other->_has_bits_[0]);
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  std::swap(_cached_size_, other->_cached_size_);
+  if (other != this) {
+    std::swap(origin_, other->origin_);
+    std::swap(angles_, other->angles_);
+    std::swap(scale_, other->scale_);
+    std::swap(type_, other->type_);
+    std::swap(_has_bits_[0], other->_has_bits_[0]);
+    _unknown_fields_.Swap(&other->_unknown_fields_);
+    std::swap(_cached_size_, other->_cached_size_);
+  }
 }
 
 ::google::protobuf::Metadata CMsgTEMuzzleFlash::GetMetadata() const {
@@ -12275,144 +8913,6 @@ void CMsgTEMuzzleFlash::InternalSwap(CMsgTEMuzzleFlash* other) {
   return metadata;
 }
 
-#if PROTOBUF_INLINE_NOT_IN_HEADERS
-// CMsgTEMuzzleFlash
-
-// optional .CMsgVector origin = 1;
-bool CMsgTEMuzzleFlash::has_origin() const {
-  return (_has_bits_[0] & 0x00000001u) != 0;
-}
-void CMsgTEMuzzleFlash::set_has_origin() {
-  _has_bits_[0] |= 0x00000001u;
-}
-void CMsgTEMuzzleFlash::clear_has_origin() {
-  _has_bits_[0] &= ~0x00000001u;
-}
-void CMsgTEMuzzleFlash::clear_origin() {
-  if (origin_ != NULL) origin_->::CMsgVector::Clear();
-  clear_has_origin();
-}
-const ::CMsgVector& CMsgTEMuzzleFlash::origin() const {
-  // @@protoc_insertion_point(field_get:CMsgTEMuzzleFlash.origin)
-  return origin_ != NULL ? *origin_ : *default_instance_->origin_;
-}
-::CMsgVector* CMsgTEMuzzleFlash::mutable_origin() {
-  set_has_origin();
-  if (origin_ == NULL) {
-    origin_ = new ::CMsgVector;
-  }
-  // @@protoc_insertion_point(field_mutable:CMsgTEMuzzleFlash.origin)
-  return origin_;
-}
-::CMsgVector* CMsgTEMuzzleFlash::release_origin() {
-  clear_has_origin();
-  ::CMsgVector* temp = origin_;
-  origin_ = NULL;
-  return temp;
-}
-void CMsgTEMuzzleFlash::set_allocated_origin(::CMsgVector* origin) {
-  delete origin_;
-  origin_ = origin;
-  if (origin) {
-    set_has_origin();
-  } else {
-    clear_has_origin();
-  }
-  // @@protoc_insertion_point(field_set_allocated:CMsgTEMuzzleFlash.origin)
-}
-
-// optional .CMsgQAngle angles = 2;
-bool CMsgTEMuzzleFlash::has_angles() const {
-  return (_has_bits_[0] & 0x00000002u) != 0;
-}
-void CMsgTEMuzzleFlash::set_has_angles() {
-  _has_bits_[0] |= 0x00000002u;
-}
-void CMsgTEMuzzleFlash::clear_has_angles() {
-  _has_bits_[0] &= ~0x00000002u;
-}
-void CMsgTEMuzzleFlash::clear_angles() {
-  if (angles_ != NULL) angles_->::CMsgQAngle::Clear();
-  clear_has_angles();
-}
-const ::CMsgQAngle& CMsgTEMuzzleFlash::angles() const {
-  // @@protoc_insertion_point(field_get:CMsgTEMuzzleFlash.angles)
-  return angles_ != NULL ? *angles_ : *default_instance_->angles_;
-}
-::CMsgQAngle* CMsgTEMuzzleFlash::mutable_angles() {
-  set_has_angles();
-  if (angles_ == NULL) {
-    angles_ = new ::CMsgQAngle;
-  }
-  // @@protoc_insertion_point(field_mutable:CMsgTEMuzzleFlash.angles)
-  return angles_;
-}
-::CMsgQAngle* CMsgTEMuzzleFlash::release_angles() {
-  clear_has_angles();
-  ::CMsgQAngle* temp = angles_;
-  angles_ = NULL;
-  return temp;
-}
-void CMsgTEMuzzleFlash::set_allocated_angles(::CMsgQAngle* angles) {
-  delete angles_;
-  angles_ = angles;
-  if (angles) {
-    set_has_angles();
-  } else {
-    clear_has_angles();
-  }
-  // @@protoc_insertion_point(field_set_allocated:CMsgTEMuzzleFlash.angles)
-}
-
-// optional float scale = 3;
-bool CMsgTEMuzzleFlash::has_scale() const {
-  return (_has_bits_[0] & 0x00000004u) != 0;
-}
-void CMsgTEMuzzleFlash::set_has_scale() {
-  _has_bits_[0] |= 0x00000004u;
-}
-void CMsgTEMuzzleFlash::clear_has_scale() {
-  _has_bits_[0] &= ~0x00000004u;
-}
-void CMsgTEMuzzleFlash::clear_scale() {
-  scale_ = 0;
-  clear_has_scale();
-}
- float CMsgTEMuzzleFlash::scale() const {
-  // @@protoc_insertion_point(field_get:CMsgTEMuzzleFlash.scale)
-  return scale_;
-}
- void CMsgTEMuzzleFlash::set_scale(float value) {
-  set_has_scale();
-  scale_ = value;
-  // @@protoc_insertion_point(field_set:CMsgTEMuzzleFlash.scale)
-}
-
-// optional uint32 type = 4;
-bool CMsgTEMuzzleFlash::has_type() const {
-  return (_has_bits_[0] & 0x00000008u) != 0;
-}
-void CMsgTEMuzzleFlash::set_has_type() {
-  _has_bits_[0] |= 0x00000008u;
-}
-void CMsgTEMuzzleFlash::clear_has_type() {
-  _has_bits_[0] &= ~0x00000008u;
-}
-void CMsgTEMuzzleFlash::clear_type() {
-  type_ = 0u;
-  clear_has_type();
-}
- ::google::protobuf::uint32 CMsgTEMuzzleFlash::type() const {
-  // @@protoc_insertion_point(field_get:CMsgTEMuzzleFlash.type)
-  return type_;
-}
- void CMsgTEMuzzleFlash::set_type(::google::protobuf::uint32 value) {
-  set_has_type();
-  type_ = value;
-  // @@protoc_insertion_point(field_set:CMsgTEMuzzleFlash.type)
-}
-
-#endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
 
 // ===================================================================
 
@@ -12424,7 +8924,7 @@ const int CMsgTEBloodStream::kAmountFieldNumber;
 #endif  // !_MSC_VER
 
 CMsgTEBloodStream::CMsgTEBloodStream()
-  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  : ::google::protobuf::Message() {
   SharedCtor();
   // @@protoc_insertion_point(constructor:CMsgTEBloodStream)
 }
@@ -12435,8 +8935,7 @@ void CMsgTEBloodStream::InitAsDefaultInstance() {
 }
 
 CMsgTEBloodStream::CMsgTEBloodStream(const CMsgTEBloodStream& from)
-  : ::google::protobuf::Message(),
-    _internal_metadata_(NULL) {
+  : ::google::protobuf::Message() {
   SharedCtor();
   MergeFrom(from);
   // @@protoc_insertion_point(copy_constructor:CMsgTEBloodStream)
@@ -12480,24 +8979,22 @@ const CMsgTEBloodStream& CMsgTEBloodStream::default_instance() {
 
 CMsgTEBloodStream* CMsgTEBloodStream::default_instance_ = NULL;
 
-CMsgTEBloodStream* CMsgTEBloodStream::New(::google::protobuf::Arena* arena) const {
-  CMsgTEBloodStream* n = new CMsgTEBloodStream;
-  if (arena != NULL) {
-    arena->Own(n);
-  }
-  return n;
+CMsgTEBloodStream* CMsgTEBloodStream::New() const {
+  return new CMsgTEBloodStream;
 }
 
 void CMsgTEBloodStream::Clear() {
-#define ZR_HELPER_(f) reinterpret_cast<char*>(\
-  &reinterpret_cast<CMsgTEBloodStream*>(16)->f)
+#define OFFSET_OF_FIELD_(f) (reinterpret_cast<char*>(      \
+  &reinterpret_cast<CMsgTEBloodStream*>(16)->f) - \
+   reinterpret_cast<char*>(16))
 
-#define ZR_(first, last) do {\
-  ::memset(&first, 0,\
-           ZR_HELPER_(last) - ZR_HELPER_(first) + sizeof(last));\
-} while (0)
+#define ZR_(first, last) do {                              \
+    size_t f = OFFSET_OF_FIELD_(first);                    \
+    size_t n = OFFSET_OF_FIELD_(last) - f + sizeof(last);  \
+    ::memset(&first, 0, n);                                \
+  } while (0)
 
-  if (_has_bits_[0 / 32] & 15u) {
+  if (_has_bits_[0 / 32] & 15) {
     ZR_(color_, amount_);
     if (has_origin()) {
       if (origin_ != NULL) origin_->::CMsgVector::Clear();
@@ -12507,13 +9004,11 @@ void CMsgTEBloodStream::Clear() {
     }
   }
 
-#undef ZR_HELPER_
+#undef OFFSET_OF_FIELD_
 #undef ZR_
 
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
-  if (_internal_metadata_.have_unknown_fields()) {
-    mutable_unknown_fields()->Clear();
-  }
+  mutable_unknown_fields()->Clear();
 }
 
 bool CMsgTEBloodStream::MergePartialFromCodedStream(
@@ -12609,13 +9104,13 @@ void CMsgTEBloodStream::SerializeWithCachedSizes(
   // optional .CMsgVector origin = 1;
   if (has_origin()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      1, *this->origin_, output);
+      1, this->origin(), output);
   }
 
   // optional .CMsgVector direction = 2;
   if (has_direction()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      2, *this->direction_, output);
+      2, this->direction(), output);
   }
 
   // optional fixed32 color = 3;
@@ -12628,7 +9123,7 @@ void CMsgTEBloodStream::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteUInt32(4, this->amount(), output);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
   }
@@ -12642,14 +9137,14 @@ void CMsgTEBloodStream::SerializeWithCachedSizes(
   if (has_origin()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
-        1, *this->origin_, target);
+        1, this->origin(), target);
   }
 
   // optional .CMsgVector direction = 2;
   if (has_direction()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
-        2, *this->direction_, target);
+        2, this->direction(), target);
   }
 
   // optional fixed32 color = 3;
@@ -12662,7 +9157,7 @@ void CMsgTEBloodStream::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(4, this->amount(), target);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
   }
@@ -12673,19 +9168,19 @@ void CMsgTEBloodStream::SerializeWithCachedSizes(
 int CMsgTEBloodStream::ByteSize() const {
   int total_size = 0;
 
-  if (_has_bits_[0 / 32] & 15u) {
+  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     // optional .CMsgVector origin = 1;
     if (has_origin()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
-          *this->origin_);
+          this->origin());
     }
 
     // optional .CMsgVector direction = 2;
     if (has_direction()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
-          *this->direction_);
+          this->direction());
     }
 
     // optional fixed32 color = 3;
@@ -12701,7 +9196,7 @@ int CMsgTEBloodStream::ByteSize() const {
     }
 
   }
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     total_size +=
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         unknown_fields());
@@ -12713,10 +9208,10 @@ int CMsgTEBloodStream::ByteSize() const {
 }
 
 void CMsgTEBloodStream::MergeFrom(const ::google::protobuf::Message& from) {
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
-  const CMsgTEBloodStream* source = 
-      ::google::protobuf::internal::DynamicCastToGenerated<const CMsgTEBloodStream>(
-          &from);
+  GOOGLE_CHECK_NE(&from, this);
+  const CMsgTEBloodStream* source =
+    ::google::protobuf::internal::dynamic_cast_if_available<const CMsgTEBloodStream*>(
+      &from);
   if (source == NULL) {
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
   } else {
@@ -12725,7 +9220,7 @@ void CMsgTEBloodStream::MergeFrom(const ::google::protobuf::Message& from) {
 }
 
 void CMsgTEBloodStream::MergeFrom(const CMsgTEBloodStream& from) {
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  GOOGLE_CHECK_NE(&from, this);
   if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (from.has_origin()) {
       mutable_origin()->::CMsgVector::MergeFrom(from.origin());
@@ -12740,9 +9235,7 @@ void CMsgTEBloodStream::MergeFrom(const CMsgTEBloodStream& from) {
       set_amount(from.amount());
     }
   }
-  if (from._internal_metadata_.have_unknown_fields()) {
-    mutable_unknown_fields()->MergeFrom(from.unknown_fields());
-  }
+  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
 }
 
 void CMsgTEBloodStream::CopyFrom(const ::google::protobuf::Message& from) {
@@ -12763,17 +9256,15 @@ bool CMsgTEBloodStream::IsInitialized() const {
 }
 
 void CMsgTEBloodStream::Swap(CMsgTEBloodStream* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
-void CMsgTEBloodStream::InternalSwap(CMsgTEBloodStream* other) {
-  std::swap(origin_, other->origin_);
-  std::swap(direction_, other->direction_);
-  std::swap(color_, other->color_);
-  std::swap(amount_, other->amount_);
-  std::swap(_has_bits_[0], other->_has_bits_[0]);
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  std::swap(_cached_size_, other->_cached_size_);
+  if (other != this) {
+    std::swap(origin_, other->origin_);
+    std::swap(direction_, other->direction_);
+    std::swap(color_, other->color_);
+    std::swap(amount_, other->amount_);
+    std::swap(_has_bits_[0], other->_has_bits_[0]);
+    _unknown_fields_.Swap(&other->_unknown_fields_);
+    std::swap(_cached_size_, other->_cached_size_);
+  }
 }
 
 ::google::protobuf::Metadata CMsgTEBloodStream::GetMetadata() const {
@@ -12784,144 +9275,6 @@ void CMsgTEBloodStream::InternalSwap(CMsgTEBloodStream* other) {
   return metadata;
 }
 
-#if PROTOBUF_INLINE_NOT_IN_HEADERS
-// CMsgTEBloodStream
-
-// optional .CMsgVector origin = 1;
-bool CMsgTEBloodStream::has_origin() const {
-  return (_has_bits_[0] & 0x00000001u) != 0;
-}
-void CMsgTEBloodStream::set_has_origin() {
-  _has_bits_[0] |= 0x00000001u;
-}
-void CMsgTEBloodStream::clear_has_origin() {
-  _has_bits_[0] &= ~0x00000001u;
-}
-void CMsgTEBloodStream::clear_origin() {
-  if (origin_ != NULL) origin_->::CMsgVector::Clear();
-  clear_has_origin();
-}
-const ::CMsgVector& CMsgTEBloodStream::origin() const {
-  // @@protoc_insertion_point(field_get:CMsgTEBloodStream.origin)
-  return origin_ != NULL ? *origin_ : *default_instance_->origin_;
-}
-::CMsgVector* CMsgTEBloodStream::mutable_origin() {
-  set_has_origin();
-  if (origin_ == NULL) {
-    origin_ = new ::CMsgVector;
-  }
-  // @@protoc_insertion_point(field_mutable:CMsgTEBloodStream.origin)
-  return origin_;
-}
-::CMsgVector* CMsgTEBloodStream::release_origin() {
-  clear_has_origin();
-  ::CMsgVector* temp = origin_;
-  origin_ = NULL;
-  return temp;
-}
-void CMsgTEBloodStream::set_allocated_origin(::CMsgVector* origin) {
-  delete origin_;
-  origin_ = origin;
-  if (origin) {
-    set_has_origin();
-  } else {
-    clear_has_origin();
-  }
-  // @@protoc_insertion_point(field_set_allocated:CMsgTEBloodStream.origin)
-}
-
-// optional .CMsgVector direction = 2;
-bool CMsgTEBloodStream::has_direction() const {
-  return (_has_bits_[0] & 0x00000002u) != 0;
-}
-void CMsgTEBloodStream::set_has_direction() {
-  _has_bits_[0] |= 0x00000002u;
-}
-void CMsgTEBloodStream::clear_has_direction() {
-  _has_bits_[0] &= ~0x00000002u;
-}
-void CMsgTEBloodStream::clear_direction() {
-  if (direction_ != NULL) direction_->::CMsgVector::Clear();
-  clear_has_direction();
-}
-const ::CMsgVector& CMsgTEBloodStream::direction() const {
-  // @@protoc_insertion_point(field_get:CMsgTEBloodStream.direction)
-  return direction_ != NULL ? *direction_ : *default_instance_->direction_;
-}
-::CMsgVector* CMsgTEBloodStream::mutable_direction() {
-  set_has_direction();
-  if (direction_ == NULL) {
-    direction_ = new ::CMsgVector;
-  }
-  // @@protoc_insertion_point(field_mutable:CMsgTEBloodStream.direction)
-  return direction_;
-}
-::CMsgVector* CMsgTEBloodStream::release_direction() {
-  clear_has_direction();
-  ::CMsgVector* temp = direction_;
-  direction_ = NULL;
-  return temp;
-}
-void CMsgTEBloodStream::set_allocated_direction(::CMsgVector* direction) {
-  delete direction_;
-  direction_ = direction;
-  if (direction) {
-    set_has_direction();
-  } else {
-    clear_has_direction();
-  }
-  // @@protoc_insertion_point(field_set_allocated:CMsgTEBloodStream.direction)
-}
-
-// optional fixed32 color = 3;
-bool CMsgTEBloodStream::has_color() const {
-  return (_has_bits_[0] & 0x00000004u) != 0;
-}
-void CMsgTEBloodStream::set_has_color() {
-  _has_bits_[0] |= 0x00000004u;
-}
-void CMsgTEBloodStream::clear_has_color() {
-  _has_bits_[0] &= ~0x00000004u;
-}
-void CMsgTEBloodStream::clear_color() {
-  color_ = 0u;
-  clear_has_color();
-}
- ::google::protobuf::uint32 CMsgTEBloodStream::color() const {
-  // @@protoc_insertion_point(field_get:CMsgTEBloodStream.color)
-  return color_;
-}
- void CMsgTEBloodStream::set_color(::google::protobuf::uint32 value) {
-  set_has_color();
-  color_ = value;
-  // @@protoc_insertion_point(field_set:CMsgTEBloodStream.color)
-}
-
-// optional uint32 amount = 4;
-bool CMsgTEBloodStream::has_amount() const {
-  return (_has_bits_[0] & 0x00000008u) != 0;
-}
-void CMsgTEBloodStream::set_has_amount() {
-  _has_bits_[0] |= 0x00000008u;
-}
-void CMsgTEBloodStream::clear_has_amount() {
-  _has_bits_[0] &= ~0x00000008u;
-}
-void CMsgTEBloodStream::clear_amount() {
-  amount_ = 0u;
-  clear_has_amount();
-}
- ::google::protobuf::uint32 CMsgTEBloodStream::amount() const {
-  // @@protoc_insertion_point(field_get:CMsgTEBloodStream.amount)
-  return amount_;
-}
- void CMsgTEBloodStream::set_amount(::google::protobuf::uint32 value) {
-  set_has_amount();
-  amount_ = value;
-  // @@protoc_insertion_point(field_set:CMsgTEBloodStream.amount)
-}
-
-#endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
 
 // ===================================================================
 
@@ -12938,7 +9291,7 @@ const int CMsgTEExplosion::kAffectRagdollsFieldNumber;
 #endif  // !_MSC_VER
 
 CMsgTEExplosion::CMsgTEExplosion()
-  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  : ::google::protobuf::Message() {
   SharedCtor();
   // @@protoc_insertion_point(constructor:CMsgTEExplosion)
 }
@@ -12949,8 +9302,7 @@ void CMsgTEExplosion::InitAsDefaultInstance() {
 }
 
 CMsgTEExplosion::CMsgTEExplosion(const CMsgTEExplosion& from)
-  : ::google::protobuf::Message(),
-    _internal_metadata_(NULL) {
+  : ::google::protobuf::Message() {
   SharedCtor();
   MergeFrom(from);
   // @@protoc_insertion_point(copy_constructor:CMsgTEExplosion)
@@ -12999,24 +9351,22 @@ const CMsgTEExplosion& CMsgTEExplosion::default_instance() {
 
 CMsgTEExplosion* CMsgTEExplosion::default_instance_ = NULL;
 
-CMsgTEExplosion* CMsgTEExplosion::New(::google::protobuf::Arena* arena) const {
-  CMsgTEExplosion* n = new CMsgTEExplosion;
-  if (arena != NULL) {
-    arena->Own(n);
-  }
-  return n;
+CMsgTEExplosion* CMsgTEExplosion::New() const {
+  return new CMsgTEExplosion;
 }
 
 void CMsgTEExplosion::Clear() {
-#define ZR_HELPER_(f) reinterpret_cast<char*>(\
-  &reinterpret_cast<CMsgTEExplosion*>(16)->f)
+#define OFFSET_OF_FIELD_(f) (reinterpret_cast<char*>(      \
+  &reinterpret_cast<CMsgTEExplosion*>(16)->f) - \
+   reinterpret_cast<char*>(16))
 
-#define ZR_(first, last) do {\
-  ::memset(&first, 0,\
-           ZR_HELPER_(last) - ZR_HELPER_(first) + sizeof(last));\
-} while (0)
+#define ZR_(first, last) do {                              \
+    size_t f = OFFSET_OF_FIELD_(first);                    \
+    size_t n = OFFSET_OF_FIELD_(last) - f + sizeof(last);  \
+    ::memset(&first, 0, n);                                \
+  } while (0)
 
-  if (_has_bits_[0 / 32] & 255u) {
+  if (_has_bits_[0 / 32] & 255) {
     ZR_(framerate_, flags_);
     ZR_(materialtype_, scale_);
     if (has_origin()) {
@@ -13028,13 +9378,11 @@ void CMsgTEExplosion::Clear() {
   }
   affect_ragdolls_ = false;
 
-#undef ZR_HELPER_
+#undef OFFSET_OF_FIELD_
 #undef ZR_
 
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
-  if (_internal_metadata_.have_unknown_fields()) {
-    mutable_unknown_fields()->Clear();
-  }
+  mutable_unknown_fields()->Clear();
 }
 
 bool CMsgTEExplosion::MergePartialFromCodedStream(
@@ -13205,7 +9553,7 @@ void CMsgTEExplosion::SerializeWithCachedSizes(
   // optional .CMsgVector origin = 1;
   if (has_origin()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      1, *this->origin_, output);
+      1, this->origin(), output);
   }
 
   // optional uint32 framerate = 2;
@@ -13221,7 +9569,7 @@ void CMsgTEExplosion::SerializeWithCachedSizes(
   // optional .CMsgVector normal = 4;
   if (has_normal()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      4, *this->normal_, output);
+      4, this->normal(), output);
   }
 
   // optional uint32 materialtype = 5;
@@ -13249,7 +9597,7 @@ void CMsgTEExplosion::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteBool(9, this->affect_ragdolls(), output);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
   }
@@ -13263,7 +9611,7 @@ void CMsgTEExplosion::SerializeWithCachedSizes(
   if (has_origin()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
-        1, *this->origin_, target);
+        1, this->origin(), target);
   }
 
   // optional uint32 framerate = 2;
@@ -13280,7 +9628,7 @@ void CMsgTEExplosion::SerializeWithCachedSizes(
   if (has_normal()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
-        4, *this->normal_, target);
+        4, this->normal(), target);
   }
 
   // optional uint32 materialtype = 5;
@@ -13308,7 +9656,7 @@ void CMsgTEExplosion::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(9, this->affect_ragdolls(), target);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
   }
@@ -13319,12 +9667,12 @@ void CMsgTEExplosion::SerializeWithCachedSizes(
 int CMsgTEExplosion::ByteSize() const {
   int total_size = 0;
 
-  if (_has_bits_[0 / 32] & 255u) {
+  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     // optional .CMsgVector origin = 1;
     if (has_origin()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
-          *this->origin_);
+          this->origin());
     }
 
     // optional uint32 framerate = 2;
@@ -13345,7 +9693,7 @@ int CMsgTEExplosion::ByteSize() const {
     if (has_normal()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
-          *this->normal_);
+          this->normal());
     }
 
     // optional uint32 materialtype = 5;
@@ -13375,12 +9723,14 @@ int CMsgTEExplosion::ByteSize() const {
     }
 
   }
-  // optional bool affect_ragdolls = 9;
-  if (has_affect_ragdolls()) {
-    total_size += 1 + 1;
-  }
+  if (_has_bits_[8 / 32] & (0xffu << (8 % 32))) {
+    // optional bool affect_ragdolls = 9;
+    if (has_affect_ragdolls()) {
+      total_size += 1 + 1;
+    }
 
-  if (_internal_metadata_.have_unknown_fields()) {
+  }
+  if (!unknown_fields().empty()) {
     total_size +=
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         unknown_fields());
@@ -13392,10 +9742,10 @@ int CMsgTEExplosion::ByteSize() const {
 }
 
 void CMsgTEExplosion::MergeFrom(const ::google::protobuf::Message& from) {
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
-  const CMsgTEExplosion* source = 
-      ::google::protobuf::internal::DynamicCastToGenerated<const CMsgTEExplosion>(
-          &from);
+  GOOGLE_CHECK_NE(&from, this);
+  const CMsgTEExplosion* source =
+    ::google::protobuf::internal::dynamic_cast_if_available<const CMsgTEExplosion*>(
+      &from);
   if (source == NULL) {
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
   } else {
@@ -13404,7 +9754,7 @@ void CMsgTEExplosion::MergeFrom(const ::google::protobuf::Message& from) {
 }
 
 void CMsgTEExplosion::MergeFrom(const CMsgTEExplosion& from) {
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  GOOGLE_CHECK_NE(&from, this);
   if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (from.has_origin()) {
       mutable_origin()->::CMsgVector::MergeFrom(from.origin());
@@ -13436,9 +9786,7 @@ void CMsgTEExplosion::MergeFrom(const CMsgTEExplosion& from) {
       set_affect_ragdolls(from.affect_ragdolls());
     }
   }
-  if (from._internal_metadata_.have_unknown_fields()) {
-    mutable_unknown_fields()->MergeFrom(from.unknown_fields());
-  }
+  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
 }
 
 void CMsgTEExplosion::CopyFrom(const ::google::protobuf::Message& from) {
@@ -13459,22 +9807,20 @@ bool CMsgTEExplosion::IsInitialized() const {
 }
 
 void CMsgTEExplosion::Swap(CMsgTEExplosion* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
-void CMsgTEExplosion::InternalSwap(CMsgTEExplosion* other) {
-  std::swap(origin_, other->origin_);
-  std::swap(framerate_, other->framerate_);
-  std::swap(flags_, other->flags_);
-  std::swap(normal_, other->normal_);
-  std::swap(materialtype_, other->materialtype_);
-  std::swap(radius_, other->radius_);
-  std::swap(magnitude_, other->magnitude_);
-  std::swap(scale_, other->scale_);
-  std::swap(affect_ragdolls_, other->affect_ragdolls_);
-  std::swap(_has_bits_[0], other->_has_bits_[0]);
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  std::swap(_cached_size_, other->_cached_size_);
+  if (other != this) {
+    std::swap(origin_, other->origin_);
+    std::swap(framerate_, other->framerate_);
+    std::swap(flags_, other->flags_);
+    std::swap(normal_, other->normal_);
+    std::swap(materialtype_, other->materialtype_);
+    std::swap(radius_, other->radius_);
+    std::swap(magnitude_, other->magnitude_);
+    std::swap(scale_, other->scale_);
+    std::swap(affect_ragdolls_, other->affect_ragdolls_);
+    std::swap(_has_bits_[0], other->_has_bits_[0]);
+    _unknown_fields_.Swap(&other->_unknown_fields_);
+    std::swap(_cached_size_, other->_cached_size_);
+  }
 }
 
 ::google::protobuf::Metadata CMsgTEExplosion::GetMetadata() const {
@@ -13485,264 +9831,6 @@ void CMsgTEExplosion::InternalSwap(CMsgTEExplosion* other) {
   return metadata;
 }
 
-#if PROTOBUF_INLINE_NOT_IN_HEADERS
-// CMsgTEExplosion
-
-// optional .CMsgVector origin = 1;
-bool CMsgTEExplosion::has_origin() const {
-  return (_has_bits_[0] & 0x00000001u) != 0;
-}
-void CMsgTEExplosion::set_has_origin() {
-  _has_bits_[0] |= 0x00000001u;
-}
-void CMsgTEExplosion::clear_has_origin() {
-  _has_bits_[0] &= ~0x00000001u;
-}
-void CMsgTEExplosion::clear_origin() {
-  if (origin_ != NULL) origin_->::CMsgVector::Clear();
-  clear_has_origin();
-}
-const ::CMsgVector& CMsgTEExplosion::origin() const {
-  // @@protoc_insertion_point(field_get:CMsgTEExplosion.origin)
-  return origin_ != NULL ? *origin_ : *default_instance_->origin_;
-}
-::CMsgVector* CMsgTEExplosion::mutable_origin() {
-  set_has_origin();
-  if (origin_ == NULL) {
-    origin_ = new ::CMsgVector;
-  }
-  // @@protoc_insertion_point(field_mutable:CMsgTEExplosion.origin)
-  return origin_;
-}
-::CMsgVector* CMsgTEExplosion::release_origin() {
-  clear_has_origin();
-  ::CMsgVector* temp = origin_;
-  origin_ = NULL;
-  return temp;
-}
-void CMsgTEExplosion::set_allocated_origin(::CMsgVector* origin) {
-  delete origin_;
-  origin_ = origin;
-  if (origin) {
-    set_has_origin();
-  } else {
-    clear_has_origin();
-  }
-  // @@protoc_insertion_point(field_set_allocated:CMsgTEExplosion.origin)
-}
-
-// optional uint32 framerate = 2;
-bool CMsgTEExplosion::has_framerate() const {
-  return (_has_bits_[0] & 0x00000002u) != 0;
-}
-void CMsgTEExplosion::set_has_framerate() {
-  _has_bits_[0] |= 0x00000002u;
-}
-void CMsgTEExplosion::clear_has_framerate() {
-  _has_bits_[0] &= ~0x00000002u;
-}
-void CMsgTEExplosion::clear_framerate() {
-  framerate_ = 0u;
-  clear_has_framerate();
-}
- ::google::protobuf::uint32 CMsgTEExplosion::framerate() const {
-  // @@protoc_insertion_point(field_get:CMsgTEExplosion.framerate)
-  return framerate_;
-}
- void CMsgTEExplosion::set_framerate(::google::protobuf::uint32 value) {
-  set_has_framerate();
-  framerate_ = value;
-  // @@protoc_insertion_point(field_set:CMsgTEExplosion.framerate)
-}
-
-// optional uint32 flags = 3;
-bool CMsgTEExplosion::has_flags() const {
-  return (_has_bits_[0] & 0x00000004u) != 0;
-}
-void CMsgTEExplosion::set_has_flags() {
-  _has_bits_[0] |= 0x00000004u;
-}
-void CMsgTEExplosion::clear_has_flags() {
-  _has_bits_[0] &= ~0x00000004u;
-}
-void CMsgTEExplosion::clear_flags() {
-  flags_ = 0u;
-  clear_has_flags();
-}
- ::google::protobuf::uint32 CMsgTEExplosion::flags() const {
-  // @@protoc_insertion_point(field_get:CMsgTEExplosion.flags)
-  return flags_;
-}
- void CMsgTEExplosion::set_flags(::google::protobuf::uint32 value) {
-  set_has_flags();
-  flags_ = value;
-  // @@protoc_insertion_point(field_set:CMsgTEExplosion.flags)
-}
-
-// optional .CMsgVector normal = 4;
-bool CMsgTEExplosion::has_normal() const {
-  return (_has_bits_[0] & 0x00000008u) != 0;
-}
-void CMsgTEExplosion::set_has_normal() {
-  _has_bits_[0] |= 0x00000008u;
-}
-void CMsgTEExplosion::clear_has_normal() {
-  _has_bits_[0] &= ~0x00000008u;
-}
-void CMsgTEExplosion::clear_normal() {
-  if (normal_ != NULL) normal_->::CMsgVector::Clear();
-  clear_has_normal();
-}
-const ::CMsgVector& CMsgTEExplosion::normal() const {
-  // @@protoc_insertion_point(field_get:CMsgTEExplosion.normal)
-  return normal_ != NULL ? *normal_ : *default_instance_->normal_;
-}
-::CMsgVector* CMsgTEExplosion::mutable_normal() {
-  set_has_normal();
-  if (normal_ == NULL) {
-    normal_ = new ::CMsgVector;
-  }
-  // @@protoc_insertion_point(field_mutable:CMsgTEExplosion.normal)
-  return normal_;
-}
-::CMsgVector* CMsgTEExplosion::release_normal() {
-  clear_has_normal();
-  ::CMsgVector* temp = normal_;
-  normal_ = NULL;
-  return temp;
-}
-void CMsgTEExplosion::set_allocated_normal(::CMsgVector* normal) {
-  delete normal_;
-  normal_ = normal;
-  if (normal) {
-    set_has_normal();
-  } else {
-    clear_has_normal();
-  }
-  // @@protoc_insertion_point(field_set_allocated:CMsgTEExplosion.normal)
-}
-
-// optional uint32 materialtype = 5;
-bool CMsgTEExplosion::has_materialtype() const {
-  return (_has_bits_[0] & 0x00000010u) != 0;
-}
-void CMsgTEExplosion::set_has_materialtype() {
-  _has_bits_[0] |= 0x00000010u;
-}
-void CMsgTEExplosion::clear_has_materialtype() {
-  _has_bits_[0] &= ~0x00000010u;
-}
-void CMsgTEExplosion::clear_materialtype() {
-  materialtype_ = 0u;
-  clear_has_materialtype();
-}
- ::google::protobuf::uint32 CMsgTEExplosion::materialtype() const {
-  // @@protoc_insertion_point(field_get:CMsgTEExplosion.materialtype)
-  return materialtype_;
-}
- void CMsgTEExplosion::set_materialtype(::google::protobuf::uint32 value) {
-  set_has_materialtype();
-  materialtype_ = value;
-  // @@protoc_insertion_point(field_set:CMsgTEExplosion.materialtype)
-}
-
-// optional uint32 radius = 6;
-bool CMsgTEExplosion::has_radius() const {
-  return (_has_bits_[0] & 0x00000020u) != 0;
-}
-void CMsgTEExplosion::set_has_radius() {
-  _has_bits_[0] |= 0x00000020u;
-}
-void CMsgTEExplosion::clear_has_radius() {
-  _has_bits_[0] &= ~0x00000020u;
-}
-void CMsgTEExplosion::clear_radius() {
-  radius_ = 0u;
-  clear_has_radius();
-}
- ::google::protobuf::uint32 CMsgTEExplosion::radius() const {
-  // @@protoc_insertion_point(field_get:CMsgTEExplosion.radius)
-  return radius_;
-}
- void CMsgTEExplosion::set_radius(::google::protobuf::uint32 value) {
-  set_has_radius();
-  radius_ = value;
-  // @@protoc_insertion_point(field_set:CMsgTEExplosion.radius)
-}
-
-// optional uint32 magnitude = 7;
-bool CMsgTEExplosion::has_magnitude() const {
-  return (_has_bits_[0] & 0x00000040u) != 0;
-}
-void CMsgTEExplosion::set_has_magnitude() {
-  _has_bits_[0] |= 0x00000040u;
-}
-void CMsgTEExplosion::clear_has_magnitude() {
-  _has_bits_[0] &= ~0x00000040u;
-}
-void CMsgTEExplosion::clear_magnitude() {
-  magnitude_ = 0u;
-  clear_has_magnitude();
-}
- ::google::protobuf::uint32 CMsgTEExplosion::magnitude() const {
-  // @@protoc_insertion_point(field_get:CMsgTEExplosion.magnitude)
-  return magnitude_;
-}
- void CMsgTEExplosion::set_magnitude(::google::protobuf::uint32 value) {
-  set_has_magnitude();
-  magnitude_ = value;
-  // @@protoc_insertion_point(field_set:CMsgTEExplosion.magnitude)
-}
-
-// optional float scale = 8;
-bool CMsgTEExplosion::has_scale() const {
-  return (_has_bits_[0] & 0x00000080u) != 0;
-}
-void CMsgTEExplosion::set_has_scale() {
-  _has_bits_[0] |= 0x00000080u;
-}
-void CMsgTEExplosion::clear_has_scale() {
-  _has_bits_[0] &= ~0x00000080u;
-}
-void CMsgTEExplosion::clear_scale() {
-  scale_ = 0;
-  clear_has_scale();
-}
- float CMsgTEExplosion::scale() const {
-  // @@protoc_insertion_point(field_get:CMsgTEExplosion.scale)
-  return scale_;
-}
- void CMsgTEExplosion::set_scale(float value) {
-  set_has_scale();
-  scale_ = value;
-  // @@protoc_insertion_point(field_set:CMsgTEExplosion.scale)
-}
-
-// optional bool affect_ragdolls = 9;
-bool CMsgTEExplosion::has_affect_ragdolls() const {
-  return (_has_bits_[0] & 0x00000100u) != 0;
-}
-void CMsgTEExplosion::set_has_affect_ragdolls() {
-  _has_bits_[0] |= 0x00000100u;
-}
-void CMsgTEExplosion::clear_has_affect_ragdolls() {
-  _has_bits_[0] &= ~0x00000100u;
-}
-void CMsgTEExplosion::clear_affect_ragdolls() {
-  affect_ragdolls_ = false;
-  clear_has_affect_ragdolls();
-}
- bool CMsgTEExplosion::affect_ragdolls() const {
-  // @@protoc_insertion_point(field_get:CMsgTEExplosion.affect_ragdolls)
-  return affect_ragdolls_;
-}
- void CMsgTEExplosion::set_affect_ragdolls(bool value) {
-  set_has_affect_ragdolls();
-  affect_ragdolls_ = value;
-  // @@protoc_insertion_point(field_set:CMsgTEExplosion.affect_ragdolls)
-}
-
-#endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
 
 // ===================================================================
 
@@ -13754,7 +9842,7 @@ const int CMsgTEDust::kDirectionFieldNumber;
 #endif  // !_MSC_VER
 
 CMsgTEDust::CMsgTEDust()
-  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  : ::google::protobuf::Message() {
   SharedCtor();
   // @@protoc_insertion_point(constructor:CMsgTEDust)
 }
@@ -13765,8 +9853,7 @@ void CMsgTEDust::InitAsDefaultInstance() {
 }
 
 CMsgTEDust::CMsgTEDust(const CMsgTEDust& from)
-  : ::google::protobuf::Message(),
-    _internal_metadata_(NULL) {
+  : ::google::protobuf::Message() {
   SharedCtor();
   MergeFrom(from);
   // @@protoc_insertion_point(copy_constructor:CMsgTEDust)
@@ -13810,24 +9897,22 @@ const CMsgTEDust& CMsgTEDust::default_instance() {
 
 CMsgTEDust* CMsgTEDust::default_instance_ = NULL;
 
-CMsgTEDust* CMsgTEDust::New(::google::protobuf::Arena* arena) const {
-  CMsgTEDust* n = new CMsgTEDust;
-  if (arena != NULL) {
-    arena->Own(n);
-  }
-  return n;
+CMsgTEDust* CMsgTEDust::New() const {
+  return new CMsgTEDust;
 }
 
 void CMsgTEDust::Clear() {
-#define ZR_HELPER_(f) reinterpret_cast<char*>(\
-  &reinterpret_cast<CMsgTEDust*>(16)->f)
+#define OFFSET_OF_FIELD_(f) (reinterpret_cast<char*>(      \
+  &reinterpret_cast<CMsgTEDust*>(16)->f) - \
+   reinterpret_cast<char*>(16))
 
-#define ZR_(first, last) do {\
-  ::memset(&first, 0,\
-           ZR_HELPER_(last) - ZR_HELPER_(first) + sizeof(last));\
-} while (0)
+#define ZR_(first, last) do {                              \
+    size_t f = OFFSET_OF_FIELD_(first);                    \
+    size_t n = OFFSET_OF_FIELD_(last) - f + sizeof(last);  \
+    ::memset(&first, 0, n);                                \
+  } while (0)
 
-  if (_has_bits_[0 / 32] & 15u) {
+  if (_has_bits_[0 / 32] & 15) {
     ZR_(size_, speed_);
     if (has_origin()) {
       if (origin_ != NULL) origin_->::CMsgVector::Clear();
@@ -13837,13 +9922,11 @@ void CMsgTEDust::Clear() {
     }
   }
 
-#undef ZR_HELPER_
+#undef OFFSET_OF_FIELD_
 #undef ZR_
 
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
-  if (_internal_metadata_.have_unknown_fields()) {
-    mutable_unknown_fields()->Clear();
-  }
+  mutable_unknown_fields()->Clear();
 }
 
 bool CMsgTEDust::MergePartialFromCodedStream(
@@ -13939,7 +10022,7 @@ void CMsgTEDust::SerializeWithCachedSizes(
   // optional .CMsgVector origin = 1;
   if (has_origin()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      1, *this->origin_, output);
+      1, this->origin(), output);
   }
 
   // optional float size = 2;
@@ -13955,10 +10038,10 @@ void CMsgTEDust::SerializeWithCachedSizes(
   // optional .CMsgVector direction = 4;
   if (has_direction()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      4, *this->direction_, output);
+      4, this->direction(), output);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
   }
@@ -13972,7 +10055,7 @@ void CMsgTEDust::SerializeWithCachedSizes(
   if (has_origin()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
-        1, *this->origin_, target);
+        1, this->origin(), target);
   }
 
   // optional float size = 2;
@@ -13989,10 +10072,10 @@ void CMsgTEDust::SerializeWithCachedSizes(
   if (has_direction()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
-        4, *this->direction_, target);
+        4, this->direction(), target);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
   }
@@ -14003,12 +10086,12 @@ void CMsgTEDust::SerializeWithCachedSizes(
 int CMsgTEDust::ByteSize() const {
   int total_size = 0;
 
-  if (_has_bits_[0 / 32] & 15u) {
+  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     // optional .CMsgVector origin = 1;
     if (has_origin()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
-          *this->origin_);
+          this->origin());
     }
 
     // optional float size = 2;
@@ -14025,11 +10108,11 @@ int CMsgTEDust::ByteSize() const {
     if (has_direction()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
-          *this->direction_);
+          this->direction());
     }
 
   }
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     total_size +=
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         unknown_fields());
@@ -14041,10 +10124,10 @@ int CMsgTEDust::ByteSize() const {
 }
 
 void CMsgTEDust::MergeFrom(const ::google::protobuf::Message& from) {
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
-  const CMsgTEDust* source = 
-      ::google::protobuf::internal::DynamicCastToGenerated<const CMsgTEDust>(
-          &from);
+  GOOGLE_CHECK_NE(&from, this);
+  const CMsgTEDust* source =
+    ::google::protobuf::internal::dynamic_cast_if_available<const CMsgTEDust*>(
+      &from);
   if (source == NULL) {
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
   } else {
@@ -14053,7 +10136,7 @@ void CMsgTEDust::MergeFrom(const ::google::protobuf::Message& from) {
 }
 
 void CMsgTEDust::MergeFrom(const CMsgTEDust& from) {
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  GOOGLE_CHECK_NE(&from, this);
   if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (from.has_origin()) {
       mutable_origin()->::CMsgVector::MergeFrom(from.origin());
@@ -14068,9 +10151,7 @@ void CMsgTEDust::MergeFrom(const CMsgTEDust& from) {
       mutable_direction()->::CMsgVector::MergeFrom(from.direction());
     }
   }
-  if (from._internal_metadata_.have_unknown_fields()) {
-    mutable_unknown_fields()->MergeFrom(from.unknown_fields());
-  }
+  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
 }
 
 void CMsgTEDust::CopyFrom(const ::google::protobuf::Message& from) {
@@ -14091,17 +10172,15 @@ bool CMsgTEDust::IsInitialized() const {
 }
 
 void CMsgTEDust::Swap(CMsgTEDust* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
-void CMsgTEDust::InternalSwap(CMsgTEDust* other) {
-  std::swap(origin_, other->origin_);
-  std::swap(size_, other->size_);
-  std::swap(speed_, other->speed_);
-  std::swap(direction_, other->direction_);
-  std::swap(_has_bits_[0], other->_has_bits_[0]);
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  std::swap(_cached_size_, other->_cached_size_);
+  if (other != this) {
+    std::swap(origin_, other->origin_);
+    std::swap(size_, other->size_);
+    std::swap(speed_, other->speed_);
+    std::swap(direction_, other->direction_);
+    std::swap(_has_bits_[0], other->_has_bits_[0]);
+    _unknown_fields_.Swap(&other->_unknown_fields_);
+    std::swap(_cached_size_, other->_cached_size_);
+  }
 }
 
 ::google::protobuf::Metadata CMsgTEDust::GetMetadata() const {
@@ -14112,144 +10191,6 @@ void CMsgTEDust::InternalSwap(CMsgTEDust* other) {
   return metadata;
 }
 
-#if PROTOBUF_INLINE_NOT_IN_HEADERS
-// CMsgTEDust
-
-// optional .CMsgVector origin = 1;
-bool CMsgTEDust::has_origin() const {
-  return (_has_bits_[0] & 0x00000001u) != 0;
-}
-void CMsgTEDust::set_has_origin() {
-  _has_bits_[0] |= 0x00000001u;
-}
-void CMsgTEDust::clear_has_origin() {
-  _has_bits_[0] &= ~0x00000001u;
-}
-void CMsgTEDust::clear_origin() {
-  if (origin_ != NULL) origin_->::CMsgVector::Clear();
-  clear_has_origin();
-}
-const ::CMsgVector& CMsgTEDust::origin() const {
-  // @@protoc_insertion_point(field_get:CMsgTEDust.origin)
-  return origin_ != NULL ? *origin_ : *default_instance_->origin_;
-}
-::CMsgVector* CMsgTEDust::mutable_origin() {
-  set_has_origin();
-  if (origin_ == NULL) {
-    origin_ = new ::CMsgVector;
-  }
-  // @@protoc_insertion_point(field_mutable:CMsgTEDust.origin)
-  return origin_;
-}
-::CMsgVector* CMsgTEDust::release_origin() {
-  clear_has_origin();
-  ::CMsgVector* temp = origin_;
-  origin_ = NULL;
-  return temp;
-}
-void CMsgTEDust::set_allocated_origin(::CMsgVector* origin) {
-  delete origin_;
-  origin_ = origin;
-  if (origin) {
-    set_has_origin();
-  } else {
-    clear_has_origin();
-  }
-  // @@protoc_insertion_point(field_set_allocated:CMsgTEDust.origin)
-}
-
-// optional float size = 2;
-bool CMsgTEDust::has_size() const {
-  return (_has_bits_[0] & 0x00000002u) != 0;
-}
-void CMsgTEDust::set_has_size() {
-  _has_bits_[0] |= 0x00000002u;
-}
-void CMsgTEDust::clear_has_size() {
-  _has_bits_[0] &= ~0x00000002u;
-}
-void CMsgTEDust::clear_size() {
-  size_ = 0;
-  clear_has_size();
-}
- float CMsgTEDust::size() const {
-  // @@protoc_insertion_point(field_get:CMsgTEDust.size)
-  return size_;
-}
- void CMsgTEDust::set_size(float value) {
-  set_has_size();
-  size_ = value;
-  // @@protoc_insertion_point(field_set:CMsgTEDust.size)
-}
-
-// optional float speed = 3;
-bool CMsgTEDust::has_speed() const {
-  return (_has_bits_[0] & 0x00000004u) != 0;
-}
-void CMsgTEDust::set_has_speed() {
-  _has_bits_[0] |= 0x00000004u;
-}
-void CMsgTEDust::clear_has_speed() {
-  _has_bits_[0] &= ~0x00000004u;
-}
-void CMsgTEDust::clear_speed() {
-  speed_ = 0;
-  clear_has_speed();
-}
- float CMsgTEDust::speed() const {
-  // @@protoc_insertion_point(field_get:CMsgTEDust.speed)
-  return speed_;
-}
- void CMsgTEDust::set_speed(float value) {
-  set_has_speed();
-  speed_ = value;
-  // @@protoc_insertion_point(field_set:CMsgTEDust.speed)
-}
-
-// optional .CMsgVector direction = 4;
-bool CMsgTEDust::has_direction() const {
-  return (_has_bits_[0] & 0x00000008u) != 0;
-}
-void CMsgTEDust::set_has_direction() {
-  _has_bits_[0] |= 0x00000008u;
-}
-void CMsgTEDust::clear_has_direction() {
-  _has_bits_[0] &= ~0x00000008u;
-}
-void CMsgTEDust::clear_direction() {
-  if (direction_ != NULL) direction_->::CMsgVector::Clear();
-  clear_has_direction();
-}
-const ::CMsgVector& CMsgTEDust::direction() const {
-  // @@protoc_insertion_point(field_get:CMsgTEDust.direction)
-  return direction_ != NULL ? *direction_ : *default_instance_->direction_;
-}
-::CMsgVector* CMsgTEDust::mutable_direction() {
-  set_has_direction();
-  if (direction_ == NULL) {
-    direction_ = new ::CMsgVector;
-  }
-  // @@protoc_insertion_point(field_mutable:CMsgTEDust.direction)
-  return direction_;
-}
-::CMsgVector* CMsgTEDust::release_direction() {
-  clear_has_direction();
-  ::CMsgVector* temp = direction_;
-  direction_ = NULL;
-  return temp;
-}
-void CMsgTEDust::set_allocated_direction(::CMsgVector* direction) {
-  delete direction_;
-  direction_ = direction;
-  if (direction) {
-    set_has_direction();
-  } else {
-    clear_has_direction();
-  }
-  // @@protoc_insertion_point(field_set_allocated:CMsgTEDust.direction)
-}
-
-#endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
 
 // ===================================================================
 
@@ -14259,7 +10200,7 @@ const int CMsgTELargeFunnel::kReversedFieldNumber;
 #endif  // !_MSC_VER
 
 CMsgTELargeFunnel::CMsgTELargeFunnel()
-  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  : ::google::protobuf::Message() {
   SharedCtor();
   // @@protoc_insertion_point(constructor:CMsgTELargeFunnel)
 }
@@ -14269,8 +10210,7 @@ void CMsgTELargeFunnel::InitAsDefaultInstance() {
 }
 
 CMsgTELargeFunnel::CMsgTELargeFunnel(const CMsgTELargeFunnel& from)
-  : ::google::protobuf::Message(),
-    _internal_metadata_(NULL) {
+  : ::google::protobuf::Message() {
   SharedCtor();
   MergeFrom(from);
   // @@protoc_insertion_point(copy_constructor:CMsgTELargeFunnel)
@@ -14311,25 +10251,19 @@ const CMsgTELargeFunnel& CMsgTELargeFunnel::default_instance() {
 
 CMsgTELargeFunnel* CMsgTELargeFunnel::default_instance_ = NULL;
 
-CMsgTELargeFunnel* CMsgTELargeFunnel::New(::google::protobuf::Arena* arena) const {
-  CMsgTELargeFunnel* n = new CMsgTELargeFunnel;
-  if (arena != NULL) {
-    arena->Own(n);
-  }
-  return n;
+CMsgTELargeFunnel* CMsgTELargeFunnel::New() const {
+  return new CMsgTELargeFunnel;
 }
 
 void CMsgTELargeFunnel::Clear() {
-  if (_has_bits_[0 / 32] & 3u) {
+  if (_has_bits_[0 / 32] & 3) {
     if (has_origin()) {
       if (origin_ != NULL) origin_->::CMsgVector::Clear();
     }
     reversed_ = 0u;
   }
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
-  if (_internal_metadata_.have_unknown_fields()) {
-    mutable_unknown_fields()->Clear();
-  }
+  mutable_unknown_fields()->Clear();
 }
 
 bool CMsgTELargeFunnel::MergePartialFromCodedStream(
@@ -14397,7 +10331,7 @@ void CMsgTELargeFunnel::SerializeWithCachedSizes(
   // optional .CMsgVector origin = 1;
   if (has_origin()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      1, *this->origin_, output);
+      1, this->origin(), output);
   }
 
   // optional uint32 reversed = 2;
@@ -14405,7 +10339,7 @@ void CMsgTELargeFunnel::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteUInt32(2, this->reversed(), output);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
   }
@@ -14419,7 +10353,7 @@ void CMsgTELargeFunnel::SerializeWithCachedSizes(
   if (has_origin()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
-        1, *this->origin_, target);
+        1, this->origin(), target);
   }
 
   // optional uint32 reversed = 2;
@@ -14427,7 +10361,7 @@ void CMsgTELargeFunnel::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(2, this->reversed(), target);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
   }
@@ -14438,12 +10372,12 @@ void CMsgTELargeFunnel::SerializeWithCachedSizes(
 int CMsgTELargeFunnel::ByteSize() const {
   int total_size = 0;
 
-  if (_has_bits_[0 / 32] & 3u) {
+  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     // optional .CMsgVector origin = 1;
     if (has_origin()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
-          *this->origin_);
+          this->origin());
     }
 
     // optional uint32 reversed = 2;
@@ -14454,7 +10388,7 @@ int CMsgTELargeFunnel::ByteSize() const {
     }
 
   }
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     total_size +=
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         unknown_fields());
@@ -14466,10 +10400,10 @@ int CMsgTELargeFunnel::ByteSize() const {
 }
 
 void CMsgTELargeFunnel::MergeFrom(const ::google::protobuf::Message& from) {
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
-  const CMsgTELargeFunnel* source = 
-      ::google::protobuf::internal::DynamicCastToGenerated<const CMsgTELargeFunnel>(
-          &from);
+  GOOGLE_CHECK_NE(&from, this);
+  const CMsgTELargeFunnel* source =
+    ::google::protobuf::internal::dynamic_cast_if_available<const CMsgTELargeFunnel*>(
+      &from);
   if (source == NULL) {
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
   } else {
@@ -14478,7 +10412,7 @@ void CMsgTELargeFunnel::MergeFrom(const ::google::protobuf::Message& from) {
 }
 
 void CMsgTELargeFunnel::MergeFrom(const CMsgTELargeFunnel& from) {
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  GOOGLE_CHECK_NE(&from, this);
   if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (from.has_origin()) {
       mutable_origin()->::CMsgVector::MergeFrom(from.origin());
@@ -14487,9 +10421,7 @@ void CMsgTELargeFunnel::MergeFrom(const CMsgTELargeFunnel& from) {
       set_reversed(from.reversed());
     }
   }
-  if (from._internal_metadata_.have_unknown_fields()) {
-    mutable_unknown_fields()->MergeFrom(from.unknown_fields());
-  }
+  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
 }
 
 void CMsgTELargeFunnel::CopyFrom(const ::google::protobuf::Message& from) {
@@ -14510,15 +10442,13 @@ bool CMsgTELargeFunnel::IsInitialized() const {
 }
 
 void CMsgTELargeFunnel::Swap(CMsgTELargeFunnel* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
-void CMsgTELargeFunnel::InternalSwap(CMsgTELargeFunnel* other) {
-  std::swap(origin_, other->origin_);
-  std::swap(reversed_, other->reversed_);
-  std::swap(_has_bits_[0], other->_has_bits_[0]);
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  std::swap(_cached_size_, other->_cached_size_);
+  if (other != this) {
+    std::swap(origin_, other->origin_);
+    std::swap(reversed_, other->reversed_);
+    std::swap(_has_bits_[0], other->_has_bits_[0]);
+    _unknown_fields_.Swap(&other->_unknown_fields_);
+    std::swap(_cached_size_, other->_cached_size_);
+  }
 }
 
 ::google::protobuf::Metadata CMsgTELargeFunnel::GetMetadata() const {
@@ -14529,77 +10459,6 @@ void CMsgTELargeFunnel::InternalSwap(CMsgTELargeFunnel* other) {
   return metadata;
 }
 
-#if PROTOBUF_INLINE_NOT_IN_HEADERS
-// CMsgTELargeFunnel
-
-// optional .CMsgVector origin = 1;
-bool CMsgTELargeFunnel::has_origin() const {
-  return (_has_bits_[0] & 0x00000001u) != 0;
-}
-void CMsgTELargeFunnel::set_has_origin() {
-  _has_bits_[0] |= 0x00000001u;
-}
-void CMsgTELargeFunnel::clear_has_origin() {
-  _has_bits_[0] &= ~0x00000001u;
-}
-void CMsgTELargeFunnel::clear_origin() {
-  if (origin_ != NULL) origin_->::CMsgVector::Clear();
-  clear_has_origin();
-}
-const ::CMsgVector& CMsgTELargeFunnel::origin() const {
-  // @@protoc_insertion_point(field_get:CMsgTELargeFunnel.origin)
-  return origin_ != NULL ? *origin_ : *default_instance_->origin_;
-}
-::CMsgVector* CMsgTELargeFunnel::mutable_origin() {
-  set_has_origin();
-  if (origin_ == NULL) {
-    origin_ = new ::CMsgVector;
-  }
-  // @@protoc_insertion_point(field_mutable:CMsgTELargeFunnel.origin)
-  return origin_;
-}
-::CMsgVector* CMsgTELargeFunnel::release_origin() {
-  clear_has_origin();
-  ::CMsgVector* temp = origin_;
-  origin_ = NULL;
-  return temp;
-}
-void CMsgTELargeFunnel::set_allocated_origin(::CMsgVector* origin) {
-  delete origin_;
-  origin_ = origin;
-  if (origin) {
-    set_has_origin();
-  } else {
-    clear_has_origin();
-  }
-  // @@protoc_insertion_point(field_set_allocated:CMsgTELargeFunnel.origin)
-}
-
-// optional uint32 reversed = 2;
-bool CMsgTELargeFunnel::has_reversed() const {
-  return (_has_bits_[0] & 0x00000002u) != 0;
-}
-void CMsgTELargeFunnel::set_has_reversed() {
-  _has_bits_[0] |= 0x00000002u;
-}
-void CMsgTELargeFunnel::clear_has_reversed() {
-  _has_bits_[0] &= ~0x00000002u;
-}
-void CMsgTELargeFunnel::clear_reversed() {
-  reversed_ = 0u;
-  clear_has_reversed();
-}
- ::google::protobuf::uint32 CMsgTELargeFunnel::reversed() const {
-  // @@protoc_insertion_point(field_get:CMsgTELargeFunnel.reversed)
-  return reversed_;
-}
- void CMsgTELargeFunnel::set_reversed(::google::protobuf::uint32 value) {
-  set_has_reversed();
-  reversed_ = value;
-  // @@protoc_insertion_point(field_set:CMsgTELargeFunnel.reversed)
-}
-
-#endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
 
 // ===================================================================
 
@@ -14611,7 +10470,7 @@ const int CMsgTESparks::kDirectionFieldNumber;
 #endif  // !_MSC_VER
 
 CMsgTESparks::CMsgTESparks()
-  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  : ::google::protobuf::Message() {
   SharedCtor();
   // @@protoc_insertion_point(constructor:CMsgTESparks)
 }
@@ -14622,8 +10481,7 @@ void CMsgTESparks::InitAsDefaultInstance() {
 }
 
 CMsgTESparks::CMsgTESparks(const CMsgTESparks& from)
-  : ::google::protobuf::Message(),
-    _internal_metadata_(NULL) {
+  : ::google::protobuf::Message() {
   SharedCtor();
   MergeFrom(from);
   // @@protoc_insertion_point(copy_constructor:CMsgTESparks)
@@ -14667,24 +10525,22 @@ const CMsgTESparks& CMsgTESparks::default_instance() {
 
 CMsgTESparks* CMsgTESparks::default_instance_ = NULL;
 
-CMsgTESparks* CMsgTESparks::New(::google::protobuf::Arena* arena) const {
-  CMsgTESparks* n = new CMsgTESparks;
-  if (arena != NULL) {
-    arena->Own(n);
-  }
-  return n;
+CMsgTESparks* CMsgTESparks::New() const {
+  return new CMsgTESparks;
 }
 
 void CMsgTESparks::Clear() {
-#define ZR_HELPER_(f) reinterpret_cast<char*>(\
-  &reinterpret_cast<CMsgTESparks*>(16)->f)
+#define OFFSET_OF_FIELD_(f) (reinterpret_cast<char*>(      \
+  &reinterpret_cast<CMsgTESparks*>(16)->f) - \
+   reinterpret_cast<char*>(16))
 
-#define ZR_(first, last) do {\
-  ::memset(&first, 0,\
-           ZR_HELPER_(last) - ZR_HELPER_(first) + sizeof(last));\
-} while (0)
+#define ZR_(first, last) do {                              \
+    size_t f = OFFSET_OF_FIELD_(first);                    \
+    size_t n = OFFSET_OF_FIELD_(last) - f + sizeof(last);  \
+    ::memset(&first, 0, n);                                \
+  } while (0)
 
-  if (_has_bits_[0 / 32] & 15u) {
+  if (_has_bits_[0 / 32] & 15) {
     ZR_(magnitude_, length_);
     if (has_origin()) {
       if (origin_ != NULL) origin_->::CMsgVector::Clear();
@@ -14694,13 +10550,11 @@ void CMsgTESparks::Clear() {
     }
   }
 
-#undef ZR_HELPER_
+#undef OFFSET_OF_FIELD_
 #undef ZR_
 
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
-  if (_internal_metadata_.have_unknown_fields()) {
-    mutable_unknown_fields()->Clear();
-  }
+  mutable_unknown_fields()->Clear();
 }
 
 bool CMsgTESparks::MergePartialFromCodedStream(
@@ -14796,7 +10650,7 @@ void CMsgTESparks::SerializeWithCachedSizes(
   // optional .CMsgVector origin = 1;
   if (has_origin()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      1, *this->origin_, output);
+      1, this->origin(), output);
   }
 
   // optional uint32 magnitude = 2;
@@ -14812,10 +10666,10 @@ void CMsgTESparks::SerializeWithCachedSizes(
   // optional .CMsgVector direction = 4;
   if (has_direction()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      4, *this->direction_, output);
+      4, this->direction(), output);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
   }
@@ -14829,7 +10683,7 @@ void CMsgTESparks::SerializeWithCachedSizes(
   if (has_origin()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
-        1, *this->origin_, target);
+        1, this->origin(), target);
   }
 
   // optional uint32 magnitude = 2;
@@ -14846,10 +10700,10 @@ void CMsgTESparks::SerializeWithCachedSizes(
   if (has_direction()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
-        4, *this->direction_, target);
+        4, this->direction(), target);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
   }
@@ -14860,12 +10714,12 @@ void CMsgTESparks::SerializeWithCachedSizes(
 int CMsgTESparks::ByteSize() const {
   int total_size = 0;
 
-  if (_has_bits_[0 / 32] & 15u) {
+  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     // optional .CMsgVector origin = 1;
     if (has_origin()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
-          *this->origin_);
+          this->origin());
     }
 
     // optional uint32 magnitude = 2;
@@ -14886,11 +10740,11 @@ int CMsgTESparks::ByteSize() const {
     if (has_direction()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
-          *this->direction_);
+          this->direction());
     }
 
   }
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     total_size +=
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         unknown_fields());
@@ -14902,10 +10756,10 @@ int CMsgTESparks::ByteSize() const {
 }
 
 void CMsgTESparks::MergeFrom(const ::google::protobuf::Message& from) {
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
-  const CMsgTESparks* source = 
-      ::google::protobuf::internal::DynamicCastToGenerated<const CMsgTESparks>(
-          &from);
+  GOOGLE_CHECK_NE(&from, this);
+  const CMsgTESparks* source =
+    ::google::protobuf::internal::dynamic_cast_if_available<const CMsgTESparks*>(
+      &from);
   if (source == NULL) {
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
   } else {
@@ -14914,7 +10768,7 @@ void CMsgTESparks::MergeFrom(const ::google::protobuf::Message& from) {
 }
 
 void CMsgTESparks::MergeFrom(const CMsgTESparks& from) {
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  GOOGLE_CHECK_NE(&from, this);
   if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (from.has_origin()) {
       mutable_origin()->::CMsgVector::MergeFrom(from.origin());
@@ -14929,9 +10783,7 @@ void CMsgTESparks::MergeFrom(const CMsgTESparks& from) {
       mutable_direction()->::CMsgVector::MergeFrom(from.direction());
     }
   }
-  if (from._internal_metadata_.have_unknown_fields()) {
-    mutable_unknown_fields()->MergeFrom(from.unknown_fields());
-  }
+  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
 }
 
 void CMsgTESparks::CopyFrom(const ::google::protobuf::Message& from) {
@@ -14952,17 +10804,15 @@ bool CMsgTESparks::IsInitialized() const {
 }
 
 void CMsgTESparks::Swap(CMsgTESparks* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
-void CMsgTESparks::InternalSwap(CMsgTESparks* other) {
-  std::swap(origin_, other->origin_);
-  std::swap(magnitude_, other->magnitude_);
-  std::swap(length_, other->length_);
-  std::swap(direction_, other->direction_);
-  std::swap(_has_bits_[0], other->_has_bits_[0]);
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  std::swap(_cached_size_, other->_cached_size_);
+  if (other != this) {
+    std::swap(origin_, other->origin_);
+    std::swap(magnitude_, other->magnitude_);
+    std::swap(length_, other->length_);
+    std::swap(direction_, other->direction_);
+    std::swap(_has_bits_[0], other->_has_bits_[0]);
+    _unknown_fields_.Swap(&other->_unknown_fields_);
+    std::swap(_cached_size_, other->_cached_size_);
+  }
 }
 
 ::google::protobuf::Metadata CMsgTESparks::GetMetadata() const {
@@ -14973,144 +10823,6 @@ void CMsgTESparks::InternalSwap(CMsgTESparks* other) {
   return metadata;
 }
 
-#if PROTOBUF_INLINE_NOT_IN_HEADERS
-// CMsgTESparks
-
-// optional .CMsgVector origin = 1;
-bool CMsgTESparks::has_origin() const {
-  return (_has_bits_[0] & 0x00000001u) != 0;
-}
-void CMsgTESparks::set_has_origin() {
-  _has_bits_[0] |= 0x00000001u;
-}
-void CMsgTESparks::clear_has_origin() {
-  _has_bits_[0] &= ~0x00000001u;
-}
-void CMsgTESparks::clear_origin() {
-  if (origin_ != NULL) origin_->::CMsgVector::Clear();
-  clear_has_origin();
-}
-const ::CMsgVector& CMsgTESparks::origin() const {
-  // @@protoc_insertion_point(field_get:CMsgTESparks.origin)
-  return origin_ != NULL ? *origin_ : *default_instance_->origin_;
-}
-::CMsgVector* CMsgTESparks::mutable_origin() {
-  set_has_origin();
-  if (origin_ == NULL) {
-    origin_ = new ::CMsgVector;
-  }
-  // @@protoc_insertion_point(field_mutable:CMsgTESparks.origin)
-  return origin_;
-}
-::CMsgVector* CMsgTESparks::release_origin() {
-  clear_has_origin();
-  ::CMsgVector* temp = origin_;
-  origin_ = NULL;
-  return temp;
-}
-void CMsgTESparks::set_allocated_origin(::CMsgVector* origin) {
-  delete origin_;
-  origin_ = origin;
-  if (origin) {
-    set_has_origin();
-  } else {
-    clear_has_origin();
-  }
-  // @@protoc_insertion_point(field_set_allocated:CMsgTESparks.origin)
-}
-
-// optional uint32 magnitude = 2;
-bool CMsgTESparks::has_magnitude() const {
-  return (_has_bits_[0] & 0x00000002u) != 0;
-}
-void CMsgTESparks::set_has_magnitude() {
-  _has_bits_[0] |= 0x00000002u;
-}
-void CMsgTESparks::clear_has_magnitude() {
-  _has_bits_[0] &= ~0x00000002u;
-}
-void CMsgTESparks::clear_magnitude() {
-  magnitude_ = 0u;
-  clear_has_magnitude();
-}
- ::google::protobuf::uint32 CMsgTESparks::magnitude() const {
-  // @@protoc_insertion_point(field_get:CMsgTESparks.magnitude)
-  return magnitude_;
-}
- void CMsgTESparks::set_magnitude(::google::protobuf::uint32 value) {
-  set_has_magnitude();
-  magnitude_ = value;
-  // @@protoc_insertion_point(field_set:CMsgTESparks.magnitude)
-}
-
-// optional uint32 length = 3;
-bool CMsgTESparks::has_length() const {
-  return (_has_bits_[0] & 0x00000004u) != 0;
-}
-void CMsgTESparks::set_has_length() {
-  _has_bits_[0] |= 0x00000004u;
-}
-void CMsgTESparks::clear_has_length() {
-  _has_bits_[0] &= ~0x00000004u;
-}
-void CMsgTESparks::clear_length() {
-  length_ = 0u;
-  clear_has_length();
-}
- ::google::protobuf::uint32 CMsgTESparks::length() const {
-  // @@protoc_insertion_point(field_get:CMsgTESparks.length)
-  return length_;
-}
- void CMsgTESparks::set_length(::google::protobuf::uint32 value) {
-  set_has_length();
-  length_ = value;
-  // @@protoc_insertion_point(field_set:CMsgTESparks.length)
-}
-
-// optional .CMsgVector direction = 4;
-bool CMsgTESparks::has_direction() const {
-  return (_has_bits_[0] & 0x00000008u) != 0;
-}
-void CMsgTESparks::set_has_direction() {
-  _has_bits_[0] |= 0x00000008u;
-}
-void CMsgTESparks::clear_has_direction() {
-  _has_bits_[0] &= ~0x00000008u;
-}
-void CMsgTESparks::clear_direction() {
-  if (direction_ != NULL) direction_->::CMsgVector::Clear();
-  clear_has_direction();
-}
-const ::CMsgVector& CMsgTESparks::direction() const {
-  // @@protoc_insertion_point(field_get:CMsgTESparks.direction)
-  return direction_ != NULL ? *direction_ : *default_instance_->direction_;
-}
-::CMsgVector* CMsgTESparks::mutable_direction() {
-  set_has_direction();
-  if (direction_ == NULL) {
-    direction_ = new ::CMsgVector;
-  }
-  // @@protoc_insertion_point(field_mutable:CMsgTESparks.direction)
-  return direction_;
-}
-::CMsgVector* CMsgTESparks::release_direction() {
-  clear_has_direction();
-  ::CMsgVector* temp = direction_;
-  direction_ = NULL;
-  return temp;
-}
-void CMsgTESparks::set_allocated_direction(::CMsgVector* direction) {
-  delete direction_;
-  direction_ = direction;
-  if (direction) {
-    set_has_direction();
-  } else {
-    clear_has_direction();
-  }
-  // @@protoc_insertion_point(field_set_allocated:CMsgTESparks.direction)
-}
-
-#endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
 
 // ===================================================================
 
@@ -15128,7 +10840,7 @@ const int CMsgTEPhysicsProp::kScaleFieldNumber;
 #endif  // !_MSC_VER
 
 CMsgTEPhysicsProp::CMsgTEPhysicsProp()
-  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  : ::google::protobuf::Message() {
   SharedCtor();
   // @@protoc_insertion_point(constructor:CMsgTEPhysicsProp)
 }
@@ -15140,8 +10852,7 @@ void CMsgTEPhysicsProp::InitAsDefaultInstance() {
 }
 
 CMsgTEPhysicsProp::CMsgTEPhysicsProp(const CMsgTEPhysicsProp& from)
-  : ::google::protobuf::Message(),
-    _internal_metadata_(NULL) {
+  : ::google::protobuf::Message() {
   SharedCtor();
   MergeFrom(from);
   // @@protoc_insertion_point(copy_constructor:CMsgTEPhysicsProp)
@@ -15192,24 +10903,22 @@ const CMsgTEPhysicsProp& CMsgTEPhysicsProp::default_instance() {
 
 CMsgTEPhysicsProp* CMsgTEPhysicsProp::default_instance_ = NULL;
 
-CMsgTEPhysicsProp* CMsgTEPhysicsProp::New(::google::protobuf::Arena* arena) const {
-  CMsgTEPhysicsProp* n = new CMsgTEPhysicsProp;
-  if (arena != NULL) {
-    arena->Own(n);
-  }
-  return n;
+CMsgTEPhysicsProp* CMsgTEPhysicsProp::New() const {
+  return new CMsgTEPhysicsProp;
 }
 
 void CMsgTEPhysicsProp::Clear() {
-#define ZR_HELPER_(f) reinterpret_cast<char*>(\
-  &reinterpret_cast<CMsgTEPhysicsProp*>(16)->f)
+#define OFFSET_OF_FIELD_(f) (reinterpret_cast<char*>(      \
+  &reinterpret_cast<CMsgTEPhysicsProp*>(16)->f) - \
+   reinterpret_cast<char*>(16))
 
-#define ZR_(first, last) do {\
-  ::memset(&first, 0,\
-           ZR_HELPER_(last) - ZR_HELPER_(first) + sizeof(last));\
-} while (0)
+#define ZR_(first, last) do {                              \
+    size_t f = OFFSET_OF_FIELD_(first);                    \
+    size_t n = OFFSET_OF_FIELD_(last) - f + sizeof(last);  \
+    ::memset(&first, 0, n);                                \
+  } while (0)
 
-  if (_has_bits_[0 / 32] & 255u) {
+  if (_has_bits_[0 / 32] & 255) {
     ZR_(skin_, modelindex_);
     if (has_origin()) {
       if (origin_ != NULL) origin_->::CMsgVector::Clear();
@@ -15223,13 +10932,11 @@ void CMsgTEPhysicsProp::Clear() {
   }
   ZR_(breakmodelsnottomake_, scale_);
 
-#undef ZR_HELPER_
+#undef OFFSET_OF_FIELD_
 #undef ZR_
 
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
-  if (_internal_metadata_.have_unknown_fields()) {
-    mutable_unknown_fields()->Clear();
-  }
+  mutable_unknown_fields()->Clear();
 }
 
 bool CMsgTEPhysicsProp::MergePartialFromCodedStream(
@@ -15413,19 +11120,19 @@ void CMsgTEPhysicsProp::SerializeWithCachedSizes(
   // optional .CMsgVector origin = 1;
   if (has_origin()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      1, *this->origin_, output);
+      1, this->origin(), output);
   }
 
   // optional .CMsgVector velocity = 2;
   if (has_velocity()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      2, *this->velocity_, output);
+      2, this->velocity(), output);
   }
 
   // optional .CMsgQAngle angles = 3;
   if (has_angles()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      3, *this->angles_, output);
+      3, this->angles(), output);
   }
 
   // optional fixed32 skin = 4;
@@ -15463,7 +11170,7 @@ void CMsgTEPhysicsProp::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteFloat(10, this->scale(), output);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
   }
@@ -15477,21 +11184,21 @@ void CMsgTEPhysicsProp::SerializeWithCachedSizes(
   if (has_origin()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
-        1, *this->origin_, target);
+        1, this->origin(), target);
   }
 
   // optional .CMsgVector velocity = 2;
   if (has_velocity()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
-        2, *this->velocity_, target);
+        2, this->velocity(), target);
   }
 
   // optional .CMsgQAngle angles = 3;
   if (has_angles()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
-        3, *this->angles_, target);
+        3, this->angles(), target);
   }
 
   // optional fixed32 skin = 4;
@@ -15529,7 +11236,7 @@ void CMsgTEPhysicsProp::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(10, this->scale(), target);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
   }
@@ -15540,26 +11247,26 @@ void CMsgTEPhysicsProp::SerializeWithCachedSizes(
 int CMsgTEPhysicsProp::ByteSize() const {
   int total_size = 0;
 
-  if (_has_bits_[0 / 32] & 255u) {
+  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     // optional .CMsgVector origin = 1;
     if (has_origin()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
-          *this->origin_);
+          this->origin());
     }
 
     // optional .CMsgVector velocity = 2;
     if (has_velocity()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
-          *this->velocity_);
+          this->velocity());
     }
 
     // optional .CMsgQAngle angles = 3;
     if (has_angles()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
-          *this->angles_);
+          this->angles());
     }
 
     // optional fixed32 skin = 4;
@@ -15592,7 +11299,7 @@ int CMsgTEPhysicsProp::ByteSize() const {
     }
 
   }
-  if (_has_bits_[8 / 32] & 768u) {
+  if (_has_bits_[8 / 32] & (0xffu << (8 % 32))) {
     // optional uint32 breakmodelsnottomake = 9;
     if (has_breakmodelsnottomake()) {
       total_size += 1 +
@@ -15606,7 +11313,7 @@ int CMsgTEPhysicsProp::ByteSize() const {
     }
 
   }
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     total_size +=
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         unknown_fields());
@@ -15618,10 +11325,10 @@ int CMsgTEPhysicsProp::ByteSize() const {
 }
 
 void CMsgTEPhysicsProp::MergeFrom(const ::google::protobuf::Message& from) {
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
-  const CMsgTEPhysicsProp* source = 
-      ::google::protobuf::internal::DynamicCastToGenerated<const CMsgTEPhysicsProp>(
-          &from);
+  GOOGLE_CHECK_NE(&from, this);
+  const CMsgTEPhysicsProp* source =
+    ::google::protobuf::internal::dynamic_cast_if_available<const CMsgTEPhysicsProp*>(
+      &from);
   if (source == NULL) {
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
   } else {
@@ -15630,7 +11337,7 @@ void CMsgTEPhysicsProp::MergeFrom(const ::google::protobuf::Message& from) {
 }
 
 void CMsgTEPhysicsProp::MergeFrom(const CMsgTEPhysicsProp& from) {
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  GOOGLE_CHECK_NE(&from, this);
   if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (from.has_origin()) {
       mutable_origin()->::CMsgVector::MergeFrom(from.origin());
@@ -15665,9 +11372,7 @@ void CMsgTEPhysicsProp::MergeFrom(const CMsgTEPhysicsProp& from) {
       set_scale(from.scale());
     }
   }
-  if (from._internal_metadata_.have_unknown_fields()) {
-    mutable_unknown_fields()->MergeFrom(from.unknown_fields());
-  }
+  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
 }
 
 void CMsgTEPhysicsProp::CopyFrom(const ::google::protobuf::Message& from) {
@@ -15688,23 +11393,21 @@ bool CMsgTEPhysicsProp::IsInitialized() const {
 }
 
 void CMsgTEPhysicsProp::Swap(CMsgTEPhysicsProp* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
-void CMsgTEPhysicsProp::InternalSwap(CMsgTEPhysicsProp* other) {
-  std::swap(origin_, other->origin_);
-  std::swap(velocity_, other->velocity_);
-  std::swap(angles_, other->angles_);
-  std::swap(skin_, other->skin_);
-  std::swap(flags_, other->flags_);
-  std::swap(effects_, other->effects_);
-  std::swap(color_, other->color_);
-  std::swap(modelindex_, other->modelindex_);
-  std::swap(breakmodelsnottomake_, other->breakmodelsnottomake_);
-  std::swap(scale_, other->scale_);
-  std::swap(_has_bits_[0], other->_has_bits_[0]);
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  std::swap(_cached_size_, other->_cached_size_);
+  if (other != this) {
+    std::swap(origin_, other->origin_);
+    std::swap(velocity_, other->velocity_);
+    std::swap(angles_, other->angles_);
+    std::swap(skin_, other->skin_);
+    std::swap(flags_, other->flags_);
+    std::swap(effects_, other->effects_);
+    std::swap(color_, other->color_);
+    std::swap(modelindex_, other->modelindex_);
+    std::swap(breakmodelsnottomake_, other->breakmodelsnottomake_);
+    std::swap(scale_, other->scale_);
+    std::swap(_has_bits_[0], other->_has_bits_[0]);
+    _unknown_fields_.Swap(&other->_unknown_fields_);
+    std::swap(_cached_size_, other->_cached_size_);
+  }
 }
 
 ::google::protobuf::Metadata CMsgTEPhysicsProp::GetMetadata() const {
@@ -15715,307 +11418,6 @@ void CMsgTEPhysicsProp::InternalSwap(CMsgTEPhysicsProp* other) {
   return metadata;
 }
 
-#if PROTOBUF_INLINE_NOT_IN_HEADERS
-// CMsgTEPhysicsProp
-
-// optional .CMsgVector origin = 1;
-bool CMsgTEPhysicsProp::has_origin() const {
-  return (_has_bits_[0] & 0x00000001u) != 0;
-}
-void CMsgTEPhysicsProp::set_has_origin() {
-  _has_bits_[0] |= 0x00000001u;
-}
-void CMsgTEPhysicsProp::clear_has_origin() {
-  _has_bits_[0] &= ~0x00000001u;
-}
-void CMsgTEPhysicsProp::clear_origin() {
-  if (origin_ != NULL) origin_->::CMsgVector::Clear();
-  clear_has_origin();
-}
-const ::CMsgVector& CMsgTEPhysicsProp::origin() const {
-  // @@protoc_insertion_point(field_get:CMsgTEPhysicsProp.origin)
-  return origin_ != NULL ? *origin_ : *default_instance_->origin_;
-}
-::CMsgVector* CMsgTEPhysicsProp::mutable_origin() {
-  set_has_origin();
-  if (origin_ == NULL) {
-    origin_ = new ::CMsgVector;
-  }
-  // @@protoc_insertion_point(field_mutable:CMsgTEPhysicsProp.origin)
-  return origin_;
-}
-::CMsgVector* CMsgTEPhysicsProp::release_origin() {
-  clear_has_origin();
-  ::CMsgVector* temp = origin_;
-  origin_ = NULL;
-  return temp;
-}
-void CMsgTEPhysicsProp::set_allocated_origin(::CMsgVector* origin) {
-  delete origin_;
-  origin_ = origin;
-  if (origin) {
-    set_has_origin();
-  } else {
-    clear_has_origin();
-  }
-  // @@protoc_insertion_point(field_set_allocated:CMsgTEPhysicsProp.origin)
-}
-
-// optional .CMsgVector velocity = 2;
-bool CMsgTEPhysicsProp::has_velocity() const {
-  return (_has_bits_[0] & 0x00000002u) != 0;
-}
-void CMsgTEPhysicsProp::set_has_velocity() {
-  _has_bits_[0] |= 0x00000002u;
-}
-void CMsgTEPhysicsProp::clear_has_velocity() {
-  _has_bits_[0] &= ~0x00000002u;
-}
-void CMsgTEPhysicsProp::clear_velocity() {
-  if (velocity_ != NULL) velocity_->::CMsgVector::Clear();
-  clear_has_velocity();
-}
-const ::CMsgVector& CMsgTEPhysicsProp::velocity() const {
-  // @@protoc_insertion_point(field_get:CMsgTEPhysicsProp.velocity)
-  return velocity_ != NULL ? *velocity_ : *default_instance_->velocity_;
-}
-::CMsgVector* CMsgTEPhysicsProp::mutable_velocity() {
-  set_has_velocity();
-  if (velocity_ == NULL) {
-    velocity_ = new ::CMsgVector;
-  }
-  // @@protoc_insertion_point(field_mutable:CMsgTEPhysicsProp.velocity)
-  return velocity_;
-}
-::CMsgVector* CMsgTEPhysicsProp::release_velocity() {
-  clear_has_velocity();
-  ::CMsgVector* temp = velocity_;
-  velocity_ = NULL;
-  return temp;
-}
-void CMsgTEPhysicsProp::set_allocated_velocity(::CMsgVector* velocity) {
-  delete velocity_;
-  velocity_ = velocity;
-  if (velocity) {
-    set_has_velocity();
-  } else {
-    clear_has_velocity();
-  }
-  // @@protoc_insertion_point(field_set_allocated:CMsgTEPhysicsProp.velocity)
-}
-
-// optional .CMsgQAngle angles = 3;
-bool CMsgTEPhysicsProp::has_angles() const {
-  return (_has_bits_[0] & 0x00000004u) != 0;
-}
-void CMsgTEPhysicsProp::set_has_angles() {
-  _has_bits_[0] |= 0x00000004u;
-}
-void CMsgTEPhysicsProp::clear_has_angles() {
-  _has_bits_[0] &= ~0x00000004u;
-}
-void CMsgTEPhysicsProp::clear_angles() {
-  if (angles_ != NULL) angles_->::CMsgQAngle::Clear();
-  clear_has_angles();
-}
-const ::CMsgQAngle& CMsgTEPhysicsProp::angles() const {
-  // @@protoc_insertion_point(field_get:CMsgTEPhysicsProp.angles)
-  return angles_ != NULL ? *angles_ : *default_instance_->angles_;
-}
-::CMsgQAngle* CMsgTEPhysicsProp::mutable_angles() {
-  set_has_angles();
-  if (angles_ == NULL) {
-    angles_ = new ::CMsgQAngle;
-  }
-  // @@protoc_insertion_point(field_mutable:CMsgTEPhysicsProp.angles)
-  return angles_;
-}
-::CMsgQAngle* CMsgTEPhysicsProp::release_angles() {
-  clear_has_angles();
-  ::CMsgQAngle* temp = angles_;
-  angles_ = NULL;
-  return temp;
-}
-void CMsgTEPhysicsProp::set_allocated_angles(::CMsgQAngle* angles) {
-  delete angles_;
-  angles_ = angles;
-  if (angles) {
-    set_has_angles();
-  } else {
-    clear_has_angles();
-  }
-  // @@protoc_insertion_point(field_set_allocated:CMsgTEPhysicsProp.angles)
-}
-
-// optional fixed32 skin = 4;
-bool CMsgTEPhysicsProp::has_skin() const {
-  return (_has_bits_[0] & 0x00000008u) != 0;
-}
-void CMsgTEPhysicsProp::set_has_skin() {
-  _has_bits_[0] |= 0x00000008u;
-}
-void CMsgTEPhysicsProp::clear_has_skin() {
-  _has_bits_[0] &= ~0x00000008u;
-}
-void CMsgTEPhysicsProp::clear_skin() {
-  skin_ = 0u;
-  clear_has_skin();
-}
- ::google::protobuf::uint32 CMsgTEPhysicsProp::skin() const {
-  // @@protoc_insertion_point(field_get:CMsgTEPhysicsProp.skin)
-  return skin_;
-}
- void CMsgTEPhysicsProp::set_skin(::google::protobuf::uint32 value) {
-  set_has_skin();
-  skin_ = value;
-  // @@protoc_insertion_point(field_set:CMsgTEPhysicsProp.skin)
-}
-
-// optional uint32 flags = 5;
-bool CMsgTEPhysicsProp::has_flags() const {
-  return (_has_bits_[0] & 0x00000010u) != 0;
-}
-void CMsgTEPhysicsProp::set_has_flags() {
-  _has_bits_[0] |= 0x00000010u;
-}
-void CMsgTEPhysicsProp::clear_has_flags() {
-  _has_bits_[0] &= ~0x00000010u;
-}
-void CMsgTEPhysicsProp::clear_flags() {
-  flags_ = 0u;
-  clear_has_flags();
-}
- ::google::protobuf::uint32 CMsgTEPhysicsProp::flags() const {
-  // @@protoc_insertion_point(field_get:CMsgTEPhysicsProp.flags)
-  return flags_;
-}
- void CMsgTEPhysicsProp::set_flags(::google::protobuf::uint32 value) {
-  set_has_flags();
-  flags_ = value;
-  // @@protoc_insertion_point(field_set:CMsgTEPhysicsProp.flags)
-}
-
-// optional uint32 effects = 6;
-bool CMsgTEPhysicsProp::has_effects() const {
-  return (_has_bits_[0] & 0x00000020u) != 0;
-}
-void CMsgTEPhysicsProp::set_has_effects() {
-  _has_bits_[0] |= 0x00000020u;
-}
-void CMsgTEPhysicsProp::clear_has_effects() {
-  _has_bits_[0] &= ~0x00000020u;
-}
-void CMsgTEPhysicsProp::clear_effects() {
-  effects_ = 0u;
-  clear_has_effects();
-}
- ::google::protobuf::uint32 CMsgTEPhysicsProp::effects() const {
-  // @@protoc_insertion_point(field_get:CMsgTEPhysicsProp.effects)
-  return effects_;
-}
- void CMsgTEPhysicsProp::set_effects(::google::protobuf::uint32 value) {
-  set_has_effects();
-  effects_ = value;
-  // @@protoc_insertion_point(field_set:CMsgTEPhysicsProp.effects)
-}
-
-// optional fixed32 color = 7;
-bool CMsgTEPhysicsProp::has_color() const {
-  return (_has_bits_[0] & 0x00000040u) != 0;
-}
-void CMsgTEPhysicsProp::set_has_color() {
-  _has_bits_[0] |= 0x00000040u;
-}
-void CMsgTEPhysicsProp::clear_has_color() {
-  _has_bits_[0] &= ~0x00000040u;
-}
-void CMsgTEPhysicsProp::clear_color() {
-  color_ = 0u;
-  clear_has_color();
-}
- ::google::protobuf::uint32 CMsgTEPhysicsProp::color() const {
-  // @@protoc_insertion_point(field_get:CMsgTEPhysicsProp.color)
-  return color_;
-}
- void CMsgTEPhysicsProp::set_color(::google::protobuf::uint32 value) {
-  set_has_color();
-  color_ = value;
-  // @@protoc_insertion_point(field_set:CMsgTEPhysicsProp.color)
-}
-
-// optional fixed64 modelindex = 8;
-bool CMsgTEPhysicsProp::has_modelindex() const {
-  return (_has_bits_[0] & 0x00000080u) != 0;
-}
-void CMsgTEPhysicsProp::set_has_modelindex() {
-  _has_bits_[0] |= 0x00000080u;
-}
-void CMsgTEPhysicsProp::clear_has_modelindex() {
-  _has_bits_[0] &= ~0x00000080u;
-}
-void CMsgTEPhysicsProp::clear_modelindex() {
-  modelindex_ = GOOGLE_ULONGLONG(0);
-  clear_has_modelindex();
-}
- ::google::protobuf::uint64 CMsgTEPhysicsProp::modelindex() const {
-  // @@protoc_insertion_point(field_get:CMsgTEPhysicsProp.modelindex)
-  return modelindex_;
-}
- void CMsgTEPhysicsProp::set_modelindex(::google::protobuf::uint64 value) {
-  set_has_modelindex();
-  modelindex_ = value;
-  // @@protoc_insertion_point(field_set:CMsgTEPhysicsProp.modelindex)
-}
-
-// optional uint32 breakmodelsnottomake = 9;
-bool CMsgTEPhysicsProp::has_breakmodelsnottomake() const {
-  return (_has_bits_[0] & 0x00000100u) != 0;
-}
-void CMsgTEPhysicsProp::set_has_breakmodelsnottomake() {
-  _has_bits_[0] |= 0x00000100u;
-}
-void CMsgTEPhysicsProp::clear_has_breakmodelsnottomake() {
-  _has_bits_[0] &= ~0x00000100u;
-}
-void CMsgTEPhysicsProp::clear_breakmodelsnottomake() {
-  breakmodelsnottomake_ = 0u;
-  clear_has_breakmodelsnottomake();
-}
- ::google::protobuf::uint32 CMsgTEPhysicsProp::breakmodelsnottomake() const {
-  // @@protoc_insertion_point(field_get:CMsgTEPhysicsProp.breakmodelsnottomake)
-  return breakmodelsnottomake_;
-}
- void CMsgTEPhysicsProp::set_breakmodelsnottomake(::google::protobuf::uint32 value) {
-  set_has_breakmodelsnottomake();
-  breakmodelsnottomake_ = value;
-  // @@protoc_insertion_point(field_set:CMsgTEPhysicsProp.breakmodelsnottomake)
-}
-
-// optional float scale = 10;
-bool CMsgTEPhysicsProp::has_scale() const {
-  return (_has_bits_[0] & 0x00000200u) != 0;
-}
-void CMsgTEPhysicsProp::set_has_scale() {
-  _has_bits_[0] |= 0x00000200u;
-}
-void CMsgTEPhysicsProp::clear_has_scale() {
-  _has_bits_[0] &= ~0x00000200u;
-}
-void CMsgTEPhysicsProp::clear_scale() {
-  scale_ = 0;
-  clear_has_scale();
-}
- float CMsgTEPhysicsProp::scale() const {
-  // @@protoc_insertion_point(field_get:CMsgTEPhysicsProp.scale)
-  return scale_;
-}
- void CMsgTEPhysicsProp::set_scale(float value) {
-  set_has_scale();
-  scale_ = value;
-  // @@protoc_insertion_point(field_set:CMsgTEPhysicsProp.scale)
-}
-
-#endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
 
 // ===================================================================
 
@@ -16026,7 +11428,7 @@ const int CMsgTEPlayerDecal::kEntityFieldNumber;
 #endif  // !_MSC_VER
 
 CMsgTEPlayerDecal::CMsgTEPlayerDecal()
-  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  : ::google::protobuf::Message() {
   SharedCtor();
   // @@protoc_insertion_point(constructor:CMsgTEPlayerDecal)
 }
@@ -16036,8 +11438,7 @@ void CMsgTEPlayerDecal::InitAsDefaultInstance() {
 }
 
 CMsgTEPlayerDecal::CMsgTEPlayerDecal(const CMsgTEPlayerDecal& from)
-  : ::google::protobuf::Message(),
-    _internal_metadata_(NULL) {
+  : ::google::protobuf::Message() {
   SharedCtor();
   MergeFrom(from);
   // @@protoc_insertion_point(copy_constructor:CMsgTEPlayerDecal)
@@ -16079,37 +11480,33 @@ const CMsgTEPlayerDecal& CMsgTEPlayerDecal::default_instance() {
 
 CMsgTEPlayerDecal* CMsgTEPlayerDecal::default_instance_ = NULL;
 
-CMsgTEPlayerDecal* CMsgTEPlayerDecal::New(::google::protobuf::Arena* arena) const {
-  CMsgTEPlayerDecal* n = new CMsgTEPlayerDecal;
-  if (arena != NULL) {
-    arena->Own(n);
-  }
-  return n;
+CMsgTEPlayerDecal* CMsgTEPlayerDecal::New() const {
+  return new CMsgTEPlayerDecal;
 }
 
 void CMsgTEPlayerDecal::Clear() {
-#define ZR_HELPER_(f) reinterpret_cast<char*>(\
-  &reinterpret_cast<CMsgTEPlayerDecal*>(16)->f)
+#define OFFSET_OF_FIELD_(f) (reinterpret_cast<char*>(      \
+  &reinterpret_cast<CMsgTEPlayerDecal*>(16)->f) - \
+   reinterpret_cast<char*>(16))
 
-#define ZR_(first, last) do {\
-  ::memset(&first, 0,\
-           ZR_HELPER_(last) - ZR_HELPER_(first) + sizeof(last));\
-} while (0)
+#define ZR_(first, last) do {                              \
+    size_t f = OFFSET_OF_FIELD_(first);                    \
+    size_t n = OFFSET_OF_FIELD_(last) - f + sizeof(last);  \
+    ::memset(&first, 0, n);                                \
+  } while (0)
 
-  if (_has_bits_[0 / 32] & 7u) {
+  if (_has_bits_[0 / 32] & 7) {
     ZR_(player_, entity_);
     if (has_origin()) {
       if (origin_ != NULL) origin_->::CMsgVector::Clear();
     }
   }
 
-#undef ZR_HELPER_
+#undef OFFSET_OF_FIELD_
 #undef ZR_
 
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
-  if (_internal_metadata_.have_unknown_fields()) {
-    mutable_unknown_fields()->Clear();
-  }
+  mutable_unknown_fields()->Clear();
 }
 
 bool CMsgTEPlayerDecal::MergePartialFromCodedStream(
@@ -16192,7 +11589,7 @@ void CMsgTEPlayerDecal::SerializeWithCachedSizes(
   // optional .CMsgVector origin = 1;
   if (has_origin()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      1, *this->origin_, output);
+      1, this->origin(), output);
   }
 
   // optional uint32 player = 2;
@@ -16205,7 +11602,7 @@ void CMsgTEPlayerDecal::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteUInt32(3, this->entity(), output);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
   }
@@ -16219,7 +11616,7 @@ void CMsgTEPlayerDecal::SerializeWithCachedSizes(
   if (has_origin()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
-        1, *this->origin_, target);
+        1, this->origin(), target);
   }
 
   // optional uint32 player = 2;
@@ -16232,7 +11629,7 @@ void CMsgTEPlayerDecal::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(3, this->entity(), target);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
   }
@@ -16243,12 +11640,12 @@ void CMsgTEPlayerDecal::SerializeWithCachedSizes(
 int CMsgTEPlayerDecal::ByteSize() const {
   int total_size = 0;
 
-  if (_has_bits_[0 / 32] & 7u) {
+  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     // optional .CMsgVector origin = 1;
     if (has_origin()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
-          *this->origin_);
+          this->origin());
     }
 
     // optional uint32 player = 2;
@@ -16266,7 +11663,7 @@ int CMsgTEPlayerDecal::ByteSize() const {
     }
 
   }
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     total_size +=
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         unknown_fields());
@@ -16278,10 +11675,10 @@ int CMsgTEPlayerDecal::ByteSize() const {
 }
 
 void CMsgTEPlayerDecal::MergeFrom(const ::google::protobuf::Message& from) {
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
-  const CMsgTEPlayerDecal* source = 
-      ::google::protobuf::internal::DynamicCastToGenerated<const CMsgTEPlayerDecal>(
-          &from);
+  GOOGLE_CHECK_NE(&from, this);
+  const CMsgTEPlayerDecal* source =
+    ::google::protobuf::internal::dynamic_cast_if_available<const CMsgTEPlayerDecal*>(
+      &from);
   if (source == NULL) {
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
   } else {
@@ -16290,7 +11687,7 @@ void CMsgTEPlayerDecal::MergeFrom(const ::google::protobuf::Message& from) {
 }
 
 void CMsgTEPlayerDecal::MergeFrom(const CMsgTEPlayerDecal& from) {
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  GOOGLE_CHECK_NE(&from, this);
   if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (from.has_origin()) {
       mutable_origin()->::CMsgVector::MergeFrom(from.origin());
@@ -16302,9 +11699,7 @@ void CMsgTEPlayerDecal::MergeFrom(const CMsgTEPlayerDecal& from) {
       set_entity(from.entity());
     }
   }
-  if (from._internal_metadata_.have_unknown_fields()) {
-    mutable_unknown_fields()->MergeFrom(from.unknown_fields());
-  }
+  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
 }
 
 void CMsgTEPlayerDecal::CopyFrom(const ::google::protobuf::Message& from) {
@@ -16325,16 +11720,14 @@ bool CMsgTEPlayerDecal::IsInitialized() const {
 }
 
 void CMsgTEPlayerDecal::Swap(CMsgTEPlayerDecal* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
-void CMsgTEPlayerDecal::InternalSwap(CMsgTEPlayerDecal* other) {
-  std::swap(origin_, other->origin_);
-  std::swap(player_, other->player_);
-  std::swap(entity_, other->entity_);
-  std::swap(_has_bits_[0], other->_has_bits_[0]);
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  std::swap(_cached_size_, other->_cached_size_);
+  if (other != this) {
+    std::swap(origin_, other->origin_);
+    std::swap(player_, other->player_);
+    std::swap(entity_, other->entity_);
+    std::swap(_has_bits_[0], other->_has_bits_[0]);
+    _unknown_fields_.Swap(&other->_unknown_fields_);
+    std::swap(_cached_size_, other->_cached_size_);
+  }
 }
 
 ::google::protobuf::Metadata CMsgTEPlayerDecal::GetMetadata() const {
@@ -16345,101 +11738,6 @@ void CMsgTEPlayerDecal::InternalSwap(CMsgTEPlayerDecal* other) {
   return metadata;
 }
 
-#if PROTOBUF_INLINE_NOT_IN_HEADERS
-// CMsgTEPlayerDecal
-
-// optional .CMsgVector origin = 1;
-bool CMsgTEPlayerDecal::has_origin() const {
-  return (_has_bits_[0] & 0x00000001u) != 0;
-}
-void CMsgTEPlayerDecal::set_has_origin() {
-  _has_bits_[0] |= 0x00000001u;
-}
-void CMsgTEPlayerDecal::clear_has_origin() {
-  _has_bits_[0] &= ~0x00000001u;
-}
-void CMsgTEPlayerDecal::clear_origin() {
-  if (origin_ != NULL) origin_->::CMsgVector::Clear();
-  clear_has_origin();
-}
-const ::CMsgVector& CMsgTEPlayerDecal::origin() const {
-  // @@protoc_insertion_point(field_get:CMsgTEPlayerDecal.origin)
-  return origin_ != NULL ? *origin_ : *default_instance_->origin_;
-}
-::CMsgVector* CMsgTEPlayerDecal::mutable_origin() {
-  set_has_origin();
-  if (origin_ == NULL) {
-    origin_ = new ::CMsgVector;
-  }
-  // @@protoc_insertion_point(field_mutable:CMsgTEPlayerDecal.origin)
-  return origin_;
-}
-::CMsgVector* CMsgTEPlayerDecal::release_origin() {
-  clear_has_origin();
-  ::CMsgVector* temp = origin_;
-  origin_ = NULL;
-  return temp;
-}
-void CMsgTEPlayerDecal::set_allocated_origin(::CMsgVector* origin) {
-  delete origin_;
-  origin_ = origin;
-  if (origin) {
-    set_has_origin();
-  } else {
-    clear_has_origin();
-  }
-  // @@protoc_insertion_point(field_set_allocated:CMsgTEPlayerDecal.origin)
-}
-
-// optional uint32 player = 2;
-bool CMsgTEPlayerDecal::has_player() const {
-  return (_has_bits_[0] & 0x00000002u) != 0;
-}
-void CMsgTEPlayerDecal::set_has_player() {
-  _has_bits_[0] |= 0x00000002u;
-}
-void CMsgTEPlayerDecal::clear_has_player() {
-  _has_bits_[0] &= ~0x00000002u;
-}
-void CMsgTEPlayerDecal::clear_player() {
-  player_ = 0u;
-  clear_has_player();
-}
- ::google::protobuf::uint32 CMsgTEPlayerDecal::player() const {
-  // @@protoc_insertion_point(field_get:CMsgTEPlayerDecal.player)
-  return player_;
-}
- void CMsgTEPlayerDecal::set_player(::google::protobuf::uint32 value) {
-  set_has_player();
-  player_ = value;
-  // @@protoc_insertion_point(field_set:CMsgTEPlayerDecal.player)
-}
-
-// optional uint32 entity = 3;
-bool CMsgTEPlayerDecal::has_entity() const {
-  return (_has_bits_[0] & 0x00000004u) != 0;
-}
-void CMsgTEPlayerDecal::set_has_entity() {
-  _has_bits_[0] |= 0x00000004u;
-}
-void CMsgTEPlayerDecal::clear_has_entity() {
-  _has_bits_[0] &= ~0x00000004u;
-}
-void CMsgTEPlayerDecal::clear_entity() {
-  entity_ = 0u;
-  clear_has_entity();
-}
- ::google::protobuf::uint32 CMsgTEPlayerDecal::entity() const {
-  // @@protoc_insertion_point(field_get:CMsgTEPlayerDecal.entity)
-  return entity_;
-}
- void CMsgTEPlayerDecal::set_entity(::google::protobuf::uint32 value) {
-  set_has_entity();
-  entity_ = value;
-  // @@protoc_insertion_point(field_set:CMsgTEPlayerDecal.entity)
-}
-
-#endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
 
 // ===================================================================
 
@@ -16451,7 +11749,7 @@ const int CMsgTEProjectedDecal::kDistanceFieldNumber;
 #endif  // !_MSC_VER
 
 CMsgTEProjectedDecal::CMsgTEProjectedDecal()
-  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  : ::google::protobuf::Message() {
   SharedCtor();
   // @@protoc_insertion_point(constructor:CMsgTEProjectedDecal)
 }
@@ -16462,8 +11760,7 @@ void CMsgTEProjectedDecal::InitAsDefaultInstance() {
 }
 
 CMsgTEProjectedDecal::CMsgTEProjectedDecal(const CMsgTEProjectedDecal& from)
-  : ::google::protobuf::Message(),
-    _internal_metadata_(NULL) {
+  : ::google::protobuf::Message() {
   SharedCtor();
   MergeFrom(from);
   // @@protoc_insertion_point(copy_constructor:CMsgTEProjectedDecal)
@@ -16507,24 +11804,22 @@ const CMsgTEProjectedDecal& CMsgTEProjectedDecal::default_instance() {
 
 CMsgTEProjectedDecal* CMsgTEProjectedDecal::default_instance_ = NULL;
 
-CMsgTEProjectedDecal* CMsgTEProjectedDecal::New(::google::protobuf::Arena* arena) const {
-  CMsgTEProjectedDecal* n = new CMsgTEProjectedDecal;
-  if (arena != NULL) {
-    arena->Own(n);
-  }
-  return n;
+CMsgTEProjectedDecal* CMsgTEProjectedDecal::New() const {
+  return new CMsgTEProjectedDecal;
 }
 
 void CMsgTEProjectedDecal::Clear() {
-#define ZR_HELPER_(f) reinterpret_cast<char*>(\
-  &reinterpret_cast<CMsgTEProjectedDecal*>(16)->f)
+#define OFFSET_OF_FIELD_(f) (reinterpret_cast<char*>(      \
+  &reinterpret_cast<CMsgTEProjectedDecal*>(16)->f) - \
+   reinterpret_cast<char*>(16))
 
-#define ZR_(first, last) do {\
-  ::memset(&first, 0,\
-           ZR_HELPER_(last) - ZR_HELPER_(first) + sizeof(last));\
-} while (0)
+#define ZR_(first, last) do {                              \
+    size_t f = OFFSET_OF_FIELD_(first);                    \
+    size_t n = OFFSET_OF_FIELD_(last) - f + sizeof(last);  \
+    ::memset(&first, 0, n);                                \
+  } while (0)
 
-  if (_has_bits_[0 / 32] & 15u) {
+  if (_has_bits_[0 / 32] & 15) {
     ZR_(index_, distance_);
     if (has_origin()) {
       if (origin_ != NULL) origin_->::CMsgVector::Clear();
@@ -16534,13 +11829,11 @@ void CMsgTEProjectedDecal::Clear() {
     }
   }
 
-#undef ZR_HELPER_
+#undef OFFSET_OF_FIELD_
 #undef ZR_
 
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
-  if (_internal_metadata_.have_unknown_fields()) {
-    mutable_unknown_fields()->Clear();
-  }
+  mutable_unknown_fields()->Clear();
 }
 
 bool CMsgTEProjectedDecal::MergePartialFromCodedStream(
@@ -16636,13 +11929,13 @@ void CMsgTEProjectedDecal::SerializeWithCachedSizes(
   // optional .CMsgVector origin = 1;
   if (has_origin()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      1, *this->origin_, output);
+      1, this->origin(), output);
   }
 
   // optional .CMsgQAngle angles = 2;
   if (has_angles()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      2, *this->angles_, output);
+      2, this->angles(), output);
   }
 
   // optional uint32 index = 3;
@@ -16655,7 +11948,7 @@ void CMsgTEProjectedDecal::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteFloat(4, this->distance(), output);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
   }
@@ -16669,14 +11962,14 @@ void CMsgTEProjectedDecal::SerializeWithCachedSizes(
   if (has_origin()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
-        1, *this->origin_, target);
+        1, this->origin(), target);
   }
 
   // optional .CMsgQAngle angles = 2;
   if (has_angles()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
-        2, *this->angles_, target);
+        2, this->angles(), target);
   }
 
   // optional uint32 index = 3;
@@ -16689,7 +11982,7 @@ void CMsgTEProjectedDecal::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(4, this->distance(), target);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
   }
@@ -16700,19 +11993,19 @@ void CMsgTEProjectedDecal::SerializeWithCachedSizes(
 int CMsgTEProjectedDecal::ByteSize() const {
   int total_size = 0;
 
-  if (_has_bits_[0 / 32] & 15u) {
+  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     // optional .CMsgVector origin = 1;
     if (has_origin()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
-          *this->origin_);
+          this->origin());
     }
 
     // optional .CMsgQAngle angles = 2;
     if (has_angles()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
-          *this->angles_);
+          this->angles());
     }
 
     // optional uint32 index = 3;
@@ -16728,7 +12021,7 @@ int CMsgTEProjectedDecal::ByteSize() const {
     }
 
   }
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     total_size +=
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         unknown_fields());
@@ -16740,10 +12033,10 @@ int CMsgTEProjectedDecal::ByteSize() const {
 }
 
 void CMsgTEProjectedDecal::MergeFrom(const ::google::protobuf::Message& from) {
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
-  const CMsgTEProjectedDecal* source = 
-      ::google::protobuf::internal::DynamicCastToGenerated<const CMsgTEProjectedDecal>(
-          &from);
+  GOOGLE_CHECK_NE(&from, this);
+  const CMsgTEProjectedDecal* source =
+    ::google::protobuf::internal::dynamic_cast_if_available<const CMsgTEProjectedDecal*>(
+      &from);
   if (source == NULL) {
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
   } else {
@@ -16752,7 +12045,7 @@ void CMsgTEProjectedDecal::MergeFrom(const ::google::protobuf::Message& from) {
 }
 
 void CMsgTEProjectedDecal::MergeFrom(const CMsgTEProjectedDecal& from) {
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  GOOGLE_CHECK_NE(&from, this);
   if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (from.has_origin()) {
       mutable_origin()->::CMsgVector::MergeFrom(from.origin());
@@ -16767,9 +12060,7 @@ void CMsgTEProjectedDecal::MergeFrom(const CMsgTEProjectedDecal& from) {
       set_distance(from.distance());
     }
   }
-  if (from._internal_metadata_.have_unknown_fields()) {
-    mutable_unknown_fields()->MergeFrom(from.unknown_fields());
-  }
+  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
 }
 
 void CMsgTEProjectedDecal::CopyFrom(const ::google::protobuf::Message& from) {
@@ -16790,17 +12081,15 @@ bool CMsgTEProjectedDecal::IsInitialized() const {
 }
 
 void CMsgTEProjectedDecal::Swap(CMsgTEProjectedDecal* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
-void CMsgTEProjectedDecal::InternalSwap(CMsgTEProjectedDecal* other) {
-  std::swap(origin_, other->origin_);
-  std::swap(angles_, other->angles_);
-  std::swap(index_, other->index_);
-  std::swap(distance_, other->distance_);
-  std::swap(_has_bits_[0], other->_has_bits_[0]);
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  std::swap(_cached_size_, other->_cached_size_);
+  if (other != this) {
+    std::swap(origin_, other->origin_);
+    std::swap(angles_, other->angles_);
+    std::swap(index_, other->index_);
+    std::swap(distance_, other->distance_);
+    std::swap(_has_bits_[0], other->_has_bits_[0]);
+    _unknown_fields_.Swap(&other->_unknown_fields_);
+    std::swap(_cached_size_, other->_cached_size_);
+  }
 }
 
 ::google::protobuf::Metadata CMsgTEProjectedDecal::GetMetadata() const {
@@ -16811,144 +12100,6 @@ void CMsgTEProjectedDecal::InternalSwap(CMsgTEProjectedDecal* other) {
   return metadata;
 }
 
-#if PROTOBUF_INLINE_NOT_IN_HEADERS
-// CMsgTEProjectedDecal
-
-// optional .CMsgVector origin = 1;
-bool CMsgTEProjectedDecal::has_origin() const {
-  return (_has_bits_[0] & 0x00000001u) != 0;
-}
-void CMsgTEProjectedDecal::set_has_origin() {
-  _has_bits_[0] |= 0x00000001u;
-}
-void CMsgTEProjectedDecal::clear_has_origin() {
-  _has_bits_[0] &= ~0x00000001u;
-}
-void CMsgTEProjectedDecal::clear_origin() {
-  if (origin_ != NULL) origin_->::CMsgVector::Clear();
-  clear_has_origin();
-}
-const ::CMsgVector& CMsgTEProjectedDecal::origin() const {
-  // @@protoc_insertion_point(field_get:CMsgTEProjectedDecal.origin)
-  return origin_ != NULL ? *origin_ : *default_instance_->origin_;
-}
-::CMsgVector* CMsgTEProjectedDecal::mutable_origin() {
-  set_has_origin();
-  if (origin_ == NULL) {
-    origin_ = new ::CMsgVector;
-  }
-  // @@protoc_insertion_point(field_mutable:CMsgTEProjectedDecal.origin)
-  return origin_;
-}
-::CMsgVector* CMsgTEProjectedDecal::release_origin() {
-  clear_has_origin();
-  ::CMsgVector* temp = origin_;
-  origin_ = NULL;
-  return temp;
-}
-void CMsgTEProjectedDecal::set_allocated_origin(::CMsgVector* origin) {
-  delete origin_;
-  origin_ = origin;
-  if (origin) {
-    set_has_origin();
-  } else {
-    clear_has_origin();
-  }
-  // @@protoc_insertion_point(field_set_allocated:CMsgTEProjectedDecal.origin)
-}
-
-// optional .CMsgQAngle angles = 2;
-bool CMsgTEProjectedDecal::has_angles() const {
-  return (_has_bits_[0] & 0x00000002u) != 0;
-}
-void CMsgTEProjectedDecal::set_has_angles() {
-  _has_bits_[0] |= 0x00000002u;
-}
-void CMsgTEProjectedDecal::clear_has_angles() {
-  _has_bits_[0] &= ~0x00000002u;
-}
-void CMsgTEProjectedDecal::clear_angles() {
-  if (angles_ != NULL) angles_->::CMsgQAngle::Clear();
-  clear_has_angles();
-}
-const ::CMsgQAngle& CMsgTEProjectedDecal::angles() const {
-  // @@protoc_insertion_point(field_get:CMsgTEProjectedDecal.angles)
-  return angles_ != NULL ? *angles_ : *default_instance_->angles_;
-}
-::CMsgQAngle* CMsgTEProjectedDecal::mutable_angles() {
-  set_has_angles();
-  if (angles_ == NULL) {
-    angles_ = new ::CMsgQAngle;
-  }
-  // @@protoc_insertion_point(field_mutable:CMsgTEProjectedDecal.angles)
-  return angles_;
-}
-::CMsgQAngle* CMsgTEProjectedDecal::release_angles() {
-  clear_has_angles();
-  ::CMsgQAngle* temp = angles_;
-  angles_ = NULL;
-  return temp;
-}
-void CMsgTEProjectedDecal::set_allocated_angles(::CMsgQAngle* angles) {
-  delete angles_;
-  angles_ = angles;
-  if (angles) {
-    set_has_angles();
-  } else {
-    clear_has_angles();
-  }
-  // @@protoc_insertion_point(field_set_allocated:CMsgTEProjectedDecal.angles)
-}
-
-// optional uint32 index = 3;
-bool CMsgTEProjectedDecal::has_index() const {
-  return (_has_bits_[0] & 0x00000004u) != 0;
-}
-void CMsgTEProjectedDecal::set_has_index() {
-  _has_bits_[0] |= 0x00000004u;
-}
-void CMsgTEProjectedDecal::clear_has_index() {
-  _has_bits_[0] &= ~0x00000004u;
-}
-void CMsgTEProjectedDecal::clear_index() {
-  index_ = 0u;
-  clear_has_index();
-}
- ::google::protobuf::uint32 CMsgTEProjectedDecal::index() const {
-  // @@protoc_insertion_point(field_get:CMsgTEProjectedDecal.index)
-  return index_;
-}
- void CMsgTEProjectedDecal::set_index(::google::protobuf::uint32 value) {
-  set_has_index();
-  index_ = value;
-  // @@protoc_insertion_point(field_set:CMsgTEProjectedDecal.index)
-}
-
-// optional float distance = 4;
-bool CMsgTEProjectedDecal::has_distance() const {
-  return (_has_bits_[0] & 0x00000008u) != 0;
-}
-void CMsgTEProjectedDecal::set_has_distance() {
-  _has_bits_[0] |= 0x00000008u;
-}
-void CMsgTEProjectedDecal::clear_has_distance() {
-  _has_bits_[0] &= ~0x00000008u;
-}
-void CMsgTEProjectedDecal::clear_distance() {
-  distance_ = 0;
-  clear_has_distance();
-}
- float CMsgTEProjectedDecal::distance() const {
-  // @@protoc_insertion_point(field_get:CMsgTEProjectedDecal.distance)
-  return distance_;
-}
- void CMsgTEProjectedDecal::set_distance(float value) {
-  set_has_distance();
-  distance_ = value;
-  // @@protoc_insertion_point(field_set:CMsgTEProjectedDecal.distance)
-}
-
-#endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
 
 // ===================================================================
 
@@ -16958,7 +12109,7 @@ const int CMsgTESmoke::kScaleFieldNumber;
 #endif  // !_MSC_VER
 
 CMsgTESmoke::CMsgTESmoke()
-  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  : ::google::protobuf::Message() {
   SharedCtor();
   // @@protoc_insertion_point(constructor:CMsgTESmoke)
 }
@@ -16968,8 +12119,7 @@ void CMsgTESmoke::InitAsDefaultInstance() {
 }
 
 CMsgTESmoke::CMsgTESmoke(const CMsgTESmoke& from)
-  : ::google::protobuf::Message(),
-    _internal_metadata_(NULL) {
+  : ::google::protobuf::Message() {
   SharedCtor();
   MergeFrom(from);
   // @@protoc_insertion_point(copy_constructor:CMsgTESmoke)
@@ -17010,25 +12160,19 @@ const CMsgTESmoke& CMsgTESmoke::default_instance() {
 
 CMsgTESmoke* CMsgTESmoke::default_instance_ = NULL;
 
-CMsgTESmoke* CMsgTESmoke::New(::google::protobuf::Arena* arena) const {
-  CMsgTESmoke* n = new CMsgTESmoke;
-  if (arena != NULL) {
-    arena->Own(n);
-  }
-  return n;
+CMsgTESmoke* CMsgTESmoke::New() const {
+  return new CMsgTESmoke;
 }
 
 void CMsgTESmoke::Clear() {
-  if (_has_bits_[0 / 32] & 3u) {
+  if (_has_bits_[0 / 32] & 3) {
     if (has_origin()) {
       if (origin_ != NULL) origin_->::CMsgVector::Clear();
     }
     scale_ = 0;
   }
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
-  if (_internal_metadata_.have_unknown_fields()) {
-    mutable_unknown_fields()->Clear();
-  }
+  mutable_unknown_fields()->Clear();
 }
 
 bool CMsgTESmoke::MergePartialFromCodedStream(
@@ -17096,7 +12240,7 @@ void CMsgTESmoke::SerializeWithCachedSizes(
   // optional .CMsgVector origin = 1;
   if (has_origin()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      1, *this->origin_, output);
+      1, this->origin(), output);
   }
 
   // optional float scale = 2;
@@ -17104,7 +12248,7 @@ void CMsgTESmoke::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteFloat(2, this->scale(), output);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
   }
@@ -17118,7 +12262,7 @@ void CMsgTESmoke::SerializeWithCachedSizes(
   if (has_origin()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
-        1, *this->origin_, target);
+        1, this->origin(), target);
   }
 
   // optional float scale = 2;
@@ -17126,7 +12270,7 @@ void CMsgTESmoke::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(2, this->scale(), target);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
   }
@@ -17137,12 +12281,12 @@ void CMsgTESmoke::SerializeWithCachedSizes(
 int CMsgTESmoke::ByteSize() const {
   int total_size = 0;
 
-  if (_has_bits_[0 / 32] & 3u) {
+  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     // optional .CMsgVector origin = 1;
     if (has_origin()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
-          *this->origin_);
+          this->origin());
     }
 
     // optional float scale = 2;
@@ -17151,7 +12295,7 @@ int CMsgTESmoke::ByteSize() const {
     }
 
   }
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     total_size +=
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         unknown_fields());
@@ -17163,10 +12307,10 @@ int CMsgTESmoke::ByteSize() const {
 }
 
 void CMsgTESmoke::MergeFrom(const ::google::protobuf::Message& from) {
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
-  const CMsgTESmoke* source = 
-      ::google::protobuf::internal::DynamicCastToGenerated<const CMsgTESmoke>(
-          &from);
+  GOOGLE_CHECK_NE(&from, this);
+  const CMsgTESmoke* source =
+    ::google::protobuf::internal::dynamic_cast_if_available<const CMsgTESmoke*>(
+      &from);
   if (source == NULL) {
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
   } else {
@@ -17175,7 +12319,7 @@ void CMsgTESmoke::MergeFrom(const ::google::protobuf::Message& from) {
 }
 
 void CMsgTESmoke::MergeFrom(const CMsgTESmoke& from) {
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  GOOGLE_CHECK_NE(&from, this);
   if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (from.has_origin()) {
       mutable_origin()->::CMsgVector::MergeFrom(from.origin());
@@ -17184,9 +12328,7 @@ void CMsgTESmoke::MergeFrom(const CMsgTESmoke& from) {
       set_scale(from.scale());
     }
   }
-  if (from._internal_metadata_.have_unknown_fields()) {
-    mutable_unknown_fields()->MergeFrom(from.unknown_fields());
-  }
+  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
 }
 
 void CMsgTESmoke::CopyFrom(const ::google::protobuf::Message& from) {
@@ -17207,15 +12349,13 @@ bool CMsgTESmoke::IsInitialized() const {
 }
 
 void CMsgTESmoke::Swap(CMsgTESmoke* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
-void CMsgTESmoke::InternalSwap(CMsgTESmoke* other) {
-  std::swap(origin_, other->origin_);
-  std::swap(scale_, other->scale_);
-  std::swap(_has_bits_[0], other->_has_bits_[0]);
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  std::swap(_cached_size_, other->_cached_size_);
+  if (other != this) {
+    std::swap(origin_, other->origin_);
+    std::swap(scale_, other->scale_);
+    std::swap(_has_bits_[0], other->_has_bits_[0]);
+    _unknown_fields_.Swap(&other->_unknown_fields_);
+    std::swap(_cached_size_, other->_cached_size_);
+  }
 }
 
 ::google::protobuf::Metadata CMsgTESmoke::GetMetadata() const {
@@ -17226,77 +12366,6 @@ void CMsgTESmoke::InternalSwap(CMsgTESmoke* other) {
   return metadata;
 }
 
-#if PROTOBUF_INLINE_NOT_IN_HEADERS
-// CMsgTESmoke
-
-// optional .CMsgVector origin = 1;
-bool CMsgTESmoke::has_origin() const {
-  return (_has_bits_[0] & 0x00000001u) != 0;
-}
-void CMsgTESmoke::set_has_origin() {
-  _has_bits_[0] |= 0x00000001u;
-}
-void CMsgTESmoke::clear_has_origin() {
-  _has_bits_[0] &= ~0x00000001u;
-}
-void CMsgTESmoke::clear_origin() {
-  if (origin_ != NULL) origin_->::CMsgVector::Clear();
-  clear_has_origin();
-}
-const ::CMsgVector& CMsgTESmoke::origin() const {
-  // @@protoc_insertion_point(field_get:CMsgTESmoke.origin)
-  return origin_ != NULL ? *origin_ : *default_instance_->origin_;
-}
-::CMsgVector* CMsgTESmoke::mutable_origin() {
-  set_has_origin();
-  if (origin_ == NULL) {
-    origin_ = new ::CMsgVector;
-  }
-  // @@protoc_insertion_point(field_mutable:CMsgTESmoke.origin)
-  return origin_;
-}
-::CMsgVector* CMsgTESmoke::release_origin() {
-  clear_has_origin();
-  ::CMsgVector* temp = origin_;
-  origin_ = NULL;
-  return temp;
-}
-void CMsgTESmoke::set_allocated_origin(::CMsgVector* origin) {
-  delete origin_;
-  origin_ = origin;
-  if (origin) {
-    set_has_origin();
-  } else {
-    clear_has_origin();
-  }
-  // @@protoc_insertion_point(field_set_allocated:CMsgTESmoke.origin)
-}
-
-// optional float scale = 2;
-bool CMsgTESmoke::has_scale() const {
-  return (_has_bits_[0] & 0x00000002u) != 0;
-}
-void CMsgTESmoke::set_has_scale() {
-  _has_bits_[0] |= 0x00000002u;
-}
-void CMsgTESmoke::clear_has_scale() {
-  _has_bits_[0] &= ~0x00000002u;
-}
-void CMsgTESmoke::clear_scale() {
-  scale_ = 0;
-  clear_has_scale();
-}
- float CMsgTESmoke::scale() const {
-  // @@protoc_insertion_point(field_get:CMsgTESmoke.scale)
-  return scale_;
-}
- void CMsgTESmoke::set_scale(float value) {
-  set_has_scale();
-  scale_ = value;
-  // @@protoc_insertion_point(field_set:CMsgTESmoke.scale)
-}
-
-#endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
 
 // ===================================================================
 
@@ -17307,7 +12376,7 @@ const int CMsgTEWorldDecal::kIndexFieldNumber;
 #endif  // !_MSC_VER
 
 CMsgTEWorldDecal::CMsgTEWorldDecal()
-  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  : ::google::protobuf::Message() {
   SharedCtor();
   // @@protoc_insertion_point(constructor:CMsgTEWorldDecal)
 }
@@ -17318,8 +12387,7 @@ void CMsgTEWorldDecal::InitAsDefaultInstance() {
 }
 
 CMsgTEWorldDecal::CMsgTEWorldDecal(const CMsgTEWorldDecal& from)
-  : ::google::protobuf::Message(),
-    _internal_metadata_(NULL) {
+  : ::google::protobuf::Message() {
   SharedCtor();
   MergeFrom(from);
   // @@protoc_insertion_point(copy_constructor:CMsgTEWorldDecal)
@@ -17362,16 +12430,12 @@ const CMsgTEWorldDecal& CMsgTEWorldDecal::default_instance() {
 
 CMsgTEWorldDecal* CMsgTEWorldDecal::default_instance_ = NULL;
 
-CMsgTEWorldDecal* CMsgTEWorldDecal::New(::google::protobuf::Arena* arena) const {
-  CMsgTEWorldDecal* n = new CMsgTEWorldDecal;
-  if (arena != NULL) {
-    arena->Own(n);
-  }
-  return n;
+CMsgTEWorldDecal* CMsgTEWorldDecal::New() const {
+  return new CMsgTEWorldDecal;
 }
 
 void CMsgTEWorldDecal::Clear() {
-  if (_has_bits_[0 / 32] & 7u) {
+  if (_has_bits_[0 / 32] & 7) {
     if (has_origin()) {
       if (origin_ != NULL) origin_->::CMsgVector::Clear();
     }
@@ -17381,9 +12445,7 @@ void CMsgTEWorldDecal::Clear() {
     index_ = 0u;
   }
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
-  if (_internal_metadata_.have_unknown_fields()) {
-    mutable_unknown_fields()->Clear();
-  }
+  mutable_unknown_fields()->Clear();
 }
 
 bool CMsgTEWorldDecal::MergePartialFromCodedStream(
@@ -17464,13 +12526,13 @@ void CMsgTEWorldDecal::SerializeWithCachedSizes(
   // optional .CMsgVector origin = 1;
   if (has_origin()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      1, *this->origin_, output);
+      1, this->origin(), output);
   }
 
   // optional .CMsgVector normal = 2;
   if (has_normal()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      2, *this->normal_, output);
+      2, this->normal(), output);
   }
 
   // optional uint32 index = 3;
@@ -17478,7 +12540,7 @@ void CMsgTEWorldDecal::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteUInt32(3, this->index(), output);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
   }
@@ -17492,14 +12554,14 @@ void CMsgTEWorldDecal::SerializeWithCachedSizes(
   if (has_origin()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
-        1, *this->origin_, target);
+        1, this->origin(), target);
   }
 
   // optional .CMsgVector normal = 2;
   if (has_normal()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
-        2, *this->normal_, target);
+        2, this->normal(), target);
   }
 
   // optional uint32 index = 3;
@@ -17507,7 +12569,7 @@ void CMsgTEWorldDecal::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(3, this->index(), target);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
   }
@@ -17518,19 +12580,19 @@ void CMsgTEWorldDecal::SerializeWithCachedSizes(
 int CMsgTEWorldDecal::ByteSize() const {
   int total_size = 0;
 
-  if (_has_bits_[0 / 32] & 7u) {
+  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     // optional .CMsgVector origin = 1;
     if (has_origin()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
-          *this->origin_);
+          this->origin());
     }
 
     // optional .CMsgVector normal = 2;
     if (has_normal()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
-          *this->normal_);
+          this->normal());
     }
 
     // optional uint32 index = 3;
@@ -17541,7 +12603,7 @@ int CMsgTEWorldDecal::ByteSize() const {
     }
 
   }
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     total_size +=
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         unknown_fields());
@@ -17553,10 +12615,10 @@ int CMsgTEWorldDecal::ByteSize() const {
 }
 
 void CMsgTEWorldDecal::MergeFrom(const ::google::protobuf::Message& from) {
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
-  const CMsgTEWorldDecal* source = 
-      ::google::protobuf::internal::DynamicCastToGenerated<const CMsgTEWorldDecal>(
-          &from);
+  GOOGLE_CHECK_NE(&from, this);
+  const CMsgTEWorldDecal* source =
+    ::google::protobuf::internal::dynamic_cast_if_available<const CMsgTEWorldDecal*>(
+      &from);
   if (source == NULL) {
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
   } else {
@@ -17565,7 +12627,7 @@ void CMsgTEWorldDecal::MergeFrom(const ::google::protobuf::Message& from) {
 }
 
 void CMsgTEWorldDecal::MergeFrom(const CMsgTEWorldDecal& from) {
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  GOOGLE_CHECK_NE(&from, this);
   if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (from.has_origin()) {
       mutable_origin()->::CMsgVector::MergeFrom(from.origin());
@@ -17577,9 +12639,7 @@ void CMsgTEWorldDecal::MergeFrom(const CMsgTEWorldDecal& from) {
       set_index(from.index());
     }
   }
-  if (from._internal_metadata_.have_unknown_fields()) {
-    mutable_unknown_fields()->MergeFrom(from.unknown_fields());
-  }
+  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
 }
 
 void CMsgTEWorldDecal::CopyFrom(const ::google::protobuf::Message& from) {
@@ -17600,16 +12660,14 @@ bool CMsgTEWorldDecal::IsInitialized() const {
 }
 
 void CMsgTEWorldDecal::Swap(CMsgTEWorldDecal* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
-void CMsgTEWorldDecal::InternalSwap(CMsgTEWorldDecal* other) {
-  std::swap(origin_, other->origin_);
-  std::swap(normal_, other->normal_);
-  std::swap(index_, other->index_);
-  std::swap(_has_bits_[0], other->_has_bits_[0]);
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  std::swap(_cached_size_, other->_cached_size_);
+  if (other != this) {
+    std::swap(origin_, other->origin_);
+    std::swap(normal_, other->normal_);
+    std::swap(index_, other->index_);
+    std::swap(_has_bits_[0], other->_has_bits_[0]);
+    _unknown_fields_.Swap(&other->_unknown_fields_);
+    std::swap(_cached_size_, other->_cached_size_);
+  }
 }
 
 ::google::protobuf::Metadata CMsgTEWorldDecal::GetMetadata() const {
@@ -17620,120 +12678,6 @@ void CMsgTEWorldDecal::InternalSwap(CMsgTEWorldDecal* other) {
   return metadata;
 }
 
-#if PROTOBUF_INLINE_NOT_IN_HEADERS
-// CMsgTEWorldDecal
-
-// optional .CMsgVector origin = 1;
-bool CMsgTEWorldDecal::has_origin() const {
-  return (_has_bits_[0] & 0x00000001u) != 0;
-}
-void CMsgTEWorldDecal::set_has_origin() {
-  _has_bits_[0] |= 0x00000001u;
-}
-void CMsgTEWorldDecal::clear_has_origin() {
-  _has_bits_[0] &= ~0x00000001u;
-}
-void CMsgTEWorldDecal::clear_origin() {
-  if (origin_ != NULL) origin_->::CMsgVector::Clear();
-  clear_has_origin();
-}
-const ::CMsgVector& CMsgTEWorldDecal::origin() const {
-  // @@protoc_insertion_point(field_get:CMsgTEWorldDecal.origin)
-  return origin_ != NULL ? *origin_ : *default_instance_->origin_;
-}
-::CMsgVector* CMsgTEWorldDecal::mutable_origin() {
-  set_has_origin();
-  if (origin_ == NULL) {
-    origin_ = new ::CMsgVector;
-  }
-  // @@protoc_insertion_point(field_mutable:CMsgTEWorldDecal.origin)
-  return origin_;
-}
-::CMsgVector* CMsgTEWorldDecal::release_origin() {
-  clear_has_origin();
-  ::CMsgVector* temp = origin_;
-  origin_ = NULL;
-  return temp;
-}
-void CMsgTEWorldDecal::set_allocated_origin(::CMsgVector* origin) {
-  delete origin_;
-  origin_ = origin;
-  if (origin) {
-    set_has_origin();
-  } else {
-    clear_has_origin();
-  }
-  // @@protoc_insertion_point(field_set_allocated:CMsgTEWorldDecal.origin)
-}
-
-// optional .CMsgVector normal = 2;
-bool CMsgTEWorldDecal::has_normal() const {
-  return (_has_bits_[0] & 0x00000002u) != 0;
-}
-void CMsgTEWorldDecal::set_has_normal() {
-  _has_bits_[0] |= 0x00000002u;
-}
-void CMsgTEWorldDecal::clear_has_normal() {
-  _has_bits_[0] &= ~0x00000002u;
-}
-void CMsgTEWorldDecal::clear_normal() {
-  if (normal_ != NULL) normal_->::CMsgVector::Clear();
-  clear_has_normal();
-}
-const ::CMsgVector& CMsgTEWorldDecal::normal() const {
-  // @@protoc_insertion_point(field_get:CMsgTEWorldDecal.normal)
-  return normal_ != NULL ? *normal_ : *default_instance_->normal_;
-}
-::CMsgVector* CMsgTEWorldDecal::mutable_normal() {
-  set_has_normal();
-  if (normal_ == NULL) {
-    normal_ = new ::CMsgVector;
-  }
-  // @@protoc_insertion_point(field_mutable:CMsgTEWorldDecal.normal)
-  return normal_;
-}
-::CMsgVector* CMsgTEWorldDecal::release_normal() {
-  clear_has_normal();
-  ::CMsgVector* temp = normal_;
-  normal_ = NULL;
-  return temp;
-}
-void CMsgTEWorldDecal::set_allocated_normal(::CMsgVector* normal) {
-  delete normal_;
-  normal_ = normal;
-  if (normal) {
-    set_has_normal();
-  } else {
-    clear_has_normal();
-  }
-  // @@protoc_insertion_point(field_set_allocated:CMsgTEWorldDecal.normal)
-}
-
-// optional uint32 index = 3;
-bool CMsgTEWorldDecal::has_index() const {
-  return (_has_bits_[0] & 0x00000004u) != 0;
-}
-void CMsgTEWorldDecal::set_has_index() {
-  _has_bits_[0] |= 0x00000004u;
-}
-void CMsgTEWorldDecal::clear_has_index() {
-  _has_bits_[0] &= ~0x00000004u;
-}
-void CMsgTEWorldDecal::clear_index() {
-  index_ = 0u;
-  clear_has_index();
-}
- ::google::protobuf::uint32 CMsgTEWorldDecal::index() const {
-  // @@protoc_insertion_point(field_get:CMsgTEWorldDecal.index)
-  return index_;
-}
- void CMsgTEWorldDecal::set_index(::google::protobuf::uint32 value) {
-  set_has_index();
-  index_ = value;
-  // @@protoc_insertion_point(field_set:CMsgTEWorldDecal.index)
-}
-
-#endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
 
 // @@protoc_insertion_point(namespace_scope)
 

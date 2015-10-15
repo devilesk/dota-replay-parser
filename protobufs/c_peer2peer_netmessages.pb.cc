@@ -47,47 +47,47 @@ void protobuf_AssignDesc_c_5fpeer2peer_5fnetmessages_2eproto() {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CP2P_TextMessage, text_),
   };
   CP2P_TextMessage_reflection_ =
-    ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
+    new ::google::protobuf::internal::GeneratedMessageReflection(
       CP2P_TextMessage_descriptor_,
       CP2P_TextMessage::default_instance_,
       CP2P_TextMessage_offsets_,
       GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CP2P_TextMessage, _has_bits_[0]),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CP2P_TextMessage, _unknown_fields_),
       -1,
-      -1,
-      sizeof(CP2P_TextMessage),
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CP2P_TextMessage, _internal_metadata_),
-      -1);
+      ::google::protobuf::DescriptorPool::generated_pool(),
+      ::google::protobuf::MessageFactory::generated_factory(),
+      sizeof(CP2P_TextMessage));
   CSteam_Voice_Encoding_descriptor_ = file->message_type(1);
   static const int CSteam_Voice_Encoding_offsets_[1] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CSteam_Voice_Encoding, voice_data_),
   };
   CSteam_Voice_Encoding_reflection_ =
-    ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
+    new ::google::protobuf::internal::GeneratedMessageReflection(
       CSteam_Voice_Encoding_descriptor_,
       CSteam_Voice_Encoding::default_instance_,
       CSteam_Voice_Encoding_offsets_,
       GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CSteam_Voice_Encoding, _has_bits_[0]),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CSteam_Voice_Encoding, _unknown_fields_),
       -1,
-      -1,
-      sizeof(CSteam_Voice_Encoding),
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CSteam_Voice_Encoding, _internal_metadata_),
-      -1);
+      ::google::protobuf::DescriptorPool::generated_pool(),
+      ::google::protobuf::MessageFactory::generated_factory(),
+      sizeof(CSteam_Voice_Encoding));
   CP2P_Voice_descriptor_ = file->message_type(2);
   static const int CP2P_Voice_offsets_[2] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CP2P_Voice, audio_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CP2P_Voice, broadcast_group_),
   };
   CP2P_Voice_reflection_ =
-    ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
+    new ::google::protobuf::internal::GeneratedMessageReflection(
       CP2P_Voice_descriptor_,
       CP2P_Voice::default_instance_,
       CP2P_Voice_offsets_,
       GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CP2P_Voice, _has_bits_[0]),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CP2P_Voice, _unknown_fields_),
       -1,
-      -1,
-      sizeof(CP2P_Voice),
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CP2P_Voice, _internal_metadata_),
-      -1);
+      ::google::protobuf::DescriptorPool::generated_pool(),
+      ::google::protobuf::MessageFactory::generated_factory(),
+      sizeof(CP2P_Voice));
   CP2P_Voice_Handler_Flags_descriptor_ = CP2P_Voice_descriptor_->enum_type(0);
   CP2P_Ping_descriptor_ = file->message_type(3);
   static const int CP2P_Ping_offsets_[2] = {
@@ -95,16 +95,16 @@ void protobuf_AssignDesc_c_5fpeer2peer_5fnetmessages_2eproto() {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CP2P_Ping, is_reply_),
   };
   CP2P_Ping_reflection_ =
-    ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
+    new ::google::protobuf::internal::GeneratedMessageReflection(
       CP2P_Ping_descriptor_,
       CP2P_Ping::default_instance_,
       CP2P_Ping_offsets_,
       GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CP2P_Ping, _has_bits_[0]),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CP2P_Ping, _unknown_fields_),
       -1,
-      -1,
-      sizeof(CP2P_Ping),
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CP2P_Ping, _internal_metadata_),
-      -1);
+      ::google::protobuf::DescriptorPool::generated_pool(),
+      ::google::protobuf::MessageFactory::generated_factory(),
+      sizeof(CP2P_Ping));
   P2P_Messages_descriptor_ = file->enum_type(0);
 }
 
@@ -119,13 +119,13 @@ inline void protobuf_AssignDescriptorsOnce() {
 void protobuf_RegisterTypes(const ::std::string&) {
   protobuf_AssignDescriptorsOnce();
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
-      CP2P_TextMessage_descriptor_, &CP2P_TextMessage::default_instance());
+    CP2P_TextMessage_descriptor_, &CP2P_TextMessage::default_instance());
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
-      CSteam_Voice_Encoding_descriptor_, &CSteam_Voice_Encoding::default_instance());
+    CSteam_Voice_Encoding_descriptor_, &CSteam_Voice_Encoding::default_instance());
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
-      CP2P_Voice_descriptor_, &CP2P_Voice::default_instance());
+    CP2P_Voice_descriptor_, &CP2P_Voice::default_instance());
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
-      CP2P_Ping_descriptor_, &CP2P_Ping::default_instance());
+    CP2P_Ping_descriptor_, &CP2P_Ping::default_instance());
 }
 
 }  // namespace
@@ -193,16 +193,6 @@ bool P2P_Messages_IsValid(int value) {
 }
 
 
-namespace {
-
-static void MergeFromFail(int line) GOOGLE_ATTRIBUTE_COLD;
-static void MergeFromFail(int line) {
-  GOOGLE_CHECK(false) << __FILE__ << ":" << line;
-}
-
-}  // namespace
-
-
 // ===================================================================
 
 #ifndef _MSC_VER
@@ -210,7 +200,7 @@ const int CP2P_TextMessage::kTextFieldNumber;
 #endif  // !_MSC_VER
 
 CP2P_TextMessage::CP2P_TextMessage()
-  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  : ::google::protobuf::Message() {
   SharedCtor();
   // @@protoc_insertion_point(constructor:CP2P_TextMessage)
 }
@@ -219,8 +209,7 @@ void CP2P_TextMessage::InitAsDefaultInstance() {
 }
 
 CP2P_TextMessage::CP2P_TextMessage(const CP2P_TextMessage& from)
-  : ::google::protobuf::Message(),
-    _internal_metadata_(NULL) {
+  : ::google::protobuf::Message() {
   SharedCtor();
   MergeFrom(from);
   // @@protoc_insertion_point(copy_constructor:CP2P_TextMessage)
@@ -229,7 +218,7 @@ CP2P_TextMessage::CP2P_TextMessage(const CP2P_TextMessage& from)
 void CP2P_TextMessage::SharedCtor() {
   ::google::protobuf::internal::GetEmptyString();
   _cached_size_ = 0;
-  text_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  text_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
 
@@ -239,7 +228,9 @@ CP2P_TextMessage::~CP2P_TextMessage() {
 }
 
 void CP2P_TextMessage::SharedDtor() {
-  text_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (text_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete text_;
+  }
   if (this != default_instance_) {
   }
 }
@@ -261,22 +252,18 @@ const CP2P_TextMessage& CP2P_TextMessage::default_instance() {
 
 CP2P_TextMessage* CP2P_TextMessage::default_instance_ = NULL;
 
-CP2P_TextMessage* CP2P_TextMessage::New(::google::protobuf::Arena* arena) const {
-  CP2P_TextMessage* n = new CP2P_TextMessage;
-  if (arena != NULL) {
-    arena->Own(n);
-  }
-  return n;
+CP2P_TextMessage* CP2P_TextMessage::New() const {
+  return new CP2P_TextMessage;
 }
 
 void CP2P_TextMessage::Clear() {
   if (has_text()) {
-    text_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    if (text_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+      text_->clear();
+    }
   }
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
-  if (_internal_metadata_.have_unknown_fields()) {
-    mutable_unknown_fields()->Clear();
-  }
+  mutable_unknown_fields()->Clear();
 }
 
 bool CP2P_TextMessage::MergePartialFromCodedStream(
@@ -332,7 +319,7 @@ void CP2P_TextMessage::SerializeWithCachedSizes(
       1, this->text(), output);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
   }
@@ -349,7 +336,7 @@ void CP2P_TextMessage::SerializeWithCachedSizes(
         1, this->text(), target);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
   }
@@ -360,14 +347,16 @@ void CP2P_TextMessage::SerializeWithCachedSizes(
 int CP2P_TextMessage::ByteSize() const {
   int total_size = 0;
 
-  // optional bytes text = 1;
-  if (has_text()) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::BytesSize(
-        this->text());
-  }
+  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    // optional bytes text = 1;
+    if (has_text()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::BytesSize(
+          this->text());
+    }
 
-  if (_internal_metadata_.have_unknown_fields()) {
+  }
+  if (!unknown_fields().empty()) {
     total_size +=
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         unknown_fields());
@@ -379,10 +368,10 @@ int CP2P_TextMessage::ByteSize() const {
 }
 
 void CP2P_TextMessage::MergeFrom(const ::google::protobuf::Message& from) {
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
-  const CP2P_TextMessage* source = 
-      ::google::protobuf::internal::DynamicCastToGenerated<const CP2P_TextMessage>(
-          &from);
+  GOOGLE_CHECK_NE(&from, this);
+  const CP2P_TextMessage* source =
+    ::google::protobuf::internal::dynamic_cast_if_available<const CP2P_TextMessage*>(
+      &from);
   if (source == NULL) {
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
   } else {
@@ -391,16 +380,13 @@ void CP2P_TextMessage::MergeFrom(const ::google::protobuf::Message& from) {
 }
 
 void CP2P_TextMessage::MergeFrom(const CP2P_TextMessage& from) {
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  GOOGLE_CHECK_NE(&from, this);
   if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (from.has_text()) {
-      set_has_text();
-      text_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.text_);
+      set_text(from.text());
     }
   }
-  if (from._internal_metadata_.have_unknown_fields()) {
-    mutable_unknown_fields()->MergeFrom(from.unknown_fields());
-  }
+  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
 }
 
 void CP2P_TextMessage::CopyFrom(const ::google::protobuf::Message& from) {
@@ -421,14 +407,12 @@ bool CP2P_TextMessage::IsInitialized() const {
 }
 
 void CP2P_TextMessage::Swap(CP2P_TextMessage* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
-void CP2P_TextMessage::InternalSwap(CP2P_TextMessage* other) {
-  text_.Swap(&other->text_);
-  std::swap(_has_bits_[0], other->_has_bits_[0]);
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  std::swap(_cached_size_, other->_cached_size_);
+  if (other != this) {
+    std::swap(text_, other->text_);
+    std::swap(_has_bits_[0], other->_has_bits_[0]);
+    _unknown_fields_.Swap(&other->_unknown_fields_);
+    std::swap(_cached_size_, other->_cached_size_);
+  }
 }
 
 ::google::protobuf::Metadata CP2P_TextMessage::GetMetadata() const {
@@ -439,63 +423,6 @@ void CP2P_TextMessage::InternalSwap(CP2P_TextMessage* other) {
   return metadata;
 }
 
-#if PROTOBUF_INLINE_NOT_IN_HEADERS
-// CP2P_TextMessage
-
-// optional bytes text = 1;
-bool CP2P_TextMessage::has_text() const {
-  return (_has_bits_[0] & 0x00000001u) != 0;
-}
-void CP2P_TextMessage::set_has_text() {
-  _has_bits_[0] |= 0x00000001u;
-}
-void CP2P_TextMessage::clear_has_text() {
-  _has_bits_[0] &= ~0x00000001u;
-}
-void CP2P_TextMessage::clear_text() {
-  text_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  clear_has_text();
-}
- const ::std::string& CP2P_TextMessage::text() const {
-  // @@protoc_insertion_point(field_get:CP2P_TextMessage.text)
-  return text_.GetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
- void CP2P_TextMessage::set_text(const ::std::string& value) {
-  set_has_text();
-  text_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:CP2P_TextMessage.text)
-}
- void CP2P_TextMessage::set_text(const char* value) {
-  set_has_text();
-  text_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:CP2P_TextMessage.text)
-}
- void CP2P_TextMessage::set_text(const void* value, size_t size) {
-  set_has_text();
-  text_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-      ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:CP2P_TextMessage.text)
-}
- ::std::string* CP2P_TextMessage::mutable_text() {
-  set_has_text();
-  // @@protoc_insertion_point(field_mutable:CP2P_TextMessage.text)
-  return text_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
- ::std::string* CP2P_TextMessage::release_text() {
-  clear_has_text();
-  return text_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
- void CP2P_TextMessage::set_allocated_text(::std::string* text) {
-  if (text != NULL) {
-    set_has_text();
-  } else {
-    clear_has_text();
-  }
-  text_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), text);
-  // @@protoc_insertion_point(field_set_allocated:CP2P_TextMessage.text)
-}
-
-#endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
 
 // ===================================================================
 
@@ -504,7 +431,7 @@ const int CSteam_Voice_Encoding::kVoiceDataFieldNumber;
 #endif  // !_MSC_VER
 
 CSteam_Voice_Encoding::CSteam_Voice_Encoding()
-  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  : ::google::protobuf::Message() {
   SharedCtor();
   // @@protoc_insertion_point(constructor:CSteam_Voice_Encoding)
 }
@@ -513,8 +440,7 @@ void CSteam_Voice_Encoding::InitAsDefaultInstance() {
 }
 
 CSteam_Voice_Encoding::CSteam_Voice_Encoding(const CSteam_Voice_Encoding& from)
-  : ::google::protobuf::Message(),
-    _internal_metadata_(NULL) {
+  : ::google::protobuf::Message() {
   SharedCtor();
   MergeFrom(from);
   // @@protoc_insertion_point(copy_constructor:CSteam_Voice_Encoding)
@@ -523,7 +449,7 @@ CSteam_Voice_Encoding::CSteam_Voice_Encoding(const CSteam_Voice_Encoding& from)
 void CSteam_Voice_Encoding::SharedCtor() {
   ::google::protobuf::internal::GetEmptyString();
   _cached_size_ = 0;
-  voice_data_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  voice_data_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
 
@@ -533,7 +459,9 @@ CSteam_Voice_Encoding::~CSteam_Voice_Encoding() {
 }
 
 void CSteam_Voice_Encoding::SharedDtor() {
-  voice_data_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (voice_data_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete voice_data_;
+  }
   if (this != default_instance_) {
   }
 }
@@ -555,22 +483,18 @@ const CSteam_Voice_Encoding& CSteam_Voice_Encoding::default_instance() {
 
 CSteam_Voice_Encoding* CSteam_Voice_Encoding::default_instance_ = NULL;
 
-CSteam_Voice_Encoding* CSteam_Voice_Encoding::New(::google::protobuf::Arena* arena) const {
-  CSteam_Voice_Encoding* n = new CSteam_Voice_Encoding;
-  if (arena != NULL) {
-    arena->Own(n);
-  }
-  return n;
+CSteam_Voice_Encoding* CSteam_Voice_Encoding::New() const {
+  return new CSteam_Voice_Encoding;
 }
 
 void CSteam_Voice_Encoding::Clear() {
   if (has_voice_data()) {
-    voice_data_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    if (voice_data_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+      voice_data_->clear();
+    }
   }
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
-  if (_internal_metadata_.have_unknown_fields()) {
-    mutable_unknown_fields()->Clear();
-  }
+  mutable_unknown_fields()->Clear();
 }
 
 bool CSteam_Voice_Encoding::MergePartialFromCodedStream(
@@ -626,7 +550,7 @@ void CSteam_Voice_Encoding::SerializeWithCachedSizes(
       1, this->voice_data(), output);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
   }
@@ -643,7 +567,7 @@ void CSteam_Voice_Encoding::SerializeWithCachedSizes(
         1, this->voice_data(), target);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
   }
@@ -654,14 +578,16 @@ void CSteam_Voice_Encoding::SerializeWithCachedSizes(
 int CSteam_Voice_Encoding::ByteSize() const {
   int total_size = 0;
 
-  // optional bytes voice_data = 1;
-  if (has_voice_data()) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::BytesSize(
-        this->voice_data());
-  }
+  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    // optional bytes voice_data = 1;
+    if (has_voice_data()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::BytesSize(
+          this->voice_data());
+    }
 
-  if (_internal_metadata_.have_unknown_fields()) {
+  }
+  if (!unknown_fields().empty()) {
     total_size +=
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         unknown_fields());
@@ -673,10 +599,10 @@ int CSteam_Voice_Encoding::ByteSize() const {
 }
 
 void CSteam_Voice_Encoding::MergeFrom(const ::google::protobuf::Message& from) {
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
-  const CSteam_Voice_Encoding* source = 
-      ::google::protobuf::internal::DynamicCastToGenerated<const CSteam_Voice_Encoding>(
-          &from);
+  GOOGLE_CHECK_NE(&from, this);
+  const CSteam_Voice_Encoding* source =
+    ::google::protobuf::internal::dynamic_cast_if_available<const CSteam_Voice_Encoding*>(
+      &from);
   if (source == NULL) {
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
   } else {
@@ -685,16 +611,13 @@ void CSteam_Voice_Encoding::MergeFrom(const ::google::protobuf::Message& from) {
 }
 
 void CSteam_Voice_Encoding::MergeFrom(const CSteam_Voice_Encoding& from) {
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  GOOGLE_CHECK_NE(&from, this);
   if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (from.has_voice_data()) {
-      set_has_voice_data();
-      voice_data_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.voice_data_);
+      set_voice_data(from.voice_data());
     }
   }
-  if (from._internal_metadata_.have_unknown_fields()) {
-    mutable_unknown_fields()->MergeFrom(from.unknown_fields());
-  }
+  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
 }
 
 void CSteam_Voice_Encoding::CopyFrom(const ::google::protobuf::Message& from) {
@@ -715,14 +638,12 @@ bool CSteam_Voice_Encoding::IsInitialized() const {
 }
 
 void CSteam_Voice_Encoding::Swap(CSteam_Voice_Encoding* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
-void CSteam_Voice_Encoding::InternalSwap(CSteam_Voice_Encoding* other) {
-  voice_data_.Swap(&other->voice_data_);
-  std::swap(_has_bits_[0], other->_has_bits_[0]);
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  std::swap(_cached_size_, other->_cached_size_);
+  if (other != this) {
+    std::swap(voice_data_, other->voice_data_);
+    std::swap(_has_bits_[0], other->_has_bits_[0]);
+    _unknown_fields_.Swap(&other->_unknown_fields_);
+    std::swap(_cached_size_, other->_cached_size_);
+  }
 }
 
 ::google::protobuf::Metadata CSteam_Voice_Encoding::GetMetadata() const {
@@ -733,63 +654,6 @@ void CSteam_Voice_Encoding::InternalSwap(CSteam_Voice_Encoding* other) {
   return metadata;
 }
 
-#if PROTOBUF_INLINE_NOT_IN_HEADERS
-// CSteam_Voice_Encoding
-
-// optional bytes voice_data = 1;
-bool CSteam_Voice_Encoding::has_voice_data() const {
-  return (_has_bits_[0] & 0x00000001u) != 0;
-}
-void CSteam_Voice_Encoding::set_has_voice_data() {
-  _has_bits_[0] |= 0x00000001u;
-}
-void CSteam_Voice_Encoding::clear_has_voice_data() {
-  _has_bits_[0] &= ~0x00000001u;
-}
-void CSteam_Voice_Encoding::clear_voice_data() {
-  voice_data_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  clear_has_voice_data();
-}
- const ::std::string& CSteam_Voice_Encoding::voice_data() const {
-  // @@protoc_insertion_point(field_get:CSteam_Voice_Encoding.voice_data)
-  return voice_data_.GetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
- void CSteam_Voice_Encoding::set_voice_data(const ::std::string& value) {
-  set_has_voice_data();
-  voice_data_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:CSteam_Voice_Encoding.voice_data)
-}
- void CSteam_Voice_Encoding::set_voice_data(const char* value) {
-  set_has_voice_data();
-  voice_data_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:CSteam_Voice_Encoding.voice_data)
-}
- void CSteam_Voice_Encoding::set_voice_data(const void* value, size_t size) {
-  set_has_voice_data();
-  voice_data_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-      ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:CSteam_Voice_Encoding.voice_data)
-}
- ::std::string* CSteam_Voice_Encoding::mutable_voice_data() {
-  set_has_voice_data();
-  // @@protoc_insertion_point(field_mutable:CSteam_Voice_Encoding.voice_data)
-  return voice_data_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
- ::std::string* CSteam_Voice_Encoding::release_voice_data() {
-  clear_has_voice_data();
-  return voice_data_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
- void CSteam_Voice_Encoding::set_allocated_voice_data(::std::string* voice_data) {
-  if (voice_data != NULL) {
-    set_has_voice_data();
-  } else {
-    clear_has_voice_data();
-  }
-  voice_data_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), voice_data);
-  // @@protoc_insertion_point(field_set_allocated:CSteam_Voice_Encoding.voice_data)
-}
-
-#endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
 
 // ===================================================================
 
@@ -818,7 +682,7 @@ const int CP2P_Voice::kBroadcastGroupFieldNumber;
 #endif  // !_MSC_VER
 
 CP2P_Voice::CP2P_Voice()
-  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  : ::google::protobuf::Message() {
   SharedCtor();
   // @@protoc_insertion_point(constructor:CP2P_Voice)
 }
@@ -828,8 +692,7 @@ void CP2P_Voice::InitAsDefaultInstance() {
 }
 
 CP2P_Voice::CP2P_Voice(const CP2P_Voice& from)
-  : ::google::protobuf::Message(),
-    _internal_metadata_(NULL) {
+  : ::google::protobuf::Message() {
   SharedCtor();
   MergeFrom(from);
   // @@protoc_insertion_point(copy_constructor:CP2P_Voice)
@@ -870,25 +733,19 @@ const CP2P_Voice& CP2P_Voice::default_instance() {
 
 CP2P_Voice* CP2P_Voice::default_instance_ = NULL;
 
-CP2P_Voice* CP2P_Voice::New(::google::protobuf::Arena* arena) const {
-  CP2P_Voice* n = new CP2P_Voice;
-  if (arena != NULL) {
-    arena->Own(n);
-  }
-  return n;
+CP2P_Voice* CP2P_Voice::New() const {
+  return new CP2P_Voice;
 }
 
 void CP2P_Voice::Clear() {
-  if (_has_bits_[0 / 32] & 3u) {
+  if (_has_bits_[0 / 32] & 3) {
     if (has_audio()) {
       if (audio_ != NULL) audio_->::CMsgVoiceAudio::Clear();
     }
     broadcast_group_ = 0u;
   }
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
-  if (_internal_metadata_.have_unknown_fields()) {
-    mutable_unknown_fields()->Clear();
-  }
+  mutable_unknown_fields()->Clear();
 }
 
 bool CP2P_Voice::MergePartialFromCodedStream(
@@ -956,7 +813,7 @@ void CP2P_Voice::SerializeWithCachedSizes(
   // optional .CMsgVoiceAudio audio = 1;
   if (has_audio()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      1, *this->audio_, output);
+      1, this->audio(), output);
   }
 
   // optional uint32 broadcast_group = 2;
@@ -964,7 +821,7 @@ void CP2P_Voice::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteUInt32(2, this->broadcast_group(), output);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
   }
@@ -978,7 +835,7 @@ void CP2P_Voice::SerializeWithCachedSizes(
   if (has_audio()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
-        1, *this->audio_, target);
+        1, this->audio(), target);
   }
 
   // optional uint32 broadcast_group = 2;
@@ -986,7 +843,7 @@ void CP2P_Voice::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(2, this->broadcast_group(), target);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
   }
@@ -997,12 +854,12 @@ void CP2P_Voice::SerializeWithCachedSizes(
 int CP2P_Voice::ByteSize() const {
   int total_size = 0;
 
-  if (_has_bits_[0 / 32] & 3u) {
+  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     // optional .CMsgVoiceAudio audio = 1;
     if (has_audio()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
-          *this->audio_);
+          this->audio());
     }
 
     // optional uint32 broadcast_group = 2;
@@ -1013,7 +870,7 @@ int CP2P_Voice::ByteSize() const {
     }
 
   }
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     total_size +=
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         unknown_fields());
@@ -1025,10 +882,10 @@ int CP2P_Voice::ByteSize() const {
 }
 
 void CP2P_Voice::MergeFrom(const ::google::protobuf::Message& from) {
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
-  const CP2P_Voice* source = 
-      ::google::protobuf::internal::DynamicCastToGenerated<const CP2P_Voice>(
-          &from);
+  GOOGLE_CHECK_NE(&from, this);
+  const CP2P_Voice* source =
+    ::google::protobuf::internal::dynamic_cast_if_available<const CP2P_Voice*>(
+      &from);
   if (source == NULL) {
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
   } else {
@@ -1037,7 +894,7 @@ void CP2P_Voice::MergeFrom(const ::google::protobuf::Message& from) {
 }
 
 void CP2P_Voice::MergeFrom(const CP2P_Voice& from) {
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  GOOGLE_CHECK_NE(&from, this);
   if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (from.has_audio()) {
       mutable_audio()->::CMsgVoiceAudio::MergeFrom(from.audio());
@@ -1046,9 +903,7 @@ void CP2P_Voice::MergeFrom(const CP2P_Voice& from) {
       set_broadcast_group(from.broadcast_group());
     }
   }
-  if (from._internal_metadata_.have_unknown_fields()) {
-    mutable_unknown_fields()->MergeFrom(from.unknown_fields());
-  }
+  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
 }
 
 void CP2P_Voice::CopyFrom(const ::google::protobuf::Message& from) {
@@ -1069,15 +924,13 @@ bool CP2P_Voice::IsInitialized() const {
 }
 
 void CP2P_Voice::Swap(CP2P_Voice* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
-void CP2P_Voice::InternalSwap(CP2P_Voice* other) {
-  std::swap(audio_, other->audio_);
-  std::swap(broadcast_group_, other->broadcast_group_);
-  std::swap(_has_bits_[0], other->_has_bits_[0]);
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  std::swap(_cached_size_, other->_cached_size_);
+  if (other != this) {
+    std::swap(audio_, other->audio_);
+    std::swap(broadcast_group_, other->broadcast_group_);
+    std::swap(_has_bits_[0], other->_has_bits_[0]);
+    _unknown_fields_.Swap(&other->_unknown_fields_);
+    std::swap(_cached_size_, other->_cached_size_);
+  }
 }
 
 ::google::protobuf::Metadata CP2P_Voice::GetMetadata() const {
@@ -1088,77 +941,6 @@ void CP2P_Voice::InternalSwap(CP2P_Voice* other) {
   return metadata;
 }
 
-#if PROTOBUF_INLINE_NOT_IN_HEADERS
-// CP2P_Voice
-
-// optional .CMsgVoiceAudio audio = 1;
-bool CP2P_Voice::has_audio() const {
-  return (_has_bits_[0] & 0x00000001u) != 0;
-}
-void CP2P_Voice::set_has_audio() {
-  _has_bits_[0] |= 0x00000001u;
-}
-void CP2P_Voice::clear_has_audio() {
-  _has_bits_[0] &= ~0x00000001u;
-}
-void CP2P_Voice::clear_audio() {
-  if (audio_ != NULL) audio_->::CMsgVoiceAudio::Clear();
-  clear_has_audio();
-}
-const ::CMsgVoiceAudio& CP2P_Voice::audio() const {
-  // @@protoc_insertion_point(field_get:CP2P_Voice.audio)
-  return audio_ != NULL ? *audio_ : *default_instance_->audio_;
-}
-::CMsgVoiceAudio* CP2P_Voice::mutable_audio() {
-  set_has_audio();
-  if (audio_ == NULL) {
-    audio_ = new ::CMsgVoiceAudio;
-  }
-  // @@protoc_insertion_point(field_mutable:CP2P_Voice.audio)
-  return audio_;
-}
-::CMsgVoiceAudio* CP2P_Voice::release_audio() {
-  clear_has_audio();
-  ::CMsgVoiceAudio* temp = audio_;
-  audio_ = NULL;
-  return temp;
-}
-void CP2P_Voice::set_allocated_audio(::CMsgVoiceAudio* audio) {
-  delete audio_;
-  audio_ = audio;
-  if (audio) {
-    set_has_audio();
-  } else {
-    clear_has_audio();
-  }
-  // @@protoc_insertion_point(field_set_allocated:CP2P_Voice.audio)
-}
-
-// optional uint32 broadcast_group = 2;
-bool CP2P_Voice::has_broadcast_group() const {
-  return (_has_bits_[0] & 0x00000002u) != 0;
-}
-void CP2P_Voice::set_has_broadcast_group() {
-  _has_bits_[0] |= 0x00000002u;
-}
-void CP2P_Voice::clear_has_broadcast_group() {
-  _has_bits_[0] &= ~0x00000002u;
-}
-void CP2P_Voice::clear_broadcast_group() {
-  broadcast_group_ = 0u;
-  clear_has_broadcast_group();
-}
- ::google::protobuf::uint32 CP2P_Voice::broadcast_group() const {
-  // @@protoc_insertion_point(field_get:CP2P_Voice.broadcast_group)
-  return broadcast_group_;
-}
- void CP2P_Voice::set_broadcast_group(::google::protobuf::uint32 value) {
-  set_has_broadcast_group();
-  broadcast_group_ = value;
-  // @@protoc_insertion_point(field_set:CP2P_Voice.broadcast_group)
-}
-
-#endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
 
 // ===================================================================
 
@@ -1168,7 +950,7 @@ const int CP2P_Ping::kIsReplyFieldNumber;
 #endif  // !_MSC_VER
 
 CP2P_Ping::CP2P_Ping()
-  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  : ::google::protobuf::Message() {
   SharedCtor();
   // @@protoc_insertion_point(constructor:CP2P_Ping)
 }
@@ -1177,8 +959,7 @@ void CP2P_Ping::InitAsDefaultInstance() {
 }
 
 CP2P_Ping::CP2P_Ping(const CP2P_Ping& from)
-  : ::google::protobuf::Message(),
-    _internal_metadata_(NULL) {
+  : ::google::protobuf::Message() {
   SharedCtor();
   MergeFrom(from);
   // @@protoc_insertion_point(copy_constructor:CP2P_Ping)
@@ -1218,32 +999,28 @@ const CP2P_Ping& CP2P_Ping::default_instance() {
 
 CP2P_Ping* CP2P_Ping::default_instance_ = NULL;
 
-CP2P_Ping* CP2P_Ping::New(::google::protobuf::Arena* arena) const {
-  CP2P_Ping* n = new CP2P_Ping;
-  if (arena != NULL) {
-    arena->Own(n);
-  }
-  return n;
+CP2P_Ping* CP2P_Ping::New() const {
+  return new CP2P_Ping;
 }
 
 void CP2P_Ping::Clear() {
-#define ZR_HELPER_(f) reinterpret_cast<char*>(\
-  &reinterpret_cast<CP2P_Ping*>(16)->f)
+#define OFFSET_OF_FIELD_(f) (reinterpret_cast<char*>(      \
+  &reinterpret_cast<CP2P_Ping*>(16)->f) - \
+   reinterpret_cast<char*>(16))
 
-#define ZR_(first, last) do {\
-  ::memset(&first, 0,\
-           ZR_HELPER_(last) - ZR_HELPER_(first) + sizeof(last));\
-} while (0)
+#define ZR_(first, last) do {                              \
+    size_t f = OFFSET_OF_FIELD_(first);                    \
+    size_t n = OFFSET_OF_FIELD_(last) - f + sizeof(last);  \
+    ::memset(&first, 0, n);                                \
+  } while (0)
 
   ZR_(send_time_, is_reply_);
 
-#undef ZR_HELPER_
+#undef OFFSET_OF_FIELD_
 #undef ZR_
 
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
-  if (_internal_metadata_.have_unknown_fields()) {
-    mutable_unknown_fields()->Clear();
-  }
+  mutable_unknown_fields()->Clear();
 }
 
 bool CP2P_Ping::MergePartialFromCodedStream(
@@ -1320,7 +1097,7 @@ void CP2P_Ping::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteBool(2, this->is_reply(), output);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
   }
@@ -1340,7 +1117,7 @@ void CP2P_Ping::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(2, this->is_reply(), target);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
   }
@@ -1348,39 +1125,24 @@ void CP2P_Ping::SerializeWithCachedSizes(
   return target;
 }
 
-int CP2P_Ping::RequiredFieldsByteSizeFallback() const {
-  int total_size = 0;
-
-  if (has_send_time()) {
-    // required uint64 send_time = 1;
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::UInt64Size(
-        this->send_time());
-  }
-
-  if (has_is_reply()) {
-    // required bool is_reply = 2;
-    total_size += 1 + 1;
-  }
-
-  return total_size;
-}
 int CP2P_Ping::ByteSize() const {
   int total_size = 0;
 
-  if (((_has_bits_[0] & 0x00000003) ^ 0x00000003) == 0) {  // All required fields are present.
+  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     // required uint64 send_time = 1;
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::UInt64Size(
-        this->send_time());
+    if (has_send_time()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::UInt64Size(
+          this->send_time());
+    }
 
     // required bool is_reply = 2;
-    total_size += 1 + 1;
+    if (has_is_reply()) {
+      total_size += 1 + 1;
+    }
 
-  } else {
-    total_size += RequiredFieldsByteSizeFallback();
   }
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     total_size +=
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         unknown_fields());
@@ -1392,10 +1154,10 @@ int CP2P_Ping::ByteSize() const {
 }
 
 void CP2P_Ping::MergeFrom(const ::google::protobuf::Message& from) {
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
-  const CP2P_Ping* source = 
-      ::google::protobuf::internal::DynamicCastToGenerated<const CP2P_Ping>(
-          &from);
+  GOOGLE_CHECK_NE(&from, this);
+  const CP2P_Ping* source =
+    ::google::protobuf::internal::dynamic_cast_if_available<const CP2P_Ping*>(
+      &from);
   if (source == NULL) {
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
   } else {
@@ -1404,7 +1166,7 @@ void CP2P_Ping::MergeFrom(const ::google::protobuf::Message& from) {
 }
 
 void CP2P_Ping::MergeFrom(const CP2P_Ping& from) {
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  GOOGLE_CHECK_NE(&from, this);
   if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (from.has_send_time()) {
       set_send_time(from.send_time());
@@ -1413,9 +1175,7 @@ void CP2P_Ping::MergeFrom(const CP2P_Ping& from) {
       set_is_reply(from.is_reply());
     }
   }
-  if (from._internal_metadata_.have_unknown_fields()) {
-    mutable_unknown_fields()->MergeFrom(from.unknown_fields());
-  }
+  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
 }
 
 void CP2P_Ping::CopyFrom(const ::google::protobuf::Message& from) {
@@ -1437,15 +1197,13 @@ bool CP2P_Ping::IsInitialized() const {
 }
 
 void CP2P_Ping::Swap(CP2P_Ping* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
-void CP2P_Ping::InternalSwap(CP2P_Ping* other) {
-  std::swap(send_time_, other->send_time_);
-  std::swap(is_reply_, other->is_reply_);
-  std::swap(_has_bits_[0], other->_has_bits_[0]);
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  std::swap(_cached_size_, other->_cached_size_);
+  if (other != this) {
+    std::swap(send_time_, other->send_time_);
+    std::swap(is_reply_, other->is_reply_);
+    std::swap(_has_bits_[0], other->_has_bits_[0]);
+    _unknown_fields_.Swap(&other->_unknown_fields_);
+    std::swap(_cached_size_, other->_cached_size_);
+  }
 }
 
 ::google::protobuf::Metadata CP2P_Ping::GetMetadata() const {
@@ -1456,58 +1214,6 @@ void CP2P_Ping::InternalSwap(CP2P_Ping* other) {
   return metadata;
 }
 
-#if PROTOBUF_INLINE_NOT_IN_HEADERS
-// CP2P_Ping
-
-// required uint64 send_time = 1;
-bool CP2P_Ping::has_send_time() const {
-  return (_has_bits_[0] & 0x00000001u) != 0;
-}
-void CP2P_Ping::set_has_send_time() {
-  _has_bits_[0] |= 0x00000001u;
-}
-void CP2P_Ping::clear_has_send_time() {
-  _has_bits_[0] &= ~0x00000001u;
-}
-void CP2P_Ping::clear_send_time() {
-  send_time_ = GOOGLE_ULONGLONG(0);
-  clear_has_send_time();
-}
- ::google::protobuf::uint64 CP2P_Ping::send_time() const {
-  // @@protoc_insertion_point(field_get:CP2P_Ping.send_time)
-  return send_time_;
-}
- void CP2P_Ping::set_send_time(::google::protobuf::uint64 value) {
-  set_has_send_time();
-  send_time_ = value;
-  // @@protoc_insertion_point(field_set:CP2P_Ping.send_time)
-}
-
-// required bool is_reply = 2;
-bool CP2P_Ping::has_is_reply() const {
-  return (_has_bits_[0] & 0x00000002u) != 0;
-}
-void CP2P_Ping::set_has_is_reply() {
-  _has_bits_[0] |= 0x00000002u;
-}
-void CP2P_Ping::clear_has_is_reply() {
-  _has_bits_[0] &= ~0x00000002u;
-}
-void CP2P_Ping::clear_is_reply() {
-  is_reply_ = false;
-  clear_has_is_reply();
-}
- bool CP2P_Ping::is_reply() const {
-  // @@protoc_insertion_point(field_get:CP2P_Ping.is_reply)
-  return is_reply_;
-}
- void CP2P_Ping::set_is_reply(bool value) {
-  set_has_is_reply();
-  is_reply_ = value;
-  // @@protoc_insertion_point(field_set:CP2P_Ping.is_reply)
-}
-
-#endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
 
 // @@protoc_insertion_point(namespace_scope)
 

@@ -39,32 +39,32 @@ void protobuf_AssignDesc_steammessages_5foauth_2esteamworkssdk_2eproto() {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(COAuthToken_ImplicitGrantNoPrompt_Request, clientid_),
   };
   COAuthToken_ImplicitGrantNoPrompt_Request_reflection_ =
-    ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
+    new ::google::protobuf::internal::GeneratedMessageReflection(
       COAuthToken_ImplicitGrantNoPrompt_Request_descriptor_,
       COAuthToken_ImplicitGrantNoPrompt_Request::default_instance_,
       COAuthToken_ImplicitGrantNoPrompt_Request_offsets_,
       GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(COAuthToken_ImplicitGrantNoPrompt_Request, _has_bits_[0]),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(COAuthToken_ImplicitGrantNoPrompt_Request, _unknown_fields_),
       -1,
-      -1,
-      sizeof(COAuthToken_ImplicitGrantNoPrompt_Request),
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(COAuthToken_ImplicitGrantNoPrompt_Request, _internal_metadata_),
-      -1);
+      ::google::protobuf::DescriptorPool::generated_pool(),
+      ::google::protobuf::MessageFactory::generated_factory(),
+      sizeof(COAuthToken_ImplicitGrantNoPrompt_Request));
   COAuthToken_ImplicitGrantNoPrompt_Response_descriptor_ = file->message_type(1);
   static const int COAuthToken_ImplicitGrantNoPrompt_Response_offsets_[2] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(COAuthToken_ImplicitGrantNoPrompt_Response, access_token_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(COAuthToken_ImplicitGrantNoPrompt_Response, redirect_uri_),
   };
   COAuthToken_ImplicitGrantNoPrompt_Response_reflection_ =
-    ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
+    new ::google::protobuf::internal::GeneratedMessageReflection(
       COAuthToken_ImplicitGrantNoPrompt_Response_descriptor_,
       COAuthToken_ImplicitGrantNoPrompt_Response::default_instance_,
       COAuthToken_ImplicitGrantNoPrompt_Response_offsets_,
       GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(COAuthToken_ImplicitGrantNoPrompt_Response, _has_bits_[0]),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(COAuthToken_ImplicitGrantNoPrompt_Response, _unknown_fields_),
       -1,
-      -1,
-      sizeof(COAuthToken_ImplicitGrantNoPrompt_Response),
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(COAuthToken_ImplicitGrantNoPrompt_Response, _internal_metadata_),
-      -1);
+      ::google::protobuf::DescriptorPool::generated_pool(),
+      ::google::protobuf::MessageFactory::generated_factory(),
+      sizeof(COAuthToken_ImplicitGrantNoPrompt_Response));
 }
 
 namespace {
@@ -78,9 +78,9 @@ inline void protobuf_AssignDescriptorsOnce() {
 void protobuf_RegisterTypes(const ::std::string&) {
   protobuf_AssignDescriptorsOnce();
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
-      COAuthToken_ImplicitGrantNoPrompt_Request_descriptor_, &COAuthToken_ImplicitGrantNoPrompt_Request::default_instance());
+    COAuthToken_ImplicitGrantNoPrompt_Request_descriptor_, &COAuthToken_ImplicitGrantNoPrompt_Request::default_instance());
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
-      COAuthToken_ImplicitGrantNoPrompt_Response_descriptor_, &COAuthToken_ImplicitGrantNoPrompt_Response::default_instance());
+    COAuthToken_ImplicitGrantNoPrompt_Response_descriptor_, &COAuthToken_ImplicitGrantNoPrompt_Response::default_instance());
 }
 
 }  // namespace
@@ -134,16 +134,6 @@ struct StaticDescriptorInitializer_steammessages_5foauth_2esteamworkssdk_2eproto
   }
 } static_descriptor_initializer_steammessages_5foauth_2esteamworkssdk_2eproto_;
 
-namespace {
-
-static void MergeFromFail(int line) GOOGLE_ATTRIBUTE_COLD;
-static void MergeFromFail(int line) {
-  GOOGLE_CHECK(false) << __FILE__ << ":" << line;
-}
-
-}  // namespace
-
-
 // ===================================================================
 
 #ifndef _MSC_VER
@@ -151,7 +141,7 @@ const int COAuthToken_ImplicitGrantNoPrompt_Request::kClientidFieldNumber;
 #endif  // !_MSC_VER
 
 COAuthToken_ImplicitGrantNoPrompt_Request::COAuthToken_ImplicitGrantNoPrompt_Request()
-  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  : ::google::protobuf::Message() {
   SharedCtor();
   // @@protoc_insertion_point(constructor:COAuthToken_ImplicitGrantNoPrompt_Request)
 }
@@ -160,8 +150,7 @@ void COAuthToken_ImplicitGrantNoPrompt_Request::InitAsDefaultInstance() {
 }
 
 COAuthToken_ImplicitGrantNoPrompt_Request::COAuthToken_ImplicitGrantNoPrompt_Request(const COAuthToken_ImplicitGrantNoPrompt_Request& from)
-  : ::google::protobuf::Message(),
-    _internal_metadata_(NULL) {
+  : ::google::protobuf::Message() {
   SharedCtor();
   MergeFrom(from);
   // @@protoc_insertion_point(copy_constructor:COAuthToken_ImplicitGrantNoPrompt_Request)
@@ -170,7 +159,7 @@ COAuthToken_ImplicitGrantNoPrompt_Request::COAuthToken_ImplicitGrantNoPrompt_Req
 void COAuthToken_ImplicitGrantNoPrompt_Request::SharedCtor() {
   ::google::protobuf::internal::GetEmptyString();
   _cached_size_ = 0;
-  clientid_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  clientid_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
 
@@ -180,7 +169,9 @@ COAuthToken_ImplicitGrantNoPrompt_Request::~COAuthToken_ImplicitGrantNoPrompt_Re
 }
 
 void COAuthToken_ImplicitGrantNoPrompt_Request::SharedDtor() {
-  clientid_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (clientid_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete clientid_;
+  }
   if (this != default_instance_) {
   }
 }
@@ -202,22 +193,18 @@ const COAuthToken_ImplicitGrantNoPrompt_Request& COAuthToken_ImplicitGrantNoProm
 
 COAuthToken_ImplicitGrantNoPrompt_Request* COAuthToken_ImplicitGrantNoPrompt_Request::default_instance_ = NULL;
 
-COAuthToken_ImplicitGrantNoPrompt_Request* COAuthToken_ImplicitGrantNoPrompt_Request::New(::google::protobuf::Arena* arena) const {
-  COAuthToken_ImplicitGrantNoPrompt_Request* n = new COAuthToken_ImplicitGrantNoPrompt_Request;
-  if (arena != NULL) {
-    arena->Own(n);
-  }
-  return n;
+COAuthToken_ImplicitGrantNoPrompt_Request* COAuthToken_ImplicitGrantNoPrompt_Request::New() const {
+  return new COAuthToken_ImplicitGrantNoPrompt_Request;
 }
 
 void COAuthToken_ImplicitGrantNoPrompt_Request::Clear() {
   if (has_clientid()) {
-    clientid_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    if (clientid_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+      clientid_->clear();
+    }
   }
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
-  if (_internal_metadata_.have_unknown_fields()) {
-    mutable_unknown_fields()->Clear();
-  }
+  mutable_unknown_fields()->Clear();
 }
 
 bool COAuthToken_ImplicitGrantNoPrompt_Request::MergePartialFromCodedStream(
@@ -238,7 +225,7 @@ bool COAuthToken_ImplicitGrantNoPrompt_Request::MergePartialFromCodedStream(
           ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
             this->clientid().data(), this->clientid().length(),
             ::google::protobuf::internal::WireFormat::PARSE,
-            "COAuthToken_ImplicitGrantNoPrompt_Request.clientid");
+            "clientid");
         } else {
           goto handle_unusual;
         }
@@ -276,12 +263,12 @@ void COAuthToken_ImplicitGrantNoPrompt_Request::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
       this->clientid().data(), this->clientid().length(),
       ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "COAuthToken_ImplicitGrantNoPrompt_Request.clientid");
+      "clientid");
     ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
       1, this->clientid(), output);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
   }
@@ -296,13 +283,13 @@ void COAuthToken_ImplicitGrantNoPrompt_Request::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
       this->clientid().data(), this->clientid().length(),
       ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "COAuthToken_ImplicitGrantNoPrompt_Request.clientid");
+      "clientid");
     target =
       ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
         1, this->clientid(), target);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
   }
@@ -313,14 +300,16 @@ void COAuthToken_ImplicitGrantNoPrompt_Request::SerializeWithCachedSizes(
 int COAuthToken_ImplicitGrantNoPrompt_Request::ByteSize() const {
   int total_size = 0;
 
-  // optional string clientid = 1;
-  if (has_clientid()) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::StringSize(
-        this->clientid());
-  }
+  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    // optional string clientid = 1;
+    if (has_clientid()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::StringSize(
+          this->clientid());
+    }
 
-  if (_internal_metadata_.have_unknown_fields()) {
+  }
+  if (!unknown_fields().empty()) {
     total_size +=
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         unknown_fields());
@@ -332,10 +321,10 @@ int COAuthToken_ImplicitGrantNoPrompt_Request::ByteSize() const {
 }
 
 void COAuthToken_ImplicitGrantNoPrompt_Request::MergeFrom(const ::google::protobuf::Message& from) {
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
-  const COAuthToken_ImplicitGrantNoPrompt_Request* source = 
-      ::google::protobuf::internal::DynamicCastToGenerated<const COAuthToken_ImplicitGrantNoPrompt_Request>(
-          &from);
+  GOOGLE_CHECK_NE(&from, this);
+  const COAuthToken_ImplicitGrantNoPrompt_Request* source =
+    ::google::protobuf::internal::dynamic_cast_if_available<const COAuthToken_ImplicitGrantNoPrompt_Request*>(
+      &from);
   if (source == NULL) {
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
   } else {
@@ -344,16 +333,13 @@ void COAuthToken_ImplicitGrantNoPrompt_Request::MergeFrom(const ::google::protob
 }
 
 void COAuthToken_ImplicitGrantNoPrompt_Request::MergeFrom(const COAuthToken_ImplicitGrantNoPrompt_Request& from) {
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  GOOGLE_CHECK_NE(&from, this);
   if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (from.has_clientid()) {
-      set_has_clientid();
-      clientid_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.clientid_);
+      set_clientid(from.clientid());
     }
   }
-  if (from._internal_metadata_.have_unknown_fields()) {
-    mutable_unknown_fields()->MergeFrom(from.unknown_fields());
-  }
+  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
 }
 
 void COAuthToken_ImplicitGrantNoPrompt_Request::CopyFrom(const ::google::protobuf::Message& from) {
@@ -374,14 +360,12 @@ bool COAuthToken_ImplicitGrantNoPrompt_Request::IsInitialized() const {
 }
 
 void COAuthToken_ImplicitGrantNoPrompt_Request::Swap(COAuthToken_ImplicitGrantNoPrompt_Request* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
-void COAuthToken_ImplicitGrantNoPrompt_Request::InternalSwap(COAuthToken_ImplicitGrantNoPrompt_Request* other) {
-  clientid_.Swap(&other->clientid_);
-  std::swap(_has_bits_[0], other->_has_bits_[0]);
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  std::swap(_cached_size_, other->_cached_size_);
+  if (other != this) {
+    std::swap(clientid_, other->clientid_);
+    std::swap(_has_bits_[0], other->_has_bits_[0]);
+    _unknown_fields_.Swap(&other->_unknown_fields_);
+    std::swap(_cached_size_, other->_cached_size_);
+  }
 }
 
 ::google::protobuf::Metadata COAuthToken_ImplicitGrantNoPrompt_Request::GetMetadata() const {
@@ -392,63 +376,6 @@ void COAuthToken_ImplicitGrantNoPrompt_Request::InternalSwap(COAuthToken_Implici
   return metadata;
 }
 
-#if PROTOBUF_INLINE_NOT_IN_HEADERS
-// COAuthToken_ImplicitGrantNoPrompt_Request
-
-// optional string clientid = 1;
-bool COAuthToken_ImplicitGrantNoPrompt_Request::has_clientid() const {
-  return (_has_bits_[0] & 0x00000001u) != 0;
-}
-void COAuthToken_ImplicitGrantNoPrompt_Request::set_has_clientid() {
-  _has_bits_[0] |= 0x00000001u;
-}
-void COAuthToken_ImplicitGrantNoPrompt_Request::clear_has_clientid() {
-  _has_bits_[0] &= ~0x00000001u;
-}
-void COAuthToken_ImplicitGrantNoPrompt_Request::clear_clientid() {
-  clientid_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  clear_has_clientid();
-}
- const ::std::string& COAuthToken_ImplicitGrantNoPrompt_Request::clientid() const {
-  // @@protoc_insertion_point(field_get:COAuthToken_ImplicitGrantNoPrompt_Request.clientid)
-  return clientid_.GetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
- void COAuthToken_ImplicitGrantNoPrompt_Request::set_clientid(const ::std::string& value) {
-  set_has_clientid();
-  clientid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:COAuthToken_ImplicitGrantNoPrompt_Request.clientid)
-}
- void COAuthToken_ImplicitGrantNoPrompt_Request::set_clientid(const char* value) {
-  set_has_clientid();
-  clientid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:COAuthToken_ImplicitGrantNoPrompt_Request.clientid)
-}
- void COAuthToken_ImplicitGrantNoPrompt_Request::set_clientid(const char* value, size_t size) {
-  set_has_clientid();
-  clientid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-      ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:COAuthToken_ImplicitGrantNoPrompt_Request.clientid)
-}
- ::std::string* COAuthToken_ImplicitGrantNoPrompt_Request::mutable_clientid() {
-  set_has_clientid();
-  // @@protoc_insertion_point(field_mutable:COAuthToken_ImplicitGrantNoPrompt_Request.clientid)
-  return clientid_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
- ::std::string* COAuthToken_ImplicitGrantNoPrompt_Request::release_clientid() {
-  clear_has_clientid();
-  return clientid_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
- void COAuthToken_ImplicitGrantNoPrompt_Request::set_allocated_clientid(::std::string* clientid) {
-  if (clientid != NULL) {
-    set_has_clientid();
-  } else {
-    clear_has_clientid();
-  }
-  clientid_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), clientid);
-  // @@protoc_insertion_point(field_set_allocated:COAuthToken_ImplicitGrantNoPrompt_Request.clientid)
-}
-
-#endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
 
 // ===================================================================
 
@@ -458,7 +385,7 @@ const int COAuthToken_ImplicitGrantNoPrompt_Response::kRedirectUriFieldNumber;
 #endif  // !_MSC_VER
 
 COAuthToken_ImplicitGrantNoPrompt_Response::COAuthToken_ImplicitGrantNoPrompt_Response()
-  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  : ::google::protobuf::Message() {
   SharedCtor();
   // @@protoc_insertion_point(constructor:COAuthToken_ImplicitGrantNoPrompt_Response)
 }
@@ -467,8 +394,7 @@ void COAuthToken_ImplicitGrantNoPrompt_Response::InitAsDefaultInstance() {
 }
 
 COAuthToken_ImplicitGrantNoPrompt_Response::COAuthToken_ImplicitGrantNoPrompt_Response(const COAuthToken_ImplicitGrantNoPrompt_Response& from)
-  : ::google::protobuf::Message(),
-    _internal_metadata_(NULL) {
+  : ::google::protobuf::Message() {
   SharedCtor();
   MergeFrom(from);
   // @@protoc_insertion_point(copy_constructor:COAuthToken_ImplicitGrantNoPrompt_Response)
@@ -477,8 +403,8 @@ COAuthToken_ImplicitGrantNoPrompt_Response::COAuthToken_ImplicitGrantNoPrompt_Re
 void COAuthToken_ImplicitGrantNoPrompt_Response::SharedCtor() {
   ::google::protobuf::internal::GetEmptyString();
   _cached_size_ = 0;
-  access_token_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  redirect_uri_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  access_token_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  redirect_uri_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
 
@@ -488,8 +414,12 @@ COAuthToken_ImplicitGrantNoPrompt_Response::~COAuthToken_ImplicitGrantNoPrompt_R
 }
 
 void COAuthToken_ImplicitGrantNoPrompt_Response::SharedDtor() {
-  access_token_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  redirect_uri_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (access_token_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete access_token_;
+  }
+  if (redirect_uri_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete redirect_uri_;
+  }
   if (this != default_instance_) {
   }
 }
@@ -511,27 +441,25 @@ const COAuthToken_ImplicitGrantNoPrompt_Response& COAuthToken_ImplicitGrantNoPro
 
 COAuthToken_ImplicitGrantNoPrompt_Response* COAuthToken_ImplicitGrantNoPrompt_Response::default_instance_ = NULL;
 
-COAuthToken_ImplicitGrantNoPrompt_Response* COAuthToken_ImplicitGrantNoPrompt_Response::New(::google::protobuf::Arena* arena) const {
-  COAuthToken_ImplicitGrantNoPrompt_Response* n = new COAuthToken_ImplicitGrantNoPrompt_Response;
-  if (arena != NULL) {
-    arena->Own(n);
-  }
-  return n;
+COAuthToken_ImplicitGrantNoPrompt_Response* COAuthToken_ImplicitGrantNoPrompt_Response::New() const {
+  return new COAuthToken_ImplicitGrantNoPrompt_Response;
 }
 
 void COAuthToken_ImplicitGrantNoPrompt_Response::Clear() {
-  if (_has_bits_[0 / 32] & 3u) {
+  if (_has_bits_[0 / 32] & 3) {
     if (has_access_token()) {
-      access_token_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+      if (access_token_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+        access_token_->clear();
+      }
     }
     if (has_redirect_uri()) {
-      redirect_uri_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+      if (redirect_uri_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+        redirect_uri_->clear();
+      }
     }
   }
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
-  if (_internal_metadata_.have_unknown_fields()) {
-    mutable_unknown_fields()->Clear();
-  }
+  mutable_unknown_fields()->Clear();
 }
 
 bool COAuthToken_ImplicitGrantNoPrompt_Response::MergePartialFromCodedStream(
@@ -552,7 +480,7 @@ bool COAuthToken_ImplicitGrantNoPrompt_Response::MergePartialFromCodedStream(
           ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
             this->access_token().data(), this->access_token().length(),
             ::google::protobuf::internal::WireFormat::PARSE,
-            "COAuthToken_ImplicitGrantNoPrompt_Response.access_token");
+            "access_token");
         } else {
           goto handle_unusual;
         }
@@ -569,7 +497,7 @@ bool COAuthToken_ImplicitGrantNoPrompt_Response::MergePartialFromCodedStream(
           ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
             this->redirect_uri().data(), this->redirect_uri().length(),
             ::google::protobuf::internal::WireFormat::PARSE,
-            "COAuthToken_ImplicitGrantNoPrompt_Response.redirect_uri");
+            "redirect_uri");
         } else {
           goto handle_unusual;
         }
@@ -607,7 +535,7 @@ void COAuthToken_ImplicitGrantNoPrompt_Response::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
       this->access_token().data(), this->access_token().length(),
       ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "COAuthToken_ImplicitGrantNoPrompt_Response.access_token");
+      "access_token");
     ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
       1, this->access_token(), output);
   }
@@ -617,12 +545,12 @@ void COAuthToken_ImplicitGrantNoPrompt_Response::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
       this->redirect_uri().data(), this->redirect_uri().length(),
       ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "COAuthToken_ImplicitGrantNoPrompt_Response.redirect_uri");
+      "redirect_uri");
     ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
       2, this->redirect_uri(), output);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
   }
@@ -637,7 +565,7 @@ void COAuthToken_ImplicitGrantNoPrompt_Response::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
       this->access_token().data(), this->access_token().length(),
       ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "COAuthToken_ImplicitGrantNoPrompt_Response.access_token");
+      "access_token");
     target =
       ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
         1, this->access_token(), target);
@@ -648,13 +576,13 @@ void COAuthToken_ImplicitGrantNoPrompt_Response::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
       this->redirect_uri().data(), this->redirect_uri().length(),
       ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "COAuthToken_ImplicitGrantNoPrompt_Response.redirect_uri");
+      "redirect_uri");
     target =
       ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
         2, this->redirect_uri(), target);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
   }
@@ -665,7 +593,7 @@ void COAuthToken_ImplicitGrantNoPrompt_Response::SerializeWithCachedSizes(
 int COAuthToken_ImplicitGrantNoPrompt_Response::ByteSize() const {
   int total_size = 0;
 
-  if (_has_bits_[0 / 32] & 3u) {
+  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     // optional string access_token = 1;
     if (has_access_token()) {
       total_size += 1 +
@@ -681,7 +609,7 @@ int COAuthToken_ImplicitGrantNoPrompt_Response::ByteSize() const {
     }
 
   }
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     total_size +=
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         unknown_fields());
@@ -693,10 +621,10 @@ int COAuthToken_ImplicitGrantNoPrompt_Response::ByteSize() const {
 }
 
 void COAuthToken_ImplicitGrantNoPrompt_Response::MergeFrom(const ::google::protobuf::Message& from) {
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
-  const COAuthToken_ImplicitGrantNoPrompt_Response* source = 
-      ::google::protobuf::internal::DynamicCastToGenerated<const COAuthToken_ImplicitGrantNoPrompt_Response>(
-          &from);
+  GOOGLE_CHECK_NE(&from, this);
+  const COAuthToken_ImplicitGrantNoPrompt_Response* source =
+    ::google::protobuf::internal::dynamic_cast_if_available<const COAuthToken_ImplicitGrantNoPrompt_Response*>(
+      &from);
   if (source == NULL) {
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
   } else {
@@ -705,20 +633,16 @@ void COAuthToken_ImplicitGrantNoPrompt_Response::MergeFrom(const ::google::proto
 }
 
 void COAuthToken_ImplicitGrantNoPrompt_Response::MergeFrom(const COAuthToken_ImplicitGrantNoPrompt_Response& from) {
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  GOOGLE_CHECK_NE(&from, this);
   if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (from.has_access_token()) {
-      set_has_access_token();
-      access_token_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.access_token_);
+      set_access_token(from.access_token());
     }
     if (from.has_redirect_uri()) {
-      set_has_redirect_uri();
-      redirect_uri_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.redirect_uri_);
+      set_redirect_uri(from.redirect_uri());
     }
   }
-  if (from._internal_metadata_.have_unknown_fields()) {
-    mutable_unknown_fields()->MergeFrom(from.unknown_fields());
-  }
+  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
 }
 
 void COAuthToken_ImplicitGrantNoPrompt_Response::CopyFrom(const ::google::protobuf::Message& from) {
@@ -739,15 +663,13 @@ bool COAuthToken_ImplicitGrantNoPrompt_Response::IsInitialized() const {
 }
 
 void COAuthToken_ImplicitGrantNoPrompt_Response::Swap(COAuthToken_ImplicitGrantNoPrompt_Response* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
-void COAuthToken_ImplicitGrantNoPrompt_Response::InternalSwap(COAuthToken_ImplicitGrantNoPrompt_Response* other) {
-  access_token_.Swap(&other->access_token_);
-  redirect_uri_.Swap(&other->redirect_uri_);
-  std::swap(_has_bits_[0], other->_has_bits_[0]);
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  std::swap(_cached_size_, other->_cached_size_);
+  if (other != this) {
+    std::swap(access_token_, other->access_token_);
+    std::swap(redirect_uri_, other->redirect_uri_);
+    std::swap(_has_bits_[0], other->_has_bits_[0]);
+    _unknown_fields_.Swap(&other->_unknown_fields_);
+    std::swap(_cached_size_, other->_cached_size_);
+  }
 }
 
 ::google::protobuf::Metadata COAuthToken_ImplicitGrantNoPrompt_Response::GetMetadata() const {
@@ -758,116 +680,6 @@ void COAuthToken_ImplicitGrantNoPrompt_Response::InternalSwap(COAuthToken_Implic
   return metadata;
 }
 
-#if PROTOBUF_INLINE_NOT_IN_HEADERS
-// COAuthToken_ImplicitGrantNoPrompt_Response
-
-// optional string access_token = 1;
-bool COAuthToken_ImplicitGrantNoPrompt_Response::has_access_token() const {
-  return (_has_bits_[0] & 0x00000001u) != 0;
-}
-void COAuthToken_ImplicitGrantNoPrompt_Response::set_has_access_token() {
-  _has_bits_[0] |= 0x00000001u;
-}
-void COAuthToken_ImplicitGrantNoPrompt_Response::clear_has_access_token() {
-  _has_bits_[0] &= ~0x00000001u;
-}
-void COAuthToken_ImplicitGrantNoPrompt_Response::clear_access_token() {
-  access_token_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  clear_has_access_token();
-}
- const ::std::string& COAuthToken_ImplicitGrantNoPrompt_Response::access_token() const {
-  // @@protoc_insertion_point(field_get:COAuthToken_ImplicitGrantNoPrompt_Response.access_token)
-  return access_token_.GetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
- void COAuthToken_ImplicitGrantNoPrompt_Response::set_access_token(const ::std::string& value) {
-  set_has_access_token();
-  access_token_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:COAuthToken_ImplicitGrantNoPrompt_Response.access_token)
-}
- void COAuthToken_ImplicitGrantNoPrompt_Response::set_access_token(const char* value) {
-  set_has_access_token();
-  access_token_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:COAuthToken_ImplicitGrantNoPrompt_Response.access_token)
-}
- void COAuthToken_ImplicitGrantNoPrompt_Response::set_access_token(const char* value, size_t size) {
-  set_has_access_token();
-  access_token_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-      ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:COAuthToken_ImplicitGrantNoPrompt_Response.access_token)
-}
- ::std::string* COAuthToken_ImplicitGrantNoPrompt_Response::mutable_access_token() {
-  set_has_access_token();
-  // @@protoc_insertion_point(field_mutable:COAuthToken_ImplicitGrantNoPrompt_Response.access_token)
-  return access_token_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
- ::std::string* COAuthToken_ImplicitGrantNoPrompt_Response::release_access_token() {
-  clear_has_access_token();
-  return access_token_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
- void COAuthToken_ImplicitGrantNoPrompt_Response::set_allocated_access_token(::std::string* access_token) {
-  if (access_token != NULL) {
-    set_has_access_token();
-  } else {
-    clear_has_access_token();
-  }
-  access_token_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), access_token);
-  // @@protoc_insertion_point(field_set_allocated:COAuthToken_ImplicitGrantNoPrompt_Response.access_token)
-}
-
-// optional string redirect_uri = 2;
-bool COAuthToken_ImplicitGrantNoPrompt_Response::has_redirect_uri() const {
-  return (_has_bits_[0] & 0x00000002u) != 0;
-}
-void COAuthToken_ImplicitGrantNoPrompt_Response::set_has_redirect_uri() {
-  _has_bits_[0] |= 0x00000002u;
-}
-void COAuthToken_ImplicitGrantNoPrompt_Response::clear_has_redirect_uri() {
-  _has_bits_[0] &= ~0x00000002u;
-}
-void COAuthToken_ImplicitGrantNoPrompt_Response::clear_redirect_uri() {
-  redirect_uri_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  clear_has_redirect_uri();
-}
- const ::std::string& COAuthToken_ImplicitGrantNoPrompt_Response::redirect_uri() const {
-  // @@protoc_insertion_point(field_get:COAuthToken_ImplicitGrantNoPrompt_Response.redirect_uri)
-  return redirect_uri_.GetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
- void COAuthToken_ImplicitGrantNoPrompt_Response::set_redirect_uri(const ::std::string& value) {
-  set_has_redirect_uri();
-  redirect_uri_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:COAuthToken_ImplicitGrantNoPrompt_Response.redirect_uri)
-}
- void COAuthToken_ImplicitGrantNoPrompt_Response::set_redirect_uri(const char* value) {
-  set_has_redirect_uri();
-  redirect_uri_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:COAuthToken_ImplicitGrantNoPrompt_Response.redirect_uri)
-}
- void COAuthToken_ImplicitGrantNoPrompt_Response::set_redirect_uri(const char* value, size_t size) {
-  set_has_redirect_uri();
-  redirect_uri_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-      ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:COAuthToken_ImplicitGrantNoPrompt_Response.redirect_uri)
-}
- ::std::string* COAuthToken_ImplicitGrantNoPrompt_Response::mutable_redirect_uri() {
-  set_has_redirect_uri();
-  // @@protoc_insertion_point(field_mutable:COAuthToken_ImplicitGrantNoPrompt_Response.redirect_uri)
-  return redirect_uri_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
- ::std::string* COAuthToken_ImplicitGrantNoPrompt_Response::release_redirect_uri() {
-  clear_has_redirect_uri();
-  return redirect_uri_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
- void COAuthToken_ImplicitGrantNoPrompt_Response::set_allocated_redirect_uri(::std::string* redirect_uri) {
-  if (redirect_uri != NULL) {
-    set_has_redirect_uri();
-  } else {
-    clear_has_redirect_uri();
-  }
-  redirect_uri_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), redirect_uri);
-  // @@protoc_insertion_point(field_set_allocated:COAuthToken_ImplicitGrantNoPrompt_Response.redirect_uri)
-}
-
-#endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
 
 // @@protoc_insertion_point(namespace_scope)
 

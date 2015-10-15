@@ -83,16 +83,16 @@ void protobuf_AssignDesc_gameevents_2eproto() {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgVDebugGameSessionIDEvent, gamesessionid_),
   };
   CMsgVDebugGameSessionIDEvent_reflection_ =
-    ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
+    new ::google::protobuf::internal::GeneratedMessageReflection(
       CMsgVDebugGameSessionIDEvent_descriptor_,
       CMsgVDebugGameSessionIDEvent::default_instance_,
       CMsgVDebugGameSessionIDEvent_offsets_,
       GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgVDebugGameSessionIDEvent, _has_bits_[0]),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgVDebugGameSessionIDEvent, _unknown_fields_),
       -1,
-      -1,
-      sizeof(CMsgVDebugGameSessionIDEvent),
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgVDebugGameSessionIDEvent, _internal_metadata_),
-      -1);
+      ::google::protobuf::DescriptorPool::generated_pool(),
+      ::google::protobuf::MessageFactory::generated_factory(),
+      sizeof(CMsgVDebugGameSessionIDEvent));
   CMsgPlaceDecalEvent_descriptor_ = file->message_type(1);
   static const int CMsgPlaceDecalEvent_offsets_[13] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgPlaceDecalEvent, position_),
@@ -110,46 +110,46 @@ void protobuf_AssignDesc_gameevents_2eproto() {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgPlaceDecalEvent, translucenthit_),
   };
   CMsgPlaceDecalEvent_reflection_ =
-    ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
+    new ::google::protobuf::internal::GeneratedMessageReflection(
       CMsgPlaceDecalEvent_descriptor_,
       CMsgPlaceDecalEvent::default_instance_,
       CMsgPlaceDecalEvent_offsets_,
       GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgPlaceDecalEvent, _has_bits_[0]),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgPlaceDecalEvent, _unknown_fields_),
       -1,
-      -1,
-      sizeof(CMsgPlaceDecalEvent),
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgPlaceDecalEvent, _internal_metadata_),
-      -1);
+      ::google::protobuf::DescriptorPool::generated_pool(),
+      ::google::protobuf::MessageFactory::generated_factory(),
+      sizeof(CMsgPlaceDecalEvent));
   CMsgClearWorldDecalsEvent_descriptor_ = file->message_type(2);
   static const int CMsgClearWorldDecalsEvent_offsets_[1] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgClearWorldDecalsEvent, flagstoclear_),
   };
   CMsgClearWorldDecalsEvent_reflection_ =
-    ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
+    new ::google::protobuf::internal::GeneratedMessageReflection(
       CMsgClearWorldDecalsEvent_descriptor_,
       CMsgClearWorldDecalsEvent::default_instance_,
       CMsgClearWorldDecalsEvent_offsets_,
       GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgClearWorldDecalsEvent, _has_bits_[0]),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgClearWorldDecalsEvent, _unknown_fields_),
       -1,
-      -1,
-      sizeof(CMsgClearWorldDecalsEvent),
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgClearWorldDecalsEvent, _internal_metadata_),
-      -1);
+      ::google::protobuf::DescriptorPool::generated_pool(),
+      ::google::protobuf::MessageFactory::generated_factory(),
+      sizeof(CMsgClearWorldDecalsEvent));
   CMsgClearEntityDecalsEvent_descriptor_ = file->message_type(3);
   static const int CMsgClearEntityDecalsEvent_offsets_[1] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgClearEntityDecalsEvent, flagstoclear_),
   };
   CMsgClearEntityDecalsEvent_reflection_ =
-    ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
+    new ::google::protobuf::internal::GeneratedMessageReflection(
       CMsgClearEntityDecalsEvent_descriptor_,
       CMsgClearEntityDecalsEvent::default_instance_,
       CMsgClearEntityDecalsEvent_offsets_,
       GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgClearEntityDecalsEvent, _has_bits_[0]),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgClearEntityDecalsEvent, _unknown_fields_),
       -1,
-      -1,
-      sizeof(CMsgClearEntityDecalsEvent),
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgClearEntityDecalsEvent, _internal_metadata_),
-      -1);
+      ::google::protobuf::DescriptorPool::generated_pool(),
+      ::google::protobuf::MessageFactory::generated_factory(),
+      sizeof(CMsgClearEntityDecalsEvent));
   CMsgClearDecalsForSkeletonInstanceEvent_descriptor_ = file->message_type(4);
   static const int CMsgClearDecalsForSkeletonInstanceEvent_offsets_[3] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgClearDecalsForSkeletonInstanceEvent, flagstoclear_),
@@ -157,47 +157,47 @@ void protobuf_AssignDesc_gameevents_2eproto() {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgClearDecalsForSkeletonInstanceEvent, skeletoninstancehash_),
   };
   CMsgClearDecalsForSkeletonInstanceEvent_reflection_ =
-    ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
+    new ::google::protobuf::internal::GeneratedMessageReflection(
       CMsgClearDecalsForSkeletonInstanceEvent_descriptor_,
       CMsgClearDecalsForSkeletonInstanceEvent::default_instance_,
       CMsgClearDecalsForSkeletonInstanceEvent_offsets_,
       GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgClearDecalsForSkeletonInstanceEvent, _has_bits_[0]),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgClearDecalsForSkeletonInstanceEvent, _unknown_fields_),
       -1,
-      -1,
-      sizeof(CMsgClearDecalsForSkeletonInstanceEvent),
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgClearDecalsForSkeletonInstanceEvent, _internal_metadata_),
-      -1);
+      ::google::protobuf::DescriptorPool::generated_pool(),
+      ::google::protobuf::MessageFactory::generated_factory(),
+      sizeof(CMsgClearDecalsForSkeletonInstanceEvent));
   CMsgSource1LegacyGameEventList_descriptor_ = file->message_type(5);
   static const int CMsgSource1LegacyGameEventList_offsets_[1] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgSource1LegacyGameEventList, descriptors_),
   };
   CMsgSource1LegacyGameEventList_reflection_ =
-    ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
+    new ::google::protobuf::internal::GeneratedMessageReflection(
       CMsgSource1LegacyGameEventList_descriptor_,
       CMsgSource1LegacyGameEventList::default_instance_,
       CMsgSource1LegacyGameEventList_offsets_,
       GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgSource1LegacyGameEventList, _has_bits_[0]),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgSource1LegacyGameEventList, _unknown_fields_),
       -1,
-      -1,
-      sizeof(CMsgSource1LegacyGameEventList),
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgSource1LegacyGameEventList, _internal_metadata_),
-      -1);
+      ::google::protobuf::DescriptorPool::generated_pool(),
+      ::google::protobuf::MessageFactory::generated_factory(),
+      sizeof(CMsgSource1LegacyGameEventList));
   CMsgSource1LegacyGameEventList_key_t_descriptor_ = CMsgSource1LegacyGameEventList_descriptor_->nested_type(0);
   static const int CMsgSource1LegacyGameEventList_key_t_offsets_[2] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgSource1LegacyGameEventList_key_t, type_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgSource1LegacyGameEventList_key_t, name_),
   };
   CMsgSource1LegacyGameEventList_key_t_reflection_ =
-    ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
+    new ::google::protobuf::internal::GeneratedMessageReflection(
       CMsgSource1LegacyGameEventList_key_t_descriptor_,
       CMsgSource1LegacyGameEventList_key_t::default_instance_,
       CMsgSource1LegacyGameEventList_key_t_offsets_,
       GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgSource1LegacyGameEventList_key_t, _has_bits_[0]),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgSource1LegacyGameEventList_key_t, _unknown_fields_),
       -1,
-      -1,
-      sizeof(CMsgSource1LegacyGameEventList_key_t),
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgSource1LegacyGameEventList_key_t, _internal_metadata_),
-      -1);
+      ::google::protobuf::DescriptorPool::generated_pool(),
+      ::google::protobuf::MessageFactory::generated_factory(),
+      sizeof(CMsgSource1LegacyGameEventList_key_t));
   CMsgSource1LegacyGameEventList_descriptor_t_descriptor_ = CMsgSource1LegacyGameEventList_descriptor_->nested_type(1);
   static const int CMsgSource1LegacyGameEventList_descriptor_t_offsets_[3] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgSource1LegacyGameEventList_descriptor_t, eventid_),
@@ -205,32 +205,32 @@ void protobuf_AssignDesc_gameevents_2eproto() {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgSource1LegacyGameEventList_descriptor_t, keys_),
   };
   CMsgSource1LegacyGameEventList_descriptor_t_reflection_ =
-    ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
+    new ::google::protobuf::internal::GeneratedMessageReflection(
       CMsgSource1LegacyGameEventList_descriptor_t_descriptor_,
       CMsgSource1LegacyGameEventList_descriptor_t::default_instance_,
       CMsgSource1LegacyGameEventList_descriptor_t_offsets_,
       GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgSource1LegacyGameEventList_descriptor_t, _has_bits_[0]),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgSource1LegacyGameEventList_descriptor_t, _unknown_fields_),
       -1,
-      -1,
-      sizeof(CMsgSource1LegacyGameEventList_descriptor_t),
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgSource1LegacyGameEventList_descriptor_t, _internal_metadata_),
-      -1);
+      ::google::protobuf::DescriptorPool::generated_pool(),
+      ::google::protobuf::MessageFactory::generated_factory(),
+      sizeof(CMsgSource1LegacyGameEventList_descriptor_t));
   CMsgSource1LegacyListenEvents_descriptor_ = file->message_type(6);
   static const int CMsgSource1LegacyListenEvents_offsets_[2] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgSource1LegacyListenEvents, playerslot_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgSource1LegacyListenEvents, eventarraybits_),
   };
   CMsgSource1LegacyListenEvents_reflection_ =
-    ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
+    new ::google::protobuf::internal::GeneratedMessageReflection(
       CMsgSource1LegacyListenEvents_descriptor_,
       CMsgSource1LegacyListenEvents::default_instance_,
       CMsgSource1LegacyListenEvents_offsets_,
       GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgSource1LegacyListenEvents, _has_bits_[0]),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgSource1LegacyListenEvents, _unknown_fields_),
       -1,
-      -1,
-      sizeof(CMsgSource1LegacyListenEvents),
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgSource1LegacyListenEvents, _internal_metadata_),
-      -1);
+      ::google::protobuf::DescriptorPool::generated_pool(),
+      ::google::protobuf::MessageFactory::generated_factory(),
+      sizeof(CMsgSource1LegacyListenEvents));
   CMsgSource1LegacyGameEvent_descriptor_ = file->message_type(7);
   static const int CMsgSource1LegacyGameEvent_offsets_[3] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgSource1LegacyGameEvent, event_name_),
@@ -238,16 +238,16 @@ void protobuf_AssignDesc_gameevents_2eproto() {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgSource1LegacyGameEvent, keys_),
   };
   CMsgSource1LegacyGameEvent_reflection_ =
-    ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
+    new ::google::protobuf::internal::GeneratedMessageReflection(
       CMsgSource1LegacyGameEvent_descriptor_,
       CMsgSource1LegacyGameEvent::default_instance_,
       CMsgSource1LegacyGameEvent_offsets_,
       GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgSource1LegacyGameEvent, _has_bits_[0]),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgSource1LegacyGameEvent, _unknown_fields_),
       -1,
-      -1,
-      sizeof(CMsgSource1LegacyGameEvent),
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgSource1LegacyGameEvent, _internal_metadata_),
-      -1);
+      ::google::protobuf::DescriptorPool::generated_pool(),
+      ::google::protobuf::MessageFactory::generated_factory(),
+      sizeof(CMsgSource1LegacyGameEvent));
   CMsgSource1LegacyGameEvent_key_t_descriptor_ = CMsgSource1LegacyGameEvent_descriptor_->nested_type(0);
   static const int CMsgSource1LegacyGameEvent_key_t_offsets_[8] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgSource1LegacyGameEvent_key_t, type_),
@@ -260,16 +260,16 @@ void protobuf_AssignDesc_gameevents_2eproto() {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgSource1LegacyGameEvent_key_t, val_uint64_),
   };
   CMsgSource1LegacyGameEvent_key_t_reflection_ =
-    ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
+    new ::google::protobuf::internal::GeneratedMessageReflection(
       CMsgSource1LegacyGameEvent_key_t_descriptor_,
       CMsgSource1LegacyGameEvent_key_t::default_instance_,
       CMsgSource1LegacyGameEvent_key_t_offsets_,
       GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgSource1LegacyGameEvent_key_t, _has_bits_[0]),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgSource1LegacyGameEvent_key_t, _unknown_fields_),
       -1,
-      -1,
-      sizeof(CMsgSource1LegacyGameEvent_key_t),
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgSource1LegacyGameEvent_key_t, _internal_metadata_),
-      -1);
+      ::google::protobuf::DescriptorPool::generated_pool(),
+      ::google::protobuf::MessageFactory::generated_factory(),
+      sizeof(CMsgSource1LegacyGameEvent_key_t));
   CMsgSosStartSoundEvent_descriptor_ = file->message_type(8);
   static const int CMsgSosStartSoundEvent_offsets_[5] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgSosStartSoundEvent, soundevent_guid_),
@@ -279,79 +279,79 @@ void protobuf_AssignDesc_gameevents_2eproto() {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgSosStartSoundEvent, packed_params_),
   };
   CMsgSosStartSoundEvent_reflection_ =
-    ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
+    new ::google::protobuf::internal::GeneratedMessageReflection(
       CMsgSosStartSoundEvent_descriptor_,
       CMsgSosStartSoundEvent::default_instance_,
       CMsgSosStartSoundEvent_offsets_,
       GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgSosStartSoundEvent, _has_bits_[0]),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgSosStartSoundEvent, _unknown_fields_),
       -1,
-      -1,
-      sizeof(CMsgSosStartSoundEvent),
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgSosStartSoundEvent, _internal_metadata_),
-      -1);
+      ::google::protobuf::DescriptorPool::generated_pool(),
+      ::google::protobuf::MessageFactory::generated_factory(),
+      sizeof(CMsgSosStartSoundEvent));
   CMsgSosStopSoundEvent_descriptor_ = file->message_type(9);
   static const int CMsgSosStopSoundEvent_offsets_[1] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgSosStopSoundEvent, soundevent_guid_),
   };
   CMsgSosStopSoundEvent_reflection_ =
-    ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
+    new ::google::protobuf::internal::GeneratedMessageReflection(
       CMsgSosStopSoundEvent_descriptor_,
       CMsgSosStopSoundEvent::default_instance_,
       CMsgSosStopSoundEvent_offsets_,
       GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgSosStopSoundEvent, _has_bits_[0]),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgSosStopSoundEvent, _unknown_fields_),
       -1,
-      -1,
-      sizeof(CMsgSosStopSoundEvent),
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgSosStopSoundEvent, _internal_metadata_),
-      -1);
+      ::google::protobuf::DescriptorPool::generated_pool(),
+      ::google::protobuf::MessageFactory::generated_factory(),
+      sizeof(CMsgSosStopSoundEvent));
   CMsgSosStopSoundEventHash_descriptor_ = file->message_type(10);
   static const int CMsgSosStopSoundEventHash_offsets_[2] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgSosStopSoundEventHash, soundevent_hash_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgSosStopSoundEventHash, source_entity_index_),
   };
   CMsgSosStopSoundEventHash_reflection_ =
-    ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
+    new ::google::protobuf::internal::GeneratedMessageReflection(
       CMsgSosStopSoundEventHash_descriptor_,
       CMsgSosStopSoundEventHash::default_instance_,
       CMsgSosStopSoundEventHash_offsets_,
       GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgSosStopSoundEventHash, _has_bits_[0]),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgSosStopSoundEventHash, _unknown_fields_),
       -1,
-      -1,
-      sizeof(CMsgSosStopSoundEventHash),
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgSosStopSoundEventHash, _internal_metadata_),
-      -1);
+      ::google::protobuf::DescriptorPool::generated_pool(),
+      ::google::protobuf::MessageFactory::generated_factory(),
+      sizeof(CMsgSosStopSoundEventHash));
   CMsgSosSetSoundEventParams_descriptor_ = file->message_type(11);
   static const int CMsgSosSetSoundEventParams_offsets_[2] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgSosSetSoundEventParams, soundevent_guid_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgSosSetSoundEventParams, packed_params_),
   };
   CMsgSosSetSoundEventParams_reflection_ =
-    ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
+    new ::google::protobuf::internal::GeneratedMessageReflection(
       CMsgSosSetSoundEventParams_descriptor_,
       CMsgSosSetSoundEventParams::default_instance_,
       CMsgSosSetSoundEventParams_offsets_,
       GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgSosSetSoundEventParams, _has_bits_[0]),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgSosSetSoundEventParams, _unknown_fields_),
       -1,
-      -1,
-      sizeof(CMsgSosSetSoundEventParams),
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgSosSetSoundEventParams, _internal_metadata_),
-      -1);
+      ::google::protobuf::DescriptorPool::generated_pool(),
+      ::google::protobuf::MessageFactory::generated_factory(),
+      sizeof(CMsgSosSetSoundEventParams));
   CMsgSosSetLibraryStackFields_descriptor_ = file->message_type(12);
   static const int CMsgSosSetLibraryStackFields_offsets_[2] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgSosSetLibraryStackFields, stack_hash_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgSosSetLibraryStackFields, packed_fields_),
   };
   CMsgSosSetLibraryStackFields_reflection_ =
-    ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
+    new ::google::protobuf::internal::GeneratedMessageReflection(
       CMsgSosSetLibraryStackFields_descriptor_,
       CMsgSosSetLibraryStackFields::default_instance_,
       CMsgSosSetLibraryStackFields_offsets_,
       GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgSosSetLibraryStackFields, _has_bits_[0]),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgSosSetLibraryStackFields, _unknown_fields_),
       -1,
-      -1,
-      sizeof(CMsgSosSetLibraryStackFields),
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgSosSetLibraryStackFields, _internal_metadata_),
-      -1);
+      ::google::protobuf::DescriptorPool::generated_pool(),
+      ::google::protobuf::MessageFactory::generated_factory(),
+      sizeof(CMsgSosSetLibraryStackFields));
   EBaseGameEvents_descriptor_ = file->enum_type(0);
 }
 
@@ -366,37 +366,37 @@ inline void protobuf_AssignDescriptorsOnce() {
 void protobuf_RegisterTypes(const ::std::string&) {
   protobuf_AssignDescriptorsOnce();
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
-      CMsgVDebugGameSessionIDEvent_descriptor_, &CMsgVDebugGameSessionIDEvent::default_instance());
+    CMsgVDebugGameSessionIDEvent_descriptor_, &CMsgVDebugGameSessionIDEvent::default_instance());
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
-      CMsgPlaceDecalEvent_descriptor_, &CMsgPlaceDecalEvent::default_instance());
+    CMsgPlaceDecalEvent_descriptor_, &CMsgPlaceDecalEvent::default_instance());
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
-      CMsgClearWorldDecalsEvent_descriptor_, &CMsgClearWorldDecalsEvent::default_instance());
+    CMsgClearWorldDecalsEvent_descriptor_, &CMsgClearWorldDecalsEvent::default_instance());
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
-      CMsgClearEntityDecalsEvent_descriptor_, &CMsgClearEntityDecalsEvent::default_instance());
+    CMsgClearEntityDecalsEvent_descriptor_, &CMsgClearEntityDecalsEvent::default_instance());
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
-      CMsgClearDecalsForSkeletonInstanceEvent_descriptor_, &CMsgClearDecalsForSkeletonInstanceEvent::default_instance());
+    CMsgClearDecalsForSkeletonInstanceEvent_descriptor_, &CMsgClearDecalsForSkeletonInstanceEvent::default_instance());
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
-      CMsgSource1LegacyGameEventList_descriptor_, &CMsgSource1LegacyGameEventList::default_instance());
+    CMsgSource1LegacyGameEventList_descriptor_, &CMsgSource1LegacyGameEventList::default_instance());
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
-      CMsgSource1LegacyGameEventList_key_t_descriptor_, &CMsgSource1LegacyGameEventList_key_t::default_instance());
+    CMsgSource1LegacyGameEventList_key_t_descriptor_, &CMsgSource1LegacyGameEventList_key_t::default_instance());
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
-      CMsgSource1LegacyGameEventList_descriptor_t_descriptor_, &CMsgSource1LegacyGameEventList_descriptor_t::default_instance());
+    CMsgSource1LegacyGameEventList_descriptor_t_descriptor_, &CMsgSource1LegacyGameEventList_descriptor_t::default_instance());
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
-      CMsgSource1LegacyListenEvents_descriptor_, &CMsgSource1LegacyListenEvents::default_instance());
+    CMsgSource1LegacyListenEvents_descriptor_, &CMsgSource1LegacyListenEvents::default_instance());
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
-      CMsgSource1LegacyGameEvent_descriptor_, &CMsgSource1LegacyGameEvent::default_instance());
+    CMsgSource1LegacyGameEvent_descriptor_, &CMsgSource1LegacyGameEvent::default_instance());
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
-      CMsgSource1LegacyGameEvent_key_t_descriptor_, &CMsgSource1LegacyGameEvent_key_t::default_instance());
+    CMsgSource1LegacyGameEvent_key_t_descriptor_, &CMsgSource1LegacyGameEvent_key_t::default_instance());
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
-      CMsgSosStartSoundEvent_descriptor_, &CMsgSosStartSoundEvent::default_instance());
+    CMsgSosStartSoundEvent_descriptor_, &CMsgSosStartSoundEvent::default_instance());
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
-      CMsgSosStopSoundEvent_descriptor_, &CMsgSosStopSoundEvent::default_instance());
+    CMsgSosStopSoundEvent_descriptor_, &CMsgSosStopSoundEvent::default_instance());
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
-      CMsgSosStopSoundEventHash_descriptor_, &CMsgSosStopSoundEventHash::default_instance());
+    CMsgSosStopSoundEventHash_descriptor_, &CMsgSosStopSoundEventHash::default_instance());
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
-      CMsgSosSetSoundEventParams_descriptor_, &CMsgSosSetSoundEventParams::default_instance());
+    CMsgSosSetSoundEventParams_descriptor_, &CMsgSosSetSoundEventParams::default_instance());
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
-      CMsgSosSetLibraryStackFields_descriptor_, &CMsgSosSetLibraryStackFields::default_instance());
+    CMsgSosSetLibraryStackFields_descriptor_, &CMsgSosSetLibraryStackFields::default_instance());
 }
 
 }  // namespace
@@ -567,16 +567,6 @@ bool EBaseGameEvents_IsValid(int value) {
 }
 
 
-namespace {
-
-static void MergeFromFail(int line) GOOGLE_ATTRIBUTE_COLD;
-static void MergeFromFail(int line) {
-  GOOGLE_CHECK(false) << __FILE__ << ":" << line;
-}
-
-}  // namespace
-
-
 // ===================================================================
 
 #ifndef _MSC_VER
@@ -585,7 +575,7 @@ const int CMsgVDebugGameSessionIDEvent::kGamesessionidFieldNumber;
 #endif  // !_MSC_VER
 
 CMsgVDebugGameSessionIDEvent::CMsgVDebugGameSessionIDEvent()
-  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  : ::google::protobuf::Message() {
   SharedCtor();
   // @@protoc_insertion_point(constructor:CMsgVDebugGameSessionIDEvent)
 }
@@ -594,8 +584,7 @@ void CMsgVDebugGameSessionIDEvent::InitAsDefaultInstance() {
 }
 
 CMsgVDebugGameSessionIDEvent::CMsgVDebugGameSessionIDEvent(const CMsgVDebugGameSessionIDEvent& from)
-  : ::google::protobuf::Message(),
-    _internal_metadata_(NULL) {
+  : ::google::protobuf::Message() {
   SharedCtor();
   MergeFrom(from);
   // @@protoc_insertion_point(copy_constructor:CMsgVDebugGameSessionIDEvent)
@@ -605,7 +594,7 @@ void CMsgVDebugGameSessionIDEvent::SharedCtor() {
   ::google::protobuf::internal::GetEmptyString();
   _cached_size_ = 0;
   clientid_ = 0;
-  gamesessionid_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  gamesessionid_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
 
@@ -615,7 +604,9 @@ CMsgVDebugGameSessionIDEvent::~CMsgVDebugGameSessionIDEvent() {
 }
 
 void CMsgVDebugGameSessionIDEvent::SharedDtor() {
-  gamesessionid_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (gamesessionid_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete gamesessionid_;
+  }
   if (this != default_instance_) {
   }
 }
@@ -637,25 +628,21 @@ const CMsgVDebugGameSessionIDEvent& CMsgVDebugGameSessionIDEvent::default_instan
 
 CMsgVDebugGameSessionIDEvent* CMsgVDebugGameSessionIDEvent::default_instance_ = NULL;
 
-CMsgVDebugGameSessionIDEvent* CMsgVDebugGameSessionIDEvent::New(::google::protobuf::Arena* arena) const {
-  CMsgVDebugGameSessionIDEvent* n = new CMsgVDebugGameSessionIDEvent;
-  if (arena != NULL) {
-    arena->Own(n);
-  }
-  return n;
+CMsgVDebugGameSessionIDEvent* CMsgVDebugGameSessionIDEvent::New() const {
+  return new CMsgVDebugGameSessionIDEvent;
 }
 
 void CMsgVDebugGameSessionIDEvent::Clear() {
-  if (_has_bits_[0 / 32] & 3u) {
+  if (_has_bits_[0 / 32] & 3) {
     clientid_ = 0;
     if (has_gamesessionid()) {
-      gamesessionid_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+      if (gamesessionid_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+        gamesessionid_->clear();
+      }
     }
   }
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
-  if (_internal_metadata_.have_unknown_fields()) {
-    mutable_unknown_fields()->Clear();
-  }
+  mutable_unknown_fields()->Clear();
 }
 
 bool CMsgVDebugGameSessionIDEvent::MergePartialFromCodedStream(
@@ -691,7 +678,7 @@ bool CMsgVDebugGameSessionIDEvent::MergePartialFromCodedStream(
           ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
             this->gamesessionid().data(), this->gamesessionid().length(),
             ::google::protobuf::internal::WireFormat::PARSE,
-            "CMsgVDebugGameSessionIDEvent.gamesessionid");
+            "gamesessionid");
         } else {
           goto handle_unusual;
         }
@@ -734,12 +721,12 @@ void CMsgVDebugGameSessionIDEvent::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
       this->gamesessionid().data(), this->gamesessionid().length(),
       ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "CMsgVDebugGameSessionIDEvent.gamesessionid");
+      "gamesessionid");
     ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
       2, this->gamesessionid(), output);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
   }
@@ -759,13 +746,13 @@ void CMsgVDebugGameSessionIDEvent::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
       this->gamesessionid().data(), this->gamesessionid().length(),
       ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "CMsgVDebugGameSessionIDEvent.gamesessionid");
+      "gamesessionid");
     target =
       ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
         2, this->gamesessionid(), target);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
   }
@@ -776,7 +763,7 @@ void CMsgVDebugGameSessionIDEvent::SerializeWithCachedSizes(
 int CMsgVDebugGameSessionIDEvent::ByteSize() const {
   int total_size = 0;
 
-  if (_has_bits_[0 / 32] & 3u) {
+  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     // optional int32 clientid = 1;
     if (has_clientid()) {
       total_size += 1 +
@@ -792,7 +779,7 @@ int CMsgVDebugGameSessionIDEvent::ByteSize() const {
     }
 
   }
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     total_size +=
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         unknown_fields());
@@ -804,10 +791,10 @@ int CMsgVDebugGameSessionIDEvent::ByteSize() const {
 }
 
 void CMsgVDebugGameSessionIDEvent::MergeFrom(const ::google::protobuf::Message& from) {
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
-  const CMsgVDebugGameSessionIDEvent* source = 
-      ::google::protobuf::internal::DynamicCastToGenerated<const CMsgVDebugGameSessionIDEvent>(
-          &from);
+  GOOGLE_CHECK_NE(&from, this);
+  const CMsgVDebugGameSessionIDEvent* source =
+    ::google::protobuf::internal::dynamic_cast_if_available<const CMsgVDebugGameSessionIDEvent*>(
+      &from);
   if (source == NULL) {
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
   } else {
@@ -816,19 +803,16 @@ void CMsgVDebugGameSessionIDEvent::MergeFrom(const ::google::protobuf::Message& 
 }
 
 void CMsgVDebugGameSessionIDEvent::MergeFrom(const CMsgVDebugGameSessionIDEvent& from) {
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  GOOGLE_CHECK_NE(&from, this);
   if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (from.has_clientid()) {
       set_clientid(from.clientid());
     }
     if (from.has_gamesessionid()) {
-      set_has_gamesessionid();
-      gamesessionid_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.gamesessionid_);
+      set_gamesessionid(from.gamesessionid());
     }
   }
-  if (from._internal_metadata_.have_unknown_fields()) {
-    mutable_unknown_fields()->MergeFrom(from.unknown_fields());
-  }
+  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
 }
 
 void CMsgVDebugGameSessionIDEvent::CopyFrom(const ::google::protobuf::Message& from) {
@@ -849,15 +833,13 @@ bool CMsgVDebugGameSessionIDEvent::IsInitialized() const {
 }
 
 void CMsgVDebugGameSessionIDEvent::Swap(CMsgVDebugGameSessionIDEvent* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
-void CMsgVDebugGameSessionIDEvent::InternalSwap(CMsgVDebugGameSessionIDEvent* other) {
-  std::swap(clientid_, other->clientid_);
-  gamesessionid_.Swap(&other->gamesessionid_);
-  std::swap(_has_bits_[0], other->_has_bits_[0]);
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  std::swap(_cached_size_, other->_cached_size_);
+  if (other != this) {
+    std::swap(clientid_, other->clientid_);
+    std::swap(gamesessionid_, other->gamesessionid_);
+    std::swap(_has_bits_[0], other->_has_bits_[0]);
+    _unknown_fields_.Swap(&other->_unknown_fields_);
+    std::swap(_cached_size_, other->_cached_size_);
+  }
 }
 
 ::google::protobuf::Metadata CMsgVDebugGameSessionIDEvent::GetMetadata() const {
@@ -868,87 +850,6 @@ void CMsgVDebugGameSessionIDEvent::InternalSwap(CMsgVDebugGameSessionIDEvent* ot
   return metadata;
 }
 
-#if PROTOBUF_INLINE_NOT_IN_HEADERS
-// CMsgVDebugGameSessionIDEvent
-
-// optional int32 clientid = 1;
-bool CMsgVDebugGameSessionIDEvent::has_clientid() const {
-  return (_has_bits_[0] & 0x00000001u) != 0;
-}
-void CMsgVDebugGameSessionIDEvent::set_has_clientid() {
-  _has_bits_[0] |= 0x00000001u;
-}
-void CMsgVDebugGameSessionIDEvent::clear_has_clientid() {
-  _has_bits_[0] &= ~0x00000001u;
-}
-void CMsgVDebugGameSessionIDEvent::clear_clientid() {
-  clientid_ = 0;
-  clear_has_clientid();
-}
- ::google::protobuf::int32 CMsgVDebugGameSessionIDEvent::clientid() const {
-  // @@protoc_insertion_point(field_get:CMsgVDebugGameSessionIDEvent.clientid)
-  return clientid_;
-}
- void CMsgVDebugGameSessionIDEvent::set_clientid(::google::protobuf::int32 value) {
-  set_has_clientid();
-  clientid_ = value;
-  // @@protoc_insertion_point(field_set:CMsgVDebugGameSessionIDEvent.clientid)
-}
-
-// optional string gamesessionid = 2;
-bool CMsgVDebugGameSessionIDEvent::has_gamesessionid() const {
-  return (_has_bits_[0] & 0x00000002u) != 0;
-}
-void CMsgVDebugGameSessionIDEvent::set_has_gamesessionid() {
-  _has_bits_[0] |= 0x00000002u;
-}
-void CMsgVDebugGameSessionIDEvent::clear_has_gamesessionid() {
-  _has_bits_[0] &= ~0x00000002u;
-}
-void CMsgVDebugGameSessionIDEvent::clear_gamesessionid() {
-  gamesessionid_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  clear_has_gamesessionid();
-}
- const ::std::string& CMsgVDebugGameSessionIDEvent::gamesessionid() const {
-  // @@protoc_insertion_point(field_get:CMsgVDebugGameSessionIDEvent.gamesessionid)
-  return gamesessionid_.GetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
- void CMsgVDebugGameSessionIDEvent::set_gamesessionid(const ::std::string& value) {
-  set_has_gamesessionid();
-  gamesessionid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:CMsgVDebugGameSessionIDEvent.gamesessionid)
-}
- void CMsgVDebugGameSessionIDEvent::set_gamesessionid(const char* value) {
-  set_has_gamesessionid();
-  gamesessionid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:CMsgVDebugGameSessionIDEvent.gamesessionid)
-}
- void CMsgVDebugGameSessionIDEvent::set_gamesessionid(const char* value, size_t size) {
-  set_has_gamesessionid();
-  gamesessionid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-      ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:CMsgVDebugGameSessionIDEvent.gamesessionid)
-}
- ::std::string* CMsgVDebugGameSessionIDEvent::mutable_gamesessionid() {
-  set_has_gamesessionid();
-  // @@protoc_insertion_point(field_mutable:CMsgVDebugGameSessionIDEvent.gamesessionid)
-  return gamesessionid_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
- ::std::string* CMsgVDebugGameSessionIDEvent::release_gamesessionid() {
-  clear_has_gamesessionid();
-  return gamesessionid_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
- void CMsgVDebugGameSessionIDEvent::set_allocated_gamesessionid(::std::string* gamesessionid) {
-  if (gamesessionid != NULL) {
-    set_has_gamesessionid();
-  } else {
-    clear_has_gamesessionid();
-  }
-  gamesessionid_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), gamesessionid);
-  // @@protoc_insertion_point(field_set_allocated:CMsgVDebugGameSessionIDEvent.gamesessionid)
-}
-
-#endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
 
 // ===================================================================
 
@@ -969,7 +870,7 @@ const int CMsgPlaceDecalEvent::kTranslucenthitFieldNumber;
 #endif  // !_MSC_VER
 
 CMsgPlaceDecalEvent::CMsgPlaceDecalEvent()
-  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  : ::google::protobuf::Message() {
   SharedCtor();
   // @@protoc_insertion_point(constructor:CMsgPlaceDecalEvent)
 }
@@ -981,8 +882,7 @@ void CMsgPlaceDecalEvent::InitAsDefaultInstance() {
 }
 
 CMsgPlaceDecalEvent::CMsgPlaceDecalEvent(const CMsgPlaceDecalEvent& from)
-  : ::google::protobuf::Message(),
-    _internal_metadata_(NULL) {
+  : ::google::protobuf::Message() {
   SharedCtor();
   MergeFrom(from);
   // @@protoc_insertion_point(copy_constructor:CMsgPlaceDecalEvent)
@@ -1036,24 +936,22 @@ const CMsgPlaceDecalEvent& CMsgPlaceDecalEvent::default_instance() {
 
 CMsgPlaceDecalEvent* CMsgPlaceDecalEvent::default_instance_ = NULL;
 
-CMsgPlaceDecalEvent* CMsgPlaceDecalEvent::New(::google::protobuf::Arena* arena) const {
-  CMsgPlaceDecalEvent* n = new CMsgPlaceDecalEvent;
-  if (arena != NULL) {
-    arena->Own(n);
-  }
-  return n;
+CMsgPlaceDecalEvent* CMsgPlaceDecalEvent::New() const {
+  return new CMsgPlaceDecalEvent;
 }
 
 void CMsgPlaceDecalEvent::Clear() {
-#define ZR_HELPER_(f) reinterpret_cast<char*>(\
-  &reinterpret_cast<CMsgPlaceDecalEvent*>(16)->f)
+#define OFFSET_OF_FIELD_(f) (reinterpret_cast<char*>(      \
+  &reinterpret_cast<CMsgPlaceDecalEvent*>(16)->f) - \
+   reinterpret_cast<char*>(16))
 
-#define ZR_(first, last) do {\
-  ::memset(&first, 0,\
-           ZR_HELPER_(last) - ZR_HELPER_(first) + sizeof(last));\
-} while (0)
+#define ZR_(first, last) do {                              \
+    size_t f = OFFSET_OF_FIELD_(first);                    \
+    size_t n = OFFSET_OF_FIELD_(last) - f + sizeof(last);  \
+    ::memset(&first, 0, n);                                \
+  } while (0)
 
-  if (_has_bits_[0 / 32] & 255u) {
+  if (_has_bits_[0 / 32] & 255) {
     ZR_(decalmaterialindex_, height_);
     if (has_position()) {
       if (position_ != NULL) position_->::CMsgVector::Clear();
@@ -1065,17 +963,15 @@ void CMsgPlaceDecalEvent::Clear() {
       if (saxis_ != NULL) saxis_->::CMsgVector::Clear();
     }
   }
-  if (_has_bits_[8 / 32] & 7936u) {
+  if (_has_bits_[8 / 32] & 7936) {
     ZR_(depth_, translucenthit_);
   }
 
-#undef ZR_HELPER_
+#undef OFFSET_OF_FIELD_
 #undef ZR_
 
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
-  if (_internal_metadata_.have_unknown_fields()) {
-    mutable_unknown_fields()->Clear();
-  }
+  mutable_unknown_fields()->Clear();
 }
 
 bool CMsgPlaceDecalEvent::MergePartialFromCodedStream(
@@ -1304,19 +1200,19 @@ void CMsgPlaceDecalEvent::SerializeWithCachedSizes(
   // optional .CMsgVector position = 1;
   if (has_position()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      1, *this->position_, output);
+      1, this->position(), output);
   }
 
   // optional .CMsgVector normal = 2;
   if (has_normal()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      2, *this->normal_, output);
+      2, this->normal(), output);
   }
 
   // optional .CMsgVector saxis = 3;
   if (has_saxis()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      3, *this->saxis_, output);
+      3, this->saxis(), output);
   }
 
   // optional uint32 decalmaterialindex = 4;
@@ -1369,7 +1265,7 @@ void CMsgPlaceDecalEvent::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteBool(13, this->translucenthit(), output);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
   }
@@ -1383,21 +1279,21 @@ void CMsgPlaceDecalEvent::SerializeWithCachedSizes(
   if (has_position()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
-        1, *this->position_, target);
+        1, this->position(), target);
   }
 
   // optional .CMsgVector normal = 2;
   if (has_normal()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
-        2, *this->normal_, target);
+        2, this->normal(), target);
   }
 
   // optional .CMsgVector saxis = 3;
   if (has_saxis()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
-        3, *this->saxis_, target);
+        3, this->saxis(), target);
   }
 
   // optional uint32 decalmaterialindex = 4;
@@ -1450,7 +1346,7 @@ void CMsgPlaceDecalEvent::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(13, this->translucenthit(), target);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
   }
@@ -1461,26 +1357,26 @@ void CMsgPlaceDecalEvent::SerializeWithCachedSizes(
 int CMsgPlaceDecalEvent::ByteSize() const {
   int total_size = 0;
 
-  if (_has_bits_[0 / 32] & 255u) {
+  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     // optional .CMsgVector position = 1;
     if (has_position()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
-          *this->position_);
+          this->position());
     }
 
     // optional .CMsgVector normal = 2;
     if (has_normal()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
-          *this->normal_);
+          this->normal());
     }
 
     // optional .CMsgVector saxis = 3;
     if (has_saxis()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
-          *this->saxis_);
+          this->saxis());
     }
 
     // optional uint32 decalmaterialindex = 4;
@@ -1513,7 +1409,7 @@ int CMsgPlaceDecalEvent::ByteSize() const {
     }
 
   }
-  if (_has_bits_[8 / 32] & 7936u) {
+  if (_has_bits_[8 / 32] & (0xffu << (8 % 32))) {
     // optional float depth = 9;
     if (has_depth()) {
       total_size += 1 + 4;
@@ -1544,7 +1440,7 @@ int CMsgPlaceDecalEvent::ByteSize() const {
     }
 
   }
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     total_size +=
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         unknown_fields());
@@ -1556,10 +1452,10 @@ int CMsgPlaceDecalEvent::ByteSize() const {
 }
 
 void CMsgPlaceDecalEvent::MergeFrom(const ::google::protobuf::Message& from) {
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
-  const CMsgPlaceDecalEvent* source = 
-      ::google::protobuf::internal::DynamicCastToGenerated<const CMsgPlaceDecalEvent>(
-          &from);
+  GOOGLE_CHECK_NE(&from, this);
+  const CMsgPlaceDecalEvent* source =
+    ::google::protobuf::internal::dynamic_cast_if_available<const CMsgPlaceDecalEvent*>(
+      &from);
   if (source == NULL) {
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
   } else {
@@ -1568,7 +1464,7 @@ void CMsgPlaceDecalEvent::MergeFrom(const ::google::protobuf::Message& from) {
 }
 
 void CMsgPlaceDecalEvent::MergeFrom(const CMsgPlaceDecalEvent& from) {
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  GOOGLE_CHECK_NE(&from, this);
   if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (from.has_position()) {
       mutable_position()->::CMsgVector::MergeFrom(from.position());
@@ -1612,9 +1508,7 @@ void CMsgPlaceDecalEvent::MergeFrom(const CMsgPlaceDecalEvent& from) {
       set_translucenthit(from.translucenthit());
     }
   }
-  if (from._internal_metadata_.have_unknown_fields()) {
-    mutable_unknown_fields()->MergeFrom(from.unknown_fields());
-  }
+  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
 }
 
 void CMsgPlaceDecalEvent::CopyFrom(const ::google::protobuf::Message& from) {
@@ -1635,26 +1529,24 @@ bool CMsgPlaceDecalEvent::IsInitialized() const {
 }
 
 void CMsgPlaceDecalEvent::Swap(CMsgPlaceDecalEvent* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
-void CMsgPlaceDecalEvent::InternalSwap(CMsgPlaceDecalEvent* other) {
-  std::swap(position_, other->position_);
-  std::swap(normal_, other->normal_);
-  std::swap(saxis_, other->saxis_);
-  std::swap(decalmaterialindex_, other->decalmaterialindex_);
-  std::swap(flags_, other->flags_);
-  std::swap(color_, other->color_);
-  std::swap(width_, other->width_);
-  std::swap(height_, other->height_);
-  std::swap(depth_, other->depth_);
-  std::swap(entityhandleindex_, other->entityhandleindex_);
-  std::swap(skeletoninstancehash_, other->skeletoninstancehash_);
-  std::swap(boneindex_, other->boneindex_);
-  std::swap(translucenthit_, other->translucenthit_);
-  std::swap(_has_bits_[0], other->_has_bits_[0]);
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  std::swap(_cached_size_, other->_cached_size_);
+  if (other != this) {
+    std::swap(position_, other->position_);
+    std::swap(normal_, other->normal_);
+    std::swap(saxis_, other->saxis_);
+    std::swap(decalmaterialindex_, other->decalmaterialindex_);
+    std::swap(flags_, other->flags_);
+    std::swap(color_, other->color_);
+    std::swap(width_, other->width_);
+    std::swap(height_, other->height_);
+    std::swap(depth_, other->depth_);
+    std::swap(entityhandleindex_, other->entityhandleindex_);
+    std::swap(skeletoninstancehash_, other->skeletoninstancehash_);
+    std::swap(boneindex_, other->boneindex_);
+    std::swap(translucenthit_, other->translucenthit_);
+    std::swap(_has_bits_[0], other->_has_bits_[0]);
+    _unknown_fields_.Swap(&other->_unknown_fields_);
+    std::swap(_cached_size_, other->_cached_size_);
+  }
 }
 
 ::google::protobuf::Metadata CMsgPlaceDecalEvent::GetMetadata() const {
@@ -1665,379 +1557,6 @@ void CMsgPlaceDecalEvent::InternalSwap(CMsgPlaceDecalEvent* other) {
   return metadata;
 }
 
-#if PROTOBUF_INLINE_NOT_IN_HEADERS
-// CMsgPlaceDecalEvent
-
-// optional .CMsgVector position = 1;
-bool CMsgPlaceDecalEvent::has_position() const {
-  return (_has_bits_[0] & 0x00000001u) != 0;
-}
-void CMsgPlaceDecalEvent::set_has_position() {
-  _has_bits_[0] |= 0x00000001u;
-}
-void CMsgPlaceDecalEvent::clear_has_position() {
-  _has_bits_[0] &= ~0x00000001u;
-}
-void CMsgPlaceDecalEvent::clear_position() {
-  if (position_ != NULL) position_->::CMsgVector::Clear();
-  clear_has_position();
-}
-const ::CMsgVector& CMsgPlaceDecalEvent::position() const {
-  // @@protoc_insertion_point(field_get:CMsgPlaceDecalEvent.position)
-  return position_ != NULL ? *position_ : *default_instance_->position_;
-}
-::CMsgVector* CMsgPlaceDecalEvent::mutable_position() {
-  set_has_position();
-  if (position_ == NULL) {
-    position_ = new ::CMsgVector;
-  }
-  // @@protoc_insertion_point(field_mutable:CMsgPlaceDecalEvent.position)
-  return position_;
-}
-::CMsgVector* CMsgPlaceDecalEvent::release_position() {
-  clear_has_position();
-  ::CMsgVector* temp = position_;
-  position_ = NULL;
-  return temp;
-}
-void CMsgPlaceDecalEvent::set_allocated_position(::CMsgVector* position) {
-  delete position_;
-  position_ = position;
-  if (position) {
-    set_has_position();
-  } else {
-    clear_has_position();
-  }
-  // @@protoc_insertion_point(field_set_allocated:CMsgPlaceDecalEvent.position)
-}
-
-// optional .CMsgVector normal = 2;
-bool CMsgPlaceDecalEvent::has_normal() const {
-  return (_has_bits_[0] & 0x00000002u) != 0;
-}
-void CMsgPlaceDecalEvent::set_has_normal() {
-  _has_bits_[0] |= 0x00000002u;
-}
-void CMsgPlaceDecalEvent::clear_has_normal() {
-  _has_bits_[0] &= ~0x00000002u;
-}
-void CMsgPlaceDecalEvent::clear_normal() {
-  if (normal_ != NULL) normal_->::CMsgVector::Clear();
-  clear_has_normal();
-}
-const ::CMsgVector& CMsgPlaceDecalEvent::normal() const {
-  // @@protoc_insertion_point(field_get:CMsgPlaceDecalEvent.normal)
-  return normal_ != NULL ? *normal_ : *default_instance_->normal_;
-}
-::CMsgVector* CMsgPlaceDecalEvent::mutable_normal() {
-  set_has_normal();
-  if (normal_ == NULL) {
-    normal_ = new ::CMsgVector;
-  }
-  // @@protoc_insertion_point(field_mutable:CMsgPlaceDecalEvent.normal)
-  return normal_;
-}
-::CMsgVector* CMsgPlaceDecalEvent::release_normal() {
-  clear_has_normal();
-  ::CMsgVector* temp = normal_;
-  normal_ = NULL;
-  return temp;
-}
-void CMsgPlaceDecalEvent::set_allocated_normal(::CMsgVector* normal) {
-  delete normal_;
-  normal_ = normal;
-  if (normal) {
-    set_has_normal();
-  } else {
-    clear_has_normal();
-  }
-  // @@protoc_insertion_point(field_set_allocated:CMsgPlaceDecalEvent.normal)
-}
-
-// optional .CMsgVector saxis = 3;
-bool CMsgPlaceDecalEvent::has_saxis() const {
-  return (_has_bits_[0] & 0x00000004u) != 0;
-}
-void CMsgPlaceDecalEvent::set_has_saxis() {
-  _has_bits_[0] |= 0x00000004u;
-}
-void CMsgPlaceDecalEvent::clear_has_saxis() {
-  _has_bits_[0] &= ~0x00000004u;
-}
-void CMsgPlaceDecalEvent::clear_saxis() {
-  if (saxis_ != NULL) saxis_->::CMsgVector::Clear();
-  clear_has_saxis();
-}
-const ::CMsgVector& CMsgPlaceDecalEvent::saxis() const {
-  // @@protoc_insertion_point(field_get:CMsgPlaceDecalEvent.saxis)
-  return saxis_ != NULL ? *saxis_ : *default_instance_->saxis_;
-}
-::CMsgVector* CMsgPlaceDecalEvent::mutable_saxis() {
-  set_has_saxis();
-  if (saxis_ == NULL) {
-    saxis_ = new ::CMsgVector;
-  }
-  // @@protoc_insertion_point(field_mutable:CMsgPlaceDecalEvent.saxis)
-  return saxis_;
-}
-::CMsgVector* CMsgPlaceDecalEvent::release_saxis() {
-  clear_has_saxis();
-  ::CMsgVector* temp = saxis_;
-  saxis_ = NULL;
-  return temp;
-}
-void CMsgPlaceDecalEvent::set_allocated_saxis(::CMsgVector* saxis) {
-  delete saxis_;
-  saxis_ = saxis;
-  if (saxis) {
-    set_has_saxis();
-  } else {
-    clear_has_saxis();
-  }
-  // @@protoc_insertion_point(field_set_allocated:CMsgPlaceDecalEvent.saxis)
-}
-
-// optional uint32 decalmaterialindex = 4;
-bool CMsgPlaceDecalEvent::has_decalmaterialindex() const {
-  return (_has_bits_[0] & 0x00000008u) != 0;
-}
-void CMsgPlaceDecalEvent::set_has_decalmaterialindex() {
-  _has_bits_[0] |= 0x00000008u;
-}
-void CMsgPlaceDecalEvent::clear_has_decalmaterialindex() {
-  _has_bits_[0] &= ~0x00000008u;
-}
-void CMsgPlaceDecalEvent::clear_decalmaterialindex() {
-  decalmaterialindex_ = 0u;
-  clear_has_decalmaterialindex();
-}
- ::google::protobuf::uint32 CMsgPlaceDecalEvent::decalmaterialindex() const {
-  // @@protoc_insertion_point(field_get:CMsgPlaceDecalEvent.decalmaterialindex)
-  return decalmaterialindex_;
-}
- void CMsgPlaceDecalEvent::set_decalmaterialindex(::google::protobuf::uint32 value) {
-  set_has_decalmaterialindex();
-  decalmaterialindex_ = value;
-  // @@protoc_insertion_point(field_set:CMsgPlaceDecalEvent.decalmaterialindex)
-}
-
-// optional uint32 flags = 5;
-bool CMsgPlaceDecalEvent::has_flags() const {
-  return (_has_bits_[0] & 0x00000010u) != 0;
-}
-void CMsgPlaceDecalEvent::set_has_flags() {
-  _has_bits_[0] |= 0x00000010u;
-}
-void CMsgPlaceDecalEvent::clear_has_flags() {
-  _has_bits_[0] &= ~0x00000010u;
-}
-void CMsgPlaceDecalEvent::clear_flags() {
-  flags_ = 0u;
-  clear_has_flags();
-}
- ::google::protobuf::uint32 CMsgPlaceDecalEvent::flags() const {
-  // @@protoc_insertion_point(field_get:CMsgPlaceDecalEvent.flags)
-  return flags_;
-}
- void CMsgPlaceDecalEvent::set_flags(::google::protobuf::uint32 value) {
-  set_has_flags();
-  flags_ = value;
-  // @@protoc_insertion_point(field_set:CMsgPlaceDecalEvent.flags)
-}
-
-// optional fixed32 color = 6;
-bool CMsgPlaceDecalEvent::has_color() const {
-  return (_has_bits_[0] & 0x00000020u) != 0;
-}
-void CMsgPlaceDecalEvent::set_has_color() {
-  _has_bits_[0] |= 0x00000020u;
-}
-void CMsgPlaceDecalEvent::clear_has_color() {
-  _has_bits_[0] &= ~0x00000020u;
-}
-void CMsgPlaceDecalEvent::clear_color() {
-  color_ = 0u;
-  clear_has_color();
-}
- ::google::protobuf::uint32 CMsgPlaceDecalEvent::color() const {
-  // @@protoc_insertion_point(field_get:CMsgPlaceDecalEvent.color)
-  return color_;
-}
- void CMsgPlaceDecalEvent::set_color(::google::protobuf::uint32 value) {
-  set_has_color();
-  color_ = value;
-  // @@protoc_insertion_point(field_set:CMsgPlaceDecalEvent.color)
-}
-
-// optional float width = 7;
-bool CMsgPlaceDecalEvent::has_width() const {
-  return (_has_bits_[0] & 0x00000040u) != 0;
-}
-void CMsgPlaceDecalEvent::set_has_width() {
-  _has_bits_[0] |= 0x00000040u;
-}
-void CMsgPlaceDecalEvent::clear_has_width() {
-  _has_bits_[0] &= ~0x00000040u;
-}
-void CMsgPlaceDecalEvent::clear_width() {
-  width_ = 0;
-  clear_has_width();
-}
- float CMsgPlaceDecalEvent::width() const {
-  // @@protoc_insertion_point(field_get:CMsgPlaceDecalEvent.width)
-  return width_;
-}
- void CMsgPlaceDecalEvent::set_width(float value) {
-  set_has_width();
-  width_ = value;
-  // @@protoc_insertion_point(field_set:CMsgPlaceDecalEvent.width)
-}
-
-// optional float height = 8;
-bool CMsgPlaceDecalEvent::has_height() const {
-  return (_has_bits_[0] & 0x00000080u) != 0;
-}
-void CMsgPlaceDecalEvent::set_has_height() {
-  _has_bits_[0] |= 0x00000080u;
-}
-void CMsgPlaceDecalEvent::clear_has_height() {
-  _has_bits_[0] &= ~0x00000080u;
-}
-void CMsgPlaceDecalEvent::clear_height() {
-  height_ = 0;
-  clear_has_height();
-}
- float CMsgPlaceDecalEvent::height() const {
-  // @@protoc_insertion_point(field_get:CMsgPlaceDecalEvent.height)
-  return height_;
-}
- void CMsgPlaceDecalEvent::set_height(float value) {
-  set_has_height();
-  height_ = value;
-  // @@protoc_insertion_point(field_set:CMsgPlaceDecalEvent.height)
-}
-
-// optional float depth = 9;
-bool CMsgPlaceDecalEvent::has_depth() const {
-  return (_has_bits_[0] & 0x00000100u) != 0;
-}
-void CMsgPlaceDecalEvent::set_has_depth() {
-  _has_bits_[0] |= 0x00000100u;
-}
-void CMsgPlaceDecalEvent::clear_has_depth() {
-  _has_bits_[0] &= ~0x00000100u;
-}
-void CMsgPlaceDecalEvent::clear_depth() {
-  depth_ = 0;
-  clear_has_depth();
-}
- float CMsgPlaceDecalEvent::depth() const {
-  // @@protoc_insertion_point(field_get:CMsgPlaceDecalEvent.depth)
-  return depth_;
-}
- void CMsgPlaceDecalEvent::set_depth(float value) {
-  set_has_depth();
-  depth_ = value;
-  // @@protoc_insertion_point(field_set:CMsgPlaceDecalEvent.depth)
-}
-
-// optional uint32 entityhandleindex = 10;
-bool CMsgPlaceDecalEvent::has_entityhandleindex() const {
-  return (_has_bits_[0] & 0x00000200u) != 0;
-}
-void CMsgPlaceDecalEvent::set_has_entityhandleindex() {
-  _has_bits_[0] |= 0x00000200u;
-}
-void CMsgPlaceDecalEvent::clear_has_entityhandleindex() {
-  _has_bits_[0] &= ~0x00000200u;
-}
-void CMsgPlaceDecalEvent::clear_entityhandleindex() {
-  entityhandleindex_ = 0u;
-  clear_has_entityhandleindex();
-}
- ::google::protobuf::uint32 CMsgPlaceDecalEvent::entityhandleindex() const {
-  // @@protoc_insertion_point(field_get:CMsgPlaceDecalEvent.entityhandleindex)
-  return entityhandleindex_;
-}
- void CMsgPlaceDecalEvent::set_entityhandleindex(::google::protobuf::uint32 value) {
-  set_has_entityhandleindex();
-  entityhandleindex_ = value;
-  // @@protoc_insertion_point(field_set:CMsgPlaceDecalEvent.entityhandleindex)
-}
-
-// optional fixed32 skeletoninstancehash = 11;
-bool CMsgPlaceDecalEvent::has_skeletoninstancehash() const {
-  return (_has_bits_[0] & 0x00000400u) != 0;
-}
-void CMsgPlaceDecalEvent::set_has_skeletoninstancehash() {
-  _has_bits_[0] |= 0x00000400u;
-}
-void CMsgPlaceDecalEvent::clear_has_skeletoninstancehash() {
-  _has_bits_[0] &= ~0x00000400u;
-}
-void CMsgPlaceDecalEvent::clear_skeletoninstancehash() {
-  skeletoninstancehash_ = 0u;
-  clear_has_skeletoninstancehash();
-}
- ::google::protobuf::uint32 CMsgPlaceDecalEvent::skeletoninstancehash() const {
-  // @@protoc_insertion_point(field_get:CMsgPlaceDecalEvent.skeletoninstancehash)
-  return skeletoninstancehash_;
-}
- void CMsgPlaceDecalEvent::set_skeletoninstancehash(::google::protobuf::uint32 value) {
-  set_has_skeletoninstancehash();
-  skeletoninstancehash_ = value;
-  // @@protoc_insertion_point(field_set:CMsgPlaceDecalEvent.skeletoninstancehash)
-}
-
-// optional int32 boneindex = 12;
-bool CMsgPlaceDecalEvent::has_boneindex() const {
-  return (_has_bits_[0] & 0x00000800u) != 0;
-}
-void CMsgPlaceDecalEvent::set_has_boneindex() {
-  _has_bits_[0] |= 0x00000800u;
-}
-void CMsgPlaceDecalEvent::clear_has_boneindex() {
-  _has_bits_[0] &= ~0x00000800u;
-}
-void CMsgPlaceDecalEvent::clear_boneindex() {
-  boneindex_ = 0;
-  clear_has_boneindex();
-}
- ::google::protobuf::int32 CMsgPlaceDecalEvent::boneindex() const {
-  // @@protoc_insertion_point(field_get:CMsgPlaceDecalEvent.boneindex)
-  return boneindex_;
-}
- void CMsgPlaceDecalEvent::set_boneindex(::google::protobuf::int32 value) {
-  set_has_boneindex();
-  boneindex_ = value;
-  // @@protoc_insertion_point(field_set:CMsgPlaceDecalEvent.boneindex)
-}
-
-// optional bool translucenthit = 13;
-bool CMsgPlaceDecalEvent::has_translucenthit() const {
-  return (_has_bits_[0] & 0x00001000u) != 0;
-}
-void CMsgPlaceDecalEvent::set_has_translucenthit() {
-  _has_bits_[0] |= 0x00001000u;
-}
-void CMsgPlaceDecalEvent::clear_has_translucenthit() {
-  _has_bits_[0] &= ~0x00001000u;
-}
-void CMsgPlaceDecalEvent::clear_translucenthit() {
-  translucenthit_ = false;
-  clear_has_translucenthit();
-}
- bool CMsgPlaceDecalEvent::translucenthit() const {
-  // @@protoc_insertion_point(field_get:CMsgPlaceDecalEvent.translucenthit)
-  return translucenthit_;
-}
- void CMsgPlaceDecalEvent::set_translucenthit(bool value) {
-  set_has_translucenthit();
-  translucenthit_ = value;
-  // @@protoc_insertion_point(field_set:CMsgPlaceDecalEvent.translucenthit)
-}
-
-#endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
 
 // ===================================================================
 
@@ -2046,7 +1565,7 @@ const int CMsgClearWorldDecalsEvent::kFlagstoclearFieldNumber;
 #endif  // !_MSC_VER
 
 CMsgClearWorldDecalsEvent::CMsgClearWorldDecalsEvent()
-  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  : ::google::protobuf::Message() {
   SharedCtor();
   // @@protoc_insertion_point(constructor:CMsgClearWorldDecalsEvent)
 }
@@ -2055,8 +1574,7 @@ void CMsgClearWorldDecalsEvent::InitAsDefaultInstance() {
 }
 
 CMsgClearWorldDecalsEvent::CMsgClearWorldDecalsEvent(const CMsgClearWorldDecalsEvent& from)
-  : ::google::protobuf::Message(),
-    _internal_metadata_(NULL) {
+  : ::google::protobuf::Message() {
   SharedCtor();
   MergeFrom(from);
   // @@protoc_insertion_point(copy_constructor:CMsgClearWorldDecalsEvent)
@@ -2095,20 +1613,14 @@ const CMsgClearWorldDecalsEvent& CMsgClearWorldDecalsEvent::default_instance() {
 
 CMsgClearWorldDecalsEvent* CMsgClearWorldDecalsEvent::default_instance_ = NULL;
 
-CMsgClearWorldDecalsEvent* CMsgClearWorldDecalsEvent::New(::google::protobuf::Arena* arena) const {
-  CMsgClearWorldDecalsEvent* n = new CMsgClearWorldDecalsEvent;
-  if (arena != NULL) {
-    arena->Own(n);
-  }
-  return n;
+CMsgClearWorldDecalsEvent* CMsgClearWorldDecalsEvent::New() const {
+  return new CMsgClearWorldDecalsEvent;
 }
 
 void CMsgClearWorldDecalsEvent::Clear() {
   flagstoclear_ = 0u;
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
-  if (_internal_metadata_.have_unknown_fields()) {
-    mutable_unknown_fields()->Clear();
-  }
+  mutable_unknown_fields()->Clear();
 }
 
 bool CMsgClearWorldDecalsEvent::MergePartialFromCodedStream(
@@ -2165,7 +1677,7 @@ void CMsgClearWorldDecalsEvent::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteUInt32(1, this->flagstoclear(), output);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
   }
@@ -2180,7 +1692,7 @@ void CMsgClearWorldDecalsEvent::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(1, this->flagstoclear(), target);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
   }
@@ -2191,14 +1703,16 @@ void CMsgClearWorldDecalsEvent::SerializeWithCachedSizes(
 int CMsgClearWorldDecalsEvent::ByteSize() const {
   int total_size = 0;
 
-  // optional uint32 flagstoclear = 1;
-  if (has_flagstoclear()) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::UInt32Size(
-        this->flagstoclear());
-  }
+  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    // optional uint32 flagstoclear = 1;
+    if (has_flagstoclear()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::UInt32Size(
+          this->flagstoclear());
+    }
 
-  if (_internal_metadata_.have_unknown_fields()) {
+  }
+  if (!unknown_fields().empty()) {
     total_size +=
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         unknown_fields());
@@ -2210,10 +1724,10 @@ int CMsgClearWorldDecalsEvent::ByteSize() const {
 }
 
 void CMsgClearWorldDecalsEvent::MergeFrom(const ::google::protobuf::Message& from) {
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
-  const CMsgClearWorldDecalsEvent* source = 
-      ::google::protobuf::internal::DynamicCastToGenerated<const CMsgClearWorldDecalsEvent>(
-          &from);
+  GOOGLE_CHECK_NE(&from, this);
+  const CMsgClearWorldDecalsEvent* source =
+    ::google::protobuf::internal::dynamic_cast_if_available<const CMsgClearWorldDecalsEvent*>(
+      &from);
   if (source == NULL) {
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
   } else {
@@ -2222,15 +1736,13 @@ void CMsgClearWorldDecalsEvent::MergeFrom(const ::google::protobuf::Message& fro
 }
 
 void CMsgClearWorldDecalsEvent::MergeFrom(const CMsgClearWorldDecalsEvent& from) {
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  GOOGLE_CHECK_NE(&from, this);
   if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (from.has_flagstoclear()) {
       set_flagstoclear(from.flagstoclear());
     }
   }
-  if (from._internal_metadata_.have_unknown_fields()) {
-    mutable_unknown_fields()->MergeFrom(from.unknown_fields());
-  }
+  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
 }
 
 void CMsgClearWorldDecalsEvent::CopyFrom(const ::google::protobuf::Message& from) {
@@ -2251,14 +1763,12 @@ bool CMsgClearWorldDecalsEvent::IsInitialized() const {
 }
 
 void CMsgClearWorldDecalsEvent::Swap(CMsgClearWorldDecalsEvent* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
-void CMsgClearWorldDecalsEvent::InternalSwap(CMsgClearWorldDecalsEvent* other) {
-  std::swap(flagstoclear_, other->flagstoclear_);
-  std::swap(_has_bits_[0], other->_has_bits_[0]);
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  std::swap(_cached_size_, other->_cached_size_);
+  if (other != this) {
+    std::swap(flagstoclear_, other->flagstoclear_);
+    std::swap(_has_bits_[0], other->_has_bits_[0]);
+    _unknown_fields_.Swap(&other->_unknown_fields_);
+    std::swap(_cached_size_, other->_cached_size_);
+  }
 }
 
 ::google::protobuf::Metadata CMsgClearWorldDecalsEvent::GetMetadata() const {
@@ -2269,34 +1779,6 @@ void CMsgClearWorldDecalsEvent::InternalSwap(CMsgClearWorldDecalsEvent* other) {
   return metadata;
 }
 
-#if PROTOBUF_INLINE_NOT_IN_HEADERS
-// CMsgClearWorldDecalsEvent
-
-// optional uint32 flagstoclear = 1;
-bool CMsgClearWorldDecalsEvent::has_flagstoclear() const {
-  return (_has_bits_[0] & 0x00000001u) != 0;
-}
-void CMsgClearWorldDecalsEvent::set_has_flagstoclear() {
-  _has_bits_[0] |= 0x00000001u;
-}
-void CMsgClearWorldDecalsEvent::clear_has_flagstoclear() {
-  _has_bits_[0] &= ~0x00000001u;
-}
-void CMsgClearWorldDecalsEvent::clear_flagstoclear() {
-  flagstoclear_ = 0u;
-  clear_has_flagstoclear();
-}
- ::google::protobuf::uint32 CMsgClearWorldDecalsEvent::flagstoclear() const {
-  // @@protoc_insertion_point(field_get:CMsgClearWorldDecalsEvent.flagstoclear)
-  return flagstoclear_;
-}
- void CMsgClearWorldDecalsEvent::set_flagstoclear(::google::protobuf::uint32 value) {
-  set_has_flagstoclear();
-  flagstoclear_ = value;
-  // @@protoc_insertion_point(field_set:CMsgClearWorldDecalsEvent.flagstoclear)
-}
-
-#endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
 
 // ===================================================================
 
@@ -2305,7 +1787,7 @@ const int CMsgClearEntityDecalsEvent::kFlagstoclearFieldNumber;
 #endif  // !_MSC_VER
 
 CMsgClearEntityDecalsEvent::CMsgClearEntityDecalsEvent()
-  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  : ::google::protobuf::Message() {
   SharedCtor();
   // @@protoc_insertion_point(constructor:CMsgClearEntityDecalsEvent)
 }
@@ -2314,8 +1796,7 @@ void CMsgClearEntityDecalsEvent::InitAsDefaultInstance() {
 }
 
 CMsgClearEntityDecalsEvent::CMsgClearEntityDecalsEvent(const CMsgClearEntityDecalsEvent& from)
-  : ::google::protobuf::Message(),
-    _internal_metadata_(NULL) {
+  : ::google::protobuf::Message() {
   SharedCtor();
   MergeFrom(from);
   // @@protoc_insertion_point(copy_constructor:CMsgClearEntityDecalsEvent)
@@ -2354,20 +1835,14 @@ const CMsgClearEntityDecalsEvent& CMsgClearEntityDecalsEvent::default_instance()
 
 CMsgClearEntityDecalsEvent* CMsgClearEntityDecalsEvent::default_instance_ = NULL;
 
-CMsgClearEntityDecalsEvent* CMsgClearEntityDecalsEvent::New(::google::protobuf::Arena* arena) const {
-  CMsgClearEntityDecalsEvent* n = new CMsgClearEntityDecalsEvent;
-  if (arena != NULL) {
-    arena->Own(n);
-  }
-  return n;
+CMsgClearEntityDecalsEvent* CMsgClearEntityDecalsEvent::New() const {
+  return new CMsgClearEntityDecalsEvent;
 }
 
 void CMsgClearEntityDecalsEvent::Clear() {
   flagstoclear_ = 0u;
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
-  if (_internal_metadata_.have_unknown_fields()) {
-    mutable_unknown_fields()->Clear();
-  }
+  mutable_unknown_fields()->Clear();
 }
 
 bool CMsgClearEntityDecalsEvent::MergePartialFromCodedStream(
@@ -2424,7 +1899,7 @@ void CMsgClearEntityDecalsEvent::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteUInt32(1, this->flagstoclear(), output);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
   }
@@ -2439,7 +1914,7 @@ void CMsgClearEntityDecalsEvent::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(1, this->flagstoclear(), target);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
   }
@@ -2450,14 +1925,16 @@ void CMsgClearEntityDecalsEvent::SerializeWithCachedSizes(
 int CMsgClearEntityDecalsEvent::ByteSize() const {
   int total_size = 0;
 
-  // optional uint32 flagstoclear = 1;
-  if (has_flagstoclear()) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::UInt32Size(
-        this->flagstoclear());
-  }
+  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    // optional uint32 flagstoclear = 1;
+    if (has_flagstoclear()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::UInt32Size(
+          this->flagstoclear());
+    }
 
-  if (_internal_metadata_.have_unknown_fields()) {
+  }
+  if (!unknown_fields().empty()) {
     total_size +=
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         unknown_fields());
@@ -2469,10 +1946,10 @@ int CMsgClearEntityDecalsEvent::ByteSize() const {
 }
 
 void CMsgClearEntityDecalsEvent::MergeFrom(const ::google::protobuf::Message& from) {
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
-  const CMsgClearEntityDecalsEvent* source = 
-      ::google::protobuf::internal::DynamicCastToGenerated<const CMsgClearEntityDecalsEvent>(
-          &from);
+  GOOGLE_CHECK_NE(&from, this);
+  const CMsgClearEntityDecalsEvent* source =
+    ::google::protobuf::internal::dynamic_cast_if_available<const CMsgClearEntityDecalsEvent*>(
+      &from);
   if (source == NULL) {
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
   } else {
@@ -2481,15 +1958,13 @@ void CMsgClearEntityDecalsEvent::MergeFrom(const ::google::protobuf::Message& fr
 }
 
 void CMsgClearEntityDecalsEvent::MergeFrom(const CMsgClearEntityDecalsEvent& from) {
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  GOOGLE_CHECK_NE(&from, this);
   if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (from.has_flagstoclear()) {
       set_flagstoclear(from.flagstoclear());
     }
   }
-  if (from._internal_metadata_.have_unknown_fields()) {
-    mutable_unknown_fields()->MergeFrom(from.unknown_fields());
-  }
+  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
 }
 
 void CMsgClearEntityDecalsEvent::CopyFrom(const ::google::protobuf::Message& from) {
@@ -2510,14 +1985,12 @@ bool CMsgClearEntityDecalsEvent::IsInitialized() const {
 }
 
 void CMsgClearEntityDecalsEvent::Swap(CMsgClearEntityDecalsEvent* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
-void CMsgClearEntityDecalsEvent::InternalSwap(CMsgClearEntityDecalsEvent* other) {
-  std::swap(flagstoclear_, other->flagstoclear_);
-  std::swap(_has_bits_[0], other->_has_bits_[0]);
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  std::swap(_cached_size_, other->_cached_size_);
+  if (other != this) {
+    std::swap(flagstoclear_, other->flagstoclear_);
+    std::swap(_has_bits_[0], other->_has_bits_[0]);
+    _unknown_fields_.Swap(&other->_unknown_fields_);
+    std::swap(_cached_size_, other->_cached_size_);
+  }
 }
 
 ::google::protobuf::Metadata CMsgClearEntityDecalsEvent::GetMetadata() const {
@@ -2528,34 +2001,6 @@ void CMsgClearEntityDecalsEvent::InternalSwap(CMsgClearEntityDecalsEvent* other)
   return metadata;
 }
 
-#if PROTOBUF_INLINE_NOT_IN_HEADERS
-// CMsgClearEntityDecalsEvent
-
-// optional uint32 flagstoclear = 1;
-bool CMsgClearEntityDecalsEvent::has_flagstoclear() const {
-  return (_has_bits_[0] & 0x00000001u) != 0;
-}
-void CMsgClearEntityDecalsEvent::set_has_flagstoclear() {
-  _has_bits_[0] |= 0x00000001u;
-}
-void CMsgClearEntityDecalsEvent::clear_has_flagstoclear() {
-  _has_bits_[0] &= ~0x00000001u;
-}
-void CMsgClearEntityDecalsEvent::clear_flagstoclear() {
-  flagstoclear_ = 0u;
-  clear_has_flagstoclear();
-}
- ::google::protobuf::uint32 CMsgClearEntityDecalsEvent::flagstoclear() const {
-  // @@protoc_insertion_point(field_get:CMsgClearEntityDecalsEvent.flagstoclear)
-  return flagstoclear_;
-}
- void CMsgClearEntityDecalsEvent::set_flagstoclear(::google::protobuf::uint32 value) {
-  set_has_flagstoclear();
-  flagstoclear_ = value;
-  // @@protoc_insertion_point(field_set:CMsgClearEntityDecalsEvent.flagstoclear)
-}
-
-#endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
 
 // ===================================================================
 
@@ -2566,7 +2011,7 @@ const int CMsgClearDecalsForSkeletonInstanceEvent::kSkeletoninstancehashFieldNum
 #endif  // !_MSC_VER
 
 CMsgClearDecalsForSkeletonInstanceEvent::CMsgClearDecalsForSkeletonInstanceEvent()
-  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  : ::google::protobuf::Message() {
   SharedCtor();
   // @@protoc_insertion_point(constructor:CMsgClearDecalsForSkeletonInstanceEvent)
 }
@@ -2575,8 +2020,7 @@ void CMsgClearDecalsForSkeletonInstanceEvent::InitAsDefaultInstance() {
 }
 
 CMsgClearDecalsForSkeletonInstanceEvent::CMsgClearDecalsForSkeletonInstanceEvent(const CMsgClearDecalsForSkeletonInstanceEvent& from)
-  : ::google::protobuf::Message(),
-    _internal_metadata_(NULL) {
+  : ::google::protobuf::Message() {
   SharedCtor();
   MergeFrom(from);
   // @@protoc_insertion_point(copy_constructor:CMsgClearDecalsForSkeletonInstanceEvent)
@@ -2617,32 +2061,28 @@ const CMsgClearDecalsForSkeletonInstanceEvent& CMsgClearDecalsForSkeletonInstanc
 
 CMsgClearDecalsForSkeletonInstanceEvent* CMsgClearDecalsForSkeletonInstanceEvent::default_instance_ = NULL;
 
-CMsgClearDecalsForSkeletonInstanceEvent* CMsgClearDecalsForSkeletonInstanceEvent::New(::google::protobuf::Arena* arena) const {
-  CMsgClearDecalsForSkeletonInstanceEvent* n = new CMsgClearDecalsForSkeletonInstanceEvent;
-  if (arena != NULL) {
-    arena->Own(n);
-  }
-  return n;
+CMsgClearDecalsForSkeletonInstanceEvent* CMsgClearDecalsForSkeletonInstanceEvent::New() const {
+  return new CMsgClearDecalsForSkeletonInstanceEvent;
 }
 
 void CMsgClearDecalsForSkeletonInstanceEvent::Clear() {
-#define ZR_HELPER_(f) reinterpret_cast<char*>(\
-  &reinterpret_cast<CMsgClearDecalsForSkeletonInstanceEvent*>(16)->f)
+#define OFFSET_OF_FIELD_(f) (reinterpret_cast<char*>(      \
+  &reinterpret_cast<CMsgClearDecalsForSkeletonInstanceEvent*>(16)->f) - \
+   reinterpret_cast<char*>(16))
 
-#define ZR_(first, last) do {\
-  ::memset(&first, 0,\
-           ZR_HELPER_(last) - ZR_HELPER_(first) + sizeof(last));\
-} while (0)
+#define ZR_(first, last) do {                              \
+    size_t f = OFFSET_OF_FIELD_(first);                    \
+    size_t n = OFFSET_OF_FIELD_(last) - f + sizeof(last);  \
+    ::memset(&first, 0, n);                                \
+  } while (0)
 
   ZR_(flagstoclear_, skeletoninstancehash_);
 
-#undef ZR_HELPER_
+#undef OFFSET_OF_FIELD_
 #undef ZR_
 
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
-  if (_internal_metadata_.have_unknown_fields()) {
-    mutable_unknown_fields()->Clear();
-  }
+  mutable_unknown_fields()->Clear();
 }
 
 bool CMsgClearDecalsForSkeletonInstanceEvent::MergePartialFromCodedStream(
@@ -2739,7 +2179,7 @@ void CMsgClearDecalsForSkeletonInstanceEvent::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteUInt32(3, this->skeletoninstancehash(), output);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
   }
@@ -2764,7 +2204,7 @@ void CMsgClearDecalsForSkeletonInstanceEvent::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(3, this->skeletoninstancehash(), target);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
   }
@@ -2775,7 +2215,7 @@ void CMsgClearDecalsForSkeletonInstanceEvent::SerializeWithCachedSizes(
 int CMsgClearDecalsForSkeletonInstanceEvent::ByteSize() const {
   int total_size = 0;
 
-  if (_has_bits_[0 / 32] & 7u) {
+  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     // optional uint32 flagstoclear = 1;
     if (has_flagstoclear()) {
       total_size += 1 +
@@ -2798,7 +2238,7 @@ int CMsgClearDecalsForSkeletonInstanceEvent::ByteSize() const {
     }
 
   }
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     total_size +=
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         unknown_fields());
@@ -2810,10 +2250,10 @@ int CMsgClearDecalsForSkeletonInstanceEvent::ByteSize() const {
 }
 
 void CMsgClearDecalsForSkeletonInstanceEvent::MergeFrom(const ::google::protobuf::Message& from) {
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
-  const CMsgClearDecalsForSkeletonInstanceEvent* source = 
-      ::google::protobuf::internal::DynamicCastToGenerated<const CMsgClearDecalsForSkeletonInstanceEvent>(
-          &from);
+  GOOGLE_CHECK_NE(&from, this);
+  const CMsgClearDecalsForSkeletonInstanceEvent* source =
+    ::google::protobuf::internal::dynamic_cast_if_available<const CMsgClearDecalsForSkeletonInstanceEvent*>(
+      &from);
   if (source == NULL) {
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
   } else {
@@ -2822,7 +2262,7 @@ void CMsgClearDecalsForSkeletonInstanceEvent::MergeFrom(const ::google::protobuf
 }
 
 void CMsgClearDecalsForSkeletonInstanceEvent::MergeFrom(const CMsgClearDecalsForSkeletonInstanceEvent& from) {
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  GOOGLE_CHECK_NE(&from, this);
   if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (from.has_flagstoclear()) {
       set_flagstoclear(from.flagstoclear());
@@ -2834,9 +2274,7 @@ void CMsgClearDecalsForSkeletonInstanceEvent::MergeFrom(const CMsgClearDecalsFor
       set_skeletoninstancehash(from.skeletoninstancehash());
     }
   }
-  if (from._internal_metadata_.have_unknown_fields()) {
-    mutable_unknown_fields()->MergeFrom(from.unknown_fields());
-  }
+  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
 }
 
 void CMsgClearDecalsForSkeletonInstanceEvent::CopyFrom(const ::google::protobuf::Message& from) {
@@ -2857,16 +2295,14 @@ bool CMsgClearDecalsForSkeletonInstanceEvent::IsInitialized() const {
 }
 
 void CMsgClearDecalsForSkeletonInstanceEvent::Swap(CMsgClearDecalsForSkeletonInstanceEvent* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
-void CMsgClearDecalsForSkeletonInstanceEvent::InternalSwap(CMsgClearDecalsForSkeletonInstanceEvent* other) {
-  std::swap(flagstoclear_, other->flagstoclear_);
-  std::swap(entityhandleindex_, other->entityhandleindex_);
-  std::swap(skeletoninstancehash_, other->skeletoninstancehash_);
-  std::swap(_has_bits_[0], other->_has_bits_[0]);
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  std::swap(_cached_size_, other->_cached_size_);
+  if (other != this) {
+    std::swap(flagstoclear_, other->flagstoclear_);
+    std::swap(entityhandleindex_, other->entityhandleindex_);
+    std::swap(skeletoninstancehash_, other->skeletoninstancehash_);
+    std::swap(_has_bits_[0], other->_has_bits_[0]);
+    _unknown_fields_.Swap(&other->_unknown_fields_);
+    std::swap(_cached_size_, other->_cached_size_);
+  }
 }
 
 ::google::protobuf::Metadata CMsgClearDecalsForSkeletonInstanceEvent::GetMetadata() const {
@@ -2877,82 +2313,6 @@ void CMsgClearDecalsForSkeletonInstanceEvent::InternalSwap(CMsgClearDecalsForSke
   return metadata;
 }
 
-#if PROTOBUF_INLINE_NOT_IN_HEADERS
-// CMsgClearDecalsForSkeletonInstanceEvent
-
-// optional uint32 flagstoclear = 1;
-bool CMsgClearDecalsForSkeletonInstanceEvent::has_flagstoclear() const {
-  return (_has_bits_[0] & 0x00000001u) != 0;
-}
-void CMsgClearDecalsForSkeletonInstanceEvent::set_has_flagstoclear() {
-  _has_bits_[0] |= 0x00000001u;
-}
-void CMsgClearDecalsForSkeletonInstanceEvent::clear_has_flagstoclear() {
-  _has_bits_[0] &= ~0x00000001u;
-}
-void CMsgClearDecalsForSkeletonInstanceEvent::clear_flagstoclear() {
-  flagstoclear_ = 0u;
-  clear_has_flagstoclear();
-}
- ::google::protobuf::uint32 CMsgClearDecalsForSkeletonInstanceEvent::flagstoclear() const {
-  // @@protoc_insertion_point(field_get:CMsgClearDecalsForSkeletonInstanceEvent.flagstoclear)
-  return flagstoclear_;
-}
- void CMsgClearDecalsForSkeletonInstanceEvent::set_flagstoclear(::google::protobuf::uint32 value) {
-  set_has_flagstoclear();
-  flagstoclear_ = value;
-  // @@protoc_insertion_point(field_set:CMsgClearDecalsForSkeletonInstanceEvent.flagstoclear)
-}
-
-// optional uint32 entityhandleindex = 2;
-bool CMsgClearDecalsForSkeletonInstanceEvent::has_entityhandleindex() const {
-  return (_has_bits_[0] & 0x00000002u) != 0;
-}
-void CMsgClearDecalsForSkeletonInstanceEvent::set_has_entityhandleindex() {
-  _has_bits_[0] |= 0x00000002u;
-}
-void CMsgClearDecalsForSkeletonInstanceEvent::clear_has_entityhandleindex() {
-  _has_bits_[0] &= ~0x00000002u;
-}
-void CMsgClearDecalsForSkeletonInstanceEvent::clear_entityhandleindex() {
-  entityhandleindex_ = 0u;
-  clear_has_entityhandleindex();
-}
- ::google::protobuf::uint32 CMsgClearDecalsForSkeletonInstanceEvent::entityhandleindex() const {
-  // @@protoc_insertion_point(field_get:CMsgClearDecalsForSkeletonInstanceEvent.entityhandleindex)
-  return entityhandleindex_;
-}
- void CMsgClearDecalsForSkeletonInstanceEvent::set_entityhandleindex(::google::protobuf::uint32 value) {
-  set_has_entityhandleindex();
-  entityhandleindex_ = value;
-  // @@protoc_insertion_point(field_set:CMsgClearDecalsForSkeletonInstanceEvent.entityhandleindex)
-}
-
-// optional uint32 skeletoninstancehash = 3;
-bool CMsgClearDecalsForSkeletonInstanceEvent::has_skeletoninstancehash() const {
-  return (_has_bits_[0] & 0x00000004u) != 0;
-}
-void CMsgClearDecalsForSkeletonInstanceEvent::set_has_skeletoninstancehash() {
-  _has_bits_[0] |= 0x00000004u;
-}
-void CMsgClearDecalsForSkeletonInstanceEvent::clear_has_skeletoninstancehash() {
-  _has_bits_[0] &= ~0x00000004u;
-}
-void CMsgClearDecalsForSkeletonInstanceEvent::clear_skeletoninstancehash() {
-  skeletoninstancehash_ = 0u;
-  clear_has_skeletoninstancehash();
-}
- ::google::protobuf::uint32 CMsgClearDecalsForSkeletonInstanceEvent::skeletoninstancehash() const {
-  // @@protoc_insertion_point(field_get:CMsgClearDecalsForSkeletonInstanceEvent.skeletoninstancehash)
-  return skeletoninstancehash_;
-}
- void CMsgClearDecalsForSkeletonInstanceEvent::set_skeletoninstancehash(::google::protobuf::uint32 value) {
-  set_has_skeletoninstancehash();
-  skeletoninstancehash_ = value;
-  // @@protoc_insertion_point(field_set:CMsgClearDecalsForSkeletonInstanceEvent.skeletoninstancehash)
-}
-
-#endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
 
 // ===================================================================
 
@@ -2962,7 +2322,7 @@ const int CMsgSource1LegacyGameEventList_key_t::kNameFieldNumber;
 #endif  // !_MSC_VER
 
 CMsgSource1LegacyGameEventList_key_t::CMsgSource1LegacyGameEventList_key_t()
-  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  : ::google::protobuf::Message() {
   SharedCtor();
   // @@protoc_insertion_point(constructor:CMsgSource1LegacyGameEventList.key_t)
 }
@@ -2971,8 +2331,7 @@ void CMsgSource1LegacyGameEventList_key_t::InitAsDefaultInstance() {
 }
 
 CMsgSource1LegacyGameEventList_key_t::CMsgSource1LegacyGameEventList_key_t(const CMsgSource1LegacyGameEventList_key_t& from)
-  : ::google::protobuf::Message(),
-    _internal_metadata_(NULL) {
+  : ::google::protobuf::Message() {
   SharedCtor();
   MergeFrom(from);
   // @@protoc_insertion_point(copy_constructor:CMsgSource1LegacyGameEventList.key_t)
@@ -2982,7 +2341,7 @@ void CMsgSource1LegacyGameEventList_key_t::SharedCtor() {
   ::google::protobuf::internal::GetEmptyString();
   _cached_size_ = 0;
   type_ = 0;
-  name_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  name_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
 
@@ -2992,7 +2351,9 @@ CMsgSource1LegacyGameEventList_key_t::~CMsgSource1LegacyGameEventList_key_t() {
 }
 
 void CMsgSource1LegacyGameEventList_key_t::SharedDtor() {
-  name_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (name_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete name_;
+  }
   if (this != default_instance_) {
   }
 }
@@ -3014,25 +2375,21 @@ const CMsgSource1LegacyGameEventList_key_t& CMsgSource1LegacyGameEventList_key_t
 
 CMsgSource1LegacyGameEventList_key_t* CMsgSource1LegacyGameEventList_key_t::default_instance_ = NULL;
 
-CMsgSource1LegacyGameEventList_key_t* CMsgSource1LegacyGameEventList_key_t::New(::google::protobuf::Arena* arena) const {
-  CMsgSource1LegacyGameEventList_key_t* n = new CMsgSource1LegacyGameEventList_key_t;
-  if (arena != NULL) {
-    arena->Own(n);
-  }
-  return n;
+CMsgSource1LegacyGameEventList_key_t* CMsgSource1LegacyGameEventList_key_t::New() const {
+  return new CMsgSource1LegacyGameEventList_key_t;
 }
 
 void CMsgSource1LegacyGameEventList_key_t::Clear() {
-  if (_has_bits_[0 / 32] & 3u) {
+  if (_has_bits_[0 / 32] & 3) {
     type_ = 0;
     if (has_name()) {
-      name_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+      if (name_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+        name_->clear();
+      }
     }
   }
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
-  if (_internal_metadata_.have_unknown_fields()) {
-    mutable_unknown_fields()->Clear();
-  }
+  mutable_unknown_fields()->Clear();
 }
 
 bool CMsgSource1LegacyGameEventList_key_t::MergePartialFromCodedStream(
@@ -3068,7 +2425,7 @@ bool CMsgSource1LegacyGameEventList_key_t::MergePartialFromCodedStream(
           ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
             this->name().data(), this->name().length(),
             ::google::protobuf::internal::WireFormat::PARSE,
-            "CMsgSource1LegacyGameEventList.key_t.name");
+            "name");
         } else {
           goto handle_unusual;
         }
@@ -3111,12 +2468,12 @@ void CMsgSource1LegacyGameEventList_key_t::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
       this->name().data(), this->name().length(),
       ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "CMsgSource1LegacyGameEventList.key_t.name");
+      "name");
     ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
       2, this->name(), output);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
   }
@@ -3136,13 +2493,13 @@ void CMsgSource1LegacyGameEventList_key_t::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
       this->name().data(), this->name().length(),
       ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "CMsgSource1LegacyGameEventList.key_t.name");
+      "name");
     target =
       ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
         2, this->name(), target);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
   }
@@ -3153,7 +2510,7 @@ void CMsgSource1LegacyGameEventList_key_t::SerializeWithCachedSizes(
 int CMsgSource1LegacyGameEventList_key_t::ByteSize() const {
   int total_size = 0;
 
-  if (_has_bits_[0 / 32] & 3u) {
+  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     // optional int32 type = 1;
     if (has_type()) {
       total_size += 1 +
@@ -3169,7 +2526,7 @@ int CMsgSource1LegacyGameEventList_key_t::ByteSize() const {
     }
 
   }
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     total_size +=
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         unknown_fields());
@@ -3181,10 +2538,10 @@ int CMsgSource1LegacyGameEventList_key_t::ByteSize() const {
 }
 
 void CMsgSource1LegacyGameEventList_key_t::MergeFrom(const ::google::protobuf::Message& from) {
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
-  const CMsgSource1LegacyGameEventList_key_t* source = 
-      ::google::protobuf::internal::DynamicCastToGenerated<const CMsgSource1LegacyGameEventList_key_t>(
-          &from);
+  GOOGLE_CHECK_NE(&from, this);
+  const CMsgSource1LegacyGameEventList_key_t* source =
+    ::google::protobuf::internal::dynamic_cast_if_available<const CMsgSource1LegacyGameEventList_key_t*>(
+      &from);
   if (source == NULL) {
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
   } else {
@@ -3193,19 +2550,16 @@ void CMsgSource1LegacyGameEventList_key_t::MergeFrom(const ::google::protobuf::M
 }
 
 void CMsgSource1LegacyGameEventList_key_t::MergeFrom(const CMsgSource1LegacyGameEventList_key_t& from) {
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  GOOGLE_CHECK_NE(&from, this);
   if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (from.has_type()) {
       set_type(from.type());
     }
     if (from.has_name()) {
-      set_has_name();
-      name_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.name_);
+      set_name(from.name());
     }
   }
-  if (from._internal_metadata_.have_unknown_fields()) {
-    mutable_unknown_fields()->MergeFrom(from.unknown_fields());
-  }
+  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
 }
 
 void CMsgSource1LegacyGameEventList_key_t::CopyFrom(const ::google::protobuf::Message& from) {
@@ -3226,15 +2580,13 @@ bool CMsgSource1LegacyGameEventList_key_t::IsInitialized() const {
 }
 
 void CMsgSource1LegacyGameEventList_key_t::Swap(CMsgSource1LegacyGameEventList_key_t* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
-void CMsgSource1LegacyGameEventList_key_t::InternalSwap(CMsgSource1LegacyGameEventList_key_t* other) {
-  std::swap(type_, other->type_);
-  name_.Swap(&other->name_);
-  std::swap(_has_bits_[0], other->_has_bits_[0]);
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  std::swap(_cached_size_, other->_cached_size_);
+  if (other != this) {
+    std::swap(type_, other->type_);
+    std::swap(name_, other->name_);
+    std::swap(_has_bits_[0], other->_has_bits_[0]);
+    _unknown_fields_.Swap(&other->_unknown_fields_);
+    std::swap(_cached_size_, other->_cached_size_);
+  }
 }
 
 ::google::protobuf::Metadata CMsgSource1LegacyGameEventList_key_t::GetMetadata() const {
@@ -3255,7 +2607,7 @@ const int CMsgSource1LegacyGameEventList_descriptor_t::kKeysFieldNumber;
 #endif  // !_MSC_VER
 
 CMsgSource1LegacyGameEventList_descriptor_t::CMsgSource1LegacyGameEventList_descriptor_t()
-  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  : ::google::protobuf::Message() {
   SharedCtor();
   // @@protoc_insertion_point(constructor:CMsgSource1LegacyGameEventList.descriptor_t)
 }
@@ -3264,8 +2616,7 @@ void CMsgSource1LegacyGameEventList_descriptor_t::InitAsDefaultInstance() {
 }
 
 CMsgSource1LegacyGameEventList_descriptor_t::CMsgSource1LegacyGameEventList_descriptor_t(const CMsgSource1LegacyGameEventList_descriptor_t& from)
-  : ::google::protobuf::Message(),
-    _internal_metadata_(NULL) {
+  : ::google::protobuf::Message() {
   SharedCtor();
   MergeFrom(from);
   // @@protoc_insertion_point(copy_constructor:CMsgSource1LegacyGameEventList.descriptor_t)
@@ -3275,7 +2626,7 @@ void CMsgSource1LegacyGameEventList_descriptor_t::SharedCtor() {
   ::google::protobuf::internal::GetEmptyString();
   _cached_size_ = 0;
   eventid_ = 0;
-  name_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  name_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
 
@@ -3285,7 +2636,9 @@ CMsgSource1LegacyGameEventList_descriptor_t::~CMsgSource1LegacyGameEventList_des
 }
 
 void CMsgSource1LegacyGameEventList_descriptor_t::SharedDtor() {
-  name_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (name_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete name_;
+  }
   if (this != default_instance_) {
   }
 }
@@ -3307,26 +2660,22 @@ const CMsgSource1LegacyGameEventList_descriptor_t& CMsgSource1LegacyGameEventLis
 
 CMsgSource1LegacyGameEventList_descriptor_t* CMsgSource1LegacyGameEventList_descriptor_t::default_instance_ = NULL;
 
-CMsgSource1LegacyGameEventList_descriptor_t* CMsgSource1LegacyGameEventList_descriptor_t::New(::google::protobuf::Arena* arena) const {
-  CMsgSource1LegacyGameEventList_descriptor_t* n = new CMsgSource1LegacyGameEventList_descriptor_t;
-  if (arena != NULL) {
-    arena->Own(n);
-  }
-  return n;
+CMsgSource1LegacyGameEventList_descriptor_t* CMsgSource1LegacyGameEventList_descriptor_t::New() const {
+  return new CMsgSource1LegacyGameEventList_descriptor_t;
 }
 
 void CMsgSource1LegacyGameEventList_descriptor_t::Clear() {
-  if (_has_bits_[0 / 32] & 3u) {
+  if (_has_bits_[0 / 32] & 3) {
     eventid_ = 0;
     if (has_name()) {
-      name_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+      if (name_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+        name_->clear();
+      }
     }
   }
   keys_.Clear();
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
-  if (_internal_metadata_.have_unknown_fields()) {
-    mutable_unknown_fields()->Clear();
-  }
+  mutable_unknown_fields()->Clear();
 }
 
 bool CMsgSource1LegacyGameEventList_descriptor_t::MergePartialFromCodedStream(
@@ -3362,7 +2711,7 @@ bool CMsgSource1LegacyGameEventList_descriptor_t::MergePartialFromCodedStream(
           ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
             this->name().data(), this->name().length(),
             ::google::protobuf::internal::WireFormat::PARSE,
-            "CMsgSource1LegacyGameEventList.descriptor_t.name");
+            "name");
         } else {
           goto handle_unusual;
         }
@@ -3374,15 +2723,12 @@ bool CMsgSource1LegacyGameEventList_descriptor_t::MergePartialFromCodedStream(
       case 3: {
         if (tag == 26) {
          parse_keys:
-          DO_(input->IncrementRecursionDepth());
-         parse_loop_keys:
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtualNoRecursionDepth(
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
                 input, add_keys()));
         } else {
           goto handle_unusual;
         }
-        if (input->ExpectTag(26)) goto parse_loop_keys;
-        input->UnsafeDecrementRecursionDepth();
+        if (input->ExpectTag(26)) goto parse_keys;
         if (input->ExpectAtEnd()) goto success;
         break;
       }
@@ -3422,18 +2768,18 @@ void CMsgSource1LegacyGameEventList_descriptor_t::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
       this->name().data(), this->name().length(),
       ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "CMsgSource1LegacyGameEventList.descriptor_t.name");
+      "name");
     ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
       2, this->name(), output);
   }
 
   // repeated .CMsgSource1LegacyGameEventList.key_t keys = 3;
-  for (unsigned int i = 0, n = this->keys_size(); i < n; i++) {
+  for (int i = 0; i < this->keys_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       3, this->keys(i), output);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
   }
@@ -3453,20 +2799,20 @@ void CMsgSource1LegacyGameEventList_descriptor_t::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
       this->name().data(), this->name().length(),
       ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "CMsgSource1LegacyGameEventList.descriptor_t.name");
+      "name");
     target =
       ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
         2, this->name(), target);
   }
 
   // repeated .CMsgSource1LegacyGameEventList.key_t keys = 3;
-  for (unsigned int i = 0, n = this->keys_size(); i < n; i++) {
+  for (int i = 0; i < this->keys_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
         3, this->keys(i), target);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
   }
@@ -3477,7 +2823,7 @@ void CMsgSource1LegacyGameEventList_descriptor_t::SerializeWithCachedSizes(
 int CMsgSource1LegacyGameEventList_descriptor_t::ByteSize() const {
   int total_size = 0;
 
-  if (_has_bits_[0 / 32] & 3u) {
+  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     // optional int32 eventid = 1;
     if (has_eventid()) {
       total_size += 1 +
@@ -3501,7 +2847,7 @@ int CMsgSource1LegacyGameEventList_descriptor_t::ByteSize() const {
         this->keys(i));
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     total_size +=
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         unknown_fields());
@@ -3513,10 +2859,10 @@ int CMsgSource1LegacyGameEventList_descriptor_t::ByteSize() const {
 }
 
 void CMsgSource1LegacyGameEventList_descriptor_t::MergeFrom(const ::google::protobuf::Message& from) {
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
-  const CMsgSource1LegacyGameEventList_descriptor_t* source = 
-      ::google::protobuf::internal::DynamicCastToGenerated<const CMsgSource1LegacyGameEventList_descriptor_t>(
-          &from);
+  GOOGLE_CHECK_NE(&from, this);
+  const CMsgSource1LegacyGameEventList_descriptor_t* source =
+    ::google::protobuf::internal::dynamic_cast_if_available<const CMsgSource1LegacyGameEventList_descriptor_t*>(
+      &from);
   if (source == NULL) {
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
   } else {
@@ -3525,20 +2871,17 @@ void CMsgSource1LegacyGameEventList_descriptor_t::MergeFrom(const ::google::prot
 }
 
 void CMsgSource1LegacyGameEventList_descriptor_t::MergeFrom(const CMsgSource1LegacyGameEventList_descriptor_t& from) {
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  GOOGLE_CHECK_NE(&from, this);
   keys_.MergeFrom(from.keys_);
   if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (from.has_eventid()) {
       set_eventid(from.eventid());
     }
     if (from.has_name()) {
-      set_has_name();
-      name_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.name_);
+      set_name(from.name());
     }
   }
-  if (from._internal_metadata_.have_unknown_fields()) {
-    mutable_unknown_fields()->MergeFrom(from.unknown_fields());
-  }
+  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
 }
 
 void CMsgSource1LegacyGameEventList_descriptor_t::CopyFrom(const ::google::protobuf::Message& from) {
@@ -3559,16 +2902,14 @@ bool CMsgSource1LegacyGameEventList_descriptor_t::IsInitialized() const {
 }
 
 void CMsgSource1LegacyGameEventList_descriptor_t::Swap(CMsgSource1LegacyGameEventList_descriptor_t* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
-void CMsgSource1LegacyGameEventList_descriptor_t::InternalSwap(CMsgSource1LegacyGameEventList_descriptor_t* other) {
-  std::swap(eventid_, other->eventid_);
-  name_.Swap(&other->name_);
-  keys_.UnsafeArenaSwap(&other->keys_);
-  std::swap(_has_bits_[0], other->_has_bits_[0]);
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  std::swap(_cached_size_, other->_cached_size_);
+  if (other != this) {
+    std::swap(eventid_, other->eventid_);
+    std::swap(name_, other->name_);
+    keys_.Swap(&other->keys_);
+    std::swap(_has_bits_[0], other->_has_bits_[0]);
+    _unknown_fields_.Swap(&other->_unknown_fields_);
+    std::swap(_cached_size_, other->_cached_size_);
+  }
 }
 
 ::google::protobuf::Metadata CMsgSource1LegacyGameEventList_descriptor_t::GetMetadata() const {
@@ -3587,7 +2928,7 @@ const int CMsgSource1LegacyGameEventList::kDescriptorsFieldNumber;
 #endif  // !_MSC_VER
 
 CMsgSource1LegacyGameEventList::CMsgSource1LegacyGameEventList()
-  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  : ::google::protobuf::Message() {
   SharedCtor();
   // @@protoc_insertion_point(constructor:CMsgSource1LegacyGameEventList)
 }
@@ -3596,8 +2937,7 @@ void CMsgSource1LegacyGameEventList::InitAsDefaultInstance() {
 }
 
 CMsgSource1LegacyGameEventList::CMsgSource1LegacyGameEventList(const CMsgSource1LegacyGameEventList& from)
-  : ::google::protobuf::Message(),
-    _internal_metadata_(NULL) {
+  : ::google::protobuf::Message() {
   SharedCtor();
   MergeFrom(from);
   // @@protoc_insertion_point(copy_constructor:CMsgSource1LegacyGameEventList)
@@ -3635,20 +2975,14 @@ const CMsgSource1LegacyGameEventList& CMsgSource1LegacyGameEventList::default_in
 
 CMsgSource1LegacyGameEventList* CMsgSource1LegacyGameEventList::default_instance_ = NULL;
 
-CMsgSource1LegacyGameEventList* CMsgSource1LegacyGameEventList::New(::google::protobuf::Arena* arena) const {
-  CMsgSource1LegacyGameEventList* n = new CMsgSource1LegacyGameEventList;
-  if (arena != NULL) {
-    arena->Own(n);
-  }
-  return n;
+CMsgSource1LegacyGameEventList* CMsgSource1LegacyGameEventList::New() const {
+  return new CMsgSource1LegacyGameEventList;
 }
 
 void CMsgSource1LegacyGameEventList::Clear() {
   descriptors_.Clear();
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
-  if (_internal_metadata_.have_unknown_fields()) {
-    mutable_unknown_fields()->Clear();
-  }
+  mutable_unknown_fields()->Clear();
 }
 
 bool CMsgSource1LegacyGameEventList::MergePartialFromCodedStream(
@@ -3664,15 +2998,13 @@ bool CMsgSource1LegacyGameEventList::MergePartialFromCodedStream(
       // repeated .CMsgSource1LegacyGameEventList.descriptor_t descriptors = 1;
       case 1: {
         if (tag == 10) {
-          DO_(input->IncrementRecursionDepth());
-         parse_loop_descriptors:
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtualNoRecursionDepth(
+         parse_descriptors:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
                 input, add_descriptors()));
         } else {
           goto handle_unusual;
         }
-        if (input->ExpectTag(10)) goto parse_loop_descriptors;
-        input->UnsafeDecrementRecursionDepth();
+        if (input->ExpectTag(10)) goto parse_descriptors;
         if (input->ExpectAtEnd()) goto success;
         break;
       }
@@ -3703,12 +3035,12 @@ void CMsgSource1LegacyGameEventList::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
   // @@protoc_insertion_point(serialize_start:CMsgSource1LegacyGameEventList)
   // repeated .CMsgSource1LegacyGameEventList.descriptor_t descriptors = 1;
-  for (unsigned int i = 0, n = this->descriptors_size(); i < n; i++) {
+  for (int i = 0; i < this->descriptors_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       1, this->descriptors(i), output);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
   }
@@ -3719,13 +3051,13 @@ void CMsgSource1LegacyGameEventList::SerializeWithCachedSizes(
     ::google::protobuf::uint8* target) const {
   // @@protoc_insertion_point(serialize_to_array_start:CMsgSource1LegacyGameEventList)
   // repeated .CMsgSource1LegacyGameEventList.descriptor_t descriptors = 1;
-  for (unsigned int i = 0, n = this->descriptors_size(); i < n; i++) {
+  for (int i = 0; i < this->descriptors_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
         1, this->descriptors(i), target);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
   }
@@ -3744,7 +3076,7 @@ int CMsgSource1LegacyGameEventList::ByteSize() const {
         this->descriptors(i));
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     total_size +=
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         unknown_fields());
@@ -3756,10 +3088,10 @@ int CMsgSource1LegacyGameEventList::ByteSize() const {
 }
 
 void CMsgSource1LegacyGameEventList::MergeFrom(const ::google::protobuf::Message& from) {
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
-  const CMsgSource1LegacyGameEventList* source = 
-      ::google::protobuf::internal::DynamicCastToGenerated<const CMsgSource1LegacyGameEventList>(
-          &from);
+  GOOGLE_CHECK_NE(&from, this);
+  const CMsgSource1LegacyGameEventList* source =
+    ::google::protobuf::internal::dynamic_cast_if_available<const CMsgSource1LegacyGameEventList*>(
+      &from);
   if (source == NULL) {
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
   } else {
@@ -3768,11 +3100,9 @@ void CMsgSource1LegacyGameEventList::MergeFrom(const ::google::protobuf::Message
 }
 
 void CMsgSource1LegacyGameEventList::MergeFrom(const CMsgSource1LegacyGameEventList& from) {
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  GOOGLE_CHECK_NE(&from, this);
   descriptors_.MergeFrom(from.descriptors_);
-  if (from._internal_metadata_.have_unknown_fields()) {
-    mutable_unknown_fields()->MergeFrom(from.unknown_fields());
-  }
+  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
 }
 
 void CMsgSource1LegacyGameEventList::CopyFrom(const ::google::protobuf::Message& from) {
@@ -3793,14 +3123,12 @@ bool CMsgSource1LegacyGameEventList::IsInitialized() const {
 }
 
 void CMsgSource1LegacyGameEventList::Swap(CMsgSource1LegacyGameEventList* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
-void CMsgSource1LegacyGameEventList::InternalSwap(CMsgSource1LegacyGameEventList* other) {
-  descriptors_.UnsafeArenaSwap(&other->descriptors_);
-  std::swap(_has_bits_[0], other->_has_bits_[0]);
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  std::swap(_cached_size_, other->_cached_size_);
+  if (other != this) {
+    descriptors_.Swap(&other->descriptors_);
+    std::swap(_has_bits_[0], other->_has_bits_[0]);
+    _unknown_fields_.Swap(&other->_unknown_fields_);
+    std::swap(_cached_size_, other->_cached_size_);
+  }
 }
 
 ::google::protobuf::Metadata CMsgSource1LegacyGameEventList::GetMetadata() const {
@@ -3811,232 +3139,6 @@ void CMsgSource1LegacyGameEventList::InternalSwap(CMsgSource1LegacyGameEventList
   return metadata;
 }
 
-#if PROTOBUF_INLINE_NOT_IN_HEADERS
-// CMsgSource1LegacyGameEventList_key_t
-
-// optional int32 type = 1;
-bool CMsgSource1LegacyGameEventList_key_t::has_type() const {
-  return (_has_bits_[0] & 0x00000001u) != 0;
-}
-void CMsgSource1LegacyGameEventList_key_t::set_has_type() {
-  _has_bits_[0] |= 0x00000001u;
-}
-void CMsgSource1LegacyGameEventList_key_t::clear_has_type() {
-  _has_bits_[0] &= ~0x00000001u;
-}
-void CMsgSource1LegacyGameEventList_key_t::clear_type() {
-  type_ = 0;
-  clear_has_type();
-}
- ::google::protobuf::int32 CMsgSource1LegacyGameEventList_key_t::type() const {
-  // @@protoc_insertion_point(field_get:CMsgSource1LegacyGameEventList.key_t.type)
-  return type_;
-}
- void CMsgSource1LegacyGameEventList_key_t::set_type(::google::protobuf::int32 value) {
-  set_has_type();
-  type_ = value;
-  // @@protoc_insertion_point(field_set:CMsgSource1LegacyGameEventList.key_t.type)
-}
-
-// optional string name = 2;
-bool CMsgSource1LegacyGameEventList_key_t::has_name() const {
-  return (_has_bits_[0] & 0x00000002u) != 0;
-}
-void CMsgSource1LegacyGameEventList_key_t::set_has_name() {
-  _has_bits_[0] |= 0x00000002u;
-}
-void CMsgSource1LegacyGameEventList_key_t::clear_has_name() {
-  _has_bits_[0] &= ~0x00000002u;
-}
-void CMsgSource1LegacyGameEventList_key_t::clear_name() {
-  name_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  clear_has_name();
-}
- const ::std::string& CMsgSource1LegacyGameEventList_key_t::name() const {
-  // @@protoc_insertion_point(field_get:CMsgSource1LegacyGameEventList.key_t.name)
-  return name_.GetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
- void CMsgSource1LegacyGameEventList_key_t::set_name(const ::std::string& value) {
-  set_has_name();
-  name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:CMsgSource1LegacyGameEventList.key_t.name)
-}
- void CMsgSource1LegacyGameEventList_key_t::set_name(const char* value) {
-  set_has_name();
-  name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:CMsgSource1LegacyGameEventList.key_t.name)
-}
- void CMsgSource1LegacyGameEventList_key_t::set_name(const char* value, size_t size) {
-  set_has_name();
-  name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-      ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:CMsgSource1LegacyGameEventList.key_t.name)
-}
- ::std::string* CMsgSource1LegacyGameEventList_key_t::mutable_name() {
-  set_has_name();
-  // @@protoc_insertion_point(field_mutable:CMsgSource1LegacyGameEventList.key_t.name)
-  return name_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
- ::std::string* CMsgSource1LegacyGameEventList_key_t::release_name() {
-  clear_has_name();
-  return name_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
- void CMsgSource1LegacyGameEventList_key_t::set_allocated_name(::std::string* name) {
-  if (name != NULL) {
-    set_has_name();
-  } else {
-    clear_has_name();
-  }
-  name_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), name);
-  // @@protoc_insertion_point(field_set_allocated:CMsgSource1LegacyGameEventList.key_t.name)
-}
-
-// -------------------------------------------------------------------
-
-// CMsgSource1LegacyGameEventList_descriptor_t
-
-// optional int32 eventid = 1;
-bool CMsgSource1LegacyGameEventList_descriptor_t::has_eventid() const {
-  return (_has_bits_[0] & 0x00000001u) != 0;
-}
-void CMsgSource1LegacyGameEventList_descriptor_t::set_has_eventid() {
-  _has_bits_[0] |= 0x00000001u;
-}
-void CMsgSource1LegacyGameEventList_descriptor_t::clear_has_eventid() {
-  _has_bits_[0] &= ~0x00000001u;
-}
-void CMsgSource1LegacyGameEventList_descriptor_t::clear_eventid() {
-  eventid_ = 0;
-  clear_has_eventid();
-}
- ::google::protobuf::int32 CMsgSource1LegacyGameEventList_descriptor_t::eventid() const {
-  // @@protoc_insertion_point(field_get:CMsgSource1LegacyGameEventList.descriptor_t.eventid)
-  return eventid_;
-}
- void CMsgSource1LegacyGameEventList_descriptor_t::set_eventid(::google::protobuf::int32 value) {
-  set_has_eventid();
-  eventid_ = value;
-  // @@protoc_insertion_point(field_set:CMsgSource1LegacyGameEventList.descriptor_t.eventid)
-}
-
-// optional string name = 2;
-bool CMsgSource1LegacyGameEventList_descriptor_t::has_name() const {
-  return (_has_bits_[0] & 0x00000002u) != 0;
-}
-void CMsgSource1LegacyGameEventList_descriptor_t::set_has_name() {
-  _has_bits_[0] |= 0x00000002u;
-}
-void CMsgSource1LegacyGameEventList_descriptor_t::clear_has_name() {
-  _has_bits_[0] &= ~0x00000002u;
-}
-void CMsgSource1LegacyGameEventList_descriptor_t::clear_name() {
-  name_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  clear_has_name();
-}
- const ::std::string& CMsgSource1LegacyGameEventList_descriptor_t::name() const {
-  // @@protoc_insertion_point(field_get:CMsgSource1LegacyGameEventList.descriptor_t.name)
-  return name_.GetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
- void CMsgSource1LegacyGameEventList_descriptor_t::set_name(const ::std::string& value) {
-  set_has_name();
-  name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:CMsgSource1LegacyGameEventList.descriptor_t.name)
-}
- void CMsgSource1LegacyGameEventList_descriptor_t::set_name(const char* value) {
-  set_has_name();
-  name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:CMsgSource1LegacyGameEventList.descriptor_t.name)
-}
- void CMsgSource1LegacyGameEventList_descriptor_t::set_name(const char* value, size_t size) {
-  set_has_name();
-  name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-      ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:CMsgSource1LegacyGameEventList.descriptor_t.name)
-}
- ::std::string* CMsgSource1LegacyGameEventList_descriptor_t::mutable_name() {
-  set_has_name();
-  // @@protoc_insertion_point(field_mutable:CMsgSource1LegacyGameEventList.descriptor_t.name)
-  return name_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
- ::std::string* CMsgSource1LegacyGameEventList_descriptor_t::release_name() {
-  clear_has_name();
-  return name_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
- void CMsgSource1LegacyGameEventList_descriptor_t::set_allocated_name(::std::string* name) {
-  if (name != NULL) {
-    set_has_name();
-  } else {
-    clear_has_name();
-  }
-  name_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), name);
-  // @@protoc_insertion_point(field_set_allocated:CMsgSource1LegacyGameEventList.descriptor_t.name)
-}
-
-// repeated .CMsgSource1LegacyGameEventList.key_t keys = 3;
-int CMsgSource1LegacyGameEventList_descriptor_t::keys_size() const {
-  return keys_.size();
-}
-void CMsgSource1LegacyGameEventList_descriptor_t::clear_keys() {
-  keys_.Clear();
-}
-const ::CMsgSource1LegacyGameEventList_key_t& CMsgSource1LegacyGameEventList_descriptor_t::keys(int index) const {
-  // @@protoc_insertion_point(field_get:CMsgSource1LegacyGameEventList.descriptor_t.keys)
-  return keys_.Get(index);
-}
-::CMsgSource1LegacyGameEventList_key_t* CMsgSource1LegacyGameEventList_descriptor_t::mutable_keys(int index) {
-  // @@protoc_insertion_point(field_mutable:CMsgSource1LegacyGameEventList.descriptor_t.keys)
-  return keys_.Mutable(index);
-}
-::CMsgSource1LegacyGameEventList_key_t* CMsgSource1LegacyGameEventList_descriptor_t::add_keys() {
-  // @@protoc_insertion_point(field_add:CMsgSource1LegacyGameEventList.descriptor_t.keys)
-  return keys_.Add();
-}
-::google::protobuf::RepeatedPtrField< ::CMsgSource1LegacyGameEventList_key_t >*
-CMsgSource1LegacyGameEventList_descriptor_t::mutable_keys() {
-  // @@protoc_insertion_point(field_mutable_list:CMsgSource1LegacyGameEventList.descriptor_t.keys)
-  return &keys_;
-}
-const ::google::protobuf::RepeatedPtrField< ::CMsgSource1LegacyGameEventList_key_t >&
-CMsgSource1LegacyGameEventList_descriptor_t::keys() const {
-  // @@protoc_insertion_point(field_list:CMsgSource1LegacyGameEventList.descriptor_t.keys)
-  return keys_;
-}
-
-// -------------------------------------------------------------------
-
-// CMsgSource1LegacyGameEventList
-
-// repeated .CMsgSource1LegacyGameEventList.descriptor_t descriptors = 1;
-int CMsgSource1LegacyGameEventList::descriptors_size() const {
-  return descriptors_.size();
-}
-void CMsgSource1LegacyGameEventList::clear_descriptors() {
-  descriptors_.Clear();
-}
-const ::CMsgSource1LegacyGameEventList_descriptor_t& CMsgSource1LegacyGameEventList::descriptors(int index) const {
-  // @@protoc_insertion_point(field_get:CMsgSource1LegacyGameEventList.descriptors)
-  return descriptors_.Get(index);
-}
-::CMsgSource1LegacyGameEventList_descriptor_t* CMsgSource1LegacyGameEventList::mutable_descriptors(int index) {
-  // @@protoc_insertion_point(field_mutable:CMsgSource1LegacyGameEventList.descriptors)
-  return descriptors_.Mutable(index);
-}
-::CMsgSource1LegacyGameEventList_descriptor_t* CMsgSource1LegacyGameEventList::add_descriptors() {
-  // @@protoc_insertion_point(field_add:CMsgSource1LegacyGameEventList.descriptors)
-  return descriptors_.Add();
-}
-::google::protobuf::RepeatedPtrField< ::CMsgSource1LegacyGameEventList_descriptor_t >*
-CMsgSource1LegacyGameEventList::mutable_descriptors() {
-  // @@protoc_insertion_point(field_mutable_list:CMsgSource1LegacyGameEventList.descriptors)
-  return &descriptors_;
-}
-const ::google::protobuf::RepeatedPtrField< ::CMsgSource1LegacyGameEventList_descriptor_t >&
-CMsgSource1LegacyGameEventList::descriptors() const {
-  // @@protoc_insertion_point(field_list:CMsgSource1LegacyGameEventList.descriptors)
-  return descriptors_;
-}
-
-#endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
 
 // ===================================================================
 
@@ -4046,7 +3148,7 @@ const int CMsgSource1LegacyListenEvents::kEventarraybitsFieldNumber;
 #endif  // !_MSC_VER
 
 CMsgSource1LegacyListenEvents::CMsgSource1LegacyListenEvents()
-  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  : ::google::protobuf::Message() {
   SharedCtor();
   // @@protoc_insertion_point(constructor:CMsgSource1LegacyListenEvents)
 }
@@ -4055,8 +3157,7 @@ void CMsgSource1LegacyListenEvents::InitAsDefaultInstance() {
 }
 
 CMsgSource1LegacyListenEvents::CMsgSource1LegacyListenEvents(const CMsgSource1LegacyListenEvents& from)
-  : ::google::protobuf::Message(),
-    _internal_metadata_(NULL) {
+  : ::google::protobuf::Message() {
   SharedCtor();
   MergeFrom(from);
   // @@protoc_insertion_point(copy_constructor:CMsgSource1LegacyListenEvents)
@@ -4095,21 +3196,15 @@ const CMsgSource1LegacyListenEvents& CMsgSource1LegacyListenEvents::default_inst
 
 CMsgSource1LegacyListenEvents* CMsgSource1LegacyListenEvents::default_instance_ = NULL;
 
-CMsgSource1LegacyListenEvents* CMsgSource1LegacyListenEvents::New(::google::protobuf::Arena* arena) const {
-  CMsgSource1LegacyListenEvents* n = new CMsgSource1LegacyListenEvents;
-  if (arena != NULL) {
-    arena->Own(n);
-  }
-  return n;
+CMsgSource1LegacyListenEvents* CMsgSource1LegacyListenEvents::New() const {
+  return new CMsgSource1LegacyListenEvents;
 }
 
 void CMsgSource1LegacyListenEvents::Clear() {
   playerslot_ = 0;
   eventarraybits_.Clear();
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
-  if (_internal_metadata_.have_unknown_fields()) {
-    mutable_unknown_fields()->Clear();
-  }
+  mutable_unknown_fields()->Clear();
 }
 
 bool CMsgSource1LegacyListenEvents::MergePartialFromCodedStream(
@@ -4191,7 +3286,7 @@ void CMsgSource1LegacyListenEvents::SerializeWithCachedSizes(
       2, this->eventarraybits(i), output);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
   }
@@ -4212,7 +3307,7 @@ void CMsgSource1LegacyListenEvents::SerializeWithCachedSizes(
       WriteUInt32ToArray(2, this->eventarraybits(i), target);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
   }
@@ -4223,13 +3318,15 @@ void CMsgSource1LegacyListenEvents::SerializeWithCachedSizes(
 int CMsgSource1LegacyListenEvents::ByteSize() const {
   int total_size = 0;
 
-  // optional int32 playerslot = 1;
-  if (has_playerslot()) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::Int32Size(
-        this->playerslot());
-  }
+  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    // optional int32 playerslot = 1;
+    if (has_playerslot()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::Int32Size(
+          this->playerslot());
+    }
 
+  }
   // repeated uint32 eventarraybits = 2;
   {
     int data_size = 0;
@@ -4240,7 +3337,7 @@ int CMsgSource1LegacyListenEvents::ByteSize() const {
     total_size += 1 * this->eventarraybits_size() + data_size;
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     total_size +=
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         unknown_fields());
@@ -4252,10 +3349,10 @@ int CMsgSource1LegacyListenEvents::ByteSize() const {
 }
 
 void CMsgSource1LegacyListenEvents::MergeFrom(const ::google::protobuf::Message& from) {
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
-  const CMsgSource1LegacyListenEvents* source = 
-      ::google::protobuf::internal::DynamicCastToGenerated<const CMsgSource1LegacyListenEvents>(
-          &from);
+  GOOGLE_CHECK_NE(&from, this);
+  const CMsgSource1LegacyListenEvents* source =
+    ::google::protobuf::internal::dynamic_cast_if_available<const CMsgSource1LegacyListenEvents*>(
+      &from);
   if (source == NULL) {
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
   } else {
@@ -4264,16 +3361,14 @@ void CMsgSource1LegacyListenEvents::MergeFrom(const ::google::protobuf::Message&
 }
 
 void CMsgSource1LegacyListenEvents::MergeFrom(const CMsgSource1LegacyListenEvents& from) {
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  GOOGLE_CHECK_NE(&from, this);
   eventarraybits_.MergeFrom(from.eventarraybits_);
   if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (from.has_playerslot()) {
       set_playerslot(from.playerslot());
     }
   }
-  if (from._internal_metadata_.have_unknown_fields()) {
-    mutable_unknown_fields()->MergeFrom(from.unknown_fields());
-  }
+  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
 }
 
 void CMsgSource1LegacyListenEvents::CopyFrom(const ::google::protobuf::Message& from) {
@@ -4294,15 +3389,13 @@ bool CMsgSource1LegacyListenEvents::IsInitialized() const {
 }
 
 void CMsgSource1LegacyListenEvents::Swap(CMsgSource1LegacyListenEvents* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
-void CMsgSource1LegacyListenEvents::InternalSwap(CMsgSource1LegacyListenEvents* other) {
-  std::swap(playerslot_, other->playerslot_);
-  eventarraybits_.UnsafeArenaSwap(&other->eventarraybits_);
-  std::swap(_has_bits_[0], other->_has_bits_[0]);
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  std::swap(_cached_size_, other->_cached_size_);
+  if (other != this) {
+    std::swap(playerslot_, other->playerslot_);
+    eventarraybits_.Swap(&other->eventarraybits_);
+    std::swap(_has_bits_[0], other->_has_bits_[0]);
+    _unknown_fields_.Swap(&other->_unknown_fields_);
+    std::swap(_cached_size_, other->_cached_size_);
+  }
 }
 
 ::google::protobuf::Metadata CMsgSource1LegacyListenEvents::GetMetadata() const {
@@ -4313,64 +3406,6 @@ void CMsgSource1LegacyListenEvents::InternalSwap(CMsgSource1LegacyListenEvents* 
   return metadata;
 }
 
-#if PROTOBUF_INLINE_NOT_IN_HEADERS
-// CMsgSource1LegacyListenEvents
-
-// optional int32 playerslot = 1;
-bool CMsgSource1LegacyListenEvents::has_playerslot() const {
-  return (_has_bits_[0] & 0x00000001u) != 0;
-}
-void CMsgSource1LegacyListenEvents::set_has_playerslot() {
-  _has_bits_[0] |= 0x00000001u;
-}
-void CMsgSource1LegacyListenEvents::clear_has_playerslot() {
-  _has_bits_[0] &= ~0x00000001u;
-}
-void CMsgSource1LegacyListenEvents::clear_playerslot() {
-  playerslot_ = 0;
-  clear_has_playerslot();
-}
- ::google::protobuf::int32 CMsgSource1LegacyListenEvents::playerslot() const {
-  // @@protoc_insertion_point(field_get:CMsgSource1LegacyListenEvents.playerslot)
-  return playerslot_;
-}
- void CMsgSource1LegacyListenEvents::set_playerslot(::google::protobuf::int32 value) {
-  set_has_playerslot();
-  playerslot_ = value;
-  // @@protoc_insertion_point(field_set:CMsgSource1LegacyListenEvents.playerslot)
-}
-
-// repeated uint32 eventarraybits = 2;
-int CMsgSource1LegacyListenEvents::eventarraybits_size() const {
-  return eventarraybits_.size();
-}
-void CMsgSource1LegacyListenEvents::clear_eventarraybits() {
-  eventarraybits_.Clear();
-}
- ::google::protobuf::uint32 CMsgSource1LegacyListenEvents::eventarraybits(int index) const {
-  // @@protoc_insertion_point(field_get:CMsgSource1LegacyListenEvents.eventarraybits)
-  return eventarraybits_.Get(index);
-}
- void CMsgSource1LegacyListenEvents::set_eventarraybits(int index, ::google::protobuf::uint32 value) {
-  eventarraybits_.Set(index, value);
-  // @@protoc_insertion_point(field_set:CMsgSource1LegacyListenEvents.eventarraybits)
-}
- void CMsgSource1LegacyListenEvents::add_eventarraybits(::google::protobuf::uint32 value) {
-  eventarraybits_.Add(value);
-  // @@protoc_insertion_point(field_add:CMsgSource1LegacyListenEvents.eventarraybits)
-}
- const ::google::protobuf::RepeatedField< ::google::protobuf::uint32 >&
-CMsgSource1LegacyListenEvents::eventarraybits() const {
-  // @@protoc_insertion_point(field_list:CMsgSource1LegacyListenEvents.eventarraybits)
-  return eventarraybits_;
-}
- ::google::protobuf::RepeatedField< ::google::protobuf::uint32 >*
-CMsgSource1LegacyListenEvents::mutable_eventarraybits() {
-  // @@protoc_insertion_point(field_mutable_list:CMsgSource1LegacyListenEvents.eventarraybits)
-  return &eventarraybits_;
-}
-
-#endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
 
 // ===================================================================
 
@@ -4386,7 +3421,7 @@ const int CMsgSource1LegacyGameEvent_key_t::kValUint64FieldNumber;
 #endif  // !_MSC_VER
 
 CMsgSource1LegacyGameEvent_key_t::CMsgSource1LegacyGameEvent_key_t()
-  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  : ::google::protobuf::Message() {
   SharedCtor();
   // @@protoc_insertion_point(constructor:CMsgSource1LegacyGameEvent.key_t)
 }
@@ -4395,8 +3430,7 @@ void CMsgSource1LegacyGameEvent_key_t::InitAsDefaultInstance() {
 }
 
 CMsgSource1LegacyGameEvent_key_t::CMsgSource1LegacyGameEvent_key_t(const CMsgSource1LegacyGameEvent_key_t& from)
-  : ::google::protobuf::Message(),
-    _internal_metadata_(NULL) {
+  : ::google::protobuf::Message() {
   SharedCtor();
   MergeFrom(from);
   // @@protoc_insertion_point(copy_constructor:CMsgSource1LegacyGameEvent.key_t)
@@ -4406,7 +3440,7 @@ void CMsgSource1LegacyGameEvent_key_t::SharedCtor() {
   ::google::protobuf::internal::GetEmptyString();
   _cached_size_ = 0;
   type_ = 0;
-  val_string_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  val_string_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   val_float_ = 0;
   val_long_ = 0;
   val_short_ = 0;
@@ -4422,7 +3456,9 @@ CMsgSource1LegacyGameEvent_key_t::~CMsgSource1LegacyGameEvent_key_t() {
 }
 
 void CMsgSource1LegacyGameEvent_key_t::SharedDtor() {
-  val_string_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (val_string_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete val_string_;
+  }
   if (this != default_instance_) {
   }
 }
@@ -4444,37 +3480,35 @@ const CMsgSource1LegacyGameEvent_key_t& CMsgSource1LegacyGameEvent_key_t::defaul
 
 CMsgSource1LegacyGameEvent_key_t* CMsgSource1LegacyGameEvent_key_t::default_instance_ = NULL;
 
-CMsgSource1LegacyGameEvent_key_t* CMsgSource1LegacyGameEvent_key_t::New(::google::protobuf::Arena* arena) const {
-  CMsgSource1LegacyGameEvent_key_t* n = new CMsgSource1LegacyGameEvent_key_t;
-  if (arena != NULL) {
-    arena->Own(n);
-  }
-  return n;
+CMsgSource1LegacyGameEvent_key_t* CMsgSource1LegacyGameEvent_key_t::New() const {
+  return new CMsgSource1LegacyGameEvent_key_t;
 }
 
 void CMsgSource1LegacyGameEvent_key_t::Clear() {
-#define ZR_HELPER_(f) reinterpret_cast<char*>(\
-  &reinterpret_cast<CMsgSource1LegacyGameEvent_key_t*>(16)->f)
+#define OFFSET_OF_FIELD_(f) (reinterpret_cast<char*>(      \
+  &reinterpret_cast<CMsgSource1LegacyGameEvent_key_t*>(16)->f) - \
+   reinterpret_cast<char*>(16))
 
-#define ZR_(first, last) do {\
-  ::memset(&first, 0,\
-           ZR_HELPER_(last) - ZR_HELPER_(first) + sizeof(last));\
-} while (0)
+#define ZR_(first, last) do {                              \
+    size_t f = OFFSET_OF_FIELD_(first);                    \
+    size_t n = OFFSET_OF_FIELD_(last) - f + sizeof(last);  \
+    ::memset(&first, 0, n);                                \
+  } while (0)
 
-  if (_has_bits_[0 / 32] & 255u) {
+  if (_has_bits_[0 / 32] & 255) {
     ZR_(type_, val_uint64_);
     if (has_val_string()) {
-      val_string_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+      if (val_string_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+        val_string_->clear();
+      }
     }
   }
 
-#undef ZR_HELPER_
+#undef OFFSET_OF_FIELD_
 #undef ZR_
 
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
-  if (_internal_metadata_.have_unknown_fields()) {
-    mutable_unknown_fields()->Clear();
-  }
+  mutable_unknown_fields()->Clear();
 }
 
 bool CMsgSource1LegacyGameEvent_key_t::MergePartialFromCodedStream(
@@ -4510,7 +3544,7 @@ bool CMsgSource1LegacyGameEvent_key_t::MergePartialFromCodedStream(
           ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
             this->val_string().data(), this->val_string().length(),
             ::google::protobuf::internal::WireFormat::PARSE,
-            "CMsgSource1LegacyGameEvent.key_t.val_string");
+            "val_string");
         } else {
           goto handle_unusual;
         }
@@ -4643,7 +3677,7 @@ void CMsgSource1LegacyGameEvent_key_t::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
       this->val_string().data(), this->val_string().length(),
       ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "CMsgSource1LegacyGameEvent.key_t.val_string");
+      "val_string");
     ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
       2, this->val_string(), output);
   }
@@ -4678,7 +3712,7 @@ void CMsgSource1LegacyGameEvent_key_t::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteUInt64(8, this->val_uint64(), output);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
   }
@@ -4698,7 +3732,7 @@ void CMsgSource1LegacyGameEvent_key_t::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
       this->val_string().data(), this->val_string().length(),
       ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "CMsgSource1LegacyGameEvent.key_t.val_string");
+      "val_string");
     target =
       ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
         2, this->val_string(), target);
@@ -4734,7 +3768,7 @@ void CMsgSource1LegacyGameEvent_key_t::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteUInt64ToArray(8, this->val_uint64(), target);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
   }
@@ -4745,7 +3779,7 @@ void CMsgSource1LegacyGameEvent_key_t::SerializeWithCachedSizes(
 int CMsgSource1LegacyGameEvent_key_t::ByteSize() const {
   int total_size = 0;
 
-  if (_has_bits_[0 / 32] & 255u) {
+  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     // optional int32 type = 1;
     if (has_type()) {
       total_size += 1 +
@@ -4799,7 +3833,7 @@ int CMsgSource1LegacyGameEvent_key_t::ByteSize() const {
     }
 
   }
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     total_size +=
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         unknown_fields());
@@ -4811,10 +3845,10 @@ int CMsgSource1LegacyGameEvent_key_t::ByteSize() const {
 }
 
 void CMsgSource1LegacyGameEvent_key_t::MergeFrom(const ::google::protobuf::Message& from) {
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
-  const CMsgSource1LegacyGameEvent_key_t* source = 
-      ::google::protobuf::internal::DynamicCastToGenerated<const CMsgSource1LegacyGameEvent_key_t>(
-          &from);
+  GOOGLE_CHECK_NE(&from, this);
+  const CMsgSource1LegacyGameEvent_key_t* source =
+    ::google::protobuf::internal::dynamic_cast_if_available<const CMsgSource1LegacyGameEvent_key_t*>(
+      &from);
   if (source == NULL) {
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
   } else {
@@ -4823,14 +3857,13 @@ void CMsgSource1LegacyGameEvent_key_t::MergeFrom(const ::google::protobuf::Messa
 }
 
 void CMsgSource1LegacyGameEvent_key_t::MergeFrom(const CMsgSource1LegacyGameEvent_key_t& from) {
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  GOOGLE_CHECK_NE(&from, this);
   if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (from.has_type()) {
       set_type(from.type());
     }
     if (from.has_val_string()) {
-      set_has_val_string();
-      val_string_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.val_string_);
+      set_val_string(from.val_string());
     }
     if (from.has_val_float()) {
       set_val_float(from.val_float());
@@ -4851,9 +3884,7 @@ void CMsgSource1LegacyGameEvent_key_t::MergeFrom(const CMsgSource1LegacyGameEven
       set_val_uint64(from.val_uint64());
     }
   }
-  if (from._internal_metadata_.have_unknown_fields()) {
-    mutable_unknown_fields()->MergeFrom(from.unknown_fields());
-  }
+  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
 }
 
 void CMsgSource1LegacyGameEvent_key_t::CopyFrom(const ::google::protobuf::Message& from) {
@@ -4874,21 +3905,19 @@ bool CMsgSource1LegacyGameEvent_key_t::IsInitialized() const {
 }
 
 void CMsgSource1LegacyGameEvent_key_t::Swap(CMsgSource1LegacyGameEvent_key_t* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
-void CMsgSource1LegacyGameEvent_key_t::InternalSwap(CMsgSource1LegacyGameEvent_key_t* other) {
-  std::swap(type_, other->type_);
-  val_string_.Swap(&other->val_string_);
-  std::swap(val_float_, other->val_float_);
-  std::swap(val_long_, other->val_long_);
-  std::swap(val_short_, other->val_short_);
-  std::swap(val_byte_, other->val_byte_);
-  std::swap(val_bool_, other->val_bool_);
-  std::swap(val_uint64_, other->val_uint64_);
-  std::swap(_has_bits_[0], other->_has_bits_[0]);
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  std::swap(_cached_size_, other->_cached_size_);
+  if (other != this) {
+    std::swap(type_, other->type_);
+    std::swap(val_string_, other->val_string_);
+    std::swap(val_float_, other->val_float_);
+    std::swap(val_long_, other->val_long_);
+    std::swap(val_short_, other->val_short_);
+    std::swap(val_byte_, other->val_byte_);
+    std::swap(val_bool_, other->val_bool_);
+    std::swap(val_uint64_, other->val_uint64_);
+    std::swap(_has_bits_[0], other->_has_bits_[0]);
+    _unknown_fields_.Swap(&other->_unknown_fields_);
+    std::swap(_cached_size_, other->_cached_size_);
+  }
 }
 
 ::google::protobuf::Metadata CMsgSource1LegacyGameEvent_key_t::GetMetadata() const {
@@ -4909,7 +3938,7 @@ const int CMsgSource1LegacyGameEvent::kKeysFieldNumber;
 #endif  // !_MSC_VER
 
 CMsgSource1LegacyGameEvent::CMsgSource1LegacyGameEvent()
-  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  : ::google::protobuf::Message() {
   SharedCtor();
   // @@protoc_insertion_point(constructor:CMsgSource1LegacyGameEvent)
 }
@@ -4918,8 +3947,7 @@ void CMsgSource1LegacyGameEvent::InitAsDefaultInstance() {
 }
 
 CMsgSource1LegacyGameEvent::CMsgSource1LegacyGameEvent(const CMsgSource1LegacyGameEvent& from)
-  : ::google::protobuf::Message(),
-    _internal_metadata_(NULL) {
+  : ::google::protobuf::Message() {
   SharedCtor();
   MergeFrom(from);
   // @@protoc_insertion_point(copy_constructor:CMsgSource1LegacyGameEvent)
@@ -4928,7 +3956,7 @@ CMsgSource1LegacyGameEvent::CMsgSource1LegacyGameEvent(const CMsgSource1LegacyGa
 void CMsgSource1LegacyGameEvent::SharedCtor() {
   ::google::protobuf::internal::GetEmptyString();
   _cached_size_ = 0;
-  event_name_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  event_name_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   eventid_ = 0;
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
@@ -4939,7 +3967,9 @@ CMsgSource1LegacyGameEvent::~CMsgSource1LegacyGameEvent() {
 }
 
 void CMsgSource1LegacyGameEvent::SharedDtor() {
-  event_name_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (event_name_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete event_name_;
+  }
   if (this != default_instance_) {
   }
 }
@@ -4961,26 +3991,22 @@ const CMsgSource1LegacyGameEvent& CMsgSource1LegacyGameEvent::default_instance()
 
 CMsgSource1LegacyGameEvent* CMsgSource1LegacyGameEvent::default_instance_ = NULL;
 
-CMsgSource1LegacyGameEvent* CMsgSource1LegacyGameEvent::New(::google::protobuf::Arena* arena) const {
-  CMsgSource1LegacyGameEvent* n = new CMsgSource1LegacyGameEvent;
-  if (arena != NULL) {
-    arena->Own(n);
-  }
-  return n;
+CMsgSource1LegacyGameEvent* CMsgSource1LegacyGameEvent::New() const {
+  return new CMsgSource1LegacyGameEvent;
 }
 
 void CMsgSource1LegacyGameEvent::Clear() {
-  if (_has_bits_[0 / 32] & 3u) {
+  if (_has_bits_[0 / 32] & 3) {
     if (has_event_name()) {
-      event_name_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+      if (event_name_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+        event_name_->clear();
+      }
     }
     eventid_ = 0;
   }
   keys_.Clear();
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
-  if (_internal_metadata_.have_unknown_fields()) {
-    mutable_unknown_fields()->Clear();
-  }
+  mutable_unknown_fields()->Clear();
 }
 
 bool CMsgSource1LegacyGameEvent::MergePartialFromCodedStream(
@@ -5001,7 +4027,7 @@ bool CMsgSource1LegacyGameEvent::MergePartialFromCodedStream(
           ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
             this->event_name().data(), this->event_name().length(),
             ::google::protobuf::internal::WireFormat::PARSE,
-            "CMsgSource1LegacyGameEvent.event_name");
+            "event_name");
         } else {
           goto handle_unusual;
         }
@@ -5028,15 +4054,12 @@ bool CMsgSource1LegacyGameEvent::MergePartialFromCodedStream(
       case 3: {
         if (tag == 26) {
          parse_keys:
-          DO_(input->IncrementRecursionDepth());
-         parse_loop_keys:
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtualNoRecursionDepth(
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
                 input, add_keys()));
         } else {
           goto handle_unusual;
         }
-        if (input->ExpectTag(26)) goto parse_loop_keys;
-        input->UnsafeDecrementRecursionDepth();
+        if (input->ExpectTag(26)) goto parse_keys;
         if (input->ExpectAtEnd()) goto success;
         break;
       }
@@ -5071,7 +4094,7 @@ void CMsgSource1LegacyGameEvent::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
       this->event_name().data(), this->event_name().length(),
       ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "CMsgSource1LegacyGameEvent.event_name");
+      "event_name");
     ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
       1, this->event_name(), output);
   }
@@ -5082,12 +4105,12 @@ void CMsgSource1LegacyGameEvent::SerializeWithCachedSizes(
   }
 
   // repeated .CMsgSource1LegacyGameEvent.key_t keys = 3;
-  for (unsigned int i = 0, n = this->keys_size(); i < n; i++) {
+  for (int i = 0; i < this->keys_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       3, this->keys(i), output);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
   }
@@ -5102,7 +4125,7 @@ void CMsgSource1LegacyGameEvent::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
       this->event_name().data(), this->event_name().length(),
       ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "CMsgSource1LegacyGameEvent.event_name");
+      "event_name");
     target =
       ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
         1, this->event_name(), target);
@@ -5114,13 +4137,13 @@ void CMsgSource1LegacyGameEvent::SerializeWithCachedSizes(
   }
 
   // repeated .CMsgSource1LegacyGameEvent.key_t keys = 3;
-  for (unsigned int i = 0, n = this->keys_size(); i < n; i++) {
+  for (int i = 0; i < this->keys_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
         3, this->keys(i), target);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
   }
@@ -5131,7 +4154,7 @@ void CMsgSource1LegacyGameEvent::SerializeWithCachedSizes(
 int CMsgSource1LegacyGameEvent::ByteSize() const {
   int total_size = 0;
 
-  if (_has_bits_[0 / 32] & 3u) {
+  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     // optional string event_name = 1;
     if (has_event_name()) {
       total_size += 1 +
@@ -5155,7 +4178,7 @@ int CMsgSource1LegacyGameEvent::ByteSize() const {
         this->keys(i));
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     total_size +=
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         unknown_fields());
@@ -5167,10 +4190,10 @@ int CMsgSource1LegacyGameEvent::ByteSize() const {
 }
 
 void CMsgSource1LegacyGameEvent::MergeFrom(const ::google::protobuf::Message& from) {
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
-  const CMsgSource1LegacyGameEvent* source = 
-      ::google::protobuf::internal::DynamicCastToGenerated<const CMsgSource1LegacyGameEvent>(
-          &from);
+  GOOGLE_CHECK_NE(&from, this);
+  const CMsgSource1LegacyGameEvent* source =
+    ::google::protobuf::internal::dynamic_cast_if_available<const CMsgSource1LegacyGameEvent*>(
+      &from);
   if (source == NULL) {
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
   } else {
@@ -5179,20 +4202,17 @@ void CMsgSource1LegacyGameEvent::MergeFrom(const ::google::protobuf::Message& fr
 }
 
 void CMsgSource1LegacyGameEvent::MergeFrom(const CMsgSource1LegacyGameEvent& from) {
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  GOOGLE_CHECK_NE(&from, this);
   keys_.MergeFrom(from.keys_);
   if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (from.has_event_name()) {
-      set_has_event_name();
-      event_name_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.event_name_);
+      set_event_name(from.event_name());
     }
     if (from.has_eventid()) {
       set_eventid(from.eventid());
     }
   }
-  if (from._internal_metadata_.have_unknown_fields()) {
-    mutable_unknown_fields()->MergeFrom(from.unknown_fields());
-  }
+  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
 }
 
 void CMsgSource1LegacyGameEvent::CopyFrom(const ::google::protobuf::Message& from) {
@@ -5213,16 +4233,14 @@ bool CMsgSource1LegacyGameEvent::IsInitialized() const {
 }
 
 void CMsgSource1LegacyGameEvent::Swap(CMsgSource1LegacyGameEvent* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
-void CMsgSource1LegacyGameEvent::InternalSwap(CMsgSource1LegacyGameEvent* other) {
-  event_name_.Swap(&other->event_name_);
-  std::swap(eventid_, other->eventid_);
-  keys_.UnsafeArenaSwap(&other->keys_);
-  std::swap(_has_bits_[0], other->_has_bits_[0]);
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  std::swap(_cached_size_, other->_cached_size_);
+  if (other != this) {
+    std::swap(event_name_, other->event_name_);
+    std::swap(eventid_, other->eventid_);
+    keys_.Swap(&other->keys_);
+    std::swap(_has_bits_[0], other->_has_bits_[0]);
+    _unknown_fields_.Swap(&other->_unknown_fields_);
+    std::swap(_cached_size_, other->_cached_size_);
+  }
 }
 
 ::google::protobuf::Metadata CMsgSource1LegacyGameEvent::GetMetadata() const {
@@ -5233,342 +4251,6 @@ void CMsgSource1LegacyGameEvent::InternalSwap(CMsgSource1LegacyGameEvent* other)
   return metadata;
 }
 
-#if PROTOBUF_INLINE_NOT_IN_HEADERS
-// CMsgSource1LegacyGameEvent_key_t
-
-// optional int32 type = 1;
-bool CMsgSource1LegacyGameEvent_key_t::has_type() const {
-  return (_has_bits_[0] & 0x00000001u) != 0;
-}
-void CMsgSource1LegacyGameEvent_key_t::set_has_type() {
-  _has_bits_[0] |= 0x00000001u;
-}
-void CMsgSource1LegacyGameEvent_key_t::clear_has_type() {
-  _has_bits_[0] &= ~0x00000001u;
-}
-void CMsgSource1LegacyGameEvent_key_t::clear_type() {
-  type_ = 0;
-  clear_has_type();
-}
- ::google::protobuf::int32 CMsgSource1LegacyGameEvent_key_t::type() const {
-  // @@protoc_insertion_point(field_get:CMsgSource1LegacyGameEvent.key_t.type)
-  return type_;
-}
- void CMsgSource1LegacyGameEvent_key_t::set_type(::google::protobuf::int32 value) {
-  set_has_type();
-  type_ = value;
-  // @@protoc_insertion_point(field_set:CMsgSource1LegacyGameEvent.key_t.type)
-}
-
-// optional string val_string = 2;
-bool CMsgSource1LegacyGameEvent_key_t::has_val_string() const {
-  return (_has_bits_[0] & 0x00000002u) != 0;
-}
-void CMsgSource1LegacyGameEvent_key_t::set_has_val_string() {
-  _has_bits_[0] |= 0x00000002u;
-}
-void CMsgSource1LegacyGameEvent_key_t::clear_has_val_string() {
-  _has_bits_[0] &= ~0x00000002u;
-}
-void CMsgSource1LegacyGameEvent_key_t::clear_val_string() {
-  val_string_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  clear_has_val_string();
-}
- const ::std::string& CMsgSource1LegacyGameEvent_key_t::val_string() const {
-  // @@protoc_insertion_point(field_get:CMsgSource1LegacyGameEvent.key_t.val_string)
-  return val_string_.GetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
- void CMsgSource1LegacyGameEvent_key_t::set_val_string(const ::std::string& value) {
-  set_has_val_string();
-  val_string_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:CMsgSource1LegacyGameEvent.key_t.val_string)
-}
- void CMsgSource1LegacyGameEvent_key_t::set_val_string(const char* value) {
-  set_has_val_string();
-  val_string_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:CMsgSource1LegacyGameEvent.key_t.val_string)
-}
- void CMsgSource1LegacyGameEvent_key_t::set_val_string(const char* value, size_t size) {
-  set_has_val_string();
-  val_string_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-      ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:CMsgSource1LegacyGameEvent.key_t.val_string)
-}
- ::std::string* CMsgSource1LegacyGameEvent_key_t::mutable_val_string() {
-  set_has_val_string();
-  // @@protoc_insertion_point(field_mutable:CMsgSource1LegacyGameEvent.key_t.val_string)
-  return val_string_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
- ::std::string* CMsgSource1LegacyGameEvent_key_t::release_val_string() {
-  clear_has_val_string();
-  return val_string_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
- void CMsgSource1LegacyGameEvent_key_t::set_allocated_val_string(::std::string* val_string) {
-  if (val_string != NULL) {
-    set_has_val_string();
-  } else {
-    clear_has_val_string();
-  }
-  val_string_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), val_string);
-  // @@protoc_insertion_point(field_set_allocated:CMsgSource1LegacyGameEvent.key_t.val_string)
-}
-
-// optional float val_float = 3;
-bool CMsgSource1LegacyGameEvent_key_t::has_val_float() const {
-  return (_has_bits_[0] & 0x00000004u) != 0;
-}
-void CMsgSource1LegacyGameEvent_key_t::set_has_val_float() {
-  _has_bits_[0] |= 0x00000004u;
-}
-void CMsgSource1LegacyGameEvent_key_t::clear_has_val_float() {
-  _has_bits_[0] &= ~0x00000004u;
-}
-void CMsgSource1LegacyGameEvent_key_t::clear_val_float() {
-  val_float_ = 0;
-  clear_has_val_float();
-}
- float CMsgSource1LegacyGameEvent_key_t::val_float() const {
-  // @@protoc_insertion_point(field_get:CMsgSource1LegacyGameEvent.key_t.val_float)
-  return val_float_;
-}
- void CMsgSource1LegacyGameEvent_key_t::set_val_float(float value) {
-  set_has_val_float();
-  val_float_ = value;
-  // @@protoc_insertion_point(field_set:CMsgSource1LegacyGameEvent.key_t.val_float)
-}
-
-// optional int32 val_long = 4;
-bool CMsgSource1LegacyGameEvent_key_t::has_val_long() const {
-  return (_has_bits_[0] & 0x00000008u) != 0;
-}
-void CMsgSource1LegacyGameEvent_key_t::set_has_val_long() {
-  _has_bits_[0] |= 0x00000008u;
-}
-void CMsgSource1LegacyGameEvent_key_t::clear_has_val_long() {
-  _has_bits_[0] &= ~0x00000008u;
-}
-void CMsgSource1LegacyGameEvent_key_t::clear_val_long() {
-  val_long_ = 0;
-  clear_has_val_long();
-}
- ::google::protobuf::int32 CMsgSource1LegacyGameEvent_key_t::val_long() const {
-  // @@protoc_insertion_point(field_get:CMsgSource1LegacyGameEvent.key_t.val_long)
-  return val_long_;
-}
- void CMsgSource1LegacyGameEvent_key_t::set_val_long(::google::protobuf::int32 value) {
-  set_has_val_long();
-  val_long_ = value;
-  // @@protoc_insertion_point(field_set:CMsgSource1LegacyGameEvent.key_t.val_long)
-}
-
-// optional int32 val_short = 5;
-bool CMsgSource1LegacyGameEvent_key_t::has_val_short() const {
-  return (_has_bits_[0] & 0x00000010u) != 0;
-}
-void CMsgSource1LegacyGameEvent_key_t::set_has_val_short() {
-  _has_bits_[0] |= 0x00000010u;
-}
-void CMsgSource1LegacyGameEvent_key_t::clear_has_val_short() {
-  _has_bits_[0] &= ~0x00000010u;
-}
-void CMsgSource1LegacyGameEvent_key_t::clear_val_short() {
-  val_short_ = 0;
-  clear_has_val_short();
-}
- ::google::protobuf::int32 CMsgSource1LegacyGameEvent_key_t::val_short() const {
-  // @@protoc_insertion_point(field_get:CMsgSource1LegacyGameEvent.key_t.val_short)
-  return val_short_;
-}
- void CMsgSource1LegacyGameEvent_key_t::set_val_short(::google::protobuf::int32 value) {
-  set_has_val_short();
-  val_short_ = value;
-  // @@protoc_insertion_point(field_set:CMsgSource1LegacyGameEvent.key_t.val_short)
-}
-
-// optional int32 val_byte = 6;
-bool CMsgSource1LegacyGameEvent_key_t::has_val_byte() const {
-  return (_has_bits_[0] & 0x00000020u) != 0;
-}
-void CMsgSource1LegacyGameEvent_key_t::set_has_val_byte() {
-  _has_bits_[0] |= 0x00000020u;
-}
-void CMsgSource1LegacyGameEvent_key_t::clear_has_val_byte() {
-  _has_bits_[0] &= ~0x00000020u;
-}
-void CMsgSource1LegacyGameEvent_key_t::clear_val_byte() {
-  val_byte_ = 0;
-  clear_has_val_byte();
-}
- ::google::protobuf::int32 CMsgSource1LegacyGameEvent_key_t::val_byte() const {
-  // @@protoc_insertion_point(field_get:CMsgSource1LegacyGameEvent.key_t.val_byte)
-  return val_byte_;
-}
- void CMsgSource1LegacyGameEvent_key_t::set_val_byte(::google::protobuf::int32 value) {
-  set_has_val_byte();
-  val_byte_ = value;
-  // @@protoc_insertion_point(field_set:CMsgSource1LegacyGameEvent.key_t.val_byte)
-}
-
-// optional bool val_bool = 7;
-bool CMsgSource1LegacyGameEvent_key_t::has_val_bool() const {
-  return (_has_bits_[0] & 0x00000040u) != 0;
-}
-void CMsgSource1LegacyGameEvent_key_t::set_has_val_bool() {
-  _has_bits_[0] |= 0x00000040u;
-}
-void CMsgSource1LegacyGameEvent_key_t::clear_has_val_bool() {
-  _has_bits_[0] &= ~0x00000040u;
-}
-void CMsgSource1LegacyGameEvent_key_t::clear_val_bool() {
-  val_bool_ = false;
-  clear_has_val_bool();
-}
- bool CMsgSource1LegacyGameEvent_key_t::val_bool() const {
-  // @@protoc_insertion_point(field_get:CMsgSource1LegacyGameEvent.key_t.val_bool)
-  return val_bool_;
-}
- void CMsgSource1LegacyGameEvent_key_t::set_val_bool(bool value) {
-  set_has_val_bool();
-  val_bool_ = value;
-  // @@protoc_insertion_point(field_set:CMsgSource1LegacyGameEvent.key_t.val_bool)
-}
-
-// optional uint64 val_uint64 = 8;
-bool CMsgSource1LegacyGameEvent_key_t::has_val_uint64() const {
-  return (_has_bits_[0] & 0x00000080u) != 0;
-}
-void CMsgSource1LegacyGameEvent_key_t::set_has_val_uint64() {
-  _has_bits_[0] |= 0x00000080u;
-}
-void CMsgSource1LegacyGameEvent_key_t::clear_has_val_uint64() {
-  _has_bits_[0] &= ~0x00000080u;
-}
-void CMsgSource1LegacyGameEvent_key_t::clear_val_uint64() {
-  val_uint64_ = GOOGLE_ULONGLONG(0);
-  clear_has_val_uint64();
-}
- ::google::protobuf::uint64 CMsgSource1LegacyGameEvent_key_t::val_uint64() const {
-  // @@protoc_insertion_point(field_get:CMsgSource1LegacyGameEvent.key_t.val_uint64)
-  return val_uint64_;
-}
- void CMsgSource1LegacyGameEvent_key_t::set_val_uint64(::google::protobuf::uint64 value) {
-  set_has_val_uint64();
-  val_uint64_ = value;
-  // @@protoc_insertion_point(field_set:CMsgSource1LegacyGameEvent.key_t.val_uint64)
-}
-
-// -------------------------------------------------------------------
-
-// CMsgSource1LegacyGameEvent
-
-// optional string event_name = 1;
-bool CMsgSource1LegacyGameEvent::has_event_name() const {
-  return (_has_bits_[0] & 0x00000001u) != 0;
-}
-void CMsgSource1LegacyGameEvent::set_has_event_name() {
-  _has_bits_[0] |= 0x00000001u;
-}
-void CMsgSource1LegacyGameEvent::clear_has_event_name() {
-  _has_bits_[0] &= ~0x00000001u;
-}
-void CMsgSource1LegacyGameEvent::clear_event_name() {
-  event_name_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  clear_has_event_name();
-}
- const ::std::string& CMsgSource1LegacyGameEvent::event_name() const {
-  // @@protoc_insertion_point(field_get:CMsgSource1LegacyGameEvent.event_name)
-  return event_name_.GetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
- void CMsgSource1LegacyGameEvent::set_event_name(const ::std::string& value) {
-  set_has_event_name();
-  event_name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:CMsgSource1LegacyGameEvent.event_name)
-}
- void CMsgSource1LegacyGameEvent::set_event_name(const char* value) {
-  set_has_event_name();
-  event_name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:CMsgSource1LegacyGameEvent.event_name)
-}
- void CMsgSource1LegacyGameEvent::set_event_name(const char* value, size_t size) {
-  set_has_event_name();
-  event_name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-      ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:CMsgSource1LegacyGameEvent.event_name)
-}
- ::std::string* CMsgSource1LegacyGameEvent::mutable_event_name() {
-  set_has_event_name();
-  // @@protoc_insertion_point(field_mutable:CMsgSource1LegacyGameEvent.event_name)
-  return event_name_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
- ::std::string* CMsgSource1LegacyGameEvent::release_event_name() {
-  clear_has_event_name();
-  return event_name_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
- void CMsgSource1LegacyGameEvent::set_allocated_event_name(::std::string* event_name) {
-  if (event_name != NULL) {
-    set_has_event_name();
-  } else {
-    clear_has_event_name();
-  }
-  event_name_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), event_name);
-  // @@protoc_insertion_point(field_set_allocated:CMsgSource1LegacyGameEvent.event_name)
-}
-
-// optional int32 eventid = 2;
-bool CMsgSource1LegacyGameEvent::has_eventid() const {
-  return (_has_bits_[0] & 0x00000002u) != 0;
-}
-void CMsgSource1LegacyGameEvent::set_has_eventid() {
-  _has_bits_[0] |= 0x00000002u;
-}
-void CMsgSource1LegacyGameEvent::clear_has_eventid() {
-  _has_bits_[0] &= ~0x00000002u;
-}
-void CMsgSource1LegacyGameEvent::clear_eventid() {
-  eventid_ = 0;
-  clear_has_eventid();
-}
- ::google::protobuf::int32 CMsgSource1LegacyGameEvent::eventid() const {
-  // @@protoc_insertion_point(field_get:CMsgSource1LegacyGameEvent.eventid)
-  return eventid_;
-}
- void CMsgSource1LegacyGameEvent::set_eventid(::google::protobuf::int32 value) {
-  set_has_eventid();
-  eventid_ = value;
-  // @@protoc_insertion_point(field_set:CMsgSource1LegacyGameEvent.eventid)
-}
-
-// repeated .CMsgSource1LegacyGameEvent.key_t keys = 3;
-int CMsgSource1LegacyGameEvent::keys_size() const {
-  return keys_.size();
-}
-void CMsgSource1LegacyGameEvent::clear_keys() {
-  keys_.Clear();
-}
-const ::CMsgSource1LegacyGameEvent_key_t& CMsgSource1LegacyGameEvent::keys(int index) const {
-  // @@protoc_insertion_point(field_get:CMsgSource1LegacyGameEvent.keys)
-  return keys_.Get(index);
-}
-::CMsgSource1LegacyGameEvent_key_t* CMsgSource1LegacyGameEvent::mutable_keys(int index) {
-  // @@protoc_insertion_point(field_mutable:CMsgSource1LegacyGameEvent.keys)
-  return keys_.Mutable(index);
-}
-::CMsgSource1LegacyGameEvent_key_t* CMsgSource1LegacyGameEvent::add_keys() {
-  // @@protoc_insertion_point(field_add:CMsgSource1LegacyGameEvent.keys)
-  return keys_.Add();
-}
-::google::protobuf::RepeatedPtrField< ::CMsgSource1LegacyGameEvent_key_t >*
-CMsgSource1LegacyGameEvent::mutable_keys() {
-  // @@protoc_insertion_point(field_mutable_list:CMsgSource1LegacyGameEvent.keys)
-  return &keys_;
-}
-const ::google::protobuf::RepeatedPtrField< ::CMsgSource1LegacyGameEvent_key_t >&
-CMsgSource1LegacyGameEvent::keys() const {
-  // @@protoc_insertion_point(field_list:CMsgSource1LegacyGameEvent.keys)
-  return keys_;
-}
-
-#endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
 
 // ===================================================================
 
@@ -5581,7 +4263,7 @@ const int CMsgSosStartSoundEvent::kPackedParamsFieldNumber;
 #endif  // !_MSC_VER
 
 CMsgSosStartSoundEvent::CMsgSosStartSoundEvent()
-  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  : ::google::protobuf::Message() {
   SharedCtor();
   // @@protoc_insertion_point(constructor:CMsgSosStartSoundEvent)
 }
@@ -5590,8 +4272,7 @@ void CMsgSosStartSoundEvent::InitAsDefaultInstance() {
 }
 
 CMsgSosStartSoundEvent::CMsgSosStartSoundEvent(const CMsgSosStartSoundEvent& from)
-  : ::google::protobuf::Message(),
-    _internal_metadata_(NULL) {
+  : ::google::protobuf::Message() {
   SharedCtor();
   MergeFrom(from);
   // @@protoc_insertion_point(copy_constructor:CMsgSosStartSoundEvent)
@@ -5604,7 +4285,7 @@ void CMsgSosStartSoundEvent::SharedCtor() {
   soundevent_hash_ = 0u;
   source_entity_index_ = 0;
   seed_ = 0;
-  packed_params_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  packed_params_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
 
@@ -5614,7 +4295,9 @@ CMsgSosStartSoundEvent::~CMsgSosStartSoundEvent() {
 }
 
 void CMsgSosStartSoundEvent::SharedDtor() {
-  packed_params_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (packed_params_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete packed_params_;
+  }
   if (this != default_instance_) {
   }
 }
@@ -5636,37 +4319,35 @@ const CMsgSosStartSoundEvent& CMsgSosStartSoundEvent::default_instance() {
 
 CMsgSosStartSoundEvent* CMsgSosStartSoundEvent::default_instance_ = NULL;
 
-CMsgSosStartSoundEvent* CMsgSosStartSoundEvent::New(::google::protobuf::Arena* arena) const {
-  CMsgSosStartSoundEvent* n = new CMsgSosStartSoundEvent;
-  if (arena != NULL) {
-    arena->Own(n);
-  }
-  return n;
+CMsgSosStartSoundEvent* CMsgSosStartSoundEvent::New() const {
+  return new CMsgSosStartSoundEvent;
 }
 
 void CMsgSosStartSoundEvent::Clear() {
-#define ZR_HELPER_(f) reinterpret_cast<char*>(\
-  &reinterpret_cast<CMsgSosStartSoundEvent*>(16)->f)
+#define OFFSET_OF_FIELD_(f) (reinterpret_cast<char*>(      \
+  &reinterpret_cast<CMsgSosStartSoundEvent*>(16)->f) - \
+   reinterpret_cast<char*>(16))
 
-#define ZR_(first, last) do {\
-  ::memset(&first, 0,\
-           ZR_HELPER_(last) - ZR_HELPER_(first) + sizeof(last));\
-} while (0)
+#define ZR_(first, last) do {                              \
+    size_t f = OFFSET_OF_FIELD_(first);                    \
+    size_t n = OFFSET_OF_FIELD_(last) - f + sizeof(last);  \
+    ::memset(&first, 0, n);                                \
+  } while (0)
 
-  if (_has_bits_[0 / 32] & 31u) {
+  if (_has_bits_[0 / 32] & 31) {
     ZR_(soundevent_guid_, seed_);
     if (has_packed_params()) {
-      packed_params_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+      if (packed_params_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+        packed_params_->clear();
+      }
     }
   }
 
-#undef ZR_HELPER_
+#undef OFFSET_OF_FIELD_
 #undef ZR_
 
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
-  if (_internal_metadata_.have_unknown_fields()) {
-    mutable_unknown_fields()->Clear();
-  }
+  mutable_unknown_fields()->Clear();
 }
 
 bool CMsgSosStartSoundEvent::MergePartialFromCodedStream(
@@ -5802,7 +4483,7 @@ void CMsgSosStartSoundEvent::SerializeWithCachedSizes(
       5, this->packed_params(), output);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
   }
@@ -5839,7 +4520,7 @@ void CMsgSosStartSoundEvent::SerializeWithCachedSizes(
         5, this->packed_params(), target);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
   }
@@ -5850,7 +4531,7 @@ void CMsgSosStartSoundEvent::SerializeWithCachedSizes(
 int CMsgSosStartSoundEvent::ByteSize() const {
   int total_size = 0;
 
-  if (_has_bits_[0 / 32] & 31u) {
+  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     // optional int32 soundevent_guid = 1;
     if (has_soundevent_guid()) {
       total_size += 1 +
@@ -5885,7 +4566,7 @@ int CMsgSosStartSoundEvent::ByteSize() const {
     }
 
   }
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     total_size +=
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         unknown_fields());
@@ -5897,10 +4578,10 @@ int CMsgSosStartSoundEvent::ByteSize() const {
 }
 
 void CMsgSosStartSoundEvent::MergeFrom(const ::google::protobuf::Message& from) {
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
-  const CMsgSosStartSoundEvent* source = 
-      ::google::protobuf::internal::DynamicCastToGenerated<const CMsgSosStartSoundEvent>(
-          &from);
+  GOOGLE_CHECK_NE(&from, this);
+  const CMsgSosStartSoundEvent* source =
+    ::google::protobuf::internal::dynamic_cast_if_available<const CMsgSosStartSoundEvent*>(
+      &from);
   if (source == NULL) {
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
   } else {
@@ -5909,7 +4590,7 @@ void CMsgSosStartSoundEvent::MergeFrom(const ::google::protobuf::Message& from) 
 }
 
 void CMsgSosStartSoundEvent::MergeFrom(const CMsgSosStartSoundEvent& from) {
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  GOOGLE_CHECK_NE(&from, this);
   if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (from.has_soundevent_guid()) {
       set_soundevent_guid(from.soundevent_guid());
@@ -5924,13 +4605,10 @@ void CMsgSosStartSoundEvent::MergeFrom(const CMsgSosStartSoundEvent& from) {
       set_seed(from.seed());
     }
     if (from.has_packed_params()) {
-      set_has_packed_params();
-      packed_params_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.packed_params_);
+      set_packed_params(from.packed_params());
     }
   }
-  if (from._internal_metadata_.have_unknown_fields()) {
-    mutable_unknown_fields()->MergeFrom(from.unknown_fields());
-  }
+  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
 }
 
 void CMsgSosStartSoundEvent::CopyFrom(const ::google::protobuf::Message& from) {
@@ -5951,18 +4629,16 @@ bool CMsgSosStartSoundEvent::IsInitialized() const {
 }
 
 void CMsgSosStartSoundEvent::Swap(CMsgSosStartSoundEvent* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
-void CMsgSosStartSoundEvent::InternalSwap(CMsgSosStartSoundEvent* other) {
-  std::swap(soundevent_guid_, other->soundevent_guid_);
-  std::swap(soundevent_hash_, other->soundevent_hash_);
-  std::swap(source_entity_index_, other->source_entity_index_);
-  std::swap(seed_, other->seed_);
-  packed_params_.Swap(&other->packed_params_);
-  std::swap(_has_bits_[0], other->_has_bits_[0]);
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  std::swap(_cached_size_, other->_cached_size_);
+  if (other != this) {
+    std::swap(soundevent_guid_, other->soundevent_guid_);
+    std::swap(soundevent_hash_, other->soundevent_hash_);
+    std::swap(source_entity_index_, other->source_entity_index_);
+    std::swap(seed_, other->seed_);
+    std::swap(packed_params_, other->packed_params_);
+    std::swap(_has_bits_[0], other->_has_bits_[0]);
+    _unknown_fields_.Swap(&other->_unknown_fields_);
+    std::swap(_cached_size_, other->_cached_size_);
+  }
 }
 
 ::google::protobuf::Metadata CMsgSosStartSoundEvent::GetMetadata() const {
@@ -5973,159 +4649,6 @@ void CMsgSosStartSoundEvent::InternalSwap(CMsgSosStartSoundEvent* other) {
   return metadata;
 }
 
-#if PROTOBUF_INLINE_NOT_IN_HEADERS
-// CMsgSosStartSoundEvent
-
-// optional int32 soundevent_guid = 1;
-bool CMsgSosStartSoundEvent::has_soundevent_guid() const {
-  return (_has_bits_[0] & 0x00000001u) != 0;
-}
-void CMsgSosStartSoundEvent::set_has_soundevent_guid() {
-  _has_bits_[0] |= 0x00000001u;
-}
-void CMsgSosStartSoundEvent::clear_has_soundevent_guid() {
-  _has_bits_[0] &= ~0x00000001u;
-}
-void CMsgSosStartSoundEvent::clear_soundevent_guid() {
-  soundevent_guid_ = 0;
-  clear_has_soundevent_guid();
-}
- ::google::protobuf::int32 CMsgSosStartSoundEvent::soundevent_guid() const {
-  // @@protoc_insertion_point(field_get:CMsgSosStartSoundEvent.soundevent_guid)
-  return soundevent_guid_;
-}
- void CMsgSosStartSoundEvent::set_soundevent_guid(::google::protobuf::int32 value) {
-  set_has_soundevent_guid();
-  soundevent_guid_ = value;
-  // @@protoc_insertion_point(field_set:CMsgSosStartSoundEvent.soundevent_guid)
-}
-
-// optional fixed32 soundevent_hash = 2;
-bool CMsgSosStartSoundEvent::has_soundevent_hash() const {
-  return (_has_bits_[0] & 0x00000002u) != 0;
-}
-void CMsgSosStartSoundEvent::set_has_soundevent_hash() {
-  _has_bits_[0] |= 0x00000002u;
-}
-void CMsgSosStartSoundEvent::clear_has_soundevent_hash() {
-  _has_bits_[0] &= ~0x00000002u;
-}
-void CMsgSosStartSoundEvent::clear_soundevent_hash() {
-  soundevent_hash_ = 0u;
-  clear_has_soundevent_hash();
-}
- ::google::protobuf::uint32 CMsgSosStartSoundEvent::soundevent_hash() const {
-  // @@protoc_insertion_point(field_get:CMsgSosStartSoundEvent.soundevent_hash)
-  return soundevent_hash_;
-}
- void CMsgSosStartSoundEvent::set_soundevent_hash(::google::protobuf::uint32 value) {
-  set_has_soundevent_hash();
-  soundevent_hash_ = value;
-  // @@protoc_insertion_point(field_set:CMsgSosStartSoundEvent.soundevent_hash)
-}
-
-// optional int32 source_entity_index = 3;
-bool CMsgSosStartSoundEvent::has_source_entity_index() const {
-  return (_has_bits_[0] & 0x00000004u) != 0;
-}
-void CMsgSosStartSoundEvent::set_has_source_entity_index() {
-  _has_bits_[0] |= 0x00000004u;
-}
-void CMsgSosStartSoundEvent::clear_has_source_entity_index() {
-  _has_bits_[0] &= ~0x00000004u;
-}
-void CMsgSosStartSoundEvent::clear_source_entity_index() {
-  source_entity_index_ = 0;
-  clear_has_source_entity_index();
-}
- ::google::protobuf::int32 CMsgSosStartSoundEvent::source_entity_index() const {
-  // @@protoc_insertion_point(field_get:CMsgSosStartSoundEvent.source_entity_index)
-  return source_entity_index_;
-}
- void CMsgSosStartSoundEvent::set_source_entity_index(::google::protobuf::int32 value) {
-  set_has_source_entity_index();
-  source_entity_index_ = value;
-  // @@protoc_insertion_point(field_set:CMsgSosStartSoundEvent.source_entity_index)
-}
-
-// optional int32 seed = 4;
-bool CMsgSosStartSoundEvent::has_seed() const {
-  return (_has_bits_[0] & 0x00000008u) != 0;
-}
-void CMsgSosStartSoundEvent::set_has_seed() {
-  _has_bits_[0] |= 0x00000008u;
-}
-void CMsgSosStartSoundEvent::clear_has_seed() {
-  _has_bits_[0] &= ~0x00000008u;
-}
-void CMsgSosStartSoundEvent::clear_seed() {
-  seed_ = 0;
-  clear_has_seed();
-}
- ::google::protobuf::int32 CMsgSosStartSoundEvent::seed() const {
-  // @@protoc_insertion_point(field_get:CMsgSosStartSoundEvent.seed)
-  return seed_;
-}
- void CMsgSosStartSoundEvent::set_seed(::google::protobuf::int32 value) {
-  set_has_seed();
-  seed_ = value;
-  // @@protoc_insertion_point(field_set:CMsgSosStartSoundEvent.seed)
-}
-
-// optional bytes packed_params = 5;
-bool CMsgSosStartSoundEvent::has_packed_params() const {
-  return (_has_bits_[0] & 0x00000010u) != 0;
-}
-void CMsgSosStartSoundEvent::set_has_packed_params() {
-  _has_bits_[0] |= 0x00000010u;
-}
-void CMsgSosStartSoundEvent::clear_has_packed_params() {
-  _has_bits_[0] &= ~0x00000010u;
-}
-void CMsgSosStartSoundEvent::clear_packed_params() {
-  packed_params_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  clear_has_packed_params();
-}
- const ::std::string& CMsgSosStartSoundEvent::packed_params() const {
-  // @@protoc_insertion_point(field_get:CMsgSosStartSoundEvent.packed_params)
-  return packed_params_.GetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
- void CMsgSosStartSoundEvent::set_packed_params(const ::std::string& value) {
-  set_has_packed_params();
-  packed_params_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:CMsgSosStartSoundEvent.packed_params)
-}
- void CMsgSosStartSoundEvent::set_packed_params(const char* value) {
-  set_has_packed_params();
-  packed_params_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:CMsgSosStartSoundEvent.packed_params)
-}
- void CMsgSosStartSoundEvent::set_packed_params(const void* value, size_t size) {
-  set_has_packed_params();
-  packed_params_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-      ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:CMsgSosStartSoundEvent.packed_params)
-}
- ::std::string* CMsgSosStartSoundEvent::mutable_packed_params() {
-  set_has_packed_params();
-  // @@protoc_insertion_point(field_mutable:CMsgSosStartSoundEvent.packed_params)
-  return packed_params_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
- ::std::string* CMsgSosStartSoundEvent::release_packed_params() {
-  clear_has_packed_params();
-  return packed_params_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
- void CMsgSosStartSoundEvent::set_allocated_packed_params(::std::string* packed_params) {
-  if (packed_params != NULL) {
-    set_has_packed_params();
-  } else {
-    clear_has_packed_params();
-  }
-  packed_params_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), packed_params);
-  // @@protoc_insertion_point(field_set_allocated:CMsgSosStartSoundEvent.packed_params)
-}
-
-#endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
 
 // ===================================================================
 
@@ -6134,7 +4657,7 @@ const int CMsgSosStopSoundEvent::kSoundeventGuidFieldNumber;
 #endif  // !_MSC_VER
 
 CMsgSosStopSoundEvent::CMsgSosStopSoundEvent()
-  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  : ::google::protobuf::Message() {
   SharedCtor();
   // @@protoc_insertion_point(constructor:CMsgSosStopSoundEvent)
 }
@@ -6143,8 +4666,7 @@ void CMsgSosStopSoundEvent::InitAsDefaultInstance() {
 }
 
 CMsgSosStopSoundEvent::CMsgSosStopSoundEvent(const CMsgSosStopSoundEvent& from)
-  : ::google::protobuf::Message(),
-    _internal_metadata_(NULL) {
+  : ::google::protobuf::Message() {
   SharedCtor();
   MergeFrom(from);
   // @@protoc_insertion_point(copy_constructor:CMsgSosStopSoundEvent)
@@ -6183,20 +4705,14 @@ const CMsgSosStopSoundEvent& CMsgSosStopSoundEvent::default_instance() {
 
 CMsgSosStopSoundEvent* CMsgSosStopSoundEvent::default_instance_ = NULL;
 
-CMsgSosStopSoundEvent* CMsgSosStopSoundEvent::New(::google::protobuf::Arena* arena) const {
-  CMsgSosStopSoundEvent* n = new CMsgSosStopSoundEvent;
-  if (arena != NULL) {
-    arena->Own(n);
-  }
-  return n;
+CMsgSosStopSoundEvent* CMsgSosStopSoundEvent::New() const {
+  return new CMsgSosStopSoundEvent;
 }
 
 void CMsgSosStopSoundEvent::Clear() {
   soundevent_guid_ = 0;
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
-  if (_internal_metadata_.have_unknown_fields()) {
-    mutable_unknown_fields()->Clear();
-  }
+  mutable_unknown_fields()->Clear();
 }
 
 bool CMsgSosStopSoundEvent::MergePartialFromCodedStream(
@@ -6253,7 +4769,7 @@ void CMsgSosStopSoundEvent::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt32(1, this->soundevent_guid(), output);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
   }
@@ -6268,7 +4784,7 @@ void CMsgSosStopSoundEvent::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(1, this->soundevent_guid(), target);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
   }
@@ -6279,14 +4795,16 @@ void CMsgSosStopSoundEvent::SerializeWithCachedSizes(
 int CMsgSosStopSoundEvent::ByteSize() const {
   int total_size = 0;
 
-  // optional int32 soundevent_guid = 1;
-  if (has_soundevent_guid()) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::Int32Size(
-        this->soundevent_guid());
-  }
+  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    // optional int32 soundevent_guid = 1;
+    if (has_soundevent_guid()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::Int32Size(
+          this->soundevent_guid());
+    }
 
-  if (_internal_metadata_.have_unknown_fields()) {
+  }
+  if (!unknown_fields().empty()) {
     total_size +=
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         unknown_fields());
@@ -6298,10 +4816,10 @@ int CMsgSosStopSoundEvent::ByteSize() const {
 }
 
 void CMsgSosStopSoundEvent::MergeFrom(const ::google::protobuf::Message& from) {
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
-  const CMsgSosStopSoundEvent* source = 
-      ::google::protobuf::internal::DynamicCastToGenerated<const CMsgSosStopSoundEvent>(
-          &from);
+  GOOGLE_CHECK_NE(&from, this);
+  const CMsgSosStopSoundEvent* source =
+    ::google::protobuf::internal::dynamic_cast_if_available<const CMsgSosStopSoundEvent*>(
+      &from);
   if (source == NULL) {
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
   } else {
@@ -6310,15 +4828,13 @@ void CMsgSosStopSoundEvent::MergeFrom(const ::google::protobuf::Message& from) {
 }
 
 void CMsgSosStopSoundEvent::MergeFrom(const CMsgSosStopSoundEvent& from) {
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  GOOGLE_CHECK_NE(&from, this);
   if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (from.has_soundevent_guid()) {
       set_soundevent_guid(from.soundevent_guid());
     }
   }
-  if (from._internal_metadata_.have_unknown_fields()) {
-    mutable_unknown_fields()->MergeFrom(from.unknown_fields());
-  }
+  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
 }
 
 void CMsgSosStopSoundEvent::CopyFrom(const ::google::protobuf::Message& from) {
@@ -6339,14 +4855,12 @@ bool CMsgSosStopSoundEvent::IsInitialized() const {
 }
 
 void CMsgSosStopSoundEvent::Swap(CMsgSosStopSoundEvent* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
-void CMsgSosStopSoundEvent::InternalSwap(CMsgSosStopSoundEvent* other) {
-  std::swap(soundevent_guid_, other->soundevent_guid_);
-  std::swap(_has_bits_[0], other->_has_bits_[0]);
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  std::swap(_cached_size_, other->_cached_size_);
+  if (other != this) {
+    std::swap(soundevent_guid_, other->soundevent_guid_);
+    std::swap(_has_bits_[0], other->_has_bits_[0]);
+    _unknown_fields_.Swap(&other->_unknown_fields_);
+    std::swap(_cached_size_, other->_cached_size_);
+  }
 }
 
 ::google::protobuf::Metadata CMsgSosStopSoundEvent::GetMetadata() const {
@@ -6357,34 +4871,6 @@ void CMsgSosStopSoundEvent::InternalSwap(CMsgSosStopSoundEvent* other) {
   return metadata;
 }
 
-#if PROTOBUF_INLINE_NOT_IN_HEADERS
-// CMsgSosStopSoundEvent
-
-// optional int32 soundevent_guid = 1;
-bool CMsgSosStopSoundEvent::has_soundevent_guid() const {
-  return (_has_bits_[0] & 0x00000001u) != 0;
-}
-void CMsgSosStopSoundEvent::set_has_soundevent_guid() {
-  _has_bits_[0] |= 0x00000001u;
-}
-void CMsgSosStopSoundEvent::clear_has_soundevent_guid() {
-  _has_bits_[0] &= ~0x00000001u;
-}
-void CMsgSosStopSoundEvent::clear_soundevent_guid() {
-  soundevent_guid_ = 0;
-  clear_has_soundevent_guid();
-}
- ::google::protobuf::int32 CMsgSosStopSoundEvent::soundevent_guid() const {
-  // @@protoc_insertion_point(field_get:CMsgSosStopSoundEvent.soundevent_guid)
-  return soundevent_guid_;
-}
- void CMsgSosStopSoundEvent::set_soundevent_guid(::google::protobuf::int32 value) {
-  set_has_soundevent_guid();
-  soundevent_guid_ = value;
-  // @@protoc_insertion_point(field_set:CMsgSosStopSoundEvent.soundevent_guid)
-}
-
-#endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
 
 // ===================================================================
 
@@ -6394,7 +4880,7 @@ const int CMsgSosStopSoundEventHash::kSourceEntityIndexFieldNumber;
 #endif  // !_MSC_VER
 
 CMsgSosStopSoundEventHash::CMsgSosStopSoundEventHash()
-  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  : ::google::protobuf::Message() {
   SharedCtor();
   // @@protoc_insertion_point(constructor:CMsgSosStopSoundEventHash)
 }
@@ -6403,8 +4889,7 @@ void CMsgSosStopSoundEventHash::InitAsDefaultInstance() {
 }
 
 CMsgSosStopSoundEventHash::CMsgSosStopSoundEventHash(const CMsgSosStopSoundEventHash& from)
-  : ::google::protobuf::Message(),
-    _internal_metadata_(NULL) {
+  : ::google::protobuf::Message() {
   SharedCtor();
   MergeFrom(from);
   // @@protoc_insertion_point(copy_constructor:CMsgSosStopSoundEventHash)
@@ -6444,32 +4929,28 @@ const CMsgSosStopSoundEventHash& CMsgSosStopSoundEventHash::default_instance() {
 
 CMsgSosStopSoundEventHash* CMsgSosStopSoundEventHash::default_instance_ = NULL;
 
-CMsgSosStopSoundEventHash* CMsgSosStopSoundEventHash::New(::google::protobuf::Arena* arena) const {
-  CMsgSosStopSoundEventHash* n = new CMsgSosStopSoundEventHash;
-  if (arena != NULL) {
-    arena->Own(n);
-  }
-  return n;
+CMsgSosStopSoundEventHash* CMsgSosStopSoundEventHash::New() const {
+  return new CMsgSosStopSoundEventHash;
 }
 
 void CMsgSosStopSoundEventHash::Clear() {
-#define ZR_HELPER_(f) reinterpret_cast<char*>(\
-  &reinterpret_cast<CMsgSosStopSoundEventHash*>(16)->f)
+#define OFFSET_OF_FIELD_(f) (reinterpret_cast<char*>(      \
+  &reinterpret_cast<CMsgSosStopSoundEventHash*>(16)->f) - \
+   reinterpret_cast<char*>(16))
 
-#define ZR_(first, last) do {\
-  ::memset(&first, 0,\
-           ZR_HELPER_(last) - ZR_HELPER_(first) + sizeof(last));\
-} while (0)
+#define ZR_(first, last) do {                              \
+    size_t f = OFFSET_OF_FIELD_(first);                    \
+    size_t n = OFFSET_OF_FIELD_(last) - f + sizeof(last);  \
+    ::memset(&first, 0, n);                                \
+  } while (0)
 
   ZR_(soundevent_hash_, source_entity_index_);
 
-#undef ZR_HELPER_
+#undef OFFSET_OF_FIELD_
 #undef ZR_
 
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
-  if (_internal_metadata_.have_unknown_fields()) {
-    mutable_unknown_fields()->Clear();
-  }
+  mutable_unknown_fields()->Clear();
 }
 
 bool CMsgSosStopSoundEventHash::MergePartialFromCodedStream(
@@ -6546,7 +5027,7 @@ void CMsgSosStopSoundEventHash::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt32(2, this->source_entity_index(), output);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
   }
@@ -6566,7 +5047,7 @@ void CMsgSosStopSoundEventHash::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(2, this->source_entity_index(), target);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
   }
@@ -6577,7 +5058,7 @@ void CMsgSosStopSoundEventHash::SerializeWithCachedSizes(
 int CMsgSosStopSoundEventHash::ByteSize() const {
   int total_size = 0;
 
-  if (_has_bits_[0 / 32] & 3u) {
+  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     // optional fixed32 soundevent_hash = 1;
     if (has_soundevent_hash()) {
       total_size += 1 + 4;
@@ -6591,7 +5072,7 @@ int CMsgSosStopSoundEventHash::ByteSize() const {
     }
 
   }
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     total_size +=
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         unknown_fields());
@@ -6603,10 +5084,10 @@ int CMsgSosStopSoundEventHash::ByteSize() const {
 }
 
 void CMsgSosStopSoundEventHash::MergeFrom(const ::google::protobuf::Message& from) {
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
-  const CMsgSosStopSoundEventHash* source = 
-      ::google::protobuf::internal::DynamicCastToGenerated<const CMsgSosStopSoundEventHash>(
-          &from);
+  GOOGLE_CHECK_NE(&from, this);
+  const CMsgSosStopSoundEventHash* source =
+    ::google::protobuf::internal::dynamic_cast_if_available<const CMsgSosStopSoundEventHash*>(
+      &from);
   if (source == NULL) {
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
   } else {
@@ -6615,7 +5096,7 @@ void CMsgSosStopSoundEventHash::MergeFrom(const ::google::protobuf::Message& fro
 }
 
 void CMsgSosStopSoundEventHash::MergeFrom(const CMsgSosStopSoundEventHash& from) {
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  GOOGLE_CHECK_NE(&from, this);
   if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (from.has_soundevent_hash()) {
       set_soundevent_hash(from.soundevent_hash());
@@ -6624,9 +5105,7 @@ void CMsgSosStopSoundEventHash::MergeFrom(const CMsgSosStopSoundEventHash& from)
       set_source_entity_index(from.source_entity_index());
     }
   }
-  if (from._internal_metadata_.have_unknown_fields()) {
-    mutable_unknown_fields()->MergeFrom(from.unknown_fields());
-  }
+  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
 }
 
 void CMsgSosStopSoundEventHash::CopyFrom(const ::google::protobuf::Message& from) {
@@ -6647,15 +5126,13 @@ bool CMsgSosStopSoundEventHash::IsInitialized() const {
 }
 
 void CMsgSosStopSoundEventHash::Swap(CMsgSosStopSoundEventHash* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
-void CMsgSosStopSoundEventHash::InternalSwap(CMsgSosStopSoundEventHash* other) {
-  std::swap(soundevent_hash_, other->soundevent_hash_);
-  std::swap(source_entity_index_, other->source_entity_index_);
-  std::swap(_has_bits_[0], other->_has_bits_[0]);
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  std::swap(_cached_size_, other->_cached_size_);
+  if (other != this) {
+    std::swap(soundevent_hash_, other->soundevent_hash_);
+    std::swap(source_entity_index_, other->source_entity_index_);
+    std::swap(_has_bits_[0], other->_has_bits_[0]);
+    _unknown_fields_.Swap(&other->_unknown_fields_);
+    std::swap(_cached_size_, other->_cached_size_);
+  }
 }
 
 ::google::protobuf::Metadata CMsgSosStopSoundEventHash::GetMetadata() const {
@@ -6666,58 +5143,6 @@ void CMsgSosStopSoundEventHash::InternalSwap(CMsgSosStopSoundEventHash* other) {
   return metadata;
 }
 
-#if PROTOBUF_INLINE_NOT_IN_HEADERS
-// CMsgSosStopSoundEventHash
-
-// optional fixed32 soundevent_hash = 1;
-bool CMsgSosStopSoundEventHash::has_soundevent_hash() const {
-  return (_has_bits_[0] & 0x00000001u) != 0;
-}
-void CMsgSosStopSoundEventHash::set_has_soundevent_hash() {
-  _has_bits_[0] |= 0x00000001u;
-}
-void CMsgSosStopSoundEventHash::clear_has_soundevent_hash() {
-  _has_bits_[0] &= ~0x00000001u;
-}
-void CMsgSosStopSoundEventHash::clear_soundevent_hash() {
-  soundevent_hash_ = 0u;
-  clear_has_soundevent_hash();
-}
- ::google::protobuf::uint32 CMsgSosStopSoundEventHash::soundevent_hash() const {
-  // @@protoc_insertion_point(field_get:CMsgSosStopSoundEventHash.soundevent_hash)
-  return soundevent_hash_;
-}
- void CMsgSosStopSoundEventHash::set_soundevent_hash(::google::protobuf::uint32 value) {
-  set_has_soundevent_hash();
-  soundevent_hash_ = value;
-  // @@protoc_insertion_point(field_set:CMsgSosStopSoundEventHash.soundevent_hash)
-}
-
-// optional int32 source_entity_index = 2;
-bool CMsgSosStopSoundEventHash::has_source_entity_index() const {
-  return (_has_bits_[0] & 0x00000002u) != 0;
-}
-void CMsgSosStopSoundEventHash::set_has_source_entity_index() {
-  _has_bits_[0] |= 0x00000002u;
-}
-void CMsgSosStopSoundEventHash::clear_has_source_entity_index() {
-  _has_bits_[0] &= ~0x00000002u;
-}
-void CMsgSosStopSoundEventHash::clear_source_entity_index() {
-  source_entity_index_ = 0;
-  clear_has_source_entity_index();
-}
- ::google::protobuf::int32 CMsgSosStopSoundEventHash::source_entity_index() const {
-  // @@protoc_insertion_point(field_get:CMsgSosStopSoundEventHash.source_entity_index)
-  return source_entity_index_;
-}
- void CMsgSosStopSoundEventHash::set_source_entity_index(::google::protobuf::int32 value) {
-  set_has_source_entity_index();
-  source_entity_index_ = value;
-  // @@protoc_insertion_point(field_set:CMsgSosStopSoundEventHash.source_entity_index)
-}
-
-#endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
 
 // ===================================================================
 
@@ -6727,7 +5152,7 @@ const int CMsgSosSetSoundEventParams::kPackedParamsFieldNumber;
 #endif  // !_MSC_VER
 
 CMsgSosSetSoundEventParams::CMsgSosSetSoundEventParams()
-  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  : ::google::protobuf::Message() {
   SharedCtor();
   // @@protoc_insertion_point(constructor:CMsgSosSetSoundEventParams)
 }
@@ -6736,8 +5161,7 @@ void CMsgSosSetSoundEventParams::InitAsDefaultInstance() {
 }
 
 CMsgSosSetSoundEventParams::CMsgSosSetSoundEventParams(const CMsgSosSetSoundEventParams& from)
-  : ::google::protobuf::Message(),
-    _internal_metadata_(NULL) {
+  : ::google::protobuf::Message() {
   SharedCtor();
   MergeFrom(from);
   // @@protoc_insertion_point(copy_constructor:CMsgSosSetSoundEventParams)
@@ -6747,7 +5171,7 @@ void CMsgSosSetSoundEventParams::SharedCtor() {
   ::google::protobuf::internal::GetEmptyString();
   _cached_size_ = 0;
   soundevent_guid_ = 0;
-  packed_params_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  packed_params_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
 
@@ -6757,7 +5181,9 @@ CMsgSosSetSoundEventParams::~CMsgSosSetSoundEventParams() {
 }
 
 void CMsgSosSetSoundEventParams::SharedDtor() {
-  packed_params_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (packed_params_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete packed_params_;
+  }
   if (this != default_instance_) {
   }
 }
@@ -6779,25 +5205,21 @@ const CMsgSosSetSoundEventParams& CMsgSosSetSoundEventParams::default_instance()
 
 CMsgSosSetSoundEventParams* CMsgSosSetSoundEventParams::default_instance_ = NULL;
 
-CMsgSosSetSoundEventParams* CMsgSosSetSoundEventParams::New(::google::protobuf::Arena* arena) const {
-  CMsgSosSetSoundEventParams* n = new CMsgSosSetSoundEventParams;
-  if (arena != NULL) {
-    arena->Own(n);
-  }
-  return n;
+CMsgSosSetSoundEventParams* CMsgSosSetSoundEventParams::New() const {
+  return new CMsgSosSetSoundEventParams;
 }
 
 void CMsgSosSetSoundEventParams::Clear() {
-  if (_has_bits_[0 / 32] & 3u) {
+  if (_has_bits_[0 / 32] & 3) {
     soundevent_guid_ = 0;
     if (has_packed_params()) {
-      packed_params_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+      if (packed_params_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+        packed_params_->clear();
+      }
     }
   }
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
-  if (_internal_metadata_.have_unknown_fields()) {
-    mutable_unknown_fields()->Clear();
-  }
+  mutable_unknown_fields()->Clear();
 }
 
 bool CMsgSosSetSoundEventParams::MergePartialFromCodedStream(
@@ -6873,7 +5295,7 @@ void CMsgSosSetSoundEventParams::SerializeWithCachedSizes(
       5, this->packed_params(), output);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
   }
@@ -6895,7 +5317,7 @@ void CMsgSosSetSoundEventParams::SerializeWithCachedSizes(
         5, this->packed_params(), target);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
   }
@@ -6906,7 +5328,7 @@ void CMsgSosSetSoundEventParams::SerializeWithCachedSizes(
 int CMsgSosSetSoundEventParams::ByteSize() const {
   int total_size = 0;
 
-  if (_has_bits_[0 / 32] & 3u) {
+  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     // optional int32 soundevent_guid = 1;
     if (has_soundevent_guid()) {
       total_size += 1 +
@@ -6922,7 +5344,7 @@ int CMsgSosSetSoundEventParams::ByteSize() const {
     }
 
   }
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     total_size +=
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         unknown_fields());
@@ -6934,10 +5356,10 @@ int CMsgSosSetSoundEventParams::ByteSize() const {
 }
 
 void CMsgSosSetSoundEventParams::MergeFrom(const ::google::protobuf::Message& from) {
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
-  const CMsgSosSetSoundEventParams* source = 
-      ::google::protobuf::internal::DynamicCastToGenerated<const CMsgSosSetSoundEventParams>(
-          &from);
+  GOOGLE_CHECK_NE(&from, this);
+  const CMsgSosSetSoundEventParams* source =
+    ::google::protobuf::internal::dynamic_cast_if_available<const CMsgSosSetSoundEventParams*>(
+      &from);
   if (source == NULL) {
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
   } else {
@@ -6946,19 +5368,16 @@ void CMsgSosSetSoundEventParams::MergeFrom(const ::google::protobuf::Message& fr
 }
 
 void CMsgSosSetSoundEventParams::MergeFrom(const CMsgSosSetSoundEventParams& from) {
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  GOOGLE_CHECK_NE(&from, this);
   if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (from.has_soundevent_guid()) {
       set_soundevent_guid(from.soundevent_guid());
     }
     if (from.has_packed_params()) {
-      set_has_packed_params();
-      packed_params_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.packed_params_);
+      set_packed_params(from.packed_params());
     }
   }
-  if (from._internal_metadata_.have_unknown_fields()) {
-    mutable_unknown_fields()->MergeFrom(from.unknown_fields());
-  }
+  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
 }
 
 void CMsgSosSetSoundEventParams::CopyFrom(const ::google::protobuf::Message& from) {
@@ -6979,15 +5398,13 @@ bool CMsgSosSetSoundEventParams::IsInitialized() const {
 }
 
 void CMsgSosSetSoundEventParams::Swap(CMsgSosSetSoundEventParams* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
-void CMsgSosSetSoundEventParams::InternalSwap(CMsgSosSetSoundEventParams* other) {
-  std::swap(soundevent_guid_, other->soundevent_guid_);
-  packed_params_.Swap(&other->packed_params_);
-  std::swap(_has_bits_[0], other->_has_bits_[0]);
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  std::swap(_cached_size_, other->_cached_size_);
+  if (other != this) {
+    std::swap(soundevent_guid_, other->soundevent_guid_);
+    std::swap(packed_params_, other->packed_params_);
+    std::swap(_has_bits_[0], other->_has_bits_[0]);
+    _unknown_fields_.Swap(&other->_unknown_fields_);
+    std::swap(_cached_size_, other->_cached_size_);
+  }
 }
 
 ::google::protobuf::Metadata CMsgSosSetSoundEventParams::GetMetadata() const {
@@ -6998,87 +5415,6 @@ void CMsgSosSetSoundEventParams::InternalSwap(CMsgSosSetSoundEventParams* other)
   return metadata;
 }
 
-#if PROTOBUF_INLINE_NOT_IN_HEADERS
-// CMsgSosSetSoundEventParams
-
-// optional int32 soundevent_guid = 1;
-bool CMsgSosSetSoundEventParams::has_soundevent_guid() const {
-  return (_has_bits_[0] & 0x00000001u) != 0;
-}
-void CMsgSosSetSoundEventParams::set_has_soundevent_guid() {
-  _has_bits_[0] |= 0x00000001u;
-}
-void CMsgSosSetSoundEventParams::clear_has_soundevent_guid() {
-  _has_bits_[0] &= ~0x00000001u;
-}
-void CMsgSosSetSoundEventParams::clear_soundevent_guid() {
-  soundevent_guid_ = 0;
-  clear_has_soundevent_guid();
-}
- ::google::protobuf::int32 CMsgSosSetSoundEventParams::soundevent_guid() const {
-  // @@protoc_insertion_point(field_get:CMsgSosSetSoundEventParams.soundevent_guid)
-  return soundevent_guid_;
-}
- void CMsgSosSetSoundEventParams::set_soundevent_guid(::google::protobuf::int32 value) {
-  set_has_soundevent_guid();
-  soundevent_guid_ = value;
-  // @@protoc_insertion_point(field_set:CMsgSosSetSoundEventParams.soundevent_guid)
-}
-
-// optional bytes packed_params = 5;
-bool CMsgSosSetSoundEventParams::has_packed_params() const {
-  return (_has_bits_[0] & 0x00000002u) != 0;
-}
-void CMsgSosSetSoundEventParams::set_has_packed_params() {
-  _has_bits_[0] |= 0x00000002u;
-}
-void CMsgSosSetSoundEventParams::clear_has_packed_params() {
-  _has_bits_[0] &= ~0x00000002u;
-}
-void CMsgSosSetSoundEventParams::clear_packed_params() {
-  packed_params_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  clear_has_packed_params();
-}
- const ::std::string& CMsgSosSetSoundEventParams::packed_params() const {
-  // @@protoc_insertion_point(field_get:CMsgSosSetSoundEventParams.packed_params)
-  return packed_params_.GetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
- void CMsgSosSetSoundEventParams::set_packed_params(const ::std::string& value) {
-  set_has_packed_params();
-  packed_params_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:CMsgSosSetSoundEventParams.packed_params)
-}
- void CMsgSosSetSoundEventParams::set_packed_params(const char* value) {
-  set_has_packed_params();
-  packed_params_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:CMsgSosSetSoundEventParams.packed_params)
-}
- void CMsgSosSetSoundEventParams::set_packed_params(const void* value, size_t size) {
-  set_has_packed_params();
-  packed_params_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-      ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:CMsgSosSetSoundEventParams.packed_params)
-}
- ::std::string* CMsgSosSetSoundEventParams::mutable_packed_params() {
-  set_has_packed_params();
-  // @@protoc_insertion_point(field_mutable:CMsgSosSetSoundEventParams.packed_params)
-  return packed_params_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
- ::std::string* CMsgSosSetSoundEventParams::release_packed_params() {
-  clear_has_packed_params();
-  return packed_params_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
- void CMsgSosSetSoundEventParams::set_allocated_packed_params(::std::string* packed_params) {
-  if (packed_params != NULL) {
-    set_has_packed_params();
-  } else {
-    clear_has_packed_params();
-  }
-  packed_params_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), packed_params);
-  // @@protoc_insertion_point(field_set_allocated:CMsgSosSetSoundEventParams.packed_params)
-}
-
-#endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
 
 // ===================================================================
 
@@ -7088,7 +5424,7 @@ const int CMsgSosSetLibraryStackFields::kPackedFieldsFieldNumber;
 #endif  // !_MSC_VER
 
 CMsgSosSetLibraryStackFields::CMsgSosSetLibraryStackFields()
-  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  : ::google::protobuf::Message() {
   SharedCtor();
   // @@protoc_insertion_point(constructor:CMsgSosSetLibraryStackFields)
 }
@@ -7097,8 +5433,7 @@ void CMsgSosSetLibraryStackFields::InitAsDefaultInstance() {
 }
 
 CMsgSosSetLibraryStackFields::CMsgSosSetLibraryStackFields(const CMsgSosSetLibraryStackFields& from)
-  : ::google::protobuf::Message(),
-    _internal_metadata_(NULL) {
+  : ::google::protobuf::Message() {
   SharedCtor();
   MergeFrom(from);
   // @@protoc_insertion_point(copy_constructor:CMsgSosSetLibraryStackFields)
@@ -7108,7 +5443,7 @@ void CMsgSosSetLibraryStackFields::SharedCtor() {
   ::google::protobuf::internal::GetEmptyString();
   _cached_size_ = 0;
   stack_hash_ = 0u;
-  packed_fields_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  packed_fields_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
 
@@ -7118,7 +5453,9 @@ CMsgSosSetLibraryStackFields::~CMsgSosSetLibraryStackFields() {
 }
 
 void CMsgSosSetLibraryStackFields::SharedDtor() {
-  packed_fields_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (packed_fields_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete packed_fields_;
+  }
   if (this != default_instance_) {
   }
 }
@@ -7140,25 +5477,21 @@ const CMsgSosSetLibraryStackFields& CMsgSosSetLibraryStackFields::default_instan
 
 CMsgSosSetLibraryStackFields* CMsgSosSetLibraryStackFields::default_instance_ = NULL;
 
-CMsgSosSetLibraryStackFields* CMsgSosSetLibraryStackFields::New(::google::protobuf::Arena* arena) const {
-  CMsgSosSetLibraryStackFields* n = new CMsgSosSetLibraryStackFields;
-  if (arena != NULL) {
-    arena->Own(n);
-  }
-  return n;
+CMsgSosSetLibraryStackFields* CMsgSosSetLibraryStackFields::New() const {
+  return new CMsgSosSetLibraryStackFields;
 }
 
 void CMsgSosSetLibraryStackFields::Clear() {
-  if (_has_bits_[0 / 32] & 3u) {
+  if (_has_bits_[0 / 32] & 3) {
     stack_hash_ = 0u;
     if (has_packed_fields()) {
-      packed_fields_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+      if (packed_fields_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+        packed_fields_->clear();
+      }
     }
   }
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
-  if (_internal_metadata_.have_unknown_fields()) {
-    mutable_unknown_fields()->Clear();
-  }
+  mutable_unknown_fields()->Clear();
 }
 
 bool CMsgSosSetLibraryStackFields::MergePartialFromCodedStream(
@@ -7234,7 +5567,7 @@ void CMsgSosSetLibraryStackFields::SerializeWithCachedSizes(
       5, this->packed_fields(), output);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
   }
@@ -7256,7 +5589,7 @@ void CMsgSosSetLibraryStackFields::SerializeWithCachedSizes(
         5, this->packed_fields(), target);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
   }
@@ -7267,7 +5600,7 @@ void CMsgSosSetLibraryStackFields::SerializeWithCachedSizes(
 int CMsgSosSetLibraryStackFields::ByteSize() const {
   int total_size = 0;
 
-  if (_has_bits_[0 / 32] & 3u) {
+  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     // optional fixed32 stack_hash = 1;
     if (has_stack_hash()) {
       total_size += 1 + 4;
@@ -7281,7 +5614,7 @@ int CMsgSosSetLibraryStackFields::ByteSize() const {
     }
 
   }
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     total_size +=
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         unknown_fields());
@@ -7293,10 +5626,10 @@ int CMsgSosSetLibraryStackFields::ByteSize() const {
 }
 
 void CMsgSosSetLibraryStackFields::MergeFrom(const ::google::protobuf::Message& from) {
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
-  const CMsgSosSetLibraryStackFields* source = 
-      ::google::protobuf::internal::DynamicCastToGenerated<const CMsgSosSetLibraryStackFields>(
-          &from);
+  GOOGLE_CHECK_NE(&from, this);
+  const CMsgSosSetLibraryStackFields* source =
+    ::google::protobuf::internal::dynamic_cast_if_available<const CMsgSosSetLibraryStackFields*>(
+      &from);
   if (source == NULL) {
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
   } else {
@@ -7305,19 +5638,16 @@ void CMsgSosSetLibraryStackFields::MergeFrom(const ::google::protobuf::Message& 
 }
 
 void CMsgSosSetLibraryStackFields::MergeFrom(const CMsgSosSetLibraryStackFields& from) {
-  if (GOOGLE_PREDICT_FALSE(&from == this)) MergeFromFail(__LINE__);
+  GOOGLE_CHECK_NE(&from, this);
   if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (from.has_stack_hash()) {
       set_stack_hash(from.stack_hash());
     }
     if (from.has_packed_fields()) {
-      set_has_packed_fields();
-      packed_fields_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.packed_fields_);
+      set_packed_fields(from.packed_fields());
     }
   }
-  if (from._internal_metadata_.have_unknown_fields()) {
-    mutable_unknown_fields()->MergeFrom(from.unknown_fields());
-  }
+  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
 }
 
 void CMsgSosSetLibraryStackFields::CopyFrom(const ::google::protobuf::Message& from) {
@@ -7338,15 +5668,13 @@ bool CMsgSosSetLibraryStackFields::IsInitialized() const {
 }
 
 void CMsgSosSetLibraryStackFields::Swap(CMsgSosSetLibraryStackFields* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
-void CMsgSosSetLibraryStackFields::InternalSwap(CMsgSosSetLibraryStackFields* other) {
-  std::swap(stack_hash_, other->stack_hash_);
-  packed_fields_.Swap(&other->packed_fields_);
-  std::swap(_has_bits_[0], other->_has_bits_[0]);
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  std::swap(_cached_size_, other->_cached_size_);
+  if (other != this) {
+    std::swap(stack_hash_, other->stack_hash_);
+    std::swap(packed_fields_, other->packed_fields_);
+    std::swap(_has_bits_[0], other->_has_bits_[0]);
+    _unknown_fields_.Swap(&other->_unknown_fields_);
+    std::swap(_cached_size_, other->_cached_size_);
+  }
 }
 
 ::google::protobuf::Metadata CMsgSosSetLibraryStackFields::GetMetadata() const {
@@ -7357,87 +5685,6 @@ void CMsgSosSetLibraryStackFields::InternalSwap(CMsgSosSetLibraryStackFields* ot
   return metadata;
 }
 
-#if PROTOBUF_INLINE_NOT_IN_HEADERS
-// CMsgSosSetLibraryStackFields
-
-// optional fixed32 stack_hash = 1;
-bool CMsgSosSetLibraryStackFields::has_stack_hash() const {
-  return (_has_bits_[0] & 0x00000001u) != 0;
-}
-void CMsgSosSetLibraryStackFields::set_has_stack_hash() {
-  _has_bits_[0] |= 0x00000001u;
-}
-void CMsgSosSetLibraryStackFields::clear_has_stack_hash() {
-  _has_bits_[0] &= ~0x00000001u;
-}
-void CMsgSosSetLibraryStackFields::clear_stack_hash() {
-  stack_hash_ = 0u;
-  clear_has_stack_hash();
-}
- ::google::protobuf::uint32 CMsgSosSetLibraryStackFields::stack_hash() const {
-  // @@protoc_insertion_point(field_get:CMsgSosSetLibraryStackFields.stack_hash)
-  return stack_hash_;
-}
- void CMsgSosSetLibraryStackFields::set_stack_hash(::google::protobuf::uint32 value) {
-  set_has_stack_hash();
-  stack_hash_ = value;
-  // @@protoc_insertion_point(field_set:CMsgSosSetLibraryStackFields.stack_hash)
-}
-
-// optional bytes packed_fields = 5;
-bool CMsgSosSetLibraryStackFields::has_packed_fields() const {
-  return (_has_bits_[0] & 0x00000002u) != 0;
-}
-void CMsgSosSetLibraryStackFields::set_has_packed_fields() {
-  _has_bits_[0] |= 0x00000002u;
-}
-void CMsgSosSetLibraryStackFields::clear_has_packed_fields() {
-  _has_bits_[0] &= ~0x00000002u;
-}
-void CMsgSosSetLibraryStackFields::clear_packed_fields() {
-  packed_fields_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  clear_has_packed_fields();
-}
- const ::std::string& CMsgSosSetLibraryStackFields::packed_fields() const {
-  // @@protoc_insertion_point(field_get:CMsgSosSetLibraryStackFields.packed_fields)
-  return packed_fields_.GetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
- void CMsgSosSetLibraryStackFields::set_packed_fields(const ::std::string& value) {
-  set_has_packed_fields();
-  packed_fields_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:CMsgSosSetLibraryStackFields.packed_fields)
-}
- void CMsgSosSetLibraryStackFields::set_packed_fields(const char* value) {
-  set_has_packed_fields();
-  packed_fields_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:CMsgSosSetLibraryStackFields.packed_fields)
-}
- void CMsgSosSetLibraryStackFields::set_packed_fields(const void* value, size_t size) {
-  set_has_packed_fields();
-  packed_fields_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-      ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:CMsgSosSetLibraryStackFields.packed_fields)
-}
- ::std::string* CMsgSosSetLibraryStackFields::mutable_packed_fields() {
-  set_has_packed_fields();
-  // @@protoc_insertion_point(field_mutable:CMsgSosSetLibraryStackFields.packed_fields)
-  return packed_fields_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
- ::std::string* CMsgSosSetLibraryStackFields::release_packed_fields() {
-  clear_has_packed_fields();
-  return packed_fields_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
- void CMsgSosSetLibraryStackFields::set_allocated_packed_fields(::std::string* packed_fields) {
-  if (packed_fields != NULL) {
-    set_has_packed_fields();
-  } else {
-    clear_has_packed_fields();
-  }
-  packed_fields_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), packed_fields);
-  // @@protoc_insertion_point(field_set_allocated:CMsgSosSetLibraryStackFields.packed_fields)
-}
-
-#endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
 
 // @@protoc_insertion_point(namespace_scope)
 
