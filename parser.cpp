@@ -94,15 +94,17 @@ void Parser::readMessage(const char* buffer, int &pos) {
   cmd = (cmd & ~EDemoCommands::DEM_IsCompressed);
   //std::cout << "command: " << std::to_string(cmd) << " compressed: " << std::to_string(compressed) << "\n";
 
-  uint32_t tick;
-  tick = readVarUInt32(&buffer[pos], pos);
+  uint32_t _tick;
+  _tick = readVarUInt32(&buffer[pos], pos);
 
   // This appears to actually be an int32, where a -1 means pre-game.
-  if (tick == 4294967295) {
-    tick = 0;
+  if (_tick == 4294967295) {
+    _tick = 0;
   }
 
-  //std::cout << "tick: " << std::to_string(tick) << "\n";
+  if (tick != _tick) {
+    std::cout << "tick: " << std::to_string(tick) << "\n";
+  }
 
   uint32_t size;
   size = readVarUInt32(&buffer[pos], pos);
@@ -116,7 +118,7 @@ void Parser::readMessage(const char* buffer, int &pos) {
       char * uBuffer = new char[uSize];
       if (snappy::RawUncompress(&buffer[pos], size, uBuffer)) {
         //std::cout << "uncompressed success, size: " << std::to_string(uSize) << "\n";
-        parseMessage(cmd, tick, uSize, uBuffer);
+        parseMessage(cmd, _tick, uSize, uBuffer);
       }
       else {
         //std::cout << "uncompress fail\n";
@@ -130,7 +132,7 @@ void Parser::readMessage(const char* buffer, int &pos) {
     }
   }
   else {
-    parseMessage(cmd, tick, size, &buffer[pos]);
+    parseMessage(cmd, _tick, size, &buffer[pos]);
   }
   
   pos += size;
