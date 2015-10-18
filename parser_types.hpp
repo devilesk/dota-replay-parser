@@ -211,6 +211,7 @@ class Parser {
     int pos;
     /** Position cache for fullpackets */
     std::vector<uint32_t> fpackcache;
+    std::vector<uint32_t> fpackcachetick;
   public:
     std::unordered_map<int, std::string> classInfo;
     std::unordered_map<int, Properties*> classBaselines;
@@ -224,6 +225,7 @@ class Parser {
     int packetEntityFullPackets;
     int classIdSize;
     bool processPacketEntities;
+    bool syncTick;
     
     Parser() {
       pos = 0;
@@ -231,15 +233,16 @@ class Parser {
       packetEntityFullPackets = 0;
       hasClassInfo = false;
       processPacketEntities = true;
+      syncTick = false;
     };
     
     void open(std::string path);
     void readHeader();
     inline bool good() const {
-        return pos < length;
+      return pos < length;
     }
     inline void read() {
-        readMessage(buffer, pos);
+      readMessage(buffer, pos);
     }
     inline void close() {
       delete[] buffer;
@@ -253,6 +256,7 @@ class Parser {
     uint32_t updateInstanceBaseline();
     uint32_t updateInstanceBaselineItem(StringTableItem* item);
     flattened_serializers parseSendTables(CDemoSendTables* sendTables, PropertySerializerTable* pst);
+    void readMessageHeader(const char* buffer, int &pos, uint32_t& cmd, uint32_t& _tick, uint32_t& size, bool& compressed);
     void readMessage(const char* buffer, int &pos);
     void parseMessage(int cmd, int tick, int size, const char* buffer);
     //uint32_t parseClassInfo(CDemoClassInfo*);

@@ -88,7 +88,7 @@ void Parser::onCSVCMsg_PacketEntities(const char* buffer, int size) {
     Properties* props;
     
     // Proceed based on the update type
-    switch(eventType){
+    switch(eventType) {
       case EntityEventType_Create:
         // Create a new PacketEntity.
         pe = new PacketEntity();
@@ -106,7 +106,7 @@ void Parser::onCSVCMsg_PacketEntities(const char* buffer, int size) {
           pe->className = classInfo[pe->classId];
         }
         else {
-          //std::cout << "unable to find class " << std::to_string(pe->classId) << "\n";
+          std::cout << "unable to find class " << std::to_string(pe->classId) << "\n";
         }
         
         // Get the associated baseline
@@ -114,7 +114,7 @@ void Parser::onCSVCMsg_PacketEntities(const char* buffer, int size) {
           pe->classBaseline = classBaselines[pe->classId];
         }
         else {
-          //std::cout << "unable to find class baseline " << std::to_string(pe->classId) << "\n";
+          std::cout << "unable to find class baseline " << std::to_string(pe->classId) << "\n";
         }
         
         // Get the associated serializer
@@ -191,6 +191,7 @@ void Parser::onCSVCMsg_PacketEntities(const char* buffer, int size) {
   
   // free deleted entities
   for (auto & p : deletes) {
-      delete p;
+    delete p->properties;
+    delete p;
   }
 }

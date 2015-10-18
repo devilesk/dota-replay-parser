@@ -101,6 +101,7 @@ void Parser::open(std::string path) {
   // get file length
   stream.seekg(0, stream.end);
   length = stream.tellg();
+  std::cout << "File length: " << std::to_string(length) << "\n";
   stream.seekg(0, stream.beg);
   
   buffer = new char[length];
@@ -155,96 +156,198 @@ void Parser::handle() {
 }
 
 void Parser::skipTo(uint32_t _tick) {
+  std::cout << "skipTo\n";
   // make sure we have a valid state before skipping ahead / back
-  while (tick < 30) {
-      read();
+  while (!syncTick) {
+    std::cout << "reading until syncTick\n";
+    read();
   }
   
   // clear all entities
+  for(auto& kv : packetEntities) {
+    delete kv.second->properties;
+    delete kv.second;
+  }
+  packetEntities.clear();
   
   // skip to clostest fullpacket
   seekToFullPacket(_tick);
   
   // parse full packet
-  
-  // update string tables
+  std::cout << "parse seeked fullpacket\n";
+  uint32_t cmd;
+  uint32_t t;
+  uint32_t size;
+  bool compressed;
 
+  readMessageHeader(buffer, pos, cmd, t, size, compressed);
+  
+  CDemoFullPacket packet;
+  char* uBuffer;
+  if (compressed) {
+    std::size_t uSize;
+    if (snappy::GetUncompressedLength(&buffer[pos], size, &uSize)) {
+      char* uBuffer = new char[uSize];
+      if (snappy::RawUncompress(&buffer[pos], size, uBuffer)) {
+        packet.ParseFromArray(uBuffer, uSize);
+      }
+      else {
+        exit(0);
+      }
+      delete[] uBuffer;
+    }
+    else {
+      exit(0);
+    }
+  }
+  else {
+    packet.ParseFromArray(&buffer[pos], size);
+  }
+  
+  pos += size;
+      
+  // update string tables
+  std::cout << "fullpacket update string tables\n";
+  for (auto &tbl : packet.string_table().tables()) {
+    std::cout << "fullpacket tbl.table_name: " << tbl.table_name() << "\n";
+    if (stringTables.nameIndex.find(tbl.table_name()) != stringTables.nameIndex.end() &&
+        stringTables.tables.find(stringTables.nameIndex[tbl.table_name()]) != stringTables.tables.end()) {
+      StringTable* stringTable = stringTables.tables[stringTables.nameIndex[tbl.table_name()]];
+      
+      for (int i = 0; i < tbl.items_size(); ++i) {
+        if (stringTable->items.find(i) != stringTable->items.end()) {
+          stringTable->items[i]->key = tbl.items(i).str();
+          stringTable->items[i]->value = tbl.items(i).data();
+        }
+        else {
+          StringTableItem* item = new StringTableItem {
+            i,
+            tbl.items(i).str(),
+            tbl.items(i).data()
+          };
+          stringTable->items[i] = item;
+        }
+      }
+      
+      for (int i = 0; i < tbl.items_clientside_size(); ++i) {
+        if (stringTable->items.find(i) != stringTable->items.end()) {
+          stringTable->items[i]->key = tbl.items_clientside(i).str();
+          stringTable->items[i]->value = tbl.items_clientside(i).data();
+        }
+        else {
+          StringTableItem* item = new StringTableItem {
+            i,
+            tbl.items_clientside(i).str(),
+            tbl.items_clientside(i).data()
+          };
+          stringTable->items[i] = item;
+        }
+      }
+      
+      if (stringTable->name.compare("instancebaseline") == 0) {
+        updateInstanceBaseline();
+        std::cout << "stringTable->name instancebaseline\n";
+      }
+    }
+    else {
+      std::cout << "not found tbl.table_name: " << tbl.table_name() << "\n";
+    }
+  }
+  
+  // process full packet
+  packetEntityFullPackets = 0;
+  onCDemoFullPacket(&packet);
+  
   // read until at desired tick
+  std::cout << "read until at desired tick" << std::to_string(tick) << " " << std::to_string(_tick) << "\n";
   while (tick < _tick) {
-      read();
+    read();
   }
 }
 
 void Parser::seekToFullPacket(int _tick) {
+  std::cout << "seekToFullPacket\n";
   // generate the cache
   if (fpackcache.empty()) {
+    std::cout << "generate the cache\n";
     pos = 0;
     readHeader();
     uint32_t cmd;
+    uint32_t t;
+    uint32_t size;
+    bool compressed;
     uint32_t p;
     
     do {
       p = pos;
+      
       cmd = readVarUInt32(&buffer[pos], pos);
-      const bool compressed = (cmd & EDemoCommands::DEM_IsCompressed) == EDemoCommands::DEM_IsCompressed;
       cmd = (cmd & ~EDemoCommands::DEM_IsCompressed);
-      //std::cout << "command: " << std::to_string(cmd) << " compressed: " << std::to_string(compressed) << "\n";
-
-      uint32_t _tick;
-      _tick = readVarUInt32(&buffer[pos], pos);
-
-      // This appears to actually be an int32, where a -1 means pre-game.
-      if (_tick == 4294967295) {
-        _tick = 0;
-      }
-
-      if (tick != _tick) {
-        std::cout << "tick: " << std::to_string(tick) << "\n";
-      }
-
-      uint32_t size;
+      t = readVarUInt32(&buffer[pos], pos);
       size = readVarUInt32(&buffer[pos], pos);
+      
       pos += size;
+      
+      //std::cout << std::to_string(cmd) << " " << std::to_string(pos) << "\n";
       
       if (cmd == 13) {
         fpackcache.push_back(p);
+        fpackcachetick.push_back(t);
       }
     } while (cmd != 0);
+    
+    std::cout << "cache generated\n";
   }
-  
+  std::cout << "first fullpacket " << std::to_string(*fpackcache.begin()) << " " << std::to_string(*fpackcachetick.begin()) << "\n";
+  std::cout << "last fullpacket " << std::to_string(fpackcache.back()) << " " << std::to_string(fpackcachetick.back()) << "\n";
+  std::cout << "size fullpacket " << std::to_string(fpackcache.size()) << " " << std::to_string(fpackcachetick.size()) << "\n";
   // seek to the fullpacket closest to desired tick
-  for (int i = 0; i < fpackcache.size(); ++i) {
-    if (fpackcache[i] >= _tick) {
-      pos = fpackcache[i];
+  for (int i = 0; i < fpackcachetick.size(); ++i) {
+    std::cout << "fullpacket ticks " << std::to_string(fpackcachetick[i]) << "\n";
+    if (fpackcachetick[i] >= _tick) {
+      std::cout << "fullpacket pos set " << std::to_string(pos) << " " << std::to_string(fpackcachetick[i]) << "\n";
       break;
     }
+    pos = fpackcache[i];
   }
 }
 
-void Parser::readMessage(const char* buffer, int &pos) {
-  char* uBuffer;
-  uint32_t cmd;
+void Parser::readMessageHeader(const char* buffer, int &pos, uint32_t& cmd, uint32_t& _tick, uint32_t& size, bool& compressed) {
   cmd = readVarUInt32(&buffer[pos], pos);
-  const bool compressed = (cmd & EDemoCommands::DEM_IsCompressed) == EDemoCommands::DEM_IsCompressed;
+  compressed = (cmd & EDemoCommands::DEM_IsCompressed) == EDemoCommands::DEM_IsCompressed;
   cmd = (cmd & ~EDemoCommands::DEM_IsCompressed);
-  //std::cout << "command: " << std::to_string(cmd) << " compressed: " << std::to_string(compressed) << "\n";
 
-  uint32_t _tick;
   _tick = readVarUInt32(&buffer[pos], pos);
-
+  std::cout << "head tick: " << std::to_string(_tick) << "\n";
   // This appears to actually be an int32, where a -1 means pre-game.
   if (_tick == 4294967295) {
     _tick = 0;
   }
 
-  if (tick != _tick) {
-    std::cout << "tick: " << std::to_string(tick) << "\n";
-  }
-
-  uint32_t size;
+  /*if (tick != _tick) {
+    std::cout << "tick: " << std::to_string(_tick) << "\n";
+  }*/
+  
   size = readVarUInt32(&buffer[pos], pos);
-  //std::cout << "size: " << std::to_string(size) << "\n";
+}
 
+void Parser::readMessage(const char* buffer, int &pos) {
+  char* uBuffer;
+  uint32_t cmd;
+  uint32_t _tick;
+  uint32_t size;
+  bool compressed;
+
+  readMessageHeader(buffer, pos, cmd, _tick, size, compressed);
+  
+  if (cmd == 3) {
+    syncTick = true;
+  }
+  
+  if (tick != _tick) {
+    std::cout << "tick: " << std::to_string(_tick) << "\n";
+  }
+  
   //if (compressed && snappy::IsValidCompressedBuffer(&buffer[pos], size)) {
   if (compressed) {
     //std::cout << "valid snappy compressed buffer\n";

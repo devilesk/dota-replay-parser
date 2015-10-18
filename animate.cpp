@@ -29,6 +29,8 @@ int main(int argc, char **argv) {
   //p.open("1858267282.dem");
   p.open(path);
   p.readHeader();
+  p.skipTo(50322); //14322
+  replayTick = 50322;
   //p.handle();
   
   std::cout << "Last tick: " << std::to_string(p.tick) << "\n";
@@ -117,7 +119,7 @@ void main_loop() {
   SDL_FillRect(screen, NULL, SDL_MapRGB(screen->format, 255, 255, 255));
   SDL_BlitSurface(background, NULL, screen, NULL);
   
-  for(auto& kv: p.packetEntities) {
+  for(auto& kv : p.packetEntities) {
     if (isPrefix(kv.second->className, "CDOTA_Unit_Hero_")) {
       if (has_coordinates(kv.second)) {
         //std::cout << "entity className: " << kv.second->className << " entity id: " << kv.second->index << "\n";
@@ -141,8 +143,12 @@ void main_loop() {
     } else if (isPrefix(kv.second->className, "CDOTA_BaseNPC_Creep")) {
       if (has_coordinates(kv.second)) {
         uint64_t team;
+        uint64_t team2;
+        uint64_t team3;
         kv.second->fetchUint64("m_iTeamNum", team);
-        //std::cout << "creep team: " << std::to_string(team) << "\n";
+        kv.second->properties->fetchUint64("m_iTeamNum", team2);
+        kv.second->classBaseline->fetchUint64("m_iTeamNum", team3);
+        std::cout << "creep team: " << std::to_string(team) << "creep team: " << std::to_string(team2) << "creep team: " << std::to_string(team3) << "\n";
         int img_x;
         int img_y;
         get_coordinates(kv.second, img_x, img_y);
