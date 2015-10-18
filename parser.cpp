@@ -1,5 +1,6 @@
 #include "parser.hpp"
 
+/*
 int main ()
 {
   //std::cout << "HELLO WORLD!\n";
@@ -84,6 +85,140 @@ int main ()
   //std::cout << "File closed.\n";
   
   std::cout << "Last tick: " << std::to_string(p.tick) << "\n";
+}*/
+
+const std::string Parser::demheader = "PBDEMS2";
+
+void Parser::open(std::string path) {
+  stream.open(path.c_str(), std::ifstream::in | std::ifstream::binary);
+  if (!stream.is_open()) {
+    std::cout << "Could not open file.\n";
+  }
+  else {
+    std::cout << "File opened.\n";
+  }
+
+  // get file length
+  stream.seekg(0, stream.end);
+  length = stream.tellg();
+  stream.seekg(0, stream.beg);
+  
+  buffer = new char[length];
+  
+  stream.read(buffer, length);
+  stream.close();
+  
+  pos = 0;
+}
+
+void Parser::readHeader() {
+  char header[8];
+
+  std::copy(buffer, &buffer[7], header);
+  pos += 8;
+  
+  if (strcmp(header, demheader.c_str())) {
+    std::cout << "Invalid header.\n";
+  }
+  else {
+    std::cout << "Valid header.\n";
+  }
+
+  // Skip the next 8 bytes, which appear to be two int32s related to the size
+  // of the demo file. We may need them in the future, but not so far.
+  pos += 8;
+
+  uint32_t cmd;
+  cmd = readVarUInt32(&buffer[pos], pos);
+
+  tick = readVarUInt32(&buffer[pos], pos);
+
+  // This appears to actually be an int32, where a -1 means pre-game.
+  if (tick == 4294967295) {
+    tick = 0;
+  }
+  
+  uint32_t size;
+  size = readVarUInt32(&buffer[pos], pos);
+
+  CDemoFileHeader demo_header;
+  demo_header.ParseFromArray(&buffer[pos], size);
+  std::cout << "map_name: " << demo_header.map_name() << "\n";
+
+  pos += size;
+}
+
+void Parser::handle() {
+  while (good()) {
+    read();
+  }
+}
+
+void Parser::skipTo(uint32_t _tick) {
+  // make sure we have a valid state before skipping ahead / back
+  while (tick < 30) {
+      read();
+  }
+  
+  // clear all entities
+  
+  // skip to clostest fullpacket
+  seekToFullPacket(_tick);
+  
+  // parse full packet
+  
+  // update string tables
+
+  // read until at desired tick
+  while (tick < _tick) {
+      read();
+  }
+}
+
+void Parser::seekToFullPacket(int _tick) {
+  // generate the cache
+  if (fpackcache.empty()) {
+    pos = 0;
+    readHeader();
+    uint32_t cmd;
+    uint32_t p;
+    
+    do {
+      p = pos;
+      cmd = readVarUInt32(&buffer[pos], pos);
+      const bool compressed = (cmd & EDemoCommands::DEM_IsCompressed) == EDemoCommands::DEM_IsCompressed;
+      cmd = (cmd & ~EDemoCommands::DEM_IsCompressed);
+      //std::cout << "command: " << std::to_string(cmd) << " compressed: " << std::to_string(compressed) << "\n";
+
+      uint32_t _tick;
+      _tick = readVarUInt32(&buffer[pos], pos);
+
+      // This appears to actually be an int32, where a -1 means pre-game.
+      if (_tick == 4294967295) {
+        _tick = 0;
+      }
+
+      if (tick != _tick) {
+        std::cout << "tick: " << std::to_string(tick) << "\n";
+      }
+
+      uint32_t size;
+      size = readVarUInt32(&buffer[pos], pos);
+      pos += size;
+      
+      if (cmd == 13) {
+        fpackcache.push_back(p);
+      }
+    } while (cmd != 0);
+  }
+  
+  // seek to the fullpacket closest to desired tick
+  for (int i = 0; i < fpackcache.size(); ++i) {
+    if (fpackcache[i] >= _tick) {
+      pos = fpackcache[i];
+      break;
+    }
+  }
 }
 
 void Parser::readMessage(const char* buffer, int &pos) {
@@ -269,15 +404,4 @@ void Parser::onCUserMessageSayText2(const char* buffer, int size) {
   CUserMessageSayText2 data;
   data.ParseFromArray(buffer, size);
   std::cout << data.messagename() << " | " << data.param1() << ": " << data.param2() << "\n";
-}
-
-void entityHandler(PacketEntity* pe, EntityEventType t) {
-  //std::cout << "entity className: " << pe->className << " " << std::to_string(t) << " entity id: " << pe->index << "\n";
-  if (pe->className.compare("CDOTA_NPC_Observer_Ward") == 0 || isPrefix(pe->className, "CDOTA_Unit_Hero_")) {
-    //std::cout << "entity className: " << pe->className << " " << std::to_string(t) << " entity id: " << pe->index << "\n";
-    for (auto const& p : pe->properties->KV)
-    {
-        //std::cout << "\t" << p.first << " " << asString(p.second) << "\n";
-    }
-  }
 }

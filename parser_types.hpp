@@ -203,6 +203,14 @@ struct pendingMessage {
 typedef void (*packetEntityHandler)(PacketEntity* , EntityEventType);
 
 class Parser {
+  private:
+    static const std::string demheader;
+    std::ifstream stream;
+    int length;
+    char* buffer;
+    int pos;
+    /** Position cache for fullpackets */
+    std::vector<uint32_t> fpackcache;
   public:
     std::unordered_map<int, std::string> classInfo;
     std::unordered_map<int, Properties*> classBaselines;
@@ -218,11 +226,28 @@ class Parser {
     bool processPacketEntities;
     
     Parser() {
+      pos = 0;
       tick = 0;
       packetEntityFullPackets = 0;
       hasClassInfo = false;
       processPacketEntities = true;
     };
+    
+    void open(std::string path);
+    void readHeader();
+    inline bool good() const {
+        return pos < length;
+    }
+    inline void read() {
+        readMessage(buffer, pos);
+    }
+    inline void close() {
+      delete[] buffer;
+    }
+    void handle();
+    void skipTo(uint32_t tick);
+    void seekToFullPacket(int _tick);
+    
     //uint32_t onCSVCMsg_CreateStringTable(CSVCMsg_CreateStringTable* data);
     //uint32_t onCSVCMsg_ServerInfo(CSVCMsg_ServerInfo* data);
     uint32_t updateInstanceBaseline();

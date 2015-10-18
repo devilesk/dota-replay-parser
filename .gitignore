@@ -4,3 +4,5 @@ parser.mem
 parser.html
 parser.js
 parser.html.mem
+*.bc
+*.txt
