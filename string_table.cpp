@@ -1,5 +1,54 @@
 #include "string_table.hpp"
 
+void Parser::onCDemoStringTables(const CDemoStringTables* string_table) {
+  //std::cout << "onCDemoStringTables" << std::to_string(tick) << "\n";
+  for (auto &tbl : string_table->tables()) {
+    //std::cout << "tbl.table_name: " << tbl.table_name() << "\n";
+    if (stringTables.nameIndex.find(tbl.table_name()) != stringTables.nameIndex.end() &&
+        stringTables.tables.find(stringTables.nameIndex[tbl.table_name()]) != stringTables.tables.end()) {
+      StringTable* stringTable = stringTables.tables[stringTables.nameIndex[tbl.table_name()]];
+      
+      for (int i = 0; i < tbl.items_size(); ++i) {
+        if (stringTable->items.find(i) != stringTable->items.end()) {
+          stringTable->items[i]->key = tbl.items(i).str();
+          stringTable->items[i]->value = tbl.items(i).data();
+        }
+        else {
+          StringTableItem* item = new StringTableItem {
+            i,
+            tbl.items(i).str(),
+            tbl.items(i).data()
+          };
+          stringTable->items[i] = item;
+        }
+      }
+      
+      for (int i = 0; i < tbl.items_clientside_size(); ++i) {
+        if (stringTable->items.find(i) != stringTable->items.end()) {
+          stringTable->items[i]->key = tbl.items_clientside(i).str();
+          stringTable->items[i]->value = tbl.items_clientside(i).data();
+        }
+        else {
+          StringTableItem* item = new StringTableItem {
+            i,
+            tbl.items_clientside(i).str(),
+            tbl.items_clientside(i).data()
+          };
+          stringTable->items[i] = item;
+        }
+      }
+      
+      if (stringTable->name.compare("instancebaseline") == 0) {
+        updateInstanceBaseline();
+        //std::cout << "stringTable->name instancebaseline\n";
+      }
+    }
+    else {
+      std::cout << "not found tbl.table_name: " << tbl.table_name() << "\n";
+    }
+  }
+}
+
 void Parser::onCSVCMsg_CreateStringTable(const char* buffer, int size) {
   CSVCMsg_CreateStringTable data;
   data.ParseFromArray(buffer, size);

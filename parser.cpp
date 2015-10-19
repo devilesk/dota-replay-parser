@@ -164,17 +164,17 @@ void Parser::skipTo(uint32_t _tick) {
   }
   
   // clear all entities
-  for(auto& kv : packetEntities) {
+  /*for(auto& kv : packetEntities) {
     delete kv.second->properties;
     delete kv.second;
   }
-  packetEntities.clear();
+  packetEntities.clear();*/
   
   // skip to clostest fullpacket
   seekToFullPacket(_tick);
   
   // parse full packet
-  std::cout << "parse seeked fullpacket\n";
+  /*std::cout << "parse seeked fullpacket\n";
   uint32_t cmd;
   uint32_t t;
   uint32_t size;
@@ -208,55 +208,11 @@ void Parser::skipTo(uint32_t _tick) {
       
   // update string tables
   std::cout << "fullpacket update string tables\n";
-  for (auto &tbl : packet.string_table().tables()) {
-    std::cout << "fullpacket tbl.table_name: " << tbl.table_name() << "\n";
-    if (stringTables.nameIndex.find(tbl.table_name()) != stringTables.nameIndex.end() &&
-        stringTables.tables.find(stringTables.nameIndex[tbl.table_name()]) != stringTables.tables.end()) {
-      StringTable* stringTable = stringTables.tables[stringTables.nameIndex[tbl.table_name()]];
-      
-      for (int i = 0; i < tbl.items_size(); ++i) {
-        if (stringTable->items.find(i) != stringTable->items.end()) {
-          stringTable->items[i]->key = tbl.items(i).str();
-          stringTable->items[i]->value = tbl.items(i).data();
-        }
-        else {
-          StringTableItem* item = new StringTableItem {
-            i,
-            tbl.items(i).str(),
-            tbl.items(i).data()
-          };
-          stringTable->items[i] = item;
-        }
-      }
-      
-      for (int i = 0; i < tbl.items_clientside_size(); ++i) {
-        if (stringTable->items.find(i) != stringTable->items.end()) {
-          stringTable->items[i]->key = tbl.items_clientside(i).str();
-          stringTable->items[i]->value = tbl.items_clientside(i).data();
-        }
-        else {
-          StringTableItem* item = new StringTableItem {
-            i,
-            tbl.items_clientside(i).str(),
-            tbl.items_clientside(i).data()
-          };
-          stringTable->items[i] = item;
-        }
-      }
-      
-      if (stringTable->name.compare("instancebaseline") == 0) {
-        updateInstanceBaseline();
-        std::cout << "stringTable->name instancebaseline\n";
-      }
-    }
-    else {
-      std::cout << "not found tbl.table_name: " << tbl.table_name() << "\n";
-    }
-  }
+  onCDemoStringTables(&packet.string_table());
   
   // process full packet
   packetEntityFullPackets = 0;
-  onCDemoFullPacket(&packet);
+  onCDemoFullPacket(&packet);*/
   
   // read until at desired tick
   std::cout << "read until at desired tick" << std::to_string(tick) << " " << std::to_string(_tick) << "\n";
@@ -308,7 +264,17 @@ void Parser::seekToFullPacket(int _tick) {
       std::cout << "fullpacket pos set " << std::to_string(pos) << " " << std::to_string(fpackcachetick[i]) << "\n";
       break;
     }
+    
+    // clear all entities
+    for(auto& kv : packetEntities) {
+      delete kv.second->properties;
+      delete kv.second;
+    }
+    packetEntities.clear();
+  
     pos = fpackcache[i];
+    packetEntityFullPackets = 0;
+    read();
   }
 }
 
@@ -318,7 +284,7 @@ void Parser::readMessageHeader(const char* buffer, int &pos, uint32_t& cmd, uint
   cmd = (cmd & ~EDemoCommands::DEM_IsCompressed);
 
   _tick = readVarUInt32(&buffer[pos], pos);
-  std::cout << "head tick: " << std::to_string(_tick) << "\n";
+  //std::cout << "head tick: " << std::to_string(_tick) << "\n";
   // This appears to actually be an int32, where a -1 means pre-game.
   if (_tick == 4294967295) {
     _tick = 0;
@@ -344,9 +310,9 @@ void Parser::readMessage(const char* buffer, int &pos) {
     syncTick = true;
   }
   
-  if (tick != _tick) {
+  /*if (tick != _tick) {
     std::cout << "tick: " << std::to_string(_tick) << "\n";
-  }
+  }*/
   
   //if (compressed && snappy::IsValidCompressedBuffer(&buffer[pos], size)) {
   if (compressed) {
@@ -500,6 +466,7 @@ void Parser::onCDemoPacket(const CDemoPacket* packet) {
 
 void Parser::onCDemoFullPacket(const CDemoFullPacket* packet) {
   //parseStringTables(&(packet->string_table()), p);
+  onCDemoStringTables(&(packet->string_table()));
   onCDemoPacket(&(packet->packet()));
 }
 

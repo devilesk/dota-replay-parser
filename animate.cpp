@@ -83,7 +83,7 @@ bool has_coordinates(PacketEntity* pe) {
         pe->properties->KV.find("CBodyComponentBaseAnimatingOverlay.m_vecY") != pe->properties->KV.end();
 }
 
-void get_coordinates(PacketEntity* pe, int& img_x, int& img_y) {
+bool get_coordinates(PacketEntity* pe, int& img_x, int& img_y) {
   uint64_t cX;
   uint64_t cY;
   float vX;
@@ -92,13 +92,13 @@ void get_coordinates(PacketEntity* pe, int& img_x, int& img_y) {
   //std::cout << "CBodyComponentBaseAnimatingOverlay.m_cellY: " << asString(pe->properties->KV["CBodyComponentBaseAnimatingOverlay.m_cellY"]) << "\n";
   //std::cout << "CBodyComponentBaseAnimatingOverlay.m_vecX: " << asString(pe->properties->KV["CBodyComponentBaseAnimatingOverlay.m_vecX"]) << "\n";
   //std::cout << "CBodyComponentBaseAnimatingOverlay.m_vecY: " << asString(pe->properties->KV["CBodyComponentBaseAnimatingOverlay.m_vecY"]) << "\n";
-  pe->properties->fetchUint64("CBodyComponentBaseAnimatingOverlay.m_cellX", cX);
+  if (!pe->fetchUint64("CBodyComponentBaseAnimatingOverlay.m_cellX", cX)) return false;
   //std::cout << "cX: " << std::to_string(cX) << "\n";
-  pe->properties->fetchUint64("CBodyComponentBaseAnimatingOverlay.m_cellY", cY);
+  if (!pe->fetchUint64("CBodyComponentBaseAnimatingOverlay.m_cellY", cY)) return false;
   //std::cout << "cY: " << std::to_string(cY) << "\n";
-  pe->properties->fetchFloat32("CBodyComponentBaseAnimatingOverlay.m_vecX", vX);
+  if (!pe->fetchFloat32("CBodyComponentBaseAnimatingOverlay.m_vecX", vX)) return false;
   //std::cout << "vX: " << std::to_string(vX) << "\n";
-  pe->properties->fetchFloat32("CBodyComponentBaseAnimatingOverlay.m_vecY", vY);
+  if (!pe->fetchFloat32("CBodyComponentBaseAnimatingOverlay.m_vecY", vY)) return false;
   //std::cout << "vY: " << std::to_string(vY) << "\n";
   
   double x = (((double)cX * cellWidth) - MAX_COORDINATE) + (double)vX;
@@ -108,6 +108,7 @@ void get_coordinates(PacketEntity* pe, int& img_x, int& img_y) {
   
   img_x = int((8576.0 + x) * 0.0626 + -25.0152);
   img_y = int((8192.0 - y) * 0.0630 + -45.7787);
+  return true;
 }
 
 void main_loop() {
@@ -121,104 +122,96 @@ void main_loop() {
   
   for(auto& kv : p.packetEntities) {
     if (isPrefix(kv.second->className, "CDOTA_Unit_Hero_")) {
-      if (has_coordinates(kv.second)) {
-        //std::cout << "entity className: " << kv.second->className << " entity id: " << kv.second->index << "\n";
-        
-        int img_x;
-        int img_y;
-        get_coordinates(kv.second, img_x, img_y);
-        
-        //std::cout << "img_x: " << std::to_string(img_x) << "\n";
-        //std::cout << "img_y: " << std::to_string(img_y) << "\n";
-        //std::cout << "hero_map[kv.second->className]: " << std::to_string(hero_map[kv.second->className]) << "\n";
-        
-        SDL_Rect dstrect;
-        dstrect.x = img_x - 16;
-        dstrect.y = img_y - 16;
-        dstrect.w = 32;
-        dstrect.h = 32;
-        SDL_BlitSurface(herosprites, &(h_offsets[hero_map[kv.second->className]]), screen, &dstrect);
-        //std::cout << "drew hero\n";
-      }
+      //std::cout << "entity className: " << kv.second->className << " entity id: " << kv.second->index << "\n";
+      
+      int img_x;
+      int img_y;
+      if (!get_coordinates(kv.second, img_x, img_y)) continue;
+      
+      //std::cout << "img_x: " << std::to_string(img_x) << "\n";
+      //std::cout << "img_y: " << std::to_string(img_y) << "\n";
+      //std::cout << "hero_map[kv.second->className]: " << std::to_string(hero_map[kv.second->className]) << "\n";
+      
+      SDL_Rect dstrect;
+      dstrect.x = img_x - 16;
+      dstrect.y = img_y - 16;
+      dstrect.w = 32;
+      dstrect.h = 32;
+      SDL_BlitSurface(herosprites, &(h_offsets[hero_map[kv.second->className]]), screen, &dstrect);
+      //std::cout << "drew hero\n";
     } else if (isPrefix(kv.second->className, "CDOTA_BaseNPC_Creep")) {
-      if (has_coordinates(kv.second)) {
-        uint64_t team;
-        uint64_t team2;
-        uint64_t team3;
-        kv.second->fetchUint64("m_iTeamNum", team);
-        kv.second->properties->fetchUint64("m_iTeamNum", team2);
-        kv.second->classBaseline->fetchUint64("m_iTeamNum", team3);
-        std::cout << "creep team: " << std::to_string(team) << "creep team: " << std::to_string(team2) << "creep team: " << std::to_string(team3) << "\n";
-        int img_x;
-        int img_y;
-        get_coordinates(kv.second, img_x, img_y);
-        SDL_Rect dstrect;
-        dstrect.x = img_x - 2;
-        dstrect.y = img_y - 2;
-        dstrect.w = 4;
-        dstrect.h = 4;
-        if (team == 3) {
-          SDL_FillRect(screen, &dstrect, SDL_MapRGB(screen->format, 255, 0, 0));
-        }
-        else if (team == 2) {
-          SDL_FillRect(screen, &dstrect, SDL_MapRGB(screen->format, 0, 255, 0));
-        }
-        else if (team == 4) {
-          SDL_FillRect(screen, &dstrect, SDL_MapRGB(screen->format, 255, 127, 0));
-        }
+      uint64_t team;
+      uint64_t team2;
+      uint64_t team3;
+      kv.second->fetchUint64("m_iTeamNum", team);
+      kv.second->properties->fetchUint64("m_iTeamNum", team2);
+      kv.second->classBaseline->fetchUint64("m_iTeamNum", team3);
+      //std::cout << "creep team: " << std::to_string(team) << "creep team: " << std::to_string(team2) << "creep team: " << std::to_string(team3) << "\n";
+      int img_x;
+      int img_y;
+      if (!get_coordinates(kv.second, img_x, img_y)) continue;
+      SDL_Rect dstrect;
+      dstrect.x = img_x - 2;
+      dstrect.y = img_y - 2;
+      dstrect.w = 4;
+      dstrect.h = 4;
+      if (team == 3) {
+        SDL_FillRect(screen, &dstrect, SDL_MapRGB(screen->format, 255, 0, 0));
+      }
+      else if (team == 2) {
+        SDL_FillRect(screen, &dstrect, SDL_MapRGB(screen->format, 0, 255, 0));
+      }
+      else if (team == 4) {
+        SDL_FillRect(screen, &dstrect, SDL_MapRGB(screen->format, 255, 127, 0));
       }
     } else if (isPrefix(kv.second->className, "CDOTA_BaseNPC_Fort") ||
                isPrefix(kv.second->className, "CDOTA_BaseNPC_Barracks") ||
                isPrefix(kv.second->className, "CDOTA_BaseNPC_Tower")) {
-      if (has_coordinates(kv.second)) {
-        uint64_t team;
-        kv.second->fetchUint64("m_iTeamNum", team);
-        //std::cout << "creep team: " << std::to_string(team) << "\n";
-        int img_x;
-        int img_y;
-        get_coordinates(kv.second, img_x, img_y);
-        SDL_Rect dstrect;
-        dstrect.x = img_x - 4;
-        dstrect.y = img_y - 4;
-        dstrect.w = 8;
-        dstrect.h = 8;
-        if (team == 3) {
-          SDL_FillRect(screen, &dstrect, SDL_MapRGB(screen->format, 255, 0, 0));
-        }
-        else {
-          SDL_FillRect(screen, &dstrect, SDL_MapRGB(screen->format, 0, 255, 0));
-        }
+      uint64_t team;
+      kv.second->fetchUint64("m_iTeamNum", team);
+      //std::cout << "creep team: " << std::to_string(team) << "\n";
+      int img_x;
+      int img_y;
+      if (!get_coordinates(kv.second, img_x, img_y)) continue;
+      SDL_Rect dstrect;
+      dstrect.x = img_x - 4;
+      dstrect.y = img_y - 4;
+      dstrect.w = 8;
+      dstrect.h = 8;
+      if (team == 3) {
+        SDL_FillRect(screen, &dstrect, SDL_MapRGB(screen->format, 255, 0, 0));
+      }
+      else {
+        SDL_FillRect(screen, &dstrect, SDL_MapRGB(screen->format, 0, 255, 0));
       }
     } else if (isPrefix(kv.second->className, "CDOTA_NPC_Observer_Ward")) {
-      if (has_coordinates(kv.second)) {
-        uint64_t team;
-        kv.second->fetchUint64("m_iTeamNum", team);
-        //std::cout << "creep team: " << std::to_string(team) << "\n";
-        int img_x;
-        int img_y;
-        get_coordinates(kv.second, img_x, img_y);
-        SDL_Rect dstrect;
-        dstrect.x = img_x - 3;
-        dstrect.y = img_y - 3;
-        dstrect.w = 6;
-        dstrect.h = 6;
-        if (team == 3) {
-          SDL_FillRect(screen, &dstrect, SDL_MapRGB(screen->format, 255, 0, 0));
-        }
-        else {
-          SDL_FillRect(screen, &dstrect, SDL_MapRGB(screen->format, 0, 255, 0));
-        }
-        
-        dstrect.x = img_x - 8;
-        dstrect.y = img_y - 23;
-        dstrect.w = 16;
-        dstrect.h = 24;
-        if (kv.second->className.compare("CDOTA_NPC_Observer_Ward") == 0) {
-          SDL_BlitSurface(ward_observer, NULL, screen, &dstrect);
-        }
-        else if (kv.second->className.compare("CDOTA_NPC_Observer_Ward_TrueSight") == 0) {
-          SDL_BlitSurface(ward_sentry, NULL, screen, &dstrect);
-        }
+      uint64_t team;
+      kv.second->fetchUint64("m_iTeamNum", team);
+      //std::cout << "creep team: " << std::to_string(team) << "\n";
+      int img_x;
+      int img_y;
+      if (!get_coordinates(kv.second, img_x, img_y)) continue;
+      SDL_Rect dstrect;
+      dstrect.x = img_x - 3;
+      dstrect.y = img_y - 3;
+      dstrect.w = 6;
+      dstrect.h = 6;
+      if (team == 3) {
+        SDL_FillRect(screen, &dstrect, SDL_MapRGB(screen->format, 255, 0, 0));
+      }
+      else {
+        SDL_FillRect(screen, &dstrect, SDL_MapRGB(screen->format, 0, 255, 0));
+      }
+      
+      dstrect.x = img_x - 8;
+      dstrect.y = img_y - 23;
+      dstrect.w = 16;
+      dstrect.h = 24;
+      if (kv.second->className.compare("CDOTA_NPC_Observer_Ward") == 0) {
+        SDL_BlitSurface(ward_observer, NULL, screen, &dstrect);
+      }
+      else if (kv.second->className.compare("CDOTA_NPC_Observer_Ward_TrueSight") == 0) {
+        SDL_BlitSurface(ward_sentry, NULL, screen, &dstrect);
       }
     }
   }

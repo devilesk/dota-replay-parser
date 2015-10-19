@@ -29,7 +29,7 @@ void Parser::onCDemoClassInfo(const char* buffer, int size) {
     classInfo[data.classes(i).class_id()] = data.classes(i).network_name();
     
     if (serializers.find(data.classes(i).network_name()) == serializers.end()) {
-      //std::cout << "unable to find table for class " << std::to_string(data.classes(i).class_id()) << " " << data.classes(i).network_name() << "\n";
+      std::cout << "unable to find table for class " << std::to_string(data.classes(i).class_id()) << " " << data.classes(i).network_name() << "\n";
     }
   }
   
@@ -54,7 +54,7 @@ uint32_t Parser::updateInstanceBaseline() {
 uint32_t Parser::updateInstanceBaselineItem(StringTableItem* item) {
   //std::cout << "updateInstanceBaselineItem\n";
   int classId = std::stoi(item->key);
-  std::cout << "classId: " << std::to_string(classId) << "\n";
+  //std::cout << "classId: " << std::to_string(classId) << "\n";
   std::string className = classInfo[classId];
   //std::cout << "className: " << className << "\n";
   /*if (classBaselines.find(classId) == classBaselines.end()) {

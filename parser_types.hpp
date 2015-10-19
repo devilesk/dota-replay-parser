@@ -265,7 +265,8 @@ class Parser {
     
     void onCDemoPacket(const CDemoPacket* packet);
     void onCDemoFullPacket(const CDemoFullPacket* packet);
-
+    void onCDemoStringTables(const CDemoStringTables* string_table);
+    
     void onCDemoStop(const char* buffer, int size);
     void onCDemoFileHeader(const char* buffer, int size);
     void onCDemoFileInfo(const char* buffer, int size);
