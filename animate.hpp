@@ -6,7 +6,8 @@
 SDL_Surface* load_image();
 void load_images();
 bool has_coordinates(PacketEntity* pe);
-bool get_coordinates(PacketEntity* pe, int& img_x, int& img_y);
+bool getCoordinates(PacketEntity* pe, int& img_x, int& img_y);
+bool getMaxHealth(PacketEntity* pe, uint64_t& maxHealth);
 void main_loop();
 
 #endif /* _ANIMATE_HPP_ */

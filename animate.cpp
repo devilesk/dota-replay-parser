@@ -10,6 +10,8 @@ SDL_Surface* herosprites = NULL;
 SDL_Surface* itemsprites = NULL;
 SDL_Surface* ward_observer = NULL;
 SDL_Surface* ward_sentry = NULL;
+SDL_Surface* death_x = NULL;
+SDL_Surface* courier = NULL;
 
 Parser p;
 int replayTick = 0;
@@ -74,6 +76,8 @@ void load_images() {
   itemsprites = load_image("assets/items.jpg");
   ward_observer = load_image("assets/ward_observer.png");
   ward_sentry = load_image("assets/ward_sentry.png");
+  courier = load_image("assets/courier.png");
+  death_x = load_image("assets/death_x.png");
 }
 
 bool has_coordinates(PacketEntity* pe) {
@@ -83,7 +87,11 @@ bool has_coordinates(PacketEntity* pe) {
         pe->properties->KV.find("CBodyComponentBaseAnimatingOverlay.m_vecY") != pe->properties->KV.end();
 }
 
-bool get_coordinates(PacketEntity* pe, int& img_x, int& img_y) {
+bool getMaxHealth(PacketEntity* pe, uint64_t& maxHealth) {
+  return !pe->fetchUint64("m_iMaxHealth", maxHealth)
+}
+
+bool getCoordinates(PacketEntity* pe, int& img_x, int& img_y) {
   uint64_t cX;
   uint64_t cY;
   float vX;
@@ -126,7 +134,7 @@ void main_loop() {
       
       int img_x;
       int img_y;
-      if (!get_coordinates(kv.second, img_x, img_y)) continue;
+      if (!getCoordinates(kv.second, img_x, img_y)) continue;
       
       //std::cout << "img_x: " << std::to_string(img_x) << "\n";
       //std::cout << "img_y: " << std::to_string(img_y) << "\n";
@@ -138,7 +146,39 @@ void main_loop() {
       dstrect.w = 32;
       dstrect.h = 32;
       SDL_BlitSurface(herosprites, &(h_offsets[hero_map[kv.second->className]]), screen, &dstrect);
-      //std::cout << "drew hero\n";
+      
+      int32_t health;
+      if (kv.second->fetchInt32("m_iHealth", health)) {
+        if (health == 0) {
+          dstrect.x = img_x - 10;
+          dstrect.y = img_y - 10;
+          dstrect.w = 20;
+          dstrect.h = 20;
+          SDL_BlitSurface(death_x, NULL, screen, &dstrect);
+        }
+      }
+    } else if (isPrefix(kv.second->className, "CDOTA_Unit_Courier")) {
+      int img_x;
+      int img_y;
+      if (!getCoordinates(kv.second, img_x, img_y)) continue;
+      
+      SDL_Rect dstrect;
+      dstrect.x = img_x - 8;
+      dstrect.y = img_y - 8;
+      dstrect.w = 16;
+      dstrect.h = 16;
+      SDL_BlitSurface(courier, NULL, screen, &dstrect);
+            
+      float respawnTime;
+      if (kv.second->fetchFloat32("m_flRespawnTime", respawnTime)) {
+        if (respawnTime > 0) {
+          dstrect.x = img_x - 10;
+          dstrect.y = img_y - 10;
+          dstrect.w = 20;
+          dstrect.h = 20;
+          SDL_BlitSurface(death_x, NULL, screen, &dstrect);
+        }
+      }
     } else if (isPrefix(kv.second->className, "CDOTA_BaseNPC_Creep")) {
       uint64_t team;
       uint64_t team2;
@@ -149,7 +189,7 @@ void main_loop() {
       //std::cout << "creep team: " << std::to_string(team) << "creep team: " << std::to_string(team2) << "creep team: " << std::to_string(team3) << "\n";
       int img_x;
       int img_y;
-      if (!get_coordinates(kv.second, img_x, img_y)) continue;
+      if (!getCoordinates(kv.second, img_x, img_y)) continue;
       SDL_Rect dstrect;
       dstrect.x = img_x - 2;
       dstrect.y = img_y - 2;
@@ -172,7 +212,7 @@ void main_loop() {
       //std::cout << "creep team: " << std::to_string(team) << "\n";
       int img_x;
       int img_y;
-      if (!get_coordinates(kv.second, img_x, img_y)) continue;
+      if (!getCoordinates(kv.second, img_x, img_y)) continue;
       SDL_Rect dstrect;
       dstrect.x = img_x - 4;
       dstrect.y = img_y - 4;
@@ -190,7 +230,7 @@ void main_loop() {
       //std::cout << "creep team: " << std::to_string(team) << "\n";
       int img_x;
       int img_y;
-      if (!get_coordinates(kv.second, img_x, img_y)) continue;
+      if (!getCoordinates(kv.second, img_x, img_y)) continue;
       SDL_Rect dstrect;
       dstrect.x = img_x - 3;
       dstrect.y = img_y - 3;
