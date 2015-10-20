@@ -75,8 +75,8 @@ value_type decodeSimTime(dota::bitstream &stream, dt_field* f) {
 }
 value_type decodeString(dota::bitstream &stream, dt_field* f) {
   char buf[1024];
-  std::string ret = std::string(buf);
   stream.nReadString(buf, 1024);
+  std::string ret = std::string(buf);
   return ret;
 }
 value_type decodeVector(dota::bitstream &stream, dt_field* f) {
