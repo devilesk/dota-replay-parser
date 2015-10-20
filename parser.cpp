@@ -92,16 +92,16 @@ const std::string Parser::demheader = "PBDEMS2";
 void Parser::open(std::string path) {
   stream.open(path.c_str(), std::ifstream::in | std::ifstream::binary);
   if (!stream.is_open()) {
-    std::cout << "Could not open file.\n";
+    std::cout << "could not open file\n";
   }
   else {
-    std::cout << "File opened.\n";
+    std::cout << "file opened\n";
   }
 
   // get file length
   stream.seekg(0, stream.end);
   length = stream.tellg();
-  std::cout << "File length: " << std::to_string(length) << "\n";
+  std::cout << "file length: " << std::to_string(length) << "\n";
   stream.seekg(0, stream.beg);
   
   buffer = new char[length];
@@ -119,10 +119,10 @@ void Parser::readHeader() {
   pos += 8;
   
   if (strcmp(header, demheader.c_str())) {
-    std::cout << "Invalid header.\n";
+    std::cout << "invalid header\n";
   }
   else {
-    std::cout << "Valid header.\n";
+    std::cout << "valid header\n";
   }
 
   // Skip the next 8 bytes, which appear to be two int32s related to the size
@@ -190,10 +190,9 @@ void Parser::generateFullPacketCache() {
 }
 
 void Parser::skipTo(uint32_t _tick) {
-  std::cout << "skipTo\n";
+  std::cout << "skipTo " << std::to_string(_tick) << "\n";
   // make sure we have a valid state before skipping ahead / back
   while (!syncTick) {
-    std::cout << "reading until syncTick\n";
     read();
   }
   
