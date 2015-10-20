@@ -62,7 +62,7 @@ dt* recurseTable(flattened_serializers* sers, CSVCMsg_FlattenedSerializer* msg, 
       for (int i = 0; i < (int)prop->field->serializer->length; ++i) {
         char buf[5];
         sprintf(buf, "%04d", i);
-        std::string n = std::string(buf, 5);
+        std::string n = std::string(buf, 4);
         //std::cout << "n: " << n << "\n";
         
         tmpDt->properties.push_back(new dt_property {
@@ -94,7 +94,7 @@ dt* recurseTable(flattened_serializers* sers, CSVCMsg_FlattenedSerializer* msg, 
           *nTable = *prop->table;
           char buf2[5];
           sprintf(buf2, "%04d", i);
-          std::string n = std::string(buf2, 5);
+          std::string n = std::string(buf2, 4);
           nTable->name = n;
           //std::cout << "nTable->name: " << n << "\n";
           tmpDt->properties.back()->table = nTable;
