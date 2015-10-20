@@ -155,6 +155,40 @@ void Parser::handle() {
   }
 }
 
+void Parser::generateFullPacketCache() {
+  fpackcache.clear();
+  fpackcachetick.clear();
+  std::cout << "generate the cache\n";
+  uint32_t tmpPos = pos;
+  pos = 0;
+  readHeader();
+  uint32_t cmd;
+  uint32_t t;
+  uint32_t size;
+  bool compressed;
+  uint32_t p;
+  
+  do {
+    p = pos;
+    
+    cmd = readVarUInt32(&buffer[pos], pos);
+    cmd = (cmd & ~EDemoCommands::DEM_IsCompressed);
+    t = readVarUInt32(&buffer[pos], pos);
+    size = readVarUInt32(&buffer[pos], pos);
+    
+    pos += size;
+    
+    if (cmd == 13) {
+      fpackcache.push_back(p);
+      fpackcachetick.push_back(t);
+    }
+  } while (cmd != 0);
+  
+  lastTick = t;
+  pos = tmpPos;
+  std::cout << "cache generated, lastTick: " << std::to_string(lastTick) << "\n";
+}
+
 void Parser::skipTo(uint32_t _tick) {
   std::cout << "skipTo\n";
   // make sure we have a valid state before skipping ahead / back
@@ -225,34 +259,7 @@ void Parser::seekToFullPacket(int _tick) {
   std::cout << "seekToFullPacket\n";
   // generate the cache
   if (fpackcache.empty()) {
-    std::cout << "generate the cache\n";
-    pos = 0;
-    readHeader();
-    uint32_t cmd;
-    uint32_t t;
-    uint32_t size;
-    bool compressed;
-    uint32_t p;
-    
-    do {
-      p = pos;
-      
-      cmd = readVarUInt32(&buffer[pos], pos);
-      cmd = (cmd & ~EDemoCommands::DEM_IsCompressed);
-      t = readVarUInt32(&buffer[pos], pos);
-      size = readVarUInt32(&buffer[pos], pos);
-      
-      pos += size;
-      
-      //std::cout << std::to_string(cmd) << " " << std::to_string(pos) << "\n";
-      
-      if (cmd == 13) {
-        fpackcache.push_back(p);
-        fpackcachetick.push_back(t);
-      }
-    } while (cmd != 0);
-    
-    std::cout << "cache generated\n";
+    generateFullPacketCache();
   }
   std::cout << "first fullpacket " << std::to_string(*fpackcache.begin()) << " " << std::to_string(*fpackcachetick.begin()) << "\n";
   std::cout << "last fullpacket " << std::to_string(fpackcache.back()) << " " << std::to_string(fpackcachetick.back()) << "\n";

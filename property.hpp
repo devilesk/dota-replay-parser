@@ -22,56 +22,67 @@ class propertyToString : public boost::static_visitor<> {
         
         void operator()(bool & t) const
         {
+            //std::cout << "bool\n";
             toFill = std::to_string(t);
         }
         
         void operator()(char & t) const
         {
+            //std::cout << "char\n";
             toFill = std::to_string(t);
         }
         
         void operator()(float & t) const
         {
+            //std::cout << "float\n";
             toFill = std::to_string(t);
         }
         
         void operator()(double & t) const
         {
+            //std::cout << "double\n";
             toFill = std::to_string(t);
         }
         
         void operator()(uint16_t & t) const
         {
+            //std::cout << "uint16_t\n";
             toFill = std::to_string(t);
         }
         
         void operator()(uint32_t & t) const
         {
+            //std::cout << "uint32_t\n";
             toFill = std::to_string(t);
         }
         
         void operator()(uint64_t & t) const
         {
+            //std::cout << "uint64_t\n";
             toFill = std::to_string(t);
         }
         
         void operator()(int32_t & t) const
         {
+            //std::cout << "int32_t\n";
             toFill = std::to_string(t);
         }
         
         void operator()(int64_t & t) const
         {
+            //std::cout << "int64_t\n";
             toFill = std::to_string(t);
         }
         
         void operator()(std::string & t) const
         {
+            //std::cout << "std::string\n";
             toFill = t;
         }
         
         void operator()(std::vector<float> & t) const
         {
+            //std::cout << "std::vector<float>\n";
             toFill = std::to_string(t[0]) + std::to_string(t[1]) + std::to_string(t[2]);
         }
 };

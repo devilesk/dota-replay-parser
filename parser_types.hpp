@@ -222,6 +222,7 @@ class Parser {
     StringTables stringTables;
     uint32_t GameBuild;
     uint32_t tick;
+    uint32_t lastTick;
     int packetEntityFullPackets;
     int classIdSize;
     bool processPacketEntities;
@@ -230,6 +231,7 @@ class Parser {
     Parser() {
       pos = 0;
       tick = 0;
+      lastTick = 0;
       packetEntityFullPackets = 0;
       hasClassInfo = false;
       processPacketEntities = true;
@@ -250,6 +252,7 @@ class Parser {
     void handle();
     void skipTo(uint32_t tick);
     void seekToFullPacket(int _tick);
+    void generateFullPacketCache();
     
     //uint32_t onCSVCMsg_CreateStringTable(CSVCMsg_CreateStringTable* data);
     //uint32_t onCSVCMsg_ServerInfo(CSVCMsg_ServerInfo* data);
