@@ -6,3 +6,4 @@ parser.js
 parser.html.mem
 *.bc
 *.txt
+classdump
