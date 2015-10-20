@@ -1,8 +1,4 @@
-#include "parser.hpp"
 #include "animate.hpp"
-#include <emscripten.h>
-#include <SDL/SDL.h>
-#include <SDL/SDL_image.h>
 
 SDL_Surface* screen = NULL;
 SDL_Surface* background = NULL;
@@ -12,6 +8,9 @@ SDL_Surface* ward_observer = NULL;
 SDL_Surface* ward_sentry = NULL;
 SDL_Surface* death_x = NULL;
 SDL_Surface* courier = NULL;
+SDL_Surface* courier_flying = NULL;
+
+TTF_Font* font;
 
 Parser p;
 int replayTick = 0;
@@ -27,21 +26,22 @@ int main(int argc, char **argv) {
   std::string path(argv[1]);*/
   std::string path("1858267282.dem");
 
-  p.packetEntityHandlers.push_back(entityHandler);
-  //p.open("1858267282.dem");
+  //p.packetEntityHandlers.push_back(entityHandler);
   p.open(path);
+  p.generateFullPacketCache();
   p.readHeader();
-  p.skipTo(50322); //14322
-  replayTick = 50322;
+  //p.skipTo(50322); //14322
+  //replayTick = 50322;
   //p.handle();
-  
-  std::cout << "Last tick: " << std::to_string(p.tick) << "\n";
   
   init_sprites();
   load_images();
   
   SDL_Init(SDL_INIT_VIDEO);
   screen = SDL_SetVideoMode(1536, 952, 32, SDL_SWSURFACE);
+  
+  TTF_Init();
+  font = load_font("assets/DejaVuSans.ttf", 12);
  
   #ifdef EMSCRIPTEN
     // void emscripten_set_main_loop(em_callback_func func, int fps, int simulate_infinite_loop);
@@ -57,6 +57,15 @@ int main(int argc, char **argv) {
   SDL_Quit();
 
   std::cout << "done" << std::endl;
+}
+
+TTF_Font* load_font(const char* file, int ptsize) {
+    TTF_Font* tmpfont;
+    tmpfont = TTF_OpenFont(file, ptsize);
+    if (tmpfont == NULL){
+        std::cout << "Unable to load font: " << file << TTF_GetError() << std::endl;
+    }
+    return tmpfont;
 }
 
 SDL_Surface* load_image(std::string path) {
@@ -77,18 +86,8 @@ void load_images() {
   ward_observer = load_image("assets/ward_observer.png");
   ward_sentry = load_image("assets/ward_sentry.png");
   courier = load_image("assets/courier.png");
+  courier_flying = load_image("assets/courier_flying.png");
   death_x = load_image("assets/death_x.png");
-}
-
-bool has_coordinates(PacketEntity* pe) {
- return pe->properties->KV.find("CBodyComponentBaseAnimatingOverlay.m_cellX") != pe->properties->KV.end() &&
-        pe->properties->KV.find("CBodyComponentBaseAnimatingOverlay.m_cellY") != pe->properties->KV.end() &&
-        pe->properties->KV.find("CBodyComponentBaseAnimatingOverlay.m_vecX") != pe->properties->KV.end() &&
-        pe->properties->KV.find("CBodyComponentBaseAnimatingOverlay.m_vecY") != pe->properties->KV.end();
-}
-
-bool getMaxHealth(PacketEntity* pe, uint64_t& maxHealth) {
-  return !pe->fetchUint64("m_iMaxHealth", maxHealth)
 }
 
 bool getCoordinates(PacketEntity* pe, int& img_x, int& img_y) {
@@ -96,23 +95,14 @@ bool getCoordinates(PacketEntity* pe, int& img_x, int& img_y) {
   uint64_t cY;
   float vX;
   float vY;
-  //std::cout << "CBodyComponentBaseAnimatingOverlay.m_cellX: " << asString(pe->properties->KV["CBodyComponentBaseAnimatingOverlay.m_cellX"]) << "\n";
-  //std::cout << "CBodyComponentBaseAnimatingOverlay.m_cellY: " << asString(pe->properties->KV["CBodyComponentBaseAnimatingOverlay.m_cellY"]) << "\n";
-  //std::cout << "CBodyComponentBaseAnimatingOverlay.m_vecX: " << asString(pe->properties->KV["CBodyComponentBaseAnimatingOverlay.m_vecX"]) << "\n";
-  //std::cout << "CBodyComponentBaseAnimatingOverlay.m_vecY: " << asString(pe->properties->KV["CBodyComponentBaseAnimatingOverlay.m_vecY"]) << "\n";
+  
   if (!pe->fetchUint64("CBodyComponentBaseAnimatingOverlay.m_cellX", cX)) return false;
-  //std::cout << "cX: " << std::to_string(cX) << "\n";
   if (!pe->fetchUint64("CBodyComponentBaseAnimatingOverlay.m_cellY", cY)) return false;
-  //std::cout << "cY: " << std::to_string(cY) << "\n";
   if (!pe->fetchFloat32("CBodyComponentBaseAnimatingOverlay.m_vecX", vX)) return false;
-  //std::cout << "vX: " << std::to_string(vX) << "\n";
   if (!pe->fetchFloat32("CBodyComponentBaseAnimatingOverlay.m_vecY", vY)) return false;
-  //std::cout << "vY: " << std::to_string(vY) << "\n";
   
   double x = (((double)cX * cellWidth) - MAX_COORDINATE) + (double)vX;
   double y = (((double)cY * cellWidth) - MAX_COORDINATE) + (double)vY;
-  //std::cout << "x: " << std::to_string(x) << "\n";
-  //std::cout << "y: " << std::to_string(y) << "\n";
   
   img_x = int((8576.0 + x) * 0.0626 + -25.0152);
   img_y = int((8192.0 - y) * 0.0630 + -45.7787);
@@ -124,7 +114,6 @@ void main_loop() {
     p.read();
   }
 
-  
   SDL_FillRect(screen, NULL, SDL_MapRGB(screen->format, 255, 255, 255));
   SDL_BlitSurface(background, NULL, screen, NULL);
   
@@ -157,18 +146,32 @@ void main_loop() {
           SDL_BlitSurface(death_x, NULL, screen, &dstrect);
         }
       }
-    } else if (isPrefix(kv.second->className, "CDOTA_Unit_Courier")) {
+    }
+    else if (isPrefix(kv.second->className, "CDOTA_Unit_Courier")) {
+      bool isFlying;
+      kv.second->fetchBool("m_bFlyingCourier", isFlying);
+    
       int img_x;
       int img_y;
       if (!getCoordinates(kv.second, img_x, img_y)) continue;
       
       SDL_Rect dstrect;
-      dstrect.x = img_x - 8;
-      dstrect.y = img_y - 8;
-      dstrect.w = 16;
-      dstrect.h = 16;
-      SDL_BlitSurface(courier, NULL, screen, &dstrect);
-            
+      
+      if (!isFlying) {
+        dstrect.x = img_x - 8;
+        dstrect.y = img_y - 8;
+        dstrect.w = 16;
+        dstrect.h = 16;
+        SDL_BlitSurface(courier, NULL, screen, &dstrect);
+      }
+      else {
+        dstrect.x = img_x - 15;
+        dstrect.y = img_y - 8;
+        dstrect.w = 30;
+        dstrect.h = 16;
+        SDL_BlitSurface(courier_flying, NULL, screen, &dstrect);
+      }
+
       float respawnTime;
       if (kv.second->fetchFloat32("m_flRespawnTime", respawnTime)) {
         if (respawnTime > 0) {
@@ -179,17 +182,15 @@ void main_loop() {
           SDL_BlitSurface(death_x, NULL, screen, &dstrect);
         }
       }
-    } else if (isPrefix(kv.second->className, "CDOTA_BaseNPC_Creep")) {
+    }
+    else if (isPrefix(kv.second->className, "CDOTA_BaseNPC_Creep")) {
       uint64_t team;
-      uint64_t team2;
-      uint64_t team3;
-      kv.second->fetchUint64("m_iTeamNum", team);
-      kv.second->properties->fetchUint64("m_iTeamNum", team2);
-      kv.second->classBaseline->fetchUint64("m_iTeamNum", team3);
-      //std::cout << "creep team: " << std::to_string(team) << "creep team: " << std::to_string(team2) << "creep team: " << std::to_string(team3) << "\n";
+      getTeam(kv.second, team);
+
       int img_x;
       int img_y;
       if (!getCoordinates(kv.second, img_x, img_y)) continue;
+      
       SDL_Rect dstrect;
       dstrect.x = img_x - 2;
       dstrect.y = img_y - 2;
@@ -204,15 +205,17 @@ void main_loop() {
       else if (team == 4) {
         SDL_FillRect(screen, &dstrect, SDL_MapRGB(screen->format, 255, 127, 0));
       }
-    } else if (isPrefix(kv.second->className, "CDOTA_BaseNPC_Fort") ||
+    }
+    else if (isPrefix(kv.second->className, "CDOTA_BaseNPC_Fort") ||
                isPrefix(kv.second->className, "CDOTA_BaseNPC_Barracks") ||
                isPrefix(kv.second->className, "CDOTA_BaseNPC_Tower")) {
       uint64_t team;
-      kv.second->fetchUint64("m_iTeamNum", team);
-      //std::cout << "creep team: " << std::to_string(team) << "\n";
+      getTeam(kv.second, team);
+
       int img_x;
       int img_y;
       if (!getCoordinates(kv.second, img_x, img_y)) continue;
+
       SDL_Rect dstrect;
       dstrect.x = img_x - 4;
       dstrect.y = img_y - 4;
@@ -224,13 +227,15 @@ void main_loop() {
       else {
         SDL_FillRect(screen, &dstrect, SDL_MapRGB(screen->format, 0, 255, 0));
       }
-    } else if (isPrefix(kv.second->className, "CDOTA_NPC_Observer_Ward")) {
+    }
+    else if (isPrefix(kv.second->className, "CDOTA_NPC_Observer_Ward")) {
       uint64_t team;
-      kv.second->fetchUint64("m_iTeamNum", team);
-      //std::cout << "creep team: " << std::to_string(team) << "\n";
+      getTeam(kv.second, team);
+
       int img_x;
       int img_y;
       if (!getCoordinates(kv.second, img_x, img_y)) continue;
+
       SDL_Rect dstrect;
       dstrect.x = img_x - 3;
       dstrect.y = img_y - 3;
@@ -254,25 +259,49 @@ void main_loop() {
         SDL_BlitSurface(ward_sentry, NULL, screen, &dstrect);
       }
     }
-  }
-  /*SDL_Rect dstrect;
-  dstrect.x = 1536/2;
-  dstrect.y = 952/2;
-  dstrect.w = 32;
-  dstrect.h = 32;
-  SDL_BlitSurface(herosprites, &(h_offsets[sprite_t::CDOTA_Unit_Hero_Luna]), screen, &dstrect);*/
-  
-  SDL_Flip(screen);
-  ++replayTick;
-}
-
-void entityHandler(PacketEntity* pe, EntityEventType t) {
-  //std::cout << "entity className: " << pe->className << " " << std::to_string(t) << " entity id: " << pe->index << "\n";
-  if (pe->className.compare("CDOTA_NPC_Observer_Ward") == 0 || isPrefix(pe->className, "CDOTA_Unit_Hero_")) {
-    //std::cout << "entity className: " << pe->className << " " << std::to_string(t) << " entity id: " << pe->index << "\n";
-    for (auto const& p : pe->properties->KV)
-    {
-        //std::cout << "\t" << p.first << " " << asString(p.second) << "\n";
+    else if (isPrefix(kv.second->className, "CDOTAGamerulesProxy")) {
+    
+    }
+    else if (isPrefix(kv.second->className, "CDOTA_DataSpectator")) {
+    
+    }
+    else if (isPrefix(kv.second->className, "CDOTA_DataDire")) {
+    
+    }
+    else if (isPrefix(kv.second->className, "CDOTA_DataRadiant")) {
+    
+    }
+    else if (isPrefix(kv.second->className, "CDOTA_PlayerResource")) {
+      /*for (int i = 0; i < 10; ++i) {
+        std::string n = "000" + std::to_string(i);
+        std::string playerName;
+        uint64_t steamId;
+        uint32_t hero;
+        if (kv.second->fetchString("m_vecPlayerData.0000.m_iszPlayerName", playerName)) {
+          std::cout << "player: " << playerName << "\n";
+        }
+        if (kv.second->fetchUint64("m_vecPlayerData.0004.m_iPlayerSteamID", steamId)) {
+          std::cout << " steamId: " << std::to_string(steamId) << "\n";
+        }
+        if (kv.second->fetchUint32("m_vecPlayerTeamData.0009.m_hSelectedHero", hero)) {
+          std::cout << " hero: " << std::to_string(hero) << "\n";
+        }
+      }*/
+      std::string playerName;
+      uint64_t steamId;
+      uint32_t hero;
+      if (kv.second->fetchString("m_vecPlayerData.0000.m_iszPlayerName", playerName)) {
+        std::cout << "player: " << playerName << "\n";
+      }
+      if (kv.second->fetchUint64("m_vecPlayerData.0004.m_iPlayerSteamID", steamId)) {
+        std::cout << " steamId: " << std::to_string(steamId) << "\n";
+      }
+      if (kv.second->fetchUint32("m_vecPlayerTeamData.0009.m_hSelectedHero", hero)) {
+        std::cout << " hero: " << std::to_string(hero) << "\n";
+      }
     }
   }
+
+  SDL_Flip(screen);
+  ++replayTick;
 }
