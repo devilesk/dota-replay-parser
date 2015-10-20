@@ -222,7 +222,7 @@ class Parser {
     StringTables stringTables;
     uint32_t GameBuild;
     uint32_t tick;
-    uint32_t lastTick;
+    uint32_t stopTick;
     int packetEntityFullPackets;
     int classIdSize;
     bool processPacketEntities;
@@ -231,7 +231,7 @@ class Parser {
     Parser() {
       pos = 0;
       tick = 0;
-      lastTick = 0;
+      stopTick = 0;
       packetEntityFullPackets = 0;
       hasClassInfo = false;
       processPacketEntities = true;

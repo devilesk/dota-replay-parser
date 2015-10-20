@@ -1,92 +1,5 @@
 #include "parser.hpp"
 
-/*
-int main ()
-{
-  //std::cout << "HELLO WORLD!\n";
-  Parser p;
-  p.packetEntityHandlers.push_back(entityHandler);
-  //StringTables string_tables;
-  //p.stringTables = string_tables;
-  std::ifstream stream;
-  std::string path = "1858267282.dem";
-  //std::string path = "testfiles/1698148651_source2.dem";
-  // std::ifstream::in and std::ifstream::binary are mode flags for input and binary
-  stream.open(path.c_str(), std::ifstream::in | std::ifstream::binary);
-  if (!stream.is_open()) {
-    //std::cout << "Could not open file.\n";
-  }
-  else {
-    //std::cout << "File opened.\n";
-  }
-
-  // get file length
-  stream.seekg(0, stream.end);
-  int length = stream.tellg();
-  stream.seekg(0, stream.beg);
-
-  char * buffer = new char[length];
-  
-  stream.read(buffer, length);
-  stream.close();
-  
-  char header[8];
-
-  std::copy(buffer, &buffer[7], header);
-  std::string demheader = "PBDEMS2";
-  //std::cout << std::to_string(sizeof(header)) << "\n";
-  //std::cout << header << "\n";
-
-  if (strcmp(header, demheader.c_str())) {
-    //std::cout << "Invalid header.\n";
-  }
-  else {
-    //std::cout << "Valid header.\n";
-  }
-
-  int pos = 8;
-
-  // Skip the next 8 bytes, which appear to be two int32s related to the size
-  // of the demo file. We may need them in the future, but not so far.
-  pos += 8;
-
-  uint32_t cmd;
-  cmd = readVarUInt32(&buffer[pos], pos);
-  //std::cout << "command: " << std::to_string(cmd) << "\n";
-
-  uint32_t tick;
-  tick = readVarUInt32(&buffer[pos], pos);
-
-  // This appears to actually be an int32, where a -1 means pre-game.
-  if (tick == 4294967295) {
-    tick = 0;
-  }
-
-  //std::cout << "tick: " << std::to_string(tick) << "\n";
-
-  uint32_t size;
-  size = readVarUInt32(&buffer[pos], pos);
-  //std::cout << "size: " << std::to_string(size) << "\n";
-
-  CDemoFileHeader demo_header;
-  demo_header.ParseFromArray(&buffer[pos], size);
-  //std::cout << "map_name: " << demo_header.map_name() << "\n";
-
-  pos += size;
-  
-  // read dem messages
-  while (pos < length)
-  {
-    p.readMessage(buffer, pos);
-  }
-
-  //std::cout << "File length: " << std::to_string(length) << "\n";
-  delete[] buffer;
-  //std::cout << "File closed.\n";
-  
-  std::cout << "Last tick: " << std::to_string(p.tick) << "\n";
-}*/
-
 const std::string Parser::demheader = "PBDEMS2";
 
 void Parser::open(std::string path) {
@@ -184,9 +97,9 @@ void Parser::generateFullPacketCache() {
     }
   } while (cmd != 0);
   
-  lastTick = t;
+  stopTick = t;
   pos = tmpPos;
-  std::cout << "cache generated, lastTick: " << std::to_string(lastTick) << "\n";
+  std::cout << "cache generated, stopTick: " << std::to_string(stopTick) << "\n";
 }
 
 void Parser::skipTo(uint32_t _tick) {
@@ -196,56 +109,8 @@ void Parser::skipTo(uint32_t _tick) {
     read();
   }
   
-  // clear all entities
-  /*for(auto& kv : packetEntities) {
-    delete kv.second->properties;
-    delete kv.second;
-  }
-  packetEntities.clear();*/
-  
-  // skip to clostest fullpacket
+  // skip to closest fullpacket
   seekToFullPacket(_tick);
-  
-  // parse full packet
-  /*std::cout << "parse seeked fullpacket\n";
-  uint32_t cmd;
-  uint32_t t;
-  uint32_t size;
-  bool compressed;
-
-  readMessageHeader(buffer, pos, cmd, t, size, compressed);
-  
-  CDemoFullPacket packet;
-  char* uBuffer;
-  if (compressed) {
-    std::size_t uSize;
-    if (snappy::GetUncompressedLength(&buffer[pos], size, &uSize)) {
-      char* uBuffer = new char[uSize];
-      if (snappy::RawUncompress(&buffer[pos], size, uBuffer)) {
-        packet.ParseFromArray(uBuffer, uSize);
-      }
-      else {
-        exit(0);
-      }
-      delete[] uBuffer;
-    }
-    else {
-      exit(0);
-    }
-  }
-  else {
-    packet.ParseFromArray(&buffer[pos], size);
-  }
-  
-  pos += size;
-      
-  // update string tables
-  std::cout << "fullpacket update string tables\n";
-  onCDemoStringTables(&packet.string_table());
-  
-  // process full packet
-  packetEntityFullPackets = 0;
-  onCDemoFullPacket(&packet);*/
   
   // read until at desired tick
   std::cout << "read until at desired tick" << std::to_string(tick) << " " << std::to_string(_tick) << "\n";
@@ -260,16 +125,17 @@ void Parser::seekToFullPacket(int _tick) {
   if (fpackcache.empty()) {
     generateFullPacketCache();
   }
-  std::cout << "first fullpacket " << std::to_string(*fpackcache.begin()) << " " << std::to_string(*fpackcachetick.begin()) << "\n";
-  std::cout << "last fullpacket " << std::to_string(fpackcache.back()) << " " << std::to_string(fpackcachetick.back()) << "\n";
-  std::cout << "size fullpacket " << std::to_string(fpackcache.size()) << " " << std::to_string(fpackcachetick.size()) << "\n";
+
   // seek to the fullpacket closest to desired tick
   for (int i = 0; i < fpackcachetick.size(); ++i) {
-    std::cout << "fullpacket ticks " << std::to_string(fpackcachetick[i]) << "\n";
     if (fpackcachetick[i] >= _tick) {
-      std::cout << "fullpacket pos set " << std::to_string(pos) << " " << std::to_string(fpackcachetick[i]) << "\n";
       break;
     }
+    
+    // here we parse all full packets up to requested tick
+    // it seems like all full packet string tables need to be parsed to get a consistent state
+    // but only entities in the last full packet need to be processed
+    // for now we fully parse all of them anyway with read()
     
     // clear all entities
     for(auto& kv : packetEntities) {
@@ -278,6 +144,7 @@ void Parser::seekToFullPacket(int _tick) {
     }
     packetEntities.clear();
   
+    // parse full packet
     pos = fpackcache[i];
     packetEntityFullPackets = 0;
     read();
@@ -290,7 +157,7 @@ void Parser::readMessageHeader(const char* buffer, int &pos, uint32_t& cmd, uint
   cmd = (cmd & ~EDemoCommands::DEM_IsCompressed);
 
   _tick = readVarUInt32(&buffer[pos], pos);
-  //std::cout << "head tick: " << std::to_string(_tick) << "\n";
+  
   // This appears to actually be an int32, where a -1 means pre-game.
   if (_tick == 4294967295) {
     _tick = 0;
@@ -315,10 +182,6 @@ void Parser::readMessage(const char* buffer, int &pos) {
   if (cmd == 3) {
     syncTick = true;
   }
-  
-  /*if (tick != _tick) {
-    std::cout << "tick: " << std::to_string(_tick) << "\n";
-  }*/
   
   //if (compressed && snappy::IsValidCompressedBuffer(&buffer[pos], size)) {
   if (compressed) {
