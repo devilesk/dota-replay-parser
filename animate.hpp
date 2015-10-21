@@ -11,6 +11,7 @@
 #include "spriteclips.hpp"
 
 enum textquality {solid, shaded, blended};
+void skipToNextFullPacket(int direction);
 void init_color_map();
 TTF_Font* load_font(const char* file, int ptsize);
 SDL_Surface* draw_text(TTF_Font *fonttodraw, uint8_t fgR, uint8_t fgG, uint8_t fgB, uint8_t fgA, 

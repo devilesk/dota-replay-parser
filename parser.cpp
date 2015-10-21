@@ -5,10 +5,10 @@ const std::string Parser::demheader = "PBDEMS2";
 void Parser::open(std::string path) {
   stream.open(path.c_str(), std::ifstream::in | std::ifstream::binary);
   if (!stream.is_open()) {
-    std::cout << "could not open file\n";
+    std::cout << "could not open file" << path << "\n";
   }
   else {
-    std::cout << "file opened\n";
+    std::cout << "file " << path << " opened\n";
   }
 
   // get file length

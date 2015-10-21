@@ -20,23 +20,82 @@ int minuteTick = -1;
 int gameState;
 std::unordered_map<std::string, uint32_t> colors;
 std::unordered_map<uint64_t, uint32_t> team_colors;
+bool isPaused = false;
+int playbackSpeed = 1;
+
+extern "C" {
+  int setTick(int tick) {
+    p.skipTo(tick);
+    replayTick = tick;
+    return 0;
+  }
+  int changePlayback(int state) {
+    switch (state) {
+      case 0:
+        isPaused = false;
+      break;
+      case 1:
+        isPaused = true;
+      break;
+      case 2:
+        skipToNextFullPacket(-1);
+      break;
+      case 3:
+        skipToNextFullPacket(1);
+      break;
+      case 4:
+        if (playbackSpeed > 1) playbackSpeed = (int)(playbackSpeed / 2);
+        return playbackSpeed;
+      break;
+      case 5:
+        if (playbackSpeed < 1024) playbackSpeed = (int)(playbackSpeed * 2);
+        return playbackSpeed;
+      break;
+    }
+    return 0;
+  }
+}
+
+void skipToNextFullPacket(int direction) {
+  uint32_t tick = 0;
+  for (int i = 0; i < p.fpackcachetick.size(); ++i) {
+    if (direction == -1) {
+      if (p.fpackcachetick[i] >= p.tick) {
+        break;
+      }
+      tick = p.fpackcachetick[i];
+    }
+    else {
+      tick = p.fpackcachetick[i];
+      if (p.fpackcachetick[i] > p.tick) {
+        break;
+      }
+    }
+  }
+  p.skipTo(tick);
+  replayTick = tick;
+}
 
 int main(int argc, char **argv) {
-  /*if (argc < 2) {
-      std::cerr << "Usage: example <file>" << std::endl;
+  if (argc < 2) {
+      std::cerr << "Usage: program <file>" << std::endl;
       return 1;
   }
 
-  std::string path(argv[1]);*/
-  std::string path("1858267282.dem");
+  std::string path(argv[1]);
+  //std::string path("1858267282.dem");
 
   //p.packetEntityHandlers.push_back(entityHandler);
   p.open(path);
   p.generateFullPacketCache();
   p.readHeader();
-  p.skipTo(50322); //14322
-  replayTick = 50322;
+  //p.skipTo(50322); //14322
+  //replayTick = 50322;
   //p.handle();
+  
+  EM_ASM_({
+    initSlider($0, $1);
+  }, p.stopTick, p.tick);
   
   init_sprites();
   load_images();
@@ -155,6 +214,8 @@ bool getCoordinates(PacketEntity* pe, int& img_x, int& img_y) {
 }
 
 void main_loop() {
+  if (isPaused) return;
+  
   while (p.good() && p.tick < replayTick) {
     p.read();
   }
@@ -348,9 +409,6 @@ void main_loop() {
         int mins = std::floor(clock / 60);
         if (((int)clock) % 60 == 0 && mins > minuteTick) {
           minuteTick = mins;
-          /*EM_ASM_({
-              addSliderTick($0);
-          }, msg->tick);*/
         }
       }
       
@@ -477,5 +535,9 @@ void main_loop() {
   }
 
   SDL_Flip(screen);
-  ++replayTick;
+  replayTick += playbackSpeed;
+  
+  EM_ASM_({
+    updateSlider($0);
+  }, p.tick);
 }

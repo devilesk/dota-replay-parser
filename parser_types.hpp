@@ -211,8 +211,8 @@ class Parser {
     int pos;
     /** Position cache for fullpackets */
     std::vector<uint32_t> fpackcache;
-    std::vector<uint32_t> fpackcachetick;
   public:
+    std::vector<uint32_t> fpackcachetick;
     std::unordered_map<int, std::string> classInfo;
     std::unordered_map<int, Properties*> classBaselines;
     bool hasClassInfo;
