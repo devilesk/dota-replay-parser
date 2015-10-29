@@ -5,7 +5,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>Dota 2 Reborn Replay Viewer</title>
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.css">
-    <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="replayviewer.css">
     <style>
 
@@ -18,12 +18,15 @@
     
     <div class="top-menu hidden">
       <div class="top-menu-inner">
-        <div id="playback-controls" class="">
-          <button id="fast-backward"><i class="icon-fast-backward"></i></button>
-          <button id="step-backward"><i class="icon-step-backward"></i></button>
-          <button id="play-pause"><i class="icon-pause"></i></button>
-          <button id="step-forward"><i class="icon-step-forward"></i></button>
-          <button id="fast-forward"><i class="icon-fast-forward"></i></button>
+        <div id="playback-controls-left" class="playback-controls">
+          <button id="step-backward"><i class="fa fa-step-backward fa-fw"></i></button>
+          <button id="play-pause"><i class="fa fa-pause fa-fw"></i></button>
+          <button id="step-forward"><i class="fa fa-step-forward fa-fw"></i></button>
+        </div>
+        <div id="playback-controls-right" class="playback-controls">
+          <i class="fa fa-tachometer fa-fw"></i>
+          <button id="fast-backward"><i class="fa fa-minus fa-fw"></i></button>
+          <button id="fast-forward"><i class="fa fa-plus fa-fw"></i></button>
         </div>
         <div id="slider-container">
           <div id="slider" class=""></div>
@@ -50,30 +53,94 @@
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
     <script type="text/javascript">
+function loadImage() {
+  var req = new XMLHttpRequest();
+  req.responseType = 'arraybuffer';
+  req.open('GET', 'spellicons/drow_ranger_frost_arrows.png', true);
+  req.onload = function () {
+    console.log(req.response);
+    writeFile('drow_ranger_frost_arrows.png', req.response);
+  };
+  req.send(null);
+}
+
+function writeFile(fileName, fileData) {
+  var stream = FS.open(fileName, 'w+');
+  var data = new Uint8Array(fileData);
+  console.log('data length', data.length);
+  FS.write(stream, data, 0, data.length, 0);
+  FS.close(stream);
+  console.log(fileName, 'written');
+}
+
+var mainCalled = false;
 var isPaused = false;
+var playbackSpeed = 1;
+var locked = 0;
+
+function toggleControls(state) {
+  if (state === "disable") {
+    locked++;
+    if (locked > 1) return true;
+  }
+  else {
+    locked = 0;
+  }
+  $('.playback-controls button').prop("disabled", state === "disable");
+  $("#slider").slider(state);
+  return false;
+}
 $(function () {
   $('#play-pause').click(function (e) {
     if (isPaused) {
-      $('#play-pause > .icon-pause').removeClass('icon-pause').addClass('icon-play');
+      $('#play-pause > i').removeClass('fa-play').addClass('fa-pause');
+      console.log('play');
       changePlayback(0);
     }
     else {
-      $('#play-pause > .icon-play').removeClass('icon-play').addClass('icon-pause');
+      $('#play-pause > i').removeClass('fa-pause').addClass('fa-play');
+      console.log('pause');
       changePlayback(1);
     }
     isPaused = !isPaused;
   });
-  $('#fast-backward').click(function (e) { changePlayback(2); });
-  $('#fast-forward').click(function (e) { changePlayback(3); });
-  $('#step-backward').click(function (e) { changePlayback(4); });
-  $('#step-forward').click(function (e) { changePlayback(5); });
+  $('#step-backward').click(function (e) {
+    console.log('step backward');
+    if (toggleControls("disable")) return;
+    var self = this;
+    setTimeout(function () {
+      changePlayback(2);
+      seekDone();
+      toggleControls("enable");
+    }, 0);
+  });
+  $('#step-forward').click(function (e) {
+    console.log('step forward');
+    if (toggleControls("disable")) return;
+    var self = this;
+    setTimeout(function () {
+      changePlayback(3);
+      seekDone();
+      toggleControls("enable");
+    }, 0);
+  });
+  $('#fast-backward').click(function (e) {
+    if (playbackSpeed == 1) return;
+    playbackSpeed = changePlayback(4);
+    console.log(playbackSpeed);
+  });
+  $('#fast-forward').click(function (e) {
+    if (playbackSpeed >= 128) return;
+    playbackSpeed = changePlayback(5);
+    console.log(playbackSpeed);
+  });
 });
 var file;
 var fileData;
 var noDependenciesLeft = false;
 
 function start() {
-  //$('#canvas-container').removeClass('hidden');
+  $('#canvas-container').removeClass('hidden');
   $('#output').removeClass('hidden');
   var arguments = [file.name];
   /*if ($('#parseCreep').is(':checked')) arguments.push('--parsecreep');
@@ -83,6 +150,7 @@ function start() {
   if ($('#parseBuilding').is(':checked')) arguments.push('--parsebuilding');
   if ($('#parseItem').is(':checked')) arguments.push('--parseitem');*/
   console.log('calling main', arguments);
+  mainCalled = true;
   Module.callMain(arguments);
 }
 
@@ -133,12 +201,7 @@ function handleFiles(files) {
     console.log('file read', reader.result.slice(0, 8));
     fileData = reader.result;
     setTimeout(function () {
-      var stream = FS.open(file.name, 'w+');
-      var data = new Uint8Array(fileData);
-      console.log('data length', data.length);
-      FS.write(stream, data, 0, data.length, 0);
-      FS.close(stream);
-      console.log('file written');
+      writeFile(file.name, fileData);
       setTick = Module.cwrap('setTick', 'number', ['number']);
       changePlayback = Module.cwrap('changePlayback', 'number', ['number']);
       console.log('totalDependencies', Module.totalDependencies, noDependenciesLeft);
@@ -148,6 +211,7 @@ function handleFiles(files) {
   reader.readAsArrayBuffer(file);
 }
 
+var isSliding = false;
 var slidingValue = 0;
 var lastTickUpdate = 0;
 function initSlider(max, value) {
@@ -156,21 +220,43 @@ function initSlider(max, value) {
     value: value,
     max: max,
     step: 1,
+    start: function(event, ui) {
+      if (locked >= 1) return false;
+      console.log('start slide', locked);
+      isSliding = true;
+      changePlayback(1);
+    },
     slide: function(event, ui) {
       slidingValue = ui.value;
     },
     stop: function(event, ui) {
+      console.log('stop slide', locked);
       lastTickUpdate = slidingValue;
-      setTick(lastTickUpdate);
+      if (toggleControls("disable")) return;
+      setTimeout(function () {
+        setTick(lastTickUpdate);
+        seekDone();
+        isSliding = false;
+        toggleControls("enable");
+        console.log('stop slide2', locked);
+      }, 1000);
     }
   });
   $('.top-menu').removeClass('hidden');
   Module.setStatus('');
 }
 function updateSlider(tick) {
-  if (tick - lastTickUpdate >= 30) {
+  if (isSliding) return;
+  if (Math.abs(tick - lastTickUpdate) >= 30) {
     lastTickUpdate = tick;
     $("#slider").slider("value", tick);
+  }
+}
+function seekDone() {
+  if (isPaused) {
+    setTimeout(function () {
+      changePlayback(1);
+    }, 0);
   }
 }
     </script>
@@ -244,11 +330,11 @@ function updateSlider(tick) {
           this.totalDependencies = Math.max(this.totalDependencies, left);
           noDependenciesLeft = !left;
           Module.setStatus(left ? 'Preparing... (' + (this.totalDependencies-left) + '/' + this.totalDependencies + ')' : 'All downloads complete.');
-          if (!left) {
+          if (!left && !mainCalled) {
             $('#file-input-container').removeClass("hidden");
-            if (file) {
+            /*if (file) {
               start();
-            }
+            }*/
           }
         }
       };

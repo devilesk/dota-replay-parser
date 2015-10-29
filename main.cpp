@@ -7,13 +7,13 @@ const double MAX_COORDINATE = 16384;
 std::string CNAME;
 
 int main(int argc, char **argv) {
-  if (argc < 2) {
-      std::cerr << "Usage: classdump <class name>" << std::endl;
+  if (argc < 3) {
+      std::cerr << "Usage: classdump <class name> <replay file>" << std::endl;
       return 1;
   }
 
   CNAME = std::string(argv[1]);
-  std::string path("1858267282.dem");
+  std::string path(argv[2]);
 
   //p.open("1858267282.dem");
   p.open(path);
