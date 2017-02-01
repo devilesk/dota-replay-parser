@@ -25,7 +25,7 @@
 #include <google/protobuf/extension_set.h>
 #include <google/protobuf/generated_enum_reflection.h>
 #include <google/protobuf/unknown_field_set.h>
-#include "dota_gcmessages_common.pb.h"
+#include "dota_shared_enums.pb.h"
 // @@protoc_insertion_point(includes)
 
 // Internal implementation detail -- do not call these.
@@ -35,6 +35,7 @@ void protobuf_ShutdownFile_dota_5fgcmessages_5fclient_5ffantasy_2eproto();
 
 class CMsgGCPlayerInfo;
 class CMsgGCPlayerInfo_PlayerInfo;
+class CMsgGCPlayerInfo_RegionLeaderboard;
 class CMsgDOTACreateFantasyLeagueRequest;
 class CMsgDOTACreateFantasyLeagueResponse;
 class CMsgFantasyLeagueScoring;
@@ -109,20 +110,15 @@ class CMsgDOTAFantasyLeaveLeagueResponse;
 class CMsgDOTAFantasyPlayerScoreDetailsRequest;
 class CMsgDOTAFantasyPlayerScoreDetailsResponse;
 class CMsgDOTAFantasyPlayerScoreDetailsResponse_PlayerMatchData;
-class CMsgDOTATournament;
-class CMsgDOTATournament_Team;
-class CMsgDOTATournament_Game;
-class CMsgDOTATournament_Node;
-class CMsgDOTATournamentRequest;
-class CMsgDOTATournamentResponse;
-class CMsgDOTAClearTournamentGame;
 class CMsgDOTAPassportVoteTeamGuess;
 class CMsgDOTAPassportVoteGenericSelection;
 class CMsgDOTAPassportStampedPlayer;
 class CMsgDOTAPassportPlayerCardChallenge;
 class CMsgDOTAPassportVote;
-class CMsgPassportDataRequest;
-class CMsgPassportDataResponse;
+class CMsgClientToGCGetPlayerCardRosterRequest;
+class CMsgClientToGCGetPlayerCardRosterResponse;
+class CMsgClientToGCSetPlayerCardRosterRequest;
+class CMsgClientToGCSetPlayerCardRosterResponse;
 
 enum CMsgDOTACreateFantasyLeagueResponse_EResult {
   CMsgDOTACreateFantasyLeagueResponse_EResult_SUCCESS = 0,
@@ -662,115 +658,52 @@ inline bool CMsgDOTAFantasyPlayerScoreDetailsResponse_EResult_Parse(
   return ::google::protobuf::internal::ParseNamedEnum<CMsgDOTAFantasyPlayerScoreDetailsResponse_EResult>(
     CMsgDOTAFantasyPlayerScoreDetailsResponse_EResult_descriptor(), name, value);
 }
-enum ETournamentGameState {
-  k_ETournamentGameState_Unknown = 0,
-  k_ETournamentGameState_Scheduled = 1,
-  k_ETournamentGameState_WaitingForLobbyToStart = 2,
-  k_ETournamentGameState_Active = 3,
-  k_ETournamentGameState_DireVictory = 4,
-  k_ETournamentGameState_RadVictory = 5,
-  k_ETournamentGameState_Canceled = 6,
-  k_ETournamentTeamState_NotNeeded = 7
+enum CMsgClientToGCGetPlayerCardRosterResponse_Result {
+  CMsgClientToGCGetPlayerCardRosterResponse_Result_SUCCESS = 0,
+  CMsgClientToGCGetPlayerCardRosterResponse_Result_ERROR_UNSPECIFIED = 1,
+  CMsgClientToGCGetPlayerCardRosterResponse_Result_ERROR_INVALID_LEAGUE_ID = 2,
+  CMsgClientToGCGetPlayerCardRosterResponse_Result_ERROR_INVALID_TIMESTAMP = 3
 };
-bool ETournamentGameState_IsValid(int value);
-const ETournamentGameState ETournamentGameState_MIN = k_ETournamentGameState_Unknown;
-const ETournamentGameState ETournamentGameState_MAX = k_ETournamentTeamState_NotNeeded;
-const int ETournamentGameState_ARRAYSIZE = ETournamentGameState_MAX + 1;
+bool CMsgClientToGCGetPlayerCardRosterResponse_Result_IsValid(int value);
+const CMsgClientToGCGetPlayerCardRosterResponse_Result CMsgClientToGCGetPlayerCardRosterResponse_Result_Result_MIN = CMsgClientToGCGetPlayerCardRosterResponse_Result_SUCCESS;
+const CMsgClientToGCGetPlayerCardRosterResponse_Result CMsgClientToGCGetPlayerCardRosterResponse_Result_Result_MAX = CMsgClientToGCGetPlayerCardRosterResponse_Result_ERROR_INVALID_TIMESTAMP;
+const int CMsgClientToGCGetPlayerCardRosterResponse_Result_Result_ARRAYSIZE = CMsgClientToGCGetPlayerCardRosterResponse_Result_Result_MAX + 1;
 
-const ::google::protobuf::EnumDescriptor* ETournamentGameState_descriptor();
-inline const ::std::string& ETournamentGameState_Name(ETournamentGameState value) {
+const ::google::protobuf::EnumDescriptor* CMsgClientToGCGetPlayerCardRosterResponse_Result_descriptor();
+inline const ::std::string& CMsgClientToGCGetPlayerCardRosterResponse_Result_Name(CMsgClientToGCGetPlayerCardRosterResponse_Result value) {
   return ::google::protobuf::internal::NameOfEnum(
-    ETournamentGameState_descriptor(), value);
+    CMsgClientToGCGetPlayerCardRosterResponse_Result_descriptor(), value);
 }
-inline bool ETournamentGameState_Parse(
-    const ::std::string& name, ETournamentGameState* value) {
-  return ::google::protobuf::internal::ParseNamedEnum<ETournamentGameState>(
-    ETournamentGameState_descriptor(), name, value);
+inline bool CMsgClientToGCGetPlayerCardRosterResponse_Result_Parse(
+    const ::std::string& name, CMsgClientToGCGetPlayerCardRosterResponse_Result* value) {
+  return ::google::protobuf::internal::ParseNamedEnum<CMsgClientToGCGetPlayerCardRosterResponse_Result>(
+    CMsgClientToGCGetPlayerCardRosterResponse_Result_descriptor(), name, value);
 }
-enum ETournamentTeamState {
-  k_ETournamentTeamState_Unknown = 0,
-  k_ETournamentTeamState_Node1 = 1,
-  k_ETournamentTeamState_NodeMax = 1024,
-  k_ETournamentTeamState_Eliminated = 14003,
-  k_ETournamentTeamState_Forfeited = 14004,
-  k_ETournamentTeamState_Finished1st = 15001,
-  k_ETournamentTeamState_Finished2nd = 15002,
-  k_ETournamentTeamState_Finished3rd = 15003,
-  k_ETournamentTeamState_Finished4th = 15004,
-  k_ETournamentTeamState_Finished5th = 15005,
-  k_ETournamentTeamState_Finished6th = 15006,
-  k_ETournamentTeamState_Finished7th = 15007,
-  k_ETournamentTeamState_Finished8th = 15008,
-  k_ETournamentTeamState_Finished9th = 15009,
-  k_ETournamentTeamState_Finished10th = 15010,
-  k_ETournamentTeamState_Finished11th = 15011,
-  k_ETournamentTeamState_Finished12th = 15012,
-  k_ETournamentTeamState_Finished13th = 15013,
-  k_ETournamentTeamState_Finished14th = 15014,
-  k_ETournamentTeamState_Finished15th = 15015,
-  k_ETournamentTeamState_Finished16th = 15016
+enum CMsgClientToGCSetPlayerCardRosterResponse_Result {
+  CMsgClientToGCSetPlayerCardRosterResponse_Result_SUCCESS = 0,
+  CMsgClientToGCSetPlayerCardRosterResponse_Result_ERROR_UNSPECIFIED = 1,
+  CMsgClientToGCSetPlayerCardRosterResponse_Result_ERROR_INVALID_LEAGUE_ID = 2,
+  CMsgClientToGCSetPlayerCardRosterResponse_Result_ERROR_INVALID_TIMESTAMP = 3,
+  CMsgClientToGCSetPlayerCardRosterResponse_Result_ERROR_PLAYER_CARD_NOT_OWNED = 4,
+  CMsgClientToGCSetPlayerCardRosterResponse_Result_ERROR_INVALID_SLOT = 5,
+  CMsgClientToGCSetPlayerCardRosterResponse_Result_ERROR_FAILED_CARD_INFO = 6,
+  CMsgClientToGCSetPlayerCardRosterResponse_Result_ERROR_ACCOUNT_DUPLICATE = 7,
+  CMsgClientToGCSetPlayerCardRosterResponse_Result_ERROR_LOCKED_TIMESTAMP = 8
 };
-bool ETournamentTeamState_IsValid(int value);
-const ETournamentTeamState ETournamentTeamState_MIN = k_ETournamentTeamState_Unknown;
-const ETournamentTeamState ETournamentTeamState_MAX = k_ETournamentTeamState_Finished16th;
-const int ETournamentTeamState_ARRAYSIZE = ETournamentTeamState_MAX + 1;
+bool CMsgClientToGCSetPlayerCardRosterResponse_Result_IsValid(int value);
+const CMsgClientToGCSetPlayerCardRosterResponse_Result CMsgClientToGCSetPlayerCardRosterResponse_Result_Result_MIN = CMsgClientToGCSetPlayerCardRosterResponse_Result_SUCCESS;
+const CMsgClientToGCSetPlayerCardRosterResponse_Result CMsgClientToGCSetPlayerCardRosterResponse_Result_Result_MAX = CMsgClientToGCSetPlayerCardRosterResponse_Result_ERROR_LOCKED_TIMESTAMP;
+const int CMsgClientToGCSetPlayerCardRosterResponse_Result_Result_ARRAYSIZE = CMsgClientToGCSetPlayerCardRosterResponse_Result_Result_MAX + 1;
 
-const ::google::protobuf::EnumDescriptor* ETournamentTeamState_descriptor();
-inline const ::std::string& ETournamentTeamState_Name(ETournamentTeamState value) {
+const ::google::protobuf::EnumDescriptor* CMsgClientToGCSetPlayerCardRosterResponse_Result_descriptor();
+inline const ::std::string& CMsgClientToGCSetPlayerCardRosterResponse_Result_Name(CMsgClientToGCSetPlayerCardRosterResponse_Result value) {
   return ::google::protobuf::internal::NameOfEnum(
-    ETournamentTeamState_descriptor(), value);
+    CMsgClientToGCSetPlayerCardRosterResponse_Result_descriptor(), value);
 }
-inline bool ETournamentTeamState_Parse(
-    const ::std::string& name, ETournamentTeamState* value) {
-  return ::google::protobuf::internal::ParseNamedEnum<ETournamentTeamState>(
-    ETournamentTeamState_descriptor(), name, value);
-}
-enum ETournamentState {
-  k_ETournamentState_Unknown = 0,
-  k_ETournamentState_Setup = 1,
-  k_ETournamentState_Scheduled = 2,
-  k_ETournamentState_InProgress = 3,
-  k_ETournamentState_Completed = 4,
-  k_ETournamentState_Canceled = 5
-};
-bool ETournamentState_IsValid(int value);
-const ETournamentState ETournamentState_MIN = k_ETournamentState_Unknown;
-const ETournamentState ETournamentState_MAX = k_ETournamentState_Canceled;
-const int ETournamentState_ARRAYSIZE = ETournamentState_MAX + 1;
-
-const ::google::protobuf::EnumDescriptor* ETournamentState_descriptor();
-inline const ::std::string& ETournamentState_Name(ETournamentState value) {
-  return ::google::protobuf::internal::NameOfEnum(
-    ETournamentState_descriptor(), value);
-}
-inline bool ETournamentState_Parse(
-    const ::std::string& name, ETournamentState* value) {
-  return ::google::protobuf::internal::ParseNamedEnum<ETournamentState>(
-    ETournamentState_descriptor(), name, value);
-}
-enum ETournamentNodeState {
-  k_ETournamentNodeState_Unknown = 0,
-  k_ETournamentNodeState_TeamsNotYetAssigned = 1,
-  k_ETournamentNodeState_InBetweenGames = 2,
-  k_ETournamentNodeState_GameInProgress = 3,
-  k_ETournamentNodeState_A_Won = 4,
-  k_ETournamentNodeState_B_Won = 5,
-  k_ETournamentNodeState_Canceled = 6
-};
-bool ETournamentNodeState_IsValid(int value);
-const ETournamentNodeState ETournamentNodeState_MIN = k_ETournamentNodeState_Unknown;
-const ETournamentNodeState ETournamentNodeState_MAX = k_ETournamentNodeState_Canceled;
-const int ETournamentNodeState_ARRAYSIZE = ETournamentNodeState_MAX + 1;
-
-const ::google::protobuf::EnumDescriptor* ETournamentNodeState_descriptor();
-inline const ::std::string& ETournamentNodeState_Name(ETournamentNodeState value) {
-  return ::google::protobuf::internal::NameOfEnum(
-    ETournamentNodeState_descriptor(), value);
-}
-inline bool ETournamentNodeState_Parse(
-    const ::std::string& name, ETournamentNodeState* value) {
-  return ::google::protobuf::internal::ParseNamedEnum<ETournamentNodeState>(
-    ETournamentNodeState_descriptor(), name, value);
+inline bool CMsgClientToGCSetPlayerCardRosterResponse_Result_Parse(
+    const ::std::string& name, CMsgClientToGCSetPlayerCardRosterResponse_Result* value) {
+  return ::google::protobuf::internal::ParseNamedEnum<CMsgClientToGCSetPlayerCardRosterResponse_Result>(
+    CMsgClientToGCSetPlayerCardRosterResponse_Result_descriptor(), name, value);
 }
 enum DOTA_2013PassportSelectionIndices {
   PP13_SEL_ALLSTAR_PLAYER_0 = 0,
@@ -1028,6 +961,27 @@ class CMsgGCPlayerInfo_PlayerInfo : public ::google::protobuf::Message {
   inline bool is_locked() const;
   inline void set_is_locked(bool value);
 
+  // optional bool is_pro = 10;
+  inline bool has_is_pro() const;
+  inline void clear_is_pro();
+  static const int kIsProFieldNumber = 10;
+  inline bool is_pro() const;
+  inline void set_is_pro(bool value);
+
+  // optional uint32 locked_until = 11;
+  inline bool has_locked_until() const;
+  inline void clear_locked_until();
+  static const int kLockedUntilFieldNumber = 11;
+  inline ::google::protobuf::uint32 locked_until() const;
+  inline void set_locked_until(::google::protobuf::uint32 value);
+
+  // optional uint32 timestamp = 12;
+  inline bool has_timestamp() const;
+  inline void clear_timestamp();
+  static const int kTimestampFieldNumber = 12;
+  inline ::google::protobuf::uint32 timestamp() const;
+  inline void set_timestamp(::google::protobuf::uint32 value);
+
   // @@protoc_insertion_point(class_scope:CMsgGCPlayerInfo.PlayerInfo)
  private:
   inline void set_has_account_id();
@@ -1048,6 +1002,12 @@ class CMsgGCPlayerInfo_PlayerInfo : public ::google::protobuf::Message {
   inline void clear_has_sponsor();
   inline void set_has_is_locked();
   inline void clear_has_is_locked();
+  inline void set_has_is_pro();
+  inline void clear_has_is_pro();
+  inline void set_has_locked_until();
+  inline void clear_has_locked_until();
+  inline void set_has_timestamp();
+  inline void clear_has_timestamp();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
@@ -1059,15 +1019,110 @@ class CMsgGCPlayerInfo_PlayerInfo : public ::google::protobuf::Message {
   ::std::string* country_code_;
   ::std::string* team_name_;
   ::std::string* team_tag_;
+  ::std::string* sponsor_;
   ::google::protobuf::uint32 team_id_;
   bool is_locked_;
-  ::std::string* sponsor_;
+  bool is_pro_;
+  ::google::protobuf::uint32 locked_until_;
+  ::google::protobuf::uint32 timestamp_;
   friend void  protobuf_AddDesc_dota_5fgcmessages_5fclient_5ffantasy_2eproto();
   friend void protobuf_AssignDesc_dota_5fgcmessages_5fclient_5ffantasy_2eproto();
   friend void protobuf_ShutdownFile_dota_5fgcmessages_5fclient_5ffantasy_2eproto();
 
   void InitAsDefaultInstance();
   static CMsgGCPlayerInfo_PlayerInfo* default_instance_;
+};
+// -------------------------------------------------------------------
+
+class CMsgGCPlayerInfo_RegionLeaderboard : public ::google::protobuf::Message {
+ public:
+  CMsgGCPlayerInfo_RegionLeaderboard();
+  virtual ~CMsgGCPlayerInfo_RegionLeaderboard();
+
+  CMsgGCPlayerInfo_RegionLeaderboard(const CMsgGCPlayerInfo_RegionLeaderboard& from);
+
+  inline CMsgGCPlayerInfo_RegionLeaderboard& operator=(const CMsgGCPlayerInfo_RegionLeaderboard& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+    return _unknown_fields_;
+  }
+
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+    return &_unknown_fields_;
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const CMsgGCPlayerInfo_RegionLeaderboard& default_instance();
+
+  void Swap(CMsgGCPlayerInfo_RegionLeaderboard* other);
+
+  // implements Message ----------------------------------------------
+
+  CMsgGCPlayerInfo_RegionLeaderboard* New() const;
+  void CopyFrom(const ::google::protobuf::Message& from);
+  void MergeFrom(const ::google::protobuf::Message& from);
+  void CopyFrom(const CMsgGCPlayerInfo_RegionLeaderboard& from);
+  void MergeFrom(const CMsgGCPlayerInfo_RegionLeaderboard& from);
+  void Clear();
+  bool IsInitialized() const;
+
+  int ByteSize() const;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input);
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  int GetCachedSize() const { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const;
+  public:
+  ::google::protobuf::Metadata GetMetadata() const;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // optional uint32 division = 1;
+  inline bool has_division() const;
+  inline void clear_division();
+  static const int kDivisionFieldNumber = 1;
+  inline ::google::protobuf::uint32 division() const;
+  inline void set_division(::google::protobuf::uint32 value);
+
+  // repeated uint32 account_ids = 2;
+  inline int account_ids_size() const;
+  inline void clear_account_ids();
+  static const int kAccountIdsFieldNumber = 2;
+  inline ::google::protobuf::uint32 account_ids(int index) const;
+  inline void set_account_ids(int index, ::google::protobuf::uint32 value);
+  inline void add_account_ids(::google::protobuf::uint32 value);
+  inline const ::google::protobuf::RepeatedField< ::google::protobuf::uint32 >&
+      account_ids() const;
+  inline ::google::protobuf::RepeatedField< ::google::protobuf::uint32 >*
+      mutable_account_ids();
+
+  // @@protoc_insertion_point(class_scope:CMsgGCPlayerInfo.RegionLeaderboard)
+ private:
+  inline void set_has_division();
+  inline void clear_has_division();
+
+  ::google::protobuf::UnknownFieldSet _unknown_fields_;
+
+  ::google::protobuf::uint32 _has_bits_[1];
+  mutable int _cached_size_;
+  ::google::protobuf::RepeatedField< ::google::protobuf::uint32 > account_ids_;
+  ::google::protobuf::uint32 division_;
+  friend void  protobuf_AddDesc_dota_5fgcmessages_5fclient_5ffantasy_2eproto();
+  friend void protobuf_AssignDesc_dota_5fgcmessages_5fclient_5ffantasy_2eproto();
+  friend void protobuf_ShutdownFile_dota_5fgcmessages_5fclient_5ffantasy_2eproto();
+
+  void InitAsDefaultInstance();
+  static CMsgGCPlayerInfo_RegionLeaderboard* default_instance_;
 };
 // -------------------------------------------------------------------
 
@@ -1123,6 +1178,7 @@ class CMsgGCPlayerInfo : public ::google::protobuf::Message {
   // nested types ----------------------------------------------------
 
   typedef CMsgGCPlayerInfo_PlayerInfo PlayerInfo;
+  typedef CMsgGCPlayerInfo_RegionLeaderboard RegionLeaderboard;
 
   // accessors -------------------------------------------------------
 
@@ -1138,6 +1194,18 @@ class CMsgGCPlayerInfo : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedPtrField< ::CMsgGCPlayerInfo_PlayerInfo >*
       mutable_player_infos();
 
+  // repeated .CMsgGCPlayerInfo.RegionLeaderboard leaderboards = 2;
+  inline int leaderboards_size() const;
+  inline void clear_leaderboards();
+  static const int kLeaderboardsFieldNumber = 2;
+  inline const ::CMsgGCPlayerInfo_RegionLeaderboard& leaderboards(int index) const;
+  inline ::CMsgGCPlayerInfo_RegionLeaderboard* mutable_leaderboards(int index);
+  inline ::CMsgGCPlayerInfo_RegionLeaderboard* add_leaderboards();
+  inline const ::google::protobuf::RepeatedPtrField< ::CMsgGCPlayerInfo_RegionLeaderboard >&
+      leaderboards() const;
+  inline ::google::protobuf::RepeatedPtrField< ::CMsgGCPlayerInfo_RegionLeaderboard >*
+      mutable_leaderboards();
+
   // @@protoc_insertion_point(class_scope:CMsgGCPlayerInfo)
  private:
 
@@ -1146,6 +1214,7 @@ class CMsgGCPlayerInfo : public ::google::protobuf::Message {
   ::google::protobuf::uint32 _has_bits_[1];
   mutable int _cached_size_;
   ::google::protobuf::RepeatedPtrField< ::CMsgGCPlayerInfo_PlayerInfo > player_infos_;
+  ::google::protobuf::RepeatedPtrField< ::CMsgGCPlayerInfo_RegionLeaderboard > leaderboards_;
   friend void  protobuf_AddDesc_dota_5fgcmessages_5fclient_5ffantasy_2eproto();
   friend void protobuf_AssignDesc_dota_5fgcmessages_5fclient_5ffantasy_2eproto();
   friend void protobuf_ShutdownFile_dota_5fgcmessages_5fclient_5ffantasy_2eproto();
@@ -9637,15 +9706,6 @@ class CMsgDOTAFantasyPlayerScoreDetailsResponse_PlayerMatchData : public ::googl
   inline ::std::string* release_opposing_team_name();
   inline void set_allocated_opposing_team_name(::std::string* opposing_team_name);
 
-  // optional .CMsgFantasyLeagueScoring stats = 10;
-  inline bool has_stats() const;
-  inline void clear_stats();
-  static const int kStatsFieldNumber = 10;
-  inline const ::CMsgFantasyLeagueScoring& stats() const;
-  inline ::CMsgFantasyLeagueScoring* mutable_stats();
-  inline ::CMsgFantasyLeagueScoring* release_stats();
-  inline void set_allocated_stats(::CMsgFantasyLeagueScoring* stats);
-
   // optional uint32 owned_by = 11;
   inline bool has_owned_by() const;
   inline void clear_owned_by();
@@ -9680,8 +9740,6 @@ class CMsgDOTAFantasyPlayerScoreDetailsResponse_PlayerMatchData : public ::googl
   inline void clear_has_opposing_team_logo();
   inline void set_has_opposing_team_name();
   inline void clear_has_opposing_team_name();
-  inline void set_has_stats();
-  inline void clear_has_stats();
   inline void set_has_owned_by();
   inline void clear_has_owned_by();
   inline void set_has_benched();
@@ -9700,7 +9758,6 @@ class CMsgDOTAFantasyPlayerScoreDetailsResponse_PlayerMatchData : public ::googl
   ::google::protobuf::uint32 opposing_team_id_;
   ::google::protobuf::uint64 opposing_team_logo_;
   ::std::string* opposing_team_name_;
-  ::CMsgFantasyLeagueScoring* stats_;
   ::google::protobuf::uint32 owned_by_;
   bool benched_;
   friend void  protobuf_AddDesc_dota_5fgcmessages_5fclient_5ffantasy_2eproto();
@@ -9828,1003 +9885,6 @@ class CMsgDOTAFantasyPlayerScoreDetailsResponse : public ::google::protobuf::Mes
 
   void InitAsDefaultInstance();
   static CMsgDOTAFantasyPlayerScoreDetailsResponse* default_instance_;
-};
-// -------------------------------------------------------------------
-
-class CMsgDOTATournament_Team : public ::google::protobuf::Message {
- public:
-  CMsgDOTATournament_Team();
-  virtual ~CMsgDOTATournament_Team();
-
-  CMsgDOTATournament_Team(const CMsgDOTATournament_Team& from);
-
-  inline CMsgDOTATournament_Team& operator=(const CMsgDOTATournament_Team& from) {
-    CopyFrom(from);
-    return *this;
-  }
-
-  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
-    return _unknown_fields_;
-  }
-
-  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
-    return &_unknown_fields_;
-  }
-
-  static const ::google::protobuf::Descriptor* descriptor();
-  static const CMsgDOTATournament_Team& default_instance();
-
-  void Swap(CMsgDOTATournament_Team* other);
-
-  // implements Message ----------------------------------------------
-
-  CMsgDOTATournament_Team* New() const;
-  void CopyFrom(const ::google::protobuf::Message& from);
-  void MergeFrom(const ::google::protobuf::Message& from);
-  void CopyFrom(const CMsgDOTATournament_Team& from);
-  void MergeFrom(const CMsgDOTATournament_Team& from);
-  void Clear();
-  bool IsInitialized() const;
-
-  int ByteSize() const;
-  bool MergePartialFromCodedStream(
-      ::google::protobuf::io::CodedInputStream* input);
-  void SerializeWithCachedSizes(
-      ::google::protobuf::io::CodedOutputStream* output) const;
-  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
-  int GetCachedSize() const { return _cached_size_; }
-  private:
-  void SharedCtor();
-  void SharedDtor();
-  void SetCachedSize(int size) const;
-  public:
-  ::google::protobuf::Metadata GetMetadata() const;
-
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-
-  // optional uint32 team_id = 1;
-  inline bool has_team_id() const;
-  inline void clear_team_id();
-  static const int kTeamIdFieldNumber = 1;
-  inline ::google::protobuf::uint32 team_id() const;
-  inline void set_team_id(::google::protobuf::uint32 value);
-
-  // optional string team_name = 2;
-  inline bool has_team_name() const;
-  inline void clear_team_name();
-  static const int kTeamNameFieldNumber = 2;
-  inline const ::std::string& team_name() const;
-  inline void set_team_name(const ::std::string& value);
-  inline void set_team_name(const char* value);
-  inline void set_team_name(const char* value, size_t size);
-  inline ::std::string* mutable_team_name();
-  inline ::std::string* release_team_name();
-  inline void set_allocated_team_name(::std::string* team_name);
-
-  // optional string team_abbrev = 3;
-  inline bool has_team_abbrev() const;
-  inline void clear_team_abbrev();
-  static const int kTeamAbbrevFieldNumber = 3;
-  inline const ::std::string& team_abbrev() const;
-  inline void set_team_abbrev(const ::std::string& value);
-  inline void set_team_abbrev(const char* value);
-  inline void set_team_abbrev(const char* value, size_t size);
-  inline ::std::string* mutable_team_abbrev();
-  inline ::std::string* release_team_abbrev();
-  inline void set_allocated_team_abbrev(::std::string* team_abbrev);
-
-  // repeated uint32 players = 4 [packed = true];
-  inline int players_size() const;
-  inline void clear_players();
-  static const int kPlayersFieldNumber = 4;
-  inline ::google::protobuf::uint32 players(int index) const;
-  inline void set_players(int index, ::google::protobuf::uint32 value);
-  inline void add_players(::google::protobuf::uint32 value);
-  inline const ::google::protobuf::RepeatedField< ::google::protobuf::uint32 >&
-      players() const;
-  inline ::google::protobuf::RepeatedField< ::google::protobuf::uint32 >*
-      mutable_players();
-
-  // optional uint32 seed = 5;
-  inline bool has_seed() const;
-  inline void clear_seed();
-  static const int kSeedFieldNumber = 5;
-  inline ::google::protobuf::uint32 seed() const;
-  inline void set_seed(::google::protobuf::uint32 value);
-
-  // optional uint64 team_logo = 6;
-  inline bool has_team_logo() const;
-  inline void clear_team_logo();
-  static const int kTeamLogoFieldNumber = 6;
-  inline ::google::protobuf::uint64 team_logo() const;
-  inline void set_team_logo(::google::protobuf::uint64 value);
-
-  // optional string country_code = 7;
-  inline bool has_country_code() const;
-  inline void clear_country_code();
-  static const int kCountryCodeFieldNumber = 7;
-  inline const ::std::string& country_code() const;
-  inline void set_country_code(const ::std::string& value);
-  inline void set_country_code(const char* value);
-  inline void set_country_code(const char* value, size_t size);
-  inline ::std::string* mutable_country_code();
-  inline ::std::string* release_country_code();
-  inline void set_allocated_country_code(::std::string* country_code);
-
-  // optional uint32 node_or_state = 8;
-  inline bool has_node_or_state() const;
-  inline void clear_node_or_state();
-  static const int kNodeOrStateFieldNumber = 8;
-  inline ::google::protobuf::uint32 node_or_state() const;
-  inline void set_node_or_state(::google::protobuf::uint32 value);
-
-  // @@protoc_insertion_point(class_scope:CMsgDOTATournament.Team)
- private:
-  inline void set_has_team_id();
-  inline void clear_has_team_id();
-  inline void set_has_team_name();
-  inline void clear_has_team_name();
-  inline void set_has_team_abbrev();
-  inline void clear_has_team_abbrev();
-  inline void set_has_seed();
-  inline void clear_has_seed();
-  inline void set_has_team_logo();
-  inline void clear_has_team_logo();
-  inline void set_has_country_code();
-  inline void clear_has_country_code();
-  inline void set_has_node_or_state();
-  inline void clear_has_node_or_state();
-
-  ::google::protobuf::UnknownFieldSet _unknown_fields_;
-
-  ::google::protobuf::uint32 _has_bits_[1];
-  mutable int _cached_size_;
-  ::std::string* team_name_;
-  ::std::string* team_abbrev_;
-  ::google::protobuf::uint32 team_id_;
-  ::google::protobuf::uint32 seed_;
-  ::google::protobuf::RepeatedField< ::google::protobuf::uint32 > players_;
-  mutable int _players_cached_byte_size_;
-  ::google::protobuf::uint64 team_logo_;
-  ::std::string* country_code_;
-  ::google::protobuf::uint32 node_or_state_;
-  friend void  protobuf_AddDesc_dota_5fgcmessages_5fclient_5ffantasy_2eproto();
-  friend void protobuf_AssignDesc_dota_5fgcmessages_5fclient_5ffantasy_2eproto();
-  friend void protobuf_ShutdownFile_dota_5fgcmessages_5fclient_5ffantasy_2eproto();
-
-  void InitAsDefaultInstance();
-  static CMsgDOTATournament_Team* default_instance_;
-};
-// -------------------------------------------------------------------
-
-class CMsgDOTATournament_Game : public ::google::protobuf::Message {
- public:
-  CMsgDOTATournament_Game();
-  virtual ~CMsgDOTATournament_Game();
-
-  CMsgDOTATournament_Game(const CMsgDOTATournament_Game& from);
-
-  inline CMsgDOTATournament_Game& operator=(const CMsgDOTATournament_Game& from) {
-    CopyFrom(from);
-    return *this;
-  }
-
-  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
-    return _unknown_fields_;
-  }
-
-  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
-    return &_unknown_fields_;
-  }
-
-  static const ::google::protobuf::Descriptor* descriptor();
-  static const CMsgDOTATournament_Game& default_instance();
-
-  void Swap(CMsgDOTATournament_Game* other);
-
-  // implements Message ----------------------------------------------
-
-  CMsgDOTATournament_Game* New() const;
-  void CopyFrom(const ::google::protobuf::Message& from);
-  void MergeFrom(const ::google::protobuf::Message& from);
-  void CopyFrom(const CMsgDOTATournament_Game& from);
-  void MergeFrom(const CMsgDOTATournament_Game& from);
-  void Clear();
-  bool IsInitialized() const;
-
-  int ByteSize() const;
-  bool MergePartialFromCodedStream(
-      ::google::protobuf::io::CodedInputStream* input);
-  void SerializeWithCachedSizes(
-      ::google::protobuf::io::CodedOutputStream* output) const;
-  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
-  int GetCachedSize() const { return _cached_size_; }
-  private:
-  void SharedCtor();
-  void SharedDtor();
-  void SetCachedSize(int size) const;
-  public:
-  ::google::protobuf::Metadata GetMetadata() const;
-
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-
-  // optional uint32 game_id = 1;
-  inline bool has_game_id() const;
-  inline void clear_game_id();
-  static const int kGameIdFieldNumber = 1;
-  inline ::google::protobuf::uint32 game_id() const;
-  inline void set_game_id(::google::protobuf::uint32 value);
-
-  // optional uint32 good_team_id = 2;
-  inline bool has_good_team_id() const;
-  inline void clear_good_team_id();
-  static const int kGoodTeamIdFieldNumber = 2;
-  inline ::google::protobuf::uint32 good_team_id() const;
-  inline void set_good_team_id(::google::protobuf::uint32 value);
-
-  // optional uint32 bad_team_id = 3;
-  inline bool has_bad_team_id() const;
-  inline void clear_bad_team_id();
-  static const int kBadTeamIdFieldNumber = 3;
-  inline ::google::protobuf::uint32 bad_team_id() const;
-  inline void set_bad_team_id(::google::protobuf::uint32 value);
-
-  // optional uint32 good_team_seed = 12;
-  inline bool has_good_team_seed() const;
-  inline void clear_good_team_seed();
-  static const int kGoodTeamSeedFieldNumber = 12;
-  inline ::google::protobuf::uint32 good_team_seed() const;
-  inline void set_good_team_seed(::google::protobuf::uint32 value);
-
-  // optional uint32 bad_team_seed = 13;
-  inline bool has_bad_team_seed() const;
-  inline void clear_bad_team_seed();
-  static const int kBadTeamSeedFieldNumber = 13;
-  inline ::google::protobuf::uint32 bad_team_seed() const;
-  inline void set_bad_team_seed(::google::protobuf::uint32 value);
-
-  // optional fixed64 lobby_id = 4;
-  inline bool has_lobby_id() const;
-  inline void clear_lobby_id();
-  static const int kLobbyIdFieldNumber = 4;
-  inline ::google::protobuf::uint64 lobby_id() const;
-  inline void set_lobby_id(::google::protobuf::uint64 value);
-
-  // optional uint64 match_id = 5;
-  inline bool has_match_id() const;
-  inline void clear_match_id();
-  static const int kMatchIdFieldNumber = 5;
-  inline ::google::protobuf::uint64 match_id() const;
-  inline void set_match_id(::google::protobuf::uint64 value);
-
-  // optional string game_name = 6;
-  inline bool has_game_name() const;
-  inline void clear_game_name();
-  static const int kGameNameFieldNumber = 6;
-  inline const ::std::string& game_name() const;
-  inline void set_game_name(const ::std::string& value);
-  inline void set_game_name(const char* value);
-  inline void set_game_name(const char* value, size_t size);
-  inline ::std::string* mutable_game_name();
-  inline ::std::string* release_game_name();
-  inline void set_allocated_game_name(::std::string* game_name);
-
-  // optional bool live_stream = 7;
-  inline bool has_live_stream() const;
-  inline void clear_live_stream();
-  static const int kLiveStreamFieldNumber = 7;
-  inline bool live_stream() const;
-  inline void set_live_stream(bool value);
-
-  // optional string message = 9;
-  inline bool has_message() const;
-  inline void clear_message();
-  static const int kMessageFieldNumber = 9;
-  inline const ::std::string& message() const;
-  inline void set_message(const ::std::string& value);
-  inline void set_message(const char* value);
-  inline void set_message(const char* value, size_t size);
-  inline ::std::string* mutable_message();
-  inline ::std::string* release_message();
-  inline void set_allocated_message(::std::string* message);
-
-  // optional bool results_final = 10;
-  inline bool has_results_final() const;
-  inline void clear_results_final();
-  static const int kResultsFinalFieldNumber = 10;
-  inline bool results_final() const;
-  inline void set_results_final(bool value);
-
-  // optional .ETournamentGameState state = 14 [default = k_ETournamentGameState_Unknown];
-  inline bool has_state() const;
-  inline void clear_state();
-  static const int kStateFieldNumber = 14;
-  inline ::ETournamentGameState state() const;
-  inline void set_state(::ETournamentGameState value);
-
-  // optional uint32 node_id = 15;
-  inline bool has_node_id() const;
-  inline void clear_node_id();
-  static const int kNodeIdFieldNumber = 15;
-  inline ::google::protobuf::uint32 node_id() const;
-  inline void set_node_id(::google::protobuf::uint32 value);
-
-  // optional uint32 start_time = 16;
-  inline bool has_start_time() const;
-  inline void clear_start_time();
-  static const int kStartTimeFieldNumber = 16;
-  inline ::google::protobuf::uint32 start_time() const;
-  inline void set_start_time(::google::protobuf::uint32 value);
-
-  // @@protoc_insertion_point(class_scope:CMsgDOTATournament.Game)
- private:
-  inline void set_has_game_id();
-  inline void clear_has_game_id();
-  inline void set_has_good_team_id();
-  inline void clear_has_good_team_id();
-  inline void set_has_bad_team_id();
-  inline void clear_has_bad_team_id();
-  inline void set_has_good_team_seed();
-  inline void clear_has_good_team_seed();
-  inline void set_has_bad_team_seed();
-  inline void clear_has_bad_team_seed();
-  inline void set_has_lobby_id();
-  inline void clear_has_lobby_id();
-  inline void set_has_match_id();
-  inline void clear_has_match_id();
-  inline void set_has_game_name();
-  inline void clear_has_game_name();
-  inline void set_has_live_stream();
-  inline void clear_has_live_stream();
-  inline void set_has_message();
-  inline void clear_has_message();
-  inline void set_has_results_final();
-  inline void clear_has_results_final();
-  inline void set_has_state();
-  inline void clear_has_state();
-  inline void set_has_node_id();
-  inline void clear_has_node_id();
-  inline void set_has_start_time();
-  inline void clear_has_start_time();
-
-  ::google::protobuf::UnknownFieldSet _unknown_fields_;
-
-  ::google::protobuf::uint32 _has_bits_[1];
-  mutable int _cached_size_;
-  ::google::protobuf::uint32 game_id_;
-  ::google::protobuf::uint32 good_team_id_;
-  ::google::protobuf::uint32 bad_team_id_;
-  ::google::protobuf::uint32 good_team_seed_;
-  ::google::protobuf::uint64 lobby_id_;
-  ::google::protobuf::uint64 match_id_;
-  ::std::string* game_name_;
-  ::google::protobuf::uint32 bad_team_seed_;
-  bool live_stream_;
-  bool results_final_;
-  ::std::string* message_;
-  int state_;
-  ::google::protobuf::uint32 node_id_;
-  ::google::protobuf::uint32 start_time_;
-  friend void  protobuf_AddDesc_dota_5fgcmessages_5fclient_5ffantasy_2eproto();
-  friend void protobuf_AssignDesc_dota_5fgcmessages_5fclient_5ffantasy_2eproto();
-  friend void protobuf_ShutdownFile_dota_5fgcmessages_5fclient_5ffantasy_2eproto();
-
-  void InitAsDefaultInstance();
-  static CMsgDOTATournament_Game* default_instance_;
-};
-// -------------------------------------------------------------------
-
-class CMsgDOTATournament_Node : public ::google::protobuf::Message {
- public:
-  CMsgDOTATournament_Node();
-  virtual ~CMsgDOTATournament_Node();
-
-  CMsgDOTATournament_Node(const CMsgDOTATournament_Node& from);
-
-  inline CMsgDOTATournament_Node& operator=(const CMsgDOTATournament_Node& from) {
-    CopyFrom(from);
-    return *this;
-  }
-
-  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
-    return _unknown_fields_;
-  }
-
-  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
-    return &_unknown_fields_;
-  }
-
-  static const ::google::protobuf::Descriptor* descriptor();
-  static const CMsgDOTATournament_Node& default_instance();
-
-  void Swap(CMsgDOTATournament_Node* other);
-
-  // implements Message ----------------------------------------------
-
-  CMsgDOTATournament_Node* New() const;
-  void CopyFrom(const ::google::protobuf::Message& from);
-  void MergeFrom(const ::google::protobuf::Message& from);
-  void CopyFrom(const CMsgDOTATournament_Node& from);
-  void MergeFrom(const CMsgDOTATournament_Node& from);
-  void Clear();
-  bool IsInitialized() const;
-
-  int ByteSize() const;
-  bool MergePartialFromCodedStream(
-      ::google::protobuf::io::CodedInputStream* input);
-  void SerializeWithCachedSizes(
-      ::google::protobuf::io::CodedOutputStream* output) const;
-  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
-  int GetCachedSize() const { return _cached_size_; }
-  private:
-  void SharedCtor();
-  void SharedDtor();
-  void SetCachedSize(int size) const;
-  public:
-  ::google::protobuf::Metadata GetMetadata() const;
-
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-
-  // optional uint32 node_id = 1;
-  inline bool has_node_id() const;
-  inline void clear_node_id();
-  static const int kNodeIdFieldNumber = 1;
-  inline ::google::protobuf::uint32 node_id() const;
-  inline void set_node_id(::google::protobuf::uint32 value);
-
-  // optional uint32 team_seed_a = 2;
-  inline bool has_team_seed_a() const;
-  inline void clear_team_seed_a();
-  static const int kTeamSeedAFieldNumber = 2;
-  inline ::google::protobuf::uint32 team_seed_a() const;
-  inline void set_team_seed_a(::google::protobuf::uint32 value);
-
-  // optional uint32 team_seed_b = 3;
-  inline bool has_team_seed_b() const;
-  inline void clear_team_seed_b();
-  static const int kTeamSeedBFieldNumber = 3;
-  inline ::google::protobuf::uint32 team_seed_b() const;
-  inline void set_team_seed_b(::google::protobuf::uint32 value);
-
-  // optional uint32 winner_node = 4;
-  inline bool has_winner_node() const;
-  inline void clear_winner_node();
-  static const int kWinnerNodeFieldNumber = 4;
-  inline ::google::protobuf::uint32 winner_node() const;
-  inline void set_winner_node(::google::protobuf::uint32 value);
-
-  // optional uint32 loser_node = 5;
-  inline bool has_loser_node() const;
-  inline void clear_loser_node();
-  static const int kLoserNodeFieldNumber = 5;
-  inline ::google::protobuf::uint32 loser_node() const;
-  inline void set_loser_node(::google::protobuf::uint32 value);
-
-  // optional uint32 series_type = 7;
-  inline bool has_series_type() const;
-  inline void clear_series_type();
-  static const int kSeriesTypeFieldNumber = 7;
-  inline ::google::protobuf::uint32 series_type() const;
-  inline void set_series_type(::google::protobuf::uint32 value);
-
-  // optional .ETournamentNodeState node_state = 8 [default = k_ETournamentNodeState_Unknown];
-  inline bool has_node_state() const;
-  inline void clear_node_state();
-  static const int kNodeStateFieldNumber = 8;
-  inline ::ETournamentNodeState node_state() const;
-  inline void set_node_state(::ETournamentNodeState value);
-
-  // optional uint32 series_id = 9;
-  inline bool has_series_id() const;
-  inline void clear_series_id();
-  static const int kSeriesIdFieldNumber = 9;
-  inline ::google::protobuf::uint32 series_id() const;
-  inline void set_series_id(::google::protobuf::uint32 value);
-
-  // optional uint32 start_time = 16;
-  inline bool has_start_time() const;
-  inline void clear_start_time();
-  static const int kStartTimeFieldNumber = 16;
-  inline ::google::protobuf::uint32 start_time() const;
-  inline void set_start_time(::google::protobuf::uint32 value);
-
-  // @@protoc_insertion_point(class_scope:CMsgDOTATournament.Node)
- private:
-  inline void set_has_node_id();
-  inline void clear_has_node_id();
-  inline void set_has_team_seed_a();
-  inline void clear_has_team_seed_a();
-  inline void set_has_team_seed_b();
-  inline void clear_has_team_seed_b();
-  inline void set_has_winner_node();
-  inline void clear_has_winner_node();
-  inline void set_has_loser_node();
-  inline void clear_has_loser_node();
-  inline void set_has_series_type();
-  inline void clear_has_series_type();
-  inline void set_has_node_state();
-  inline void clear_has_node_state();
-  inline void set_has_series_id();
-  inline void clear_has_series_id();
-  inline void set_has_start_time();
-  inline void clear_has_start_time();
-
-  ::google::protobuf::UnknownFieldSet _unknown_fields_;
-
-  ::google::protobuf::uint32 _has_bits_[1];
-  mutable int _cached_size_;
-  ::google::protobuf::uint32 node_id_;
-  ::google::protobuf::uint32 team_seed_a_;
-  ::google::protobuf::uint32 team_seed_b_;
-  ::google::protobuf::uint32 winner_node_;
-  ::google::protobuf::uint32 loser_node_;
-  ::google::protobuf::uint32 series_type_;
-  int node_state_;
-  ::google::protobuf::uint32 series_id_;
-  ::google::protobuf::uint32 start_time_;
-  friend void  protobuf_AddDesc_dota_5fgcmessages_5fclient_5ffantasy_2eproto();
-  friend void protobuf_AssignDesc_dota_5fgcmessages_5fclient_5ffantasy_2eproto();
-  friend void protobuf_ShutdownFile_dota_5fgcmessages_5fclient_5ffantasy_2eproto();
-
-  void InitAsDefaultInstance();
-  static CMsgDOTATournament_Node* default_instance_;
-};
-// -------------------------------------------------------------------
-
-class CMsgDOTATournament : public ::google::protobuf::Message {
- public:
-  CMsgDOTATournament();
-  virtual ~CMsgDOTATournament();
-
-  CMsgDOTATournament(const CMsgDOTATournament& from);
-
-  inline CMsgDOTATournament& operator=(const CMsgDOTATournament& from) {
-    CopyFrom(from);
-    return *this;
-  }
-
-  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
-    return _unknown_fields_;
-  }
-
-  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
-    return &_unknown_fields_;
-  }
-
-  static const ::google::protobuf::Descriptor* descriptor();
-  static const CMsgDOTATournament& default_instance();
-
-  void Swap(CMsgDOTATournament* other);
-
-  // implements Message ----------------------------------------------
-
-  CMsgDOTATournament* New() const;
-  void CopyFrom(const ::google::protobuf::Message& from);
-  void MergeFrom(const ::google::protobuf::Message& from);
-  void CopyFrom(const CMsgDOTATournament& from);
-  void MergeFrom(const CMsgDOTATournament& from);
-  void Clear();
-  bool IsInitialized() const;
-
-  int ByteSize() const;
-  bool MergePartialFromCodedStream(
-      ::google::protobuf::io::CodedInputStream* input);
-  void SerializeWithCachedSizes(
-      ::google::protobuf::io::CodedOutputStream* output) const;
-  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
-  int GetCachedSize() const { return _cached_size_; }
-  private:
-  void SharedCtor();
-  void SharedDtor();
-  void SetCachedSize(int size) const;
-  public:
-  ::google::protobuf::Metadata GetMetadata() const;
-
-  // nested types ----------------------------------------------------
-
-  typedef CMsgDOTATournament_Team Team;
-  typedef CMsgDOTATournament_Game Game;
-  typedef CMsgDOTATournament_Node Node;
-
-  // accessors -------------------------------------------------------
-
-  // repeated .CMsgDOTATournament.Team teams = 1;
-  inline int teams_size() const;
-  inline void clear_teams();
-  static const int kTeamsFieldNumber = 1;
-  inline const ::CMsgDOTATournament_Team& teams(int index) const;
-  inline ::CMsgDOTATournament_Team* mutable_teams(int index);
-  inline ::CMsgDOTATournament_Team* add_teams();
-  inline const ::google::protobuf::RepeatedPtrField< ::CMsgDOTATournament_Team >&
-      teams() const;
-  inline ::google::protobuf::RepeatedPtrField< ::CMsgDOTATournament_Team >*
-      mutable_teams();
-
-  // repeated .CMsgDOTATournament.Game games = 2;
-  inline int games_size() const;
-  inline void clear_games();
-  static const int kGamesFieldNumber = 2;
-  inline const ::CMsgDOTATournament_Game& games(int index) const;
-  inline ::CMsgDOTATournament_Game* mutable_games(int index);
-  inline ::CMsgDOTATournament_Game* add_games();
-  inline const ::google::protobuf::RepeatedPtrField< ::CMsgDOTATournament_Game >&
-      games() const;
-  inline ::google::protobuf::RepeatedPtrField< ::CMsgDOTATournament_Game >*
-      mutable_games();
-
-  // optional uint64 gid = 3;
-  inline bool has_gid() const;
-  inline void clear_gid();
-  static const int kGidFieldNumber = 3;
-  inline ::google::protobuf::uint64 gid() const;
-  inline void set_gid(::google::protobuf::uint64 value);
-
-  // optional uint32 tournament_id = 4;
-  inline bool has_tournament_id() const;
-  inline void clear_tournament_id();
-  static const int kTournamentIdFieldNumber = 4;
-  inline ::google::protobuf::uint32 tournament_id() const;
-  inline void set_tournament_id(::google::protobuf::uint32 value);
-
-  // optional .ETournamentType tournament_type = 5 [default = k_ETournamentType_Unknown];
-  inline bool has_tournament_type() const;
-  inline void clear_tournament_type();
-  static const int kTournamentTypeFieldNumber = 5;
-  inline ::ETournamentType tournament_type() const;
-  inline void set_tournament_type(::ETournamentType value);
-
-  // optional .ETournamentTemplate tournament_template = 6 [default = k_ETournamentTemplate_None];
-  inline bool has_tournament_template() const;
-  inline void clear_tournament_template();
-  static const int kTournamentTemplateFieldNumber = 6;
-  inline ::ETournamentTemplate tournament_template() const;
-  inline void set_tournament_template(::ETournamentTemplate value);
-
-  // optional uint32 league_id = 7;
-  inline bool has_league_id() const;
-  inline void clear_league_id();
-  static const int kLeagueIdFieldNumber = 7;
-  inline ::google::protobuf::uint32 league_id() const;
-  inline void set_league_id(::google::protobuf::uint32 value);
-
-  // optional uint32 start_time = 8;
-  inline bool has_start_time() const;
-  inline void clear_start_time();
-  static const int kStartTimeFieldNumber = 8;
-  inline ::google::protobuf::uint32 start_time() const;
-  inline void set_start_time(::google::protobuf::uint32 value);
-
-  // optional .ETournamentState state = 9 [default = k_ETournamentState_Unknown];
-  inline bool has_state() const;
-  inline void clear_state();
-  static const int kStateFieldNumber = 9;
-  inline ::ETournamentState state() const;
-  inline void set_state(::ETournamentState value);
-
-  // repeated .CMsgDOTATournament.Node nodes = 10;
-  inline int nodes_size() const;
-  inline void clear_nodes();
-  static const int kNodesFieldNumber = 10;
-  inline const ::CMsgDOTATournament_Node& nodes(int index) const;
-  inline ::CMsgDOTATournament_Node* mutable_nodes(int index);
-  inline ::CMsgDOTATournament_Node* add_nodes();
-  inline const ::google::protobuf::RepeatedPtrField< ::CMsgDOTATournament_Node >&
-      nodes() const;
-  inline ::google::protobuf::RepeatedPtrField< ::CMsgDOTATournament_Node >*
-      mutable_nodes();
-
-  // @@protoc_insertion_point(class_scope:CMsgDOTATournament)
- private:
-  inline void set_has_gid();
-  inline void clear_has_gid();
-  inline void set_has_tournament_id();
-  inline void clear_has_tournament_id();
-  inline void set_has_tournament_type();
-  inline void clear_has_tournament_type();
-  inline void set_has_tournament_template();
-  inline void clear_has_tournament_template();
-  inline void set_has_league_id();
-  inline void clear_has_league_id();
-  inline void set_has_start_time();
-  inline void clear_has_start_time();
-  inline void set_has_state();
-  inline void clear_has_state();
-
-  ::google::protobuf::UnknownFieldSet _unknown_fields_;
-
-  ::google::protobuf::uint32 _has_bits_[1];
-  mutable int _cached_size_;
-  ::google::protobuf::RepeatedPtrField< ::CMsgDOTATournament_Team > teams_;
-  ::google::protobuf::RepeatedPtrField< ::CMsgDOTATournament_Game > games_;
-  ::google::protobuf::uint64 gid_;
-  ::google::protobuf::uint32 tournament_id_;
-  int tournament_type_;
-  int tournament_template_;
-  ::google::protobuf::uint32 league_id_;
-  ::google::protobuf::uint32 start_time_;
-  int state_;
-  ::google::protobuf::RepeatedPtrField< ::CMsgDOTATournament_Node > nodes_;
-  friend void  protobuf_AddDesc_dota_5fgcmessages_5fclient_5ffantasy_2eproto();
-  friend void protobuf_AssignDesc_dota_5fgcmessages_5fclient_5ffantasy_2eproto();
-  friend void protobuf_ShutdownFile_dota_5fgcmessages_5fclient_5ffantasy_2eproto();
-
-  void InitAsDefaultInstance();
-  static CMsgDOTATournament* default_instance_;
-};
-// -------------------------------------------------------------------
-
-class CMsgDOTATournamentRequest : public ::google::protobuf::Message {
- public:
-  CMsgDOTATournamentRequest();
-  virtual ~CMsgDOTATournamentRequest();
-
-  CMsgDOTATournamentRequest(const CMsgDOTATournamentRequest& from);
-
-  inline CMsgDOTATournamentRequest& operator=(const CMsgDOTATournamentRequest& from) {
-    CopyFrom(from);
-    return *this;
-  }
-
-  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
-    return _unknown_fields_;
-  }
-
-  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
-    return &_unknown_fields_;
-  }
-
-  static const ::google::protobuf::Descriptor* descriptor();
-  static const CMsgDOTATournamentRequest& default_instance();
-
-  void Swap(CMsgDOTATournamentRequest* other);
-
-  // implements Message ----------------------------------------------
-
-  CMsgDOTATournamentRequest* New() const;
-  void CopyFrom(const ::google::protobuf::Message& from);
-  void MergeFrom(const ::google::protobuf::Message& from);
-  void CopyFrom(const CMsgDOTATournamentRequest& from);
-  void MergeFrom(const CMsgDOTATournamentRequest& from);
-  void Clear();
-  bool IsInitialized() const;
-
-  int ByteSize() const;
-  bool MergePartialFromCodedStream(
-      ::google::protobuf::io::CodedInputStream* input);
-  void SerializeWithCachedSizes(
-      ::google::protobuf::io::CodedOutputStream* output) const;
-  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
-  int GetCachedSize() const { return _cached_size_; }
-  private:
-  void SharedCtor();
-  void SharedDtor();
-  void SetCachedSize(int size) const;
-  public:
-  ::google::protobuf::Metadata GetMetadata() const;
-
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-
-  // optional uint32 tournament_id = 1;
-  inline bool has_tournament_id() const;
-  inline void clear_tournament_id();
-  static const int kTournamentIdFieldNumber = 1;
-  inline ::google::protobuf::uint32 tournament_id() const;
-  inline void set_tournament_id(::google::protobuf::uint32 value);
-
-  // optional uint64 client_tournament_gid = 2;
-  inline bool has_client_tournament_gid() const;
-  inline void clear_client_tournament_gid();
-  static const int kClientTournamentGidFieldNumber = 2;
-  inline ::google::protobuf::uint64 client_tournament_gid() const;
-  inline void set_client_tournament_gid(::google::protobuf::uint64 value);
-
-  // @@protoc_insertion_point(class_scope:CMsgDOTATournamentRequest)
- private:
-  inline void set_has_tournament_id();
-  inline void clear_has_tournament_id();
-  inline void set_has_client_tournament_gid();
-  inline void clear_has_client_tournament_gid();
-
-  ::google::protobuf::UnknownFieldSet _unknown_fields_;
-
-  ::google::protobuf::uint32 _has_bits_[1];
-  mutable int _cached_size_;
-  ::google::protobuf::uint64 client_tournament_gid_;
-  ::google::protobuf::uint32 tournament_id_;
-  friend void  protobuf_AddDesc_dota_5fgcmessages_5fclient_5ffantasy_2eproto();
-  friend void protobuf_AssignDesc_dota_5fgcmessages_5fclient_5ffantasy_2eproto();
-  friend void protobuf_ShutdownFile_dota_5fgcmessages_5fclient_5ffantasy_2eproto();
-
-  void InitAsDefaultInstance();
-  static CMsgDOTATournamentRequest* default_instance_;
-};
-// -------------------------------------------------------------------
-
-class CMsgDOTATournamentResponse : public ::google::protobuf::Message {
- public:
-  CMsgDOTATournamentResponse();
-  virtual ~CMsgDOTATournamentResponse();
-
-  CMsgDOTATournamentResponse(const CMsgDOTATournamentResponse& from);
-
-  inline CMsgDOTATournamentResponse& operator=(const CMsgDOTATournamentResponse& from) {
-    CopyFrom(from);
-    return *this;
-  }
-
-  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
-    return _unknown_fields_;
-  }
-
-  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
-    return &_unknown_fields_;
-  }
-
-  static const ::google::protobuf::Descriptor* descriptor();
-  static const CMsgDOTATournamentResponse& default_instance();
-
-  void Swap(CMsgDOTATournamentResponse* other);
-
-  // implements Message ----------------------------------------------
-
-  CMsgDOTATournamentResponse* New() const;
-  void CopyFrom(const ::google::protobuf::Message& from);
-  void MergeFrom(const ::google::protobuf::Message& from);
-  void CopyFrom(const CMsgDOTATournamentResponse& from);
-  void MergeFrom(const CMsgDOTATournamentResponse& from);
-  void Clear();
-  bool IsInitialized() const;
-
-  int ByteSize() const;
-  bool MergePartialFromCodedStream(
-      ::google::protobuf::io::CodedInputStream* input);
-  void SerializeWithCachedSizes(
-      ::google::protobuf::io::CodedOutputStream* output) const;
-  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
-  int GetCachedSize() const { return _cached_size_; }
-  private:
-  void SharedCtor();
-  void SharedDtor();
-  void SetCachedSize(int size) const;
-  public:
-  ::google::protobuf::Metadata GetMetadata() const;
-
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-
-  // optional uint32 result = 1 [default = 2];
-  inline bool has_result() const;
-  inline void clear_result();
-  static const int kResultFieldNumber = 1;
-  inline ::google::protobuf::uint32 result() const;
-  inline void set_result(::google::protobuf::uint32 value);
-
-  // optional .CMsgDOTATournament tournament = 2;
-  inline bool has_tournament() const;
-  inline void clear_tournament();
-  static const int kTournamentFieldNumber = 2;
-  inline const ::CMsgDOTATournament& tournament() const;
-  inline ::CMsgDOTATournament* mutable_tournament();
-  inline ::CMsgDOTATournament* release_tournament();
-  inline void set_allocated_tournament(::CMsgDOTATournament* tournament);
-
-  // @@protoc_insertion_point(class_scope:CMsgDOTATournamentResponse)
- private:
-  inline void set_has_result();
-  inline void clear_has_result();
-  inline void set_has_tournament();
-  inline void clear_has_tournament();
-
-  ::google::protobuf::UnknownFieldSet _unknown_fields_;
-
-  ::google::protobuf::uint32 _has_bits_[1];
-  mutable int _cached_size_;
-  ::CMsgDOTATournament* tournament_;
-  ::google::protobuf::uint32 result_;
-  friend void  protobuf_AddDesc_dota_5fgcmessages_5fclient_5ffantasy_2eproto();
-  friend void protobuf_AssignDesc_dota_5fgcmessages_5fclient_5ffantasy_2eproto();
-  friend void protobuf_ShutdownFile_dota_5fgcmessages_5fclient_5ffantasy_2eproto();
-
-  void InitAsDefaultInstance();
-  static CMsgDOTATournamentResponse* default_instance_;
-};
-// -------------------------------------------------------------------
-
-class CMsgDOTAClearTournamentGame : public ::google::protobuf::Message {
- public:
-  CMsgDOTAClearTournamentGame();
-  virtual ~CMsgDOTAClearTournamentGame();
-
-  CMsgDOTAClearTournamentGame(const CMsgDOTAClearTournamentGame& from);
-
-  inline CMsgDOTAClearTournamentGame& operator=(const CMsgDOTAClearTournamentGame& from) {
-    CopyFrom(from);
-    return *this;
-  }
-
-  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
-    return _unknown_fields_;
-  }
-
-  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
-    return &_unknown_fields_;
-  }
-
-  static const ::google::protobuf::Descriptor* descriptor();
-  static const CMsgDOTAClearTournamentGame& default_instance();
-
-  void Swap(CMsgDOTAClearTournamentGame* other);
-
-  // implements Message ----------------------------------------------
-
-  CMsgDOTAClearTournamentGame* New() const;
-  void CopyFrom(const ::google::protobuf::Message& from);
-  void MergeFrom(const ::google::protobuf::Message& from);
-  void CopyFrom(const CMsgDOTAClearTournamentGame& from);
-  void MergeFrom(const CMsgDOTAClearTournamentGame& from);
-  void Clear();
-  bool IsInitialized() const;
-
-  int ByteSize() const;
-  bool MergePartialFromCodedStream(
-      ::google::protobuf::io::CodedInputStream* input);
-  void SerializeWithCachedSizes(
-      ::google::protobuf::io::CodedOutputStream* output) const;
-  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
-  int GetCachedSize() const { return _cached_size_; }
-  private:
-  void SharedCtor();
-  void SharedDtor();
-  void SetCachedSize(int size) const;
-  public:
-  ::google::protobuf::Metadata GetMetadata() const;
-
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-
-  // optional uint32 tournament_id = 1;
-  inline bool has_tournament_id() const;
-  inline void clear_tournament_id();
-  static const int kTournamentIdFieldNumber = 1;
-  inline ::google::protobuf::uint32 tournament_id() const;
-  inline void set_tournament_id(::google::protobuf::uint32 value);
-
-  // optional uint32 game_id = 2;
-  inline bool has_game_id() const;
-  inline void clear_game_id();
-  static const int kGameIdFieldNumber = 2;
-  inline ::google::protobuf::uint32 game_id() const;
-  inline void set_game_id(::google::protobuf::uint32 value);
-
-  // @@protoc_insertion_point(class_scope:CMsgDOTAClearTournamentGame)
- private:
-  inline void set_has_tournament_id();
-  inline void clear_has_tournament_id();
-  inline void set_has_game_id();
-  inline void clear_has_game_id();
-
-  ::google::protobuf::UnknownFieldSet _unknown_fields_;
-
-  ::google::protobuf::uint32 _has_bits_[1];
-  mutable int _cached_size_;
-  ::google::protobuf::uint32 tournament_id_;
-  ::google::protobuf::uint32 game_id_;
-  friend void  protobuf_AddDesc_dota_5fgcmessages_5fclient_5ffantasy_2eproto();
-  friend void protobuf_AssignDesc_dota_5fgcmessages_5fclient_5ffantasy_2eproto();
-  friend void protobuf_ShutdownFile_dota_5fgcmessages_5fclient_5ffantasy_2eproto();
-
-  void InitAsDefaultInstance();
-  static CMsgDOTAClearTournamentGame* default_instance_;
 };
 // -------------------------------------------------------------------
 
@@ -11305,14 +10365,14 @@ class CMsgDOTAPassportVote : public ::google::protobuf::Message {
 };
 // -------------------------------------------------------------------
 
-class CMsgPassportDataRequest : public ::google::protobuf::Message {
+class CMsgClientToGCGetPlayerCardRosterRequest : public ::google::protobuf::Message {
  public:
-  CMsgPassportDataRequest();
-  virtual ~CMsgPassportDataRequest();
+  CMsgClientToGCGetPlayerCardRosterRequest();
+  virtual ~CMsgClientToGCGetPlayerCardRosterRequest();
 
-  CMsgPassportDataRequest(const CMsgPassportDataRequest& from);
+  CMsgClientToGCGetPlayerCardRosterRequest(const CMsgClientToGCGetPlayerCardRosterRequest& from);
 
-  inline CMsgPassportDataRequest& operator=(const CMsgPassportDataRequest& from) {
+  inline CMsgClientToGCGetPlayerCardRosterRequest& operator=(const CMsgClientToGCGetPlayerCardRosterRequest& from) {
     CopyFrom(from);
     return *this;
   }
@@ -11326,17 +10386,17 @@ class CMsgPassportDataRequest : public ::google::protobuf::Message {
   }
 
   static const ::google::protobuf::Descriptor* descriptor();
-  static const CMsgPassportDataRequest& default_instance();
+  static const CMsgClientToGCGetPlayerCardRosterRequest& default_instance();
 
-  void Swap(CMsgPassportDataRequest* other);
+  void Swap(CMsgClientToGCGetPlayerCardRosterRequest* other);
 
   // implements Message ----------------------------------------------
 
-  CMsgPassportDataRequest* New() const;
+  CMsgClientToGCGetPlayerCardRosterRequest* New() const;
   void CopyFrom(const ::google::protobuf::Message& from);
   void MergeFrom(const ::google::protobuf::Message& from);
-  void CopyFrom(const CMsgPassportDataRequest& from);
-  void MergeFrom(const CMsgPassportDataRequest& from);
+  void CopyFrom(const CMsgClientToGCGetPlayerCardRosterRequest& from);
+  void MergeFrom(const CMsgClientToGCGetPlayerCardRosterRequest& from);
   void Clear();
   bool IsInitialized() const;
 
@@ -11358,40 +10418,50 @@ class CMsgPassportDataRequest : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // optional uint32 account_id = 1;
-  inline bool has_account_id() const;
-  inline void clear_account_id();
-  static const int kAccountIdFieldNumber = 1;
-  inline ::google::protobuf::uint32 account_id() const;
-  inline void set_account_id(::google::protobuf::uint32 value);
+  // optional uint32 league_id = 1;
+  inline bool has_league_id() const;
+  inline void clear_league_id();
+  static const int kLeagueIdFieldNumber = 1;
+  inline ::google::protobuf::uint32 league_id() const;
+  inline void set_league_id(::google::protobuf::uint32 value);
 
-  // @@protoc_insertion_point(class_scope:CMsgPassportDataRequest)
+  // optional uint32 timestamp = 2;
+  inline bool has_timestamp() const;
+  inline void clear_timestamp();
+  static const int kTimestampFieldNumber = 2;
+  inline ::google::protobuf::uint32 timestamp() const;
+  inline void set_timestamp(::google::protobuf::uint32 value);
+
+  // @@protoc_insertion_point(class_scope:CMsgClientToGCGetPlayerCardRosterRequest)
  private:
-  inline void set_has_account_id();
-  inline void clear_has_account_id();
+  inline void set_has_league_id();
+  inline void clear_has_league_id();
+  inline void set_has_timestamp();
+  inline void clear_has_timestamp();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
   ::google::protobuf::uint32 _has_bits_[1];
   mutable int _cached_size_;
-  ::google::protobuf::uint32 account_id_;
+  ::google::protobuf::uint32 league_id_;
+  ::google::protobuf::uint32 timestamp_;
   friend void  protobuf_AddDesc_dota_5fgcmessages_5fclient_5ffantasy_2eproto();
   friend void protobuf_AssignDesc_dota_5fgcmessages_5fclient_5ffantasy_2eproto();
   friend void protobuf_ShutdownFile_dota_5fgcmessages_5fclient_5ffantasy_2eproto();
 
   void InitAsDefaultInstance();
-  static CMsgPassportDataRequest* default_instance_;
+  static CMsgClientToGCGetPlayerCardRosterRequest* default_instance_;
 };
 // -------------------------------------------------------------------
 
-class CMsgPassportDataResponse : public ::google::protobuf::Message {
+class CMsgClientToGCGetPlayerCardRosterResponse : public ::google::protobuf::Message {
  public:
-  CMsgPassportDataResponse();
-  virtual ~CMsgPassportDataResponse();
+  CMsgClientToGCGetPlayerCardRosterResponse();
+  virtual ~CMsgClientToGCGetPlayerCardRosterResponse();
 
-  CMsgPassportDataResponse(const CMsgPassportDataResponse& from);
+  CMsgClientToGCGetPlayerCardRosterResponse(const CMsgClientToGCGetPlayerCardRosterResponse& from);
 
-  inline CMsgPassportDataResponse& operator=(const CMsgPassportDataResponse& from) {
+  inline CMsgClientToGCGetPlayerCardRosterResponse& operator=(const CMsgClientToGCGetPlayerCardRosterResponse& from) {
     CopyFrom(from);
     return *this;
   }
@@ -11405,17 +10475,165 @@ class CMsgPassportDataResponse : public ::google::protobuf::Message {
   }
 
   static const ::google::protobuf::Descriptor* descriptor();
-  static const CMsgPassportDataResponse& default_instance();
+  static const CMsgClientToGCGetPlayerCardRosterResponse& default_instance();
 
-  void Swap(CMsgPassportDataResponse* other);
+  void Swap(CMsgClientToGCGetPlayerCardRosterResponse* other);
 
   // implements Message ----------------------------------------------
 
-  CMsgPassportDataResponse* New() const;
+  CMsgClientToGCGetPlayerCardRosterResponse* New() const;
   void CopyFrom(const ::google::protobuf::Message& from);
   void MergeFrom(const ::google::protobuf::Message& from);
-  void CopyFrom(const CMsgPassportDataResponse& from);
-  void MergeFrom(const CMsgPassportDataResponse& from);
+  void CopyFrom(const CMsgClientToGCGetPlayerCardRosterResponse& from);
+  void MergeFrom(const CMsgClientToGCGetPlayerCardRosterResponse& from);
+  void Clear();
+  bool IsInitialized() const;
+
+  int ByteSize() const;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input);
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  int GetCachedSize() const { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const;
+  public:
+  ::google::protobuf::Metadata GetMetadata() const;
+
+  // nested types ----------------------------------------------------
+
+  typedef CMsgClientToGCGetPlayerCardRosterResponse_Result Result;
+  static const Result SUCCESS = CMsgClientToGCGetPlayerCardRosterResponse_Result_SUCCESS;
+  static const Result ERROR_UNSPECIFIED = CMsgClientToGCGetPlayerCardRosterResponse_Result_ERROR_UNSPECIFIED;
+  static const Result ERROR_INVALID_LEAGUE_ID = CMsgClientToGCGetPlayerCardRosterResponse_Result_ERROR_INVALID_LEAGUE_ID;
+  static const Result ERROR_INVALID_TIMESTAMP = CMsgClientToGCGetPlayerCardRosterResponse_Result_ERROR_INVALID_TIMESTAMP;
+  static inline bool Result_IsValid(int value) {
+    return CMsgClientToGCGetPlayerCardRosterResponse_Result_IsValid(value);
+  }
+  static const Result Result_MIN =
+    CMsgClientToGCGetPlayerCardRosterResponse_Result_Result_MIN;
+  static const Result Result_MAX =
+    CMsgClientToGCGetPlayerCardRosterResponse_Result_Result_MAX;
+  static const int Result_ARRAYSIZE =
+    CMsgClientToGCGetPlayerCardRosterResponse_Result_Result_ARRAYSIZE;
+  static inline const ::google::protobuf::EnumDescriptor*
+  Result_descriptor() {
+    return CMsgClientToGCGetPlayerCardRosterResponse_Result_descriptor();
+  }
+  static inline const ::std::string& Result_Name(Result value) {
+    return CMsgClientToGCGetPlayerCardRosterResponse_Result_Name(value);
+  }
+  static inline bool Result_Parse(const ::std::string& name,
+      Result* value) {
+    return CMsgClientToGCGetPlayerCardRosterResponse_Result_Parse(name, value);
+  }
+
+  // accessors -------------------------------------------------------
+
+  // optional .CMsgClientToGCGetPlayerCardRosterResponse.Result result = 1 [default = SUCCESS];
+  inline bool has_result() const;
+  inline void clear_result();
+  static const int kResultFieldNumber = 1;
+  inline ::CMsgClientToGCGetPlayerCardRosterResponse_Result result() const;
+  inline void set_result(::CMsgClientToGCGetPlayerCardRosterResponse_Result value);
+
+  // repeated uint64 player_card_item_id = 2;
+  inline int player_card_item_id_size() const;
+  inline void clear_player_card_item_id();
+  static const int kPlayerCardItemIdFieldNumber = 2;
+  inline ::google::protobuf::uint64 player_card_item_id(int index) const;
+  inline void set_player_card_item_id(int index, ::google::protobuf::uint64 value);
+  inline void add_player_card_item_id(::google::protobuf::uint64 value);
+  inline const ::google::protobuf::RepeatedField< ::google::protobuf::uint64 >&
+      player_card_item_id() const;
+  inline ::google::protobuf::RepeatedField< ::google::protobuf::uint64 >*
+      mutable_player_card_item_id();
+
+  // optional float score = 3;
+  inline bool has_score() const;
+  inline void clear_score();
+  static const int kScoreFieldNumber = 3;
+  inline float score() const;
+  inline void set_score(float value);
+
+  // optional bool finalized = 4;
+  inline bool has_finalized() const;
+  inline void clear_finalized();
+  static const int kFinalizedFieldNumber = 4;
+  inline bool finalized() const;
+  inline void set_finalized(bool value);
+
+  // optional float percentile = 5;
+  inline bool has_percentile() const;
+  inline void clear_percentile();
+  static const int kPercentileFieldNumber = 5;
+  inline float percentile() const;
+  inline void set_percentile(float value);
+
+  // @@protoc_insertion_point(class_scope:CMsgClientToGCGetPlayerCardRosterResponse)
+ private:
+  inline void set_has_result();
+  inline void clear_has_result();
+  inline void set_has_score();
+  inline void clear_has_score();
+  inline void set_has_finalized();
+  inline void clear_has_finalized();
+  inline void set_has_percentile();
+  inline void clear_has_percentile();
+
+  ::google::protobuf::UnknownFieldSet _unknown_fields_;
+
+  ::google::protobuf::uint32 _has_bits_[1];
+  mutable int _cached_size_;
+  ::google::protobuf::RepeatedField< ::google::protobuf::uint64 > player_card_item_id_;
+  int result_;
+  float score_;
+  bool finalized_;
+  float percentile_;
+  friend void  protobuf_AddDesc_dota_5fgcmessages_5fclient_5ffantasy_2eproto();
+  friend void protobuf_AssignDesc_dota_5fgcmessages_5fclient_5ffantasy_2eproto();
+  friend void protobuf_ShutdownFile_dota_5fgcmessages_5fclient_5ffantasy_2eproto();
+
+  void InitAsDefaultInstance();
+  static CMsgClientToGCGetPlayerCardRosterResponse* default_instance_;
+};
+// -------------------------------------------------------------------
+
+class CMsgClientToGCSetPlayerCardRosterRequest : public ::google::protobuf::Message {
+ public:
+  CMsgClientToGCSetPlayerCardRosterRequest();
+  virtual ~CMsgClientToGCSetPlayerCardRosterRequest();
+
+  CMsgClientToGCSetPlayerCardRosterRequest(const CMsgClientToGCSetPlayerCardRosterRequest& from);
+
+  inline CMsgClientToGCSetPlayerCardRosterRequest& operator=(const CMsgClientToGCSetPlayerCardRosterRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+    return _unknown_fields_;
+  }
+
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+    return &_unknown_fields_;
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const CMsgClientToGCSetPlayerCardRosterRequest& default_instance();
+
+  void Swap(CMsgClientToGCSetPlayerCardRosterRequest* other);
+
+  // implements Message ----------------------------------------------
+
+  CMsgClientToGCSetPlayerCardRosterRequest* New() const;
+  void CopyFrom(const ::google::protobuf::Message& from);
+  void MergeFrom(const ::google::protobuf::Message& from);
+  void CopyFrom(const CMsgClientToGCSetPlayerCardRosterRequest& from);
+  void MergeFrom(const CMsgClientToGCSetPlayerCardRosterRequest& from);
   void Clear();
   bool IsInitialized() const;
 
@@ -11437,183 +10655,169 @@ class CMsgPassportDataResponse : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // optional uint32 account_id = 1;
-  inline bool has_account_id() const;
-  inline void clear_account_id();
-  static const int kAccountIdFieldNumber = 1;
-  inline ::google::protobuf::uint32 account_id() const;
-  inline void set_account_id(::google::protobuf::uint32 value);
+  // optional uint32 league_id = 1;
+  inline bool has_league_id() const;
+  inline void clear_league_id();
+  static const int kLeagueIdFieldNumber = 1;
+  inline ::google::protobuf::uint32 league_id() const;
+  inline void set_league_id(::google::protobuf::uint32 value);
 
-  // optional uint32 result = 2 [default = 2];
-  inline bool has_result() const;
-  inline void clear_result();
-  static const int kResultFieldNumber = 2;
-  inline ::google::protobuf::uint32 result() const;
-  inline void set_result(::google::protobuf::uint32 value);
+  // optional uint32 timestamp = 2;
+  inline bool has_timestamp() const;
+  inline void clear_timestamp();
+  static const int kTimestampFieldNumber = 2;
+  inline ::google::protobuf::uint32 timestamp() const;
+  inline void set_timestamp(::google::protobuf::uint32 value);
 
-  // optional .CMsgDOTATournament international = 5;
-  inline bool has_international() const;
-  inline void clear_international();
-  static const int kInternationalFieldNumber = 5;
-  inline const ::CMsgDOTATournament& international() const;
-  inline ::CMsgDOTATournament* mutable_international();
-  inline ::CMsgDOTATournament* release_international();
-  inline void set_allocated_international(::CMsgDOTATournament* international);
+  // optional uint32 slot = 3;
+  inline bool has_slot() const;
+  inline void clear_slot();
+  static const int kSlotFieldNumber = 3;
+  inline ::google::protobuf::uint32 slot() const;
+  inline void set_slot(::google::protobuf::uint32 value);
 
-  // optional uint32 east_qualifiers_predict_end_time = 7;
-  inline bool has_east_qualifiers_predict_end_time() const;
-  inline void clear_east_qualifiers_predict_end_time();
-  static const int kEastQualifiersPredictEndTimeFieldNumber = 7;
-  inline ::google::protobuf::uint32 east_qualifiers_predict_end_time() const;
-  inline void set_east_qualifiers_predict_end_time(::google::protobuf::uint32 value);
+  // optional uint64 player_card_item_id = 4;
+  inline bool has_player_card_item_id() const;
+  inline void clear_player_card_item_id();
+  static const int kPlayerCardItemIdFieldNumber = 4;
+  inline ::google::protobuf::uint64 player_card_item_id() const;
+  inline void set_player_card_item_id(::google::protobuf::uint64 value);
 
-  // optional uint32 west_qualifiers_predict_end_time = 8;
-  inline bool has_west_qualifiers_predict_end_time() const;
-  inline void clear_west_qualifiers_predict_end_time();
-  static const int kWestQualifiersPredictEndTimeFieldNumber = 8;
-  inline ::google::protobuf::uint32 west_qualifiers_predict_end_time() const;
-  inline void set_west_qualifiers_predict_end_time(::google::protobuf::uint32 value);
-
-  // optional uint32 allstar_match_end_time = 9;
-  inline bool has_allstar_match_end_time() const;
-  inline void clear_allstar_match_end_time();
-  static const int kAllstarMatchEndTimeFieldNumber = 9;
-  inline ::google::protobuf::uint32 allstar_match_end_time() const;
-  inline void set_allstar_match_end_time(::google::protobuf::uint32 value);
-
-  // optional .CMsgDOTAPassportVote league_guesses = 6;
-  inline bool has_league_guesses() const;
-  inline void clear_league_guesses();
-  static const int kLeagueGuessesFieldNumber = 6;
-  inline const ::CMsgDOTAPassportVote& league_guesses() const;
-  inline ::CMsgDOTAPassportVote* mutable_league_guesses();
-  inline ::CMsgDOTAPassportVote* release_league_guesses();
-  inline void set_allocated_league_guesses(::CMsgDOTAPassportVote* league_guesses);
-
-  // optional uint32 east_qualifiers_winner_team_id = 10;
-  inline bool has_east_qualifiers_winner_team_id() const;
-  inline void clear_east_qualifiers_winner_team_id();
-  static const int kEastQualifiersWinnerTeamIdFieldNumber = 10;
-  inline ::google::protobuf::uint32 east_qualifiers_winner_team_id() const;
-  inline void set_east_qualifiers_winner_team_id(::google::protobuf::uint32 value);
-
-  // optional uint32 east_qualifiers_runner_up_team_id = 11;
-  inline bool has_east_qualifiers_runner_up_team_id() const;
-  inline void clear_east_qualifiers_runner_up_team_id();
-  static const int kEastQualifiersRunnerUpTeamIdFieldNumber = 11;
-  inline ::google::protobuf::uint32 east_qualifiers_runner_up_team_id() const;
-  inline void set_east_qualifiers_runner_up_team_id(::google::protobuf::uint32 value);
-
-  // optional uint32 west_qualifiers_winner_team_id = 12;
-  inline bool has_west_qualifiers_winner_team_id() const;
-  inline void clear_west_qualifiers_winner_team_id();
-  static const int kWestQualifiersWinnerTeamIdFieldNumber = 12;
-  inline ::google::protobuf::uint32 west_qualifiers_winner_team_id() const;
-  inline void set_west_qualifiers_winner_team_id(::google::protobuf::uint32 value);
-
-  // optional uint32 west_qualifiers_runner_up_team_id = 13;
-  inline bool has_west_qualifiers_runner_up_team_id() const;
-  inline void clear_west_qualifiers_runner_up_team_id();
-  static const int kWestQualifiersRunnerUpTeamIdFieldNumber = 13;
-  inline ::google::protobuf::uint32 west_qualifiers_runner_up_team_id() const;
-  inline void set_west_qualifiers_runner_up_team_id(::google::protobuf::uint32 value);
-
-  // optional uint32 passports_bought = 14;
-  inline bool has_passports_bought() const;
-  inline void clear_passports_bought();
-  static const int kPassportsBoughtFieldNumber = 14;
-  inline ::google::protobuf::uint32 passports_bought() const;
-  inline void set_passports_bought(::google::protobuf::uint32 value);
-
-  // optional uint32 original_purchaser_id = 15;
-  inline bool has_original_purchaser_id() const;
-  inline void clear_original_purchaser_id();
-  static const int kOriginalPurchaserIdFieldNumber = 15;
-  inline ::google::protobuf::uint32 original_purchaser_id() const;
-  inline void set_original_purchaser_id(::google::protobuf::uint32 value);
-
-  // optional uint32 fantasy_team_count = 16;
-  inline bool has_fantasy_team_count() const;
-  inline void clear_fantasy_team_count();
-  static const int kFantasyTeamCountFieldNumber = 16;
-  inline ::google::protobuf::uint32 fantasy_team_count() const;
-  inline void set_fantasy_team_count(::google::protobuf::uint32 value);
-
-  // optional uint32 fantasy_teamexpiration = 17;
-  inline bool has_fantasy_teamexpiration() const;
-  inline void clear_fantasy_teamexpiration();
-  static const int kFantasyTeamexpirationFieldNumber = 17;
-  inline ::google::protobuf::uint32 fantasy_teamexpiration() const;
-  inline void set_fantasy_teamexpiration(::google::protobuf::uint32 value);
-
-  // optional uint32 fantasy_teams_will_lock_at = 18;
-  inline bool has_fantasy_teams_will_lock_at() const;
-  inline void clear_fantasy_teams_will_lock_at();
-  static const int kFantasyTeamsWillLockAtFieldNumber = 18;
-  inline ::google::protobuf::uint32 fantasy_teams_will_lock_at() const;
-  inline void set_fantasy_teams_will_lock_at(::google::protobuf::uint32 value);
-
-  // @@protoc_insertion_point(class_scope:CMsgPassportDataResponse)
+  // @@protoc_insertion_point(class_scope:CMsgClientToGCSetPlayerCardRosterRequest)
  private:
-  inline void set_has_account_id();
-  inline void clear_has_account_id();
-  inline void set_has_result();
-  inline void clear_has_result();
-  inline void set_has_international();
-  inline void clear_has_international();
-  inline void set_has_east_qualifiers_predict_end_time();
-  inline void clear_has_east_qualifiers_predict_end_time();
-  inline void set_has_west_qualifiers_predict_end_time();
-  inline void clear_has_west_qualifiers_predict_end_time();
-  inline void set_has_allstar_match_end_time();
-  inline void clear_has_allstar_match_end_time();
-  inline void set_has_league_guesses();
-  inline void clear_has_league_guesses();
-  inline void set_has_east_qualifiers_winner_team_id();
-  inline void clear_has_east_qualifiers_winner_team_id();
-  inline void set_has_east_qualifiers_runner_up_team_id();
-  inline void clear_has_east_qualifiers_runner_up_team_id();
-  inline void set_has_west_qualifiers_winner_team_id();
-  inline void clear_has_west_qualifiers_winner_team_id();
-  inline void set_has_west_qualifiers_runner_up_team_id();
-  inline void clear_has_west_qualifiers_runner_up_team_id();
-  inline void set_has_passports_bought();
-  inline void clear_has_passports_bought();
-  inline void set_has_original_purchaser_id();
-  inline void clear_has_original_purchaser_id();
-  inline void set_has_fantasy_team_count();
-  inline void clear_has_fantasy_team_count();
-  inline void set_has_fantasy_teamexpiration();
-  inline void clear_has_fantasy_teamexpiration();
-  inline void set_has_fantasy_teams_will_lock_at();
-  inline void clear_has_fantasy_teams_will_lock_at();
+  inline void set_has_league_id();
+  inline void clear_has_league_id();
+  inline void set_has_timestamp();
+  inline void clear_has_timestamp();
+  inline void set_has_slot();
+  inline void clear_has_slot();
+  inline void set_has_player_card_item_id();
+  inline void clear_has_player_card_item_id();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
   ::google::protobuf::uint32 _has_bits_[1];
   mutable int _cached_size_;
-  ::google::protobuf::uint32 account_id_;
-  ::google::protobuf::uint32 result_;
-  ::CMsgDOTATournament* international_;
-  ::google::protobuf::uint32 east_qualifiers_predict_end_time_;
-  ::google::protobuf::uint32 west_qualifiers_predict_end_time_;
-  ::CMsgDOTAPassportVote* league_guesses_;
-  ::google::protobuf::uint32 allstar_match_end_time_;
-  ::google::protobuf::uint32 east_qualifiers_winner_team_id_;
-  ::google::protobuf::uint32 east_qualifiers_runner_up_team_id_;
-  ::google::protobuf::uint32 west_qualifiers_winner_team_id_;
-  ::google::protobuf::uint32 west_qualifiers_runner_up_team_id_;
-  ::google::protobuf::uint32 passports_bought_;
-  ::google::protobuf::uint32 original_purchaser_id_;
-  ::google::protobuf::uint32 fantasy_team_count_;
-  ::google::protobuf::uint32 fantasy_teamexpiration_;
-  ::google::protobuf::uint32 fantasy_teams_will_lock_at_;
+  ::google::protobuf::uint32 league_id_;
+  ::google::protobuf::uint32 timestamp_;
+  ::google::protobuf::uint64 player_card_item_id_;
+  ::google::protobuf::uint32 slot_;
   friend void  protobuf_AddDesc_dota_5fgcmessages_5fclient_5ffantasy_2eproto();
   friend void protobuf_AssignDesc_dota_5fgcmessages_5fclient_5ffantasy_2eproto();
   friend void protobuf_ShutdownFile_dota_5fgcmessages_5fclient_5ffantasy_2eproto();
 
   void InitAsDefaultInstance();
-  static CMsgPassportDataResponse* default_instance_;
+  static CMsgClientToGCSetPlayerCardRosterRequest* default_instance_;
+};
+// -------------------------------------------------------------------
+
+class CMsgClientToGCSetPlayerCardRosterResponse : public ::google::protobuf::Message {
+ public:
+  CMsgClientToGCSetPlayerCardRosterResponse();
+  virtual ~CMsgClientToGCSetPlayerCardRosterResponse();
+
+  CMsgClientToGCSetPlayerCardRosterResponse(const CMsgClientToGCSetPlayerCardRosterResponse& from);
+
+  inline CMsgClientToGCSetPlayerCardRosterResponse& operator=(const CMsgClientToGCSetPlayerCardRosterResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+    return _unknown_fields_;
+  }
+
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+    return &_unknown_fields_;
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const CMsgClientToGCSetPlayerCardRosterResponse& default_instance();
+
+  void Swap(CMsgClientToGCSetPlayerCardRosterResponse* other);
+
+  // implements Message ----------------------------------------------
+
+  CMsgClientToGCSetPlayerCardRosterResponse* New() const;
+  void CopyFrom(const ::google::protobuf::Message& from);
+  void MergeFrom(const ::google::protobuf::Message& from);
+  void CopyFrom(const CMsgClientToGCSetPlayerCardRosterResponse& from);
+  void MergeFrom(const CMsgClientToGCSetPlayerCardRosterResponse& from);
+  void Clear();
+  bool IsInitialized() const;
+
+  int ByteSize() const;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input);
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  int GetCachedSize() const { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const;
+  public:
+  ::google::protobuf::Metadata GetMetadata() const;
+
+  // nested types ----------------------------------------------------
+
+  typedef CMsgClientToGCSetPlayerCardRosterResponse_Result Result;
+  static const Result SUCCESS = CMsgClientToGCSetPlayerCardRosterResponse_Result_SUCCESS;
+  static const Result ERROR_UNSPECIFIED = CMsgClientToGCSetPlayerCardRosterResponse_Result_ERROR_UNSPECIFIED;
+  static const Result ERROR_INVALID_LEAGUE_ID = CMsgClientToGCSetPlayerCardRosterResponse_Result_ERROR_INVALID_LEAGUE_ID;
+  static const Result ERROR_INVALID_TIMESTAMP = CMsgClientToGCSetPlayerCardRosterResponse_Result_ERROR_INVALID_TIMESTAMP;
+  static const Result ERROR_PLAYER_CARD_NOT_OWNED = CMsgClientToGCSetPlayerCardRosterResponse_Result_ERROR_PLAYER_CARD_NOT_OWNED;
+  static const Result ERROR_INVALID_SLOT = CMsgClientToGCSetPlayerCardRosterResponse_Result_ERROR_INVALID_SLOT;
+  static const Result ERROR_FAILED_CARD_INFO = CMsgClientToGCSetPlayerCardRosterResponse_Result_ERROR_FAILED_CARD_INFO;
+  static const Result ERROR_ACCOUNT_DUPLICATE = CMsgClientToGCSetPlayerCardRosterResponse_Result_ERROR_ACCOUNT_DUPLICATE;
+  static const Result ERROR_LOCKED_TIMESTAMP = CMsgClientToGCSetPlayerCardRosterResponse_Result_ERROR_LOCKED_TIMESTAMP;
+  static inline bool Result_IsValid(int value) {
+    return CMsgClientToGCSetPlayerCardRosterResponse_Result_IsValid(value);
+  }
+  static const Result Result_MIN =
+    CMsgClientToGCSetPlayerCardRosterResponse_Result_Result_MIN;
+  static const Result Result_MAX =
+    CMsgClientToGCSetPlayerCardRosterResponse_Result_Result_MAX;
+  static const int Result_ARRAYSIZE =
+    CMsgClientToGCSetPlayerCardRosterResponse_Result_Result_ARRAYSIZE;
+  static inline const ::google::protobuf::EnumDescriptor*
+  Result_descriptor() {
+    return CMsgClientToGCSetPlayerCardRosterResponse_Result_descriptor();
+  }
+  static inline const ::std::string& Result_Name(Result value) {
+    return CMsgClientToGCSetPlayerCardRosterResponse_Result_Name(value);
+  }
+  static inline bool Result_Parse(const ::std::string& name,
+      Result* value) {
+    return CMsgClientToGCSetPlayerCardRosterResponse_Result_Parse(name, value);
+  }
+
+  // accessors -------------------------------------------------------
+
+  // optional .CMsgClientToGCSetPlayerCardRosterResponse.Result result = 1 [default = SUCCESS];
+  inline bool has_result() const;
+  inline void clear_result();
+  static const int kResultFieldNumber = 1;
+  inline ::CMsgClientToGCSetPlayerCardRosterResponse_Result result() const;
+  inline void set_result(::CMsgClientToGCSetPlayerCardRosterResponse_Result value);
+
+  // @@protoc_insertion_point(class_scope:CMsgClientToGCSetPlayerCardRosterResponse)
+ private:
+  inline void set_has_result();
+  inline void clear_has_result();
+
+  ::google::protobuf::UnknownFieldSet _unknown_fields_;
+
+  ::google::protobuf::uint32 _has_bits_[1];
+  mutable int _cached_size_;
+  int result_;
+  friend void  protobuf_AddDesc_dota_5fgcmessages_5fclient_5ffantasy_2eproto();
+  friend void protobuf_AssignDesc_dota_5fgcmessages_5fclient_5ffantasy_2eproto();
+  friend void protobuf_ShutdownFile_dota_5fgcmessages_5fclient_5ffantasy_2eproto();
+
+  void InitAsDefaultInstance();
+  static CMsgClientToGCSetPlayerCardRosterResponse* default_instance_;
 };
 // ===================================================================
 
@@ -12098,6 +11302,136 @@ inline void CMsgGCPlayerInfo_PlayerInfo::set_is_locked(bool value) {
   // @@protoc_insertion_point(field_set:CMsgGCPlayerInfo.PlayerInfo.is_locked)
 }
 
+// optional bool is_pro = 10;
+inline bool CMsgGCPlayerInfo_PlayerInfo::has_is_pro() const {
+  return (_has_bits_[0] & 0x00000200u) != 0;
+}
+inline void CMsgGCPlayerInfo_PlayerInfo::set_has_is_pro() {
+  _has_bits_[0] |= 0x00000200u;
+}
+inline void CMsgGCPlayerInfo_PlayerInfo::clear_has_is_pro() {
+  _has_bits_[0] &= ~0x00000200u;
+}
+inline void CMsgGCPlayerInfo_PlayerInfo::clear_is_pro() {
+  is_pro_ = false;
+  clear_has_is_pro();
+}
+inline bool CMsgGCPlayerInfo_PlayerInfo::is_pro() const {
+  // @@protoc_insertion_point(field_get:CMsgGCPlayerInfo.PlayerInfo.is_pro)
+  return is_pro_;
+}
+inline void CMsgGCPlayerInfo_PlayerInfo::set_is_pro(bool value) {
+  set_has_is_pro();
+  is_pro_ = value;
+  // @@protoc_insertion_point(field_set:CMsgGCPlayerInfo.PlayerInfo.is_pro)
+}
+
+// optional uint32 locked_until = 11;
+inline bool CMsgGCPlayerInfo_PlayerInfo::has_locked_until() const {
+  return (_has_bits_[0] & 0x00000400u) != 0;
+}
+inline void CMsgGCPlayerInfo_PlayerInfo::set_has_locked_until() {
+  _has_bits_[0] |= 0x00000400u;
+}
+inline void CMsgGCPlayerInfo_PlayerInfo::clear_has_locked_until() {
+  _has_bits_[0] &= ~0x00000400u;
+}
+inline void CMsgGCPlayerInfo_PlayerInfo::clear_locked_until() {
+  locked_until_ = 0u;
+  clear_has_locked_until();
+}
+inline ::google::protobuf::uint32 CMsgGCPlayerInfo_PlayerInfo::locked_until() const {
+  // @@protoc_insertion_point(field_get:CMsgGCPlayerInfo.PlayerInfo.locked_until)
+  return locked_until_;
+}
+inline void CMsgGCPlayerInfo_PlayerInfo::set_locked_until(::google::protobuf::uint32 value) {
+  set_has_locked_until();
+  locked_until_ = value;
+  // @@protoc_insertion_point(field_set:CMsgGCPlayerInfo.PlayerInfo.locked_until)
+}
+
+// optional uint32 timestamp = 12;
+inline bool CMsgGCPlayerInfo_PlayerInfo::has_timestamp() const {
+  return (_has_bits_[0] & 0x00000800u) != 0;
+}
+inline void CMsgGCPlayerInfo_PlayerInfo::set_has_timestamp() {
+  _has_bits_[0] |= 0x00000800u;
+}
+inline void CMsgGCPlayerInfo_PlayerInfo::clear_has_timestamp() {
+  _has_bits_[0] &= ~0x00000800u;
+}
+inline void CMsgGCPlayerInfo_PlayerInfo::clear_timestamp() {
+  timestamp_ = 0u;
+  clear_has_timestamp();
+}
+inline ::google::protobuf::uint32 CMsgGCPlayerInfo_PlayerInfo::timestamp() const {
+  // @@protoc_insertion_point(field_get:CMsgGCPlayerInfo.PlayerInfo.timestamp)
+  return timestamp_;
+}
+inline void CMsgGCPlayerInfo_PlayerInfo::set_timestamp(::google::protobuf::uint32 value) {
+  set_has_timestamp();
+  timestamp_ = value;
+  // @@protoc_insertion_point(field_set:CMsgGCPlayerInfo.PlayerInfo.timestamp)
+}
+
+// -------------------------------------------------------------------
+
+// CMsgGCPlayerInfo_RegionLeaderboard
+
+// optional uint32 division = 1;
+inline bool CMsgGCPlayerInfo_RegionLeaderboard::has_division() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+inline void CMsgGCPlayerInfo_RegionLeaderboard::set_has_division() {
+  _has_bits_[0] |= 0x00000001u;
+}
+inline void CMsgGCPlayerInfo_RegionLeaderboard::clear_has_division() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+inline void CMsgGCPlayerInfo_RegionLeaderboard::clear_division() {
+  division_ = 0u;
+  clear_has_division();
+}
+inline ::google::protobuf::uint32 CMsgGCPlayerInfo_RegionLeaderboard::division() const {
+  // @@protoc_insertion_point(field_get:CMsgGCPlayerInfo.RegionLeaderboard.division)
+  return division_;
+}
+inline void CMsgGCPlayerInfo_RegionLeaderboard::set_division(::google::protobuf::uint32 value) {
+  set_has_division();
+  division_ = value;
+  // @@protoc_insertion_point(field_set:CMsgGCPlayerInfo.RegionLeaderboard.division)
+}
+
+// repeated uint32 account_ids = 2;
+inline int CMsgGCPlayerInfo_RegionLeaderboard::account_ids_size() const {
+  return account_ids_.size();
+}
+inline void CMsgGCPlayerInfo_RegionLeaderboard::clear_account_ids() {
+  account_ids_.Clear();
+}
+inline ::google::protobuf::uint32 CMsgGCPlayerInfo_RegionLeaderboard::account_ids(int index) const {
+  // @@protoc_insertion_point(field_get:CMsgGCPlayerInfo.RegionLeaderboard.account_ids)
+  return account_ids_.Get(index);
+}
+inline void CMsgGCPlayerInfo_RegionLeaderboard::set_account_ids(int index, ::google::protobuf::uint32 value) {
+  account_ids_.Set(index, value);
+  // @@protoc_insertion_point(field_set:CMsgGCPlayerInfo.RegionLeaderboard.account_ids)
+}
+inline void CMsgGCPlayerInfo_RegionLeaderboard::add_account_ids(::google::protobuf::uint32 value) {
+  account_ids_.Add(value);
+  // @@protoc_insertion_point(field_add:CMsgGCPlayerInfo.RegionLeaderboard.account_ids)
+}
+inline const ::google::protobuf::RepeatedField< ::google::protobuf::uint32 >&
+CMsgGCPlayerInfo_RegionLeaderboard::account_ids() const {
+  // @@protoc_insertion_point(field_list:CMsgGCPlayerInfo.RegionLeaderboard.account_ids)
+  return account_ids_;
+}
+inline ::google::protobuf::RepeatedField< ::google::protobuf::uint32 >*
+CMsgGCPlayerInfo_RegionLeaderboard::mutable_account_ids() {
+  // @@protoc_insertion_point(field_mutable_list:CMsgGCPlayerInfo.RegionLeaderboard.account_ids)
+  return &account_ids_;
+}
+
 // -------------------------------------------------------------------
 
 // CMsgGCPlayerInfo
@@ -12130,6 +11464,36 @@ inline ::google::protobuf::RepeatedPtrField< ::CMsgGCPlayerInfo_PlayerInfo >*
 CMsgGCPlayerInfo::mutable_player_infos() {
   // @@protoc_insertion_point(field_mutable_list:CMsgGCPlayerInfo.player_infos)
   return &player_infos_;
+}
+
+// repeated .CMsgGCPlayerInfo.RegionLeaderboard leaderboards = 2;
+inline int CMsgGCPlayerInfo::leaderboards_size() const {
+  return leaderboards_.size();
+}
+inline void CMsgGCPlayerInfo::clear_leaderboards() {
+  leaderboards_.Clear();
+}
+inline const ::CMsgGCPlayerInfo_RegionLeaderboard& CMsgGCPlayerInfo::leaderboards(int index) const {
+  // @@protoc_insertion_point(field_get:CMsgGCPlayerInfo.leaderboards)
+  return leaderboards_.Get(index);
+}
+inline ::CMsgGCPlayerInfo_RegionLeaderboard* CMsgGCPlayerInfo::mutable_leaderboards(int index) {
+  // @@protoc_insertion_point(field_mutable:CMsgGCPlayerInfo.leaderboards)
+  return leaderboards_.Mutable(index);
+}
+inline ::CMsgGCPlayerInfo_RegionLeaderboard* CMsgGCPlayerInfo::add_leaderboards() {
+  // @@protoc_insertion_point(field_add:CMsgGCPlayerInfo.leaderboards)
+  return leaderboards_.Add();
+}
+inline const ::google::protobuf::RepeatedPtrField< ::CMsgGCPlayerInfo_RegionLeaderboard >&
+CMsgGCPlayerInfo::leaderboards() const {
+  // @@protoc_insertion_point(field_list:CMsgGCPlayerInfo.leaderboards)
+  return leaderboards_;
+}
+inline ::google::protobuf::RepeatedPtrField< ::CMsgGCPlayerInfo_RegionLeaderboard >*
+CMsgGCPlayerInfo::mutable_leaderboards() {
+  // @@protoc_insertion_point(field_mutable_list:CMsgGCPlayerInfo.leaderboards)
+  return &leaderboards_;
 }
 
 // -------------------------------------------------------------------
@@ -20113,56 +19477,15 @@ inline void CMsgDOTAFantasyPlayerScoreDetailsResponse_PlayerMatchData::set_alloc
   // @@protoc_insertion_point(field_set_allocated:CMsgDOTAFantasyPlayerScoreDetailsResponse.PlayerMatchData.opposing_team_name)
 }
 
-// optional .CMsgFantasyLeagueScoring stats = 10;
-inline bool CMsgDOTAFantasyPlayerScoreDetailsResponse_PlayerMatchData::has_stats() const {
-  return (_has_bits_[0] & 0x00000200u) != 0;
-}
-inline void CMsgDOTAFantasyPlayerScoreDetailsResponse_PlayerMatchData::set_has_stats() {
-  _has_bits_[0] |= 0x00000200u;
-}
-inline void CMsgDOTAFantasyPlayerScoreDetailsResponse_PlayerMatchData::clear_has_stats() {
-  _has_bits_[0] &= ~0x00000200u;
-}
-inline void CMsgDOTAFantasyPlayerScoreDetailsResponse_PlayerMatchData::clear_stats() {
-  if (stats_ != NULL) stats_->::CMsgFantasyLeagueScoring::Clear();
-  clear_has_stats();
-}
-inline const ::CMsgFantasyLeagueScoring& CMsgDOTAFantasyPlayerScoreDetailsResponse_PlayerMatchData::stats() const {
-  // @@protoc_insertion_point(field_get:CMsgDOTAFantasyPlayerScoreDetailsResponse.PlayerMatchData.stats)
-  return stats_ != NULL ? *stats_ : *default_instance_->stats_;
-}
-inline ::CMsgFantasyLeagueScoring* CMsgDOTAFantasyPlayerScoreDetailsResponse_PlayerMatchData::mutable_stats() {
-  set_has_stats();
-  if (stats_ == NULL) stats_ = new ::CMsgFantasyLeagueScoring;
-  // @@protoc_insertion_point(field_mutable:CMsgDOTAFantasyPlayerScoreDetailsResponse.PlayerMatchData.stats)
-  return stats_;
-}
-inline ::CMsgFantasyLeagueScoring* CMsgDOTAFantasyPlayerScoreDetailsResponse_PlayerMatchData::release_stats() {
-  clear_has_stats();
-  ::CMsgFantasyLeagueScoring* temp = stats_;
-  stats_ = NULL;
-  return temp;
-}
-inline void CMsgDOTAFantasyPlayerScoreDetailsResponse_PlayerMatchData::set_allocated_stats(::CMsgFantasyLeagueScoring* stats) {
-  delete stats_;
-  stats_ = stats;
-  if (stats) {
-    set_has_stats();
-  } else {
-    clear_has_stats();
-  }
-  // @@protoc_insertion_point(field_set_allocated:CMsgDOTAFantasyPlayerScoreDetailsResponse.PlayerMatchData.stats)
-}
-
 // optional uint32 owned_by = 11;
 inline bool CMsgDOTAFantasyPlayerScoreDetailsResponse_PlayerMatchData::has_owned_by() const {
-  return (_has_bits_[0] & 0x00000400u) != 0;
+  return (_has_bits_[0] & 0x00000200u) != 0;
 }
 inline void CMsgDOTAFantasyPlayerScoreDetailsResponse_PlayerMatchData::set_has_owned_by() {
-  _has_bits_[0] |= 0x00000400u;
+  _has_bits_[0] |= 0x00000200u;
 }
 inline void CMsgDOTAFantasyPlayerScoreDetailsResponse_PlayerMatchData::clear_has_owned_by() {
-  _has_bits_[0] &= ~0x00000400u;
+  _has_bits_[0] &= ~0x00000200u;
 }
 inline void CMsgDOTAFantasyPlayerScoreDetailsResponse_PlayerMatchData::clear_owned_by() {
   owned_by_ = 0u;
@@ -20180,13 +19503,13 @@ inline void CMsgDOTAFantasyPlayerScoreDetailsResponse_PlayerMatchData::set_owned
 
 // optional bool benched = 12;
 inline bool CMsgDOTAFantasyPlayerScoreDetailsResponse_PlayerMatchData::has_benched() const {
-  return (_has_bits_[0] & 0x00000800u) != 0;
+  return (_has_bits_[0] & 0x00000400u) != 0;
 }
 inline void CMsgDOTAFantasyPlayerScoreDetailsResponse_PlayerMatchData::set_has_benched() {
-  _has_bits_[0] |= 0x00000800u;
+  _has_bits_[0] |= 0x00000400u;
 }
 inline void CMsgDOTAFantasyPlayerScoreDetailsResponse_PlayerMatchData::clear_has_benched() {
-  _has_bits_[0] &= ~0x00000800u;
+  _has_bits_[0] &= ~0x00000400u;
 }
 inline void CMsgDOTAFantasyPlayerScoreDetailsResponse_PlayerMatchData::clear_benched() {
   benched_ = false;
@@ -20259,1468 +19582,6 @@ inline ::google::protobuf::RepeatedPtrField< ::CMsgDOTAFantasyPlayerScoreDetails
 CMsgDOTAFantasyPlayerScoreDetailsResponse::mutable_data() {
   // @@protoc_insertion_point(field_mutable_list:CMsgDOTAFantasyPlayerScoreDetailsResponse.data)
   return &data_;
-}
-
-// -------------------------------------------------------------------
-
-// CMsgDOTATournament_Team
-
-// optional uint32 team_id = 1;
-inline bool CMsgDOTATournament_Team::has_team_id() const {
-  return (_has_bits_[0] & 0x00000001u) != 0;
-}
-inline void CMsgDOTATournament_Team::set_has_team_id() {
-  _has_bits_[0] |= 0x00000001u;
-}
-inline void CMsgDOTATournament_Team::clear_has_team_id() {
-  _has_bits_[0] &= ~0x00000001u;
-}
-inline void CMsgDOTATournament_Team::clear_team_id() {
-  team_id_ = 0u;
-  clear_has_team_id();
-}
-inline ::google::protobuf::uint32 CMsgDOTATournament_Team::team_id() const {
-  // @@protoc_insertion_point(field_get:CMsgDOTATournament.Team.team_id)
-  return team_id_;
-}
-inline void CMsgDOTATournament_Team::set_team_id(::google::protobuf::uint32 value) {
-  set_has_team_id();
-  team_id_ = value;
-  // @@protoc_insertion_point(field_set:CMsgDOTATournament.Team.team_id)
-}
-
-// optional string team_name = 2;
-inline bool CMsgDOTATournament_Team::has_team_name() const {
-  return (_has_bits_[0] & 0x00000002u) != 0;
-}
-inline void CMsgDOTATournament_Team::set_has_team_name() {
-  _has_bits_[0] |= 0x00000002u;
-}
-inline void CMsgDOTATournament_Team::clear_has_team_name() {
-  _has_bits_[0] &= ~0x00000002u;
-}
-inline void CMsgDOTATournament_Team::clear_team_name() {
-  if (team_name_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    team_name_->clear();
-  }
-  clear_has_team_name();
-}
-inline const ::std::string& CMsgDOTATournament_Team::team_name() const {
-  // @@protoc_insertion_point(field_get:CMsgDOTATournament.Team.team_name)
-  return *team_name_;
-}
-inline void CMsgDOTATournament_Team::set_team_name(const ::std::string& value) {
-  set_has_team_name();
-  if (team_name_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    team_name_ = new ::std::string;
-  }
-  team_name_->assign(value);
-  // @@protoc_insertion_point(field_set:CMsgDOTATournament.Team.team_name)
-}
-inline void CMsgDOTATournament_Team::set_team_name(const char* value) {
-  set_has_team_name();
-  if (team_name_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    team_name_ = new ::std::string;
-  }
-  team_name_->assign(value);
-  // @@protoc_insertion_point(field_set_char:CMsgDOTATournament.Team.team_name)
-}
-inline void CMsgDOTATournament_Team::set_team_name(const char* value, size_t size) {
-  set_has_team_name();
-  if (team_name_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    team_name_ = new ::std::string;
-  }
-  team_name_->assign(reinterpret_cast<const char*>(value), size);
-  // @@protoc_insertion_point(field_set_pointer:CMsgDOTATournament.Team.team_name)
-}
-inline ::std::string* CMsgDOTATournament_Team::mutable_team_name() {
-  set_has_team_name();
-  if (team_name_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    team_name_ = new ::std::string;
-  }
-  // @@protoc_insertion_point(field_mutable:CMsgDOTATournament.Team.team_name)
-  return team_name_;
-}
-inline ::std::string* CMsgDOTATournament_Team::release_team_name() {
-  clear_has_team_name();
-  if (team_name_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    return NULL;
-  } else {
-    ::std::string* temp = team_name_;
-    team_name_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-    return temp;
-  }
-}
-inline void CMsgDOTATournament_Team::set_allocated_team_name(::std::string* team_name) {
-  if (team_name_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    delete team_name_;
-  }
-  if (team_name) {
-    set_has_team_name();
-    team_name_ = team_name;
-  } else {
-    clear_has_team_name();
-    team_name_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  }
-  // @@protoc_insertion_point(field_set_allocated:CMsgDOTATournament.Team.team_name)
-}
-
-// optional string team_abbrev = 3;
-inline bool CMsgDOTATournament_Team::has_team_abbrev() const {
-  return (_has_bits_[0] & 0x00000004u) != 0;
-}
-inline void CMsgDOTATournament_Team::set_has_team_abbrev() {
-  _has_bits_[0] |= 0x00000004u;
-}
-inline void CMsgDOTATournament_Team::clear_has_team_abbrev() {
-  _has_bits_[0] &= ~0x00000004u;
-}
-inline void CMsgDOTATournament_Team::clear_team_abbrev() {
-  if (team_abbrev_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    team_abbrev_->clear();
-  }
-  clear_has_team_abbrev();
-}
-inline const ::std::string& CMsgDOTATournament_Team::team_abbrev() const {
-  // @@protoc_insertion_point(field_get:CMsgDOTATournament.Team.team_abbrev)
-  return *team_abbrev_;
-}
-inline void CMsgDOTATournament_Team::set_team_abbrev(const ::std::string& value) {
-  set_has_team_abbrev();
-  if (team_abbrev_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    team_abbrev_ = new ::std::string;
-  }
-  team_abbrev_->assign(value);
-  // @@protoc_insertion_point(field_set:CMsgDOTATournament.Team.team_abbrev)
-}
-inline void CMsgDOTATournament_Team::set_team_abbrev(const char* value) {
-  set_has_team_abbrev();
-  if (team_abbrev_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    team_abbrev_ = new ::std::string;
-  }
-  team_abbrev_->assign(value);
-  // @@protoc_insertion_point(field_set_char:CMsgDOTATournament.Team.team_abbrev)
-}
-inline void CMsgDOTATournament_Team::set_team_abbrev(const char* value, size_t size) {
-  set_has_team_abbrev();
-  if (team_abbrev_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    team_abbrev_ = new ::std::string;
-  }
-  team_abbrev_->assign(reinterpret_cast<const char*>(value), size);
-  // @@protoc_insertion_point(field_set_pointer:CMsgDOTATournament.Team.team_abbrev)
-}
-inline ::std::string* CMsgDOTATournament_Team::mutable_team_abbrev() {
-  set_has_team_abbrev();
-  if (team_abbrev_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    team_abbrev_ = new ::std::string;
-  }
-  // @@protoc_insertion_point(field_mutable:CMsgDOTATournament.Team.team_abbrev)
-  return team_abbrev_;
-}
-inline ::std::string* CMsgDOTATournament_Team::release_team_abbrev() {
-  clear_has_team_abbrev();
-  if (team_abbrev_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    return NULL;
-  } else {
-    ::std::string* temp = team_abbrev_;
-    team_abbrev_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-    return temp;
-  }
-}
-inline void CMsgDOTATournament_Team::set_allocated_team_abbrev(::std::string* team_abbrev) {
-  if (team_abbrev_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    delete team_abbrev_;
-  }
-  if (team_abbrev) {
-    set_has_team_abbrev();
-    team_abbrev_ = team_abbrev;
-  } else {
-    clear_has_team_abbrev();
-    team_abbrev_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  }
-  // @@protoc_insertion_point(field_set_allocated:CMsgDOTATournament.Team.team_abbrev)
-}
-
-// repeated uint32 players = 4 [packed = true];
-inline int CMsgDOTATournament_Team::players_size() const {
-  return players_.size();
-}
-inline void CMsgDOTATournament_Team::clear_players() {
-  players_.Clear();
-}
-inline ::google::protobuf::uint32 CMsgDOTATournament_Team::players(int index) const {
-  // @@protoc_insertion_point(field_get:CMsgDOTATournament.Team.players)
-  return players_.Get(index);
-}
-inline void CMsgDOTATournament_Team::set_players(int index, ::google::protobuf::uint32 value) {
-  players_.Set(index, value);
-  // @@protoc_insertion_point(field_set:CMsgDOTATournament.Team.players)
-}
-inline void CMsgDOTATournament_Team::add_players(::google::protobuf::uint32 value) {
-  players_.Add(value);
-  // @@protoc_insertion_point(field_add:CMsgDOTATournament.Team.players)
-}
-inline const ::google::protobuf::RepeatedField< ::google::protobuf::uint32 >&
-CMsgDOTATournament_Team::players() const {
-  // @@protoc_insertion_point(field_list:CMsgDOTATournament.Team.players)
-  return players_;
-}
-inline ::google::protobuf::RepeatedField< ::google::protobuf::uint32 >*
-CMsgDOTATournament_Team::mutable_players() {
-  // @@protoc_insertion_point(field_mutable_list:CMsgDOTATournament.Team.players)
-  return &players_;
-}
-
-// optional uint32 seed = 5;
-inline bool CMsgDOTATournament_Team::has_seed() const {
-  return (_has_bits_[0] & 0x00000010u) != 0;
-}
-inline void CMsgDOTATournament_Team::set_has_seed() {
-  _has_bits_[0] |= 0x00000010u;
-}
-inline void CMsgDOTATournament_Team::clear_has_seed() {
-  _has_bits_[0] &= ~0x00000010u;
-}
-inline void CMsgDOTATournament_Team::clear_seed() {
-  seed_ = 0u;
-  clear_has_seed();
-}
-inline ::google::protobuf::uint32 CMsgDOTATournament_Team::seed() const {
-  // @@protoc_insertion_point(field_get:CMsgDOTATournament.Team.seed)
-  return seed_;
-}
-inline void CMsgDOTATournament_Team::set_seed(::google::protobuf::uint32 value) {
-  set_has_seed();
-  seed_ = value;
-  // @@protoc_insertion_point(field_set:CMsgDOTATournament.Team.seed)
-}
-
-// optional uint64 team_logo = 6;
-inline bool CMsgDOTATournament_Team::has_team_logo() const {
-  return (_has_bits_[0] & 0x00000020u) != 0;
-}
-inline void CMsgDOTATournament_Team::set_has_team_logo() {
-  _has_bits_[0] |= 0x00000020u;
-}
-inline void CMsgDOTATournament_Team::clear_has_team_logo() {
-  _has_bits_[0] &= ~0x00000020u;
-}
-inline void CMsgDOTATournament_Team::clear_team_logo() {
-  team_logo_ = GOOGLE_ULONGLONG(0);
-  clear_has_team_logo();
-}
-inline ::google::protobuf::uint64 CMsgDOTATournament_Team::team_logo() const {
-  // @@protoc_insertion_point(field_get:CMsgDOTATournament.Team.team_logo)
-  return team_logo_;
-}
-inline void CMsgDOTATournament_Team::set_team_logo(::google::protobuf::uint64 value) {
-  set_has_team_logo();
-  team_logo_ = value;
-  // @@protoc_insertion_point(field_set:CMsgDOTATournament.Team.team_logo)
-}
-
-// optional string country_code = 7;
-inline bool CMsgDOTATournament_Team::has_country_code() const {
-  return (_has_bits_[0] & 0x00000040u) != 0;
-}
-inline void CMsgDOTATournament_Team::set_has_country_code() {
-  _has_bits_[0] |= 0x00000040u;
-}
-inline void CMsgDOTATournament_Team::clear_has_country_code() {
-  _has_bits_[0] &= ~0x00000040u;
-}
-inline void CMsgDOTATournament_Team::clear_country_code() {
-  if (country_code_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    country_code_->clear();
-  }
-  clear_has_country_code();
-}
-inline const ::std::string& CMsgDOTATournament_Team::country_code() const {
-  // @@protoc_insertion_point(field_get:CMsgDOTATournament.Team.country_code)
-  return *country_code_;
-}
-inline void CMsgDOTATournament_Team::set_country_code(const ::std::string& value) {
-  set_has_country_code();
-  if (country_code_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    country_code_ = new ::std::string;
-  }
-  country_code_->assign(value);
-  // @@protoc_insertion_point(field_set:CMsgDOTATournament.Team.country_code)
-}
-inline void CMsgDOTATournament_Team::set_country_code(const char* value) {
-  set_has_country_code();
-  if (country_code_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    country_code_ = new ::std::string;
-  }
-  country_code_->assign(value);
-  // @@protoc_insertion_point(field_set_char:CMsgDOTATournament.Team.country_code)
-}
-inline void CMsgDOTATournament_Team::set_country_code(const char* value, size_t size) {
-  set_has_country_code();
-  if (country_code_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    country_code_ = new ::std::string;
-  }
-  country_code_->assign(reinterpret_cast<const char*>(value), size);
-  // @@protoc_insertion_point(field_set_pointer:CMsgDOTATournament.Team.country_code)
-}
-inline ::std::string* CMsgDOTATournament_Team::mutable_country_code() {
-  set_has_country_code();
-  if (country_code_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    country_code_ = new ::std::string;
-  }
-  // @@protoc_insertion_point(field_mutable:CMsgDOTATournament.Team.country_code)
-  return country_code_;
-}
-inline ::std::string* CMsgDOTATournament_Team::release_country_code() {
-  clear_has_country_code();
-  if (country_code_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    return NULL;
-  } else {
-    ::std::string* temp = country_code_;
-    country_code_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-    return temp;
-  }
-}
-inline void CMsgDOTATournament_Team::set_allocated_country_code(::std::string* country_code) {
-  if (country_code_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    delete country_code_;
-  }
-  if (country_code) {
-    set_has_country_code();
-    country_code_ = country_code;
-  } else {
-    clear_has_country_code();
-    country_code_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  }
-  // @@protoc_insertion_point(field_set_allocated:CMsgDOTATournament.Team.country_code)
-}
-
-// optional uint32 node_or_state = 8;
-inline bool CMsgDOTATournament_Team::has_node_or_state() const {
-  return (_has_bits_[0] & 0x00000080u) != 0;
-}
-inline void CMsgDOTATournament_Team::set_has_node_or_state() {
-  _has_bits_[0] |= 0x00000080u;
-}
-inline void CMsgDOTATournament_Team::clear_has_node_or_state() {
-  _has_bits_[0] &= ~0x00000080u;
-}
-inline void CMsgDOTATournament_Team::clear_node_or_state() {
-  node_or_state_ = 0u;
-  clear_has_node_or_state();
-}
-inline ::google::protobuf::uint32 CMsgDOTATournament_Team::node_or_state() const {
-  // @@protoc_insertion_point(field_get:CMsgDOTATournament.Team.node_or_state)
-  return node_or_state_;
-}
-inline void CMsgDOTATournament_Team::set_node_or_state(::google::protobuf::uint32 value) {
-  set_has_node_or_state();
-  node_or_state_ = value;
-  // @@protoc_insertion_point(field_set:CMsgDOTATournament.Team.node_or_state)
-}
-
-// -------------------------------------------------------------------
-
-// CMsgDOTATournament_Game
-
-// optional uint32 game_id = 1;
-inline bool CMsgDOTATournament_Game::has_game_id() const {
-  return (_has_bits_[0] & 0x00000001u) != 0;
-}
-inline void CMsgDOTATournament_Game::set_has_game_id() {
-  _has_bits_[0] |= 0x00000001u;
-}
-inline void CMsgDOTATournament_Game::clear_has_game_id() {
-  _has_bits_[0] &= ~0x00000001u;
-}
-inline void CMsgDOTATournament_Game::clear_game_id() {
-  game_id_ = 0u;
-  clear_has_game_id();
-}
-inline ::google::protobuf::uint32 CMsgDOTATournament_Game::game_id() const {
-  // @@protoc_insertion_point(field_get:CMsgDOTATournament.Game.game_id)
-  return game_id_;
-}
-inline void CMsgDOTATournament_Game::set_game_id(::google::protobuf::uint32 value) {
-  set_has_game_id();
-  game_id_ = value;
-  // @@protoc_insertion_point(field_set:CMsgDOTATournament.Game.game_id)
-}
-
-// optional uint32 good_team_id = 2;
-inline bool CMsgDOTATournament_Game::has_good_team_id() const {
-  return (_has_bits_[0] & 0x00000002u) != 0;
-}
-inline void CMsgDOTATournament_Game::set_has_good_team_id() {
-  _has_bits_[0] |= 0x00000002u;
-}
-inline void CMsgDOTATournament_Game::clear_has_good_team_id() {
-  _has_bits_[0] &= ~0x00000002u;
-}
-inline void CMsgDOTATournament_Game::clear_good_team_id() {
-  good_team_id_ = 0u;
-  clear_has_good_team_id();
-}
-inline ::google::protobuf::uint32 CMsgDOTATournament_Game::good_team_id() const {
-  // @@protoc_insertion_point(field_get:CMsgDOTATournament.Game.good_team_id)
-  return good_team_id_;
-}
-inline void CMsgDOTATournament_Game::set_good_team_id(::google::protobuf::uint32 value) {
-  set_has_good_team_id();
-  good_team_id_ = value;
-  // @@protoc_insertion_point(field_set:CMsgDOTATournament.Game.good_team_id)
-}
-
-// optional uint32 bad_team_id = 3;
-inline bool CMsgDOTATournament_Game::has_bad_team_id() const {
-  return (_has_bits_[0] & 0x00000004u) != 0;
-}
-inline void CMsgDOTATournament_Game::set_has_bad_team_id() {
-  _has_bits_[0] |= 0x00000004u;
-}
-inline void CMsgDOTATournament_Game::clear_has_bad_team_id() {
-  _has_bits_[0] &= ~0x00000004u;
-}
-inline void CMsgDOTATournament_Game::clear_bad_team_id() {
-  bad_team_id_ = 0u;
-  clear_has_bad_team_id();
-}
-inline ::google::protobuf::uint32 CMsgDOTATournament_Game::bad_team_id() const {
-  // @@protoc_insertion_point(field_get:CMsgDOTATournament.Game.bad_team_id)
-  return bad_team_id_;
-}
-inline void CMsgDOTATournament_Game::set_bad_team_id(::google::protobuf::uint32 value) {
-  set_has_bad_team_id();
-  bad_team_id_ = value;
-  // @@protoc_insertion_point(field_set:CMsgDOTATournament.Game.bad_team_id)
-}
-
-// optional uint32 good_team_seed = 12;
-inline bool CMsgDOTATournament_Game::has_good_team_seed() const {
-  return (_has_bits_[0] & 0x00000008u) != 0;
-}
-inline void CMsgDOTATournament_Game::set_has_good_team_seed() {
-  _has_bits_[0] |= 0x00000008u;
-}
-inline void CMsgDOTATournament_Game::clear_has_good_team_seed() {
-  _has_bits_[0] &= ~0x00000008u;
-}
-inline void CMsgDOTATournament_Game::clear_good_team_seed() {
-  good_team_seed_ = 0u;
-  clear_has_good_team_seed();
-}
-inline ::google::protobuf::uint32 CMsgDOTATournament_Game::good_team_seed() const {
-  // @@protoc_insertion_point(field_get:CMsgDOTATournament.Game.good_team_seed)
-  return good_team_seed_;
-}
-inline void CMsgDOTATournament_Game::set_good_team_seed(::google::protobuf::uint32 value) {
-  set_has_good_team_seed();
-  good_team_seed_ = value;
-  // @@protoc_insertion_point(field_set:CMsgDOTATournament.Game.good_team_seed)
-}
-
-// optional uint32 bad_team_seed = 13;
-inline bool CMsgDOTATournament_Game::has_bad_team_seed() const {
-  return (_has_bits_[0] & 0x00000010u) != 0;
-}
-inline void CMsgDOTATournament_Game::set_has_bad_team_seed() {
-  _has_bits_[0] |= 0x00000010u;
-}
-inline void CMsgDOTATournament_Game::clear_has_bad_team_seed() {
-  _has_bits_[0] &= ~0x00000010u;
-}
-inline void CMsgDOTATournament_Game::clear_bad_team_seed() {
-  bad_team_seed_ = 0u;
-  clear_has_bad_team_seed();
-}
-inline ::google::protobuf::uint32 CMsgDOTATournament_Game::bad_team_seed() const {
-  // @@protoc_insertion_point(field_get:CMsgDOTATournament.Game.bad_team_seed)
-  return bad_team_seed_;
-}
-inline void CMsgDOTATournament_Game::set_bad_team_seed(::google::protobuf::uint32 value) {
-  set_has_bad_team_seed();
-  bad_team_seed_ = value;
-  // @@protoc_insertion_point(field_set:CMsgDOTATournament.Game.bad_team_seed)
-}
-
-// optional fixed64 lobby_id = 4;
-inline bool CMsgDOTATournament_Game::has_lobby_id() const {
-  return (_has_bits_[0] & 0x00000020u) != 0;
-}
-inline void CMsgDOTATournament_Game::set_has_lobby_id() {
-  _has_bits_[0] |= 0x00000020u;
-}
-inline void CMsgDOTATournament_Game::clear_has_lobby_id() {
-  _has_bits_[0] &= ~0x00000020u;
-}
-inline void CMsgDOTATournament_Game::clear_lobby_id() {
-  lobby_id_ = GOOGLE_ULONGLONG(0);
-  clear_has_lobby_id();
-}
-inline ::google::protobuf::uint64 CMsgDOTATournament_Game::lobby_id() const {
-  // @@protoc_insertion_point(field_get:CMsgDOTATournament.Game.lobby_id)
-  return lobby_id_;
-}
-inline void CMsgDOTATournament_Game::set_lobby_id(::google::protobuf::uint64 value) {
-  set_has_lobby_id();
-  lobby_id_ = value;
-  // @@protoc_insertion_point(field_set:CMsgDOTATournament.Game.lobby_id)
-}
-
-// optional uint64 match_id = 5;
-inline bool CMsgDOTATournament_Game::has_match_id() const {
-  return (_has_bits_[0] & 0x00000040u) != 0;
-}
-inline void CMsgDOTATournament_Game::set_has_match_id() {
-  _has_bits_[0] |= 0x00000040u;
-}
-inline void CMsgDOTATournament_Game::clear_has_match_id() {
-  _has_bits_[0] &= ~0x00000040u;
-}
-inline void CMsgDOTATournament_Game::clear_match_id() {
-  match_id_ = GOOGLE_ULONGLONG(0);
-  clear_has_match_id();
-}
-inline ::google::protobuf::uint64 CMsgDOTATournament_Game::match_id() const {
-  // @@protoc_insertion_point(field_get:CMsgDOTATournament.Game.match_id)
-  return match_id_;
-}
-inline void CMsgDOTATournament_Game::set_match_id(::google::protobuf::uint64 value) {
-  set_has_match_id();
-  match_id_ = value;
-  // @@protoc_insertion_point(field_set:CMsgDOTATournament.Game.match_id)
-}
-
-// optional string game_name = 6;
-inline bool CMsgDOTATournament_Game::has_game_name() const {
-  return (_has_bits_[0] & 0x00000080u) != 0;
-}
-inline void CMsgDOTATournament_Game::set_has_game_name() {
-  _has_bits_[0] |= 0x00000080u;
-}
-inline void CMsgDOTATournament_Game::clear_has_game_name() {
-  _has_bits_[0] &= ~0x00000080u;
-}
-inline void CMsgDOTATournament_Game::clear_game_name() {
-  if (game_name_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    game_name_->clear();
-  }
-  clear_has_game_name();
-}
-inline const ::std::string& CMsgDOTATournament_Game::game_name() const {
-  // @@protoc_insertion_point(field_get:CMsgDOTATournament.Game.game_name)
-  return *game_name_;
-}
-inline void CMsgDOTATournament_Game::set_game_name(const ::std::string& value) {
-  set_has_game_name();
-  if (game_name_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    game_name_ = new ::std::string;
-  }
-  game_name_->assign(value);
-  // @@protoc_insertion_point(field_set:CMsgDOTATournament.Game.game_name)
-}
-inline void CMsgDOTATournament_Game::set_game_name(const char* value) {
-  set_has_game_name();
-  if (game_name_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    game_name_ = new ::std::string;
-  }
-  game_name_->assign(value);
-  // @@protoc_insertion_point(field_set_char:CMsgDOTATournament.Game.game_name)
-}
-inline void CMsgDOTATournament_Game::set_game_name(const char* value, size_t size) {
-  set_has_game_name();
-  if (game_name_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    game_name_ = new ::std::string;
-  }
-  game_name_->assign(reinterpret_cast<const char*>(value), size);
-  // @@protoc_insertion_point(field_set_pointer:CMsgDOTATournament.Game.game_name)
-}
-inline ::std::string* CMsgDOTATournament_Game::mutable_game_name() {
-  set_has_game_name();
-  if (game_name_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    game_name_ = new ::std::string;
-  }
-  // @@protoc_insertion_point(field_mutable:CMsgDOTATournament.Game.game_name)
-  return game_name_;
-}
-inline ::std::string* CMsgDOTATournament_Game::release_game_name() {
-  clear_has_game_name();
-  if (game_name_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    return NULL;
-  } else {
-    ::std::string* temp = game_name_;
-    game_name_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-    return temp;
-  }
-}
-inline void CMsgDOTATournament_Game::set_allocated_game_name(::std::string* game_name) {
-  if (game_name_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    delete game_name_;
-  }
-  if (game_name) {
-    set_has_game_name();
-    game_name_ = game_name;
-  } else {
-    clear_has_game_name();
-    game_name_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  }
-  // @@protoc_insertion_point(field_set_allocated:CMsgDOTATournament.Game.game_name)
-}
-
-// optional bool live_stream = 7;
-inline bool CMsgDOTATournament_Game::has_live_stream() const {
-  return (_has_bits_[0] & 0x00000100u) != 0;
-}
-inline void CMsgDOTATournament_Game::set_has_live_stream() {
-  _has_bits_[0] |= 0x00000100u;
-}
-inline void CMsgDOTATournament_Game::clear_has_live_stream() {
-  _has_bits_[0] &= ~0x00000100u;
-}
-inline void CMsgDOTATournament_Game::clear_live_stream() {
-  live_stream_ = false;
-  clear_has_live_stream();
-}
-inline bool CMsgDOTATournament_Game::live_stream() const {
-  // @@protoc_insertion_point(field_get:CMsgDOTATournament.Game.live_stream)
-  return live_stream_;
-}
-inline void CMsgDOTATournament_Game::set_live_stream(bool value) {
-  set_has_live_stream();
-  live_stream_ = value;
-  // @@protoc_insertion_point(field_set:CMsgDOTATournament.Game.live_stream)
-}
-
-// optional string message = 9;
-inline bool CMsgDOTATournament_Game::has_message() const {
-  return (_has_bits_[0] & 0x00000200u) != 0;
-}
-inline void CMsgDOTATournament_Game::set_has_message() {
-  _has_bits_[0] |= 0x00000200u;
-}
-inline void CMsgDOTATournament_Game::clear_has_message() {
-  _has_bits_[0] &= ~0x00000200u;
-}
-inline void CMsgDOTATournament_Game::clear_message() {
-  if (message_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    message_->clear();
-  }
-  clear_has_message();
-}
-inline const ::std::string& CMsgDOTATournament_Game::message() const {
-  // @@protoc_insertion_point(field_get:CMsgDOTATournament.Game.message)
-  return *message_;
-}
-inline void CMsgDOTATournament_Game::set_message(const ::std::string& value) {
-  set_has_message();
-  if (message_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    message_ = new ::std::string;
-  }
-  message_->assign(value);
-  // @@protoc_insertion_point(field_set:CMsgDOTATournament.Game.message)
-}
-inline void CMsgDOTATournament_Game::set_message(const char* value) {
-  set_has_message();
-  if (message_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    message_ = new ::std::string;
-  }
-  message_->assign(value);
-  // @@protoc_insertion_point(field_set_char:CMsgDOTATournament.Game.message)
-}
-inline void CMsgDOTATournament_Game::set_message(const char* value, size_t size) {
-  set_has_message();
-  if (message_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    message_ = new ::std::string;
-  }
-  message_->assign(reinterpret_cast<const char*>(value), size);
-  // @@protoc_insertion_point(field_set_pointer:CMsgDOTATournament.Game.message)
-}
-inline ::std::string* CMsgDOTATournament_Game::mutable_message() {
-  set_has_message();
-  if (message_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    message_ = new ::std::string;
-  }
-  // @@protoc_insertion_point(field_mutable:CMsgDOTATournament.Game.message)
-  return message_;
-}
-inline ::std::string* CMsgDOTATournament_Game::release_message() {
-  clear_has_message();
-  if (message_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    return NULL;
-  } else {
-    ::std::string* temp = message_;
-    message_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-    return temp;
-  }
-}
-inline void CMsgDOTATournament_Game::set_allocated_message(::std::string* message) {
-  if (message_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    delete message_;
-  }
-  if (message) {
-    set_has_message();
-    message_ = message;
-  } else {
-    clear_has_message();
-    message_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  }
-  // @@protoc_insertion_point(field_set_allocated:CMsgDOTATournament.Game.message)
-}
-
-// optional bool results_final = 10;
-inline bool CMsgDOTATournament_Game::has_results_final() const {
-  return (_has_bits_[0] & 0x00000400u) != 0;
-}
-inline void CMsgDOTATournament_Game::set_has_results_final() {
-  _has_bits_[0] |= 0x00000400u;
-}
-inline void CMsgDOTATournament_Game::clear_has_results_final() {
-  _has_bits_[0] &= ~0x00000400u;
-}
-inline void CMsgDOTATournament_Game::clear_results_final() {
-  results_final_ = false;
-  clear_has_results_final();
-}
-inline bool CMsgDOTATournament_Game::results_final() const {
-  // @@protoc_insertion_point(field_get:CMsgDOTATournament.Game.results_final)
-  return results_final_;
-}
-inline void CMsgDOTATournament_Game::set_results_final(bool value) {
-  set_has_results_final();
-  results_final_ = value;
-  // @@protoc_insertion_point(field_set:CMsgDOTATournament.Game.results_final)
-}
-
-// optional .ETournamentGameState state = 14 [default = k_ETournamentGameState_Unknown];
-inline bool CMsgDOTATournament_Game::has_state() const {
-  return (_has_bits_[0] & 0x00000800u) != 0;
-}
-inline void CMsgDOTATournament_Game::set_has_state() {
-  _has_bits_[0] |= 0x00000800u;
-}
-inline void CMsgDOTATournament_Game::clear_has_state() {
-  _has_bits_[0] &= ~0x00000800u;
-}
-inline void CMsgDOTATournament_Game::clear_state() {
-  state_ = 0;
-  clear_has_state();
-}
-inline ::ETournamentGameState CMsgDOTATournament_Game::state() const {
-  // @@protoc_insertion_point(field_get:CMsgDOTATournament.Game.state)
-  return static_cast< ::ETournamentGameState >(state_);
-}
-inline void CMsgDOTATournament_Game::set_state(::ETournamentGameState value) {
-  assert(::ETournamentGameState_IsValid(value));
-  set_has_state();
-  state_ = value;
-  // @@protoc_insertion_point(field_set:CMsgDOTATournament.Game.state)
-}
-
-// optional uint32 node_id = 15;
-inline bool CMsgDOTATournament_Game::has_node_id() const {
-  return (_has_bits_[0] & 0x00001000u) != 0;
-}
-inline void CMsgDOTATournament_Game::set_has_node_id() {
-  _has_bits_[0] |= 0x00001000u;
-}
-inline void CMsgDOTATournament_Game::clear_has_node_id() {
-  _has_bits_[0] &= ~0x00001000u;
-}
-inline void CMsgDOTATournament_Game::clear_node_id() {
-  node_id_ = 0u;
-  clear_has_node_id();
-}
-inline ::google::protobuf::uint32 CMsgDOTATournament_Game::node_id() const {
-  // @@protoc_insertion_point(field_get:CMsgDOTATournament.Game.node_id)
-  return node_id_;
-}
-inline void CMsgDOTATournament_Game::set_node_id(::google::protobuf::uint32 value) {
-  set_has_node_id();
-  node_id_ = value;
-  // @@protoc_insertion_point(field_set:CMsgDOTATournament.Game.node_id)
-}
-
-// optional uint32 start_time = 16;
-inline bool CMsgDOTATournament_Game::has_start_time() const {
-  return (_has_bits_[0] & 0x00002000u) != 0;
-}
-inline void CMsgDOTATournament_Game::set_has_start_time() {
-  _has_bits_[0] |= 0x00002000u;
-}
-inline void CMsgDOTATournament_Game::clear_has_start_time() {
-  _has_bits_[0] &= ~0x00002000u;
-}
-inline void CMsgDOTATournament_Game::clear_start_time() {
-  start_time_ = 0u;
-  clear_has_start_time();
-}
-inline ::google::protobuf::uint32 CMsgDOTATournament_Game::start_time() const {
-  // @@protoc_insertion_point(field_get:CMsgDOTATournament.Game.start_time)
-  return start_time_;
-}
-inline void CMsgDOTATournament_Game::set_start_time(::google::protobuf::uint32 value) {
-  set_has_start_time();
-  start_time_ = value;
-  // @@protoc_insertion_point(field_set:CMsgDOTATournament.Game.start_time)
-}
-
-// -------------------------------------------------------------------
-
-// CMsgDOTATournament_Node
-
-// optional uint32 node_id = 1;
-inline bool CMsgDOTATournament_Node::has_node_id() const {
-  return (_has_bits_[0] & 0x00000001u) != 0;
-}
-inline void CMsgDOTATournament_Node::set_has_node_id() {
-  _has_bits_[0] |= 0x00000001u;
-}
-inline void CMsgDOTATournament_Node::clear_has_node_id() {
-  _has_bits_[0] &= ~0x00000001u;
-}
-inline void CMsgDOTATournament_Node::clear_node_id() {
-  node_id_ = 0u;
-  clear_has_node_id();
-}
-inline ::google::protobuf::uint32 CMsgDOTATournament_Node::node_id() const {
-  // @@protoc_insertion_point(field_get:CMsgDOTATournament.Node.node_id)
-  return node_id_;
-}
-inline void CMsgDOTATournament_Node::set_node_id(::google::protobuf::uint32 value) {
-  set_has_node_id();
-  node_id_ = value;
-  // @@protoc_insertion_point(field_set:CMsgDOTATournament.Node.node_id)
-}
-
-// optional uint32 team_seed_a = 2;
-inline bool CMsgDOTATournament_Node::has_team_seed_a() const {
-  return (_has_bits_[0] & 0x00000002u) != 0;
-}
-inline void CMsgDOTATournament_Node::set_has_team_seed_a() {
-  _has_bits_[0] |= 0x00000002u;
-}
-inline void CMsgDOTATournament_Node::clear_has_team_seed_a() {
-  _has_bits_[0] &= ~0x00000002u;
-}
-inline void CMsgDOTATournament_Node::clear_team_seed_a() {
-  team_seed_a_ = 0u;
-  clear_has_team_seed_a();
-}
-inline ::google::protobuf::uint32 CMsgDOTATournament_Node::team_seed_a() const {
-  // @@protoc_insertion_point(field_get:CMsgDOTATournament.Node.team_seed_a)
-  return team_seed_a_;
-}
-inline void CMsgDOTATournament_Node::set_team_seed_a(::google::protobuf::uint32 value) {
-  set_has_team_seed_a();
-  team_seed_a_ = value;
-  // @@protoc_insertion_point(field_set:CMsgDOTATournament.Node.team_seed_a)
-}
-
-// optional uint32 team_seed_b = 3;
-inline bool CMsgDOTATournament_Node::has_team_seed_b() const {
-  return (_has_bits_[0] & 0x00000004u) != 0;
-}
-inline void CMsgDOTATournament_Node::set_has_team_seed_b() {
-  _has_bits_[0] |= 0x00000004u;
-}
-inline void CMsgDOTATournament_Node::clear_has_team_seed_b() {
-  _has_bits_[0] &= ~0x00000004u;
-}
-inline void CMsgDOTATournament_Node::clear_team_seed_b() {
-  team_seed_b_ = 0u;
-  clear_has_team_seed_b();
-}
-inline ::google::protobuf::uint32 CMsgDOTATournament_Node::team_seed_b() const {
-  // @@protoc_insertion_point(field_get:CMsgDOTATournament.Node.team_seed_b)
-  return team_seed_b_;
-}
-inline void CMsgDOTATournament_Node::set_team_seed_b(::google::protobuf::uint32 value) {
-  set_has_team_seed_b();
-  team_seed_b_ = value;
-  // @@protoc_insertion_point(field_set:CMsgDOTATournament.Node.team_seed_b)
-}
-
-// optional uint32 winner_node = 4;
-inline bool CMsgDOTATournament_Node::has_winner_node() const {
-  return (_has_bits_[0] & 0x00000008u) != 0;
-}
-inline void CMsgDOTATournament_Node::set_has_winner_node() {
-  _has_bits_[0] |= 0x00000008u;
-}
-inline void CMsgDOTATournament_Node::clear_has_winner_node() {
-  _has_bits_[0] &= ~0x00000008u;
-}
-inline void CMsgDOTATournament_Node::clear_winner_node() {
-  winner_node_ = 0u;
-  clear_has_winner_node();
-}
-inline ::google::protobuf::uint32 CMsgDOTATournament_Node::winner_node() const {
-  // @@protoc_insertion_point(field_get:CMsgDOTATournament.Node.winner_node)
-  return winner_node_;
-}
-inline void CMsgDOTATournament_Node::set_winner_node(::google::protobuf::uint32 value) {
-  set_has_winner_node();
-  winner_node_ = value;
-  // @@protoc_insertion_point(field_set:CMsgDOTATournament.Node.winner_node)
-}
-
-// optional uint32 loser_node = 5;
-inline bool CMsgDOTATournament_Node::has_loser_node() const {
-  return (_has_bits_[0] & 0x00000010u) != 0;
-}
-inline void CMsgDOTATournament_Node::set_has_loser_node() {
-  _has_bits_[0] |= 0x00000010u;
-}
-inline void CMsgDOTATournament_Node::clear_has_loser_node() {
-  _has_bits_[0] &= ~0x00000010u;
-}
-inline void CMsgDOTATournament_Node::clear_loser_node() {
-  loser_node_ = 0u;
-  clear_has_loser_node();
-}
-inline ::google::protobuf::uint32 CMsgDOTATournament_Node::loser_node() const {
-  // @@protoc_insertion_point(field_get:CMsgDOTATournament.Node.loser_node)
-  return loser_node_;
-}
-inline void CMsgDOTATournament_Node::set_loser_node(::google::protobuf::uint32 value) {
-  set_has_loser_node();
-  loser_node_ = value;
-  // @@protoc_insertion_point(field_set:CMsgDOTATournament.Node.loser_node)
-}
-
-// optional uint32 series_type = 7;
-inline bool CMsgDOTATournament_Node::has_series_type() const {
-  return (_has_bits_[0] & 0x00000020u) != 0;
-}
-inline void CMsgDOTATournament_Node::set_has_series_type() {
-  _has_bits_[0] |= 0x00000020u;
-}
-inline void CMsgDOTATournament_Node::clear_has_series_type() {
-  _has_bits_[0] &= ~0x00000020u;
-}
-inline void CMsgDOTATournament_Node::clear_series_type() {
-  series_type_ = 0u;
-  clear_has_series_type();
-}
-inline ::google::protobuf::uint32 CMsgDOTATournament_Node::series_type() const {
-  // @@protoc_insertion_point(field_get:CMsgDOTATournament.Node.series_type)
-  return series_type_;
-}
-inline void CMsgDOTATournament_Node::set_series_type(::google::protobuf::uint32 value) {
-  set_has_series_type();
-  series_type_ = value;
-  // @@protoc_insertion_point(field_set:CMsgDOTATournament.Node.series_type)
-}
-
-// optional .ETournamentNodeState node_state = 8 [default = k_ETournamentNodeState_Unknown];
-inline bool CMsgDOTATournament_Node::has_node_state() const {
-  return (_has_bits_[0] & 0x00000040u) != 0;
-}
-inline void CMsgDOTATournament_Node::set_has_node_state() {
-  _has_bits_[0] |= 0x00000040u;
-}
-inline void CMsgDOTATournament_Node::clear_has_node_state() {
-  _has_bits_[0] &= ~0x00000040u;
-}
-inline void CMsgDOTATournament_Node::clear_node_state() {
-  node_state_ = 0;
-  clear_has_node_state();
-}
-inline ::ETournamentNodeState CMsgDOTATournament_Node::node_state() const {
-  // @@protoc_insertion_point(field_get:CMsgDOTATournament.Node.node_state)
-  return static_cast< ::ETournamentNodeState >(node_state_);
-}
-inline void CMsgDOTATournament_Node::set_node_state(::ETournamentNodeState value) {
-  assert(::ETournamentNodeState_IsValid(value));
-  set_has_node_state();
-  node_state_ = value;
-  // @@protoc_insertion_point(field_set:CMsgDOTATournament.Node.node_state)
-}
-
-// optional uint32 series_id = 9;
-inline bool CMsgDOTATournament_Node::has_series_id() const {
-  return (_has_bits_[0] & 0x00000080u) != 0;
-}
-inline void CMsgDOTATournament_Node::set_has_series_id() {
-  _has_bits_[0] |= 0x00000080u;
-}
-inline void CMsgDOTATournament_Node::clear_has_series_id() {
-  _has_bits_[0] &= ~0x00000080u;
-}
-inline void CMsgDOTATournament_Node::clear_series_id() {
-  series_id_ = 0u;
-  clear_has_series_id();
-}
-inline ::google::protobuf::uint32 CMsgDOTATournament_Node::series_id() const {
-  // @@protoc_insertion_point(field_get:CMsgDOTATournament.Node.series_id)
-  return series_id_;
-}
-inline void CMsgDOTATournament_Node::set_series_id(::google::protobuf::uint32 value) {
-  set_has_series_id();
-  series_id_ = value;
-  // @@protoc_insertion_point(field_set:CMsgDOTATournament.Node.series_id)
-}
-
-// optional uint32 start_time = 16;
-inline bool CMsgDOTATournament_Node::has_start_time() const {
-  return (_has_bits_[0] & 0x00000100u) != 0;
-}
-inline void CMsgDOTATournament_Node::set_has_start_time() {
-  _has_bits_[0] |= 0x00000100u;
-}
-inline void CMsgDOTATournament_Node::clear_has_start_time() {
-  _has_bits_[0] &= ~0x00000100u;
-}
-inline void CMsgDOTATournament_Node::clear_start_time() {
-  start_time_ = 0u;
-  clear_has_start_time();
-}
-inline ::google::protobuf::uint32 CMsgDOTATournament_Node::start_time() const {
-  // @@protoc_insertion_point(field_get:CMsgDOTATournament.Node.start_time)
-  return start_time_;
-}
-inline void CMsgDOTATournament_Node::set_start_time(::google::protobuf::uint32 value) {
-  set_has_start_time();
-  start_time_ = value;
-  // @@protoc_insertion_point(field_set:CMsgDOTATournament.Node.start_time)
-}
-
-// -------------------------------------------------------------------
-
-// CMsgDOTATournament
-
-// repeated .CMsgDOTATournament.Team teams = 1;
-inline int CMsgDOTATournament::teams_size() const {
-  return teams_.size();
-}
-inline void CMsgDOTATournament::clear_teams() {
-  teams_.Clear();
-}
-inline const ::CMsgDOTATournament_Team& CMsgDOTATournament::teams(int index) const {
-  // @@protoc_insertion_point(field_get:CMsgDOTATournament.teams)
-  return teams_.Get(index);
-}
-inline ::CMsgDOTATournament_Team* CMsgDOTATournament::mutable_teams(int index) {
-  // @@protoc_insertion_point(field_mutable:CMsgDOTATournament.teams)
-  return teams_.Mutable(index);
-}
-inline ::CMsgDOTATournament_Team* CMsgDOTATournament::add_teams() {
-  // @@protoc_insertion_point(field_add:CMsgDOTATournament.teams)
-  return teams_.Add();
-}
-inline const ::google::protobuf::RepeatedPtrField< ::CMsgDOTATournament_Team >&
-CMsgDOTATournament::teams() const {
-  // @@protoc_insertion_point(field_list:CMsgDOTATournament.teams)
-  return teams_;
-}
-inline ::google::protobuf::RepeatedPtrField< ::CMsgDOTATournament_Team >*
-CMsgDOTATournament::mutable_teams() {
-  // @@protoc_insertion_point(field_mutable_list:CMsgDOTATournament.teams)
-  return &teams_;
-}
-
-// repeated .CMsgDOTATournament.Game games = 2;
-inline int CMsgDOTATournament::games_size() const {
-  return games_.size();
-}
-inline void CMsgDOTATournament::clear_games() {
-  games_.Clear();
-}
-inline const ::CMsgDOTATournament_Game& CMsgDOTATournament::games(int index) const {
-  // @@protoc_insertion_point(field_get:CMsgDOTATournament.games)
-  return games_.Get(index);
-}
-inline ::CMsgDOTATournament_Game* CMsgDOTATournament::mutable_games(int index) {
-  // @@protoc_insertion_point(field_mutable:CMsgDOTATournament.games)
-  return games_.Mutable(index);
-}
-inline ::CMsgDOTATournament_Game* CMsgDOTATournament::add_games() {
-  // @@protoc_insertion_point(field_add:CMsgDOTATournament.games)
-  return games_.Add();
-}
-inline const ::google::protobuf::RepeatedPtrField< ::CMsgDOTATournament_Game >&
-CMsgDOTATournament::games() const {
-  // @@protoc_insertion_point(field_list:CMsgDOTATournament.games)
-  return games_;
-}
-inline ::google::protobuf::RepeatedPtrField< ::CMsgDOTATournament_Game >*
-CMsgDOTATournament::mutable_games() {
-  // @@protoc_insertion_point(field_mutable_list:CMsgDOTATournament.games)
-  return &games_;
-}
-
-// optional uint64 gid = 3;
-inline bool CMsgDOTATournament::has_gid() const {
-  return (_has_bits_[0] & 0x00000004u) != 0;
-}
-inline void CMsgDOTATournament::set_has_gid() {
-  _has_bits_[0] |= 0x00000004u;
-}
-inline void CMsgDOTATournament::clear_has_gid() {
-  _has_bits_[0] &= ~0x00000004u;
-}
-inline void CMsgDOTATournament::clear_gid() {
-  gid_ = GOOGLE_ULONGLONG(0);
-  clear_has_gid();
-}
-inline ::google::protobuf::uint64 CMsgDOTATournament::gid() const {
-  // @@protoc_insertion_point(field_get:CMsgDOTATournament.gid)
-  return gid_;
-}
-inline void CMsgDOTATournament::set_gid(::google::protobuf::uint64 value) {
-  set_has_gid();
-  gid_ = value;
-  // @@protoc_insertion_point(field_set:CMsgDOTATournament.gid)
-}
-
-// optional uint32 tournament_id = 4;
-inline bool CMsgDOTATournament::has_tournament_id() const {
-  return (_has_bits_[0] & 0x00000008u) != 0;
-}
-inline void CMsgDOTATournament::set_has_tournament_id() {
-  _has_bits_[0] |= 0x00000008u;
-}
-inline void CMsgDOTATournament::clear_has_tournament_id() {
-  _has_bits_[0] &= ~0x00000008u;
-}
-inline void CMsgDOTATournament::clear_tournament_id() {
-  tournament_id_ = 0u;
-  clear_has_tournament_id();
-}
-inline ::google::protobuf::uint32 CMsgDOTATournament::tournament_id() const {
-  // @@protoc_insertion_point(field_get:CMsgDOTATournament.tournament_id)
-  return tournament_id_;
-}
-inline void CMsgDOTATournament::set_tournament_id(::google::protobuf::uint32 value) {
-  set_has_tournament_id();
-  tournament_id_ = value;
-  // @@protoc_insertion_point(field_set:CMsgDOTATournament.tournament_id)
-}
-
-// optional .ETournamentType tournament_type = 5 [default = k_ETournamentType_Unknown];
-inline bool CMsgDOTATournament::has_tournament_type() const {
-  return (_has_bits_[0] & 0x00000010u) != 0;
-}
-inline void CMsgDOTATournament::set_has_tournament_type() {
-  _has_bits_[0] |= 0x00000010u;
-}
-inline void CMsgDOTATournament::clear_has_tournament_type() {
-  _has_bits_[0] &= ~0x00000010u;
-}
-inline void CMsgDOTATournament::clear_tournament_type() {
-  tournament_type_ = 0;
-  clear_has_tournament_type();
-}
-inline ::ETournamentType CMsgDOTATournament::tournament_type() const {
-  // @@protoc_insertion_point(field_get:CMsgDOTATournament.tournament_type)
-  return static_cast< ::ETournamentType >(tournament_type_);
-}
-inline void CMsgDOTATournament::set_tournament_type(::ETournamentType value) {
-  assert(::ETournamentType_IsValid(value));
-  set_has_tournament_type();
-  tournament_type_ = value;
-  // @@protoc_insertion_point(field_set:CMsgDOTATournament.tournament_type)
-}
-
-// optional .ETournamentTemplate tournament_template = 6 [default = k_ETournamentTemplate_None];
-inline bool CMsgDOTATournament::has_tournament_template() const {
-  return (_has_bits_[0] & 0x00000020u) != 0;
-}
-inline void CMsgDOTATournament::set_has_tournament_template() {
-  _has_bits_[0] |= 0x00000020u;
-}
-inline void CMsgDOTATournament::clear_has_tournament_template() {
-  _has_bits_[0] &= ~0x00000020u;
-}
-inline void CMsgDOTATournament::clear_tournament_template() {
-  tournament_template_ = 0;
-  clear_has_tournament_template();
-}
-inline ::ETournamentTemplate CMsgDOTATournament::tournament_template() const {
-  // @@protoc_insertion_point(field_get:CMsgDOTATournament.tournament_template)
-  return static_cast< ::ETournamentTemplate >(tournament_template_);
-}
-inline void CMsgDOTATournament::set_tournament_template(::ETournamentTemplate value) {
-  assert(::ETournamentTemplate_IsValid(value));
-  set_has_tournament_template();
-  tournament_template_ = value;
-  // @@protoc_insertion_point(field_set:CMsgDOTATournament.tournament_template)
-}
-
-// optional uint32 league_id = 7;
-inline bool CMsgDOTATournament::has_league_id() const {
-  return (_has_bits_[0] & 0x00000040u) != 0;
-}
-inline void CMsgDOTATournament::set_has_league_id() {
-  _has_bits_[0] |= 0x00000040u;
-}
-inline void CMsgDOTATournament::clear_has_league_id() {
-  _has_bits_[0] &= ~0x00000040u;
-}
-inline void CMsgDOTATournament::clear_league_id() {
-  league_id_ = 0u;
-  clear_has_league_id();
-}
-inline ::google::protobuf::uint32 CMsgDOTATournament::league_id() const {
-  // @@protoc_insertion_point(field_get:CMsgDOTATournament.league_id)
-  return league_id_;
-}
-inline void CMsgDOTATournament::set_league_id(::google::protobuf::uint32 value) {
-  set_has_league_id();
-  league_id_ = value;
-  // @@protoc_insertion_point(field_set:CMsgDOTATournament.league_id)
-}
-
-// optional uint32 start_time = 8;
-inline bool CMsgDOTATournament::has_start_time() const {
-  return (_has_bits_[0] & 0x00000080u) != 0;
-}
-inline void CMsgDOTATournament::set_has_start_time() {
-  _has_bits_[0] |= 0x00000080u;
-}
-inline void CMsgDOTATournament::clear_has_start_time() {
-  _has_bits_[0] &= ~0x00000080u;
-}
-inline void CMsgDOTATournament::clear_start_time() {
-  start_time_ = 0u;
-  clear_has_start_time();
-}
-inline ::google::protobuf::uint32 CMsgDOTATournament::start_time() const {
-  // @@protoc_insertion_point(field_get:CMsgDOTATournament.start_time)
-  return start_time_;
-}
-inline void CMsgDOTATournament::set_start_time(::google::protobuf::uint32 value) {
-  set_has_start_time();
-  start_time_ = value;
-  // @@protoc_insertion_point(field_set:CMsgDOTATournament.start_time)
-}
-
-// optional .ETournamentState state = 9 [default = k_ETournamentState_Unknown];
-inline bool CMsgDOTATournament::has_state() const {
-  return (_has_bits_[0] & 0x00000100u) != 0;
-}
-inline void CMsgDOTATournament::set_has_state() {
-  _has_bits_[0] |= 0x00000100u;
-}
-inline void CMsgDOTATournament::clear_has_state() {
-  _has_bits_[0] &= ~0x00000100u;
-}
-inline void CMsgDOTATournament::clear_state() {
-  state_ = 0;
-  clear_has_state();
-}
-inline ::ETournamentState CMsgDOTATournament::state() const {
-  // @@protoc_insertion_point(field_get:CMsgDOTATournament.state)
-  return static_cast< ::ETournamentState >(state_);
-}
-inline void CMsgDOTATournament::set_state(::ETournamentState value) {
-  assert(::ETournamentState_IsValid(value));
-  set_has_state();
-  state_ = value;
-  // @@protoc_insertion_point(field_set:CMsgDOTATournament.state)
-}
-
-// repeated .CMsgDOTATournament.Node nodes = 10;
-inline int CMsgDOTATournament::nodes_size() const {
-  return nodes_.size();
-}
-inline void CMsgDOTATournament::clear_nodes() {
-  nodes_.Clear();
-}
-inline const ::CMsgDOTATournament_Node& CMsgDOTATournament::nodes(int index) const {
-  // @@protoc_insertion_point(field_get:CMsgDOTATournament.nodes)
-  return nodes_.Get(index);
-}
-inline ::CMsgDOTATournament_Node* CMsgDOTATournament::mutable_nodes(int index) {
-  // @@protoc_insertion_point(field_mutable:CMsgDOTATournament.nodes)
-  return nodes_.Mutable(index);
-}
-inline ::CMsgDOTATournament_Node* CMsgDOTATournament::add_nodes() {
-  // @@protoc_insertion_point(field_add:CMsgDOTATournament.nodes)
-  return nodes_.Add();
-}
-inline const ::google::protobuf::RepeatedPtrField< ::CMsgDOTATournament_Node >&
-CMsgDOTATournament::nodes() const {
-  // @@protoc_insertion_point(field_list:CMsgDOTATournament.nodes)
-  return nodes_;
-}
-inline ::google::protobuf::RepeatedPtrField< ::CMsgDOTATournament_Node >*
-CMsgDOTATournament::mutable_nodes() {
-  // @@protoc_insertion_point(field_mutable_list:CMsgDOTATournament.nodes)
-  return &nodes_;
-}
-
-// -------------------------------------------------------------------
-
-// CMsgDOTATournamentRequest
-
-// optional uint32 tournament_id = 1;
-inline bool CMsgDOTATournamentRequest::has_tournament_id() const {
-  return (_has_bits_[0] & 0x00000001u) != 0;
-}
-inline void CMsgDOTATournamentRequest::set_has_tournament_id() {
-  _has_bits_[0] |= 0x00000001u;
-}
-inline void CMsgDOTATournamentRequest::clear_has_tournament_id() {
-  _has_bits_[0] &= ~0x00000001u;
-}
-inline void CMsgDOTATournamentRequest::clear_tournament_id() {
-  tournament_id_ = 0u;
-  clear_has_tournament_id();
-}
-inline ::google::protobuf::uint32 CMsgDOTATournamentRequest::tournament_id() const {
-  // @@protoc_insertion_point(field_get:CMsgDOTATournamentRequest.tournament_id)
-  return tournament_id_;
-}
-inline void CMsgDOTATournamentRequest::set_tournament_id(::google::protobuf::uint32 value) {
-  set_has_tournament_id();
-  tournament_id_ = value;
-  // @@protoc_insertion_point(field_set:CMsgDOTATournamentRequest.tournament_id)
-}
-
-// optional uint64 client_tournament_gid = 2;
-inline bool CMsgDOTATournamentRequest::has_client_tournament_gid() const {
-  return (_has_bits_[0] & 0x00000002u) != 0;
-}
-inline void CMsgDOTATournamentRequest::set_has_client_tournament_gid() {
-  _has_bits_[0] |= 0x00000002u;
-}
-inline void CMsgDOTATournamentRequest::clear_has_client_tournament_gid() {
-  _has_bits_[0] &= ~0x00000002u;
-}
-inline void CMsgDOTATournamentRequest::clear_client_tournament_gid() {
-  client_tournament_gid_ = GOOGLE_ULONGLONG(0);
-  clear_has_client_tournament_gid();
-}
-inline ::google::protobuf::uint64 CMsgDOTATournamentRequest::client_tournament_gid() const {
-  // @@protoc_insertion_point(field_get:CMsgDOTATournamentRequest.client_tournament_gid)
-  return client_tournament_gid_;
-}
-inline void CMsgDOTATournamentRequest::set_client_tournament_gid(::google::protobuf::uint64 value) {
-  set_has_client_tournament_gid();
-  client_tournament_gid_ = value;
-  // @@protoc_insertion_point(field_set:CMsgDOTATournamentRequest.client_tournament_gid)
-}
-
-// -------------------------------------------------------------------
-
-// CMsgDOTATournamentResponse
-
-// optional uint32 result = 1 [default = 2];
-inline bool CMsgDOTATournamentResponse::has_result() const {
-  return (_has_bits_[0] & 0x00000001u) != 0;
-}
-inline void CMsgDOTATournamentResponse::set_has_result() {
-  _has_bits_[0] |= 0x00000001u;
-}
-inline void CMsgDOTATournamentResponse::clear_has_result() {
-  _has_bits_[0] &= ~0x00000001u;
-}
-inline void CMsgDOTATournamentResponse::clear_result() {
-  result_ = 2u;
-  clear_has_result();
-}
-inline ::google::protobuf::uint32 CMsgDOTATournamentResponse::result() const {
-  // @@protoc_insertion_point(field_get:CMsgDOTATournamentResponse.result)
-  return result_;
-}
-inline void CMsgDOTATournamentResponse::set_result(::google::protobuf::uint32 value) {
-  set_has_result();
-  result_ = value;
-  // @@protoc_insertion_point(field_set:CMsgDOTATournamentResponse.result)
-}
-
-// optional .CMsgDOTATournament tournament = 2;
-inline bool CMsgDOTATournamentResponse::has_tournament() const {
-  return (_has_bits_[0] & 0x00000002u) != 0;
-}
-inline void CMsgDOTATournamentResponse::set_has_tournament() {
-  _has_bits_[0] |= 0x00000002u;
-}
-inline void CMsgDOTATournamentResponse::clear_has_tournament() {
-  _has_bits_[0] &= ~0x00000002u;
-}
-inline void CMsgDOTATournamentResponse::clear_tournament() {
-  if (tournament_ != NULL) tournament_->::CMsgDOTATournament::Clear();
-  clear_has_tournament();
-}
-inline const ::CMsgDOTATournament& CMsgDOTATournamentResponse::tournament() const {
-  // @@protoc_insertion_point(field_get:CMsgDOTATournamentResponse.tournament)
-  return tournament_ != NULL ? *tournament_ : *default_instance_->tournament_;
-}
-inline ::CMsgDOTATournament* CMsgDOTATournamentResponse::mutable_tournament() {
-  set_has_tournament();
-  if (tournament_ == NULL) tournament_ = new ::CMsgDOTATournament;
-  // @@protoc_insertion_point(field_mutable:CMsgDOTATournamentResponse.tournament)
-  return tournament_;
-}
-inline ::CMsgDOTATournament* CMsgDOTATournamentResponse::release_tournament() {
-  clear_has_tournament();
-  ::CMsgDOTATournament* temp = tournament_;
-  tournament_ = NULL;
-  return temp;
-}
-inline void CMsgDOTATournamentResponse::set_allocated_tournament(::CMsgDOTATournament* tournament) {
-  delete tournament_;
-  tournament_ = tournament;
-  if (tournament) {
-    set_has_tournament();
-  } else {
-    clear_has_tournament();
-  }
-  // @@protoc_insertion_point(field_set_allocated:CMsgDOTATournamentResponse.tournament)
-}
-
-// -------------------------------------------------------------------
-
-// CMsgDOTAClearTournamentGame
-
-// optional uint32 tournament_id = 1;
-inline bool CMsgDOTAClearTournamentGame::has_tournament_id() const {
-  return (_has_bits_[0] & 0x00000001u) != 0;
-}
-inline void CMsgDOTAClearTournamentGame::set_has_tournament_id() {
-  _has_bits_[0] |= 0x00000001u;
-}
-inline void CMsgDOTAClearTournamentGame::clear_has_tournament_id() {
-  _has_bits_[0] &= ~0x00000001u;
-}
-inline void CMsgDOTAClearTournamentGame::clear_tournament_id() {
-  tournament_id_ = 0u;
-  clear_has_tournament_id();
-}
-inline ::google::protobuf::uint32 CMsgDOTAClearTournamentGame::tournament_id() const {
-  // @@protoc_insertion_point(field_get:CMsgDOTAClearTournamentGame.tournament_id)
-  return tournament_id_;
-}
-inline void CMsgDOTAClearTournamentGame::set_tournament_id(::google::protobuf::uint32 value) {
-  set_has_tournament_id();
-  tournament_id_ = value;
-  // @@protoc_insertion_point(field_set:CMsgDOTAClearTournamentGame.tournament_id)
-}
-
-// optional uint32 game_id = 2;
-inline bool CMsgDOTAClearTournamentGame::has_game_id() const {
-  return (_has_bits_[0] & 0x00000002u) != 0;
-}
-inline void CMsgDOTAClearTournamentGame::set_has_game_id() {
-  _has_bits_[0] |= 0x00000002u;
-}
-inline void CMsgDOTAClearTournamentGame::clear_has_game_id() {
-  _has_bits_[0] &= ~0x00000002u;
-}
-inline void CMsgDOTAClearTournamentGame::clear_game_id() {
-  game_id_ = 0u;
-  clear_has_game_id();
-}
-inline ::google::protobuf::uint32 CMsgDOTAClearTournamentGame::game_id() const {
-  // @@protoc_insertion_point(field_get:CMsgDOTAClearTournamentGame.game_id)
-  return game_id_;
-}
-inline void CMsgDOTAClearTournamentGame::set_game_id(::google::protobuf::uint32 value) {
-  set_has_game_id();
-  game_id_ = value;
-  // @@protoc_insertion_point(field_set:CMsgDOTAClearTournamentGame.game_id)
 }
 
 // -------------------------------------------------------------------
@@ -22058,452 +19919,314 @@ CMsgDOTAPassportVote::mutable_player_card_challenges() {
 
 // -------------------------------------------------------------------
 
-// CMsgPassportDataRequest
+// CMsgClientToGCGetPlayerCardRosterRequest
 
-// optional uint32 account_id = 1;
-inline bool CMsgPassportDataRequest::has_account_id() const {
+// optional uint32 league_id = 1;
+inline bool CMsgClientToGCGetPlayerCardRosterRequest::has_league_id() const {
   return (_has_bits_[0] & 0x00000001u) != 0;
 }
-inline void CMsgPassportDataRequest::set_has_account_id() {
+inline void CMsgClientToGCGetPlayerCardRosterRequest::set_has_league_id() {
   _has_bits_[0] |= 0x00000001u;
 }
-inline void CMsgPassportDataRequest::clear_has_account_id() {
+inline void CMsgClientToGCGetPlayerCardRosterRequest::clear_has_league_id() {
   _has_bits_[0] &= ~0x00000001u;
 }
-inline void CMsgPassportDataRequest::clear_account_id() {
-  account_id_ = 0u;
-  clear_has_account_id();
+inline void CMsgClientToGCGetPlayerCardRosterRequest::clear_league_id() {
+  league_id_ = 0u;
+  clear_has_league_id();
 }
-inline ::google::protobuf::uint32 CMsgPassportDataRequest::account_id() const {
-  // @@protoc_insertion_point(field_get:CMsgPassportDataRequest.account_id)
-  return account_id_;
+inline ::google::protobuf::uint32 CMsgClientToGCGetPlayerCardRosterRequest::league_id() const {
+  // @@protoc_insertion_point(field_get:CMsgClientToGCGetPlayerCardRosterRequest.league_id)
+  return league_id_;
 }
-inline void CMsgPassportDataRequest::set_account_id(::google::protobuf::uint32 value) {
-  set_has_account_id();
-  account_id_ = value;
-  // @@protoc_insertion_point(field_set:CMsgPassportDataRequest.account_id)
+inline void CMsgClientToGCGetPlayerCardRosterRequest::set_league_id(::google::protobuf::uint32 value) {
+  set_has_league_id();
+  league_id_ = value;
+  // @@protoc_insertion_point(field_set:CMsgClientToGCGetPlayerCardRosterRequest.league_id)
+}
+
+// optional uint32 timestamp = 2;
+inline bool CMsgClientToGCGetPlayerCardRosterRequest::has_timestamp() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+inline void CMsgClientToGCGetPlayerCardRosterRequest::set_has_timestamp() {
+  _has_bits_[0] |= 0x00000002u;
+}
+inline void CMsgClientToGCGetPlayerCardRosterRequest::clear_has_timestamp() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+inline void CMsgClientToGCGetPlayerCardRosterRequest::clear_timestamp() {
+  timestamp_ = 0u;
+  clear_has_timestamp();
+}
+inline ::google::protobuf::uint32 CMsgClientToGCGetPlayerCardRosterRequest::timestamp() const {
+  // @@protoc_insertion_point(field_get:CMsgClientToGCGetPlayerCardRosterRequest.timestamp)
+  return timestamp_;
+}
+inline void CMsgClientToGCGetPlayerCardRosterRequest::set_timestamp(::google::protobuf::uint32 value) {
+  set_has_timestamp();
+  timestamp_ = value;
+  // @@protoc_insertion_point(field_set:CMsgClientToGCGetPlayerCardRosterRequest.timestamp)
 }
 
 // -------------------------------------------------------------------
 
-// CMsgPassportDataResponse
+// CMsgClientToGCGetPlayerCardRosterResponse
 
-// optional uint32 account_id = 1;
-inline bool CMsgPassportDataResponse::has_account_id() const {
+// optional .CMsgClientToGCGetPlayerCardRosterResponse.Result result = 1 [default = SUCCESS];
+inline bool CMsgClientToGCGetPlayerCardRosterResponse::has_result() const {
   return (_has_bits_[0] & 0x00000001u) != 0;
 }
-inline void CMsgPassportDataResponse::set_has_account_id() {
+inline void CMsgClientToGCGetPlayerCardRosterResponse::set_has_result() {
   _has_bits_[0] |= 0x00000001u;
 }
-inline void CMsgPassportDataResponse::clear_has_account_id() {
+inline void CMsgClientToGCGetPlayerCardRosterResponse::clear_has_result() {
   _has_bits_[0] &= ~0x00000001u;
 }
-inline void CMsgPassportDataResponse::clear_account_id() {
-  account_id_ = 0u;
-  clear_has_account_id();
-}
-inline ::google::protobuf::uint32 CMsgPassportDataResponse::account_id() const {
-  // @@protoc_insertion_point(field_get:CMsgPassportDataResponse.account_id)
-  return account_id_;
-}
-inline void CMsgPassportDataResponse::set_account_id(::google::protobuf::uint32 value) {
-  set_has_account_id();
-  account_id_ = value;
-  // @@protoc_insertion_point(field_set:CMsgPassportDataResponse.account_id)
-}
-
-// optional uint32 result = 2 [default = 2];
-inline bool CMsgPassportDataResponse::has_result() const {
-  return (_has_bits_[0] & 0x00000002u) != 0;
-}
-inline void CMsgPassportDataResponse::set_has_result() {
-  _has_bits_[0] |= 0x00000002u;
-}
-inline void CMsgPassportDataResponse::clear_has_result() {
-  _has_bits_[0] &= ~0x00000002u;
-}
-inline void CMsgPassportDataResponse::clear_result() {
-  result_ = 2u;
+inline void CMsgClientToGCGetPlayerCardRosterResponse::clear_result() {
+  result_ = 0;
   clear_has_result();
 }
-inline ::google::protobuf::uint32 CMsgPassportDataResponse::result() const {
-  // @@protoc_insertion_point(field_get:CMsgPassportDataResponse.result)
-  return result_;
+inline ::CMsgClientToGCGetPlayerCardRosterResponse_Result CMsgClientToGCGetPlayerCardRosterResponse::result() const {
+  // @@protoc_insertion_point(field_get:CMsgClientToGCGetPlayerCardRosterResponse.result)
+  return static_cast< ::CMsgClientToGCGetPlayerCardRosterResponse_Result >(result_);
 }
-inline void CMsgPassportDataResponse::set_result(::google::protobuf::uint32 value) {
+inline void CMsgClientToGCGetPlayerCardRosterResponse::set_result(::CMsgClientToGCGetPlayerCardRosterResponse_Result value) {
+  assert(::CMsgClientToGCGetPlayerCardRosterResponse_Result_IsValid(value));
   set_has_result();
   result_ = value;
-  // @@protoc_insertion_point(field_set:CMsgPassportDataResponse.result)
+  // @@protoc_insertion_point(field_set:CMsgClientToGCGetPlayerCardRosterResponse.result)
 }
 
-// optional .CMsgDOTATournament international = 5;
-inline bool CMsgPassportDataResponse::has_international() const {
+// repeated uint64 player_card_item_id = 2;
+inline int CMsgClientToGCGetPlayerCardRosterResponse::player_card_item_id_size() const {
+  return player_card_item_id_.size();
+}
+inline void CMsgClientToGCGetPlayerCardRosterResponse::clear_player_card_item_id() {
+  player_card_item_id_.Clear();
+}
+inline ::google::protobuf::uint64 CMsgClientToGCGetPlayerCardRosterResponse::player_card_item_id(int index) const {
+  // @@protoc_insertion_point(field_get:CMsgClientToGCGetPlayerCardRosterResponse.player_card_item_id)
+  return player_card_item_id_.Get(index);
+}
+inline void CMsgClientToGCGetPlayerCardRosterResponse::set_player_card_item_id(int index, ::google::protobuf::uint64 value) {
+  player_card_item_id_.Set(index, value);
+  // @@protoc_insertion_point(field_set:CMsgClientToGCGetPlayerCardRosterResponse.player_card_item_id)
+}
+inline void CMsgClientToGCGetPlayerCardRosterResponse::add_player_card_item_id(::google::protobuf::uint64 value) {
+  player_card_item_id_.Add(value);
+  // @@protoc_insertion_point(field_add:CMsgClientToGCGetPlayerCardRosterResponse.player_card_item_id)
+}
+inline const ::google::protobuf::RepeatedField< ::google::protobuf::uint64 >&
+CMsgClientToGCGetPlayerCardRosterResponse::player_card_item_id() const {
+  // @@protoc_insertion_point(field_list:CMsgClientToGCGetPlayerCardRosterResponse.player_card_item_id)
+  return player_card_item_id_;
+}
+inline ::google::protobuf::RepeatedField< ::google::protobuf::uint64 >*
+CMsgClientToGCGetPlayerCardRosterResponse::mutable_player_card_item_id() {
+  // @@protoc_insertion_point(field_mutable_list:CMsgClientToGCGetPlayerCardRosterResponse.player_card_item_id)
+  return &player_card_item_id_;
+}
+
+// optional float score = 3;
+inline bool CMsgClientToGCGetPlayerCardRosterResponse::has_score() const {
   return (_has_bits_[0] & 0x00000004u) != 0;
 }
-inline void CMsgPassportDataResponse::set_has_international() {
+inline void CMsgClientToGCGetPlayerCardRosterResponse::set_has_score() {
   _has_bits_[0] |= 0x00000004u;
 }
-inline void CMsgPassportDataResponse::clear_has_international() {
+inline void CMsgClientToGCGetPlayerCardRosterResponse::clear_has_score() {
   _has_bits_[0] &= ~0x00000004u;
 }
-inline void CMsgPassportDataResponse::clear_international() {
-  if (international_ != NULL) international_->::CMsgDOTATournament::Clear();
-  clear_has_international();
+inline void CMsgClientToGCGetPlayerCardRosterResponse::clear_score() {
+  score_ = 0;
+  clear_has_score();
 }
-inline const ::CMsgDOTATournament& CMsgPassportDataResponse::international() const {
-  // @@protoc_insertion_point(field_get:CMsgPassportDataResponse.international)
-  return international_ != NULL ? *international_ : *default_instance_->international_;
+inline float CMsgClientToGCGetPlayerCardRosterResponse::score() const {
+  // @@protoc_insertion_point(field_get:CMsgClientToGCGetPlayerCardRosterResponse.score)
+  return score_;
 }
-inline ::CMsgDOTATournament* CMsgPassportDataResponse::mutable_international() {
-  set_has_international();
-  if (international_ == NULL) international_ = new ::CMsgDOTATournament;
-  // @@protoc_insertion_point(field_mutable:CMsgPassportDataResponse.international)
-  return international_;
-}
-inline ::CMsgDOTATournament* CMsgPassportDataResponse::release_international() {
-  clear_has_international();
-  ::CMsgDOTATournament* temp = international_;
-  international_ = NULL;
-  return temp;
-}
-inline void CMsgPassportDataResponse::set_allocated_international(::CMsgDOTATournament* international) {
-  delete international_;
-  international_ = international;
-  if (international) {
-    set_has_international();
-  } else {
-    clear_has_international();
-  }
-  // @@protoc_insertion_point(field_set_allocated:CMsgPassportDataResponse.international)
+inline void CMsgClientToGCGetPlayerCardRosterResponse::set_score(float value) {
+  set_has_score();
+  score_ = value;
+  // @@protoc_insertion_point(field_set:CMsgClientToGCGetPlayerCardRosterResponse.score)
 }
 
-// optional uint32 east_qualifiers_predict_end_time = 7;
-inline bool CMsgPassportDataResponse::has_east_qualifiers_predict_end_time() const {
+// optional bool finalized = 4;
+inline bool CMsgClientToGCGetPlayerCardRosterResponse::has_finalized() const {
   return (_has_bits_[0] & 0x00000008u) != 0;
 }
-inline void CMsgPassportDataResponse::set_has_east_qualifiers_predict_end_time() {
+inline void CMsgClientToGCGetPlayerCardRosterResponse::set_has_finalized() {
   _has_bits_[0] |= 0x00000008u;
 }
-inline void CMsgPassportDataResponse::clear_has_east_qualifiers_predict_end_time() {
+inline void CMsgClientToGCGetPlayerCardRosterResponse::clear_has_finalized() {
   _has_bits_[0] &= ~0x00000008u;
 }
-inline void CMsgPassportDataResponse::clear_east_qualifiers_predict_end_time() {
-  east_qualifiers_predict_end_time_ = 0u;
-  clear_has_east_qualifiers_predict_end_time();
+inline void CMsgClientToGCGetPlayerCardRosterResponse::clear_finalized() {
+  finalized_ = false;
+  clear_has_finalized();
 }
-inline ::google::protobuf::uint32 CMsgPassportDataResponse::east_qualifiers_predict_end_time() const {
-  // @@protoc_insertion_point(field_get:CMsgPassportDataResponse.east_qualifiers_predict_end_time)
-  return east_qualifiers_predict_end_time_;
+inline bool CMsgClientToGCGetPlayerCardRosterResponse::finalized() const {
+  // @@protoc_insertion_point(field_get:CMsgClientToGCGetPlayerCardRosterResponse.finalized)
+  return finalized_;
 }
-inline void CMsgPassportDataResponse::set_east_qualifiers_predict_end_time(::google::protobuf::uint32 value) {
-  set_has_east_qualifiers_predict_end_time();
-  east_qualifiers_predict_end_time_ = value;
-  // @@protoc_insertion_point(field_set:CMsgPassportDataResponse.east_qualifiers_predict_end_time)
+inline void CMsgClientToGCGetPlayerCardRosterResponse::set_finalized(bool value) {
+  set_has_finalized();
+  finalized_ = value;
+  // @@protoc_insertion_point(field_set:CMsgClientToGCGetPlayerCardRosterResponse.finalized)
 }
 
-// optional uint32 west_qualifiers_predict_end_time = 8;
-inline bool CMsgPassportDataResponse::has_west_qualifiers_predict_end_time() const {
+// optional float percentile = 5;
+inline bool CMsgClientToGCGetPlayerCardRosterResponse::has_percentile() const {
   return (_has_bits_[0] & 0x00000010u) != 0;
 }
-inline void CMsgPassportDataResponse::set_has_west_qualifiers_predict_end_time() {
+inline void CMsgClientToGCGetPlayerCardRosterResponse::set_has_percentile() {
   _has_bits_[0] |= 0x00000010u;
 }
-inline void CMsgPassportDataResponse::clear_has_west_qualifiers_predict_end_time() {
+inline void CMsgClientToGCGetPlayerCardRosterResponse::clear_has_percentile() {
   _has_bits_[0] &= ~0x00000010u;
 }
-inline void CMsgPassportDataResponse::clear_west_qualifiers_predict_end_time() {
-  west_qualifiers_predict_end_time_ = 0u;
-  clear_has_west_qualifiers_predict_end_time();
+inline void CMsgClientToGCGetPlayerCardRosterResponse::clear_percentile() {
+  percentile_ = 0;
+  clear_has_percentile();
 }
-inline ::google::protobuf::uint32 CMsgPassportDataResponse::west_qualifiers_predict_end_time() const {
-  // @@protoc_insertion_point(field_get:CMsgPassportDataResponse.west_qualifiers_predict_end_time)
-  return west_qualifiers_predict_end_time_;
+inline float CMsgClientToGCGetPlayerCardRosterResponse::percentile() const {
+  // @@protoc_insertion_point(field_get:CMsgClientToGCGetPlayerCardRosterResponse.percentile)
+  return percentile_;
 }
-inline void CMsgPassportDataResponse::set_west_qualifiers_predict_end_time(::google::protobuf::uint32 value) {
-  set_has_west_qualifiers_predict_end_time();
-  west_qualifiers_predict_end_time_ = value;
-  // @@protoc_insertion_point(field_set:CMsgPassportDataResponse.west_qualifiers_predict_end_time)
-}
-
-// optional uint32 allstar_match_end_time = 9;
-inline bool CMsgPassportDataResponse::has_allstar_match_end_time() const {
-  return (_has_bits_[0] & 0x00000020u) != 0;
-}
-inline void CMsgPassportDataResponse::set_has_allstar_match_end_time() {
-  _has_bits_[0] |= 0x00000020u;
-}
-inline void CMsgPassportDataResponse::clear_has_allstar_match_end_time() {
-  _has_bits_[0] &= ~0x00000020u;
-}
-inline void CMsgPassportDataResponse::clear_allstar_match_end_time() {
-  allstar_match_end_time_ = 0u;
-  clear_has_allstar_match_end_time();
-}
-inline ::google::protobuf::uint32 CMsgPassportDataResponse::allstar_match_end_time() const {
-  // @@protoc_insertion_point(field_get:CMsgPassportDataResponse.allstar_match_end_time)
-  return allstar_match_end_time_;
-}
-inline void CMsgPassportDataResponse::set_allstar_match_end_time(::google::protobuf::uint32 value) {
-  set_has_allstar_match_end_time();
-  allstar_match_end_time_ = value;
-  // @@protoc_insertion_point(field_set:CMsgPassportDataResponse.allstar_match_end_time)
+inline void CMsgClientToGCGetPlayerCardRosterResponse::set_percentile(float value) {
+  set_has_percentile();
+  percentile_ = value;
+  // @@protoc_insertion_point(field_set:CMsgClientToGCGetPlayerCardRosterResponse.percentile)
 }
 
-// optional .CMsgDOTAPassportVote league_guesses = 6;
-inline bool CMsgPassportDataResponse::has_league_guesses() const {
-  return (_has_bits_[0] & 0x00000040u) != 0;
+// -------------------------------------------------------------------
+
+// CMsgClientToGCSetPlayerCardRosterRequest
+
+// optional uint32 league_id = 1;
+inline bool CMsgClientToGCSetPlayerCardRosterRequest::has_league_id() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
 }
-inline void CMsgPassportDataResponse::set_has_league_guesses() {
-  _has_bits_[0] |= 0x00000040u;
+inline void CMsgClientToGCSetPlayerCardRosterRequest::set_has_league_id() {
+  _has_bits_[0] |= 0x00000001u;
 }
-inline void CMsgPassportDataResponse::clear_has_league_guesses() {
-  _has_bits_[0] &= ~0x00000040u;
+inline void CMsgClientToGCSetPlayerCardRosterRequest::clear_has_league_id() {
+  _has_bits_[0] &= ~0x00000001u;
 }
-inline void CMsgPassportDataResponse::clear_league_guesses() {
-  if (league_guesses_ != NULL) league_guesses_->::CMsgDOTAPassportVote::Clear();
-  clear_has_league_guesses();
+inline void CMsgClientToGCSetPlayerCardRosterRequest::clear_league_id() {
+  league_id_ = 0u;
+  clear_has_league_id();
 }
-inline const ::CMsgDOTAPassportVote& CMsgPassportDataResponse::league_guesses() const {
-  // @@protoc_insertion_point(field_get:CMsgPassportDataResponse.league_guesses)
-  return league_guesses_ != NULL ? *league_guesses_ : *default_instance_->league_guesses_;
+inline ::google::protobuf::uint32 CMsgClientToGCSetPlayerCardRosterRequest::league_id() const {
+  // @@protoc_insertion_point(field_get:CMsgClientToGCSetPlayerCardRosterRequest.league_id)
+  return league_id_;
 }
-inline ::CMsgDOTAPassportVote* CMsgPassportDataResponse::mutable_league_guesses() {
-  set_has_league_guesses();
-  if (league_guesses_ == NULL) league_guesses_ = new ::CMsgDOTAPassportVote;
-  // @@protoc_insertion_point(field_mutable:CMsgPassportDataResponse.league_guesses)
-  return league_guesses_;
-}
-inline ::CMsgDOTAPassportVote* CMsgPassportDataResponse::release_league_guesses() {
-  clear_has_league_guesses();
-  ::CMsgDOTAPassportVote* temp = league_guesses_;
-  league_guesses_ = NULL;
-  return temp;
-}
-inline void CMsgPassportDataResponse::set_allocated_league_guesses(::CMsgDOTAPassportVote* league_guesses) {
-  delete league_guesses_;
-  league_guesses_ = league_guesses;
-  if (league_guesses) {
-    set_has_league_guesses();
-  } else {
-    clear_has_league_guesses();
-  }
-  // @@protoc_insertion_point(field_set_allocated:CMsgPassportDataResponse.league_guesses)
+inline void CMsgClientToGCSetPlayerCardRosterRequest::set_league_id(::google::protobuf::uint32 value) {
+  set_has_league_id();
+  league_id_ = value;
+  // @@protoc_insertion_point(field_set:CMsgClientToGCSetPlayerCardRosterRequest.league_id)
 }
 
-// optional uint32 east_qualifiers_winner_team_id = 10;
-inline bool CMsgPassportDataResponse::has_east_qualifiers_winner_team_id() const {
-  return (_has_bits_[0] & 0x00000080u) != 0;
+// optional uint32 timestamp = 2;
+inline bool CMsgClientToGCSetPlayerCardRosterRequest::has_timestamp() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
 }
-inline void CMsgPassportDataResponse::set_has_east_qualifiers_winner_team_id() {
-  _has_bits_[0] |= 0x00000080u;
+inline void CMsgClientToGCSetPlayerCardRosterRequest::set_has_timestamp() {
+  _has_bits_[0] |= 0x00000002u;
 }
-inline void CMsgPassportDataResponse::clear_has_east_qualifiers_winner_team_id() {
-  _has_bits_[0] &= ~0x00000080u;
+inline void CMsgClientToGCSetPlayerCardRosterRequest::clear_has_timestamp() {
+  _has_bits_[0] &= ~0x00000002u;
 }
-inline void CMsgPassportDataResponse::clear_east_qualifiers_winner_team_id() {
-  east_qualifiers_winner_team_id_ = 0u;
-  clear_has_east_qualifiers_winner_team_id();
+inline void CMsgClientToGCSetPlayerCardRosterRequest::clear_timestamp() {
+  timestamp_ = 0u;
+  clear_has_timestamp();
 }
-inline ::google::protobuf::uint32 CMsgPassportDataResponse::east_qualifiers_winner_team_id() const {
-  // @@protoc_insertion_point(field_get:CMsgPassportDataResponse.east_qualifiers_winner_team_id)
-  return east_qualifiers_winner_team_id_;
+inline ::google::protobuf::uint32 CMsgClientToGCSetPlayerCardRosterRequest::timestamp() const {
+  // @@protoc_insertion_point(field_get:CMsgClientToGCSetPlayerCardRosterRequest.timestamp)
+  return timestamp_;
 }
-inline void CMsgPassportDataResponse::set_east_qualifiers_winner_team_id(::google::protobuf::uint32 value) {
-  set_has_east_qualifiers_winner_team_id();
-  east_qualifiers_winner_team_id_ = value;
-  // @@protoc_insertion_point(field_set:CMsgPassportDataResponse.east_qualifiers_winner_team_id)
-}
-
-// optional uint32 east_qualifiers_runner_up_team_id = 11;
-inline bool CMsgPassportDataResponse::has_east_qualifiers_runner_up_team_id() const {
-  return (_has_bits_[0] & 0x00000100u) != 0;
-}
-inline void CMsgPassportDataResponse::set_has_east_qualifiers_runner_up_team_id() {
-  _has_bits_[0] |= 0x00000100u;
-}
-inline void CMsgPassportDataResponse::clear_has_east_qualifiers_runner_up_team_id() {
-  _has_bits_[0] &= ~0x00000100u;
-}
-inline void CMsgPassportDataResponse::clear_east_qualifiers_runner_up_team_id() {
-  east_qualifiers_runner_up_team_id_ = 0u;
-  clear_has_east_qualifiers_runner_up_team_id();
-}
-inline ::google::protobuf::uint32 CMsgPassportDataResponse::east_qualifiers_runner_up_team_id() const {
-  // @@protoc_insertion_point(field_get:CMsgPassportDataResponse.east_qualifiers_runner_up_team_id)
-  return east_qualifiers_runner_up_team_id_;
-}
-inline void CMsgPassportDataResponse::set_east_qualifiers_runner_up_team_id(::google::protobuf::uint32 value) {
-  set_has_east_qualifiers_runner_up_team_id();
-  east_qualifiers_runner_up_team_id_ = value;
-  // @@protoc_insertion_point(field_set:CMsgPassportDataResponse.east_qualifiers_runner_up_team_id)
+inline void CMsgClientToGCSetPlayerCardRosterRequest::set_timestamp(::google::protobuf::uint32 value) {
+  set_has_timestamp();
+  timestamp_ = value;
+  // @@protoc_insertion_point(field_set:CMsgClientToGCSetPlayerCardRosterRequest.timestamp)
 }
 
-// optional uint32 west_qualifiers_winner_team_id = 12;
-inline bool CMsgPassportDataResponse::has_west_qualifiers_winner_team_id() const {
-  return (_has_bits_[0] & 0x00000200u) != 0;
+// optional uint32 slot = 3;
+inline bool CMsgClientToGCSetPlayerCardRosterRequest::has_slot() const {
+  return (_has_bits_[0] & 0x00000004u) != 0;
 }
-inline void CMsgPassportDataResponse::set_has_west_qualifiers_winner_team_id() {
-  _has_bits_[0] |= 0x00000200u;
+inline void CMsgClientToGCSetPlayerCardRosterRequest::set_has_slot() {
+  _has_bits_[0] |= 0x00000004u;
 }
-inline void CMsgPassportDataResponse::clear_has_west_qualifiers_winner_team_id() {
-  _has_bits_[0] &= ~0x00000200u;
+inline void CMsgClientToGCSetPlayerCardRosterRequest::clear_has_slot() {
+  _has_bits_[0] &= ~0x00000004u;
 }
-inline void CMsgPassportDataResponse::clear_west_qualifiers_winner_team_id() {
-  west_qualifiers_winner_team_id_ = 0u;
-  clear_has_west_qualifiers_winner_team_id();
+inline void CMsgClientToGCSetPlayerCardRosterRequest::clear_slot() {
+  slot_ = 0u;
+  clear_has_slot();
 }
-inline ::google::protobuf::uint32 CMsgPassportDataResponse::west_qualifiers_winner_team_id() const {
-  // @@protoc_insertion_point(field_get:CMsgPassportDataResponse.west_qualifiers_winner_team_id)
-  return west_qualifiers_winner_team_id_;
+inline ::google::protobuf::uint32 CMsgClientToGCSetPlayerCardRosterRequest::slot() const {
+  // @@protoc_insertion_point(field_get:CMsgClientToGCSetPlayerCardRosterRequest.slot)
+  return slot_;
 }
-inline void CMsgPassportDataResponse::set_west_qualifiers_winner_team_id(::google::protobuf::uint32 value) {
-  set_has_west_qualifiers_winner_team_id();
-  west_qualifiers_winner_team_id_ = value;
-  // @@protoc_insertion_point(field_set:CMsgPassportDataResponse.west_qualifiers_winner_team_id)
-}
-
-// optional uint32 west_qualifiers_runner_up_team_id = 13;
-inline bool CMsgPassportDataResponse::has_west_qualifiers_runner_up_team_id() const {
-  return (_has_bits_[0] & 0x00000400u) != 0;
-}
-inline void CMsgPassportDataResponse::set_has_west_qualifiers_runner_up_team_id() {
-  _has_bits_[0] |= 0x00000400u;
-}
-inline void CMsgPassportDataResponse::clear_has_west_qualifiers_runner_up_team_id() {
-  _has_bits_[0] &= ~0x00000400u;
-}
-inline void CMsgPassportDataResponse::clear_west_qualifiers_runner_up_team_id() {
-  west_qualifiers_runner_up_team_id_ = 0u;
-  clear_has_west_qualifiers_runner_up_team_id();
-}
-inline ::google::protobuf::uint32 CMsgPassportDataResponse::west_qualifiers_runner_up_team_id() const {
-  // @@protoc_insertion_point(field_get:CMsgPassportDataResponse.west_qualifiers_runner_up_team_id)
-  return west_qualifiers_runner_up_team_id_;
-}
-inline void CMsgPassportDataResponse::set_west_qualifiers_runner_up_team_id(::google::protobuf::uint32 value) {
-  set_has_west_qualifiers_runner_up_team_id();
-  west_qualifiers_runner_up_team_id_ = value;
-  // @@protoc_insertion_point(field_set:CMsgPassportDataResponse.west_qualifiers_runner_up_team_id)
+inline void CMsgClientToGCSetPlayerCardRosterRequest::set_slot(::google::protobuf::uint32 value) {
+  set_has_slot();
+  slot_ = value;
+  // @@protoc_insertion_point(field_set:CMsgClientToGCSetPlayerCardRosterRequest.slot)
 }
 
-// optional uint32 passports_bought = 14;
-inline bool CMsgPassportDataResponse::has_passports_bought() const {
-  return (_has_bits_[0] & 0x00000800u) != 0;
+// optional uint64 player_card_item_id = 4;
+inline bool CMsgClientToGCSetPlayerCardRosterRequest::has_player_card_item_id() const {
+  return (_has_bits_[0] & 0x00000008u) != 0;
 }
-inline void CMsgPassportDataResponse::set_has_passports_bought() {
-  _has_bits_[0] |= 0x00000800u;
+inline void CMsgClientToGCSetPlayerCardRosterRequest::set_has_player_card_item_id() {
+  _has_bits_[0] |= 0x00000008u;
 }
-inline void CMsgPassportDataResponse::clear_has_passports_bought() {
-  _has_bits_[0] &= ~0x00000800u;
+inline void CMsgClientToGCSetPlayerCardRosterRequest::clear_has_player_card_item_id() {
+  _has_bits_[0] &= ~0x00000008u;
 }
-inline void CMsgPassportDataResponse::clear_passports_bought() {
-  passports_bought_ = 0u;
-  clear_has_passports_bought();
+inline void CMsgClientToGCSetPlayerCardRosterRequest::clear_player_card_item_id() {
+  player_card_item_id_ = GOOGLE_ULONGLONG(0);
+  clear_has_player_card_item_id();
 }
-inline ::google::protobuf::uint32 CMsgPassportDataResponse::passports_bought() const {
-  // @@protoc_insertion_point(field_get:CMsgPassportDataResponse.passports_bought)
-  return passports_bought_;
+inline ::google::protobuf::uint64 CMsgClientToGCSetPlayerCardRosterRequest::player_card_item_id() const {
+  // @@protoc_insertion_point(field_get:CMsgClientToGCSetPlayerCardRosterRequest.player_card_item_id)
+  return player_card_item_id_;
 }
-inline void CMsgPassportDataResponse::set_passports_bought(::google::protobuf::uint32 value) {
-  set_has_passports_bought();
-  passports_bought_ = value;
-  // @@protoc_insertion_point(field_set:CMsgPassportDataResponse.passports_bought)
-}
-
-// optional uint32 original_purchaser_id = 15;
-inline bool CMsgPassportDataResponse::has_original_purchaser_id() const {
-  return (_has_bits_[0] & 0x00001000u) != 0;
-}
-inline void CMsgPassportDataResponse::set_has_original_purchaser_id() {
-  _has_bits_[0] |= 0x00001000u;
-}
-inline void CMsgPassportDataResponse::clear_has_original_purchaser_id() {
-  _has_bits_[0] &= ~0x00001000u;
-}
-inline void CMsgPassportDataResponse::clear_original_purchaser_id() {
-  original_purchaser_id_ = 0u;
-  clear_has_original_purchaser_id();
-}
-inline ::google::protobuf::uint32 CMsgPassportDataResponse::original_purchaser_id() const {
-  // @@protoc_insertion_point(field_get:CMsgPassportDataResponse.original_purchaser_id)
-  return original_purchaser_id_;
-}
-inline void CMsgPassportDataResponse::set_original_purchaser_id(::google::protobuf::uint32 value) {
-  set_has_original_purchaser_id();
-  original_purchaser_id_ = value;
-  // @@protoc_insertion_point(field_set:CMsgPassportDataResponse.original_purchaser_id)
+inline void CMsgClientToGCSetPlayerCardRosterRequest::set_player_card_item_id(::google::protobuf::uint64 value) {
+  set_has_player_card_item_id();
+  player_card_item_id_ = value;
+  // @@protoc_insertion_point(field_set:CMsgClientToGCSetPlayerCardRosterRequest.player_card_item_id)
 }
 
-// optional uint32 fantasy_team_count = 16;
-inline bool CMsgPassportDataResponse::has_fantasy_team_count() const {
-  return (_has_bits_[0] & 0x00002000u) != 0;
-}
-inline void CMsgPassportDataResponse::set_has_fantasy_team_count() {
-  _has_bits_[0] |= 0x00002000u;
-}
-inline void CMsgPassportDataResponse::clear_has_fantasy_team_count() {
-  _has_bits_[0] &= ~0x00002000u;
-}
-inline void CMsgPassportDataResponse::clear_fantasy_team_count() {
-  fantasy_team_count_ = 0u;
-  clear_has_fantasy_team_count();
-}
-inline ::google::protobuf::uint32 CMsgPassportDataResponse::fantasy_team_count() const {
-  // @@protoc_insertion_point(field_get:CMsgPassportDataResponse.fantasy_team_count)
-  return fantasy_team_count_;
-}
-inline void CMsgPassportDataResponse::set_fantasy_team_count(::google::protobuf::uint32 value) {
-  set_has_fantasy_team_count();
-  fantasy_team_count_ = value;
-  // @@protoc_insertion_point(field_set:CMsgPassportDataResponse.fantasy_team_count)
-}
+// -------------------------------------------------------------------
 
-// optional uint32 fantasy_teamexpiration = 17;
-inline bool CMsgPassportDataResponse::has_fantasy_teamexpiration() const {
-  return (_has_bits_[0] & 0x00004000u) != 0;
-}
-inline void CMsgPassportDataResponse::set_has_fantasy_teamexpiration() {
-  _has_bits_[0] |= 0x00004000u;
-}
-inline void CMsgPassportDataResponse::clear_has_fantasy_teamexpiration() {
-  _has_bits_[0] &= ~0x00004000u;
-}
-inline void CMsgPassportDataResponse::clear_fantasy_teamexpiration() {
-  fantasy_teamexpiration_ = 0u;
-  clear_has_fantasy_teamexpiration();
-}
-inline ::google::protobuf::uint32 CMsgPassportDataResponse::fantasy_teamexpiration() const {
-  // @@protoc_insertion_point(field_get:CMsgPassportDataResponse.fantasy_teamexpiration)
-  return fantasy_teamexpiration_;
-}
-inline void CMsgPassportDataResponse::set_fantasy_teamexpiration(::google::protobuf::uint32 value) {
-  set_has_fantasy_teamexpiration();
-  fantasy_teamexpiration_ = value;
-  // @@protoc_insertion_point(field_set:CMsgPassportDataResponse.fantasy_teamexpiration)
-}
+// CMsgClientToGCSetPlayerCardRosterResponse
 
-// optional uint32 fantasy_teams_will_lock_at = 18;
-inline bool CMsgPassportDataResponse::has_fantasy_teams_will_lock_at() const {
-  return (_has_bits_[0] & 0x00008000u) != 0;
+// optional .CMsgClientToGCSetPlayerCardRosterResponse.Result result = 1 [default = SUCCESS];
+inline bool CMsgClientToGCSetPlayerCardRosterResponse::has_result() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
 }
-inline void CMsgPassportDataResponse::set_has_fantasy_teams_will_lock_at() {
-  _has_bits_[0] |= 0x00008000u;
+inline void CMsgClientToGCSetPlayerCardRosterResponse::set_has_result() {
+  _has_bits_[0] |= 0x00000001u;
 }
-inline void CMsgPassportDataResponse::clear_has_fantasy_teams_will_lock_at() {
-  _has_bits_[0] &= ~0x00008000u;
+inline void CMsgClientToGCSetPlayerCardRosterResponse::clear_has_result() {
+  _has_bits_[0] &= ~0x00000001u;
 }
-inline void CMsgPassportDataResponse::clear_fantasy_teams_will_lock_at() {
-  fantasy_teams_will_lock_at_ = 0u;
-  clear_has_fantasy_teams_will_lock_at();
+inline void CMsgClientToGCSetPlayerCardRosterResponse::clear_result() {
+  result_ = 0;
+  clear_has_result();
 }
-inline ::google::protobuf::uint32 CMsgPassportDataResponse::fantasy_teams_will_lock_at() const {
-  // @@protoc_insertion_point(field_get:CMsgPassportDataResponse.fantasy_teams_will_lock_at)
-  return fantasy_teams_will_lock_at_;
+inline ::CMsgClientToGCSetPlayerCardRosterResponse_Result CMsgClientToGCSetPlayerCardRosterResponse::result() const {
+  // @@protoc_insertion_point(field_get:CMsgClientToGCSetPlayerCardRosterResponse.result)
+  return static_cast< ::CMsgClientToGCSetPlayerCardRosterResponse_Result >(result_);
 }
-inline void CMsgPassportDataResponse::set_fantasy_teams_will_lock_at(::google::protobuf::uint32 value) {
-  set_has_fantasy_teams_will_lock_at();
-  fantasy_teams_will_lock_at_ = value;
-  // @@protoc_insertion_point(field_set:CMsgPassportDataResponse.fantasy_teams_will_lock_at)
+inline void CMsgClientToGCSetPlayerCardRosterResponse::set_result(::CMsgClientToGCSetPlayerCardRosterResponse_Result value) {
+  assert(::CMsgClientToGCSetPlayerCardRosterResponse_Result_IsValid(value));
+  set_has_result();
+  result_ = value;
+  // @@protoc_insertion_point(field_set:CMsgClientToGCSetPlayerCardRosterResponse.result)
 }
 
 
@@ -22638,25 +20361,15 @@ template <>
 inline const EnumDescriptor* GetEnumDescriptor< ::CMsgDOTAFantasyPlayerScoreDetailsResponse_EResult>() {
   return ::CMsgDOTAFantasyPlayerScoreDetailsResponse_EResult_descriptor();
 }
-template <> struct is_proto_enum< ::ETournamentGameState> : ::google::protobuf::internal::true_type {};
+template <> struct is_proto_enum< ::CMsgClientToGCGetPlayerCardRosterResponse_Result> : ::google::protobuf::internal::true_type {};
 template <>
-inline const EnumDescriptor* GetEnumDescriptor< ::ETournamentGameState>() {
-  return ::ETournamentGameState_descriptor();
+inline const EnumDescriptor* GetEnumDescriptor< ::CMsgClientToGCGetPlayerCardRosterResponse_Result>() {
+  return ::CMsgClientToGCGetPlayerCardRosterResponse_Result_descriptor();
 }
-template <> struct is_proto_enum< ::ETournamentTeamState> : ::google::protobuf::internal::true_type {};
+template <> struct is_proto_enum< ::CMsgClientToGCSetPlayerCardRosterResponse_Result> : ::google::protobuf::internal::true_type {};
 template <>
-inline const EnumDescriptor* GetEnumDescriptor< ::ETournamentTeamState>() {
-  return ::ETournamentTeamState_descriptor();
-}
-template <> struct is_proto_enum< ::ETournamentState> : ::google::protobuf::internal::true_type {};
-template <>
-inline const EnumDescriptor* GetEnumDescriptor< ::ETournamentState>() {
-  return ::ETournamentState_descriptor();
-}
-template <> struct is_proto_enum< ::ETournamentNodeState> : ::google::protobuf::internal::true_type {};
-template <>
-inline const EnumDescriptor* GetEnumDescriptor< ::ETournamentNodeState>() {
-  return ::ETournamentNodeState_descriptor();
+inline const EnumDescriptor* GetEnumDescriptor< ::CMsgClientToGCSetPlayerCardRosterResponse_Result>() {
+  return ::CMsgClientToGCSetPlayerCardRosterResponse_Result_descriptor();
 }
 template <> struct is_proto_enum< ::DOTA_2013PassportSelectionIndices> : ::google::protobuf::internal::true_type {};
 template <>

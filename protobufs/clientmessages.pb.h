@@ -33,11 +33,17 @@ void protobuf_AssignDesc_clientmessages_2eproto();
 void protobuf_ShutdownFile_clientmessages_2eproto();
 
 class CClientMsg_CustomGameEvent;
-class CClientMsg_TrackedControllerInput;
+class CClientMsg_ClientUIEvent;
+class CClientMsg_DevPaletteVisibilityChangedEvent;
+class CClientMsg_WorldUIControllerHasPanelChangedEvent;
+class CClientMsg_RotateAnchor;
 
 enum EBaseClientMessages {
   CM_CustomGameEvent = 280,
-  CM_TrackedControllerInput = 281,
+  CM_ClientUIEvent = 282,
+  CM_DevPaletteVisibilityChanged = 283,
+  CM_WorldUIControllerHasPanelChanged = 284,
+  CM_RotateAnchor = 285,
   CM_MAX_BASE = 300
 };
 bool EBaseClientMessages_IsValid(int value);
@@ -54,6 +60,26 @@ inline bool EBaseClientMessages_Parse(
     const ::std::string& name, EBaseClientMessages* value) {
   return ::google::protobuf::internal::ParseNamedEnum<EBaseClientMessages>(
     EBaseClientMessages_descriptor(), name, value);
+}
+enum EClientUIEvent {
+  EClientUIEvent_Invalid = 0,
+  EClientUIEvent_DialogFinished = 1,
+  EClientUIEvent_FireOutput = 2
+};
+bool EClientUIEvent_IsValid(int value);
+const EClientUIEvent EClientUIEvent_MIN = EClientUIEvent_Invalid;
+const EClientUIEvent EClientUIEvent_MAX = EClientUIEvent_FireOutput;
+const int EClientUIEvent_ARRAYSIZE = EClientUIEvent_MAX + 1;
+
+const ::google::protobuf::EnumDescriptor* EClientUIEvent_descriptor();
+inline const ::std::string& EClientUIEvent_Name(EClientUIEvent value) {
+  return ::google::protobuf::internal::NameOfEnum(
+    EClientUIEvent_descriptor(), value);
+}
+inline bool EClientUIEvent_Parse(
+    const ::std::string& name, EClientUIEvent* value) {
+  return ::google::protobuf::internal::ParseNamedEnum<EClientUIEvent>(
+    EClientUIEvent_descriptor(), name, value);
 }
 // ===================================================================
 
@@ -156,14 +182,14 @@ class CClientMsg_CustomGameEvent : public ::google::protobuf::Message {
 };
 // -------------------------------------------------------------------
 
-class CClientMsg_TrackedControllerInput : public ::google::protobuf::Message {
+class CClientMsg_ClientUIEvent : public ::google::protobuf::Message {
  public:
-  CClientMsg_TrackedControllerInput();
-  virtual ~CClientMsg_TrackedControllerInput();
+  CClientMsg_ClientUIEvent();
+  virtual ~CClientMsg_ClientUIEvent();
 
-  CClientMsg_TrackedControllerInput(const CClientMsg_TrackedControllerInput& from);
+  CClientMsg_ClientUIEvent(const CClientMsg_ClientUIEvent& from);
 
-  inline CClientMsg_TrackedControllerInput& operator=(const CClientMsg_TrackedControllerInput& from) {
+  inline CClientMsg_ClientUIEvent& operator=(const CClientMsg_ClientUIEvent& from) {
     CopyFrom(from);
     return *this;
   }
@@ -177,17 +203,17 @@ class CClientMsg_TrackedControllerInput : public ::google::protobuf::Message {
   }
 
   static const ::google::protobuf::Descriptor* descriptor();
-  static const CClientMsg_TrackedControllerInput& default_instance();
+  static const CClientMsg_ClientUIEvent& default_instance();
 
-  void Swap(CClientMsg_TrackedControllerInput* other);
+  void Swap(CClientMsg_ClientUIEvent* other);
 
   // implements Message ----------------------------------------------
 
-  CClientMsg_TrackedControllerInput* New() const;
+  CClientMsg_ClientUIEvent* New() const;
   void CopyFrom(const ::google::protobuf::Message& from);
   void MergeFrom(const ::google::protobuf::Message& from);
-  void CopyFrom(const CClientMsg_TrackedControllerInput& from);
-  void MergeFrom(const CClientMsg_TrackedControllerInput& from);
+  void CopyFrom(const CClientMsg_ClientUIEvent& from);
+  void MergeFrom(const CClientMsg_ClientUIEvent& from);
   void Clear();
   bool IsInitialized() const;
 
@@ -209,34 +235,336 @@ class CClientMsg_TrackedControllerInput : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // optional bytes data = 1;
-  inline bool has_data() const;
-  inline void clear_data();
-  static const int kDataFieldNumber = 1;
-  inline const ::std::string& data() const;
-  inline void set_data(const ::std::string& value);
-  inline void set_data(const char* value);
-  inline void set_data(const void* value, size_t size);
-  inline ::std::string* mutable_data();
-  inline ::std::string* release_data();
-  inline void set_allocated_data(::std::string* data);
+  // optional .EClientUIEvent event = 1 [default = EClientUIEvent_Invalid];
+  inline bool has_event() const;
+  inline void clear_event();
+  static const int kEventFieldNumber = 1;
+  inline ::EClientUIEvent event() const;
+  inline void set_event(::EClientUIEvent value);
 
-  // @@protoc_insertion_point(class_scope:CClientMsg_TrackedControllerInput)
+  // optional uint32 ent_ehandle = 2;
+  inline bool has_ent_ehandle() const;
+  inline void clear_ent_ehandle();
+  static const int kEntEhandleFieldNumber = 2;
+  inline ::google::protobuf::uint32 ent_ehandle() const;
+  inline void set_ent_ehandle(::google::protobuf::uint32 value);
+
+  // optional uint32 client_ehandle = 3;
+  inline bool has_client_ehandle() const;
+  inline void clear_client_ehandle();
+  static const int kClientEhandleFieldNumber = 3;
+  inline ::google::protobuf::uint32 client_ehandle() const;
+  inline void set_client_ehandle(::google::protobuf::uint32 value);
+
+  // optional string data1 = 4;
+  inline bool has_data1() const;
+  inline void clear_data1();
+  static const int kData1FieldNumber = 4;
+  inline const ::std::string& data1() const;
+  inline void set_data1(const ::std::string& value);
+  inline void set_data1(const char* value);
+  inline void set_data1(const char* value, size_t size);
+  inline ::std::string* mutable_data1();
+  inline ::std::string* release_data1();
+  inline void set_allocated_data1(::std::string* data1);
+
+  // optional string data2 = 5;
+  inline bool has_data2() const;
+  inline void clear_data2();
+  static const int kData2FieldNumber = 5;
+  inline const ::std::string& data2() const;
+  inline void set_data2(const ::std::string& value);
+  inline void set_data2(const char* value);
+  inline void set_data2(const char* value, size_t size);
+  inline ::std::string* mutable_data2();
+  inline ::std::string* release_data2();
+  inline void set_allocated_data2(::std::string* data2);
+
+  // @@protoc_insertion_point(class_scope:CClientMsg_ClientUIEvent)
  private:
-  inline void set_has_data();
-  inline void clear_has_data();
+  inline void set_has_event();
+  inline void clear_has_event();
+  inline void set_has_ent_ehandle();
+  inline void clear_has_ent_ehandle();
+  inline void set_has_client_ehandle();
+  inline void clear_has_client_ehandle();
+  inline void set_has_data1();
+  inline void clear_has_data1();
+  inline void set_has_data2();
+  inline void clear_has_data2();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
   ::google::protobuf::uint32 _has_bits_[1];
   mutable int _cached_size_;
-  ::std::string* data_;
+  int event_;
+  ::google::protobuf::uint32 ent_ehandle_;
+  ::std::string* data1_;
+  ::std::string* data2_;
+  ::google::protobuf::uint32 client_ehandle_;
   friend void  protobuf_AddDesc_clientmessages_2eproto();
   friend void protobuf_AssignDesc_clientmessages_2eproto();
   friend void protobuf_ShutdownFile_clientmessages_2eproto();
 
   void InitAsDefaultInstance();
-  static CClientMsg_TrackedControllerInput* default_instance_;
+  static CClientMsg_ClientUIEvent* default_instance_;
+};
+// -------------------------------------------------------------------
+
+class CClientMsg_DevPaletteVisibilityChangedEvent : public ::google::protobuf::Message {
+ public:
+  CClientMsg_DevPaletteVisibilityChangedEvent();
+  virtual ~CClientMsg_DevPaletteVisibilityChangedEvent();
+
+  CClientMsg_DevPaletteVisibilityChangedEvent(const CClientMsg_DevPaletteVisibilityChangedEvent& from);
+
+  inline CClientMsg_DevPaletteVisibilityChangedEvent& operator=(const CClientMsg_DevPaletteVisibilityChangedEvent& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+    return _unknown_fields_;
+  }
+
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+    return &_unknown_fields_;
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const CClientMsg_DevPaletteVisibilityChangedEvent& default_instance();
+
+  void Swap(CClientMsg_DevPaletteVisibilityChangedEvent* other);
+
+  // implements Message ----------------------------------------------
+
+  CClientMsg_DevPaletteVisibilityChangedEvent* New() const;
+  void CopyFrom(const ::google::protobuf::Message& from);
+  void MergeFrom(const ::google::protobuf::Message& from);
+  void CopyFrom(const CClientMsg_DevPaletteVisibilityChangedEvent& from);
+  void MergeFrom(const CClientMsg_DevPaletteVisibilityChangedEvent& from);
+  void Clear();
+  bool IsInitialized() const;
+
+  int ByteSize() const;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input);
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  int GetCachedSize() const { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const;
+  public:
+  ::google::protobuf::Metadata GetMetadata() const;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // optional bool visible = 1;
+  inline bool has_visible() const;
+  inline void clear_visible();
+  static const int kVisibleFieldNumber = 1;
+  inline bool visible() const;
+  inline void set_visible(bool value);
+
+  // @@protoc_insertion_point(class_scope:CClientMsg_DevPaletteVisibilityChangedEvent)
+ private:
+  inline void set_has_visible();
+  inline void clear_has_visible();
+
+  ::google::protobuf::UnknownFieldSet _unknown_fields_;
+
+  ::google::protobuf::uint32 _has_bits_[1];
+  mutable int _cached_size_;
+  bool visible_;
+  friend void  protobuf_AddDesc_clientmessages_2eproto();
+  friend void protobuf_AssignDesc_clientmessages_2eproto();
+  friend void protobuf_ShutdownFile_clientmessages_2eproto();
+
+  void InitAsDefaultInstance();
+  static CClientMsg_DevPaletteVisibilityChangedEvent* default_instance_;
+};
+// -------------------------------------------------------------------
+
+class CClientMsg_WorldUIControllerHasPanelChangedEvent : public ::google::protobuf::Message {
+ public:
+  CClientMsg_WorldUIControllerHasPanelChangedEvent();
+  virtual ~CClientMsg_WorldUIControllerHasPanelChangedEvent();
+
+  CClientMsg_WorldUIControllerHasPanelChangedEvent(const CClientMsg_WorldUIControllerHasPanelChangedEvent& from);
+
+  inline CClientMsg_WorldUIControllerHasPanelChangedEvent& operator=(const CClientMsg_WorldUIControllerHasPanelChangedEvent& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+    return _unknown_fields_;
+  }
+
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+    return &_unknown_fields_;
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const CClientMsg_WorldUIControllerHasPanelChangedEvent& default_instance();
+
+  void Swap(CClientMsg_WorldUIControllerHasPanelChangedEvent* other);
+
+  // implements Message ----------------------------------------------
+
+  CClientMsg_WorldUIControllerHasPanelChangedEvent* New() const;
+  void CopyFrom(const ::google::protobuf::Message& from);
+  void MergeFrom(const ::google::protobuf::Message& from);
+  void CopyFrom(const CClientMsg_WorldUIControllerHasPanelChangedEvent& from);
+  void MergeFrom(const CClientMsg_WorldUIControllerHasPanelChangedEvent& from);
+  void Clear();
+  bool IsInitialized() const;
+
+  int ByteSize() const;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input);
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  int GetCachedSize() const { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const;
+  public:
+  ::google::protobuf::Metadata GetMetadata() const;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // optional bool has_panel = 1;
+  inline bool has_has_panel() const;
+  inline void clear_has_panel();
+  static const int kHasPanelFieldNumber = 1;
+  inline bool has_panel() const;
+  inline void set_has_panel(bool value);
+
+  // optional uint32 client_ehandle = 2;
+  inline bool has_client_ehandle() const;
+  inline void clear_client_ehandle();
+  static const int kClientEhandleFieldNumber = 2;
+  inline ::google::protobuf::uint32 client_ehandle() const;
+  inline void set_client_ehandle(::google::protobuf::uint32 value);
+
+  // optional uint32 literal_hand_type = 3;
+  inline bool has_literal_hand_type() const;
+  inline void clear_literal_hand_type();
+  static const int kLiteralHandTypeFieldNumber = 3;
+  inline ::google::protobuf::uint32 literal_hand_type() const;
+  inline void set_literal_hand_type(::google::protobuf::uint32 value);
+
+  // @@protoc_insertion_point(class_scope:CClientMsg_WorldUIControllerHasPanelChangedEvent)
+ private:
+  inline void set_has_has_panel();
+  inline void clear_has_has_panel();
+  inline void set_has_client_ehandle();
+  inline void clear_has_client_ehandle();
+  inline void set_has_literal_hand_type();
+  inline void clear_has_literal_hand_type();
+
+  ::google::protobuf::UnknownFieldSet _unknown_fields_;
+
+  ::google::protobuf::uint32 _has_bits_[1];
+  mutable int _cached_size_;
+  bool has_panel_;
+  ::google::protobuf::uint32 client_ehandle_;
+  ::google::protobuf::uint32 literal_hand_type_;
+  friend void  protobuf_AddDesc_clientmessages_2eproto();
+  friend void protobuf_AssignDesc_clientmessages_2eproto();
+  friend void protobuf_ShutdownFile_clientmessages_2eproto();
+
+  void InitAsDefaultInstance();
+  static CClientMsg_WorldUIControllerHasPanelChangedEvent* default_instance_;
+};
+// -------------------------------------------------------------------
+
+class CClientMsg_RotateAnchor : public ::google::protobuf::Message {
+ public:
+  CClientMsg_RotateAnchor();
+  virtual ~CClientMsg_RotateAnchor();
+
+  CClientMsg_RotateAnchor(const CClientMsg_RotateAnchor& from);
+
+  inline CClientMsg_RotateAnchor& operator=(const CClientMsg_RotateAnchor& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+    return _unknown_fields_;
+  }
+
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+    return &_unknown_fields_;
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const CClientMsg_RotateAnchor& default_instance();
+
+  void Swap(CClientMsg_RotateAnchor* other);
+
+  // implements Message ----------------------------------------------
+
+  CClientMsg_RotateAnchor* New() const;
+  void CopyFrom(const ::google::protobuf::Message& from);
+  void MergeFrom(const ::google::protobuf::Message& from);
+  void CopyFrom(const CClientMsg_RotateAnchor& from);
+  void MergeFrom(const CClientMsg_RotateAnchor& from);
+  void Clear();
+  bool IsInitialized() const;
+
+  int ByteSize() const;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input);
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  int GetCachedSize() const { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const;
+  public:
+  ::google::protobuf::Metadata GetMetadata() const;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // optional float angle = 1;
+  inline bool has_angle() const;
+  inline void clear_angle();
+  static const int kAngleFieldNumber = 1;
+  inline float angle() const;
+  inline void set_angle(float value);
+
+  // @@protoc_insertion_point(class_scope:CClientMsg_RotateAnchor)
+ private:
+  inline void set_has_angle();
+  inline void clear_has_angle();
+
+  ::google::protobuf::UnknownFieldSet _unknown_fields_;
+
+  ::google::protobuf::uint32 _has_bits_[1];
+  mutable int _cached_size_;
+  float angle_;
+  friend void  protobuf_AddDesc_clientmessages_2eproto();
+  friend void protobuf_AssignDesc_clientmessages_2eproto();
+  friend void protobuf_ShutdownFile_clientmessages_2eproto();
+
+  void InitAsDefaultInstance();
+  static CClientMsg_RotateAnchor* default_instance_;
 };
 // ===================================================================
 
@@ -399,82 +727,363 @@ inline void CClientMsg_CustomGameEvent::set_allocated_data(::std::string* data) 
 
 // -------------------------------------------------------------------
 
-// CClientMsg_TrackedControllerInput
+// CClientMsg_ClientUIEvent
 
-// optional bytes data = 1;
-inline bool CClientMsg_TrackedControllerInput::has_data() const {
+// optional .EClientUIEvent event = 1 [default = EClientUIEvent_Invalid];
+inline bool CClientMsg_ClientUIEvent::has_event() const {
   return (_has_bits_[0] & 0x00000001u) != 0;
 }
-inline void CClientMsg_TrackedControllerInput::set_has_data() {
+inline void CClientMsg_ClientUIEvent::set_has_event() {
   _has_bits_[0] |= 0x00000001u;
 }
-inline void CClientMsg_TrackedControllerInput::clear_has_data() {
+inline void CClientMsg_ClientUIEvent::clear_has_event() {
   _has_bits_[0] &= ~0x00000001u;
 }
-inline void CClientMsg_TrackedControllerInput::clear_data() {
-  if (data_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    data_->clear();
+inline void CClientMsg_ClientUIEvent::clear_event() {
+  event_ = 0;
+  clear_has_event();
+}
+inline ::EClientUIEvent CClientMsg_ClientUIEvent::event() const {
+  // @@protoc_insertion_point(field_get:CClientMsg_ClientUIEvent.event)
+  return static_cast< ::EClientUIEvent >(event_);
+}
+inline void CClientMsg_ClientUIEvent::set_event(::EClientUIEvent value) {
+  assert(::EClientUIEvent_IsValid(value));
+  set_has_event();
+  event_ = value;
+  // @@protoc_insertion_point(field_set:CClientMsg_ClientUIEvent.event)
+}
+
+// optional uint32 ent_ehandle = 2;
+inline bool CClientMsg_ClientUIEvent::has_ent_ehandle() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+inline void CClientMsg_ClientUIEvent::set_has_ent_ehandle() {
+  _has_bits_[0] |= 0x00000002u;
+}
+inline void CClientMsg_ClientUIEvent::clear_has_ent_ehandle() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+inline void CClientMsg_ClientUIEvent::clear_ent_ehandle() {
+  ent_ehandle_ = 0u;
+  clear_has_ent_ehandle();
+}
+inline ::google::protobuf::uint32 CClientMsg_ClientUIEvent::ent_ehandle() const {
+  // @@protoc_insertion_point(field_get:CClientMsg_ClientUIEvent.ent_ehandle)
+  return ent_ehandle_;
+}
+inline void CClientMsg_ClientUIEvent::set_ent_ehandle(::google::protobuf::uint32 value) {
+  set_has_ent_ehandle();
+  ent_ehandle_ = value;
+  // @@protoc_insertion_point(field_set:CClientMsg_ClientUIEvent.ent_ehandle)
+}
+
+// optional uint32 client_ehandle = 3;
+inline bool CClientMsg_ClientUIEvent::has_client_ehandle() const {
+  return (_has_bits_[0] & 0x00000004u) != 0;
+}
+inline void CClientMsg_ClientUIEvent::set_has_client_ehandle() {
+  _has_bits_[0] |= 0x00000004u;
+}
+inline void CClientMsg_ClientUIEvent::clear_has_client_ehandle() {
+  _has_bits_[0] &= ~0x00000004u;
+}
+inline void CClientMsg_ClientUIEvent::clear_client_ehandle() {
+  client_ehandle_ = 0u;
+  clear_has_client_ehandle();
+}
+inline ::google::protobuf::uint32 CClientMsg_ClientUIEvent::client_ehandle() const {
+  // @@protoc_insertion_point(field_get:CClientMsg_ClientUIEvent.client_ehandle)
+  return client_ehandle_;
+}
+inline void CClientMsg_ClientUIEvent::set_client_ehandle(::google::protobuf::uint32 value) {
+  set_has_client_ehandle();
+  client_ehandle_ = value;
+  // @@protoc_insertion_point(field_set:CClientMsg_ClientUIEvent.client_ehandle)
+}
+
+// optional string data1 = 4;
+inline bool CClientMsg_ClientUIEvent::has_data1() const {
+  return (_has_bits_[0] & 0x00000008u) != 0;
+}
+inline void CClientMsg_ClientUIEvent::set_has_data1() {
+  _has_bits_[0] |= 0x00000008u;
+}
+inline void CClientMsg_ClientUIEvent::clear_has_data1() {
+  _has_bits_[0] &= ~0x00000008u;
+}
+inline void CClientMsg_ClientUIEvent::clear_data1() {
+  if (data1_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    data1_->clear();
   }
-  clear_has_data();
+  clear_has_data1();
 }
-inline const ::std::string& CClientMsg_TrackedControllerInput::data() const {
-  // @@protoc_insertion_point(field_get:CClientMsg_TrackedControllerInput.data)
-  return *data_;
+inline const ::std::string& CClientMsg_ClientUIEvent::data1() const {
+  // @@protoc_insertion_point(field_get:CClientMsg_ClientUIEvent.data1)
+  return *data1_;
 }
-inline void CClientMsg_TrackedControllerInput::set_data(const ::std::string& value) {
-  set_has_data();
-  if (data_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    data_ = new ::std::string;
+inline void CClientMsg_ClientUIEvent::set_data1(const ::std::string& value) {
+  set_has_data1();
+  if (data1_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    data1_ = new ::std::string;
   }
-  data_->assign(value);
-  // @@protoc_insertion_point(field_set:CClientMsg_TrackedControllerInput.data)
+  data1_->assign(value);
+  // @@protoc_insertion_point(field_set:CClientMsg_ClientUIEvent.data1)
 }
-inline void CClientMsg_TrackedControllerInput::set_data(const char* value) {
-  set_has_data();
-  if (data_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    data_ = new ::std::string;
+inline void CClientMsg_ClientUIEvent::set_data1(const char* value) {
+  set_has_data1();
+  if (data1_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    data1_ = new ::std::string;
   }
-  data_->assign(value);
-  // @@protoc_insertion_point(field_set_char:CClientMsg_TrackedControllerInput.data)
+  data1_->assign(value);
+  // @@protoc_insertion_point(field_set_char:CClientMsg_ClientUIEvent.data1)
 }
-inline void CClientMsg_TrackedControllerInput::set_data(const void* value, size_t size) {
-  set_has_data();
-  if (data_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    data_ = new ::std::string;
+inline void CClientMsg_ClientUIEvent::set_data1(const char* value, size_t size) {
+  set_has_data1();
+  if (data1_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    data1_ = new ::std::string;
   }
-  data_->assign(reinterpret_cast<const char*>(value), size);
-  // @@protoc_insertion_point(field_set_pointer:CClientMsg_TrackedControllerInput.data)
+  data1_->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:CClientMsg_ClientUIEvent.data1)
 }
-inline ::std::string* CClientMsg_TrackedControllerInput::mutable_data() {
-  set_has_data();
-  if (data_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    data_ = new ::std::string;
+inline ::std::string* CClientMsg_ClientUIEvent::mutable_data1() {
+  set_has_data1();
+  if (data1_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    data1_ = new ::std::string;
   }
-  // @@protoc_insertion_point(field_mutable:CClientMsg_TrackedControllerInput.data)
-  return data_;
+  // @@protoc_insertion_point(field_mutable:CClientMsg_ClientUIEvent.data1)
+  return data1_;
 }
-inline ::std::string* CClientMsg_TrackedControllerInput::release_data() {
-  clear_has_data();
-  if (data_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+inline ::std::string* CClientMsg_ClientUIEvent::release_data1() {
+  clear_has_data1();
+  if (data1_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
     return NULL;
   } else {
-    ::std::string* temp = data_;
-    data_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    ::std::string* temp = data1_;
+    data1_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
     return temp;
   }
 }
-inline void CClientMsg_TrackedControllerInput::set_allocated_data(::std::string* data) {
-  if (data_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    delete data_;
+inline void CClientMsg_ClientUIEvent::set_allocated_data1(::std::string* data1) {
+  if (data1_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete data1_;
   }
-  if (data) {
-    set_has_data();
-    data_ = data;
+  if (data1) {
+    set_has_data1();
+    data1_ = data1;
   } else {
-    clear_has_data();
-    data_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    clear_has_data1();
+    data1_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   }
-  // @@protoc_insertion_point(field_set_allocated:CClientMsg_TrackedControllerInput.data)
+  // @@protoc_insertion_point(field_set_allocated:CClientMsg_ClientUIEvent.data1)
+}
+
+// optional string data2 = 5;
+inline bool CClientMsg_ClientUIEvent::has_data2() const {
+  return (_has_bits_[0] & 0x00000010u) != 0;
+}
+inline void CClientMsg_ClientUIEvent::set_has_data2() {
+  _has_bits_[0] |= 0x00000010u;
+}
+inline void CClientMsg_ClientUIEvent::clear_has_data2() {
+  _has_bits_[0] &= ~0x00000010u;
+}
+inline void CClientMsg_ClientUIEvent::clear_data2() {
+  if (data2_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    data2_->clear();
+  }
+  clear_has_data2();
+}
+inline const ::std::string& CClientMsg_ClientUIEvent::data2() const {
+  // @@protoc_insertion_point(field_get:CClientMsg_ClientUIEvent.data2)
+  return *data2_;
+}
+inline void CClientMsg_ClientUIEvent::set_data2(const ::std::string& value) {
+  set_has_data2();
+  if (data2_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    data2_ = new ::std::string;
+  }
+  data2_->assign(value);
+  // @@protoc_insertion_point(field_set:CClientMsg_ClientUIEvent.data2)
+}
+inline void CClientMsg_ClientUIEvent::set_data2(const char* value) {
+  set_has_data2();
+  if (data2_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    data2_ = new ::std::string;
+  }
+  data2_->assign(value);
+  // @@protoc_insertion_point(field_set_char:CClientMsg_ClientUIEvent.data2)
+}
+inline void CClientMsg_ClientUIEvent::set_data2(const char* value, size_t size) {
+  set_has_data2();
+  if (data2_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    data2_ = new ::std::string;
+  }
+  data2_->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:CClientMsg_ClientUIEvent.data2)
+}
+inline ::std::string* CClientMsg_ClientUIEvent::mutable_data2() {
+  set_has_data2();
+  if (data2_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    data2_ = new ::std::string;
+  }
+  // @@protoc_insertion_point(field_mutable:CClientMsg_ClientUIEvent.data2)
+  return data2_;
+}
+inline ::std::string* CClientMsg_ClientUIEvent::release_data2() {
+  clear_has_data2();
+  if (data2_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    return NULL;
+  } else {
+    ::std::string* temp = data2_;
+    data2_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    return temp;
+  }
+}
+inline void CClientMsg_ClientUIEvent::set_allocated_data2(::std::string* data2) {
+  if (data2_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete data2_;
+  }
+  if (data2) {
+    set_has_data2();
+    data2_ = data2;
+  } else {
+    clear_has_data2();
+    data2_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_set_allocated:CClientMsg_ClientUIEvent.data2)
+}
+
+// -------------------------------------------------------------------
+
+// CClientMsg_DevPaletteVisibilityChangedEvent
+
+// optional bool visible = 1;
+inline bool CClientMsg_DevPaletteVisibilityChangedEvent::has_visible() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+inline void CClientMsg_DevPaletteVisibilityChangedEvent::set_has_visible() {
+  _has_bits_[0] |= 0x00000001u;
+}
+inline void CClientMsg_DevPaletteVisibilityChangedEvent::clear_has_visible() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+inline void CClientMsg_DevPaletteVisibilityChangedEvent::clear_visible() {
+  visible_ = false;
+  clear_has_visible();
+}
+inline bool CClientMsg_DevPaletteVisibilityChangedEvent::visible() const {
+  // @@protoc_insertion_point(field_get:CClientMsg_DevPaletteVisibilityChangedEvent.visible)
+  return visible_;
+}
+inline void CClientMsg_DevPaletteVisibilityChangedEvent::set_visible(bool value) {
+  set_has_visible();
+  visible_ = value;
+  // @@protoc_insertion_point(field_set:CClientMsg_DevPaletteVisibilityChangedEvent.visible)
+}
+
+// -------------------------------------------------------------------
+
+// CClientMsg_WorldUIControllerHasPanelChangedEvent
+
+// optional bool has_panel = 1;
+inline bool CClientMsg_WorldUIControllerHasPanelChangedEvent::has_has_panel() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+inline void CClientMsg_WorldUIControllerHasPanelChangedEvent::set_has_has_panel() {
+  _has_bits_[0] |= 0x00000001u;
+}
+inline void CClientMsg_WorldUIControllerHasPanelChangedEvent::clear_has_has_panel() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+inline void CClientMsg_WorldUIControllerHasPanelChangedEvent::clear_has_panel() {
+  has_panel_ = false;
+  clear_has_has_panel();
+}
+inline bool CClientMsg_WorldUIControllerHasPanelChangedEvent::has_panel() const {
+  // @@protoc_insertion_point(field_get:CClientMsg_WorldUIControllerHasPanelChangedEvent.has_panel)
+  return has_panel_;
+}
+inline void CClientMsg_WorldUIControllerHasPanelChangedEvent::set_has_panel(bool value) {
+  set_has_has_panel();
+  has_panel_ = value;
+  // @@protoc_insertion_point(field_set:CClientMsg_WorldUIControllerHasPanelChangedEvent.has_panel)
+}
+
+// optional uint32 client_ehandle = 2;
+inline bool CClientMsg_WorldUIControllerHasPanelChangedEvent::has_client_ehandle() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+inline void CClientMsg_WorldUIControllerHasPanelChangedEvent::set_has_client_ehandle() {
+  _has_bits_[0] |= 0x00000002u;
+}
+inline void CClientMsg_WorldUIControllerHasPanelChangedEvent::clear_has_client_ehandle() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+inline void CClientMsg_WorldUIControllerHasPanelChangedEvent::clear_client_ehandle() {
+  client_ehandle_ = 0u;
+  clear_has_client_ehandle();
+}
+inline ::google::protobuf::uint32 CClientMsg_WorldUIControllerHasPanelChangedEvent::client_ehandle() const {
+  // @@protoc_insertion_point(field_get:CClientMsg_WorldUIControllerHasPanelChangedEvent.client_ehandle)
+  return client_ehandle_;
+}
+inline void CClientMsg_WorldUIControllerHasPanelChangedEvent::set_client_ehandle(::google::protobuf::uint32 value) {
+  set_has_client_ehandle();
+  client_ehandle_ = value;
+  // @@protoc_insertion_point(field_set:CClientMsg_WorldUIControllerHasPanelChangedEvent.client_ehandle)
+}
+
+// optional uint32 literal_hand_type = 3;
+inline bool CClientMsg_WorldUIControllerHasPanelChangedEvent::has_literal_hand_type() const {
+  return (_has_bits_[0] & 0x00000004u) != 0;
+}
+inline void CClientMsg_WorldUIControllerHasPanelChangedEvent::set_has_literal_hand_type() {
+  _has_bits_[0] |= 0x00000004u;
+}
+inline void CClientMsg_WorldUIControllerHasPanelChangedEvent::clear_has_literal_hand_type() {
+  _has_bits_[0] &= ~0x00000004u;
+}
+inline void CClientMsg_WorldUIControllerHasPanelChangedEvent::clear_literal_hand_type() {
+  literal_hand_type_ = 0u;
+  clear_has_literal_hand_type();
+}
+inline ::google::protobuf::uint32 CClientMsg_WorldUIControllerHasPanelChangedEvent::literal_hand_type() const {
+  // @@protoc_insertion_point(field_get:CClientMsg_WorldUIControllerHasPanelChangedEvent.literal_hand_type)
+  return literal_hand_type_;
+}
+inline void CClientMsg_WorldUIControllerHasPanelChangedEvent::set_literal_hand_type(::google::protobuf::uint32 value) {
+  set_has_literal_hand_type();
+  literal_hand_type_ = value;
+  // @@protoc_insertion_point(field_set:CClientMsg_WorldUIControllerHasPanelChangedEvent.literal_hand_type)
+}
+
+// -------------------------------------------------------------------
+
+// CClientMsg_RotateAnchor
+
+// optional float angle = 1;
+inline bool CClientMsg_RotateAnchor::has_angle() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+inline void CClientMsg_RotateAnchor::set_has_angle() {
+  _has_bits_[0] |= 0x00000001u;
+}
+inline void CClientMsg_RotateAnchor::clear_has_angle() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+inline void CClientMsg_RotateAnchor::clear_angle() {
+  angle_ = 0;
+  clear_has_angle();
+}
+inline float CClientMsg_RotateAnchor::angle() const {
+  // @@protoc_insertion_point(field_get:CClientMsg_RotateAnchor.angle)
+  return angle_;
+}
+inline void CClientMsg_RotateAnchor::set_angle(float value) {
+  set_has_angle();
+  angle_ = value;
+  // @@protoc_insertion_point(field_set:CClientMsg_RotateAnchor.angle)
 }
 
 
@@ -488,6 +1097,11 @@ template <> struct is_proto_enum< ::EBaseClientMessages> : ::google::protobuf::i
 template <>
 inline const EnumDescriptor* GetEnumDescriptor< ::EBaseClientMessages>() {
   return ::EBaseClientMessages_descriptor();
+}
+template <> struct is_proto_enum< ::EClientUIEvent> : ::google::protobuf::internal::true_type {};
+template <>
+inline const EnumDescriptor* GetEnumDescriptor< ::EClientUIEvent>() {
+  return ::EClientUIEvent_descriptor();
 }
 
 }  // namespace google

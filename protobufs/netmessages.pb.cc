@@ -153,6 +153,9 @@ const ::google::protobuf::internal::GeneratedMessageReflection*
 const ::google::protobuf::Descriptor* CSVCMsg_HLTVStatus_descriptor_ = NULL;
 const ::google::protobuf::internal::GeneratedMessageReflection*
   CSVCMsg_HLTVStatus_reflection_ = NULL;
+const ::google::protobuf::Descriptor* CSVCMsg_ServerSteamID_descriptor_ = NULL;
+const ::google::protobuf::internal::GeneratedMessageReflection*
+  CSVCMsg_ServerSteamID_reflection_ = NULL;
 const ::google::protobuf::Descriptor* CSVCMsg_CmdKeyValues_descriptor_ = NULL;
 const ::google::protobuf::internal::GeneratedMessageReflection*
   CSVCMsg_CmdKeyValues_reflection_ = NULL;
@@ -202,6 +205,15 @@ const ::google::protobuf::internal::GeneratedMessageReflection*
 const ::google::protobuf::Descriptor* CBidirMsg_RelayPacket_SignedDestinationAddress_t_descriptor_ = NULL;
 const ::google::protobuf::internal::GeneratedMessageReflection*
   CBidirMsg_RelayPacket_SignedDestinationAddress_t_reflection_ = NULL;
+const ::google::protobuf::Descriptor* CMsgServerNetworkStats_descriptor_ = NULL;
+const ::google::protobuf::internal::GeneratedMessageReflection*
+  CMsgServerNetworkStats_reflection_ = NULL;
+const ::google::protobuf::Descriptor* CMsgServerNetworkStats_Port_descriptor_ = NULL;
+const ::google::protobuf::internal::GeneratedMessageReflection*
+  CMsgServerNetworkStats_Port_reflection_ = NULL;
+const ::google::protobuf::Descriptor* CMsgServerNetworkStats_Player_descriptor_ = NULL;
+const ::google::protobuf::internal::GeneratedMessageReflection*
+  CMsgServerNetworkStats_Player_reflection_ = NULL;
 const ::google::protobuf::EnumDescriptor* CLC_Messages_descriptor_ = NULL;
 const ::google::protobuf::EnumDescriptor* SVC_Messages_descriptor_ = NULL;
 const ::google::protobuf::EnumDescriptor* VoiceDataFormat_t_descriptor_ = NULL;
@@ -1023,7 +1035,22 @@ void protobuf_AssignDesc_netmessages_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(CSVCMsg_HLTVStatus));
-  CSVCMsg_CmdKeyValues_descriptor_ = file->message_type(40);
+  CSVCMsg_ServerSteamID_descriptor_ = file->message_type(40);
+  static const int CSVCMsg_ServerSteamID_offsets_[1] = {
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CSVCMsg_ServerSteamID, steam_id_),
+  };
+  CSVCMsg_ServerSteamID_reflection_ =
+    new ::google::protobuf::internal::GeneratedMessageReflection(
+      CSVCMsg_ServerSteamID_descriptor_,
+      CSVCMsg_ServerSteamID::default_instance_,
+      CSVCMsg_ServerSteamID_offsets_,
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CSVCMsg_ServerSteamID, _has_bits_[0]),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CSVCMsg_ServerSteamID, _unknown_fields_),
+      -1,
+      ::google::protobuf::DescriptorPool::generated_pool(),
+      ::google::protobuf::MessageFactory::generated_factory(),
+      sizeof(CSVCMsg_ServerSteamID));
+  CSVCMsg_CmdKeyValues_descriptor_ = file->message_type(41);
   static const int CSVCMsg_CmdKeyValues_offsets_[1] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CSVCMsg_CmdKeyValues, data_),
   };
@@ -1038,7 +1065,7 @@ void protobuf_AssignDesc_netmessages_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(CSVCMsg_CmdKeyValues));
-  CMsgIPCAddress_descriptor_ = file->message_type(41);
+  CMsgIPCAddress_descriptor_ = file->message_type(42);
   static const int CMsgIPCAddress_offsets_[2] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgIPCAddress, computer_guid_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgIPCAddress, process_id_),
@@ -1054,7 +1081,7 @@ void protobuf_AssignDesc_netmessages_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(CMsgIPCAddress));
-  CMsgServerPeer_descriptor_ = file->message_type(42);
+  CMsgServerPeer_descriptor_ = file->message_type(43);
   static const int CMsgServerPeer_offsets_[6] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgServerPeer, player_slot_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgServerPeer, steamid_),
@@ -1074,7 +1101,7 @@ void protobuf_AssignDesc_netmessages_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(CMsgServerPeer));
-  CSVCMsg_PeerList_descriptor_ = file->message_type(43);
+  CSVCMsg_PeerList_descriptor_ = file->message_type(44);
   static const int CSVCMsg_PeerList_offsets_[1] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CSVCMsg_PeerList, peer_),
   };
@@ -1089,7 +1116,7 @@ void protobuf_AssignDesc_netmessages_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(CSVCMsg_PeerList));
-  CSVCMsg_ClearAllStringTables_descriptor_ = file->message_type(44);
+  CSVCMsg_ClearAllStringTables_descriptor_ = file->message_type(45);
   static const int CSVCMsg_ClearAllStringTables_offsets_[2] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CSVCMsg_ClearAllStringTables, mapname_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CSVCMsg_ClearAllStringTables, map_crc_),
@@ -1105,7 +1132,7 @@ void protobuf_AssignDesc_netmessages_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(CSVCMsg_ClearAllStringTables));
-  ProtoFlattenedSerializerField_t_descriptor_ = file->message_type(45);
+  ProtoFlattenedSerializerField_t_descriptor_ = file->message_type(46);
   static const int ProtoFlattenedSerializerField_t_offsets_[10] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(ProtoFlattenedSerializerField_t, var_type_sym_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(ProtoFlattenedSerializerField_t, var_name_sym_),
@@ -1129,7 +1156,7 @@ void protobuf_AssignDesc_netmessages_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(ProtoFlattenedSerializerField_t));
-  ProtoFlattenedSerializer_t_descriptor_ = file->message_type(46);
+  ProtoFlattenedSerializer_t_descriptor_ = file->message_type(47);
   static const int ProtoFlattenedSerializer_t_offsets_[3] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(ProtoFlattenedSerializer_t, serializer_name_sym_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(ProtoFlattenedSerializer_t, serializer_version_),
@@ -1146,7 +1173,7 @@ void protobuf_AssignDesc_netmessages_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(ProtoFlattenedSerializer_t));
-  CSVCMsg_FlattenedSerializer_descriptor_ = file->message_type(47);
+  CSVCMsg_FlattenedSerializer_descriptor_ = file->message_type(48);
   static const int CSVCMsg_FlattenedSerializer_offsets_[3] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CSVCMsg_FlattenedSerializer, serializers_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CSVCMsg_FlattenedSerializer, symbols_),
@@ -1163,7 +1190,7 @@ void protobuf_AssignDesc_netmessages_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(CSVCMsg_FlattenedSerializer));
-  CSVCMsg_StopSound_descriptor_ = file->message_type(48);
+  CSVCMsg_StopSound_descriptor_ = file->message_type(49);
   static const int CSVCMsg_StopSound_offsets_[1] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CSVCMsg_StopSound, guid_),
   };
@@ -1178,7 +1205,7 @@ void protobuf_AssignDesc_netmessages_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(CSVCMsg_StopSound));
-  CBidirMsg_RebroadcastGameEvent_descriptor_ = file->message_type(49);
+  CBidirMsg_RebroadcastGameEvent_descriptor_ = file->message_type(50);
   static const int CBidirMsg_RebroadcastGameEvent_offsets_[4] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CBidirMsg_RebroadcastGameEvent, posttoserver_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CBidirMsg_RebroadcastGameEvent, buftype_),
@@ -1196,7 +1223,7 @@ void protobuf_AssignDesc_netmessages_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(CBidirMsg_RebroadcastGameEvent));
-  CBidirMsg_RebroadcastSource_descriptor_ = file->message_type(50);
+  CBidirMsg_RebroadcastSource_descriptor_ = file->message_type(51);
   static const int CBidirMsg_RebroadcastSource_offsets_[1] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CBidirMsg_RebroadcastSource, eventsource_),
   };
@@ -1211,7 +1238,7 @@ void protobuf_AssignDesc_netmessages_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(CBidirMsg_RebroadcastSource));
-  SerializedNetAddress_t_descriptor_ = file->message_type(51);
+  SerializedNetAddress_t_descriptor_ = file->message_type(52);
   static const int SerializedNetAddress_t_offsets_[1] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(SerializedNetAddress_t, serializedaddress_),
   };
@@ -1226,7 +1253,7 @@ void protobuf_AssignDesc_netmessages_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(SerializedNetAddress_t));
-  CBidirMsg_RelayInfo_descriptor_ = file->message_type(52);
+  CBidirMsg_RelayInfo_descriptor_ = file->message_type(53);
   static const int CBidirMsg_RelayInfo_offsets_[3] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CBidirMsg_RelayInfo, operation_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CBidirMsg_RelayInfo, serializedtargetaddress_),
@@ -1244,7 +1271,7 @@ void protobuf_AssignDesc_netmessages_2eproto() {
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(CBidirMsg_RelayInfo));
   CBidirMsg_RelayInfo_Operation_t_descriptor_ = CBidirMsg_RelayInfo_descriptor_->enum_type(0);
-  SignedPayload_t_descriptor_ = file->message_type(53);
+  SignedPayload_t_descriptor_ = file->message_type(54);
   static const int SignedPayload_t_offsets_[3] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(SignedPayload_t, payloaddata_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(SignedPayload_t, signature_),
@@ -1261,7 +1288,7 @@ void protobuf_AssignDesc_netmessages_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(SignedPayload_t));
-  CBidirMsg_RelayPacket_descriptor_ = file->message_type(54);
+  CBidirMsg_RelayPacket_descriptor_ = file->message_type(55);
   static const int CBidirMsg_RelayPacket_offsets_[4] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CBidirMsg_RelayPacket, prevhopcount_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CBidirMsg_RelayPacket, originalsender_),
@@ -1296,6 +1323,81 @@ void protobuf_AssignDesc_netmessages_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(CBidirMsg_RelayPacket_SignedDestinationAddress_t));
+  CMsgServerNetworkStats_descriptor_ = file->message_type(56);
+  static const int CMsgServerNetworkStats_offsets_[25] = {
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgServerNetworkStats, dedicated_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgServerNetworkStats, cpu_usage_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgServerNetworkStats, memory_used_mb_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgServerNetworkStats, memory_free_mb_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgServerNetworkStats, uptime_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgServerNetworkStats, spawn_count_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgServerNetworkStats, num_clients_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgServerNetworkStats, num_bots_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgServerNetworkStats, num_spectators_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgServerNetworkStats, num_tv_relays_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgServerNetworkStats, fps_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgServerNetworkStats, ports_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgServerNetworkStats, avg_latency_out_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgServerNetworkStats, avg_latency_in_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgServerNetworkStats, avg_packets_out_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgServerNetworkStats, avg_packets_in_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgServerNetworkStats, avg_loss_out_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgServerNetworkStats, avg_loss_in_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgServerNetworkStats, avg_data_out_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgServerNetworkStats, avg_data_in_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgServerNetworkStats, total_data_in_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgServerNetworkStats, total_packets_in_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgServerNetworkStats, total_data_out_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgServerNetworkStats, total_packets_out_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgServerNetworkStats, players_),
+  };
+  CMsgServerNetworkStats_reflection_ =
+    new ::google::protobuf::internal::GeneratedMessageReflection(
+      CMsgServerNetworkStats_descriptor_,
+      CMsgServerNetworkStats::default_instance_,
+      CMsgServerNetworkStats_offsets_,
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgServerNetworkStats, _has_bits_[0]),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgServerNetworkStats, _unknown_fields_),
+      -1,
+      ::google::protobuf::DescriptorPool::generated_pool(),
+      ::google::protobuf::MessageFactory::generated_factory(),
+      sizeof(CMsgServerNetworkStats));
+  CMsgServerNetworkStats_Port_descriptor_ = CMsgServerNetworkStats_descriptor_->nested_type(0);
+  static const int CMsgServerNetworkStats_Port_offsets_[2] = {
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgServerNetworkStats_Port, port_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgServerNetworkStats_Port, name_),
+  };
+  CMsgServerNetworkStats_Port_reflection_ =
+    new ::google::protobuf::internal::GeneratedMessageReflection(
+      CMsgServerNetworkStats_Port_descriptor_,
+      CMsgServerNetworkStats_Port::default_instance_,
+      CMsgServerNetworkStats_Port_offsets_,
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgServerNetworkStats_Port, _has_bits_[0]),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgServerNetworkStats_Port, _unknown_fields_),
+      -1,
+      ::google::protobuf::DescriptorPool::generated_pool(),
+      ::google::protobuf::MessageFactory::generated_factory(),
+      sizeof(CMsgServerNetworkStats_Port));
+  CMsgServerNetworkStats_Player_descriptor_ = CMsgServerNetworkStats_descriptor_->nested_type(1);
+  static const int CMsgServerNetworkStats_Player_offsets_[6] = {
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgServerNetworkStats_Player, steamid_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgServerNetworkStats_Player, remote_addr_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgServerNetworkStats_Player, ping_stddev_ms_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgServerNetworkStats_Player, ping_avg_ms_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgServerNetworkStats_Player, packet_loss_pct_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgServerNetworkStats_Player, is_bot_),
+  };
+  CMsgServerNetworkStats_Player_reflection_ =
+    new ::google::protobuf::internal::GeneratedMessageReflection(
+      CMsgServerNetworkStats_Player_descriptor_,
+      CMsgServerNetworkStats_Player::default_instance_,
+      CMsgServerNetworkStats_Player_offsets_,
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgServerNetworkStats_Player, _has_bits_[0]),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgServerNetworkStats_Player, _unknown_fields_),
+      -1,
+      ::google::protobuf::DescriptorPool::generated_pool(),
+      ::google::protobuf::MessageFactory::generated_factory(),
+      sizeof(CMsgServerNetworkStats_Player));
   CLC_Messages_descriptor_ = file->enum_type(0);
   SVC_Messages_descriptor_ = file->enum_type(1);
   VoiceDataFormat_t_descriptor_ = file->enum_type(2);
@@ -1410,6 +1512,8 @@ void protobuf_RegisterTypes(const ::std::string&) {
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
     CSVCMsg_HLTVStatus_descriptor_, &CSVCMsg_HLTVStatus::default_instance());
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
+    CSVCMsg_ServerSteamID_descriptor_, &CSVCMsg_ServerSteamID::default_instance());
+  ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
     CSVCMsg_CmdKeyValues_descriptor_, &CSVCMsg_CmdKeyValues::default_instance());
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
     CMsgIPCAddress_descriptor_, &CMsgIPCAddress::default_instance());
@@ -1441,6 +1545,12 @@ void protobuf_RegisterTypes(const ::std::string&) {
     CBidirMsg_RelayPacket_descriptor_, &CBidirMsg_RelayPacket::default_instance());
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
     CBidirMsg_RelayPacket_SignedDestinationAddress_t_descriptor_, &CBidirMsg_RelayPacket_SignedDestinationAddress_t::default_instance());
+  ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
+    CMsgServerNetworkStats_descriptor_, &CMsgServerNetworkStats::default_instance());
+  ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
+    CMsgServerNetworkStats_Port_descriptor_, &CMsgServerNetworkStats_Port::default_instance());
+  ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
+    CMsgServerNetworkStats_Player_descriptor_, &CMsgServerNetworkStats_Player::default_instance());
 }
 
 }  // namespace
@@ -1536,6 +1646,8 @@ void protobuf_ShutdownFile_netmessages_2eproto() {
   delete CSVCMsg_FullFrameSplit_reflection_;
   delete CSVCMsg_HLTVStatus::default_instance_;
   delete CSVCMsg_HLTVStatus_reflection_;
+  delete CSVCMsg_ServerSteamID::default_instance_;
+  delete CSVCMsg_ServerSteamID_reflection_;
   delete CSVCMsg_CmdKeyValues::default_instance_;
   delete CSVCMsg_CmdKeyValues_reflection_;
   delete CMsgIPCAddress::default_instance_;
@@ -1568,6 +1680,12 @@ void protobuf_ShutdownFile_netmessages_2eproto() {
   delete CBidirMsg_RelayPacket_reflection_;
   delete CBidirMsg_RelayPacket_SignedDestinationAddress_t::default_instance_;
   delete CBidirMsg_RelayPacket_SignedDestinationAddress_t_reflection_;
+  delete CMsgServerNetworkStats::default_instance_;
+  delete CMsgServerNetworkStats_reflection_;
+  delete CMsgServerNetworkStats_Port::default_instance_;
+  delete CMsgServerNetworkStats_Port_reflection_;
+  delete CMsgServerNetworkStats_Player::default_instance_;
+  delete CMsgServerNetworkStats_Player_reflection_;
 }
 
 void protobuf_AddDesc_netmessages_2eproto() {
@@ -1697,96 +1815,118 @@ void protobuf_AddDesc_netmessages_2eproto() {
     "\014\n\004tick\030\001 \001(\005\022\017\n\007section\030\002 \001(\005\022\r\n\005total\030"
     "\003 \001(\005\022\014\n\004data\030\004 \001(\014\"U\n\022CSVCMsg_HLTVStatu"
     "s\022\016\n\006master\030\001 \001(\t\022\017\n\007clients\030\002 \001(\005\022\r\n\005sl"
-    "ots\030\003 \001(\005\022\017\n\007proxies\030\004 \001(\005\"$\n\024CSVCMsg_Cm"
-    "dKeyValues\022\014\n\004data\030\001 \001(\014\";\n\016CMsgIPCAddre"
-    "ss\022\025\n\rcomputer_guid\030\001 \001(\006\022\022\n\nprocess_id\030"
-    "\002 \001(\r\"\240\001\n\016CMsgServerPeer\022\023\n\013player_slot\030"
-    "\001 \001(\005\022\017\n\007steamid\030\002 \001(\006\022\034\n\003ipc\030\003 \001(\0132\017.CM"
-    "sgIPCAddress\022\025\n\rthey_hear_you\030\004 \001(\010\022\025\n\ry"
-    "ou_hear_them\030\005 \001(\010\022\034\n\024is_listenserver_ho"
-    "st\030\006 \001(\010\"1\n\020CSVCMsg_PeerList\022\035\n\004peer\030\001 \003"
-    "(\0132\017.CMsgServerPeer\"@\n\034CSVCMsg_ClearAllS"
-    "tringTables\022\017\n\007mapname\030\001 \001(\t\022\017\n\007map_crc\030"
-    "\002 \001(\r\"\222\002\n\037ProtoFlattenedSerializerField_"
-    "t\022\024\n\014var_type_sym\030\001 \001(\005\022\024\n\014var_name_sym\030"
-    "\002 \001(\005\022\021\n\tbit_count\030\003 \001(\005\022\021\n\tlow_value\030\004 "
-    "\001(\002\022\022\n\nhigh_value\030\005 \001(\002\022\024\n\014encode_flags\030"
-    "\006 \001(\005\022!\n\031field_serializer_name_sym\030\007 \001(\005"
-    "\022 \n\030field_serializer_version\030\010 \001(\005\022\025\n\rse"
-    "nd_node_sym\030\t \001(\005\022\027\n\017var_encoder_sym\030\n \001"
-    "(\005\"k\n\032ProtoFlattenedSerializer_t\022\033\n\023seri"
-    "alizer_name_sym\030\001 \001(\005\022\032\n\022serializer_vers"
-    "ion\030\002 \001(\005\022\024\n\014fields_index\030\003 \003(\005\"\222\001\n\033CSVC"
-    "Msg_FlattenedSerializer\0220\n\013serializers\030\001"
-    " \003(\0132\033.ProtoFlattenedSerializer_t\022\017\n\007sym"
-    "bols\030\002 \003(\t\0220\n\006fields\030\003 \003(\0132 .ProtoFlatte"
-    "nedSerializerField_t\"!\n\021CSVCMsg_StopSoun"
-    "d\022\014\n\004guid\030\001 \001(\007\"y\n\036CBidirMsg_Rebroadcast"
-    "GameEvent\022\024\n\014posttoserver\030\001 \001(\010\022\017\n\007bufty"
-    "pe\030\002 \001(\005\022\026\n\016clientbitcount\030\003 \001(\r\022\030\n\020rece"
-    "ivingclients\030\004 \001(\004\"2\n\033CBidirMsg_Rebroadc"
-    "astSource\022\023\n\013eventsource\030\001 \001(\005\"3\n\026Serial"
-    "izedNetAddress_t\022\031\n\021serializedAddress\030\001 "
-    "\002(\014\"\257\002\n\023CBidirMsg_RelayInfo\022F\n\toperation"
-    "\030\001 \002(\0162 .CBidirMsg_RelayInfo.Operation_t"
-    ":\021RIO_REQUEST_RELAY\0228\n\027serializedTargetA"
-    "ddress\030\002 \001(\0132\027.SerializedNetAddress_t\022\026\n"
-    "\016additionalHops\030\003 \001(\r\"~\n\013Operation_t\022\025\n\021"
-    "RIO_REQUEST_RELAY\020\000\022\022\n\016RIO_WILL_RELAY\020\001\022"
-    "\020\n\014RIO_NO_ROUTE\020\002\022\024\n\020RIO_REJECT_RELAY\020\003\022"
-    "\034\n\030RIO_ESTABLISH_CONNECTION\020\004\"T\n\017SignedP"
-    "ayload_t\022\023\n\013payloadData\030\001 \002(\014\022\021\n\tsignatu"
-    "re\030\002 \002(\r\022\031\n\021bPayloadEncrypted\030\003 \002(\010\"\320\002\n\025"
-    "CBidirMsg_RelayPacket\022\024\n\014prevhopcount\030\001 "
-    "\002(\r\022/\n\016originalSender\030\002 \002(\0132\027.Serialized"
-    "NetAddress_t\022\'\n\rsignedPayload\030\003 \002(\0132\020.Si"
-    "gnedPayload_t\022H\n\rrecipientList\030\004 \003(\01321.C"
-    "BidirMsg_RelayPacket.SignedDestinationAd"
-    "dress_t\032}\n\032SignedDestinationAddress_t\022/\n"
-    "\016serializedAddr\030\001 \002(\0132\027.SerializedNetAdd"
-    "ress_t\022\021\n\tsignature\030\002 \002(\r\022\033\n\023encryptedPa"
-    "yloadKey\030\003 \001(\014*\337\002\n\014CLC_Messages\022\022\n\016clc_C"
-    "lientInfo\020\024\022\014\n\010clc_Move\020\025\022\021\n\rclc_VoiceDa"
-    "ta\020\026\022\023\n\017clc_BaselineAck\020\027\022\024\n\020clc_ListenE"
-    "vents\020\030\022\030\n\024clc_RespondCvarValue\020\031\022\024\n\020clc"
-    "_FileCRCCheck\020\032\022\027\n\023clc_LoadingProgress\020\033"
-    "\022\032\n\026clc_SplitPlayerConnect\020\034\022\025\n\021clc_Clie"
-    "ntMessage\020\035\022\035\n\031clc_SplitPlayerDisconnect"
-    "\020\036\022\024\n\020clc_ServerStatus\020\037\022\022\n\016clc_ServerPi"
-    "ng\020 \022\024\n\020clc_RequestPause\020!\022\024\n\020clc_CmdKey"
-    "Values\020\"*\202\004\n\014SVC_Messages\022\022\n\016svc_ServerI"
-    "nfo\020(\022\033\n\027svc_FlattenedSerializer\020)\022\021\n\rsv"
-    "c_ClassInfo\020*\022\020\n\014svc_SetPause\020+\022\031\n\025svc_C"
-    "reateStringTable\020,\022\031\n\025svc_UpdateStringTa"
-    "ble\020-\022\021\n\rsvc_VoiceInit\020.\022\021\n\rsvc_VoiceDat"
-    "a\020/\022\r\n\tsvc_Print\0200\022\016\n\nsvc_Sounds\0201\022\017\n\013sv"
-    "c_SetView\0202\022\034\n\030svc_ClearAllStringTables\020"
-    "3\022\024\n\020svc_CmdKeyValues\0204\022\020\n\014svc_BSPDecal\020"
-    "5\022\023\n\017svc_SplitScreen\0206\022\026\n\022svc_PacketEnti"
-    "ties\0207\022\020\n\014svc_Prefetch\0208\022\014\n\010svc_Menu\0209\022\024"
-    "\n\020svc_GetCvarValue\020:\022\021\n\rsvc_StopSound\020;\022"
-    "\020\n\014svc_PeerList\020<\022\026\n\022svc_PacketReliable\020"
-    "=\022\022\n\016svc_HLTVStatus\020>\022\026\n\022svc_FullFrameSp"
-    "lit\020F*L\n\021VoiceDataFormat_t\022\032\n\026VOICEDATA_"
-    "FORMAT_STEAM\020\000\022\033\n\027VOICEDATA_FORMAT_ENGIN"
-    "E\020\001*B\n\016RequestPause_t\022\014\n\010RP_PAUSE\020\000\022\016\n\nR"
-    "P_UNPAUSE\020\001\022\022\n\016RP_TOGGLEPAUSE\020\002*\035\n\014Prefe"
-    "tchType\022\r\n\tPFT_SOUND\020\000*V\n\027ESplitScreenMe"
-    "ssageType\022\033\n\027MSG_SPLITSCREEN_ADDUSER\020\000\022\036"
-    "\n\032MSG_SPLITSCREEN_REMOVEUSER\020\001*\263\001\n\025EQuer"
-    "yCvarValueStatus\022%\n!eQueryCvarValueStatu"
-    "s_ValueIntact\020\000\022&\n\"eQueryCvarValueStatus"
-    "_CvarNotFound\020\001\022\"\n\036eQueryCvarValueStatus"
-    "_NotACvar\020\002\022\'\n#eQueryCvarValueStatus_Cva"
-    "rProtected\020\003*h\n\013DIALOG_TYPE\022\016\n\nDIALOG_MS"
-    "G\020\000\022\017\n\013DIALOG_MENU\020\001\022\017\n\013DIALOG_TEXT\020\002\022\020\n"
-    "\014DIALOG_ENTRY\020\003\022\025\n\021DIALOG_ASKCONNECT\020\004*+"
-    "\n\031SVC_Messages_LowFrequency\022\016\n\tsvc_dummy"
-    "\020\330\004*a\n\026Bidirectional_Messages\022\033\n\027bi_Rebr"
-    "oadcastGameEvent\020\020\022\030\n\024bi_RebroadcastSour"
-    "ce\020\021\022\020\n\014bi_GameEvent\020\022*M\n#Bidirectional_"
-    "Messages_LowFrequency\022\021\n\014bi_RelayInfo\020\274\005"
-    "\022\023\n\016bi_RelayPacket\020\275\005B\003\200\001\000", 8346);
+    "ots\030\003 \001(\005\022\017\n\007proxies\030\004 \001(\005\")\n\025CSVCMsg_Se"
+    "rverSteamID\022\020\n\010steam_id\030\001 \001(\004\"$\n\024CSVCMsg"
+    "_CmdKeyValues\022\014\n\004data\030\001 \001(\014\";\n\016CMsgIPCAd"
+    "dress\022\025\n\rcomputer_guid\030\001 \001(\006\022\022\n\nprocess_"
+    "id\030\002 \001(\r\"\240\001\n\016CMsgServerPeer\022\023\n\013player_sl"
+    "ot\030\001 \001(\005\022\017\n\007steamid\030\002 \001(\006\022\034\n\003ipc\030\003 \001(\0132\017"
+    ".CMsgIPCAddress\022\025\n\rthey_hear_you\030\004 \001(\010\022\025"
+    "\n\ryou_hear_them\030\005 \001(\010\022\034\n\024is_listenserver"
+    "_host\030\006 \001(\010\"1\n\020CSVCMsg_PeerList\022\035\n\004peer\030"
+    "\001 \003(\0132\017.CMsgServerPeer\"@\n\034CSVCMsg_ClearA"
+    "llStringTables\022\017\n\007mapname\030\001 \001(\t\022\017\n\007map_c"
+    "rc\030\002 \001(\r\"\222\002\n\037ProtoFlattenedSerializerFie"
+    "ld_t\022\024\n\014var_type_sym\030\001 \001(\005\022\024\n\014var_name_s"
+    "ym\030\002 \001(\005\022\021\n\tbit_count\030\003 \001(\005\022\021\n\tlow_value"
+    "\030\004 \001(\002\022\022\n\nhigh_value\030\005 \001(\002\022\024\n\014encode_fla"
+    "gs\030\006 \001(\005\022!\n\031field_serializer_name_sym\030\007 "
+    "\001(\005\022 \n\030field_serializer_version\030\010 \001(\005\022\025\n"
+    "\rsend_node_sym\030\t \001(\005\022\027\n\017var_encoder_sym\030"
+    "\n \001(\005\"k\n\032ProtoFlattenedSerializer_t\022\033\n\023s"
+    "erializer_name_sym\030\001 \001(\005\022\032\n\022serializer_v"
+    "ersion\030\002 \001(\005\022\024\n\014fields_index\030\003 \003(\005\"\222\001\n\033C"
+    "SVCMsg_FlattenedSerializer\0220\n\013serializer"
+    "s\030\001 \003(\0132\033.ProtoFlattenedSerializer_t\022\017\n\007"
+    "symbols\030\002 \003(\t\0220\n\006fields\030\003 \003(\0132 .ProtoFla"
+    "ttenedSerializerField_t\"!\n\021CSVCMsg_StopS"
+    "ound\022\014\n\004guid\030\001 \001(\007\"y\n\036CBidirMsg_Rebroadc"
+    "astGameEvent\022\024\n\014posttoserver\030\001 \001(\010\022\017\n\007bu"
+    "ftype\030\002 \001(\005\022\026\n\016clientbitcount\030\003 \001(\r\022\030\n\020r"
+    "eceivingclients\030\004 \001(\004\"2\n\033CBidirMsg_Rebro"
+    "adcastSource\022\023\n\013eventsource\030\001 \001(\005\"3\n\026Ser"
+    "ializedNetAddress_t\022\031\n\021serializedAddress"
+    "\030\001 \002(\014\"\257\002\n\023CBidirMsg_RelayInfo\022F\n\toperat"
+    "ion\030\001 \002(\0162 .CBidirMsg_RelayInfo.Operatio"
+    "n_t:\021RIO_REQUEST_RELAY\0228\n\027serializedTarg"
+    "etAddress\030\002 \001(\0132\027.SerializedNetAddress_t"
+    "\022\026\n\016additionalHops\030\003 \001(\r\"~\n\013Operation_t\022"
+    "\025\n\021RIO_REQUEST_RELAY\020\000\022\022\n\016RIO_WILL_RELAY"
+    "\020\001\022\020\n\014RIO_NO_ROUTE\020\002\022\024\n\020RIO_REJECT_RELAY"
+    "\020\003\022\034\n\030RIO_ESTABLISH_CONNECTION\020\004\"T\n\017Sign"
+    "edPayload_t\022\023\n\013payloadData\030\001 \002(\014\022\021\n\tsign"
+    "ature\030\002 \002(\r\022\031\n\021bPayloadEncrypted\030\003 \002(\010\"\320"
+    "\002\n\025CBidirMsg_RelayPacket\022\024\n\014prevhopcount"
+    "\030\001 \002(\r\022/\n\016originalSender\030\002 \002(\0132\027.Seriali"
+    "zedNetAddress_t\022\'\n\rsignedPayload\030\003 \002(\0132\020"
+    ".SignedPayload_t\022H\n\rrecipientList\030\004 \003(\0132"
+    "1.CBidirMsg_RelayPacket.SignedDestinatio"
+    "nAddress_t\032}\n\032SignedDestinationAddress_t"
+    "\022/\n\016serializedAddr\030\001 \002(\0132\027.SerializedNet"
+    "Address_t\022\021\n\tsignature\030\002 \002(\r\022\033\n\023encrypte"
+    "dPayloadKey\030\003 \001(\014\"\233\006\n\026CMsgServerNetworkS"
+    "tats\022\021\n\tdedicated\030\001 \001(\010\022\021\n\tcpu_usage\030\002 \001"
+    "(\005\022\026\n\016memory_used_mb\030\003 \001(\005\022\026\n\016memory_fre"
+    "e_mb\030\004 \001(\005\022\016\n\006uptime\030\005 \001(\005\022\023\n\013spawn_coun"
+    "t\030\006 \001(\005\022\023\n\013num_clients\030\010 \001(\005\022\020\n\010num_bots"
+    "\030\t \001(\005\022\026\n\016num_spectators\030\n \001(\005\022\025\n\rnum_tv"
+    "_relays\030\013 \001(\005\022\013\n\003fps\030\014 \001(\002\022+\n\005ports\030\021 \003("
+    "\0132\034.CMsgServerNetworkStats.Port\022\027\n\017avg_l"
+    "atency_out\030\022 \001(\002\022\026\n\016avg_latency_in\030\023 \001(\002"
+    "\022\027\n\017avg_packets_out\030\024 \001(\002\022\026\n\016avg_packets"
+    "_in\030\025 \001(\002\022\024\n\014avg_loss_out\030\026 \001(\002\022\023\n\013avg_l"
+    "oss_in\030\027 \001(\002\022\024\n\014avg_data_out\030\030 \001(\002\022\023\n\013av"
+    "g_data_in\030\031 \001(\002\022\025\n\rtotal_data_in\030\032 \001(\004\022\030"
+    "\n\020total_packets_in\030\033 \001(\004\022\026\n\016total_data_o"
+    "ut\030\034 \001(\004\022\031\n\021total_packets_out\030\035 \001(\004\022/\n\007p"
+    "layers\030\036 \003(\0132\036.CMsgServerNetworkStats.Pl"
+    "ayer\032\"\n\004Port\022\014\n\004port\030\001 \001(\005\022\014\n\004name\030\002 \001(\t"
+    "\032\204\001\n\006Player\022\017\n\007steamid\030\001 \001(\004\022\023\n\013remote_a"
+    "ddr\030\002 \001(\t\022\026\n\016ping_stddev_ms\030\003 \001(\005\022\023\n\013pin"
+    "g_avg_ms\030\004 \001(\005\022\027\n\017packet_loss_pct\030\005 \001(\002\022"
+    "\016\n\006is_bot\030\006 \001(\010*\337\002\n\014CLC_Messages\022\022\n\016clc_"
+    "ClientInfo\020\024\022\014\n\010clc_Move\020\025\022\021\n\rclc_VoiceD"
+    "ata\020\026\022\023\n\017clc_BaselineAck\020\027\022\024\n\020clc_Listen"
+    "Events\020\030\022\030\n\024clc_RespondCvarValue\020\031\022\024\n\020cl"
+    "c_FileCRCCheck\020\032\022\027\n\023clc_LoadingProgress\020"
+    "\033\022\032\n\026clc_SplitPlayerConnect\020\034\022\025\n\021clc_Cli"
+    "entMessage\020\035\022\035\n\031clc_SplitPlayerDisconnec"
+    "t\020\036\022\024\n\020clc_ServerStatus\020\037\022\022\n\016clc_ServerP"
+    "ing\020 \022\024\n\020clc_RequestPause\020!\022\024\n\020clc_CmdKe"
+    "yValues\020\"*\231\004\n\014SVC_Messages\022\022\n\016svc_Server"
+    "Info\020(\022\033\n\027svc_FlattenedSerializer\020)\022\021\n\rs"
+    "vc_ClassInfo\020*\022\020\n\014svc_SetPause\020+\022\031\n\025svc_"
+    "CreateStringTable\020,\022\031\n\025svc_UpdateStringT"
+    "able\020-\022\021\n\rsvc_VoiceInit\020.\022\021\n\rsvc_VoiceDa"
+    "ta\020/\022\r\n\tsvc_Print\0200\022\016\n\nsvc_Sounds\0201\022\017\n\013s"
+    "vc_SetView\0202\022\034\n\030svc_ClearAllStringTables"
+    "\0203\022\024\n\020svc_CmdKeyValues\0204\022\020\n\014svc_BSPDecal"
+    "\0205\022\023\n\017svc_SplitScreen\0206\022\026\n\022svc_PacketEnt"
+    "ities\0207\022\020\n\014svc_Prefetch\0208\022\014\n\010svc_Menu\0209\022"
+    "\024\n\020svc_GetCvarValue\020:\022\021\n\rsvc_StopSound\020;"
+    "\022\020\n\014svc_PeerList\020<\022\026\n\022svc_PacketReliable"
+    "\020=\022\022\n\016svc_HLTVStatus\020>\022\025\n\021svc_ServerStea"
+    "mID\020\?\022\026\n\022svc_FullFrameSplit\020F*L\n\021VoiceDa"
+    "taFormat_t\022\032\n\026VOICEDATA_FORMAT_STEAM\020\000\022\033"
+    "\n\027VOICEDATA_FORMAT_ENGINE\020\001*B\n\016RequestPa"
+    "use_t\022\014\n\010RP_PAUSE\020\000\022\016\n\nRP_UNPAUSE\020\001\022\022\n\016R"
+    "P_TOGGLEPAUSE\020\002*\035\n\014PrefetchType\022\r\n\tPFT_S"
+    "OUND\020\000*V\n\027ESplitScreenMessageType\022\033\n\027MSG"
+    "_SPLITSCREEN_ADDUSER\020\000\022\036\n\032MSG_SPLITSCREE"
+    "N_REMOVEUSER\020\001*\263\001\n\025EQueryCvarValueStatus"
+    "\022%\n!eQueryCvarValueStatus_ValueIntact\020\000\022"
+    "&\n\"eQueryCvarValueStatus_CvarNotFound\020\001\022"
+    "\"\n\036eQueryCvarValueStatus_NotACvar\020\002\022\'\n#e"
+    "QueryCvarValueStatus_CvarProtected\020\003*h\n\013"
+    "DIALOG_TYPE\022\016\n\nDIALOG_MSG\020\000\022\017\n\013DIALOG_ME"
+    "NU\020\001\022\017\n\013DIALOG_TEXT\020\002\022\020\n\014DIALOG_ENTRY\020\003\022"
+    "\025\n\021DIALOG_ASKCONNECT\020\004*+\n\031SVC_Messages_L"
+    "owFrequency\022\016\n\tsvc_dummy\020\330\004*a\n\026Bidirecti"
+    "onal_Messages\022\033\n\027bi_RebroadcastGameEvent"
+    "\020\020\022\030\n\024bi_RebroadcastSource\020\021\022\020\n\014bi_GameE"
+    "vent\020\022*M\n#Bidirectional_Messages_LowFreq"
+    "uency\022\021\n\014bi_RelayInfo\020\274\005\022\023\n\016bi_RelayPack"
+    "et\020\275\005B\003\200\001\000", 9210);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "netmessages.proto", &protobuf_RegisterTypes);
   CCLCMsg_ClientInfo::default_instance_ = new CCLCMsg_ClientInfo();
@@ -1834,6 +1974,7 @@ void protobuf_AddDesc_netmessages_2eproto() {
   CSVCMsg_PacketReliable::default_instance_ = new CSVCMsg_PacketReliable();
   CSVCMsg_FullFrameSplit::default_instance_ = new CSVCMsg_FullFrameSplit();
   CSVCMsg_HLTVStatus::default_instance_ = new CSVCMsg_HLTVStatus();
+  CSVCMsg_ServerSteamID::default_instance_ = new CSVCMsg_ServerSteamID();
   CSVCMsg_CmdKeyValues::default_instance_ = new CSVCMsg_CmdKeyValues();
   CMsgIPCAddress::default_instance_ = new CMsgIPCAddress();
   CMsgServerPeer::default_instance_ = new CMsgServerPeer();
@@ -1850,6 +1991,9 @@ void protobuf_AddDesc_netmessages_2eproto() {
   SignedPayload_t::default_instance_ = new SignedPayload_t();
   CBidirMsg_RelayPacket::default_instance_ = new CBidirMsg_RelayPacket();
   CBidirMsg_RelayPacket_SignedDestinationAddress_t::default_instance_ = new CBidirMsg_RelayPacket_SignedDestinationAddress_t();
+  CMsgServerNetworkStats::default_instance_ = new CMsgServerNetworkStats();
+  CMsgServerNetworkStats_Port::default_instance_ = new CMsgServerNetworkStats_Port();
+  CMsgServerNetworkStats_Player::default_instance_ = new CMsgServerNetworkStats_Player();
   CCLCMsg_ClientInfo::default_instance_->InitAsDefaultInstance();
   CCLCMsg_Move::default_instance_->InitAsDefaultInstance();
   CMsgVoiceAudio::default_instance_->InitAsDefaultInstance();
@@ -1895,6 +2039,7 @@ void protobuf_AddDesc_netmessages_2eproto() {
   CSVCMsg_PacketReliable::default_instance_->InitAsDefaultInstance();
   CSVCMsg_FullFrameSplit::default_instance_->InitAsDefaultInstance();
   CSVCMsg_HLTVStatus::default_instance_->InitAsDefaultInstance();
+  CSVCMsg_ServerSteamID::default_instance_->InitAsDefaultInstance();
   CSVCMsg_CmdKeyValues::default_instance_->InitAsDefaultInstance();
   CMsgIPCAddress::default_instance_->InitAsDefaultInstance();
   CMsgServerPeer::default_instance_->InitAsDefaultInstance();
@@ -1911,6 +2056,9 @@ void protobuf_AddDesc_netmessages_2eproto() {
   SignedPayload_t::default_instance_->InitAsDefaultInstance();
   CBidirMsg_RelayPacket::default_instance_->InitAsDefaultInstance();
   CBidirMsg_RelayPacket_SignedDestinationAddress_t::default_instance_->InitAsDefaultInstance();
+  CMsgServerNetworkStats::default_instance_->InitAsDefaultInstance();
+  CMsgServerNetworkStats_Port::default_instance_->InitAsDefaultInstance();
+  CMsgServerNetworkStats_Player::default_instance_->InitAsDefaultInstance();
   ::google::protobuf::internal::OnShutdown(&protobuf_ShutdownFile_netmessages_2eproto);
 }
 
@@ -1976,6 +2124,7 @@ bool SVC_Messages_IsValid(int value) {
     case 60:
     case 61:
     case 62:
+    case 63:
     case 70:
       return true;
     default:
@@ -17887,6 +18036,228 @@ void CSVCMsg_HLTVStatus::Swap(CSVCMsg_HLTVStatus* other) {
 // ===================================================================
 
 #ifndef _MSC_VER
+const int CSVCMsg_ServerSteamID::kSteamIdFieldNumber;
+#endif  // !_MSC_VER
+
+CSVCMsg_ServerSteamID::CSVCMsg_ServerSteamID()
+  : ::google::protobuf::Message() {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:CSVCMsg_ServerSteamID)
+}
+
+void CSVCMsg_ServerSteamID::InitAsDefaultInstance() {
+}
+
+CSVCMsg_ServerSteamID::CSVCMsg_ServerSteamID(const CSVCMsg_ServerSteamID& from)
+  : ::google::protobuf::Message() {
+  SharedCtor();
+  MergeFrom(from);
+  // @@protoc_insertion_point(copy_constructor:CSVCMsg_ServerSteamID)
+}
+
+void CSVCMsg_ServerSteamID::SharedCtor() {
+  _cached_size_ = 0;
+  steam_id_ = GOOGLE_ULONGLONG(0);
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+}
+
+CSVCMsg_ServerSteamID::~CSVCMsg_ServerSteamID() {
+  // @@protoc_insertion_point(destructor:CSVCMsg_ServerSteamID)
+  SharedDtor();
+}
+
+void CSVCMsg_ServerSteamID::SharedDtor() {
+  if (this != default_instance_) {
+  }
+}
+
+void CSVCMsg_ServerSteamID::SetCachedSize(int size) const {
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+}
+const ::google::protobuf::Descriptor* CSVCMsg_ServerSteamID::descriptor() {
+  protobuf_AssignDescriptorsOnce();
+  return CSVCMsg_ServerSteamID_descriptor_;
+}
+
+const CSVCMsg_ServerSteamID& CSVCMsg_ServerSteamID::default_instance() {
+  if (default_instance_ == NULL) protobuf_AddDesc_netmessages_2eproto();
+  return *default_instance_;
+}
+
+CSVCMsg_ServerSteamID* CSVCMsg_ServerSteamID::default_instance_ = NULL;
+
+CSVCMsg_ServerSteamID* CSVCMsg_ServerSteamID::New() const {
+  return new CSVCMsg_ServerSteamID;
+}
+
+void CSVCMsg_ServerSteamID::Clear() {
+  steam_id_ = GOOGLE_ULONGLONG(0);
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+  mutable_unknown_fields()->Clear();
+}
+
+bool CSVCMsg_ServerSteamID::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:CSVCMsg_ServerSteamID)
+  for (;;) {
+    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoff(127);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // optional uint64 steam_id = 1;
+      case 1: {
+        if (tag == 8) {
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::uint64, ::google::protobuf::internal::WireFormatLite::TYPE_UINT64>(
+                 input, &steam_id_)));
+          set_has_steam_id();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectAtEnd()) goto success;
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0 ||
+            ::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, mutable_unknown_fields()));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:CSVCMsg_ServerSteamID)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:CSVCMsg_ServerSteamID)
+  return false;
+#undef DO_
+}
+
+void CSVCMsg_ServerSteamID::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:CSVCMsg_ServerSteamID)
+  // optional uint64 steam_id = 1;
+  if (has_steam_id()) {
+    ::google::protobuf::internal::WireFormatLite::WriteUInt64(1, this->steam_id(), output);
+  }
+
+  if (!unknown_fields().empty()) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        unknown_fields(), output);
+  }
+  // @@protoc_insertion_point(serialize_end:CSVCMsg_ServerSteamID)
+}
+
+::google::protobuf::uint8* CSVCMsg_ServerSteamID::SerializeWithCachedSizesToArray(
+    ::google::protobuf::uint8* target) const {
+  // @@protoc_insertion_point(serialize_to_array_start:CSVCMsg_ServerSteamID)
+  // optional uint64 steam_id = 1;
+  if (has_steam_id()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt64ToArray(1, this->steam_id(), target);
+  }
+
+  if (!unknown_fields().empty()) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        unknown_fields(), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:CSVCMsg_ServerSteamID)
+  return target;
+}
+
+int CSVCMsg_ServerSteamID::ByteSize() const {
+  int total_size = 0;
+
+  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    // optional uint64 steam_id = 1;
+    if (has_steam_id()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::UInt64Size(
+          this->steam_id());
+    }
+
+  }
+  if (!unknown_fields().empty()) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        unknown_fields());
+  }
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = total_size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+  return total_size;
+}
+
+void CSVCMsg_ServerSteamID::MergeFrom(const ::google::protobuf::Message& from) {
+  GOOGLE_CHECK_NE(&from, this);
+  const CSVCMsg_ServerSteamID* source =
+    ::google::protobuf::internal::dynamic_cast_if_available<const CSVCMsg_ServerSteamID*>(
+      &from);
+  if (source == NULL) {
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+    MergeFrom(*source);
+  }
+}
+
+void CSVCMsg_ServerSteamID::MergeFrom(const CSVCMsg_ServerSteamID& from) {
+  GOOGLE_CHECK_NE(&from, this);
+  if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    if (from.has_steam_id()) {
+      set_steam_id(from.steam_id());
+    }
+  }
+  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
+}
+
+void CSVCMsg_ServerSteamID::CopyFrom(const ::google::protobuf::Message& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void CSVCMsg_ServerSteamID::CopyFrom(const CSVCMsg_ServerSteamID& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool CSVCMsg_ServerSteamID::IsInitialized() const {
+
+  return true;
+}
+
+void CSVCMsg_ServerSteamID::Swap(CSVCMsg_ServerSteamID* other) {
+  if (other != this) {
+    std::swap(steam_id_, other->steam_id_);
+    std::swap(_has_bits_[0], other->_has_bits_[0]);
+    _unknown_fields_.Swap(&other->_unknown_fields_);
+    std::swap(_cached_size_, other->_cached_size_);
+  }
+}
+
+::google::protobuf::Metadata CSVCMsg_ServerSteamID::GetMetadata() const {
+  protobuf_AssignDescriptorsOnce();
+  ::google::protobuf::Metadata metadata;
+  metadata.descriptor = CSVCMsg_ServerSteamID_descriptor_;
+  metadata.reflection = CSVCMsg_ServerSteamID_reflection_;
+  return metadata;
+}
+
+
+// ===================================================================
+
+#ifndef _MSC_VER
 const int CSVCMsg_CmdKeyValues::kDataFieldNumber;
 #endif  // !_MSC_VER
 
@@ -22903,6 +23274,1885 @@ void CBidirMsg_RelayPacket::Swap(CBidirMsg_RelayPacket* other) {
   ::google::protobuf::Metadata metadata;
   metadata.descriptor = CBidirMsg_RelayPacket_descriptor_;
   metadata.reflection = CBidirMsg_RelayPacket_reflection_;
+  return metadata;
+}
+
+
+// ===================================================================
+
+#ifndef _MSC_VER
+const int CMsgServerNetworkStats_Port::kPortFieldNumber;
+const int CMsgServerNetworkStats_Port::kNameFieldNumber;
+#endif  // !_MSC_VER
+
+CMsgServerNetworkStats_Port::CMsgServerNetworkStats_Port()
+  : ::google::protobuf::Message() {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:CMsgServerNetworkStats.Port)
+}
+
+void CMsgServerNetworkStats_Port::InitAsDefaultInstance() {
+}
+
+CMsgServerNetworkStats_Port::CMsgServerNetworkStats_Port(const CMsgServerNetworkStats_Port& from)
+  : ::google::protobuf::Message() {
+  SharedCtor();
+  MergeFrom(from);
+  // @@protoc_insertion_point(copy_constructor:CMsgServerNetworkStats.Port)
+}
+
+void CMsgServerNetworkStats_Port::SharedCtor() {
+  ::google::protobuf::internal::GetEmptyString();
+  _cached_size_ = 0;
+  port_ = 0;
+  name_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+}
+
+CMsgServerNetworkStats_Port::~CMsgServerNetworkStats_Port() {
+  // @@protoc_insertion_point(destructor:CMsgServerNetworkStats.Port)
+  SharedDtor();
+}
+
+void CMsgServerNetworkStats_Port::SharedDtor() {
+  if (name_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete name_;
+  }
+  if (this != default_instance_) {
+  }
+}
+
+void CMsgServerNetworkStats_Port::SetCachedSize(int size) const {
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+}
+const ::google::protobuf::Descriptor* CMsgServerNetworkStats_Port::descriptor() {
+  protobuf_AssignDescriptorsOnce();
+  return CMsgServerNetworkStats_Port_descriptor_;
+}
+
+const CMsgServerNetworkStats_Port& CMsgServerNetworkStats_Port::default_instance() {
+  if (default_instance_ == NULL) protobuf_AddDesc_netmessages_2eproto();
+  return *default_instance_;
+}
+
+CMsgServerNetworkStats_Port* CMsgServerNetworkStats_Port::default_instance_ = NULL;
+
+CMsgServerNetworkStats_Port* CMsgServerNetworkStats_Port::New() const {
+  return new CMsgServerNetworkStats_Port;
+}
+
+void CMsgServerNetworkStats_Port::Clear() {
+  if (_has_bits_[0 / 32] & 3) {
+    port_ = 0;
+    if (has_name()) {
+      if (name_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+        name_->clear();
+      }
+    }
+  }
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+  mutable_unknown_fields()->Clear();
+}
+
+bool CMsgServerNetworkStats_Port::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:CMsgServerNetworkStats.Port)
+  for (;;) {
+    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoff(127);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // optional int32 port = 1;
+      case 1: {
+        if (tag == 8) {
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
+                 input, &port_)));
+          set_has_port();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(18)) goto parse_name;
+        break;
+      }
+
+      // optional string name = 2;
+      case 2: {
+        if (tag == 18) {
+         parse_name:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_name()));
+          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+            this->name().data(), this->name().length(),
+            ::google::protobuf::internal::WireFormat::PARSE,
+            "name");
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectAtEnd()) goto success;
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0 ||
+            ::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, mutable_unknown_fields()));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:CMsgServerNetworkStats.Port)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:CMsgServerNetworkStats.Port)
+  return false;
+#undef DO_
+}
+
+void CMsgServerNetworkStats_Port::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:CMsgServerNetworkStats.Port)
+  // optional int32 port = 1;
+  if (has_port()) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(1, this->port(), output);
+  }
+
+  // optional string name = 2;
+  if (has_name()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->name().data(), this->name().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "name");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      2, this->name(), output);
+  }
+
+  if (!unknown_fields().empty()) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        unknown_fields(), output);
+  }
+  // @@protoc_insertion_point(serialize_end:CMsgServerNetworkStats.Port)
+}
+
+::google::protobuf::uint8* CMsgServerNetworkStats_Port::SerializeWithCachedSizesToArray(
+    ::google::protobuf::uint8* target) const {
+  // @@protoc_insertion_point(serialize_to_array_start:CMsgServerNetworkStats.Port)
+  // optional int32 port = 1;
+  if (has_port()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(1, this->port(), target);
+  }
+
+  // optional string name = 2;
+  if (has_name()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->name().data(), this->name().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "name");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        2, this->name(), target);
+  }
+
+  if (!unknown_fields().empty()) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        unknown_fields(), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:CMsgServerNetworkStats.Port)
+  return target;
+}
+
+int CMsgServerNetworkStats_Port::ByteSize() const {
+  int total_size = 0;
+
+  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    // optional int32 port = 1;
+    if (has_port()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::Int32Size(
+          this->port());
+    }
+
+    // optional string name = 2;
+    if (has_name()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::StringSize(
+          this->name());
+    }
+
+  }
+  if (!unknown_fields().empty()) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        unknown_fields());
+  }
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = total_size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+  return total_size;
+}
+
+void CMsgServerNetworkStats_Port::MergeFrom(const ::google::protobuf::Message& from) {
+  GOOGLE_CHECK_NE(&from, this);
+  const CMsgServerNetworkStats_Port* source =
+    ::google::protobuf::internal::dynamic_cast_if_available<const CMsgServerNetworkStats_Port*>(
+      &from);
+  if (source == NULL) {
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+    MergeFrom(*source);
+  }
+}
+
+void CMsgServerNetworkStats_Port::MergeFrom(const CMsgServerNetworkStats_Port& from) {
+  GOOGLE_CHECK_NE(&from, this);
+  if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    if (from.has_port()) {
+      set_port(from.port());
+    }
+    if (from.has_name()) {
+      set_name(from.name());
+    }
+  }
+  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
+}
+
+void CMsgServerNetworkStats_Port::CopyFrom(const ::google::protobuf::Message& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void CMsgServerNetworkStats_Port::CopyFrom(const CMsgServerNetworkStats_Port& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool CMsgServerNetworkStats_Port::IsInitialized() const {
+
+  return true;
+}
+
+void CMsgServerNetworkStats_Port::Swap(CMsgServerNetworkStats_Port* other) {
+  if (other != this) {
+    std::swap(port_, other->port_);
+    std::swap(name_, other->name_);
+    std::swap(_has_bits_[0], other->_has_bits_[0]);
+    _unknown_fields_.Swap(&other->_unknown_fields_);
+    std::swap(_cached_size_, other->_cached_size_);
+  }
+}
+
+::google::protobuf::Metadata CMsgServerNetworkStats_Port::GetMetadata() const {
+  protobuf_AssignDescriptorsOnce();
+  ::google::protobuf::Metadata metadata;
+  metadata.descriptor = CMsgServerNetworkStats_Port_descriptor_;
+  metadata.reflection = CMsgServerNetworkStats_Port_reflection_;
+  return metadata;
+}
+
+
+// -------------------------------------------------------------------
+
+#ifndef _MSC_VER
+const int CMsgServerNetworkStats_Player::kSteamidFieldNumber;
+const int CMsgServerNetworkStats_Player::kRemoteAddrFieldNumber;
+const int CMsgServerNetworkStats_Player::kPingStddevMsFieldNumber;
+const int CMsgServerNetworkStats_Player::kPingAvgMsFieldNumber;
+const int CMsgServerNetworkStats_Player::kPacketLossPctFieldNumber;
+const int CMsgServerNetworkStats_Player::kIsBotFieldNumber;
+#endif  // !_MSC_VER
+
+CMsgServerNetworkStats_Player::CMsgServerNetworkStats_Player()
+  : ::google::protobuf::Message() {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:CMsgServerNetworkStats.Player)
+}
+
+void CMsgServerNetworkStats_Player::InitAsDefaultInstance() {
+}
+
+CMsgServerNetworkStats_Player::CMsgServerNetworkStats_Player(const CMsgServerNetworkStats_Player& from)
+  : ::google::protobuf::Message() {
+  SharedCtor();
+  MergeFrom(from);
+  // @@protoc_insertion_point(copy_constructor:CMsgServerNetworkStats.Player)
+}
+
+void CMsgServerNetworkStats_Player::SharedCtor() {
+  ::google::protobuf::internal::GetEmptyString();
+  _cached_size_ = 0;
+  steamid_ = GOOGLE_ULONGLONG(0);
+  remote_addr_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  ping_stddev_ms_ = 0;
+  ping_avg_ms_ = 0;
+  packet_loss_pct_ = 0;
+  is_bot_ = false;
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+}
+
+CMsgServerNetworkStats_Player::~CMsgServerNetworkStats_Player() {
+  // @@protoc_insertion_point(destructor:CMsgServerNetworkStats.Player)
+  SharedDtor();
+}
+
+void CMsgServerNetworkStats_Player::SharedDtor() {
+  if (remote_addr_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete remote_addr_;
+  }
+  if (this != default_instance_) {
+  }
+}
+
+void CMsgServerNetworkStats_Player::SetCachedSize(int size) const {
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+}
+const ::google::protobuf::Descriptor* CMsgServerNetworkStats_Player::descriptor() {
+  protobuf_AssignDescriptorsOnce();
+  return CMsgServerNetworkStats_Player_descriptor_;
+}
+
+const CMsgServerNetworkStats_Player& CMsgServerNetworkStats_Player::default_instance() {
+  if (default_instance_ == NULL) protobuf_AddDesc_netmessages_2eproto();
+  return *default_instance_;
+}
+
+CMsgServerNetworkStats_Player* CMsgServerNetworkStats_Player::default_instance_ = NULL;
+
+CMsgServerNetworkStats_Player* CMsgServerNetworkStats_Player::New() const {
+  return new CMsgServerNetworkStats_Player;
+}
+
+void CMsgServerNetworkStats_Player::Clear() {
+#define OFFSET_OF_FIELD_(f) (reinterpret_cast<char*>(      \
+  &reinterpret_cast<CMsgServerNetworkStats_Player*>(16)->f) - \
+   reinterpret_cast<char*>(16))
+
+#define ZR_(first, last) do {                              \
+    size_t f = OFFSET_OF_FIELD_(first);                    \
+    size_t n = OFFSET_OF_FIELD_(last) - f + sizeof(last);  \
+    ::memset(&first, 0, n);                                \
+  } while (0)
+
+  if (_has_bits_[0 / 32] & 63) {
+    ZR_(ping_stddev_ms_, is_bot_);
+    steamid_ = GOOGLE_ULONGLONG(0);
+    if (has_remote_addr()) {
+      if (remote_addr_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+        remote_addr_->clear();
+      }
+    }
+  }
+
+#undef OFFSET_OF_FIELD_
+#undef ZR_
+
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+  mutable_unknown_fields()->Clear();
+}
+
+bool CMsgServerNetworkStats_Player::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:CMsgServerNetworkStats.Player)
+  for (;;) {
+    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoff(127);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // optional uint64 steamid = 1;
+      case 1: {
+        if (tag == 8) {
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::uint64, ::google::protobuf::internal::WireFormatLite::TYPE_UINT64>(
+                 input, &steamid_)));
+          set_has_steamid();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(18)) goto parse_remote_addr;
+        break;
+      }
+
+      // optional string remote_addr = 2;
+      case 2: {
+        if (tag == 18) {
+         parse_remote_addr:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_remote_addr()));
+          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+            this->remote_addr().data(), this->remote_addr().length(),
+            ::google::protobuf::internal::WireFormat::PARSE,
+            "remote_addr");
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(24)) goto parse_ping_stddev_ms;
+        break;
+      }
+
+      // optional int32 ping_stddev_ms = 3;
+      case 3: {
+        if (tag == 24) {
+         parse_ping_stddev_ms:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
+                 input, &ping_stddev_ms_)));
+          set_has_ping_stddev_ms();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(32)) goto parse_ping_avg_ms;
+        break;
+      }
+
+      // optional int32 ping_avg_ms = 4;
+      case 4: {
+        if (tag == 32) {
+         parse_ping_avg_ms:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
+                 input, &ping_avg_ms_)));
+          set_has_ping_avg_ms();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(45)) goto parse_packet_loss_pct;
+        break;
+      }
+
+      // optional float packet_loss_pct = 5;
+      case 5: {
+        if (tag == 45) {
+         parse_packet_loss_pct:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
+                 input, &packet_loss_pct_)));
+          set_has_packet_loss_pct();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(48)) goto parse_is_bot;
+        break;
+      }
+
+      // optional bool is_bot = 6;
+      case 6: {
+        if (tag == 48) {
+         parse_is_bot:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   bool, ::google::protobuf::internal::WireFormatLite::TYPE_BOOL>(
+                 input, &is_bot_)));
+          set_has_is_bot();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectAtEnd()) goto success;
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0 ||
+            ::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, mutable_unknown_fields()));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:CMsgServerNetworkStats.Player)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:CMsgServerNetworkStats.Player)
+  return false;
+#undef DO_
+}
+
+void CMsgServerNetworkStats_Player::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:CMsgServerNetworkStats.Player)
+  // optional uint64 steamid = 1;
+  if (has_steamid()) {
+    ::google::protobuf::internal::WireFormatLite::WriteUInt64(1, this->steamid(), output);
+  }
+
+  // optional string remote_addr = 2;
+  if (has_remote_addr()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->remote_addr().data(), this->remote_addr().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "remote_addr");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      2, this->remote_addr(), output);
+  }
+
+  // optional int32 ping_stddev_ms = 3;
+  if (has_ping_stddev_ms()) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(3, this->ping_stddev_ms(), output);
+  }
+
+  // optional int32 ping_avg_ms = 4;
+  if (has_ping_avg_ms()) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(4, this->ping_avg_ms(), output);
+  }
+
+  // optional float packet_loss_pct = 5;
+  if (has_packet_loss_pct()) {
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(5, this->packet_loss_pct(), output);
+  }
+
+  // optional bool is_bot = 6;
+  if (has_is_bot()) {
+    ::google::protobuf::internal::WireFormatLite::WriteBool(6, this->is_bot(), output);
+  }
+
+  if (!unknown_fields().empty()) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        unknown_fields(), output);
+  }
+  // @@protoc_insertion_point(serialize_end:CMsgServerNetworkStats.Player)
+}
+
+::google::protobuf::uint8* CMsgServerNetworkStats_Player::SerializeWithCachedSizesToArray(
+    ::google::protobuf::uint8* target) const {
+  // @@protoc_insertion_point(serialize_to_array_start:CMsgServerNetworkStats.Player)
+  // optional uint64 steamid = 1;
+  if (has_steamid()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt64ToArray(1, this->steamid(), target);
+  }
+
+  // optional string remote_addr = 2;
+  if (has_remote_addr()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->remote_addr().data(), this->remote_addr().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "remote_addr");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        2, this->remote_addr(), target);
+  }
+
+  // optional int32 ping_stddev_ms = 3;
+  if (has_ping_stddev_ms()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(3, this->ping_stddev_ms(), target);
+  }
+
+  // optional int32 ping_avg_ms = 4;
+  if (has_ping_avg_ms()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(4, this->ping_avg_ms(), target);
+  }
+
+  // optional float packet_loss_pct = 5;
+  if (has_packet_loss_pct()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(5, this->packet_loss_pct(), target);
+  }
+
+  // optional bool is_bot = 6;
+  if (has_is_bot()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(6, this->is_bot(), target);
+  }
+
+  if (!unknown_fields().empty()) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        unknown_fields(), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:CMsgServerNetworkStats.Player)
+  return target;
+}
+
+int CMsgServerNetworkStats_Player::ByteSize() const {
+  int total_size = 0;
+
+  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    // optional uint64 steamid = 1;
+    if (has_steamid()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::UInt64Size(
+          this->steamid());
+    }
+
+    // optional string remote_addr = 2;
+    if (has_remote_addr()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::StringSize(
+          this->remote_addr());
+    }
+
+    // optional int32 ping_stddev_ms = 3;
+    if (has_ping_stddev_ms()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::Int32Size(
+          this->ping_stddev_ms());
+    }
+
+    // optional int32 ping_avg_ms = 4;
+    if (has_ping_avg_ms()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::Int32Size(
+          this->ping_avg_ms());
+    }
+
+    // optional float packet_loss_pct = 5;
+    if (has_packet_loss_pct()) {
+      total_size += 1 + 4;
+    }
+
+    // optional bool is_bot = 6;
+    if (has_is_bot()) {
+      total_size += 1 + 1;
+    }
+
+  }
+  if (!unknown_fields().empty()) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        unknown_fields());
+  }
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = total_size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+  return total_size;
+}
+
+void CMsgServerNetworkStats_Player::MergeFrom(const ::google::protobuf::Message& from) {
+  GOOGLE_CHECK_NE(&from, this);
+  const CMsgServerNetworkStats_Player* source =
+    ::google::protobuf::internal::dynamic_cast_if_available<const CMsgServerNetworkStats_Player*>(
+      &from);
+  if (source == NULL) {
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+    MergeFrom(*source);
+  }
+}
+
+void CMsgServerNetworkStats_Player::MergeFrom(const CMsgServerNetworkStats_Player& from) {
+  GOOGLE_CHECK_NE(&from, this);
+  if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    if (from.has_steamid()) {
+      set_steamid(from.steamid());
+    }
+    if (from.has_remote_addr()) {
+      set_remote_addr(from.remote_addr());
+    }
+    if (from.has_ping_stddev_ms()) {
+      set_ping_stddev_ms(from.ping_stddev_ms());
+    }
+    if (from.has_ping_avg_ms()) {
+      set_ping_avg_ms(from.ping_avg_ms());
+    }
+    if (from.has_packet_loss_pct()) {
+      set_packet_loss_pct(from.packet_loss_pct());
+    }
+    if (from.has_is_bot()) {
+      set_is_bot(from.is_bot());
+    }
+  }
+  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
+}
+
+void CMsgServerNetworkStats_Player::CopyFrom(const ::google::protobuf::Message& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void CMsgServerNetworkStats_Player::CopyFrom(const CMsgServerNetworkStats_Player& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool CMsgServerNetworkStats_Player::IsInitialized() const {
+
+  return true;
+}
+
+void CMsgServerNetworkStats_Player::Swap(CMsgServerNetworkStats_Player* other) {
+  if (other != this) {
+    std::swap(steamid_, other->steamid_);
+    std::swap(remote_addr_, other->remote_addr_);
+    std::swap(ping_stddev_ms_, other->ping_stddev_ms_);
+    std::swap(ping_avg_ms_, other->ping_avg_ms_);
+    std::swap(packet_loss_pct_, other->packet_loss_pct_);
+    std::swap(is_bot_, other->is_bot_);
+    std::swap(_has_bits_[0], other->_has_bits_[0]);
+    _unknown_fields_.Swap(&other->_unknown_fields_);
+    std::swap(_cached_size_, other->_cached_size_);
+  }
+}
+
+::google::protobuf::Metadata CMsgServerNetworkStats_Player::GetMetadata() const {
+  protobuf_AssignDescriptorsOnce();
+  ::google::protobuf::Metadata metadata;
+  metadata.descriptor = CMsgServerNetworkStats_Player_descriptor_;
+  metadata.reflection = CMsgServerNetworkStats_Player_reflection_;
+  return metadata;
+}
+
+
+// -------------------------------------------------------------------
+
+#ifndef _MSC_VER
+const int CMsgServerNetworkStats::kDedicatedFieldNumber;
+const int CMsgServerNetworkStats::kCpuUsageFieldNumber;
+const int CMsgServerNetworkStats::kMemoryUsedMbFieldNumber;
+const int CMsgServerNetworkStats::kMemoryFreeMbFieldNumber;
+const int CMsgServerNetworkStats::kUptimeFieldNumber;
+const int CMsgServerNetworkStats::kSpawnCountFieldNumber;
+const int CMsgServerNetworkStats::kNumClientsFieldNumber;
+const int CMsgServerNetworkStats::kNumBotsFieldNumber;
+const int CMsgServerNetworkStats::kNumSpectatorsFieldNumber;
+const int CMsgServerNetworkStats::kNumTvRelaysFieldNumber;
+const int CMsgServerNetworkStats::kFpsFieldNumber;
+const int CMsgServerNetworkStats::kPortsFieldNumber;
+const int CMsgServerNetworkStats::kAvgLatencyOutFieldNumber;
+const int CMsgServerNetworkStats::kAvgLatencyInFieldNumber;
+const int CMsgServerNetworkStats::kAvgPacketsOutFieldNumber;
+const int CMsgServerNetworkStats::kAvgPacketsInFieldNumber;
+const int CMsgServerNetworkStats::kAvgLossOutFieldNumber;
+const int CMsgServerNetworkStats::kAvgLossInFieldNumber;
+const int CMsgServerNetworkStats::kAvgDataOutFieldNumber;
+const int CMsgServerNetworkStats::kAvgDataInFieldNumber;
+const int CMsgServerNetworkStats::kTotalDataInFieldNumber;
+const int CMsgServerNetworkStats::kTotalPacketsInFieldNumber;
+const int CMsgServerNetworkStats::kTotalDataOutFieldNumber;
+const int CMsgServerNetworkStats::kTotalPacketsOutFieldNumber;
+const int CMsgServerNetworkStats::kPlayersFieldNumber;
+#endif  // !_MSC_VER
+
+CMsgServerNetworkStats::CMsgServerNetworkStats()
+  : ::google::protobuf::Message() {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:CMsgServerNetworkStats)
+}
+
+void CMsgServerNetworkStats::InitAsDefaultInstance() {
+}
+
+CMsgServerNetworkStats::CMsgServerNetworkStats(const CMsgServerNetworkStats& from)
+  : ::google::protobuf::Message() {
+  SharedCtor();
+  MergeFrom(from);
+  // @@protoc_insertion_point(copy_constructor:CMsgServerNetworkStats)
+}
+
+void CMsgServerNetworkStats::SharedCtor() {
+  _cached_size_ = 0;
+  dedicated_ = false;
+  cpu_usage_ = 0;
+  memory_used_mb_ = 0;
+  memory_free_mb_ = 0;
+  uptime_ = 0;
+  spawn_count_ = 0;
+  num_clients_ = 0;
+  num_bots_ = 0;
+  num_spectators_ = 0;
+  num_tv_relays_ = 0;
+  fps_ = 0;
+  avg_latency_out_ = 0;
+  avg_latency_in_ = 0;
+  avg_packets_out_ = 0;
+  avg_packets_in_ = 0;
+  avg_loss_out_ = 0;
+  avg_loss_in_ = 0;
+  avg_data_out_ = 0;
+  avg_data_in_ = 0;
+  total_data_in_ = GOOGLE_ULONGLONG(0);
+  total_packets_in_ = GOOGLE_ULONGLONG(0);
+  total_data_out_ = GOOGLE_ULONGLONG(0);
+  total_packets_out_ = GOOGLE_ULONGLONG(0);
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+}
+
+CMsgServerNetworkStats::~CMsgServerNetworkStats() {
+  // @@protoc_insertion_point(destructor:CMsgServerNetworkStats)
+  SharedDtor();
+}
+
+void CMsgServerNetworkStats::SharedDtor() {
+  if (this != default_instance_) {
+  }
+}
+
+void CMsgServerNetworkStats::SetCachedSize(int size) const {
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+}
+const ::google::protobuf::Descriptor* CMsgServerNetworkStats::descriptor() {
+  protobuf_AssignDescriptorsOnce();
+  return CMsgServerNetworkStats_descriptor_;
+}
+
+const CMsgServerNetworkStats& CMsgServerNetworkStats::default_instance() {
+  if (default_instance_ == NULL) protobuf_AddDesc_netmessages_2eproto();
+  return *default_instance_;
+}
+
+CMsgServerNetworkStats* CMsgServerNetworkStats::default_instance_ = NULL;
+
+CMsgServerNetworkStats* CMsgServerNetworkStats::New() const {
+  return new CMsgServerNetworkStats;
+}
+
+void CMsgServerNetworkStats::Clear() {
+#define OFFSET_OF_FIELD_(f) (reinterpret_cast<char*>(      \
+  &reinterpret_cast<CMsgServerNetworkStats*>(16)->f) - \
+   reinterpret_cast<char*>(16))
+
+#define ZR_(first, last) do {                              \
+    size_t f = OFFSET_OF_FIELD_(first);                    \
+    size_t n = OFFSET_OF_FIELD_(last) - f + sizeof(last);  \
+    ::memset(&first, 0, n);                                \
+  } while (0)
+
+  if (_has_bits_[0 / 32] & 255) {
+    ZR_(dedicated_, num_bots_);
+  }
+  if (_has_bits_[8 / 32] & 63232) {
+    ZR_(num_spectators_, num_tv_relays_);
+    ZR_(fps_, avg_packets_in_);
+  }
+  if (_has_bits_[16 / 32] & 16711680) {
+    ZR_(avg_loss_out_, total_packets_out_);
+    avg_data_in_ = 0;
+  }
+
+#undef OFFSET_OF_FIELD_
+#undef ZR_
+
+  ports_.Clear();
+  players_.Clear();
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+  mutable_unknown_fields()->Clear();
+}
+
+bool CMsgServerNetworkStats::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:CMsgServerNetworkStats)
+  for (;;) {
+    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoff(16383);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // optional bool dedicated = 1;
+      case 1: {
+        if (tag == 8) {
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   bool, ::google::protobuf::internal::WireFormatLite::TYPE_BOOL>(
+                 input, &dedicated_)));
+          set_has_dedicated();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(16)) goto parse_cpu_usage;
+        break;
+      }
+
+      // optional int32 cpu_usage = 2;
+      case 2: {
+        if (tag == 16) {
+         parse_cpu_usage:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
+                 input, &cpu_usage_)));
+          set_has_cpu_usage();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(24)) goto parse_memory_used_mb;
+        break;
+      }
+
+      // optional int32 memory_used_mb = 3;
+      case 3: {
+        if (tag == 24) {
+         parse_memory_used_mb:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
+                 input, &memory_used_mb_)));
+          set_has_memory_used_mb();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(32)) goto parse_memory_free_mb;
+        break;
+      }
+
+      // optional int32 memory_free_mb = 4;
+      case 4: {
+        if (tag == 32) {
+         parse_memory_free_mb:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
+                 input, &memory_free_mb_)));
+          set_has_memory_free_mb();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(40)) goto parse_uptime;
+        break;
+      }
+
+      // optional int32 uptime = 5;
+      case 5: {
+        if (tag == 40) {
+         parse_uptime:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
+                 input, &uptime_)));
+          set_has_uptime();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(48)) goto parse_spawn_count;
+        break;
+      }
+
+      // optional int32 spawn_count = 6;
+      case 6: {
+        if (tag == 48) {
+         parse_spawn_count:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
+                 input, &spawn_count_)));
+          set_has_spawn_count();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(64)) goto parse_num_clients;
+        break;
+      }
+
+      // optional int32 num_clients = 8;
+      case 8: {
+        if (tag == 64) {
+         parse_num_clients:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
+                 input, &num_clients_)));
+          set_has_num_clients();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(72)) goto parse_num_bots;
+        break;
+      }
+
+      // optional int32 num_bots = 9;
+      case 9: {
+        if (tag == 72) {
+         parse_num_bots:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
+                 input, &num_bots_)));
+          set_has_num_bots();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(80)) goto parse_num_spectators;
+        break;
+      }
+
+      // optional int32 num_spectators = 10;
+      case 10: {
+        if (tag == 80) {
+         parse_num_spectators:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
+                 input, &num_spectators_)));
+          set_has_num_spectators();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(88)) goto parse_num_tv_relays;
+        break;
+      }
+
+      // optional int32 num_tv_relays = 11;
+      case 11: {
+        if (tag == 88) {
+         parse_num_tv_relays:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
+                 input, &num_tv_relays_)));
+          set_has_num_tv_relays();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(101)) goto parse_fps;
+        break;
+      }
+
+      // optional float fps = 12;
+      case 12: {
+        if (tag == 101) {
+         parse_fps:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
+                 input, &fps_)));
+          set_has_fps();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(138)) goto parse_ports;
+        break;
+      }
+
+      // repeated .CMsgServerNetworkStats.Port ports = 17;
+      case 17: {
+        if (tag == 138) {
+         parse_ports:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+                input, add_ports()));
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(138)) goto parse_ports;
+        if (input->ExpectTag(149)) goto parse_avg_latency_out;
+        break;
+      }
+
+      // optional float avg_latency_out = 18;
+      case 18: {
+        if (tag == 149) {
+         parse_avg_latency_out:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
+                 input, &avg_latency_out_)));
+          set_has_avg_latency_out();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(157)) goto parse_avg_latency_in;
+        break;
+      }
+
+      // optional float avg_latency_in = 19;
+      case 19: {
+        if (tag == 157) {
+         parse_avg_latency_in:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
+                 input, &avg_latency_in_)));
+          set_has_avg_latency_in();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(165)) goto parse_avg_packets_out;
+        break;
+      }
+
+      // optional float avg_packets_out = 20;
+      case 20: {
+        if (tag == 165) {
+         parse_avg_packets_out:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
+                 input, &avg_packets_out_)));
+          set_has_avg_packets_out();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(173)) goto parse_avg_packets_in;
+        break;
+      }
+
+      // optional float avg_packets_in = 21;
+      case 21: {
+        if (tag == 173) {
+         parse_avg_packets_in:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
+                 input, &avg_packets_in_)));
+          set_has_avg_packets_in();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(181)) goto parse_avg_loss_out;
+        break;
+      }
+
+      // optional float avg_loss_out = 22;
+      case 22: {
+        if (tag == 181) {
+         parse_avg_loss_out:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
+                 input, &avg_loss_out_)));
+          set_has_avg_loss_out();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(189)) goto parse_avg_loss_in;
+        break;
+      }
+
+      // optional float avg_loss_in = 23;
+      case 23: {
+        if (tag == 189) {
+         parse_avg_loss_in:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
+                 input, &avg_loss_in_)));
+          set_has_avg_loss_in();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(197)) goto parse_avg_data_out;
+        break;
+      }
+
+      // optional float avg_data_out = 24;
+      case 24: {
+        if (tag == 197) {
+         parse_avg_data_out:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
+                 input, &avg_data_out_)));
+          set_has_avg_data_out();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(205)) goto parse_avg_data_in;
+        break;
+      }
+
+      // optional float avg_data_in = 25;
+      case 25: {
+        if (tag == 205) {
+         parse_avg_data_in:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
+                 input, &avg_data_in_)));
+          set_has_avg_data_in();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(208)) goto parse_total_data_in;
+        break;
+      }
+
+      // optional uint64 total_data_in = 26;
+      case 26: {
+        if (tag == 208) {
+         parse_total_data_in:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::uint64, ::google::protobuf::internal::WireFormatLite::TYPE_UINT64>(
+                 input, &total_data_in_)));
+          set_has_total_data_in();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(216)) goto parse_total_packets_in;
+        break;
+      }
+
+      // optional uint64 total_packets_in = 27;
+      case 27: {
+        if (tag == 216) {
+         parse_total_packets_in:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::uint64, ::google::protobuf::internal::WireFormatLite::TYPE_UINT64>(
+                 input, &total_packets_in_)));
+          set_has_total_packets_in();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(224)) goto parse_total_data_out;
+        break;
+      }
+
+      // optional uint64 total_data_out = 28;
+      case 28: {
+        if (tag == 224) {
+         parse_total_data_out:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::uint64, ::google::protobuf::internal::WireFormatLite::TYPE_UINT64>(
+                 input, &total_data_out_)));
+          set_has_total_data_out();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(232)) goto parse_total_packets_out;
+        break;
+      }
+
+      // optional uint64 total_packets_out = 29;
+      case 29: {
+        if (tag == 232) {
+         parse_total_packets_out:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::uint64, ::google::protobuf::internal::WireFormatLite::TYPE_UINT64>(
+                 input, &total_packets_out_)));
+          set_has_total_packets_out();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(242)) goto parse_players;
+        break;
+      }
+
+      // repeated .CMsgServerNetworkStats.Player players = 30;
+      case 30: {
+        if (tag == 242) {
+         parse_players:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+                input, add_players()));
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(242)) goto parse_players;
+        if (input->ExpectAtEnd()) goto success;
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0 ||
+            ::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, mutable_unknown_fields()));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:CMsgServerNetworkStats)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:CMsgServerNetworkStats)
+  return false;
+#undef DO_
+}
+
+void CMsgServerNetworkStats::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:CMsgServerNetworkStats)
+  // optional bool dedicated = 1;
+  if (has_dedicated()) {
+    ::google::protobuf::internal::WireFormatLite::WriteBool(1, this->dedicated(), output);
+  }
+
+  // optional int32 cpu_usage = 2;
+  if (has_cpu_usage()) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(2, this->cpu_usage(), output);
+  }
+
+  // optional int32 memory_used_mb = 3;
+  if (has_memory_used_mb()) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(3, this->memory_used_mb(), output);
+  }
+
+  // optional int32 memory_free_mb = 4;
+  if (has_memory_free_mb()) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(4, this->memory_free_mb(), output);
+  }
+
+  // optional int32 uptime = 5;
+  if (has_uptime()) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(5, this->uptime(), output);
+  }
+
+  // optional int32 spawn_count = 6;
+  if (has_spawn_count()) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(6, this->spawn_count(), output);
+  }
+
+  // optional int32 num_clients = 8;
+  if (has_num_clients()) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(8, this->num_clients(), output);
+  }
+
+  // optional int32 num_bots = 9;
+  if (has_num_bots()) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(9, this->num_bots(), output);
+  }
+
+  // optional int32 num_spectators = 10;
+  if (has_num_spectators()) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(10, this->num_spectators(), output);
+  }
+
+  // optional int32 num_tv_relays = 11;
+  if (has_num_tv_relays()) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(11, this->num_tv_relays(), output);
+  }
+
+  // optional float fps = 12;
+  if (has_fps()) {
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(12, this->fps(), output);
+  }
+
+  // repeated .CMsgServerNetworkStats.Port ports = 17;
+  for (int i = 0; i < this->ports_size(); i++) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      17, this->ports(i), output);
+  }
+
+  // optional float avg_latency_out = 18;
+  if (has_avg_latency_out()) {
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(18, this->avg_latency_out(), output);
+  }
+
+  // optional float avg_latency_in = 19;
+  if (has_avg_latency_in()) {
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(19, this->avg_latency_in(), output);
+  }
+
+  // optional float avg_packets_out = 20;
+  if (has_avg_packets_out()) {
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(20, this->avg_packets_out(), output);
+  }
+
+  // optional float avg_packets_in = 21;
+  if (has_avg_packets_in()) {
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(21, this->avg_packets_in(), output);
+  }
+
+  // optional float avg_loss_out = 22;
+  if (has_avg_loss_out()) {
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(22, this->avg_loss_out(), output);
+  }
+
+  // optional float avg_loss_in = 23;
+  if (has_avg_loss_in()) {
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(23, this->avg_loss_in(), output);
+  }
+
+  // optional float avg_data_out = 24;
+  if (has_avg_data_out()) {
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(24, this->avg_data_out(), output);
+  }
+
+  // optional float avg_data_in = 25;
+  if (has_avg_data_in()) {
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(25, this->avg_data_in(), output);
+  }
+
+  // optional uint64 total_data_in = 26;
+  if (has_total_data_in()) {
+    ::google::protobuf::internal::WireFormatLite::WriteUInt64(26, this->total_data_in(), output);
+  }
+
+  // optional uint64 total_packets_in = 27;
+  if (has_total_packets_in()) {
+    ::google::protobuf::internal::WireFormatLite::WriteUInt64(27, this->total_packets_in(), output);
+  }
+
+  // optional uint64 total_data_out = 28;
+  if (has_total_data_out()) {
+    ::google::protobuf::internal::WireFormatLite::WriteUInt64(28, this->total_data_out(), output);
+  }
+
+  // optional uint64 total_packets_out = 29;
+  if (has_total_packets_out()) {
+    ::google::protobuf::internal::WireFormatLite::WriteUInt64(29, this->total_packets_out(), output);
+  }
+
+  // repeated .CMsgServerNetworkStats.Player players = 30;
+  for (int i = 0; i < this->players_size(); i++) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      30, this->players(i), output);
+  }
+
+  if (!unknown_fields().empty()) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        unknown_fields(), output);
+  }
+  // @@protoc_insertion_point(serialize_end:CMsgServerNetworkStats)
+}
+
+::google::protobuf::uint8* CMsgServerNetworkStats::SerializeWithCachedSizesToArray(
+    ::google::protobuf::uint8* target) const {
+  // @@protoc_insertion_point(serialize_to_array_start:CMsgServerNetworkStats)
+  // optional bool dedicated = 1;
+  if (has_dedicated()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(1, this->dedicated(), target);
+  }
+
+  // optional int32 cpu_usage = 2;
+  if (has_cpu_usage()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(2, this->cpu_usage(), target);
+  }
+
+  // optional int32 memory_used_mb = 3;
+  if (has_memory_used_mb()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(3, this->memory_used_mb(), target);
+  }
+
+  // optional int32 memory_free_mb = 4;
+  if (has_memory_free_mb()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(4, this->memory_free_mb(), target);
+  }
+
+  // optional int32 uptime = 5;
+  if (has_uptime()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(5, this->uptime(), target);
+  }
+
+  // optional int32 spawn_count = 6;
+  if (has_spawn_count()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(6, this->spawn_count(), target);
+  }
+
+  // optional int32 num_clients = 8;
+  if (has_num_clients()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(8, this->num_clients(), target);
+  }
+
+  // optional int32 num_bots = 9;
+  if (has_num_bots()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(9, this->num_bots(), target);
+  }
+
+  // optional int32 num_spectators = 10;
+  if (has_num_spectators()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(10, this->num_spectators(), target);
+  }
+
+  // optional int32 num_tv_relays = 11;
+  if (has_num_tv_relays()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(11, this->num_tv_relays(), target);
+  }
+
+  // optional float fps = 12;
+  if (has_fps()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(12, this->fps(), target);
+  }
+
+  // repeated .CMsgServerNetworkStats.Port ports = 17;
+  for (int i = 0; i < this->ports_size(); i++) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      WriteMessageNoVirtualToArray(
+        17, this->ports(i), target);
+  }
+
+  // optional float avg_latency_out = 18;
+  if (has_avg_latency_out()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(18, this->avg_latency_out(), target);
+  }
+
+  // optional float avg_latency_in = 19;
+  if (has_avg_latency_in()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(19, this->avg_latency_in(), target);
+  }
+
+  // optional float avg_packets_out = 20;
+  if (has_avg_packets_out()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(20, this->avg_packets_out(), target);
+  }
+
+  // optional float avg_packets_in = 21;
+  if (has_avg_packets_in()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(21, this->avg_packets_in(), target);
+  }
+
+  // optional float avg_loss_out = 22;
+  if (has_avg_loss_out()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(22, this->avg_loss_out(), target);
+  }
+
+  // optional float avg_loss_in = 23;
+  if (has_avg_loss_in()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(23, this->avg_loss_in(), target);
+  }
+
+  // optional float avg_data_out = 24;
+  if (has_avg_data_out()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(24, this->avg_data_out(), target);
+  }
+
+  // optional float avg_data_in = 25;
+  if (has_avg_data_in()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(25, this->avg_data_in(), target);
+  }
+
+  // optional uint64 total_data_in = 26;
+  if (has_total_data_in()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt64ToArray(26, this->total_data_in(), target);
+  }
+
+  // optional uint64 total_packets_in = 27;
+  if (has_total_packets_in()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt64ToArray(27, this->total_packets_in(), target);
+  }
+
+  // optional uint64 total_data_out = 28;
+  if (has_total_data_out()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt64ToArray(28, this->total_data_out(), target);
+  }
+
+  // optional uint64 total_packets_out = 29;
+  if (has_total_packets_out()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt64ToArray(29, this->total_packets_out(), target);
+  }
+
+  // repeated .CMsgServerNetworkStats.Player players = 30;
+  for (int i = 0; i < this->players_size(); i++) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      WriteMessageNoVirtualToArray(
+        30, this->players(i), target);
+  }
+
+  if (!unknown_fields().empty()) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        unknown_fields(), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:CMsgServerNetworkStats)
+  return target;
+}
+
+int CMsgServerNetworkStats::ByteSize() const {
+  int total_size = 0;
+
+  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    // optional bool dedicated = 1;
+    if (has_dedicated()) {
+      total_size += 1 + 1;
+    }
+
+    // optional int32 cpu_usage = 2;
+    if (has_cpu_usage()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::Int32Size(
+          this->cpu_usage());
+    }
+
+    // optional int32 memory_used_mb = 3;
+    if (has_memory_used_mb()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::Int32Size(
+          this->memory_used_mb());
+    }
+
+    // optional int32 memory_free_mb = 4;
+    if (has_memory_free_mb()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::Int32Size(
+          this->memory_free_mb());
+    }
+
+    // optional int32 uptime = 5;
+    if (has_uptime()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::Int32Size(
+          this->uptime());
+    }
+
+    // optional int32 spawn_count = 6;
+    if (has_spawn_count()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::Int32Size(
+          this->spawn_count());
+    }
+
+    // optional int32 num_clients = 8;
+    if (has_num_clients()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::Int32Size(
+          this->num_clients());
+    }
+
+    // optional int32 num_bots = 9;
+    if (has_num_bots()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::Int32Size(
+          this->num_bots());
+    }
+
+  }
+  if (_has_bits_[8 / 32] & (0xffu << (8 % 32))) {
+    // optional int32 num_spectators = 10;
+    if (has_num_spectators()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::Int32Size(
+          this->num_spectators());
+    }
+
+    // optional int32 num_tv_relays = 11;
+    if (has_num_tv_relays()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::Int32Size(
+          this->num_tv_relays());
+    }
+
+    // optional float fps = 12;
+    if (has_fps()) {
+      total_size += 1 + 4;
+    }
+
+    // optional float avg_latency_out = 18;
+    if (has_avg_latency_out()) {
+      total_size += 2 + 4;
+    }
+
+    // optional float avg_latency_in = 19;
+    if (has_avg_latency_in()) {
+      total_size += 2 + 4;
+    }
+
+    // optional float avg_packets_out = 20;
+    if (has_avg_packets_out()) {
+      total_size += 2 + 4;
+    }
+
+    // optional float avg_packets_in = 21;
+    if (has_avg_packets_in()) {
+      total_size += 2 + 4;
+    }
+
+  }
+  if (_has_bits_[16 / 32] & (0xffu << (16 % 32))) {
+    // optional float avg_loss_out = 22;
+    if (has_avg_loss_out()) {
+      total_size += 2 + 4;
+    }
+
+    // optional float avg_loss_in = 23;
+    if (has_avg_loss_in()) {
+      total_size += 2 + 4;
+    }
+
+    // optional float avg_data_out = 24;
+    if (has_avg_data_out()) {
+      total_size += 2 + 4;
+    }
+
+    // optional float avg_data_in = 25;
+    if (has_avg_data_in()) {
+      total_size += 2 + 4;
+    }
+
+    // optional uint64 total_data_in = 26;
+    if (has_total_data_in()) {
+      total_size += 2 +
+        ::google::protobuf::internal::WireFormatLite::UInt64Size(
+          this->total_data_in());
+    }
+
+    // optional uint64 total_packets_in = 27;
+    if (has_total_packets_in()) {
+      total_size += 2 +
+        ::google::protobuf::internal::WireFormatLite::UInt64Size(
+          this->total_packets_in());
+    }
+
+    // optional uint64 total_data_out = 28;
+    if (has_total_data_out()) {
+      total_size += 2 +
+        ::google::protobuf::internal::WireFormatLite::UInt64Size(
+          this->total_data_out());
+    }
+
+    // optional uint64 total_packets_out = 29;
+    if (has_total_packets_out()) {
+      total_size += 2 +
+        ::google::protobuf::internal::WireFormatLite::UInt64Size(
+          this->total_packets_out());
+    }
+
+  }
+  // repeated .CMsgServerNetworkStats.Port ports = 17;
+  total_size += 2 * this->ports_size();
+  for (int i = 0; i < this->ports_size(); i++) {
+    total_size +=
+      ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+        this->ports(i));
+  }
+
+  // repeated .CMsgServerNetworkStats.Player players = 30;
+  total_size += 2 * this->players_size();
+  for (int i = 0; i < this->players_size(); i++) {
+    total_size +=
+      ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+        this->players(i));
+  }
+
+  if (!unknown_fields().empty()) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        unknown_fields());
+  }
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = total_size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+  return total_size;
+}
+
+void CMsgServerNetworkStats::MergeFrom(const ::google::protobuf::Message& from) {
+  GOOGLE_CHECK_NE(&from, this);
+  const CMsgServerNetworkStats* source =
+    ::google::protobuf::internal::dynamic_cast_if_available<const CMsgServerNetworkStats*>(
+      &from);
+  if (source == NULL) {
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+    MergeFrom(*source);
+  }
+}
+
+void CMsgServerNetworkStats::MergeFrom(const CMsgServerNetworkStats& from) {
+  GOOGLE_CHECK_NE(&from, this);
+  ports_.MergeFrom(from.ports_);
+  players_.MergeFrom(from.players_);
+  if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    if (from.has_dedicated()) {
+      set_dedicated(from.dedicated());
+    }
+    if (from.has_cpu_usage()) {
+      set_cpu_usage(from.cpu_usage());
+    }
+    if (from.has_memory_used_mb()) {
+      set_memory_used_mb(from.memory_used_mb());
+    }
+    if (from.has_memory_free_mb()) {
+      set_memory_free_mb(from.memory_free_mb());
+    }
+    if (from.has_uptime()) {
+      set_uptime(from.uptime());
+    }
+    if (from.has_spawn_count()) {
+      set_spawn_count(from.spawn_count());
+    }
+    if (from.has_num_clients()) {
+      set_num_clients(from.num_clients());
+    }
+    if (from.has_num_bots()) {
+      set_num_bots(from.num_bots());
+    }
+  }
+  if (from._has_bits_[8 / 32] & (0xffu << (8 % 32))) {
+    if (from.has_num_spectators()) {
+      set_num_spectators(from.num_spectators());
+    }
+    if (from.has_num_tv_relays()) {
+      set_num_tv_relays(from.num_tv_relays());
+    }
+    if (from.has_fps()) {
+      set_fps(from.fps());
+    }
+    if (from.has_avg_latency_out()) {
+      set_avg_latency_out(from.avg_latency_out());
+    }
+    if (from.has_avg_latency_in()) {
+      set_avg_latency_in(from.avg_latency_in());
+    }
+    if (from.has_avg_packets_out()) {
+      set_avg_packets_out(from.avg_packets_out());
+    }
+    if (from.has_avg_packets_in()) {
+      set_avg_packets_in(from.avg_packets_in());
+    }
+  }
+  if (from._has_bits_[16 / 32] & (0xffu << (16 % 32))) {
+    if (from.has_avg_loss_out()) {
+      set_avg_loss_out(from.avg_loss_out());
+    }
+    if (from.has_avg_loss_in()) {
+      set_avg_loss_in(from.avg_loss_in());
+    }
+    if (from.has_avg_data_out()) {
+      set_avg_data_out(from.avg_data_out());
+    }
+    if (from.has_avg_data_in()) {
+      set_avg_data_in(from.avg_data_in());
+    }
+    if (from.has_total_data_in()) {
+      set_total_data_in(from.total_data_in());
+    }
+    if (from.has_total_packets_in()) {
+      set_total_packets_in(from.total_packets_in());
+    }
+    if (from.has_total_data_out()) {
+      set_total_data_out(from.total_data_out());
+    }
+    if (from.has_total_packets_out()) {
+      set_total_packets_out(from.total_packets_out());
+    }
+  }
+  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
+}
+
+void CMsgServerNetworkStats::CopyFrom(const ::google::protobuf::Message& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void CMsgServerNetworkStats::CopyFrom(const CMsgServerNetworkStats& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool CMsgServerNetworkStats::IsInitialized() const {
+
+  return true;
+}
+
+void CMsgServerNetworkStats::Swap(CMsgServerNetworkStats* other) {
+  if (other != this) {
+    std::swap(dedicated_, other->dedicated_);
+    std::swap(cpu_usage_, other->cpu_usage_);
+    std::swap(memory_used_mb_, other->memory_used_mb_);
+    std::swap(memory_free_mb_, other->memory_free_mb_);
+    std::swap(uptime_, other->uptime_);
+    std::swap(spawn_count_, other->spawn_count_);
+    std::swap(num_clients_, other->num_clients_);
+    std::swap(num_bots_, other->num_bots_);
+    std::swap(num_spectators_, other->num_spectators_);
+    std::swap(num_tv_relays_, other->num_tv_relays_);
+    std::swap(fps_, other->fps_);
+    ports_.Swap(&other->ports_);
+    std::swap(avg_latency_out_, other->avg_latency_out_);
+    std::swap(avg_latency_in_, other->avg_latency_in_);
+    std::swap(avg_packets_out_, other->avg_packets_out_);
+    std::swap(avg_packets_in_, other->avg_packets_in_);
+    std::swap(avg_loss_out_, other->avg_loss_out_);
+    std::swap(avg_loss_in_, other->avg_loss_in_);
+    std::swap(avg_data_out_, other->avg_data_out_);
+    std::swap(avg_data_in_, other->avg_data_in_);
+    std::swap(total_data_in_, other->total_data_in_);
+    std::swap(total_packets_in_, other->total_packets_in_);
+    std::swap(total_data_out_, other->total_data_out_);
+    std::swap(total_packets_out_, other->total_packets_out_);
+    players_.Swap(&other->players_);
+    std::swap(_has_bits_[0], other->_has_bits_[0]);
+    _unknown_fields_.Swap(&other->_unknown_fields_);
+    std::swap(_cached_size_, other->_cached_size_);
+  }
+}
+
+::google::protobuf::Metadata CMsgServerNetworkStats::GetMetadata() const {
+  protobuf_AssignDescriptorsOnce();
+  ::google::protobuf::Metadata metadata;
+  metadata.descriptor = CMsgServerNetworkStats_descriptor_;
+  metadata.reflection = CMsgServerNetworkStats_reflection_;
   return metadata;
 }
 

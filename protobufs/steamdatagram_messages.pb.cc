@@ -69,6 +69,9 @@ const ::google::protobuf::internal::GeneratedMessageReflection*
 const ::google::protobuf::Descriptor* CMsgSteamDatagramConnectionStatsRouterToServer_descriptor_ = NULL;
 const ::google::protobuf::internal::GeneratedMessageReflection*
   CMsgSteamDatagramConnectionStatsRouterToServer_reflection_ = NULL;
+const ::google::protobuf::Descriptor* CMsgSteamDatagramConnectionStatsServerToRouter_descriptor_ = NULL;
+const ::google::protobuf::internal::GeneratedMessageReflection*
+  CMsgSteamDatagramConnectionStatsServerToRouter_reflection_ = NULL;
 const ::google::protobuf::Descriptor* CMsgSteamDatagramClientPingSampleRequest_descriptor_ = NULL;
 const ::google::protobuf::internal::GeneratedMessageReflection*
   CMsgSteamDatagramClientPingSampleRequest_reflection_ = NULL;
@@ -84,6 +87,12 @@ const ::google::protobuf::internal::GeneratedMessageReflection*
 const ::google::protobuf::Descriptor* CMsgSteamDatagramClientSwitchedPrimary_RouterQuality_descriptor_ = NULL;
 const ::google::protobuf::internal::GeneratedMessageReflection*
   CMsgSteamDatagramClientSwitchedPrimary_RouterQuality_reflection_ = NULL;
+const ::google::protobuf::Descriptor* CMsgSteamDatagramRouterHealth_descriptor_ = NULL;
+const ::google::protobuf::internal::GeneratedMessageReflection*
+  CMsgSteamDatagramRouterHealth_reflection_ = NULL;
+const ::google::protobuf::Descriptor* CMsgSteamDatagramRouterHealth_DataCenter_descriptor_ = NULL;
+const ::google::protobuf::internal::GeneratedMessageReflection*
+  CMsgSteamDatagramRouterHealth_DataCenter_reflection_ = NULL;
 const ::google::protobuf::EnumDescriptor* ESteamDatagramMsgID_descriptor_ = NULL;
 
 }  // namespace
@@ -96,7 +105,7 @@ void protobuf_AssignDesc_steamdatagram_5fmessages_2eproto() {
       "steamdatagram_messages.proto");
   GOOGLE_CHECK(file != NULL);
   CMsgSteamDatagramRouterPingReply_descriptor_ = file->message_type(0);
-  static const int CMsgSteamDatagramRouterPingReply_offsets_[8] = {
+  static const int CMsgSteamDatagramRouterPingReply_offsets_[11] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgSteamDatagramRouterPingReply, client_timestamp_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgSteamDatagramRouterPingReply, latency_datacenter_ids_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgSteamDatagramRouterPingReply, latency_ping_ms_),
@@ -105,6 +114,9 @@ void protobuf_AssignDesc_steamdatagram_5fmessages_2eproto() {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgSteamDatagramRouterPingReply, challenge_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgSteamDatagramRouterPingReply, seconds_until_shutdown_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgSteamDatagramRouterPingReply, client_cookie_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgSteamDatagramRouterPingReply, scoring_penalty_relay_cluster_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgSteamDatagramRouterPingReply, scoring_penalty_datacenter_ids_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgSteamDatagramRouterPingReply, scoring_penalty_values_),
   };
   CMsgSteamDatagramRouterPingReply_reflection_ =
     new ::google::protobuf::internal::GeneratedMessageReflection(
@@ -180,11 +192,12 @@ void protobuf_AssignDesc_steamdatagram_5fmessages_2eproto() {
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(CMsgSteamDatagramGameServerAuthTicket_ExtraField));
   CMsgSteamDatagramGameserverSessionRequest_descriptor_ = file->message_type(3);
-  static const int CMsgSteamDatagramGameserverSessionRequest_offsets_[4] = {
+  static const int CMsgSteamDatagramGameserverSessionRequest_offsets_[5] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgSteamDatagramGameserverSessionRequest, ticket_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgSteamDatagramGameserverSessionRequest, challenge_time_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgSteamDatagramGameserverSessionRequest, challenge_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgSteamDatagramGameserverSessionRequest, client_cookie_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgSteamDatagramGameserverSessionRequest, network_config_version_),
   };
   CMsgSteamDatagramGameserverSessionRequest_reflection_ =
     new ::google::protobuf::internal::GeneratedMessageReflection(
@@ -198,10 +211,11 @@ void protobuf_AssignDesc_steamdatagram_5fmessages_2eproto() {
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(CMsgSteamDatagramGameserverSessionRequest));
   CMsgSteamDatagramGameserverSessionEstablished_descriptor_ = file->message_type(4);
-  static const int CMsgSteamDatagramGameserverSessionEstablished_offsets_[3] = {
+  static const int CMsgSteamDatagramGameserverSessionEstablished_offsets_[4] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgSteamDatagramGameserverSessionEstablished, client_cookie_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgSteamDatagramGameserverSessionEstablished, gameserver_steam_id_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgSteamDatagramGameserverSessionEstablished, seconds_until_shutdown_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgSteamDatagramGameserverSessionEstablished, session_id_),
   };
   CMsgSteamDatagramGameserverSessionEstablished_reflection_ =
     new ::google::protobuf::internal::GeneratedMessageReflection(
@@ -297,7 +311,7 @@ void protobuf_AssignDesc_steamdatagram_5fmessages_2eproto() {
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(CMsgSteamDatagramDataCenterState_DataCenter));
   CMsgSteamDatagramLinkInstantaneousStats_descriptor_ = file->message_type(8);
-  static const int CMsgSteamDatagramLinkInstantaneousStats_offsets_[7] = {
+  static const int CMsgSteamDatagramLinkInstantaneousStats_offsets_[8] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgSteamDatagramLinkInstantaneousStats, out_packets_per_sec_x10_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgSteamDatagramLinkInstantaneousStats, out_bytes_per_sec_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgSteamDatagramLinkInstantaneousStats, in_packets_per_sec_x10_),
@@ -305,6 +319,7 @@ void protobuf_AssignDesc_steamdatagram_5fmessages_2eproto() {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgSteamDatagramLinkInstantaneousStats, ping_ms_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgSteamDatagramLinkInstantaneousStats, packets_dropped_pct_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgSteamDatagramLinkInstantaneousStats, packets_weird_sequence_pct_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgSteamDatagramLinkInstantaneousStats, peak_jitter_usec_),
   };
   CMsgSteamDatagramLinkInstantaneousStats_reflection_ =
     new ::google::protobuf::internal::GeneratedMessageReflection(
@@ -318,7 +333,7 @@ void protobuf_AssignDesc_steamdatagram_5fmessages_2eproto() {
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(CMsgSteamDatagramLinkInstantaneousStats));
   CMsgSteamDatagramLinkLifetimeStats_descriptor_ = file->message_type(9);
-  static const int CMsgSteamDatagramLinkLifetimeStats_offsets_[9] = {
+  static const int CMsgSteamDatagramLinkLifetimeStats_offsets_[42] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgSteamDatagramLinkLifetimeStats, packets_sent_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgSteamDatagramLinkLifetimeStats, kb_sent_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgSteamDatagramLinkLifetimeStats, packets_recv_),
@@ -328,6 +343,39 @@ void protobuf_AssignDesc_steamdatagram_5fmessages_2eproto() {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgSteamDatagramLinkLifetimeStats, packets_recv_out_of_order_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgSteamDatagramLinkLifetimeStats, packets_recv_duplicate_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgSteamDatagramLinkLifetimeStats, packets_recv_lurch_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgSteamDatagramLinkLifetimeStats, quality_histogram_100_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgSteamDatagramLinkLifetimeStats, quality_histogram_99_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgSteamDatagramLinkLifetimeStats, quality_histogram_97_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgSteamDatagramLinkLifetimeStats, quality_histogram_95_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgSteamDatagramLinkLifetimeStats, quality_histogram_90_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgSteamDatagramLinkLifetimeStats, quality_histogram_75_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgSteamDatagramLinkLifetimeStats, quality_histogram_50_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgSteamDatagramLinkLifetimeStats, quality_histogram_1_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgSteamDatagramLinkLifetimeStats, quality_histogram_dead_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgSteamDatagramLinkLifetimeStats, quality_ntile_2nd_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgSteamDatagramLinkLifetimeStats, quality_ntile_5th_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgSteamDatagramLinkLifetimeStats, quality_ntile_25th_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgSteamDatagramLinkLifetimeStats, quality_ntile_50th_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgSteamDatagramLinkLifetimeStats, ping_histogram_25_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgSteamDatagramLinkLifetimeStats, ping_histogram_50_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgSteamDatagramLinkLifetimeStats, ping_histogram_75_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgSteamDatagramLinkLifetimeStats, ping_histogram_100_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgSteamDatagramLinkLifetimeStats, ping_histogram_125_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgSteamDatagramLinkLifetimeStats, ping_histogram_150_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgSteamDatagramLinkLifetimeStats, ping_histogram_200_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgSteamDatagramLinkLifetimeStats, ping_histogram_300_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgSteamDatagramLinkLifetimeStats, ping_histogram_max_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgSteamDatagramLinkLifetimeStats, ping_ntile_5th_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgSteamDatagramLinkLifetimeStats, ping_ntile_50th_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgSteamDatagramLinkLifetimeStats, ping_ntile_75th_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgSteamDatagramLinkLifetimeStats, ping_ntile_95th_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgSteamDatagramLinkLifetimeStats, ping_ntile_98th_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgSteamDatagramLinkLifetimeStats, jitter_histogram_negligible_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgSteamDatagramLinkLifetimeStats, jitter_histogram_1_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgSteamDatagramLinkLifetimeStats, jitter_histogram_2_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgSteamDatagramLinkLifetimeStats, jitter_histogram_5_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgSteamDatagramLinkLifetimeStats, jitter_histogram_10_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgSteamDatagramLinkLifetimeStats, jitter_histogram_20_),
   };
   CMsgSteamDatagramLinkLifetimeStats_reflection_ =
     new ::google::protobuf::internal::GeneratedMessageReflection(
@@ -377,13 +425,16 @@ void protobuf_AssignDesc_steamdatagram_5fmessages_2eproto() {
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(CMsgSteamDatagramConnectionStatsClientToRouter));
   CMsgSteamDatagramConnectionStatsRouterToClient_descriptor_ = file->message_type(12);
-  static const int CMsgSteamDatagramConnectionStatsRouterToClient_offsets_[9] = {
+  static const int CMsgSteamDatagramConnectionStatsRouterToClient_offsets_[12] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgSteamDatagramConnectionStatsRouterToClient, r2c_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgSteamDatagramConnectionStatsRouterToClient, s2c_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgSteamDatagramConnectionStatsRouterToClient, client_timestamp_from_router_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgSteamDatagramConnectionStatsRouterToClient, client_timestamp_from_server_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgSteamDatagramConnectionStatsRouterToClient, router_gameserver_latency_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgSteamDatagramConnectionStatsRouterToClient, seconds_until_shutdown_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgSteamDatagramConnectionStatsRouterToClient, migrate_request_ip_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgSteamDatagramConnectionStatsRouterToClient, migrate_request_port_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgSteamDatagramConnectionStatsRouterToClient, scoring_penalty_relay_cluster_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgSteamDatagramConnectionStatsRouterToClient, client_cookie_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgSteamDatagramConnectionStatsRouterToClient, seq_num_r2c_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgSteamDatagramConnectionStatsRouterToClient, seq_num_s2c_),
@@ -400,10 +451,12 @@ void protobuf_AssignDesc_steamdatagram_5fmessages_2eproto() {
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(CMsgSteamDatagramConnectionStatsRouterToClient));
   CMsgSteamDatagramConnectionStatsRouterToServer_descriptor_ = file->message_type(13);
-  static const int CMsgSteamDatagramConnectionStatsRouterToServer_offsets_[6] = {
+  static const int CMsgSteamDatagramConnectionStatsRouterToServer_offsets_[8] = {
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgSteamDatagramConnectionStatsRouterToServer, r2s_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgSteamDatagramConnectionStatsRouterToServer, c2s_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgSteamDatagramConnectionStatsRouterToServer, client_timestamp_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgSteamDatagramConnectionStatsRouterToServer, router_timestamp_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgSteamDatagramConnectionStatsRouterToServer, seq_num_r2s_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgSteamDatagramConnectionStatsRouterToServer, seq_num_c2s_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgSteamDatagramConnectionStatsRouterToServer, client_steam_id_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgSteamDatagramConnectionStatsRouterToServer, client_session_id_),
@@ -419,7 +472,27 @@ void protobuf_AssignDesc_steamdatagram_5fmessages_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(CMsgSteamDatagramConnectionStatsRouterToServer));
-  CMsgSteamDatagramClientPingSampleRequest_descriptor_ = file->message_type(14);
+  CMsgSteamDatagramConnectionStatsServerToRouter_descriptor_ = file->message_type(14);
+  static const int CMsgSteamDatagramConnectionStatsServerToRouter_offsets_[6] = {
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgSteamDatagramConnectionStatsServerToRouter, s2r_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgSteamDatagramConnectionStatsServerToRouter, s2c_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgSteamDatagramConnectionStatsServerToRouter, seq_num_s2r_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgSteamDatagramConnectionStatsServerToRouter, seq_num_s2c_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgSteamDatagramConnectionStatsServerToRouter, client_steam_id_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgSteamDatagramConnectionStatsServerToRouter, client_session_id_),
+  };
+  CMsgSteamDatagramConnectionStatsServerToRouter_reflection_ =
+    new ::google::protobuf::internal::GeneratedMessageReflection(
+      CMsgSteamDatagramConnectionStatsServerToRouter_descriptor_,
+      CMsgSteamDatagramConnectionStatsServerToRouter::default_instance_,
+      CMsgSteamDatagramConnectionStatsServerToRouter_offsets_,
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgSteamDatagramConnectionStatsServerToRouter, _has_bits_[0]),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgSteamDatagramConnectionStatsServerToRouter, _unknown_fields_),
+      -1,
+      ::google::protobuf::DescriptorPool::generated_pool(),
+      ::google::protobuf::MessageFactory::generated_factory(),
+      sizeof(CMsgSteamDatagramConnectionStatsServerToRouter));
+  CMsgSteamDatagramClientPingSampleRequest_descriptor_ = file->message_type(15);
   static const int CMsgSteamDatagramClientPingSampleRequest_offsets_[1] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgSteamDatagramClientPingSampleRequest, client_cookie_),
   };
@@ -434,7 +507,7 @@ void protobuf_AssignDesc_steamdatagram_5fmessages_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(CMsgSteamDatagramClientPingSampleRequest));
-  CMsgSteamDatagramClientPingSampleReply_descriptor_ = file->message_type(15);
+  CMsgSteamDatagramClientPingSampleReply_descriptor_ = file->message_type(16);
   static const int CMsgSteamDatagramClientPingSampleReply_offsets_[2] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgSteamDatagramClientPingSampleReply, client_cookie_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgSteamDatagramClientPingSampleReply, routing_clusters_),
@@ -467,7 +540,7 @@ void protobuf_AssignDesc_steamdatagram_5fmessages_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(CMsgSteamDatagramClientPingSampleReply_RoutingCluster));
-  CMsgSteamDatagramClientSwitchedPrimary_descriptor_ = file->message_type(16);
+  CMsgSteamDatagramClientSwitchedPrimary_descriptor_ = file->message_type(17);
   static const int CMsgSteamDatagramClientSwitchedPrimary_offsets_[12] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgSteamDatagramClientSwitchedPrimary, client_cookie_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgSteamDatagramClientSwitchedPrimary, from_ip_),
@@ -511,6 +584,45 @@ void protobuf_AssignDesc_steamdatagram_5fmessages_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(CMsgSteamDatagramClientSwitchedPrimary_RouterQuality));
+  CMsgSteamDatagramRouterHealth_descriptor_ = file->message_type(18);
+  static const int CMsgSteamDatagramRouterHealth_offsets_[9] = {
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgSteamDatagramRouterHealth, cpu_load_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgSteamDatagramRouterHealth, active_sessions_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgSteamDatagramRouterHealth, data_pkts_sec_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgSteamDatagramRouterHealth, other_pkts_sec_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgSteamDatagramRouterHealth, seconds_until_shutdown_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgSteamDatagramRouterHealth, cpu_cost_per_user_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgSteamDatagramRouterHealth, cpu_cost_per_packet_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgSteamDatagramRouterHealth, data_centers_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgSteamDatagramRouterHealth, magic_),
+  };
+  CMsgSteamDatagramRouterHealth_reflection_ =
+    new ::google::protobuf::internal::GeneratedMessageReflection(
+      CMsgSteamDatagramRouterHealth_descriptor_,
+      CMsgSteamDatagramRouterHealth::default_instance_,
+      CMsgSteamDatagramRouterHealth_offsets_,
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgSteamDatagramRouterHealth, _has_bits_[0]),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgSteamDatagramRouterHealth, _unknown_fields_),
+      -1,
+      ::google::protobuf::DescriptorPool::generated_pool(),
+      ::google::protobuf::MessageFactory::generated_factory(),
+      sizeof(CMsgSteamDatagramRouterHealth));
+  CMsgSteamDatagramRouterHealth_DataCenter_descriptor_ = CMsgSteamDatagramRouterHealth_descriptor_->nested_type(0);
+  static const int CMsgSteamDatagramRouterHealth_DataCenter_offsets_[2] = {
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgSteamDatagramRouterHealth_DataCenter, datacenter_id_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgSteamDatagramRouterHealth_DataCenter, state_),
+  };
+  CMsgSteamDatagramRouterHealth_DataCenter_reflection_ =
+    new ::google::protobuf::internal::GeneratedMessageReflection(
+      CMsgSteamDatagramRouterHealth_DataCenter_descriptor_,
+      CMsgSteamDatagramRouterHealth_DataCenter::default_instance_,
+      CMsgSteamDatagramRouterHealth_DataCenter_offsets_,
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgSteamDatagramRouterHealth_DataCenter, _has_bits_[0]),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgSteamDatagramRouterHealth_DataCenter, _unknown_fields_),
+      -1,
+      ::google::protobuf::DescriptorPool::generated_pool(),
+      ::google::protobuf::MessageFactory::generated_factory(),
+      sizeof(CMsgSteamDatagramRouterHealth_DataCenter));
   ESteamDatagramMsgID_descriptor_ = file->enum_type(0);
 }
 
@@ -559,6 +671,8 @@ void protobuf_RegisterTypes(const ::std::string&) {
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
     CMsgSteamDatagramConnectionStatsRouterToServer_descriptor_, &CMsgSteamDatagramConnectionStatsRouterToServer::default_instance());
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
+    CMsgSteamDatagramConnectionStatsServerToRouter_descriptor_, &CMsgSteamDatagramConnectionStatsServerToRouter::default_instance());
+  ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
     CMsgSteamDatagramClientPingSampleRequest_descriptor_, &CMsgSteamDatagramClientPingSampleRequest::default_instance());
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
     CMsgSteamDatagramClientPingSampleReply_descriptor_, &CMsgSteamDatagramClientPingSampleReply::default_instance());
@@ -568,6 +682,10 @@ void protobuf_RegisterTypes(const ::std::string&) {
     CMsgSteamDatagramClientSwitchedPrimary_descriptor_, &CMsgSteamDatagramClientSwitchedPrimary::default_instance());
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
     CMsgSteamDatagramClientSwitchedPrimary_RouterQuality_descriptor_, &CMsgSteamDatagramClientSwitchedPrimary_RouterQuality::default_instance());
+  ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
+    CMsgSteamDatagramRouterHealth_descriptor_, &CMsgSteamDatagramRouterHealth::default_instance());
+  ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
+    CMsgSteamDatagramRouterHealth_DataCenter_descriptor_, &CMsgSteamDatagramRouterHealth_DataCenter::default_instance());
 }
 
 }  // namespace
@@ -607,6 +725,8 @@ void protobuf_ShutdownFile_steamdatagram_5fmessages_2eproto() {
   delete CMsgSteamDatagramConnectionStatsRouterToClient_reflection_;
   delete CMsgSteamDatagramConnectionStatsRouterToServer::default_instance_;
   delete CMsgSteamDatagramConnectionStatsRouterToServer_reflection_;
+  delete CMsgSteamDatagramConnectionStatsServerToRouter::default_instance_;
+  delete CMsgSteamDatagramConnectionStatsServerToRouter_reflection_;
   delete CMsgSteamDatagramClientPingSampleRequest::default_instance_;
   delete CMsgSteamDatagramClientPingSampleRequest_reflection_;
   delete CMsgSteamDatagramClientPingSampleReply::default_instance_;
@@ -617,6 +737,10 @@ void protobuf_ShutdownFile_steamdatagram_5fmessages_2eproto() {
   delete CMsgSteamDatagramClientSwitchedPrimary_reflection_;
   delete CMsgSteamDatagramClientSwitchedPrimary_RouterQuality::default_instance_;
   delete CMsgSteamDatagramClientSwitchedPrimary_RouterQuality_reflection_;
+  delete CMsgSteamDatagramRouterHealth::default_instance_;
+  delete CMsgSteamDatagramRouterHealth_reflection_;
+  delete CMsgSteamDatagramRouterHealth_DataCenter::default_instance_;
+  delete CMsgSteamDatagramRouterHealth_DataCenter_reflection_;
 }
 
 void protobuf_AddDesc_steamdatagram_5fmessages_2eproto() {
@@ -626,128 +750,177 @@ void protobuf_AddDesc_steamdatagram_5fmessages_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-    "\n\034steamdatagram_messages.proto\"\364\001\n CMsgS"
+    "\n\034steamdatagram_messages.proto\"\353\002\n CMsgS"
     "teamDatagramRouterPingReply\022\030\n\020client_ti"
     "mestamp\030\001 \001(\007\022\"\n\026latency_datacenter_ids\030"
     "\002 \003(\007B\002\020\001\022\033\n\017latency_ping_ms\030\003 \003(\rB\002\020\001\022\026"
     "\n\016your_public_ip\030\004 \001(\007\022\023\n\013server_time\030\005 "
     "\001(\007\022\021\n\tchallenge\030\006 \001(\006\022\036\n\026seconds_until_"
-    "shutdown\030\007 \001(\r\022\025\n\rclient_cookie\030\010 \001(\007\"\334\001"
-    "\n\037CMsgSteamDatagramGameserverPing\022\026\n\016cli"
-    "ent_session\030\001 \001(\r\022\027\n\017client_steam_id\030\002 \001"
-    "(\006\022\030\n\020client_timestamp\030\003 \001(\007\022\030\n\020router_t"
-    "imestamp\030\004 \001(\007\022!\n\031router_gameserver_late"
-    "ncy\030\005 \001(\r\022\031\n\021seq_number_router\030\006 \001(\r\022\026\n\016"
-    "seq_number_e2e\030\007 \001(\r\"\220\003\n%CMsgSteamDatagr"
-    "amGameServerAuthTicket\022\023\n\013time_expiry\030\001 "
-    "\001(\007\022\033\n\023authorized_steam_id\030\002 \001(\006\022\034\n\024auth"
-    "orized_public_ip\030\003 \001(\007\022\033\n\023gameserver_ste"
-    "am_id\030\004 \001(\006\022\031\n\021gameserver_net_id\030\005 \001(\006\022\021"
-    "\n\tsignature\030\006 \001(\014\022\016\n\006app_id\030\007 \001(\r\022G\n\014ext"
-    "ra_fields\030\010 \003(\01321.CMsgSteamDatagramGameS"
-    "erverAuthTicket.ExtraField\032s\n\nExtraField"
-    "\022\014\n\004name\030\001 \001(\t\022\024\n\014string_value\030\002 \001(\t\022\023\n\013"
-    "int32_value\030\003 \001(\021\022\025\n\rfixed32_value\030\004 \001(\007"
-    "\022\025\n\rfixed64_value\030\005 \001(\006\"\245\001\n)CMsgSteamDat"
-    "agramGameserverSessionRequest\0226\n\006ticket\030"
-    "\001 \001(\0132&.CMsgSteamDatagramGameServerAuthT"
-    "icket\022\026\n\016challenge_time\030\003 \001(\007\022\021\n\tchallen"
-    "ge\030\004 \001(\006\022\025\n\rclient_cookie\030\005 \001(\007\"\203\001\n-CMsg"
-    "SteamDatagramGameserverSessionEstablishe"
-    "d\022\025\n\rclient_cookie\030\001 \001(\007\022\033\n\023gameserver_s"
-    "team_id\030\003 \001(\006\022\036\n\026seconds_until_shutdown\030"
-    "\004 \001(\r\"\223\001\n\032CMsgSteamDatagramNoSession\022\025\n\r"
-    "client_cookie\030\007 \001(\007\022\026\n\016your_public_ip\030\002 "
-    "\001(\007\022\023\n\013server_time\030\003 \001(\007\022\021\n\tchallenge\030\004 "
-    "\001(\006\022\036\n\026seconds_until_shutdown\030\005 \001(\r\"=\n\033C"
-    "MsgSteamDatagramDiagnostic\022\020\n\010severity\030\001"
-    " \001(\r\022\014\n\004text\030\002 \001(\t\"\357\001\n CMsgSteamDatagram"
-    "DataCenterState\022B\n\014data_centers\030\001 \003(\0132,."
-    "CMsgSteamDatagramDataCenterState.DataCen"
-    "ter\032*\n\006Server\022\017\n\007address\030\001 \001(\t\022\017\n\007ping_m"
-    "s\030\002 \001(\r\032[\n\nDataCenter\022\014\n\004code\030\001 \001(\t\022\?\n\rs"
-    "erver_sample\030\002 \003(\0132(.CMsgSteamDatagramDa"
-    "taCenterState.Server\"\361\001\n\'CMsgSteamDatagr"
-    "amLinkInstantaneousStats\022\037\n\027out_packets_"
-    "per_sec_x10\030\001 \001(\r\022\031\n\021out_bytes_per_sec\030\002"
-    " \001(\r\022\036\n\026in_packets_per_sec_x10\030\003 \001(\r\022\030\n\020"
-    "in_bytes_per_sec\030\004 \001(\r\022\017\n\007ping_ms\030\005 \001(\r\022"
-    "\033\n\023packets_dropped_pct\030\006 \001(\r\022\"\n\032packets_"
-    "weird_sequence_pct\030\007 \001(\r\"\217\002\n\"CMsgSteamDa"
-    "tagramLinkLifetimeStats\022\024\n\014packets_sent\030"
-    "\003 \001(\004\022\017\n\007kb_sent\030\004 \001(\004\022\024\n\014packets_recv\030\005"
-    " \001(\004\022\017\n\007kb_recv\030\006 \001(\004\022\036\n\026packets_recv_se"
-    "quenced\030\007 \001(\004\022\034\n\024packets_recv_dropped\030\010 "
-    "\001(\004\022!\n\031packets_recv_out_of_order\030\t \001(\004\022\036"
-    "\n\026packets_recv_duplicate\030\n \001(\004\022\032\n\022packet"
-    "s_recv_lurch\030\013 \001(\004\"\234\001\n\"CMsgSteamDatagram"
-    "ConnectionQuality\022\?\n\rinstantaneous\030\001 \001(\013"
-    "2(.CMsgSteamDatagramLinkInstantaneousSta"
-    "ts\0225\n\010lifetime\030\002 \001(\0132#.CMsgSteamDatagram"
-    "LinkLifetimeStats\"\357\001\n.CMsgSteamDatagramC"
-    "onnectionStatsClientToRouter\0220\n\003c2r\030\001 \001("
-    "\0132#.CMsgSteamDatagramConnectionQuality\0220"
-    "\n\003c2s\030\002 \001(\0132#.CMsgSteamDatagramConnectio"
-    "nQuality\022\030\n\020client_timestamp\030\003 \001(\007\022\025\n\rcl"
-    "ient_cookie\030\010 \001(\007\022\023\n\013seq_num_c2r\030\t \001(\r\022\023"
-    "\n\013seq_num_c2s\030\n \001(\r\"\344\002\n.CMsgSteamDatagra"
-    "mConnectionStatsRouterToClient\0220\n\003r2c\030\001 "
-    "\001(\0132#.CMsgSteamDatagramConnectionQuality"
-    "\0220\n\003s2c\030\002 \001(\0132#.CMsgSteamDatagramConnect"
-    "ionQuality\022$\n\034client_timestamp_from_rout"
-    "er\030\003 \001(\007\022$\n\034client_timestamp_from_server"
-    "\030\004 \001(\007\022!\n\031router_gameserver_latency\030\005 \001("
-    "\r\022\036\n\026seconds_until_shutdown\030\006 \001(\r\022\025\n\rcli"
-    "ent_cookie\030\007 \001(\007\022\023\n\013seq_num_r2c\030\010 \001(\r\022\023\n"
-    "\013seq_num_s2c\030\t \001(\r\"\337\001\n.CMsgSteamDatagram"
-    "ConnectionStatsRouterToServer\0220\n\003c2s\030\002 \001"
-    "(\0132#.CMsgSteamDatagramConnectionQuality\022"
-    "\030\n\020client_timestamp\030\003 \001(\007\022\030\n\020router_time"
-    "stamp\030\004 \001(\007\022\023\n\013seq_num_c2s\030\006 \001(\r\022\027\n\017clie"
-    "nt_steam_id\030\007 \001(\006\022\031\n\021client_session_id\030\010"
-    " \001(\r\"A\n(CMsgSteamDatagramClientPingSampl"
-    "eRequest\022\025\n\rclient_cookie\030\001 \001(\007\"\333\001\n&CMsg"
-    "SteamDatagramClientPingSampleReply\022\025\n\rcl"
-    "ient_cookie\030\001 \001(\007\022P\n\020routing_clusters\030\002 "
-    "\003(\01326.CMsgSteamDatagramClientPingSampleR"
-    "eply.RoutingCluster\032H\n\016RoutingCluster\022\n\n"
-    "\002id\030\001 \001(\007\022\025\n\rfront_ping_ms\030\002 \001(\r\022\023\n\013e2e_"
-    "ping_ms\030\003 \001(\r\"\216\005\n&CMsgSteamDatagramClien"
-    "tSwitchedPrimary\022\025\n\rclient_cookie\030\001 \001(\007\022"
-    "\017\n\007from_ip\030\002 \001(\007\022\021\n\tfrom_port\030\003 \001(\r\022\033\n\023f"
-    "rom_router_cluster\030\004 \001(\007\022\030\n\020from_active_"
-    "time\030\005 \001(\r\022 \n\030from_active_packets_recv\030\006"
-    " \001(\r\022\033\n\023from_dropped_reason\030\007 \001(\t\022\016\n\006gap"
-    "_ms\030\010 \001(\r\022O\n\020from_quality_now\030\t \001(\01325.CM"
-    "sgSteamDatagramClientSwitchedPrimary.Rou"
-    "terQuality\022M\n\016to_quality_now\030\n \001(\01325.CMs"
-    "gSteamDatagramClientSwitchedPrimary.Rout"
-    "erQuality\022P\n\021from_quality_then\030\013 \001(\01325.C"
-    "MsgSteamDatagramClientSwitchedPrimary.Ro"
-    "uterQuality\022N\n\017to_quality_then\030\014 \001(\01325.C"
-    "MsgSteamDatagramClientSwitchedPrimary.Ro"
-    "uterQuality\032a\n\rRouterQuality\022\r\n\005score\030\001 "
-    "\001(\r\022\022\n\nfront_ping\030\002 \001(\r\022\021\n\tback_ping\030\003 \001"
-    "(\r\022\032\n\022seconds_until_down\030\004 \001(\r*\332\005\n\023EStea"
-    "mDatagramMsgID\022)\n%k_ESteamDatagramMsg_Ro"
-    "uterPingRequest\020\001\022\'\n#k_ESteamDatagramMsg"
-    "_RouterPingReply\020\002\022-\n)k_ESteamDatagramMs"
-    "g_GameserverPingRequest\020\003\022+\n\'k_ESteamDat"
-    "agramMsg_GameserverPingReply\020\004\0220\n,k_ESte"
-    "amDatagramMsg_GameserverSessionRequest\020\005"
-    "\0224\n0k_ESteamDatagramMsg_GameserverSessio"
-    "nEstablished\020\006\022!\n\035k_ESteamDatagramMsg_No"
-    "Session\020\007\022\"\n\036k_ESteamDatagramMsg_Diagnos"
-    "tic\020\010\022*\n&k_ESteamDatagramMsg_DataClientT"
-    "oRouter\020\t\022*\n&k_ESteamDatagramMsg_DataRou"
-    "terToServer\020\n\022*\n&k_ESteamDatagramMsg_Dat"
-    "aServerToRouter\020\013\022*\n&k_ESteamDatagramMsg"
-    "_DataRouterToClient\020\014\022\035\n\031k_ESteamDatagra"
-    "mMsg_Stats\020\r\022/\n+k_ESteamDatagramMsg_Clie"
-    "ntPingSampleRequest\020\016\022-\n)k_ESteamDatagra"
-    "mMsg_ClientPingSampleReply\020\017\0225\n1k_ESteam"
-    "DatagramMsg_ClientToRouterSwitchedPrimar"
-    "y\020\020B\003\200\001\000", 4848);
+    "shutdown\030\007 \001(\r\022\025\n\rclient_cookie\030\010 \001(\007\022%\n"
+    "\035scoring_penalty_relay_cluster\030\t \001(\r\022*\n\036"
+    "scoring_penalty_datacenter_ids\030\n \003(\007B\002\020\001"
+    "\022\"\n\026scoring_penalty_values\030\013 \003(\rB\002\020\001\"\334\001\n"
+    "\037CMsgSteamDatagramGameserverPing\022\026\n\016clie"
+    "nt_session\030\001 \001(\r\022\027\n\017client_steam_id\030\002 \001("
+    "\006\022\030\n\020client_timestamp\030\003 \001(\007\022\030\n\020router_ti"
+    "mestamp\030\004 \001(\007\022!\n\031router_gameserver_laten"
+    "cy\030\005 \001(\r\022\031\n\021seq_number_router\030\006 \001(\r\022\026\n\016s"
+    "eq_number_e2e\030\007 \001(\r\"\220\003\n%CMsgSteamDatagra"
+    "mGameServerAuthTicket\022\023\n\013time_expiry\030\001 \001"
+    "(\007\022\033\n\023authorized_steam_id\030\002 \001(\006\022\034\n\024autho"
+    "rized_public_ip\030\003 \001(\007\022\033\n\023gameserver_stea"
+    "m_id\030\004 \001(\006\022\031\n\021gameserver_net_id\030\005 \001(\006\022\021\n"
+    "\tsignature\030\006 \001(\014\022\016\n\006app_id\030\007 \001(\r\022G\n\014extr"
+    "a_fields\030\010 \003(\01321.CMsgSteamDatagramGameSe"
+    "rverAuthTicket.ExtraField\032s\n\nExtraField\022"
+    "\014\n\004name\030\001 \001(\t\022\024\n\014string_value\030\002 \001(\t\022\023\n\013i"
+    "nt32_value\030\003 \001(\021\022\025\n\rfixed32_value\030\004 \001(\007\022"
+    "\025\n\rfixed64_value\030\005 \001(\006\"\305\001\n)CMsgSteamData"
+    "gramGameserverSessionRequest\0226\n\006ticket\030\001"
+    " \001(\0132&.CMsgSteamDatagramGameServerAuthTi"
+    "cket\022\026\n\016challenge_time\030\003 \001(\007\022\021\n\tchalleng"
+    "e\030\004 \001(\006\022\025\n\rclient_cookie\030\005 \001(\007\022\036\n\026networ"
+    "k_config_version\030\006 \001(\r\"\227\001\n-CMsgSteamData"
+    "gramGameserverSessionEstablished\022\025\n\rclie"
+    "nt_cookie\030\001 \001(\007\022\033\n\023gameserver_steam_id\030\003"
+    " \001(\006\022\036\n\026seconds_until_shutdown\030\004 \001(\r\022\022\n\n"
+    "session_id\030\005 \001(\r\"\223\001\n\032CMsgSteamDatagramNo"
+    "Session\022\025\n\rclient_cookie\030\007 \001(\007\022\026\n\016your_p"
+    "ublic_ip\030\002 \001(\007\022\023\n\013server_time\030\003 \001(\007\022\021\n\tc"
+    "hallenge\030\004 \001(\006\022\036\n\026seconds_until_shutdown"
+    "\030\005 \001(\r\"=\n\033CMsgSteamDatagramDiagnostic\022\020\n"
+    "\010severity\030\001 \001(\r\022\014\n\004text\030\002 \001(\t\"\357\001\n CMsgSt"
+    "eamDatagramDataCenterState\022B\n\014data_cente"
+    "rs\030\001 \003(\0132,.CMsgSteamDatagramDataCenterSt"
+    "ate.DataCenter\032*\n\006Server\022\017\n\007address\030\001 \001("
+    "\t\022\017\n\007ping_ms\030\002 \001(\r\032[\n\nDataCenter\022\014\n\004code"
+    "\030\001 \001(\t\022\?\n\rserver_sample\030\002 \003(\0132(.CMsgStea"
+    "mDatagramDataCenterState.Server\"\213\002\n\'CMsg"
+    "SteamDatagramLinkInstantaneousStats\022\037\n\027o"
+    "ut_packets_per_sec_x10\030\001 \001(\r\022\031\n\021out_byte"
+    "s_per_sec\030\002 \001(\r\022\036\n\026in_packets_per_sec_x1"
+    "0\030\003 \001(\r\022\030\n\020in_bytes_per_sec\030\004 \001(\r\022\017\n\007pin"
+    "g_ms\030\005 \001(\r\022\033\n\023packets_dropped_pct\030\006 \001(\r\022"
+    "\"\n\032packets_weird_sequence_pct\030\007 \001(\r\022\030\n\020p"
+    "eak_jitter_usec\030\010 \001(\r\"\265\t\n\"CMsgSteamDatag"
+    "ramLinkLifetimeStats\022\024\n\014packets_sent\030\003 \001"
+    "(\004\022\017\n\007kb_sent\030\004 \001(\004\022\024\n\014packets_recv\030\005 \001("
+    "\004\022\017\n\007kb_recv\030\006 \001(\004\022\036\n\026packets_recv_seque"
+    "nced\030\007 \001(\004\022\034\n\024packets_recv_dropped\030\010 \001(\004"
+    "\022!\n\031packets_recv_out_of_order\030\t \001(\004\022\036\n\026p"
+    "ackets_recv_duplicate\030\n \001(\004\022\032\n\022packets_r"
+    "ecv_lurch\030\013 \001(\004\022\035\n\025quality_histogram_100"
+    "\030\025 \001(\r\022\034\n\024quality_histogram_99\030\026 \001(\r\022\034\n\024"
+    "quality_histogram_97\030\027 \001(\r\022\034\n\024quality_hi"
+    "stogram_95\030\030 \001(\r\022\034\n\024quality_histogram_90"
+    "\030\031 \001(\r\022\034\n\024quality_histogram_75\030\032 \001(\r\022\034\n\024"
+    "quality_histogram_50\030\033 \001(\r\022\033\n\023quality_hi"
+    "stogram_1\030\034 \001(\r\022\036\n\026quality_histogram_dea"
+    "d\030\035 \001(\r\022\031\n\021quality_ntile_2nd\030\036 \001(\r\022\031\n\021qu"
+    "ality_ntile_5th\030\037 \001(\r\022\032\n\022quality_ntile_2"
+    "5th\030  \001(\r\022\032\n\022quality_ntile_50th\030! \001(\r\022\031\n"
+    "\021ping_histogram_25\030) \001(\r\022\031\n\021ping_histogr"
+    "am_50\030* \001(\r\022\031\n\021ping_histogram_75\030+ \001(\r\022\032"
+    "\n\022ping_histogram_100\030, \001(\r\022\032\n\022ping_histo"
+    "gram_125\030- \001(\r\022\032\n\022ping_histogram_150\030. \001"
+    "(\r\022\032\n\022ping_histogram_200\030/ \001(\r\022\032\n\022ping_h"
+    "istogram_300\0300 \001(\r\022\032\n\022ping_histogram_max"
+    "\0301 \001(\r\022\026\n\016ping_ntile_5th\0302 \001(\r\022\027\n\017ping_n"
+    "tile_50th\0303 \001(\r\022\027\n\017ping_ntile_75th\0304 \001(\r"
+    "\022\027\n\017ping_ntile_95th\0305 \001(\r\022\027\n\017ping_ntile_"
+    "98th\0306 \001(\r\022#\n\033jitter_histogram_negligibl"
+    "e\030= \001(\r\022\032\n\022jitter_histogram_1\030> \001(\r\022\032\n\022j"
+    "itter_histogram_2\030\? \001(\r\022\032\n\022jitter_histog"
+    "ram_5\030@ \001(\r\022\033\n\023jitter_histogram_10\030A \001(\r"
+    "\022\033\n\023jitter_histogram_20\030B \001(\r\"\234\001\n\"CMsgSt"
+    "eamDatagramConnectionQuality\022\?\n\rinstanta"
+    "neous\030\001 \001(\0132(.CMsgSteamDatagramLinkInsta"
+    "ntaneousStats\0225\n\010lifetime\030\002 \001(\0132#.CMsgSt"
+    "eamDatagramLinkLifetimeStats\"\357\001\n.CMsgSte"
+    "amDatagramConnectionStatsClientToRouter\022"
+    "0\n\003c2r\030\001 \001(\0132#.CMsgSteamDatagramConnecti"
+    "onQuality\0220\n\003c2s\030\002 \001(\0132#.CMsgSteamDatagr"
+    "amConnectionQuality\022\030\n\020client_timestamp\030"
+    "\003 \001(\007\022\025\n\rclient_cookie\030\010 \001(\007\022\023\n\013seq_num_"
+    "c2r\030\t \001(\r\022\023\n\013seq_num_c2s\030\n \001(\r\"\305\003\n.CMsgS"
+    "teamDatagramConnectionStatsRouterToClien"
+    "t\0220\n\003r2c\030\001 \001(\0132#.CMsgSteamDatagramConnec"
+    "tionQuality\0220\n\003s2c\030\002 \001(\0132#.CMsgSteamData"
+    "gramConnectionQuality\022$\n\034client_timestam"
+    "p_from_router\030\003 \001(\007\022$\n\034client_timestamp_"
+    "from_server\030\004 \001(\007\022!\n\031router_gameserver_l"
+    "atency\030\005 \001(\r\022\036\n\026seconds_until_shutdown\030\006"
+    " \001(\r\022\032\n\022migrate_request_ip\030\n \001(\007\022\034\n\024migr"
+    "ate_request_port\030\013 \001(\r\022%\n\035scoring_penalt"
+    "y_relay_cluster\030\014 \001(\r\022\025\n\rclient_cookie\030\007"
+    " \001(\007\022\023\n\013seq_num_r2c\030\010 \001(\r\022\023\n\013seq_num_s2c"
+    "\030\t \001(\r\"\246\002\n.CMsgSteamDatagramConnectionSt"
+    "atsRouterToServer\0220\n\003r2s\030\001 \001(\0132#.CMsgSte"
+    "amDatagramConnectionQuality\0220\n\003c2s\030\002 \001(\013"
+    "2#.CMsgSteamDatagramConnectionQuality\022\030\n"
+    "\020client_timestamp\030\003 \001(\007\022\030\n\020router_timest"
+    "amp\030\004 \001(\007\022\023\n\013seq_num_r2s\030\005 \001(\r\022\023\n\013seq_nu"
+    "m_c2s\030\006 \001(\r\022\027\n\017client_steam_id\030\007 \001(\006\022\031\n\021"
+    "client_session_id\030\010 \001(\r\"\362\001\n.CMsgSteamDat"
+    "agramConnectionStatsServerToRouter\0220\n\003s2"
+    "r\030\001 \001(\0132#.CMsgSteamDatagramConnectionQua"
+    "lity\0220\n\003s2c\030\002 \001(\0132#.CMsgSteamDatagramCon"
+    "nectionQuality\022\023\n\013seq_num_s2r\030\003 \001(\r\022\023\n\013s"
+    "eq_num_s2c\030\004 \001(\r\022\027\n\017client_steam_id\030\005 \001("
+    "\006\022\031\n\021client_session_id\030\006 \001(\r\"A\n(CMsgStea"
+    "mDatagramClientPingSampleRequest\022\025\n\rclie"
+    "nt_cookie\030\001 \001(\007\"\333\001\n&CMsgSteamDatagramCli"
+    "entPingSampleReply\022\025\n\rclient_cookie\030\001 \001("
+    "\007\022P\n\020routing_clusters\030\002 \003(\01326.CMsgSteamD"
+    "atagramClientPingSampleReply.RoutingClus"
+    "ter\032H\n\016RoutingCluster\022\n\n\002id\030\001 \001(\007\022\025\n\rfro"
+    "nt_ping_ms\030\002 \001(\r\022\023\n\013e2e_ping_ms\030\003 \001(\r\"\216\005"
+    "\n&CMsgSteamDatagramClientSwitchedPrimary"
+    "\022\025\n\rclient_cookie\030\001 \001(\007\022\017\n\007from_ip\030\002 \001(\007"
+    "\022\021\n\tfrom_port\030\003 \001(\r\022\033\n\023from_router_clust"
+    "er\030\004 \001(\007\022\030\n\020from_active_time\030\005 \001(\r\022 \n\030fr"
+    "om_active_packets_recv\030\006 \001(\r\022\033\n\023from_dro"
+    "pped_reason\030\007 \001(\t\022\016\n\006gap_ms\030\010 \001(\r\022O\n\020fro"
+    "m_quality_now\030\t \001(\01325.CMsgSteamDatagramC"
+    "lientSwitchedPrimary.RouterQuality\022M\n\016to"
+    "_quality_now\030\n \001(\01325.CMsgSteamDatagramCl"
+    "ientSwitchedPrimary.RouterQuality\022P\n\021fro"
+    "m_quality_then\030\013 \001(\01325.CMsgSteamDatagram"
+    "ClientSwitchedPrimary.RouterQuality\022N\n\017t"
+    "o_quality_then\030\014 \001(\01325.CMsgSteamDatagram"
+    "ClientSwitchedPrimary.RouterQuality\032a\n\rR"
+    "outerQuality\022\r\n\005score\030\001 \001(\r\022\022\n\nfront_pin"
+    "g\030\002 \001(\r\022\021\n\tback_ping\030\003 \001(\r\022\032\n\022seconds_un"
+    "til_down\030\004 \001(\r\"\325\002\n\035CMsgSteamDatagramRout"
+    "erHealth\022\020\n\010cpu_load\030\001 \001(\002\022\027\n\017active_ses"
+    "sions\030\002 \001(\r\022\025\n\rdata_pkts_sec\030\003 \001(\r\022\026\n\016ot"
+    "her_pkts_sec\030\004 \001(\r\022\036\n\026seconds_until_shut"
+    "down\030\005 \001(\r\022\031\n\021cpu_cost_per_user\030\010 \001(\002\022\033\n"
+    "\023cpu_cost_per_packet\030\t \001(\002\022\?\n\014data_cente"
+    "rs\030\006 \003(\0132).CMsgSteamDatagramRouterHealth"
+    ".DataCenter\022\r\n\005magic\030\007 \001(\006\0322\n\nDataCenter"
+    "\022\025\n\rdatacenter_id\030\001 \001(\007\022\r\n\005state\030\002 \001(\r*\240"
+    "\006\n\023ESteamDatagramMsgID\022\037\n\033k_ESteamDatagr"
+    "amMsg_Invalid\020\000\022)\n%k_ESteamDatagramMsg_R"
+    "outerPingRequest\020\001\022\'\n#k_ESteamDatagramMs"
+    "g_RouterPingReply\020\002\022-\n)k_ESteamDatagramM"
+    "sg_GameserverPingRequest\020\003\022+\n\'k_ESteamDa"
+    "tagramMsg_GameserverPingReply\020\004\0220\n,k_ESt"
+    "eamDatagramMsg_GameserverSessionRequest\020"
+    "\005\0224\n0k_ESteamDatagramMsg_GameserverSessi"
+    "onEstablished\020\006\022!\n\035k_ESteamDatagramMsg_N"
+    "oSession\020\007\022\"\n\036k_ESteamDatagramMsg_Diagno"
+    "stic\020\010\022*\n&k_ESteamDatagramMsg_DataClient"
+    "ToRouter\020\t\022*\n&k_ESteamDatagramMsg_DataRo"
+    "uterToServer\020\n\022*\n&k_ESteamDatagramMsg_Da"
+    "taServerToRouter\020\013\022*\n&k_ESteamDatagramMs"
+    "g_DataRouterToClient\020\014\022\035\n\031k_ESteamDatagr"
+    "amMsg_Stats\020\r\022/\n+k_ESteamDatagramMsg_Cli"
+    "entPingSampleRequest\020\016\022-\n)k_ESteamDatagr"
+    "amMsg_ClientPingSampleReply\020\017\0225\n1k_EStea"
+    "mDatagramMsg_ClientToRouterSwitchedPrima"
+    "ry\020\020\022#\n\037k_ESteamDatagramMsg_RelayHealth\020"
+    "\021B\003\200\001\000", 6806);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "steamdatagram_messages.proto", &protobuf_RegisterTypes);
   CMsgSteamDatagramRouterPingReply::default_instance_ = new CMsgSteamDatagramRouterPingReply();
@@ -767,11 +940,14 @@ void protobuf_AddDesc_steamdatagram_5fmessages_2eproto() {
   CMsgSteamDatagramConnectionStatsClientToRouter::default_instance_ = new CMsgSteamDatagramConnectionStatsClientToRouter();
   CMsgSteamDatagramConnectionStatsRouterToClient::default_instance_ = new CMsgSteamDatagramConnectionStatsRouterToClient();
   CMsgSteamDatagramConnectionStatsRouterToServer::default_instance_ = new CMsgSteamDatagramConnectionStatsRouterToServer();
+  CMsgSteamDatagramConnectionStatsServerToRouter::default_instance_ = new CMsgSteamDatagramConnectionStatsServerToRouter();
   CMsgSteamDatagramClientPingSampleRequest::default_instance_ = new CMsgSteamDatagramClientPingSampleRequest();
   CMsgSteamDatagramClientPingSampleReply::default_instance_ = new CMsgSteamDatagramClientPingSampleReply();
   CMsgSteamDatagramClientPingSampleReply_RoutingCluster::default_instance_ = new CMsgSteamDatagramClientPingSampleReply_RoutingCluster();
   CMsgSteamDatagramClientSwitchedPrimary::default_instance_ = new CMsgSteamDatagramClientSwitchedPrimary();
   CMsgSteamDatagramClientSwitchedPrimary_RouterQuality::default_instance_ = new CMsgSteamDatagramClientSwitchedPrimary_RouterQuality();
+  CMsgSteamDatagramRouterHealth::default_instance_ = new CMsgSteamDatagramRouterHealth();
+  CMsgSteamDatagramRouterHealth_DataCenter::default_instance_ = new CMsgSteamDatagramRouterHealth_DataCenter();
   CMsgSteamDatagramRouterPingReply::default_instance_->InitAsDefaultInstance();
   CMsgSteamDatagramGameserverPing::default_instance_->InitAsDefaultInstance();
   CMsgSteamDatagramGameServerAuthTicket::default_instance_->InitAsDefaultInstance();
@@ -789,11 +965,14 @@ void protobuf_AddDesc_steamdatagram_5fmessages_2eproto() {
   CMsgSteamDatagramConnectionStatsClientToRouter::default_instance_->InitAsDefaultInstance();
   CMsgSteamDatagramConnectionStatsRouterToClient::default_instance_->InitAsDefaultInstance();
   CMsgSteamDatagramConnectionStatsRouterToServer::default_instance_->InitAsDefaultInstance();
+  CMsgSteamDatagramConnectionStatsServerToRouter::default_instance_->InitAsDefaultInstance();
   CMsgSteamDatagramClientPingSampleRequest::default_instance_->InitAsDefaultInstance();
   CMsgSteamDatagramClientPingSampleReply::default_instance_->InitAsDefaultInstance();
   CMsgSteamDatagramClientPingSampleReply_RoutingCluster::default_instance_->InitAsDefaultInstance();
   CMsgSteamDatagramClientSwitchedPrimary::default_instance_->InitAsDefaultInstance();
   CMsgSteamDatagramClientSwitchedPrimary_RouterQuality::default_instance_->InitAsDefaultInstance();
+  CMsgSteamDatagramRouterHealth::default_instance_->InitAsDefaultInstance();
+  CMsgSteamDatagramRouterHealth_DataCenter::default_instance_->InitAsDefaultInstance();
   ::google::protobuf::internal::OnShutdown(&protobuf_ShutdownFile_steamdatagram_5fmessages_2eproto);
 }
 
@@ -809,6 +988,7 @@ const ::google::protobuf::EnumDescriptor* ESteamDatagramMsgID_descriptor() {
 }
 bool ESteamDatagramMsgID_IsValid(int value) {
   switch(value) {
+    case 0:
     case 1:
     case 2:
     case 3:
@@ -825,6 +1005,7 @@ bool ESteamDatagramMsgID_IsValid(int value) {
     case 14:
     case 15:
     case 16:
+    case 17:
       return true;
     default:
       return false;
@@ -843,6 +1024,9 @@ const int CMsgSteamDatagramRouterPingReply::kServerTimeFieldNumber;
 const int CMsgSteamDatagramRouterPingReply::kChallengeFieldNumber;
 const int CMsgSteamDatagramRouterPingReply::kSecondsUntilShutdownFieldNumber;
 const int CMsgSteamDatagramRouterPingReply::kClientCookieFieldNumber;
+const int CMsgSteamDatagramRouterPingReply::kScoringPenaltyRelayClusterFieldNumber;
+const int CMsgSteamDatagramRouterPingReply::kScoringPenaltyDatacenterIdsFieldNumber;
+const int CMsgSteamDatagramRouterPingReply::kScoringPenaltyValuesFieldNumber;
 #endif  // !_MSC_VER
 
 CMsgSteamDatagramRouterPingReply::CMsgSteamDatagramRouterPingReply()
@@ -869,6 +1053,7 @@ void CMsgSteamDatagramRouterPingReply::SharedCtor() {
   challenge_ = GOOGLE_ULONGLONG(0);
   seconds_until_shutdown_ = 0u;
   client_cookie_ = 0u;
+  scoring_penalty_relay_cluster_ = 0u;
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
 
@@ -918,12 +1103,15 @@ void CMsgSteamDatagramRouterPingReply::Clear() {
     ZR_(client_timestamp_, your_public_ip_);
     ZR_(challenge_, client_cookie_);
   }
+  scoring_penalty_relay_cluster_ = 0u;
 
 #undef OFFSET_OF_FIELD_
 #undef ZR_
 
   latency_datacenter_ids_.Clear();
   latency_ping_ms_.Clear();
+  scoring_penalty_datacenter_ids_.Clear();
+  scoring_penalty_values_.Clear();
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
   mutable_unknown_fields()->Clear();
 }
@@ -1059,6 +1247,57 @@ bool CMsgSteamDatagramRouterPingReply::MergePartialFromCodedStream(
         } else {
           goto handle_unusual;
         }
+        if (input->ExpectTag(72)) goto parse_scoring_penalty_relay_cluster;
+        break;
+      }
+
+      // optional uint32 scoring_penalty_relay_cluster = 9;
+      case 9: {
+        if (tag == 72) {
+         parse_scoring_penalty_relay_cluster:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                 input, &scoring_penalty_relay_cluster_)));
+          set_has_scoring_penalty_relay_cluster();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(82)) goto parse_scoring_penalty_datacenter_ids;
+        break;
+      }
+
+      // repeated fixed32 scoring_penalty_datacenter_ids = 10 [packed = true];
+      case 10: {
+        if (tag == 82) {
+         parse_scoring_penalty_datacenter_ids:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPackedPrimitive<
+                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_FIXED32>(
+                 input, this->mutable_scoring_penalty_datacenter_ids())));
+        } else if (tag == 85) {
+          DO_((::google::protobuf::internal::WireFormatLite::ReadRepeatedPrimitiveNoInline<
+                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_FIXED32>(
+                 1, 82, input, this->mutable_scoring_penalty_datacenter_ids())));
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(90)) goto parse_scoring_penalty_values;
+        break;
+      }
+
+      // repeated uint32 scoring_penalty_values = 11 [packed = true];
+      case 11: {
+        if (tag == 90) {
+         parse_scoring_penalty_values:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPackedPrimitive<
+                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                 input, this->mutable_scoring_penalty_values())));
+        } else if (tag == 88) {
+          DO_((::google::protobuf::internal::WireFormatLite::ReadRepeatedPrimitiveNoInline<
+                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                 1, 90, input, this->mutable_scoring_penalty_values())));
+        } else {
+          goto handle_unusual;
+        }
         if (input->ExpectAtEnd()) goto success;
         break;
       }
@@ -1138,6 +1377,31 @@ void CMsgSteamDatagramRouterPingReply::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteFixed32(8, this->client_cookie(), output);
   }
 
+  // optional uint32 scoring_penalty_relay_cluster = 9;
+  if (has_scoring_penalty_relay_cluster()) {
+    ::google::protobuf::internal::WireFormatLite::WriteUInt32(9, this->scoring_penalty_relay_cluster(), output);
+  }
+
+  // repeated fixed32 scoring_penalty_datacenter_ids = 10 [packed = true];
+  if (this->scoring_penalty_datacenter_ids_size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteTag(10, ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED, output);
+    output->WriteVarint32(_scoring_penalty_datacenter_ids_cached_byte_size_);
+  }
+  for (int i = 0; i < this->scoring_penalty_datacenter_ids_size(); i++) {
+    ::google::protobuf::internal::WireFormatLite::WriteFixed32NoTag(
+      this->scoring_penalty_datacenter_ids(i), output);
+  }
+
+  // repeated uint32 scoring_penalty_values = 11 [packed = true];
+  if (this->scoring_penalty_values_size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteTag(11, ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED, output);
+    output->WriteVarint32(_scoring_penalty_values_cached_byte_size_);
+  }
+  for (int i = 0; i < this->scoring_penalty_values_size(); i++) {
+    ::google::protobuf::internal::WireFormatLite::WriteUInt32NoTag(
+      this->scoring_penalty_values(i), output);
+  }
+
   if (!unknown_fields().empty()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
@@ -1206,6 +1470,39 @@ void CMsgSteamDatagramRouterPingReply::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteFixed32ToArray(8, this->client_cookie(), target);
   }
 
+  // optional uint32 scoring_penalty_relay_cluster = 9;
+  if (has_scoring_penalty_relay_cluster()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(9, this->scoring_penalty_relay_cluster(), target);
+  }
+
+  // repeated fixed32 scoring_penalty_datacenter_ids = 10 [packed = true];
+  if (this->scoring_penalty_datacenter_ids_size() > 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteTagToArray(
+      10,
+      ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED,
+      target);
+    target = ::google::protobuf::io::CodedOutputStream::WriteVarint32ToArray(
+      _scoring_penalty_datacenter_ids_cached_byte_size_, target);
+  }
+  for (int i = 0; i < this->scoring_penalty_datacenter_ids_size(); i++) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      WriteFixed32NoTagToArray(this->scoring_penalty_datacenter_ids(i), target);
+  }
+
+  // repeated uint32 scoring_penalty_values = 11 [packed = true];
+  if (this->scoring_penalty_values_size() > 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteTagToArray(
+      11,
+      ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED,
+      target);
+    target = ::google::protobuf::io::CodedOutputStream::WriteVarint32ToArray(
+      _scoring_penalty_values_cached_byte_size_, target);
+  }
+  for (int i = 0; i < this->scoring_penalty_values_size(); i++) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      WriteUInt32NoTagToArray(this->scoring_penalty_values(i), target);
+  }
+
   if (!unknown_fields().empty()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
@@ -1251,6 +1548,15 @@ int CMsgSteamDatagramRouterPingReply::ByteSize() const {
     }
 
   }
+  if (_has_bits_[8 / 32] & (0xffu << (8 % 32))) {
+    // optional uint32 scoring_penalty_relay_cluster = 9;
+    if (has_scoring_penalty_relay_cluster()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::UInt32Size(
+          this->scoring_penalty_relay_cluster());
+    }
+
+  }
   // repeated fixed32 latency_datacenter_ids = 2 [packed = true];
   {
     int data_size = 0;
@@ -1282,6 +1588,37 @@ int CMsgSteamDatagramRouterPingReply::ByteSize() const {
     total_size += data_size;
   }
 
+  // repeated fixed32 scoring_penalty_datacenter_ids = 10 [packed = true];
+  {
+    int data_size = 0;
+    data_size = 4 * this->scoring_penalty_datacenter_ids_size();
+    if (data_size > 0) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::Int32Size(data_size);
+    }
+    GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+    _scoring_penalty_datacenter_ids_cached_byte_size_ = data_size;
+    GOOGLE_SAFE_CONCURRENT_WRITES_END();
+    total_size += data_size;
+  }
+
+  // repeated uint32 scoring_penalty_values = 11 [packed = true];
+  {
+    int data_size = 0;
+    for (int i = 0; i < this->scoring_penalty_values_size(); i++) {
+      data_size += ::google::protobuf::internal::WireFormatLite::
+        UInt32Size(this->scoring_penalty_values(i));
+    }
+    if (data_size > 0) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::Int32Size(data_size);
+    }
+    GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+    _scoring_penalty_values_cached_byte_size_ = data_size;
+    GOOGLE_SAFE_CONCURRENT_WRITES_END();
+    total_size += data_size;
+  }
+
   if (!unknown_fields().empty()) {
     total_size +=
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
@@ -1309,6 +1646,8 @@ void CMsgSteamDatagramRouterPingReply::MergeFrom(const CMsgSteamDatagramRouterPi
   GOOGLE_CHECK_NE(&from, this);
   latency_datacenter_ids_.MergeFrom(from.latency_datacenter_ids_);
   latency_ping_ms_.MergeFrom(from.latency_ping_ms_);
+  scoring_penalty_datacenter_ids_.MergeFrom(from.scoring_penalty_datacenter_ids_);
+  scoring_penalty_values_.MergeFrom(from.scoring_penalty_values_);
   if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (from.has_client_timestamp()) {
       set_client_timestamp(from.client_timestamp());
@@ -1327,6 +1666,11 @@ void CMsgSteamDatagramRouterPingReply::MergeFrom(const CMsgSteamDatagramRouterPi
     }
     if (from.has_client_cookie()) {
       set_client_cookie(from.client_cookie());
+    }
+  }
+  if (from._has_bits_[8 / 32] & (0xffu << (8 % 32))) {
+    if (from.has_scoring_penalty_relay_cluster()) {
+      set_scoring_penalty_relay_cluster(from.scoring_penalty_relay_cluster());
     }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
@@ -1359,6 +1703,9 @@ void CMsgSteamDatagramRouterPingReply::Swap(CMsgSteamDatagramRouterPingReply* ot
     std::swap(challenge_, other->challenge_);
     std::swap(seconds_until_shutdown_, other->seconds_until_shutdown_);
     std::swap(client_cookie_, other->client_cookie_);
+    std::swap(scoring_penalty_relay_cluster_, other->scoring_penalty_relay_cluster_);
+    scoring_penalty_datacenter_ids_.Swap(&other->scoring_penalty_datacenter_ids_);
+    scoring_penalty_values_.Swap(&other->scoring_penalty_values_);
     std::swap(_has_bits_[0], other->_has_bits_[0]);
     _unknown_fields_.Swap(&other->_unknown_fields_);
     std::swap(_cached_size_, other->_cached_size_);
@@ -2776,6 +3123,7 @@ const int CMsgSteamDatagramGameserverSessionRequest::kTicketFieldNumber;
 const int CMsgSteamDatagramGameserverSessionRequest::kChallengeTimeFieldNumber;
 const int CMsgSteamDatagramGameserverSessionRequest::kChallengeFieldNumber;
 const int CMsgSteamDatagramGameserverSessionRequest::kClientCookieFieldNumber;
+const int CMsgSteamDatagramGameserverSessionRequest::kNetworkConfigVersionFieldNumber;
 #endif  // !_MSC_VER
 
 CMsgSteamDatagramGameserverSessionRequest::CMsgSteamDatagramGameserverSessionRequest()
@@ -2801,6 +3149,7 @@ void CMsgSteamDatagramGameserverSessionRequest::SharedCtor() {
   challenge_time_ = 0u;
   challenge_ = GOOGLE_ULONGLONG(0);
   client_cookie_ = 0u;
+  network_config_version_ = 0u;
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
 
@@ -2847,8 +3196,8 @@ void CMsgSteamDatagramGameserverSessionRequest::Clear() {
     ::memset(&first, 0, n);                                \
   } while (0)
 
-  if (_has_bits_[0 / 32] & 15) {
-    ZR_(challenge_, client_cookie_);
+  if (_has_bits_[0 / 32] & 31) {
+    ZR_(challenge_, network_config_version_);
     if (has_ticket()) {
       if (ticket_ != NULL) ticket_->::CMsgSteamDatagramGameServerAuthTicket::Clear();
     }
@@ -2924,6 +3273,21 @@ bool CMsgSteamDatagramGameserverSessionRequest::MergePartialFromCodedStream(
         } else {
           goto handle_unusual;
         }
+        if (input->ExpectTag(48)) goto parse_network_config_version;
+        break;
+      }
+
+      // optional uint32 network_config_version = 6;
+      case 6: {
+        if (tag == 48) {
+         parse_network_config_version:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                 input, &network_config_version_)));
+          set_has_network_config_version();
+        } else {
+          goto handle_unusual;
+        }
         if (input->ExpectAtEnd()) goto success;
         break;
       }
@@ -2974,6 +3338,11 @@ void CMsgSteamDatagramGameserverSessionRequest::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteFixed32(5, this->client_cookie(), output);
   }
 
+  // optional uint32 network_config_version = 6;
+  if (has_network_config_version()) {
+    ::google::protobuf::internal::WireFormatLite::WriteUInt32(6, this->network_config_version(), output);
+  }
+
   if (!unknown_fields().empty()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
@@ -3004,6 +3373,11 @@ void CMsgSteamDatagramGameserverSessionRequest::SerializeWithCachedSizes(
   // optional fixed32 client_cookie = 5;
   if (has_client_cookie()) {
     target = ::google::protobuf::internal::WireFormatLite::WriteFixed32ToArray(5, this->client_cookie(), target);
+  }
+
+  // optional uint32 network_config_version = 6;
+  if (has_network_config_version()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(6, this->network_config_version(), target);
   }
 
   if (!unknown_fields().empty()) {
@@ -3038,6 +3412,13 @@ int CMsgSteamDatagramGameserverSessionRequest::ByteSize() const {
     // optional fixed32 client_cookie = 5;
     if (has_client_cookie()) {
       total_size += 1 + 4;
+    }
+
+    // optional uint32 network_config_version = 6;
+    if (has_network_config_version()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::UInt32Size(
+          this->network_config_version());
     }
 
   }
@@ -3079,6 +3460,9 @@ void CMsgSteamDatagramGameserverSessionRequest::MergeFrom(const CMsgSteamDatagra
     if (from.has_client_cookie()) {
       set_client_cookie(from.client_cookie());
     }
+    if (from.has_network_config_version()) {
+      set_network_config_version(from.network_config_version());
+    }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
 }
@@ -3106,6 +3490,7 @@ void CMsgSteamDatagramGameserverSessionRequest::Swap(CMsgSteamDatagramGameserver
     std::swap(challenge_time_, other->challenge_time_);
     std::swap(challenge_, other->challenge_);
     std::swap(client_cookie_, other->client_cookie_);
+    std::swap(network_config_version_, other->network_config_version_);
     std::swap(_has_bits_[0], other->_has_bits_[0]);
     _unknown_fields_.Swap(&other->_unknown_fields_);
     std::swap(_cached_size_, other->_cached_size_);
@@ -3127,6 +3512,7 @@ void CMsgSteamDatagramGameserverSessionRequest::Swap(CMsgSteamDatagramGameserver
 const int CMsgSteamDatagramGameserverSessionEstablished::kClientCookieFieldNumber;
 const int CMsgSteamDatagramGameserverSessionEstablished::kGameserverSteamIdFieldNumber;
 const int CMsgSteamDatagramGameserverSessionEstablished::kSecondsUntilShutdownFieldNumber;
+const int CMsgSteamDatagramGameserverSessionEstablished::kSessionIdFieldNumber;
 #endif  // !_MSC_VER
 
 CMsgSteamDatagramGameserverSessionEstablished::CMsgSteamDatagramGameserverSessionEstablished()
@@ -3150,6 +3536,7 @@ void CMsgSteamDatagramGameserverSessionEstablished::SharedCtor() {
   client_cookie_ = 0u;
   gameserver_steam_id_ = GOOGLE_ULONGLONG(0);
   seconds_until_shutdown_ = 0u;
+  session_id_ = 0u;
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
 
@@ -3195,7 +3582,7 @@ void CMsgSteamDatagramGameserverSessionEstablished::Clear() {
     ::memset(&first, 0, n);                                \
   } while (0)
 
-  ZR_(gameserver_steam_id_, seconds_until_shutdown_);
+  ZR_(gameserver_steam_id_, session_id_);
 
 #undef OFFSET_OF_FIELD_
 #undef ZR_
@@ -3254,6 +3641,21 @@ bool CMsgSteamDatagramGameserverSessionEstablished::MergePartialFromCodedStream(
         } else {
           goto handle_unusual;
         }
+        if (input->ExpectTag(40)) goto parse_session_id;
+        break;
+      }
+
+      // optional uint32 session_id = 5;
+      case 5: {
+        if (tag == 40) {
+         parse_session_id:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                 input, &session_id_)));
+          set_has_session_id();
+        } else {
+          goto handle_unusual;
+        }
         if (input->ExpectAtEnd()) goto success;
         break;
       }
@@ -3298,6 +3700,11 @@ void CMsgSteamDatagramGameserverSessionEstablished::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteUInt32(4, this->seconds_until_shutdown(), output);
   }
 
+  // optional uint32 session_id = 5;
+  if (has_session_id()) {
+    ::google::protobuf::internal::WireFormatLite::WriteUInt32(5, this->session_id(), output);
+  }
+
   if (!unknown_fields().empty()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
@@ -3321,6 +3728,11 @@ void CMsgSteamDatagramGameserverSessionEstablished::SerializeWithCachedSizes(
   // optional uint32 seconds_until_shutdown = 4;
   if (has_seconds_until_shutdown()) {
     target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(4, this->seconds_until_shutdown(), target);
+  }
+
+  // optional uint32 session_id = 5;
+  if (has_session_id()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(5, this->session_id(), target);
   }
 
   if (!unknown_fields().empty()) {
@@ -3350,6 +3762,13 @@ int CMsgSteamDatagramGameserverSessionEstablished::ByteSize() const {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::UInt32Size(
           this->seconds_until_shutdown());
+    }
+
+    // optional uint32 session_id = 5;
+    if (has_session_id()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::UInt32Size(
+          this->session_id());
     }
 
   }
@@ -3388,6 +3807,9 @@ void CMsgSteamDatagramGameserverSessionEstablished::MergeFrom(const CMsgSteamDat
     if (from.has_seconds_until_shutdown()) {
       set_seconds_until_shutdown(from.seconds_until_shutdown());
     }
+    if (from.has_session_id()) {
+      set_session_id(from.session_id());
+    }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
 }
@@ -3414,6 +3836,7 @@ void CMsgSteamDatagramGameserverSessionEstablished::Swap(CMsgSteamDatagramGamese
     std::swap(client_cookie_, other->client_cookie_);
     std::swap(gameserver_steam_id_, other->gameserver_steam_id_);
     std::swap(seconds_until_shutdown_, other->seconds_until_shutdown_);
+    std::swap(session_id_, other->session_id_);
     std::swap(_has_bits_[0], other->_has_bits_[0]);
     _unknown_fields_.Swap(&other->_unknown_fields_);
     std::swap(_cached_size_, other->_cached_size_);
@@ -4890,6 +5313,7 @@ const int CMsgSteamDatagramLinkInstantaneousStats::kInBytesPerSecFieldNumber;
 const int CMsgSteamDatagramLinkInstantaneousStats::kPingMsFieldNumber;
 const int CMsgSteamDatagramLinkInstantaneousStats::kPacketsDroppedPctFieldNumber;
 const int CMsgSteamDatagramLinkInstantaneousStats::kPacketsWeirdSequencePctFieldNumber;
+const int CMsgSteamDatagramLinkInstantaneousStats::kPeakJitterUsecFieldNumber;
 #endif  // !_MSC_VER
 
 CMsgSteamDatagramLinkInstantaneousStats::CMsgSteamDatagramLinkInstantaneousStats()
@@ -4917,6 +5341,7 @@ void CMsgSteamDatagramLinkInstantaneousStats::SharedCtor() {
   ping_ms_ = 0u;
   packets_dropped_pct_ = 0u;
   packets_weird_sequence_pct_ = 0u;
+  peak_jitter_usec_ = 0u;
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
 
@@ -4962,8 +5387,8 @@ void CMsgSteamDatagramLinkInstantaneousStats::Clear() {
     ::memset(&first, 0, n);                                \
   } while (0)
 
-  if (_has_bits_[0 / 32] & 127) {
-    ZR_(out_packets_per_sec_x10_, packets_weird_sequence_pct_);
+  if (_has_bits_[0 / 32] & 255) {
+    ZR_(out_packets_per_sec_x10_, peak_jitter_usec_);
   }
 
 #undef OFFSET_OF_FIELD_
@@ -5083,6 +5508,21 @@ bool CMsgSteamDatagramLinkInstantaneousStats::MergePartialFromCodedStream(
         } else {
           goto handle_unusual;
         }
+        if (input->ExpectTag(64)) goto parse_peak_jitter_usec;
+        break;
+      }
+
+      // optional uint32 peak_jitter_usec = 8;
+      case 8: {
+        if (tag == 64) {
+         parse_peak_jitter_usec:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                 input, &peak_jitter_usec_)));
+          set_has_peak_jitter_usec();
+        } else {
+          goto handle_unusual;
+        }
         if (input->ExpectAtEnd()) goto success;
         break;
       }
@@ -5147,6 +5587,11 @@ void CMsgSteamDatagramLinkInstantaneousStats::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteUInt32(7, this->packets_weird_sequence_pct(), output);
   }
 
+  // optional uint32 peak_jitter_usec = 8;
+  if (has_peak_jitter_usec()) {
+    ::google::protobuf::internal::WireFormatLite::WriteUInt32(8, this->peak_jitter_usec(), output);
+  }
+
   if (!unknown_fields().empty()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
@@ -5190,6 +5635,11 @@ void CMsgSteamDatagramLinkInstantaneousStats::SerializeWithCachedSizes(
   // optional uint32 packets_weird_sequence_pct = 7;
   if (has_packets_weird_sequence_pct()) {
     target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(7, this->packets_weird_sequence_pct(), target);
+  }
+
+  // optional uint32 peak_jitter_usec = 8;
+  if (has_peak_jitter_usec()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(8, this->peak_jitter_usec(), target);
   }
 
   if (!unknown_fields().empty()) {
@@ -5253,6 +5703,13 @@ int CMsgSteamDatagramLinkInstantaneousStats::ByteSize() const {
           this->packets_weird_sequence_pct());
     }
 
+    // optional uint32 peak_jitter_usec = 8;
+    if (has_peak_jitter_usec()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::UInt32Size(
+          this->peak_jitter_usec());
+    }
+
   }
   if (!unknown_fields().empty()) {
     total_size +=
@@ -5301,6 +5758,9 @@ void CMsgSteamDatagramLinkInstantaneousStats::MergeFrom(const CMsgSteamDatagramL
     if (from.has_packets_weird_sequence_pct()) {
       set_packets_weird_sequence_pct(from.packets_weird_sequence_pct());
     }
+    if (from.has_peak_jitter_usec()) {
+      set_peak_jitter_usec(from.peak_jitter_usec());
+    }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
 }
@@ -5331,6 +5791,7 @@ void CMsgSteamDatagramLinkInstantaneousStats::Swap(CMsgSteamDatagramLinkInstanta
     std::swap(ping_ms_, other->ping_ms_);
     std::swap(packets_dropped_pct_, other->packets_dropped_pct_);
     std::swap(packets_weird_sequence_pct_, other->packets_weird_sequence_pct_);
+    std::swap(peak_jitter_usec_, other->peak_jitter_usec_);
     std::swap(_has_bits_[0], other->_has_bits_[0]);
     _unknown_fields_.Swap(&other->_unknown_fields_);
     std::swap(_cached_size_, other->_cached_size_);
@@ -5358,6 +5819,39 @@ const int CMsgSteamDatagramLinkLifetimeStats::kPacketsRecvDroppedFieldNumber;
 const int CMsgSteamDatagramLinkLifetimeStats::kPacketsRecvOutOfOrderFieldNumber;
 const int CMsgSteamDatagramLinkLifetimeStats::kPacketsRecvDuplicateFieldNumber;
 const int CMsgSteamDatagramLinkLifetimeStats::kPacketsRecvLurchFieldNumber;
+const int CMsgSteamDatagramLinkLifetimeStats::kQualityHistogram100FieldNumber;
+const int CMsgSteamDatagramLinkLifetimeStats::kQualityHistogram99FieldNumber;
+const int CMsgSteamDatagramLinkLifetimeStats::kQualityHistogram97FieldNumber;
+const int CMsgSteamDatagramLinkLifetimeStats::kQualityHistogram95FieldNumber;
+const int CMsgSteamDatagramLinkLifetimeStats::kQualityHistogram90FieldNumber;
+const int CMsgSteamDatagramLinkLifetimeStats::kQualityHistogram75FieldNumber;
+const int CMsgSteamDatagramLinkLifetimeStats::kQualityHistogram50FieldNumber;
+const int CMsgSteamDatagramLinkLifetimeStats::kQualityHistogram1FieldNumber;
+const int CMsgSteamDatagramLinkLifetimeStats::kQualityHistogramDeadFieldNumber;
+const int CMsgSteamDatagramLinkLifetimeStats::kQualityNtile2NdFieldNumber;
+const int CMsgSteamDatagramLinkLifetimeStats::kQualityNtile5ThFieldNumber;
+const int CMsgSteamDatagramLinkLifetimeStats::kQualityNtile25ThFieldNumber;
+const int CMsgSteamDatagramLinkLifetimeStats::kQualityNtile50ThFieldNumber;
+const int CMsgSteamDatagramLinkLifetimeStats::kPingHistogram25FieldNumber;
+const int CMsgSteamDatagramLinkLifetimeStats::kPingHistogram50FieldNumber;
+const int CMsgSteamDatagramLinkLifetimeStats::kPingHistogram75FieldNumber;
+const int CMsgSteamDatagramLinkLifetimeStats::kPingHistogram100FieldNumber;
+const int CMsgSteamDatagramLinkLifetimeStats::kPingHistogram125FieldNumber;
+const int CMsgSteamDatagramLinkLifetimeStats::kPingHistogram150FieldNumber;
+const int CMsgSteamDatagramLinkLifetimeStats::kPingHistogram200FieldNumber;
+const int CMsgSteamDatagramLinkLifetimeStats::kPingHistogram300FieldNumber;
+const int CMsgSteamDatagramLinkLifetimeStats::kPingHistogramMaxFieldNumber;
+const int CMsgSteamDatagramLinkLifetimeStats::kPingNtile5ThFieldNumber;
+const int CMsgSteamDatagramLinkLifetimeStats::kPingNtile50ThFieldNumber;
+const int CMsgSteamDatagramLinkLifetimeStats::kPingNtile75ThFieldNumber;
+const int CMsgSteamDatagramLinkLifetimeStats::kPingNtile95ThFieldNumber;
+const int CMsgSteamDatagramLinkLifetimeStats::kPingNtile98ThFieldNumber;
+const int CMsgSteamDatagramLinkLifetimeStats::kJitterHistogramNegligibleFieldNumber;
+const int CMsgSteamDatagramLinkLifetimeStats::kJitterHistogram1FieldNumber;
+const int CMsgSteamDatagramLinkLifetimeStats::kJitterHistogram2FieldNumber;
+const int CMsgSteamDatagramLinkLifetimeStats::kJitterHistogram5FieldNumber;
+const int CMsgSteamDatagramLinkLifetimeStats::kJitterHistogram10FieldNumber;
+const int CMsgSteamDatagramLinkLifetimeStats::kJitterHistogram20FieldNumber;
 #endif  // !_MSC_VER
 
 CMsgSteamDatagramLinkLifetimeStats::CMsgSteamDatagramLinkLifetimeStats()
@@ -5387,6 +5881,39 @@ void CMsgSteamDatagramLinkLifetimeStats::SharedCtor() {
   packets_recv_out_of_order_ = GOOGLE_ULONGLONG(0);
   packets_recv_duplicate_ = GOOGLE_ULONGLONG(0);
   packets_recv_lurch_ = GOOGLE_ULONGLONG(0);
+  quality_histogram_100_ = 0u;
+  quality_histogram_99_ = 0u;
+  quality_histogram_97_ = 0u;
+  quality_histogram_95_ = 0u;
+  quality_histogram_90_ = 0u;
+  quality_histogram_75_ = 0u;
+  quality_histogram_50_ = 0u;
+  quality_histogram_1_ = 0u;
+  quality_histogram_dead_ = 0u;
+  quality_ntile_2nd_ = 0u;
+  quality_ntile_5th_ = 0u;
+  quality_ntile_25th_ = 0u;
+  quality_ntile_50th_ = 0u;
+  ping_histogram_25_ = 0u;
+  ping_histogram_50_ = 0u;
+  ping_histogram_75_ = 0u;
+  ping_histogram_100_ = 0u;
+  ping_histogram_125_ = 0u;
+  ping_histogram_150_ = 0u;
+  ping_histogram_200_ = 0u;
+  ping_histogram_300_ = 0u;
+  ping_histogram_max_ = 0u;
+  ping_ntile_5th_ = 0u;
+  ping_ntile_50th_ = 0u;
+  ping_ntile_75th_ = 0u;
+  ping_ntile_95th_ = 0u;
+  ping_ntile_98th_ = 0u;
+  jitter_histogram_negligible_ = 0u;
+  jitter_histogram_1_ = 0u;
+  jitter_histogram_2_ = 0u;
+  jitter_histogram_5_ = 0u;
+  jitter_histogram_10_ = 0u;
+  jitter_histogram_20_ = 0u;
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
 
@@ -5435,7 +5962,19 @@ void CMsgSteamDatagramLinkLifetimeStats::Clear() {
   if (_has_bits_[0 / 32] & 255) {
     ZR_(packets_sent_, packets_recv_duplicate_);
   }
-  packets_recv_lurch_ = GOOGLE_ULONGLONG(0);
+  if (_has_bits_[8 / 32] & 65280) {
+    ZR_(packets_recv_lurch_, quality_histogram_50_);
+  }
+  if (_has_bits_[16 / 32] & 16711680) {
+    ZR_(quality_histogram_1_, ping_histogram_50_);
+  }
+  if (_has_bits_[24 / 32] & 4278190080) {
+    ZR_(ping_histogram_75_, ping_ntile_5th_);
+  }
+  if (_has_bits_[32 / 32] & 255) {
+    ZR_(ping_ntile_50th_, jitter_histogram_5_);
+  }
+  ZR_(jitter_histogram_10_, jitter_histogram_20_);
 
 #undef OFFSET_OF_FIELD_
 #undef ZR_
@@ -5450,7 +5989,7 @@ bool CMsgSteamDatagramLinkLifetimeStats::MergePartialFromCodedStream(
   ::google::protobuf::uint32 tag;
   // @@protoc_insertion_point(parse_start:CMsgSteamDatagramLinkLifetimeStats)
   for (;;) {
-    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoff(127);
+    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoff(16383);
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
@@ -5584,6 +6123,501 @@ bool CMsgSteamDatagramLinkLifetimeStats::MergePartialFromCodedStream(
         } else {
           goto handle_unusual;
         }
+        if (input->ExpectTag(168)) goto parse_quality_histogram_100;
+        break;
+      }
+
+      // optional uint32 quality_histogram_100 = 21;
+      case 21: {
+        if (tag == 168) {
+         parse_quality_histogram_100:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                 input, &quality_histogram_100_)));
+          set_has_quality_histogram_100();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(176)) goto parse_quality_histogram_99;
+        break;
+      }
+
+      // optional uint32 quality_histogram_99 = 22;
+      case 22: {
+        if (tag == 176) {
+         parse_quality_histogram_99:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                 input, &quality_histogram_99_)));
+          set_has_quality_histogram_99();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(184)) goto parse_quality_histogram_97;
+        break;
+      }
+
+      // optional uint32 quality_histogram_97 = 23;
+      case 23: {
+        if (tag == 184) {
+         parse_quality_histogram_97:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                 input, &quality_histogram_97_)));
+          set_has_quality_histogram_97();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(192)) goto parse_quality_histogram_95;
+        break;
+      }
+
+      // optional uint32 quality_histogram_95 = 24;
+      case 24: {
+        if (tag == 192) {
+         parse_quality_histogram_95:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                 input, &quality_histogram_95_)));
+          set_has_quality_histogram_95();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(200)) goto parse_quality_histogram_90;
+        break;
+      }
+
+      // optional uint32 quality_histogram_90 = 25;
+      case 25: {
+        if (tag == 200) {
+         parse_quality_histogram_90:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                 input, &quality_histogram_90_)));
+          set_has_quality_histogram_90();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(208)) goto parse_quality_histogram_75;
+        break;
+      }
+
+      // optional uint32 quality_histogram_75 = 26;
+      case 26: {
+        if (tag == 208) {
+         parse_quality_histogram_75:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                 input, &quality_histogram_75_)));
+          set_has_quality_histogram_75();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(216)) goto parse_quality_histogram_50;
+        break;
+      }
+
+      // optional uint32 quality_histogram_50 = 27;
+      case 27: {
+        if (tag == 216) {
+         parse_quality_histogram_50:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                 input, &quality_histogram_50_)));
+          set_has_quality_histogram_50();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(224)) goto parse_quality_histogram_1;
+        break;
+      }
+
+      // optional uint32 quality_histogram_1 = 28;
+      case 28: {
+        if (tag == 224) {
+         parse_quality_histogram_1:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                 input, &quality_histogram_1_)));
+          set_has_quality_histogram_1();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(232)) goto parse_quality_histogram_dead;
+        break;
+      }
+
+      // optional uint32 quality_histogram_dead = 29;
+      case 29: {
+        if (tag == 232) {
+         parse_quality_histogram_dead:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                 input, &quality_histogram_dead_)));
+          set_has_quality_histogram_dead();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(240)) goto parse_quality_ntile_2nd;
+        break;
+      }
+
+      // optional uint32 quality_ntile_2nd = 30;
+      case 30: {
+        if (tag == 240) {
+         parse_quality_ntile_2nd:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                 input, &quality_ntile_2nd_)));
+          set_has_quality_ntile_2nd();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(248)) goto parse_quality_ntile_5th;
+        break;
+      }
+
+      // optional uint32 quality_ntile_5th = 31;
+      case 31: {
+        if (tag == 248) {
+         parse_quality_ntile_5th:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                 input, &quality_ntile_5th_)));
+          set_has_quality_ntile_5th();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(256)) goto parse_quality_ntile_25th;
+        break;
+      }
+
+      // optional uint32 quality_ntile_25th = 32;
+      case 32: {
+        if (tag == 256) {
+         parse_quality_ntile_25th:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                 input, &quality_ntile_25th_)));
+          set_has_quality_ntile_25th();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(264)) goto parse_quality_ntile_50th;
+        break;
+      }
+
+      // optional uint32 quality_ntile_50th = 33;
+      case 33: {
+        if (tag == 264) {
+         parse_quality_ntile_50th:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                 input, &quality_ntile_50th_)));
+          set_has_quality_ntile_50th();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(328)) goto parse_ping_histogram_25;
+        break;
+      }
+
+      // optional uint32 ping_histogram_25 = 41;
+      case 41: {
+        if (tag == 328) {
+         parse_ping_histogram_25:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                 input, &ping_histogram_25_)));
+          set_has_ping_histogram_25();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(336)) goto parse_ping_histogram_50;
+        break;
+      }
+
+      // optional uint32 ping_histogram_50 = 42;
+      case 42: {
+        if (tag == 336) {
+         parse_ping_histogram_50:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                 input, &ping_histogram_50_)));
+          set_has_ping_histogram_50();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(344)) goto parse_ping_histogram_75;
+        break;
+      }
+
+      // optional uint32 ping_histogram_75 = 43;
+      case 43: {
+        if (tag == 344) {
+         parse_ping_histogram_75:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                 input, &ping_histogram_75_)));
+          set_has_ping_histogram_75();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(352)) goto parse_ping_histogram_100;
+        break;
+      }
+
+      // optional uint32 ping_histogram_100 = 44;
+      case 44: {
+        if (tag == 352) {
+         parse_ping_histogram_100:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                 input, &ping_histogram_100_)));
+          set_has_ping_histogram_100();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(360)) goto parse_ping_histogram_125;
+        break;
+      }
+
+      // optional uint32 ping_histogram_125 = 45;
+      case 45: {
+        if (tag == 360) {
+         parse_ping_histogram_125:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                 input, &ping_histogram_125_)));
+          set_has_ping_histogram_125();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(368)) goto parse_ping_histogram_150;
+        break;
+      }
+
+      // optional uint32 ping_histogram_150 = 46;
+      case 46: {
+        if (tag == 368) {
+         parse_ping_histogram_150:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                 input, &ping_histogram_150_)));
+          set_has_ping_histogram_150();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(376)) goto parse_ping_histogram_200;
+        break;
+      }
+
+      // optional uint32 ping_histogram_200 = 47;
+      case 47: {
+        if (tag == 376) {
+         parse_ping_histogram_200:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                 input, &ping_histogram_200_)));
+          set_has_ping_histogram_200();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(384)) goto parse_ping_histogram_300;
+        break;
+      }
+
+      // optional uint32 ping_histogram_300 = 48;
+      case 48: {
+        if (tag == 384) {
+         parse_ping_histogram_300:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                 input, &ping_histogram_300_)));
+          set_has_ping_histogram_300();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(392)) goto parse_ping_histogram_max;
+        break;
+      }
+
+      // optional uint32 ping_histogram_max = 49;
+      case 49: {
+        if (tag == 392) {
+         parse_ping_histogram_max:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                 input, &ping_histogram_max_)));
+          set_has_ping_histogram_max();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(400)) goto parse_ping_ntile_5th;
+        break;
+      }
+
+      // optional uint32 ping_ntile_5th = 50;
+      case 50: {
+        if (tag == 400) {
+         parse_ping_ntile_5th:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                 input, &ping_ntile_5th_)));
+          set_has_ping_ntile_5th();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(408)) goto parse_ping_ntile_50th;
+        break;
+      }
+
+      // optional uint32 ping_ntile_50th = 51;
+      case 51: {
+        if (tag == 408) {
+         parse_ping_ntile_50th:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                 input, &ping_ntile_50th_)));
+          set_has_ping_ntile_50th();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(416)) goto parse_ping_ntile_75th;
+        break;
+      }
+
+      // optional uint32 ping_ntile_75th = 52;
+      case 52: {
+        if (tag == 416) {
+         parse_ping_ntile_75th:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                 input, &ping_ntile_75th_)));
+          set_has_ping_ntile_75th();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(424)) goto parse_ping_ntile_95th;
+        break;
+      }
+
+      // optional uint32 ping_ntile_95th = 53;
+      case 53: {
+        if (tag == 424) {
+         parse_ping_ntile_95th:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                 input, &ping_ntile_95th_)));
+          set_has_ping_ntile_95th();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(432)) goto parse_ping_ntile_98th;
+        break;
+      }
+
+      // optional uint32 ping_ntile_98th = 54;
+      case 54: {
+        if (tag == 432) {
+         parse_ping_ntile_98th:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                 input, &ping_ntile_98th_)));
+          set_has_ping_ntile_98th();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(488)) goto parse_jitter_histogram_negligible;
+        break;
+      }
+
+      // optional uint32 jitter_histogram_negligible = 61;
+      case 61: {
+        if (tag == 488) {
+         parse_jitter_histogram_negligible:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                 input, &jitter_histogram_negligible_)));
+          set_has_jitter_histogram_negligible();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(496)) goto parse_jitter_histogram_1;
+        break;
+      }
+
+      // optional uint32 jitter_histogram_1 = 62;
+      case 62: {
+        if (tag == 496) {
+         parse_jitter_histogram_1:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                 input, &jitter_histogram_1_)));
+          set_has_jitter_histogram_1();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(504)) goto parse_jitter_histogram_2;
+        break;
+      }
+
+      // optional uint32 jitter_histogram_2 = 63;
+      case 63: {
+        if (tag == 504) {
+         parse_jitter_histogram_2:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                 input, &jitter_histogram_2_)));
+          set_has_jitter_histogram_2();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(512)) goto parse_jitter_histogram_5;
+        break;
+      }
+
+      // optional uint32 jitter_histogram_5 = 64;
+      case 64: {
+        if (tag == 512) {
+         parse_jitter_histogram_5:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                 input, &jitter_histogram_5_)));
+          set_has_jitter_histogram_5();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(520)) goto parse_jitter_histogram_10;
+        break;
+      }
+
+      // optional uint32 jitter_histogram_10 = 65;
+      case 65: {
+        if (tag == 520) {
+         parse_jitter_histogram_10:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                 input, &jitter_histogram_10_)));
+          set_has_jitter_histogram_10();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(528)) goto parse_jitter_histogram_20;
+        break;
+      }
+
+      // optional uint32 jitter_histogram_20 = 66;
+      case 66: {
+        if (tag == 528) {
+         parse_jitter_histogram_20:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                 input, &jitter_histogram_20_)));
+          set_has_jitter_histogram_20();
+        } else {
+          goto handle_unusual;
+        }
         if (input->ExpectAtEnd()) goto success;
         break;
       }
@@ -5658,6 +6692,171 @@ void CMsgSteamDatagramLinkLifetimeStats::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteUInt64(11, this->packets_recv_lurch(), output);
   }
 
+  // optional uint32 quality_histogram_100 = 21;
+  if (has_quality_histogram_100()) {
+    ::google::protobuf::internal::WireFormatLite::WriteUInt32(21, this->quality_histogram_100(), output);
+  }
+
+  // optional uint32 quality_histogram_99 = 22;
+  if (has_quality_histogram_99()) {
+    ::google::protobuf::internal::WireFormatLite::WriteUInt32(22, this->quality_histogram_99(), output);
+  }
+
+  // optional uint32 quality_histogram_97 = 23;
+  if (has_quality_histogram_97()) {
+    ::google::protobuf::internal::WireFormatLite::WriteUInt32(23, this->quality_histogram_97(), output);
+  }
+
+  // optional uint32 quality_histogram_95 = 24;
+  if (has_quality_histogram_95()) {
+    ::google::protobuf::internal::WireFormatLite::WriteUInt32(24, this->quality_histogram_95(), output);
+  }
+
+  // optional uint32 quality_histogram_90 = 25;
+  if (has_quality_histogram_90()) {
+    ::google::protobuf::internal::WireFormatLite::WriteUInt32(25, this->quality_histogram_90(), output);
+  }
+
+  // optional uint32 quality_histogram_75 = 26;
+  if (has_quality_histogram_75()) {
+    ::google::protobuf::internal::WireFormatLite::WriteUInt32(26, this->quality_histogram_75(), output);
+  }
+
+  // optional uint32 quality_histogram_50 = 27;
+  if (has_quality_histogram_50()) {
+    ::google::protobuf::internal::WireFormatLite::WriteUInt32(27, this->quality_histogram_50(), output);
+  }
+
+  // optional uint32 quality_histogram_1 = 28;
+  if (has_quality_histogram_1()) {
+    ::google::protobuf::internal::WireFormatLite::WriteUInt32(28, this->quality_histogram_1(), output);
+  }
+
+  // optional uint32 quality_histogram_dead = 29;
+  if (has_quality_histogram_dead()) {
+    ::google::protobuf::internal::WireFormatLite::WriteUInt32(29, this->quality_histogram_dead(), output);
+  }
+
+  // optional uint32 quality_ntile_2nd = 30;
+  if (has_quality_ntile_2nd()) {
+    ::google::protobuf::internal::WireFormatLite::WriteUInt32(30, this->quality_ntile_2nd(), output);
+  }
+
+  // optional uint32 quality_ntile_5th = 31;
+  if (has_quality_ntile_5th()) {
+    ::google::protobuf::internal::WireFormatLite::WriteUInt32(31, this->quality_ntile_5th(), output);
+  }
+
+  // optional uint32 quality_ntile_25th = 32;
+  if (has_quality_ntile_25th()) {
+    ::google::protobuf::internal::WireFormatLite::WriteUInt32(32, this->quality_ntile_25th(), output);
+  }
+
+  // optional uint32 quality_ntile_50th = 33;
+  if (has_quality_ntile_50th()) {
+    ::google::protobuf::internal::WireFormatLite::WriteUInt32(33, this->quality_ntile_50th(), output);
+  }
+
+  // optional uint32 ping_histogram_25 = 41;
+  if (has_ping_histogram_25()) {
+    ::google::protobuf::internal::WireFormatLite::WriteUInt32(41, this->ping_histogram_25(), output);
+  }
+
+  // optional uint32 ping_histogram_50 = 42;
+  if (has_ping_histogram_50()) {
+    ::google::protobuf::internal::WireFormatLite::WriteUInt32(42, this->ping_histogram_50(), output);
+  }
+
+  // optional uint32 ping_histogram_75 = 43;
+  if (has_ping_histogram_75()) {
+    ::google::protobuf::internal::WireFormatLite::WriteUInt32(43, this->ping_histogram_75(), output);
+  }
+
+  // optional uint32 ping_histogram_100 = 44;
+  if (has_ping_histogram_100()) {
+    ::google::protobuf::internal::WireFormatLite::WriteUInt32(44, this->ping_histogram_100(), output);
+  }
+
+  // optional uint32 ping_histogram_125 = 45;
+  if (has_ping_histogram_125()) {
+    ::google::protobuf::internal::WireFormatLite::WriteUInt32(45, this->ping_histogram_125(), output);
+  }
+
+  // optional uint32 ping_histogram_150 = 46;
+  if (has_ping_histogram_150()) {
+    ::google::protobuf::internal::WireFormatLite::WriteUInt32(46, this->ping_histogram_150(), output);
+  }
+
+  // optional uint32 ping_histogram_200 = 47;
+  if (has_ping_histogram_200()) {
+    ::google::protobuf::internal::WireFormatLite::WriteUInt32(47, this->ping_histogram_200(), output);
+  }
+
+  // optional uint32 ping_histogram_300 = 48;
+  if (has_ping_histogram_300()) {
+    ::google::protobuf::internal::WireFormatLite::WriteUInt32(48, this->ping_histogram_300(), output);
+  }
+
+  // optional uint32 ping_histogram_max = 49;
+  if (has_ping_histogram_max()) {
+    ::google::protobuf::internal::WireFormatLite::WriteUInt32(49, this->ping_histogram_max(), output);
+  }
+
+  // optional uint32 ping_ntile_5th = 50;
+  if (has_ping_ntile_5th()) {
+    ::google::protobuf::internal::WireFormatLite::WriteUInt32(50, this->ping_ntile_5th(), output);
+  }
+
+  // optional uint32 ping_ntile_50th = 51;
+  if (has_ping_ntile_50th()) {
+    ::google::protobuf::internal::WireFormatLite::WriteUInt32(51, this->ping_ntile_50th(), output);
+  }
+
+  // optional uint32 ping_ntile_75th = 52;
+  if (has_ping_ntile_75th()) {
+    ::google::protobuf::internal::WireFormatLite::WriteUInt32(52, this->ping_ntile_75th(), output);
+  }
+
+  // optional uint32 ping_ntile_95th = 53;
+  if (has_ping_ntile_95th()) {
+    ::google::protobuf::internal::WireFormatLite::WriteUInt32(53, this->ping_ntile_95th(), output);
+  }
+
+  // optional uint32 ping_ntile_98th = 54;
+  if (has_ping_ntile_98th()) {
+    ::google::protobuf::internal::WireFormatLite::WriteUInt32(54, this->ping_ntile_98th(), output);
+  }
+
+  // optional uint32 jitter_histogram_negligible = 61;
+  if (has_jitter_histogram_negligible()) {
+    ::google::protobuf::internal::WireFormatLite::WriteUInt32(61, this->jitter_histogram_negligible(), output);
+  }
+
+  // optional uint32 jitter_histogram_1 = 62;
+  if (has_jitter_histogram_1()) {
+    ::google::protobuf::internal::WireFormatLite::WriteUInt32(62, this->jitter_histogram_1(), output);
+  }
+
+  // optional uint32 jitter_histogram_2 = 63;
+  if (has_jitter_histogram_2()) {
+    ::google::protobuf::internal::WireFormatLite::WriteUInt32(63, this->jitter_histogram_2(), output);
+  }
+
+  // optional uint32 jitter_histogram_5 = 64;
+  if (has_jitter_histogram_5()) {
+    ::google::protobuf::internal::WireFormatLite::WriteUInt32(64, this->jitter_histogram_5(), output);
+  }
+
+  // optional uint32 jitter_histogram_10 = 65;
+  if (has_jitter_histogram_10()) {
+    ::google::protobuf::internal::WireFormatLite::WriteUInt32(65, this->jitter_histogram_10(), output);
+  }
+
+  // optional uint32 jitter_histogram_20 = 66;
+  if (has_jitter_histogram_20()) {
+    ::google::protobuf::internal::WireFormatLite::WriteUInt32(66, this->jitter_histogram_20(), output);
+  }
+
   if (!unknown_fields().empty()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
@@ -5711,6 +6910,171 @@ void CMsgSteamDatagramLinkLifetimeStats::SerializeWithCachedSizes(
   // optional uint64 packets_recv_lurch = 11;
   if (has_packets_recv_lurch()) {
     target = ::google::protobuf::internal::WireFormatLite::WriteUInt64ToArray(11, this->packets_recv_lurch(), target);
+  }
+
+  // optional uint32 quality_histogram_100 = 21;
+  if (has_quality_histogram_100()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(21, this->quality_histogram_100(), target);
+  }
+
+  // optional uint32 quality_histogram_99 = 22;
+  if (has_quality_histogram_99()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(22, this->quality_histogram_99(), target);
+  }
+
+  // optional uint32 quality_histogram_97 = 23;
+  if (has_quality_histogram_97()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(23, this->quality_histogram_97(), target);
+  }
+
+  // optional uint32 quality_histogram_95 = 24;
+  if (has_quality_histogram_95()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(24, this->quality_histogram_95(), target);
+  }
+
+  // optional uint32 quality_histogram_90 = 25;
+  if (has_quality_histogram_90()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(25, this->quality_histogram_90(), target);
+  }
+
+  // optional uint32 quality_histogram_75 = 26;
+  if (has_quality_histogram_75()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(26, this->quality_histogram_75(), target);
+  }
+
+  // optional uint32 quality_histogram_50 = 27;
+  if (has_quality_histogram_50()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(27, this->quality_histogram_50(), target);
+  }
+
+  // optional uint32 quality_histogram_1 = 28;
+  if (has_quality_histogram_1()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(28, this->quality_histogram_1(), target);
+  }
+
+  // optional uint32 quality_histogram_dead = 29;
+  if (has_quality_histogram_dead()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(29, this->quality_histogram_dead(), target);
+  }
+
+  // optional uint32 quality_ntile_2nd = 30;
+  if (has_quality_ntile_2nd()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(30, this->quality_ntile_2nd(), target);
+  }
+
+  // optional uint32 quality_ntile_5th = 31;
+  if (has_quality_ntile_5th()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(31, this->quality_ntile_5th(), target);
+  }
+
+  // optional uint32 quality_ntile_25th = 32;
+  if (has_quality_ntile_25th()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(32, this->quality_ntile_25th(), target);
+  }
+
+  // optional uint32 quality_ntile_50th = 33;
+  if (has_quality_ntile_50th()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(33, this->quality_ntile_50th(), target);
+  }
+
+  // optional uint32 ping_histogram_25 = 41;
+  if (has_ping_histogram_25()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(41, this->ping_histogram_25(), target);
+  }
+
+  // optional uint32 ping_histogram_50 = 42;
+  if (has_ping_histogram_50()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(42, this->ping_histogram_50(), target);
+  }
+
+  // optional uint32 ping_histogram_75 = 43;
+  if (has_ping_histogram_75()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(43, this->ping_histogram_75(), target);
+  }
+
+  // optional uint32 ping_histogram_100 = 44;
+  if (has_ping_histogram_100()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(44, this->ping_histogram_100(), target);
+  }
+
+  // optional uint32 ping_histogram_125 = 45;
+  if (has_ping_histogram_125()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(45, this->ping_histogram_125(), target);
+  }
+
+  // optional uint32 ping_histogram_150 = 46;
+  if (has_ping_histogram_150()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(46, this->ping_histogram_150(), target);
+  }
+
+  // optional uint32 ping_histogram_200 = 47;
+  if (has_ping_histogram_200()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(47, this->ping_histogram_200(), target);
+  }
+
+  // optional uint32 ping_histogram_300 = 48;
+  if (has_ping_histogram_300()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(48, this->ping_histogram_300(), target);
+  }
+
+  // optional uint32 ping_histogram_max = 49;
+  if (has_ping_histogram_max()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(49, this->ping_histogram_max(), target);
+  }
+
+  // optional uint32 ping_ntile_5th = 50;
+  if (has_ping_ntile_5th()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(50, this->ping_ntile_5th(), target);
+  }
+
+  // optional uint32 ping_ntile_50th = 51;
+  if (has_ping_ntile_50th()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(51, this->ping_ntile_50th(), target);
+  }
+
+  // optional uint32 ping_ntile_75th = 52;
+  if (has_ping_ntile_75th()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(52, this->ping_ntile_75th(), target);
+  }
+
+  // optional uint32 ping_ntile_95th = 53;
+  if (has_ping_ntile_95th()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(53, this->ping_ntile_95th(), target);
+  }
+
+  // optional uint32 ping_ntile_98th = 54;
+  if (has_ping_ntile_98th()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(54, this->ping_ntile_98th(), target);
+  }
+
+  // optional uint32 jitter_histogram_negligible = 61;
+  if (has_jitter_histogram_negligible()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(61, this->jitter_histogram_negligible(), target);
+  }
+
+  // optional uint32 jitter_histogram_1 = 62;
+  if (has_jitter_histogram_1()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(62, this->jitter_histogram_1(), target);
+  }
+
+  // optional uint32 jitter_histogram_2 = 63;
+  if (has_jitter_histogram_2()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(63, this->jitter_histogram_2(), target);
+  }
+
+  // optional uint32 jitter_histogram_5 = 64;
+  if (has_jitter_histogram_5()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(64, this->jitter_histogram_5(), target);
+  }
+
+  // optional uint32 jitter_histogram_10 = 65;
+  if (has_jitter_histogram_10()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(65, this->jitter_histogram_10(), target);
+  }
+
+  // optional uint32 jitter_histogram_20 = 66;
+  if (has_jitter_histogram_20()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(66, this->jitter_histogram_20(), target);
   }
 
   if (!unknown_fields().empty()) {
@@ -5790,6 +7154,245 @@ int CMsgSteamDatagramLinkLifetimeStats::ByteSize() const {
           this->packets_recv_lurch());
     }
 
+    // optional uint32 quality_histogram_100 = 21;
+    if (has_quality_histogram_100()) {
+      total_size += 2 +
+        ::google::protobuf::internal::WireFormatLite::UInt32Size(
+          this->quality_histogram_100());
+    }
+
+    // optional uint32 quality_histogram_99 = 22;
+    if (has_quality_histogram_99()) {
+      total_size += 2 +
+        ::google::protobuf::internal::WireFormatLite::UInt32Size(
+          this->quality_histogram_99());
+    }
+
+    // optional uint32 quality_histogram_97 = 23;
+    if (has_quality_histogram_97()) {
+      total_size += 2 +
+        ::google::protobuf::internal::WireFormatLite::UInt32Size(
+          this->quality_histogram_97());
+    }
+
+    // optional uint32 quality_histogram_95 = 24;
+    if (has_quality_histogram_95()) {
+      total_size += 2 +
+        ::google::protobuf::internal::WireFormatLite::UInt32Size(
+          this->quality_histogram_95());
+    }
+
+    // optional uint32 quality_histogram_90 = 25;
+    if (has_quality_histogram_90()) {
+      total_size += 2 +
+        ::google::protobuf::internal::WireFormatLite::UInt32Size(
+          this->quality_histogram_90());
+    }
+
+    // optional uint32 quality_histogram_75 = 26;
+    if (has_quality_histogram_75()) {
+      total_size += 2 +
+        ::google::protobuf::internal::WireFormatLite::UInt32Size(
+          this->quality_histogram_75());
+    }
+
+    // optional uint32 quality_histogram_50 = 27;
+    if (has_quality_histogram_50()) {
+      total_size += 2 +
+        ::google::protobuf::internal::WireFormatLite::UInt32Size(
+          this->quality_histogram_50());
+    }
+
+  }
+  if (_has_bits_[16 / 32] & (0xffu << (16 % 32))) {
+    // optional uint32 quality_histogram_1 = 28;
+    if (has_quality_histogram_1()) {
+      total_size += 2 +
+        ::google::protobuf::internal::WireFormatLite::UInt32Size(
+          this->quality_histogram_1());
+    }
+
+    // optional uint32 quality_histogram_dead = 29;
+    if (has_quality_histogram_dead()) {
+      total_size += 2 +
+        ::google::protobuf::internal::WireFormatLite::UInt32Size(
+          this->quality_histogram_dead());
+    }
+
+    // optional uint32 quality_ntile_2nd = 30;
+    if (has_quality_ntile_2nd()) {
+      total_size += 2 +
+        ::google::protobuf::internal::WireFormatLite::UInt32Size(
+          this->quality_ntile_2nd());
+    }
+
+    // optional uint32 quality_ntile_5th = 31;
+    if (has_quality_ntile_5th()) {
+      total_size += 2 +
+        ::google::protobuf::internal::WireFormatLite::UInt32Size(
+          this->quality_ntile_5th());
+    }
+
+    // optional uint32 quality_ntile_25th = 32;
+    if (has_quality_ntile_25th()) {
+      total_size += 2 +
+        ::google::protobuf::internal::WireFormatLite::UInt32Size(
+          this->quality_ntile_25th());
+    }
+
+    // optional uint32 quality_ntile_50th = 33;
+    if (has_quality_ntile_50th()) {
+      total_size += 2 +
+        ::google::protobuf::internal::WireFormatLite::UInt32Size(
+          this->quality_ntile_50th());
+    }
+
+    // optional uint32 ping_histogram_25 = 41;
+    if (has_ping_histogram_25()) {
+      total_size += 2 +
+        ::google::protobuf::internal::WireFormatLite::UInt32Size(
+          this->ping_histogram_25());
+    }
+
+    // optional uint32 ping_histogram_50 = 42;
+    if (has_ping_histogram_50()) {
+      total_size += 2 +
+        ::google::protobuf::internal::WireFormatLite::UInt32Size(
+          this->ping_histogram_50());
+    }
+
+  }
+  if (_has_bits_[24 / 32] & (0xffu << (24 % 32))) {
+    // optional uint32 ping_histogram_75 = 43;
+    if (has_ping_histogram_75()) {
+      total_size += 2 +
+        ::google::protobuf::internal::WireFormatLite::UInt32Size(
+          this->ping_histogram_75());
+    }
+
+    // optional uint32 ping_histogram_100 = 44;
+    if (has_ping_histogram_100()) {
+      total_size += 2 +
+        ::google::protobuf::internal::WireFormatLite::UInt32Size(
+          this->ping_histogram_100());
+    }
+
+    // optional uint32 ping_histogram_125 = 45;
+    if (has_ping_histogram_125()) {
+      total_size += 2 +
+        ::google::protobuf::internal::WireFormatLite::UInt32Size(
+          this->ping_histogram_125());
+    }
+
+    // optional uint32 ping_histogram_150 = 46;
+    if (has_ping_histogram_150()) {
+      total_size += 2 +
+        ::google::protobuf::internal::WireFormatLite::UInt32Size(
+          this->ping_histogram_150());
+    }
+
+    // optional uint32 ping_histogram_200 = 47;
+    if (has_ping_histogram_200()) {
+      total_size += 2 +
+        ::google::protobuf::internal::WireFormatLite::UInt32Size(
+          this->ping_histogram_200());
+    }
+
+    // optional uint32 ping_histogram_300 = 48;
+    if (has_ping_histogram_300()) {
+      total_size += 2 +
+        ::google::protobuf::internal::WireFormatLite::UInt32Size(
+          this->ping_histogram_300());
+    }
+
+    // optional uint32 ping_histogram_max = 49;
+    if (has_ping_histogram_max()) {
+      total_size += 2 +
+        ::google::protobuf::internal::WireFormatLite::UInt32Size(
+          this->ping_histogram_max());
+    }
+
+    // optional uint32 ping_ntile_5th = 50;
+    if (has_ping_ntile_5th()) {
+      total_size += 2 +
+        ::google::protobuf::internal::WireFormatLite::UInt32Size(
+          this->ping_ntile_5th());
+    }
+
+  }
+  if (_has_bits_[32 / 32] & (0xffu << (32 % 32))) {
+    // optional uint32 ping_ntile_50th = 51;
+    if (has_ping_ntile_50th()) {
+      total_size += 2 +
+        ::google::protobuf::internal::WireFormatLite::UInt32Size(
+          this->ping_ntile_50th());
+    }
+
+    // optional uint32 ping_ntile_75th = 52;
+    if (has_ping_ntile_75th()) {
+      total_size += 2 +
+        ::google::protobuf::internal::WireFormatLite::UInt32Size(
+          this->ping_ntile_75th());
+    }
+
+    // optional uint32 ping_ntile_95th = 53;
+    if (has_ping_ntile_95th()) {
+      total_size += 2 +
+        ::google::protobuf::internal::WireFormatLite::UInt32Size(
+          this->ping_ntile_95th());
+    }
+
+    // optional uint32 ping_ntile_98th = 54;
+    if (has_ping_ntile_98th()) {
+      total_size += 2 +
+        ::google::protobuf::internal::WireFormatLite::UInt32Size(
+          this->ping_ntile_98th());
+    }
+
+    // optional uint32 jitter_histogram_negligible = 61;
+    if (has_jitter_histogram_negligible()) {
+      total_size += 2 +
+        ::google::protobuf::internal::WireFormatLite::UInt32Size(
+          this->jitter_histogram_negligible());
+    }
+
+    // optional uint32 jitter_histogram_1 = 62;
+    if (has_jitter_histogram_1()) {
+      total_size += 2 +
+        ::google::protobuf::internal::WireFormatLite::UInt32Size(
+          this->jitter_histogram_1());
+    }
+
+    // optional uint32 jitter_histogram_2 = 63;
+    if (has_jitter_histogram_2()) {
+      total_size += 2 +
+        ::google::protobuf::internal::WireFormatLite::UInt32Size(
+          this->jitter_histogram_2());
+    }
+
+    // optional uint32 jitter_histogram_5 = 64;
+    if (has_jitter_histogram_5()) {
+      total_size += 2 +
+        ::google::protobuf::internal::WireFormatLite::UInt32Size(
+          this->jitter_histogram_5());
+    }
+
+  }
+  if (_has_bits_[40 / 32] & (0xffu << (40 % 32))) {
+    // optional uint32 jitter_histogram_10 = 65;
+    if (has_jitter_histogram_10()) {
+      total_size += 2 +
+        ::google::protobuf::internal::WireFormatLite::UInt32Size(
+          this->jitter_histogram_10());
+    }
+
+    // optional uint32 jitter_histogram_20 = 66;
+    if (has_jitter_histogram_20()) {
+      total_size += 2 +
+        ::google::protobuf::internal::WireFormatLite::UInt32Size(
+          this->jitter_histogram_20());
+    }
+
   }
   if (!unknown_fields().empty()) {
     total_size +=
@@ -5846,6 +7449,113 @@ void CMsgSteamDatagramLinkLifetimeStats::MergeFrom(const CMsgSteamDatagramLinkLi
     if (from.has_packets_recv_lurch()) {
       set_packets_recv_lurch(from.packets_recv_lurch());
     }
+    if (from.has_quality_histogram_100()) {
+      set_quality_histogram_100(from.quality_histogram_100());
+    }
+    if (from.has_quality_histogram_99()) {
+      set_quality_histogram_99(from.quality_histogram_99());
+    }
+    if (from.has_quality_histogram_97()) {
+      set_quality_histogram_97(from.quality_histogram_97());
+    }
+    if (from.has_quality_histogram_95()) {
+      set_quality_histogram_95(from.quality_histogram_95());
+    }
+    if (from.has_quality_histogram_90()) {
+      set_quality_histogram_90(from.quality_histogram_90());
+    }
+    if (from.has_quality_histogram_75()) {
+      set_quality_histogram_75(from.quality_histogram_75());
+    }
+    if (from.has_quality_histogram_50()) {
+      set_quality_histogram_50(from.quality_histogram_50());
+    }
+  }
+  if (from._has_bits_[16 / 32] & (0xffu << (16 % 32))) {
+    if (from.has_quality_histogram_1()) {
+      set_quality_histogram_1(from.quality_histogram_1());
+    }
+    if (from.has_quality_histogram_dead()) {
+      set_quality_histogram_dead(from.quality_histogram_dead());
+    }
+    if (from.has_quality_ntile_2nd()) {
+      set_quality_ntile_2nd(from.quality_ntile_2nd());
+    }
+    if (from.has_quality_ntile_5th()) {
+      set_quality_ntile_5th(from.quality_ntile_5th());
+    }
+    if (from.has_quality_ntile_25th()) {
+      set_quality_ntile_25th(from.quality_ntile_25th());
+    }
+    if (from.has_quality_ntile_50th()) {
+      set_quality_ntile_50th(from.quality_ntile_50th());
+    }
+    if (from.has_ping_histogram_25()) {
+      set_ping_histogram_25(from.ping_histogram_25());
+    }
+    if (from.has_ping_histogram_50()) {
+      set_ping_histogram_50(from.ping_histogram_50());
+    }
+  }
+  if (from._has_bits_[24 / 32] & (0xffu << (24 % 32))) {
+    if (from.has_ping_histogram_75()) {
+      set_ping_histogram_75(from.ping_histogram_75());
+    }
+    if (from.has_ping_histogram_100()) {
+      set_ping_histogram_100(from.ping_histogram_100());
+    }
+    if (from.has_ping_histogram_125()) {
+      set_ping_histogram_125(from.ping_histogram_125());
+    }
+    if (from.has_ping_histogram_150()) {
+      set_ping_histogram_150(from.ping_histogram_150());
+    }
+    if (from.has_ping_histogram_200()) {
+      set_ping_histogram_200(from.ping_histogram_200());
+    }
+    if (from.has_ping_histogram_300()) {
+      set_ping_histogram_300(from.ping_histogram_300());
+    }
+    if (from.has_ping_histogram_max()) {
+      set_ping_histogram_max(from.ping_histogram_max());
+    }
+    if (from.has_ping_ntile_5th()) {
+      set_ping_ntile_5th(from.ping_ntile_5th());
+    }
+  }
+  if (from._has_bits_[32 / 32] & (0xffu << (32 % 32))) {
+    if (from.has_ping_ntile_50th()) {
+      set_ping_ntile_50th(from.ping_ntile_50th());
+    }
+    if (from.has_ping_ntile_75th()) {
+      set_ping_ntile_75th(from.ping_ntile_75th());
+    }
+    if (from.has_ping_ntile_95th()) {
+      set_ping_ntile_95th(from.ping_ntile_95th());
+    }
+    if (from.has_ping_ntile_98th()) {
+      set_ping_ntile_98th(from.ping_ntile_98th());
+    }
+    if (from.has_jitter_histogram_negligible()) {
+      set_jitter_histogram_negligible(from.jitter_histogram_negligible());
+    }
+    if (from.has_jitter_histogram_1()) {
+      set_jitter_histogram_1(from.jitter_histogram_1());
+    }
+    if (from.has_jitter_histogram_2()) {
+      set_jitter_histogram_2(from.jitter_histogram_2());
+    }
+    if (from.has_jitter_histogram_5()) {
+      set_jitter_histogram_5(from.jitter_histogram_5());
+    }
+  }
+  if (from._has_bits_[40 / 32] & (0xffu << (40 % 32))) {
+    if (from.has_jitter_histogram_10()) {
+      set_jitter_histogram_10(from.jitter_histogram_10());
+    }
+    if (from.has_jitter_histogram_20()) {
+      set_jitter_histogram_20(from.jitter_histogram_20());
+    }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
 }
@@ -5878,7 +7588,41 @@ void CMsgSteamDatagramLinkLifetimeStats::Swap(CMsgSteamDatagramLinkLifetimeStats
     std::swap(packets_recv_out_of_order_, other->packets_recv_out_of_order_);
     std::swap(packets_recv_duplicate_, other->packets_recv_duplicate_);
     std::swap(packets_recv_lurch_, other->packets_recv_lurch_);
+    std::swap(quality_histogram_100_, other->quality_histogram_100_);
+    std::swap(quality_histogram_99_, other->quality_histogram_99_);
+    std::swap(quality_histogram_97_, other->quality_histogram_97_);
+    std::swap(quality_histogram_95_, other->quality_histogram_95_);
+    std::swap(quality_histogram_90_, other->quality_histogram_90_);
+    std::swap(quality_histogram_75_, other->quality_histogram_75_);
+    std::swap(quality_histogram_50_, other->quality_histogram_50_);
+    std::swap(quality_histogram_1_, other->quality_histogram_1_);
+    std::swap(quality_histogram_dead_, other->quality_histogram_dead_);
+    std::swap(quality_ntile_2nd_, other->quality_ntile_2nd_);
+    std::swap(quality_ntile_5th_, other->quality_ntile_5th_);
+    std::swap(quality_ntile_25th_, other->quality_ntile_25th_);
+    std::swap(quality_ntile_50th_, other->quality_ntile_50th_);
+    std::swap(ping_histogram_25_, other->ping_histogram_25_);
+    std::swap(ping_histogram_50_, other->ping_histogram_50_);
+    std::swap(ping_histogram_75_, other->ping_histogram_75_);
+    std::swap(ping_histogram_100_, other->ping_histogram_100_);
+    std::swap(ping_histogram_125_, other->ping_histogram_125_);
+    std::swap(ping_histogram_150_, other->ping_histogram_150_);
+    std::swap(ping_histogram_200_, other->ping_histogram_200_);
+    std::swap(ping_histogram_300_, other->ping_histogram_300_);
+    std::swap(ping_histogram_max_, other->ping_histogram_max_);
+    std::swap(ping_ntile_5th_, other->ping_ntile_5th_);
+    std::swap(ping_ntile_50th_, other->ping_ntile_50th_);
+    std::swap(ping_ntile_75th_, other->ping_ntile_75th_);
+    std::swap(ping_ntile_95th_, other->ping_ntile_95th_);
+    std::swap(ping_ntile_98th_, other->ping_ntile_98th_);
+    std::swap(jitter_histogram_negligible_, other->jitter_histogram_negligible_);
+    std::swap(jitter_histogram_1_, other->jitter_histogram_1_);
+    std::swap(jitter_histogram_2_, other->jitter_histogram_2_);
+    std::swap(jitter_histogram_5_, other->jitter_histogram_5_);
+    std::swap(jitter_histogram_10_, other->jitter_histogram_10_);
+    std::swap(jitter_histogram_20_, other->jitter_histogram_20_);
     std::swap(_has_bits_[0], other->_has_bits_[0]);
+    std::swap(_has_bits_[1], other->_has_bits_[1]);
     _unknown_fields_.Swap(&other->_unknown_fields_);
     std::swap(_cached_size_, other->_cached_size_);
   }
@@ -6611,6 +8355,9 @@ const int CMsgSteamDatagramConnectionStatsRouterToClient::kClientTimestampFromRo
 const int CMsgSteamDatagramConnectionStatsRouterToClient::kClientTimestampFromServerFieldNumber;
 const int CMsgSteamDatagramConnectionStatsRouterToClient::kRouterGameserverLatencyFieldNumber;
 const int CMsgSteamDatagramConnectionStatsRouterToClient::kSecondsUntilShutdownFieldNumber;
+const int CMsgSteamDatagramConnectionStatsRouterToClient::kMigrateRequestIpFieldNumber;
+const int CMsgSteamDatagramConnectionStatsRouterToClient::kMigrateRequestPortFieldNumber;
+const int CMsgSteamDatagramConnectionStatsRouterToClient::kScoringPenaltyRelayClusterFieldNumber;
 const int CMsgSteamDatagramConnectionStatsRouterToClient::kClientCookieFieldNumber;
 const int CMsgSteamDatagramConnectionStatsRouterToClient::kSeqNumR2CFieldNumber;
 const int CMsgSteamDatagramConnectionStatsRouterToClient::kSeqNumS2CFieldNumber;
@@ -6642,6 +8389,9 @@ void CMsgSteamDatagramConnectionStatsRouterToClient::SharedCtor() {
   client_timestamp_from_server_ = 0u;
   router_gameserver_latency_ = 0u;
   seconds_until_shutdown_ = 0u;
+  migrate_request_ip_ = 0u;
+  migrate_request_port_ = 0u;
+  scoring_penalty_relay_cluster_ = 0u;
   client_cookie_ = 0u;
   seq_num_r2c_ = 0u;
   seq_num_s2c_ = 0u;
@@ -6693,7 +8443,7 @@ void CMsgSteamDatagramConnectionStatsRouterToClient::Clear() {
   } while (0)
 
   if (_has_bits_[0 / 32] & 255) {
-    ZR_(client_timestamp_from_router_, seq_num_r2c_);
+    ZR_(client_timestamp_from_router_, migrate_request_port_);
     if (has_r2c()) {
       if (r2c_ != NULL) r2c_->::CMsgSteamDatagramConnectionQuality::Clear();
     }
@@ -6701,7 +8451,7 @@ void CMsgSteamDatagramConnectionStatsRouterToClient::Clear() {
       if (s2c_ != NULL) s2c_->::CMsgSteamDatagramConnectionQuality::Clear();
     }
   }
-  seq_num_s2c_ = 0u;
+  ZR_(scoring_penalty_relay_cluster_, seq_num_s2c_);
 
 #undef OFFSET_OF_FIELD_
 #undef ZR_
@@ -6846,6 +8596,51 @@ bool CMsgSteamDatagramConnectionStatsRouterToClient::MergePartialFromCodedStream
         } else {
           goto handle_unusual;
         }
+        if (input->ExpectTag(85)) goto parse_migrate_request_ip;
+        break;
+      }
+
+      // optional fixed32 migrate_request_ip = 10;
+      case 10: {
+        if (tag == 85) {
+         parse_migrate_request_ip:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_FIXED32>(
+                 input, &migrate_request_ip_)));
+          set_has_migrate_request_ip();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(88)) goto parse_migrate_request_port;
+        break;
+      }
+
+      // optional uint32 migrate_request_port = 11;
+      case 11: {
+        if (tag == 88) {
+         parse_migrate_request_port:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                 input, &migrate_request_port_)));
+          set_has_migrate_request_port();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(96)) goto parse_scoring_penalty_relay_cluster;
+        break;
+      }
+
+      // optional uint32 scoring_penalty_relay_cluster = 12;
+      case 12: {
+        if (tag == 96) {
+         parse_scoring_penalty_relay_cluster:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                 input, &scoring_penalty_relay_cluster_)));
+          set_has_scoring_penalty_relay_cluster();
+        } else {
+          goto handle_unusual;
+        }
         if (input->ExpectAtEnd()) goto success;
         break;
       }
@@ -6922,6 +8717,21 @@ void CMsgSteamDatagramConnectionStatsRouterToClient::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteUInt32(9, this->seq_num_s2c(), output);
   }
 
+  // optional fixed32 migrate_request_ip = 10;
+  if (has_migrate_request_ip()) {
+    ::google::protobuf::internal::WireFormatLite::WriteFixed32(10, this->migrate_request_ip(), output);
+  }
+
+  // optional uint32 migrate_request_port = 11;
+  if (has_migrate_request_port()) {
+    ::google::protobuf::internal::WireFormatLite::WriteUInt32(11, this->migrate_request_port(), output);
+  }
+
+  // optional uint32 scoring_penalty_relay_cluster = 12;
+  if (has_scoring_penalty_relay_cluster()) {
+    ::google::protobuf::internal::WireFormatLite::WriteUInt32(12, this->scoring_penalty_relay_cluster(), output);
+  }
+
   if (!unknown_fields().empty()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
@@ -6981,6 +8791,21 @@ void CMsgSteamDatagramConnectionStatsRouterToClient::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(9, this->seq_num_s2c(), target);
   }
 
+  // optional fixed32 migrate_request_ip = 10;
+  if (has_migrate_request_ip()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteFixed32ToArray(10, this->migrate_request_ip(), target);
+  }
+
+  // optional uint32 migrate_request_port = 11;
+  if (has_migrate_request_port()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(11, this->migrate_request_port(), target);
+  }
+
+  // optional uint32 scoring_penalty_relay_cluster = 12;
+  if (has_scoring_penalty_relay_cluster()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(12, this->scoring_penalty_relay_cluster(), target);
+  }
+
   if (!unknown_fields().empty()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
@@ -7031,6 +8856,27 @@ int CMsgSteamDatagramConnectionStatsRouterToClient::ByteSize() const {
           this->seconds_until_shutdown());
     }
 
+    // optional fixed32 migrate_request_ip = 10;
+    if (has_migrate_request_ip()) {
+      total_size += 1 + 4;
+    }
+
+    // optional uint32 migrate_request_port = 11;
+    if (has_migrate_request_port()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::UInt32Size(
+          this->migrate_request_port());
+    }
+
+  }
+  if (_has_bits_[8 / 32] & (0xffu << (8 % 32))) {
+    // optional uint32 scoring_penalty_relay_cluster = 12;
+    if (has_scoring_penalty_relay_cluster()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::UInt32Size(
+          this->scoring_penalty_relay_cluster());
+    }
+
     // optional fixed32 client_cookie = 7;
     if (has_client_cookie()) {
       total_size += 1 + 4;
@@ -7043,8 +8889,6 @@ int CMsgSteamDatagramConnectionStatsRouterToClient::ByteSize() const {
           this->seq_num_r2c());
     }
 
-  }
-  if (_has_bits_[8 / 32] & (0xffu << (8 % 32))) {
     // optional uint32 seq_num_s2c = 9;
     if (has_seq_num_s2c()) {
       total_size += 1 +
@@ -7097,14 +8941,23 @@ void CMsgSteamDatagramConnectionStatsRouterToClient::MergeFrom(const CMsgSteamDa
     if (from.has_seconds_until_shutdown()) {
       set_seconds_until_shutdown(from.seconds_until_shutdown());
     }
+    if (from.has_migrate_request_ip()) {
+      set_migrate_request_ip(from.migrate_request_ip());
+    }
+    if (from.has_migrate_request_port()) {
+      set_migrate_request_port(from.migrate_request_port());
+    }
+  }
+  if (from._has_bits_[8 / 32] & (0xffu << (8 % 32))) {
+    if (from.has_scoring_penalty_relay_cluster()) {
+      set_scoring_penalty_relay_cluster(from.scoring_penalty_relay_cluster());
+    }
     if (from.has_client_cookie()) {
       set_client_cookie(from.client_cookie());
     }
     if (from.has_seq_num_r2c()) {
       set_seq_num_r2c(from.seq_num_r2c());
     }
-  }
-  if (from._has_bits_[8 / 32] & (0xffu << (8 % 32))) {
     if (from.has_seq_num_s2c()) {
       set_seq_num_s2c(from.seq_num_s2c());
     }
@@ -7137,6 +8990,9 @@ void CMsgSteamDatagramConnectionStatsRouterToClient::Swap(CMsgSteamDatagramConne
     std::swap(client_timestamp_from_server_, other->client_timestamp_from_server_);
     std::swap(router_gameserver_latency_, other->router_gameserver_latency_);
     std::swap(seconds_until_shutdown_, other->seconds_until_shutdown_);
+    std::swap(migrate_request_ip_, other->migrate_request_ip_);
+    std::swap(migrate_request_port_, other->migrate_request_port_);
+    std::swap(scoring_penalty_relay_cluster_, other->scoring_penalty_relay_cluster_);
     std::swap(client_cookie_, other->client_cookie_);
     std::swap(seq_num_r2c_, other->seq_num_r2c_);
     std::swap(seq_num_s2c_, other->seq_num_s2c_);
@@ -7158,9 +9014,11 @@ void CMsgSteamDatagramConnectionStatsRouterToClient::Swap(CMsgSteamDatagramConne
 // ===================================================================
 
 #ifndef _MSC_VER
+const int CMsgSteamDatagramConnectionStatsRouterToServer::kR2SFieldNumber;
 const int CMsgSteamDatagramConnectionStatsRouterToServer::kC2SFieldNumber;
 const int CMsgSteamDatagramConnectionStatsRouterToServer::kClientTimestampFieldNumber;
 const int CMsgSteamDatagramConnectionStatsRouterToServer::kRouterTimestampFieldNumber;
+const int CMsgSteamDatagramConnectionStatsRouterToServer::kSeqNumR2SFieldNumber;
 const int CMsgSteamDatagramConnectionStatsRouterToServer::kSeqNumC2SFieldNumber;
 const int CMsgSteamDatagramConnectionStatsRouterToServer::kClientSteamIdFieldNumber;
 const int CMsgSteamDatagramConnectionStatsRouterToServer::kClientSessionIdFieldNumber;
@@ -7173,6 +9031,7 @@ CMsgSteamDatagramConnectionStatsRouterToServer::CMsgSteamDatagramConnectionStats
 }
 
 void CMsgSteamDatagramConnectionStatsRouterToServer::InitAsDefaultInstance() {
+  r2s_ = const_cast< ::CMsgSteamDatagramConnectionQuality*>(&::CMsgSteamDatagramConnectionQuality::default_instance());
   c2s_ = const_cast< ::CMsgSteamDatagramConnectionQuality*>(&::CMsgSteamDatagramConnectionQuality::default_instance());
 }
 
@@ -7185,9 +9044,11 @@ CMsgSteamDatagramConnectionStatsRouterToServer::CMsgSteamDatagramConnectionStats
 
 void CMsgSteamDatagramConnectionStatsRouterToServer::SharedCtor() {
   _cached_size_ = 0;
+  r2s_ = NULL;
   c2s_ = NULL;
   client_timestamp_ = 0u;
   router_timestamp_ = 0u;
+  seq_num_r2s_ = 0u;
   seq_num_c2s_ = 0u;
   client_steam_id_ = GOOGLE_ULONGLONG(0);
   client_session_id_ = 0u;
@@ -7201,6 +9062,7 @@ CMsgSteamDatagramConnectionStatsRouterToServer::~CMsgSteamDatagramConnectionStat
 
 void CMsgSteamDatagramConnectionStatsRouterToServer::SharedDtor() {
   if (this != default_instance_) {
+    delete r2s_;
     delete c2s_;
   }
 }
@@ -7237,8 +9099,11 @@ void CMsgSteamDatagramConnectionStatsRouterToServer::Clear() {
     ::memset(&first, 0, n);                                \
   } while (0)
 
-  if (_has_bits_[0 / 32] & 63) {
+  if (_has_bits_[0 / 32] & 255) {
     ZR_(client_timestamp_, client_session_id_);
+    if (has_r2s()) {
+      if (r2s_ != NULL) r2s_->::CMsgSteamDatagramConnectionQuality::Clear();
+    }
     if (has_c2s()) {
       if (c2s_ != NULL) c2s_->::CMsgSteamDatagramConnectionQuality::Clear();
     }
@@ -7261,9 +9126,22 @@ bool CMsgSteamDatagramConnectionStatsRouterToServer::MergePartialFromCodedStream
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // optional .CMsgSteamDatagramConnectionQuality r2s = 1;
+      case 1: {
+        if (tag == 10) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+               input, mutable_r2s()));
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(18)) goto parse_c2s;
+        break;
+      }
+
       // optional .CMsgSteamDatagramConnectionQuality c2s = 2;
       case 2: {
         if (tag == 18) {
+         parse_c2s:
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
                input, mutable_c2s()));
         } else {
@@ -7296,6 +9174,21 @@ bool CMsgSteamDatagramConnectionStatsRouterToServer::MergePartialFromCodedStream
                    ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_FIXED32>(
                  input, &router_timestamp_)));
           set_has_router_timestamp();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(40)) goto parse_seq_num_r2s;
+        break;
+      }
+
+      // optional uint32 seq_num_r2s = 5;
+      case 5: {
+        if (tag == 40) {
+         parse_seq_num_r2s:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                 input, &seq_num_r2s_)));
+          set_has_seq_num_r2s();
         } else {
           goto handle_unusual;
         }
@@ -7373,6 +9266,12 @@ failure:
 void CMsgSteamDatagramConnectionStatsRouterToServer::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
   // @@protoc_insertion_point(serialize_start:CMsgSteamDatagramConnectionStatsRouterToServer)
+  // optional .CMsgSteamDatagramConnectionQuality r2s = 1;
+  if (has_r2s()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      1, this->r2s(), output);
+  }
+
   // optional .CMsgSteamDatagramConnectionQuality c2s = 2;
   if (has_c2s()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
@@ -7387,6 +9286,11 @@ void CMsgSteamDatagramConnectionStatsRouterToServer::SerializeWithCachedSizes(
   // optional fixed32 router_timestamp = 4;
   if (has_router_timestamp()) {
     ::google::protobuf::internal::WireFormatLite::WriteFixed32(4, this->router_timestamp(), output);
+  }
+
+  // optional uint32 seq_num_r2s = 5;
+  if (has_seq_num_r2s()) {
+    ::google::protobuf::internal::WireFormatLite::WriteUInt32(5, this->seq_num_r2s(), output);
   }
 
   // optional uint32 seq_num_c2s = 6;
@@ -7414,6 +9318,13 @@ void CMsgSteamDatagramConnectionStatsRouterToServer::SerializeWithCachedSizes(
 ::google::protobuf::uint8* CMsgSteamDatagramConnectionStatsRouterToServer::SerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
   // @@protoc_insertion_point(serialize_to_array_start:CMsgSteamDatagramConnectionStatsRouterToServer)
+  // optional .CMsgSteamDatagramConnectionQuality r2s = 1;
+  if (has_r2s()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      WriteMessageNoVirtualToArray(
+        1, this->r2s(), target);
+  }
+
   // optional .CMsgSteamDatagramConnectionQuality c2s = 2;
   if (has_c2s()) {
     target = ::google::protobuf::internal::WireFormatLite::
@@ -7429,6 +9340,11 @@ void CMsgSteamDatagramConnectionStatsRouterToServer::SerializeWithCachedSizes(
   // optional fixed32 router_timestamp = 4;
   if (has_router_timestamp()) {
     target = ::google::protobuf::internal::WireFormatLite::WriteFixed32ToArray(4, this->router_timestamp(), target);
+  }
+
+  // optional uint32 seq_num_r2s = 5;
+  if (has_seq_num_r2s()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(5, this->seq_num_r2s(), target);
   }
 
   // optional uint32 seq_num_c2s = 6;
@@ -7458,6 +9374,13 @@ int CMsgSteamDatagramConnectionStatsRouterToServer::ByteSize() const {
   int total_size = 0;
 
   if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    // optional .CMsgSteamDatagramConnectionQuality r2s = 1;
+    if (has_r2s()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+          this->r2s());
+    }
+
     // optional .CMsgSteamDatagramConnectionQuality c2s = 2;
     if (has_c2s()) {
       total_size += 1 +
@@ -7473,6 +9396,13 @@ int CMsgSteamDatagramConnectionStatsRouterToServer::ByteSize() const {
     // optional fixed32 router_timestamp = 4;
     if (has_router_timestamp()) {
       total_size += 1 + 4;
+    }
+
+    // optional uint32 seq_num_r2s = 5;
+    if (has_seq_num_r2s()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::UInt32Size(
+          this->seq_num_r2s());
     }
 
     // optional uint32 seq_num_c2s = 6;
@@ -7521,6 +9451,9 @@ void CMsgSteamDatagramConnectionStatsRouterToServer::MergeFrom(const ::google::p
 void CMsgSteamDatagramConnectionStatsRouterToServer::MergeFrom(const CMsgSteamDatagramConnectionStatsRouterToServer& from) {
   GOOGLE_CHECK_NE(&from, this);
   if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    if (from.has_r2s()) {
+      mutable_r2s()->::CMsgSteamDatagramConnectionQuality::MergeFrom(from.r2s());
+    }
     if (from.has_c2s()) {
       mutable_c2s()->::CMsgSteamDatagramConnectionQuality::MergeFrom(from.c2s());
     }
@@ -7529,6 +9462,9 @@ void CMsgSteamDatagramConnectionStatsRouterToServer::MergeFrom(const CMsgSteamDa
     }
     if (from.has_router_timestamp()) {
       set_router_timestamp(from.router_timestamp());
+    }
+    if (from.has_seq_num_r2s()) {
+      set_seq_num_r2s(from.seq_num_r2s());
     }
     if (from.has_seq_num_c2s()) {
       set_seq_num_c2s(from.seq_num_c2s());
@@ -7562,9 +9498,11 @@ bool CMsgSteamDatagramConnectionStatsRouterToServer::IsInitialized() const {
 
 void CMsgSteamDatagramConnectionStatsRouterToServer::Swap(CMsgSteamDatagramConnectionStatsRouterToServer* other) {
   if (other != this) {
+    std::swap(r2s_, other->r2s_);
     std::swap(c2s_, other->c2s_);
     std::swap(client_timestamp_, other->client_timestamp_);
     std::swap(router_timestamp_, other->router_timestamp_);
+    std::swap(seq_num_r2s_, other->seq_num_r2s_);
     std::swap(seq_num_c2s_, other->seq_num_c2s_);
     std::swap(client_steam_id_, other->client_steam_id_);
     std::swap(client_session_id_, other->client_session_id_);
@@ -7579,6 +9517,444 @@ void CMsgSteamDatagramConnectionStatsRouterToServer::Swap(CMsgSteamDatagramConne
   ::google::protobuf::Metadata metadata;
   metadata.descriptor = CMsgSteamDatagramConnectionStatsRouterToServer_descriptor_;
   metadata.reflection = CMsgSteamDatagramConnectionStatsRouterToServer_reflection_;
+  return metadata;
+}
+
+
+// ===================================================================
+
+#ifndef _MSC_VER
+const int CMsgSteamDatagramConnectionStatsServerToRouter::kS2RFieldNumber;
+const int CMsgSteamDatagramConnectionStatsServerToRouter::kS2CFieldNumber;
+const int CMsgSteamDatagramConnectionStatsServerToRouter::kSeqNumS2RFieldNumber;
+const int CMsgSteamDatagramConnectionStatsServerToRouter::kSeqNumS2CFieldNumber;
+const int CMsgSteamDatagramConnectionStatsServerToRouter::kClientSteamIdFieldNumber;
+const int CMsgSteamDatagramConnectionStatsServerToRouter::kClientSessionIdFieldNumber;
+#endif  // !_MSC_VER
+
+CMsgSteamDatagramConnectionStatsServerToRouter::CMsgSteamDatagramConnectionStatsServerToRouter()
+  : ::google::protobuf::Message() {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:CMsgSteamDatagramConnectionStatsServerToRouter)
+}
+
+void CMsgSteamDatagramConnectionStatsServerToRouter::InitAsDefaultInstance() {
+  s2r_ = const_cast< ::CMsgSteamDatagramConnectionQuality*>(&::CMsgSteamDatagramConnectionQuality::default_instance());
+  s2c_ = const_cast< ::CMsgSteamDatagramConnectionQuality*>(&::CMsgSteamDatagramConnectionQuality::default_instance());
+}
+
+CMsgSteamDatagramConnectionStatsServerToRouter::CMsgSteamDatagramConnectionStatsServerToRouter(const CMsgSteamDatagramConnectionStatsServerToRouter& from)
+  : ::google::protobuf::Message() {
+  SharedCtor();
+  MergeFrom(from);
+  // @@protoc_insertion_point(copy_constructor:CMsgSteamDatagramConnectionStatsServerToRouter)
+}
+
+void CMsgSteamDatagramConnectionStatsServerToRouter::SharedCtor() {
+  _cached_size_ = 0;
+  s2r_ = NULL;
+  s2c_ = NULL;
+  seq_num_s2r_ = 0u;
+  seq_num_s2c_ = 0u;
+  client_steam_id_ = GOOGLE_ULONGLONG(0);
+  client_session_id_ = 0u;
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+}
+
+CMsgSteamDatagramConnectionStatsServerToRouter::~CMsgSteamDatagramConnectionStatsServerToRouter() {
+  // @@protoc_insertion_point(destructor:CMsgSteamDatagramConnectionStatsServerToRouter)
+  SharedDtor();
+}
+
+void CMsgSteamDatagramConnectionStatsServerToRouter::SharedDtor() {
+  if (this != default_instance_) {
+    delete s2r_;
+    delete s2c_;
+  }
+}
+
+void CMsgSteamDatagramConnectionStatsServerToRouter::SetCachedSize(int size) const {
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+}
+const ::google::protobuf::Descriptor* CMsgSteamDatagramConnectionStatsServerToRouter::descriptor() {
+  protobuf_AssignDescriptorsOnce();
+  return CMsgSteamDatagramConnectionStatsServerToRouter_descriptor_;
+}
+
+const CMsgSteamDatagramConnectionStatsServerToRouter& CMsgSteamDatagramConnectionStatsServerToRouter::default_instance() {
+  if (default_instance_ == NULL) protobuf_AddDesc_steamdatagram_5fmessages_2eproto();
+  return *default_instance_;
+}
+
+CMsgSteamDatagramConnectionStatsServerToRouter* CMsgSteamDatagramConnectionStatsServerToRouter::default_instance_ = NULL;
+
+CMsgSteamDatagramConnectionStatsServerToRouter* CMsgSteamDatagramConnectionStatsServerToRouter::New() const {
+  return new CMsgSteamDatagramConnectionStatsServerToRouter;
+}
+
+void CMsgSteamDatagramConnectionStatsServerToRouter::Clear() {
+#define OFFSET_OF_FIELD_(f) (reinterpret_cast<char*>(      \
+  &reinterpret_cast<CMsgSteamDatagramConnectionStatsServerToRouter*>(16)->f) - \
+   reinterpret_cast<char*>(16))
+
+#define ZR_(first, last) do {                              \
+    size_t f = OFFSET_OF_FIELD_(first);                    \
+    size_t n = OFFSET_OF_FIELD_(last) - f + sizeof(last);  \
+    ::memset(&first, 0, n);                                \
+  } while (0)
+
+  if (_has_bits_[0 / 32] & 63) {
+    ZR_(seq_num_s2r_, client_session_id_);
+    if (has_s2r()) {
+      if (s2r_ != NULL) s2r_->::CMsgSteamDatagramConnectionQuality::Clear();
+    }
+    if (has_s2c()) {
+      if (s2c_ != NULL) s2c_->::CMsgSteamDatagramConnectionQuality::Clear();
+    }
+  }
+
+#undef OFFSET_OF_FIELD_
+#undef ZR_
+
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+  mutable_unknown_fields()->Clear();
+}
+
+bool CMsgSteamDatagramConnectionStatsServerToRouter::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:CMsgSteamDatagramConnectionStatsServerToRouter)
+  for (;;) {
+    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoff(127);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // optional .CMsgSteamDatagramConnectionQuality s2r = 1;
+      case 1: {
+        if (tag == 10) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+               input, mutable_s2r()));
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(18)) goto parse_s2c;
+        break;
+      }
+
+      // optional .CMsgSteamDatagramConnectionQuality s2c = 2;
+      case 2: {
+        if (tag == 18) {
+         parse_s2c:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+               input, mutable_s2c()));
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(24)) goto parse_seq_num_s2r;
+        break;
+      }
+
+      // optional uint32 seq_num_s2r = 3;
+      case 3: {
+        if (tag == 24) {
+         parse_seq_num_s2r:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                 input, &seq_num_s2r_)));
+          set_has_seq_num_s2r();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(32)) goto parse_seq_num_s2c;
+        break;
+      }
+
+      // optional uint32 seq_num_s2c = 4;
+      case 4: {
+        if (tag == 32) {
+         parse_seq_num_s2c:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                 input, &seq_num_s2c_)));
+          set_has_seq_num_s2c();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(41)) goto parse_client_steam_id;
+        break;
+      }
+
+      // optional fixed64 client_steam_id = 5;
+      case 5: {
+        if (tag == 41) {
+         parse_client_steam_id:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::uint64, ::google::protobuf::internal::WireFormatLite::TYPE_FIXED64>(
+                 input, &client_steam_id_)));
+          set_has_client_steam_id();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(48)) goto parse_client_session_id;
+        break;
+      }
+
+      // optional uint32 client_session_id = 6;
+      case 6: {
+        if (tag == 48) {
+         parse_client_session_id:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                 input, &client_session_id_)));
+          set_has_client_session_id();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectAtEnd()) goto success;
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0 ||
+            ::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, mutable_unknown_fields()));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:CMsgSteamDatagramConnectionStatsServerToRouter)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:CMsgSteamDatagramConnectionStatsServerToRouter)
+  return false;
+#undef DO_
+}
+
+void CMsgSteamDatagramConnectionStatsServerToRouter::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:CMsgSteamDatagramConnectionStatsServerToRouter)
+  // optional .CMsgSteamDatagramConnectionQuality s2r = 1;
+  if (has_s2r()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      1, this->s2r(), output);
+  }
+
+  // optional .CMsgSteamDatagramConnectionQuality s2c = 2;
+  if (has_s2c()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      2, this->s2c(), output);
+  }
+
+  // optional uint32 seq_num_s2r = 3;
+  if (has_seq_num_s2r()) {
+    ::google::protobuf::internal::WireFormatLite::WriteUInt32(3, this->seq_num_s2r(), output);
+  }
+
+  // optional uint32 seq_num_s2c = 4;
+  if (has_seq_num_s2c()) {
+    ::google::protobuf::internal::WireFormatLite::WriteUInt32(4, this->seq_num_s2c(), output);
+  }
+
+  // optional fixed64 client_steam_id = 5;
+  if (has_client_steam_id()) {
+    ::google::protobuf::internal::WireFormatLite::WriteFixed64(5, this->client_steam_id(), output);
+  }
+
+  // optional uint32 client_session_id = 6;
+  if (has_client_session_id()) {
+    ::google::protobuf::internal::WireFormatLite::WriteUInt32(6, this->client_session_id(), output);
+  }
+
+  if (!unknown_fields().empty()) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        unknown_fields(), output);
+  }
+  // @@protoc_insertion_point(serialize_end:CMsgSteamDatagramConnectionStatsServerToRouter)
+}
+
+::google::protobuf::uint8* CMsgSteamDatagramConnectionStatsServerToRouter::SerializeWithCachedSizesToArray(
+    ::google::protobuf::uint8* target) const {
+  // @@protoc_insertion_point(serialize_to_array_start:CMsgSteamDatagramConnectionStatsServerToRouter)
+  // optional .CMsgSteamDatagramConnectionQuality s2r = 1;
+  if (has_s2r()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      WriteMessageNoVirtualToArray(
+        1, this->s2r(), target);
+  }
+
+  // optional .CMsgSteamDatagramConnectionQuality s2c = 2;
+  if (has_s2c()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      WriteMessageNoVirtualToArray(
+        2, this->s2c(), target);
+  }
+
+  // optional uint32 seq_num_s2r = 3;
+  if (has_seq_num_s2r()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(3, this->seq_num_s2r(), target);
+  }
+
+  // optional uint32 seq_num_s2c = 4;
+  if (has_seq_num_s2c()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(4, this->seq_num_s2c(), target);
+  }
+
+  // optional fixed64 client_steam_id = 5;
+  if (has_client_steam_id()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteFixed64ToArray(5, this->client_steam_id(), target);
+  }
+
+  // optional uint32 client_session_id = 6;
+  if (has_client_session_id()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(6, this->client_session_id(), target);
+  }
+
+  if (!unknown_fields().empty()) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        unknown_fields(), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:CMsgSteamDatagramConnectionStatsServerToRouter)
+  return target;
+}
+
+int CMsgSteamDatagramConnectionStatsServerToRouter::ByteSize() const {
+  int total_size = 0;
+
+  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    // optional .CMsgSteamDatagramConnectionQuality s2r = 1;
+    if (has_s2r()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+          this->s2r());
+    }
+
+    // optional .CMsgSteamDatagramConnectionQuality s2c = 2;
+    if (has_s2c()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+          this->s2c());
+    }
+
+    // optional uint32 seq_num_s2r = 3;
+    if (has_seq_num_s2r()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::UInt32Size(
+          this->seq_num_s2r());
+    }
+
+    // optional uint32 seq_num_s2c = 4;
+    if (has_seq_num_s2c()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::UInt32Size(
+          this->seq_num_s2c());
+    }
+
+    // optional fixed64 client_steam_id = 5;
+    if (has_client_steam_id()) {
+      total_size += 1 + 8;
+    }
+
+    // optional uint32 client_session_id = 6;
+    if (has_client_session_id()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::UInt32Size(
+          this->client_session_id());
+    }
+
+  }
+  if (!unknown_fields().empty()) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        unknown_fields());
+  }
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = total_size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+  return total_size;
+}
+
+void CMsgSteamDatagramConnectionStatsServerToRouter::MergeFrom(const ::google::protobuf::Message& from) {
+  GOOGLE_CHECK_NE(&from, this);
+  const CMsgSteamDatagramConnectionStatsServerToRouter* source =
+    ::google::protobuf::internal::dynamic_cast_if_available<const CMsgSteamDatagramConnectionStatsServerToRouter*>(
+      &from);
+  if (source == NULL) {
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+    MergeFrom(*source);
+  }
+}
+
+void CMsgSteamDatagramConnectionStatsServerToRouter::MergeFrom(const CMsgSteamDatagramConnectionStatsServerToRouter& from) {
+  GOOGLE_CHECK_NE(&from, this);
+  if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    if (from.has_s2r()) {
+      mutable_s2r()->::CMsgSteamDatagramConnectionQuality::MergeFrom(from.s2r());
+    }
+    if (from.has_s2c()) {
+      mutable_s2c()->::CMsgSteamDatagramConnectionQuality::MergeFrom(from.s2c());
+    }
+    if (from.has_seq_num_s2r()) {
+      set_seq_num_s2r(from.seq_num_s2r());
+    }
+    if (from.has_seq_num_s2c()) {
+      set_seq_num_s2c(from.seq_num_s2c());
+    }
+    if (from.has_client_steam_id()) {
+      set_client_steam_id(from.client_steam_id());
+    }
+    if (from.has_client_session_id()) {
+      set_client_session_id(from.client_session_id());
+    }
+  }
+  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
+}
+
+void CMsgSteamDatagramConnectionStatsServerToRouter::CopyFrom(const ::google::protobuf::Message& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void CMsgSteamDatagramConnectionStatsServerToRouter::CopyFrom(const CMsgSteamDatagramConnectionStatsServerToRouter& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool CMsgSteamDatagramConnectionStatsServerToRouter::IsInitialized() const {
+
+  return true;
+}
+
+void CMsgSteamDatagramConnectionStatsServerToRouter::Swap(CMsgSteamDatagramConnectionStatsServerToRouter* other) {
+  if (other != this) {
+    std::swap(s2r_, other->s2r_);
+    std::swap(s2c_, other->s2c_);
+    std::swap(seq_num_s2r_, other->seq_num_s2r_);
+    std::swap(seq_num_s2c_, other->seq_num_s2c_);
+    std::swap(client_steam_id_, other->client_steam_id_);
+    std::swap(client_session_id_, other->client_session_id_);
+    std::swap(_has_bits_[0], other->_has_bits_[0]);
+    _unknown_fields_.Swap(&other->_unknown_fields_);
+    std::swap(_cached_size_, other->_cached_size_);
+  }
+}
+
+::google::protobuf::Metadata CMsgSteamDatagramConnectionStatsServerToRouter::GetMetadata() const {
+  protobuf_AssignDescriptorsOnce();
+  ::google::protobuf::Metadata metadata;
+  metadata.descriptor = CMsgSteamDatagramConnectionStatsServerToRouter_descriptor_;
+  metadata.reflection = CMsgSteamDatagramConnectionStatsServerToRouter_reflection_;
   return metadata;
 }
 
@@ -9421,6 +11797,819 @@ void CMsgSteamDatagramClientSwitchedPrimary::Swap(CMsgSteamDatagramClientSwitche
   ::google::protobuf::Metadata metadata;
   metadata.descriptor = CMsgSteamDatagramClientSwitchedPrimary_descriptor_;
   metadata.reflection = CMsgSteamDatagramClientSwitchedPrimary_reflection_;
+  return metadata;
+}
+
+
+// ===================================================================
+
+#ifndef _MSC_VER
+const int CMsgSteamDatagramRouterHealth_DataCenter::kDatacenterIdFieldNumber;
+const int CMsgSteamDatagramRouterHealth_DataCenter::kStateFieldNumber;
+#endif  // !_MSC_VER
+
+CMsgSteamDatagramRouterHealth_DataCenter::CMsgSteamDatagramRouterHealth_DataCenter()
+  : ::google::protobuf::Message() {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:CMsgSteamDatagramRouterHealth.DataCenter)
+}
+
+void CMsgSteamDatagramRouterHealth_DataCenter::InitAsDefaultInstance() {
+}
+
+CMsgSteamDatagramRouterHealth_DataCenter::CMsgSteamDatagramRouterHealth_DataCenter(const CMsgSteamDatagramRouterHealth_DataCenter& from)
+  : ::google::protobuf::Message() {
+  SharedCtor();
+  MergeFrom(from);
+  // @@protoc_insertion_point(copy_constructor:CMsgSteamDatagramRouterHealth.DataCenter)
+}
+
+void CMsgSteamDatagramRouterHealth_DataCenter::SharedCtor() {
+  _cached_size_ = 0;
+  datacenter_id_ = 0u;
+  state_ = 0u;
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+}
+
+CMsgSteamDatagramRouterHealth_DataCenter::~CMsgSteamDatagramRouterHealth_DataCenter() {
+  // @@protoc_insertion_point(destructor:CMsgSteamDatagramRouterHealth.DataCenter)
+  SharedDtor();
+}
+
+void CMsgSteamDatagramRouterHealth_DataCenter::SharedDtor() {
+  if (this != default_instance_) {
+  }
+}
+
+void CMsgSteamDatagramRouterHealth_DataCenter::SetCachedSize(int size) const {
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+}
+const ::google::protobuf::Descriptor* CMsgSteamDatagramRouterHealth_DataCenter::descriptor() {
+  protobuf_AssignDescriptorsOnce();
+  return CMsgSteamDatagramRouterHealth_DataCenter_descriptor_;
+}
+
+const CMsgSteamDatagramRouterHealth_DataCenter& CMsgSteamDatagramRouterHealth_DataCenter::default_instance() {
+  if (default_instance_ == NULL) protobuf_AddDesc_steamdatagram_5fmessages_2eproto();
+  return *default_instance_;
+}
+
+CMsgSteamDatagramRouterHealth_DataCenter* CMsgSteamDatagramRouterHealth_DataCenter::default_instance_ = NULL;
+
+CMsgSteamDatagramRouterHealth_DataCenter* CMsgSteamDatagramRouterHealth_DataCenter::New() const {
+  return new CMsgSteamDatagramRouterHealth_DataCenter;
+}
+
+void CMsgSteamDatagramRouterHealth_DataCenter::Clear() {
+#define OFFSET_OF_FIELD_(f) (reinterpret_cast<char*>(      \
+  &reinterpret_cast<CMsgSteamDatagramRouterHealth_DataCenter*>(16)->f) - \
+   reinterpret_cast<char*>(16))
+
+#define ZR_(first, last) do {                              \
+    size_t f = OFFSET_OF_FIELD_(first);                    \
+    size_t n = OFFSET_OF_FIELD_(last) - f + sizeof(last);  \
+    ::memset(&first, 0, n);                                \
+  } while (0)
+
+  ZR_(datacenter_id_, state_);
+
+#undef OFFSET_OF_FIELD_
+#undef ZR_
+
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+  mutable_unknown_fields()->Clear();
+}
+
+bool CMsgSteamDatagramRouterHealth_DataCenter::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:CMsgSteamDatagramRouterHealth.DataCenter)
+  for (;;) {
+    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoff(127);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // optional fixed32 datacenter_id = 1;
+      case 1: {
+        if (tag == 13) {
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_FIXED32>(
+                 input, &datacenter_id_)));
+          set_has_datacenter_id();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(16)) goto parse_state;
+        break;
+      }
+
+      // optional uint32 state = 2;
+      case 2: {
+        if (tag == 16) {
+         parse_state:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                 input, &state_)));
+          set_has_state();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectAtEnd()) goto success;
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0 ||
+            ::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, mutable_unknown_fields()));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:CMsgSteamDatagramRouterHealth.DataCenter)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:CMsgSteamDatagramRouterHealth.DataCenter)
+  return false;
+#undef DO_
+}
+
+void CMsgSteamDatagramRouterHealth_DataCenter::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:CMsgSteamDatagramRouterHealth.DataCenter)
+  // optional fixed32 datacenter_id = 1;
+  if (has_datacenter_id()) {
+    ::google::protobuf::internal::WireFormatLite::WriteFixed32(1, this->datacenter_id(), output);
+  }
+
+  // optional uint32 state = 2;
+  if (has_state()) {
+    ::google::protobuf::internal::WireFormatLite::WriteUInt32(2, this->state(), output);
+  }
+
+  if (!unknown_fields().empty()) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        unknown_fields(), output);
+  }
+  // @@protoc_insertion_point(serialize_end:CMsgSteamDatagramRouterHealth.DataCenter)
+}
+
+::google::protobuf::uint8* CMsgSteamDatagramRouterHealth_DataCenter::SerializeWithCachedSizesToArray(
+    ::google::protobuf::uint8* target) const {
+  // @@protoc_insertion_point(serialize_to_array_start:CMsgSteamDatagramRouterHealth.DataCenter)
+  // optional fixed32 datacenter_id = 1;
+  if (has_datacenter_id()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteFixed32ToArray(1, this->datacenter_id(), target);
+  }
+
+  // optional uint32 state = 2;
+  if (has_state()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(2, this->state(), target);
+  }
+
+  if (!unknown_fields().empty()) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        unknown_fields(), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:CMsgSteamDatagramRouterHealth.DataCenter)
+  return target;
+}
+
+int CMsgSteamDatagramRouterHealth_DataCenter::ByteSize() const {
+  int total_size = 0;
+
+  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    // optional fixed32 datacenter_id = 1;
+    if (has_datacenter_id()) {
+      total_size += 1 + 4;
+    }
+
+    // optional uint32 state = 2;
+    if (has_state()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::UInt32Size(
+          this->state());
+    }
+
+  }
+  if (!unknown_fields().empty()) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        unknown_fields());
+  }
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = total_size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+  return total_size;
+}
+
+void CMsgSteamDatagramRouterHealth_DataCenter::MergeFrom(const ::google::protobuf::Message& from) {
+  GOOGLE_CHECK_NE(&from, this);
+  const CMsgSteamDatagramRouterHealth_DataCenter* source =
+    ::google::protobuf::internal::dynamic_cast_if_available<const CMsgSteamDatagramRouterHealth_DataCenter*>(
+      &from);
+  if (source == NULL) {
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+    MergeFrom(*source);
+  }
+}
+
+void CMsgSteamDatagramRouterHealth_DataCenter::MergeFrom(const CMsgSteamDatagramRouterHealth_DataCenter& from) {
+  GOOGLE_CHECK_NE(&from, this);
+  if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    if (from.has_datacenter_id()) {
+      set_datacenter_id(from.datacenter_id());
+    }
+    if (from.has_state()) {
+      set_state(from.state());
+    }
+  }
+  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
+}
+
+void CMsgSteamDatagramRouterHealth_DataCenter::CopyFrom(const ::google::protobuf::Message& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void CMsgSteamDatagramRouterHealth_DataCenter::CopyFrom(const CMsgSteamDatagramRouterHealth_DataCenter& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool CMsgSteamDatagramRouterHealth_DataCenter::IsInitialized() const {
+
+  return true;
+}
+
+void CMsgSteamDatagramRouterHealth_DataCenter::Swap(CMsgSteamDatagramRouterHealth_DataCenter* other) {
+  if (other != this) {
+    std::swap(datacenter_id_, other->datacenter_id_);
+    std::swap(state_, other->state_);
+    std::swap(_has_bits_[0], other->_has_bits_[0]);
+    _unknown_fields_.Swap(&other->_unknown_fields_);
+    std::swap(_cached_size_, other->_cached_size_);
+  }
+}
+
+::google::protobuf::Metadata CMsgSteamDatagramRouterHealth_DataCenter::GetMetadata() const {
+  protobuf_AssignDescriptorsOnce();
+  ::google::protobuf::Metadata metadata;
+  metadata.descriptor = CMsgSteamDatagramRouterHealth_DataCenter_descriptor_;
+  metadata.reflection = CMsgSteamDatagramRouterHealth_DataCenter_reflection_;
+  return metadata;
+}
+
+
+// -------------------------------------------------------------------
+
+#ifndef _MSC_VER
+const int CMsgSteamDatagramRouterHealth::kCpuLoadFieldNumber;
+const int CMsgSteamDatagramRouterHealth::kActiveSessionsFieldNumber;
+const int CMsgSteamDatagramRouterHealth::kDataPktsSecFieldNumber;
+const int CMsgSteamDatagramRouterHealth::kOtherPktsSecFieldNumber;
+const int CMsgSteamDatagramRouterHealth::kSecondsUntilShutdownFieldNumber;
+const int CMsgSteamDatagramRouterHealth::kCpuCostPerUserFieldNumber;
+const int CMsgSteamDatagramRouterHealth::kCpuCostPerPacketFieldNumber;
+const int CMsgSteamDatagramRouterHealth::kDataCentersFieldNumber;
+const int CMsgSteamDatagramRouterHealth::kMagicFieldNumber;
+#endif  // !_MSC_VER
+
+CMsgSteamDatagramRouterHealth::CMsgSteamDatagramRouterHealth()
+  : ::google::protobuf::Message() {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:CMsgSteamDatagramRouterHealth)
+}
+
+void CMsgSteamDatagramRouterHealth::InitAsDefaultInstance() {
+}
+
+CMsgSteamDatagramRouterHealth::CMsgSteamDatagramRouterHealth(const CMsgSteamDatagramRouterHealth& from)
+  : ::google::protobuf::Message() {
+  SharedCtor();
+  MergeFrom(from);
+  // @@protoc_insertion_point(copy_constructor:CMsgSteamDatagramRouterHealth)
+}
+
+void CMsgSteamDatagramRouterHealth::SharedCtor() {
+  _cached_size_ = 0;
+  cpu_load_ = 0;
+  active_sessions_ = 0u;
+  data_pkts_sec_ = 0u;
+  other_pkts_sec_ = 0u;
+  seconds_until_shutdown_ = 0u;
+  cpu_cost_per_user_ = 0;
+  cpu_cost_per_packet_ = 0;
+  magic_ = GOOGLE_ULONGLONG(0);
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+}
+
+CMsgSteamDatagramRouterHealth::~CMsgSteamDatagramRouterHealth() {
+  // @@protoc_insertion_point(destructor:CMsgSteamDatagramRouterHealth)
+  SharedDtor();
+}
+
+void CMsgSteamDatagramRouterHealth::SharedDtor() {
+  if (this != default_instance_) {
+  }
+}
+
+void CMsgSteamDatagramRouterHealth::SetCachedSize(int size) const {
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+}
+const ::google::protobuf::Descriptor* CMsgSteamDatagramRouterHealth::descriptor() {
+  protobuf_AssignDescriptorsOnce();
+  return CMsgSteamDatagramRouterHealth_descriptor_;
+}
+
+const CMsgSteamDatagramRouterHealth& CMsgSteamDatagramRouterHealth::default_instance() {
+  if (default_instance_ == NULL) protobuf_AddDesc_steamdatagram_5fmessages_2eproto();
+  return *default_instance_;
+}
+
+CMsgSteamDatagramRouterHealth* CMsgSteamDatagramRouterHealth::default_instance_ = NULL;
+
+CMsgSteamDatagramRouterHealth* CMsgSteamDatagramRouterHealth::New() const {
+  return new CMsgSteamDatagramRouterHealth;
+}
+
+void CMsgSteamDatagramRouterHealth::Clear() {
+#define OFFSET_OF_FIELD_(f) (reinterpret_cast<char*>(      \
+  &reinterpret_cast<CMsgSteamDatagramRouterHealth*>(16)->f) - \
+   reinterpret_cast<char*>(16))
+
+#define ZR_(first, last) do {                              \
+    size_t f = OFFSET_OF_FIELD_(first);                    \
+    size_t n = OFFSET_OF_FIELD_(last) - f + sizeof(last);  \
+    ::memset(&first, 0, n);                                \
+  } while (0)
+
+  if (_has_bits_[0 / 32] & 127) {
+    ZR_(cpu_load_, cpu_cost_per_user_);
+    cpu_cost_per_packet_ = 0;
+  }
+  magic_ = GOOGLE_ULONGLONG(0);
+
+#undef OFFSET_OF_FIELD_
+#undef ZR_
+
+  data_centers_.Clear();
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+  mutable_unknown_fields()->Clear();
+}
+
+bool CMsgSteamDatagramRouterHealth::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:CMsgSteamDatagramRouterHealth)
+  for (;;) {
+    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoff(127);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // optional float cpu_load = 1;
+      case 1: {
+        if (tag == 13) {
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
+                 input, &cpu_load_)));
+          set_has_cpu_load();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(16)) goto parse_active_sessions;
+        break;
+      }
+
+      // optional uint32 active_sessions = 2;
+      case 2: {
+        if (tag == 16) {
+         parse_active_sessions:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                 input, &active_sessions_)));
+          set_has_active_sessions();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(24)) goto parse_data_pkts_sec;
+        break;
+      }
+
+      // optional uint32 data_pkts_sec = 3;
+      case 3: {
+        if (tag == 24) {
+         parse_data_pkts_sec:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                 input, &data_pkts_sec_)));
+          set_has_data_pkts_sec();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(32)) goto parse_other_pkts_sec;
+        break;
+      }
+
+      // optional uint32 other_pkts_sec = 4;
+      case 4: {
+        if (tag == 32) {
+         parse_other_pkts_sec:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                 input, &other_pkts_sec_)));
+          set_has_other_pkts_sec();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(40)) goto parse_seconds_until_shutdown;
+        break;
+      }
+
+      // optional uint32 seconds_until_shutdown = 5;
+      case 5: {
+        if (tag == 40) {
+         parse_seconds_until_shutdown:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                 input, &seconds_until_shutdown_)));
+          set_has_seconds_until_shutdown();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(50)) goto parse_data_centers;
+        break;
+      }
+
+      // repeated .CMsgSteamDatagramRouterHealth.DataCenter data_centers = 6;
+      case 6: {
+        if (tag == 50) {
+         parse_data_centers:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+                input, add_data_centers()));
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(50)) goto parse_data_centers;
+        if (input->ExpectTag(57)) goto parse_magic;
+        break;
+      }
+
+      // optional fixed64 magic = 7;
+      case 7: {
+        if (tag == 57) {
+         parse_magic:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::uint64, ::google::protobuf::internal::WireFormatLite::TYPE_FIXED64>(
+                 input, &magic_)));
+          set_has_magic();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(69)) goto parse_cpu_cost_per_user;
+        break;
+      }
+
+      // optional float cpu_cost_per_user = 8;
+      case 8: {
+        if (tag == 69) {
+         parse_cpu_cost_per_user:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
+                 input, &cpu_cost_per_user_)));
+          set_has_cpu_cost_per_user();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(77)) goto parse_cpu_cost_per_packet;
+        break;
+      }
+
+      // optional float cpu_cost_per_packet = 9;
+      case 9: {
+        if (tag == 77) {
+         parse_cpu_cost_per_packet:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
+                 input, &cpu_cost_per_packet_)));
+          set_has_cpu_cost_per_packet();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectAtEnd()) goto success;
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0 ||
+            ::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, mutable_unknown_fields()));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:CMsgSteamDatagramRouterHealth)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:CMsgSteamDatagramRouterHealth)
+  return false;
+#undef DO_
+}
+
+void CMsgSteamDatagramRouterHealth::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:CMsgSteamDatagramRouterHealth)
+  // optional float cpu_load = 1;
+  if (has_cpu_load()) {
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(1, this->cpu_load(), output);
+  }
+
+  // optional uint32 active_sessions = 2;
+  if (has_active_sessions()) {
+    ::google::protobuf::internal::WireFormatLite::WriteUInt32(2, this->active_sessions(), output);
+  }
+
+  // optional uint32 data_pkts_sec = 3;
+  if (has_data_pkts_sec()) {
+    ::google::protobuf::internal::WireFormatLite::WriteUInt32(3, this->data_pkts_sec(), output);
+  }
+
+  // optional uint32 other_pkts_sec = 4;
+  if (has_other_pkts_sec()) {
+    ::google::protobuf::internal::WireFormatLite::WriteUInt32(4, this->other_pkts_sec(), output);
+  }
+
+  // optional uint32 seconds_until_shutdown = 5;
+  if (has_seconds_until_shutdown()) {
+    ::google::protobuf::internal::WireFormatLite::WriteUInt32(5, this->seconds_until_shutdown(), output);
+  }
+
+  // repeated .CMsgSteamDatagramRouterHealth.DataCenter data_centers = 6;
+  for (int i = 0; i < this->data_centers_size(); i++) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      6, this->data_centers(i), output);
+  }
+
+  // optional fixed64 magic = 7;
+  if (has_magic()) {
+    ::google::protobuf::internal::WireFormatLite::WriteFixed64(7, this->magic(), output);
+  }
+
+  // optional float cpu_cost_per_user = 8;
+  if (has_cpu_cost_per_user()) {
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(8, this->cpu_cost_per_user(), output);
+  }
+
+  // optional float cpu_cost_per_packet = 9;
+  if (has_cpu_cost_per_packet()) {
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(9, this->cpu_cost_per_packet(), output);
+  }
+
+  if (!unknown_fields().empty()) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        unknown_fields(), output);
+  }
+  // @@protoc_insertion_point(serialize_end:CMsgSteamDatagramRouterHealth)
+}
+
+::google::protobuf::uint8* CMsgSteamDatagramRouterHealth::SerializeWithCachedSizesToArray(
+    ::google::protobuf::uint8* target) const {
+  // @@protoc_insertion_point(serialize_to_array_start:CMsgSteamDatagramRouterHealth)
+  // optional float cpu_load = 1;
+  if (has_cpu_load()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(1, this->cpu_load(), target);
+  }
+
+  // optional uint32 active_sessions = 2;
+  if (has_active_sessions()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(2, this->active_sessions(), target);
+  }
+
+  // optional uint32 data_pkts_sec = 3;
+  if (has_data_pkts_sec()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(3, this->data_pkts_sec(), target);
+  }
+
+  // optional uint32 other_pkts_sec = 4;
+  if (has_other_pkts_sec()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(4, this->other_pkts_sec(), target);
+  }
+
+  // optional uint32 seconds_until_shutdown = 5;
+  if (has_seconds_until_shutdown()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(5, this->seconds_until_shutdown(), target);
+  }
+
+  // repeated .CMsgSteamDatagramRouterHealth.DataCenter data_centers = 6;
+  for (int i = 0; i < this->data_centers_size(); i++) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      WriteMessageNoVirtualToArray(
+        6, this->data_centers(i), target);
+  }
+
+  // optional fixed64 magic = 7;
+  if (has_magic()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteFixed64ToArray(7, this->magic(), target);
+  }
+
+  // optional float cpu_cost_per_user = 8;
+  if (has_cpu_cost_per_user()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(8, this->cpu_cost_per_user(), target);
+  }
+
+  // optional float cpu_cost_per_packet = 9;
+  if (has_cpu_cost_per_packet()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(9, this->cpu_cost_per_packet(), target);
+  }
+
+  if (!unknown_fields().empty()) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        unknown_fields(), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:CMsgSteamDatagramRouterHealth)
+  return target;
+}
+
+int CMsgSteamDatagramRouterHealth::ByteSize() const {
+  int total_size = 0;
+
+  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    // optional float cpu_load = 1;
+    if (has_cpu_load()) {
+      total_size += 1 + 4;
+    }
+
+    // optional uint32 active_sessions = 2;
+    if (has_active_sessions()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::UInt32Size(
+          this->active_sessions());
+    }
+
+    // optional uint32 data_pkts_sec = 3;
+    if (has_data_pkts_sec()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::UInt32Size(
+          this->data_pkts_sec());
+    }
+
+    // optional uint32 other_pkts_sec = 4;
+    if (has_other_pkts_sec()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::UInt32Size(
+          this->other_pkts_sec());
+    }
+
+    // optional uint32 seconds_until_shutdown = 5;
+    if (has_seconds_until_shutdown()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::UInt32Size(
+          this->seconds_until_shutdown());
+    }
+
+    // optional float cpu_cost_per_user = 8;
+    if (has_cpu_cost_per_user()) {
+      total_size += 1 + 4;
+    }
+
+    // optional float cpu_cost_per_packet = 9;
+    if (has_cpu_cost_per_packet()) {
+      total_size += 1 + 4;
+    }
+
+  }
+  if (_has_bits_[8 / 32] & (0xffu << (8 % 32))) {
+    // optional fixed64 magic = 7;
+    if (has_magic()) {
+      total_size += 1 + 8;
+    }
+
+  }
+  // repeated .CMsgSteamDatagramRouterHealth.DataCenter data_centers = 6;
+  total_size += 1 * this->data_centers_size();
+  for (int i = 0; i < this->data_centers_size(); i++) {
+    total_size +=
+      ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+        this->data_centers(i));
+  }
+
+  if (!unknown_fields().empty()) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        unknown_fields());
+  }
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = total_size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+  return total_size;
+}
+
+void CMsgSteamDatagramRouterHealth::MergeFrom(const ::google::protobuf::Message& from) {
+  GOOGLE_CHECK_NE(&from, this);
+  const CMsgSteamDatagramRouterHealth* source =
+    ::google::protobuf::internal::dynamic_cast_if_available<const CMsgSteamDatagramRouterHealth*>(
+      &from);
+  if (source == NULL) {
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+    MergeFrom(*source);
+  }
+}
+
+void CMsgSteamDatagramRouterHealth::MergeFrom(const CMsgSteamDatagramRouterHealth& from) {
+  GOOGLE_CHECK_NE(&from, this);
+  data_centers_.MergeFrom(from.data_centers_);
+  if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    if (from.has_cpu_load()) {
+      set_cpu_load(from.cpu_load());
+    }
+    if (from.has_active_sessions()) {
+      set_active_sessions(from.active_sessions());
+    }
+    if (from.has_data_pkts_sec()) {
+      set_data_pkts_sec(from.data_pkts_sec());
+    }
+    if (from.has_other_pkts_sec()) {
+      set_other_pkts_sec(from.other_pkts_sec());
+    }
+    if (from.has_seconds_until_shutdown()) {
+      set_seconds_until_shutdown(from.seconds_until_shutdown());
+    }
+    if (from.has_cpu_cost_per_user()) {
+      set_cpu_cost_per_user(from.cpu_cost_per_user());
+    }
+    if (from.has_cpu_cost_per_packet()) {
+      set_cpu_cost_per_packet(from.cpu_cost_per_packet());
+    }
+  }
+  if (from._has_bits_[8 / 32] & (0xffu << (8 % 32))) {
+    if (from.has_magic()) {
+      set_magic(from.magic());
+    }
+  }
+  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
+}
+
+void CMsgSteamDatagramRouterHealth::CopyFrom(const ::google::protobuf::Message& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void CMsgSteamDatagramRouterHealth::CopyFrom(const CMsgSteamDatagramRouterHealth& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool CMsgSteamDatagramRouterHealth::IsInitialized() const {
+
+  return true;
+}
+
+void CMsgSteamDatagramRouterHealth::Swap(CMsgSteamDatagramRouterHealth* other) {
+  if (other != this) {
+    std::swap(cpu_load_, other->cpu_load_);
+    std::swap(active_sessions_, other->active_sessions_);
+    std::swap(data_pkts_sec_, other->data_pkts_sec_);
+    std::swap(other_pkts_sec_, other->other_pkts_sec_);
+    std::swap(seconds_until_shutdown_, other->seconds_until_shutdown_);
+    std::swap(cpu_cost_per_user_, other->cpu_cost_per_user_);
+    std::swap(cpu_cost_per_packet_, other->cpu_cost_per_packet_);
+    data_centers_.Swap(&other->data_centers_);
+    std::swap(magic_, other->magic_);
+    std::swap(_has_bits_[0], other->_has_bits_[0]);
+    _unknown_fields_.Swap(&other->_unknown_fields_);
+    std::swap(_cached_size_, other->_cached_size_);
+  }
+}
+
+::google::protobuf::Metadata CMsgSteamDatagramRouterHealth::GetMetadata() const {
+  protobuf_AssignDescriptorsOnce();
+  ::google::protobuf::Metadata metadata;
+  metadata.descriptor = CMsgSteamDatagramRouterHealth_descriptor_;
+  metadata.reflection = CMsgSteamDatagramRouterHealth_reflection_;
   return metadata;
 }
 

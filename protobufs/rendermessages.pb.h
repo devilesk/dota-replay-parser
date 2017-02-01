@@ -45,6 +45,7 @@ class CBorderData;
 class CBorderData_CBorderSide;
 class CBoxShadowData;
 class CTextShadowData;
+class CRadialClipData;
 class CMsgClipData;
 class CMsgPushCompositingLayer;
 class CMsgPopCompositingLayer;
@@ -106,6 +107,8 @@ class CMsgClip;
 class CMsgClip_AnimationFrameData;
 class CMsgPushClipLayer;
 class CMsgPopClipLayer;
+class CMsgPushPanelContextInLayer;
+class CMsgPopPanelContextInLayer;
 class CMsgPushAAndTContext;
 class CMsgPopAAndTContext;
 class CMsgBeginPaintBackground;
@@ -115,8 +118,6 @@ class CMsgEndPaintLast;
 class CMsgDrawFilledRect;
 class CMsgRenderFilledRect;
 class CMsgDrawTexturedRect;
-class CMsgDrawDoubleBufferedRect;
-class CMsgDrawYUV420DoubleBufferedRect;
 class CMsgRenderTexturedRect;
 class CMsgLockTexture;
 class CMsgTextInlineObject;
@@ -1726,6 +1727,115 @@ class CTextShadowData : public ::google::protobuf::Message {
 };
 // -------------------------------------------------------------------
 
+class CRadialClipData : public ::google::protobuf::Message {
+ public:
+  CRadialClipData();
+  virtual ~CRadialClipData();
+
+  CRadialClipData(const CRadialClipData& from);
+
+  inline CRadialClipData& operator=(const CRadialClipData& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+    return _unknown_fields_;
+  }
+
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+    return &_unknown_fields_;
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const CRadialClipData& default_instance();
+
+  void Swap(CRadialClipData* other);
+
+  // implements Message ----------------------------------------------
+
+  CRadialClipData* New() const;
+  void CopyFrom(const ::google::protobuf::Message& from);
+  void MergeFrom(const ::google::protobuf::Message& from);
+  void CopyFrom(const CRadialClipData& from);
+  void MergeFrom(const CRadialClipData& from);
+  void Clear();
+  bool IsInitialized() const;
+
+  int ByteSize() const;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input);
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  int GetCachedSize() const { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const;
+  public:
+  ::google::protobuf::Metadata GetMetadata() const;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // optional double center_x = 1;
+  inline bool has_center_x() const;
+  inline void clear_center_x();
+  static const int kCenterXFieldNumber = 1;
+  inline double center_x() const;
+  inline void set_center_x(double value);
+
+  // optional double center_y = 2;
+  inline bool has_center_y() const;
+  inline void clear_center_y();
+  static const int kCenterYFieldNumber = 2;
+  inline double center_y() const;
+  inline void set_center_y(double value);
+
+  // optional double start_angle = 3;
+  inline bool has_start_angle() const;
+  inline void clear_start_angle();
+  static const int kStartAngleFieldNumber = 3;
+  inline double start_angle() const;
+  inline void set_start_angle(double value);
+
+  // optional double sector_angle = 4;
+  inline bool has_sector_angle() const;
+  inline void clear_sector_angle();
+  static const int kSectorAngleFieldNumber = 4;
+  inline double sector_angle() const;
+  inline void set_sector_angle(double value);
+
+  // @@protoc_insertion_point(class_scope:CRadialClipData)
+ private:
+  inline void set_has_center_x();
+  inline void clear_has_center_x();
+  inline void set_has_center_y();
+  inline void clear_has_center_y();
+  inline void set_has_start_angle();
+  inline void clear_has_start_angle();
+  inline void set_has_sector_angle();
+  inline void clear_has_sector_angle();
+
+  ::google::protobuf::UnknownFieldSet _unknown_fields_;
+
+  ::google::protobuf::uint32 _has_bits_[1];
+  mutable int _cached_size_;
+  double center_x_;
+  double center_y_;
+  double start_angle_;
+  double sector_angle_;
+  friend void  protobuf_AddDesc_rendermessages_2eproto();
+  friend void protobuf_AssignDesc_rendermessages_2eproto();
+  friend void protobuf_ShutdownFile_rendermessages_2eproto();
+
+  void InitAsDefaultInstance();
+  static CRadialClipData* default_instance_;
+};
+// -------------------------------------------------------------------
+
 class CMsgClipData : public ::google::protobuf::Message {
  public:
   CMsgClipData();
@@ -1779,36 +1889,54 @@ class CMsgClipData : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // optional double left = 1;
+  // optional bool rect_clip = 1;
+  inline bool has_rect_clip() const;
+  inline void clear_rect_clip();
+  static const int kRectClipFieldNumber = 1;
+  inline bool rect_clip() const;
+  inline void set_rect_clip(bool value);
+
+  // optional double left = 2;
   inline bool has_left() const;
   inline void clear_left();
-  static const int kLeftFieldNumber = 1;
+  static const int kLeftFieldNumber = 2;
   inline double left() const;
   inline void set_left(double value);
 
-  // optional double top = 2;
+  // optional double top = 3;
   inline bool has_top() const;
   inline void clear_top();
-  static const int kTopFieldNumber = 2;
+  static const int kTopFieldNumber = 3;
   inline double top() const;
   inline void set_top(double value);
 
-  // optional double right = 3;
+  // optional double right = 4;
   inline bool has_right() const;
   inline void clear_right();
-  static const int kRightFieldNumber = 3;
+  static const int kRightFieldNumber = 4;
   inline double right() const;
   inline void set_right(double value);
 
-  // optional double bottom = 4;
+  // optional double bottom = 5;
   inline bool has_bottom() const;
   inline void clear_bottom();
-  static const int kBottomFieldNumber = 4;
+  static const int kBottomFieldNumber = 5;
   inline double bottom() const;
   inline void set_bottom(double value);
 
+  // optional .CRadialClipData radial_clip = 6;
+  inline bool has_radial_clip() const;
+  inline void clear_radial_clip();
+  static const int kRadialClipFieldNumber = 6;
+  inline const ::CRadialClipData& radial_clip() const;
+  inline ::CRadialClipData* mutable_radial_clip();
+  inline ::CRadialClipData* release_radial_clip();
+  inline void set_allocated_radial_clip(::CRadialClipData* radial_clip);
+
   // @@protoc_insertion_point(class_scope:CMsgClipData)
  private:
+  inline void set_has_rect_clip();
+  inline void clear_has_rect_clip();
   inline void set_has_left();
   inline void clear_has_left();
   inline void set_has_top();
@@ -1817,6 +1945,8 @@ class CMsgClipData : public ::google::protobuf::Message {
   inline void clear_has_right();
   inline void set_has_bottom();
   inline void clear_has_bottom();
+  inline void set_has_radial_clip();
+  inline void clear_has_radial_clip();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
@@ -1826,6 +1956,8 @@ class CMsgClipData : public ::google::protobuf::Message {
   double top_;
   double right_;
   double bottom_;
+  ::CRadialClipData* radial_clip_;
+  bool rect_clip_;
   friend void  protobuf_AddDesc_rendermessages_2eproto();
   friend void protobuf_AssignDesc_rendermessages_2eproto();
   friend void protobuf_ShutdownFile_rendermessages_2eproto();
@@ -2251,56 +2383,84 @@ class CMsgPushCompositingLayer : public ::google::protobuf::Message {
   inline bool needs_depth() const;
   inline void set_needs_depth(bool value);
 
-  // optional bool needs_redraw_every_frame = 52;
+  // optional bool needs_intermediate_texture = 52;
+  inline bool has_needs_intermediate_texture() const;
+  inline void clear_needs_intermediate_texture();
+  static const int kNeedsIntermediateTextureFieldNumber = 52;
+  inline bool needs_intermediate_texture() const;
+  inline void set_needs_intermediate_texture(bool value);
+
+  // optional bool needs_redraw_every_frame = 53;
   inline bool has_needs_redraw_every_frame() const;
   inline void clear_needs_redraw_every_frame();
-  static const int kNeedsRedrawEveryFrameFieldNumber = 52;
+  static const int kNeedsRedrawEveryFrameFieldNumber = 53;
   inline bool needs_redraw_every_frame() const;
   inline void set_needs_redraw_every_frame(bool value);
 
-  // optional .CTextShadowData text_shadow = 53;
+  // optional .CTextShadowData text_shadow = 54;
   inline bool has_text_shadow() const;
   inline void clear_text_shadow();
-  static const int kTextShadowFieldNumber = 53;
+  static const int kTextShadowFieldNumber = 54;
   inline const ::CTextShadowData& text_shadow() const;
   inline ::CTextShadowData* mutable_text_shadow();
   inline ::CTextShadowData* release_text_shadow();
   inline void set_allocated_text_shadow(::CTextShadowData* text_shadow);
 
-  // optional uint32 mix_blend_mode = 54;
+  // optional uint32 mix_blend_mode = 55;
   inline bool has_mix_blend_mode() const;
   inline void clear_mix_blend_mode();
-  static const int kMixBlendModeFieldNumber = 54;
+  static const int kMixBlendModeFieldNumber = 55;
   inline ::google::protobuf::uint32 mix_blend_mode() const;
   inline void set_mix_blend_mode(::google::protobuf::uint32 value);
 
-  // optional double occluded_left_edge = 55;
+  // optional double occluded_left_edge = 56;
   inline bool has_occluded_left_edge() const;
   inline void clear_occluded_left_edge();
-  static const int kOccludedLeftEdgeFieldNumber = 55;
+  static const int kOccludedLeftEdgeFieldNumber = 56;
   inline double occluded_left_edge() const;
   inline void set_occluded_left_edge(double value);
 
-  // optional double occluded_top_edge = 56;
+  // optional double occluded_top_edge = 57;
   inline bool has_occluded_top_edge() const;
   inline void clear_occluded_top_edge();
-  static const int kOccludedTopEdgeFieldNumber = 56;
+  static const int kOccludedTopEdgeFieldNumber = 57;
   inline double occluded_top_edge() const;
   inline void set_occluded_top_edge(double value);
 
-  // optional double occluded_right_edge = 57;
+  // optional double occluded_right_edge = 58;
   inline bool has_occluded_right_edge() const;
   inline void clear_occluded_right_edge();
-  static const int kOccludedRightEdgeFieldNumber = 57;
+  static const int kOccludedRightEdgeFieldNumber = 58;
   inline double occluded_right_edge() const;
   inline void set_occluded_right_edge(double value);
 
-  // optional double occluded_bottom_edge = 58;
+  // optional double occluded_bottom_edge = 59;
   inline bool has_occluded_bottom_edge() const;
   inline void clear_occluded_bottom_edge();
-  static const int kOccludedBottomEdgeFieldNumber = 58;
+  static const int kOccludedBottomEdgeFieldNumber = 59;
   inline double occluded_bottom_edge() const;
   inline void set_occluded_bottom_edge(double value);
+
+  // optional .CRadialClipData radial_clip = 60;
+  inline bool has_radial_clip() const;
+  inline void clear_radial_clip();
+  static const int kRadialClipFieldNumber = 60;
+  inline const ::CRadialClipData& radial_clip() const;
+  inline ::CRadialClipData* mutable_radial_clip();
+  inline ::CRadialClipData* release_radial_clip();
+  inline void set_allocated_radial_clip(::CRadialClipData* radial_clip);
+
+  // optional string composition_layer_texture_name = 64;
+  inline bool has_composition_layer_texture_name() const;
+  inline void clear_composition_layer_texture_name();
+  static const int kCompositionLayerTextureNameFieldNumber = 64;
+  inline const ::std::string& composition_layer_texture_name() const;
+  inline void set_composition_layer_texture_name(const ::std::string& value);
+  inline void set_composition_layer_texture_name(const char* value);
+  inline void set_composition_layer_texture_name(const char* value, size_t size);
+  inline ::std::string* mutable_composition_layer_texture_name();
+  inline ::std::string* release_composition_layer_texture_name();
+  inline void set_allocated_composition_layer_texture_name(::std::string* composition_layer_texture_name);
 
   // @@protoc_insertion_point(class_scope:CMsgPushCompositingLayer)
  private:
@@ -2406,6 +2566,8 @@ class CMsgPushCompositingLayer : public ::google::protobuf::Message {
   inline void clear_has_needs_clear();
   inline void set_has_needs_depth();
   inline void clear_has_needs_depth();
+  inline void set_has_needs_intermediate_texture();
+  inline void clear_has_needs_intermediate_texture();
   inline void set_has_needs_redraw_every_frame();
   inline void clear_has_needs_redraw_every_frame();
   inline void set_has_text_shadow();
@@ -2420,6 +2582,10 @@ class CMsgPushCompositingLayer : public ::google::protobuf::Message {
   inline void clear_has_occluded_right_edge();
   inline void set_has_occluded_bottom_edge();
   inline void clear_has_occluded_bottom_edge();
+  inline void set_has_radial_clip();
+  inline void clear_has_radial_clip();
+  inline void set_has_composition_layer_texture_name();
+  inline void clear_has_composition_layer_texture_name();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
@@ -2475,6 +2641,7 @@ class CMsgPushCompositingLayer : public ::google::protobuf::Message {
   double rotate_2d_;
   bool needs_clear_;
   bool needs_depth_;
+  bool needs_intermediate_texture_;
   bool needs_redraw_every_frame_;
   ::google::protobuf::uint32 mix_blend_mode_;
   ::CTextShadowData* text_shadow_;
@@ -2482,6 +2649,8 @@ class CMsgPushCompositingLayer : public ::google::protobuf::Message {
   double occluded_top_edge_;
   double occluded_right_edge_;
   double occluded_bottom_edge_;
+  ::CRadialClipData* radial_clip_;
+  ::std::string* composition_layer_texture_name_;
   mutable int _cached_size_;
   friend void  protobuf_AddDesc_rendermessages_2eproto();
   friend void protobuf_AssignDesc_rendermessages_2eproto();
@@ -3266,10 +3435,17 @@ class CMsgPointWithTransition : public ::google::protobuf::Message {
   inline ::CMsgTransitionData* release_transition_data();
   inline void set_allocated_transition_data(::CMsgTransitionData* transition_data);
 
-  // repeated .CMsgAnimationData animations = 4;
+  // optional uint32 style_symbol = 4;
+  inline bool has_style_symbol() const;
+  inline void clear_style_symbol();
+  static const int kStyleSymbolFieldNumber = 4;
+  inline ::google::protobuf::uint32 style_symbol() const;
+  inline void set_style_symbol(::google::protobuf::uint32 value);
+
+  // repeated .CMsgAnimationData animations = 5;
   inline int animations_size() const;
   inline void clear_animations();
-  static const int kAnimationsFieldNumber = 4;
+  static const int kAnimationsFieldNumber = 5;
   inline const ::CMsgAnimationData& animations(int index) const;
   inline ::CMsgAnimationData* mutable_animations(int index);
   inline ::CMsgAnimationData* add_animations();
@@ -3290,6 +3466,8 @@ class CMsgPointWithTransition : public ::google::protobuf::Message {
   inline void clear_has_transition();
   inline void set_has_transition_data();
   inline void clear_has_transition_data();
+  inline void set_has_style_symbol();
+  inline void clear_has_style_symbol();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
@@ -3299,6 +3477,7 @@ class CMsgPointWithTransition : public ::google::protobuf::Message {
   ::CMsgPoint* transition_;
   ::CMsgTransitionData* transition_data_;
   ::google::protobuf::RepeatedPtrField< ::CMsgAnimationData > animations_;
+  ::google::protobuf::uint32 style_symbol_;
   friend void  protobuf_AddDesc_rendermessages_2eproto();
   friend void protobuf_AssignDesc_rendermessages_2eproto();
   friend void protobuf_ShutdownFile_rendermessages_2eproto();
@@ -3465,10 +3644,17 @@ class CMsgColor : public ::google::protobuf::Message {
   inline ::CMsgTransitionData* release_transition_data();
   inline void set_allocated_transition_data(::CMsgTransitionData* transition_data);
 
-  // repeated .CMsgAnimationData animations = 4;
+  // optional uint32 style_symbol = 4;
+  inline bool has_style_symbol() const;
+  inline void clear_style_symbol();
+  static const int kStyleSymbolFieldNumber = 4;
+  inline ::google::protobuf::uint32 style_symbol() const;
+  inline void set_style_symbol(::google::protobuf::uint32 value);
+
+  // repeated .CMsgAnimationData animations = 5;
   inline int animations_size() const;
   inline void clear_animations();
-  static const int kAnimationsFieldNumber = 4;
+  static const int kAnimationsFieldNumber = 5;
   inline const ::CMsgAnimationData& animations(int index) const;
   inline ::CMsgAnimationData* mutable_animations(int index);
   inline ::CMsgAnimationData* add_animations();
@@ -3489,6 +3675,8 @@ class CMsgColor : public ::google::protobuf::Message {
   inline void clear_has_transition();
   inline void set_has_transition_data();
   inline void clear_has_transition_data();
+  inline void set_has_style_symbol();
+  inline void clear_has_style_symbol();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
@@ -3498,6 +3686,7 @@ class CMsgColor : public ::google::protobuf::Message {
   ::google::protobuf::uint32 transition_;
   ::CMsgTransitionData* transition_data_;
   ::google::protobuf::RepeatedPtrField< ::CMsgAnimationData > animations_;
+  ::google::protobuf::uint32 style_symbol_;
   friend void  protobuf_AddDesc_rendermessages_2eproto();
   friend void protobuf_AssignDesc_rendermessages_2eproto();
   friend void protobuf_ShutdownFile_rendermessages_2eproto();
@@ -4564,10 +4753,17 @@ class CMsgFillBrushCollection : public ::google::protobuf::Message {
   inline ::CMsgTransitionData* release_transition_data();
   inline void set_allocated_transition_data(::CMsgTransitionData* transition_data);
 
-  // repeated .CMsgAnimationData animations = 4;
+  // optional uint32 style_symbol = 4;
+  inline bool has_style_symbol() const;
+  inline void clear_style_symbol();
+  static const int kStyleSymbolFieldNumber = 4;
+  inline ::google::protobuf::uint32 style_symbol() const;
+  inline void set_style_symbol(::google::protobuf::uint32 value);
+
+  // repeated .CMsgAnimationData animations = 5;
   inline int animations_size() const;
   inline void clear_animations();
-  static const int kAnimationsFieldNumber = 4;
+  static const int kAnimationsFieldNumber = 5;
   inline const ::CMsgAnimationData& animations(int index) const;
   inline ::CMsgAnimationData* mutable_animations(int index);
   inline ::CMsgAnimationData* add_animations();
@@ -4584,6 +4780,8 @@ class CMsgFillBrushCollection : public ::google::protobuf::Message {
  private:
   inline void set_has_transition_data();
   inline void clear_has_transition_data();
+  inline void set_has_style_symbol();
+  inline void clear_has_style_symbol();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
@@ -4593,6 +4791,7 @@ class CMsgFillBrushCollection : public ::google::protobuf::Message {
   ::google::protobuf::RepeatedPtrField< ::CMsgFillBrush > transition_;
   ::CMsgTransitionData* transition_data_;
   ::google::protobuf::RepeatedPtrField< ::CMsgAnimationData > animations_;
+  ::google::protobuf::uint32 style_symbol_;
   friend void  protobuf_AddDesc_rendermessages_2eproto();
   friend void protobuf_AssignDesc_rendermessages_2eproto();
   friend void protobuf_ShutdownFile_rendermessages_2eproto();
@@ -4847,10 +5046,17 @@ class CMsgPanelPosition : public ::google::protobuf::Message {
   inline ::CMsgTransitionData* release_transition_data();
   inline void set_allocated_transition_data(::CMsgTransitionData* transition_data);
 
-  // repeated .CMsgAnimationData animations = 4;
+  // optional uint32 style_symbol = 4;
+  inline bool has_style_symbol() const;
+  inline void clear_style_symbol();
+  static const int kStyleSymbolFieldNumber = 4;
+  inline ::google::protobuf::uint32 style_symbol() const;
+  inline void set_style_symbol(::google::protobuf::uint32 value);
+
+  // repeated .CMsgAnimationData animations = 5;
   inline int animations_size() const;
   inline void clear_animations();
-  static const int kAnimationsFieldNumber = 4;
+  static const int kAnimationsFieldNumber = 5;
   inline const ::CMsgAnimationData& animations(int index) const;
   inline ::CMsgAnimationData* mutable_animations(int index);
   inline ::CMsgAnimationData* add_animations();
@@ -4859,37 +5065,37 @@ class CMsgPanelPosition : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedPtrField< ::CMsgAnimationData >*
       mutable_animations();
 
-  // optional .CMsgPoint scroll_offset = 5;
+  // optional .CMsgPoint scroll_offset = 6;
   inline bool has_scroll_offset() const;
   inline void clear_scroll_offset();
-  static const int kScrollOffsetFieldNumber = 5;
+  static const int kScrollOffsetFieldNumber = 6;
   inline const ::CMsgPoint& scroll_offset() const;
   inline ::CMsgPoint* mutable_scroll_offset();
   inline ::CMsgPoint* release_scroll_offset();
   inline void set_allocated_scroll_offset(::CMsgPoint* scroll_offset);
 
-  // optional .CMsgPoint scroll_offset_target = 6;
+  // optional .CMsgPoint scroll_offset_target = 7;
   inline bool has_scroll_offset_target() const;
   inline void clear_scroll_offset_target();
-  static const int kScrollOffsetTargetFieldNumber = 6;
+  static const int kScrollOffsetTargetFieldNumber = 7;
   inline const ::CMsgPoint& scroll_offset_target() const;
   inline ::CMsgPoint* mutable_scroll_offset_target();
   inline ::CMsgPoint* release_scroll_offset_target();
   inline void set_allocated_scroll_offset_target(::CMsgPoint* scroll_offset_target);
 
-  // optional .CMsgTransitionData scroll_transition_x = 7;
+  // optional .CMsgTransitionData scroll_transition_x = 8;
   inline bool has_scroll_transition_x() const;
   inline void clear_scroll_transition_x();
-  static const int kScrollTransitionXFieldNumber = 7;
+  static const int kScrollTransitionXFieldNumber = 8;
   inline const ::CMsgTransitionData& scroll_transition_x() const;
   inline ::CMsgTransitionData* mutable_scroll_transition_x();
   inline ::CMsgTransitionData* release_scroll_transition_x();
   inline void set_allocated_scroll_transition_x(::CMsgTransitionData* scroll_transition_x);
 
-  // optional .CMsgTransitionData scroll_transition_y = 8;
+  // optional .CMsgTransitionData scroll_transition_y = 9;
   inline bool has_scroll_transition_y() const;
   inline void clear_scroll_transition_y();
-  static const int kScrollTransitionYFieldNumber = 8;
+  static const int kScrollTransitionYFieldNumber = 9;
   inline const ::CMsgTransitionData& scroll_transition_y() const;
   inline ::CMsgTransitionData* mutable_scroll_transition_y();
   inline ::CMsgTransitionData* release_scroll_transition_y();
@@ -4907,6 +5113,8 @@ class CMsgPanelPosition : public ::google::protobuf::Message {
   inline void clear_has_transition();
   inline void set_has_transition_data();
   inline void clear_has_transition_data();
+  inline void set_has_style_symbol();
+  inline void clear_has_style_symbol();
   inline void set_has_scroll_offset();
   inline void clear_has_scroll_offset();
   inline void set_has_scroll_offset_target();
@@ -4928,6 +5136,7 @@ class CMsgPanelPosition : public ::google::protobuf::Message {
   ::CMsgPoint* scroll_offset_target_;
   ::CMsgTransitionData* scroll_transition_x_;
   ::CMsgTransitionData* scroll_transition_y_;
+  ::google::protobuf::uint32 style_symbol_;
   friend void  protobuf_AddDesc_rendermessages_2eproto();
   friend void protobuf_AssignDesc_rendermessages_2eproto();
   friend void protobuf_ShutdownFile_rendermessages_2eproto();
@@ -5094,10 +5303,17 @@ class CMsgOpacity : public ::google::protobuf::Message {
   inline ::CMsgTransitionData* release_transition_data();
   inline void set_allocated_transition_data(::CMsgTransitionData* transition_data);
 
-  // repeated .CMsgAnimationData animations = 4;
+  // optional uint32 style_symbol = 4;
+  inline bool has_style_symbol() const;
+  inline void clear_style_symbol();
+  static const int kStyleSymbolFieldNumber = 4;
+  inline ::google::protobuf::uint32 style_symbol() const;
+  inline void set_style_symbol(::google::protobuf::uint32 value);
+
+  // repeated .CMsgAnimationData animations = 5;
   inline int animations_size() const;
   inline void clear_animations();
-  static const int kAnimationsFieldNumber = 4;
+  static const int kAnimationsFieldNumber = 5;
   inline const ::CMsgAnimationData& animations(int index) const;
   inline ::CMsgAnimationData* mutable_animations(int index);
   inline ::CMsgAnimationData* add_animations();
@@ -5118,6 +5334,8 @@ class CMsgOpacity : public ::google::protobuf::Message {
   inline void clear_has_transition();
   inline void set_has_transition_data();
   inline void clear_has_transition_data();
+  inline void set_has_style_symbol();
+  inline void clear_has_style_symbol();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
@@ -5127,6 +5345,7 @@ class CMsgOpacity : public ::google::protobuf::Message {
   double transition_;
   ::CMsgTransitionData* transition_data_;
   ::google::protobuf::RepeatedPtrField< ::CMsgAnimationData > animations_;
+  ::google::protobuf::uint32 style_symbol_;
   friend void  protobuf_AddDesc_rendermessages_2eproto();
   friend void protobuf_AssignDesc_rendermessages_2eproto();
   friend void protobuf_ShutdownFile_rendermessages_2eproto();
@@ -5293,10 +5512,17 @@ class CMsgRotate2D : public ::google::protobuf::Message {
   inline ::CMsgTransitionData* release_transition_data();
   inline void set_allocated_transition_data(::CMsgTransitionData* transition_data);
 
-  // repeated .CMsgAnimationData animations = 4;
+  // optional uint32 style_symbol = 4;
+  inline bool has_style_symbol() const;
+  inline void clear_style_symbol();
+  static const int kStyleSymbolFieldNumber = 4;
+  inline ::google::protobuf::uint32 style_symbol() const;
+  inline void set_style_symbol(::google::protobuf::uint32 value);
+
+  // repeated .CMsgAnimationData animations = 5;
   inline int animations_size() const;
   inline void clear_animations();
-  static const int kAnimationsFieldNumber = 4;
+  static const int kAnimationsFieldNumber = 5;
   inline const ::CMsgAnimationData& animations(int index) const;
   inline ::CMsgAnimationData* mutable_animations(int index);
   inline ::CMsgAnimationData* add_animations();
@@ -5317,6 +5543,8 @@ class CMsgRotate2D : public ::google::protobuf::Message {
   inline void clear_has_transition();
   inline void set_has_transition_data();
   inline void clear_has_transition_data();
+  inline void set_has_style_symbol();
+  inline void clear_has_style_symbol();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
@@ -5326,6 +5554,7 @@ class CMsgRotate2D : public ::google::protobuf::Message {
   double transition_;
   ::CMsgTransitionData* transition_data_;
   ::google::protobuf::RepeatedPtrField< ::CMsgAnimationData > animations_;
+  ::google::protobuf::uint32 style_symbol_;
   friend void  protobuf_AddDesc_rendermessages_2eproto();
   friend void protobuf_AssignDesc_rendermessages_2eproto();
   friend void protobuf_ShutdownFile_rendermessages_2eproto();
@@ -5587,10 +5816,17 @@ class CMsgOpacityMask : public ::google::protobuf::Message {
   inline ::CMsgTransitionData* release_transition_data();
   inline void set_allocated_transition_data(::CMsgTransitionData* transition_data);
 
-  // repeated .CMsgAnimationData animations = 4;
+  // optional uint32 style_symbol = 4;
+  inline bool has_style_symbol() const;
+  inline void clear_style_symbol();
+  static const int kStyleSymbolFieldNumber = 4;
+  inline ::google::protobuf::uint32 style_symbol() const;
+  inline void set_style_symbol(::google::protobuf::uint32 value);
+
+  // repeated .CMsgAnimationData animations = 5;
   inline int animations_size() const;
   inline void clear_animations();
-  static const int kAnimationsFieldNumber = 4;
+  static const int kAnimationsFieldNumber = 5;
   inline const ::CMsgAnimationData& animations(int index) const;
   inline ::CMsgAnimationData* mutable_animations(int index);
   inline ::CMsgAnimationData* add_animations();
@@ -5611,6 +5847,8 @@ class CMsgOpacityMask : public ::google::protobuf::Message {
   inline void clear_has_transition();
   inline void set_has_transition_data();
   inline void clear_has_transition_data();
+  inline void set_has_style_symbol();
+  inline void clear_has_style_symbol();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
@@ -5620,6 +5858,7 @@ class CMsgOpacityMask : public ::google::protobuf::Message {
   ::CMsgOpacityMaskData* transition_;
   ::CMsgTransitionData* transition_data_;
   ::google::protobuf::RepeatedPtrField< ::CMsgAnimationData > animations_;
+  ::google::protobuf::uint32 style_symbol_;
   friend void  protobuf_AddDesc_rendermessages_2eproto();
   friend void protobuf_AssignDesc_rendermessages_2eproto();
   friend void protobuf_ShutdownFile_rendermessages_2eproto();
@@ -5786,10 +6025,17 @@ class CMsgHueShift : public ::google::protobuf::Message {
   inline ::CMsgTransitionData* release_transition_data();
   inline void set_allocated_transition_data(::CMsgTransitionData* transition_data);
 
-  // repeated .CMsgAnimationData animations = 4;
+  // optional uint32 style_symbol = 4;
+  inline bool has_style_symbol() const;
+  inline void clear_style_symbol();
+  static const int kStyleSymbolFieldNumber = 4;
+  inline ::google::protobuf::uint32 style_symbol() const;
+  inline void set_style_symbol(::google::protobuf::uint32 value);
+
+  // repeated .CMsgAnimationData animations = 5;
   inline int animations_size() const;
   inline void clear_animations();
-  static const int kAnimationsFieldNumber = 4;
+  static const int kAnimationsFieldNumber = 5;
   inline const ::CMsgAnimationData& animations(int index) const;
   inline ::CMsgAnimationData* mutable_animations(int index);
   inline ::CMsgAnimationData* add_animations();
@@ -5810,6 +6056,8 @@ class CMsgHueShift : public ::google::protobuf::Message {
   inline void clear_has_transition();
   inline void set_has_transition_data();
   inline void clear_has_transition_data();
+  inline void set_has_style_symbol();
+  inline void clear_has_style_symbol();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
@@ -5819,6 +6067,7 @@ class CMsgHueShift : public ::google::protobuf::Message {
   double transition_;
   ::CMsgTransitionData* transition_data_;
   ::google::protobuf::RepeatedPtrField< ::CMsgAnimationData > animations_;
+  ::google::protobuf::uint32 style_symbol_;
   friend void  protobuf_AddDesc_rendermessages_2eproto();
   friend void protobuf_AssignDesc_rendermessages_2eproto();
   friend void protobuf_ShutdownFile_rendermessages_2eproto();
@@ -5985,10 +6234,17 @@ class CMsgSaturation : public ::google::protobuf::Message {
   inline ::CMsgTransitionData* release_transition_data();
   inline void set_allocated_transition_data(::CMsgTransitionData* transition_data);
 
-  // repeated .CMsgAnimationData animations = 4;
+  // optional uint32 style_symbol = 4;
+  inline bool has_style_symbol() const;
+  inline void clear_style_symbol();
+  static const int kStyleSymbolFieldNumber = 4;
+  inline ::google::protobuf::uint32 style_symbol() const;
+  inline void set_style_symbol(::google::protobuf::uint32 value);
+
+  // repeated .CMsgAnimationData animations = 5;
   inline int animations_size() const;
   inline void clear_animations();
-  static const int kAnimationsFieldNumber = 4;
+  static const int kAnimationsFieldNumber = 5;
   inline const ::CMsgAnimationData& animations(int index) const;
   inline ::CMsgAnimationData* mutable_animations(int index);
   inline ::CMsgAnimationData* add_animations();
@@ -6009,6 +6265,8 @@ class CMsgSaturation : public ::google::protobuf::Message {
   inline void clear_has_transition();
   inline void set_has_transition_data();
   inline void clear_has_transition_data();
+  inline void set_has_style_symbol();
+  inline void clear_has_style_symbol();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
@@ -6018,6 +6276,7 @@ class CMsgSaturation : public ::google::protobuf::Message {
   double transition_;
   ::CMsgTransitionData* transition_data_;
   ::google::protobuf::RepeatedPtrField< ::CMsgAnimationData > animations_;
+  ::google::protobuf::uint32 style_symbol_;
   friend void  protobuf_AddDesc_rendermessages_2eproto();
   friend void protobuf_AssignDesc_rendermessages_2eproto();
   friend void protobuf_ShutdownFile_rendermessages_2eproto();
@@ -6184,10 +6443,17 @@ class CMsgBrightness : public ::google::protobuf::Message {
   inline ::CMsgTransitionData* release_transition_data();
   inline void set_allocated_transition_data(::CMsgTransitionData* transition_data);
 
-  // repeated .CMsgAnimationData animations = 4;
+  // optional uint32 style_symbol = 4;
+  inline bool has_style_symbol() const;
+  inline void clear_style_symbol();
+  static const int kStyleSymbolFieldNumber = 4;
+  inline ::google::protobuf::uint32 style_symbol() const;
+  inline void set_style_symbol(::google::protobuf::uint32 value);
+
+  // repeated .CMsgAnimationData animations = 5;
   inline int animations_size() const;
   inline void clear_animations();
-  static const int kAnimationsFieldNumber = 4;
+  static const int kAnimationsFieldNumber = 5;
   inline const ::CMsgAnimationData& animations(int index) const;
   inline ::CMsgAnimationData* mutable_animations(int index);
   inline ::CMsgAnimationData* add_animations();
@@ -6208,6 +6474,8 @@ class CMsgBrightness : public ::google::protobuf::Message {
   inline void clear_has_transition();
   inline void set_has_transition_data();
   inline void clear_has_transition_data();
+  inline void set_has_style_symbol();
+  inline void clear_has_style_symbol();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
@@ -6217,6 +6485,7 @@ class CMsgBrightness : public ::google::protobuf::Message {
   double transition_;
   ::CMsgTransitionData* transition_data_;
   ::google::protobuf::RepeatedPtrField< ::CMsgAnimationData > animations_;
+  ::google::protobuf::uint32 style_symbol_;
   friend void  protobuf_AddDesc_rendermessages_2eproto();
   friend void protobuf_AssignDesc_rendermessages_2eproto();
   friend void protobuf_ShutdownFile_rendermessages_2eproto();
@@ -6383,10 +6652,17 @@ class CMsgContrast : public ::google::protobuf::Message {
   inline ::CMsgTransitionData* release_transition_data();
   inline void set_allocated_transition_data(::CMsgTransitionData* transition_data);
 
-  // repeated .CMsgAnimationData animations = 4;
+  // optional uint32 style_symbol = 4;
+  inline bool has_style_symbol() const;
+  inline void clear_style_symbol();
+  static const int kStyleSymbolFieldNumber = 4;
+  inline ::google::protobuf::uint32 style_symbol() const;
+  inline void set_style_symbol(::google::protobuf::uint32 value);
+
+  // repeated .CMsgAnimationData animations = 5;
   inline int animations_size() const;
   inline void clear_animations();
-  static const int kAnimationsFieldNumber = 4;
+  static const int kAnimationsFieldNumber = 5;
   inline const ::CMsgAnimationData& animations(int index) const;
   inline ::CMsgAnimationData* mutable_animations(int index);
   inline ::CMsgAnimationData* add_animations();
@@ -6407,6 +6683,8 @@ class CMsgContrast : public ::google::protobuf::Message {
   inline void clear_has_transition();
   inline void set_has_transition_data();
   inline void clear_has_transition_data();
+  inline void set_has_style_symbol();
+  inline void clear_has_style_symbol();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
@@ -6416,6 +6694,7 @@ class CMsgContrast : public ::google::protobuf::Message {
   double transition_;
   ::CMsgTransitionData* transition_data_;
   ::google::protobuf::RepeatedPtrField< ::CMsgAnimationData > animations_;
+  ::google::protobuf::uint32 style_symbol_;
   friend void  protobuf_AddDesc_rendermessages_2eproto();
   friend void protobuf_AssignDesc_rendermessages_2eproto();
   friend void protobuf_ShutdownFile_rendermessages_2eproto();
@@ -6687,10 +6966,17 @@ class CMsgGaussianBlur : public ::google::protobuf::Message {
   inline ::CMsgTransitionData* release_transition_data();
   inline void set_allocated_transition_data(::CMsgTransitionData* transition_data);
 
-  // repeated .CMsgAnimationData animations = 4;
+  // optional uint32 style_symbol = 4;
+  inline bool has_style_symbol() const;
+  inline void clear_style_symbol();
+  static const int kStyleSymbolFieldNumber = 4;
+  inline ::google::protobuf::uint32 style_symbol() const;
+  inline void set_style_symbol(::google::protobuf::uint32 value);
+
+  // repeated .CMsgAnimationData animations = 5;
   inline int animations_size() const;
   inline void clear_animations();
-  static const int kAnimationsFieldNumber = 4;
+  static const int kAnimationsFieldNumber = 5;
   inline const ::CMsgAnimationData& animations(int index) const;
   inline ::CMsgAnimationData* mutable_animations(int index);
   inline ::CMsgAnimationData* add_animations();
@@ -6711,6 +6997,8 @@ class CMsgGaussianBlur : public ::google::protobuf::Message {
   inline void clear_has_transition();
   inline void set_has_transition_data();
   inline void clear_has_transition_data();
+  inline void set_has_style_symbol();
+  inline void clear_has_style_symbol();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
@@ -6720,6 +7008,7 @@ class CMsgGaussianBlur : public ::google::protobuf::Message {
   ::CMsgGaussianValues* transition_;
   ::CMsgTransitionData* transition_data_;
   ::google::protobuf::RepeatedPtrField< ::CMsgAnimationData > animations_;
+  ::google::protobuf::uint32 style_symbol_;
   friend void  protobuf_AddDesc_rendermessages_2eproto();
   friend void protobuf_AssignDesc_rendermessages_2eproto();
   friend void protobuf_ShutdownFile_rendermessages_2eproto();
@@ -6886,10 +7175,17 @@ class CMsg3DTransformPerspective : public ::google::protobuf::Message {
   inline ::CMsgTransitionData* release_transition_data();
   inline void set_allocated_transition_data(::CMsgTransitionData* transition_data);
 
-  // repeated .CMsgAnimationData animations = 4;
+  // optional uint32 style_symbol = 4;
+  inline bool has_style_symbol() const;
+  inline void clear_style_symbol();
+  static const int kStyleSymbolFieldNumber = 4;
+  inline ::google::protobuf::uint32 style_symbol() const;
+  inline void set_style_symbol(::google::protobuf::uint32 value);
+
+  // repeated .CMsgAnimationData animations = 5;
   inline int animations_size() const;
   inline void clear_animations();
-  static const int kAnimationsFieldNumber = 4;
+  static const int kAnimationsFieldNumber = 5;
   inline const ::CMsgAnimationData& animations(int index) const;
   inline ::CMsgAnimationData* mutable_animations(int index);
   inline ::CMsgAnimationData* add_animations();
@@ -6910,6 +7206,8 @@ class CMsg3DTransformPerspective : public ::google::protobuf::Message {
   inline void clear_has_transition();
   inline void set_has_transition_data();
   inline void clear_has_transition_data();
+  inline void set_has_style_symbol();
+  inline void clear_has_style_symbol();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
@@ -6919,6 +7217,7 @@ class CMsg3DTransformPerspective : public ::google::protobuf::Message {
   double transition_;
   ::CMsgTransitionData* transition_data_;
   ::google::protobuf::RepeatedPtrField< ::CMsgAnimationData > animations_;
+  ::google::protobuf::uint32 style_symbol_;
   friend void  protobuf_AddDesc_rendermessages_2eproto();
   friend void protobuf_AssignDesc_rendermessages_2eproto();
   friend void protobuf_ShutdownFile_rendermessages_2eproto();
@@ -7091,10 +7390,17 @@ class CMsg3DTransformPerspectiveOrigin : public ::google::protobuf::Message {
   inline ::CMsgTransitionData* release_transition_data();
   inline void set_allocated_transition_data(::CMsgTransitionData* transition_data);
 
-  // repeated .CMsgAnimationData animations = 4;
+  // optional uint32 style_symbol = 4;
+  inline bool has_style_symbol() const;
+  inline void clear_style_symbol();
+  static const int kStyleSymbolFieldNumber = 4;
+  inline ::google::protobuf::uint32 style_symbol() const;
+  inline void set_style_symbol(::google::protobuf::uint32 value);
+
+  // repeated .CMsgAnimationData animations = 5;
   inline int animations_size() const;
   inline void clear_animations();
-  static const int kAnimationsFieldNumber = 4;
+  static const int kAnimationsFieldNumber = 5;
   inline const ::CMsgAnimationData& animations(int index) const;
   inline ::CMsgAnimationData* mutable_animations(int index);
   inline ::CMsgAnimationData* add_animations();
@@ -7115,6 +7421,8 @@ class CMsg3DTransformPerspectiveOrigin : public ::google::protobuf::Message {
   inline void clear_has_transition();
   inline void set_has_transition_data();
   inline void clear_has_transition_data();
+  inline void set_has_style_symbol();
+  inline void clear_has_style_symbol();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
@@ -7124,6 +7432,7 @@ class CMsg3DTransformPerspectiveOrigin : public ::google::protobuf::Message {
   ::CMsgPoint* transition_;
   ::CMsgTransitionData* transition_data_;
   ::google::protobuf::RepeatedPtrField< ::CMsgAnimationData > animations_;
+  ::google::protobuf::uint32 style_symbol_;
   friend void  protobuf_AddDesc_rendermessages_2eproto();
   friend void protobuf_AssignDesc_rendermessages_2eproto();
   friend void protobuf_ShutdownFile_rendermessages_2eproto();
@@ -7415,10 +7724,17 @@ class CMsg3DTransformOrigin : public ::google::protobuf::Message {
   inline ::CMsgTransitionData* release_transition_data();
   inline void set_allocated_transition_data(::CMsgTransitionData* transition_data);
 
-  // repeated .CMsgAnimationData animations = 4;
+  // optional uint32 style_symbol = 4;
+  inline bool has_style_symbol() const;
+  inline void clear_style_symbol();
+  static const int kStyleSymbolFieldNumber = 4;
+  inline ::google::protobuf::uint32 style_symbol() const;
+  inline void set_style_symbol(::google::protobuf::uint32 value);
+
+  // repeated .CMsgAnimationData animations = 5;
   inline int animations_size() const;
   inline void clear_animations();
-  static const int kAnimationsFieldNumber = 4;
+  static const int kAnimationsFieldNumber = 5;
   inline const ::CMsgAnimationData& animations(int index) const;
   inline ::CMsgAnimationData* mutable_animations(int index);
   inline ::CMsgAnimationData* add_animations();
@@ -7439,6 +7755,8 @@ class CMsg3DTransformOrigin : public ::google::protobuf::Message {
   inline void clear_has_transition();
   inline void set_has_transition_data();
   inline void clear_has_transition_data();
+  inline void set_has_style_symbol();
+  inline void clear_has_style_symbol();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
@@ -7448,6 +7766,7 @@ class CMsg3DTransformOrigin : public ::google::protobuf::Message {
   ::CMsgTransformOriginData* transition_;
   ::CMsgTransitionData* transition_data_;
   ::google::protobuf::RepeatedPtrField< ::CMsgAnimationData > animations_;
+  ::google::protobuf::uint32 style_symbol_;
   friend void  protobuf_AddDesc_rendermessages_2eproto();
   friend void protobuf_AssignDesc_rendermessages_2eproto();
   friend void protobuf_ShutdownFile_rendermessages_2eproto();
@@ -7620,10 +7939,17 @@ class CMsg3DTransformMatrix : public ::google::protobuf::Message {
   inline ::CMsgMatrix4x4* release_transition();
   inline void set_allocated_transition(::CMsgMatrix4x4* transition);
 
-  // repeated .CMsgAnimationData animations = 4;
+  // optional uint32 style_symbol = 4;
+  inline bool has_style_symbol() const;
+  inline void clear_style_symbol();
+  static const int kStyleSymbolFieldNumber = 4;
+  inline ::google::protobuf::uint32 style_symbol() const;
+  inline void set_style_symbol(::google::protobuf::uint32 value);
+
+  // repeated .CMsgAnimationData animations = 5;
   inline int animations_size() const;
   inline void clear_animations();
-  static const int kAnimationsFieldNumber = 4;
+  static const int kAnimationsFieldNumber = 5;
   inline const ::CMsgAnimationData& animations(int index) const;
   inline ::CMsgAnimationData* mutable_animations(int index);
   inline ::CMsgAnimationData* add_animations();
@@ -7644,6 +7970,8 @@ class CMsg3DTransformMatrix : public ::google::protobuf::Message {
   inline void clear_has_transition_data();
   inline void set_has_transition();
   inline void clear_has_transition();
+  inline void set_has_style_symbol();
+  inline void clear_has_style_symbol();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
@@ -7653,6 +7981,7 @@ class CMsg3DTransformMatrix : public ::google::protobuf::Message {
   ::CMsgTransitionData* transition_data_;
   ::CMsgMatrix4x4* transition_;
   ::google::protobuf::RepeatedPtrField< ::CMsgAnimationData > animations_;
+  ::google::protobuf::uint32 style_symbol_;
   friend void  protobuf_AddDesc_rendermessages_2eproto();
   friend void protobuf_AssignDesc_rendermessages_2eproto();
   friend void protobuf_ShutdownFile_rendermessages_2eproto();
@@ -7825,10 +8154,17 @@ class CMsgBorderRadius : public ::google::protobuf::Message {
   inline ::CRadiusData* release_transition();
   inline void set_allocated_transition(::CRadiusData* transition);
 
-  // repeated .CMsgAnimationData animations = 4;
+  // optional uint32 style_symbol = 4;
+  inline bool has_style_symbol() const;
+  inline void clear_style_symbol();
+  static const int kStyleSymbolFieldNumber = 4;
+  inline ::google::protobuf::uint32 style_symbol() const;
+  inline void set_style_symbol(::google::protobuf::uint32 value);
+
+  // repeated .CMsgAnimationData animations = 5;
   inline int animations_size() const;
   inline void clear_animations();
-  static const int kAnimationsFieldNumber = 4;
+  static const int kAnimationsFieldNumber = 5;
   inline const ::CMsgAnimationData& animations(int index) const;
   inline ::CMsgAnimationData* mutable_animations(int index);
   inline ::CMsgAnimationData* add_animations();
@@ -7849,6 +8185,8 @@ class CMsgBorderRadius : public ::google::protobuf::Message {
   inline void clear_has_transition_data();
   inline void set_has_transition();
   inline void clear_has_transition();
+  inline void set_has_style_symbol();
+  inline void clear_has_style_symbol();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
@@ -7858,6 +8196,7 @@ class CMsgBorderRadius : public ::google::protobuf::Message {
   ::CMsgTransitionData* transition_data_;
   ::CRadiusData* transition_;
   ::google::protobuf::RepeatedPtrField< ::CMsgAnimationData > animations_;
+  ::google::protobuf::uint32 style_symbol_;
   friend void  protobuf_AddDesc_rendermessages_2eproto();
   friend void protobuf_AssignDesc_rendermessages_2eproto();
   friend void protobuf_ShutdownFile_rendermessages_2eproto();
@@ -8030,10 +8369,17 @@ class CMsgBorder : public ::google::protobuf::Message {
   inline ::CBorderData* release_transition();
   inline void set_allocated_transition(::CBorderData* transition);
 
-  // repeated .CMsgAnimationData animations = 4;
+  // optional uint32 style_symbol = 4;
+  inline bool has_style_symbol() const;
+  inline void clear_style_symbol();
+  static const int kStyleSymbolFieldNumber = 4;
+  inline ::google::protobuf::uint32 style_symbol() const;
+  inline void set_style_symbol(::google::protobuf::uint32 value);
+
+  // repeated .CMsgAnimationData animations = 5;
   inline int animations_size() const;
   inline void clear_animations();
-  static const int kAnimationsFieldNumber = 4;
+  static const int kAnimationsFieldNumber = 5;
   inline const ::CMsgAnimationData& animations(int index) const;
   inline ::CMsgAnimationData* mutable_animations(int index);
   inline ::CMsgAnimationData* add_animations();
@@ -8054,6 +8400,8 @@ class CMsgBorder : public ::google::protobuf::Message {
   inline void clear_has_transition_data();
   inline void set_has_transition();
   inline void clear_has_transition();
+  inline void set_has_style_symbol();
+  inline void clear_has_style_symbol();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
@@ -8063,6 +8411,7 @@ class CMsgBorder : public ::google::protobuf::Message {
   ::CMsgTransitionData* transition_data_;
   ::CBorderData* transition_;
   ::google::protobuf::RepeatedPtrField< ::CMsgAnimationData > animations_;
+  ::google::protobuf::uint32 style_symbol_;
   friend void  protobuf_AddDesc_rendermessages_2eproto();
   friend void protobuf_AssignDesc_rendermessages_2eproto();
   friend void protobuf_ShutdownFile_rendermessages_2eproto();
@@ -8235,10 +8584,17 @@ class CMsgBoxShadow : public ::google::protobuf::Message {
   inline ::CBoxShadowData* release_transition();
   inline void set_allocated_transition(::CBoxShadowData* transition);
 
-  // repeated .CMsgAnimationData animations = 4;
+  // optional uint32 style_symbol = 4;
+  inline bool has_style_symbol() const;
+  inline void clear_style_symbol();
+  static const int kStyleSymbolFieldNumber = 4;
+  inline ::google::protobuf::uint32 style_symbol() const;
+  inline void set_style_symbol(::google::protobuf::uint32 value);
+
+  // repeated .CMsgAnimationData animations = 5;
   inline int animations_size() const;
   inline void clear_animations();
-  static const int kAnimationsFieldNumber = 4;
+  static const int kAnimationsFieldNumber = 5;
   inline const ::CMsgAnimationData& animations(int index) const;
   inline ::CMsgAnimationData* mutable_animations(int index);
   inline ::CMsgAnimationData* add_animations();
@@ -8259,6 +8615,8 @@ class CMsgBoxShadow : public ::google::protobuf::Message {
   inline void clear_has_transition_data();
   inline void set_has_transition();
   inline void clear_has_transition();
+  inline void set_has_style_symbol();
+  inline void clear_has_style_symbol();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
@@ -8268,6 +8626,7 @@ class CMsgBoxShadow : public ::google::protobuf::Message {
   ::CMsgTransitionData* transition_data_;
   ::CBoxShadowData* transition_;
   ::google::protobuf::RepeatedPtrField< ::CMsgAnimationData > animations_;
+  ::google::protobuf::uint32 style_symbol_;
   friend void  protobuf_AddDesc_rendermessages_2eproto();
   friend void protobuf_AssignDesc_rendermessages_2eproto();
   friend void protobuf_ShutdownFile_rendermessages_2eproto();
@@ -8440,10 +8799,17 @@ class CMsgTextShadow : public ::google::protobuf::Message {
   inline ::CTextShadowData* release_transition();
   inline void set_allocated_transition(::CTextShadowData* transition);
 
-  // repeated .CMsgAnimationData animations = 4;
+  // optional uint32 style_symbol = 4;
+  inline bool has_style_symbol() const;
+  inline void clear_style_symbol();
+  static const int kStyleSymbolFieldNumber = 4;
+  inline ::google::protobuf::uint32 style_symbol() const;
+  inline void set_style_symbol(::google::protobuf::uint32 value);
+
+  // repeated .CMsgAnimationData animations = 5;
   inline int animations_size() const;
   inline void clear_animations();
-  static const int kAnimationsFieldNumber = 4;
+  static const int kAnimationsFieldNumber = 5;
   inline const ::CMsgAnimationData& animations(int index) const;
   inline ::CMsgAnimationData* mutable_animations(int index);
   inline ::CMsgAnimationData* add_animations();
@@ -8464,6 +8830,8 @@ class CMsgTextShadow : public ::google::protobuf::Message {
   inline void clear_has_transition_data();
   inline void set_has_transition();
   inline void clear_has_transition();
+  inline void set_has_style_symbol();
+  inline void clear_has_style_symbol();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
@@ -8473,6 +8841,7 @@ class CMsgTextShadow : public ::google::protobuf::Message {
   ::CMsgTransitionData* transition_data_;
   ::CTextShadowData* transition_;
   ::google::protobuf::RepeatedPtrField< ::CMsgAnimationData > animations_;
+  ::google::protobuf::uint32 style_symbol_;
   friend void  protobuf_AddDesc_rendermessages_2eproto();
   friend void protobuf_AssignDesc_rendermessages_2eproto();
   friend void protobuf_ShutdownFile_rendermessages_2eproto();
@@ -8645,10 +9014,17 @@ class CMsgClip : public ::google::protobuf::Message {
   inline ::CMsgClipData* release_transition();
   inline void set_allocated_transition(::CMsgClipData* transition);
 
-  // repeated .CMsgAnimationData animations = 4;
+  // optional uint32 style_symbol = 4;
+  inline bool has_style_symbol() const;
+  inline void clear_style_symbol();
+  static const int kStyleSymbolFieldNumber = 4;
+  inline ::google::protobuf::uint32 style_symbol() const;
+  inline void set_style_symbol(::google::protobuf::uint32 value);
+
+  // repeated .CMsgAnimationData animations = 5;
   inline int animations_size() const;
   inline void clear_animations();
-  static const int kAnimationsFieldNumber = 4;
+  static const int kAnimationsFieldNumber = 5;
   inline const ::CMsgAnimationData& animations(int index) const;
   inline ::CMsgAnimationData* mutable_animations(int index);
   inline ::CMsgAnimationData* add_animations();
@@ -8669,6 +9045,8 @@ class CMsgClip : public ::google::protobuf::Message {
   inline void clear_has_transition_data();
   inline void set_has_transition();
   inline void clear_has_transition();
+  inline void set_has_style_symbol();
+  inline void clear_has_style_symbol();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
@@ -8678,6 +9056,7 @@ class CMsgClip : public ::google::protobuf::Message {
   ::CMsgTransitionData* transition_data_;
   ::CMsgClipData* transition_;
   ::google::protobuf::RepeatedPtrField< ::CMsgAnimationData > animations_;
+  ::google::protobuf::uint32 style_symbol_;
   friend void  protobuf_AddDesc_rendermessages_2eproto();
   friend void protobuf_AssignDesc_rendermessages_2eproto();
   friend void protobuf_ShutdownFile_rendermessages_2eproto();
@@ -8858,6 +9237,398 @@ class CMsgPopClipLayer : public ::google::protobuf::Message {
 
   void InitAsDefaultInstance();
   static CMsgPopClipLayer* default_instance_;
+};
+// -------------------------------------------------------------------
+
+class CMsgPushPanelContextInLayer : public ::google::protobuf::Message {
+ public:
+  CMsgPushPanelContextInLayer();
+  virtual ~CMsgPushPanelContextInLayer();
+
+  CMsgPushPanelContextInLayer(const CMsgPushPanelContextInLayer& from);
+
+  inline CMsgPushPanelContextInLayer& operator=(const CMsgPushPanelContextInLayer& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+    return _unknown_fields_;
+  }
+
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+    return &_unknown_fields_;
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const CMsgPushPanelContextInLayer& default_instance();
+
+  void Swap(CMsgPushPanelContextInLayer* other);
+
+  // implements Message ----------------------------------------------
+
+  CMsgPushPanelContextInLayer* New() const;
+  void CopyFrom(const ::google::protobuf::Message& from);
+  void MergeFrom(const ::google::protobuf::Message& from);
+  void CopyFrom(const CMsgPushPanelContextInLayer& from);
+  void MergeFrom(const CMsgPushPanelContextInLayer& from);
+  void Clear();
+  bool IsInitialized() const;
+
+  int ByteSize() const;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input);
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  int GetCachedSize() const { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const;
+  public:
+  ::google::protobuf::Metadata GetMetadata() const;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // optional double transform_m00 = 1;
+  inline bool has_transform_m00() const;
+  inline void clear_transform_m00();
+  static const int kTransformM00FieldNumber = 1;
+  inline double transform_m00() const;
+  inline void set_transform_m00(double value);
+
+  // optional double transform_m01 = 2;
+  inline bool has_transform_m01() const;
+  inline void clear_transform_m01();
+  static const int kTransformM01FieldNumber = 2;
+  inline double transform_m01() const;
+  inline void set_transform_m01(double value);
+
+  // optional double transform_m02 = 3;
+  inline bool has_transform_m02() const;
+  inline void clear_transform_m02();
+  static const int kTransformM02FieldNumber = 3;
+  inline double transform_m02() const;
+  inline void set_transform_m02(double value);
+
+  // optional double transform_m03 = 4;
+  inline bool has_transform_m03() const;
+  inline void clear_transform_m03();
+  static const int kTransformM03FieldNumber = 4;
+  inline double transform_m03() const;
+  inline void set_transform_m03(double value);
+
+  // optional double transform_m10 = 5;
+  inline bool has_transform_m10() const;
+  inline void clear_transform_m10();
+  static const int kTransformM10FieldNumber = 5;
+  inline double transform_m10() const;
+  inline void set_transform_m10(double value);
+
+  // optional double transform_m11 = 6;
+  inline bool has_transform_m11() const;
+  inline void clear_transform_m11();
+  static const int kTransformM11FieldNumber = 6;
+  inline double transform_m11() const;
+  inline void set_transform_m11(double value);
+
+  // optional double transform_m12 = 7;
+  inline bool has_transform_m12() const;
+  inline void clear_transform_m12();
+  static const int kTransformM12FieldNumber = 7;
+  inline double transform_m12() const;
+  inline void set_transform_m12(double value);
+
+  // optional double transform_m13 = 8;
+  inline bool has_transform_m13() const;
+  inline void clear_transform_m13();
+  static const int kTransformM13FieldNumber = 8;
+  inline double transform_m13() const;
+  inline void set_transform_m13(double value);
+
+  // optional double transform_m20 = 9;
+  inline bool has_transform_m20() const;
+  inline void clear_transform_m20();
+  static const int kTransformM20FieldNumber = 9;
+  inline double transform_m20() const;
+  inline void set_transform_m20(double value);
+
+  // optional double transform_m21 = 10;
+  inline bool has_transform_m21() const;
+  inline void clear_transform_m21();
+  static const int kTransformM21FieldNumber = 10;
+  inline double transform_m21() const;
+  inline void set_transform_m21(double value);
+
+  // optional double transform_m22 = 11;
+  inline bool has_transform_m22() const;
+  inline void clear_transform_m22();
+  static const int kTransformM22FieldNumber = 11;
+  inline double transform_m22() const;
+  inline void set_transform_m22(double value);
+
+  // optional double transform_m23 = 12;
+  inline bool has_transform_m23() const;
+  inline void clear_transform_m23();
+  static const int kTransformM23FieldNumber = 12;
+  inline double transform_m23() const;
+  inline void set_transform_m23(double value);
+
+  // optional double transform_m30 = 13;
+  inline bool has_transform_m30() const;
+  inline void clear_transform_m30();
+  static const int kTransformM30FieldNumber = 13;
+  inline double transform_m30() const;
+  inline void set_transform_m30(double value);
+
+  // optional double transform_m31 = 14;
+  inline bool has_transform_m31() const;
+  inline void clear_transform_m31();
+  static const int kTransformM31FieldNumber = 14;
+  inline double transform_m31() const;
+  inline void set_transform_m31(double value);
+
+  // optional double transform_m32 = 15;
+  inline bool has_transform_m32() const;
+  inline void clear_transform_m32();
+  static const int kTransformM32FieldNumber = 15;
+  inline double transform_m32() const;
+  inline void set_transform_m32(double value);
+
+  // optional double transform_m33 = 16;
+  inline bool has_transform_m33() const;
+  inline void clear_transform_m33();
+  static const int kTransformM33FieldNumber = 16;
+  inline double transform_m33() const;
+  inline void set_transform_m33(double value);
+
+  // optional .CBoxShadowData box_shadow = 17;
+  inline bool has_box_shadow() const;
+  inline void clear_box_shadow();
+  static const int kBoxShadowFieldNumber = 17;
+  inline const ::CBoxShadowData& box_shadow() const;
+  inline ::CBoxShadowData* mutable_box_shadow();
+  inline ::CBoxShadowData* release_box_shadow();
+  inline void set_allocated_box_shadow(::CBoxShadowData* box_shadow);
+
+  // optional double width = 18;
+  inline bool has_width() const;
+  inline void clear_width();
+  static const int kWidthFieldNumber = 18;
+  inline double width() const;
+  inline void set_width(double value);
+
+  // optional double height = 19;
+  inline bool has_height() const;
+  inline void clear_height();
+  static const int kHeightFieldNumber = 19;
+  inline double height() const;
+  inline void set_height(double value);
+
+  // optional double position_x = 20;
+  inline bool has_position_x() const;
+  inline void clear_position_x();
+  static const int kPositionXFieldNumber = 20;
+  inline double position_x() const;
+  inline void set_position_x(double value);
+
+  // optional double position_y = 21;
+  inline bool has_position_y() const;
+  inline void clear_position_y();
+  static const int kPositionYFieldNumber = 21;
+  inline double position_y() const;
+  inline void set_position_y(double value);
+
+  // optional double position_z = 22;
+  inline bool has_position_z() const;
+  inline void clear_position_z();
+  static const int kPositionZFieldNumber = 22;
+  inline double position_z() const;
+  inline void set_position_z(double value);
+
+  // optional .CBorderData border = 23;
+  inline bool has_border() const;
+  inline void clear_border();
+  static const int kBorderFieldNumber = 23;
+  inline const ::CBorderData& border() const;
+  inline ::CBorderData* mutable_border();
+  inline ::CBorderData* release_border();
+  inline void set_allocated_border(::CBorderData* border);
+
+  // optional double scroll_x = 24;
+  inline bool has_scroll_x() const;
+  inline void clear_scroll_x();
+  static const int kScrollXFieldNumber = 24;
+  inline double scroll_x() const;
+  inline void set_scroll_x(double value);
+
+  // optional double scroll_y = 25;
+  inline bool has_scroll_y() const;
+  inline void clear_scroll_y();
+  static const int kScrollYFieldNumber = 25;
+  inline double scroll_y() const;
+  inline void set_scroll_y(double value);
+
+  // @@protoc_insertion_point(class_scope:CMsgPushPanelContextInLayer)
+ private:
+  inline void set_has_transform_m00();
+  inline void clear_has_transform_m00();
+  inline void set_has_transform_m01();
+  inline void clear_has_transform_m01();
+  inline void set_has_transform_m02();
+  inline void clear_has_transform_m02();
+  inline void set_has_transform_m03();
+  inline void clear_has_transform_m03();
+  inline void set_has_transform_m10();
+  inline void clear_has_transform_m10();
+  inline void set_has_transform_m11();
+  inline void clear_has_transform_m11();
+  inline void set_has_transform_m12();
+  inline void clear_has_transform_m12();
+  inline void set_has_transform_m13();
+  inline void clear_has_transform_m13();
+  inline void set_has_transform_m20();
+  inline void clear_has_transform_m20();
+  inline void set_has_transform_m21();
+  inline void clear_has_transform_m21();
+  inline void set_has_transform_m22();
+  inline void clear_has_transform_m22();
+  inline void set_has_transform_m23();
+  inline void clear_has_transform_m23();
+  inline void set_has_transform_m30();
+  inline void clear_has_transform_m30();
+  inline void set_has_transform_m31();
+  inline void clear_has_transform_m31();
+  inline void set_has_transform_m32();
+  inline void clear_has_transform_m32();
+  inline void set_has_transform_m33();
+  inline void clear_has_transform_m33();
+  inline void set_has_box_shadow();
+  inline void clear_has_box_shadow();
+  inline void set_has_width();
+  inline void clear_has_width();
+  inline void set_has_height();
+  inline void clear_has_height();
+  inline void set_has_position_x();
+  inline void clear_has_position_x();
+  inline void set_has_position_y();
+  inline void clear_has_position_y();
+  inline void set_has_position_z();
+  inline void clear_has_position_z();
+  inline void set_has_border();
+  inline void clear_has_border();
+  inline void set_has_scroll_x();
+  inline void clear_has_scroll_x();
+  inline void set_has_scroll_y();
+  inline void clear_has_scroll_y();
+
+  ::google::protobuf::UnknownFieldSet _unknown_fields_;
+
+  ::google::protobuf::uint32 _has_bits_[1];
+  mutable int _cached_size_;
+  double transform_m00_;
+  double transform_m01_;
+  double transform_m02_;
+  double transform_m03_;
+  double transform_m10_;
+  double transform_m11_;
+  double transform_m12_;
+  double transform_m13_;
+  double transform_m20_;
+  double transform_m21_;
+  double transform_m22_;
+  double transform_m23_;
+  double transform_m30_;
+  double transform_m31_;
+  double transform_m32_;
+  double transform_m33_;
+  ::CBoxShadowData* box_shadow_;
+  double width_;
+  double height_;
+  double position_x_;
+  double position_y_;
+  double position_z_;
+  ::CBorderData* border_;
+  double scroll_x_;
+  double scroll_y_;
+  friend void  protobuf_AddDesc_rendermessages_2eproto();
+  friend void protobuf_AssignDesc_rendermessages_2eproto();
+  friend void protobuf_ShutdownFile_rendermessages_2eproto();
+
+  void InitAsDefaultInstance();
+  static CMsgPushPanelContextInLayer* default_instance_;
+};
+// -------------------------------------------------------------------
+
+class CMsgPopPanelContextInLayer : public ::google::protobuf::Message {
+ public:
+  CMsgPopPanelContextInLayer();
+  virtual ~CMsgPopPanelContextInLayer();
+
+  CMsgPopPanelContextInLayer(const CMsgPopPanelContextInLayer& from);
+
+  inline CMsgPopPanelContextInLayer& operator=(const CMsgPopPanelContextInLayer& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+    return _unknown_fields_;
+  }
+
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+    return &_unknown_fields_;
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const CMsgPopPanelContextInLayer& default_instance();
+
+  void Swap(CMsgPopPanelContextInLayer* other);
+
+  // implements Message ----------------------------------------------
+
+  CMsgPopPanelContextInLayer* New() const;
+  void CopyFrom(const ::google::protobuf::Message& from);
+  void MergeFrom(const ::google::protobuf::Message& from);
+  void CopyFrom(const CMsgPopPanelContextInLayer& from);
+  void MergeFrom(const CMsgPopPanelContextInLayer& from);
+  void Clear();
+  bool IsInitialized() const;
+
+  int ByteSize() const;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input);
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  int GetCachedSize() const { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const;
+  public:
+  ::google::protobuf::Metadata GetMetadata() const;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // @@protoc_insertion_point(class_scope:CMsgPopPanelContextInLayer)
+ private:
+
+  ::google::protobuf::UnknownFieldSet _unknown_fields_;
+
+  ::google::protobuf::uint32 _has_bits_[1];
+  mutable int _cached_size_;
+  friend void  protobuf_AddDesc_rendermessages_2eproto();
+  friend void protobuf_AssignDesc_rendermessages_2eproto();
+  friend void protobuf_ShutdownFile_rendermessages_2eproto();
+
+  void InitAsDefaultInstance();
+  static CMsgPopPanelContextInLayer* default_instance_;
 };
 // -------------------------------------------------------------------
 
@@ -9143,26 +9914,73 @@ class CMsgPushAAndTContext : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 needs_full_repaint() const;
   inline void set_needs_full_repaint(::google::protobuf::int32 value);
 
-  // optional bool wants_hit_test = 29;
+  // optional bool needs_intermediate_texture = 29;
+  inline bool has_needs_intermediate_texture() const;
+  inline void clear_needs_intermediate_texture();
+  static const int kNeedsIntermediateTextureFieldNumber = 29;
+  inline bool needs_intermediate_texture() const;
+  inline void set_needs_intermediate_texture(bool value);
+
+  // optional bool clip_after_transform = 30;
+  inline bool has_clip_after_transform() const;
+  inline void clear_clip_after_transform();
+  static const int kClipAfterTransformFieldNumber = 30;
+  inline bool clip_after_transform() const;
+  inline void set_clip_after_transform(bool value);
+
+  // optional bool wants_hit_test = 31;
   inline bool has_wants_hit_test() const;
   inline void clear_wants_hit_test();
-  static const int kWantsHitTestFieldNumber = 29;
+  static const int kWantsHitTestFieldNumber = 31;
   inline bool wants_hit_test() const;
   inline void set_wants_hit_test(bool value);
 
-  // optional uint32 mix_blend_mode = 30;
+  // optional bool wants_hit_test_children = 32;
+  inline bool has_wants_hit_test_children() const;
+  inline void clear_wants_hit_test_children();
+  static const int kWantsHitTestChildrenFieldNumber = 32;
+  inline bool wants_hit_test_children() const;
+  inline void set_wants_hit_test_children(bool value);
+
+  // optional uint32 mix_blend_mode = 33;
   inline bool has_mix_blend_mode() const;
   inline void clear_mix_blend_mode();
-  static const int kMixBlendModeFieldNumber = 30;
+  static const int kMixBlendModeFieldNumber = 33;
   inline ::google::protobuf::uint32 mix_blend_mode() const;
   inline void set_mix_blend_mode(::google::protobuf::uint32 value);
 
-  // optional bool opaque_background = 31;
+  // optional bool opaque_background = 34;
   inline bool has_opaque_background() const;
   inline void clear_opaque_background();
-  static const int kOpaqueBackgroundFieldNumber = 31;
+  static const int kOpaqueBackgroundFieldNumber = 34;
   inline bool opaque_background() const;
   inline void set_opaque_background(bool value);
+
+  // optional uint32 child_panel_count = 35;
+  inline bool has_child_panel_count() const;
+  inline void clear_child_panel_count();
+  static const int kChildPanelCountFieldNumber = 35;
+  inline ::google::protobuf::uint32 child_panel_count() const;
+  inline void set_child_panel_count(::google::protobuf::uint32 value);
+
+  // optional bool wants_screenspace_quad_output = 36;
+  inline bool has_wants_screenspace_quad_output() const;
+  inline void clear_wants_screenspace_quad_output();
+  static const int kWantsScreenspaceQuadOutputFieldNumber = 36;
+  inline bool wants_screenspace_quad_output() const;
+  inline void set_wants_screenspace_quad_output(bool value);
+
+  // optional string composition_layer_texture_name = 38;
+  inline bool has_composition_layer_texture_name() const;
+  inline void clear_composition_layer_texture_name();
+  static const int kCompositionLayerTextureNameFieldNumber = 38;
+  inline const ::std::string& composition_layer_texture_name() const;
+  inline void set_composition_layer_texture_name(const ::std::string& value);
+  inline void set_composition_layer_texture_name(const char* value);
+  inline void set_composition_layer_texture_name(const char* value, size_t size);
+  inline ::std::string* mutable_composition_layer_texture_name();
+  inline ::std::string* release_composition_layer_texture_name();
+  inline void set_allocated_composition_layer_texture_name(::std::string* composition_layer_texture_name);
 
   // @@protoc_insertion_point(class_scope:CMsgPushAAndTContext)
  private:
@@ -9220,17 +10038,28 @@ class CMsgPushAAndTContext : public ::google::protobuf::Message {
   inline void clear_has_suppress_clip_to_bounds();
   inline void set_has_needs_full_repaint();
   inline void clear_has_needs_full_repaint();
+  inline void set_has_needs_intermediate_texture();
+  inline void clear_has_needs_intermediate_texture();
+  inline void set_has_clip_after_transform();
+  inline void clear_has_clip_after_transform();
   inline void set_has_wants_hit_test();
   inline void clear_has_wants_hit_test();
+  inline void set_has_wants_hit_test_children();
+  inline void clear_has_wants_hit_test_children();
   inline void set_has_mix_blend_mode();
   inline void clear_has_mix_blend_mode();
   inline void set_has_opaque_background();
   inline void clear_has_opaque_background();
+  inline void set_has_child_panel_count();
+  inline void clear_has_child_panel_count();
+  inline void set_has_wants_screenspace_quad_output();
+  inline void clear_has_wants_screenspace_quad_output();
+  inline void set_has_composition_layer_texture_name();
+  inline void clear_has_composition_layer_texture_name();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
-  ::google::protobuf::uint32 _has_bits_[1];
-  mutable int _cached_size_;
+  ::google::protobuf::uint32 _has_bits_[2];
   ::google::protobuf::uint64 context_id_;
   double width_;
   double height_;
@@ -9250,8 +10079,8 @@ class CMsgPushAAndTContext : public ::google::protobuf::Message {
   float zindex_;
   bool chilren_have_3dtransforms_;
   bool suppress_clip_to_bounds_;
-  bool wants_hit_test_;
-  bool opaque_background_;
+  bool needs_intermediate_texture_;
+  bool clip_after_transform_;
   ::CMsgGaussianBlur* gaussian_blur_;
   ::CMsgBorder* border_;
   ::CMsgBoxShadow* box_shadow_;
@@ -9261,6 +10090,13 @@ class CMsgPushAAndTContext : public ::google::protobuf::Message {
   ::CMsgClip* clip_;
   ::google::protobuf::int32 needs_full_repaint_;
   ::google::protobuf::uint32 mix_blend_mode_;
+  bool wants_hit_test_;
+  bool wants_hit_test_children_;
+  bool opaque_background_;
+  bool wants_screenspace_quad_output_;
+  ::google::protobuf::uint32 child_panel_count_;
+  ::std::string* composition_layer_texture_name_;
+  mutable int _cached_size_;
   friend void  protobuf_AddDesc_rendermessages_2eproto();
   friend void protobuf_AssignDesc_rendermessages_2eproto();
   friend void protobuf_ShutdownFile_rendermessages_2eproto();
@@ -9965,6 +10801,15 @@ class CMsgDrawTexturedRect : public ::google::protobuf::Message {
   inline ::google::protobuf::uint32 texture_sample_mode() const;
   inline void set_texture_sample_mode(::google::protobuf::uint32 value);
 
+  // optional .CMsgOpacity texture_opacity = 8;
+  inline bool has_texture_opacity() const;
+  inline void clear_texture_opacity();
+  static const int kTextureOpacityFieldNumber = 8;
+  inline const ::CMsgOpacity& texture_opacity() const;
+  inline ::CMsgOpacity* mutable_texture_opacity();
+  inline ::CMsgOpacity* release_texture_opacity();
+  inline void set_allocated_texture_opacity(::CMsgOpacity* texture_opacity);
+
   // @@protoc_insertion_point(class_scope:CMsgDrawTexturedRect)
  private:
   inline void set_has_top_left();
@@ -9981,6 +10826,8 @@ class CMsgDrawTexturedRect : public ::google::protobuf::Message {
   inline void clear_has_texture_serial();
   inline void set_has_texture_sample_mode();
   inline void clear_has_texture_sample_mode();
+  inline void set_has_texture_opacity();
+  inline void clear_has_texture_opacity();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
@@ -9992,6 +10839,7 @@ class CMsgDrawTexturedRect : public ::google::protobuf::Message {
   ::google::protobuf::uint32 texture_id_;
   ::google::protobuf::int32 texture_serial_;
   ::CMsgPoint* texture_bottom_right_;
+  ::CMsgOpacity* texture_opacity_;
   ::google::protobuf::uint32 texture_sample_mode_;
   friend void  protobuf_AddDesc_rendermessages_2eproto();
   friend void protobuf_AssignDesc_rendermessages_2eproto();
@@ -9999,260 +10847,6 @@ class CMsgDrawTexturedRect : public ::google::protobuf::Message {
 
   void InitAsDefaultInstance();
   static CMsgDrawTexturedRect* default_instance_;
-};
-// -------------------------------------------------------------------
-
-class CMsgDrawDoubleBufferedRect : public ::google::protobuf::Message {
- public:
-  CMsgDrawDoubleBufferedRect();
-  virtual ~CMsgDrawDoubleBufferedRect();
-
-  CMsgDrawDoubleBufferedRect(const CMsgDrawDoubleBufferedRect& from);
-
-  inline CMsgDrawDoubleBufferedRect& operator=(const CMsgDrawDoubleBufferedRect& from) {
-    CopyFrom(from);
-    return *this;
-  }
-
-  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
-    return _unknown_fields_;
-  }
-
-  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
-    return &_unknown_fields_;
-  }
-
-  static const ::google::protobuf::Descriptor* descriptor();
-  static const CMsgDrawDoubleBufferedRect& default_instance();
-
-  void Swap(CMsgDrawDoubleBufferedRect* other);
-
-  // implements Message ----------------------------------------------
-
-  CMsgDrawDoubleBufferedRect* New() const;
-  void CopyFrom(const ::google::protobuf::Message& from);
-  void MergeFrom(const ::google::protobuf::Message& from);
-  void CopyFrom(const CMsgDrawDoubleBufferedRect& from);
-  void MergeFrom(const CMsgDrawDoubleBufferedRect& from);
-  void Clear();
-  bool IsInitialized() const;
-
-  int ByteSize() const;
-  bool MergePartialFromCodedStream(
-      ::google::protobuf::io::CodedInputStream* input);
-  void SerializeWithCachedSizes(
-      ::google::protobuf::io::CodedOutputStream* output) const;
-  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
-  int GetCachedSize() const { return _cached_size_; }
-  private:
-  void SharedCtor();
-  void SharedDtor();
-  void SetCachedSize(int size) const;
-  public:
-  ::google::protobuf::Metadata GetMetadata() const;
-
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-
-  // optional .CMsgPoint top_left = 1;
-  inline bool has_top_left() const;
-  inline void clear_top_left();
-  static const int kTopLeftFieldNumber = 1;
-  inline const ::CMsgPoint& top_left() const;
-  inline ::CMsgPoint* mutable_top_left();
-  inline ::CMsgPoint* release_top_left();
-  inline void set_allocated_top_left(::CMsgPoint* top_left);
-
-  // optional .CMsgPoint bottom_right = 2;
-  inline bool has_bottom_right() const;
-  inline void clear_bottom_right();
-  static const int kBottomRightFieldNumber = 2;
-  inline const ::CMsgPoint& bottom_right() const;
-  inline ::CMsgPoint* mutable_bottom_right();
-  inline ::CMsgPoint* release_bottom_right();
-  inline void set_allocated_bottom_right(::CMsgPoint* bottom_right);
-
-  // optional uint32 texture_id = 3;
-  inline bool has_texture_id() const;
-  inline void clear_texture_id();
-  static const int kTextureIdFieldNumber = 3;
-  inline ::google::protobuf::uint32 texture_id() const;
-  inline void set_texture_id(::google::protobuf::uint32 value);
-
-  // optional .CMsgPoint texture_top_left = 4;
-  inline bool has_texture_top_left() const;
-  inline void clear_texture_top_left();
-  static const int kTextureTopLeftFieldNumber = 4;
-  inline const ::CMsgPoint& texture_top_left() const;
-  inline ::CMsgPoint* mutable_texture_top_left();
-  inline ::CMsgPoint* release_texture_top_left();
-  inline void set_allocated_texture_top_left(::CMsgPoint* texture_top_left);
-
-  // optional .CMsgPoint texture_bottom_right = 5;
-  inline bool has_texture_bottom_right() const;
-  inline void clear_texture_bottom_right();
-  static const int kTextureBottomRightFieldNumber = 5;
-  inline const ::CMsgPoint& texture_bottom_right() const;
-  inline ::CMsgPoint* mutable_texture_bottom_right();
-  inline ::CMsgPoint* release_texture_bottom_right();
-  inline void set_allocated_texture_bottom_right(::CMsgPoint* texture_bottom_right);
-
-  // @@protoc_insertion_point(class_scope:CMsgDrawDoubleBufferedRect)
- private:
-  inline void set_has_top_left();
-  inline void clear_has_top_left();
-  inline void set_has_bottom_right();
-  inline void clear_has_bottom_right();
-  inline void set_has_texture_id();
-  inline void clear_has_texture_id();
-  inline void set_has_texture_top_left();
-  inline void clear_has_texture_top_left();
-  inline void set_has_texture_bottom_right();
-  inline void clear_has_texture_bottom_right();
-
-  ::google::protobuf::UnknownFieldSet _unknown_fields_;
-
-  ::google::protobuf::uint32 _has_bits_[1];
-  mutable int _cached_size_;
-  ::CMsgPoint* top_left_;
-  ::CMsgPoint* bottom_right_;
-  ::CMsgPoint* texture_top_left_;
-  ::CMsgPoint* texture_bottom_right_;
-  ::google::protobuf::uint32 texture_id_;
-  friend void  protobuf_AddDesc_rendermessages_2eproto();
-  friend void protobuf_AssignDesc_rendermessages_2eproto();
-  friend void protobuf_ShutdownFile_rendermessages_2eproto();
-
-  void InitAsDefaultInstance();
-  static CMsgDrawDoubleBufferedRect* default_instance_;
-};
-// -------------------------------------------------------------------
-
-class CMsgDrawYUV420DoubleBufferedRect : public ::google::protobuf::Message {
- public:
-  CMsgDrawYUV420DoubleBufferedRect();
-  virtual ~CMsgDrawYUV420DoubleBufferedRect();
-
-  CMsgDrawYUV420DoubleBufferedRect(const CMsgDrawYUV420DoubleBufferedRect& from);
-
-  inline CMsgDrawYUV420DoubleBufferedRect& operator=(const CMsgDrawYUV420DoubleBufferedRect& from) {
-    CopyFrom(from);
-    return *this;
-  }
-
-  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
-    return _unknown_fields_;
-  }
-
-  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
-    return &_unknown_fields_;
-  }
-
-  static const ::google::protobuf::Descriptor* descriptor();
-  static const CMsgDrawYUV420DoubleBufferedRect& default_instance();
-
-  void Swap(CMsgDrawYUV420DoubleBufferedRect* other);
-
-  // implements Message ----------------------------------------------
-
-  CMsgDrawYUV420DoubleBufferedRect* New() const;
-  void CopyFrom(const ::google::protobuf::Message& from);
-  void MergeFrom(const ::google::protobuf::Message& from);
-  void CopyFrom(const CMsgDrawYUV420DoubleBufferedRect& from);
-  void MergeFrom(const CMsgDrawYUV420DoubleBufferedRect& from);
-  void Clear();
-  bool IsInitialized() const;
-
-  int ByteSize() const;
-  bool MergePartialFromCodedStream(
-      ::google::protobuf::io::CodedInputStream* input);
-  void SerializeWithCachedSizes(
-      ::google::protobuf::io::CodedOutputStream* output) const;
-  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
-  int GetCachedSize() const { return _cached_size_; }
-  private:
-  void SharedCtor();
-  void SharedDtor();
-  void SetCachedSize(int size) const;
-  public:
-  ::google::protobuf::Metadata GetMetadata() const;
-
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-
-  // optional .CMsgPoint top_left = 1;
-  inline bool has_top_left() const;
-  inline void clear_top_left();
-  static const int kTopLeftFieldNumber = 1;
-  inline const ::CMsgPoint& top_left() const;
-  inline ::CMsgPoint* mutable_top_left();
-  inline ::CMsgPoint* release_top_left();
-  inline void set_allocated_top_left(::CMsgPoint* top_left);
-
-  // optional .CMsgPoint bottom_right = 2;
-  inline bool has_bottom_right() const;
-  inline void clear_bottom_right();
-  static const int kBottomRightFieldNumber = 2;
-  inline const ::CMsgPoint& bottom_right() const;
-  inline ::CMsgPoint* mutable_bottom_right();
-  inline ::CMsgPoint* release_bottom_right();
-  inline void set_allocated_bottom_right(::CMsgPoint* bottom_right);
-
-  // optional uint32 texture_id = 3;
-  inline bool has_texture_id() const;
-  inline void clear_texture_id();
-  static const int kTextureIdFieldNumber = 3;
-  inline ::google::protobuf::uint32 texture_id() const;
-  inline void set_texture_id(::google::protobuf::uint32 value);
-
-  // optional .CMsgPoint texture_top_left = 4;
-  inline bool has_texture_top_left() const;
-  inline void clear_texture_top_left();
-  static const int kTextureTopLeftFieldNumber = 4;
-  inline const ::CMsgPoint& texture_top_left() const;
-  inline ::CMsgPoint* mutable_texture_top_left();
-  inline ::CMsgPoint* release_texture_top_left();
-  inline void set_allocated_texture_top_left(::CMsgPoint* texture_top_left);
-
-  // optional .CMsgPoint texture_bottom_right = 5;
-  inline bool has_texture_bottom_right() const;
-  inline void clear_texture_bottom_right();
-  static const int kTextureBottomRightFieldNumber = 5;
-  inline const ::CMsgPoint& texture_bottom_right() const;
-  inline ::CMsgPoint* mutable_texture_bottom_right();
-  inline ::CMsgPoint* release_texture_bottom_right();
-  inline void set_allocated_texture_bottom_right(::CMsgPoint* texture_bottom_right);
-
-  // @@protoc_insertion_point(class_scope:CMsgDrawYUV420DoubleBufferedRect)
- private:
-  inline void set_has_top_left();
-  inline void clear_has_top_left();
-  inline void set_has_bottom_right();
-  inline void clear_has_bottom_right();
-  inline void set_has_texture_id();
-  inline void clear_has_texture_id();
-  inline void set_has_texture_top_left();
-  inline void clear_has_texture_top_left();
-  inline void set_has_texture_bottom_right();
-  inline void clear_has_texture_bottom_right();
-
-  ::google::protobuf::UnknownFieldSet _unknown_fields_;
-
-  ::google::protobuf::uint32 _has_bits_[1];
-  mutable int _cached_size_;
-  ::CMsgPoint* top_left_;
-  ::CMsgPoint* bottom_right_;
-  ::CMsgPoint* texture_top_left_;
-  ::CMsgPoint* texture_bottom_right_;
-  ::google::protobuf::uint32 texture_id_;
-  friend void  protobuf_AddDesc_rendermessages_2eproto();
-  friend void protobuf_AssignDesc_rendermessages_2eproto();
-  friend void protobuf_ShutdownFile_rendermessages_2eproto();
-
-  void InitAsDefaultInstance();
-  static CMsgDrawYUV420DoubleBufferedRect* default_instance_;
 };
 // -------------------------------------------------------------------
 
@@ -10366,6 +10960,13 @@ class CMsgRenderTexturedRect : public ::google::protobuf::Message {
   inline ::google::protobuf::uint32 texture_sample_mode() const;
   inline void set_texture_sample_mode(::google::protobuf::uint32 value);
 
+  // optional float texture_opacity = 8 [default = 1];
+  inline bool has_texture_opacity() const;
+  inline void clear_texture_opacity();
+  static const int kTextureOpacityFieldNumber = 8;
+  inline float texture_opacity() const;
+  inline void set_texture_opacity(float value);
+
   // @@protoc_insertion_point(class_scope:CMsgRenderTexturedRect)
  private:
   inline void set_has_top_left();
@@ -10382,6 +10983,8 @@ class CMsgRenderTexturedRect : public ::google::protobuf::Message {
   inline void clear_has_texture_serial();
   inline void set_has_texture_sample_mode();
   inline void clear_has_texture_sample_mode();
+  inline void set_has_texture_opacity();
+  inline void clear_has_texture_opacity();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
@@ -10394,6 +10997,7 @@ class CMsgRenderTexturedRect : public ::google::protobuf::Message {
   ::google::protobuf::int32 texture_serial_;
   ::CMsgPoint* texture_bottom_right_;
   ::google::protobuf::uint32 texture_sample_mode_;
+  float texture_opacity_;
   friend void  protobuf_AddDesc_rendermessages_2eproto();
   friend void protobuf_AssignDesc_rendermessages_2eproto();
   friend void protobuf_ShutdownFile_rendermessages_2eproto();
@@ -11172,17 +11776,31 @@ class CMsgDrawTextRegion : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // optional bytes wtext = 2;
-  inline bool has_wtext() const;
-  inline void clear_wtext();
-  static const int kWtextFieldNumber = 2;
-  inline const ::std::string& wtext() const;
-  inline void set_wtext(const ::std::string& value);
-  inline void set_wtext(const char* value);
-  inline void set_wtext(const void* value, size_t size);
-  inline ::std::string* mutable_wtext();
-  inline ::std::string* release_wtext();
-  inline void set_allocated_wtext(::std::string* wtext);
+  // optional bytes raw_text = 11;
+  inline bool has_raw_text() const;
+  inline void clear_raw_text();
+  static const int kRawTextFieldNumber = 11;
+  inline const ::std::string& raw_text() const;
+  inline void set_raw_text(const ::std::string& value);
+  inline void set_raw_text(const char* value);
+  inline void set_raw_text(const void* value, size_t size);
+  inline ::std::string* mutable_raw_text();
+  inline ::std::string* release_raw_text();
+  inline void set_allocated_raw_text(::std::string* raw_text);
+
+  // optional int32 text_chars = 12;
+  inline bool has_text_chars() const;
+  inline void clear_text_chars();
+  static const int kTextCharsFieldNumber = 12;
+  inline ::google::protobuf::int32 text_chars() const;
+  inline void set_text_chars(::google::protobuf::int32 value);
+
+  // optional int32 text_encoding = 13;
+  inline bool has_text_encoding() const;
+  inline void clear_text_encoding();
+  static const int kTextEncodingFieldNumber = 13;
+  inline ::google::protobuf::int32 text_encoding() const;
+  inline void set_text_encoding(::google::protobuf::int32 value);
 
   // optional .CMsgTextFormat default_format = 3;
   inline bool has_default_format() const;
@@ -11253,8 +11871,12 @@ class CMsgDrawTextRegion : public ::google::protobuf::Message {
 
   // @@protoc_insertion_point(class_scope:CMsgDrawTextRegion)
  private:
-  inline void set_has_wtext();
-  inline void clear_has_wtext();
+  inline void set_has_raw_text();
+  inline void clear_has_raw_text();
+  inline void set_has_text_chars();
+  inline void clear_has_text_chars();
+  inline void set_has_text_encoding();
+  inline void clear_has_text_encoding();
   inline void set_has_default_format();
   inline void clear_has_default_format();
   inline void set_has_text_align();
@@ -11274,7 +11896,9 @@ class CMsgDrawTextRegion : public ::google::protobuf::Message {
 
   ::google::protobuf::uint32 _has_bits_[1];
   mutable int _cached_size_;
-  ::std::string* wtext_;
+  ::std::string* raw_text_;
+  ::google::protobuf::int32 text_chars_;
+  ::google::protobuf::int32 text_encoding_;
   ::CMsgTextFormat* default_format_;
   ::google::protobuf::uint32 text_align_;
   ::google::protobuf::uint32 line_height_;
@@ -11345,17 +11969,31 @@ class CMsgRenderTextRegion : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // optional bytes wtext = 2;
-  inline bool has_wtext() const;
-  inline void clear_wtext();
-  static const int kWtextFieldNumber = 2;
-  inline const ::std::string& wtext() const;
-  inline void set_wtext(const ::std::string& value);
-  inline void set_wtext(const char* value);
-  inline void set_wtext(const void* value, size_t size);
-  inline ::std::string* mutable_wtext();
-  inline ::std::string* release_wtext();
-  inline void set_allocated_wtext(::std::string* wtext);
+  // optional bytes raw_text = 12;
+  inline bool has_raw_text() const;
+  inline void clear_raw_text();
+  static const int kRawTextFieldNumber = 12;
+  inline const ::std::string& raw_text() const;
+  inline void set_raw_text(const ::std::string& value);
+  inline void set_raw_text(const char* value);
+  inline void set_raw_text(const void* value, size_t size);
+  inline ::std::string* mutable_raw_text();
+  inline ::std::string* release_raw_text();
+  inline void set_allocated_raw_text(::std::string* raw_text);
+
+  // optional int32 text_chars = 13;
+  inline bool has_text_chars() const;
+  inline void clear_text_chars();
+  static const int kTextCharsFieldNumber = 13;
+  inline ::google::protobuf::int32 text_chars() const;
+  inline void set_text_chars(::google::protobuf::int32 value);
+
+  // optional int32 text_encoding = 14;
+  inline bool has_text_encoding() const;
+  inline void clear_text_encoding();
+  static const int kTextEncodingFieldNumber = 14;
+  inline ::google::protobuf::int32 text_encoding() const;
+  inline void set_text_encoding(::google::protobuf::int32 value);
 
   // optional .CMsgRenderTextFormat default_format = 3;
   inline bool has_default_format() const;
@@ -11435,8 +12073,12 @@ class CMsgRenderTextRegion : public ::google::protobuf::Message {
 
   // @@protoc_insertion_point(class_scope:CMsgRenderTextRegion)
  private:
-  inline void set_has_wtext();
-  inline void clear_has_wtext();
+  inline void set_has_raw_text();
+  inline void clear_has_raw_text();
+  inline void set_has_text_chars();
+  inline void clear_has_text_chars();
+  inline void set_has_text_encoding();
+  inline void clear_has_text_encoding();
   inline void set_has_default_format();
   inline void clear_has_default_format();
   inline void set_has_text_align();
@@ -11458,7 +12100,9 @@ class CMsgRenderTextRegion : public ::google::protobuf::Message {
 
   ::google::protobuf::uint32 _has_bits_[1];
   mutable int _cached_size_;
-  ::std::string* wtext_;
+  ::std::string* raw_text_;
+  ::google::protobuf::int32 text_chars_;
+  ::google::protobuf::int32 text_encoding_;
   ::CMsgRenderTextFormat* default_format_;
   ::google::protobuf::uint32 text_align_;
   ::google::protobuf::uint32 line_height_;
@@ -13278,17 +13922,141 @@ inline void CTextShadowData::set_strength(double value) {
 
 // -------------------------------------------------------------------
 
-// CMsgClipData
+// CRadialClipData
 
-// optional double left = 1;
-inline bool CMsgClipData::has_left() const {
+// optional double center_x = 1;
+inline bool CRadialClipData::has_center_x() const {
   return (_has_bits_[0] & 0x00000001u) != 0;
 }
-inline void CMsgClipData::set_has_left() {
+inline void CRadialClipData::set_has_center_x() {
   _has_bits_[0] |= 0x00000001u;
 }
-inline void CMsgClipData::clear_has_left() {
+inline void CRadialClipData::clear_has_center_x() {
   _has_bits_[0] &= ~0x00000001u;
+}
+inline void CRadialClipData::clear_center_x() {
+  center_x_ = 0;
+  clear_has_center_x();
+}
+inline double CRadialClipData::center_x() const {
+  // @@protoc_insertion_point(field_get:CRadialClipData.center_x)
+  return center_x_;
+}
+inline void CRadialClipData::set_center_x(double value) {
+  set_has_center_x();
+  center_x_ = value;
+  // @@protoc_insertion_point(field_set:CRadialClipData.center_x)
+}
+
+// optional double center_y = 2;
+inline bool CRadialClipData::has_center_y() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+inline void CRadialClipData::set_has_center_y() {
+  _has_bits_[0] |= 0x00000002u;
+}
+inline void CRadialClipData::clear_has_center_y() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+inline void CRadialClipData::clear_center_y() {
+  center_y_ = 0;
+  clear_has_center_y();
+}
+inline double CRadialClipData::center_y() const {
+  // @@protoc_insertion_point(field_get:CRadialClipData.center_y)
+  return center_y_;
+}
+inline void CRadialClipData::set_center_y(double value) {
+  set_has_center_y();
+  center_y_ = value;
+  // @@protoc_insertion_point(field_set:CRadialClipData.center_y)
+}
+
+// optional double start_angle = 3;
+inline bool CRadialClipData::has_start_angle() const {
+  return (_has_bits_[0] & 0x00000004u) != 0;
+}
+inline void CRadialClipData::set_has_start_angle() {
+  _has_bits_[0] |= 0x00000004u;
+}
+inline void CRadialClipData::clear_has_start_angle() {
+  _has_bits_[0] &= ~0x00000004u;
+}
+inline void CRadialClipData::clear_start_angle() {
+  start_angle_ = 0;
+  clear_has_start_angle();
+}
+inline double CRadialClipData::start_angle() const {
+  // @@protoc_insertion_point(field_get:CRadialClipData.start_angle)
+  return start_angle_;
+}
+inline void CRadialClipData::set_start_angle(double value) {
+  set_has_start_angle();
+  start_angle_ = value;
+  // @@protoc_insertion_point(field_set:CRadialClipData.start_angle)
+}
+
+// optional double sector_angle = 4;
+inline bool CRadialClipData::has_sector_angle() const {
+  return (_has_bits_[0] & 0x00000008u) != 0;
+}
+inline void CRadialClipData::set_has_sector_angle() {
+  _has_bits_[0] |= 0x00000008u;
+}
+inline void CRadialClipData::clear_has_sector_angle() {
+  _has_bits_[0] &= ~0x00000008u;
+}
+inline void CRadialClipData::clear_sector_angle() {
+  sector_angle_ = 0;
+  clear_has_sector_angle();
+}
+inline double CRadialClipData::sector_angle() const {
+  // @@protoc_insertion_point(field_get:CRadialClipData.sector_angle)
+  return sector_angle_;
+}
+inline void CRadialClipData::set_sector_angle(double value) {
+  set_has_sector_angle();
+  sector_angle_ = value;
+  // @@protoc_insertion_point(field_set:CRadialClipData.sector_angle)
+}
+
+// -------------------------------------------------------------------
+
+// CMsgClipData
+
+// optional bool rect_clip = 1;
+inline bool CMsgClipData::has_rect_clip() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+inline void CMsgClipData::set_has_rect_clip() {
+  _has_bits_[0] |= 0x00000001u;
+}
+inline void CMsgClipData::clear_has_rect_clip() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+inline void CMsgClipData::clear_rect_clip() {
+  rect_clip_ = false;
+  clear_has_rect_clip();
+}
+inline bool CMsgClipData::rect_clip() const {
+  // @@protoc_insertion_point(field_get:CMsgClipData.rect_clip)
+  return rect_clip_;
+}
+inline void CMsgClipData::set_rect_clip(bool value) {
+  set_has_rect_clip();
+  rect_clip_ = value;
+  // @@protoc_insertion_point(field_set:CMsgClipData.rect_clip)
+}
+
+// optional double left = 2;
+inline bool CMsgClipData::has_left() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+inline void CMsgClipData::set_has_left() {
+  _has_bits_[0] |= 0x00000002u;
+}
+inline void CMsgClipData::clear_has_left() {
+  _has_bits_[0] &= ~0x00000002u;
 }
 inline void CMsgClipData::clear_left() {
   left_ = 0;
@@ -13304,15 +14072,15 @@ inline void CMsgClipData::set_left(double value) {
   // @@protoc_insertion_point(field_set:CMsgClipData.left)
 }
 
-// optional double top = 2;
+// optional double top = 3;
 inline bool CMsgClipData::has_top() const {
-  return (_has_bits_[0] & 0x00000002u) != 0;
+  return (_has_bits_[0] & 0x00000004u) != 0;
 }
 inline void CMsgClipData::set_has_top() {
-  _has_bits_[0] |= 0x00000002u;
+  _has_bits_[0] |= 0x00000004u;
 }
 inline void CMsgClipData::clear_has_top() {
-  _has_bits_[0] &= ~0x00000002u;
+  _has_bits_[0] &= ~0x00000004u;
 }
 inline void CMsgClipData::clear_top() {
   top_ = 0;
@@ -13328,15 +14096,15 @@ inline void CMsgClipData::set_top(double value) {
   // @@protoc_insertion_point(field_set:CMsgClipData.top)
 }
 
-// optional double right = 3;
+// optional double right = 4;
 inline bool CMsgClipData::has_right() const {
-  return (_has_bits_[0] & 0x00000004u) != 0;
+  return (_has_bits_[0] & 0x00000008u) != 0;
 }
 inline void CMsgClipData::set_has_right() {
-  _has_bits_[0] |= 0x00000004u;
+  _has_bits_[0] |= 0x00000008u;
 }
 inline void CMsgClipData::clear_has_right() {
-  _has_bits_[0] &= ~0x00000004u;
+  _has_bits_[0] &= ~0x00000008u;
 }
 inline void CMsgClipData::clear_right() {
   right_ = 0;
@@ -13352,15 +14120,15 @@ inline void CMsgClipData::set_right(double value) {
   // @@protoc_insertion_point(field_set:CMsgClipData.right)
 }
 
-// optional double bottom = 4;
+// optional double bottom = 5;
 inline bool CMsgClipData::has_bottom() const {
-  return (_has_bits_[0] & 0x00000008u) != 0;
+  return (_has_bits_[0] & 0x00000010u) != 0;
 }
 inline void CMsgClipData::set_has_bottom() {
-  _has_bits_[0] |= 0x00000008u;
+  _has_bits_[0] |= 0x00000010u;
 }
 inline void CMsgClipData::clear_has_bottom() {
-  _has_bits_[0] &= ~0x00000008u;
+  _has_bits_[0] &= ~0x00000010u;
 }
 inline void CMsgClipData::clear_bottom() {
   bottom_ = 0;
@@ -13374,6 +14142,47 @@ inline void CMsgClipData::set_bottom(double value) {
   set_has_bottom();
   bottom_ = value;
   // @@protoc_insertion_point(field_set:CMsgClipData.bottom)
+}
+
+// optional .CRadialClipData radial_clip = 6;
+inline bool CMsgClipData::has_radial_clip() const {
+  return (_has_bits_[0] & 0x00000020u) != 0;
+}
+inline void CMsgClipData::set_has_radial_clip() {
+  _has_bits_[0] |= 0x00000020u;
+}
+inline void CMsgClipData::clear_has_radial_clip() {
+  _has_bits_[0] &= ~0x00000020u;
+}
+inline void CMsgClipData::clear_radial_clip() {
+  if (radial_clip_ != NULL) radial_clip_->::CRadialClipData::Clear();
+  clear_has_radial_clip();
+}
+inline const ::CRadialClipData& CMsgClipData::radial_clip() const {
+  // @@protoc_insertion_point(field_get:CMsgClipData.radial_clip)
+  return radial_clip_ != NULL ? *radial_clip_ : *default_instance_->radial_clip_;
+}
+inline ::CRadialClipData* CMsgClipData::mutable_radial_clip() {
+  set_has_radial_clip();
+  if (radial_clip_ == NULL) radial_clip_ = new ::CRadialClipData;
+  // @@protoc_insertion_point(field_mutable:CMsgClipData.radial_clip)
+  return radial_clip_;
+}
+inline ::CRadialClipData* CMsgClipData::release_radial_clip() {
+  clear_has_radial_clip();
+  ::CRadialClipData* temp = radial_clip_;
+  radial_clip_ = NULL;
+  return temp;
+}
+inline void CMsgClipData::set_allocated_radial_clip(::CRadialClipData* radial_clip) {
+  delete radial_clip_;
+  radial_clip_ = radial_clip;
+  if (radial_clip) {
+    set_has_radial_clip();
+  } else {
+    clear_has_radial_clip();
+  }
+  // @@protoc_insertion_point(field_set_allocated:CMsgClipData.radial_clip)
 }
 
 // -------------------------------------------------------------------
@@ -14655,15 +15464,39 @@ inline void CMsgPushCompositingLayer::set_needs_depth(bool value) {
   // @@protoc_insertion_point(field_set:CMsgPushCompositingLayer.needs_depth)
 }
 
-// optional bool needs_redraw_every_frame = 52;
-inline bool CMsgPushCompositingLayer::has_needs_redraw_every_frame() const {
+// optional bool needs_intermediate_texture = 52;
+inline bool CMsgPushCompositingLayer::has_needs_intermediate_texture() const {
   return (_has_bits_[1] & 0x00080000u) != 0;
 }
-inline void CMsgPushCompositingLayer::set_has_needs_redraw_every_frame() {
+inline void CMsgPushCompositingLayer::set_has_needs_intermediate_texture() {
   _has_bits_[1] |= 0x00080000u;
 }
-inline void CMsgPushCompositingLayer::clear_has_needs_redraw_every_frame() {
+inline void CMsgPushCompositingLayer::clear_has_needs_intermediate_texture() {
   _has_bits_[1] &= ~0x00080000u;
+}
+inline void CMsgPushCompositingLayer::clear_needs_intermediate_texture() {
+  needs_intermediate_texture_ = false;
+  clear_has_needs_intermediate_texture();
+}
+inline bool CMsgPushCompositingLayer::needs_intermediate_texture() const {
+  // @@protoc_insertion_point(field_get:CMsgPushCompositingLayer.needs_intermediate_texture)
+  return needs_intermediate_texture_;
+}
+inline void CMsgPushCompositingLayer::set_needs_intermediate_texture(bool value) {
+  set_has_needs_intermediate_texture();
+  needs_intermediate_texture_ = value;
+  // @@protoc_insertion_point(field_set:CMsgPushCompositingLayer.needs_intermediate_texture)
+}
+
+// optional bool needs_redraw_every_frame = 53;
+inline bool CMsgPushCompositingLayer::has_needs_redraw_every_frame() const {
+  return (_has_bits_[1] & 0x00100000u) != 0;
+}
+inline void CMsgPushCompositingLayer::set_has_needs_redraw_every_frame() {
+  _has_bits_[1] |= 0x00100000u;
+}
+inline void CMsgPushCompositingLayer::clear_has_needs_redraw_every_frame() {
+  _has_bits_[1] &= ~0x00100000u;
 }
 inline void CMsgPushCompositingLayer::clear_needs_redraw_every_frame() {
   needs_redraw_every_frame_ = false;
@@ -14679,15 +15512,15 @@ inline void CMsgPushCompositingLayer::set_needs_redraw_every_frame(bool value) {
   // @@protoc_insertion_point(field_set:CMsgPushCompositingLayer.needs_redraw_every_frame)
 }
 
-// optional .CTextShadowData text_shadow = 53;
+// optional .CTextShadowData text_shadow = 54;
 inline bool CMsgPushCompositingLayer::has_text_shadow() const {
-  return (_has_bits_[1] & 0x00100000u) != 0;
+  return (_has_bits_[1] & 0x00200000u) != 0;
 }
 inline void CMsgPushCompositingLayer::set_has_text_shadow() {
-  _has_bits_[1] |= 0x00100000u;
+  _has_bits_[1] |= 0x00200000u;
 }
 inline void CMsgPushCompositingLayer::clear_has_text_shadow() {
-  _has_bits_[1] &= ~0x00100000u;
+  _has_bits_[1] &= ~0x00200000u;
 }
 inline void CMsgPushCompositingLayer::clear_text_shadow() {
   if (text_shadow_ != NULL) text_shadow_->::CTextShadowData::Clear();
@@ -14720,15 +15553,15 @@ inline void CMsgPushCompositingLayer::set_allocated_text_shadow(::CTextShadowDat
   // @@protoc_insertion_point(field_set_allocated:CMsgPushCompositingLayer.text_shadow)
 }
 
-// optional uint32 mix_blend_mode = 54;
+// optional uint32 mix_blend_mode = 55;
 inline bool CMsgPushCompositingLayer::has_mix_blend_mode() const {
-  return (_has_bits_[1] & 0x00200000u) != 0;
+  return (_has_bits_[1] & 0x00400000u) != 0;
 }
 inline void CMsgPushCompositingLayer::set_has_mix_blend_mode() {
-  _has_bits_[1] |= 0x00200000u;
+  _has_bits_[1] |= 0x00400000u;
 }
 inline void CMsgPushCompositingLayer::clear_has_mix_blend_mode() {
-  _has_bits_[1] &= ~0x00200000u;
+  _has_bits_[1] &= ~0x00400000u;
 }
 inline void CMsgPushCompositingLayer::clear_mix_blend_mode() {
   mix_blend_mode_ = 0u;
@@ -14744,15 +15577,15 @@ inline void CMsgPushCompositingLayer::set_mix_blend_mode(::google::protobuf::uin
   // @@protoc_insertion_point(field_set:CMsgPushCompositingLayer.mix_blend_mode)
 }
 
-// optional double occluded_left_edge = 55;
+// optional double occluded_left_edge = 56;
 inline bool CMsgPushCompositingLayer::has_occluded_left_edge() const {
-  return (_has_bits_[1] & 0x00400000u) != 0;
+  return (_has_bits_[1] & 0x00800000u) != 0;
 }
 inline void CMsgPushCompositingLayer::set_has_occluded_left_edge() {
-  _has_bits_[1] |= 0x00400000u;
+  _has_bits_[1] |= 0x00800000u;
 }
 inline void CMsgPushCompositingLayer::clear_has_occluded_left_edge() {
-  _has_bits_[1] &= ~0x00400000u;
+  _has_bits_[1] &= ~0x00800000u;
 }
 inline void CMsgPushCompositingLayer::clear_occluded_left_edge() {
   occluded_left_edge_ = 0;
@@ -14768,15 +15601,15 @@ inline void CMsgPushCompositingLayer::set_occluded_left_edge(double value) {
   // @@protoc_insertion_point(field_set:CMsgPushCompositingLayer.occluded_left_edge)
 }
 
-// optional double occluded_top_edge = 56;
+// optional double occluded_top_edge = 57;
 inline bool CMsgPushCompositingLayer::has_occluded_top_edge() const {
-  return (_has_bits_[1] & 0x00800000u) != 0;
+  return (_has_bits_[1] & 0x01000000u) != 0;
 }
 inline void CMsgPushCompositingLayer::set_has_occluded_top_edge() {
-  _has_bits_[1] |= 0x00800000u;
+  _has_bits_[1] |= 0x01000000u;
 }
 inline void CMsgPushCompositingLayer::clear_has_occluded_top_edge() {
-  _has_bits_[1] &= ~0x00800000u;
+  _has_bits_[1] &= ~0x01000000u;
 }
 inline void CMsgPushCompositingLayer::clear_occluded_top_edge() {
   occluded_top_edge_ = 0;
@@ -14792,15 +15625,15 @@ inline void CMsgPushCompositingLayer::set_occluded_top_edge(double value) {
   // @@protoc_insertion_point(field_set:CMsgPushCompositingLayer.occluded_top_edge)
 }
 
-// optional double occluded_right_edge = 57;
+// optional double occluded_right_edge = 58;
 inline bool CMsgPushCompositingLayer::has_occluded_right_edge() const {
-  return (_has_bits_[1] & 0x01000000u) != 0;
+  return (_has_bits_[1] & 0x02000000u) != 0;
 }
 inline void CMsgPushCompositingLayer::set_has_occluded_right_edge() {
-  _has_bits_[1] |= 0x01000000u;
+  _has_bits_[1] |= 0x02000000u;
 }
 inline void CMsgPushCompositingLayer::clear_has_occluded_right_edge() {
-  _has_bits_[1] &= ~0x01000000u;
+  _has_bits_[1] &= ~0x02000000u;
 }
 inline void CMsgPushCompositingLayer::clear_occluded_right_edge() {
   occluded_right_edge_ = 0;
@@ -14816,15 +15649,15 @@ inline void CMsgPushCompositingLayer::set_occluded_right_edge(double value) {
   // @@protoc_insertion_point(field_set:CMsgPushCompositingLayer.occluded_right_edge)
 }
 
-// optional double occluded_bottom_edge = 58;
+// optional double occluded_bottom_edge = 59;
 inline bool CMsgPushCompositingLayer::has_occluded_bottom_edge() const {
-  return (_has_bits_[1] & 0x02000000u) != 0;
+  return (_has_bits_[1] & 0x04000000u) != 0;
 }
 inline void CMsgPushCompositingLayer::set_has_occluded_bottom_edge() {
-  _has_bits_[1] |= 0x02000000u;
+  _has_bits_[1] |= 0x04000000u;
 }
 inline void CMsgPushCompositingLayer::clear_has_occluded_bottom_edge() {
-  _has_bits_[1] &= ~0x02000000u;
+  _has_bits_[1] &= ~0x04000000u;
 }
 inline void CMsgPushCompositingLayer::clear_occluded_bottom_edge() {
   occluded_bottom_edge_ = 0;
@@ -14838,6 +15671,123 @@ inline void CMsgPushCompositingLayer::set_occluded_bottom_edge(double value) {
   set_has_occluded_bottom_edge();
   occluded_bottom_edge_ = value;
   // @@protoc_insertion_point(field_set:CMsgPushCompositingLayer.occluded_bottom_edge)
+}
+
+// optional .CRadialClipData radial_clip = 60;
+inline bool CMsgPushCompositingLayer::has_radial_clip() const {
+  return (_has_bits_[1] & 0x08000000u) != 0;
+}
+inline void CMsgPushCompositingLayer::set_has_radial_clip() {
+  _has_bits_[1] |= 0x08000000u;
+}
+inline void CMsgPushCompositingLayer::clear_has_radial_clip() {
+  _has_bits_[1] &= ~0x08000000u;
+}
+inline void CMsgPushCompositingLayer::clear_radial_clip() {
+  if (radial_clip_ != NULL) radial_clip_->::CRadialClipData::Clear();
+  clear_has_radial_clip();
+}
+inline const ::CRadialClipData& CMsgPushCompositingLayer::radial_clip() const {
+  // @@protoc_insertion_point(field_get:CMsgPushCompositingLayer.radial_clip)
+  return radial_clip_ != NULL ? *radial_clip_ : *default_instance_->radial_clip_;
+}
+inline ::CRadialClipData* CMsgPushCompositingLayer::mutable_radial_clip() {
+  set_has_radial_clip();
+  if (radial_clip_ == NULL) radial_clip_ = new ::CRadialClipData;
+  // @@protoc_insertion_point(field_mutable:CMsgPushCompositingLayer.radial_clip)
+  return radial_clip_;
+}
+inline ::CRadialClipData* CMsgPushCompositingLayer::release_radial_clip() {
+  clear_has_radial_clip();
+  ::CRadialClipData* temp = radial_clip_;
+  radial_clip_ = NULL;
+  return temp;
+}
+inline void CMsgPushCompositingLayer::set_allocated_radial_clip(::CRadialClipData* radial_clip) {
+  delete radial_clip_;
+  radial_clip_ = radial_clip;
+  if (radial_clip) {
+    set_has_radial_clip();
+  } else {
+    clear_has_radial_clip();
+  }
+  // @@protoc_insertion_point(field_set_allocated:CMsgPushCompositingLayer.radial_clip)
+}
+
+// optional string composition_layer_texture_name = 64;
+inline bool CMsgPushCompositingLayer::has_composition_layer_texture_name() const {
+  return (_has_bits_[1] & 0x10000000u) != 0;
+}
+inline void CMsgPushCompositingLayer::set_has_composition_layer_texture_name() {
+  _has_bits_[1] |= 0x10000000u;
+}
+inline void CMsgPushCompositingLayer::clear_has_composition_layer_texture_name() {
+  _has_bits_[1] &= ~0x10000000u;
+}
+inline void CMsgPushCompositingLayer::clear_composition_layer_texture_name() {
+  if (composition_layer_texture_name_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    composition_layer_texture_name_->clear();
+  }
+  clear_has_composition_layer_texture_name();
+}
+inline const ::std::string& CMsgPushCompositingLayer::composition_layer_texture_name() const {
+  // @@protoc_insertion_point(field_get:CMsgPushCompositingLayer.composition_layer_texture_name)
+  return *composition_layer_texture_name_;
+}
+inline void CMsgPushCompositingLayer::set_composition_layer_texture_name(const ::std::string& value) {
+  set_has_composition_layer_texture_name();
+  if (composition_layer_texture_name_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    composition_layer_texture_name_ = new ::std::string;
+  }
+  composition_layer_texture_name_->assign(value);
+  // @@protoc_insertion_point(field_set:CMsgPushCompositingLayer.composition_layer_texture_name)
+}
+inline void CMsgPushCompositingLayer::set_composition_layer_texture_name(const char* value) {
+  set_has_composition_layer_texture_name();
+  if (composition_layer_texture_name_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    composition_layer_texture_name_ = new ::std::string;
+  }
+  composition_layer_texture_name_->assign(value);
+  // @@protoc_insertion_point(field_set_char:CMsgPushCompositingLayer.composition_layer_texture_name)
+}
+inline void CMsgPushCompositingLayer::set_composition_layer_texture_name(const char* value, size_t size) {
+  set_has_composition_layer_texture_name();
+  if (composition_layer_texture_name_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    composition_layer_texture_name_ = new ::std::string;
+  }
+  composition_layer_texture_name_->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:CMsgPushCompositingLayer.composition_layer_texture_name)
+}
+inline ::std::string* CMsgPushCompositingLayer::mutable_composition_layer_texture_name() {
+  set_has_composition_layer_texture_name();
+  if (composition_layer_texture_name_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    composition_layer_texture_name_ = new ::std::string;
+  }
+  // @@protoc_insertion_point(field_mutable:CMsgPushCompositingLayer.composition_layer_texture_name)
+  return composition_layer_texture_name_;
+}
+inline ::std::string* CMsgPushCompositingLayer::release_composition_layer_texture_name() {
+  clear_has_composition_layer_texture_name();
+  if (composition_layer_texture_name_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    return NULL;
+  } else {
+    ::std::string* temp = composition_layer_texture_name_;
+    composition_layer_texture_name_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    return temp;
+  }
+}
+inline void CMsgPushCompositingLayer::set_allocated_composition_layer_texture_name(::std::string* composition_layer_texture_name) {
+  if (composition_layer_texture_name_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete composition_layer_texture_name_;
+  }
+  if (composition_layer_texture_name) {
+    set_has_composition_layer_texture_name();
+    composition_layer_texture_name_ = composition_layer_texture_name;
+  } else {
+    clear_has_composition_layer_texture_name();
+    composition_layer_texture_name_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_set_allocated:CMsgPushCompositingLayer.composition_layer_texture_name)
 }
 
 // -------------------------------------------------------------------
@@ -15662,7 +16612,31 @@ inline void CMsgPointWithTransition::set_allocated_transition_data(::CMsgTransit
   // @@protoc_insertion_point(field_set_allocated:CMsgPointWithTransition.transition_data)
 }
 
-// repeated .CMsgAnimationData animations = 4;
+// optional uint32 style_symbol = 4;
+inline bool CMsgPointWithTransition::has_style_symbol() const {
+  return (_has_bits_[0] & 0x00000008u) != 0;
+}
+inline void CMsgPointWithTransition::set_has_style_symbol() {
+  _has_bits_[0] |= 0x00000008u;
+}
+inline void CMsgPointWithTransition::clear_has_style_symbol() {
+  _has_bits_[0] &= ~0x00000008u;
+}
+inline void CMsgPointWithTransition::clear_style_symbol() {
+  style_symbol_ = 0u;
+  clear_has_style_symbol();
+}
+inline ::google::protobuf::uint32 CMsgPointWithTransition::style_symbol() const {
+  // @@protoc_insertion_point(field_get:CMsgPointWithTransition.style_symbol)
+  return style_symbol_;
+}
+inline void CMsgPointWithTransition::set_style_symbol(::google::protobuf::uint32 value) {
+  set_has_style_symbol();
+  style_symbol_ = value;
+  // @@protoc_insertion_point(field_set:CMsgPointWithTransition.style_symbol)
+}
+
+// repeated .CMsgAnimationData animations = 5;
 inline int CMsgPointWithTransition::animations_size() const {
   return animations_.size();
 }
@@ -15813,7 +16787,31 @@ inline void CMsgColor::set_allocated_transition_data(::CMsgTransitionData* trans
   // @@protoc_insertion_point(field_set_allocated:CMsgColor.transition_data)
 }
 
-// repeated .CMsgAnimationData animations = 4;
+// optional uint32 style_symbol = 4;
+inline bool CMsgColor::has_style_symbol() const {
+  return (_has_bits_[0] & 0x00000008u) != 0;
+}
+inline void CMsgColor::set_has_style_symbol() {
+  _has_bits_[0] |= 0x00000008u;
+}
+inline void CMsgColor::clear_has_style_symbol() {
+  _has_bits_[0] &= ~0x00000008u;
+}
+inline void CMsgColor::clear_style_symbol() {
+  style_symbol_ = 0u;
+  clear_has_style_symbol();
+}
+inline ::google::protobuf::uint32 CMsgColor::style_symbol() const {
+  // @@protoc_insertion_point(field_get:CMsgColor.style_symbol)
+  return style_symbol_;
+}
+inline void CMsgColor::set_style_symbol(::google::protobuf::uint32 value) {
+  set_has_style_symbol();
+  style_symbol_ = value;
+  // @@protoc_insertion_point(field_set:CMsgColor.style_symbol)
+}
+
+// repeated .CMsgAnimationData animations = 5;
 inline int CMsgColor::animations_size() const {
   return animations_.size();
 }
@@ -17345,7 +18343,31 @@ inline void CMsgFillBrushCollection::set_allocated_transition_data(::CMsgTransit
   // @@protoc_insertion_point(field_set_allocated:CMsgFillBrushCollection.transition_data)
 }
 
-// repeated .CMsgAnimationData animations = 4;
+// optional uint32 style_symbol = 4;
+inline bool CMsgFillBrushCollection::has_style_symbol() const {
+  return (_has_bits_[0] & 0x00000008u) != 0;
+}
+inline void CMsgFillBrushCollection::set_has_style_symbol() {
+  _has_bits_[0] |= 0x00000008u;
+}
+inline void CMsgFillBrushCollection::clear_has_style_symbol() {
+  _has_bits_[0] &= ~0x00000008u;
+}
+inline void CMsgFillBrushCollection::clear_style_symbol() {
+  style_symbol_ = 0u;
+  clear_has_style_symbol();
+}
+inline ::google::protobuf::uint32 CMsgFillBrushCollection::style_symbol() const {
+  // @@protoc_insertion_point(field_get:CMsgFillBrushCollection.style_symbol)
+  return style_symbol_;
+}
+inline void CMsgFillBrushCollection::set_style_symbol(::google::protobuf::uint32 value) {
+  set_has_style_symbol();
+  style_symbol_ = value;
+  // @@protoc_insertion_point(field_set:CMsgFillBrushCollection.style_symbol)
+}
+
+// repeated .CMsgAnimationData animations = 5;
 inline int CMsgFillBrushCollection::animations_size() const {
   return animations_.size();
 }
@@ -17581,7 +18603,31 @@ inline void CMsgPanelPosition::set_allocated_transition_data(::CMsgTransitionDat
   // @@protoc_insertion_point(field_set_allocated:CMsgPanelPosition.transition_data)
 }
 
-// repeated .CMsgAnimationData animations = 4;
+// optional uint32 style_symbol = 4;
+inline bool CMsgPanelPosition::has_style_symbol() const {
+  return (_has_bits_[0] & 0x00000008u) != 0;
+}
+inline void CMsgPanelPosition::set_has_style_symbol() {
+  _has_bits_[0] |= 0x00000008u;
+}
+inline void CMsgPanelPosition::clear_has_style_symbol() {
+  _has_bits_[0] &= ~0x00000008u;
+}
+inline void CMsgPanelPosition::clear_style_symbol() {
+  style_symbol_ = 0u;
+  clear_has_style_symbol();
+}
+inline ::google::protobuf::uint32 CMsgPanelPosition::style_symbol() const {
+  // @@protoc_insertion_point(field_get:CMsgPanelPosition.style_symbol)
+  return style_symbol_;
+}
+inline void CMsgPanelPosition::set_style_symbol(::google::protobuf::uint32 value) {
+  set_has_style_symbol();
+  style_symbol_ = value;
+  // @@protoc_insertion_point(field_set:CMsgPanelPosition.style_symbol)
+}
+
+// repeated .CMsgAnimationData animations = 5;
 inline int CMsgPanelPosition::animations_size() const {
   return animations_.size();
 }
@@ -17611,15 +18657,15 @@ CMsgPanelPosition::mutable_animations() {
   return &animations_;
 }
 
-// optional .CMsgPoint scroll_offset = 5;
+// optional .CMsgPoint scroll_offset = 6;
 inline bool CMsgPanelPosition::has_scroll_offset() const {
-  return (_has_bits_[0] & 0x00000010u) != 0;
+  return (_has_bits_[0] & 0x00000020u) != 0;
 }
 inline void CMsgPanelPosition::set_has_scroll_offset() {
-  _has_bits_[0] |= 0x00000010u;
+  _has_bits_[0] |= 0x00000020u;
 }
 inline void CMsgPanelPosition::clear_has_scroll_offset() {
-  _has_bits_[0] &= ~0x00000010u;
+  _has_bits_[0] &= ~0x00000020u;
 }
 inline void CMsgPanelPosition::clear_scroll_offset() {
   if (scroll_offset_ != NULL) scroll_offset_->::CMsgPoint::Clear();
@@ -17652,15 +18698,15 @@ inline void CMsgPanelPosition::set_allocated_scroll_offset(::CMsgPoint* scroll_o
   // @@protoc_insertion_point(field_set_allocated:CMsgPanelPosition.scroll_offset)
 }
 
-// optional .CMsgPoint scroll_offset_target = 6;
+// optional .CMsgPoint scroll_offset_target = 7;
 inline bool CMsgPanelPosition::has_scroll_offset_target() const {
-  return (_has_bits_[0] & 0x00000020u) != 0;
+  return (_has_bits_[0] & 0x00000040u) != 0;
 }
 inline void CMsgPanelPosition::set_has_scroll_offset_target() {
-  _has_bits_[0] |= 0x00000020u;
+  _has_bits_[0] |= 0x00000040u;
 }
 inline void CMsgPanelPosition::clear_has_scroll_offset_target() {
-  _has_bits_[0] &= ~0x00000020u;
+  _has_bits_[0] &= ~0x00000040u;
 }
 inline void CMsgPanelPosition::clear_scroll_offset_target() {
   if (scroll_offset_target_ != NULL) scroll_offset_target_->::CMsgPoint::Clear();
@@ -17693,15 +18739,15 @@ inline void CMsgPanelPosition::set_allocated_scroll_offset_target(::CMsgPoint* s
   // @@protoc_insertion_point(field_set_allocated:CMsgPanelPosition.scroll_offset_target)
 }
 
-// optional .CMsgTransitionData scroll_transition_x = 7;
+// optional .CMsgTransitionData scroll_transition_x = 8;
 inline bool CMsgPanelPosition::has_scroll_transition_x() const {
-  return (_has_bits_[0] & 0x00000040u) != 0;
+  return (_has_bits_[0] & 0x00000080u) != 0;
 }
 inline void CMsgPanelPosition::set_has_scroll_transition_x() {
-  _has_bits_[0] |= 0x00000040u;
+  _has_bits_[0] |= 0x00000080u;
 }
 inline void CMsgPanelPosition::clear_has_scroll_transition_x() {
-  _has_bits_[0] &= ~0x00000040u;
+  _has_bits_[0] &= ~0x00000080u;
 }
 inline void CMsgPanelPosition::clear_scroll_transition_x() {
   if (scroll_transition_x_ != NULL) scroll_transition_x_->::CMsgTransitionData::Clear();
@@ -17734,15 +18780,15 @@ inline void CMsgPanelPosition::set_allocated_scroll_transition_x(::CMsgTransitio
   // @@protoc_insertion_point(field_set_allocated:CMsgPanelPosition.scroll_transition_x)
 }
 
-// optional .CMsgTransitionData scroll_transition_y = 8;
+// optional .CMsgTransitionData scroll_transition_y = 9;
 inline bool CMsgPanelPosition::has_scroll_transition_y() const {
-  return (_has_bits_[0] & 0x00000080u) != 0;
+  return (_has_bits_[0] & 0x00000100u) != 0;
 }
 inline void CMsgPanelPosition::set_has_scroll_transition_y() {
-  _has_bits_[0] |= 0x00000080u;
+  _has_bits_[0] |= 0x00000100u;
 }
 inline void CMsgPanelPosition::clear_has_scroll_transition_y() {
-  _has_bits_[0] &= ~0x00000080u;
+  _has_bits_[0] &= ~0x00000100u;
 }
 inline void CMsgPanelPosition::clear_scroll_transition_y() {
   if (scroll_transition_y_ != NULL) scroll_transition_y_->::CMsgTransitionData::Clear();
@@ -17896,7 +18942,31 @@ inline void CMsgOpacity::set_allocated_transition_data(::CMsgTransitionData* tra
   // @@protoc_insertion_point(field_set_allocated:CMsgOpacity.transition_data)
 }
 
-// repeated .CMsgAnimationData animations = 4;
+// optional uint32 style_symbol = 4;
+inline bool CMsgOpacity::has_style_symbol() const {
+  return (_has_bits_[0] & 0x00000008u) != 0;
+}
+inline void CMsgOpacity::set_has_style_symbol() {
+  _has_bits_[0] |= 0x00000008u;
+}
+inline void CMsgOpacity::clear_has_style_symbol() {
+  _has_bits_[0] &= ~0x00000008u;
+}
+inline void CMsgOpacity::clear_style_symbol() {
+  style_symbol_ = 0u;
+  clear_has_style_symbol();
+}
+inline ::google::protobuf::uint32 CMsgOpacity::style_symbol() const {
+  // @@protoc_insertion_point(field_get:CMsgOpacity.style_symbol)
+  return style_symbol_;
+}
+inline void CMsgOpacity::set_style_symbol(::google::protobuf::uint32 value) {
+  set_has_style_symbol();
+  style_symbol_ = value;
+  // @@protoc_insertion_point(field_set:CMsgOpacity.style_symbol)
+}
+
+// repeated .CMsgAnimationData animations = 5;
 inline int CMsgOpacity::animations_size() const {
   return animations_.size();
 }
@@ -18047,7 +19117,31 @@ inline void CMsgRotate2D::set_allocated_transition_data(::CMsgTransitionData* tr
   // @@protoc_insertion_point(field_set_allocated:CMsgRotate2D.transition_data)
 }
 
-// repeated .CMsgAnimationData animations = 4;
+// optional uint32 style_symbol = 4;
+inline bool CMsgRotate2D::has_style_symbol() const {
+  return (_has_bits_[0] & 0x00000008u) != 0;
+}
+inline void CMsgRotate2D::set_has_style_symbol() {
+  _has_bits_[0] |= 0x00000008u;
+}
+inline void CMsgRotate2D::clear_has_style_symbol() {
+  _has_bits_[0] &= ~0x00000008u;
+}
+inline void CMsgRotate2D::clear_style_symbol() {
+  style_symbol_ = 0u;
+  clear_has_style_symbol();
+}
+inline ::google::protobuf::uint32 CMsgRotate2D::style_symbol() const {
+  // @@protoc_insertion_point(field_get:CMsgRotate2D.style_symbol)
+  return style_symbol_;
+}
+inline void CMsgRotate2D::set_style_symbol(::google::protobuf::uint32 value) {
+  set_has_style_symbol();
+  style_symbol_ = value;
+  // @@protoc_insertion_point(field_set:CMsgRotate2D.style_symbol)
+}
+
+// repeated .CMsgAnimationData animations = 5;
 inline int CMsgRotate2D::animations_size() const {
   return animations_.size();
 }
@@ -18301,7 +19395,31 @@ inline void CMsgOpacityMask::set_allocated_transition_data(::CMsgTransitionData*
   // @@protoc_insertion_point(field_set_allocated:CMsgOpacityMask.transition_data)
 }
 
-// repeated .CMsgAnimationData animations = 4;
+// optional uint32 style_symbol = 4;
+inline bool CMsgOpacityMask::has_style_symbol() const {
+  return (_has_bits_[0] & 0x00000008u) != 0;
+}
+inline void CMsgOpacityMask::set_has_style_symbol() {
+  _has_bits_[0] |= 0x00000008u;
+}
+inline void CMsgOpacityMask::clear_has_style_symbol() {
+  _has_bits_[0] &= ~0x00000008u;
+}
+inline void CMsgOpacityMask::clear_style_symbol() {
+  style_symbol_ = 0u;
+  clear_has_style_symbol();
+}
+inline ::google::protobuf::uint32 CMsgOpacityMask::style_symbol() const {
+  // @@protoc_insertion_point(field_get:CMsgOpacityMask.style_symbol)
+  return style_symbol_;
+}
+inline void CMsgOpacityMask::set_style_symbol(::google::protobuf::uint32 value) {
+  set_has_style_symbol();
+  style_symbol_ = value;
+  // @@protoc_insertion_point(field_set:CMsgOpacityMask.style_symbol)
+}
+
+// repeated .CMsgAnimationData animations = 5;
 inline int CMsgOpacityMask::animations_size() const {
   return animations_.size();
 }
@@ -18452,7 +19570,31 @@ inline void CMsgHueShift::set_allocated_transition_data(::CMsgTransitionData* tr
   // @@protoc_insertion_point(field_set_allocated:CMsgHueShift.transition_data)
 }
 
-// repeated .CMsgAnimationData animations = 4;
+// optional uint32 style_symbol = 4;
+inline bool CMsgHueShift::has_style_symbol() const {
+  return (_has_bits_[0] & 0x00000008u) != 0;
+}
+inline void CMsgHueShift::set_has_style_symbol() {
+  _has_bits_[0] |= 0x00000008u;
+}
+inline void CMsgHueShift::clear_has_style_symbol() {
+  _has_bits_[0] &= ~0x00000008u;
+}
+inline void CMsgHueShift::clear_style_symbol() {
+  style_symbol_ = 0u;
+  clear_has_style_symbol();
+}
+inline ::google::protobuf::uint32 CMsgHueShift::style_symbol() const {
+  // @@protoc_insertion_point(field_get:CMsgHueShift.style_symbol)
+  return style_symbol_;
+}
+inline void CMsgHueShift::set_style_symbol(::google::protobuf::uint32 value) {
+  set_has_style_symbol();
+  style_symbol_ = value;
+  // @@protoc_insertion_point(field_set:CMsgHueShift.style_symbol)
+}
+
+// repeated .CMsgAnimationData animations = 5;
 inline int CMsgHueShift::animations_size() const {
   return animations_.size();
 }
@@ -18603,7 +19745,31 @@ inline void CMsgSaturation::set_allocated_transition_data(::CMsgTransitionData* 
   // @@protoc_insertion_point(field_set_allocated:CMsgSaturation.transition_data)
 }
 
-// repeated .CMsgAnimationData animations = 4;
+// optional uint32 style_symbol = 4;
+inline bool CMsgSaturation::has_style_symbol() const {
+  return (_has_bits_[0] & 0x00000008u) != 0;
+}
+inline void CMsgSaturation::set_has_style_symbol() {
+  _has_bits_[0] |= 0x00000008u;
+}
+inline void CMsgSaturation::clear_has_style_symbol() {
+  _has_bits_[0] &= ~0x00000008u;
+}
+inline void CMsgSaturation::clear_style_symbol() {
+  style_symbol_ = 0u;
+  clear_has_style_symbol();
+}
+inline ::google::protobuf::uint32 CMsgSaturation::style_symbol() const {
+  // @@protoc_insertion_point(field_get:CMsgSaturation.style_symbol)
+  return style_symbol_;
+}
+inline void CMsgSaturation::set_style_symbol(::google::protobuf::uint32 value) {
+  set_has_style_symbol();
+  style_symbol_ = value;
+  // @@protoc_insertion_point(field_set:CMsgSaturation.style_symbol)
+}
+
+// repeated .CMsgAnimationData animations = 5;
 inline int CMsgSaturation::animations_size() const {
   return animations_.size();
 }
@@ -18754,7 +19920,31 @@ inline void CMsgBrightness::set_allocated_transition_data(::CMsgTransitionData* 
   // @@protoc_insertion_point(field_set_allocated:CMsgBrightness.transition_data)
 }
 
-// repeated .CMsgAnimationData animations = 4;
+// optional uint32 style_symbol = 4;
+inline bool CMsgBrightness::has_style_symbol() const {
+  return (_has_bits_[0] & 0x00000008u) != 0;
+}
+inline void CMsgBrightness::set_has_style_symbol() {
+  _has_bits_[0] |= 0x00000008u;
+}
+inline void CMsgBrightness::clear_has_style_symbol() {
+  _has_bits_[0] &= ~0x00000008u;
+}
+inline void CMsgBrightness::clear_style_symbol() {
+  style_symbol_ = 0u;
+  clear_has_style_symbol();
+}
+inline ::google::protobuf::uint32 CMsgBrightness::style_symbol() const {
+  // @@protoc_insertion_point(field_get:CMsgBrightness.style_symbol)
+  return style_symbol_;
+}
+inline void CMsgBrightness::set_style_symbol(::google::protobuf::uint32 value) {
+  set_has_style_symbol();
+  style_symbol_ = value;
+  // @@protoc_insertion_point(field_set:CMsgBrightness.style_symbol)
+}
+
+// repeated .CMsgAnimationData animations = 5;
 inline int CMsgBrightness::animations_size() const {
   return animations_.size();
 }
@@ -18905,7 +20095,31 @@ inline void CMsgContrast::set_allocated_transition_data(::CMsgTransitionData* tr
   // @@protoc_insertion_point(field_set_allocated:CMsgContrast.transition_data)
 }
 
-// repeated .CMsgAnimationData animations = 4;
+// optional uint32 style_symbol = 4;
+inline bool CMsgContrast::has_style_symbol() const {
+  return (_has_bits_[0] & 0x00000008u) != 0;
+}
+inline void CMsgContrast::set_has_style_symbol() {
+  _has_bits_[0] |= 0x00000008u;
+}
+inline void CMsgContrast::clear_has_style_symbol() {
+  _has_bits_[0] &= ~0x00000008u;
+}
+inline void CMsgContrast::clear_style_symbol() {
+  style_symbol_ = 0u;
+  clear_has_style_symbol();
+}
+inline ::google::protobuf::uint32 CMsgContrast::style_symbol() const {
+  // @@protoc_insertion_point(field_get:CMsgContrast.style_symbol)
+  return style_symbol_;
+}
+inline void CMsgContrast::set_style_symbol(::google::protobuf::uint32 value) {
+  set_has_style_symbol();
+  style_symbol_ = value;
+  // @@protoc_insertion_point(field_set:CMsgContrast.style_symbol)
+}
+
+// repeated .CMsgAnimationData animations = 5;
 inline int CMsgContrast::animations_size() const {
   return animations_.size();
 }
@@ -19183,7 +20397,31 @@ inline void CMsgGaussianBlur::set_allocated_transition_data(::CMsgTransitionData
   // @@protoc_insertion_point(field_set_allocated:CMsgGaussianBlur.transition_data)
 }
 
-// repeated .CMsgAnimationData animations = 4;
+// optional uint32 style_symbol = 4;
+inline bool CMsgGaussianBlur::has_style_symbol() const {
+  return (_has_bits_[0] & 0x00000008u) != 0;
+}
+inline void CMsgGaussianBlur::set_has_style_symbol() {
+  _has_bits_[0] |= 0x00000008u;
+}
+inline void CMsgGaussianBlur::clear_has_style_symbol() {
+  _has_bits_[0] &= ~0x00000008u;
+}
+inline void CMsgGaussianBlur::clear_style_symbol() {
+  style_symbol_ = 0u;
+  clear_has_style_symbol();
+}
+inline ::google::protobuf::uint32 CMsgGaussianBlur::style_symbol() const {
+  // @@protoc_insertion_point(field_get:CMsgGaussianBlur.style_symbol)
+  return style_symbol_;
+}
+inline void CMsgGaussianBlur::set_style_symbol(::google::protobuf::uint32 value) {
+  set_has_style_symbol();
+  style_symbol_ = value;
+  // @@protoc_insertion_point(field_set:CMsgGaussianBlur.style_symbol)
+}
+
+// repeated .CMsgAnimationData animations = 5;
 inline int CMsgGaussianBlur::animations_size() const {
   return animations_.size();
 }
@@ -19334,7 +20572,31 @@ inline void CMsg3DTransformPerspective::set_allocated_transition_data(::CMsgTran
   // @@protoc_insertion_point(field_set_allocated:CMsg3DTransformPerspective.transition_data)
 }
 
-// repeated .CMsgAnimationData animations = 4;
+// optional uint32 style_symbol = 4;
+inline bool CMsg3DTransformPerspective::has_style_symbol() const {
+  return (_has_bits_[0] & 0x00000008u) != 0;
+}
+inline void CMsg3DTransformPerspective::set_has_style_symbol() {
+  _has_bits_[0] |= 0x00000008u;
+}
+inline void CMsg3DTransformPerspective::clear_has_style_symbol() {
+  _has_bits_[0] &= ~0x00000008u;
+}
+inline void CMsg3DTransformPerspective::clear_style_symbol() {
+  style_symbol_ = 0u;
+  clear_has_style_symbol();
+}
+inline ::google::protobuf::uint32 CMsg3DTransformPerspective::style_symbol() const {
+  // @@protoc_insertion_point(field_get:CMsg3DTransformPerspective.style_symbol)
+  return style_symbol_;
+}
+inline void CMsg3DTransformPerspective::set_style_symbol(::google::protobuf::uint32 value) {
+  set_has_style_symbol();
+  style_symbol_ = value;
+  // @@protoc_insertion_point(field_set:CMsg3DTransformPerspective.style_symbol)
+}
+
+// repeated .CMsgAnimationData animations = 5;
 inline int CMsg3DTransformPerspective::animations_size() const {
   return animations_.size();
 }
@@ -19536,7 +20798,31 @@ inline void CMsg3DTransformPerspectiveOrigin::set_allocated_transition_data(::CM
   // @@protoc_insertion_point(field_set_allocated:CMsg3DTransformPerspectiveOrigin.transition_data)
 }
 
-// repeated .CMsgAnimationData animations = 4;
+// optional uint32 style_symbol = 4;
+inline bool CMsg3DTransformPerspectiveOrigin::has_style_symbol() const {
+  return (_has_bits_[0] & 0x00000008u) != 0;
+}
+inline void CMsg3DTransformPerspectiveOrigin::set_has_style_symbol() {
+  _has_bits_[0] |= 0x00000008u;
+}
+inline void CMsg3DTransformPerspectiveOrigin::clear_has_style_symbol() {
+  _has_bits_[0] &= ~0x00000008u;
+}
+inline void CMsg3DTransformPerspectiveOrigin::clear_style_symbol() {
+  style_symbol_ = 0u;
+  clear_has_style_symbol();
+}
+inline ::google::protobuf::uint32 CMsg3DTransformPerspectiveOrigin::style_symbol() const {
+  // @@protoc_insertion_point(field_get:CMsg3DTransformPerspectiveOrigin.style_symbol)
+  return style_symbol_;
+}
+inline void CMsg3DTransformPerspectiveOrigin::set_style_symbol(::google::protobuf::uint32 value) {
+  set_has_style_symbol();
+  style_symbol_ = value;
+  // @@protoc_insertion_point(field_set:CMsg3DTransformPerspectiveOrigin.style_symbol)
+}
+
+// repeated .CMsgAnimationData animations = 5;
 inline int CMsg3DTransformPerspectiveOrigin::animations_size() const {
   return animations_.size();
 }
@@ -19862,7 +21148,31 @@ inline void CMsg3DTransformOrigin::set_allocated_transition_data(::CMsgTransitio
   // @@protoc_insertion_point(field_set_allocated:CMsg3DTransformOrigin.transition_data)
 }
 
-// repeated .CMsgAnimationData animations = 4;
+// optional uint32 style_symbol = 4;
+inline bool CMsg3DTransformOrigin::has_style_symbol() const {
+  return (_has_bits_[0] & 0x00000008u) != 0;
+}
+inline void CMsg3DTransformOrigin::set_has_style_symbol() {
+  _has_bits_[0] |= 0x00000008u;
+}
+inline void CMsg3DTransformOrigin::clear_has_style_symbol() {
+  _has_bits_[0] &= ~0x00000008u;
+}
+inline void CMsg3DTransformOrigin::clear_style_symbol() {
+  style_symbol_ = 0u;
+  clear_has_style_symbol();
+}
+inline ::google::protobuf::uint32 CMsg3DTransformOrigin::style_symbol() const {
+  // @@protoc_insertion_point(field_get:CMsg3DTransformOrigin.style_symbol)
+  return style_symbol_;
+}
+inline void CMsg3DTransformOrigin::set_style_symbol(::google::protobuf::uint32 value) {
+  set_has_style_symbol();
+  style_symbol_ = value;
+  // @@protoc_insertion_point(field_set:CMsg3DTransformOrigin.style_symbol)
+}
+
+// repeated .CMsgAnimationData animations = 5;
 inline int CMsg3DTransformOrigin::animations_size() const {
   return animations_.size();
 }
@@ -20064,7 +21374,31 @@ inline void CMsg3DTransformMatrix::set_allocated_transition(::CMsgMatrix4x4* tra
   // @@protoc_insertion_point(field_set_allocated:CMsg3DTransformMatrix.transition)
 }
 
-// repeated .CMsgAnimationData animations = 4;
+// optional uint32 style_symbol = 4;
+inline bool CMsg3DTransformMatrix::has_style_symbol() const {
+  return (_has_bits_[0] & 0x00000008u) != 0;
+}
+inline void CMsg3DTransformMatrix::set_has_style_symbol() {
+  _has_bits_[0] |= 0x00000008u;
+}
+inline void CMsg3DTransformMatrix::clear_has_style_symbol() {
+  _has_bits_[0] &= ~0x00000008u;
+}
+inline void CMsg3DTransformMatrix::clear_style_symbol() {
+  style_symbol_ = 0u;
+  clear_has_style_symbol();
+}
+inline ::google::protobuf::uint32 CMsg3DTransformMatrix::style_symbol() const {
+  // @@protoc_insertion_point(field_get:CMsg3DTransformMatrix.style_symbol)
+  return style_symbol_;
+}
+inline void CMsg3DTransformMatrix::set_style_symbol(::google::protobuf::uint32 value) {
+  set_has_style_symbol();
+  style_symbol_ = value;
+  // @@protoc_insertion_point(field_set:CMsg3DTransformMatrix.style_symbol)
+}
+
+// repeated .CMsgAnimationData animations = 5;
 inline int CMsg3DTransformMatrix::animations_size() const {
   return animations_.size();
 }
@@ -20266,7 +21600,31 @@ inline void CMsgBorderRadius::set_allocated_transition(::CRadiusData* transition
   // @@protoc_insertion_point(field_set_allocated:CMsgBorderRadius.transition)
 }
 
-// repeated .CMsgAnimationData animations = 4;
+// optional uint32 style_symbol = 4;
+inline bool CMsgBorderRadius::has_style_symbol() const {
+  return (_has_bits_[0] & 0x00000008u) != 0;
+}
+inline void CMsgBorderRadius::set_has_style_symbol() {
+  _has_bits_[0] |= 0x00000008u;
+}
+inline void CMsgBorderRadius::clear_has_style_symbol() {
+  _has_bits_[0] &= ~0x00000008u;
+}
+inline void CMsgBorderRadius::clear_style_symbol() {
+  style_symbol_ = 0u;
+  clear_has_style_symbol();
+}
+inline ::google::protobuf::uint32 CMsgBorderRadius::style_symbol() const {
+  // @@protoc_insertion_point(field_get:CMsgBorderRadius.style_symbol)
+  return style_symbol_;
+}
+inline void CMsgBorderRadius::set_style_symbol(::google::protobuf::uint32 value) {
+  set_has_style_symbol();
+  style_symbol_ = value;
+  // @@protoc_insertion_point(field_set:CMsgBorderRadius.style_symbol)
+}
+
+// repeated .CMsgAnimationData animations = 5;
 inline int CMsgBorderRadius::animations_size() const {
   return animations_.size();
 }
@@ -20468,7 +21826,31 @@ inline void CMsgBorder::set_allocated_transition(::CBorderData* transition) {
   // @@protoc_insertion_point(field_set_allocated:CMsgBorder.transition)
 }
 
-// repeated .CMsgAnimationData animations = 4;
+// optional uint32 style_symbol = 4;
+inline bool CMsgBorder::has_style_symbol() const {
+  return (_has_bits_[0] & 0x00000008u) != 0;
+}
+inline void CMsgBorder::set_has_style_symbol() {
+  _has_bits_[0] |= 0x00000008u;
+}
+inline void CMsgBorder::clear_has_style_symbol() {
+  _has_bits_[0] &= ~0x00000008u;
+}
+inline void CMsgBorder::clear_style_symbol() {
+  style_symbol_ = 0u;
+  clear_has_style_symbol();
+}
+inline ::google::protobuf::uint32 CMsgBorder::style_symbol() const {
+  // @@protoc_insertion_point(field_get:CMsgBorder.style_symbol)
+  return style_symbol_;
+}
+inline void CMsgBorder::set_style_symbol(::google::protobuf::uint32 value) {
+  set_has_style_symbol();
+  style_symbol_ = value;
+  // @@protoc_insertion_point(field_set:CMsgBorder.style_symbol)
+}
+
+// repeated .CMsgAnimationData animations = 5;
 inline int CMsgBorder::animations_size() const {
   return animations_.size();
 }
@@ -20670,7 +22052,31 @@ inline void CMsgBoxShadow::set_allocated_transition(::CBoxShadowData* transition
   // @@protoc_insertion_point(field_set_allocated:CMsgBoxShadow.transition)
 }
 
-// repeated .CMsgAnimationData animations = 4;
+// optional uint32 style_symbol = 4;
+inline bool CMsgBoxShadow::has_style_symbol() const {
+  return (_has_bits_[0] & 0x00000008u) != 0;
+}
+inline void CMsgBoxShadow::set_has_style_symbol() {
+  _has_bits_[0] |= 0x00000008u;
+}
+inline void CMsgBoxShadow::clear_has_style_symbol() {
+  _has_bits_[0] &= ~0x00000008u;
+}
+inline void CMsgBoxShadow::clear_style_symbol() {
+  style_symbol_ = 0u;
+  clear_has_style_symbol();
+}
+inline ::google::protobuf::uint32 CMsgBoxShadow::style_symbol() const {
+  // @@protoc_insertion_point(field_get:CMsgBoxShadow.style_symbol)
+  return style_symbol_;
+}
+inline void CMsgBoxShadow::set_style_symbol(::google::protobuf::uint32 value) {
+  set_has_style_symbol();
+  style_symbol_ = value;
+  // @@protoc_insertion_point(field_set:CMsgBoxShadow.style_symbol)
+}
+
+// repeated .CMsgAnimationData animations = 5;
 inline int CMsgBoxShadow::animations_size() const {
   return animations_.size();
 }
@@ -20872,7 +22278,31 @@ inline void CMsgTextShadow::set_allocated_transition(::CTextShadowData* transiti
   // @@protoc_insertion_point(field_set_allocated:CMsgTextShadow.transition)
 }
 
-// repeated .CMsgAnimationData animations = 4;
+// optional uint32 style_symbol = 4;
+inline bool CMsgTextShadow::has_style_symbol() const {
+  return (_has_bits_[0] & 0x00000008u) != 0;
+}
+inline void CMsgTextShadow::set_has_style_symbol() {
+  _has_bits_[0] |= 0x00000008u;
+}
+inline void CMsgTextShadow::clear_has_style_symbol() {
+  _has_bits_[0] &= ~0x00000008u;
+}
+inline void CMsgTextShadow::clear_style_symbol() {
+  style_symbol_ = 0u;
+  clear_has_style_symbol();
+}
+inline ::google::protobuf::uint32 CMsgTextShadow::style_symbol() const {
+  // @@protoc_insertion_point(field_get:CMsgTextShadow.style_symbol)
+  return style_symbol_;
+}
+inline void CMsgTextShadow::set_style_symbol(::google::protobuf::uint32 value) {
+  set_has_style_symbol();
+  style_symbol_ = value;
+  // @@protoc_insertion_point(field_set:CMsgTextShadow.style_symbol)
+}
+
+// repeated .CMsgAnimationData animations = 5;
 inline int CMsgTextShadow::animations_size() const {
   return animations_.size();
 }
@@ -21074,7 +22504,31 @@ inline void CMsgClip::set_allocated_transition(::CMsgClipData* transition) {
   // @@protoc_insertion_point(field_set_allocated:CMsgClip.transition)
 }
 
-// repeated .CMsgAnimationData animations = 4;
+// optional uint32 style_symbol = 4;
+inline bool CMsgClip::has_style_symbol() const {
+  return (_has_bits_[0] & 0x00000008u) != 0;
+}
+inline void CMsgClip::set_has_style_symbol() {
+  _has_bits_[0] |= 0x00000008u;
+}
+inline void CMsgClip::clear_has_style_symbol() {
+  _has_bits_[0] &= ~0x00000008u;
+}
+inline void CMsgClip::clear_style_symbol() {
+  style_symbol_ = 0u;
+  clear_has_style_symbol();
+}
+inline ::google::protobuf::uint32 CMsgClip::style_symbol() const {
+  // @@protoc_insertion_point(field_get:CMsgClip.style_symbol)
+  return style_symbol_;
+}
+inline void CMsgClip::set_style_symbol(::google::protobuf::uint32 value) {
+  set_has_style_symbol();
+  style_symbol_ = value;
+  // @@protoc_insertion_point(field_set:CMsgClip.style_symbol)
+}
+
+// repeated .CMsgAnimationData animations = 5;
 inline int CMsgClip::animations_size() const {
   return animations_.size();
 }
@@ -21234,6 +22688,648 @@ inline void CMsgPushClipLayer::set_allocated_border_radius(::CRadiusData* border
 // -------------------------------------------------------------------
 
 // CMsgPopClipLayer
+
+// -------------------------------------------------------------------
+
+// CMsgPushPanelContextInLayer
+
+// optional double transform_m00 = 1;
+inline bool CMsgPushPanelContextInLayer::has_transform_m00() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+inline void CMsgPushPanelContextInLayer::set_has_transform_m00() {
+  _has_bits_[0] |= 0x00000001u;
+}
+inline void CMsgPushPanelContextInLayer::clear_has_transform_m00() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+inline void CMsgPushPanelContextInLayer::clear_transform_m00() {
+  transform_m00_ = 0;
+  clear_has_transform_m00();
+}
+inline double CMsgPushPanelContextInLayer::transform_m00() const {
+  // @@protoc_insertion_point(field_get:CMsgPushPanelContextInLayer.transform_m00)
+  return transform_m00_;
+}
+inline void CMsgPushPanelContextInLayer::set_transform_m00(double value) {
+  set_has_transform_m00();
+  transform_m00_ = value;
+  // @@protoc_insertion_point(field_set:CMsgPushPanelContextInLayer.transform_m00)
+}
+
+// optional double transform_m01 = 2;
+inline bool CMsgPushPanelContextInLayer::has_transform_m01() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+inline void CMsgPushPanelContextInLayer::set_has_transform_m01() {
+  _has_bits_[0] |= 0x00000002u;
+}
+inline void CMsgPushPanelContextInLayer::clear_has_transform_m01() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+inline void CMsgPushPanelContextInLayer::clear_transform_m01() {
+  transform_m01_ = 0;
+  clear_has_transform_m01();
+}
+inline double CMsgPushPanelContextInLayer::transform_m01() const {
+  // @@protoc_insertion_point(field_get:CMsgPushPanelContextInLayer.transform_m01)
+  return transform_m01_;
+}
+inline void CMsgPushPanelContextInLayer::set_transform_m01(double value) {
+  set_has_transform_m01();
+  transform_m01_ = value;
+  // @@protoc_insertion_point(field_set:CMsgPushPanelContextInLayer.transform_m01)
+}
+
+// optional double transform_m02 = 3;
+inline bool CMsgPushPanelContextInLayer::has_transform_m02() const {
+  return (_has_bits_[0] & 0x00000004u) != 0;
+}
+inline void CMsgPushPanelContextInLayer::set_has_transform_m02() {
+  _has_bits_[0] |= 0x00000004u;
+}
+inline void CMsgPushPanelContextInLayer::clear_has_transform_m02() {
+  _has_bits_[0] &= ~0x00000004u;
+}
+inline void CMsgPushPanelContextInLayer::clear_transform_m02() {
+  transform_m02_ = 0;
+  clear_has_transform_m02();
+}
+inline double CMsgPushPanelContextInLayer::transform_m02() const {
+  // @@protoc_insertion_point(field_get:CMsgPushPanelContextInLayer.transform_m02)
+  return transform_m02_;
+}
+inline void CMsgPushPanelContextInLayer::set_transform_m02(double value) {
+  set_has_transform_m02();
+  transform_m02_ = value;
+  // @@protoc_insertion_point(field_set:CMsgPushPanelContextInLayer.transform_m02)
+}
+
+// optional double transform_m03 = 4;
+inline bool CMsgPushPanelContextInLayer::has_transform_m03() const {
+  return (_has_bits_[0] & 0x00000008u) != 0;
+}
+inline void CMsgPushPanelContextInLayer::set_has_transform_m03() {
+  _has_bits_[0] |= 0x00000008u;
+}
+inline void CMsgPushPanelContextInLayer::clear_has_transform_m03() {
+  _has_bits_[0] &= ~0x00000008u;
+}
+inline void CMsgPushPanelContextInLayer::clear_transform_m03() {
+  transform_m03_ = 0;
+  clear_has_transform_m03();
+}
+inline double CMsgPushPanelContextInLayer::transform_m03() const {
+  // @@protoc_insertion_point(field_get:CMsgPushPanelContextInLayer.transform_m03)
+  return transform_m03_;
+}
+inline void CMsgPushPanelContextInLayer::set_transform_m03(double value) {
+  set_has_transform_m03();
+  transform_m03_ = value;
+  // @@protoc_insertion_point(field_set:CMsgPushPanelContextInLayer.transform_m03)
+}
+
+// optional double transform_m10 = 5;
+inline bool CMsgPushPanelContextInLayer::has_transform_m10() const {
+  return (_has_bits_[0] & 0x00000010u) != 0;
+}
+inline void CMsgPushPanelContextInLayer::set_has_transform_m10() {
+  _has_bits_[0] |= 0x00000010u;
+}
+inline void CMsgPushPanelContextInLayer::clear_has_transform_m10() {
+  _has_bits_[0] &= ~0x00000010u;
+}
+inline void CMsgPushPanelContextInLayer::clear_transform_m10() {
+  transform_m10_ = 0;
+  clear_has_transform_m10();
+}
+inline double CMsgPushPanelContextInLayer::transform_m10() const {
+  // @@protoc_insertion_point(field_get:CMsgPushPanelContextInLayer.transform_m10)
+  return transform_m10_;
+}
+inline void CMsgPushPanelContextInLayer::set_transform_m10(double value) {
+  set_has_transform_m10();
+  transform_m10_ = value;
+  // @@protoc_insertion_point(field_set:CMsgPushPanelContextInLayer.transform_m10)
+}
+
+// optional double transform_m11 = 6;
+inline bool CMsgPushPanelContextInLayer::has_transform_m11() const {
+  return (_has_bits_[0] & 0x00000020u) != 0;
+}
+inline void CMsgPushPanelContextInLayer::set_has_transform_m11() {
+  _has_bits_[0] |= 0x00000020u;
+}
+inline void CMsgPushPanelContextInLayer::clear_has_transform_m11() {
+  _has_bits_[0] &= ~0x00000020u;
+}
+inline void CMsgPushPanelContextInLayer::clear_transform_m11() {
+  transform_m11_ = 0;
+  clear_has_transform_m11();
+}
+inline double CMsgPushPanelContextInLayer::transform_m11() const {
+  // @@protoc_insertion_point(field_get:CMsgPushPanelContextInLayer.transform_m11)
+  return transform_m11_;
+}
+inline void CMsgPushPanelContextInLayer::set_transform_m11(double value) {
+  set_has_transform_m11();
+  transform_m11_ = value;
+  // @@protoc_insertion_point(field_set:CMsgPushPanelContextInLayer.transform_m11)
+}
+
+// optional double transform_m12 = 7;
+inline bool CMsgPushPanelContextInLayer::has_transform_m12() const {
+  return (_has_bits_[0] & 0x00000040u) != 0;
+}
+inline void CMsgPushPanelContextInLayer::set_has_transform_m12() {
+  _has_bits_[0] |= 0x00000040u;
+}
+inline void CMsgPushPanelContextInLayer::clear_has_transform_m12() {
+  _has_bits_[0] &= ~0x00000040u;
+}
+inline void CMsgPushPanelContextInLayer::clear_transform_m12() {
+  transform_m12_ = 0;
+  clear_has_transform_m12();
+}
+inline double CMsgPushPanelContextInLayer::transform_m12() const {
+  // @@protoc_insertion_point(field_get:CMsgPushPanelContextInLayer.transform_m12)
+  return transform_m12_;
+}
+inline void CMsgPushPanelContextInLayer::set_transform_m12(double value) {
+  set_has_transform_m12();
+  transform_m12_ = value;
+  // @@protoc_insertion_point(field_set:CMsgPushPanelContextInLayer.transform_m12)
+}
+
+// optional double transform_m13 = 8;
+inline bool CMsgPushPanelContextInLayer::has_transform_m13() const {
+  return (_has_bits_[0] & 0x00000080u) != 0;
+}
+inline void CMsgPushPanelContextInLayer::set_has_transform_m13() {
+  _has_bits_[0] |= 0x00000080u;
+}
+inline void CMsgPushPanelContextInLayer::clear_has_transform_m13() {
+  _has_bits_[0] &= ~0x00000080u;
+}
+inline void CMsgPushPanelContextInLayer::clear_transform_m13() {
+  transform_m13_ = 0;
+  clear_has_transform_m13();
+}
+inline double CMsgPushPanelContextInLayer::transform_m13() const {
+  // @@protoc_insertion_point(field_get:CMsgPushPanelContextInLayer.transform_m13)
+  return transform_m13_;
+}
+inline void CMsgPushPanelContextInLayer::set_transform_m13(double value) {
+  set_has_transform_m13();
+  transform_m13_ = value;
+  // @@protoc_insertion_point(field_set:CMsgPushPanelContextInLayer.transform_m13)
+}
+
+// optional double transform_m20 = 9;
+inline bool CMsgPushPanelContextInLayer::has_transform_m20() const {
+  return (_has_bits_[0] & 0x00000100u) != 0;
+}
+inline void CMsgPushPanelContextInLayer::set_has_transform_m20() {
+  _has_bits_[0] |= 0x00000100u;
+}
+inline void CMsgPushPanelContextInLayer::clear_has_transform_m20() {
+  _has_bits_[0] &= ~0x00000100u;
+}
+inline void CMsgPushPanelContextInLayer::clear_transform_m20() {
+  transform_m20_ = 0;
+  clear_has_transform_m20();
+}
+inline double CMsgPushPanelContextInLayer::transform_m20() const {
+  // @@protoc_insertion_point(field_get:CMsgPushPanelContextInLayer.transform_m20)
+  return transform_m20_;
+}
+inline void CMsgPushPanelContextInLayer::set_transform_m20(double value) {
+  set_has_transform_m20();
+  transform_m20_ = value;
+  // @@protoc_insertion_point(field_set:CMsgPushPanelContextInLayer.transform_m20)
+}
+
+// optional double transform_m21 = 10;
+inline bool CMsgPushPanelContextInLayer::has_transform_m21() const {
+  return (_has_bits_[0] & 0x00000200u) != 0;
+}
+inline void CMsgPushPanelContextInLayer::set_has_transform_m21() {
+  _has_bits_[0] |= 0x00000200u;
+}
+inline void CMsgPushPanelContextInLayer::clear_has_transform_m21() {
+  _has_bits_[0] &= ~0x00000200u;
+}
+inline void CMsgPushPanelContextInLayer::clear_transform_m21() {
+  transform_m21_ = 0;
+  clear_has_transform_m21();
+}
+inline double CMsgPushPanelContextInLayer::transform_m21() const {
+  // @@protoc_insertion_point(field_get:CMsgPushPanelContextInLayer.transform_m21)
+  return transform_m21_;
+}
+inline void CMsgPushPanelContextInLayer::set_transform_m21(double value) {
+  set_has_transform_m21();
+  transform_m21_ = value;
+  // @@protoc_insertion_point(field_set:CMsgPushPanelContextInLayer.transform_m21)
+}
+
+// optional double transform_m22 = 11;
+inline bool CMsgPushPanelContextInLayer::has_transform_m22() const {
+  return (_has_bits_[0] & 0x00000400u) != 0;
+}
+inline void CMsgPushPanelContextInLayer::set_has_transform_m22() {
+  _has_bits_[0] |= 0x00000400u;
+}
+inline void CMsgPushPanelContextInLayer::clear_has_transform_m22() {
+  _has_bits_[0] &= ~0x00000400u;
+}
+inline void CMsgPushPanelContextInLayer::clear_transform_m22() {
+  transform_m22_ = 0;
+  clear_has_transform_m22();
+}
+inline double CMsgPushPanelContextInLayer::transform_m22() const {
+  // @@protoc_insertion_point(field_get:CMsgPushPanelContextInLayer.transform_m22)
+  return transform_m22_;
+}
+inline void CMsgPushPanelContextInLayer::set_transform_m22(double value) {
+  set_has_transform_m22();
+  transform_m22_ = value;
+  // @@protoc_insertion_point(field_set:CMsgPushPanelContextInLayer.transform_m22)
+}
+
+// optional double transform_m23 = 12;
+inline bool CMsgPushPanelContextInLayer::has_transform_m23() const {
+  return (_has_bits_[0] & 0x00000800u) != 0;
+}
+inline void CMsgPushPanelContextInLayer::set_has_transform_m23() {
+  _has_bits_[0] |= 0x00000800u;
+}
+inline void CMsgPushPanelContextInLayer::clear_has_transform_m23() {
+  _has_bits_[0] &= ~0x00000800u;
+}
+inline void CMsgPushPanelContextInLayer::clear_transform_m23() {
+  transform_m23_ = 0;
+  clear_has_transform_m23();
+}
+inline double CMsgPushPanelContextInLayer::transform_m23() const {
+  // @@protoc_insertion_point(field_get:CMsgPushPanelContextInLayer.transform_m23)
+  return transform_m23_;
+}
+inline void CMsgPushPanelContextInLayer::set_transform_m23(double value) {
+  set_has_transform_m23();
+  transform_m23_ = value;
+  // @@protoc_insertion_point(field_set:CMsgPushPanelContextInLayer.transform_m23)
+}
+
+// optional double transform_m30 = 13;
+inline bool CMsgPushPanelContextInLayer::has_transform_m30() const {
+  return (_has_bits_[0] & 0x00001000u) != 0;
+}
+inline void CMsgPushPanelContextInLayer::set_has_transform_m30() {
+  _has_bits_[0] |= 0x00001000u;
+}
+inline void CMsgPushPanelContextInLayer::clear_has_transform_m30() {
+  _has_bits_[0] &= ~0x00001000u;
+}
+inline void CMsgPushPanelContextInLayer::clear_transform_m30() {
+  transform_m30_ = 0;
+  clear_has_transform_m30();
+}
+inline double CMsgPushPanelContextInLayer::transform_m30() const {
+  // @@protoc_insertion_point(field_get:CMsgPushPanelContextInLayer.transform_m30)
+  return transform_m30_;
+}
+inline void CMsgPushPanelContextInLayer::set_transform_m30(double value) {
+  set_has_transform_m30();
+  transform_m30_ = value;
+  // @@protoc_insertion_point(field_set:CMsgPushPanelContextInLayer.transform_m30)
+}
+
+// optional double transform_m31 = 14;
+inline bool CMsgPushPanelContextInLayer::has_transform_m31() const {
+  return (_has_bits_[0] & 0x00002000u) != 0;
+}
+inline void CMsgPushPanelContextInLayer::set_has_transform_m31() {
+  _has_bits_[0] |= 0x00002000u;
+}
+inline void CMsgPushPanelContextInLayer::clear_has_transform_m31() {
+  _has_bits_[0] &= ~0x00002000u;
+}
+inline void CMsgPushPanelContextInLayer::clear_transform_m31() {
+  transform_m31_ = 0;
+  clear_has_transform_m31();
+}
+inline double CMsgPushPanelContextInLayer::transform_m31() const {
+  // @@protoc_insertion_point(field_get:CMsgPushPanelContextInLayer.transform_m31)
+  return transform_m31_;
+}
+inline void CMsgPushPanelContextInLayer::set_transform_m31(double value) {
+  set_has_transform_m31();
+  transform_m31_ = value;
+  // @@protoc_insertion_point(field_set:CMsgPushPanelContextInLayer.transform_m31)
+}
+
+// optional double transform_m32 = 15;
+inline bool CMsgPushPanelContextInLayer::has_transform_m32() const {
+  return (_has_bits_[0] & 0x00004000u) != 0;
+}
+inline void CMsgPushPanelContextInLayer::set_has_transform_m32() {
+  _has_bits_[0] |= 0x00004000u;
+}
+inline void CMsgPushPanelContextInLayer::clear_has_transform_m32() {
+  _has_bits_[0] &= ~0x00004000u;
+}
+inline void CMsgPushPanelContextInLayer::clear_transform_m32() {
+  transform_m32_ = 0;
+  clear_has_transform_m32();
+}
+inline double CMsgPushPanelContextInLayer::transform_m32() const {
+  // @@protoc_insertion_point(field_get:CMsgPushPanelContextInLayer.transform_m32)
+  return transform_m32_;
+}
+inline void CMsgPushPanelContextInLayer::set_transform_m32(double value) {
+  set_has_transform_m32();
+  transform_m32_ = value;
+  // @@protoc_insertion_point(field_set:CMsgPushPanelContextInLayer.transform_m32)
+}
+
+// optional double transform_m33 = 16;
+inline bool CMsgPushPanelContextInLayer::has_transform_m33() const {
+  return (_has_bits_[0] & 0x00008000u) != 0;
+}
+inline void CMsgPushPanelContextInLayer::set_has_transform_m33() {
+  _has_bits_[0] |= 0x00008000u;
+}
+inline void CMsgPushPanelContextInLayer::clear_has_transform_m33() {
+  _has_bits_[0] &= ~0x00008000u;
+}
+inline void CMsgPushPanelContextInLayer::clear_transform_m33() {
+  transform_m33_ = 0;
+  clear_has_transform_m33();
+}
+inline double CMsgPushPanelContextInLayer::transform_m33() const {
+  // @@protoc_insertion_point(field_get:CMsgPushPanelContextInLayer.transform_m33)
+  return transform_m33_;
+}
+inline void CMsgPushPanelContextInLayer::set_transform_m33(double value) {
+  set_has_transform_m33();
+  transform_m33_ = value;
+  // @@protoc_insertion_point(field_set:CMsgPushPanelContextInLayer.transform_m33)
+}
+
+// optional .CBoxShadowData box_shadow = 17;
+inline bool CMsgPushPanelContextInLayer::has_box_shadow() const {
+  return (_has_bits_[0] & 0x00010000u) != 0;
+}
+inline void CMsgPushPanelContextInLayer::set_has_box_shadow() {
+  _has_bits_[0] |= 0x00010000u;
+}
+inline void CMsgPushPanelContextInLayer::clear_has_box_shadow() {
+  _has_bits_[0] &= ~0x00010000u;
+}
+inline void CMsgPushPanelContextInLayer::clear_box_shadow() {
+  if (box_shadow_ != NULL) box_shadow_->::CBoxShadowData::Clear();
+  clear_has_box_shadow();
+}
+inline const ::CBoxShadowData& CMsgPushPanelContextInLayer::box_shadow() const {
+  // @@protoc_insertion_point(field_get:CMsgPushPanelContextInLayer.box_shadow)
+  return box_shadow_ != NULL ? *box_shadow_ : *default_instance_->box_shadow_;
+}
+inline ::CBoxShadowData* CMsgPushPanelContextInLayer::mutable_box_shadow() {
+  set_has_box_shadow();
+  if (box_shadow_ == NULL) box_shadow_ = new ::CBoxShadowData;
+  // @@protoc_insertion_point(field_mutable:CMsgPushPanelContextInLayer.box_shadow)
+  return box_shadow_;
+}
+inline ::CBoxShadowData* CMsgPushPanelContextInLayer::release_box_shadow() {
+  clear_has_box_shadow();
+  ::CBoxShadowData* temp = box_shadow_;
+  box_shadow_ = NULL;
+  return temp;
+}
+inline void CMsgPushPanelContextInLayer::set_allocated_box_shadow(::CBoxShadowData* box_shadow) {
+  delete box_shadow_;
+  box_shadow_ = box_shadow;
+  if (box_shadow) {
+    set_has_box_shadow();
+  } else {
+    clear_has_box_shadow();
+  }
+  // @@protoc_insertion_point(field_set_allocated:CMsgPushPanelContextInLayer.box_shadow)
+}
+
+// optional double width = 18;
+inline bool CMsgPushPanelContextInLayer::has_width() const {
+  return (_has_bits_[0] & 0x00020000u) != 0;
+}
+inline void CMsgPushPanelContextInLayer::set_has_width() {
+  _has_bits_[0] |= 0x00020000u;
+}
+inline void CMsgPushPanelContextInLayer::clear_has_width() {
+  _has_bits_[0] &= ~0x00020000u;
+}
+inline void CMsgPushPanelContextInLayer::clear_width() {
+  width_ = 0;
+  clear_has_width();
+}
+inline double CMsgPushPanelContextInLayer::width() const {
+  // @@protoc_insertion_point(field_get:CMsgPushPanelContextInLayer.width)
+  return width_;
+}
+inline void CMsgPushPanelContextInLayer::set_width(double value) {
+  set_has_width();
+  width_ = value;
+  // @@protoc_insertion_point(field_set:CMsgPushPanelContextInLayer.width)
+}
+
+// optional double height = 19;
+inline bool CMsgPushPanelContextInLayer::has_height() const {
+  return (_has_bits_[0] & 0x00040000u) != 0;
+}
+inline void CMsgPushPanelContextInLayer::set_has_height() {
+  _has_bits_[0] |= 0x00040000u;
+}
+inline void CMsgPushPanelContextInLayer::clear_has_height() {
+  _has_bits_[0] &= ~0x00040000u;
+}
+inline void CMsgPushPanelContextInLayer::clear_height() {
+  height_ = 0;
+  clear_has_height();
+}
+inline double CMsgPushPanelContextInLayer::height() const {
+  // @@protoc_insertion_point(field_get:CMsgPushPanelContextInLayer.height)
+  return height_;
+}
+inline void CMsgPushPanelContextInLayer::set_height(double value) {
+  set_has_height();
+  height_ = value;
+  // @@protoc_insertion_point(field_set:CMsgPushPanelContextInLayer.height)
+}
+
+// optional double position_x = 20;
+inline bool CMsgPushPanelContextInLayer::has_position_x() const {
+  return (_has_bits_[0] & 0x00080000u) != 0;
+}
+inline void CMsgPushPanelContextInLayer::set_has_position_x() {
+  _has_bits_[0] |= 0x00080000u;
+}
+inline void CMsgPushPanelContextInLayer::clear_has_position_x() {
+  _has_bits_[0] &= ~0x00080000u;
+}
+inline void CMsgPushPanelContextInLayer::clear_position_x() {
+  position_x_ = 0;
+  clear_has_position_x();
+}
+inline double CMsgPushPanelContextInLayer::position_x() const {
+  // @@protoc_insertion_point(field_get:CMsgPushPanelContextInLayer.position_x)
+  return position_x_;
+}
+inline void CMsgPushPanelContextInLayer::set_position_x(double value) {
+  set_has_position_x();
+  position_x_ = value;
+  // @@protoc_insertion_point(field_set:CMsgPushPanelContextInLayer.position_x)
+}
+
+// optional double position_y = 21;
+inline bool CMsgPushPanelContextInLayer::has_position_y() const {
+  return (_has_bits_[0] & 0x00100000u) != 0;
+}
+inline void CMsgPushPanelContextInLayer::set_has_position_y() {
+  _has_bits_[0] |= 0x00100000u;
+}
+inline void CMsgPushPanelContextInLayer::clear_has_position_y() {
+  _has_bits_[0] &= ~0x00100000u;
+}
+inline void CMsgPushPanelContextInLayer::clear_position_y() {
+  position_y_ = 0;
+  clear_has_position_y();
+}
+inline double CMsgPushPanelContextInLayer::position_y() const {
+  // @@protoc_insertion_point(field_get:CMsgPushPanelContextInLayer.position_y)
+  return position_y_;
+}
+inline void CMsgPushPanelContextInLayer::set_position_y(double value) {
+  set_has_position_y();
+  position_y_ = value;
+  // @@protoc_insertion_point(field_set:CMsgPushPanelContextInLayer.position_y)
+}
+
+// optional double position_z = 22;
+inline bool CMsgPushPanelContextInLayer::has_position_z() const {
+  return (_has_bits_[0] & 0x00200000u) != 0;
+}
+inline void CMsgPushPanelContextInLayer::set_has_position_z() {
+  _has_bits_[0] |= 0x00200000u;
+}
+inline void CMsgPushPanelContextInLayer::clear_has_position_z() {
+  _has_bits_[0] &= ~0x00200000u;
+}
+inline void CMsgPushPanelContextInLayer::clear_position_z() {
+  position_z_ = 0;
+  clear_has_position_z();
+}
+inline double CMsgPushPanelContextInLayer::position_z() const {
+  // @@protoc_insertion_point(field_get:CMsgPushPanelContextInLayer.position_z)
+  return position_z_;
+}
+inline void CMsgPushPanelContextInLayer::set_position_z(double value) {
+  set_has_position_z();
+  position_z_ = value;
+  // @@protoc_insertion_point(field_set:CMsgPushPanelContextInLayer.position_z)
+}
+
+// optional .CBorderData border = 23;
+inline bool CMsgPushPanelContextInLayer::has_border() const {
+  return (_has_bits_[0] & 0x00400000u) != 0;
+}
+inline void CMsgPushPanelContextInLayer::set_has_border() {
+  _has_bits_[0] |= 0x00400000u;
+}
+inline void CMsgPushPanelContextInLayer::clear_has_border() {
+  _has_bits_[0] &= ~0x00400000u;
+}
+inline void CMsgPushPanelContextInLayer::clear_border() {
+  if (border_ != NULL) border_->::CBorderData::Clear();
+  clear_has_border();
+}
+inline const ::CBorderData& CMsgPushPanelContextInLayer::border() const {
+  // @@protoc_insertion_point(field_get:CMsgPushPanelContextInLayer.border)
+  return border_ != NULL ? *border_ : *default_instance_->border_;
+}
+inline ::CBorderData* CMsgPushPanelContextInLayer::mutable_border() {
+  set_has_border();
+  if (border_ == NULL) border_ = new ::CBorderData;
+  // @@protoc_insertion_point(field_mutable:CMsgPushPanelContextInLayer.border)
+  return border_;
+}
+inline ::CBorderData* CMsgPushPanelContextInLayer::release_border() {
+  clear_has_border();
+  ::CBorderData* temp = border_;
+  border_ = NULL;
+  return temp;
+}
+inline void CMsgPushPanelContextInLayer::set_allocated_border(::CBorderData* border) {
+  delete border_;
+  border_ = border;
+  if (border) {
+    set_has_border();
+  } else {
+    clear_has_border();
+  }
+  // @@protoc_insertion_point(field_set_allocated:CMsgPushPanelContextInLayer.border)
+}
+
+// optional double scroll_x = 24;
+inline bool CMsgPushPanelContextInLayer::has_scroll_x() const {
+  return (_has_bits_[0] & 0x00800000u) != 0;
+}
+inline void CMsgPushPanelContextInLayer::set_has_scroll_x() {
+  _has_bits_[0] |= 0x00800000u;
+}
+inline void CMsgPushPanelContextInLayer::clear_has_scroll_x() {
+  _has_bits_[0] &= ~0x00800000u;
+}
+inline void CMsgPushPanelContextInLayer::clear_scroll_x() {
+  scroll_x_ = 0;
+  clear_has_scroll_x();
+}
+inline double CMsgPushPanelContextInLayer::scroll_x() const {
+  // @@protoc_insertion_point(field_get:CMsgPushPanelContextInLayer.scroll_x)
+  return scroll_x_;
+}
+inline void CMsgPushPanelContextInLayer::set_scroll_x(double value) {
+  set_has_scroll_x();
+  scroll_x_ = value;
+  // @@protoc_insertion_point(field_set:CMsgPushPanelContextInLayer.scroll_x)
+}
+
+// optional double scroll_y = 25;
+inline bool CMsgPushPanelContextInLayer::has_scroll_y() const {
+  return (_has_bits_[0] & 0x01000000u) != 0;
+}
+inline void CMsgPushPanelContextInLayer::set_has_scroll_y() {
+  _has_bits_[0] |= 0x01000000u;
+}
+inline void CMsgPushPanelContextInLayer::clear_has_scroll_y() {
+  _has_bits_[0] &= ~0x01000000u;
+}
+inline void CMsgPushPanelContextInLayer::clear_scroll_y() {
+  scroll_y_ = 0;
+  clear_has_scroll_y();
+}
+inline double CMsgPushPanelContextInLayer::scroll_y() const {
+  // @@protoc_insertion_point(field_get:CMsgPushPanelContextInLayer.scroll_y)
+  return scroll_y_;
+}
+inline void CMsgPushPanelContextInLayer::set_scroll_y(double value) {
+  set_has_scroll_y();
+  scroll_y_ = value;
+  // @@protoc_insertion_point(field_set:CMsgPushPanelContextInLayer.scroll_y)
+}
+
+// -------------------------------------------------------------------
+
+// CMsgPopPanelContextInLayer
 
 // -------------------------------------------------------------------
 
@@ -22227,15 +24323,63 @@ inline void CMsgPushAAndTContext::set_needs_full_repaint(::google::protobuf::int
   // @@protoc_insertion_point(field_set:CMsgPushAAndTContext.needs_full_repaint)
 }
 
-// optional bool wants_hit_test = 29;
-inline bool CMsgPushAAndTContext::has_wants_hit_test() const {
+// optional bool needs_intermediate_texture = 29;
+inline bool CMsgPushAAndTContext::has_needs_intermediate_texture() const {
   return (_has_bits_[0] & 0x08000000u) != 0;
 }
-inline void CMsgPushAAndTContext::set_has_wants_hit_test() {
+inline void CMsgPushAAndTContext::set_has_needs_intermediate_texture() {
   _has_bits_[0] |= 0x08000000u;
 }
-inline void CMsgPushAAndTContext::clear_has_wants_hit_test() {
+inline void CMsgPushAAndTContext::clear_has_needs_intermediate_texture() {
   _has_bits_[0] &= ~0x08000000u;
+}
+inline void CMsgPushAAndTContext::clear_needs_intermediate_texture() {
+  needs_intermediate_texture_ = false;
+  clear_has_needs_intermediate_texture();
+}
+inline bool CMsgPushAAndTContext::needs_intermediate_texture() const {
+  // @@protoc_insertion_point(field_get:CMsgPushAAndTContext.needs_intermediate_texture)
+  return needs_intermediate_texture_;
+}
+inline void CMsgPushAAndTContext::set_needs_intermediate_texture(bool value) {
+  set_has_needs_intermediate_texture();
+  needs_intermediate_texture_ = value;
+  // @@protoc_insertion_point(field_set:CMsgPushAAndTContext.needs_intermediate_texture)
+}
+
+// optional bool clip_after_transform = 30;
+inline bool CMsgPushAAndTContext::has_clip_after_transform() const {
+  return (_has_bits_[0] & 0x10000000u) != 0;
+}
+inline void CMsgPushAAndTContext::set_has_clip_after_transform() {
+  _has_bits_[0] |= 0x10000000u;
+}
+inline void CMsgPushAAndTContext::clear_has_clip_after_transform() {
+  _has_bits_[0] &= ~0x10000000u;
+}
+inline void CMsgPushAAndTContext::clear_clip_after_transform() {
+  clip_after_transform_ = false;
+  clear_has_clip_after_transform();
+}
+inline bool CMsgPushAAndTContext::clip_after_transform() const {
+  // @@protoc_insertion_point(field_get:CMsgPushAAndTContext.clip_after_transform)
+  return clip_after_transform_;
+}
+inline void CMsgPushAAndTContext::set_clip_after_transform(bool value) {
+  set_has_clip_after_transform();
+  clip_after_transform_ = value;
+  // @@protoc_insertion_point(field_set:CMsgPushAAndTContext.clip_after_transform)
+}
+
+// optional bool wants_hit_test = 31;
+inline bool CMsgPushAAndTContext::has_wants_hit_test() const {
+  return (_has_bits_[0] & 0x20000000u) != 0;
+}
+inline void CMsgPushAAndTContext::set_has_wants_hit_test() {
+  _has_bits_[0] |= 0x20000000u;
+}
+inline void CMsgPushAAndTContext::clear_has_wants_hit_test() {
+  _has_bits_[0] &= ~0x20000000u;
 }
 inline void CMsgPushAAndTContext::clear_wants_hit_test() {
   wants_hit_test_ = false;
@@ -22251,15 +24395,39 @@ inline void CMsgPushAAndTContext::set_wants_hit_test(bool value) {
   // @@protoc_insertion_point(field_set:CMsgPushAAndTContext.wants_hit_test)
 }
 
-// optional uint32 mix_blend_mode = 30;
+// optional bool wants_hit_test_children = 32;
+inline bool CMsgPushAAndTContext::has_wants_hit_test_children() const {
+  return (_has_bits_[0] & 0x40000000u) != 0;
+}
+inline void CMsgPushAAndTContext::set_has_wants_hit_test_children() {
+  _has_bits_[0] |= 0x40000000u;
+}
+inline void CMsgPushAAndTContext::clear_has_wants_hit_test_children() {
+  _has_bits_[0] &= ~0x40000000u;
+}
+inline void CMsgPushAAndTContext::clear_wants_hit_test_children() {
+  wants_hit_test_children_ = false;
+  clear_has_wants_hit_test_children();
+}
+inline bool CMsgPushAAndTContext::wants_hit_test_children() const {
+  // @@protoc_insertion_point(field_get:CMsgPushAAndTContext.wants_hit_test_children)
+  return wants_hit_test_children_;
+}
+inline void CMsgPushAAndTContext::set_wants_hit_test_children(bool value) {
+  set_has_wants_hit_test_children();
+  wants_hit_test_children_ = value;
+  // @@protoc_insertion_point(field_set:CMsgPushAAndTContext.wants_hit_test_children)
+}
+
+// optional uint32 mix_blend_mode = 33;
 inline bool CMsgPushAAndTContext::has_mix_blend_mode() const {
-  return (_has_bits_[0] & 0x10000000u) != 0;
+  return (_has_bits_[0] & 0x80000000u) != 0;
 }
 inline void CMsgPushAAndTContext::set_has_mix_blend_mode() {
-  _has_bits_[0] |= 0x10000000u;
+  _has_bits_[0] |= 0x80000000u;
 }
 inline void CMsgPushAAndTContext::clear_has_mix_blend_mode() {
-  _has_bits_[0] &= ~0x10000000u;
+  _has_bits_[0] &= ~0x80000000u;
 }
 inline void CMsgPushAAndTContext::clear_mix_blend_mode() {
   mix_blend_mode_ = 0u;
@@ -22275,15 +24443,15 @@ inline void CMsgPushAAndTContext::set_mix_blend_mode(::google::protobuf::uint32 
   // @@protoc_insertion_point(field_set:CMsgPushAAndTContext.mix_blend_mode)
 }
 
-// optional bool opaque_background = 31;
+// optional bool opaque_background = 34;
 inline bool CMsgPushAAndTContext::has_opaque_background() const {
-  return (_has_bits_[0] & 0x20000000u) != 0;
+  return (_has_bits_[1] & 0x00000001u) != 0;
 }
 inline void CMsgPushAAndTContext::set_has_opaque_background() {
-  _has_bits_[0] |= 0x20000000u;
+  _has_bits_[1] |= 0x00000001u;
 }
 inline void CMsgPushAAndTContext::clear_has_opaque_background() {
-  _has_bits_[0] &= ~0x20000000u;
+  _has_bits_[1] &= ~0x00000001u;
 }
 inline void CMsgPushAAndTContext::clear_opaque_background() {
   opaque_background_ = false;
@@ -22297,6 +24465,130 @@ inline void CMsgPushAAndTContext::set_opaque_background(bool value) {
   set_has_opaque_background();
   opaque_background_ = value;
   // @@protoc_insertion_point(field_set:CMsgPushAAndTContext.opaque_background)
+}
+
+// optional uint32 child_panel_count = 35;
+inline bool CMsgPushAAndTContext::has_child_panel_count() const {
+  return (_has_bits_[1] & 0x00000002u) != 0;
+}
+inline void CMsgPushAAndTContext::set_has_child_panel_count() {
+  _has_bits_[1] |= 0x00000002u;
+}
+inline void CMsgPushAAndTContext::clear_has_child_panel_count() {
+  _has_bits_[1] &= ~0x00000002u;
+}
+inline void CMsgPushAAndTContext::clear_child_panel_count() {
+  child_panel_count_ = 0u;
+  clear_has_child_panel_count();
+}
+inline ::google::protobuf::uint32 CMsgPushAAndTContext::child_panel_count() const {
+  // @@protoc_insertion_point(field_get:CMsgPushAAndTContext.child_panel_count)
+  return child_panel_count_;
+}
+inline void CMsgPushAAndTContext::set_child_panel_count(::google::protobuf::uint32 value) {
+  set_has_child_panel_count();
+  child_panel_count_ = value;
+  // @@protoc_insertion_point(field_set:CMsgPushAAndTContext.child_panel_count)
+}
+
+// optional bool wants_screenspace_quad_output = 36;
+inline bool CMsgPushAAndTContext::has_wants_screenspace_quad_output() const {
+  return (_has_bits_[1] & 0x00000004u) != 0;
+}
+inline void CMsgPushAAndTContext::set_has_wants_screenspace_quad_output() {
+  _has_bits_[1] |= 0x00000004u;
+}
+inline void CMsgPushAAndTContext::clear_has_wants_screenspace_quad_output() {
+  _has_bits_[1] &= ~0x00000004u;
+}
+inline void CMsgPushAAndTContext::clear_wants_screenspace_quad_output() {
+  wants_screenspace_quad_output_ = false;
+  clear_has_wants_screenspace_quad_output();
+}
+inline bool CMsgPushAAndTContext::wants_screenspace_quad_output() const {
+  // @@protoc_insertion_point(field_get:CMsgPushAAndTContext.wants_screenspace_quad_output)
+  return wants_screenspace_quad_output_;
+}
+inline void CMsgPushAAndTContext::set_wants_screenspace_quad_output(bool value) {
+  set_has_wants_screenspace_quad_output();
+  wants_screenspace_quad_output_ = value;
+  // @@protoc_insertion_point(field_set:CMsgPushAAndTContext.wants_screenspace_quad_output)
+}
+
+// optional string composition_layer_texture_name = 38;
+inline bool CMsgPushAAndTContext::has_composition_layer_texture_name() const {
+  return (_has_bits_[1] & 0x00000008u) != 0;
+}
+inline void CMsgPushAAndTContext::set_has_composition_layer_texture_name() {
+  _has_bits_[1] |= 0x00000008u;
+}
+inline void CMsgPushAAndTContext::clear_has_composition_layer_texture_name() {
+  _has_bits_[1] &= ~0x00000008u;
+}
+inline void CMsgPushAAndTContext::clear_composition_layer_texture_name() {
+  if (composition_layer_texture_name_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    composition_layer_texture_name_->clear();
+  }
+  clear_has_composition_layer_texture_name();
+}
+inline const ::std::string& CMsgPushAAndTContext::composition_layer_texture_name() const {
+  // @@protoc_insertion_point(field_get:CMsgPushAAndTContext.composition_layer_texture_name)
+  return *composition_layer_texture_name_;
+}
+inline void CMsgPushAAndTContext::set_composition_layer_texture_name(const ::std::string& value) {
+  set_has_composition_layer_texture_name();
+  if (composition_layer_texture_name_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    composition_layer_texture_name_ = new ::std::string;
+  }
+  composition_layer_texture_name_->assign(value);
+  // @@protoc_insertion_point(field_set:CMsgPushAAndTContext.composition_layer_texture_name)
+}
+inline void CMsgPushAAndTContext::set_composition_layer_texture_name(const char* value) {
+  set_has_composition_layer_texture_name();
+  if (composition_layer_texture_name_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    composition_layer_texture_name_ = new ::std::string;
+  }
+  composition_layer_texture_name_->assign(value);
+  // @@protoc_insertion_point(field_set_char:CMsgPushAAndTContext.composition_layer_texture_name)
+}
+inline void CMsgPushAAndTContext::set_composition_layer_texture_name(const char* value, size_t size) {
+  set_has_composition_layer_texture_name();
+  if (composition_layer_texture_name_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    composition_layer_texture_name_ = new ::std::string;
+  }
+  composition_layer_texture_name_->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:CMsgPushAAndTContext.composition_layer_texture_name)
+}
+inline ::std::string* CMsgPushAAndTContext::mutable_composition_layer_texture_name() {
+  set_has_composition_layer_texture_name();
+  if (composition_layer_texture_name_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    composition_layer_texture_name_ = new ::std::string;
+  }
+  // @@protoc_insertion_point(field_mutable:CMsgPushAAndTContext.composition_layer_texture_name)
+  return composition_layer_texture_name_;
+}
+inline ::std::string* CMsgPushAAndTContext::release_composition_layer_texture_name() {
+  clear_has_composition_layer_texture_name();
+  if (composition_layer_texture_name_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    return NULL;
+  } else {
+    ::std::string* temp = composition_layer_texture_name_;
+    composition_layer_texture_name_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    return temp;
+  }
+}
+inline void CMsgPushAAndTContext::set_allocated_composition_layer_texture_name(::std::string* composition_layer_texture_name) {
+  if (composition_layer_texture_name_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete composition_layer_texture_name_;
+  }
+  if (composition_layer_texture_name) {
+    set_has_composition_layer_texture_name();
+    composition_layer_texture_name_ = composition_layer_texture_name;
+  } else {
+    clear_has_composition_layer_texture_name();
+    composition_layer_texture_name_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_set_allocated:CMsgPushAAndTContext.composition_layer_texture_name)
 }
 
 // -------------------------------------------------------------------
@@ -22885,388 +25177,45 @@ inline void CMsgDrawTexturedRect::set_texture_sample_mode(::google::protobuf::ui
   // @@protoc_insertion_point(field_set:CMsgDrawTexturedRect.texture_sample_mode)
 }
 
-// -------------------------------------------------------------------
-
-// CMsgDrawDoubleBufferedRect
-
-// optional .CMsgPoint top_left = 1;
-inline bool CMsgDrawDoubleBufferedRect::has_top_left() const {
-  return (_has_bits_[0] & 0x00000001u) != 0;
+// optional .CMsgOpacity texture_opacity = 8;
+inline bool CMsgDrawTexturedRect::has_texture_opacity() const {
+  return (_has_bits_[0] & 0x00000080u) != 0;
 }
-inline void CMsgDrawDoubleBufferedRect::set_has_top_left() {
-  _has_bits_[0] |= 0x00000001u;
+inline void CMsgDrawTexturedRect::set_has_texture_opacity() {
+  _has_bits_[0] |= 0x00000080u;
 }
-inline void CMsgDrawDoubleBufferedRect::clear_has_top_left() {
-  _has_bits_[0] &= ~0x00000001u;
+inline void CMsgDrawTexturedRect::clear_has_texture_opacity() {
+  _has_bits_[0] &= ~0x00000080u;
 }
-inline void CMsgDrawDoubleBufferedRect::clear_top_left() {
-  if (top_left_ != NULL) top_left_->::CMsgPoint::Clear();
-  clear_has_top_left();
+inline void CMsgDrawTexturedRect::clear_texture_opacity() {
+  if (texture_opacity_ != NULL) texture_opacity_->::CMsgOpacity::Clear();
+  clear_has_texture_opacity();
 }
-inline const ::CMsgPoint& CMsgDrawDoubleBufferedRect::top_left() const {
-  // @@protoc_insertion_point(field_get:CMsgDrawDoubleBufferedRect.top_left)
-  return top_left_ != NULL ? *top_left_ : *default_instance_->top_left_;
+inline const ::CMsgOpacity& CMsgDrawTexturedRect::texture_opacity() const {
+  // @@protoc_insertion_point(field_get:CMsgDrawTexturedRect.texture_opacity)
+  return texture_opacity_ != NULL ? *texture_opacity_ : *default_instance_->texture_opacity_;
 }
-inline ::CMsgPoint* CMsgDrawDoubleBufferedRect::mutable_top_left() {
-  set_has_top_left();
-  if (top_left_ == NULL) top_left_ = new ::CMsgPoint;
-  // @@protoc_insertion_point(field_mutable:CMsgDrawDoubleBufferedRect.top_left)
-  return top_left_;
+inline ::CMsgOpacity* CMsgDrawTexturedRect::mutable_texture_opacity() {
+  set_has_texture_opacity();
+  if (texture_opacity_ == NULL) texture_opacity_ = new ::CMsgOpacity;
+  // @@protoc_insertion_point(field_mutable:CMsgDrawTexturedRect.texture_opacity)
+  return texture_opacity_;
 }
-inline ::CMsgPoint* CMsgDrawDoubleBufferedRect::release_top_left() {
-  clear_has_top_left();
-  ::CMsgPoint* temp = top_left_;
-  top_left_ = NULL;
+inline ::CMsgOpacity* CMsgDrawTexturedRect::release_texture_opacity() {
+  clear_has_texture_opacity();
+  ::CMsgOpacity* temp = texture_opacity_;
+  texture_opacity_ = NULL;
   return temp;
 }
-inline void CMsgDrawDoubleBufferedRect::set_allocated_top_left(::CMsgPoint* top_left) {
-  delete top_left_;
-  top_left_ = top_left;
-  if (top_left) {
-    set_has_top_left();
+inline void CMsgDrawTexturedRect::set_allocated_texture_opacity(::CMsgOpacity* texture_opacity) {
+  delete texture_opacity_;
+  texture_opacity_ = texture_opacity;
+  if (texture_opacity) {
+    set_has_texture_opacity();
   } else {
-    clear_has_top_left();
+    clear_has_texture_opacity();
   }
-  // @@protoc_insertion_point(field_set_allocated:CMsgDrawDoubleBufferedRect.top_left)
-}
-
-// optional .CMsgPoint bottom_right = 2;
-inline bool CMsgDrawDoubleBufferedRect::has_bottom_right() const {
-  return (_has_bits_[0] & 0x00000002u) != 0;
-}
-inline void CMsgDrawDoubleBufferedRect::set_has_bottom_right() {
-  _has_bits_[0] |= 0x00000002u;
-}
-inline void CMsgDrawDoubleBufferedRect::clear_has_bottom_right() {
-  _has_bits_[0] &= ~0x00000002u;
-}
-inline void CMsgDrawDoubleBufferedRect::clear_bottom_right() {
-  if (bottom_right_ != NULL) bottom_right_->::CMsgPoint::Clear();
-  clear_has_bottom_right();
-}
-inline const ::CMsgPoint& CMsgDrawDoubleBufferedRect::bottom_right() const {
-  // @@protoc_insertion_point(field_get:CMsgDrawDoubleBufferedRect.bottom_right)
-  return bottom_right_ != NULL ? *bottom_right_ : *default_instance_->bottom_right_;
-}
-inline ::CMsgPoint* CMsgDrawDoubleBufferedRect::mutable_bottom_right() {
-  set_has_bottom_right();
-  if (bottom_right_ == NULL) bottom_right_ = new ::CMsgPoint;
-  // @@protoc_insertion_point(field_mutable:CMsgDrawDoubleBufferedRect.bottom_right)
-  return bottom_right_;
-}
-inline ::CMsgPoint* CMsgDrawDoubleBufferedRect::release_bottom_right() {
-  clear_has_bottom_right();
-  ::CMsgPoint* temp = bottom_right_;
-  bottom_right_ = NULL;
-  return temp;
-}
-inline void CMsgDrawDoubleBufferedRect::set_allocated_bottom_right(::CMsgPoint* bottom_right) {
-  delete bottom_right_;
-  bottom_right_ = bottom_right;
-  if (bottom_right) {
-    set_has_bottom_right();
-  } else {
-    clear_has_bottom_right();
-  }
-  // @@protoc_insertion_point(field_set_allocated:CMsgDrawDoubleBufferedRect.bottom_right)
-}
-
-// optional uint32 texture_id = 3;
-inline bool CMsgDrawDoubleBufferedRect::has_texture_id() const {
-  return (_has_bits_[0] & 0x00000004u) != 0;
-}
-inline void CMsgDrawDoubleBufferedRect::set_has_texture_id() {
-  _has_bits_[0] |= 0x00000004u;
-}
-inline void CMsgDrawDoubleBufferedRect::clear_has_texture_id() {
-  _has_bits_[0] &= ~0x00000004u;
-}
-inline void CMsgDrawDoubleBufferedRect::clear_texture_id() {
-  texture_id_ = 0u;
-  clear_has_texture_id();
-}
-inline ::google::protobuf::uint32 CMsgDrawDoubleBufferedRect::texture_id() const {
-  // @@protoc_insertion_point(field_get:CMsgDrawDoubleBufferedRect.texture_id)
-  return texture_id_;
-}
-inline void CMsgDrawDoubleBufferedRect::set_texture_id(::google::protobuf::uint32 value) {
-  set_has_texture_id();
-  texture_id_ = value;
-  // @@protoc_insertion_point(field_set:CMsgDrawDoubleBufferedRect.texture_id)
-}
-
-// optional .CMsgPoint texture_top_left = 4;
-inline bool CMsgDrawDoubleBufferedRect::has_texture_top_left() const {
-  return (_has_bits_[0] & 0x00000008u) != 0;
-}
-inline void CMsgDrawDoubleBufferedRect::set_has_texture_top_left() {
-  _has_bits_[0] |= 0x00000008u;
-}
-inline void CMsgDrawDoubleBufferedRect::clear_has_texture_top_left() {
-  _has_bits_[0] &= ~0x00000008u;
-}
-inline void CMsgDrawDoubleBufferedRect::clear_texture_top_left() {
-  if (texture_top_left_ != NULL) texture_top_left_->::CMsgPoint::Clear();
-  clear_has_texture_top_left();
-}
-inline const ::CMsgPoint& CMsgDrawDoubleBufferedRect::texture_top_left() const {
-  // @@protoc_insertion_point(field_get:CMsgDrawDoubleBufferedRect.texture_top_left)
-  return texture_top_left_ != NULL ? *texture_top_left_ : *default_instance_->texture_top_left_;
-}
-inline ::CMsgPoint* CMsgDrawDoubleBufferedRect::mutable_texture_top_left() {
-  set_has_texture_top_left();
-  if (texture_top_left_ == NULL) texture_top_left_ = new ::CMsgPoint;
-  // @@protoc_insertion_point(field_mutable:CMsgDrawDoubleBufferedRect.texture_top_left)
-  return texture_top_left_;
-}
-inline ::CMsgPoint* CMsgDrawDoubleBufferedRect::release_texture_top_left() {
-  clear_has_texture_top_left();
-  ::CMsgPoint* temp = texture_top_left_;
-  texture_top_left_ = NULL;
-  return temp;
-}
-inline void CMsgDrawDoubleBufferedRect::set_allocated_texture_top_left(::CMsgPoint* texture_top_left) {
-  delete texture_top_left_;
-  texture_top_left_ = texture_top_left;
-  if (texture_top_left) {
-    set_has_texture_top_left();
-  } else {
-    clear_has_texture_top_left();
-  }
-  // @@protoc_insertion_point(field_set_allocated:CMsgDrawDoubleBufferedRect.texture_top_left)
-}
-
-// optional .CMsgPoint texture_bottom_right = 5;
-inline bool CMsgDrawDoubleBufferedRect::has_texture_bottom_right() const {
-  return (_has_bits_[0] & 0x00000010u) != 0;
-}
-inline void CMsgDrawDoubleBufferedRect::set_has_texture_bottom_right() {
-  _has_bits_[0] |= 0x00000010u;
-}
-inline void CMsgDrawDoubleBufferedRect::clear_has_texture_bottom_right() {
-  _has_bits_[0] &= ~0x00000010u;
-}
-inline void CMsgDrawDoubleBufferedRect::clear_texture_bottom_right() {
-  if (texture_bottom_right_ != NULL) texture_bottom_right_->::CMsgPoint::Clear();
-  clear_has_texture_bottom_right();
-}
-inline const ::CMsgPoint& CMsgDrawDoubleBufferedRect::texture_bottom_right() const {
-  // @@protoc_insertion_point(field_get:CMsgDrawDoubleBufferedRect.texture_bottom_right)
-  return texture_bottom_right_ != NULL ? *texture_bottom_right_ : *default_instance_->texture_bottom_right_;
-}
-inline ::CMsgPoint* CMsgDrawDoubleBufferedRect::mutable_texture_bottom_right() {
-  set_has_texture_bottom_right();
-  if (texture_bottom_right_ == NULL) texture_bottom_right_ = new ::CMsgPoint;
-  // @@protoc_insertion_point(field_mutable:CMsgDrawDoubleBufferedRect.texture_bottom_right)
-  return texture_bottom_right_;
-}
-inline ::CMsgPoint* CMsgDrawDoubleBufferedRect::release_texture_bottom_right() {
-  clear_has_texture_bottom_right();
-  ::CMsgPoint* temp = texture_bottom_right_;
-  texture_bottom_right_ = NULL;
-  return temp;
-}
-inline void CMsgDrawDoubleBufferedRect::set_allocated_texture_bottom_right(::CMsgPoint* texture_bottom_right) {
-  delete texture_bottom_right_;
-  texture_bottom_right_ = texture_bottom_right;
-  if (texture_bottom_right) {
-    set_has_texture_bottom_right();
-  } else {
-    clear_has_texture_bottom_right();
-  }
-  // @@protoc_insertion_point(field_set_allocated:CMsgDrawDoubleBufferedRect.texture_bottom_right)
-}
-
-// -------------------------------------------------------------------
-
-// CMsgDrawYUV420DoubleBufferedRect
-
-// optional .CMsgPoint top_left = 1;
-inline bool CMsgDrawYUV420DoubleBufferedRect::has_top_left() const {
-  return (_has_bits_[0] & 0x00000001u) != 0;
-}
-inline void CMsgDrawYUV420DoubleBufferedRect::set_has_top_left() {
-  _has_bits_[0] |= 0x00000001u;
-}
-inline void CMsgDrawYUV420DoubleBufferedRect::clear_has_top_left() {
-  _has_bits_[0] &= ~0x00000001u;
-}
-inline void CMsgDrawYUV420DoubleBufferedRect::clear_top_left() {
-  if (top_left_ != NULL) top_left_->::CMsgPoint::Clear();
-  clear_has_top_left();
-}
-inline const ::CMsgPoint& CMsgDrawYUV420DoubleBufferedRect::top_left() const {
-  // @@protoc_insertion_point(field_get:CMsgDrawYUV420DoubleBufferedRect.top_left)
-  return top_left_ != NULL ? *top_left_ : *default_instance_->top_left_;
-}
-inline ::CMsgPoint* CMsgDrawYUV420DoubleBufferedRect::mutable_top_left() {
-  set_has_top_left();
-  if (top_left_ == NULL) top_left_ = new ::CMsgPoint;
-  // @@protoc_insertion_point(field_mutable:CMsgDrawYUV420DoubleBufferedRect.top_left)
-  return top_left_;
-}
-inline ::CMsgPoint* CMsgDrawYUV420DoubleBufferedRect::release_top_left() {
-  clear_has_top_left();
-  ::CMsgPoint* temp = top_left_;
-  top_left_ = NULL;
-  return temp;
-}
-inline void CMsgDrawYUV420DoubleBufferedRect::set_allocated_top_left(::CMsgPoint* top_left) {
-  delete top_left_;
-  top_left_ = top_left;
-  if (top_left) {
-    set_has_top_left();
-  } else {
-    clear_has_top_left();
-  }
-  // @@protoc_insertion_point(field_set_allocated:CMsgDrawYUV420DoubleBufferedRect.top_left)
-}
-
-// optional .CMsgPoint bottom_right = 2;
-inline bool CMsgDrawYUV420DoubleBufferedRect::has_bottom_right() const {
-  return (_has_bits_[0] & 0x00000002u) != 0;
-}
-inline void CMsgDrawYUV420DoubleBufferedRect::set_has_bottom_right() {
-  _has_bits_[0] |= 0x00000002u;
-}
-inline void CMsgDrawYUV420DoubleBufferedRect::clear_has_bottom_right() {
-  _has_bits_[0] &= ~0x00000002u;
-}
-inline void CMsgDrawYUV420DoubleBufferedRect::clear_bottom_right() {
-  if (bottom_right_ != NULL) bottom_right_->::CMsgPoint::Clear();
-  clear_has_bottom_right();
-}
-inline const ::CMsgPoint& CMsgDrawYUV420DoubleBufferedRect::bottom_right() const {
-  // @@protoc_insertion_point(field_get:CMsgDrawYUV420DoubleBufferedRect.bottom_right)
-  return bottom_right_ != NULL ? *bottom_right_ : *default_instance_->bottom_right_;
-}
-inline ::CMsgPoint* CMsgDrawYUV420DoubleBufferedRect::mutable_bottom_right() {
-  set_has_bottom_right();
-  if (bottom_right_ == NULL) bottom_right_ = new ::CMsgPoint;
-  // @@protoc_insertion_point(field_mutable:CMsgDrawYUV420DoubleBufferedRect.bottom_right)
-  return bottom_right_;
-}
-inline ::CMsgPoint* CMsgDrawYUV420DoubleBufferedRect::release_bottom_right() {
-  clear_has_bottom_right();
-  ::CMsgPoint* temp = bottom_right_;
-  bottom_right_ = NULL;
-  return temp;
-}
-inline void CMsgDrawYUV420DoubleBufferedRect::set_allocated_bottom_right(::CMsgPoint* bottom_right) {
-  delete bottom_right_;
-  bottom_right_ = bottom_right;
-  if (bottom_right) {
-    set_has_bottom_right();
-  } else {
-    clear_has_bottom_right();
-  }
-  // @@protoc_insertion_point(field_set_allocated:CMsgDrawYUV420DoubleBufferedRect.bottom_right)
-}
-
-// optional uint32 texture_id = 3;
-inline bool CMsgDrawYUV420DoubleBufferedRect::has_texture_id() const {
-  return (_has_bits_[0] & 0x00000004u) != 0;
-}
-inline void CMsgDrawYUV420DoubleBufferedRect::set_has_texture_id() {
-  _has_bits_[0] |= 0x00000004u;
-}
-inline void CMsgDrawYUV420DoubleBufferedRect::clear_has_texture_id() {
-  _has_bits_[0] &= ~0x00000004u;
-}
-inline void CMsgDrawYUV420DoubleBufferedRect::clear_texture_id() {
-  texture_id_ = 0u;
-  clear_has_texture_id();
-}
-inline ::google::protobuf::uint32 CMsgDrawYUV420DoubleBufferedRect::texture_id() const {
-  // @@protoc_insertion_point(field_get:CMsgDrawYUV420DoubleBufferedRect.texture_id)
-  return texture_id_;
-}
-inline void CMsgDrawYUV420DoubleBufferedRect::set_texture_id(::google::protobuf::uint32 value) {
-  set_has_texture_id();
-  texture_id_ = value;
-  // @@protoc_insertion_point(field_set:CMsgDrawYUV420DoubleBufferedRect.texture_id)
-}
-
-// optional .CMsgPoint texture_top_left = 4;
-inline bool CMsgDrawYUV420DoubleBufferedRect::has_texture_top_left() const {
-  return (_has_bits_[0] & 0x00000008u) != 0;
-}
-inline void CMsgDrawYUV420DoubleBufferedRect::set_has_texture_top_left() {
-  _has_bits_[0] |= 0x00000008u;
-}
-inline void CMsgDrawYUV420DoubleBufferedRect::clear_has_texture_top_left() {
-  _has_bits_[0] &= ~0x00000008u;
-}
-inline void CMsgDrawYUV420DoubleBufferedRect::clear_texture_top_left() {
-  if (texture_top_left_ != NULL) texture_top_left_->::CMsgPoint::Clear();
-  clear_has_texture_top_left();
-}
-inline const ::CMsgPoint& CMsgDrawYUV420DoubleBufferedRect::texture_top_left() const {
-  // @@protoc_insertion_point(field_get:CMsgDrawYUV420DoubleBufferedRect.texture_top_left)
-  return texture_top_left_ != NULL ? *texture_top_left_ : *default_instance_->texture_top_left_;
-}
-inline ::CMsgPoint* CMsgDrawYUV420DoubleBufferedRect::mutable_texture_top_left() {
-  set_has_texture_top_left();
-  if (texture_top_left_ == NULL) texture_top_left_ = new ::CMsgPoint;
-  // @@protoc_insertion_point(field_mutable:CMsgDrawYUV420DoubleBufferedRect.texture_top_left)
-  return texture_top_left_;
-}
-inline ::CMsgPoint* CMsgDrawYUV420DoubleBufferedRect::release_texture_top_left() {
-  clear_has_texture_top_left();
-  ::CMsgPoint* temp = texture_top_left_;
-  texture_top_left_ = NULL;
-  return temp;
-}
-inline void CMsgDrawYUV420DoubleBufferedRect::set_allocated_texture_top_left(::CMsgPoint* texture_top_left) {
-  delete texture_top_left_;
-  texture_top_left_ = texture_top_left;
-  if (texture_top_left) {
-    set_has_texture_top_left();
-  } else {
-    clear_has_texture_top_left();
-  }
-  // @@protoc_insertion_point(field_set_allocated:CMsgDrawYUV420DoubleBufferedRect.texture_top_left)
-}
-
-// optional .CMsgPoint texture_bottom_right = 5;
-inline bool CMsgDrawYUV420DoubleBufferedRect::has_texture_bottom_right() const {
-  return (_has_bits_[0] & 0x00000010u) != 0;
-}
-inline void CMsgDrawYUV420DoubleBufferedRect::set_has_texture_bottom_right() {
-  _has_bits_[0] |= 0x00000010u;
-}
-inline void CMsgDrawYUV420DoubleBufferedRect::clear_has_texture_bottom_right() {
-  _has_bits_[0] &= ~0x00000010u;
-}
-inline void CMsgDrawYUV420DoubleBufferedRect::clear_texture_bottom_right() {
-  if (texture_bottom_right_ != NULL) texture_bottom_right_->::CMsgPoint::Clear();
-  clear_has_texture_bottom_right();
-}
-inline const ::CMsgPoint& CMsgDrawYUV420DoubleBufferedRect::texture_bottom_right() const {
-  // @@protoc_insertion_point(field_get:CMsgDrawYUV420DoubleBufferedRect.texture_bottom_right)
-  return texture_bottom_right_ != NULL ? *texture_bottom_right_ : *default_instance_->texture_bottom_right_;
-}
-inline ::CMsgPoint* CMsgDrawYUV420DoubleBufferedRect::mutable_texture_bottom_right() {
-  set_has_texture_bottom_right();
-  if (texture_bottom_right_ == NULL) texture_bottom_right_ = new ::CMsgPoint;
-  // @@protoc_insertion_point(field_mutable:CMsgDrawYUV420DoubleBufferedRect.texture_bottom_right)
-  return texture_bottom_right_;
-}
-inline ::CMsgPoint* CMsgDrawYUV420DoubleBufferedRect::release_texture_bottom_right() {
-  clear_has_texture_bottom_right();
-  ::CMsgPoint* temp = texture_bottom_right_;
-  texture_bottom_right_ = NULL;
-  return temp;
-}
-inline void CMsgDrawYUV420DoubleBufferedRect::set_allocated_texture_bottom_right(::CMsgPoint* texture_bottom_right) {
-  delete texture_bottom_right_;
-  texture_bottom_right_ = texture_bottom_right;
-  if (texture_bottom_right) {
-    set_has_texture_bottom_right();
-  } else {
-    clear_has_texture_bottom_right();
-  }
-  // @@protoc_insertion_point(field_set_allocated:CMsgDrawYUV420DoubleBufferedRect.texture_bottom_right)
+  // @@protoc_insertion_point(field_set_allocated:CMsgDrawTexturedRect.texture_opacity)
 }
 
 // -------------------------------------------------------------------
@@ -23507,6 +25456,30 @@ inline void CMsgRenderTexturedRect::set_texture_sample_mode(::google::protobuf::
   set_has_texture_sample_mode();
   texture_sample_mode_ = value;
   // @@protoc_insertion_point(field_set:CMsgRenderTexturedRect.texture_sample_mode)
+}
+
+// optional float texture_opacity = 8 [default = 1];
+inline bool CMsgRenderTexturedRect::has_texture_opacity() const {
+  return (_has_bits_[0] & 0x00000080u) != 0;
+}
+inline void CMsgRenderTexturedRect::set_has_texture_opacity() {
+  _has_bits_[0] |= 0x00000080u;
+}
+inline void CMsgRenderTexturedRect::clear_has_texture_opacity() {
+  _has_bits_[0] &= ~0x00000080u;
+}
+inline void CMsgRenderTexturedRect::clear_texture_opacity() {
+  texture_opacity_ = 1;
+  clear_has_texture_opacity();
+}
+inline float CMsgRenderTexturedRect::texture_opacity() const {
+  // @@protoc_insertion_point(field_get:CMsgRenderTexturedRect.texture_opacity)
+  return texture_opacity_;
+}
+inline void CMsgRenderTexturedRect::set_texture_opacity(float value) {
+  set_has_texture_opacity();
+  texture_opacity_ = value;
+  // @@protoc_insertion_point(field_set:CMsgRenderTexturedRect.texture_opacity)
 }
 
 // -------------------------------------------------------------------
@@ -24415,91 +26388,139 @@ inline void CMsgRenderTextRangeFormat::set_allocated_format(::CMsgRenderTextForm
 
 // CMsgDrawTextRegion
 
-// optional bytes wtext = 2;
-inline bool CMsgDrawTextRegion::has_wtext() const {
+// optional bytes raw_text = 11;
+inline bool CMsgDrawTextRegion::has_raw_text() const {
   return (_has_bits_[0] & 0x00000001u) != 0;
 }
-inline void CMsgDrawTextRegion::set_has_wtext() {
+inline void CMsgDrawTextRegion::set_has_raw_text() {
   _has_bits_[0] |= 0x00000001u;
 }
-inline void CMsgDrawTextRegion::clear_has_wtext() {
+inline void CMsgDrawTextRegion::clear_has_raw_text() {
   _has_bits_[0] &= ~0x00000001u;
 }
-inline void CMsgDrawTextRegion::clear_wtext() {
-  if (wtext_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    wtext_->clear();
+inline void CMsgDrawTextRegion::clear_raw_text() {
+  if (raw_text_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    raw_text_->clear();
   }
-  clear_has_wtext();
+  clear_has_raw_text();
 }
-inline const ::std::string& CMsgDrawTextRegion::wtext() const {
-  // @@protoc_insertion_point(field_get:CMsgDrawTextRegion.wtext)
-  return *wtext_;
+inline const ::std::string& CMsgDrawTextRegion::raw_text() const {
+  // @@protoc_insertion_point(field_get:CMsgDrawTextRegion.raw_text)
+  return *raw_text_;
 }
-inline void CMsgDrawTextRegion::set_wtext(const ::std::string& value) {
-  set_has_wtext();
-  if (wtext_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    wtext_ = new ::std::string;
+inline void CMsgDrawTextRegion::set_raw_text(const ::std::string& value) {
+  set_has_raw_text();
+  if (raw_text_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    raw_text_ = new ::std::string;
   }
-  wtext_->assign(value);
-  // @@protoc_insertion_point(field_set:CMsgDrawTextRegion.wtext)
+  raw_text_->assign(value);
+  // @@protoc_insertion_point(field_set:CMsgDrawTextRegion.raw_text)
 }
-inline void CMsgDrawTextRegion::set_wtext(const char* value) {
-  set_has_wtext();
-  if (wtext_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    wtext_ = new ::std::string;
+inline void CMsgDrawTextRegion::set_raw_text(const char* value) {
+  set_has_raw_text();
+  if (raw_text_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    raw_text_ = new ::std::string;
   }
-  wtext_->assign(value);
-  // @@protoc_insertion_point(field_set_char:CMsgDrawTextRegion.wtext)
+  raw_text_->assign(value);
+  // @@protoc_insertion_point(field_set_char:CMsgDrawTextRegion.raw_text)
 }
-inline void CMsgDrawTextRegion::set_wtext(const void* value, size_t size) {
-  set_has_wtext();
-  if (wtext_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    wtext_ = new ::std::string;
+inline void CMsgDrawTextRegion::set_raw_text(const void* value, size_t size) {
+  set_has_raw_text();
+  if (raw_text_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    raw_text_ = new ::std::string;
   }
-  wtext_->assign(reinterpret_cast<const char*>(value), size);
-  // @@protoc_insertion_point(field_set_pointer:CMsgDrawTextRegion.wtext)
+  raw_text_->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:CMsgDrawTextRegion.raw_text)
 }
-inline ::std::string* CMsgDrawTextRegion::mutable_wtext() {
-  set_has_wtext();
-  if (wtext_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    wtext_ = new ::std::string;
+inline ::std::string* CMsgDrawTextRegion::mutable_raw_text() {
+  set_has_raw_text();
+  if (raw_text_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    raw_text_ = new ::std::string;
   }
-  // @@protoc_insertion_point(field_mutable:CMsgDrawTextRegion.wtext)
-  return wtext_;
+  // @@protoc_insertion_point(field_mutable:CMsgDrawTextRegion.raw_text)
+  return raw_text_;
 }
-inline ::std::string* CMsgDrawTextRegion::release_wtext() {
-  clear_has_wtext();
-  if (wtext_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+inline ::std::string* CMsgDrawTextRegion::release_raw_text() {
+  clear_has_raw_text();
+  if (raw_text_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
     return NULL;
   } else {
-    ::std::string* temp = wtext_;
-    wtext_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    ::std::string* temp = raw_text_;
+    raw_text_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
     return temp;
   }
 }
-inline void CMsgDrawTextRegion::set_allocated_wtext(::std::string* wtext) {
-  if (wtext_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    delete wtext_;
+inline void CMsgDrawTextRegion::set_allocated_raw_text(::std::string* raw_text) {
+  if (raw_text_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete raw_text_;
   }
-  if (wtext) {
-    set_has_wtext();
-    wtext_ = wtext;
+  if (raw_text) {
+    set_has_raw_text();
+    raw_text_ = raw_text;
   } else {
-    clear_has_wtext();
-    wtext_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    clear_has_raw_text();
+    raw_text_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   }
-  // @@protoc_insertion_point(field_set_allocated:CMsgDrawTextRegion.wtext)
+  // @@protoc_insertion_point(field_set_allocated:CMsgDrawTextRegion.raw_text)
+}
+
+// optional int32 text_chars = 12;
+inline bool CMsgDrawTextRegion::has_text_chars() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+inline void CMsgDrawTextRegion::set_has_text_chars() {
+  _has_bits_[0] |= 0x00000002u;
+}
+inline void CMsgDrawTextRegion::clear_has_text_chars() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+inline void CMsgDrawTextRegion::clear_text_chars() {
+  text_chars_ = 0;
+  clear_has_text_chars();
+}
+inline ::google::protobuf::int32 CMsgDrawTextRegion::text_chars() const {
+  // @@protoc_insertion_point(field_get:CMsgDrawTextRegion.text_chars)
+  return text_chars_;
+}
+inline void CMsgDrawTextRegion::set_text_chars(::google::protobuf::int32 value) {
+  set_has_text_chars();
+  text_chars_ = value;
+  // @@protoc_insertion_point(field_set:CMsgDrawTextRegion.text_chars)
+}
+
+// optional int32 text_encoding = 13;
+inline bool CMsgDrawTextRegion::has_text_encoding() const {
+  return (_has_bits_[0] & 0x00000004u) != 0;
+}
+inline void CMsgDrawTextRegion::set_has_text_encoding() {
+  _has_bits_[0] |= 0x00000004u;
+}
+inline void CMsgDrawTextRegion::clear_has_text_encoding() {
+  _has_bits_[0] &= ~0x00000004u;
+}
+inline void CMsgDrawTextRegion::clear_text_encoding() {
+  text_encoding_ = 0;
+  clear_has_text_encoding();
+}
+inline ::google::protobuf::int32 CMsgDrawTextRegion::text_encoding() const {
+  // @@protoc_insertion_point(field_get:CMsgDrawTextRegion.text_encoding)
+  return text_encoding_;
+}
+inline void CMsgDrawTextRegion::set_text_encoding(::google::protobuf::int32 value) {
+  set_has_text_encoding();
+  text_encoding_ = value;
+  // @@protoc_insertion_point(field_set:CMsgDrawTextRegion.text_encoding)
 }
 
 // optional .CMsgTextFormat default_format = 3;
 inline bool CMsgDrawTextRegion::has_default_format() const {
-  return (_has_bits_[0] & 0x00000002u) != 0;
+  return (_has_bits_[0] & 0x00000008u) != 0;
 }
 inline void CMsgDrawTextRegion::set_has_default_format() {
-  _has_bits_[0] |= 0x00000002u;
+  _has_bits_[0] |= 0x00000008u;
 }
 inline void CMsgDrawTextRegion::clear_has_default_format() {
-  _has_bits_[0] &= ~0x00000002u;
+  _has_bits_[0] &= ~0x00000008u;
 }
 inline void CMsgDrawTextRegion::clear_default_format() {
   if (default_format_ != NULL) default_format_->::CMsgTextFormat::Clear();
@@ -24534,13 +26555,13 @@ inline void CMsgDrawTextRegion::set_allocated_default_format(::CMsgTextFormat* d
 
 // optional uint32 text_align = 4;
 inline bool CMsgDrawTextRegion::has_text_align() const {
-  return (_has_bits_[0] & 0x00000004u) != 0;
+  return (_has_bits_[0] & 0x00000010u) != 0;
 }
 inline void CMsgDrawTextRegion::set_has_text_align() {
-  _has_bits_[0] |= 0x00000004u;
+  _has_bits_[0] |= 0x00000010u;
 }
 inline void CMsgDrawTextRegion::clear_has_text_align() {
-  _has_bits_[0] &= ~0x00000004u;
+  _has_bits_[0] &= ~0x00000010u;
 }
 inline void CMsgDrawTextRegion::clear_text_align() {
   text_align_ = 0u;
@@ -24558,13 +26579,13 @@ inline void CMsgDrawTextRegion::set_text_align(::google::protobuf::uint32 value)
 
 // optional uint32 line_height = 5;
 inline bool CMsgDrawTextRegion::has_line_height() const {
-  return (_has_bits_[0] & 0x00000008u) != 0;
+  return (_has_bits_[0] & 0x00000020u) != 0;
 }
 inline void CMsgDrawTextRegion::set_has_line_height() {
-  _has_bits_[0] |= 0x00000008u;
+  _has_bits_[0] |= 0x00000020u;
 }
 inline void CMsgDrawTextRegion::clear_has_line_height() {
-  _has_bits_[0] &= ~0x00000008u;
+  _has_bits_[0] &= ~0x00000020u;
 }
 inline void CMsgDrawTextRegion::clear_line_height() {
   line_height_ = 0u;
@@ -24582,13 +26603,13 @@ inline void CMsgDrawTextRegion::set_line_height(::google::protobuf::uint32 value
 
 // optional .CMsgPoint top_left = 6;
 inline bool CMsgDrawTextRegion::has_top_left() const {
-  return (_has_bits_[0] & 0x00000010u) != 0;
+  return (_has_bits_[0] & 0x00000040u) != 0;
 }
 inline void CMsgDrawTextRegion::set_has_top_left() {
-  _has_bits_[0] |= 0x00000010u;
+  _has_bits_[0] |= 0x00000040u;
 }
 inline void CMsgDrawTextRegion::clear_has_top_left() {
-  _has_bits_[0] &= ~0x00000010u;
+  _has_bits_[0] &= ~0x00000040u;
 }
 inline void CMsgDrawTextRegion::clear_top_left() {
   if (top_left_ != NULL) top_left_->::CMsgPoint::Clear();
@@ -24623,13 +26644,13 @@ inline void CMsgDrawTextRegion::set_allocated_top_left(::CMsgPoint* top_left) {
 
 // optional .CMsgPoint bottom_right = 7;
 inline bool CMsgDrawTextRegion::has_bottom_right() const {
-  return (_has_bits_[0] & 0x00000020u) != 0;
+  return (_has_bits_[0] & 0x00000080u) != 0;
 }
 inline void CMsgDrawTextRegion::set_has_bottom_right() {
-  _has_bits_[0] |= 0x00000020u;
+  _has_bits_[0] |= 0x00000080u;
 }
 inline void CMsgDrawTextRegion::clear_has_bottom_right() {
-  _has_bits_[0] &= ~0x00000020u;
+  _has_bits_[0] &= ~0x00000080u;
 }
 inline void CMsgDrawTextRegion::clear_bottom_right() {
   if (bottom_right_ != NULL) bottom_right_->::CMsgPoint::Clear();
@@ -24664,13 +26685,13 @@ inline void CMsgDrawTextRegion::set_allocated_bottom_right(::CMsgPoint* bottom_r
 
 // optional bool wrapping = 8;
 inline bool CMsgDrawTextRegion::has_wrapping() const {
-  return (_has_bits_[0] & 0x00000040u) != 0;
+  return (_has_bits_[0] & 0x00000100u) != 0;
 }
 inline void CMsgDrawTextRegion::set_has_wrapping() {
-  _has_bits_[0] |= 0x00000040u;
+  _has_bits_[0] |= 0x00000100u;
 }
 inline void CMsgDrawTextRegion::clear_has_wrapping() {
-  _has_bits_[0] &= ~0x00000040u;
+  _has_bits_[0] &= ~0x00000100u;
 }
 inline void CMsgDrawTextRegion::clear_wrapping() {
   wrapping_ = false;
@@ -24688,13 +26709,13 @@ inline void CMsgDrawTextRegion::set_wrapping(bool value) {
 
 // optional bool ellipsis = 9;
 inline bool CMsgDrawTextRegion::has_ellipsis() const {
-  return (_has_bits_[0] & 0x00000080u) != 0;
+  return (_has_bits_[0] & 0x00000200u) != 0;
 }
 inline void CMsgDrawTextRegion::set_has_ellipsis() {
-  _has_bits_[0] |= 0x00000080u;
+  _has_bits_[0] |= 0x00000200u;
 }
 inline void CMsgDrawTextRegion::clear_has_ellipsis() {
-  _has_bits_[0] &= ~0x00000080u;
+  _has_bits_[0] &= ~0x00000200u;
 }
 inline void CMsgDrawTextRegion::clear_ellipsis() {
   ellipsis_ = false;
@@ -24744,91 +26765,139 @@ CMsgDrawTextRegion::mutable_range_formats() {
 
 // CMsgRenderTextRegion
 
-// optional bytes wtext = 2;
-inline bool CMsgRenderTextRegion::has_wtext() const {
+// optional bytes raw_text = 12;
+inline bool CMsgRenderTextRegion::has_raw_text() const {
   return (_has_bits_[0] & 0x00000001u) != 0;
 }
-inline void CMsgRenderTextRegion::set_has_wtext() {
+inline void CMsgRenderTextRegion::set_has_raw_text() {
   _has_bits_[0] |= 0x00000001u;
 }
-inline void CMsgRenderTextRegion::clear_has_wtext() {
+inline void CMsgRenderTextRegion::clear_has_raw_text() {
   _has_bits_[0] &= ~0x00000001u;
 }
-inline void CMsgRenderTextRegion::clear_wtext() {
-  if (wtext_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    wtext_->clear();
+inline void CMsgRenderTextRegion::clear_raw_text() {
+  if (raw_text_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    raw_text_->clear();
   }
-  clear_has_wtext();
+  clear_has_raw_text();
 }
-inline const ::std::string& CMsgRenderTextRegion::wtext() const {
-  // @@protoc_insertion_point(field_get:CMsgRenderTextRegion.wtext)
-  return *wtext_;
+inline const ::std::string& CMsgRenderTextRegion::raw_text() const {
+  // @@protoc_insertion_point(field_get:CMsgRenderTextRegion.raw_text)
+  return *raw_text_;
 }
-inline void CMsgRenderTextRegion::set_wtext(const ::std::string& value) {
-  set_has_wtext();
-  if (wtext_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    wtext_ = new ::std::string;
+inline void CMsgRenderTextRegion::set_raw_text(const ::std::string& value) {
+  set_has_raw_text();
+  if (raw_text_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    raw_text_ = new ::std::string;
   }
-  wtext_->assign(value);
-  // @@protoc_insertion_point(field_set:CMsgRenderTextRegion.wtext)
+  raw_text_->assign(value);
+  // @@protoc_insertion_point(field_set:CMsgRenderTextRegion.raw_text)
 }
-inline void CMsgRenderTextRegion::set_wtext(const char* value) {
-  set_has_wtext();
-  if (wtext_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    wtext_ = new ::std::string;
+inline void CMsgRenderTextRegion::set_raw_text(const char* value) {
+  set_has_raw_text();
+  if (raw_text_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    raw_text_ = new ::std::string;
   }
-  wtext_->assign(value);
-  // @@protoc_insertion_point(field_set_char:CMsgRenderTextRegion.wtext)
+  raw_text_->assign(value);
+  // @@protoc_insertion_point(field_set_char:CMsgRenderTextRegion.raw_text)
 }
-inline void CMsgRenderTextRegion::set_wtext(const void* value, size_t size) {
-  set_has_wtext();
-  if (wtext_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    wtext_ = new ::std::string;
+inline void CMsgRenderTextRegion::set_raw_text(const void* value, size_t size) {
+  set_has_raw_text();
+  if (raw_text_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    raw_text_ = new ::std::string;
   }
-  wtext_->assign(reinterpret_cast<const char*>(value), size);
-  // @@protoc_insertion_point(field_set_pointer:CMsgRenderTextRegion.wtext)
+  raw_text_->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:CMsgRenderTextRegion.raw_text)
 }
-inline ::std::string* CMsgRenderTextRegion::mutable_wtext() {
-  set_has_wtext();
-  if (wtext_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    wtext_ = new ::std::string;
+inline ::std::string* CMsgRenderTextRegion::mutable_raw_text() {
+  set_has_raw_text();
+  if (raw_text_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    raw_text_ = new ::std::string;
   }
-  // @@protoc_insertion_point(field_mutable:CMsgRenderTextRegion.wtext)
-  return wtext_;
+  // @@protoc_insertion_point(field_mutable:CMsgRenderTextRegion.raw_text)
+  return raw_text_;
 }
-inline ::std::string* CMsgRenderTextRegion::release_wtext() {
-  clear_has_wtext();
-  if (wtext_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+inline ::std::string* CMsgRenderTextRegion::release_raw_text() {
+  clear_has_raw_text();
+  if (raw_text_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
     return NULL;
   } else {
-    ::std::string* temp = wtext_;
-    wtext_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    ::std::string* temp = raw_text_;
+    raw_text_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
     return temp;
   }
 }
-inline void CMsgRenderTextRegion::set_allocated_wtext(::std::string* wtext) {
-  if (wtext_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    delete wtext_;
+inline void CMsgRenderTextRegion::set_allocated_raw_text(::std::string* raw_text) {
+  if (raw_text_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete raw_text_;
   }
-  if (wtext) {
-    set_has_wtext();
-    wtext_ = wtext;
+  if (raw_text) {
+    set_has_raw_text();
+    raw_text_ = raw_text;
   } else {
-    clear_has_wtext();
-    wtext_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    clear_has_raw_text();
+    raw_text_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   }
-  // @@protoc_insertion_point(field_set_allocated:CMsgRenderTextRegion.wtext)
+  // @@protoc_insertion_point(field_set_allocated:CMsgRenderTextRegion.raw_text)
+}
+
+// optional int32 text_chars = 13;
+inline bool CMsgRenderTextRegion::has_text_chars() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+inline void CMsgRenderTextRegion::set_has_text_chars() {
+  _has_bits_[0] |= 0x00000002u;
+}
+inline void CMsgRenderTextRegion::clear_has_text_chars() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+inline void CMsgRenderTextRegion::clear_text_chars() {
+  text_chars_ = 0;
+  clear_has_text_chars();
+}
+inline ::google::protobuf::int32 CMsgRenderTextRegion::text_chars() const {
+  // @@protoc_insertion_point(field_get:CMsgRenderTextRegion.text_chars)
+  return text_chars_;
+}
+inline void CMsgRenderTextRegion::set_text_chars(::google::protobuf::int32 value) {
+  set_has_text_chars();
+  text_chars_ = value;
+  // @@protoc_insertion_point(field_set:CMsgRenderTextRegion.text_chars)
+}
+
+// optional int32 text_encoding = 14;
+inline bool CMsgRenderTextRegion::has_text_encoding() const {
+  return (_has_bits_[0] & 0x00000004u) != 0;
+}
+inline void CMsgRenderTextRegion::set_has_text_encoding() {
+  _has_bits_[0] |= 0x00000004u;
+}
+inline void CMsgRenderTextRegion::clear_has_text_encoding() {
+  _has_bits_[0] &= ~0x00000004u;
+}
+inline void CMsgRenderTextRegion::clear_text_encoding() {
+  text_encoding_ = 0;
+  clear_has_text_encoding();
+}
+inline ::google::protobuf::int32 CMsgRenderTextRegion::text_encoding() const {
+  // @@protoc_insertion_point(field_get:CMsgRenderTextRegion.text_encoding)
+  return text_encoding_;
+}
+inline void CMsgRenderTextRegion::set_text_encoding(::google::protobuf::int32 value) {
+  set_has_text_encoding();
+  text_encoding_ = value;
+  // @@protoc_insertion_point(field_set:CMsgRenderTextRegion.text_encoding)
 }
 
 // optional .CMsgRenderTextFormat default_format = 3;
 inline bool CMsgRenderTextRegion::has_default_format() const {
-  return (_has_bits_[0] & 0x00000002u) != 0;
+  return (_has_bits_[0] & 0x00000008u) != 0;
 }
 inline void CMsgRenderTextRegion::set_has_default_format() {
-  _has_bits_[0] |= 0x00000002u;
+  _has_bits_[0] |= 0x00000008u;
 }
 inline void CMsgRenderTextRegion::clear_has_default_format() {
-  _has_bits_[0] &= ~0x00000002u;
+  _has_bits_[0] &= ~0x00000008u;
 }
 inline void CMsgRenderTextRegion::clear_default_format() {
   if (default_format_ != NULL) default_format_->::CMsgRenderTextFormat::Clear();
@@ -24863,13 +26932,13 @@ inline void CMsgRenderTextRegion::set_allocated_default_format(::CMsgRenderTextF
 
 // optional uint32 text_align = 4;
 inline bool CMsgRenderTextRegion::has_text_align() const {
-  return (_has_bits_[0] & 0x00000004u) != 0;
+  return (_has_bits_[0] & 0x00000010u) != 0;
 }
 inline void CMsgRenderTextRegion::set_has_text_align() {
-  _has_bits_[0] |= 0x00000004u;
+  _has_bits_[0] |= 0x00000010u;
 }
 inline void CMsgRenderTextRegion::clear_has_text_align() {
-  _has_bits_[0] &= ~0x00000004u;
+  _has_bits_[0] &= ~0x00000010u;
 }
 inline void CMsgRenderTextRegion::clear_text_align() {
   text_align_ = 0u;
@@ -24887,13 +26956,13 @@ inline void CMsgRenderTextRegion::set_text_align(::google::protobuf::uint32 valu
 
 // optional uint32 line_height = 5;
 inline bool CMsgRenderTextRegion::has_line_height() const {
-  return (_has_bits_[0] & 0x00000008u) != 0;
+  return (_has_bits_[0] & 0x00000020u) != 0;
 }
 inline void CMsgRenderTextRegion::set_has_line_height() {
-  _has_bits_[0] |= 0x00000008u;
+  _has_bits_[0] |= 0x00000020u;
 }
 inline void CMsgRenderTextRegion::clear_has_line_height() {
-  _has_bits_[0] &= ~0x00000008u;
+  _has_bits_[0] &= ~0x00000020u;
 }
 inline void CMsgRenderTextRegion::clear_line_height() {
   line_height_ = 0u;
@@ -24911,13 +26980,13 @@ inline void CMsgRenderTextRegion::set_line_height(::google::protobuf::uint32 val
 
 // optional .CMsgPoint top_left = 6;
 inline bool CMsgRenderTextRegion::has_top_left() const {
-  return (_has_bits_[0] & 0x00000010u) != 0;
+  return (_has_bits_[0] & 0x00000040u) != 0;
 }
 inline void CMsgRenderTextRegion::set_has_top_left() {
-  _has_bits_[0] |= 0x00000010u;
+  _has_bits_[0] |= 0x00000040u;
 }
 inline void CMsgRenderTextRegion::clear_has_top_left() {
-  _has_bits_[0] &= ~0x00000010u;
+  _has_bits_[0] &= ~0x00000040u;
 }
 inline void CMsgRenderTextRegion::clear_top_left() {
   if (top_left_ != NULL) top_left_->::CMsgPoint::Clear();
@@ -24952,13 +27021,13 @@ inline void CMsgRenderTextRegion::set_allocated_top_left(::CMsgPoint* top_left) 
 
 // optional .CMsgPoint bottom_right = 7;
 inline bool CMsgRenderTextRegion::has_bottom_right() const {
-  return (_has_bits_[0] & 0x00000020u) != 0;
+  return (_has_bits_[0] & 0x00000080u) != 0;
 }
 inline void CMsgRenderTextRegion::set_has_bottom_right() {
-  _has_bits_[0] |= 0x00000020u;
+  _has_bits_[0] |= 0x00000080u;
 }
 inline void CMsgRenderTextRegion::clear_has_bottom_right() {
-  _has_bits_[0] &= ~0x00000020u;
+  _has_bits_[0] &= ~0x00000080u;
 }
 inline void CMsgRenderTextRegion::clear_bottom_right() {
   if (bottom_right_ != NULL) bottom_right_->::CMsgPoint::Clear();
@@ -24993,13 +27062,13 @@ inline void CMsgRenderTextRegion::set_allocated_bottom_right(::CMsgPoint* bottom
 
 // optional bool wrapping = 8;
 inline bool CMsgRenderTextRegion::has_wrapping() const {
-  return (_has_bits_[0] & 0x00000040u) != 0;
+  return (_has_bits_[0] & 0x00000100u) != 0;
 }
 inline void CMsgRenderTextRegion::set_has_wrapping() {
-  _has_bits_[0] |= 0x00000040u;
+  _has_bits_[0] |= 0x00000100u;
 }
 inline void CMsgRenderTextRegion::clear_has_wrapping() {
-  _has_bits_[0] &= ~0x00000040u;
+  _has_bits_[0] &= ~0x00000100u;
 }
 inline void CMsgRenderTextRegion::clear_wrapping() {
   wrapping_ = false;
@@ -25017,13 +27086,13 @@ inline void CMsgRenderTextRegion::set_wrapping(bool value) {
 
 // optional bool ellipsis = 9;
 inline bool CMsgRenderTextRegion::has_ellipsis() const {
-  return (_has_bits_[0] & 0x00000080u) != 0;
+  return (_has_bits_[0] & 0x00000200u) != 0;
 }
 inline void CMsgRenderTextRegion::set_has_ellipsis() {
-  _has_bits_[0] |= 0x00000080u;
+  _has_bits_[0] |= 0x00000200u;
 }
 inline void CMsgRenderTextRegion::clear_has_ellipsis() {
-  _has_bits_[0] &= ~0x00000080u;
+  _has_bits_[0] &= ~0x00000200u;
 }
 inline void CMsgRenderTextRegion::clear_ellipsis() {
   ellipsis_ = false;
@@ -25071,13 +27140,13 @@ CMsgRenderTextRegion::mutable_range_formats() {
 
 // optional .CTextShadowData text_shadow = 11;
 inline bool CMsgRenderTextRegion::has_text_shadow() const {
-  return (_has_bits_[0] & 0x00000200u) != 0;
+  return (_has_bits_[0] & 0x00000800u) != 0;
 }
 inline void CMsgRenderTextRegion::set_has_text_shadow() {
-  _has_bits_[0] |= 0x00000200u;
+  _has_bits_[0] |= 0x00000800u;
 }
 inline void CMsgRenderTextRegion::clear_has_text_shadow() {
-  _has_bits_[0] &= ~0x00000200u;
+  _has_bits_[0] &= ~0x00000800u;
 }
 inline void CMsgRenderTextRegion::clear_text_shadow() {
   if (text_shadow_ != NULL) text_shadow_->::CTextShadowData::Clear();

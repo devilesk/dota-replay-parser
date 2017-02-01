@@ -42,11 +42,9 @@ class CDOTAClientMsg_HPManaAlert;
 class CDOTAClientMsg_GlyphAlert;
 class CDOTAClientMsg_MapLine;
 class CDOTAClientMsg_AspectRatio;
-class CDOTAClientMsg_UnitsAutoAttack;
+class CDOTAClientMsg_UnitsAutoAttackMode;
 class CDOTAClientMsg_UnitsAutoAttackAfterSpell;
 class CDOTAClientMsg_TeleportRequiresHalt;
-class CDOTAClientMsg_AutoPurchaseItems;
-class CDOTAClientMsg_TestItems;
 class CDOTAClientMsg_SearchString;
 class CDOTAClientMsg_Pause;
 class CDOTAClientMsg_ShopViewMode;
@@ -74,23 +72,70 @@ class CAdditionalEquipSlotClientMsg;
 class CDOTAClientMsg_FreeInventory;
 class CDOTAClientMsg_FillEmptySlotsWithBots;
 class CDOTAClientMsg_HeroStatueLike;
-class CDOTAClientMsg_TeamShowcaseEditor;
-class CDOTAClientMsg_TeamShowcaseClientData;
-class CDOTAClientMsg_PlayTeamShowcase;
 class CDOTAClientMsg_EventCNY2015Cmd;
 class CDOTAClientMsg_DemoHero;
 class CDOTAClientMsg_ChallengeSelect;
 class CDOTAClientMsg_ChallengeReroll;
 class CDOTAClientMsg_CoinWager;
+class CDOTAClientMsg_EventPointsTip;
 class CDOTAClientMsg_ExecuteOrders;
+class CDOTAClientMsg_XPAlert;
+class CDOTAClientMsg_KillcamDamageTaken;
+class CDOTAClientMsg_MatchMetadata;
+class CDOTAClientMsg_KillMyHero;
+class CDOTAClientMsg_QuestStatus;
+class CDOTAClientMsg_ToggleAutoattack;
+class CDOTAClientMsg_SpecialAbility;
+class CDOTAClientMsg_SetEnemyStartingPosition;
+class CDOTAClientMsg_SetDesiredWardPlacement;
+class CDOTAClientMsg_RollDice;
+class CDOTAClientMsg_FlipCoin;
 
+enum CDOTAClientMsg_UnitsAutoAttackMode_EMode {
+  CDOTAClientMsg_UnitsAutoAttackMode_EMode_INVALID = -1,
+  CDOTAClientMsg_UnitsAutoAttackMode_EMode_NEVER = 0,
+  CDOTAClientMsg_UnitsAutoAttackMode_EMode_AFTER_SPELLCAST = 1,
+  CDOTAClientMsg_UnitsAutoAttackMode_EMode_ALWAYS = 2
+};
+bool CDOTAClientMsg_UnitsAutoAttackMode_EMode_IsValid(int value);
+const CDOTAClientMsg_UnitsAutoAttackMode_EMode CDOTAClientMsg_UnitsAutoAttackMode_EMode_EMode_MIN = CDOTAClientMsg_UnitsAutoAttackMode_EMode_INVALID;
+const CDOTAClientMsg_UnitsAutoAttackMode_EMode CDOTAClientMsg_UnitsAutoAttackMode_EMode_EMode_MAX = CDOTAClientMsg_UnitsAutoAttackMode_EMode_ALWAYS;
+const int CDOTAClientMsg_UnitsAutoAttackMode_EMode_EMode_ARRAYSIZE = CDOTAClientMsg_UnitsAutoAttackMode_EMode_EMode_MAX + 1;
+
+const ::google::protobuf::EnumDescriptor* CDOTAClientMsg_UnitsAutoAttackMode_EMode_descriptor();
+inline const ::std::string& CDOTAClientMsg_UnitsAutoAttackMode_EMode_Name(CDOTAClientMsg_UnitsAutoAttackMode_EMode value) {
+  return ::google::protobuf::internal::NameOfEnum(
+    CDOTAClientMsg_UnitsAutoAttackMode_EMode_descriptor(), value);
+}
+inline bool CDOTAClientMsg_UnitsAutoAttackMode_EMode_Parse(
+    const ::std::string& name, CDOTAClientMsg_UnitsAutoAttackMode_EMode* value) {
+  return ::google::protobuf::internal::ParseNamedEnum<CDOTAClientMsg_UnitsAutoAttackMode_EMode>(
+    CDOTAClientMsg_UnitsAutoAttackMode_EMode_descriptor(), name, value);
+}
+enum CDOTAClientMsg_UnitsAutoAttackMode_EUnitType {
+  CDOTAClientMsg_UnitsAutoAttackMode_EUnitType_NORMAL = 0,
+  CDOTAClientMsg_UnitsAutoAttackMode_EUnitType_SUMMONED = 1
+};
+bool CDOTAClientMsg_UnitsAutoAttackMode_EUnitType_IsValid(int value);
+const CDOTAClientMsg_UnitsAutoAttackMode_EUnitType CDOTAClientMsg_UnitsAutoAttackMode_EUnitType_EUnitType_MIN = CDOTAClientMsg_UnitsAutoAttackMode_EUnitType_NORMAL;
+const CDOTAClientMsg_UnitsAutoAttackMode_EUnitType CDOTAClientMsg_UnitsAutoAttackMode_EUnitType_EUnitType_MAX = CDOTAClientMsg_UnitsAutoAttackMode_EUnitType_SUMMONED;
+const int CDOTAClientMsg_UnitsAutoAttackMode_EUnitType_EUnitType_ARRAYSIZE = CDOTAClientMsg_UnitsAutoAttackMode_EUnitType_EUnitType_MAX + 1;
+
+const ::google::protobuf::EnumDescriptor* CDOTAClientMsg_UnitsAutoAttackMode_EUnitType_descriptor();
+inline const ::std::string& CDOTAClientMsg_UnitsAutoAttackMode_EUnitType_Name(CDOTAClientMsg_UnitsAutoAttackMode_EUnitType value) {
+  return ::google::protobuf::internal::NameOfEnum(
+    CDOTAClientMsg_UnitsAutoAttackMode_EUnitType_descriptor(), value);
+}
+inline bool CDOTAClientMsg_UnitsAutoAttackMode_EUnitType_Parse(
+    const ::std::string& name, CDOTAClientMsg_UnitsAutoAttackMode_EUnitType* value) {
+  return ::google::protobuf::internal::ParseNamedEnum<CDOTAClientMsg_UnitsAutoAttackMode_EUnitType>(
+    CDOTAClientMsg_UnitsAutoAttackMode_EUnitType_descriptor(), name, value);
+}
 enum EDotaClientMessages {
   DOTA_CM_MapLine = 301,
   DOTA_CM_AspectRatio = 302,
   DOTA_CM_MapPing = 303,
   DOTA_CM_UnitsAutoAttack = 304,
-  DOTA_CM_AutoPurchaseItems = 305,
-  DOTA_CM_TestItems = 306,
   DOTA_CM_SearchString = 307,
   DOTA_CM_Pause = 308,
   DOTA_CM_ShopViewMode = 309,
@@ -134,11 +179,23 @@ enum EDotaClientMessages {
   DOTA_CM_ChallengeReroll = 347,
   DOTA_CM_ClickedBuff = 348,
   DOTA_CM_CoinWager = 349,
-  DOTA_CM_ExecuteOrders = 350
+  DOTA_CM_ExecuteOrders = 350,
+  DOTA_CM_XPAlert = 351,
+  DOTA_CM_EventPointsTip = 353,
+  DOTA_CM_MatchMetadata = 354,
+  DOTA_CM_KillMyHero = 355,
+  DOTA_CM_QuestStatus = 356,
+  DOTA_CM_ToggleAutoattack = 357,
+  DOTA_CM_SpecialAbility = 358,
+  DOTA_CM_KillcamDamageTaken = 359,
+  DOTA_CM_SetEnemyStartingPosition = 360,
+  DOTA_CM_SetDesiredWardPlacement = 361,
+  DOTA_CM_RollDice = 362,
+  DOTA_CM_FlipCoin = 363
 };
 bool EDotaClientMessages_IsValid(int value);
 const EDotaClientMessages EDotaClientMessages_MIN = DOTA_CM_MapLine;
-const EDotaClientMessages EDotaClientMessages_MAX = DOTA_CM_ExecuteOrders;
+const EDotaClientMessages EDotaClientMessages_MAX = DOTA_CM_FlipCoin;
 const int EDotaClientMessages_ARRAYSIZE = EDotaClientMessages_MAX + 1;
 
 const ::google::protobuf::EnumDescriptor* EDotaClientMessages_descriptor();
@@ -890,14 +947,14 @@ class CDOTAClientMsg_AspectRatio : public ::google::protobuf::Message {
 };
 // -------------------------------------------------------------------
 
-class CDOTAClientMsg_UnitsAutoAttack : public ::google::protobuf::Message {
+class CDOTAClientMsg_UnitsAutoAttackMode : public ::google::protobuf::Message {
  public:
-  CDOTAClientMsg_UnitsAutoAttack();
-  virtual ~CDOTAClientMsg_UnitsAutoAttack();
+  CDOTAClientMsg_UnitsAutoAttackMode();
+  virtual ~CDOTAClientMsg_UnitsAutoAttackMode();
 
-  CDOTAClientMsg_UnitsAutoAttack(const CDOTAClientMsg_UnitsAutoAttack& from);
+  CDOTAClientMsg_UnitsAutoAttackMode(const CDOTAClientMsg_UnitsAutoAttackMode& from);
 
-  inline CDOTAClientMsg_UnitsAutoAttack& operator=(const CDOTAClientMsg_UnitsAutoAttack& from) {
+  inline CDOTAClientMsg_UnitsAutoAttackMode& operator=(const CDOTAClientMsg_UnitsAutoAttackMode& from) {
     CopyFrom(from);
     return *this;
   }
@@ -911,17 +968,17 @@ class CDOTAClientMsg_UnitsAutoAttack : public ::google::protobuf::Message {
   }
 
   static const ::google::protobuf::Descriptor* descriptor();
-  static const CDOTAClientMsg_UnitsAutoAttack& default_instance();
+  static const CDOTAClientMsg_UnitsAutoAttackMode& default_instance();
 
-  void Swap(CDOTAClientMsg_UnitsAutoAttack* other);
+  void Swap(CDOTAClientMsg_UnitsAutoAttackMode* other);
 
   // implements Message ----------------------------------------------
 
-  CDOTAClientMsg_UnitsAutoAttack* New() const;
+  CDOTAClientMsg_UnitsAutoAttackMode* New() const;
   void CopyFrom(const ::google::protobuf::Message& from);
   void MergeFrom(const ::google::protobuf::Message& from);
-  void CopyFrom(const CDOTAClientMsg_UnitsAutoAttack& from);
-  void MergeFrom(const CDOTAClientMsg_UnitsAutoAttack& from);
+  void CopyFrom(const CDOTAClientMsg_UnitsAutoAttackMode& from);
+  void MergeFrom(const CDOTAClientMsg_UnitsAutoAttackMode& from);
   void Clear();
   bool IsInitialized() const;
 
@@ -941,31 +998,91 @@ class CDOTAClientMsg_UnitsAutoAttack : public ::google::protobuf::Message {
 
   // nested types ----------------------------------------------------
 
+  typedef CDOTAClientMsg_UnitsAutoAttackMode_EMode EMode;
+  static const EMode INVALID = CDOTAClientMsg_UnitsAutoAttackMode_EMode_INVALID;
+  static const EMode NEVER = CDOTAClientMsg_UnitsAutoAttackMode_EMode_NEVER;
+  static const EMode AFTER_SPELLCAST = CDOTAClientMsg_UnitsAutoAttackMode_EMode_AFTER_SPELLCAST;
+  static const EMode ALWAYS = CDOTAClientMsg_UnitsAutoAttackMode_EMode_ALWAYS;
+  static inline bool EMode_IsValid(int value) {
+    return CDOTAClientMsg_UnitsAutoAttackMode_EMode_IsValid(value);
+  }
+  static const EMode EMode_MIN =
+    CDOTAClientMsg_UnitsAutoAttackMode_EMode_EMode_MIN;
+  static const EMode EMode_MAX =
+    CDOTAClientMsg_UnitsAutoAttackMode_EMode_EMode_MAX;
+  static const int EMode_ARRAYSIZE =
+    CDOTAClientMsg_UnitsAutoAttackMode_EMode_EMode_ARRAYSIZE;
+  static inline const ::google::protobuf::EnumDescriptor*
+  EMode_descriptor() {
+    return CDOTAClientMsg_UnitsAutoAttackMode_EMode_descriptor();
+  }
+  static inline const ::std::string& EMode_Name(EMode value) {
+    return CDOTAClientMsg_UnitsAutoAttackMode_EMode_Name(value);
+  }
+  static inline bool EMode_Parse(const ::std::string& name,
+      EMode* value) {
+    return CDOTAClientMsg_UnitsAutoAttackMode_EMode_Parse(name, value);
+  }
+
+  typedef CDOTAClientMsg_UnitsAutoAttackMode_EUnitType EUnitType;
+  static const EUnitType NORMAL = CDOTAClientMsg_UnitsAutoAttackMode_EUnitType_NORMAL;
+  static const EUnitType SUMMONED = CDOTAClientMsg_UnitsAutoAttackMode_EUnitType_SUMMONED;
+  static inline bool EUnitType_IsValid(int value) {
+    return CDOTAClientMsg_UnitsAutoAttackMode_EUnitType_IsValid(value);
+  }
+  static const EUnitType EUnitType_MIN =
+    CDOTAClientMsg_UnitsAutoAttackMode_EUnitType_EUnitType_MIN;
+  static const EUnitType EUnitType_MAX =
+    CDOTAClientMsg_UnitsAutoAttackMode_EUnitType_EUnitType_MAX;
+  static const int EUnitType_ARRAYSIZE =
+    CDOTAClientMsg_UnitsAutoAttackMode_EUnitType_EUnitType_ARRAYSIZE;
+  static inline const ::google::protobuf::EnumDescriptor*
+  EUnitType_descriptor() {
+    return CDOTAClientMsg_UnitsAutoAttackMode_EUnitType_descriptor();
+  }
+  static inline const ::std::string& EUnitType_Name(EUnitType value) {
+    return CDOTAClientMsg_UnitsAutoAttackMode_EUnitType_Name(value);
+  }
+  static inline bool EUnitType_Parse(const ::std::string& name,
+      EUnitType* value) {
+    return CDOTAClientMsg_UnitsAutoAttackMode_EUnitType_Parse(name, value);
+  }
+
   // accessors -------------------------------------------------------
 
-  // optional bool enabled = 1;
-  inline bool has_enabled() const;
-  inline void clear_enabled();
-  static const int kEnabledFieldNumber = 1;
-  inline bool enabled() const;
-  inline void set_enabled(bool value);
+  // optional .CDOTAClientMsg_UnitsAutoAttackMode.EMode mode = 1 [default = INVALID];
+  inline bool has_mode() const;
+  inline void clear_mode();
+  static const int kModeFieldNumber = 1;
+  inline ::CDOTAClientMsg_UnitsAutoAttackMode_EMode mode() const;
+  inline void set_mode(::CDOTAClientMsg_UnitsAutoAttackMode_EMode value);
 
-  // @@protoc_insertion_point(class_scope:CDOTAClientMsg_UnitsAutoAttack)
+  // optional .CDOTAClientMsg_UnitsAutoAttackMode.EUnitType unit_type = 2 [default = NORMAL];
+  inline bool has_unit_type() const;
+  inline void clear_unit_type();
+  static const int kUnitTypeFieldNumber = 2;
+  inline ::CDOTAClientMsg_UnitsAutoAttackMode_EUnitType unit_type() const;
+  inline void set_unit_type(::CDOTAClientMsg_UnitsAutoAttackMode_EUnitType value);
+
+  // @@protoc_insertion_point(class_scope:CDOTAClientMsg_UnitsAutoAttackMode)
  private:
-  inline void set_has_enabled();
-  inline void clear_has_enabled();
+  inline void set_has_mode();
+  inline void clear_has_mode();
+  inline void set_has_unit_type();
+  inline void clear_has_unit_type();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
   ::google::protobuf::uint32 _has_bits_[1];
   mutable int _cached_size_;
-  bool enabled_;
+  int mode_;
+  int unit_type_;
   friend void  protobuf_AddDesc_dota_5fclientmessages_2eproto();
   friend void protobuf_AssignDesc_dota_5fclientmessages_2eproto();
   friend void protobuf_ShutdownFile_dota_5fclientmessages_2eproto();
 
   void InitAsDefaultInstance();
-  static CDOTAClientMsg_UnitsAutoAttack* default_instance_;
+  static CDOTAClientMsg_UnitsAutoAttackMode* default_instance_;
 };
 // -------------------------------------------------------------------
 
@@ -1124,169 +1241,6 @@ class CDOTAClientMsg_TeleportRequiresHalt : public ::google::protobuf::Message {
 
   void InitAsDefaultInstance();
   static CDOTAClientMsg_TeleportRequiresHalt* default_instance_;
-};
-// -------------------------------------------------------------------
-
-class CDOTAClientMsg_AutoPurchaseItems : public ::google::protobuf::Message {
- public:
-  CDOTAClientMsg_AutoPurchaseItems();
-  virtual ~CDOTAClientMsg_AutoPurchaseItems();
-
-  CDOTAClientMsg_AutoPurchaseItems(const CDOTAClientMsg_AutoPurchaseItems& from);
-
-  inline CDOTAClientMsg_AutoPurchaseItems& operator=(const CDOTAClientMsg_AutoPurchaseItems& from) {
-    CopyFrom(from);
-    return *this;
-  }
-
-  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
-    return _unknown_fields_;
-  }
-
-  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
-    return &_unknown_fields_;
-  }
-
-  static const ::google::protobuf::Descriptor* descriptor();
-  static const CDOTAClientMsg_AutoPurchaseItems& default_instance();
-
-  void Swap(CDOTAClientMsg_AutoPurchaseItems* other);
-
-  // implements Message ----------------------------------------------
-
-  CDOTAClientMsg_AutoPurchaseItems* New() const;
-  void CopyFrom(const ::google::protobuf::Message& from);
-  void MergeFrom(const ::google::protobuf::Message& from);
-  void CopyFrom(const CDOTAClientMsg_AutoPurchaseItems& from);
-  void MergeFrom(const CDOTAClientMsg_AutoPurchaseItems& from);
-  void Clear();
-  bool IsInitialized() const;
-
-  int ByteSize() const;
-  bool MergePartialFromCodedStream(
-      ::google::protobuf::io::CodedInputStream* input);
-  void SerializeWithCachedSizes(
-      ::google::protobuf::io::CodedOutputStream* output) const;
-  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
-  int GetCachedSize() const { return _cached_size_; }
-  private:
-  void SharedCtor();
-  void SharedDtor();
-  void SetCachedSize(int size) const;
-  public:
-  ::google::protobuf::Metadata GetMetadata() const;
-
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-
-  // optional bool enabled = 1;
-  inline bool has_enabled() const;
-  inline void clear_enabled();
-  static const int kEnabledFieldNumber = 1;
-  inline bool enabled() const;
-  inline void set_enabled(bool value);
-
-  // @@protoc_insertion_point(class_scope:CDOTAClientMsg_AutoPurchaseItems)
- private:
-  inline void set_has_enabled();
-  inline void clear_has_enabled();
-
-  ::google::protobuf::UnknownFieldSet _unknown_fields_;
-
-  ::google::protobuf::uint32 _has_bits_[1];
-  mutable int _cached_size_;
-  bool enabled_;
-  friend void  protobuf_AddDesc_dota_5fclientmessages_2eproto();
-  friend void protobuf_AssignDesc_dota_5fclientmessages_2eproto();
-  friend void protobuf_ShutdownFile_dota_5fclientmessages_2eproto();
-
-  void InitAsDefaultInstance();
-  static CDOTAClientMsg_AutoPurchaseItems* default_instance_;
-};
-// -------------------------------------------------------------------
-
-class CDOTAClientMsg_TestItems : public ::google::protobuf::Message {
- public:
-  CDOTAClientMsg_TestItems();
-  virtual ~CDOTAClientMsg_TestItems();
-
-  CDOTAClientMsg_TestItems(const CDOTAClientMsg_TestItems& from);
-
-  inline CDOTAClientMsg_TestItems& operator=(const CDOTAClientMsg_TestItems& from) {
-    CopyFrom(from);
-    return *this;
-  }
-
-  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
-    return _unknown_fields_;
-  }
-
-  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
-    return &_unknown_fields_;
-  }
-
-  static const ::google::protobuf::Descriptor* descriptor();
-  static const CDOTAClientMsg_TestItems& default_instance();
-
-  void Swap(CDOTAClientMsg_TestItems* other);
-
-  // implements Message ----------------------------------------------
-
-  CDOTAClientMsg_TestItems* New() const;
-  void CopyFrom(const ::google::protobuf::Message& from);
-  void MergeFrom(const ::google::protobuf::Message& from);
-  void CopyFrom(const CDOTAClientMsg_TestItems& from);
-  void MergeFrom(const CDOTAClientMsg_TestItems& from);
-  void Clear();
-  bool IsInitialized() const;
-
-  int ByteSize() const;
-  bool MergePartialFromCodedStream(
-      ::google::protobuf::io::CodedInputStream* input);
-  void SerializeWithCachedSizes(
-      ::google::protobuf::io::CodedOutputStream* output) const;
-  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
-  int GetCachedSize() const { return _cached_size_; }
-  private:
-  void SharedCtor();
-  void SharedDtor();
-  void SetCachedSize(int size) const;
-  public:
-  ::google::protobuf::Metadata GetMetadata() const;
-
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-
-  // optional string key_values = 1;
-  inline bool has_key_values() const;
-  inline void clear_key_values();
-  static const int kKeyValuesFieldNumber = 1;
-  inline const ::std::string& key_values() const;
-  inline void set_key_values(const ::std::string& value);
-  inline void set_key_values(const char* value);
-  inline void set_key_values(const char* value, size_t size);
-  inline ::std::string* mutable_key_values();
-  inline ::std::string* release_key_values();
-  inline void set_allocated_key_values(::std::string* key_values);
-
-  // @@protoc_insertion_point(class_scope:CDOTAClientMsg_TestItems)
- private:
-  inline void set_has_key_values();
-  inline void clear_has_key_values();
-
-  ::google::protobuf::UnknownFieldSet _unknown_fields_;
-
-  ::google::protobuf::uint32 _has_bits_[1];
-  mutable int _cached_size_;
-  ::std::string* key_values_;
-  friend void  protobuf_AddDesc_dota_5fclientmessages_2eproto();
-  friend void protobuf_AssignDesc_dota_5fclientmessages_2eproto();
-  friend void protobuf_ShutdownFile_dota_5fclientmessages_2eproto();
-
-  void InitAsDefaultInstance();
-  static CDOTAClientMsg_TestItems* default_instance_;
 };
 // -------------------------------------------------------------------
 
@@ -3500,243 +3454,6 @@ class CDOTAClientMsg_HeroStatueLike : public ::google::protobuf::Message {
 };
 // -------------------------------------------------------------------
 
-class CDOTAClientMsg_TeamShowcaseEditor : public ::google::protobuf::Message {
- public:
-  CDOTAClientMsg_TeamShowcaseEditor();
-  virtual ~CDOTAClientMsg_TeamShowcaseEditor();
-
-  CDOTAClientMsg_TeamShowcaseEditor(const CDOTAClientMsg_TeamShowcaseEditor& from);
-
-  inline CDOTAClientMsg_TeamShowcaseEditor& operator=(const CDOTAClientMsg_TeamShowcaseEditor& from) {
-    CopyFrom(from);
-    return *this;
-  }
-
-  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
-    return _unknown_fields_;
-  }
-
-  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
-    return &_unknown_fields_;
-  }
-
-  static const ::google::protobuf::Descriptor* descriptor();
-  static const CDOTAClientMsg_TeamShowcaseEditor& default_instance();
-
-  void Swap(CDOTAClientMsg_TeamShowcaseEditor* other);
-
-  // implements Message ----------------------------------------------
-
-  CDOTAClientMsg_TeamShowcaseEditor* New() const;
-  void CopyFrom(const ::google::protobuf::Message& from);
-  void MergeFrom(const ::google::protobuf::Message& from);
-  void CopyFrom(const CDOTAClientMsg_TeamShowcaseEditor& from);
-  void MergeFrom(const CDOTAClientMsg_TeamShowcaseEditor& from);
-  void Clear();
-  bool IsInitialized() const;
-
-  int ByteSize() const;
-  bool MergePartialFromCodedStream(
-      ::google::protobuf::io::CodedInputStream* input);
-  void SerializeWithCachedSizes(
-      ::google::protobuf::io::CodedOutputStream* output) const;
-  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
-  int GetCachedSize() const { return _cached_size_; }
-  private:
-  void SharedCtor();
-  void SharedDtor();
-  void SetCachedSize(int size) const;
-  public:
-  ::google::protobuf::Metadata GetMetadata() const;
-
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-
-  // optional bytes data = 1;
-  inline bool has_data() const;
-  inline void clear_data();
-  static const int kDataFieldNumber = 1;
-  inline const ::std::string& data() const;
-  inline void set_data(const ::std::string& value);
-  inline void set_data(const char* value);
-  inline void set_data(const void* value, size_t size);
-  inline ::std::string* mutable_data();
-  inline ::std::string* release_data();
-  inline void set_allocated_data(::std::string* data);
-
-  // @@protoc_insertion_point(class_scope:CDOTAClientMsg_TeamShowcaseEditor)
- private:
-  inline void set_has_data();
-  inline void clear_has_data();
-
-  ::google::protobuf::UnknownFieldSet _unknown_fields_;
-
-  ::google::protobuf::uint32 _has_bits_[1];
-  mutable int _cached_size_;
-  ::std::string* data_;
-  friend void  protobuf_AddDesc_dota_5fclientmessages_2eproto();
-  friend void protobuf_AssignDesc_dota_5fclientmessages_2eproto();
-  friend void protobuf_ShutdownFile_dota_5fclientmessages_2eproto();
-
-  void InitAsDefaultInstance();
-  static CDOTAClientMsg_TeamShowcaseEditor* default_instance_;
-};
-// -------------------------------------------------------------------
-
-class CDOTAClientMsg_TeamShowcaseClientData : public ::google::protobuf::Message {
- public:
-  CDOTAClientMsg_TeamShowcaseClientData();
-  virtual ~CDOTAClientMsg_TeamShowcaseClientData();
-
-  CDOTAClientMsg_TeamShowcaseClientData(const CDOTAClientMsg_TeamShowcaseClientData& from);
-
-  inline CDOTAClientMsg_TeamShowcaseClientData& operator=(const CDOTAClientMsg_TeamShowcaseClientData& from) {
-    CopyFrom(from);
-    return *this;
-  }
-
-  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
-    return _unknown_fields_;
-  }
-
-  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
-    return &_unknown_fields_;
-  }
-
-  static const ::google::protobuf::Descriptor* descriptor();
-  static const CDOTAClientMsg_TeamShowcaseClientData& default_instance();
-
-  void Swap(CDOTAClientMsg_TeamShowcaseClientData* other);
-
-  // implements Message ----------------------------------------------
-
-  CDOTAClientMsg_TeamShowcaseClientData* New() const;
-  void CopyFrom(const ::google::protobuf::Message& from);
-  void MergeFrom(const ::google::protobuf::Message& from);
-  void CopyFrom(const CDOTAClientMsg_TeamShowcaseClientData& from);
-  void MergeFrom(const CDOTAClientMsg_TeamShowcaseClientData& from);
-  void Clear();
-  bool IsInitialized() const;
-
-  int ByteSize() const;
-  bool MergePartialFromCodedStream(
-      ::google::protobuf::io::CodedInputStream* input);
-  void SerializeWithCachedSizes(
-      ::google::protobuf::io::CodedOutputStream* output) const;
-  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
-  int GetCachedSize() const { return _cached_size_; }
-  private:
-  void SharedCtor();
-  void SharedDtor();
-  void SetCachedSize(int size) const;
-  public:
-  ::google::protobuf::Metadata GetMetadata() const;
-
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-
-  // optional bytes data = 1;
-  inline bool has_data() const;
-  inline void clear_data();
-  static const int kDataFieldNumber = 1;
-  inline const ::std::string& data() const;
-  inline void set_data(const ::std::string& value);
-  inline void set_data(const char* value);
-  inline void set_data(const void* value, size_t size);
-  inline ::std::string* mutable_data();
-  inline ::std::string* release_data();
-  inline void set_allocated_data(::std::string* data);
-
-  // @@protoc_insertion_point(class_scope:CDOTAClientMsg_TeamShowcaseClientData)
- private:
-  inline void set_has_data();
-  inline void clear_has_data();
-
-  ::google::protobuf::UnknownFieldSet _unknown_fields_;
-
-  ::google::protobuf::uint32 _has_bits_[1];
-  mutable int _cached_size_;
-  ::std::string* data_;
-  friend void  protobuf_AddDesc_dota_5fclientmessages_2eproto();
-  friend void protobuf_AssignDesc_dota_5fclientmessages_2eproto();
-  friend void protobuf_ShutdownFile_dota_5fclientmessages_2eproto();
-
-  void InitAsDefaultInstance();
-  static CDOTAClientMsg_TeamShowcaseClientData* default_instance_;
-};
-// -------------------------------------------------------------------
-
-class CDOTAClientMsg_PlayTeamShowcase : public ::google::protobuf::Message {
- public:
-  CDOTAClientMsg_PlayTeamShowcase();
-  virtual ~CDOTAClientMsg_PlayTeamShowcase();
-
-  CDOTAClientMsg_PlayTeamShowcase(const CDOTAClientMsg_PlayTeamShowcase& from);
-
-  inline CDOTAClientMsg_PlayTeamShowcase& operator=(const CDOTAClientMsg_PlayTeamShowcase& from) {
-    CopyFrom(from);
-    return *this;
-  }
-
-  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
-    return _unknown_fields_;
-  }
-
-  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
-    return &_unknown_fields_;
-  }
-
-  static const ::google::protobuf::Descriptor* descriptor();
-  static const CDOTAClientMsg_PlayTeamShowcase& default_instance();
-
-  void Swap(CDOTAClientMsg_PlayTeamShowcase* other);
-
-  // implements Message ----------------------------------------------
-
-  CDOTAClientMsg_PlayTeamShowcase* New() const;
-  void CopyFrom(const ::google::protobuf::Message& from);
-  void MergeFrom(const ::google::protobuf::Message& from);
-  void CopyFrom(const CDOTAClientMsg_PlayTeamShowcase& from);
-  void MergeFrom(const CDOTAClientMsg_PlayTeamShowcase& from);
-  void Clear();
-  bool IsInitialized() const;
-
-  int ByteSize() const;
-  bool MergePartialFromCodedStream(
-      ::google::protobuf::io::CodedInputStream* input);
-  void SerializeWithCachedSizes(
-      ::google::protobuf::io::CodedOutputStream* output) const;
-  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
-  int GetCachedSize() const { return _cached_size_; }
-  private:
-  void SharedCtor();
-  void SharedDtor();
-  void SetCachedSize(int size) const;
-  public:
-  ::google::protobuf::Metadata GetMetadata() const;
-
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-
-  // @@protoc_insertion_point(class_scope:CDOTAClientMsg_PlayTeamShowcase)
- private:
-
-  ::google::protobuf::UnknownFieldSet _unknown_fields_;
-
-  ::google::protobuf::uint32 _has_bits_[1];
-  mutable int _cached_size_;
-  friend void  protobuf_AddDesc_dota_5fclientmessages_2eproto();
-  friend void protobuf_AssignDesc_dota_5fclientmessages_2eproto();
-  friend void protobuf_ShutdownFile_dota_5fclientmessages_2eproto();
-
-  void InitAsDefaultInstance();
-  static CDOTAClientMsg_PlayTeamShowcase* default_instance_;
-};
-// -------------------------------------------------------------------
-
 class CDOTAClientMsg_EventCNY2015Cmd : public ::google::protobuf::Message {
  public:
   CDOTAClientMsg_EventCNY2015Cmd();
@@ -3919,6 +3636,13 @@ class CDOTAClientMsg_DemoHero : public ::google::protobuf::Message {
   inline ::google::protobuf::uint32 style_index() const;
   inline void set_style_index(::google::protobuf::uint32 value);
 
+  // optional bool keep_existing_demohero = 6;
+  inline bool has_keep_existing_demohero() const;
+  inline void clear_keep_existing_demohero();
+  static const int kKeepExistingDemoheroFieldNumber = 6;
+  inline bool keep_existing_demohero() const;
+  inline void set_keep_existing_demohero(bool value);
+
   // @@protoc_insertion_point(class_scope:CDOTAClientMsg_DemoHero)
  private:
   inline void set_has_hero_id();
@@ -3927,6 +3651,8 @@ class CDOTAClientMsg_DemoHero : public ::google::protobuf::Message {
   inline void clear_has_hero_id_to_spawn();
   inline void set_has_style_index();
   inline void clear_has_style_index();
+  inline void set_has_keep_existing_demohero();
+  inline void clear_has_keep_existing_demohero();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
@@ -3937,6 +3663,7 @@ class CDOTAClientMsg_DemoHero : public ::google::protobuf::Message {
   ::google::protobuf::RepeatedField< ::google::protobuf::uint32 > item_defs_;
   ::google::protobuf::RepeatedField< ::google::protobuf::uint64 > item_ids_;
   ::google::protobuf::uint32 style_index_;
+  bool keep_existing_demohero_;
   friend void  protobuf_AddDesc_dota_5fclientmessages_2eproto();
   friend void protobuf_AssignDesc_dota_5fclientmessages_2eproto();
   friend void protobuf_ShutdownFile_dota_5fclientmessages_2eproto();
@@ -4223,6 +3950,85 @@ class CDOTAClientMsg_CoinWager : public ::google::protobuf::Message {
 };
 // -------------------------------------------------------------------
 
+class CDOTAClientMsg_EventPointsTip : public ::google::protobuf::Message {
+ public:
+  CDOTAClientMsg_EventPointsTip();
+  virtual ~CDOTAClientMsg_EventPointsTip();
+
+  CDOTAClientMsg_EventPointsTip(const CDOTAClientMsg_EventPointsTip& from);
+
+  inline CDOTAClientMsg_EventPointsTip& operator=(const CDOTAClientMsg_EventPointsTip& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+    return _unknown_fields_;
+  }
+
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+    return &_unknown_fields_;
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const CDOTAClientMsg_EventPointsTip& default_instance();
+
+  void Swap(CDOTAClientMsg_EventPointsTip* other);
+
+  // implements Message ----------------------------------------------
+
+  CDOTAClientMsg_EventPointsTip* New() const;
+  void CopyFrom(const ::google::protobuf::Message& from);
+  void MergeFrom(const ::google::protobuf::Message& from);
+  void CopyFrom(const CDOTAClientMsg_EventPointsTip& from);
+  void MergeFrom(const CDOTAClientMsg_EventPointsTip& from);
+  void Clear();
+  bool IsInitialized() const;
+
+  int ByteSize() const;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input);
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  int GetCachedSize() const { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const;
+  public:
+  ::google::protobuf::Metadata GetMetadata() const;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // optional uint32 recipient_player_id = 1;
+  inline bool has_recipient_player_id() const;
+  inline void clear_recipient_player_id();
+  static const int kRecipientPlayerIdFieldNumber = 1;
+  inline ::google::protobuf::uint32 recipient_player_id() const;
+  inline void set_recipient_player_id(::google::protobuf::uint32 value);
+
+  // @@protoc_insertion_point(class_scope:CDOTAClientMsg_EventPointsTip)
+ private:
+  inline void set_has_recipient_player_id();
+  inline void clear_has_recipient_player_id();
+
+  ::google::protobuf::UnknownFieldSet _unknown_fields_;
+
+  ::google::protobuf::uint32 _has_bits_[1];
+  mutable int _cached_size_;
+  ::google::protobuf::uint32 recipient_player_id_;
+  friend void  protobuf_AddDesc_dota_5fclientmessages_2eproto();
+  friend void protobuf_AssignDesc_dota_5fclientmessages_2eproto();
+  friend void protobuf_ShutdownFile_dota_5fclientmessages_2eproto();
+
+  void InitAsDefaultInstance();
+  static CDOTAClientMsg_EventPointsTip* default_instance_;
+};
+// -------------------------------------------------------------------
+
 class CDOTAClientMsg_ExecuteOrders : public ::google::protobuf::Message {
  public:
   CDOTAClientMsg_ExecuteOrders();
@@ -4302,6 +4108,1080 @@ class CDOTAClientMsg_ExecuteOrders : public ::google::protobuf::Message {
 
   void InitAsDefaultInstance();
   static CDOTAClientMsg_ExecuteOrders* default_instance_;
+};
+// -------------------------------------------------------------------
+
+class CDOTAClientMsg_XPAlert : public ::google::protobuf::Message {
+ public:
+  CDOTAClientMsg_XPAlert();
+  virtual ~CDOTAClientMsg_XPAlert();
+
+  CDOTAClientMsg_XPAlert(const CDOTAClientMsg_XPAlert& from);
+
+  inline CDOTAClientMsg_XPAlert& operator=(const CDOTAClientMsg_XPAlert& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+    return _unknown_fields_;
+  }
+
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+    return &_unknown_fields_;
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const CDOTAClientMsg_XPAlert& default_instance();
+
+  void Swap(CDOTAClientMsg_XPAlert* other);
+
+  // implements Message ----------------------------------------------
+
+  CDOTAClientMsg_XPAlert* New() const;
+  void CopyFrom(const ::google::protobuf::Message& from);
+  void MergeFrom(const ::google::protobuf::Message& from);
+  void CopyFrom(const CDOTAClientMsg_XPAlert& from);
+  void MergeFrom(const CDOTAClientMsg_XPAlert& from);
+  void Clear();
+  bool IsInitialized() const;
+
+  int ByteSize() const;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input);
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  int GetCachedSize() const { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const;
+  public:
+  ::google::protobuf::Metadata GetMetadata() const;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // optional uint32 target_entindex = 1;
+  inline bool has_target_entindex() const;
+  inline void clear_target_entindex();
+  static const int kTargetEntindexFieldNumber = 1;
+  inline ::google::protobuf::uint32 target_entindex() const;
+  inline void set_target_entindex(::google::protobuf::uint32 value);
+
+  // optional uint32 damage_taken = 2;
+  inline bool has_damage_taken() const;
+  inline void clear_damage_taken();
+  static const int kDamageTakenFieldNumber = 2;
+  inline ::google::protobuf::uint32 damage_taken() const;
+  inline void set_damage_taken(::google::protobuf::uint32 value);
+
+  // @@protoc_insertion_point(class_scope:CDOTAClientMsg_XPAlert)
+ private:
+  inline void set_has_target_entindex();
+  inline void clear_has_target_entindex();
+  inline void set_has_damage_taken();
+  inline void clear_has_damage_taken();
+
+  ::google::protobuf::UnknownFieldSet _unknown_fields_;
+
+  ::google::protobuf::uint32 _has_bits_[1];
+  mutable int _cached_size_;
+  ::google::protobuf::uint32 target_entindex_;
+  ::google::protobuf::uint32 damage_taken_;
+  friend void  protobuf_AddDesc_dota_5fclientmessages_2eproto();
+  friend void protobuf_AssignDesc_dota_5fclientmessages_2eproto();
+  friend void protobuf_ShutdownFile_dota_5fclientmessages_2eproto();
+
+  void InitAsDefaultInstance();
+  static CDOTAClientMsg_XPAlert* default_instance_;
+};
+// -------------------------------------------------------------------
+
+class CDOTAClientMsg_KillcamDamageTaken : public ::google::protobuf::Message {
+ public:
+  CDOTAClientMsg_KillcamDamageTaken();
+  virtual ~CDOTAClientMsg_KillcamDamageTaken();
+
+  CDOTAClientMsg_KillcamDamageTaken(const CDOTAClientMsg_KillcamDamageTaken& from);
+
+  inline CDOTAClientMsg_KillcamDamageTaken& operator=(const CDOTAClientMsg_KillcamDamageTaken& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+    return _unknown_fields_;
+  }
+
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+    return &_unknown_fields_;
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const CDOTAClientMsg_KillcamDamageTaken& default_instance();
+
+  void Swap(CDOTAClientMsg_KillcamDamageTaken* other);
+
+  // implements Message ----------------------------------------------
+
+  CDOTAClientMsg_KillcamDamageTaken* New() const;
+  void CopyFrom(const ::google::protobuf::Message& from);
+  void MergeFrom(const ::google::protobuf::Message& from);
+  void CopyFrom(const CDOTAClientMsg_KillcamDamageTaken& from);
+  void MergeFrom(const CDOTAClientMsg_KillcamDamageTaken& from);
+  void Clear();
+  bool IsInitialized() const;
+
+  int ByteSize() const;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input);
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  int GetCachedSize() const { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const;
+  public:
+  ::google::protobuf::Metadata GetMetadata() const;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // optional uint32 target_entindex = 1;
+  inline bool has_target_entindex() const;
+  inline void clear_target_entindex();
+  static const int kTargetEntindexFieldNumber = 1;
+  inline ::google::protobuf::uint32 target_entindex() const;
+  inline void set_target_entindex(::google::protobuf::uint32 value);
+
+  // optional uint32 damage_taken = 2;
+  inline bool has_damage_taken() const;
+  inline void clear_damage_taken();
+  static const int kDamageTakenFieldNumber = 2;
+  inline ::google::protobuf::uint32 damage_taken() const;
+  inline void set_damage_taken(::google::protobuf::uint32 value);
+
+  // optional uint32 item_type = 3;
+  inline bool has_item_type() const;
+  inline void clear_item_type();
+  static const int kItemTypeFieldNumber = 3;
+  inline ::google::protobuf::uint32 item_type() const;
+  inline void set_item_type(::google::protobuf::uint32 value);
+
+  // optional uint32 item_id = 4;
+  inline bool has_item_id() const;
+  inline void clear_item_id();
+  static const int kItemIdFieldNumber = 4;
+  inline ::google::protobuf::uint32 item_id() const;
+  inline void set_item_id(::google::protobuf::uint32 value);
+
+  // optional string hero_name = 5;
+  inline bool has_hero_name() const;
+  inline void clear_hero_name();
+  static const int kHeroNameFieldNumber = 5;
+  inline const ::std::string& hero_name() const;
+  inline void set_hero_name(const ::std::string& value);
+  inline void set_hero_name(const char* value);
+  inline void set_hero_name(const char* value, size_t size);
+  inline ::std::string* mutable_hero_name();
+  inline ::std::string* release_hero_name();
+  inline void set_allocated_hero_name(::std::string* hero_name);
+
+  // optional string damage_color = 6;
+  inline bool has_damage_color() const;
+  inline void clear_damage_color();
+  static const int kDamageColorFieldNumber = 6;
+  inline const ::std::string& damage_color() const;
+  inline void set_damage_color(const ::std::string& value);
+  inline void set_damage_color(const char* value);
+  inline void set_damage_color(const char* value, size_t size);
+  inline ::std::string* mutable_damage_color();
+  inline ::std::string* release_damage_color();
+  inline void set_allocated_damage_color(::std::string* damage_color);
+
+  // @@protoc_insertion_point(class_scope:CDOTAClientMsg_KillcamDamageTaken)
+ private:
+  inline void set_has_target_entindex();
+  inline void clear_has_target_entindex();
+  inline void set_has_damage_taken();
+  inline void clear_has_damage_taken();
+  inline void set_has_item_type();
+  inline void clear_has_item_type();
+  inline void set_has_item_id();
+  inline void clear_has_item_id();
+  inline void set_has_hero_name();
+  inline void clear_has_hero_name();
+  inline void set_has_damage_color();
+  inline void clear_has_damage_color();
+
+  ::google::protobuf::UnknownFieldSet _unknown_fields_;
+
+  ::google::protobuf::uint32 _has_bits_[1];
+  mutable int _cached_size_;
+  ::google::protobuf::uint32 target_entindex_;
+  ::google::protobuf::uint32 damage_taken_;
+  ::google::protobuf::uint32 item_type_;
+  ::google::protobuf::uint32 item_id_;
+  ::std::string* hero_name_;
+  ::std::string* damage_color_;
+  friend void  protobuf_AddDesc_dota_5fclientmessages_2eproto();
+  friend void protobuf_AssignDesc_dota_5fclientmessages_2eproto();
+  friend void protobuf_ShutdownFile_dota_5fclientmessages_2eproto();
+
+  void InitAsDefaultInstance();
+  static CDOTAClientMsg_KillcamDamageTaken* default_instance_;
+};
+// -------------------------------------------------------------------
+
+class CDOTAClientMsg_MatchMetadata : public ::google::protobuf::Message {
+ public:
+  CDOTAClientMsg_MatchMetadata();
+  virtual ~CDOTAClientMsg_MatchMetadata();
+
+  CDOTAClientMsg_MatchMetadata(const CDOTAClientMsg_MatchMetadata& from);
+
+  inline CDOTAClientMsg_MatchMetadata& operator=(const CDOTAClientMsg_MatchMetadata& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+    return _unknown_fields_;
+  }
+
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+    return &_unknown_fields_;
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const CDOTAClientMsg_MatchMetadata& default_instance();
+
+  void Swap(CDOTAClientMsg_MatchMetadata* other);
+
+  // implements Message ----------------------------------------------
+
+  CDOTAClientMsg_MatchMetadata* New() const;
+  void CopyFrom(const ::google::protobuf::Message& from);
+  void MergeFrom(const ::google::protobuf::Message& from);
+  void CopyFrom(const CDOTAClientMsg_MatchMetadata& from);
+  void MergeFrom(const CDOTAClientMsg_MatchMetadata& from);
+  void Clear();
+  bool IsInitialized() const;
+
+  int ByteSize() const;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input);
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  int GetCachedSize() const { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const;
+  public:
+  ::google::protobuf::Metadata GetMetadata() const;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // optional uint64 match_id = 1;
+  inline bool has_match_id() const;
+  inline void clear_match_id();
+  static const int kMatchIdFieldNumber = 1;
+  inline ::google::protobuf::uint64 match_id() const;
+  inline void set_match_id(::google::protobuf::uint64 value);
+
+  // optional bytes metadata = 2;
+  inline bool has_metadata() const;
+  inline void clear_metadata();
+  static const int kMetadataFieldNumber = 2;
+  inline const ::std::string& metadata() const;
+  inline void set_metadata(const ::std::string& value);
+  inline void set_metadata(const char* value);
+  inline void set_metadata(const void* value, size_t size);
+  inline ::std::string* mutable_metadata();
+  inline ::std::string* release_metadata();
+  inline void set_allocated_metadata(::std::string* metadata);
+
+  // @@protoc_insertion_point(class_scope:CDOTAClientMsg_MatchMetadata)
+ private:
+  inline void set_has_match_id();
+  inline void clear_has_match_id();
+  inline void set_has_metadata();
+  inline void clear_has_metadata();
+
+  ::google::protobuf::UnknownFieldSet _unknown_fields_;
+
+  ::google::protobuf::uint32 _has_bits_[1];
+  mutable int _cached_size_;
+  ::google::protobuf::uint64 match_id_;
+  ::std::string* metadata_;
+  friend void  protobuf_AddDesc_dota_5fclientmessages_2eproto();
+  friend void protobuf_AssignDesc_dota_5fclientmessages_2eproto();
+  friend void protobuf_ShutdownFile_dota_5fclientmessages_2eproto();
+
+  void InitAsDefaultInstance();
+  static CDOTAClientMsg_MatchMetadata* default_instance_;
+};
+// -------------------------------------------------------------------
+
+class CDOTAClientMsg_KillMyHero : public ::google::protobuf::Message {
+ public:
+  CDOTAClientMsg_KillMyHero();
+  virtual ~CDOTAClientMsg_KillMyHero();
+
+  CDOTAClientMsg_KillMyHero(const CDOTAClientMsg_KillMyHero& from);
+
+  inline CDOTAClientMsg_KillMyHero& operator=(const CDOTAClientMsg_KillMyHero& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+    return _unknown_fields_;
+  }
+
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+    return &_unknown_fields_;
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const CDOTAClientMsg_KillMyHero& default_instance();
+
+  void Swap(CDOTAClientMsg_KillMyHero* other);
+
+  // implements Message ----------------------------------------------
+
+  CDOTAClientMsg_KillMyHero* New() const;
+  void CopyFrom(const ::google::protobuf::Message& from);
+  void MergeFrom(const ::google::protobuf::Message& from);
+  void CopyFrom(const CDOTAClientMsg_KillMyHero& from);
+  void MergeFrom(const CDOTAClientMsg_KillMyHero& from);
+  void Clear();
+  bool IsInitialized() const;
+
+  int ByteSize() const;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input);
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  int GetCachedSize() const { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const;
+  public:
+  ::google::protobuf::Metadata GetMetadata() const;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // @@protoc_insertion_point(class_scope:CDOTAClientMsg_KillMyHero)
+ private:
+
+  ::google::protobuf::UnknownFieldSet _unknown_fields_;
+
+  ::google::protobuf::uint32 _has_bits_[1];
+  mutable int _cached_size_;
+  friend void  protobuf_AddDesc_dota_5fclientmessages_2eproto();
+  friend void protobuf_AssignDesc_dota_5fclientmessages_2eproto();
+  friend void protobuf_ShutdownFile_dota_5fclientmessages_2eproto();
+
+  void InitAsDefaultInstance();
+  static CDOTAClientMsg_KillMyHero* default_instance_;
+};
+// -------------------------------------------------------------------
+
+class CDOTAClientMsg_QuestStatus : public ::google::protobuf::Message {
+ public:
+  CDOTAClientMsg_QuestStatus();
+  virtual ~CDOTAClientMsg_QuestStatus();
+
+  CDOTAClientMsg_QuestStatus(const CDOTAClientMsg_QuestStatus& from);
+
+  inline CDOTAClientMsg_QuestStatus& operator=(const CDOTAClientMsg_QuestStatus& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+    return _unknown_fields_;
+  }
+
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+    return &_unknown_fields_;
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const CDOTAClientMsg_QuestStatus& default_instance();
+
+  void Swap(CDOTAClientMsg_QuestStatus* other);
+
+  // implements Message ----------------------------------------------
+
+  CDOTAClientMsg_QuestStatus* New() const;
+  void CopyFrom(const ::google::protobuf::Message& from);
+  void MergeFrom(const ::google::protobuf::Message& from);
+  void CopyFrom(const CDOTAClientMsg_QuestStatus& from);
+  void MergeFrom(const CDOTAClientMsg_QuestStatus& from);
+  void Clear();
+  bool IsInitialized() const;
+
+  int ByteSize() const;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input);
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  int GetCachedSize() const { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const;
+  public:
+  ::google::protobuf::Metadata GetMetadata() const;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // optional uint32 quest_id = 1;
+  inline bool has_quest_id() const;
+  inline void clear_quest_id();
+  static const int kQuestIdFieldNumber = 1;
+  inline ::google::protobuf::uint32 quest_id() const;
+  inline void set_quest_id(::google::protobuf::uint32 value);
+
+  // optional uint32 challenge_id = 2;
+  inline bool has_challenge_id() const;
+  inline void clear_challenge_id();
+  static const int kChallengeIdFieldNumber = 2;
+  inline ::google::protobuf::uint32 challenge_id() const;
+  inline void set_challenge_id(::google::protobuf::uint32 value);
+
+  // optional uint32 progress = 3;
+  inline bool has_progress() const;
+  inline void clear_progress();
+  static const int kProgressFieldNumber = 3;
+  inline ::google::protobuf::uint32 progress() const;
+  inline void set_progress(::google::protobuf::uint32 value);
+
+  // optional uint32 goal = 4;
+  inline bool has_goal() const;
+  inline void clear_goal();
+  static const int kGoalFieldNumber = 4;
+  inline ::google::protobuf::uint32 goal() const;
+  inline void set_goal(::google::protobuf::uint32 value);
+
+  // optional uint32 query = 5;
+  inline bool has_query() const;
+  inline void clear_query();
+  static const int kQueryFieldNumber = 5;
+  inline ::google::protobuf::uint32 query() const;
+  inline void set_query(::google::protobuf::uint32 value);
+
+  // optional float fail_gametime = 6;
+  inline bool has_fail_gametime() const;
+  inline void clear_fail_gametime();
+  static const int kFailGametimeFieldNumber = 6;
+  inline float fail_gametime() const;
+  inline void set_fail_gametime(float value);
+
+  // optional uint32 item_id = 7;
+  inline bool has_item_id() const;
+  inline void clear_item_id();
+  static const int kItemIdFieldNumber = 7;
+  inline ::google::protobuf::uint32 item_id() const;
+  inline void set_item_id(::google::protobuf::uint32 value);
+
+  // @@protoc_insertion_point(class_scope:CDOTAClientMsg_QuestStatus)
+ private:
+  inline void set_has_quest_id();
+  inline void clear_has_quest_id();
+  inline void set_has_challenge_id();
+  inline void clear_has_challenge_id();
+  inline void set_has_progress();
+  inline void clear_has_progress();
+  inline void set_has_goal();
+  inline void clear_has_goal();
+  inline void set_has_query();
+  inline void clear_has_query();
+  inline void set_has_fail_gametime();
+  inline void clear_has_fail_gametime();
+  inline void set_has_item_id();
+  inline void clear_has_item_id();
+
+  ::google::protobuf::UnknownFieldSet _unknown_fields_;
+
+  ::google::protobuf::uint32 _has_bits_[1];
+  mutable int _cached_size_;
+  ::google::protobuf::uint32 quest_id_;
+  ::google::protobuf::uint32 challenge_id_;
+  ::google::protobuf::uint32 progress_;
+  ::google::protobuf::uint32 goal_;
+  ::google::protobuf::uint32 query_;
+  float fail_gametime_;
+  ::google::protobuf::uint32 item_id_;
+  friend void  protobuf_AddDesc_dota_5fclientmessages_2eproto();
+  friend void protobuf_AssignDesc_dota_5fclientmessages_2eproto();
+  friend void protobuf_ShutdownFile_dota_5fclientmessages_2eproto();
+
+  void InitAsDefaultInstance();
+  static CDOTAClientMsg_QuestStatus* default_instance_;
+};
+// -------------------------------------------------------------------
+
+class CDOTAClientMsg_ToggleAutoattack : public ::google::protobuf::Message {
+ public:
+  CDOTAClientMsg_ToggleAutoattack();
+  virtual ~CDOTAClientMsg_ToggleAutoattack();
+
+  CDOTAClientMsg_ToggleAutoattack(const CDOTAClientMsg_ToggleAutoattack& from);
+
+  inline CDOTAClientMsg_ToggleAutoattack& operator=(const CDOTAClientMsg_ToggleAutoattack& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+    return _unknown_fields_;
+  }
+
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+    return &_unknown_fields_;
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const CDOTAClientMsg_ToggleAutoattack& default_instance();
+
+  void Swap(CDOTAClientMsg_ToggleAutoattack* other);
+
+  // implements Message ----------------------------------------------
+
+  CDOTAClientMsg_ToggleAutoattack* New() const;
+  void CopyFrom(const ::google::protobuf::Message& from);
+  void MergeFrom(const ::google::protobuf::Message& from);
+  void CopyFrom(const CDOTAClientMsg_ToggleAutoattack& from);
+  void MergeFrom(const CDOTAClientMsg_ToggleAutoattack& from);
+  void Clear();
+  bool IsInitialized() const;
+
+  int ByteSize() const;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input);
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  int GetCachedSize() const { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const;
+  public:
+  ::google::protobuf::Metadata GetMetadata() const;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // optional int32 mode = 1;
+  inline bool has_mode() const;
+  inline void clear_mode();
+  static const int kModeFieldNumber = 1;
+  inline ::google::protobuf::int32 mode() const;
+  inline void set_mode(::google::protobuf::int32 value);
+
+  // optional bool show_message = 2;
+  inline bool has_show_message() const;
+  inline void clear_show_message();
+  static const int kShowMessageFieldNumber = 2;
+  inline bool show_message() const;
+  inline void set_show_message(bool value);
+
+  // @@protoc_insertion_point(class_scope:CDOTAClientMsg_ToggleAutoattack)
+ private:
+  inline void set_has_mode();
+  inline void clear_has_mode();
+  inline void set_has_show_message();
+  inline void clear_has_show_message();
+
+  ::google::protobuf::UnknownFieldSet _unknown_fields_;
+
+  ::google::protobuf::uint32 _has_bits_[1];
+  mutable int _cached_size_;
+  ::google::protobuf::int32 mode_;
+  bool show_message_;
+  friend void  protobuf_AddDesc_dota_5fclientmessages_2eproto();
+  friend void protobuf_AssignDesc_dota_5fclientmessages_2eproto();
+  friend void protobuf_ShutdownFile_dota_5fclientmessages_2eproto();
+
+  void InitAsDefaultInstance();
+  static CDOTAClientMsg_ToggleAutoattack* default_instance_;
+};
+// -------------------------------------------------------------------
+
+class CDOTAClientMsg_SpecialAbility : public ::google::protobuf::Message {
+ public:
+  CDOTAClientMsg_SpecialAbility();
+  virtual ~CDOTAClientMsg_SpecialAbility();
+
+  CDOTAClientMsg_SpecialAbility(const CDOTAClientMsg_SpecialAbility& from);
+
+  inline CDOTAClientMsg_SpecialAbility& operator=(const CDOTAClientMsg_SpecialAbility& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+    return _unknown_fields_;
+  }
+
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+    return &_unknown_fields_;
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const CDOTAClientMsg_SpecialAbility& default_instance();
+
+  void Swap(CDOTAClientMsg_SpecialAbility* other);
+
+  // implements Message ----------------------------------------------
+
+  CDOTAClientMsg_SpecialAbility* New() const;
+  void CopyFrom(const ::google::protobuf::Message& from);
+  void MergeFrom(const ::google::protobuf::Message& from);
+  void CopyFrom(const CDOTAClientMsg_SpecialAbility& from);
+  void MergeFrom(const CDOTAClientMsg_SpecialAbility& from);
+  void Clear();
+  bool IsInitialized() const;
+
+  int ByteSize() const;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input);
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  int GetCachedSize() const { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const;
+  public:
+  ::google::protobuf::Metadata GetMetadata() const;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // optional uint32 ability_index = 1;
+  inline bool has_ability_index() const;
+  inline void clear_ability_index();
+  static const int kAbilityIndexFieldNumber = 1;
+  inline ::google::protobuf::uint32 ability_index() const;
+  inline void set_ability_index(::google::protobuf::uint32 value);
+
+  // optional uint32 target_entindex = 2;
+  inline bool has_target_entindex() const;
+  inline void clear_target_entindex();
+  static const int kTargetEntindexFieldNumber = 2;
+  inline ::google::protobuf::uint32 target_entindex() const;
+  inline void set_target_entindex(::google::protobuf::uint32 value);
+
+  // @@protoc_insertion_point(class_scope:CDOTAClientMsg_SpecialAbility)
+ private:
+  inline void set_has_ability_index();
+  inline void clear_has_ability_index();
+  inline void set_has_target_entindex();
+  inline void clear_has_target_entindex();
+
+  ::google::protobuf::UnknownFieldSet _unknown_fields_;
+
+  ::google::protobuf::uint32 _has_bits_[1];
+  mutable int _cached_size_;
+  ::google::protobuf::uint32 ability_index_;
+  ::google::protobuf::uint32 target_entindex_;
+  friend void  protobuf_AddDesc_dota_5fclientmessages_2eproto();
+  friend void protobuf_AssignDesc_dota_5fclientmessages_2eproto();
+  friend void protobuf_ShutdownFile_dota_5fclientmessages_2eproto();
+
+  void InitAsDefaultInstance();
+  static CDOTAClientMsg_SpecialAbility* default_instance_;
+};
+// -------------------------------------------------------------------
+
+class CDOTAClientMsg_SetEnemyStartingPosition : public ::google::protobuf::Message {
+ public:
+  CDOTAClientMsg_SetEnemyStartingPosition();
+  virtual ~CDOTAClientMsg_SetEnemyStartingPosition();
+
+  CDOTAClientMsg_SetEnemyStartingPosition(const CDOTAClientMsg_SetEnemyStartingPosition& from);
+
+  inline CDOTAClientMsg_SetEnemyStartingPosition& operator=(const CDOTAClientMsg_SetEnemyStartingPosition& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+    return _unknown_fields_;
+  }
+
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+    return &_unknown_fields_;
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const CDOTAClientMsg_SetEnemyStartingPosition& default_instance();
+
+  void Swap(CDOTAClientMsg_SetEnemyStartingPosition* other);
+
+  // implements Message ----------------------------------------------
+
+  CDOTAClientMsg_SetEnemyStartingPosition* New() const;
+  void CopyFrom(const ::google::protobuf::Message& from);
+  void MergeFrom(const ::google::protobuf::Message& from);
+  void CopyFrom(const CDOTAClientMsg_SetEnemyStartingPosition& from);
+  void MergeFrom(const CDOTAClientMsg_SetEnemyStartingPosition& from);
+  void Clear();
+  bool IsInitialized() const;
+
+  int ByteSize() const;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input);
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  int GetCachedSize() const { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const;
+  public:
+  ::google::protobuf::Metadata GetMetadata() const;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // optional uint32 enemy_player_id = 1;
+  inline bool has_enemy_player_id() const;
+  inline void clear_enemy_player_id();
+  static const int kEnemyPlayerIdFieldNumber = 1;
+  inline ::google::protobuf::uint32 enemy_player_id() const;
+  inline void set_enemy_player_id(::google::protobuf::uint32 value);
+
+  // optional uint32 enemy_starting_position = 2;
+  inline bool has_enemy_starting_position() const;
+  inline void clear_enemy_starting_position();
+  static const int kEnemyStartingPositionFieldNumber = 2;
+  inline ::google::protobuf::uint32 enemy_starting_position() const;
+  inline void set_enemy_starting_position(::google::protobuf::uint32 value);
+
+  // @@protoc_insertion_point(class_scope:CDOTAClientMsg_SetEnemyStartingPosition)
+ private:
+  inline void set_has_enemy_player_id();
+  inline void clear_has_enemy_player_id();
+  inline void set_has_enemy_starting_position();
+  inline void clear_has_enemy_starting_position();
+
+  ::google::protobuf::UnknownFieldSet _unknown_fields_;
+
+  ::google::protobuf::uint32 _has_bits_[1];
+  mutable int _cached_size_;
+  ::google::protobuf::uint32 enemy_player_id_;
+  ::google::protobuf::uint32 enemy_starting_position_;
+  friend void  protobuf_AddDesc_dota_5fclientmessages_2eproto();
+  friend void protobuf_AssignDesc_dota_5fclientmessages_2eproto();
+  friend void protobuf_ShutdownFile_dota_5fclientmessages_2eproto();
+
+  void InitAsDefaultInstance();
+  static CDOTAClientMsg_SetEnemyStartingPosition* default_instance_;
+};
+// -------------------------------------------------------------------
+
+class CDOTAClientMsg_SetDesiredWardPlacement : public ::google::protobuf::Message {
+ public:
+  CDOTAClientMsg_SetDesiredWardPlacement();
+  virtual ~CDOTAClientMsg_SetDesiredWardPlacement();
+
+  CDOTAClientMsg_SetDesiredWardPlacement(const CDOTAClientMsg_SetDesiredWardPlacement& from);
+
+  inline CDOTAClientMsg_SetDesiredWardPlacement& operator=(const CDOTAClientMsg_SetDesiredWardPlacement& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+    return _unknown_fields_;
+  }
+
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+    return &_unknown_fields_;
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const CDOTAClientMsg_SetDesiredWardPlacement& default_instance();
+
+  void Swap(CDOTAClientMsg_SetDesiredWardPlacement* other);
+
+  // implements Message ----------------------------------------------
+
+  CDOTAClientMsg_SetDesiredWardPlacement* New() const;
+  void CopyFrom(const ::google::protobuf::Message& from);
+  void MergeFrom(const ::google::protobuf::Message& from);
+  void CopyFrom(const CDOTAClientMsg_SetDesiredWardPlacement& from);
+  void MergeFrom(const CDOTAClientMsg_SetDesiredWardPlacement& from);
+  void Clear();
+  bool IsInitialized() const;
+
+  int ByteSize() const;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input);
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  int GetCachedSize() const { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const;
+  public:
+  ::google::protobuf::Metadata GetMetadata() const;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // optional uint32 ward_index = 1;
+  inline bool has_ward_index() const;
+  inline void clear_ward_index();
+  static const int kWardIndexFieldNumber = 1;
+  inline ::google::protobuf::uint32 ward_index() const;
+  inline void set_ward_index(::google::protobuf::uint32 value);
+
+  // optional float ward_x = 2;
+  inline bool has_ward_x() const;
+  inline void clear_ward_x();
+  static const int kWardXFieldNumber = 2;
+  inline float ward_x() const;
+  inline void set_ward_x(float value);
+
+  // optional float ward_y = 3;
+  inline bool has_ward_y() const;
+  inline void clear_ward_y();
+  static const int kWardYFieldNumber = 3;
+  inline float ward_y() const;
+  inline void set_ward_y(float value);
+
+  // @@protoc_insertion_point(class_scope:CDOTAClientMsg_SetDesiredWardPlacement)
+ private:
+  inline void set_has_ward_index();
+  inline void clear_has_ward_index();
+  inline void set_has_ward_x();
+  inline void clear_has_ward_x();
+  inline void set_has_ward_y();
+  inline void clear_has_ward_y();
+
+  ::google::protobuf::UnknownFieldSet _unknown_fields_;
+
+  ::google::protobuf::uint32 _has_bits_[1];
+  mutable int _cached_size_;
+  ::google::protobuf::uint32 ward_index_;
+  float ward_x_;
+  float ward_y_;
+  friend void  protobuf_AddDesc_dota_5fclientmessages_2eproto();
+  friend void protobuf_AssignDesc_dota_5fclientmessages_2eproto();
+  friend void protobuf_ShutdownFile_dota_5fclientmessages_2eproto();
+
+  void InitAsDefaultInstance();
+  static CDOTAClientMsg_SetDesiredWardPlacement* default_instance_;
+};
+// -------------------------------------------------------------------
+
+class CDOTAClientMsg_RollDice : public ::google::protobuf::Message {
+ public:
+  CDOTAClientMsg_RollDice();
+  virtual ~CDOTAClientMsg_RollDice();
+
+  CDOTAClientMsg_RollDice(const CDOTAClientMsg_RollDice& from);
+
+  inline CDOTAClientMsg_RollDice& operator=(const CDOTAClientMsg_RollDice& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+    return _unknown_fields_;
+  }
+
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+    return &_unknown_fields_;
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const CDOTAClientMsg_RollDice& default_instance();
+
+  void Swap(CDOTAClientMsg_RollDice* other);
+
+  // implements Message ----------------------------------------------
+
+  CDOTAClientMsg_RollDice* New() const;
+  void CopyFrom(const ::google::protobuf::Message& from);
+  void MergeFrom(const ::google::protobuf::Message& from);
+  void CopyFrom(const CDOTAClientMsg_RollDice& from);
+  void MergeFrom(const CDOTAClientMsg_RollDice& from);
+  void Clear();
+  bool IsInitialized() const;
+
+  int ByteSize() const;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input);
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  int GetCachedSize() const { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const;
+  public:
+  ::google::protobuf::Metadata GetMetadata() const;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // optional uint32 channel_type = 1;
+  inline bool has_channel_type() const;
+  inline void clear_channel_type();
+  static const int kChannelTypeFieldNumber = 1;
+  inline ::google::protobuf::uint32 channel_type() const;
+  inline void set_channel_type(::google::protobuf::uint32 value);
+
+  // optional uint32 roll_min = 2;
+  inline bool has_roll_min() const;
+  inline void clear_roll_min();
+  static const int kRollMinFieldNumber = 2;
+  inline ::google::protobuf::uint32 roll_min() const;
+  inline void set_roll_min(::google::protobuf::uint32 value);
+
+  // optional uint32 roll_max = 3;
+  inline bool has_roll_max() const;
+  inline void clear_roll_max();
+  static const int kRollMaxFieldNumber = 3;
+  inline ::google::protobuf::uint32 roll_max() const;
+  inline void set_roll_max(::google::protobuf::uint32 value);
+
+  // @@protoc_insertion_point(class_scope:CDOTAClientMsg_RollDice)
+ private:
+  inline void set_has_channel_type();
+  inline void clear_has_channel_type();
+  inline void set_has_roll_min();
+  inline void clear_has_roll_min();
+  inline void set_has_roll_max();
+  inline void clear_has_roll_max();
+
+  ::google::protobuf::UnknownFieldSet _unknown_fields_;
+
+  ::google::protobuf::uint32 _has_bits_[1];
+  mutable int _cached_size_;
+  ::google::protobuf::uint32 channel_type_;
+  ::google::protobuf::uint32 roll_min_;
+  ::google::protobuf::uint32 roll_max_;
+  friend void  protobuf_AddDesc_dota_5fclientmessages_2eproto();
+  friend void protobuf_AssignDesc_dota_5fclientmessages_2eproto();
+  friend void protobuf_ShutdownFile_dota_5fclientmessages_2eproto();
+
+  void InitAsDefaultInstance();
+  static CDOTAClientMsg_RollDice* default_instance_;
+};
+// -------------------------------------------------------------------
+
+class CDOTAClientMsg_FlipCoin : public ::google::protobuf::Message {
+ public:
+  CDOTAClientMsg_FlipCoin();
+  virtual ~CDOTAClientMsg_FlipCoin();
+
+  CDOTAClientMsg_FlipCoin(const CDOTAClientMsg_FlipCoin& from);
+
+  inline CDOTAClientMsg_FlipCoin& operator=(const CDOTAClientMsg_FlipCoin& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+    return _unknown_fields_;
+  }
+
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+    return &_unknown_fields_;
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const CDOTAClientMsg_FlipCoin& default_instance();
+
+  void Swap(CDOTAClientMsg_FlipCoin* other);
+
+  // implements Message ----------------------------------------------
+
+  CDOTAClientMsg_FlipCoin* New() const;
+  void CopyFrom(const ::google::protobuf::Message& from);
+  void MergeFrom(const ::google::protobuf::Message& from);
+  void CopyFrom(const CDOTAClientMsg_FlipCoin& from);
+  void MergeFrom(const CDOTAClientMsg_FlipCoin& from);
+  void Clear();
+  bool IsInitialized() const;
+
+  int ByteSize() const;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input);
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  int GetCachedSize() const { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const;
+  public:
+  ::google::protobuf::Metadata GetMetadata() const;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // optional uint32 channel_type = 1;
+  inline bool has_channel_type() const;
+  inline void clear_channel_type();
+  static const int kChannelTypeFieldNumber = 1;
+  inline ::google::protobuf::uint32 channel_type() const;
+  inline void set_channel_type(::google::protobuf::uint32 value);
+
+  // @@protoc_insertion_point(class_scope:CDOTAClientMsg_FlipCoin)
+ private:
+  inline void set_has_channel_type();
+  inline void clear_has_channel_type();
+
+  ::google::protobuf::UnknownFieldSet _unknown_fields_;
+
+  ::google::protobuf::uint32 _has_bits_[1];
+  mutable int _cached_size_;
+  ::google::protobuf::uint32 channel_type_;
+  friend void  protobuf_AddDesc_dota_5fclientmessages_2eproto();
+  friend void protobuf_AssignDesc_dota_5fclientmessages_2eproto();
+  friend void protobuf_ShutdownFile_dota_5fclientmessages_2eproto();
+
+  void InitAsDefaultInstance();
+  static CDOTAClientMsg_FlipCoin* default_instance_;
 };
 // ===================================================================
 
@@ -4659,30 +5539,56 @@ inline void CDOTAClientMsg_AspectRatio::set_ratio(float value) {
 
 // -------------------------------------------------------------------
 
-// CDOTAClientMsg_UnitsAutoAttack
+// CDOTAClientMsg_UnitsAutoAttackMode
 
-// optional bool enabled = 1;
-inline bool CDOTAClientMsg_UnitsAutoAttack::has_enabled() const {
+// optional .CDOTAClientMsg_UnitsAutoAttackMode.EMode mode = 1 [default = INVALID];
+inline bool CDOTAClientMsg_UnitsAutoAttackMode::has_mode() const {
   return (_has_bits_[0] & 0x00000001u) != 0;
 }
-inline void CDOTAClientMsg_UnitsAutoAttack::set_has_enabled() {
+inline void CDOTAClientMsg_UnitsAutoAttackMode::set_has_mode() {
   _has_bits_[0] |= 0x00000001u;
 }
-inline void CDOTAClientMsg_UnitsAutoAttack::clear_has_enabled() {
+inline void CDOTAClientMsg_UnitsAutoAttackMode::clear_has_mode() {
   _has_bits_[0] &= ~0x00000001u;
 }
-inline void CDOTAClientMsg_UnitsAutoAttack::clear_enabled() {
-  enabled_ = false;
-  clear_has_enabled();
+inline void CDOTAClientMsg_UnitsAutoAttackMode::clear_mode() {
+  mode_ = -1;
+  clear_has_mode();
 }
-inline bool CDOTAClientMsg_UnitsAutoAttack::enabled() const {
-  // @@protoc_insertion_point(field_get:CDOTAClientMsg_UnitsAutoAttack.enabled)
-  return enabled_;
+inline ::CDOTAClientMsg_UnitsAutoAttackMode_EMode CDOTAClientMsg_UnitsAutoAttackMode::mode() const {
+  // @@protoc_insertion_point(field_get:CDOTAClientMsg_UnitsAutoAttackMode.mode)
+  return static_cast< ::CDOTAClientMsg_UnitsAutoAttackMode_EMode >(mode_);
 }
-inline void CDOTAClientMsg_UnitsAutoAttack::set_enabled(bool value) {
-  set_has_enabled();
-  enabled_ = value;
-  // @@protoc_insertion_point(field_set:CDOTAClientMsg_UnitsAutoAttack.enabled)
+inline void CDOTAClientMsg_UnitsAutoAttackMode::set_mode(::CDOTAClientMsg_UnitsAutoAttackMode_EMode value) {
+  assert(::CDOTAClientMsg_UnitsAutoAttackMode_EMode_IsValid(value));
+  set_has_mode();
+  mode_ = value;
+  // @@protoc_insertion_point(field_set:CDOTAClientMsg_UnitsAutoAttackMode.mode)
+}
+
+// optional .CDOTAClientMsg_UnitsAutoAttackMode.EUnitType unit_type = 2 [default = NORMAL];
+inline bool CDOTAClientMsg_UnitsAutoAttackMode::has_unit_type() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+inline void CDOTAClientMsg_UnitsAutoAttackMode::set_has_unit_type() {
+  _has_bits_[0] |= 0x00000002u;
+}
+inline void CDOTAClientMsg_UnitsAutoAttackMode::clear_has_unit_type() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+inline void CDOTAClientMsg_UnitsAutoAttackMode::clear_unit_type() {
+  unit_type_ = 0;
+  clear_has_unit_type();
+}
+inline ::CDOTAClientMsg_UnitsAutoAttackMode_EUnitType CDOTAClientMsg_UnitsAutoAttackMode::unit_type() const {
+  // @@protoc_insertion_point(field_get:CDOTAClientMsg_UnitsAutoAttackMode.unit_type)
+  return static_cast< ::CDOTAClientMsg_UnitsAutoAttackMode_EUnitType >(unit_type_);
+}
+inline void CDOTAClientMsg_UnitsAutoAttackMode::set_unit_type(::CDOTAClientMsg_UnitsAutoAttackMode_EUnitType value) {
+  assert(::CDOTAClientMsg_UnitsAutoAttackMode_EUnitType_IsValid(value));
+  set_has_unit_type();
+  unit_type_ = value;
+  // @@protoc_insertion_point(field_set:CDOTAClientMsg_UnitsAutoAttackMode.unit_type)
 }
 
 // -------------------------------------------------------------------
@@ -4739,114 +5645,6 @@ inline void CDOTAClientMsg_TeleportRequiresHalt::set_enabled(bool value) {
   set_has_enabled();
   enabled_ = value;
   // @@protoc_insertion_point(field_set:CDOTAClientMsg_TeleportRequiresHalt.enabled)
-}
-
-// -------------------------------------------------------------------
-
-// CDOTAClientMsg_AutoPurchaseItems
-
-// optional bool enabled = 1;
-inline bool CDOTAClientMsg_AutoPurchaseItems::has_enabled() const {
-  return (_has_bits_[0] & 0x00000001u) != 0;
-}
-inline void CDOTAClientMsg_AutoPurchaseItems::set_has_enabled() {
-  _has_bits_[0] |= 0x00000001u;
-}
-inline void CDOTAClientMsg_AutoPurchaseItems::clear_has_enabled() {
-  _has_bits_[0] &= ~0x00000001u;
-}
-inline void CDOTAClientMsg_AutoPurchaseItems::clear_enabled() {
-  enabled_ = false;
-  clear_has_enabled();
-}
-inline bool CDOTAClientMsg_AutoPurchaseItems::enabled() const {
-  // @@protoc_insertion_point(field_get:CDOTAClientMsg_AutoPurchaseItems.enabled)
-  return enabled_;
-}
-inline void CDOTAClientMsg_AutoPurchaseItems::set_enabled(bool value) {
-  set_has_enabled();
-  enabled_ = value;
-  // @@protoc_insertion_point(field_set:CDOTAClientMsg_AutoPurchaseItems.enabled)
-}
-
-// -------------------------------------------------------------------
-
-// CDOTAClientMsg_TestItems
-
-// optional string key_values = 1;
-inline bool CDOTAClientMsg_TestItems::has_key_values() const {
-  return (_has_bits_[0] & 0x00000001u) != 0;
-}
-inline void CDOTAClientMsg_TestItems::set_has_key_values() {
-  _has_bits_[0] |= 0x00000001u;
-}
-inline void CDOTAClientMsg_TestItems::clear_has_key_values() {
-  _has_bits_[0] &= ~0x00000001u;
-}
-inline void CDOTAClientMsg_TestItems::clear_key_values() {
-  if (key_values_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    key_values_->clear();
-  }
-  clear_has_key_values();
-}
-inline const ::std::string& CDOTAClientMsg_TestItems::key_values() const {
-  // @@protoc_insertion_point(field_get:CDOTAClientMsg_TestItems.key_values)
-  return *key_values_;
-}
-inline void CDOTAClientMsg_TestItems::set_key_values(const ::std::string& value) {
-  set_has_key_values();
-  if (key_values_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    key_values_ = new ::std::string;
-  }
-  key_values_->assign(value);
-  // @@protoc_insertion_point(field_set:CDOTAClientMsg_TestItems.key_values)
-}
-inline void CDOTAClientMsg_TestItems::set_key_values(const char* value) {
-  set_has_key_values();
-  if (key_values_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    key_values_ = new ::std::string;
-  }
-  key_values_->assign(value);
-  // @@protoc_insertion_point(field_set_char:CDOTAClientMsg_TestItems.key_values)
-}
-inline void CDOTAClientMsg_TestItems::set_key_values(const char* value, size_t size) {
-  set_has_key_values();
-  if (key_values_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    key_values_ = new ::std::string;
-  }
-  key_values_->assign(reinterpret_cast<const char*>(value), size);
-  // @@protoc_insertion_point(field_set_pointer:CDOTAClientMsg_TestItems.key_values)
-}
-inline ::std::string* CDOTAClientMsg_TestItems::mutable_key_values() {
-  set_has_key_values();
-  if (key_values_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    key_values_ = new ::std::string;
-  }
-  // @@protoc_insertion_point(field_mutable:CDOTAClientMsg_TestItems.key_values)
-  return key_values_;
-}
-inline ::std::string* CDOTAClientMsg_TestItems::release_key_values() {
-  clear_has_key_values();
-  if (key_values_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    return NULL;
-  } else {
-    ::std::string* temp = key_values_;
-    key_values_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-    return temp;
-  }
-}
-inline void CDOTAClientMsg_TestItems::set_allocated_key_values(::std::string* key_values) {
-  if (key_values_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    delete key_values_;
-  }
-  if (key_values) {
-    set_has_key_values();
-    key_values_ = key_values;
-  } else {
-    clear_has_key_values();
-    key_values_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  }
-  // @@protoc_insertion_point(field_set_allocated:CDOTAClientMsg_TestItems.key_values)
 }
 
 // -------------------------------------------------------------------
@@ -5867,170 +6665,6 @@ inline void CDOTAClientMsg_HeroStatueLike::set_owner_player_id(::google::protobu
 
 // -------------------------------------------------------------------
 
-// CDOTAClientMsg_TeamShowcaseEditor
-
-// optional bytes data = 1;
-inline bool CDOTAClientMsg_TeamShowcaseEditor::has_data() const {
-  return (_has_bits_[0] & 0x00000001u) != 0;
-}
-inline void CDOTAClientMsg_TeamShowcaseEditor::set_has_data() {
-  _has_bits_[0] |= 0x00000001u;
-}
-inline void CDOTAClientMsg_TeamShowcaseEditor::clear_has_data() {
-  _has_bits_[0] &= ~0x00000001u;
-}
-inline void CDOTAClientMsg_TeamShowcaseEditor::clear_data() {
-  if (data_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    data_->clear();
-  }
-  clear_has_data();
-}
-inline const ::std::string& CDOTAClientMsg_TeamShowcaseEditor::data() const {
-  // @@protoc_insertion_point(field_get:CDOTAClientMsg_TeamShowcaseEditor.data)
-  return *data_;
-}
-inline void CDOTAClientMsg_TeamShowcaseEditor::set_data(const ::std::string& value) {
-  set_has_data();
-  if (data_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    data_ = new ::std::string;
-  }
-  data_->assign(value);
-  // @@protoc_insertion_point(field_set:CDOTAClientMsg_TeamShowcaseEditor.data)
-}
-inline void CDOTAClientMsg_TeamShowcaseEditor::set_data(const char* value) {
-  set_has_data();
-  if (data_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    data_ = new ::std::string;
-  }
-  data_->assign(value);
-  // @@protoc_insertion_point(field_set_char:CDOTAClientMsg_TeamShowcaseEditor.data)
-}
-inline void CDOTAClientMsg_TeamShowcaseEditor::set_data(const void* value, size_t size) {
-  set_has_data();
-  if (data_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    data_ = new ::std::string;
-  }
-  data_->assign(reinterpret_cast<const char*>(value), size);
-  // @@protoc_insertion_point(field_set_pointer:CDOTAClientMsg_TeamShowcaseEditor.data)
-}
-inline ::std::string* CDOTAClientMsg_TeamShowcaseEditor::mutable_data() {
-  set_has_data();
-  if (data_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    data_ = new ::std::string;
-  }
-  // @@protoc_insertion_point(field_mutable:CDOTAClientMsg_TeamShowcaseEditor.data)
-  return data_;
-}
-inline ::std::string* CDOTAClientMsg_TeamShowcaseEditor::release_data() {
-  clear_has_data();
-  if (data_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    return NULL;
-  } else {
-    ::std::string* temp = data_;
-    data_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-    return temp;
-  }
-}
-inline void CDOTAClientMsg_TeamShowcaseEditor::set_allocated_data(::std::string* data) {
-  if (data_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    delete data_;
-  }
-  if (data) {
-    set_has_data();
-    data_ = data;
-  } else {
-    clear_has_data();
-    data_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  }
-  // @@protoc_insertion_point(field_set_allocated:CDOTAClientMsg_TeamShowcaseEditor.data)
-}
-
-// -------------------------------------------------------------------
-
-// CDOTAClientMsg_TeamShowcaseClientData
-
-// optional bytes data = 1;
-inline bool CDOTAClientMsg_TeamShowcaseClientData::has_data() const {
-  return (_has_bits_[0] & 0x00000001u) != 0;
-}
-inline void CDOTAClientMsg_TeamShowcaseClientData::set_has_data() {
-  _has_bits_[0] |= 0x00000001u;
-}
-inline void CDOTAClientMsg_TeamShowcaseClientData::clear_has_data() {
-  _has_bits_[0] &= ~0x00000001u;
-}
-inline void CDOTAClientMsg_TeamShowcaseClientData::clear_data() {
-  if (data_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    data_->clear();
-  }
-  clear_has_data();
-}
-inline const ::std::string& CDOTAClientMsg_TeamShowcaseClientData::data() const {
-  // @@protoc_insertion_point(field_get:CDOTAClientMsg_TeamShowcaseClientData.data)
-  return *data_;
-}
-inline void CDOTAClientMsg_TeamShowcaseClientData::set_data(const ::std::string& value) {
-  set_has_data();
-  if (data_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    data_ = new ::std::string;
-  }
-  data_->assign(value);
-  // @@protoc_insertion_point(field_set:CDOTAClientMsg_TeamShowcaseClientData.data)
-}
-inline void CDOTAClientMsg_TeamShowcaseClientData::set_data(const char* value) {
-  set_has_data();
-  if (data_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    data_ = new ::std::string;
-  }
-  data_->assign(value);
-  // @@protoc_insertion_point(field_set_char:CDOTAClientMsg_TeamShowcaseClientData.data)
-}
-inline void CDOTAClientMsg_TeamShowcaseClientData::set_data(const void* value, size_t size) {
-  set_has_data();
-  if (data_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    data_ = new ::std::string;
-  }
-  data_->assign(reinterpret_cast<const char*>(value), size);
-  // @@protoc_insertion_point(field_set_pointer:CDOTAClientMsg_TeamShowcaseClientData.data)
-}
-inline ::std::string* CDOTAClientMsg_TeamShowcaseClientData::mutable_data() {
-  set_has_data();
-  if (data_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    data_ = new ::std::string;
-  }
-  // @@protoc_insertion_point(field_mutable:CDOTAClientMsg_TeamShowcaseClientData.data)
-  return data_;
-}
-inline ::std::string* CDOTAClientMsg_TeamShowcaseClientData::release_data() {
-  clear_has_data();
-  if (data_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    return NULL;
-  } else {
-    ::std::string* temp = data_;
-    data_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-    return temp;
-  }
-}
-inline void CDOTAClientMsg_TeamShowcaseClientData::set_allocated_data(::std::string* data) {
-  if (data_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    delete data_;
-  }
-  if (data) {
-    set_has_data();
-    data_ = data;
-  } else {
-    clear_has_data();
-    data_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  }
-  // @@protoc_insertion_point(field_set_allocated:CDOTAClientMsg_TeamShowcaseClientData.data)
-}
-
-// -------------------------------------------------------------------
-
-// CDOTAClientMsg_PlayTeamShowcase
-
-// -------------------------------------------------------------------
-
 // CDOTAClientMsg_EventCNY2015Cmd
 
 // optional bytes data = 1;
@@ -6245,6 +6879,30 @@ inline void CDOTAClientMsg_DemoHero::set_style_index(::google::protobuf::uint32 
   // @@protoc_insertion_point(field_set:CDOTAClientMsg_DemoHero.style_index)
 }
 
+// optional bool keep_existing_demohero = 6;
+inline bool CDOTAClientMsg_DemoHero::has_keep_existing_demohero() const {
+  return (_has_bits_[0] & 0x00000020u) != 0;
+}
+inline void CDOTAClientMsg_DemoHero::set_has_keep_existing_demohero() {
+  _has_bits_[0] |= 0x00000020u;
+}
+inline void CDOTAClientMsg_DemoHero::clear_has_keep_existing_demohero() {
+  _has_bits_[0] &= ~0x00000020u;
+}
+inline void CDOTAClientMsg_DemoHero::clear_keep_existing_demohero() {
+  keep_existing_demohero_ = false;
+  clear_has_keep_existing_demohero();
+}
+inline bool CDOTAClientMsg_DemoHero::keep_existing_demohero() const {
+  // @@protoc_insertion_point(field_get:CDOTAClientMsg_DemoHero.keep_existing_demohero)
+  return keep_existing_demohero_;
+}
+inline void CDOTAClientMsg_DemoHero::set_keep_existing_demohero(bool value) {
+  set_has_keep_existing_demohero();
+  keep_existing_demohero_ = value;
+  // @@protoc_insertion_point(field_set:CDOTAClientMsg_DemoHero.keep_existing_demohero)
+}
+
 // -------------------------------------------------------------------
 
 // CDOTAClientMsg_ChallengeSelect
@@ -6427,6 +7085,34 @@ inline void CDOTAClientMsg_CoinWager::set_wager_amount(::google::protobuf::uint3
 
 // -------------------------------------------------------------------
 
+// CDOTAClientMsg_EventPointsTip
+
+// optional uint32 recipient_player_id = 1;
+inline bool CDOTAClientMsg_EventPointsTip::has_recipient_player_id() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+inline void CDOTAClientMsg_EventPointsTip::set_has_recipient_player_id() {
+  _has_bits_[0] |= 0x00000001u;
+}
+inline void CDOTAClientMsg_EventPointsTip::clear_has_recipient_player_id() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+inline void CDOTAClientMsg_EventPointsTip::clear_recipient_player_id() {
+  recipient_player_id_ = 0u;
+  clear_has_recipient_player_id();
+}
+inline ::google::protobuf::uint32 CDOTAClientMsg_EventPointsTip::recipient_player_id() const {
+  // @@protoc_insertion_point(field_get:CDOTAClientMsg_EventPointsTip.recipient_player_id)
+  return recipient_player_id_;
+}
+inline void CDOTAClientMsg_EventPointsTip::set_recipient_player_id(::google::protobuf::uint32 value) {
+  set_has_recipient_player_id();
+  recipient_player_id_ = value;
+  // @@protoc_insertion_point(field_set:CDOTAClientMsg_EventPointsTip.recipient_player_id)
+}
+
+// -------------------------------------------------------------------
+
 // CDOTAClientMsg_ExecuteOrders
 
 // repeated .CDOTAMsg_UnitOrder orders = 1;
@@ -6459,6 +7145,926 @@ CDOTAClientMsg_ExecuteOrders::mutable_orders() {
   return &orders_;
 }
 
+// -------------------------------------------------------------------
+
+// CDOTAClientMsg_XPAlert
+
+// optional uint32 target_entindex = 1;
+inline bool CDOTAClientMsg_XPAlert::has_target_entindex() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+inline void CDOTAClientMsg_XPAlert::set_has_target_entindex() {
+  _has_bits_[0] |= 0x00000001u;
+}
+inline void CDOTAClientMsg_XPAlert::clear_has_target_entindex() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+inline void CDOTAClientMsg_XPAlert::clear_target_entindex() {
+  target_entindex_ = 0u;
+  clear_has_target_entindex();
+}
+inline ::google::protobuf::uint32 CDOTAClientMsg_XPAlert::target_entindex() const {
+  // @@protoc_insertion_point(field_get:CDOTAClientMsg_XPAlert.target_entindex)
+  return target_entindex_;
+}
+inline void CDOTAClientMsg_XPAlert::set_target_entindex(::google::protobuf::uint32 value) {
+  set_has_target_entindex();
+  target_entindex_ = value;
+  // @@protoc_insertion_point(field_set:CDOTAClientMsg_XPAlert.target_entindex)
+}
+
+// optional uint32 damage_taken = 2;
+inline bool CDOTAClientMsg_XPAlert::has_damage_taken() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+inline void CDOTAClientMsg_XPAlert::set_has_damage_taken() {
+  _has_bits_[0] |= 0x00000002u;
+}
+inline void CDOTAClientMsg_XPAlert::clear_has_damage_taken() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+inline void CDOTAClientMsg_XPAlert::clear_damage_taken() {
+  damage_taken_ = 0u;
+  clear_has_damage_taken();
+}
+inline ::google::protobuf::uint32 CDOTAClientMsg_XPAlert::damage_taken() const {
+  // @@protoc_insertion_point(field_get:CDOTAClientMsg_XPAlert.damage_taken)
+  return damage_taken_;
+}
+inline void CDOTAClientMsg_XPAlert::set_damage_taken(::google::protobuf::uint32 value) {
+  set_has_damage_taken();
+  damage_taken_ = value;
+  // @@protoc_insertion_point(field_set:CDOTAClientMsg_XPAlert.damage_taken)
+}
+
+// -------------------------------------------------------------------
+
+// CDOTAClientMsg_KillcamDamageTaken
+
+// optional uint32 target_entindex = 1;
+inline bool CDOTAClientMsg_KillcamDamageTaken::has_target_entindex() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+inline void CDOTAClientMsg_KillcamDamageTaken::set_has_target_entindex() {
+  _has_bits_[0] |= 0x00000001u;
+}
+inline void CDOTAClientMsg_KillcamDamageTaken::clear_has_target_entindex() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+inline void CDOTAClientMsg_KillcamDamageTaken::clear_target_entindex() {
+  target_entindex_ = 0u;
+  clear_has_target_entindex();
+}
+inline ::google::protobuf::uint32 CDOTAClientMsg_KillcamDamageTaken::target_entindex() const {
+  // @@protoc_insertion_point(field_get:CDOTAClientMsg_KillcamDamageTaken.target_entindex)
+  return target_entindex_;
+}
+inline void CDOTAClientMsg_KillcamDamageTaken::set_target_entindex(::google::protobuf::uint32 value) {
+  set_has_target_entindex();
+  target_entindex_ = value;
+  // @@protoc_insertion_point(field_set:CDOTAClientMsg_KillcamDamageTaken.target_entindex)
+}
+
+// optional uint32 damage_taken = 2;
+inline bool CDOTAClientMsg_KillcamDamageTaken::has_damage_taken() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+inline void CDOTAClientMsg_KillcamDamageTaken::set_has_damage_taken() {
+  _has_bits_[0] |= 0x00000002u;
+}
+inline void CDOTAClientMsg_KillcamDamageTaken::clear_has_damage_taken() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+inline void CDOTAClientMsg_KillcamDamageTaken::clear_damage_taken() {
+  damage_taken_ = 0u;
+  clear_has_damage_taken();
+}
+inline ::google::protobuf::uint32 CDOTAClientMsg_KillcamDamageTaken::damage_taken() const {
+  // @@protoc_insertion_point(field_get:CDOTAClientMsg_KillcamDamageTaken.damage_taken)
+  return damage_taken_;
+}
+inline void CDOTAClientMsg_KillcamDamageTaken::set_damage_taken(::google::protobuf::uint32 value) {
+  set_has_damage_taken();
+  damage_taken_ = value;
+  // @@protoc_insertion_point(field_set:CDOTAClientMsg_KillcamDamageTaken.damage_taken)
+}
+
+// optional uint32 item_type = 3;
+inline bool CDOTAClientMsg_KillcamDamageTaken::has_item_type() const {
+  return (_has_bits_[0] & 0x00000004u) != 0;
+}
+inline void CDOTAClientMsg_KillcamDamageTaken::set_has_item_type() {
+  _has_bits_[0] |= 0x00000004u;
+}
+inline void CDOTAClientMsg_KillcamDamageTaken::clear_has_item_type() {
+  _has_bits_[0] &= ~0x00000004u;
+}
+inline void CDOTAClientMsg_KillcamDamageTaken::clear_item_type() {
+  item_type_ = 0u;
+  clear_has_item_type();
+}
+inline ::google::protobuf::uint32 CDOTAClientMsg_KillcamDamageTaken::item_type() const {
+  // @@protoc_insertion_point(field_get:CDOTAClientMsg_KillcamDamageTaken.item_type)
+  return item_type_;
+}
+inline void CDOTAClientMsg_KillcamDamageTaken::set_item_type(::google::protobuf::uint32 value) {
+  set_has_item_type();
+  item_type_ = value;
+  // @@protoc_insertion_point(field_set:CDOTAClientMsg_KillcamDamageTaken.item_type)
+}
+
+// optional uint32 item_id = 4;
+inline bool CDOTAClientMsg_KillcamDamageTaken::has_item_id() const {
+  return (_has_bits_[0] & 0x00000008u) != 0;
+}
+inline void CDOTAClientMsg_KillcamDamageTaken::set_has_item_id() {
+  _has_bits_[0] |= 0x00000008u;
+}
+inline void CDOTAClientMsg_KillcamDamageTaken::clear_has_item_id() {
+  _has_bits_[0] &= ~0x00000008u;
+}
+inline void CDOTAClientMsg_KillcamDamageTaken::clear_item_id() {
+  item_id_ = 0u;
+  clear_has_item_id();
+}
+inline ::google::protobuf::uint32 CDOTAClientMsg_KillcamDamageTaken::item_id() const {
+  // @@protoc_insertion_point(field_get:CDOTAClientMsg_KillcamDamageTaken.item_id)
+  return item_id_;
+}
+inline void CDOTAClientMsg_KillcamDamageTaken::set_item_id(::google::protobuf::uint32 value) {
+  set_has_item_id();
+  item_id_ = value;
+  // @@protoc_insertion_point(field_set:CDOTAClientMsg_KillcamDamageTaken.item_id)
+}
+
+// optional string hero_name = 5;
+inline bool CDOTAClientMsg_KillcamDamageTaken::has_hero_name() const {
+  return (_has_bits_[0] & 0x00000010u) != 0;
+}
+inline void CDOTAClientMsg_KillcamDamageTaken::set_has_hero_name() {
+  _has_bits_[0] |= 0x00000010u;
+}
+inline void CDOTAClientMsg_KillcamDamageTaken::clear_has_hero_name() {
+  _has_bits_[0] &= ~0x00000010u;
+}
+inline void CDOTAClientMsg_KillcamDamageTaken::clear_hero_name() {
+  if (hero_name_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    hero_name_->clear();
+  }
+  clear_has_hero_name();
+}
+inline const ::std::string& CDOTAClientMsg_KillcamDamageTaken::hero_name() const {
+  // @@protoc_insertion_point(field_get:CDOTAClientMsg_KillcamDamageTaken.hero_name)
+  return *hero_name_;
+}
+inline void CDOTAClientMsg_KillcamDamageTaken::set_hero_name(const ::std::string& value) {
+  set_has_hero_name();
+  if (hero_name_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    hero_name_ = new ::std::string;
+  }
+  hero_name_->assign(value);
+  // @@protoc_insertion_point(field_set:CDOTAClientMsg_KillcamDamageTaken.hero_name)
+}
+inline void CDOTAClientMsg_KillcamDamageTaken::set_hero_name(const char* value) {
+  set_has_hero_name();
+  if (hero_name_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    hero_name_ = new ::std::string;
+  }
+  hero_name_->assign(value);
+  // @@protoc_insertion_point(field_set_char:CDOTAClientMsg_KillcamDamageTaken.hero_name)
+}
+inline void CDOTAClientMsg_KillcamDamageTaken::set_hero_name(const char* value, size_t size) {
+  set_has_hero_name();
+  if (hero_name_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    hero_name_ = new ::std::string;
+  }
+  hero_name_->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:CDOTAClientMsg_KillcamDamageTaken.hero_name)
+}
+inline ::std::string* CDOTAClientMsg_KillcamDamageTaken::mutable_hero_name() {
+  set_has_hero_name();
+  if (hero_name_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    hero_name_ = new ::std::string;
+  }
+  // @@protoc_insertion_point(field_mutable:CDOTAClientMsg_KillcamDamageTaken.hero_name)
+  return hero_name_;
+}
+inline ::std::string* CDOTAClientMsg_KillcamDamageTaken::release_hero_name() {
+  clear_has_hero_name();
+  if (hero_name_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    return NULL;
+  } else {
+    ::std::string* temp = hero_name_;
+    hero_name_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    return temp;
+  }
+}
+inline void CDOTAClientMsg_KillcamDamageTaken::set_allocated_hero_name(::std::string* hero_name) {
+  if (hero_name_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete hero_name_;
+  }
+  if (hero_name) {
+    set_has_hero_name();
+    hero_name_ = hero_name;
+  } else {
+    clear_has_hero_name();
+    hero_name_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_set_allocated:CDOTAClientMsg_KillcamDamageTaken.hero_name)
+}
+
+// optional string damage_color = 6;
+inline bool CDOTAClientMsg_KillcamDamageTaken::has_damage_color() const {
+  return (_has_bits_[0] & 0x00000020u) != 0;
+}
+inline void CDOTAClientMsg_KillcamDamageTaken::set_has_damage_color() {
+  _has_bits_[0] |= 0x00000020u;
+}
+inline void CDOTAClientMsg_KillcamDamageTaken::clear_has_damage_color() {
+  _has_bits_[0] &= ~0x00000020u;
+}
+inline void CDOTAClientMsg_KillcamDamageTaken::clear_damage_color() {
+  if (damage_color_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    damage_color_->clear();
+  }
+  clear_has_damage_color();
+}
+inline const ::std::string& CDOTAClientMsg_KillcamDamageTaken::damage_color() const {
+  // @@protoc_insertion_point(field_get:CDOTAClientMsg_KillcamDamageTaken.damage_color)
+  return *damage_color_;
+}
+inline void CDOTAClientMsg_KillcamDamageTaken::set_damage_color(const ::std::string& value) {
+  set_has_damage_color();
+  if (damage_color_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    damage_color_ = new ::std::string;
+  }
+  damage_color_->assign(value);
+  // @@protoc_insertion_point(field_set:CDOTAClientMsg_KillcamDamageTaken.damage_color)
+}
+inline void CDOTAClientMsg_KillcamDamageTaken::set_damage_color(const char* value) {
+  set_has_damage_color();
+  if (damage_color_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    damage_color_ = new ::std::string;
+  }
+  damage_color_->assign(value);
+  // @@protoc_insertion_point(field_set_char:CDOTAClientMsg_KillcamDamageTaken.damage_color)
+}
+inline void CDOTAClientMsg_KillcamDamageTaken::set_damage_color(const char* value, size_t size) {
+  set_has_damage_color();
+  if (damage_color_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    damage_color_ = new ::std::string;
+  }
+  damage_color_->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:CDOTAClientMsg_KillcamDamageTaken.damage_color)
+}
+inline ::std::string* CDOTAClientMsg_KillcamDamageTaken::mutable_damage_color() {
+  set_has_damage_color();
+  if (damage_color_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    damage_color_ = new ::std::string;
+  }
+  // @@protoc_insertion_point(field_mutable:CDOTAClientMsg_KillcamDamageTaken.damage_color)
+  return damage_color_;
+}
+inline ::std::string* CDOTAClientMsg_KillcamDamageTaken::release_damage_color() {
+  clear_has_damage_color();
+  if (damage_color_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    return NULL;
+  } else {
+    ::std::string* temp = damage_color_;
+    damage_color_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    return temp;
+  }
+}
+inline void CDOTAClientMsg_KillcamDamageTaken::set_allocated_damage_color(::std::string* damage_color) {
+  if (damage_color_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete damage_color_;
+  }
+  if (damage_color) {
+    set_has_damage_color();
+    damage_color_ = damage_color;
+  } else {
+    clear_has_damage_color();
+    damage_color_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_set_allocated:CDOTAClientMsg_KillcamDamageTaken.damage_color)
+}
+
+// -------------------------------------------------------------------
+
+// CDOTAClientMsg_MatchMetadata
+
+// optional uint64 match_id = 1;
+inline bool CDOTAClientMsg_MatchMetadata::has_match_id() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+inline void CDOTAClientMsg_MatchMetadata::set_has_match_id() {
+  _has_bits_[0] |= 0x00000001u;
+}
+inline void CDOTAClientMsg_MatchMetadata::clear_has_match_id() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+inline void CDOTAClientMsg_MatchMetadata::clear_match_id() {
+  match_id_ = GOOGLE_ULONGLONG(0);
+  clear_has_match_id();
+}
+inline ::google::protobuf::uint64 CDOTAClientMsg_MatchMetadata::match_id() const {
+  // @@protoc_insertion_point(field_get:CDOTAClientMsg_MatchMetadata.match_id)
+  return match_id_;
+}
+inline void CDOTAClientMsg_MatchMetadata::set_match_id(::google::protobuf::uint64 value) {
+  set_has_match_id();
+  match_id_ = value;
+  // @@protoc_insertion_point(field_set:CDOTAClientMsg_MatchMetadata.match_id)
+}
+
+// optional bytes metadata = 2;
+inline bool CDOTAClientMsg_MatchMetadata::has_metadata() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+inline void CDOTAClientMsg_MatchMetadata::set_has_metadata() {
+  _has_bits_[0] |= 0x00000002u;
+}
+inline void CDOTAClientMsg_MatchMetadata::clear_has_metadata() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+inline void CDOTAClientMsg_MatchMetadata::clear_metadata() {
+  if (metadata_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    metadata_->clear();
+  }
+  clear_has_metadata();
+}
+inline const ::std::string& CDOTAClientMsg_MatchMetadata::metadata() const {
+  // @@protoc_insertion_point(field_get:CDOTAClientMsg_MatchMetadata.metadata)
+  return *metadata_;
+}
+inline void CDOTAClientMsg_MatchMetadata::set_metadata(const ::std::string& value) {
+  set_has_metadata();
+  if (metadata_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    metadata_ = new ::std::string;
+  }
+  metadata_->assign(value);
+  // @@protoc_insertion_point(field_set:CDOTAClientMsg_MatchMetadata.metadata)
+}
+inline void CDOTAClientMsg_MatchMetadata::set_metadata(const char* value) {
+  set_has_metadata();
+  if (metadata_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    metadata_ = new ::std::string;
+  }
+  metadata_->assign(value);
+  // @@protoc_insertion_point(field_set_char:CDOTAClientMsg_MatchMetadata.metadata)
+}
+inline void CDOTAClientMsg_MatchMetadata::set_metadata(const void* value, size_t size) {
+  set_has_metadata();
+  if (metadata_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    metadata_ = new ::std::string;
+  }
+  metadata_->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:CDOTAClientMsg_MatchMetadata.metadata)
+}
+inline ::std::string* CDOTAClientMsg_MatchMetadata::mutable_metadata() {
+  set_has_metadata();
+  if (metadata_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    metadata_ = new ::std::string;
+  }
+  // @@protoc_insertion_point(field_mutable:CDOTAClientMsg_MatchMetadata.metadata)
+  return metadata_;
+}
+inline ::std::string* CDOTAClientMsg_MatchMetadata::release_metadata() {
+  clear_has_metadata();
+  if (metadata_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    return NULL;
+  } else {
+    ::std::string* temp = metadata_;
+    metadata_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    return temp;
+  }
+}
+inline void CDOTAClientMsg_MatchMetadata::set_allocated_metadata(::std::string* metadata) {
+  if (metadata_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete metadata_;
+  }
+  if (metadata) {
+    set_has_metadata();
+    metadata_ = metadata;
+  } else {
+    clear_has_metadata();
+    metadata_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_set_allocated:CDOTAClientMsg_MatchMetadata.metadata)
+}
+
+// -------------------------------------------------------------------
+
+// CDOTAClientMsg_KillMyHero
+
+// -------------------------------------------------------------------
+
+// CDOTAClientMsg_QuestStatus
+
+// optional uint32 quest_id = 1;
+inline bool CDOTAClientMsg_QuestStatus::has_quest_id() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+inline void CDOTAClientMsg_QuestStatus::set_has_quest_id() {
+  _has_bits_[0] |= 0x00000001u;
+}
+inline void CDOTAClientMsg_QuestStatus::clear_has_quest_id() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+inline void CDOTAClientMsg_QuestStatus::clear_quest_id() {
+  quest_id_ = 0u;
+  clear_has_quest_id();
+}
+inline ::google::protobuf::uint32 CDOTAClientMsg_QuestStatus::quest_id() const {
+  // @@protoc_insertion_point(field_get:CDOTAClientMsg_QuestStatus.quest_id)
+  return quest_id_;
+}
+inline void CDOTAClientMsg_QuestStatus::set_quest_id(::google::protobuf::uint32 value) {
+  set_has_quest_id();
+  quest_id_ = value;
+  // @@protoc_insertion_point(field_set:CDOTAClientMsg_QuestStatus.quest_id)
+}
+
+// optional uint32 challenge_id = 2;
+inline bool CDOTAClientMsg_QuestStatus::has_challenge_id() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+inline void CDOTAClientMsg_QuestStatus::set_has_challenge_id() {
+  _has_bits_[0] |= 0x00000002u;
+}
+inline void CDOTAClientMsg_QuestStatus::clear_has_challenge_id() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+inline void CDOTAClientMsg_QuestStatus::clear_challenge_id() {
+  challenge_id_ = 0u;
+  clear_has_challenge_id();
+}
+inline ::google::protobuf::uint32 CDOTAClientMsg_QuestStatus::challenge_id() const {
+  // @@protoc_insertion_point(field_get:CDOTAClientMsg_QuestStatus.challenge_id)
+  return challenge_id_;
+}
+inline void CDOTAClientMsg_QuestStatus::set_challenge_id(::google::protobuf::uint32 value) {
+  set_has_challenge_id();
+  challenge_id_ = value;
+  // @@protoc_insertion_point(field_set:CDOTAClientMsg_QuestStatus.challenge_id)
+}
+
+// optional uint32 progress = 3;
+inline bool CDOTAClientMsg_QuestStatus::has_progress() const {
+  return (_has_bits_[0] & 0x00000004u) != 0;
+}
+inline void CDOTAClientMsg_QuestStatus::set_has_progress() {
+  _has_bits_[0] |= 0x00000004u;
+}
+inline void CDOTAClientMsg_QuestStatus::clear_has_progress() {
+  _has_bits_[0] &= ~0x00000004u;
+}
+inline void CDOTAClientMsg_QuestStatus::clear_progress() {
+  progress_ = 0u;
+  clear_has_progress();
+}
+inline ::google::protobuf::uint32 CDOTAClientMsg_QuestStatus::progress() const {
+  // @@protoc_insertion_point(field_get:CDOTAClientMsg_QuestStatus.progress)
+  return progress_;
+}
+inline void CDOTAClientMsg_QuestStatus::set_progress(::google::protobuf::uint32 value) {
+  set_has_progress();
+  progress_ = value;
+  // @@protoc_insertion_point(field_set:CDOTAClientMsg_QuestStatus.progress)
+}
+
+// optional uint32 goal = 4;
+inline bool CDOTAClientMsg_QuestStatus::has_goal() const {
+  return (_has_bits_[0] & 0x00000008u) != 0;
+}
+inline void CDOTAClientMsg_QuestStatus::set_has_goal() {
+  _has_bits_[0] |= 0x00000008u;
+}
+inline void CDOTAClientMsg_QuestStatus::clear_has_goal() {
+  _has_bits_[0] &= ~0x00000008u;
+}
+inline void CDOTAClientMsg_QuestStatus::clear_goal() {
+  goal_ = 0u;
+  clear_has_goal();
+}
+inline ::google::protobuf::uint32 CDOTAClientMsg_QuestStatus::goal() const {
+  // @@protoc_insertion_point(field_get:CDOTAClientMsg_QuestStatus.goal)
+  return goal_;
+}
+inline void CDOTAClientMsg_QuestStatus::set_goal(::google::protobuf::uint32 value) {
+  set_has_goal();
+  goal_ = value;
+  // @@protoc_insertion_point(field_set:CDOTAClientMsg_QuestStatus.goal)
+}
+
+// optional uint32 query = 5;
+inline bool CDOTAClientMsg_QuestStatus::has_query() const {
+  return (_has_bits_[0] & 0x00000010u) != 0;
+}
+inline void CDOTAClientMsg_QuestStatus::set_has_query() {
+  _has_bits_[0] |= 0x00000010u;
+}
+inline void CDOTAClientMsg_QuestStatus::clear_has_query() {
+  _has_bits_[0] &= ~0x00000010u;
+}
+inline void CDOTAClientMsg_QuestStatus::clear_query() {
+  query_ = 0u;
+  clear_has_query();
+}
+inline ::google::protobuf::uint32 CDOTAClientMsg_QuestStatus::query() const {
+  // @@protoc_insertion_point(field_get:CDOTAClientMsg_QuestStatus.query)
+  return query_;
+}
+inline void CDOTAClientMsg_QuestStatus::set_query(::google::protobuf::uint32 value) {
+  set_has_query();
+  query_ = value;
+  // @@protoc_insertion_point(field_set:CDOTAClientMsg_QuestStatus.query)
+}
+
+// optional float fail_gametime = 6;
+inline bool CDOTAClientMsg_QuestStatus::has_fail_gametime() const {
+  return (_has_bits_[0] & 0x00000020u) != 0;
+}
+inline void CDOTAClientMsg_QuestStatus::set_has_fail_gametime() {
+  _has_bits_[0] |= 0x00000020u;
+}
+inline void CDOTAClientMsg_QuestStatus::clear_has_fail_gametime() {
+  _has_bits_[0] &= ~0x00000020u;
+}
+inline void CDOTAClientMsg_QuestStatus::clear_fail_gametime() {
+  fail_gametime_ = 0;
+  clear_has_fail_gametime();
+}
+inline float CDOTAClientMsg_QuestStatus::fail_gametime() const {
+  // @@protoc_insertion_point(field_get:CDOTAClientMsg_QuestStatus.fail_gametime)
+  return fail_gametime_;
+}
+inline void CDOTAClientMsg_QuestStatus::set_fail_gametime(float value) {
+  set_has_fail_gametime();
+  fail_gametime_ = value;
+  // @@protoc_insertion_point(field_set:CDOTAClientMsg_QuestStatus.fail_gametime)
+}
+
+// optional uint32 item_id = 7;
+inline bool CDOTAClientMsg_QuestStatus::has_item_id() const {
+  return (_has_bits_[0] & 0x00000040u) != 0;
+}
+inline void CDOTAClientMsg_QuestStatus::set_has_item_id() {
+  _has_bits_[0] |= 0x00000040u;
+}
+inline void CDOTAClientMsg_QuestStatus::clear_has_item_id() {
+  _has_bits_[0] &= ~0x00000040u;
+}
+inline void CDOTAClientMsg_QuestStatus::clear_item_id() {
+  item_id_ = 0u;
+  clear_has_item_id();
+}
+inline ::google::protobuf::uint32 CDOTAClientMsg_QuestStatus::item_id() const {
+  // @@protoc_insertion_point(field_get:CDOTAClientMsg_QuestStatus.item_id)
+  return item_id_;
+}
+inline void CDOTAClientMsg_QuestStatus::set_item_id(::google::protobuf::uint32 value) {
+  set_has_item_id();
+  item_id_ = value;
+  // @@protoc_insertion_point(field_set:CDOTAClientMsg_QuestStatus.item_id)
+}
+
+// -------------------------------------------------------------------
+
+// CDOTAClientMsg_ToggleAutoattack
+
+// optional int32 mode = 1;
+inline bool CDOTAClientMsg_ToggleAutoattack::has_mode() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+inline void CDOTAClientMsg_ToggleAutoattack::set_has_mode() {
+  _has_bits_[0] |= 0x00000001u;
+}
+inline void CDOTAClientMsg_ToggleAutoattack::clear_has_mode() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+inline void CDOTAClientMsg_ToggleAutoattack::clear_mode() {
+  mode_ = 0;
+  clear_has_mode();
+}
+inline ::google::protobuf::int32 CDOTAClientMsg_ToggleAutoattack::mode() const {
+  // @@protoc_insertion_point(field_get:CDOTAClientMsg_ToggleAutoattack.mode)
+  return mode_;
+}
+inline void CDOTAClientMsg_ToggleAutoattack::set_mode(::google::protobuf::int32 value) {
+  set_has_mode();
+  mode_ = value;
+  // @@protoc_insertion_point(field_set:CDOTAClientMsg_ToggleAutoattack.mode)
+}
+
+// optional bool show_message = 2;
+inline bool CDOTAClientMsg_ToggleAutoattack::has_show_message() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+inline void CDOTAClientMsg_ToggleAutoattack::set_has_show_message() {
+  _has_bits_[0] |= 0x00000002u;
+}
+inline void CDOTAClientMsg_ToggleAutoattack::clear_has_show_message() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+inline void CDOTAClientMsg_ToggleAutoattack::clear_show_message() {
+  show_message_ = false;
+  clear_has_show_message();
+}
+inline bool CDOTAClientMsg_ToggleAutoattack::show_message() const {
+  // @@protoc_insertion_point(field_get:CDOTAClientMsg_ToggleAutoattack.show_message)
+  return show_message_;
+}
+inline void CDOTAClientMsg_ToggleAutoattack::set_show_message(bool value) {
+  set_has_show_message();
+  show_message_ = value;
+  // @@protoc_insertion_point(field_set:CDOTAClientMsg_ToggleAutoattack.show_message)
+}
+
+// -------------------------------------------------------------------
+
+// CDOTAClientMsg_SpecialAbility
+
+// optional uint32 ability_index = 1;
+inline bool CDOTAClientMsg_SpecialAbility::has_ability_index() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+inline void CDOTAClientMsg_SpecialAbility::set_has_ability_index() {
+  _has_bits_[0] |= 0x00000001u;
+}
+inline void CDOTAClientMsg_SpecialAbility::clear_has_ability_index() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+inline void CDOTAClientMsg_SpecialAbility::clear_ability_index() {
+  ability_index_ = 0u;
+  clear_has_ability_index();
+}
+inline ::google::protobuf::uint32 CDOTAClientMsg_SpecialAbility::ability_index() const {
+  // @@protoc_insertion_point(field_get:CDOTAClientMsg_SpecialAbility.ability_index)
+  return ability_index_;
+}
+inline void CDOTAClientMsg_SpecialAbility::set_ability_index(::google::protobuf::uint32 value) {
+  set_has_ability_index();
+  ability_index_ = value;
+  // @@protoc_insertion_point(field_set:CDOTAClientMsg_SpecialAbility.ability_index)
+}
+
+// optional uint32 target_entindex = 2;
+inline bool CDOTAClientMsg_SpecialAbility::has_target_entindex() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+inline void CDOTAClientMsg_SpecialAbility::set_has_target_entindex() {
+  _has_bits_[0] |= 0x00000002u;
+}
+inline void CDOTAClientMsg_SpecialAbility::clear_has_target_entindex() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+inline void CDOTAClientMsg_SpecialAbility::clear_target_entindex() {
+  target_entindex_ = 0u;
+  clear_has_target_entindex();
+}
+inline ::google::protobuf::uint32 CDOTAClientMsg_SpecialAbility::target_entindex() const {
+  // @@protoc_insertion_point(field_get:CDOTAClientMsg_SpecialAbility.target_entindex)
+  return target_entindex_;
+}
+inline void CDOTAClientMsg_SpecialAbility::set_target_entindex(::google::protobuf::uint32 value) {
+  set_has_target_entindex();
+  target_entindex_ = value;
+  // @@protoc_insertion_point(field_set:CDOTAClientMsg_SpecialAbility.target_entindex)
+}
+
+// -------------------------------------------------------------------
+
+// CDOTAClientMsg_SetEnemyStartingPosition
+
+// optional uint32 enemy_player_id = 1;
+inline bool CDOTAClientMsg_SetEnemyStartingPosition::has_enemy_player_id() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+inline void CDOTAClientMsg_SetEnemyStartingPosition::set_has_enemy_player_id() {
+  _has_bits_[0] |= 0x00000001u;
+}
+inline void CDOTAClientMsg_SetEnemyStartingPosition::clear_has_enemy_player_id() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+inline void CDOTAClientMsg_SetEnemyStartingPosition::clear_enemy_player_id() {
+  enemy_player_id_ = 0u;
+  clear_has_enemy_player_id();
+}
+inline ::google::protobuf::uint32 CDOTAClientMsg_SetEnemyStartingPosition::enemy_player_id() const {
+  // @@protoc_insertion_point(field_get:CDOTAClientMsg_SetEnemyStartingPosition.enemy_player_id)
+  return enemy_player_id_;
+}
+inline void CDOTAClientMsg_SetEnemyStartingPosition::set_enemy_player_id(::google::protobuf::uint32 value) {
+  set_has_enemy_player_id();
+  enemy_player_id_ = value;
+  // @@protoc_insertion_point(field_set:CDOTAClientMsg_SetEnemyStartingPosition.enemy_player_id)
+}
+
+// optional uint32 enemy_starting_position = 2;
+inline bool CDOTAClientMsg_SetEnemyStartingPosition::has_enemy_starting_position() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+inline void CDOTAClientMsg_SetEnemyStartingPosition::set_has_enemy_starting_position() {
+  _has_bits_[0] |= 0x00000002u;
+}
+inline void CDOTAClientMsg_SetEnemyStartingPosition::clear_has_enemy_starting_position() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+inline void CDOTAClientMsg_SetEnemyStartingPosition::clear_enemy_starting_position() {
+  enemy_starting_position_ = 0u;
+  clear_has_enemy_starting_position();
+}
+inline ::google::protobuf::uint32 CDOTAClientMsg_SetEnemyStartingPosition::enemy_starting_position() const {
+  // @@protoc_insertion_point(field_get:CDOTAClientMsg_SetEnemyStartingPosition.enemy_starting_position)
+  return enemy_starting_position_;
+}
+inline void CDOTAClientMsg_SetEnemyStartingPosition::set_enemy_starting_position(::google::protobuf::uint32 value) {
+  set_has_enemy_starting_position();
+  enemy_starting_position_ = value;
+  // @@protoc_insertion_point(field_set:CDOTAClientMsg_SetEnemyStartingPosition.enemy_starting_position)
+}
+
+// -------------------------------------------------------------------
+
+// CDOTAClientMsg_SetDesiredWardPlacement
+
+// optional uint32 ward_index = 1;
+inline bool CDOTAClientMsg_SetDesiredWardPlacement::has_ward_index() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+inline void CDOTAClientMsg_SetDesiredWardPlacement::set_has_ward_index() {
+  _has_bits_[0] |= 0x00000001u;
+}
+inline void CDOTAClientMsg_SetDesiredWardPlacement::clear_has_ward_index() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+inline void CDOTAClientMsg_SetDesiredWardPlacement::clear_ward_index() {
+  ward_index_ = 0u;
+  clear_has_ward_index();
+}
+inline ::google::protobuf::uint32 CDOTAClientMsg_SetDesiredWardPlacement::ward_index() const {
+  // @@protoc_insertion_point(field_get:CDOTAClientMsg_SetDesiredWardPlacement.ward_index)
+  return ward_index_;
+}
+inline void CDOTAClientMsg_SetDesiredWardPlacement::set_ward_index(::google::protobuf::uint32 value) {
+  set_has_ward_index();
+  ward_index_ = value;
+  // @@protoc_insertion_point(field_set:CDOTAClientMsg_SetDesiredWardPlacement.ward_index)
+}
+
+// optional float ward_x = 2;
+inline bool CDOTAClientMsg_SetDesiredWardPlacement::has_ward_x() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+inline void CDOTAClientMsg_SetDesiredWardPlacement::set_has_ward_x() {
+  _has_bits_[0] |= 0x00000002u;
+}
+inline void CDOTAClientMsg_SetDesiredWardPlacement::clear_has_ward_x() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+inline void CDOTAClientMsg_SetDesiredWardPlacement::clear_ward_x() {
+  ward_x_ = 0;
+  clear_has_ward_x();
+}
+inline float CDOTAClientMsg_SetDesiredWardPlacement::ward_x() const {
+  // @@protoc_insertion_point(field_get:CDOTAClientMsg_SetDesiredWardPlacement.ward_x)
+  return ward_x_;
+}
+inline void CDOTAClientMsg_SetDesiredWardPlacement::set_ward_x(float value) {
+  set_has_ward_x();
+  ward_x_ = value;
+  // @@protoc_insertion_point(field_set:CDOTAClientMsg_SetDesiredWardPlacement.ward_x)
+}
+
+// optional float ward_y = 3;
+inline bool CDOTAClientMsg_SetDesiredWardPlacement::has_ward_y() const {
+  return (_has_bits_[0] & 0x00000004u) != 0;
+}
+inline void CDOTAClientMsg_SetDesiredWardPlacement::set_has_ward_y() {
+  _has_bits_[0] |= 0x00000004u;
+}
+inline void CDOTAClientMsg_SetDesiredWardPlacement::clear_has_ward_y() {
+  _has_bits_[0] &= ~0x00000004u;
+}
+inline void CDOTAClientMsg_SetDesiredWardPlacement::clear_ward_y() {
+  ward_y_ = 0;
+  clear_has_ward_y();
+}
+inline float CDOTAClientMsg_SetDesiredWardPlacement::ward_y() const {
+  // @@protoc_insertion_point(field_get:CDOTAClientMsg_SetDesiredWardPlacement.ward_y)
+  return ward_y_;
+}
+inline void CDOTAClientMsg_SetDesiredWardPlacement::set_ward_y(float value) {
+  set_has_ward_y();
+  ward_y_ = value;
+  // @@protoc_insertion_point(field_set:CDOTAClientMsg_SetDesiredWardPlacement.ward_y)
+}
+
+// -------------------------------------------------------------------
+
+// CDOTAClientMsg_RollDice
+
+// optional uint32 channel_type = 1;
+inline bool CDOTAClientMsg_RollDice::has_channel_type() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+inline void CDOTAClientMsg_RollDice::set_has_channel_type() {
+  _has_bits_[0] |= 0x00000001u;
+}
+inline void CDOTAClientMsg_RollDice::clear_has_channel_type() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+inline void CDOTAClientMsg_RollDice::clear_channel_type() {
+  channel_type_ = 0u;
+  clear_has_channel_type();
+}
+inline ::google::protobuf::uint32 CDOTAClientMsg_RollDice::channel_type() const {
+  // @@protoc_insertion_point(field_get:CDOTAClientMsg_RollDice.channel_type)
+  return channel_type_;
+}
+inline void CDOTAClientMsg_RollDice::set_channel_type(::google::protobuf::uint32 value) {
+  set_has_channel_type();
+  channel_type_ = value;
+  // @@protoc_insertion_point(field_set:CDOTAClientMsg_RollDice.channel_type)
+}
+
+// optional uint32 roll_min = 2;
+inline bool CDOTAClientMsg_RollDice::has_roll_min() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+inline void CDOTAClientMsg_RollDice::set_has_roll_min() {
+  _has_bits_[0] |= 0x00000002u;
+}
+inline void CDOTAClientMsg_RollDice::clear_has_roll_min() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+inline void CDOTAClientMsg_RollDice::clear_roll_min() {
+  roll_min_ = 0u;
+  clear_has_roll_min();
+}
+inline ::google::protobuf::uint32 CDOTAClientMsg_RollDice::roll_min() const {
+  // @@protoc_insertion_point(field_get:CDOTAClientMsg_RollDice.roll_min)
+  return roll_min_;
+}
+inline void CDOTAClientMsg_RollDice::set_roll_min(::google::protobuf::uint32 value) {
+  set_has_roll_min();
+  roll_min_ = value;
+  // @@protoc_insertion_point(field_set:CDOTAClientMsg_RollDice.roll_min)
+}
+
+// optional uint32 roll_max = 3;
+inline bool CDOTAClientMsg_RollDice::has_roll_max() const {
+  return (_has_bits_[0] & 0x00000004u) != 0;
+}
+inline void CDOTAClientMsg_RollDice::set_has_roll_max() {
+  _has_bits_[0] |= 0x00000004u;
+}
+inline void CDOTAClientMsg_RollDice::clear_has_roll_max() {
+  _has_bits_[0] &= ~0x00000004u;
+}
+inline void CDOTAClientMsg_RollDice::clear_roll_max() {
+  roll_max_ = 0u;
+  clear_has_roll_max();
+}
+inline ::google::protobuf::uint32 CDOTAClientMsg_RollDice::roll_max() const {
+  // @@protoc_insertion_point(field_get:CDOTAClientMsg_RollDice.roll_max)
+  return roll_max_;
+}
+inline void CDOTAClientMsg_RollDice::set_roll_max(::google::protobuf::uint32 value) {
+  set_has_roll_max();
+  roll_max_ = value;
+  // @@protoc_insertion_point(field_set:CDOTAClientMsg_RollDice.roll_max)
+}
+
+// -------------------------------------------------------------------
+
+// CDOTAClientMsg_FlipCoin
+
+// optional uint32 channel_type = 1;
+inline bool CDOTAClientMsg_FlipCoin::has_channel_type() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+inline void CDOTAClientMsg_FlipCoin::set_has_channel_type() {
+  _has_bits_[0] |= 0x00000001u;
+}
+inline void CDOTAClientMsg_FlipCoin::clear_has_channel_type() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+inline void CDOTAClientMsg_FlipCoin::clear_channel_type() {
+  channel_type_ = 0u;
+  clear_has_channel_type();
+}
+inline ::google::protobuf::uint32 CDOTAClientMsg_FlipCoin::channel_type() const {
+  // @@protoc_insertion_point(field_get:CDOTAClientMsg_FlipCoin.channel_type)
+  return channel_type_;
+}
+inline void CDOTAClientMsg_FlipCoin::set_channel_type(::google::protobuf::uint32 value) {
+  set_has_channel_type();
+  channel_type_ = value;
+  // @@protoc_insertion_point(field_set:CDOTAClientMsg_FlipCoin.channel_type)
+}
+
 
 // @@protoc_insertion_point(namespace_scope)
 
@@ -6466,6 +8072,16 @@ CDOTAClientMsg_ExecuteOrders::mutable_orders() {
 namespace google {
 namespace protobuf {
 
+template <> struct is_proto_enum< ::CDOTAClientMsg_UnitsAutoAttackMode_EMode> : ::google::protobuf::internal::true_type {};
+template <>
+inline const EnumDescriptor* GetEnumDescriptor< ::CDOTAClientMsg_UnitsAutoAttackMode_EMode>() {
+  return ::CDOTAClientMsg_UnitsAutoAttackMode_EMode_descriptor();
+}
+template <> struct is_proto_enum< ::CDOTAClientMsg_UnitsAutoAttackMode_EUnitType> : ::google::protobuf::internal::true_type {};
+template <>
+inline const EnumDescriptor* GetEnumDescriptor< ::CDOTAClientMsg_UnitsAutoAttackMode_EUnitType>() {
+  return ::CDOTAClientMsg_UnitsAutoAttackMode_EUnitType_descriptor();
+}
 template <> struct is_proto_enum< ::EDotaClientMessages> : ::google::protobuf::internal::true_type {};
 template <>
 inline const EnumDescriptor* GetEnumDescriptor< ::EDotaClientMessages>() {

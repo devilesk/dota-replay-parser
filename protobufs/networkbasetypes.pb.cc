@@ -304,12 +304,13 @@ void protobuf_AssignDesc_networkbasetypes_2eproto() {
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(CNETMsg_SetConVar));
   CNETMsg_SignonState_descriptor_ = file->message_type(11);
-  static const int CNETMsg_SignonState_offsets_[5] = {
+  static const int CNETMsg_SignonState_offsets_[6] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CNETMsg_SignonState, signon_state_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CNETMsg_SignonState, spawn_count_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CNETMsg_SignonState, num_server_players_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CNETMsg_SignonState, players_networkids_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CNETMsg_SignonState, map_name_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CNETMsg_SignonState, addons_),
   };
   CNETMsg_SignonState_reflection_ =
     new ::google::protobuf::internal::GeneratedMessageReflection(
@@ -440,7 +441,7 @@ void protobuf_AssignDesc_networkbasetypes_2eproto() {
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(CSVCMsgList_UserMessages_usermsg_t));
   CNETMsg_SpawnGroup_Load_descriptor_ = file->message_type(16);
-  static const int CNETMsg_SpawnGroup_Load_offsets_[16] = {
+  static const int CNETMsg_SpawnGroup_Load_offsets_[18] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CNETMsg_SpawnGroup_Load, worldname_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CNETMsg_SpawnGroup_Load, entitylumpname_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CNETMsg_SpawnGroup_Load, entityfiltername_),
@@ -457,6 +458,8 @@ void protobuf_AssignDesc_networkbasetypes_2eproto() {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CNETMsg_SpawnGroup_Load, manifestloadpriority_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CNETMsg_SpawnGroup_Load, worldgroupid_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CNETMsg_SpawnGroup_Load, creationsequence_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CNETMsg_SpawnGroup_Load, savegamefilename_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CNETMsg_SpawnGroup_Load, spawngroupparenthandle_),
   };
   CNETMsg_SpawnGroup_Load_reflection_ =
     new ::google::protobuf::internal::GeneratedMessageReflection(
@@ -536,7 +539,7 @@ void protobuf_AssignDesc_networkbasetypes_2eproto() {
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(CNETMsg_SpawnGroup_LoadCompleted));
   CSVCMsg_GameSessionConfiguration_descriptor_ = file->message_type(21);
-  static const int CSVCMsg_GameSessionConfiguration_offsets_[15] = {
+  static const int CSVCMsg_GameSessionConfiguration_offsets_[18] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CSVCMsg_GameSessionConfiguration, is_multiplayer_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CSVCMsg_GameSessionConfiguration, is_loadsavegame_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CSVCMsg_GameSessionConfiguration, is_background_map_),
@@ -552,6 +555,9 @@ void protobuf_AssignDesc_networkbasetypes_2eproto() {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CSVCMsg_GameSessionConfiguration, server_ip_address_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CSVCMsg_GameSessionConfiguration, data_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CSVCMsg_GameSessionConfiguration, is_localonly_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CSVCMsg_GameSessionConfiguration, is_transition_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CSVCMsg_GameSessionConfiguration, previouslevel_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CSVCMsg_GameSessionConfiguration, landmarkname_),
   };
   CSVCMsg_GameSessionConfiguration_reflection_ =
     new ::google::protobuf::internal::GeneratedMessageReflection(
@@ -717,73 +723,76 @@ void protobuf_AddDesc_networkbasetypes_2eproto() {
     "_std_deviation\030\005 \001(\r\022)\n!host_framestartt"
     "ime_std_deviation\030\006 \001(\r\"$\n\021CNETMsg_Strin"
     "gCmd\022\017\n\007command\030\001 \001(\t\"1\n\021CNETMsg_SetConV"
-    "ar\022\034\n\007convars\030\001 \001(\0132\013.CMsg_CVars\"\212\001\n\023CNE"
+    "ar\022\034\n\007convars\030\001 \001(\0132\013.CMsg_CVars\"\232\001\n\023CNE"
     "TMsg_SignonState\022\024\n\014signon_state\030\001 \001(\r\022\023"
     "\n\013spawn_count\030\002 \001(\r\022\032\n\022num_server_player"
     "s\030\003 \001(\r\022\032\n\022players_networkids\030\004 \003(\t\022\020\n\010m"
-    "ap_name\030\005 \001(\t\"\374\001\n\021CSVCMsg_GameEvent\022\022\n\ne"
-    "vent_name\030\001 \001(\t\022\017\n\007eventid\030\002 \001(\005\022&\n\004keys"
-    "\030\003 \003(\0132\030.CSVCMsg_GameEvent.key_t\032\231\001\n\005key"
-    "_t\022\014\n\004type\030\001 \001(\005\022\022\n\nval_string\030\002 \001(\t\022\021\n\t"
-    "val_float\030\003 \001(\002\022\020\n\010val_long\030\004 \001(\005\022\021\n\tval"
-    "_short\030\005 \001(\005\022\020\n\010val_byte\030\006 \001(\005\022\020\n\010val_bo"
-    "ol\030\007 \001(\010\022\022\n\nval_uint64\030\010 \001(\004\"\205\001\n\026CSVCMsg"
-    "List_GameEvents\022/\n\006events\030\001 \003(\0132\037.CSVCMs"
-    "gList_GameEvents.event_t\032:\n\007event_t\022\014\n\004t"
-    "ick\030\001 \001(\005\022!\n\005event\030\002 \001(\0132\022.CSVCMsg_GameE"
-    "vent\"9\n\023CSVCMsg_UserMessage\022\020\n\010msg_type\030"
-    "\001 \001(\005\022\020\n\010msg_data\030\002 \001(\014\"\217\001\n\030CSVCMsgList_"
-    "UserMessages\0225\n\010usermsgs\030\001 \003(\0132#.CSVCMsg"
-    "List_UserMessages.usermsg_t\032<\n\tusermsg_t"
-    "\022\014\n\004tick\030\001 \001(\005\022!\n\003msg\030\002 \001(\0132\024.CSVCMsg_Us"
-    "erMessage\"\300\003\n\027CNETMsg_SpawnGroup_Load\022\021\n"
-    "\tworldname\030\001 \001(\t\022\026\n\016entitylumpname\030\002 \001(\t"
-    "\022\030\n\020entityfiltername\030\003 \001(\t\022\030\n\020spawngroup"
-    "handle\030\004 \001(\r\022\035\n\025spawngroupownerhandle\030\005 "
-    "\001(\r\022%\n\020world_offset_pos\030\006 \001(\0132\013.CMsgVect"
-    "or\022\'\n\022world_offset_angle\030\007 \001(\0132\013.CMsgQAn"
-    "gle\022\032\n\022spawngroupmanifest\030\010 \001(\014\022\r\n\005flags"
-    "\030\t \001(\r\022\021\n\ttickcount\030\n \001(\005\022\032\n\022manifestinc"
-    "omplete\030\013 \001(\010\022\026\n\016localnamefixup\030\014 \001(\t\022\027\n"
-    "\017parentnamefixup\030\r \001(\t\022\034\n\024manifestloadpr"
-    "iority\030\016 \001(\005\022\024\n\014worldgroupid\030\017 \001(\r\022\030\n\020cr"
-    "eationsequence\030\020 \001(\r\"u\n!CNETMsg_SpawnGro"
-    "up_ManifestUpdate\022\030\n\020spawngrouphandle\030\001 "
-    "\001(\r\022\032\n\022spawngroupmanifest\030\002 \001(\014\022\032\n\022manif"
-    "estincomplete\030\003 \001(\010\"k\n\"CNETMsg_SpawnGrou"
-    "p_SetCreationTick\022\030\n\020spawngrouphandle\030\001 "
-    "\001(\r\022\021\n\ttickcount\030\002 \001(\005\022\030\n\020creationsequen"
-    "ce\030\003 \001(\r\"W\n\031CNETMsg_SpawnGroup_Unload\022\030\n"
-    "\020spawngrouphandle\030\001 \001(\r\022\r\n\005flags\030\002 \001(\r\022\021"
-    "\n\ttickcount\030\003 \001(\005\"<\n CNETMsg_SpawnGroup_"
-    "LoadCompleted\022\030\n\020spawngrouphandle\030\001 \001(\r\""
-    "\360\002\n CSVCMsg_GameSessionConfiguration\022\026\n\016"
-    "is_multiplayer\030\001 \001(\010\022\027\n\017is_loadsavegame\030"
-    "\002 \001(\010\022\031\n\021is_background_map\030\003 \001(\010\022\023\n\013is_h"
-    "eadless\030\004 \001(\010\022\030\n\020min_client_limit\030\005 \001(\r\022"
-    "\030\n\020max_client_limit\030\006 \001(\r\022\023\n\013max_clients"
-    "\030\007 \001(\r\022\025\n\rtick_interval\030\010 \001(\007\022\020\n\010hostnam"
-    "e\030\t \001(\t\022\024\n\014savegamename\030\n \001(\t\022\022\n\ns1_mapn"
-    "ame\030\013 \001(\t\022\020\n\010gamemode\030\014 \001(\t\022\031\n\021server_ip"
-    "_address\030\r \001(\t\022\014\n\004data\030\016 \001(\014\022\024\n\014is_local"
-    "only\030\017 \001(\010*\256\002\n\014NET_Messages\022\013\n\007net_NOP\020\000"
-    "\022\022\n\016net_Disconnect\020\001\022\027\n\023net_SplitScreenU"
-    "ser\020\003\022\014\n\010net_Tick\020\004\022\021\n\rnet_StringCmd\020\005\022\021"
-    "\n\rnet_SetConVar\020\006\022\023\n\017net_SignonState\020\007\022\027"
-    "\n\023net_SpawnGroup_Load\020\010\022!\n\035net_SpawnGrou"
-    "p_ManifestUpdate\020\t\022\"\n\036net_SpawnGroup_Set"
-    "CreationTick\020\013\022\031\n\025net_SpawnGroup_Unload\020"
-    "\014\022 \n\034net_SpawnGroup_LoadCompleted\020\r*\353\002\n\021"
-    "SpawnGroupFlags_t\022\'\n#SPAWN_GROUP_LOAD_EN"
-    "TITIES_FROM_SAVE\020\001\022#\n\037SPAWN_GROUP_DONT_S"
-    "PAWN_ENTITIES\020\002\022!\n\035SPAWN_GROUP_SYNCHRONO"
-    "US_SPAWN\020\004\022&\n\"SPAWN_GROUP_IS_INITIAL_SPA"
-    "WN_GROUP\020\010\022+\n\'SPAWN_GROUP_CREATE_CLIENT_"
-    "ONLY_ENTITIES\020\020\022\035\n\031SPAWN_GROUP_SAVE_ENTI"
-    "TIES\020 \022\"\n\036SPAWN_GROUP_BLOCK_UNTIL_LOADED"
-    "\020@\022$\n\037SPAWN_GROUP_LOAD_STREAMING_DATA\020\200\001"
-    "\022\'\n\"SPAWN_GROUP_CREATE_NEW_SCENE_WORLD\020\200"
-    "\002B\003\200\001\000", 3446);
+    "ap_name\030\005 \001(\t\022\016\n\006addons\030\006 \001(\t\"\374\001\n\021CSVCMs"
+    "g_GameEvent\022\022\n\nevent_name\030\001 \001(\t\022\017\n\007event"
+    "id\030\002 \001(\005\022&\n\004keys\030\003 \003(\0132\030.CSVCMsg_GameEve"
+    "nt.key_t\032\231\001\n\005key_t\022\014\n\004type\030\001 \001(\005\022\022\n\nval_"
+    "string\030\002 \001(\t\022\021\n\tval_float\030\003 \001(\002\022\020\n\010val_l"
+    "ong\030\004 \001(\005\022\021\n\tval_short\030\005 \001(\005\022\020\n\010val_byte"
+    "\030\006 \001(\005\022\020\n\010val_bool\030\007 \001(\010\022\022\n\nval_uint64\030\010"
+    " \001(\004\"\205\001\n\026CSVCMsgList_GameEvents\022/\n\006event"
+    "s\030\001 \003(\0132\037.CSVCMsgList_GameEvents.event_t"
+    "\032:\n\007event_t\022\014\n\004tick\030\001 \001(\005\022!\n\005event\030\002 \001(\013"
+    "2\022.CSVCMsg_GameEvent\"9\n\023CSVCMsg_UserMess"
+    "age\022\020\n\010msg_type\030\001 \001(\005\022\020\n\010msg_data\030\002 \001(\014\""
+    "\217\001\n\030CSVCMsgList_UserMessages\0225\n\010usermsgs"
+    "\030\001 \003(\0132#.CSVCMsgList_UserMessages.userms"
+    "g_t\032<\n\tusermsg_t\022\014\n\004tick\030\001 \001(\005\022!\n\003msg\030\002 "
+    "\001(\0132\024.CSVCMsg_UserMessage\"\372\003\n\027CNETMsg_Sp"
+    "awnGroup_Load\022\021\n\tworldname\030\001 \001(\t\022\026\n\016enti"
+    "tylumpname\030\002 \001(\t\022\030\n\020entityfiltername\030\003 \001"
+    "(\t\022\030\n\020spawngrouphandle\030\004 \001(\r\022\035\n\025spawngro"
+    "upownerhandle\030\005 \001(\r\022%\n\020world_offset_pos\030"
+    "\006 \001(\0132\013.CMsgVector\022\'\n\022world_offset_angle"
+    "\030\007 \001(\0132\013.CMsgQAngle\022\032\n\022spawngroupmanifes"
+    "t\030\010 \001(\014\022\r\n\005flags\030\t \001(\r\022\021\n\ttickcount\030\n \001("
+    "\005\022\032\n\022manifestincomplete\030\013 \001(\010\022\026\n\016localna"
+    "mefixup\030\014 \001(\t\022\027\n\017parentnamefixup\030\r \001(\t\022\034"
+    "\n\024manifestloadpriority\030\016 \001(\005\022\024\n\014worldgro"
+    "upid\030\017 \001(\r\022\030\n\020creationsequence\030\020 \001(\r\022\030\n\020"
+    "savegamefilename\030\021 \001(\t\022\036\n\026spawngrouppare"
+    "nthandle\030\022 \001(\r\"u\n!CNETMsg_SpawnGroup_Man"
+    "ifestUpdate\022\030\n\020spawngrouphandle\030\001 \001(\r\022\032\n"
+    "\022spawngroupmanifest\030\002 \001(\014\022\032\n\022manifestinc"
+    "omplete\030\003 \001(\010\"k\n\"CNETMsg_SpawnGroup_SetC"
+    "reationTick\022\030\n\020spawngrouphandle\030\001 \001(\r\022\021\n"
+    "\ttickcount\030\002 \001(\005\022\030\n\020creationsequence\030\003 \001"
+    "(\r\"W\n\031CNETMsg_SpawnGroup_Unload\022\030\n\020spawn"
+    "grouphandle\030\001 \001(\r\022\r\n\005flags\030\002 \001(\r\022\021\n\ttick"
+    "count\030\003 \001(\005\"<\n CNETMsg_SpawnGroup_LoadCo"
+    "mpleted\022\030\n\020spawngrouphandle\030\001 \001(\r\"\264\003\n CS"
+    "VCMsg_GameSessionConfiguration\022\026\n\016is_mul"
+    "tiplayer\030\001 \001(\010\022\027\n\017is_loadsavegame\030\002 \001(\010\022"
+    "\031\n\021is_background_map\030\003 \001(\010\022\023\n\013is_headles"
+    "s\030\004 \001(\010\022\030\n\020min_client_limit\030\005 \001(\r\022\030\n\020max"
+    "_client_limit\030\006 \001(\r\022\023\n\013max_clients\030\007 \001(\r"
+    "\022\025\n\rtick_interval\030\010 \001(\007\022\020\n\010hostname\030\t \001("
+    "\t\022\024\n\014savegamename\030\n \001(\t\022\022\n\ns1_mapname\030\013 "
+    "\001(\t\022\020\n\010gamemode\030\014 \001(\t\022\031\n\021server_ip_addre"
+    "ss\030\r \001(\t\022\014\n\004data\030\016 \001(\014\022\024\n\014is_localonly\030\017"
+    " \001(\010\022\025\n\ris_transition\030\020 \001(\010\022\025\n\rpreviousl"
+    "evel\030\021 \001(\t\022\024\n\014landmarkname\030\022 \001(\t*\256\002\n\014NET"
+    "_Messages\022\013\n\007net_NOP\020\000\022\022\n\016net_Disconnect"
+    "\020\001\022\027\n\023net_SplitScreenUser\020\003\022\014\n\010net_Tick\020"
+    "\004\022\021\n\rnet_StringCmd\020\005\022\021\n\rnet_SetConVar\020\006\022"
+    "\023\n\017net_SignonState\020\007\022\027\n\023net_SpawnGroup_L"
+    "oad\020\010\022!\n\035net_SpawnGroup_ManifestUpdate\020\t"
+    "\022\"\n\036net_SpawnGroup_SetCreationTick\020\013\022\031\n\025"
+    "net_SpawnGroup_Unload\020\014\022 \n\034net_SpawnGrou"
+    "p_LoadCompleted\020\r*\353\002\n\021SpawnGroupFlags_t\022"
+    "\'\n#SPAWN_GROUP_LOAD_ENTITIES_FROM_SAVE\020\001"
+    "\022#\n\037SPAWN_GROUP_DONT_SPAWN_ENTITIES\020\002\022!\n"
+    "\035SPAWN_GROUP_SYNCHRONOUS_SPAWN\020\004\022&\n\"SPAW"
+    "N_GROUP_IS_INITIAL_SPAWN_GROUP\020\010\022+\n\'SPAW"
+    "N_GROUP_CREATE_CLIENT_ONLY_ENTITIES\020\020\022\035\n"
+    "\031SPAWN_GROUP_SAVE_ENTITIES\020 \022\"\n\036SPAWN_GR"
+    "OUP_BLOCK_UNTIL_LOADED\020@\022$\n\037SPAWN_GROUP_"
+    "LOAD_STREAMING_DATA\020\200\001\022\'\n\"SPAWN_GROUP_CR"
+    "EATE_NEW_SCENE_WORLD\020\200\002B\003\200\001\000", 3588);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "networkbasetypes.proto", &protobuf_RegisterTypes);
   CMsgVector::default_instance_ = new CMsgVector();
@@ -4270,6 +4279,7 @@ const int CNETMsg_SignonState::kSpawnCountFieldNumber;
 const int CNETMsg_SignonState::kNumServerPlayersFieldNumber;
 const int CNETMsg_SignonState::kPlayersNetworkidsFieldNumber;
 const int CNETMsg_SignonState::kMapNameFieldNumber;
+const int CNETMsg_SignonState::kAddonsFieldNumber;
 #endif  // !_MSC_VER
 
 CNETMsg_SignonState::CNETMsg_SignonState()
@@ -4295,6 +4305,7 @@ void CNETMsg_SignonState::SharedCtor() {
   spawn_count_ = 0u;
   num_server_players_ = 0u;
   map_name_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  addons_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
 
@@ -4306,6 +4317,9 @@ CNETMsg_SignonState::~CNETMsg_SignonState() {
 void CNETMsg_SignonState::SharedDtor() {
   if (map_name_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
     delete map_name_;
+  }
+  if (addons_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete addons_;
   }
   if (this != default_instance_) {
   }
@@ -4343,12 +4357,17 @@ void CNETMsg_SignonState::Clear() {
     ::memset(&first, 0, n);                                \
   } while (0)
 
-  if (_has_bits_[0 / 32] & 23) {
+  if (_has_bits_[0 / 32] & 55) {
     ZR_(signon_state_, spawn_count_);
     num_server_players_ = 0u;
     if (has_map_name()) {
       if (map_name_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
         map_name_->clear();
+      }
+    }
+    if (has_addons()) {
+      if (addons_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+        addons_->clear();
       }
     }
   }
@@ -4447,6 +4466,23 @@ bool CNETMsg_SignonState::MergePartialFromCodedStream(
         } else {
           goto handle_unusual;
         }
+        if (input->ExpectTag(50)) goto parse_addons;
+        break;
+      }
+
+      // optional string addons = 6;
+      case 6: {
+        if (tag == 50) {
+         parse_addons:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_addons()));
+          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+            this->addons().data(), this->addons().length(),
+            ::google::protobuf::internal::WireFormat::PARSE,
+            "addons");
+        } else {
+          goto handle_unusual;
+        }
         if (input->ExpectAtEnd()) goto success;
         break;
       }
@@ -4511,6 +4547,16 @@ void CNETMsg_SignonState::SerializeWithCachedSizes(
       5, this->map_name(), output);
   }
 
+  // optional string addons = 6;
+  if (has_addons()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->addons().data(), this->addons().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "addons");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      6, this->addons(), output);
+  }
+
   if (!unknown_fields().empty()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
@@ -4557,6 +4603,17 @@ void CNETMsg_SignonState::SerializeWithCachedSizes(
         5, this->map_name(), target);
   }
 
+  // optional string addons = 6;
+  if (has_addons()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->addons().data(), this->addons().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "addons");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        6, this->addons(), target);
+  }
+
   if (!unknown_fields().empty()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
@@ -4595,6 +4652,13 @@ int CNETMsg_SignonState::ByteSize() const {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::StringSize(
           this->map_name());
+    }
+
+    // optional string addons = 6;
+    if (has_addons()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::StringSize(
+          this->addons());
     }
 
   }
@@ -4644,6 +4708,9 @@ void CNETMsg_SignonState::MergeFrom(const CNETMsg_SignonState& from) {
     if (from.has_map_name()) {
       set_map_name(from.map_name());
     }
+    if (from.has_addons()) {
+      set_addons(from.addons());
+    }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
 }
@@ -4672,6 +4739,7 @@ void CNETMsg_SignonState::Swap(CNETMsg_SignonState* other) {
     std::swap(num_server_players_, other->num_server_players_);
     players_networkids_.Swap(&other->players_networkids_);
     std::swap(map_name_, other->map_name_);
+    std::swap(addons_, other->addons_);
     std::swap(_has_bits_[0], other->_has_bits_[0]);
     _unknown_fields_.Swap(&other->_unknown_fields_);
     std::swap(_cached_size_, other->_cached_size_);
@@ -6797,6 +6865,8 @@ const int CNETMsg_SpawnGroup_Load::kParentnamefixupFieldNumber;
 const int CNETMsg_SpawnGroup_Load::kManifestloadpriorityFieldNumber;
 const int CNETMsg_SpawnGroup_Load::kWorldgroupidFieldNumber;
 const int CNETMsg_SpawnGroup_Load::kCreationsequenceFieldNumber;
+const int CNETMsg_SpawnGroup_Load::kSavegamefilenameFieldNumber;
+const int CNETMsg_SpawnGroup_Load::kSpawngroupparenthandleFieldNumber;
 #endif  // !_MSC_VER
 
 CNETMsg_SpawnGroup_Load::CNETMsg_SpawnGroup_Load()
@@ -6836,6 +6906,8 @@ void CNETMsg_SpawnGroup_Load::SharedCtor() {
   manifestloadpriority_ = 0;
   worldgroupid_ = 0u;
   creationsequence_ = 0u;
+  savegamefilename_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  spawngroupparenthandle_ = 0u;
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
 
@@ -6862,6 +6934,9 @@ void CNETMsg_SpawnGroup_Load::SharedDtor() {
   }
   if (parentnamefixup_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
     delete parentnamefixup_;
+  }
+  if (savegamefilename_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete savegamefilename_;
   }
   if (this != default_instance_) {
     delete world_offset_pos_;
@@ -6944,6 +7019,14 @@ void CNETMsg_SpawnGroup_Load::Clear() {
         parentnamefixup_->clear();
       }
     }
+  }
+  if (_has_bits_[16 / 32] & 196608) {
+    if (has_savegamefilename()) {
+      if (savegamefilename_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+        savegamefilename_->clear();
+      }
+    }
+    spawngroupparenthandle_ = 0u;
   }
 
 #undef OFFSET_OF_FIELD_
@@ -7202,6 +7285,38 @@ bool CNETMsg_SpawnGroup_Load::MergePartialFromCodedStream(
         } else {
           goto handle_unusual;
         }
+        if (input->ExpectTag(138)) goto parse_savegamefilename;
+        break;
+      }
+
+      // optional string savegamefilename = 17;
+      case 17: {
+        if (tag == 138) {
+         parse_savegamefilename:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_savegamefilename()));
+          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+            this->savegamefilename().data(), this->savegamefilename().length(),
+            ::google::protobuf::internal::WireFormat::PARSE,
+            "savegamefilename");
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(144)) goto parse_spawngroupparenthandle;
+        break;
+      }
+
+      // optional uint32 spawngroupparenthandle = 18;
+      case 18: {
+        if (tag == 144) {
+         parse_spawngroupparenthandle:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                 input, &spawngroupparenthandle_)));
+          set_has_spawngroupparenthandle();
+        } else {
+          goto handle_unusual;
+        }
         if (input->ExpectAtEnd()) goto success;
         break;
       }
@@ -7339,6 +7454,21 @@ void CNETMsg_SpawnGroup_Load::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteUInt32(16, this->creationsequence(), output);
   }
 
+  // optional string savegamefilename = 17;
+  if (has_savegamefilename()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->savegamefilename().data(), this->savegamefilename().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "savegamefilename");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      17, this->savegamefilename(), output);
+  }
+
+  // optional uint32 spawngroupparenthandle = 18;
+  if (has_spawngroupparenthandle()) {
+    ::google::protobuf::internal::WireFormatLite::WriteUInt32(18, this->spawngroupparenthandle(), output);
+  }
+
   if (!unknown_fields().empty()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
@@ -7463,6 +7593,22 @@ void CNETMsg_SpawnGroup_Load::SerializeWithCachedSizes(
   // optional uint32 creationsequence = 16;
   if (has_creationsequence()) {
     target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(16, this->creationsequence(), target);
+  }
+
+  // optional string savegamefilename = 17;
+  if (has_savegamefilename()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->savegamefilename().data(), this->savegamefilename().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "savegamefilename");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        17, this->savegamefilename(), target);
+  }
+
+  // optional uint32 spawngroupparenthandle = 18;
+  if (has_spawngroupparenthandle()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(18, this->spawngroupparenthandle(), target);
   }
 
   if (!unknown_fields().empty()) {
@@ -7590,6 +7736,22 @@ int CNETMsg_SpawnGroup_Load::ByteSize() const {
     }
 
   }
+  if (_has_bits_[16 / 32] & (0xffu << (16 % 32))) {
+    // optional string savegamefilename = 17;
+    if (has_savegamefilename()) {
+      total_size += 2 +
+        ::google::protobuf::internal::WireFormatLite::StringSize(
+          this->savegamefilename());
+    }
+
+    // optional uint32 spawngroupparenthandle = 18;
+    if (has_spawngroupparenthandle()) {
+      total_size += 2 +
+        ::google::protobuf::internal::WireFormatLite::UInt32Size(
+          this->spawngroupparenthandle());
+    }
+
+  }
   if (!unknown_fields().empty()) {
     total_size +=
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
@@ -7667,6 +7829,14 @@ void CNETMsg_SpawnGroup_Load::MergeFrom(const CNETMsg_SpawnGroup_Load& from) {
       set_creationsequence(from.creationsequence());
     }
   }
+  if (from._has_bits_[16 / 32] & (0xffu << (16 % 32))) {
+    if (from.has_savegamefilename()) {
+      set_savegamefilename(from.savegamefilename());
+    }
+    if (from.has_spawngroupparenthandle()) {
+      set_spawngroupparenthandle(from.spawngroupparenthandle());
+    }
+  }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
 }
 
@@ -7705,6 +7875,8 @@ void CNETMsg_SpawnGroup_Load::Swap(CNETMsg_SpawnGroup_Load* other) {
     std::swap(manifestloadpriority_, other->manifestloadpriority_);
     std::swap(worldgroupid_, other->worldgroupid_);
     std::swap(creationsequence_, other->creationsequence_);
+    std::swap(savegamefilename_, other->savegamefilename_);
+    std::swap(spawngroupparenthandle_, other->spawngroupparenthandle_);
     std::swap(_has_bits_[0], other->_has_bits_[0]);
     _unknown_fields_.Swap(&other->_unknown_fields_);
     std::swap(_cached_size_, other->_cached_size_);
@@ -8906,6 +9078,9 @@ const int CSVCMsg_GameSessionConfiguration::kGamemodeFieldNumber;
 const int CSVCMsg_GameSessionConfiguration::kServerIpAddressFieldNumber;
 const int CSVCMsg_GameSessionConfiguration::kDataFieldNumber;
 const int CSVCMsg_GameSessionConfiguration::kIsLocalonlyFieldNumber;
+const int CSVCMsg_GameSessionConfiguration::kIsTransitionFieldNumber;
+const int CSVCMsg_GameSessionConfiguration::kPreviouslevelFieldNumber;
+const int CSVCMsg_GameSessionConfiguration::kLandmarknameFieldNumber;
 #endif  // !_MSC_VER
 
 CSVCMsg_GameSessionConfiguration::CSVCMsg_GameSessionConfiguration()
@@ -8942,6 +9117,9 @@ void CSVCMsg_GameSessionConfiguration::SharedCtor() {
   server_ip_address_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   data_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   is_localonly_ = false;
+  is_transition_ = false;
+  previouslevel_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  landmarkname_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
 
@@ -8968,6 +9146,12 @@ void CSVCMsg_GameSessionConfiguration::SharedDtor() {
   }
   if (data_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
     delete data_;
+  }
+  if (previouslevel_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete previouslevel_;
+  }
+  if (landmarkname_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete landmarkname_;
   }
   if (this != default_instance_) {
   }
@@ -9009,7 +9193,8 @@ void CSVCMsg_GameSessionConfiguration::Clear() {
     ZR_(is_multiplayer_, max_clients_);
     tick_interval_ = 0u;
   }
-  if (_has_bits_[8 / 32] & 32512) {
+  if (_has_bits_[8 / 32] & 65280) {
+    ZR_(is_localonly_, is_transition_);
     if (has_hostname()) {
       if (hostname_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
         hostname_->clear();
@@ -9040,7 +9225,18 @@ void CSVCMsg_GameSessionConfiguration::Clear() {
         data_->clear();
       }
     }
-    is_localonly_ = false;
+  }
+  if (_has_bits_[16 / 32] & 196608) {
+    if (has_previouslevel()) {
+      if (previouslevel_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+        previouslevel_->clear();
+      }
+    }
+    if (has_landmarkname()) {
+      if (landmarkname_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+        landmarkname_->clear();
+      }
+    }
   }
 
 #undef OFFSET_OF_FIELD_
@@ -9056,7 +9252,7 @@ bool CSVCMsg_GameSessionConfiguration::MergePartialFromCodedStream(
   ::google::protobuf::uint32 tag;
   // @@protoc_insertion_point(parse_start:CSVCMsg_GameSessionConfiguration)
   for (;;) {
-    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoff(127);
+    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoff(16383);
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
@@ -9288,6 +9484,55 @@ bool CSVCMsg_GameSessionConfiguration::MergePartialFromCodedStream(
         } else {
           goto handle_unusual;
         }
+        if (input->ExpectTag(128)) goto parse_is_transition;
+        break;
+      }
+
+      // optional bool is_transition = 16;
+      case 16: {
+        if (tag == 128) {
+         parse_is_transition:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   bool, ::google::protobuf::internal::WireFormatLite::TYPE_BOOL>(
+                 input, &is_transition_)));
+          set_has_is_transition();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(138)) goto parse_previouslevel;
+        break;
+      }
+
+      // optional string previouslevel = 17;
+      case 17: {
+        if (tag == 138) {
+         parse_previouslevel:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_previouslevel()));
+          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+            this->previouslevel().data(), this->previouslevel().length(),
+            ::google::protobuf::internal::WireFormat::PARSE,
+            "previouslevel");
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(146)) goto parse_landmarkname;
+        break;
+      }
+
+      // optional string landmarkname = 18;
+      case 18: {
+        if (tag == 146) {
+         parse_landmarkname:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_landmarkname()));
+          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+            this->landmarkname().data(), this->landmarkname().length(),
+            ::google::protobuf::internal::WireFormat::PARSE,
+            "landmarkname");
+        } else {
+          goto handle_unusual;
+        }
         if (input->ExpectAtEnd()) goto success;
         break;
       }
@@ -9418,6 +9663,31 @@ void CSVCMsg_GameSessionConfiguration::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteBool(15, this->is_localonly(), output);
   }
 
+  // optional bool is_transition = 16;
+  if (has_is_transition()) {
+    ::google::protobuf::internal::WireFormatLite::WriteBool(16, this->is_transition(), output);
+  }
+
+  // optional string previouslevel = 17;
+  if (has_previouslevel()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->previouslevel().data(), this->previouslevel().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "previouslevel");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      17, this->previouslevel(), output);
+  }
+
+  // optional string landmarkname = 18;
+  if (has_landmarkname()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->landmarkname().data(), this->landmarkname().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "landmarkname");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      18, this->landmarkname(), output);
+  }
+
   if (!unknown_fields().empty()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
@@ -9535,6 +9805,33 @@ void CSVCMsg_GameSessionConfiguration::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(15, this->is_localonly(), target);
   }
 
+  // optional bool is_transition = 16;
+  if (has_is_transition()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(16, this->is_transition(), target);
+  }
+
+  // optional string previouslevel = 17;
+  if (has_previouslevel()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->previouslevel().data(), this->previouslevel().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "previouslevel");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        17, this->previouslevel(), target);
+  }
+
+  // optional string landmarkname = 18;
+  if (has_landmarkname()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->landmarkname().data(), this->landmarkname().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "landmarkname");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        18, this->landmarkname(), target);
+  }
+
   if (!unknown_fields().empty()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
@@ -9642,6 +9939,27 @@ int CSVCMsg_GameSessionConfiguration::ByteSize() const {
       total_size += 1 + 1;
     }
 
+    // optional bool is_transition = 16;
+    if (has_is_transition()) {
+      total_size += 2 + 1;
+    }
+
+  }
+  if (_has_bits_[16 / 32] & (0xffu << (16 % 32))) {
+    // optional string previouslevel = 17;
+    if (has_previouslevel()) {
+      total_size += 2 +
+        ::google::protobuf::internal::WireFormatLite::StringSize(
+          this->previouslevel());
+    }
+
+    // optional string landmarkname = 18;
+    if (has_landmarkname()) {
+      total_size += 2 +
+        ::google::protobuf::internal::WireFormatLite::StringSize(
+          this->landmarkname());
+    }
+
   }
   if (!unknown_fields().empty()) {
     total_size +=
@@ -9716,6 +10034,17 @@ void CSVCMsg_GameSessionConfiguration::MergeFrom(const CSVCMsg_GameSessionConfig
     if (from.has_is_localonly()) {
       set_is_localonly(from.is_localonly());
     }
+    if (from.has_is_transition()) {
+      set_is_transition(from.is_transition());
+    }
+  }
+  if (from._has_bits_[16 / 32] & (0xffu << (16 % 32))) {
+    if (from.has_previouslevel()) {
+      set_previouslevel(from.previouslevel());
+    }
+    if (from.has_landmarkname()) {
+      set_landmarkname(from.landmarkname());
+    }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
 }
@@ -9754,6 +10083,9 @@ void CSVCMsg_GameSessionConfiguration::Swap(CSVCMsg_GameSessionConfiguration* ot
     std::swap(server_ip_address_, other->server_ip_address_);
     std::swap(data_, other->data_);
     std::swap(is_localonly_, other->is_localonly_);
+    std::swap(is_transition_, other->is_transition_);
+    std::swap(previouslevel_, other->previouslevel_);
+    std::swap(landmarkname_, other->landmarkname_);
     std::swap(_has_bits_[0], other->_has_bits_[0]);
     _unknown_fields_.Swap(&other->_unknown_fields_);
     std::swap(_cached_size_, other->_cached_size_);

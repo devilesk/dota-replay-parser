@@ -60,6 +60,9 @@ const ::google::protobuf::internal::GeneratedMessageReflection*
 const ::google::protobuf::Descriptor* CTextShadowData_descriptor_ = NULL;
 const ::google::protobuf::internal::GeneratedMessageReflection*
   CTextShadowData_reflection_ = NULL;
+const ::google::protobuf::Descriptor* CRadialClipData_descriptor_ = NULL;
+const ::google::protobuf::internal::GeneratedMessageReflection*
+  CRadialClipData_reflection_ = NULL;
 const ::google::protobuf::Descriptor* CMsgClipData_descriptor_ = NULL;
 const ::google::protobuf::internal::GeneratedMessageReflection*
   CMsgClipData_reflection_ = NULL;
@@ -243,6 +246,12 @@ const ::google::protobuf::internal::GeneratedMessageReflection*
 const ::google::protobuf::Descriptor* CMsgPopClipLayer_descriptor_ = NULL;
 const ::google::protobuf::internal::GeneratedMessageReflection*
   CMsgPopClipLayer_reflection_ = NULL;
+const ::google::protobuf::Descriptor* CMsgPushPanelContextInLayer_descriptor_ = NULL;
+const ::google::protobuf::internal::GeneratedMessageReflection*
+  CMsgPushPanelContextInLayer_reflection_ = NULL;
+const ::google::protobuf::Descriptor* CMsgPopPanelContextInLayer_descriptor_ = NULL;
+const ::google::protobuf::internal::GeneratedMessageReflection*
+  CMsgPopPanelContextInLayer_reflection_ = NULL;
 const ::google::protobuf::Descriptor* CMsgPushAAndTContext_descriptor_ = NULL;
 const ::google::protobuf::internal::GeneratedMessageReflection*
   CMsgPushAAndTContext_reflection_ = NULL;
@@ -270,12 +279,6 @@ const ::google::protobuf::internal::GeneratedMessageReflection*
 const ::google::protobuf::Descriptor* CMsgDrawTexturedRect_descriptor_ = NULL;
 const ::google::protobuf::internal::GeneratedMessageReflection*
   CMsgDrawTexturedRect_reflection_ = NULL;
-const ::google::protobuf::Descriptor* CMsgDrawDoubleBufferedRect_descriptor_ = NULL;
-const ::google::protobuf::internal::GeneratedMessageReflection*
-  CMsgDrawDoubleBufferedRect_reflection_ = NULL;
-const ::google::protobuf::Descriptor* CMsgDrawYUV420DoubleBufferedRect_descriptor_ = NULL;
-const ::google::protobuf::internal::GeneratedMessageReflection*
-  CMsgDrawYUV420DoubleBufferedRect_reflection_ = NULL;
 const ::google::protobuf::Descriptor* CMsgRenderTexturedRect_descriptor_ = NULL;
 const ::google::protobuf::internal::GeneratedMessageReflection*
   CMsgRenderTexturedRect_reflection_ = NULL;
@@ -573,12 +576,32 @@ void protobuf_AssignDesc_rendermessages_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(CTextShadowData));
-  CMsgClipData_descriptor_ = file->message_type(12);
-  static const int CMsgClipData_offsets_[4] = {
+  CRadialClipData_descriptor_ = file->message_type(12);
+  static const int CRadialClipData_offsets_[4] = {
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CRadialClipData, center_x_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CRadialClipData, center_y_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CRadialClipData, start_angle_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CRadialClipData, sector_angle_),
+  };
+  CRadialClipData_reflection_ =
+    new ::google::protobuf::internal::GeneratedMessageReflection(
+      CRadialClipData_descriptor_,
+      CRadialClipData::default_instance_,
+      CRadialClipData_offsets_,
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CRadialClipData, _has_bits_[0]),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CRadialClipData, _unknown_fields_),
+      -1,
+      ::google::protobuf::DescriptorPool::generated_pool(),
+      ::google::protobuf::MessageFactory::generated_factory(),
+      sizeof(CRadialClipData));
+  CMsgClipData_descriptor_ = file->message_type(13);
+  static const int CMsgClipData_offsets_[6] = {
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgClipData, rect_clip_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgClipData, left_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgClipData, top_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgClipData, right_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgClipData, bottom_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgClipData, radial_clip_),
   };
   CMsgClipData_reflection_ =
     new ::google::protobuf::internal::GeneratedMessageReflection(
@@ -591,8 +614,8 @@ void protobuf_AssignDesc_rendermessages_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(CMsgClipData));
-  CMsgPushCompositingLayer_descriptor_ = file->message_type(13);
-  static const int CMsgPushCompositingLayer_offsets_[58] = {
+  CMsgPushCompositingLayer_descriptor_ = file->message_type(14);
+  static const int CMsgPushCompositingLayer_offsets_[61] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgPushCompositingLayer, layer_id_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgPushCompositingLayer, width_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgPushCompositingLayer, height_),
@@ -644,6 +667,7 @@ void protobuf_AssignDesc_rendermessages_2eproto() {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgPushCompositingLayer, rotate_2d_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgPushCompositingLayer, needs_clear_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgPushCompositingLayer, needs_depth_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgPushCompositingLayer, needs_intermediate_texture_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgPushCompositingLayer, needs_redraw_every_frame_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgPushCompositingLayer, text_shadow_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgPushCompositingLayer, mix_blend_mode_),
@@ -651,6 +675,8 @@ void protobuf_AssignDesc_rendermessages_2eproto() {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgPushCompositingLayer, occluded_top_edge_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgPushCompositingLayer, occluded_right_edge_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgPushCompositingLayer, occluded_bottom_edge_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgPushCompositingLayer, radial_clip_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgPushCompositingLayer, composition_layer_texture_name_),
   };
   CMsgPushCompositingLayer_reflection_ =
     new ::google::protobuf::internal::GeneratedMessageReflection(
@@ -663,7 +689,7 @@ void protobuf_AssignDesc_rendermessages_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(CMsgPushCompositingLayer));
-  CMsgPopCompositingLayer_descriptor_ = file->message_type(14);
+  CMsgPopCompositingLayer_descriptor_ = file->message_type(15);
   static const int CMsgPopCompositingLayer_offsets_[1] = {
   };
   CMsgPopCompositingLayer_reflection_ =
@@ -677,7 +703,7 @@ void protobuf_AssignDesc_rendermessages_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(CMsgPopCompositingLayer));
-  CMsgFreeCompositingLayer_descriptor_ = file->message_type(15);
+  CMsgFreeCompositingLayer_descriptor_ = file->message_type(16);
   static const int CMsgFreeCompositingLayer_offsets_[1] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgFreeCompositingLayer, layer_id_),
   };
@@ -692,7 +718,7 @@ void protobuf_AssignDesc_rendermessages_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(CMsgFreeCompositingLayer));
-  CMsgTransitionData_descriptor_ = file->message_type(16);
+  CMsgTransitionData_descriptor_ = file->message_type(17);
   static const int CMsgTransitionData_offsets_[8] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgTransitionData, start_time_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgTransitionData, delay_seconds_),
@@ -714,7 +740,7 @@ void protobuf_AssignDesc_rendermessages_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(CMsgTransitionData));
-  CMsgAnimationData_descriptor_ = file->message_type(17);
+  CMsgAnimationData_descriptor_ = file->message_type(18);
   static const int CMsgAnimationData_offsets_[11] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgAnimationData, start_time_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgAnimationData, delay_seconds_),
@@ -739,7 +765,7 @@ void protobuf_AssignDesc_rendermessages_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(CMsgAnimationData));
-  CMsgAnimationFrameData_descriptor_ = file->message_type(18);
+  CMsgAnimationFrameData_descriptor_ = file->message_type(19);
   static const int CMsgAnimationFrameData_offsets_[6] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgAnimationFrameData, percent_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgAnimationFrameData, timing_func_),
@@ -759,11 +785,12 @@ void protobuf_AssignDesc_rendermessages_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(CMsgAnimationFrameData));
-  CMsgPointWithTransition_descriptor_ = file->message_type(19);
-  static const int CMsgPointWithTransition_offsets_[4] = {
+  CMsgPointWithTransition_descriptor_ = file->message_type(20);
+  static const int CMsgPointWithTransition_offsets_[5] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgPointWithTransition, base_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgPointWithTransition, transition_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgPointWithTransition, transition_data_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgPointWithTransition, style_symbol_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgPointWithTransition, animations_),
   };
   CMsgPointWithTransition_reflection_ =
@@ -792,11 +819,12 @@ void protobuf_AssignDesc_rendermessages_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(CMsgPointWithTransition_AnimationFrameData));
-  CMsgColor_descriptor_ = file->message_type(20);
-  static const int CMsgColor_offsets_[4] = {
+  CMsgColor_descriptor_ = file->message_type(21);
+  static const int CMsgColor_offsets_[5] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgColor, base_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgColor, transition_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgColor, transition_data_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgColor, style_symbol_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgColor, animations_),
   };
   CMsgColor_reflection_ =
@@ -825,7 +853,7 @@ void protobuf_AssignDesc_rendermessages_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(CMsgColor_AnimationFrameData));
-  CMsgColorStop_descriptor_ = file->message_type(21);
+  CMsgColorStop_descriptor_ = file->message_type(22);
   static const int CMsgColorStop_offsets_[2] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgColorStop, position_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgColorStop, color_rgba_),
@@ -841,7 +869,7 @@ void protobuf_AssignDesc_rendermessages_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(CMsgColorStop));
-  CMsgLinearGradient_descriptor_ = file->message_type(22);
+  CMsgLinearGradient_descriptor_ = file->message_type(23);
   static const int CMsgLinearGradient_offsets_[3] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgLinearGradient, start_position_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgLinearGradient, end_position_),
@@ -858,7 +886,7 @@ void protobuf_AssignDesc_rendermessages_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(CMsgLinearGradient));
-  CMsgRadialGradient_descriptor_ = file->message_type(23);
+  CMsgRadialGradient_descriptor_ = file->message_type(24);
   static const int CMsgRadialGradient_offsets_[4] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgRadialGradient, center_position_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgRadialGradient, offset_distance_),
@@ -876,7 +904,7 @@ void protobuf_AssignDesc_rendermessages_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(CMsgRadialGradient));
-  CMsgParticle_descriptor_ = file->message_type(24);
+  CMsgParticle_descriptor_ = file->message_type(25);
   static const int CMsgParticle_offsets_[4] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgParticle, particle_position_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgParticle, particle_size_),
@@ -894,7 +922,7 @@ void protobuf_AssignDesc_rendermessages_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(CMsgParticle));
-  CMsgParticleSystem_descriptor_ = file->message_type(25);
+  CMsgParticleSystem_descriptor_ = file->message_type(26);
   static const int CMsgParticleSystem_offsets_[25] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgParticleSystem, base_position_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgParticleSystem, base_position_variance_),
@@ -933,7 +961,7 @@ void protobuf_AssignDesc_rendermessages_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(CMsgParticleSystem));
-  CMsgFillBrush_descriptor_ = file->message_type(26);
+  CMsgFillBrush_descriptor_ = file->message_type(27);
   static const int CMsgFillBrush_offsets_[5] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgFillBrush, opacity_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgFillBrush, color_rgba_),
@@ -952,11 +980,12 @@ void protobuf_AssignDesc_rendermessages_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(CMsgFillBrush));
-  CMsgFillBrushCollection_descriptor_ = file->message_type(27);
-  static const int CMsgFillBrushCollection_offsets_[4] = {
+  CMsgFillBrushCollection_descriptor_ = file->message_type(28);
+  static const int CMsgFillBrushCollection_offsets_[5] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgFillBrushCollection, base_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgFillBrushCollection, transition_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgFillBrushCollection, transition_data_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgFillBrushCollection, style_symbol_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgFillBrushCollection, animations_),
   };
   CMsgFillBrushCollection_reflection_ =
@@ -985,7 +1014,7 @@ void protobuf_AssignDesc_rendermessages_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(CMsgFillBrushCollection_AnimationFrameData));
-  CMsgRenderFillBrushCollection_descriptor_ = file->message_type(28);
+  CMsgRenderFillBrushCollection_descriptor_ = file->message_type(29);
   static const int CMsgRenderFillBrushCollection_offsets_[1] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgRenderFillBrushCollection, fill_brush_),
   };
@@ -1000,11 +1029,12 @@ void protobuf_AssignDesc_rendermessages_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(CMsgRenderFillBrushCollection));
-  CMsgPanelPosition_descriptor_ = file->message_type(29);
-  static const int CMsgPanelPosition_offsets_[8] = {
+  CMsgPanelPosition_descriptor_ = file->message_type(30);
+  static const int CMsgPanelPosition_offsets_[9] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgPanelPosition, base_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgPanelPosition, transition_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgPanelPosition, transition_data_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgPanelPosition, style_symbol_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgPanelPosition, animations_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgPanelPosition, scroll_offset_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgPanelPosition, scroll_offset_target_),
@@ -1037,11 +1067,12 @@ void protobuf_AssignDesc_rendermessages_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(CMsgPanelPosition_AnimationFrameData));
-  CMsgOpacity_descriptor_ = file->message_type(30);
-  static const int CMsgOpacity_offsets_[4] = {
+  CMsgOpacity_descriptor_ = file->message_type(31);
+  static const int CMsgOpacity_offsets_[5] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgOpacity, base_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgOpacity, transition_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgOpacity, transition_data_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgOpacity, style_symbol_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgOpacity, animations_),
   };
   CMsgOpacity_reflection_ =
@@ -1070,11 +1101,12 @@ void protobuf_AssignDesc_rendermessages_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(CMsgOpacity_AnimationFrameData));
-  CMsgRotate2D_descriptor_ = file->message_type(31);
-  static const int CMsgRotate2D_offsets_[4] = {
+  CMsgRotate2D_descriptor_ = file->message_type(32);
+  static const int CMsgRotate2D_offsets_[5] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgRotate2D, base_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgRotate2D, transition_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgRotate2D, transition_data_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgRotate2D, style_symbol_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgRotate2D, animations_),
   };
   CMsgRotate2D_reflection_ =
@@ -1103,7 +1135,7 @@ void protobuf_AssignDesc_rendermessages_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(CMsgRotate2D_AnimationFrameData));
-  CMsgOpacityMaskData_descriptor_ = file->message_type(32);
+  CMsgOpacityMaskData_descriptor_ = file->message_type(33);
   static const int CMsgOpacityMaskData_offsets_[2] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgOpacityMaskData, opacity_mask_texture_id_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgOpacityMaskData, opacity_mask_opacity_),
@@ -1119,11 +1151,12 @@ void protobuf_AssignDesc_rendermessages_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(CMsgOpacityMaskData));
-  CMsgOpacityMask_descriptor_ = file->message_type(33);
-  static const int CMsgOpacityMask_offsets_[4] = {
+  CMsgOpacityMask_descriptor_ = file->message_type(34);
+  static const int CMsgOpacityMask_offsets_[5] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgOpacityMask, base_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgOpacityMask, transition_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgOpacityMask, transition_data_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgOpacityMask, style_symbol_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgOpacityMask, animations_),
   };
   CMsgOpacityMask_reflection_ =
@@ -1152,11 +1185,12 @@ void protobuf_AssignDesc_rendermessages_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(CMsgOpacityMask_AnimationFrameData));
-  CMsgHueShift_descriptor_ = file->message_type(34);
-  static const int CMsgHueShift_offsets_[4] = {
+  CMsgHueShift_descriptor_ = file->message_type(35);
+  static const int CMsgHueShift_offsets_[5] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgHueShift, base_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgHueShift, transition_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgHueShift, transition_data_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgHueShift, style_symbol_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgHueShift, animations_),
   };
   CMsgHueShift_reflection_ =
@@ -1185,11 +1219,12 @@ void protobuf_AssignDesc_rendermessages_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(CMsgHueShift_AnimationFrameData));
-  CMsgSaturation_descriptor_ = file->message_type(35);
-  static const int CMsgSaturation_offsets_[4] = {
+  CMsgSaturation_descriptor_ = file->message_type(36);
+  static const int CMsgSaturation_offsets_[5] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgSaturation, base_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgSaturation, transition_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgSaturation, transition_data_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgSaturation, style_symbol_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgSaturation, animations_),
   };
   CMsgSaturation_reflection_ =
@@ -1218,11 +1253,12 @@ void protobuf_AssignDesc_rendermessages_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(CMsgSaturation_AnimationFrameData));
-  CMsgBrightness_descriptor_ = file->message_type(36);
-  static const int CMsgBrightness_offsets_[4] = {
+  CMsgBrightness_descriptor_ = file->message_type(37);
+  static const int CMsgBrightness_offsets_[5] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgBrightness, base_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgBrightness, transition_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgBrightness, transition_data_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgBrightness, style_symbol_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgBrightness, animations_),
   };
   CMsgBrightness_reflection_ =
@@ -1251,11 +1287,12 @@ void protobuf_AssignDesc_rendermessages_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(CMsgBrightness_AnimationFrameData));
-  CMsgContrast_descriptor_ = file->message_type(37);
-  static const int CMsgContrast_offsets_[4] = {
+  CMsgContrast_descriptor_ = file->message_type(38);
+  static const int CMsgContrast_offsets_[5] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgContrast, base_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgContrast, transition_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgContrast, transition_data_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgContrast, style_symbol_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgContrast, animations_),
   };
   CMsgContrast_reflection_ =
@@ -1284,7 +1321,7 @@ void protobuf_AssignDesc_rendermessages_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(CMsgContrast_AnimationFrameData));
-  CMsgGaussianValues_descriptor_ = file->message_type(38);
+  CMsgGaussianValues_descriptor_ = file->message_type(39);
   static const int CMsgGaussianValues_offsets_[3] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgGaussianValues, passes_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgGaussianValues, stddev_hor_),
@@ -1301,11 +1338,12 @@ void protobuf_AssignDesc_rendermessages_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(CMsgGaussianValues));
-  CMsgGaussianBlur_descriptor_ = file->message_type(39);
-  static const int CMsgGaussianBlur_offsets_[4] = {
+  CMsgGaussianBlur_descriptor_ = file->message_type(40);
+  static const int CMsgGaussianBlur_offsets_[5] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgGaussianBlur, base_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgGaussianBlur, transition_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgGaussianBlur, transition_data_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgGaussianBlur, style_symbol_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgGaussianBlur, animations_),
   };
   CMsgGaussianBlur_reflection_ =
@@ -1334,11 +1372,12 @@ void protobuf_AssignDesc_rendermessages_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(CMsgGaussianBlur_AnimationFrameData));
-  CMsg3DTransformPerspective_descriptor_ = file->message_type(40);
-  static const int CMsg3DTransformPerspective_offsets_[4] = {
+  CMsg3DTransformPerspective_descriptor_ = file->message_type(41);
+  static const int CMsg3DTransformPerspective_offsets_[5] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsg3DTransformPerspective, base_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsg3DTransformPerspective, transition_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsg3DTransformPerspective, transition_data_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsg3DTransformPerspective, style_symbol_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsg3DTransformPerspective, animations_),
   };
   CMsg3DTransformPerspective_reflection_ =
@@ -1367,11 +1406,12 @@ void protobuf_AssignDesc_rendermessages_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(CMsg3DTransformPerspective_AnimationFrameData));
-  CMsg3DTransformPerspectiveOrigin_descriptor_ = file->message_type(41);
-  static const int CMsg3DTransformPerspectiveOrigin_offsets_[4] = {
+  CMsg3DTransformPerspectiveOrigin_descriptor_ = file->message_type(42);
+  static const int CMsg3DTransformPerspectiveOrigin_offsets_[5] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsg3DTransformPerspectiveOrigin, base_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsg3DTransformPerspectiveOrigin, transition_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsg3DTransformPerspectiveOrigin, transition_data_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsg3DTransformPerspectiveOrigin, style_symbol_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsg3DTransformPerspectiveOrigin, animations_),
   };
   CMsg3DTransformPerspectiveOrigin_reflection_ =
@@ -1400,7 +1440,7 @@ void protobuf_AssignDesc_rendermessages_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(CMsg3DTransformPerspectiveOrigin_AnimationFrameData));
-  CMsgTransformOriginData_descriptor_ = file->message_type(42);
+  CMsgTransformOriginData_descriptor_ = file->message_type(43);
   static const int CMsgTransformOriginData_offsets_[5] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgTransformOriginData, x_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgTransformOriginData, y_),
@@ -1419,11 +1459,12 @@ void protobuf_AssignDesc_rendermessages_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(CMsgTransformOriginData));
-  CMsg3DTransformOrigin_descriptor_ = file->message_type(43);
-  static const int CMsg3DTransformOrigin_offsets_[4] = {
+  CMsg3DTransformOrigin_descriptor_ = file->message_type(44);
+  static const int CMsg3DTransformOrigin_offsets_[5] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsg3DTransformOrigin, base_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsg3DTransformOrigin, transition_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsg3DTransformOrigin, transition_data_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsg3DTransformOrigin, style_symbol_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsg3DTransformOrigin, animations_),
   };
   CMsg3DTransformOrigin_reflection_ =
@@ -1452,11 +1493,12 @@ void protobuf_AssignDesc_rendermessages_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(CMsg3DTransformOrigin_AnimationFrameData));
-  CMsg3DTransformMatrix_descriptor_ = file->message_type(44);
-  static const int CMsg3DTransformMatrix_offsets_[4] = {
+  CMsg3DTransformMatrix_descriptor_ = file->message_type(45);
+  static const int CMsg3DTransformMatrix_offsets_[5] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsg3DTransformMatrix, base_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsg3DTransformMatrix, transition_data_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsg3DTransformMatrix, transition_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsg3DTransformMatrix, style_symbol_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsg3DTransformMatrix, animations_),
   };
   CMsg3DTransformMatrix_reflection_ =
@@ -1485,11 +1527,12 @@ void protobuf_AssignDesc_rendermessages_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(CMsg3DTransformMatrix_AnimationFrameData));
-  CMsgBorderRadius_descriptor_ = file->message_type(45);
-  static const int CMsgBorderRadius_offsets_[4] = {
+  CMsgBorderRadius_descriptor_ = file->message_type(46);
+  static const int CMsgBorderRadius_offsets_[5] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgBorderRadius, base_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgBorderRadius, transition_data_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgBorderRadius, transition_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgBorderRadius, style_symbol_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgBorderRadius, animations_),
   };
   CMsgBorderRadius_reflection_ =
@@ -1518,11 +1561,12 @@ void protobuf_AssignDesc_rendermessages_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(CMsgBorderRadius_AnimationFrameData));
-  CMsgBorder_descriptor_ = file->message_type(46);
-  static const int CMsgBorder_offsets_[4] = {
+  CMsgBorder_descriptor_ = file->message_type(47);
+  static const int CMsgBorder_offsets_[5] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgBorder, base_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgBorder, transition_data_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgBorder, transition_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgBorder, style_symbol_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgBorder, animations_),
   };
   CMsgBorder_reflection_ =
@@ -1551,11 +1595,12 @@ void protobuf_AssignDesc_rendermessages_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(CMsgBorder_AnimationFrameData));
-  CMsgBoxShadow_descriptor_ = file->message_type(47);
-  static const int CMsgBoxShadow_offsets_[4] = {
+  CMsgBoxShadow_descriptor_ = file->message_type(48);
+  static const int CMsgBoxShadow_offsets_[5] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgBoxShadow, base_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgBoxShadow, transition_data_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgBoxShadow, transition_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgBoxShadow, style_symbol_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgBoxShadow, animations_),
   };
   CMsgBoxShadow_reflection_ =
@@ -1584,11 +1629,12 @@ void protobuf_AssignDesc_rendermessages_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(CMsgBoxShadow_AnimationFrameData));
-  CMsgTextShadow_descriptor_ = file->message_type(48);
-  static const int CMsgTextShadow_offsets_[4] = {
+  CMsgTextShadow_descriptor_ = file->message_type(49);
+  static const int CMsgTextShadow_offsets_[5] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgTextShadow, base_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgTextShadow, transition_data_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgTextShadow, transition_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgTextShadow, style_symbol_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgTextShadow, animations_),
   };
   CMsgTextShadow_reflection_ =
@@ -1617,11 +1663,12 @@ void protobuf_AssignDesc_rendermessages_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(CMsgTextShadow_AnimationFrameData));
-  CMsgClip_descriptor_ = file->message_type(49);
-  static const int CMsgClip_offsets_[4] = {
+  CMsgClip_descriptor_ = file->message_type(50);
+  static const int CMsgClip_offsets_[5] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgClip, base_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgClip, transition_data_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgClip, transition_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgClip, style_symbol_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgClip, animations_),
   };
   CMsgClip_reflection_ =
@@ -1650,7 +1697,7 @@ void protobuf_AssignDesc_rendermessages_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(CMsgClip_AnimationFrameData));
-  CMsgPushClipLayer_descriptor_ = file->message_type(50);
+  CMsgPushClipLayer_descriptor_ = file->message_type(51);
   static const int CMsgPushClipLayer_offsets_[3] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgPushClipLayer, top_left_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgPushClipLayer, bottom_right_),
@@ -1667,7 +1714,7 @@ void protobuf_AssignDesc_rendermessages_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(CMsgPushClipLayer));
-  CMsgPopClipLayer_descriptor_ = file->message_type(51);
+  CMsgPopClipLayer_descriptor_ = file->message_type(52);
   static const int CMsgPopClipLayer_offsets_[1] = {
   };
   CMsgPopClipLayer_reflection_ =
@@ -1681,8 +1728,61 @@ void protobuf_AssignDesc_rendermessages_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(CMsgPopClipLayer));
-  CMsgPushAAndTContext_descriptor_ = file->message_type(52);
-  static const int CMsgPushAAndTContext_offsets_[30] = {
+  CMsgPushPanelContextInLayer_descriptor_ = file->message_type(53);
+  static const int CMsgPushPanelContextInLayer_offsets_[25] = {
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgPushPanelContextInLayer, transform_m00_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgPushPanelContextInLayer, transform_m01_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgPushPanelContextInLayer, transform_m02_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgPushPanelContextInLayer, transform_m03_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgPushPanelContextInLayer, transform_m10_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgPushPanelContextInLayer, transform_m11_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgPushPanelContextInLayer, transform_m12_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgPushPanelContextInLayer, transform_m13_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgPushPanelContextInLayer, transform_m20_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgPushPanelContextInLayer, transform_m21_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgPushPanelContextInLayer, transform_m22_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgPushPanelContextInLayer, transform_m23_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgPushPanelContextInLayer, transform_m30_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgPushPanelContextInLayer, transform_m31_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgPushPanelContextInLayer, transform_m32_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgPushPanelContextInLayer, transform_m33_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgPushPanelContextInLayer, box_shadow_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgPushPanelContextInLayer, width_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgPushPanelContextInLayer, height_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgPushPanelContextInLayer, position_x_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgPushPanelContextInLayer, position_y_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgPushPanelContextInLayer, position_z_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgPushPanelContextInLayer, border_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgPushPanelContextInLayer, scroll_x_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgPushPanelContextInLayer, scroll_y_),
+  };
+  CMsgPushPanelContextInLayer_reflection_ =
+    new ::google::protobuf::internal::GeneratedMessageReflection(
+      CMsgPushPanelContextInLayer_descriptor_,
+      CMsgPushPanelContextInLayer::default_instance_,
+      CMsgPushPanelContextInLayer_offsets_,
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgPushPanelContextInLayer, _has_bits_[0]),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgPushPanelContextInLayer, _unknown_fields_),
+      -1,
+      ::google::protobuf::DescriptorPool::generated_pool(),
+      ::google::protobuf::MessageFactory::generated_factory(),
+      sizeof(CMsgPushPanelContextInLayer));
+  CMsgPopPanelContextInLayer_descriptor_ = file->message_type(54);
+  static const int CMsgPopPanelContextInLayer_offsets_[1] = {
+  };
+  CMsgPopPanelContextInLayer_reflection_ =
+    new ::google::protobuf::internal::GeneratedMessageReflection(
+      CMsgPopPanelContextInLayer_descriptor_,
+      CMsgPopPanelContextInLayer::default_instance_,
+      CMsgPopPanelContextInLayer_offsets_,
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgPopPanelContextInLayer, _has_bits_[0]),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgPopPanelContextInLayer, _unknown_fields_),
+      -1,
+      ::google::protobuf::DescriptorPool::generated_pool(),
+      ::google::protobuf::MessageFactory::generated_factory(),
+      sizeof(CMsgPopPanelContextInLayer));
+  CMsgPushAAndTContext_descriptor_ = file->message_type(55);
+  static const int CMsgPushAAndTContext_offsets_[36] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgPushAAndTContext, context_id_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgPushAAndTContext, width_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgPushAAndTContext, height_),
@@ -1710,9 +1810,15 @@ void protobuf_AssignDesc_rendermessages_2eproto() {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgPushAAndTContext, clip_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgPushAAndTContext, suppress_clip_to_bounds_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgPushAAndTContext, needs_full_repaint_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgPushAAndTContext, needs_intermediate_texture_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgPushAAndTContext, clip_after_transform_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgPushAAndTContext, wants_hit_test_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgPushAAndTContext, wants_hit_test_children_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgPushAAndTContext, mix_blend_mode_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgPushAAndTContext, opaque_background_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgPushAAndTContext, child_panel_count_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgPushAAndTContext, wants_screenspace_quad_output_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgPushAAndTContext, composition_layer_texture_name_),
   };
   CMsgPushAAndTContext_reflection_ =
     new ::google::protobuf::internal::GeneratedMessageReflection(
@@ -1725,7 +1831,7 @@ void protobuf_AssignDesc_rendermessages_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(CMsgPushAAndTContext));
-  CMsgPopAAndTContext_descriptor_ = file->message_type(53);
+  CMsgPopAAndTContext_descriptor_ = file->message_type(56);
   static const int CMsgPopAAndTContext_offsets_[1] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgPopAAndTContext, context_id_),
   };
@@ -1740,7 +1846,7 @@ void protobuf_AssignDesc_rendermessages_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(CMsgPopAAndTContext));
-  CMsgBeginPaintBackground_descriptor_ = file->message_type(54);
+  CMsgBeginPaintBackground_descriptor_ = file->message_type(57);
   static const int CMsgBeginPaintBackground_offsets_[1] = {
   };
   CMsgBeginPaintBackground_reflection_ =
@@ -1754,7 +1860,7 @@ void protobuf_AssignDesc_rendermessages_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(CMsgBeginPaintBackground));
-  CMsgEndPaintBackground_descriptor_ = file->message_type(55);
+  CMsgEndPaintBackground_descriptor_ = file->message_type(58);
   static const int CMsgEndPaintBackground_offsets_[1] = {
   };
   CMsgEndPaintBackground_reflection_ =
@@ -1768,7 +1874,7 @@ void protobuf_AssignDesc_rendermessages_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(CMsgEndPaintBackground));
-  CMsgBeginPaintLast_descriptor_ = file->message_type(56);
+  CMsgBeginPaintLast_descriptor_ = file->message_type(59);
   static const int CMsgBeginPaintLast_offsets_[1] = {
   };
   CMsgBeginPaintLast_reflection_ =
@@ -1782,7 +1888,7 @@ void protobuf_AssignDesc_rendermessages_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(CMsgBeginPaintLast));
-  CMsgEndPaintLast_descriptor_ = file->message_type(57);
+  CMsgEndPaintLast_descriptor_ = file->message_type(60);
   static const int CMsgEndPaintLast_offsets_[1] = {
   };
   CMsgEndPaintLast_reflection_ =
@@ -1796,7 +1902,7 @@ void protobuf_AssignDesc_rendermessages_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(CMsgEndPaintLast));
-  CMsgDrawFilledRect_descriptor_ = file->message_type(58);
+  CMsgDrawFilledRect_descriptor_ = file->message_type(61);
   static const int CMsgDrawFilledRect_offsets_[4] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgDrawFilledRect, top_left_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgDrawFilledRect, bottom_right_),
@@ -1814,7 +1920,7 @@ void protobuf_AssignDesc_rendermessages_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(CMsgDrawFilledRect));
-  CMsgRenderFilledRect_descriptor_ = file->message_type(59);
+  CMsgRenderFilledRect_descriptor_ = file->message_type(62);
   static const int CMsgRenderFilledRect_offsets_[4] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgRenderFilledRect, top_left_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgRenderFilledRect, bottom_right_),
@@ -1832,8 +1938,8 @@ void protobuf_AssignDesc_rendermessages_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(CMsgRenderFilledRect));
-  CMsgDrawTexturedRect_descriptor_ = file->message_type(60);
-  static const int CMsgDrawTexturedRect_offsets_[7] = {
+  CMsgDrawTexturedRect_descriptor_ = file->message_type(63);
+  static const int CMsgDrawTexturedRect_offsets_[8] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgDrawTexturedRect, top_left_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgDrawTexturedRect, bottom_right_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgDrawTexturedRect, texture_id_),
@@ -1841,6 +1947,7 @@ void protobuf_AssignDesc_rendermessages_2eproto() {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgDrawTexturedRect, texture_bottom_right_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgDrawTexturedRect, texture_serial_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgDrawTexturedRect, texture_sample_mode_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgDrawTexturedRect, texture_opacity_),
   };
   CMsgDrawTexturedRect_reflection_ =
     new ::google::protobuf::internal::GeneratedMessageReflection(
@@ -1853,46 +1960,8 @@ void protobuf_AssignDesc_rendermessages_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(CMsgDrawTexturedRect));
-  CMsgDrawDoubleBufferedRect_descriptor_ = file->message_type(61);
-  static const int CMsgDrawDoubleBufferedRect_offsets_[5] = {
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgDrawDoubleBufferedRect, top_left_),
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgDrawDoubleBufferedRect, bottom_right_),
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgDrawDoubleBufferedRect, texture_id_),
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgDrawDoubleBufferedRect, texture_top_left_),
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgDrawDoubleBufferedRect, texture_bottom_right_),
-  };
-  CMsgDrawDoubleBufferedRect_reflection_ =
-    new ::google::protobuf::internal::GeneratedMessageReflection(
-      CMsgDrawDoubleBufferedRect_descriptor_,
-      CMsgDrawDoubleBufferedRect::default_instance_,
-      CMsgDrawDoubleBufferedRect_offsets_,
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgDrawDoubleBufferedRect, _has_bits_[0]),
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgDrawDoubleBufferedRect, _unknown_fields_),
-      -1,
-      ::google::protobuf::DescriptorPool::generated_pool(),
-      ::google::protobuf::MessageFactory::generated_factory(),
-      sizeof(CMsgDrawDoubleBufferedRect));
-  CMsgDrawYUV420DoubleBufferedRect_descriptor_ = file->message_type(62);
-  static const int CMsgDrawYUV420DoubleBufferedRect_offsets_[5] = {
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgDrawYUV420DoubleBufferedRect, top_left_),
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgDrawYUV420DoubleBufferedRect, bottom_right_),
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgDrawYUV420DoubleBufferedRect, texture_id_),
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgDrawYUV420DoubleBufferedRect, texture_top_left_),
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgDrawYUV420DoubleBufferedRect, texture_bottom_right_),
-  };
-  CMsgDrawYUV420DoubleBufferedRect_reflection_ =
-    new ::google::protobuf::internal::GeneratedMessageReflection(
-      CMsgDrawYUV420DoubleBufferedRect_descriptor_,
-      CMsgDrawYUV420DoubleBufferedRect::default_instance_,
-      CMsgDrawYUV420DoubleBufferedRect_offsets_,
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgDrawYUV420DoubleBufferedRect, _has_bits_[0]),
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgDrawYUV420DoubleBufferedRect, _unknown_fields_),
-      -1,
-      ::google::protobuf::DescriptorPool::generated_pool(),
-      ::google::protobuf::MessageFactory::generated_factory(),
-      sizeof(CMsgDrawYUV420DoubleBufferedRect));
-  CMsgRenderTexturedRect_descriptor_ = file->message_type(63);
-  static const int CMsgRenderTexturedRect_offsets_[7] = {
+  CMsgRenderTexturedRect_descriptor_ = file->message_type(64);
+  static const int CMsgRenderTexturedRect_offsets_[8] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgRenderTexturedRect, top_left_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgRenderTexturedRect, bottom_right_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgRenderTexturedRect, texture_id_),
@@ -1900,6 +1969,7 @@ void protobuf_AssignDesc_rendermessages_2eproto() {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgRenderTexturedRect, texture_bottom_right_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgRenderTexturedRect, texture_serial_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgRenderTexturedRect, texture_sample_mode_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgRenderTexturedRect, texture_opacity_),
   };
   CMsgRenderTexturedRect_reflection_ =
     new ::google::protobuf::internal::GeneratedMessageReflection(
@@ -1912,7 +1982,7 @@ void protobuf_AssignDesc_rendermessages_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(CMsgRenderTexturedRect));
-  CMsgLockTexture_descriptor_ = file->message_type(64);
+  CMsgLockTexture_descriptor_ = file->message_type(65);
   static const int CMsgLockTexture_offsets_[2] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgLockTexture, texture_id_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgLockTexture, texture_serial_),
@@ -1928,7 +1998,7 @@ void protobuf_AssignDesc_rendermessages_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(CMsgLockTexture));
-  CMsgTextInlineObject_descriptor_ = file->message_type(65);
+  CMsgTextInlineObject_descriptor_ = file->message_type(66);
   static const int CMsgTextInlineObject_offsets_[2] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgTextInlineObject, width_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgTextInlineObject, height_),
@@ -1944,7 +2014,7 @@ void protobuf_AssignDesc_rendermessages_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(CMsgTextInlineObject));
-  CMsgTextFormat_descriptor_ = file->message_type(66);
+  CMsgTextFormat_descriptor_ = file->message_type(67);
   static const int CMsgTextFormat_offsets_[9] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgTextFormat, font_name_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgTextFormat, font_size_),
@@ -1967,7 +2037,7 @@ void protobuf_AssignDesc_rendermessages_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(CMsgTextFormat));
-  CMsgTextRangeFormat_descriptor_ = file->message_type(67);
+  CMsgTextRangeFormat_descriptor_ = file->message_type(68);
   static const int CMsgTextRangeFormat_offsets_[3] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgTextRangeFormat, start_index_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgTextRangeFormat, end_index_),
@@ -1984,7 +2054,7 @@ void protobuf_AssignDesc_rendermessages_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(CMsgTextRangeFormat));
-  CMsgRenderTextFormat_descriptor_ = file->message_type(68);
+  CMsgRenderTextFormat_descriptor_ = file->message_type(69);
   static const int CMsgRenderTextFormat_offsets_[9] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgRenderTextFormat, font_name_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgRenderTextFormat, font_size_),
@@ -2007,7 +2077,7 @@ void protobuf_AssignDesc_rendermessages_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(CMsgRenderTextFormat));
-  CMsgRenderTextRangeFormat_descriptor_ = file->message_type(69);
+  CMsgRenderTextRangeFormat_descriptor_ = file->message_type(70);
   static const int CMsgRenderTextRangeFormat_offsets_[3] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgRenderTextRangeFormat, start_index_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgRenderTextRangeFormat, end_index_),
@@ -2024,9 +2094,11 @@ void protobuf_AssignDesc_rendermessages_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(CMsgRenderTextRangeFormat));
-  CMsgDrawTextRegion_descriptor_ = file->message_type(70);
-  static const int CMsgDrawTextRegion_offsets_[9] = {
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgDrawTextRegion, wtext_),
+  CMsgDrawTextRegion_descriptor_ = file->message_type(71);
+  static const int CMsgDrawTextRegion_offsets_[11] = {
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgDrawTextRegion, raw_text_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgDrawTextRegion, text_chars_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgDrawTextRegion, text_encoding_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgDrawTextRegion, default_format_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgDrawTextRegion, text_align_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgDrawTextRegion, line_height_),
@@ -2047,9 +2119,11 @@ void protobuf_AssignDesc_rendermessages_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(CMsgDrawTextRegion));
-  CMsgRenderTextRegion_descriptor_ = file->message_type(71);
-  static const int CMsgRenderTextRegion_offsets_[10] = {
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgRenderTextRegion, wtext_),
+  CMsgRenderTextRegion_descriptor_ = file->message_type(72);
+  static const int CMsgRenderTextRegion_offsets_[12] = {
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgRenderTextRegion, raw_text_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgRenderTextRegion, text_chars_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgRenderTextRegion, text_encoding_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgRenderTextRegion, default_format_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgRenderTextRegion, text_align_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgRenderTextRegion, line_height_),
@@ -2071,7 +2145,7 @@ void protobuf_AssignDesc_rendermessages_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(CMsgRenderTextRegion));
-  CMsgRequestRenderCallback_descriptor_ = file->message_type(72);
+  CMsgRequestRenderCallback_descriptor_ = file->message_type(73);
   static const int CMsgRequestRenderCallback_offsets_[6] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgRequestRenderCallback, callback_obj_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgRequestRenderCallback, top_left_),
@@ -2131,6 +2205,8 @@ void protobuf_RegisterTypes(const ::std::string&) {
     CBoxShadowData_descriptor_, &CBoxShadowData::default_instance());
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
     CTextShadowData_descriptor_, &CTextShadowData::default_instance());
+  ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
+    CRadialClipData_descriptor_, &CRadialClipData::default_instance());
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
     CMsgClipData_descriptor_, &CMsgClipData::default_instance());
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
@@ -2254,6 +2330,10 @@ void protobuf_RegisterTypes(const ::std::string&) {
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
     CMsgPopClipLayer_descriptor_, &CMsgPopClipLayer::default_instance());
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
+    CMsgPushPanelContextInLayer_descriptor_, &CMsgPushPanelContextInLayer::default_instance());
+  ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
+    CMsgPopPanelContextInLayer_descriptor_, &CMsgPopPanelContextInLayer::default_instance());
+  ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
     CMsgPushAAndTContext_descriptor_, &CMsgPushAAndTContext::default_instance());
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
     CMsgPopAAndTContext_descriptor_, &CMsgPopAAndTContext::default_instance());
@@ -2271,10 +2351,6 @@ void protobuf_RegisterTypes(const ::std::string&) {
     CMsgRenderFilledRect_descriptor_, &CMsgRenderFilledRect::default_instance());
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
     CMsgDrawTexturedRect_descriptor_, &CMsgDrawTexturedRect::default_instance());
-  ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
-    CMsgDrawDoubleBufferedRect_descriptor_, &CMsgDrawDoubleBufferedRect::default_instance());
-  ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
-    CMsgDrawYUV420DoubleBufferedRect_descriptor_, &CMsgDrawYUV420DoubleBufferedRect::default_instance());
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
     CMsgRenderTexturedRect_descriptor_, &CMsgRenderTexturedRect::default_instance());
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
@@ -2328,6 +2404,8 @@ void protobuf_ShutdownFile_rendermessages_2eproto() {
   delete CBoxShadowData_reflection_;
   delete CTextShadowData::default_instance_;
   delete CTextShadowData_reflection_;
+  delete CRadialClipData::default_instance_;
+  delete CRadialClipData_reflection_;
   delete CMsgClipData::default_instance_;
   delete CMsgClipData_reflection_;
   delete CMsgPushCompositingLayer::default_instance_;
@@ -2450,6 +2528,10 @@ void protobuf_ShutdownFile_rendermessages_2eproto() {
   delete CMsgPushClipLayer_reflection_;
   delete CMsgPopClipLayer::default_instance_;
   delete CMsgPopClipLayer_reflection_;
+  delete CMsgPushPanelContextInLayer::default_instance_;
+  delete CMsgPushPanelContextInLayer_reflection_;
+  delete CMsgPopPanelContextInLayer::default_instance_;
+  delete CMsgPopPanelContextInLayer_reflection_;
   delete CMsgPushAAndTContext::default_instance_;
   delete CMsgPushAAndTContext_reflection_;
   delete CMsgPopAAndTContext::default_instance_;
@@ -2468,10 +2550,6 @@ void protobuf_ShutdownFile_rendermessages_2eproto() {
   delete CMsgRenderFilledRect_reflection_;
   delete CMsgDrawTexturedRect::default_instance_;
   delete CMsgDrawTexturedRect_reflection_;
-  delete CMsgDrawDoubleBufferedRect::default_instance_;
-  delete CMsgDrawDoubleBufferedRect_reflection_;
-  delete CMsgDrawYUV420DoubleBufferedRect::default_instance_;
-  delete CMsgDrawYUV420DoubleBufferedRect_reflection_;
   delete CMsgRenderTexturedRect::default_instance_;
   delete CMsgRenderTexturedRect_reflection_;
   delete CMsgLockTexture::default_instance_;
@@ -2542,386 +2620,419 @@ void protobuf_AddDesc_rendermessages_2eproto() {
     "horizontal_offset\030\002 \001(\001\022\027\n\017vertical_offs"
     "et\030\003 \001(\001\022\023\n\013blur_radius\030\004 \001(\001\022\r\n\005color\030\006"
     " \001(\r\022\021\n\tanimating\030\010 \001(\010\022\020\n\010strength\030\t \001("
-    "\001\"H\n\014CMsgClipData\022\014\n\004left\030\001 \001(\001\022\013\n\003top\030\002"
-    " \001(\001\022\r\n\005right\030\003 \001(\001\022\016\n\006bottom\030\004 \001(\001\"\247\014\n\030"
-    "CMsgPushCompositingLayer\022\020\n\010layer_id\030\001 \001"
-    "(\004\022\r\n\005width\030\002 \001(\001\022\016\n\006height\030\003 \001(\001\022\035\n\025lay"
-    "er_quad_top_left_x\030\004 \001(\001\022\035\n\025layer_quad_t"
-    "op_left_y\030\005 \001(\001\022\035\n\025layer_quad_top_left_z"
-    "\030\006 \001(\001\022\036\n\026layer_quad_top_right_x\030\007 \001(\001\022\036"
-    "\n\026layer_quad_top_right_y\030\010 \001(\001\022\036\n\026layer_"
-    "quad_top_right_z\030\t \001(\001\022 \n\030layer_quad_bot"
-    "tom_left_x\030\n \001(\001\022 \n\030layer_quad_bottom_le"
-    "ft_y\030\013 \001(\001\022 \n\030layer_quad_bottom_left_z\030\014"
-    " \001(\001\022!\n\031layer_quad_bottom_right_x\030\r \001(\001\022"
-    "!\n\031layer_quad_bottom_right_y\030\016 \001(\001\022!\n\031la"
-    "yer_quad_bottom_right_z\030\017 \001(\001\022\025\n\rtransfo"
-    "rm_m00\030\020 \001(\001\022\025\n\rtransform_m01\030\021 \001(\001\022\025\n\rt"
-    "ransform_m02\030\022 \001(\001\022\025\n\rtransform_m03\030\023 \001("
-    "\001\022\025\n\rtransform_m10\030\024 \001(\001\022\025\n\rtransform_m1"
-    "1\030\025 \001(\001\022\025\n\rtransform_m12\030\026 \001(\001\022\025\n\rtransf"
-    "orm_m13\030\027 \001(\001\022\025\n\rtransform_m20\030\030 \001(\001\022\025\n\r"
-    "transform_m21\030\031 \001(\001\022\025\n\rtransform_m22\030\032 \001"
-    "(\001\022\025\n\rtransform_m23\030\033 \001(\001\022\025\n\rtransform_m"
-    "30\030\034 \001(\001\022\025\n\rtransform_m31\030\035 \001(\001\022\025\n\rtrans"
-    "form_m32\030\036 \001(\001\022\025\n\rtransform_m33\030\037 \001(\001\022\031\n"
-    "\021perspective_depth\030  \001(\001\022\017\n\007opacity\030! \001("
-    "\001\022\031\n\021composition_color\030\" \001(\r\022\022\n\nsaturati"
-    "on\030# \001(\001\022\021\n\thue_shift\030$ \001(\001\022\022\n\nbrightnes"
-    "s\030% \001(\001\022\020\n\010contrast\030& \001(\001\022\037\n\027opacity_mas"
-    "k_texture_id\030\' \001(\r\022\034\n\024opacity_mask_opaci"
-    "ty\030( \001(\001\022\034\n\006border\030) \001(\0132\014.CBorderData\022#"
-    "\n\rborder_radius\030* \001(\0132\014.CRadiusData\022#\n\nb"
-    "ox_shadow\030+ \001(\0132\017.CBoxShadowData\022\033\n\023gaus"
-    "sianblur_passes\030, \001(\001\022\036\n\026gaussianblur_st"
-    "ddevhor\030- \001(\001\022\036\n\026gaussianblur_stddevver\030"
-    ". \001(\001\022\032\n\022scale_2d_factors_x\030/ \001(\001\022\032\n\022sca"
-    "le_2d_factors_y\0300 \001(\001\022\021\n\trotate_2d\0301 \001(\001"
-    "\022\023\n\013needs_clear\0302 \001(\010\022\023\n\013needs_depth\0303 \001"
-    "(\010\022 \n\030needs_redraw_every_frame\0304 \001(\010\022%\n\013"
-    "text_shadow\0305 \001(\0132\020.CTextShadowData\022\026\n\016m"
-    "ix_blend_mode\0306 \001(\r\022\032\n\022occluded_left_edg"
-    "e\0307 \001(\001\022\031\n\021occluded_top_edge\0308 \001(\001\022\033\n\023oc"
-    "cluded_right_edge\0309 \001(\001\022\034\n\024occluded_bott"
-    "om_edge\030: \001(\001\"\031\n\027CMsgPopCompositingLayer"
-    "\",\n\030CMsgFreeCompositingLayer\022\020\n\010layer_id"
-    "\030\001 \001(\004\"\321\001\n\022CMsgTransitionData\022\022\n\nstart_t"
-    "ime\030\001 \001(\001\022\025\n\rdelay_seconds\030\002 \001(\001\022\030\n\020dura"
-    "tion_seconds\030\003 \001(\001\022\026\n\013timing_func\030\004 \001(\r:"
-    "\0010\022\026\n\016cubic_bezier_0\030\005 \001(\002\022\026\n\016cubic_bezi"
+    "\001\"`\n\017CRadialClipData\022\020\n\010center_x\030\001 \001(\001\022\020"
+    "\n\010center_y\030\002 \001(\001\022\023\n\013start_angle\030\003 \001(\001\022\024\n"
+    "\014sector_angle\030\004 \001(\001\"\202\001\n\014CMsgClipData\022\021\n\t"
+    "rect_clip\030\001 \001(\010\022\014\n\004left\030\002 \001(\001\022\013\n\003top\030\003 \001"
+    "(\001\022\r\n\005right\030\004 \001(\001\022\016\n\006bottom\030\005 \001(\001\022%\n\013rad"
+    "ial_clip\030\006 \001(\0132\020.CRadialClipData\"\232\r\n\030CMs"
+    "gPushCompositingLayer\022\020\n\010layer_id\030\001 \001(\004\022"
+    "\r\n\005width\030\002 \001(\001\022\016\n\006height\030\003 \001(\001\022\035\n\025layer_"
+    "quad_top_left_x\030\004 \001(\001\022\035\n\025layer_quad_top_"
+    "left_y\030\005 \001(\001\022\035\n\025layer_quad_top_left_z\030\006 "
+    "\001(\001\022\036\n\026layer_quad_top_right_x\030\007 \001(\001\022\036\n\026l"
+    "ayer_quad_top_right_y\030\010 \001(\001\022\036\n\026layer_qua"
+    "d_top_right_z\030\t \001(\001\022 \n\030layer_quad_bottom"
+    "_left_x\030\n \001(\001\022 \n\030layer_quad_bottom_left_"
+    "y\030\013 \001(\001\022 \n\030layer_quad_bottom_left_z\030\014 \001("
+    "\001\022!\n\031layer_quad_bottom_right_x\030\r \001(\001\022!\n\031"
+    "layer_quad_bottom_right_y\030\016 \001(\001\022!\n\031layer"
+    "_quad_bottom_right_z\030\017 \001(\001\022\025\n\rtransform_"
+    "m00\030\020 \001(\001\022\025\n\rtransform_m01\030\021 \001(\001\022\025\n\rtran"
+    "sform_m02\030\022 \001(\001\022\025\n\rtransform_m03\030\023 \001(\001\022\025"
+    "\n\rtransform_m10\030\024 \001(\001\022\025\n\rtransform_m11\030\025"
+    " \001(\001\022\025\n\rtransform_m12\030\026 \001(\001\022\025\n\rtransform"
+    "_m13\030\027 \001(\001\022\025\n\rtransform_m20\030\030 \001(\001\022\025\n\rtra"
+    "nsform_m21\030\031 \001(\001\022\025\n\rtransform_m22\030\032 \001(\001\022"
+    "\025\n\rtransform_m23\030\033 \001(\001\022\025\n\rtransform_m30\030"
+    "\034 \001(\001\022\025\n\rtransform_m31\030\035 \001(\001\022\025\n\rtransfor"
+    "m_m32\030\036 \001(\001\022\025\n\rtransform_m33\030\037 \001(\001\022\031\n\021pe"
+    "rspective_depth\030  \001(\001\022\017\n\007opacity\030! \001(\001\022\031"
+    "\n\021composition_color\030\" \001(\r\022\022\n\nsaturation\030"
+    "# \001(\001\022\021\n\thue_shift\030$ \001(\001\022\022\n\nbrightness\030%"
+    " \001(\001\022\020\n\010contrast\030& \001(\001\022\037\n\027opacity_mask_t"
+    "exture_id\030\' \001(\r\022\034\n\024opacity_mask_opacity\030"
+    "( \001(\001\022\034\n\006border\030) \001(\0132\014.CBorderData\022#\n\rb"
+    "order_radius\030* \001(\0132\014.CRadiusData\022#\n\nbox_"
+    "shadow\030+ \001(\0132\017.CBoxShadowData\022\033\n\023gaussia"
+    "nblur_passes\030, \001(\001\022\036\n\026gaussianblur_stdde"
+    "vhor\030- \001(\001\022\036\n\026gaussianblur_stddevver\030. \001"
+    "(\001\022\032\n\022scale_2d_factors_x\030/ \001(\001\022\032\n\022scale_"
+    "2d_factors_y\0300 \001(\001\022\021\n\trotate_2d\0301 \001(\001\022\023\n"
+    "\013needs_clear\0302 \001(\010\022\023\n\013needs_depth\0303 \001(\010\022"
+    "\"\n\032needs_intermediate_texture\0304 \001(\010\022 \n\030n"
+    "eeds_redraw_every_frame\0305 \001(\010\022%\n\013text_sh"
+    "adow\0306 \001(\0132\020.CTextShadowData\022\026\n\016mix_blen"
+    "d_mode\0307 \001(\r\022\032\n\022occluded_left_edge\0308 \001(\001"
+    "\022\031\n\021occluded_top_edge\0309 \001(\001\022\033\n\023occluded_"
+    "right_edge\030: \001(\001\022\034\n\024occluded_bottom_edge"
+    "\030; \001(\001\022%\n\013radial_clip\030< \001(\0132\020.CRadialCli"
+    "pData\022&\n\036composition_layer_texture_name\030"
+    "@ \001(\t\"\031\n\027CMsgPopCompositingLayer\",\n\030CMsg"
+    "FreeCompositingLayer\022\020\n\010layer_id\030\001 \001(\004\"\321"
+    "\001\n\022CMsgTransitionData\022\022\n\nstart_time\030\001 \001("
+    "\001\022\025\n\rdelay_seconds\030\002 \001(\001\022\030\n\020duration_sec"
+    "onds\030\003 \001(\001\022\026\n\013timing_func\030\004 \001(\r:\0010\022\026\n\016cu"
+    "bic_bezier_0\030\005 \001(\002\022\026\n\016cubic_bezier_1\030\006 \001"
+    "(\002\022\026\n\016cubic_bezier_2\030\007 \001(\002\022\026\n\016cubic_bezi"
+    "er_3\030\010 \001(\002\"\234\002\n\021CMsgAnimationData\022\022\n\nstar"
+    "t_time\030\001 \001(\001\022\025\n\rdelay_seconds\030\002 \001(\001\022\030\n\020d"
+    "uration_seconds\030\003 \001(\001\022\023\n\013timing_func\030\004 \001"
+    "(\r\022\026\n\016cubic_bezier_0\030\005 \001(\002\022\026\n\016cubic_bezi"
     "er_1\030\006 \001(\002\022\026\n\016cubic_bezier_2\030\007 \001(\002\022\026\n\016cu"
-    "bic_bezier_3\030\010 \001(\002\"\234\002\n\021CMsgAnimationData"
-    "\022\022\n\nstart_time\030\001 \001(\001\022\025\n\rdelay_seconds\030\002 "
-    "\001(\001\022\030\n\020duration_seconds\030\003 \001(\001\022\023\n\013timing_"
-    "func\030\004 \001(\r\022\026\n\016cubic_bezier_0\030\005 \001(\002\022\026\n\016cu"
-    "bic_bezier_1\030\006 \001(\002\022\026\n\016cubic_bezier_2\030\007 \001"
-    "(\002\022\026\n\016cubic_bezier_3\030\010 \001(\002\022\021\n\tdirection\030"
-    "\t \001(\r\022\021\n\titeration\030\n \001(\002\022\'\n\006frames\030\013 \003(\013"
-    "2\027.CMsgAnimationFrameData\"\254\001\n\026CMsgAnimat"
-    "ionFrameData\022\017\n\007percent\030\001 \001(\002\022\026\n\013timing_"
-    "func\030\002 \001(\r:\0010\022\026\n\016cubic_bezier_0\030\003 \001(\002\022\026\n"
-    "\016cubic_bezier_1\030\004 \001(\002\022\026\n\016cubic_bezier_2\030"
-    "\005 \001(\002\022\026\n\016cubic_bezier_3\030\006 \001(\002*\t\010\350\007\020\200\200\200\200\002"
-    "\"\276\002\n\027CMsgPointWithTransition\022\030\n\004base\030\001 \001"
-    "(\0132\n.CMsgPoint\022\036\n\ntransition\030\002 \001(\0132\n.CMs"
-    "gPoint\022,\n\017transition_data\030\003 \001(\0132\023.CMsgTr"
-    "ansitionData\022&\n\nanimations\030\004 \003(\0132\022.CMsgA"
-    "nimationData\032.\n\022AnimationFrameData\022\030\n\004da"
-    "ta\030\001 \001(\0132\n.CMsgPoint2c\n\024animation_frame_"
-    "data\022\027.CMsgAnimationFrameData\030\364\007 \001(\0132+.C"
-    "MsgPointWithTransition.AnimationFrameDat"
-    "a\"\376\001\n\tCMsgColor\022\014\n\004base\030\001 \001(\r\022\022\n\ntransit"
-    "ion\030\002 \001(\r\022,\n\017transition_data\030\003 \001(\0132\023.CMs"
-    "gTransitionData\022&\n\nanimations\030\004 \003(\0132\022.CM"
-    "sgAnimationData\032\"\n\022AnimationFrameData\022\014\n"
-    "\004data\030\001 \001(\r2U\n\024animation_frame_data\022\027.CM"
-    "sgAnimationFrameData\030\351\007 \001(\0132\035.CMsgColor."
-    "AnimationFrameData\"5\n\rCMsgColorStop\022\020\n\010p"
-    "osition\030\001 \001(\001\022\022\n\ncolor_rgba\030\002 \001(\r\"~\n\022CMs"
-    "gLinearGradient\022\"\n\016start_position\030\001 \001(\0132"
-    "\n.CMsgPoint\022 \n\014end_position\030\002 \001(\0132\n.CMsg"
-    "Point\022\"\n\ncolor_stop\030\003 \003(\0132\016.CMsgColorSto"
-    "p\"\235\001\n\022CMsgRadialGradient\022#\n\017center_posit"
-    "ion\030\001 \001(\0132\n.CMsgPoint\022#\n\017offset_distance"
-    "\030\002 \001(\0132\n.CMsgPoint\022\031\n\005radii\030\003 \001(\0132\n.CMsg"
-    "Point\022\"\n\ncolor_stop\030\004 \003(\0132\016.CMsgColorSto"
-    "p\"|\n\014CMsgParticle\022%\n\021particle_position\030\001"
-    " \001(\0132\n.CMsgPoint\022\025\n\rparticle_size\030\002 \001(\002\022"
-    "\032\n\022particle_sharpness\030\003 \001(\002\022\022\n\ncolor_rgb"
-    "a\030\004 \001(\r\"\240\007\n\022CMsgParticleSystem\022!\n\rbase_p"
-    "osition\030\001 \001(\0132\n.CMsgPoint\022*\n\026base_positi"
-    "on_variance\030\002 \001(\0132\n.CMsgPoint\022\025\n\rparticl"
-    "e_size\030\003 \001(\001\022\036\n\026particle_size_variance\030\004"
-    " \001(\001\022\034\n\024particles_per_second\030\005 \001(\001\022%\n\035pa"
-    "rticles_per_second_variance\030\006 \001(\001\022!\n\031par"
-    "ticle_lifespan_seconds\030\007 \001(\001\022*\n\"particle"
-    "_lifespan_seconds_variance\030\010 \001(\001\022-\n\031part"
-    "icle_initial_velocity\030\t \001(\0132\n.CMsgPoint\022"
-    "6\n\"particle_initial_velocity_variance\030\n "
-    "\001(\0132\n.CMsgPoint\022(\n\024gravity_acceleration\030"
-    "\013 \001(\0132\n.CMsgPoint\022:\n&gravity_acceleratio"
-    "n_particle_variance\030\014 \001(\0132\n.CMsgPoint\022\030\n"
-    "\020color_start_rgba\030\r \001(\r\022!\n\031color_start_r"
-    "gba_variance\030\016 \001(\r\022\026\n\016color_end_rgba\030\017 \001"
-    "(\r\022\037\n\027color_end_rgba_variance\030\020 \001(\r\022\033\n\023p"
-    "arent_panel_handle\030\021 \001(\004\022\032\n\022parent_brush"
-    "_index\030\022 \001(\r\022\032\n\022particle_sharpness\030\023 \001(\002"
-    "\022#\n\033particle_sharpness_variance\030\024 \001(\002\022\030\n"
-    "\020particle_flicker\030\025 \001(\002\022!\n\031particle_flic"
-    "ker_variance\030\026 \001(\002\022)\n\025particle_velocity_"
-    "min\030\027 \001(\0132\n.CMsgPoint\022)\n\025particle_veloci"
-    "ty_max\030\030 \001(\0132\n.CMsgPoint\022 \n\tparticles\0302 "
-    "\003(\0132\r.CMsgParticle\"\276\001\n\rCMsgFillBrush\022\017\n\007"
-    "opacity\030\001 \001(\001\022\022\n\ncolor_rgba\030\002 \001(\r\022,\n\017lin"
-    "ear_gradient\030\003 \001(\0132\023.CMsgLinearGradient\022"
-    ",\n\017radial_gradient\030\004 \001(\0132\023.CMsgRadialGra"
-    "dient\022,\n\017particle_system\030\005 \001(\0132\023.CMsgPar"
-    "ticleSystem\"\312\002\n\027CMsgFillBrushCollection\022"
-    "\034\n\004base\030\001 \003(\0132\016.CMsgFillBrush\022\"\n\ntransit"
-    "ion\030\002 \003(\0132\016.CMsgFillBrush\022,\n\017transition_"
-    "data\030\003 \001(\0132\023.CMsgTransitionData\022&\n\nanima"
-    "tions\030\004 \003(\0132\022.CMsgAnimationData\0322\n\022Anima"
-    "tionFrameData\022\034\n\004data\030\001 \003(\0132\016.CMsgFillBr"
-    "ush2c\n\024animation_frame_data\022\027.CMsgAnimat"
-    "ionFrameData\030\357\007 \001(\0132+.CMsgFillBrushColle"
-    "ction.AnimationFrameData\"C\n\035CMsgRenderFi"
-    "llBrushCollection\022\"\n\nfill_brush\030\001 \003(\0132\016."
-    "CMsgFillBrush\"\343\003\n\021CMsgPanelPosition\022\030\n\004b"
-    "ase\030\001 \001(\0132\n.CMsgPoint\022\036\n\ntransition\030\002 \001("
-    "\0132\n.CMsgPoint\022,\n\017transition_data\030\003 \001(\0132\023"
-    ".CMsgTransitionData\022&\n\nanimations\030\004 \003(\0132"
-    "\022.CMsgAnimationData\022!\n\rscroll_offset\030\005 \001"
-    "(\0132\n.CMsgPoint\022(\n\024scroll_offset_target\030\006"
+    "bic_bezier_3\030\010 \001(\002\022\021\n\tdirection\030\t \001(\r\022\021\n"
+    "\titeration\030\n \001(\002\022\'\n\006frames\030\013 \003(\0132\027.CMsgA"
+    "nimationFrameData\"\254\001\n\026CMsgAnimationFrame"
+    "Data\022\017\n\007percent\030\001 \001(\002\022\026\n\013timing_func\030\002 \001"
+    "(\r:\0010\022\026\n\016cubic_bezier_0\030\003 \001(\002\022\026\n\016cubic_b"
+    "ezier_1\030\004 \001(\002\022\026\n\016cubic_bezier_2\030\005 \001(\002\022\026\n"
+    "\016cubic_bezier_3\030\006 \001(\002*\t\010\350\007\020\200\200\200\200\002\"\324\002\n\027CMs"
+    "gPointWithTransition\022\030\n\004base\030\001 \001(\0132\n.CMs"
+    "gPoint\022\036\n\ntransition\030\002 \001(\0132\n.CMsgPoint\022,"
+    "\n\017transition_data\030\003 \001(\0132\023.CMsgTransition"
+    "Data\022\024\n\014style_symbol\030\004 \001(\r\022&\n\nanimations"
+    "\030\005 \003(\0132\022.CMsgAnimationData\032.\n\022AnimationF"
+    "rameData\022\030\n\004data\030\001 \001(\0132\n.CMsgPoint2c\n\024an"
+    "imation_frame_data\022\027.CMsgAnimationFrameD"
+    "ata\030\364\007 \001(\0132+.CMsgPointWithTransition.Ani"
+    "mationFrameData\"\224\002\n\tCMsgColor\022\014\n\004base\030\001 "
+    "\001(\r\022\022\n\ntransition\030\002 \001(\r\022,\n\017transition_da"
+    "ta\030\003 \001(\0132\023.CMsgTransitionData\022\024\n\014style_s"
+    "ymbol\030\004 \001(\r\022&\n\nanimations\030\005 \003(\0132\022.CMsgAn"
+    "imationData\032\"\n\022AnimationFrameData\022\014\n\004dat"
+    "a\030\001 \001(\r2U\n\024animation_frame_data\022\027.CMsgAn"
+    "imationFrameData\030\351\007 \001(\0132\035.CMsgColor.Anim"
+    "ationFrameData\"5\n\rCMsgColorStop\022\020\n\010posit"
+    "ion\030\001 \001(\001\022\022\n\ncolor_rgba\030\002 \001(\r\"~\n\022CMsgLin"
+    "earGradient\022\"\n\016start_position\030\001 \001(\0132\n.CM"
+    "sgPoint\022 \n\014end_position\030\002 \001(\0132\n.CMsgPoin"
+    "t\022\"\n\ncolor_stop\030\003 \003(\0132\016.CMsgColorStop\"\235\001"
+    "\n\022CMsgRadialGradient\022#\n\017center_position\030"
+    "\001 \001(\0132\n.CMsgPoint\022#\n\017offset_distance\030\002 \001"
+    "(\0132\n.CMsgPoint\022\031\n\005radii\030\003 \001(\0132\n.CMsgPoin"
+    "t\022\"\n\ncolor_stop\030\004 \003(\0132\016.CMsgColorStop\"|\n"
+    "\014CMsgParticle\022%\n\021particle_position\030\001 \001(\013"
+    "2\n.CMsgPoint\022\025\n\rparticle_size\030\002 \001(\002\022\032\n\022p"
+    "article_sharpness\030\003 \001(\002\022\022\n\ncolor_rgba\030\004 "
+    "\001(\r\"\240\007\n\022CMsgParticleSystem\022!\n\rbase_posit"
+    "ion\030\001 \001(\0132\n.CMsgPoint\022*\n\026base_position_v"
+    "ariance\030\002 \001(\0132\n.CMsgPoint\022\025\n\rparticle_si"
+    "ze\030\003 \001(\001\022\036\n\026particle_size_variance\030\004 \001(\001"
+    "\022\034\n\024particles_per_second\030\005 \001(\001\022%\n\035partic"
+    "les_per_second_variance\030\006 \001(\001\022!\n\031particl"
+    "e_lifespan_seconds\030\007 \001(\001\022*\n\"particle_lif"
+    "espan_seconds_variance\030\010 \001(\001\022-\n\031particle"
+    "_initial_velocity\030\t \001(\0132\n.CMsgPoint\0226\n\"p"
+    "article_initial_velocity_variance\030\n \001(\0132"
+    "\n.CMsgPoint\022(\n\024gravity_acceleration\030\013 \001("
+    "\0132\n.CMsgPoint\022:\n&gravity_acceleration_pa"
+    "rticle_variance\030\014 \001(\0132\n.CMsgPoint\022\030\n\020col"
+    "or_start_rgba\030\r \001(\r\022!\n\031color_start_rgba_"
+    "variance\030\016 \001(\r\022\026\n\016color_end_rgba\030\017 \001(\r\022\037"
+    "\n\027color_end_rgba_variance\030\020 \001(\r\022\033\n\023paren"
+    "t_panel_handle\030\021 \001(\004\022\032\n\022parent_brush_ind"
+    "ex\030\022 \001(\r\022\032\n\022particle_sharpness\030\023 \001(\002\022#\n\033"
+    "particle_sharpness_variance\030\024 \001(\002\022\030\n\020par"
+    "ticle_flicker\030\025 \001(\002\022!\n\031particle_flicker_"
+    "variance\030\026 \001(\002\022)\n\025particle_velocity_min\030"
+    "\027 \001(\0132\n.CMsgPoint\022)\n\025particle_velocity_m"
+    "ax\030\030 \001(\0132\n.CMsgPoint\022 \n\tparticles\0302 \003(\0132"
+    "\r.CMsgParticle\"\276\001\n\rCMsgFillBrush\022\017\n\007opac"
+    "ity\030\001 \001(\001\022\022\n\ncolor_rgba\030\002 \001(\r\022,\n\017linear_"
+    "gradient\030\003 \001(\0132\023.CMsgLinearGradient\022,\n\017r"
+    "adial_gradient\030\004 \001(\0132\023.CMsgRadialGradien"
+    "t\022,\n\017particle_system\030\005 \001(\0132\023.CMsgParticl"
+    "eSystem\"\340\002\n\027CMsgFillBrushCollection\022\034\n\004b"
+    "ase\030\001 \003(\0132\016.CMsgFillBrush\022\"\n\ntransition\030"
+    "\002 \003(\0132\016.CMsgFillBrush\022,\n\017transition_data"
+    "\030\003 \001(\0132\023.CMsgTransitionData\022\024\n\014style_sym"
+    "bol\030\004 \001(\r\022&\n\nanimations\030\005 \003(\0132\022.CMsgAnim"
+    "ationData\0322\n\022AnimationFrameData\022\034\n\004data\030"
+    "\001 \003(\0132\016.CMsgFillBrush2c\n\024animation_frame"
+    "_data\022\027.CMsgAnimationFrameData\030\357\007 \001(\0132+."
+    "CMsgFillBrushCollection.AnimationFrameDa"
+    "ta\"C\n\035CMsgRenderFillBrushCollection\022\"\n\nf"
+    "ill_brush\030\001 \003(\0132\016.CMsgFillBrush\"\371\003\n\021CMsg"
+    "PanelPosition\022\030\n\004base\030\001 \001(\0132\n.CMsgPoint\022"
+    "\036\n\ntransition\030\002 \001(\0132\n.CMsgPoint\022,\n\017trans"
+    "ition_data\030\003 \001(\0132\023.CMsgTransitionData\022\024\n"
+    "\014style_symbol\030\004 \001(\r\022&\n\nanimations\030\005 \003(\0132"
+    "\022.CMsgAnimationData\022!\n\rscroll_offset\030\006 \001"
+    "(\0132\n.CMsgPoint\022(\n\024scroll_offset_target\030\007"
     " \001(\0132\n.CMsgPoint\0220\n\023scroll_transition_x\030"
-    "\007 \001(\0132\023.CMsgTransitionData\0220\n\023scroll_tra"
-    "nsition_y\030\010 \001(\0132\023.CMsgTransitionData\032.\n\022"
+    "\010 \001(\0132\023.CMsgTransitionData\0220\n\023scroll_tra"
+    "nsition_y\030\t \001(\0132\023.CMsgTransitionData\032.\n\022"
     "AnimationFrameData\022\030\n\004data\030\001 \001(\0132\n.CMsgP"
     "oint2]\n\024animation_frame_data\022\027.CMsgAnima"
     "tionFrameData\030\363\007 \001(\0132%.CMsgPanelPosition"
-    ".AnimationFrameData\"\202\002\n\013CMsgOpacity\022\014\n\004b"
+    ".AnimationFrameData\"\230\002\n\013CMsgOpacity\022\014\n\004b"
     "ase\030\001 \001(\001\022\022\n\ntransition\030\002 \001(\001\022,\n\017transit"
-    "ion_data\030\003 \001(\0132\023.CMsgTransitionData\022&\n\na"
-    "nimations\030\004 \003(\0132\022.CMsgAnimationData\032\"\n\022A"
-    "nimationFrameData\022\014\n\004data\030\001 \001(\0012W\n\024anima"
-    "tion_frame_data\022\027.CMsgAnimationFrameData"
-    "\030\354\007 \001(\0132\037.CMsgOpacity.AnimationFrameData"
-    "\"\204\002\n\014CMsgRotate2D\022\014\n\004base\030\001 \001(\001\022\022\n\ntrans"
-    "ition\030\002 \001(\001\022,\n\017transition_data\030\003 \001(\0132\023.C"
-    "MsgTransitionData\022&\n\nanimations\030\004 \003(\0132\022."
+    "ion_data\030\003 \001(\0132\023.CMsgTransitionData\022\024\n\014s"
+    "tyle_symbol\030\004 \001(\r\022&\n\nanimations\030\005 \003(\0132\022."
     "CMsgAnimationData\032\"\n\022AnimationFrameData\022"
-    "\014\n\004data\030\001 \001(\0012X\n\024animation_frame_data\022\027."
-    "CMsgAnimationFrameData\030\366\007 \001(\0132 .CMsgRota"
-    "te2D.AnimationFrameData\"T\n\023CMsgOpacityMa"
-    "skData\022\037\n\027opacity_mask_texture_id\030\001 \001(\r\022"
-    "\034\n\024opacity_mask_opacity\030\002 \001(\001\"\314\002\n\017CMsgOp"
-    "acityMask\022\"\n\004base\030\001 \001(\0132\024.CMsgOpacityMas"
-    "kData\022(\n\ntransition\030\002 \001(\0132\024.CMsgOpacityM"
-    "askData\022,\n\017transition_data\030\003 \001(\0132\023.CMsgT"
-    "ransitionData\022&\n\nanimations\030\004 \003(\0132\022.CMsg"
-    "AnimationData\0328\n\022AnimationFrameData\022\"\n\004d"
-    "ata\030\001 \001(\0132\024.CMsgOpacityMaskData2[\n\024anima"
-    "tion_frame_data\022\027.CMsgAnimationFrameData"
-    "\030\365\007 \001(\0132#.CMsgOpacityMask.AnimationFrame"
-    "Data\"\204\002\n\014CMsgHueShift\022\014\n\004base\030\001 \001(\001\022\022\n\nt"
-    "ransition\030\002 \001(\001\022,\n\017transition_data\030\003 \001(\013"
-    "2\023.CMsgTransitionData\022&\n\nanimations\030\004 \003("
+    "\014\n\004data\030\001 \001(\0012W\n\024animation_frame_data\022\027."
+    "CMsgAnimationFrameData\030\354\007 \001(\0132\037.CMsgOpac"
+    "ity.AnimationFrameData\"\232\002\n\014CMsgRotate2D\022"
+    "\014\n\004base\030\001 \001(\001\022\022\n\ntransition\030\002 \001(\001\022,\n\017tra"
+    "nsition_data\030\003 \001(\0132\023.CMsgTransitionData\022"
+    "\024\n\014style_symbol\030\004 \001(\r\022&\n\nanimations\030\005 \003("
     "\0132\022.CMsgAnimationData\032\"\n\022AnimationFrameD"
     "ata\022\014\n\004data\030\001 \001(\0012X\n\024animation_frame_dat"
-    "a\022\027.CMsgAnimationFrameData\030\373\007 \001(\0132 .CMsg"
-    "HueShift.AnimationFrameData\"\210\002\n\016CMsgSatu"
-    "ration\022\014\n\004base\030\001 \001(\001\022\022\n\ntransition\030\002 \001(\001"
-    "\022,\n\017transition_data\030\003 \001(\0132\023.CMsgTransiti"
-    "onData\022&\n\nanimations\030\004 \003(\0132\022.CMsgAnimati"
-    "onData\032\"\n\022AnimationFrameData\022\014\n\004data\030\001 \001"
-    "(\0012Z\n\024animation_frame_data\022\027.CMsgAnimati"
-    "onFrameData\030\355\007 \001(\0132\".CMsgSaturation.Anim"
-    "ationFrameData\"\210\002\n\016CMsgBrightness\022\014\n\004bas"
-    "e\030\001 \001(\001\022\022\n\ntransition\030\002 \001(\001\022,\n\017transitio"
-    "n_data\030\003 \001(\0132\023.CMsgTransitionData\022&\n\nani"
-    "mations\030\004 \003(\0132\022.CMsgAnimationData\032\"\n\022Ani"
-    "mationFrameData\022\014\n\004data\030\001 \001(\0012Z\n\024animati"
-    "on_frame_data\022\027.CMsgAnimationFrameData\030\374"
-    "\007 \001(\0132\".CMsgBrightness.AnimationFrameDat"
-    "a\"\204\002\n\014CMsgContrast\022\014\n\004base\030\001 \001(\001\022\022\n\ntran"
-    "sition\030\002 \001(\001\022,\n\017transition_data\030\003 \001(\0132\023."
-    "CMsgTransitionData\022&\n\nanimations\030\004 \003(\0132\022"
-    ".CMsgAnimationData\032\"\n\022AnimationFrameData"
-    "\022\014\n\004data\030\001 \001(\0012X\n\024animation_frame_data\022\027"
-    ".CMsgAnimationFrameData\030\375\007 \001(\0132 .CMsgCon"
-    "trast.AnimationFrameData\"L\n\022CMsgGaussian"
-    "Values\022\016\n\006passes\030\001 \001(\001\022\022\n\nstddev_hor\030\002 \001"
-    "(\001\022\022\n\nstddev_ver\030\003 \001(\001\"\313\002\n\020CMsgGaussianB"
-    "lur\022!\n\004base\030\001 \001(\0132\023.CMsgGaussianValues\022\'"
-    "\n\ntransition\030\002 \001(\0132\023.CMsgGaussianValues\022"
+    "a\022\027.CMsgAnimationFrameData\030\366\007 \001(\0132 .CMsg"
+    "Rotate2D.AnimationFrameData\"T\n\023CMsgOpaci"
+    "tyMaskData\022\037\n\027opacity_mask_texture_id\030\001 "
+    "\001(\r\022\034\n\024opacity_mask_opacity\030\002 \001(\001\"\342\002\n\017CM"
+    "sgOpacityMask\022\"\n\004base\030\001 \001(\0132\024.CMsgOpacit"
+    "yMaskData\022(\n\ntransition\030\002 \001(\0132\024.CMsgOpac"
+    "ityMaskData\022,\n\017transition_data\030\003 \001(\0132\023.C"
+    "MsgTransitionData\022\024\n\014style_symbol\030\004 \001(\r\022"
+    "&\n\nanimations\030\005 \003(\0132\022.CMsgAnimationData\032"
+    "8\n\022AnimationFrameData\022\"\n\004data\030\001 \001(\0132\024.CM"
+    "sgOpacityMaskData2[\n\024animation_frame_dat"
+    "a\022\027.CMsgAnimationFrameData\030\365\007 \001(\0132#.CMsg"
+    "OpacityMask.AnimationFrameData\"\232\002\n\014CMsgH"
+    "ueShift\022\014\n\004base\030\001 \001(\001\022\022\n\ntransition\030\002 \001("
+    "\001\022,\n\017transition_data\030\003 \001(\0132\023.CMsgTransit"
+    "ionData\022\024\n\014style_symbol\030\004 \001(\r\022&\n\nanimati"
+    "ons\030\005 \003(\0132\022.CMsgAnimationData\032\"\n\022Animati"
+    "onFrameData\022\014\n\004data\030\001 \001(\0012X\n\024animation_f"
+    "rame_data\022\027.CMsgAnimationFrameData\030\373\007 \001("
+    "\0132 .CMsgHueShift.AnimationFrameData\"\236\002\n\016"
+    "CMsgSaturation\022\014\n\004base\030\001 \001(\001\022\022\n\ntransiti"
+    "on\030\002 \001(\001\022,\n\017transition_data\030\003 \001(\0132\023.CMsg"
+    "TransitionData\022\024\n\014style_symbol\030\004 \001(\r\022&\n\n"
+    "animations\030\005 \003(\0132\022.CMsgAnimationData\032\"\n\022"
+    "AnimationFrameData\022\014\n\004data\030\001 \001(\0012Z\n\024anim"
+    "ation_frame_data\022\027.CMsgAnimationFrameDat"
+    "a\030\355\007 \001(\0132\".CMsgSaturation.AnimationFrame"
+    "Data\"\236\002\n\016CMsgBrightness\022\014\n\004base\030\001 \001(\001\022\022\n"
+    "\ntransition\030\002 \001(\001\022,\n\017transition_data\030\003 \001"
+    "(\0132\023.CMsgTransitionData\022\024\n\014style_symbol\030"
+    "\004 \001(\r\022&\n\nanimations\030\005 \003(\0132\022.CMsgAnimatio"
+    "nData\032\"\n\022AnimationFrameData\022\014\n\004data\030\001 \001("
+    "\0012Z\n\024animation_frame_data\022\027.CMsgAnimatio"
+    "nFrameData\030\374\007 \001(\0132\".CMsgBrightness.Anima"
+    "tionFrameData\"\232\002\n\014CMsgContrast\022\014\n\004base\030\001"
+    " \001(\001\022\022\n\ntransition\030\002 \001(\001\022,\n\017transition_d"
+    "ata\030\003 \001(\0132\023.CMsgTransitionData\022\024\n\014style_"
+    "symbol\030\004 \001(\r\022&\n\nanimations\030\005 \003(\0132\022.CMsgA"
+    "nimationData\032\"\n\022AnimationFrameData\022\014\n\004da"
+    "ta\030\001 \001(\0012X\n\024animation_frame_data\022\027.CMsgA"
+    "nimationFrameData\030\375\007 \001(\0132 .CMsgContrast."
+    "AnimationFrameData\"L\n\022CMsgGaussianValues"
+    "\022\016\n\006passes\030\001 \001(\001\022\022\n\nstddev_hor\030\002 \001(\001\022\022\n\n"
+    "stddev_ver\030\003 \001(\001\"\341\002\n\020CMsgGaussianBlur\022!\n"
+    "\004base\030\001 \001(\0132\023.CMsgGaussianValues\022\'\n\ntran"
+    "sition\030\002 \001(\0132\023.CMsgGaussianValues\022,\n\017tra"
+    "nsition_data\030\003 \001(\0132\023.CMsgTransitionData\022"
+    "\024\n\014style_symbol\030\004 \001(\r\022&\n\nanimations\030\005 \003("
+    "\0132\022.CMsgAnimationData\0327\n\022AnimationFrameD"
+    "ata\022!\n\004data\030\001 \001(\0132\023.CMsgGaussianValues2\\"
+    "\n\024animation_frame_data\022\027.CMsgAnimationFr"
+    "ameData\030\360\007 \001(\0132$.CMsgGaussianBlur.Animat"
+    "ionFrameData\"\266\002\n\032CMsg3DTransformPerspect"
+    "ive\022\014\n\004base\030\001 \001(\001\022\022\n\ntransition\030\002 \001(\001\022,\n"
+    "\017transition_data\030\003 \001(\0132\023.CMsgTransitionD"
+    "ata\022\024\n\014style_symbol\030\004 \001(\r\022&\n\nanimations\030"
+    "\005 \003(\0132\022.CMsgAnimationData\032\"\n\022AnimationFr"
+    "ameData\022\014\n\004data\030\001 \001(\0012f\n\024animation_frame"
+    "_data\022\027.CMsgAnimationFrameData\030\353\007 \001(\0132.."
+    "CMsg3DTransformPerspective.AnimationFram"
+    "eData\"\346\002\n CMsg3DTransformPerspectiveOrig"
+    "in\022\030\n\004base\030\001 \001(\0132\n.CMsgPoint\022\036\n\ntransiti"
+    "on\030\002 \001(\0132\n.CMsgPoint\022,\n\017transition_data\030"
+    "\003 \001(\0132\023.CMsgTransitionData\022\024\n\014style_symb"
+    "ol\030\004 \001(\r\022&\n\nanimations\030\005 \003(\0132\022.CMsgAnima"
+    "tionData\032.\n\022AnimationFrameData\022\030\n\004data\030\001"
+    " \001(\0132\n.CMsgPoint2l\n\024animation_frame_data"
+    "\022\027.CMsgAnimationFrameData\030\352\007 \001(\01324.CMsg3"
+    "DTransformPerspectiveOrigin.AnimationFra"
+    "meData\"w\n\027CMsgTransformOriginData\022\t\n\001x\030\001"
+    " \001(\001\022\t\n\001y\030\002 \001(\001\022\024\n\014x_is_percent\030\003 \001(\010\022\024\n"
+    "\014y_is_percent\030\004 \001(\010\022\032\n\022is_parent_relativ"
+    "e\030\005 \001(\010\"\372\002\n\025CMsg3DTransformOrigin\022&\n\004bas"
+    "e\030\001 \001(\0132\030.CMsgTransformOriginData\022,\n\ntra"
+    "nsition\030\002 \001(\0132\030.CMsgTransformOriginData\022"
     ",\n\017transition_data\030\003 \001(\0132\023.CMsgTransitio"
-    "nData\022&\n\nanimations\030\004 \003(\0132\022.CMsgAnimatio"
-    "nData\0327\n\022AnimationFrameData\022!\n\004data\030\001 \001("
-    "\0132\023.CMsgGaussianValues2\\\n\024animation_fram"
-    "e_data\022\027.CMsgAnimationFrameData\030\360\007 \001(\0132$"
-    ".CMsgGaussianBlur.AnimationFrameData\"\240\002\n"
-    "\032CMsg3DTransformPerspective\022\014\n\004base\030\001 \001("
-    "\001\022\022\n\ntransition\030\002 \001(\001\022,\n\017transition_data"
-    "\030\003 \001(\0132\023.CMsgTransitionData\022&\n\nanimation"
-    "s\030\004 \003(\0132\022.CMsgAnimationData\032\"\n\022Animation"
-    "FrameData\022\014\n\004data\030\001 \001(\0012f\n\024animation_fra"
-    "me_data\022\027.CMsgAnimationFrameData\030\353\007 \001(\0132"
-    "..CMsg3DTransformPerspective.AnimationFr"
-    "ameData\"\320\002\n CMsg3DTransformPerspectiveOr"
-    "igin\022\030\n\004base\030\001 \001(\0132\n.CMsgPoint\022\036\n\ntransi"
-    "tion\030\002 \001(\0132\n.CMsgPoint\022,\n\017transition_dat"
-    "a\030\003 \001(\0132\023.CMsgTransitionData\022&\n\nanimatio"
-    "ns\030\004 \003(\0132\022.CMsgAnimationData\032.\n\022Animatio"
-    "nFrameData\022\030\n\004data\030\001 \001(\0132\n.CMsgPoint2l\n\024"
-    "animation_frame_data\022\027.CMsgAnimationFram"
-    "eData\030\352\007 \001(\01324.CMsg3DTransformPerspectiv"
-    "eOrigin.AnimationFrameData\"w\n\027CMsgTransf"
-    "ormOriginData\022\t\n\001x\030\001 \001(\001\022\t\n\001y\030\002 \001(\001\022\024\n\014x"
-    "_is_percent\030\003 \001(\010\022\024\n\014y_is_percent\030\004 \001(\010\022"
-    "\032\n\022is_parent_relative\030\005 \001(\010\"\344\002\n\025CMsg3DTr"
-    "ansformOrigin\022&\n\004base\030\001 \001(\0132\030.CMsgTransf"
-    "ormOriginData\022,\n\ntransition\030\002 \001(\0132\030.CMsg"
-    "TransformOriginData\022,\n\017transition_data\030\003"
-    " \001(\0132\023.CMsgTransitionData\022&\n\nanimations\030"
-    "\004 \003(\0132\022.CMsgAnimationData\032<\n\022AnimationFr"
-    "ameData\022&\n\004data\030\001 \001(\0132\030.CMsgTransformOri"
-    "ginData2a\n\024animation_frame_data\022\027.CMsgAn"
-    "imationFrameData\030\367\007 \001(\0132).CMsg3DTransfor"
-    "mOrigin.AnimationFrameData\"\306\002\n\025CMsg3DTra"
-    "nsformMatrix\022\034\n\004base\030\001 \001(\0132\016.CMsgMatrix4"
-    "x4\022,\n\017transition_data\030\002 \001(\0132\023.CMsgTransi"
-    "tionData\022\"\n\ntransition\030\003 \001(\0132\016.CMsgMatri"
-    "x4x4\022&\n\nanimations\030\004 \003(\0132\022.CMsgAnimation"
-    "Data\0322\n\022AnimationFrameData\022\034\n\004data\030\001 \001(\013"
-    "2\016.CMsgMatrix4x42a\n\024animation_frame_data"
-    "\022\027.CMsgAnimationFrameData\030\350\007 \001(\0132).CMsg3"
-    "DTransformMatrix.AnimationFrameData\"\266\002\n\020"
-    "CMsgBorderRadius\022\032\n\004base\030\001 \001(\0132\014.CRadius"
-    "Data\022,\n\017transition_data\030\002 \001(\0132\023.CMsgTran"
-    "sitionData\022 \n\ntransition\030\003 \001(\0132\014.CRadius"
-    "Data\022&\n\nanimations\030\004 \003(\0132\022.CMsgAnimation"
-    "Data\0320\n\022AnimationFrameData\022\032\n\004data\030\001 \001(\013"
-    "2\014.CRadiusData2\\\n\024animation_frame_data\022\027"
-    ".CMsgAnimationFrameData\030\356\007 \001(\0132$.CMsgBor"
-    "derRadius.AnimationFrameData\"\252\002\n\nCMsgBor"
-    "der\022\032\n\004base\030\001 \001(\0132\014.CBorderData\022,\n\017trans"
-    "ition_data\030\002 \001(\0132\023.CMsgTransitionData\022 \n"
-    "\ntransition\030\003 \001(\0132\014.CBorderData\022&\n\nanima"
-    "tions\030\004 \003(\0132\022.CMsgAnimationData\0320\n\022Anima"
-    "tionFrameData\022\032\n\004data\030\001 \001(\0132\014.CBorderDat"
-    "a2V\n\024animation_frame_data\022\027.CMsgAnimatio"
-    "nFrameData\030\361\007 \001(\0132\036.CMsgBorder.Animation"
-    "FrameData\"\271\002\n\rCMsgBoxShadow\022\035\n\004base\030\001 \001("
-    "\0132\017.CBoxShadowData\022,\n\017transition_data\030\002 "
-    "\001(\0132\023.CMsgTransitionData\022#\n\ntransition\030\003"
-    " \001(\0132\017.CBoxShadowData\022&\n\nanimations\030\004 \003("
-    "\0132\022.CMsgAnimationData\0323\n\022AnimationFrameD"
-    "ata\022\035\n\004data\030\001 \001(\0132\017.CBoxShadowData2Y\n\024an"
+    "nData\022\024\n\014style_symbol\030\004 \001(\r\022&\n\nanimation"
+    "s\030\005 \003(\0132\022.CMsgAnimationData\032<\n\022Animation"
+    "FrameData\022&\n\004data\030\001 \001(\0132\030.CMsgTransformO"
+    "riginData2a\n\024animation_frame_data\022\027.CMsg"
+    "AnimationFrameData\030\367\007 \001(\0132).CMsg3DTransf"
+    "ormOrigin.AnimationFrameData\"\334\002\n\025CMsg3DT"
+    "ransformMatrix\022\034\n\004base\030\001 \001(\0132\016.CMsgMatri"
+    "x4x4\022,\n\017transition_data\030\002 \001(\0132\023.CMsgTran"
+    "sitionData\022\"\n\ntransition\030\003 \001(\0132\016.CMsgMat"
+    "rix4x4\022\024\n\014style_symbol\030\004 \001(\r\022&\n\nanimatio"
+    "ns\030\005 \003(\0132\022.CMsgAnimationData\0322\n\022Animatio"
+    "nFrameData\022\034\n\004data\030\001 \001(\0132\016.CMsgMatrix4x4"
+    "2a\n\024animation_frame_data\022\027.CMsgAnimation"
+    "FrameData\030\350\007 \001(\0132).CMsg3DTransformMatrix"
+    ".AnimationFrameData\"\314\002\n\020CMsgBorderRadius"
+    "\022\032\n\004base\030\001 \001(\0132\014.CRadiusData\022,\n\017transiti"
+    "on_data\030\002 \001(\0132\023.CMsgTransitionData\022 \n\ntr"
+    "ansition\030\003 \001(\0132\014.CRadiusData\022\024\n\014style_sy"
+    "mbol\030\004 \001(\r\022&\n\nanimations\030\005 \003(\0132\022.CMsgAni"
+    "mationData\0320\n\022AnimationFrameData\022\032\n\004data"
+    "\030\001 \001(\0132\014.CRadiusData2\\\n\024animation_frame_"
+    "data\022\027.CMsgAnimationFrameData\030\356\007 \001(\0132$.C"
+    "MsgBorderRadius.AnimationFrameData\"\300\002\n\nC"
+    "MsgBorder\022\032\n\004base\030\001 \001(\0132\014.CBorderData\022,\n"
+    "\017transition_data\030\002 \001(\0132\023.CMsgTransitionD"
+    "ata\022 \n\ntransition\030\003 \001(\0132\014.CBorderData\022\024\n"
+    "\014style_symbol\030\004 \001(\r\022&\n\nanimations\030\005 \003(\0132"
+    "\022.CMsgAnimationData\0320\n\022AnimationFrameDat"
+    "a\022\032\n\004data\030\001 \001(\0132\014.CBorderData2V\n\024animati"
+    "on_frame_data\022\027.CMsgAnimationFrameData\030\361"
+    "\007 \001(\0132\036.CMsgBorder.AnimationFrameData\"\317\002"
+    "\n\rCMsgBoxShadow\022\035\n\004base\030\001 \001(\0132\017.CBoxShad"
+    "owData\022,\n\017transition_data\030\002 \001(\0132\023.CMsgTr"
+    "ansitionData\022#\n\ntransition\030\003 \001(\0132\017.CBoxS"
+    "hadowData\022\024\n\014style_symbol\030\004 \001(\r\022&\n\nanima"
+    "tions\030\005 \003(\0132\022.CMsgAnimationData\0323\n\022Anima"
+    "tionFrameData\022\035\n\004data\030\001 \001(\0132\017.CBoxShadow"
+    "Data2Y\n\024animation_frame_data\022\027.CMsgAnima"
+    "tionFrameData\030\362\007 \001(\0132!.CMsgBoxShadow.Ani"
+    "mationFrameData\"\324\002\n\016CMsgTextShadow\022\036\n\004ba"
+    "se\030\001 \001(\0132\020.CTextShadowData\022,\n\017transition"
+    "_data\030\002 \001(\0132\023.CMsgTransitionData\022$\n\ntran"
+    "sition\030\003 \001(\0132\020.CTextShadowData\022\024\n\014style_"
+    "symbol\030\004 \001(\r\022&\n\nanimations\030\005 \003(\0132\022.CMsgA"
+    "nimationData\0324\n\022AnimationFrameData\022\036\n\004da"
+    "ta\030\001 \001(\0132\020.CTextShadowData2Z\n\024animation_"
+    "frame_data\022\027.CMsgAnimationFrameData\030\371\007 \001"
+    "(\0132\".CMsgTextShadow.AnimationFrameData\"\277"
+    "\002\n\010CMsgClip\022\033\n\004base\030\001 \001(\0132\r.CMsgClipData"
+    "\022,\n\017transition_data\030\002 \001(\0132\023.CMsgTransiti"
+    "onData\022!\n\ntransition\030\003 \001(\0132\r.CMsgClipDat"
+    "a\022\024\n\014style_symbol\030\004 \001(\r\022&\n\nanimations\030\005 "
+    "\003(\0132\022.CMsgAnimationData\0321\n\022AnimationFram"
+    "eData\022\033\n\004data\030\001 \001(\0132\r.CMsgClipData2T\n\024an"
     "imation_frame_data\022\027.CMsgAnimationFrameD"
-    "ata\030\362\007 \001(\0132!.CMsgBoxShadow.AnimationFram"
-    "eData\"\276\002\n\016CMsgTextShadow\022\036\n\004base\030\001 \001(\0132\020"
-    ".CTextShadowData\022,\n\017transition_data\030\002 \001("
-    "\0132\023.CMsgTransitionData\022$\n\ntransition\030\003 \001"
-    "(\0132\020.CTextShadowData\022&\n\nanimations\030\004 \003(\013"
-    "2\022.CMsgAnimationData\0324\n\022AnimationFrameDa"
-    "ta\022\036\n\004data\030\001 \001(\0132\020.CTextShadowData2Z\n\024an"
-    "imation_frame_data\022\027.CMsgAnimationFrameD"
-    "ata\030\371\007 \001(\0132\".CMsgTextShadow.AnimationFra"
-    "meData\"\251\002\n\010CMsgClip\022\033\n\004base\030\001 \001(\0132\r.CMsg"
-    "ClipData\022,\n\017transition_data\030\002 \001(\0132\023.CMsg"
-    "TransitionData\022!\n\ntransition\030\003 \001(\0132\r.CMs"
-    "gClipData\022&\n\nanimations\030\004 \003(\0132\022.CMsgAnim"
-    "ationData\0321\n\022AnimationFrameData\022\033\n\004data\030"
-    "\001 \001(\0132\r.CMsgClipData2T\n\024animation_frame_"
-    "data\022\027.CMsgAnimationFrameData\030\372\007 \001(\0132\034.C"
-    "MsgClip.AnimationFrameData\"x\n\021CMsgPushCl"
-    "ipLayer\022\034\n\010top_left\030\001 \001(\0132\n.CMsgPoint\022 \n"
-    "\014bottom_right\030\002 \001(\0132\n.CMsgPoint\022#\n\rborde"
-    "r_radius\030\003 \001(\0132\014.CRadiusData\"\022\n\020CMsgPopC"
-    "lipLayer\"\301\010\n\024CMsgPushAAndTContext\022\022\n\ncon"
-    "text_id\030\001 \001(\004\022\r\n\005width\030\003 \001(\001\022\016\n\006height\030\004"
-    " \001(\001\022!\n\031chilren_have_3dtransforms\030\005 \001(\010\022"
-    "\016\n\006zindex\030\006 \001(\002\022*\n\016panel_position\030\007 \001(\0132"
-    "\022.CMsgPanelPosition\0220\n\020transform_matrix\030"
-    "\010 \001(\0132\026.CMsg3DTransformMatrix\0220\n\020transfo"
-    "rm_origin\030\t \001(\0132\026.CMsg3DTransformOrigin\022"
-    ":\n\025transform_perspective\030\n \001(\0132\033.CMsg3DT"
-    "ransformPerspective\022G\n\034transform_perspec"
-    "tive_origin\030\013 \001(\0132!.CMsg3DTransformPersp"
-    "ectiveOrigin\022\035\n\007opacity\030\014 \001(\0132\014.CMsgOpac"
-    "ity\022\036\n\nwash_color\030\r \001(\0132\n.CMsgColor\022 \n\th"
-    "ue_shift\030\016 \001(\0132\r.CMsgHueShift\022#\n\nsaturat"
-    "ion\030\017 \001(\0132\017.CMsgSaturation\022#\n\nbrightness"
-    "\030\020 \001(\0132\017.CMsgBrightness\022\037\n\010contrast\030\021 \001("
-    "\0132\r.CMsgContrast\022&\n\014opacity_mask\030\022 \001(\0132\020"
-    ".CMsgOpacityMask\022(\n\rborder_radius\030\023 \001(\0132"
-    "\021.CMsgBorderRadius\022(\n\rgaussian_blur\030\024 \001("
-    "\0132\021.CMsgGaussianBlur\022\033\n\006border\030\025 \001(\0132\013.C"
-    "MsgBorder\022\"\n\nbox_shadow\030\026 \001(\0132\016.CMsgBoxS"
-    "hadow\0223\n\021scale_2d_centered\030\027 \001(\0132\030.CMsgP"
-    "ointWithTransition\022)\n\022rotate_2d_centered"
-    "\030\030 \001(\0132\r.CMsgRotate2D\022$\n\013text_shadow\030\031 \001"
-    "(\0132\017.CMsgTextShadow\022\027\n\004clip\030\032 \001(\0132\t.CMsg"
-    "Clip\022\037\n\027suppress_clip_to_bounds\030\033 \001(\010\022\032\n"
-    "\022needs_full_repaint\030\034 \001(\005\022\026\n\016wants_hit_t"
-    "est\030\035 \001(\010\022\026\n\016mix_blend_mode\030\036 \001(\r\022\031\n\021opa"
-    "que_background\030\037 \001(\010\")\n\023CMsgPopAAndTCont"
-    "ext\022\022\n\ncontext_id\030\001 \001(\004\"\032\n\030CMsgBeginPain"
-    "tBackground\"\030\n\026CMsgEndPaintBackground\"\024\n"
-    "\022CMsgBeginPaintLast\"\022\n\020CMsgEndPaintLast\""
-    "\243\001\n\022CMsgDrawFilledRect\022\034\n\010top_left\030\001 \001(\013"
-    "2\n.CMsgPoint\022 \n\014bottom_right\030\002 \001(\0132\n.CMs"
-    "gPoint\0227\n\025fill_brush_collection\030\003 \001(\0132\030."
-    "CMsgFillBrushCollection\022\024\n\014antialiasing\030"
-    "\004 \001(\r\"\253\001\n\024CMsgRenderFilledRect\022\034\n\010top_le"
-    "ft\030\001 \001(\0132\n.CMsgPoint\022 \n\014bottom_right\030\002 \001"
-    "(\0132\n.CMsgPoint\022=\n\025fill_brush_collection\030"
-    "\003 \001(\0132\036.CMsgRenderFillBrushCollection\022\024\n"
-    "\014antialiasing\030\004 \001(\r\"\365\001\n\024CMsgDrawTextured"
-    "Rect\022\034\n\010top_left\030\001 \001(\0132\n.CMsgPoint\022 \n\014bo"
-    "ttom_right\030\002 \001(\0132\n.CMsgPoint\022\022\n\ntexture_"
-    "id\030\003 \001(\r\022$\n\020texture_top_left\030\004 \001(\0132\n.CMs"
-    "gPoint\022(\n\024texture_bottom_right\030\005 \001(\0132\n.C"
-    "MsgPoint\022\031\n\016texture_serial\030\006 \001(\005:\0010\022\036\n\023t"
-    "exture_sample_mode\030\007 \001(\r:\0010\"\300\001\n\032CMsgDraw"
-    "DoubleBufferedRect\022\034\n\010top_left\030\001 \001(\0132\n.C"
-    "MsgPoint\022 \n\014bottom_right\030\002 \001(\0132\n.CMsgPoi"
-    "nt\022\022\n\ntexture_id\030\003 \001(\r\022$\n\020texture_top_le"
-    "ft\030\004 \001(\0132\n.CMsgPoint\022(\n\024texture_bottom_r"
-    "ight\030\005 \001(\0132\n.CMsgPoint\"\306\001\n CMsgDrawYUV42"
-    "0DoubleBufferedRect\022\034\n\010top_left\030\001 \001(\0132\n."
-    "CMsgPoint\022 \n\014bottom_right\030\002 \001(\0132\n.CMsgPo"
-    "int\022\022\n\ntexture_id\030\003 \001(\r\022$\n\020texture_top_l"
-    "eft\030\004 \001(\0132\n.CMsgPoint\022(\n\024texture_bottom_"
-    "right\030\005 \001(\0132\n.CMsgPoint\"\367\001\n\026CMsgRenderTe"
-    "xturedRect\022\034\n\010top_left\030\001 \001(\0132\n.CMsgPoint"
-    "\022 \n\014bottom_right\030\002 \001(\0132\n.CMsgPoint\022\022\n\nte"
-    "xture_id\030\003 \001(\r\022$\n\020texture_top_left\030\004 \001(\013"
-    "2\n.CMsgPoint\022(\n\024texture_bottom_right\030\005 \001"
-    "(\0132\n.CMsgPoint\022\031\n\016texture_serial\030\006 \001(\005:\001"
-    "0\022\036\n\023texture_sample_mode\030\007 \001(\r:\0010\"@\n\017CMs"
-    "gLockTexture\022\022\n\ntexture_id\030\001 \001(\r\022\031\n\016text"
-    "ure_serial\030\002 \001(\005:\0010\"5\n\024CMsgTextInlineObj"
-    "ect\022\r\n\005width\030\001 \001(\002\022\016\n\006height\030\002 \001(\002\"\223\002\n\016C"
-    "MsgTextFormat\022\021\n\tfont_name\030\001 \001(\t\022\021\n\tfont"
-    "_size\030\002 \001(\001\022\027\n\013font_weight\030\003 \001(\005:\002-1\022\026\n\n"
-    "font_style\030\004 \001(\005:\002-1\022\021\n\tunderline\030\005 \001(\010\022"
-    "\025\n\rstrikethrough\030\006 \001(\010\0227\n\025fill_brush_col"
-    "lection\030\007 \001(\0132\030.CMsgFillBrushCollection\022"
-    "\031\n\016letter_spacing\030\010 \001(\005:\0010\022,\n\rinline_obj"
-    "ect\030\t \001(\0132\025.CMsgTextInlineObject\"^\n\023CMsg"
-    "TextRangeFormat\022\023\n\013start_index\030\001 \001(\r\022\021\n\t"
-    "end_index\030\002 \001(\r\022\037\n\006format\030\003 \001(\0132\017.CMsgTe"
-    "xtFormat\"\237\002\n\024CMsgRenderTextFormat\022\021\n\tfon"
-    "t_name\030\001 \001(\t\022\021\n\tfont_size\030\002 \001(\001\022\027\n\013font_"
-    "weight\030\003 \001(\005:\002-1\022\026\n\nfont_style\030\004 \001(\005:\002-1"
-    "\022\021\n\tunderline\030\005 \001(\010\022\025\n\rstrikethrough\030\006 \001"
-    "(\010\022=\n\025fill_brush_collection\030\007 \001(\0132\036.CMsg"
-    "RenderFillBrushCollection\022\031\n\016letter_spac"
-    "ing\030\010 \001(\005:\0010\022,\n\rinline_object\030\t \001(\0132\025.CM"
-    "sgTextInlineObject\"j\n\031CMsgRenderTextRang"
-    "eFormat\022\023\n\013start_index\030\001 \001(\r\022\021\n\tend_inde"
-    "x\030\002 \001(\r\022%\n\006format\030\003 \001(\0132\025.CMsgRenderText"
-    "Format\"\206\002\n\022CMsgDrawTextRegion\022\r\n\005wtext\030\002"
-    " \001(\014\022\'\n\016default_format\030\003 \001(\0132\017.CMsgTextF"
+    "ata\030\372\007 \001(\0132\034.CMsgClip.AnimationFrameData"
+    "\"x\n\021CMsgPushClipLayer\022\034\n\010top_left\030\001 \001(\0132"
+    "\n.CMsgPoint\022 \n\014bottom_right\030\002 \001(\0132\n.CMsg"
+    "Point\022#\n\rborder_radius\030\003 \001(\0132\014.CRadiusDa"
+    "ta\"\022\n\020CMsgPopClipLayer\"\317\004\n\033CMsgPushPanel"
+    "ContextInLayer\022\025\n\rtransform_m00\030\001 \001(\001\022\025\n"
+    "\rtransform_m01\030\002 \001(\001\022\025\n\rtransform_m02\030\003 "
+    "\001(\001\022\025\n\rtransform_m03\030\004 \001(\001\022\025\n\rtransform_"
+    "m10\030\005 \001(\001\022\025\n\rtransform_m11\030\006 \001(\001\022\025\n\rtran"
+    "sform_m12\030\007 \001(\001\022\025\n\rtransform_m13\030\010 \001(\001\022\025"
+    "\n\rtransform_m20\030\t \001(\001\022\025\n\rtransform_m21\030\n"
+    " \001(\001\022\025\n\rtransform_m22\030\013 \001(\001\022\025\n\rtransform"
+    "_m23\030\014 \001(\001\022\025\n\rtransform_m30\030\r \001(\001\022\025\n\rtra"
+    "nsform_m31\030\016 \001(\001\022\025\n\rtransform_m32\030\017 \001(\001\022"
+    "\025\n\rtransform_m33\030\020 \001(\001\022#\n\nbox_shadow\030\021 \001"
+    "(\0132\017.CBoxShadowData\022\r\n\005width\030\022 \001(\001\022\016\n\006he"
+    "ight\030\023 \001(\001\022\022\n\nposition_x\030\024 \001(\001\022\022\n\npositi"
+    "on_y\030\025 \001(\001\022\022\n\nposition_z\030\026 \001(\001\022\034\n\006border"
+    "\030\027 \001(\0132\014.CBorderData\022\020\n\010scroll_x\030\030 \001(\001\022\020"
+    "\n\010scroll_y\030\031 \001(\001\"\034\n\032CMsgPopPanelContextI"
+    "nLayer\"\216\n\n\024CMsgPushAAndTContext\022\022\n\nconte"
+    "xt_id\030\001 \001(\004\022\r\n\005width\030\003 \001(\001\022\016\n\006height\030\004 \001"
+    "(\001\022!\n\031chilren_have_3dtransforms\030\005 \001(\010\022\016\n"
+    "\006zindex\030\006 \001(\002\022*\n\016panel_position\030\007 \001(\0132\022."
+    "CMsgPanelPosition\0220\n\020transform_matrix\030\010 "
+    "\001(\0132\026.CMsg3DTransformMatrix\0220\n\020transform"
+    "_origin\030\t \001(\0132\026.CMsg3DTransformOrigin\022:\n"
+    "\025transform_perspective\030\n \001(\0132\033.CMsg3DTra"
+    "nsformPerspective\022G\n\034transform_perspecti"
+    "ve_origin\030\013 \001(\0132!.CMsg3DTransformPerspec"
+    "tiveOrigin\022\035\n\007opacity\030\014 \001(\0132\014.CMsgOpacit"
+    "y\022\036\n\nwash_color\030\r \001(\0132\n.CMsgColor\022 \n\thue"
+    "_shift\030\016 \001(\0132\r.CMsgHueShift\022#\n\nsaturatio"
+    "n\030\017 \001(\0132\017.CMsgSaturation\022#\n\nbrightness\030\020"
+    " \001(\0132\017.CMsgBrightness\022\037\n\010contrast\030\021 \001(\0132"
+    "\r.CMsgContrast\022&\n\014opacity_mask\030\022 \001(\0132\020.C"
+    "MsgOpacityMask\022(\n\rborder_radius\030\023 \001(\0132\021."
+    "CMsgBorderRadius\022(\n\rgaussian_blur\030\024 \001(\0132"
+    "\021.CMsgGaussianBlur\022\033\n\006border\030\025 \001(\0132\013.CMs"
+    "gBorder\022\"\n\nbox_shadow\030\026 \001(\0132\016.CMsgBoxSha"
+    "dow\0223\n\021scale_2d_centered\030\027 \001(\0132\030.CMsgPoi"
+    "ntWithTransition\022)\n\022rotate_2d_centered\030\030"
+    " \001(\0132\r.CMsgRotate2D\022$\n\013text_shadow\030\031 \001(\013"
+    "2\017.CMsgTextShadow\022\027\n\004clip\030\032 \001(\0132\t.CMsgCl"
+    "ip\022\037\n\027suppress_clip_to_bounds\030\033 \001(\010\022\032\n\022n"
+    "eeds_full_repaint\030\034 \001(\005\022\"\n\032needs_interme"
+    "diate_texture\030\035 \001(\010\022\034\n\024clip_after_transf"
+    "orm\030\036 \001(\010\022\026\n\016wants_hit_test\030\037 \001(\010\022\037\n\027wan"
+    "ts_hit_test_children\030  \001(\010\022\026\n\016mix_blend_"
+    "mode\030! \001(\r\022\031\n\021opaque_background\030\" \001(\010\022\031\n"
+    "\021child_panel_count\030# \001(\r\022%\n\035wants_screen"
+    "space_quad_output\030$ \001(\010\022&\n\036composition_l"
+    "ayer_texture_name\030& \001(\t\")\n\023CMsgPopAAndTC"
+    "ontext\022\022\n\ncontext_id\030\001 \001(\004\"\032\n\030CMsgBeginP"
+    "aintBackground\"\030\n\026CMsgEndPaintBackground"
+    "\"\024\n\022CMsgBeginPaintLast\"\022\n\020CMsgEndPaintLa"
+    "st\"\243\001\n\022CMsgDrawFilledRect\022\034\n\010top_left\030\001 "
+    "\001(\0132\n.CMsgPoint\022 \n\014bottom_right\030\002 \001(\0132\n."
+    "CMsgPoint\0227\n\025fill_brush_collection\030\003 \001(\013"
+    "2\030.CMsgFillBrushCollection\022\024\n\014antialiasi"
+    "ng\030\004 \001(\r\"\253\001\n\024CMsgRenderFilledRect\022\034\n\010top"
+    "_left\030\001 \001(\0132\n.CMsgPoint\022 \n\014bottom_right\030"
+    "\002 \001(\0132\n.CMsgPoint\022=\n\025fill_brush_collecti"
+    "on\030\003 \001(\0132\036.CMsgRenderFillBrushCollection"
+    "\022\024\n\014antialiasing\030\004 \001(\r\"\234\002\n\024CMsgDrawTextu"
+    "redRect\022\034\n\010top_left\030\001 \001(\0132\n.CMsgPoint\022 \n"
+    "\014bottom_right\030\002 \001(\0132\n.CMsgPoint\022\022\n\ntextu"
+    "re_id\030\003 \001(\r\022$\n\020texture_top_left\030\004 \001(\0132\n."
+    "CMsgPoint\022(\n\024texture_bottom_right\030\005 \001(\0132"
+    "\n.CMsgPoint\022\031\n\016texture_serial\030\006 \001(\005:\0010\022\036"
+    "\n\023texture_sample_mode\030\007 \001(\r:\0010\022%\n\017textur"
+    "e_opacity\030\010 \001(\0132\014.CMsgOpacity\"\223\002\n\026CMsgRe"
+    "nderTexturedRect\022\034\n\010top_left\030\001 \001(\0132\n.CMs"
+    "gPoint\022 \n\014bottom_right\030\002 \001(\0132\n.CMsgPoint"
+    "\022\022\n\ntexture_id\030\003 \001(\r\022$\n\020texture_top_left"
+    "\030\004 \001(\0132\n.CMsgPoint\022(\n\024texture_bottom_rig"
+    "ht\030\005 \001(\0132\n.CMsgPoint\022\031\n\016texture_serial\030\006"
+    " \001(\005:\0010\022\036\n\023texture_sample_mode\030\007 \001(\r:\0010\022"
+    "\032\n\017texture_opacity\030\010 \001(\002:\0011\"@\n\017CMsgLockT"
+    "exture\022\022\n\ntexture_id\030\001 \001(\r\022\031\n\016texture_se"
+    "rial\030\002 \001(\005:\0010\"5\n\024CMsgTextInlineObject\022\r\n"
+    "\005width\030\001 \001(\002\022\016\n\006height\030\002 \001(\002\"\223\002\n\016CMsgTex"
+    "tFormat\022\021\n\tfont_name\030\001 \001(\t\022\021\n\tfont_size\030"
+    "\002 \001(\001\022\027\n\013font_weight\030\003 \001(\005:\002-1\022\026\n\nfont_s"
+    "tyle\030\004 \001(\005:\002-1\022\021\n\tunderline\030\005 \001(\010\022\025\n\rstr"
+    "ikethrough\030\006 \001(\010\0227\n\025fill_brush_collectio"
+    "n\030\007 \001(\0132\030.CMsgFillBrushCollection\022\031\n\016let"
+    "ter_spacing\030\010 \001(\005:\0010\022,\n\rinline_object\030\t "
+    "\001(\0132\025.CMsgTextInlineObject\"^\n\023CMsgTextRa"
+    "ngeFormat\022\023\n\013start_index\030\001 \001(\r\022\021\n\tend_in"
+    "dex\030\002 \001(\r\022\037\n\006format\030\003 \001(\0132\017.CMsgTextForm"
+    "at\"\237\002\n\024CMsgRenderTextFormat\022\021\n\tfont_name"
+    "\030\001 \001(\t\022\021\n\tfont_size\030\002 \001(\001\022\027\n\013font_weight"
+    "\030\003 \001(\005:\002-1\022\026\n\nfont_style\030\004 \001(\005:\002-1\022\021\n\tun"
+    "derline\030\005 \001(\010\022\025\n\rstrikethrough\030\006 \001(\010\022=\n\025"
+    "fill_brush_collection\030\007 \001(\0132\036.CMsgRender"
+    "FillBrushCollection\022\031\n\016letter_spacing\030\010 "
+    "\001(\005:\0010\022,\n\rinline_object\030\t \001(\0132\025.CMsgText"
+    "InlineObject\"j\n\031CMsgRenderTextRangeForma"
+    "t\022\023\n\013start_index\030\001 \001(\r\022\021\n\tend_index\030\002 \001("
+    "\r\022%\n\006format\030\003 \001(\0132\025.CMsgRenderTextFormat"
+    "\"\264\002\n\022CMsgDrawTextRegion\022\020\n\010raw_text\030\013 \001("
+    "\014\022\022\n\ntext_chars\030\014 \001(\005\022\025\n\rtext_encoding\030\r"
+    " \001(\005\022\'\n\016default_format\030\003 \001(\0132\017.CMsgTextF"
     "ormat\022\022\n\ntext_align\030\004 \001(\r\022\023\n\013line_height"
     "\030\005 \001(\r\022\034\n\010top_left\030\006 \001(\0132\n.CMsgPoint\022 \n\014"
     "bottom_right\030\007 \001(\0132\n.CMsgPoint\022\020\n\010wrappi"
     "ng\030\010 \001(\010\022\020\n\010ellipsis\030\t \001(\010\022+\n\rrange_form"
-    "ats\030\n \003(\0132\024.CMsgTextRangeFormat\"\273\002\n\024CMsg"
-    "RenderTextRegion\022\r\n\005wtext\030\002 \001(\014\022-\n\016defau"
-    "lt_format\030\003 \001(\0132\025.CMsgRenderTextFormat\022\022"
-    "\n\ntext_align\030\004 \001(\r\022\023\n\013line_height\030\005 \001(\r\022"
-    "\034\n\010top_left\030\006 \001(\0132\n.CMsgPoint\022 \n\014bottom_"
-    "right\030\007 \001(\0132\n.CMsgPoint\022\020\n\010wrapping\030\010 \001("
-    "\010\022\020\n\010ellipsis\030\t \001(\010\0221\n\rrange_formats\030\n \003"
-    "(\0132\032.CMsgRenderTextRangeFormat\022%\n\013text_s"
-    "hadow\030\013 \001(\0132\020.CTextShadowData\"\343\001\n\031CMsgRe"
-    "questRenderCallback\022\024\n\014callback_obj\030\001 \001("
-    "\014\022\034\n\010top_left\030\002 \001(\0132\n.CMsgPoint\022 \n\014botto"
-    "m_right\030\003 \001(\0132\n.CMsgPoint\022$\n\020top_left_pa"
-    "dding\030\004 \001(\0132\n.CMsgPoint\022(\n\024bottom_right_"
-    "padding\030\005 \001(\0132\n.CMsgPoint\022 \n\030needs_redra"
-    "w_every_frame\030\006 \001(\010B\005H\001\200\001\000", 16826);
+    "ats\030\n \003(\0132\024.CMsgTextRangeFormat\"\351\002\n\024CMsg"
+    "RenderTextRegion\022\020\n\010raw_text\030\014 \001(\014\022\022\n\nte"
+    "xt_chars\030\r \001(\005\022\025\n\rtext_encoding\030\016 \001(\005\022-\n"
+    "\016default_format\030\003 \001(\0132\025.CMsgRenderTextFo"
+    "rmat\022\022\n\ntext_align\030\004 \001(\r\022\023\n\013line_height\030"
+    "\005 \001(\r\022\034\n\010top_left\030\006 \001(\0132\n.CMsgPoint\022 \n\014b"
+    "ottom_right\030\007 \001(\0132\n.CMsgPoint\022\020\n\010wrappin"
+    "g\030\010 \001(\010\022\020\n\010ellipsis\030\t \001(\010\0221\n\rrange_forma"
+    "ts\030\n \003(\0132\032.CMsgRenderTextRangeFormat\022%\n\013"
+    "text_shadow\030\013 \001(\0132\020.CTextShadowData\"\343\001\n\031"
+    "CMsgRequestRenderCallback\022\024\n\014callback_ob"
+    "j\030\001 \001(\014\022\034\n\010top_left\030\002 \001(\0132\n.CMsgPoint\022 \n"
+    "\014bottom_right\030\003 \001(\0132\n.CMsgPoint\022$\n\020top_l"
+    "eft_padding\030\004 \001(\0132\n.CMsgPoint\022(\n\024bottom_"
+    "right_padding\030\005 \001(\0132\n.CMsgPoint\022 \n\030needs"
+    "_redraw_every_frame\030\006 \001(\010B\005H\001\200\001\000", 18152);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "rendermessages.proto", &protobuf_RegisterTypes);
   CMsgBeginFrame::default_instance_ = new CMsgBeginFrame();
@@ -2938,6 +3049,7 @@ void protobuf_AddDesc_rendermessages_2eproto() {
   CBorderData_CBorderSide::default_instance_ = new CBorderData_CBorderSide();
   CBoxShadowData::default_instance_ = new CBoxShadowData();
   CTextShadowData::default_instance_ = new CTextShadowData();
+  CRadialClipData::default_instance_ = new CRadialClipData();
   CMsgClipData::default_instance_ = new CMsgClipData();
   CMsgPushCompositingLayer::default_instance_ = new CMsgPushCompositingLayer();
   CMsgPopCompositingLayer::default_instance_ = new CMsgPopCompositingLayer();
@@ -2999,6 +3111,8 @@ void protobuf_AddDesc_rendermessages_2eproto() {
   CMsgClip_AnimationFrameData::default_instance_ = new CMsgClip_AnimationFrameData();
   CMsgPushClipLayer::default_instance_ = new CMsgPushClipLayer();
   CMsgPopClipLayer::default_instance_ = new CMsgPopClipLayer();
+  CMsgPushPanelContextInLayer::default_instance_ = new CMsgPushPanelContextInLayer();
+  CMsgPopPanelContextInLayer::default_instance_ = new CMsgPopPanelContextInLayer();
   CMsgPushAAndTContext::default_instance_ = new CMsgPushAAndTContext();
   CMsgPopAAndTContext::default_instance_ = new CMsgPopAAndTContext();
   CMsgBeginPaintBackground::default_instance_ = new CMsgBeginPaintBackground();
@@ -3008,8 +3122,6 @@ void protobuf_AddDesc_rendermessages_2eproto() {
   CMsgDrawFilledRect::default_instance_ = new CMsgDrawFilledRect();
   CMsgRenderFilledRect::default_instance_ = new CMsgRenderFilledRect();
   CMsgDrawTexturedRect::default_instance_ = new CMsgDrawTexturedRect();
-  CMsgDrawDoubleBufferedRect::default_instance_ = new CMsgDrawDoubleBufferedRect();
-  CMsgDrawYUV420DoubleBufferedRect::default_instance_ = new CMsgDrawYUV420DoubleBufferedRect();
   CMsgRenderTexturedRect::default_instance_ = new CMsgRenderTexturedRect();
   CMsgLockTexture::default_instance_ = new CMsgLockTexture();
   CMsgTextInlineObject::default_instance_ = new CMsgTextInlineObject();
@@ -3034,6 +3146,7 @@ void protobuf_AddDesc_rendermessages_2eproto() {
   CBorderData_CBorderSide::default_instance_->InitAsDefaultInstance();
   CBoxShadowData::default_instance_->InitAsDefaultInstance();
   CTextShadowData::default_instance_->InitAsDefaultInstance();
+  CRadialClipData::default_instance_->InitAsDefaultInstance();
   CMsgClipData::default_instance_->InitAsDefaultInstance();
   CMsgPushCompositingLayer::default_instance_->InitAsDefaultInstance();
   CMsgPopCompositingLayer::default_instance_->InitAsDefaultInstance();
@@ -3179,6 +3292,8 @@ void protobuf_AddDesc_rendermessages_2eproto() {
   CMsgClip_AnimationFrameData::default_instance_->InitAsDefaultInstance();
   CMsgPushClipLayer::default_instance_->InitAsDefaultInstance();
   CMsgPopClipLayer::default_instance_->InitAsDefaultInstance();
+  CMsgPushPanelContextInLayer::default_instance_->InitAsDefaultInstance();
+  CMsgPopPanelContextInLayer::default_instance_->InitAsDefaultInstance();
   CMsgPushAAndTContext::default_instance_->InitAsDefaultInstance();
   CMsgPopAAndTContext::default_instance_->InitAsDefaultInstance();
   CMsgBeginPaintBackground::default_instance_->InitAsDefaultInstance();
@@ -3188,8 +3303,6 @@ void protobuf_AddDesc_rendermessages_2eproto() {
   CMsgDrawFilledRect::default_instance_->InitAsDefaultInstance();
   CMsgRenderFilledRect::default_instance_->InitAsDefaultInstance();
   CMsgDrawTexturedRect::default_instance_->InitAsDefaultInstance();
-  CMsgDrawDoubleBufferedRect::default_instance_->InitAsDefaultInstance();
-  CMsgDrawYUV420DoubleBufferedRect::default_instance_->InitAsDefaultInstance();
   CMsgRenderTexturedRect::default_instance_->InitAsDefaultInstance();
   CMsgLockTexture::default_instance_->InitAsDefaultInstance();
   CMsgTextInlineObject::default_instance_->InitAsDefaultInstance();
@@ -8218,10 +8331,354 @@ void CTextShadowData::Swap(CTextShadowData* other) {
 // ===================================================================
 
 #ifndef _MSC_VER
+const int CRadialClipData::kCenterXFieldNumber;
+const int CRadialClipData::kCenterYFieldNumber;
+const int CRadialClipData::kStartAngleFieldNumber;
+const int CRadialClipData::kSectorAngleFieldNumber;
+#endif  // !_MSC_VER
+
+CRadialClipData::CRadialClipData()
+  : ::google::protobuf::Message() {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:CRadialClipData)
+}
+
+void CRadialClipData::InitAsDefaultInstance() {
+}
+
+CRadialClipData::CRadialClipData(const CRadialClipData& from)
+  : ::google::protobuf::Message() {
+  SharedCtor();
+  MergeFrom(from);
+  // @@protoc_insertion_point(copy_constructor:CRadialClipData)
+}
+
+void CRadialClipData::SharedCtor() {
+  _cached_size_ = 0;
+  center_x_ = 0;
+  center_y_ = 0;
+  start_angle_ = 0;
+  sector_angle_ = 0;
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+}
+
+CRadialClipData::~CRadialClipData() {
+  // @@protoc_insertion_point(destructor:CRadialClipData)
+  SharedDtor();
+}
+
+void CRadialClipData::SharedDtor() {
+  if (this != default_instance_) {
+  }
+}
+
+void CRadialClipData::SetCachedSize(int size) const {
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+}
+const ::google::protobuf::Descriptor* CRadialClipData::descriptor() {
+  protobuf_AssignDescriptorsOnce();
+  return CRadialClipData_descriptor_;
+}
+
+const CRadialClipData& CRadialClipData::default_instance() {
+  if (default_instance_ == NULL) protobuf_AddDesc_rendermessages_2eproto();
+  return *default_instance_;
+}
+
+CRadialClipData* CRadialClipData::default_instance_ = NULL;
+
+CRadialClipData* CRadialClipData::New() const {
+  return new CRadialClipData;
+}
+
+void CRadialClipData::Clear() {
+#define OFFSET_OF_FIELD_(f) (reinterpret_cast<char*>(      \
+  &reinterpret_cast<CRadialClipData*>(16)->f) - \
+   reinterpret_cast<char*>(16))
+
+#define ZR_(first, last) do {                              \
+    size_t f = OFFSET_OF_FIELD_(first);                    \
+    size_t n = OFFSET_OF_FIELD_(last) - f + sizeof(last);  \
+    ::memset(&first, 0, n);                                \
+  } while (0)
+
+  ZR_(center_x_, sector_angle_);
+
+#undef OFFSET_OF_FIELD_
+#undef ZR_
+
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+  mutable_unknown_fields()->Clear();
+}
+
+bool CRadialClipData::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:CRadialClipData)
+  for (;;) {
+    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoff(127);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // optional double center_x = 1;
+      case 1: {
+        if (tag == 9) {
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   double, ::google::protobuf::internal::WireFormatLite::TYPE_DOUBLE>(
+                 input, &center_x_)));
+          set_has_center_x();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(17)) goto parse_center_y;
+        break;
+      }
+
+      // optional double center_y = 2;
+      case 2: {
+        if (tag == 17) {
+         parse_center_y:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   double, ::google::protobuf::internal::WireFormatLite::TYPE_DOUBLE>(
+                 input, &center_y_)));
+          set_has_center_y();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(25)) goto parse_start_angle;
+        break;
+      }
+
+      // optional double start_angle = 3;
+      case 3: {
+        if (tag == 25) {
+         parse_start_angle:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   double, ::google::protobuf::internal::WireFormatLite::TYPE_DOUBLE>(
+                 input, &start_angle_)));
+          set_has_start_angle();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(33)) goto parse_sector_angle;
+        break;
+      }
+
+      // optional double sector_angle = 4;
+      case 4: {
+        if (tag == 33) {
+         parse_sector_angle:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   double, ::google::protobuf::internal::WireFormatLite::TYPE_DOUBLE>(
+                 input, &sector_angle_)));
+          set_has_sector_angle();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectAtEnd()) goto success;
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0 ||
+            ::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, mutable_unknown_fields()));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:CRadialClipData)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:CRadialClipData)
+  return false;
+#undef DO_
+}
+
+void CRadialClipData::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:CRadialClipData)
+  // optional double center_x = 1;
+  if (has_center_x()) {
+    ::google::protobuf::internal::WireFormatLite::WriteDouble(1, this->center_x(), output);
+  }
+
+  // optional double center_y = 2;
+  if (has_center_y()) {
+    ::google::protobuf::internal::WireFormatLite::WriteDouble(2, this->center_y(), output);
+  }
+
+  // optional double start_angle = 3;
+  if (has_start_angle()) {
+    ::google::protobuf::internal::WireFormatLite::WriteDouble(3, this->start_angle(), output);
+  }
+
+  // optional double sector_angle = 4;
+  if (has_sector_angle()) {
+    ::google::protobuf::internal::WireFormatLite::WriteDouble(4, this->sector_angle(), output);
+  }
+
+  if (!unknown_fields().empty()) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        unknown_fields(), output);
+  }
+  // @@protoc_insertion_point(serialize_end:CRadialClipData)
+}
+
+::google::protobuf::uint8* CRadialClipData::SerializeWithCachedSizesToArray(
+    ::google::protobuf::uint8* target) const {
+  // @@protoc_insertion_point(serialize_to_array_start:CRadialClipData)
+  // optional double center_x = 1;
+  if (has_center_x()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteDoubleToArray(1, this->center_x(), target);
+  }
+
+  // optional double center_y = 2;
+  if (has_center_y()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteDoubleToArray(2, this->center_y(), target);
+  }
+
+  // optional double start_angle = 3;
+  if (has_start_angle()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteDoubleToArray(3, this->start_angle(), target);
+  }
+
+  // optional double sector_angle = 4;
+  if (has_sector_angle()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteDoubleToArray(4, this->sector_angle(), target);
+  }
+
+  if (!unknown_fields().empty()) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        unknown_fields(), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:CRadialClipData)
+  return target;
+}
+
+int CRadialClipData::ByteSize() const {
+  int total_size = 0;
+
+  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    // optional double center_x = 1;
+    if (has_center_x()) {
+      total_size += 1 + 8;
+    }
+
+    // optional double center_y = 2;
+    if (has_center_y()) {
+      total_size += 1 + 8;
+    }
+
+    // optional double start_angle = 3;
+    if (has_start_angle()) {
+      total_size += 1 + 8;
+    }
+
+    // optional double sector_angle = 4;
+    if (has_sector_angle()) {
+      total_size += 1 + 8;
+    }
+
+  }
+  if (!unknown_fields().empty()) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        unknown_fields());
+  }
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = total_size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+  return total_size;
+}
+
+void CRadialClipData::MergeFrom(const ::google::protobuf::Message& from) {
+  GOOGLE_CHECK_NE(&from, this);
+  const CRadialClipData* source =
+    ::google::protobuf::internal::dynamic_cast_if_available<const CRadialClipData*>(
+      &from);
+  if (source == NULL) {
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+    MergeFrom(*source);
+  }
+}
+
+void CRadialClipData::MergeFrom(const CRadialClipData& from) {
+  GOOGLE_CHECK_NE(&from, this);
+  if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    if (from.has_center_x()) {
+      set_center_x(from.center_x());
+    }
+    if (from.has_center_y()) {
+      set_center_y(from.center_y());
+    }
+    if (from.has_start_angle()) {
+      set_start_angle(from.start_angle());
+    }
+    if (from.has_sector_angle()) {
+      set_sector_angle(from.sector_angle());
+    }
+  }
+  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
+}
+
+void CRadialClipData::CopyFrom(const ::google::protobuf::Message& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void CRadialClipData::CopyFrom(const CRadialClipData& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool CRadialClipData::IsInitialized() const {
+
+  return true;
+}
+
+void CRadialClipData::Swap(CRadialClipData* other) {
+  if (other != this) {
+    std::swap(center_x_, other->center_x_);
+    std::swap(center_y_, other->center_y_);
+    std::swap(start_angle_, other->start_angle_);
+    std::swap(sector_angle_, other->sector_angle_);
+    std::swap(_has_bits_[0], other->_has_bits_[0]);
+    _unknown_fields_.Swap(&other->_unknown_fields_);
+    std::swap(_cached_size_, other->_cached_size_);
+  }
+}
+
+::google::protobuf::Metadata CRadialClipData::GetMetadata() const {
+  protobuf_AssignDescriptorsOnce();
+  ::google::protobuf::Metadata metadata;
+  metadata.descriptor = CRadialClipData_descriptor_;
+  metadata.reflection = CRadialClipData_reflection_;
+  return metadata;
+}
+
+
+// ===================================================================
+
+#ifndef _MSC_VER
+const int CMsgClipData::kRectClipFieldNumber;
 const int CMsgClipData::kLeftFieldNumber;
 const int CMsgClipData::kTopFieldNumber;
 const int CMsgClipData::kRightFieldNumber;
 const int CMsgClipData::kBottomFieldNumber;
+const int CMsgClipData::kRadialClipFieldNumber;
 #endif  // !_MSC_VER
 
 CMsgClipData::CMsgClipData()
@@ -8231,6 +8688,7 @@ CMsgClipData::CMsgClipData()
 }
 
 void CMsgClipData::InitAsDefaultInstance() {
+  radial_clip_ = const_cast< ::CRadialClipData*>(&::CRadialClipData::default_instance());
 }
 
 CMsgClipData::CMsgClipData(const CMsgClipData& from)
@@ -8242,10 +8700,12 @@ CMsgClipData::CMsgClipData(const CMsgClipData& from)
 
 void CMsgClipData::SharedCtor() {
   _cached_size_ = 0;
+  rect_clip_ = false;
   left_ = 0;
   top_ = 0;
   right_ = 0;
   bottom_ = 0;
+  radial_clip_ = NULL;
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
 
@@ -8256,6 +8716,7 @@ CMsgClipData::~CMsgClipData() {
 
 void CMsgClipData::SharedDtor() {
   if (this != default_instance_) {
+    delete radial_clip_;
   }
 }
 
@@ -8291,7 +8752,13 @@ void CMsgClipData::Clear() {
     ::memset(&first, 0, n);                                \
   } while (0)
 
-  ZR_(left_, bottom_);
+  if (_has_bits_[0 / 32] & 63) {
+    ZR_(left_, bottom_);
+    rect_clip_ = false;
+    if (has_radial_clip()) {
+      if (radial_clip_ != NULL) radial_clip_->::CRadialClipData::Clear();
+    }
+  }
 
 #undef OFFSET_OF_FIELD_
 #undef ZR_
@@ -8310,9 +8777,24 @@ bool CMsgClipData::MergePartialFromCodedStream(
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // optional double left = 1;
+      // optional bool rect_clip = 1;
       case 1: {
-        if (tag == 9) {
+        if (tag == 8) {
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   bool, ::google::protobuf::internal::WireFormatLite::TYPE_BOOL>(
+                 input, &rect_clip_)));
+          set_has_rect_clip();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(17)) goto parse_left;
+        break;
+      }
+
+      // optional double left = 2;
+      case 2: {
+        if (tag == 17) {
+         parse_left:
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    double, ::google::protobuf::internal::WireFormatLite::TYPE_DOUBLE>(
                  input, &left_)));
@@ -8320,13 +8802,13 @@ bool CMsgClipData::MergePartialFromCodedStream(
         } else {
           goto handle_unusual;
         }
-        if (input->ExpectTag(17)) goto parse_top;
+        if (input->ExpectTag(25)) goto parse_top;
         break;
       }
 
-      // optional double top = 2;
-      case 2: {
-        if (tag == 17) {
+      // optional double top = 3;
+      case 3: {
+        if (tag == 25) {
          parse_top:
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    double, ::google::protobuf::internal::WireFormatLite::TYPE_DOUBLE>(
@@ -8335,13 +8817,13 @@ bool CMsgClipData::MergePartialFromCodedStream(
         } else {
           goto handle_unusual;
         }
-        if (input->ExpectTag(25)) goto parse_right;
+        if (input->ExpectTag(33)) goto parse_right;
         break;
       }
 
-      // optional double right = 3;
-      case 3: {
-        if (tag == 25) {
+      // optional double right = 4;
+      case 4: {
+        if (tag == 33) {
          parse_right:
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    double, ::google::protobuf::internal::WireFormatLite::TYPE_DOUBLE>(
@@ -8350,18 +8832,31 @@ bool CMsgClipData::MergePartialFromCodedStream(
         } else {
           goto handle_unusual;
         }
-        if (input->ExpectTag(33)) goto parse_bottom;
+        if (input->ExpectTag(41)) goto parse_bottom;
         break;
       }
 
-      // optional double bottom = 4;
-      case 4: {
-        if (tag == 33) {
+      // optional double bottom = 5;
+      case 5: {
+        if (tag == 41) {
          parse_bottom:
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    double, ::google::protobuf::internal::WireFormatLite::TYPE_DOUBLE>(
                  input, &bottom_)));
           set_has_bottom();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(50)) goto parse_radial_clip;
+        break;
+      }
+
+      // optional .CRadialClipData radial_clip = 6;
+      case 6: {
+        if (tag == 50) {
+         parse_radial_clip:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+               input, mutable_radial_clip()));
         } else {
           goto handle_unusual;
         }
@@ -8394,24 +8889,35 @@ failure:
 void CMsgClipData::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
   // @@protoc_insertion_point(serialize_start:CMsgClipData)
-  // optional double left = 1;
+  // optional bool rect_clip = 1;
+  if (has_rect_clip()) {
+    ::google::protobuf::internal::WireFormatLite::WriteBool(1, this->rect_clip(), output);
+  }
+
+  // optional double left = 2;
   if (has_left()) {
-    ::google::protobuf::internal::WireFormatLite::WriteDouble(1, this->left(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteDouble(2, this->left(), output);
   }
 
-  // optional double top = 2;
+  // optional double top = 3;
   if (has_top()) {
-    ::google::protobuf::internal::WireFormatLite::WriteDouble(2, this->top(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteDouble(3, this->top(), output);
   }
 
-  // optional double right = 3;
+  // optional double right = 4;
   if (has_right()) {
-    ::google::protobuf::internal::WireFormatLite::WriteDouble(3, this->right(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteDouble(4, this->right(), output);
   }
 
-  // optional double bottom = 4;
+  // optional double bottom = 5;
   if (has_bottom()) {
-    ::google::protobuf::internal::WireFormatLite::WriteDouble(4, this->bottom(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteDouble(5, this->bottom(), output);
+  }
+
+  // optional .CRadialClipData radial_clip = 6;
+  if (has_radial_clip()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      6, this->radial_clip(), output);
   }
 
   if (!unknown_fields().empty()) {
@@ -8424,24 +8930,36 @@ void CMsgClipData::SerializeWithCachedSizes(
 ::google::protobuf::uint8* CMsgClipData::SerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
   // @@protoc_insertion_point(serialize_to_array_start:CMsgClipData)
-  // optional double left = 1;
+  // optional bool rect_clip = 1;
+  if (has_rect_clip()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(1, this->rect_clip(), target);
+  }
+
+  // optional double left = 2;
   if (has_left()) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteDoubleToArray(1, this->left(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteDoubleToArray(2, this->left(), target);
   }
 
-  // optional double top = 2;
+  // optional double top = 3;
   if (has_top()) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteDoubleToArray(2, this->top(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteDoubleToArray(3, this->top(), target);
   }
 
-  // optional double right = 3;
+  // optional double right = 4;
   if (has_right()) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteDoubleToArray(3, this->right(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteDoubleToArray(4, this->right(), target);
   }
 
-  // optional double bottom = 4;
+  // optional double bottom = 5;
   if (has_bottom()) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteDoubleToArray(4, this->bottom(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteDoubleToArray(5, this->bottom(), target);
+  }
+
+  // optional .CRadialClipData radial_clip = 6;
+  if (has_radial_clip()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      WriteMessageNoVirtualToArray(
+        6, this->radial_clip(), target);
   }
 
   if (!unknown_fields().empty()) {
@@ -8456,24 +8974,36 @@ int CMsgClipData::ByteSize() const {
   int total_size = 0;
 
   if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
-    // optional double left = 1;
+    // optional bool rect_clip = 1;
+    if (has_rect_clip()) {
+      total_size += 1 + 1;
+    }
+
+    // optional double left = 2;
     if (has_left()) {
       total_size += 1 + 8;
     }
 
-    // optional double top = 2;
+    // optional double top = 3;
     if (has_top()) {
       total_size += 1 + 8;
     }
 
-    // optional double right = 3;
+    // optional double right = 4;
     if (has_right()) {
       total_size += 1 + 8;
     }
 
-    // optional double bottom = 4;
+    // optional double bottom = 5;
     if (has_bottom()) {
       total_size += 1 + 8;
+    }
+
+    // optional .CRadialClipData radial_clip = 6;
+    if (has_radial_clip()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+          this->radial_clip());
     }
 
   }
@@ -8503,6 +9033,9 @@ void CMsgClipData::MergeFrom(const ::google::protobuf::Message& from) {
 void CMsgClipData::MergeFrom(const CMsgClipData& from) {
   GOOGLE_CHECK_NE(&from, this);
   if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    if (from.has_rect_clip()) {
+      set_rect_clip(from.rect_clip());
+    }
     if (from.has_left()) {
       set_left(from.left());
     }
@@ -8514,6 +9047,9 @@ void CMsgClipData::MergeFrom(const CMsgClipData& from) {
     }
     if (from.has_bottom()) {
       set_bottom(from.bottom());
+    }
+    if (from.has_radial_clip()) {
+      mutable_radial_clip()->::CRadialClipData::MergeFrom(from.radial_clip());
     }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
@@ -8538,10 +9074,12 @@ bool CMsgClipData::IsInitialized() const {
 
 void CMsgClipData::Swap(CMsgClipData* other) {
   if (other != this) {
+    std::swap(rect_clip_, other->rect_clip_);
     std::swap(left_, other->left_);
     std::swap(top_, other->top_);
     std::swap(right_, other->right_);
     std::swap(bottom_, other->bottom_);
+    std::swap(radial_clip_, other->radial_clip_);
     std::swap(_has_bits_[0], other->_has_bits_[0]);
     _unknown_fields_.Swap(&other->_unknown_fields_);
     std::swap(_cached_size_, other->_cached_size_);
@@ -8611,6 +9149,7 @@ const int CMsgPushCompositingLayer::kScale2DFactorsYFieldNumber;
 const int CMsgPushCompositingLayer::kRotate2DFieldNumber;
 const int CMsgPushCompositingLayer::kNeedsClearFieldNumber;
 const int CMsgPushCompositingLayer::kNeedsDepthFieldNumber;
+const int CMsgPushCompositingLayer::kNeedsIntermediateTextureFieldNumber;
 const int CMsgPushCompositingLayer::kNeedsRedrawEveryFrameFieldNumber;
 const int CMsgPushCompositingLayer::kTextShadowFieldNumber;
 const int CMsgPushCompositingLayer::kMixBlendModeFieldNumber;
@@ -8618,6 +9157,8 @@ const int CMsgPushCompositingLayer::kOccludedLeftEdgeFieldNumber;
 const int CMsgPushCompositingLayer::kOccludedTopEdgeFieldNumber;
 const int CMsgPushCompositingLayer::kOccludedRightEdgeFieldNumber;
 const int CMsgPushCompositingLayer::kOccludedBottomEdgeFieldNumber;
+const int CMsgPushCompositingLayer::kRadialClipFieldNumber;
+const int CMsgPushCompositingLayer::kCompositionLayerTextureNameFieldNumber;
 #endif  // !_MSC_VER
 
 CMsgPushCompositingLayer::CMsgPushCompositingLayer()
@@ -8631,6 +9172,7 @@ void CMsgPushCompositingLayer::InitAsDefaultInstance() {
   border_radius_ = const_cast< ::CRadiusData*>(&::CRadiusData::default_instance());
   box_shadow_ = const_cast< ::CBoxShadowData*>(&::CBoxShadowData::default_instance());
   text_shadow_ = const_cast< ::CTextShadowData*>(&::CTextShadowData::default_instance());
+  radial_clip_ = const_cast< ::CRadialClipData*>(&::CRadialClipData::default_instance());
 }
 
 CMsgPushCompositingLayer::CMsgPushCompositingLayer(const CMsgPushCompositingLayer& from)
@@ -8641,6 +9183,7 @@ CMsgPushCompositingLayer::CMsgPushCompositingLayer(const CMsgPushCompositingLaye
 }
 
 void CMsgPushCompositingLayer::SharedCtor() {
+  ::google::protobuf::internal::GetEmptyString();
   _cached_size_ = 0;
   layer_id_ = GOOGLE_ULONGLONG(0);
   width_ = 0;
@@ -8693,6 +9236,7 @@ void CMsgPushCompositingLayer::SharedCtor() {
   rotate_2d_ = 0;
   needs_clear_ = false;
   needs_depth_ = false;
+  needs_intermediate_texture_ = false;
   needs_redraw_every_frame_ = false;
   text_shadow_ = NULL;
   mix_blend_mode_ = 0u;
@@ -8700,6 +9244,8 @@ void CMsgPushCompositingLayer::SharedCtor() {
   occluded_top_edge_ = 0;
   occluded_right_edge_ = 0;
   occluded_bottom_edge_ = 0;
+  radial_clip_ = NULL;
+  composition_layer_texture_name_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
 
@@ -8709,11 +9255,15 @@ CMsgPushCompositingLayer::~CMsgPushCompositingLayer() {
 }
 
 void CMsgPushCompositingLayer::SharedDtor() {
+  if (composition_layer_texture_name_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete composition_layer_texture_name_;
+  }
   if (this != default_instance_) {
     delete border_;
     delete border_radius_;
     delete box_shadow_;
     delete text_shadow_;
+    delete radial_clip_;
   }
 }
 
@@ -8778,12 +9328,22 @@ void CMsgPushCompositingLayer::Clear() {
   }
   if (_has_bits_[48 / 32] & 16711680) {
     ZR_(rotate_2d_, mix_blend_mode_);
-    ZR_(occluded_left_edge_, occluded_top_edge_);
     if (has_text_shadow()) {
       if (text_shadow_ != NULL) text_shadow_->::CTextShadowData::Clear();
     }
+    occluded_left_edge_ = 0;
   }
-  ZR_(occluded_right_edge_, occluded_bottom_edge_);
+  if (_has_bits_[56 / 32] & 520093696) {
+    ZR_(occluded_top_edge_, occluded_bottom_edge_);
+    if (has_radial_clip()) {
+      if (radial_clip_ != NULL) radial_clip_->::CRadialClipData::Clear();
+    }
+    if (has_composition_layer_texture_name()) {
+      if (composition_layer_texture_name_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+        composition_layer_texture_name_->clear();
+      }
+    }
+  }
 
 #undef OFFSET_OF_FIELD_
 #undef ZR_
@@ -9556,13 +10116,28 @@ bool CMsgPushCompositingLayer::MergePartialFromCodedStream(
         } else {
           goto handle_unusual;
         }
-        if (input->ExpectTag(416)) goto parse_needs_redraw_every_frame;
+        if (input->ExpectTag(416)) goto parse_needs_intermediate_texture;
         break;
       }
 
-      // optional bool needs_redraw_every_frame = 52;
+      // optional bool needs_intermediate_texture = 52;
       case 52: {
         if (tag == 416) {
+         parse_needs_intermediate_texture:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   bool, ::google::protobuf::internal::WireFormatLite::TYPE_BOOL>(
+                 input, &needs_intermediate_texture_)));
+          set_has_needs_intermediate_texture();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(424)) goto parse_needs_redraw_every_frame;
+        break;
+      }
+
+      // optional bool needs_redraw_every_frame = 53;
+      case 53: {
+        if (tag == 424) {
          parse_needs_redraw_every_frame:
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    bool, ::google::protobuf::internal::WireFormatLite::TYPE_BOOL>(
@@ -9571,26 +10146,26 @@ bool CMsgPushCompositingLayer::MergePartialFromCodedStream(
         } else {
           goto handle_unusual;
         }
-        if (input->ExpectTag(426)) goto parse_text_shadow;
+        if (input->ExpectTag(434)) goto parse_text_shadow;
         break;
       }
 
-      // optional .CTextShadowData text_shadow = 53;
-      case 53: {
-        if (tag == 426) {
+      // optional .CTextShadowData text_shadow = 54;
+      case 54: {
+        if (tag == 434) {
          parse_text_shadow:
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
                input, mutable_text_shadow()));
         } else {
           goto handle_unusual;
         }
-        if (input->ExpectTag(432)) goto parse_mix_blend_mode;
+        if (input->ExpectTag(440)) goto parse_mix_blend_mode;
         break;
       }
 
-      // optional uint32 mix_blend_mode = 54;
-      case 54: {
-        if (tag == 432) {
+      // optional uint32 mix_blend_mode = 55;
+      case 55: {
+        if (tag == 440) {
          parse_mix_blend_mode:
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
@@ -9599,13 +10174,13 @@ bool CMsgPushCompositingLayer::MergePartialFromCodedStream(
         } else {
           goto handle_unusual;
         }
-        if (input->ExpectTag(441)) goto parse_occluded_left_edge;
+        if (input->ExpectTag(449)) goto parse_occluded_left_edge;
         break;
       }
 
-      // optional double occluded_left_edge = 55;
-      case 55: {
-        if (tag == 441) {
+      // optional double occluded_left_edge = 56;
+      case 56: {
+        if (tag == 449) {
          parse_occluded_left_edge:
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    double, ::google::protobuf::internal::WireFormatLite::TYPE_DOUBLE>(
@@ -9614,13 +10189,13 @@ bool CMsgPushCompositingLayer::MergePartialFromCodedStream(
         } else {
           goto handle_unusual;
         }
-        if (input->ExpectTag(449)) goto parse_occluded_top_edge;
+        if (input->ExpectTag(457)) goto parse_occluded_top_edge;
         break;
       }
 
-      // optional double occluded_top_edge = 56;
-      case 56: {
-        if (tag == 449) {
+      // optional double occluded_top_edge = 57;
+      case 57: {
+        if (tag == 457) {
          parse_occluded_top_edge:
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    double, ::google::protobuf::internal::WireFormatLite::TYPE_DOUBLE>(
@@ -9629,13 +10204,13 @@ bool CMsgPushCompositingLayer::MergePartialFromCodedStream(
         } else {
           goto handle_unusual;
         }
-        if (input->ExpectTag(457)) goto parse_occluded_right_edge;
+        if (input->ExpectTag(465)) goto parse_occluded_right_edge;
         break;
       }
 
-      // optional double occluded_right_edge = 57;
-      case 57: {
-        if (tag == 457) {
+      // optional double occluded_right_edge = 58;
+      case 58: {
+        if (tag == 465) {
          parse_occluded_right_edge:
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    double, ::google::protobuf::internal::WireFormatLite::TYPE_DOUBLE>(
@@ -9644,18 +10219,48 @@ bool CMsgPushCompositingLayer::MergePartialFromCodedStream(
         } else {
           goto handle_unusual;
         }
-        if (input->ExpectTag(465)) goto parse_occluded_bottom_edge;
+        if (input->ExpectTag(473)) goto parse_occluded_bottom_edge;
         break;
       }
 
-      // optional double occluded_bottom_edge = 58;
-      case 58: {
-        if (tag == 465) {
+      // optional double occluded_bottom_edge = 59;
+      case 59: {
+        if (tag == 473) {
          parse_occluded_bottom_edge:
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    double, ::google::protobuf::internal::WireFormatLite::TYPE_DOUBLE>(
                  input, &occluded_bottom_edge_)));
           set_has_occluded_bottom_edge();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(482)) goto parse_radial_clip;
+        break;
+      }
+
+      // optional .CRadialClipData radial_clip = 60;
+      case 60: {
+        if (tag == 482) {
+         parse_radial_clip:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+               input, mutable_radial_clip()));
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(514)) goto parse_composition_layer_texture_name;
+        break;
+      }
+
+      // optional string composition_layer_texture_name = 64;
+      case 64: {
+        if (tag == 514) {
+         parse_composition_layer_texture_name:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_composition_layer_texture_name()));
+          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+            this->composition_layer_texture_name().data(), this->composition_layer_texture_name().length(),
+            ::google::protobuf::internal::WireFormat::PARSE,
+            "composition_layer_texture_name");
         } else {
           goto handle_unusual;
         }
@@ -9946,40 +10551,61 @@ void CMsgPushCompositingLayer::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteBool(51, this->needs_depth(), output);
   }
 
-  // optional bool needs_redraw_every_frame = 52;
-  if (has_needs_redraw_every_frame()) {
-    ::google::protobuf::internal::WireFormatLite::WriteBool(52, this->needs_redraw_every_frame(), output);
+  // optional bool needs_intermediate_texture = 52;
+  if (has_needs_intermediate_texture()) {
+    ::google::protobuf::internal::WireFormatLite::WriteBool(52, this->needs_intermediate_texture(), output);
   }
 
-  // optional .CTextShadowData text_shadow = 53;
+  // optional bool needs_redraw_every_frame = 53;
+  if (has_needs_redraw_every_frame()) {
+    ::google::protobuf::internal::WireFormatLite::WriteBool(53, this->needs_redraw_every_frame(), output);
+  }
+
+  // optional .CTextShadowData text_shadow = 54;
   if (has_text_shadow()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      53, this->text_shadow(), output);
+      54, this->text_shadow(), output);
   }
 
-  // optional uint32 mix_blend_mode = 54;
+  // optional uint32 mix_blend_mode = 55;
   if (has_mix_blend_mode()) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt32(54, this->mix_blend_mode(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteUInt32(55, this->mix_blend_mode(), output);
   }
 
-  // optional double occluded_left_edge = 55;
+  // optional double occluded_left_edge = 56;
   if (has_occluded_left_edge()) {
-    ::google::protobuf::internal::WireFormatLite::WriteDouble(55, this->occluded_left_edge(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteDouble(56, this->occluded_left_edge(), output);
   }
 
-  // optional double occluded_top_edge = 56;
+  // optional double occluded_top_edge = 57;
   if (has_occluded_top_edge()) {
-    ::google::protobuf::internal::WireFormatLite::WriteDouble(56, this->occluded_top_edge(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteDouble(57, this->occluded_top_edge(), output);
   }
 
-  // optional double occluded_right_edge = 57;
+  // optional double occluded_right_edge = 58;
   if (has_occluded_right_edge()) {
-    ::google::protobuf::internal::WireFormatLite::WriteDouble(57, this->occluded_right_edge(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteDouble(58, this->occluded_right_edge(), output);
   }
 
-  // optional double occluded_bottom_edge = 58;
+  // optional double occluded_bottom_edge = 59;
   if (has_occluded_bottom_edge()) {
-    ::google::protobuf::internal::WireFormatLite::WriteDouble(58, this->occluded_bottom_edge(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteDouble(59, this->occluded_bottom_edge(), output);
+  }
+
+  // optional .CRadialClipData radial_clip = 60;
+  if (has_radial_clip()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      60, this->radial_clip(), output);
+  }
+
+  // optional string composition_layer_texture_name = 64;
+  if (has_composition_layer_texture_name()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->composition_layer_texture_name().data(), this->composition_layer_texture_name().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "composition_layer_texture_name");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      64, this->composition_layer_texture_name(), output);
   }
 
   if (!unknown_fields().empty()) {
@@ -10253,41 +10879,64 @@ void CMsgPushCompositingLayer::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(51, this->needs_depth(), target);
   }
 
-  // optional bool needs_redraw_every_frame = 52;
-  if (has_needs_redraw_every_frame()) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(52, this->needs_redraw_every_frame(), target);
+  // optional bool needs_intermediate_texture = 52;
+  if (has_needs_intermediate_texture()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(52, this->needs_intermediate_texture(), target);
   }
 
-  // optional .CTextShadowData text_shadow = 53;
+  // optional bool needs_redraw_every_frame = 53;
+  if (has_needs_redraw_every_frame()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(53, this->needs_redraw_every_frame(), target);
+  }
+
+  // optional .CTextShadowData text_shadow = 54;
   if (has_text_shadow()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
-        53, this->text_shadow(), target);
+        54, this->text_shadow(), target);
   }
 
-  // optional uint32 mix_blend_mode = 54;
+  // optional uint32 mix_blend_mode = 55;
   if (has_mix_blend_mode()) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(54, this->mix_blend_mode(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(55, this->mix_blend_mode(), target);
   }
 
-  // optional double occluded_left_edge = 55;
+  // optional double occluded_left_edge = 56;
   if (has_occluded_left_edge()) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteDoubleToArray(55, this->occluded_left_edge(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteDoubleToArray(56, this->occluded_left_edge(), target);
   }
 
-  // optional double occluded_top_edge = 56;
+  // optional double occluded_top_edge = 57;
   if (has_occluded_top_edge()) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteDoubleToArray(56, this->occluded_top_edge(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteDoubleToArray(57, this->occluded_top_edge(), target);
   }
 
-  // optional double occluded_right_edge = 57;
+  // optional double occluded_right_edge = 58;
   if (has_occluded_right_edge()) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteDoubleToArray(57, this->occluded_right_edge(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteDoubleToArray(58, this->occluded_right_edge(), target);
   }
 
-  // optional double occluded_bottom_edge = 58;
+  // optional double occluded_bottom_edge = 59;
   if (has_occluded_bottom_edge()) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteDoubleToArray(58, this->occluded_bottom_edge(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteDoubleToArray(59, this->occluded_bottom_edge(), target);
+  }
+
+  // optional .CRadialClipData radial_clip = 60;
+  if (has_radial_clip()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      WriteMessageNoVirtualToArray(
+        60, this->radial_clip(), target);
+  }
+
+  // optional string composition_layer_texture_name = 64;
+  if (has_composition_layer_texture_name()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->composition_layer_texture_name().data(), this->composition_layer_texture_name().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "composition_layer_texture_name");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        64, this->composition_layer_texture_name(), target);
   }
 
   if (!unknown_fields().empty()) {
@@ -10581,45 +11230,64 @@ int CMsgPushCompositingLayer::ByteSize() const {
       total_size += 2 + 1;
     }
 
-    // optional bool needs_redraw_every_frame = 52;
+    // optional bool needs_intermediate_texture = 52;
+    if (has_needs_intermediate_texture()) {
+      total_size += 2 + 1;
+    }
+
+    // optional bool needs_redraw_every_frame = 53;
     if (has_needs_redraw_every_frame()) {
       total_size += 2 + 1;
     }
 
-    // optional .CTextShadowData text_shadow = 53;
+    // optional .CTextShadowData text_shadow = 54;
     if (has_text_shadow()) {
       total_size += 2 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
           this->text_shadow());
     }
 
-    // optional uint32 mix_blend_mode = 54;
+    // optional uint32 mix_blend_mode = 55;
     if (has_mix_blend_mode()) {
       total_size += 2 +
         ::google::protobuf::internal::WireFormatLite::UInt32Size(
           this->mix_blend_mode());
     }
 
-    // optional double occluded_left_edge = 55;
+    // optional double occluded_left_edge = 56;
     if (has_occluded_left_edge()) {
-      total_size += 2 + 8;
-    }
-
-    // optional double occluded_top_edge = 56;
-    if (has_occluded_top_edge()) {
       total_size += 2 + 8;
     }
 
   }
   if (_has_bits_[56 / 32] & (0xffu << (56 % 32))) {
-    // optional double occluded_right_edge = 57;
+    // optional double occluded_top_edge = 57;
+    if (has_occluded_top_edge()) {
+      total_size += 2 + 8;
+    }
+
+    // optional double occluded_right_edge = 58;
     if (has_occluded_right_edge()) {
       total_size += 2 + 8;
     }
 
-    // optional double occluded_bottom_edge = 58;
+    // optional double occluded_bottom_edge = 59;
     if (has_occluded_bottom_edge()) {
       total_size += 2 + 8;
+    }
+
+    // optional .CRadialClipData radial_clip = 60;
+    if (has_radial_clip()) {
+      total_size += 2 +
+        ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+          this->radial_clip());
+    }
+
+    // optional string composition_layer_texture_name = 64;
+    if (has_composition_layer_texture_name()) {
+      total_size += 2 +
+        ::google::protobuf::internal::WireFormatLite::StringSize(
+          this->composition_layer_texture_name());
     }
 
   }
@@ -10814,6 +11482,9 @@ void CMsgPushCompositingLayer::MergeFrom(const CMsgPushCompositingLayer& from) {
     if (from.has_needs_depth()) {
       set_needs_depth(from.needs_depth());
     }
+    if (from.has_needs_intermediate_texture()) {
+      set_needs_intermediate_texture(from.needs_intermediate_texture());
+    }
     if (from.has_needs_redraw_every_frame()) {
       set_needs_redraw_every_frame(from.needs_redraw_every_frame());
     }
@@ -10826,16 +11497,22 @@ void CMsgPushCompositingLayer::MergeFrom(const CMsgPushCompositingLayer& from) {
     if (from.has_occluded_left_edge()) {
       set_occluded_left_edge(from.occluded_left_edge());
     }
+  }
+  if (from._has_bits_[56 / 32] & (0xffu << (56 % 32))) {
     if (from.has_occluded_top_edge()) {
       set_occluded_top_edge(from.occluded_top_edge());
     }
-  }
-  if (from._has_bits_[56 / 32] & (0xffu << (56 % 32))) {
     if (from.has_occluded_right_edge()) {
       set_occluded_right_edge(from.occluded_right_edge());
     }
     if (from.has_occluded_bottom_edge()) {
       set_occluded_bottom_edge(from.occluded_bottom_edge());
+    }
+    if (from.has_radial_clip()) {
+      mutable_radial_clip()->::CRadialClipData::MergeFrom(from.radial_clip());
+    }
+    if (from.has_composition_layer_texture_name()) {
+      set_composition_layer_texture_name(from.composition_layer_texture_name());
     }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
@@ -10911,6 +11588,7 @@ void CMsgPushCompositingLayer::Swap(CMsgPushCompositingLayer* other) {
     std::swap(rotate_2d_, other->rotate_2d_);
     std::swap(needs_clear_, other->needs_clear_);
     std::swap(needs_depth_, other->needs_depth_);
+    std::swap(needs_intermediate_texture_, other->needs_intermediate_texture_);
     std::swap(needs_redraw_every_frame_, other->needs_redraw_every_frame_);
     std::swap(text_shadow_, other->text_shadow_);
     std::swap(mix_blend_mode_, other->mix_blend_mode_);
@@ -10918,6 +11596,8 @@ void CMsgPushCompositingLayer::Swap(CMsgPushCompositingLayer* other) {
     std::swap(occluded_top_edge_, other->occluded_top_edge_);
     std::swap(occluded_right_edge_, other->occluded_right_edge_);
     std::swap(occluded_bottom_edge_, other->occluded_bottom_edge_);
+    std::swap(radial_clip_, other->radial_clip_);
+    std::swap(composition_layer_texture_name_, other->composition_layer_texture_name_);
     std::swap(_has_bits_[0], other->_has_bits_[0]);
     std::swap(_has_bits_[1], other->_has_bits_[1]);
     _unknown_fields_.Swap(&other->_unknown_fields_);
@@ -13102,6 +13782,7 @@ void CMsgPointWithTransition_AnimationFrameData::Swap(CMsgPointWithTransition_An
 const int CMsgPointWithTransition::kBaseFieldNumber;
 const int CMsgPointWithTransition::kTransitionFieldNumber;
 const int CMsgPointWithTransition::kTransitionDataFieldNumber;
+const int CMsgPointWithTransition::kStyleSymbolFieldNumber;
 const int CMsgPointWithTransition::kAnimationsFieldNumber;
 #endif  // !_MSC_VER
 
@@ -13135,6 +13816,7 @@ void CMsgPointWithTransition::SharedCtor() {
   base_ = NULL;
   transition_ = NULL;
   transition_data_ = NULL;
+  style_symbol_ = 0u;
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
 
@@ -13173,7 +13855,7 @@ CMsgPointWithTransition* CMsgPointWithTransition::New() const {
 }
 
 void CMsgPointWithTransition::Clear() {
-  if (_has_bits_[0 / 32] & 7) {
+  if (_has_bits_[0 / 32] & 15) {
     if (has_base()) {
       if (base_ != NULL) base_->::CMsgPoint::Clear();
     }
@@ -13183,6 +13865,7 @@ void CMsgPointWithTransition::Clear() {
     if (has_transition_data()) {
       if (transition_data_ != NULL) transition_data_->::CMsgTransitionData::Clear();
     }
+    style_symbol_ = 0u;
   }
   animations_.Clear();
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
@@ -13233,20 +13916,35 @@ bool CMsgPointWithTransition::MergePartialFromCodedStream(
         } else {
           goto handle_unusual;
         }
-        if (input->ExpectTag(34)) goto parse_animations;
+        if (input->ExpectTag(32)) goto parse_style_symbol;
         break;
       }
 
-      // repeated .CMsgAnimationData animations = 4;
+      // optional uint32 style_symbol = 4;
       case 4: {
-        if (tag == 34) {
+        if (tag == 32) {
+         parse_style_symbol:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                 input, &style_symbol_)));
+          set_has_style_symbol();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(42)) goto parse_animations;
+        break;
+      }
+
+      // repeated .CMsgAnimationData animations = 5;
+      case 5: {
+        if (tag == 42) {
          parse_animations:
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
                 input, add_animations()));
         } else {
           goto handle_unusual;
         }
-        if (input->ExpectTag(34)) goto parse_animations;
+        if (input->ExpectTag(42)) goto parse_animations;
         if (input->ExpectAtEnd()) goto success;
         break;
       }
@@ -13294,10 +13992,15 @@ void CMsgPointWithTransition::SerializeWithCachedSizes(
       3, this->transition_data(), output);
   }
 
-  // repeated .CMsgAnimationData animations = 4;
+  // optional uint32 style_symbol = 4;
+  if (has_style_symbol()) {
+    ::google::protobuf::internal::WireFormatLite::WriteUInt32(4, this->style_symbol(), output);
+  }
+
+  // repeated .CMsgAnimationData animations = 5;
   for (int i = 0; i < this->animations_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      4, this->animations(i), output);
+      5, this->animations(i), output);
   }
 
   if (!unknown_fields().empty()) {
@@ -13331,11 +14034,16 @@ void CMsgPointWithTransition::SerializeWithCachedSizes(
         3, this->transition_data(), target);
   }
 
-  // repeated .CMsgAnimationData animations = 4;
+  // optional uint32 style_symbol = 4;
+  if (has_style_symbol()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(4, this->style_symbol(), target);
+  }
+
+  // repeated .CMsgAnimationData animations = 5;
   for (int i = 0; i < this->animations_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
-        4, this->animations(i), target);
+        5, this->animations(i), target);
   }
 
   if (!unknown_fields().empty()) {
@@ -13371,8 +14079,15 @@ int CMsgPointWithTransition::ByteSize() const {
           this->transition_data());
     }
 
+    // optional uint32 style_symbol = 4;
+    if (has_style_symbol()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::UInt32Size(
+          this->style_symbol());
+    }
+
   }
-  // repeated .CMsgAnimationData animations = 4;
+  // repeated .CMsgAnimationData animations = 5;
   total_size += 1 * this->animations_size();
   for (int i = 0; i < this->animations_size(); i++) {
     total_size +=
@@ -13416,6 +14131,9 @@ void CMsgPointWithTransition::MergeFrom(const CMsgPointWithTransition& from) {
     if (from.has_transition_data()) {
       mutable_transition_data()->::CMsgTransitionData::MergeFrom(from.transition_data());
     }
+    if (from.has_style_symbol()) {
+      set_style_symbol(from.style_symbol());
+    }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
 }
@@ -13443,6 +14161,7 @@ void CMsgPointWithTransition::Swap(CMsgPointWithTransition* other) {
     std::swap(base_, other->base_);
     std::swap(transition_, other->transition_);
     std::swap(transition_data_, other->transition_data_);
+    std::swap(style_symbol_, other->style_symbol_);
     animations_.Swap(&other->animations_);
     std::swap(_has_bits_[0], other->_has_bits_[0]);
     _unknown_fields_.Swap(&other->_unknown_fields_);
@@ -13687,6 +14406,7 @@ void CMsgColor_AnimationFrameData::Swap(CMsgColor_AnimationFrameData* other) {
 const int CMsgColor::kBaseFieldNumber;
 const int CMsgColor::kTransitionFieldNumber;
 const int CMsgColor::kTransitionDataFieldNumber;
+const int CMsgColor::kStyleSymbolFieldNumber;
 const int CMsgColor::kAnimationsFieldNumber;
 #endif  // !_MSC_VER
 
@@ -13718,6 +14438,7 @@ void CMsgColor::SharedCtor() {
   base_ = 0u;
   transition_ = 0u;
   transition_data_ = NULL;
+  style_symbol_ = 0u;
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
 
@@ -13764,11 +14485,12 @@ void CMsgColor::Clear() {
     ::memset(&first, 0, n);                                \
   } while (0)
 
-  if (_has_bits_[0 / 32] & 7) {
+  if (_has_bits_[0 / 32] & 15) {
     ZR_(base_, transition_);
     if (has_transition_data()) {
       if (transition_data_ != NULL) transition_data_->::CMsgTransitionData::Clear();
     }
+    style_symbol_ = 0u;
   }
 
 #undef OFFSET_OF_FIELD_
@@ -13827,20 +14549,35 @@ bool CMsgColor::MergePartialFromCodedStream(
         } else {
           goto handle_unusual;
         }
-        if (input->ExpectTag(34)) goto parse_animations;
+        if (input->ExpectTag(32)) goto parse_style_symbol;
         break;
       }
 
-      // repeated .CMsgAnimationData animations = 4;
+      // optional uint32 style_symbol = 4;
       case 4: {
-        if (tag == 34) {
+        if (tag == 32) {
+         parse_style_symbol:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                 input, &style_symbol_)));
+          set_has_style_symbol();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(42)) goto parse_animations;
+        break;
+      }
+
+      // repeated .CMsgAnimationData animations = 5;
+      case 5: {
+        if (tag == 42) {
          parse_animations:
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
                 input, add_animations()));
         } else {
           goto handle_unusual;
         }
-        if (input->ExpectTag(34)) goto parse_animations;
+        if (input->ExpectTag(42)) goto parse_animations;
         if (input->ExpectAtEnd()) goto success;
         break;
       }
@@ -13886,10 +14623,15 @@ void CMsgColor::SerializeWithCachedSizes(
       3, this->transition_data(), output);
   }
 
-  // repeated .CMsgAnimationData animations = 4;
+  // optional uint32 style_symbol = 4;
+  if (has_style_symbol()) {
+    ::google::protobuf::internal::WireFormatLite::WriteUInt32(4, this->style_symbol(), output);
+  }
+
+  // repeated .CMsgAnimationData animations = 5;
   for (int i = 0; i < this->animations_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      4, this->animations(i), output);
+      5, this->animations(i), output);
   }
 
   if (!unknown_fields().empty()) {
@@ -13919,11 +14661,16 @@ void CMsgColor::SerializeWithCachedSizes(
         3, this->transition_data(), target);
   }
 
-  // repeated .CMsgAnimationData animations = 4;
+  // optional uint32 style_symbol = 4;
+  if (has_style_symbol()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(4, this->style_symbol(), target);
+  }
+
+  // repeated .CMsgAnimationData animations = 5;
   for (int i = 0; i < this->animations_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
-        4, this->animations(i), target);
+        5, this->animations(i), target);
   }
 
   if (!unknown_fields().empty()) {
@@ -13959,8 +14706,15 @@ int CMsgColor::ByteSize() const {
           this->transition_data());
     }
 
+    // optional uint32 style_symbol = 4;
+    if (has_style_symbol()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::UInt32Size(
+          this->style_symbol());
+    }
+
   }
-  // repeated .CMsgAnimationData animations = 4;
+  // repeated .CMsgAnimationData animations = 5;
   total_size += 1 * this->animations_size();
   for (int i = 0; i < this->animations_size(); i++) {
     total_size +=
@@ -14004,6 +14758,9 @@ void CMsgColor::MergeFrom(const CMsgColor& from) {
     if (from.has_transition_data()) {
       mutable_transition_data()->::CMsgTransitionData::MergeFrom(from.transition_data());
     }
+    if (from.has_style_symbol()) {
+      set_style_symbol(from.style_symbol());
+    }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
 }
@@ -14031,6 +14788,7 @@ void CMsgColor::Swap(CMsgColor* other) {
     std::swap(base_, other->base_);
     std::swap(transition_, other->transition_);
     std::swap(transition_data_, other->transition_data_);
+    std::swap(style_symbol_, other->style_symbol_);
     animations_.Swap(&other->animations_);
     std::swap(_has_bits_[0], other->_has_bits_[0]);
     _unknown_fields_.Swap(&other->_unknown_fields_);
@@ -17153,6 +17911,7 @@ void CMsgFillBrushCollection_AnimationFrameData::Swap(CMsgFillBrushCollection_An
 const int CMsgFillBrushCollection::kBaseFieldNumber;
 const int CMsgFillBrushCollection::kTransitionFieldNumber;
 const int CMsgFillBrushCollection::kTransitionDataFieldNumber;
+const int CMsgFillBrushCollection::kStyleSymbolFieldNumber;
 const int CMsgFillBrushCollection::kAnimationsFieldNumber;
 #endif  // !_MSC_VER
 
@@ -17182,6 +17941,7 @@ CMsgFillBrushCollection::CMsgFillBrushCollection(const CMsgFillBrushCollection& 
 void CMsgFillBrushCollection::SharedCtor() {
   _cached_size_ = 0;
   transition_data_ = NULL;
+  style_symbol_ = 0u;
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
 
@@ -17218,8 +17978,11 @@ CMsgFillBrushCollection* CMsgFillBrushCollection::New() const {
 }
 
 void CMsgFillBrushCollection::Clear() {
-  if (has_transition_data()) {
-    if (transition_data_ != NULL) transition_data_->::CMsgTransitionData::Clear();
+  if (_has_bits_[0 / 32] & 12) {
+    if (has_transition_data()) {
+      if (transition_data_ != NULL) transition_data_->::CMsgTransitionData::Clear();
+    }
+    style_symbol_ = 0u;
   }
   base_.Clear();
   transition_.Clear();
@@ -17275,20 +18038,35 @@ bool CMsgFillBrushCollection::MergePartialFromCodedStream(
         } else {
           goto handle_unusual;
         }
-        if (input->ExpectTag(34)) goto parse_animations;
+        if (input->ExpectTag(32)) goto parse_style_symbol;
         break;
       }
 
-      // repeated .CMsgAnimationData animations = 4;
+      // optional uint32 style_symbol = 4;
       case 4: {
-        if (tag == 34) {
+        if (tag == 32) {
+         parse_style_symbol:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                 input, &style_symbol_)));
+          set_has_style_symbol();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(42)) goto parse_animations;
+        break;
+      }
+
+      // repeated .CMsgAnimationData animations = 5;
+      case 5: {
+        if (tag == 42) {
          parse_animations:
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
                 input, add_animations()));
         } else {
           goto handle_unusual;
         }
-        if (input->ExpectTag(34)) goto parse_animations;
+        if (input->ExpectTag(42)) goto parse_animations;
         if (input->ExpectAtEnd()) goto success;
         break;
       }
@@ -17336,10 +18114,15 @@ void CMsgFillBrushCollection::SerializeWithCachedSizes(
       3, this->transition_data(), output);
   }
 
-  // repeated .CMsgAnimationData animations = 4;
+  // optional uint32 style_symbol = 4;
+  if (has_style_symbol()) {
+    ::google::protobuf::internal::WireFormatLite::WriteUInt32(4, this->style_symbol(), output);
+  }
+
+  // repeated .CMsgAnimationData animations = 5;
   for (int i = 0; i < this->animations_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      4, this->animations(i), output);
+      5, this->animations(i), output);
   }
 
   if (!unknown_fields().empty()) {
@@ -17373,11 +18156,16 @@ void CMsgFillBrushCollection::SerializeWithCachedSizes(
         3, this->transition_data(), target);
   }
 
-  // repeated .CMsgAnimationData animations = 4;
+  // optional uint32 style_symbol = 4;
+  if (has_style_symbol()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(4, this->style_symbol(), target);
+  }
+
+  // repeated .CMsgAnimationData animations = 5;
   for (int i = 0; i < this->animations_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
-        4, this->animations(i), target);
+        5, this->animations(i), target);
   }
 
   if (!unknown_fields().empty()) {
@@ -17399,6 +18187,13 @@ int CMsgFillBrushCollection::ByteSize() const {
           this->transition_data());
     }
 
+    // optional uint32 style_symbol = 4;
+    if (has_style_symbol()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::UInt32Size(
+          this->style_symbol());
+    }
+
   }
   // repeated .CMsgFillBrush base = 1;
   total_size += 1 * this->base_size();
@@ -17416,7 +18211,7 @@ int CMsgFillBrushCollection::ByteSize() const {
         this->transition(i));
   }
 
-  // repeated .CMsgAnimationData animations = 4;
+  // repeated .CMsgAnimationData animations = 5;
   total_size += 1 * this->animations_size();
   for (int i = 0; i < this->animations_size(); i++) {
     total_size +=
@@ -17456,6 +18251,9 @@ void CMsgFillBrushCollection::MergeFrom(const CMsgFillBrushCollection& from) {
     if (from.has_transition_data()) {
       mutable_transition_data()->::CMsgTransitionData::MergeFrom(from.transition_data());
     }
+    if (from.has_style_symbol()) {
+      set_style_symbol(from.style_symbol());
+    }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
 }
@@ -17483,6 +18281,7 @@ void CMsgFillBrushCollection::Swap(CMsgFillBrushCollection* other) {
     base_.Swap(&other->base_);
     transition_.Swap(&other->transition_);
     std::swap(transition_data_, other->transition_data_);
+    std::swap(style_symbol_, other->style_symbol_);
     animations_.Swap(&other->animations_);
     std::swap(_has_bits_[0], other->_has_bits_[0]);
     _unknown_fields_.Swap(&other->_unknown_fields_);
@@ -17951,6 +18750,7 @@ void CMsgPanelPosition_AnimationFrameData::Swap(CMsgPanelPosition_AnimationFrame
 const int CMsgPanelPosition::kBaseFieldNumber;
 const int CMsgPanelPosition::kTransitionFieldNumber;
 const int CMsgPanelPosition::kTransitionDataFieldNumber;
+const int CMsgPanelPosition::kStyleSymbolFieldNumber;
 const int CMsgPanelPosition::kAnimationsFieldNumber;
 const int CMsgPanelPosition::kScrollOffsetFieldNumber;
 const int CMsgPanelPosition::kScrollOffsetTargetFieldNumber;
@@ -17992,6 +18792,7 @@ void CMsgPanelPosition::SharedCtor() {
   base_ = NULL;
   transition_ = NULL;
   transition_data_ = NULL;
+  style_symbol_ = 0u;
   scroll_offset_ = NULL;
   scroll_offset_target_ = NULL;
   scroll_transition_x_ = NULL;
@@ -18038,7 +18839,7 @@ CMsgPanelPosition* CMsgPanelPosition::New() const {
 }
 
 void CMsgPanelPosition::Clear() {
-  if (_has_bits_[0 / 32] & 247) {
+  if (_has_bits_[0 / 32] & 239) {
     if (has_base()) {
       if (base_ != NULL) base_->::CMsgPoint::Clear();
     }
@@ -18048,6 +18849,7 @@ void CMsgPanelPosition::Clear() {
     if (has_transition_data()) {
       if (transition_data_ != NULL) transition_data_->::CMsgTransitionData::Clear();
     }
+    style_symbol_ = 0u;
     if (has_scroll_offset()) {
       if (scroll_offset_ != NULL) scroll_offset_->::CMsgPoint::Clear();
     }
@@ -18057,9 +18859,9 @@ void CMsgPanelPosition::Clear() {
     if (has_scroll_transition_x()) {
       if (scroll_transition_x_ != NULL) scroll_transition_x_->::CMsgTransitionData::Clear();
     }
-    if (has_scroll_transition_y()) {
-      if (scroll_transition_y_ != NULL) scroll_transition_y_->::CMsgTransitionData::Clear();
-    }
+  }
+  if (has_scroll_transition_y()) {
+    if (scroll_transition_y_ != NULL) scroll_transition_y_->::CMsgTransitionData::Clear();
   }
   animations_.Clear();
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
@@ -18110,66 +18912,81 @@ bool CMsgPanelPosition::MergePartialFromCodedStream(
         } else {
           goto handle_unusual;
         }
-        if (input->ExpectTag(34)) goto parse_animations;
+        if (input->ExpectTag(32)) goto parse_style_symbol;
         break;
       }
 
-      // repeated .CMsgAnimationData animations = 4;
+      // optional uint32 style_symbol = 4;
       case 4: {
-        if (tag == 34) {
+        if (tag == 32) {
+         parse_style_symbol:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                 input, &style_symbol_)));
+          set_has_style_symbol();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(42)) goto parse_animations;
+        break;
+      }
+
+      // repeated .CMsgAnimationData animations = 5;
+      case 5: {
+        if (tag == 42) {
          parse_animations:
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
                 input, add_animations()));
         } else {
           goto handle_unusual;
         }
-        if (input->ExpectTag(34)) goto parse_animations;
-        if (input->ExpectTag(42)) goto parse_scroll_offset;
+        if (input->ExpectTag(42)) goto parse_animations;
+        if (input->ExpectTag(50)) goto parse_scroll_offset;
         break;
       }
 
-      // optional .CMsgPoint scroll_offset = 5;
-      case 5: {
-        if (tag == 42) {
+      // optional .CMsgPoint scroll_offset = 6;
+      case 6: {
+        if (tag == 50) {
          parse_scroll_offset:
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
                input, mutable_scroll_offset()));
         } else {
           goto handle_unusual;
         }
-        if (input->ExpectTag(50)) goto parse_scroll_offset_target;
+        if (input->ExpectTag(58)) goto parse_scroll_offset_target;
         break;
       }
 
-      // optional .CMsgPoint scroll_offset_target = 6;
-      case 6: {
-        if (tag == 50) {
+      // optional .CMsgPoint scroll_offset_target = 7;
+      case 7: {
+        if (tag == 58) {
          parse_scroll_offset_target:
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
                input, mutable_scroll_offset_target()));
         } else {
           goto handle_unusual;
         }
-        if (input->ExpectTag(58)) goto parse_scroll_transition_x;
+        if (input->ExpectTag(66)) goto parse_scroll_transition_x;
         break;
       }
 
-      // optional .CMsgTransitionData scroll_transition_x = 7;
-      case 7: {
-        if (tag == 58) {
+      // optional .CMsgTransitionData scroll_transition_x = 8;
+      case 8: {
+        if (tag == 66) {
          parse_scroll_transition_x:
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
                input, mutable_scroll_transition_x()));
         } else {
           goto handle_unusual;
         }
-        if (input->ExpectTag(66)) goto parse_scroll_transition_y;
+        if (input->ExpectTag(74)) goto parse_scroll_transition_y;
         break;
       }
 
-      // optional .CMsgTransitionData scroll_transition_y = 8;
-      case 8: {
-        if (tag == 66) {
+      // optional .CMsgTransitionData scroll_transition_y = 9;
+      case 9: {
+        if (tag == 74) {
          parse_scroll_transition_y:
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
                input, mutable_scroll_transition_y()));
@@ -18223,34 +19040,39 @@ void CMsgPanelPosition::SerializeWithCachedSizes(
       3, this->transition_data(), output);
   }
 
-  // repeated .CMsgAnimationData animations = 4;
+  // optional uint32 style_symbol = 4;
+  if (has_style_symbol()) {
+    ::google::protobuf::internal::WireFormatLite::WriteUInt32(4, this->style_symbol(), output);
+  }
+
+  // repeated .CMsgAnimationData animations = 5;
   for (int i = 0; i < this->animations_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      4, this->animations(i), output);
+      5, this->animations(i), output);
   }
 
-  // optional .CMsgPoint scroll_offset = 5;
+  // optional .CMsgPoint scroll_offset = 6;
   if (has_scroll_offset()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      5, this->scroll_offset(), output);
+      6, this->scroll_offset(), output);
   }
 
-  // optional .CMsgPoint scroll_offset_target = 6;
+  // optional .CMsgPoint scroll_offset_target = 7;
   if (has_scroll_offset_target()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      6, this->scroll_offset_target(), output);
+      7, this->scroll_offset_target(), output);
   }
 
-  // optional .CMsgTransitionData scroll_transition_x = 7;
+  // optional .CMsgTransitionData scroll_transition_x = 8;
   if (has_scroll_transition_x()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      7, this->scroll_transition_x(), output);
+      8, this->scroll_transition_x(), output);
   }
 
-  // optional .CMsgTransitionData scroll_transition_y = 8;
+  // optional .CMsgTransitionData scroll_transition_y = 9;
   if (has_scroll_transition_y()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      8, this->scroll_transition_y(), output);
+      9, this->scroll_transition_y(), output);
   }
 
   if (!unknown_fields().empty()) {
@@ -18284,39 +19106,44 @@ void CMsgPanelPosition::SerializeWithCachedSizes(
         3, this->transition_data(), target);
   }
 
-  // repeated .CMsgAnimationData animations = 4;
+  // optional uint32 style_symbol = 4;
+  if (has_style_symbol()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(4, this->style_symbol(), target);
+  }
+
+  // repeated .CMsgAnimationData animations = 5;
   for (int i = 0; i < this->animations_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
-        4, this->animations(i), target);
+        5, this->animations(i), target);
   }
 
-  // optional .CMsgPoint scroll_offset = 5;
+  // optional .CMsgPoint scroll_offset = 6;
   if (has_scroll_offset()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
-        5, this->scroll_offset(), target);
+        6, this->scroll_offset(), target);
   }
 
-  // optional .CMsgPoint scroll_offset_target = 6;
+  // optional .CMsgPoint scroll_offset_target = 7;
   if (has_scroll_offset_target()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
-        6, this->scroll_offset_target(), target);
+        7, this->scroll_offset_target(), target);
   }
 
-  // optional .CMsgTransitionData scroll_transition_x = 7;
+  // optional .CMsgTransitionData scroll_transition_x = 8;
   if (has_scroll_transition_x()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
-        7, this->scroll_transition_x(), target);
+        8, this->scroll_transition_x(), target);
   }
 
-  // optional .CMsgTransitionData scroll_transition_y = 8;
+  // optional .CMsgTransitionData scroll_transition_y = 9;
   if (has_scroll_transition_y()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
-        8, this->scroll_transition_y(), target);
+        9, this->scroll_transition_y(), target);
   }
 
   if (!unknown_fields().empty()) {
@@ -18352,28 +19179,37 @@ int CMsgPanelPosition::ByteSize() const {
           this->transition_data());
     }
 
-    // optional .CMsgPoint scroll_offset = 5;
+    // optional uint32 style_symbol = 4;
+    if (has_style_symbol()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::UInt32Size(
+          this->style_symbol());
+    }
+
+    // optional .CMsgPoint scroll_offset = 6;
     if (has_scroll_offset()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
           this->scroll_offset());
     }
 
-    // optional .CMsgPoint scroll_offset_target = 6;
+    // optional .CMsgPoint scroll_offset_target = 7;
     if (has_scroll_offset_target()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
           this->scroll_offset_target());
     }
 
-    // optional .CMsgTransitionData scroll_transition_x = 7;
+    // optional .CMsgTransitionData scroll_transition_x = 8;
     if (has_scroll_transition_x()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
           this->scroll_transition_x());
     }
 
-    // optional .CMsgTransitionData scroll_transition_y = 8;
+  }
+  if (_has_bits_[8 / 32] & (0xffu << (8 % 32))) {
+    // optional .CMsgTransitionData scroll_transition_y = 9;
     if (has_scroll_transition_y()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
@@ -18381,7 +19217,7 @@ int CMsgPanelPosition::ByteSize() const {
     }
 
   }
-  // repeated .CMsgAnimationData animations = 4;
+  // repeated .CMsgAnimationData animations = 5;
   total_size += 1 * this->animations_size();
   for (int i = 0; i < this->animations_size(); i++) {
     total_size +=
@@ -18425,6 +19261,9 @@ void CMsgPanelPosition::MergeFrom(const CMsgPanelPosition& from) {
     if (from.has_transition_data()) {
       mutable_transition_data()->::CMsgTransitionData::MergeFrom(from.transition_data());
     }
+    if (from.has_style_symbol()) {
+      set_style_symbol(from.style_symbol());
+    }
     if (from.has_scroll_offset()) {
       mutable_scroll_offset()->::CMsgPoint::MergeFrom(from.scroll_offset());
     }
@@ -18434,6 +19273,8 @@ void CMsgPanelPosition::MergeFrom(const CMsgPanelPosition& from) {
     if (from.has_scroll_transition_x()) {
       mutable_scroll_transition_x()->::CMsgTransitionData::MergeFrom(from.scroll_transition_x());
     }
+  }
+  if (from._has_bits_[8 / 32] & (0xffu << (8 % 32))) {
     if (from.has_scroll_transition_y()) {
       mutable_scroll_transition_y()->::CMsgTransitionData::MergeFrom(from.scroll_transition_y());
     }
@@ -18464,6 +19305,7 @@ void CMsgPanelPosition::Swap(CMsgPanelPosition* other) {
     std::swap(base_, other->base_);
     std::swap(transition_, other->transition_);
     std::swap(transition_data_, other->transition_data_);
+    std::swap(style_symbol_, other->style_symbol_);
     animations_.Swap(&other->animations_);
     std::swap(scroll_offset_, other->scroll_offset_);
     std::swap(scroll_offset_target_, other->scroll_offset_target_);
@@ -18710,6 +19552,7 @@ void CMsgOpacity_AnimationFrameData::Swap(CMsgOpacity_AnimationFrameData* other)
 const int CMsgOpacity::kBaseFieldNumber;
 const int CMsgOpacity::kTransitionFieldNumber;
 const int CMsgOpacity::kTransitionDataFieldNumber;
+const int CMsgOpacity::kStyleSymbolFieldNumber;
 const int CMsgOpacity::kAnimationsFieldNumber;
 #endif  // !_MSC_VER
 
@@ -18741,6 +19584,7 @@ void CMsgOpacity::SharedCtor() {
   base_ = 0;
   transition_ = 0;
   transition_data_ = NULL;
+  style_symbol_ = 0u;
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
 
@@ -18787,11 +19631,12 @@ void CMsgOpacity::Clear() {
     ::memset(&first, 0, n);                                \
   } while (0)
 
-  if (_has_bits_[0 / 32] & 7) {
+  if (_has_bits_[0 / 32] & 15) {
     ZR_(base_, transition_);
     if (has_transition_data()) {
       if (transition_data_ != NULL) transition_data_->::CMsgTransitionData::Clear();
     }
+    style_symbol_ = 0u;
   }
 
 #undef OFFSET_OF_FIELD_
@@ -18850,20 +19695,35 @@ bool CMsgOpacity::MergePartialFromCodedStream(
         } else {
           goto handle_unusual;
         }
-        if (input->ExpectTag(34)) goto parse_animations;
+        if (input->ExpectTag(32)) goto parse_style_symbol;
         break;
       }
 
-      // repeated .CMsgAnimationData animations = 4;
+      // optional uint32 style_symbol = 4;
       case 4: {
-        if (tag == 34) {
+        if (tag == 32) {
+         parse_style_symbol:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                 input, &style_symbol_)));
+          set_has_style_symbol();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(42)) goto parse_animations;
+        break;
+      }
+
+      // repeated .CMsgAnimationData animations = 5;
+      case 5: {
+        if (tag == 42) {
          parse_animations:
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
                 input, add_animations()));
         } else {
           goto handle_unusual;
         }
-        if (input->ExpectTag(34)) goto parse_animations;
+        if (input->ExpectTag(42)) goto parse_animations;
         if (input->ExpectAtEnd()) goto success;
         break;
       }
@@ -18909,10 +19769,15 @@ void CMsgOpacity::SerializeWithCachedSizes(
       3, this->transition_data(), output);
   }
 
-  // repeated .CMsgAnimationData animations = 4;
+  // optional uint32 style_symbol = 4;
+  if (has_style_symbol()) {
+    ::google::protobuf::internal::WireFormatLite::WriteUInt32(4, this->style_symbol(), output);
+  }
+
+  // repeated .CMsgAnimationData animations = 5;
   for (int i = 0; i < this->animations_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      4, this->animations(i), output);
+      5, this->animations(i), output);
   }
 
   if (!unknown_fields().empty()) {
@@ -18942,11 +19807,16 @@ void CMsgOpacity::SerializeWithCachedSizes(
         3, this->transition_data(), target);
   }
 
-  // repeated .CMsgAnimationData animations = 4;
+  // optional uint32 style_symbol = 4;
+  if (has_style_symbol()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(4, this->style_symbol(), target);
+  }
+
+  // repeated .CMsgAnimationData animations = 5;
   for (int i = 0; i < this->animations_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
-        4, this->animations(i), target);
+        5, this->animations(i), target);
   }
 
   if (!unknown_fields().empty()) {
@@ -18978,8 +19848,15 @@ int CMsgOpacity::ByteSize() const {
           this->transition_data());
     }
 
+    // optional uint32 style_symbol = 4;
+    if (has_style_symbol()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::UInt32Size(
+          this->style_symbol());
+    }
+
   }
-  // repeated .CMsgAnimationData animations = 4;
+  // repeated .CMsgAnimationData animations = 5;
   total_size += 1 * this->animations_size();
   for (int i = 0; i < this->animations_size(); i++) {
     total_size +=
@@ -19023,6 +19900,9 @@ void CMsgOpacity::MergeFrom(const CMsgOpacity& from) {
     if (from.has_transition_data()) {
       mutable_transition_data()->::CMsgTransitionData::MergeFrom(from.transition_data());
     }
+    if (from.has_style_symbol()) {
+      set_style_symbol(from.style_symbol());
+    }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
 }
@@ -19050,6 +19930,7 @@ void CMsgOpacity::Swap(CMsgOpacity* other) {
     std::swap(base_, other->base_);
     std::swap(transition_, other->transition_);
     std::swap(transition_data_, other->transition_data_);
+    std::swap(style_symbol_, other->style_symbol_);
     animations_.Swap(&other->animations_);
     std::swap(_has_bits_[0], other->_has_bits_[0]);
     _unknown_fields_.Swap(&other->_unknown_fields_);
@@ -19292,6 +20173,7 @@ void CMsgRotate2D_AnimationFrameData::Swap(CMsgRotate2D_AnimationFrameData* othe
 const int CMsgRotate2D::kBaseFieldNumber;
 const int CMsgRotate2D::kTransitionFieldNumber;
 const int CMsgRotate2D::kTransitionDataFieldNumber;
+const int CMsgRotate2D::kStyleSymbolFieldNumber;
 const int CMsgRotate2D::kAnimationsFieldNumber;
 #endif  // !_MSC_VER
 
@@ -19323,6 +20205,7 @@ void CMsgRotate2D::SharedCtor() {
   base_ = 0;
   transition_ = 0;
   transition_data_ = NULL;
+  style_symbol_ = 0u;
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
 
@@ -19369,11 +20252,12 @@ void CMsgRotate2D::Clear() {
     ::memset(&first, 0, n);                                \
   } while (0)
 
-  if (_has_bits_[0 / 32] & 7) {
+  if (_has_bits_[0 / 32] & 15) {
     ZR_(base_, transition_);
     if (has_transition_data()) {
       if (transition_data_ != NULL) transition_data_->::CMsgTransitionData::Clear();
     }
+    style_symbol_ = 0u;
   }
 
 #undef OFFSET_OF_FIELD_
@@ -19432,20 +20316,35 @@ bool CMsgRotate2D::MergePartialFromCodedStream(
         } else {
           goto handle_unusual;
         }
-        if (input->ExpectTag(34)) goto parse_animations;
+        if (input->ExpectTag(32)) goto parse_style_symbol;
         break;
       }
 
-      // repeated .CMsgAnimationData animations = 4;
+      // optional uint32 style_symbol = 4;
       case 4: {
-        if (tag == 34) {
+        if (tag == 32) {
+         parse_style_symbol:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                 input, &style_symbol_)));
+          set_has_style_symbol();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(42)) goto parse_animations;
+        break;
+      }
+
+      // repeated .CMsgAnimationData animations = 5;
+      case 5: {
+        if (tag == 42) {
          parse_animations:
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
                 input, add_animations()));
         } else {
           goto handle_unusual;
         }
-        if (input->ExpectTag(34)) goto parse_animations;
+        if (input->ExpectTag(42)) goto parse_animations;
         if (input->ExpectAtEnd()) goto success;
         break;
       }
@@ -19491,10 +20390,15 @@ void CMsgRotate2D::SerializeWithCachedSizes(
       3, this->transition_data(), output);
   }
 
-  // repeated .CMsgAnimationData animations = 4;
+  // optional uint32 style_symbol = 4;
+  if (has_style_symbol()) {
+    ::google::protobuf::internal::WireFormatLite::WriteUInt32(4, this->style_symbol(), output);
+  }
+
+  // repeated .CMsgAnimationData animations = 5;
   for (int i = 0; i < this->animations_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      4, this->animations(i), output);
+      5, this->animations(i), output);
   }
 
   if (!unknown_fields().empty()) {
@@ -19524,11 +20428,16 @@ void CMsgRotate2D::SerializeWithCachedSizes(
         3, this->transition_data(), target);
   }
 
-  // repeated .CMsgAnimationData animations = 4;
+  // optional uint32 style_symbol = 4;
+  if (has_style_symbol()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(4, this->style_symbol(), target);
+  }
+
+  // repeated .CMsgAnimationData animations = 5;
   for (int i = 0; i < this->animations_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
-        4, this->animations(i), target);
+        5, this->animations(i), target);
   }
 
   if (!unknown_fields().empty()) {
@@ -19560,8 +20469,15 @@ int CMsgRotate2D::ByteSize() const {
           this->transition_data());
     }
 
+    // optional uint32 style_symbol = 4;
+    if (has_style_symbol()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::UInt32Size(
+          this->style_symbol());
+    }
+
   }
-  // repeated .CMsgAnimationData animations = 4;
+  // repeated .CMsgAnimationData animations = 5;
   total_size += 1 * this->animations_size();
   for (int i = 0; i < this->animations_size(); i++) {
     total_size +=
@@ -19605,6 +20521,9 @@ void CMsgRotate2D::MergeFrom(const CMsgRotate2D& from) {
     if (from.has_transition_data()) {
       mutable_transition_data()->::CMsgTransitionData::MergeFrom(from.transition_data());
     }
+    if (from.has_style_symbol()) {
+      set_style_symbol(from.style_symbol());
+    }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
 }
@@ -19632,6 +20551,7 @@ void CMsgRotate2D::Swap(CMsgRotate2D* other) {
     std::swap(base_, other->base_);
     std::swap(transition_, other->transition_);
     std::swap(transition_data_, other->transition_data_);
+    std::swap(style_symbol_, other->style_symbol_);
     animations_.Swap(&other->animations_);
     std::swap(_has_bits_[0], other->_has_bits_[0]);
     _unknown_fields_.Swap(&other->_unknown_fields_);
@@ -20153,6 +21073,7 @@ void CMsgOpacityMask_AnimationFrameData::Swap(CMsgOpacityMask_AnimationFrameData
 const int CMsgOpacityMask::kBaseFieldNumber;
 const int CMsgOpacityMask::kTransitionFieldNumber;
 const int CMsgOpacityMask::kTransitionDataFieldNumber;
+const int CMsgOpacityMask::kStyleSymbolFieldNumber;
 const int CMsgOpacityMask::kAnimationsFieldNumber;
 #endif  // !_MSC_VER
 
@@ -20186,6 +21107,7 @@ void CMsgOpacityMask::SharedCtor() {
   base_ = NULL;
   transition_ = NULL;
   transition_data_ = NULL;
+  style_symbol_ = 0u;
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
 
@@ -20224,7 +21146,7 @@ CMsgOpacityMask* CMsgOpacityMask::New() const {
 }
 
 void CMsgOpacityMask::Clear() {
-  if (_has_bits_[0 / 32] & 7) {
+  if (_has_bits_[0 / 32] & 15) {
     if (has_base()) {
       if (base_ != NULL) base_->::CMsgOpacityMaskData::Clear();
     }
@@ -20234,6 +21156,7 @@ void CMsgOpacityMask::Clear() {
     if (has_transition_data()) {
       if (transition_data_ != NULL) transition_data_->::CMsgTransitionData::Clear();
     }
+    style_symbol_ = 0u;
   }
   animations_.Clear();
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
@@ -20284,20 +21207,35 @@ bool CMsgOpacityMask::MergePartialFromCodedStream(
         } else {
           goto handle_unusual;
         }
-        if (input->ExpectTag(34)) goto parse_animations;
+        if (input->ExpectTag(32)) goto parse_style_symbol;
         break;
       }
 
-      // repeated .CMsgAnimationData animations = 4;
+      // optional uint32 style_symbol = 4;
       case 4: {
-        if (tag == 34) {
+        if (tag == 32) {
+         parse_style_symbol:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                 input, &style_symbol_)));
+          set_has_style_symbol();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(42)) goto parse_animations;
+        break;
+      }
+
+      // repeated .CMsgAnimationData animations = 5;
+      case 5: {
+        if (tag == 42) {
          parse_animations:
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
                 input, add_animations()));
         } else {
           goto handle_unusual;
         }
-        if (input->ExpectTag(34)) goto parse_animations;
+        if (input->ExpectTag(42)) goto parse_animations;
         if (input->ExpectAtEnd()) goto success;
         break;
       }
@@ -20345,10 +21283,15 @@ void CMsgOpacityMask::SerializeWithCachedSizes(
       3, this->transition_data(), output);
   }
 
-  // repeated .CMsgAnimationData animations = 4;
+  // optional uint32 style_symbol = 4;
+  if (has_style_symbol()) {
+    ::google::protobuf::internal::WireFormatLite::WriteUInt32(4, this->style_symbol(), output);
+  }
+
+  // repeated .CMsgAnimationData animations = 5;
   for (int i = 0; i < this->animations_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      4, this->animations(i), output);
+      5, this->animations(i), output);
   }
 
   if (!unknown_fields().empty()) {
@@ -20382,11 +21325,16 @@ void CMsgOpacityMask::SerializeWithCachedSizes(
         3, this->transition_data(), target);
   }
 
-  // repeated .CMsgAnimationData animations = 4;
+  // optional uint32 style_symbol = 4;
+  if (has_style_symbol()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(4, this->style_symbol(), target);
+  }
+
+  // repeated .CMsgAnimationData animations = 5;
   for (int i = 0; i < this->animations_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
-        4, this->animations(i), target);
+        5, this->animations(i), target);
   }
 
   if (!unknown_fields().empty()) {
@@ -20422,8 +21370,15 @@ int CMsgOpacityMask::ByteSize() const {
           this->transition_data());
     }
 
+    // optional uint32 style_symbol = 4;
+    if (has_style_symbol()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::UInt32Size(
+          this->style_symbol());
+    }
+
   }
-  // repeated .CMsgAnimationData animations = 4;
+  // repeated .CMsgAnimationData animations = 5;
   total_size += 1 * this->animations_size();
   for (int i = 0; i < this->animations_size(); i++) {
     total_size +=
@@ -20467,6 +21422,9 @@ void CMsgOpacityMask::MergeFrom(const CMsgOpacityMask& from) {
     if (from.has_transition_data()) {
       mutable_transition_data()->::CMsgTransitionData::MergeFrom(from.transition_data());
     }
+    if (from.has_style_symbol()) {
+      set_style_symbol(from.style_symbol());
+    }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
 }
@@ -20494,6 +21452,7 @@ void CMsgOpacityMask::Swap(CMsgOpacityMask* other) {
     std::swap(base_, other->base_);
     std::swap(transition_, other->transition_);
     std::swap(transition_data_, other->transition_data_);
+    std::swap(style_symbol_, other->style_symbol_);
     animations_.Swap(&other->animations_);
     std::swap(_has_bits_[0], other->_has_bits_[0]);
     _unknown_fields_.Swap(&other->_unknown_fields_);
@@ -20736,6 +21695,7 @@ void CMsgHueShift_AnimationFrameData::Swap(CMsgHueShift_AnimationFrameData* othe
 const int CMsgHueShift::kBaseFieldNumber;
 const int CMsgHueShift::kTransitionFieldNumber;
 const int CMsgHueShift::kTransitionDataFieldNumber;
+const int CMsgHueShift::kStyleSymbolFieldNumber;
 const int CMsgHueShift::kAnimationsFieldNumber;
 #endif  // !_MSC_VER
 
@@ -20767,6 +21727,7 @@ void CMsgHueShift::SharedCtor() {
   base_ = 0;
   transition_ = 0;
   transition_data_ = NULL;
+  style_symbol_ = 0u;
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
 
@@ -20813,11 +21774,12 @@ void CMsgHueShift::Clear() {
     ::memset(&first, 0, n);                                \
   } while (0)
 
-  if (_has_bits_[0 / 32] & 7) {
+  if (_has_bits_[0 / 32] & 15) {
     ZR_(base_, transition_);
     if (has_transition_data()) {
       if (transition_data_ != NULL) transition_data_->::CMsgTransitionData::Clear();
     }
+    style_symbol_ = 0u;
   }
 
 #undef OFFSET_OF_FIELD_
@@ -20876,20 +21838,35 @@ bool CMsgHueShift::MergePartialFromCodedStream(
         } else {
           goto handle_unusual;
         }
-        if (input->ExpectTag(34)) goto parse_animations;
+        if (input->ExpectTag(32)) goto parse_style_symbol;
         break;
       }
 
-      // repeated .CMsgAnimationData animations = 4;
+      // optional uint32 style_symbol = 4;
       case 4: {
-        if (tag == 34) {
+        if (tag == 32) {
+         parse_style_symbol:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                 input, &style_symbol_)));
+          set_has_style_symbol();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(42)) goto parse_animations;
+        break;
+      }
+
+      // repeated .CMsgAnimationData animations = 5;
+      case 5: {
+        if (tag == 42) {
          parse_animations:
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
                 input, add_animations()));
         } else {
           goto handle_unusual;
         }
-        if (input->ExpectTag(34)) goto parse_animations;
+        if (input->ExpectTag(42)) goto parse_animations;
         if (input->ExpectAtEnd()) goto success;
         break;
       }
@@ -20935,10 +21912,15 @@ void CMsgHueShift::SerializeWithCachedSizes(
       3, this->transition_data(), output);
   }
 
-  // repeated .CMsgAnimationData animations = 4;
+  // optional uint32 style_symbol = 4;
+  if (has_style_symbol()) {
+    ::google::protobuf::internal::WireFormatLite::WriteUInt32(4, this->style_symbol(), output);
+  }
+
+  // repeated .CMsgAnimationData animations = 5;
   for (int i = 0; i < this->animations_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      4, this->animations(i), output);
+      5, this->animations(i), output);
   }
 
   if (!unknown_fields().empty()) {
@@ -20968,11 +21950,16 @@ void CMsgHueShift::SerializeWithCachedSizes(
         3, this->transition_data(), target);
   }
 
-  // repeated .CMsgAnimationData animations = 4;
+  // optional uint32 style_symbol = 4;
+  if (has_style_symbol()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(4, this->style_symbol(), target);
+  }
+
+  // repeated .CMsgAnimationData animations = 5;
   for (int i = 0; i < this->animations_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
-        4, this->animations(i), target);
+        5, this->animations(i), target);
   }
 
   if (!unknown_fields().empty()) {
@@ -21004,8 +21991,15 @@ int CMsgHueShift::ByteSize() const {
           this->transition_data());
     }
 
+    // optional uint32 style_symbol = 4;
+    if (has_style_symbol()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::UInt32Size(
+          this->style_symbol());
+    }
+
   }
-  // repeated .CMsgAnimationData animations = 4;
+  // repeated .CMsgAnimationData animations = 5;
   total_size += 1 * this->animations_size();
   for (int i = 0; i < this->animations_size(); i++) {
     total_size +=
@@ -21049,6 +22043,9 @@ void CMsgHueShift::MergeFrom(const CMsgHueShift& from) {
     if (from.has_transition_data()) {
       mutable_transition_data()->::CMsgTransitionData::MergeFrom(from.transition_data());
     }
+    if (from.has_style_symbol()) {
+      set_style_symbol(from.style_symbol());
+    }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
 }
@@ -21076,6 +22073,7 @@ void CMsgHueShift::Swap(CMsgHueShift* other) {
     std::swap(base_, other->base_);
     std::swap(transition_, other->transition_);
     std::swap(transition_data_, other->transition_data_);
+    std::swap(style_symbol_, other->style_symbol_);
     animations_.Swap(&other->animations_);
     std::swap(_has_bits_[0], other->_has_bits_[0]);
     _unknown_fields_.Swap(&other->_unknown_fields_);
@@ -21318,6 +22316,7 @@ void CMsgSaturation_AnimationFrameData::Swap(CMsgSaturation_AnimationFrameData* 
 const int CMsgSaturation::kBaseFieldNumber;
 const int CMsgSaturation::kTransitionFieldNumber;
 const int CMsgSaturation::kTransitionDataFieldNumber;
+const int CMsgSaturation::kStyleSymbolFieldNumber;
 const int CMsgSaturation::kAnimationsFieldNumber;
 #endif  // !_MSC_VER
 
@@ -21349,6 +22348,7 @@ void CMsgSaturation::SharedCtor() {
   base_ = 0;
   transition_ = 0;
   transition_data_ = NULL;
+  style_symbol_ = 0u;
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
 
@@ -21395,11 +22395,12 @@ void CMsgSaturation::Clear() {
     ::memset(&first, 0, n);                                \
   } while (0)
 
-  if (_has_bits_[0 / 32] & 7) {
+  if (_has_bits_[0 / 32] & 15) {
     ZR_(base_, transition_);
     if (has_transition_data()) {
       if (transition_data_ != NULL) transition_data_->::CMsgTransitionData::Clear();
     }
+    style_symbol_ = 0u;
   }
 
 #undef OFFSET_OF_FIELD_
@@ -21458,20 +22459,35 @@ bool CMsgSaturation::MergePartialFromCodedStream(
         } else {
           goto handle_unusual;
         }
-        if (input->ExpectTag(34)) goto parse_animations;
+        if (input->ExpectTag(32)) goto parse_style_symbol;
         break;
       }
 
-      // repeated .CMsgAnimationData animations = 4;
+      // optional uint32 style_symbol = 4;
       case 4: {
-        if (tag == 34) {
+        if (tag == 32) {
+         parse_style_symbol:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                 input, &style_symbol_)));
+          set_has_style_symbol();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(42)) goto parse_animations;
+        break;
+      }
+
+      // repeated .CMsgAnimationData animations = 5;
+      case 5: {
+        if (tag == 42) {
          parse_animations:
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
                 input, add_animations()));
         } else {
           goto handle_unusual;
         }
-        if (input->ExpectTag(34)) goto parse_animations;
+        if (input->ExpectTag(42)) goto parse_animations;
         if (input->ExpectAtEnd()) goto success;
         break;
       }
@@ -21517,10 +22533,15 @@ void CMsgSaturation::SerializeWithCachedSizes(
       3, this->transition_data(), output);
   }
 
-  // repeated .CMsgAnimationData animations = 4;
+  // optional uint32 style_symbol = 4;
+  if (has_style_symbol()) {
+    ::google::protobuf::internal::WireFormatLite::WriteUInt32(4, this->style_symbol(), output);
+  }
+
+  // repeated .CMsgAnimationData animations = 5;
   for (int i = 0; i < this->animations_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      4, this->animations(i), output);
+      5, this->animations(i), output);
   }
 
   if (!unknown_fields().empty()) {
@@ -21550,11 +22571,16 @@ void CMsgSaturation::SerializeWithCachedSizes(
         3, this->transition_data(), target);
   }
 
-  // repeated .CMsgAnimationData animations = 4;
+  // optional uint32 style_symbol = 4;
+  if (has_style_symbol()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(4, this->style_symbol(), target);
+  }
+
+  // repeated .CMsgAnimationData animations = 5;
   for (int i = 0; i < this->animations_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
-        4, this->animations(i), target);
+        5, this->animations(i), target);
   }
 
   if (!unknown_fields().empty()) {
@@ -21586,8 +22612,15 @@ int CMsgSaturation::ByteSize() const {
           this->transition_data());
     }
 
+    // optional uint32 style_symbol = 4;
+    if (has_style_symbol()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::UInt32Size(
+          this->style_symbol());
+    }
+
   }
-  // repeated .CMsgAnimationData animations = 4;
+  // repeated .CMsgAnimationData animations = 5;
   total_size += 1 * this->animations_size();
   for (int i = 0; i < this->animations_size(); i++) {
     total_size +=
@@ -21631,6 +22664,9 @@ void CMsgSaturation::MergeFrom(const CMsgSaturation& from) {
     if (from.has_transition_data()) {
       mutable_transition_data()->::CMsgTransitionData::MergeFrom(from.transition_data());
     }
+    if (from.has_style_symbol()) {
+      set_style_symbol(from.style_symbol());
+    }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
 }
@@ -21658,6 +22694,7 @@ void CMsgSaturation::Swap(CMsgSaturation* other) {
     std::swap(base_, other->base_);
     std::swap(transition_, other->transition_);
     std::swap(transition_data_, other->transition_data_);
+    std::swap(style_symbol_, other->style_symbol_);
     animations_.Swap(&other->animations_);
     std::swap(_has_bits_[0], other->_has_bits_[0]);
     _unknown_fields_.Swap(&other->_unknown_fields_);
@@ -21900,6 +22937,7 @@ void CMsgBrightness_AnimationFrameData::Swap(CMsgBrightness_AnimationFrameData* 
 const int CMsgBrightness::kBaseFieldNumber;
 const int CMsgBrightness::kTransitionFieldNumber;
 const int CMsgBrightness::kTransitionDataFieldNumber;
+const int CMsgBrightness::kStyleSymbolFieldNumber;
 const int CMsgBrightness::kAnimationsFieldNumber;
 #endif  // !_MSC_VER
 
@@ -21931,6 +22969,7 @@ void CMsgBrightness::SharedCtor() {
   base_ = 0;
   transition_ = 0;
   transition_data_ = NULL;
+  style_symbol_ = 0u;
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
 
@@ -21977,11 +23016,12 @@ void CMsgBrightness::Clear() {
     ::memset(&first, 0, n);                                \
   } while (0)
 
-  if (_has_bits_[0 / 32] & 7) {
+  if (_has_bits_[0 / 32] & 15) {
     ZR_(base_, transition_);
     if (has_transition_data()) {
       if (transition_data_ != NULL) transition_data_->::CMsgTransitionData::Clear();
     }
+    style_symbol_ = 0u;
   }
 
 #undef OFFSET_OF_FIELD_
@@ -22040,20 +23080,35 @@ bool CMsgBrightness::MergePartialFromCodedStream(
         } else {
           goto handle_unusual;
         }
-        if (input->ExpectTag(34)) goto parse_animations;
+        if (input->ExpectTag(32)) goto parse_style_symbol;
         break;
       }
 
-      // repeated .CMsgAnimationData animations = 4;
+      // optional uint32 style_symbol = 4;
       case 4: {
-        if (tag == 34) {
+        if (tag == 32) {
+         parse_style_symbol:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                 input, &style_symbol_)));
+          set_has_style_symbol();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(42)) goto parse_animations;
+        break;
+      }
+
+      // repeated .CMsgAnimationData animations = 5;
+      case 5: {
+        if (tag == 42) {
          parse_animations:
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
                 input, add_animations()));
         } else {
           goto handle_unusual;
         }
-        if (input->ExpectTag(34)) goto parse_animations;
+        if (input->ExpectTag(42)) goto parse_animations;
         if (input->ExpectAtEnd()) goto success;
         break;
       }
@@ -22099,10 +23154,15 @@ void CMsgBrightness::SerializeWithCachedSizes(
       3, this->transition_data(), output);
   }
 
-  // repeated .CMsgAnimationData animations = 4;
+  // optional uint32 style_symbol = 4;
+  if (has_style_symbol()) {
+    ::google::protobuf::internal::WireFormatLite::WriteUInt32(4, this->style_symbol(), output);
+  }
+
+  // repeated .CMsgAnimationData animations = 5;
   for (int i = 0; i < this->animations_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      4, this->animations(i), output);
+      5, this->animations(i), output);
   }
 
   if (!unknown_fields().empty()) {
@@ -22132,11 +23192,16 @@ void CMsgBrightness::SerializeWithCachedSizes(
         3, this->transition_data(), target);
   }
 
-  // repeated .CMsgAnimationData animations = 4;
+  // optional uint32 style_symbol = 4;
+  if (has_style_symbol()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(4, this->style_symbol(), target);
+  }
+
+  // repeated .CMsgAnimationData animations = 5;
   for (int i = 0; i < this->animations_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
-        4, this->animations(i), target);
+        5, this->animations(i), target);
   }
 
   if (!unknown_fields().empty()) {
@@ -22168,8 +23233,15 @@ int CMsgBrightness::ByteSize() const {
           this->transition_data());
     }
 
+    // optional uint32 style_symbol = 4;
+    if (has_style_symbol()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::UInt32Size(
+          this->style_symbol());
+    }
+
   }
-  // repeated .CMsgAnimationData animations = 4;
+  // repeated .CMsgAnimationData animations = 5;
   total_size += 1 * this->animations_size();
   for (int i = 0; i < this->animations_size(); i++) {
     total_size +=
@@ -22213,6 +23285,9 @@ void CMsgBrightness::MergeFrom(const CMsgBrightness& from) {
     if (from.has_transition_data()) {
       mutable_transition_data()->::CMsgTransitionData::MergeFrom(from.transition_data());
     }
+    if (from.has_style_symbol()) {
+      set_style_symbol(from.style_symbol());
+    }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
 }
@@ -22240,6 +23315,7 @@ void CMsgBrightness::Swap(CMsgBrightness* other) {
     std::swap(base_, other->base_);
     std::swap(transition_, other->transition_);
     std::swap(transition_data_, other->transition_data_);
+    std::swap(style_symbol_, other->style_symbol_);
     animations_.Swap(&other->animations_);
     std::swap(_has_bits_[0], other->_has_bits_[0]);
     _unknown_fields_.Swap(&other->_unknown_fields_);
@@ -22482,6 +23558,7 @@ void CMsgContrast_AnimationFrameData::Swap(CMsgContrast_AnimationFrameData* othe
 const int CMsgContrast::kBaseFieldNumber;
 const int CMsgContrast::kTransitionFieldNumber;
 const int CMsgContrast::kTransitionDataFieldNumber;
+const int CMsgContrast::kStyleSymbolFieldNumber;
 const int CMsgContrast::kAnimationsFieldNumber;
 #endif  // !_MSC_VER
 
@@ -22513,6 +23590,7 @@ void CMsgContrast::SharedCtor() {
   base_ = 0;
   transition_ = 0;
   transition_data_ = NULL;
+  style_symbol_ = 0u;
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
 
@@ -22559,11 +23637,12 @@ void CMsgContrast::Clear() {
     ::memset(&first, 0, n);                                \
   } while (0)
 
-  if (_has_bits_[0 / 32] & 7) {
+  if (_has_bits_[0 / 32] & 15) {
     ZR_(base_, transition_);
     if (has_transition_data()) {
       if (transition_data_ != NULL) transition_data_->::CMsgTransitionData::Clear();
     }
+    style_symbol_ = 0u;
   }
 
 #undef OFFSET_OF_FIELD_
@@ -22622,20 +23701,35 @@ bool CMsgContrast::MergePartialFromCodedStream(
         } else {
           goto handle_unusual;
         }
-        if (input->ExpectTag(34)) goto parse_animations;
+        if (input->ExpectTag(32)) goto parse_style_symbol;
         break;
       }
 
-      // repeated .CMsgAnimationData animations = 4;
+      // optional uint32 style_symbol = 4;
       case 4: {
-        if (tag == 34) {
+        if (tag == 32) {
+         parse_style_symbol:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                 input, &style_symbol_)));
+          set_has_style_symbol();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(42)) goto parse_animations;
+        break;
+      }
+
+      // repeated .CMsgAnimationData animations = 5;
+      case 5: {
+        if (tag == 42) {
          parse_animations:
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
                 input, add_animations()));
         } else {
           goto handle_unusual;
         }
-        if (input->ExpectTag(34)) goto parse_animations;
+        if (input->ExpectTag(42)) goto parse_animations;
         if (input->ExpectAtEnd()) goto success;
         break;
       }
@@ -22681,10 +23775,15 @@ void CMsgContrast::SerializeWithCachedSizes(
       3, this->transition_data(), output);
   }
 
-  // repeated .CMsgAnimationData animations = 4;
+  // optional uint32 style_symbol = 4;
+  if (has_style_symbol()) {
+    ::google::protobuf::internal::WireFormatLite::WriteUInt32(4, this->style_symbol(), output);
+  }
+
+  // repeated .CMsgAnimationData animations = 5;
   for (int i = 0; i < this->animations_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      4, this->animations(i), output);
+      5, this->animations(i), output);
   }
 
   if (!unknown_fields().empty()) {
@@ -22714,11 +23813,16 @@ void CMsgContrast::SerializeWithCachedSizes(
         3, this->transition_data(), target);
   }
 
-  // repeated .CMsgAnimationData animations = 4;
+  // optional uint32 style_symbol = 4;
+  if (has_style_symbol()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(4, this->style_symbol(), target);
+  }
+
+  // repeated .CMsgAnimationData animations = 5;
   for (int i = 0; i < this->animations_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
-        4, this->animations(i), target);
+        5, this->animations(i), target);
   }
 
   if (!unknown_fields().empty()) {
@@ -22750,8 +23854,15 @@ int CMsgContrast::ByteSize() const {
           this->transition_data());
     }
 
+    // optional uint32 style_symbol = 4;
+    if (has_style_symbol()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::UInt32Size(
+          this->style_symbol());
+    }
+
   }
-  // repeated .CMsgAnimationData animations = 4;
+  // repeated .CMsgAnimationData animations = 5;
   total_size += 1 * this->animations_size();
   for (int i = 0; i < this->animations_size(); i++) {
     total_size +=
@@ -22795,6 +23906,9 @@ void CMsgContrast::MergeFrom(const CMsgContrast& from) {
     if (from.has_transition_data()) {
       mutable_transition_data()->::CMsgTransitionData::MergeFrom(from.transition_data());
     }
+    if (from.has_style_symbol()) {
+      set_style_symbol(from.style_symbol());
+    }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
 }
@@ -22822,6 +23936,7 @@ void CMsgContrast::Swap(CMsgContrast* other) {
     std::swap(base_, other->base_);
     std::swap(transition_, other->transition_);
     std::swap(transition_data_, other->transition_data_);
+    std::swap(style_symbol_, other->style_symbol_);
     animations_.Swap(&other->animations_);
     std::swap(_has_bits_[0], other->_has_bits_[0]);
     _unknown_fields_.Swap(&other->_unknown_fields_);
@@ -23377,6 +24492,7 @@ void CMsgGaussianBlur_AnimationFrameData::Swap(CMsgGaussianBlur_AnimationFrameDa
 const int CMsgGaussianBlur::kBaseFieldNumber;
 const int CMsgGaussianBlur::kTransitionFieldNumber;
 const int CMsgGaussianBlur::kTransitionDataFieldNumber;
+const int CMsgGaussianBlur::kStyleSymbolFieldNumber;
 const int CMsgGaussianBlur::kAnimationsFieldNumber;
 #endif  // !_MSC_VER
 
@@ -23410,6 +24526,7 @@ void CMsgGaussianBlur::SharedCtor() {
   base_ = NULL;
   transition_ = NULL;
   transition_data_ = NULL;
+  style_symbol_ = 0u;
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
 
@@ -23448,7 +24565,7 @@ CMsgGaussianBlur* CMsgGaussianBlur::New() const {
 }
 
 void CMsgGaussianBlur::Clear() {
-  if (_has_bits_[0 / 32] & 7) {
+  if (_has_bits_[0 / 32] & 15) {
     if (has_base()) {
       if (base_ != NULL) base_->::CMsgGaussianValues::Clear();
     }
@@ -23458,6 +24575,7 @@ void CMsgGaussianBlur::Clear() {
     if (has_transition_data()) {
       if (transition_data_ != NULL) transition_data_->::CMsgTransitionData::Clear();
     }
+    style_symbol_ = 0u;
   }
   animations_.Clear();
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
@@ -23508,20 +24626,35 @@ bool CMsgGaussianBlur::MergePartialFromCodedStream(
         } else {
           goto handle_unusual;
         }
-        if (input->ExpectTag(34)) goto parse_animations;
+        if (input->ExpectTag(32)) goto parse_style_symbol;
         break;
       }
 
-      // repeated .CMsgAnimationData animations = 4;
+      // optional uint32 style_symbol = 4;
       case 4: {
-        if (tag == 34) {
+        if (tag == 32) {
+         parse_style_symbol:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                 input, &style_symbol_)));
+          set_has_style_symbol();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(42)) goto parse_animations;
+        break;
+      }
+
+      // repeated .CMsgAnimationData animations = 5;
+      case 5: {
+        if (tag == 42) {
          parse_animations:
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
                 input, add_animations()));
         } else {
           goto handle_unusual;
         }
-        if (input->ExpectTag(34)) goto parse_animations;
+        if (input->ExpectTag(42)) goto parse_animations;
         if (input->ExpectAtEnd()) goto success;
         break;
       }
@@ -23569,10 +24702,15 @@ void CMsgGaussianBlur::SerializeWithCachedSizes(
       3, this->transition_data(), output);
   }
 
-  // repeated .CMsgAnimationData animations = 4;
+  // optional uint32 style_symbol = 4;
+  if (has_style_symbol()) {
+    ::google::protobuf::internal::WireFormatLite::WriteUInt32(4, this->style_symbol(), output);
+  }
+
+  // repeated .CMsgAnimationData animations = 5;
   for (int i = 0; i < this->animations_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      4, this->animations(i), output);
+      5, this->animations(i), output);
   }
 
   if (!unknown_fields().empty()) {
@@ -23606,11 +24744,16 @@ void CMsgGaussianBlur::SerializeWithCachedSizes(
         3, this->transition_data(), target);
   }
 
-  // repeated .CMsgAnimationData animations = 4;
+  // optional uint32 style_symbol = 4;
+  if (has_style_symbol()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(4, this->style_symbol(), target);
+  }
+
+  // repeated .CMsgAnimationData animations = 5;
   for (int i = 0; i < this->animations_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
-        4, this->animations(i), target);
+        5, this->animations(i), target);
   }
 
   if (!unknown_fields().empty()) {
@@ -23646,8 +24789,15 @@ int CMsgGaussianBlur::ByteSize() const {
           this->transition_data());
     }
 
+    // optional uint32 style_symbol = 4;
+    if (has_style_symbol()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::UInt32Size(
+          this->style_symbol());
+    }
+
   }
-  // repeated .CMsgAnimationData animations = 4;
+  // repeated .CMsgAnimationData animations = 5;
   total_size += 1 * this->animations_size();
   for (int i = 0; i < this->animations_size(); i++) {
     total_size +=
@@ -23691,6 +24841,9 @@ void CMsgGaussianBlur::MergeFrom(const CMsgGaussianBlur& from) {
     if (from.has_transition_data()) {
       mutable_transition_data()->::CMsgTransitionData::MergeFrom(from.transition_data());
     }
+    if (from.has_style_symbol()) {
+      set_style_symbol(from.style_symbol());
+    }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
 }
@@ -23718,6 +24871,7 @@ void CMsgGaussianBlur::Swap(CMsgGaussianBlur* other) {
     std::swap(base_, other->base_);
     std::swap(transition_, other->transition_);
     std::swap(transition_data_, other->transition_data_);
+    std::swap(style_symbol_, other->style_symbol_);
     animations_.Swap(&other->animations_);
     std::swap(_has_bits_[0], other->_has_bits_[0]);
     _unknown_fields_.Swap(&other->_unknown_fields_);
@@ -23960,6 +25114,7 @@ void CMsg3DTransformPerspective_AnimationFrameData::Swap(CMsg3DTransformPerspect
 const int CMsg3DTransformPerspective::kBaseFieldNumber;
 const int CMsg3DTransformPerspective::kTransitionFieldNumber;
 const int CMsg3DTransformPerspective::kTransitionDataFieldNumber;
+const int CMsg3DTransformPerspective::kStyleSymbolFieldNumber;
 const int CMsg3DTransformPerspective::kAnimationsFieldNumber;
 #endif  // !_MSC_VER
 
@@ -23991,6 +25146,7 @@ void CMsg3DTransformPerspective::SharedCtor() {
   base_ = 0;
   transition_ = 0;
   transition_data_ = NULL;
+  style_symbol_ = 0u;
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
 
@@ -24037,11 +25193,12 @@ void CMsg3DTransformPerspective::Clear() {
     ::memset(&first, 0, n);                                \
   } while (0)
 
-  if (_has_bits_[0 / 32] & 7) {
+  if (_has_bits_[0 / 32] & 15) {
     ZR_(base_, transition_);
     if (has_transition_data()) {
       if (transition_data_ != NULL) transition_data_->::CMsgTransitionData::Clear();
     }
+    style_symbol_ = 0u;
   }
 
 #undef OFFSET_OF_FIELD_
@@ -24100,20 +25257,35 @@ bool CMsg3DTransformPerspective::MergePartialFromCodedStream(
         } else {
           goto handle_unusual;
         }
-        if (input->ExpectTag(34)) goto parse_animations;
+        if (input->ExpectTag(32)) goto parse_style_symbol;
         break;
       }
 
-      // repeated .CMsgAnimationData animations = 4;
+      // optional uint32 style_symbol = 4;
       case 4: {
-        if (tag == 34) {
+        if (tag == 32) {
+         parse_style_symbol:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                 input, &style_symbol_)));
+          set_has_style_symbol();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(42)) goto parse_animations;
+        break;
+      }
+
+      // repeated .CMsgAnimationData animations = 5;
+      case 5: {
+        if (tag == 42) {
          parse_animations:
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
                 input, add_animations()));
         } else {
           goto handle_unusual;
         }
-        if (input->ExpectTag(34)) goto parse_animations;
+        if (input->ExpectTag(42)) goto parse_animations;
         if (input->ExpectAtEnd()) goto success;
         break;
       }
@@ -24159,10 +25331,15 @@ void CMsg3DTransformPerspective::SerializeWithCachedSizes(
       3, this->transition_data(), output);
   }
 
-  // repeated .CMsgAnimationData animations = 4;
+  // optional uint32 style_symbol = 4;
+  if (has_style_symbol()) {
+    ::google::protobuf::internal::WireFormatLite::WriteUInt32(4, this->style_symbol(), output);
+  }
+
+  // repeated .CMsgAnimationData animations = 5;
   for (int i = 0; i < this->animations_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      4, this->animations(i), output);
+      5, this->animations(i), output);
   }
 
   if (!unknown_fields().empty()) {
@@ -24192,11 +25369,16 @@ void CMsg3DTransformPerspective::SerializeWithCachedSizes(
         3, this->transition_data(), target);
   }
 
-  // repeated .CMsgAnimationData animations = 4;
+  // optional uint32 style_symbol = 4;
+  if (has_style_symbol()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(4, this->style_symbol(), target);
+  }
+
+  // repeated .CMsgAnimationData animations = 5;
   for (int i = 0; i < this->animations_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
-        4, this->animations(i), target);
+        5, this->animations(i), target);
   }
 
   if (!unknown_fields().empty()) {
@@ -24228,8 +25410,15 @@ int CMsg3DTransformPerspective::ByteSize() const {
           this->transition_data());
     }
 
+    // optional uint32 style_symbol = 4;
+    if (has_style_symbol()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::UInt32Size(
+          this->style_symbol());
+    }
+
   }
-  // repeated .CMsgAnimationData animations = 4;
+  // repeated .CMsgAnimationData animations = 5;
   total_size += 1 * this->animations_size();
   for (int i = 0; i < this->animations_size(); i++) {
     total_size +=
@@ -24273,6 +25462,9 @@ void CMsg3DTransformPerspective::MergeFrom(const CMsg3DTransformPerspective& fro
     if (from.has_transition_data()) {
       mutable_transition_data()->::CMsgTransitionData::MergeFrom(from.transition_data());
     }
+    if (from.has_style_symbol()) {
+      set_style_symbol(from.style_symbol());
+    }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
 }
@@ -24300,6 +25492,7 @@ void CMsg3DTransformPerspective::Swap(CMsg3DTransformPerspective* other) {
     std::swap(base_, other->base_);
     std::swap(transition_, other->transition_);
     std::swap(transition_data_, other->transition_data_);
+    std::swap(style_symbol_, other->style_symbol_);
     animations_.Swap(&other->animations_);
     std::swap(_has_bits_[0], other->_has_bits_[0]);
     _unknown_fields_.Swap(&other->_unknown_fields_);
@@ -24549,6 +25742,7 @@ void CMsg3DTransformPerspectiveOrigin_AnimationFrameData::Swap(CMsg3DTransformPe
 const int CMsg3DTransformPerspectiveOrigin::kBaseFieldNumber;
 const int CMsg3DTransformPerspectiveOrigin::kTransitionFieldNumber;
 const int CMsg3DTransformPerspectiveOrigin::kTransitionDataFieldNumber;
+const int CMsg3DTransformPerspectiveOrigin::kStyleSymbolFieldNumber;
 const int CMsg3DTransformPerspectiveOrigin::kAnimationsFieldNumber;
 #endif  // !_MSC_VER
 
@@ -24582,6 +25776,7 @@ void CMsg3DTransformPerspectiveOrigin::SharedCtor() {
   base_ = NULL;
   transition_ = NULL;
   transition_data_ = NULL;
+  style_symbol_ = 0u;
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
 
@@ -24620,7 +25815,7 @@ CMsg3DTransformPerspectiveOrigin* CMsg3DTransformPerspectiveOrigin::New() const 
 }
 
 void CMsg3DTransformPerspectiveOrigin::Clear() {
-  if (_has_bits_[0 / 32] & 7) {
+  if (_has_bits_[0 / 32] & 15) {
     if (has_base()) {
       if (base_ != NULL) base_->::CMsgPoint::Clear();
     }
@@ -24630,6 +25825,7 @@ void CMsg3DTransformPerspectiveOrigin::Clear() {
     if (has_transition_data()) {
       if (transition_data_ != NULL) transition_data_->::CMsgTransitionData::Clear();
     }
+    style_symbol_ = 0u;
   }
   animations_.Clear();
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
@@ -24680,20 +25876,35 @@ bool CMsg3DTransformPerspectiveOrigin::MergePartialFromCodedStream(
         } else {
           goto handle_unusual;
         }
-        if (input->ExpectTag(34)) goto parse_animations;
+        if (input->ExpectTag(32)) goto parse_style_symbol;
         break;
       }
 
-      // repeated .CMsgAnimationData animations = 4;
+      // optional uint32 style_symbol = 4;
       case 4: {
-        if (tag == 34) {
+        if (tag == 32) {
+         parse_style_symbol:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                 input, &style_symbol_)));
+          set_has_style_symbol();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(42)) goto parse_animations;
+        break;
+      }
+
+      // repeated .CMsgAnimationData animations = 5;
+      case 5: {
+        if (tag == 42) {
          parse_animations:
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
                 input, add_animations()));
         } else {
           goto handle_unusual;
         }
-        if (input->ExpectTag(34)) goto parse_animations;
+        if (input->ExpectTag(42)) goto parse_animations;
         if (input->ExpectAtEnd()) goto success;
         break;
       }
@@ -24741,10 +25952,15 @@ void CMsg3DTransformPerspectiveOrigin::SerializeWithCachedSizes(
       3, this->transition_data(), output);
   }
 
-  // repeated .CMsgAnimationData animations = 4;
+  // optional uint32 style_symbol = 4;
+  if (has_style_symbol()) {
+    ::google::protobuf::internal::WireFormatLite::WriteUInt32(4, this->style_symbol(), output);
+  }
+
+  // repeated .CMsgAnimationData animations = 5;
   for (int i = 0; i < this->animations_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      4, this->animations(i), output);
+      5, this->animations(i), output);
   }
 
   if (!unknown_fields().empty()) {
@@ -24778,11 +25994,16 @@ void CMsg3DTransformPerspectiveOrigin::SerializeWithCachedSizes(
         3, this->transition_data(), target);
   }
 
-  // repeated .CMsgAnimationData animations = 4;
+  // optional uint32 style_symbol = 4;
+  if (has_style_symbol()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(4, this->style_symbol(), target);
+  }
+
+  // repeated .CMsgAnimationData animations = 5;
   for (int i = 0; i < this->animations_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
-        4, this->animations(i), target);
+        5, this->animations(i), target);
   }
 
   if (!unknown_fields().empty()) {
@@ -24818,8 +26039,15 @@ int CMsg3DTransformPerspectiveOrigin::ByteSize() const {
           this->transition_data());
     }
 
+    // optional uint32 style_symbol = 4;
+    if (has_style_symbol()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::UInt32Size(
+          this->style_symbol());
+    }
+
   }
-  // repeated .CMsgAnimationData animations = 4;
+  // repeated .CMsgAnimationData animations = 5;
   total_size += 1 * this->animations_size();
   for (int i = 0; i < this->animations_size(); i++) {
     total_size +=
@@ -24863,6 +26091,9 @@ void CMsg3DTransformPerspectiveOrigin::MergeFrom(const CMsg3DTransformPerspectiv
     if (from.has_transition_data()) {
       mutable_transition_data()->::CMsgTransitionData::MergeFrom(from.transition_data());
     }
+    if (from.has_style_symbol()) {
+      set_style_symbol(from.style_symbol());
+    }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
 }
@@ -24890,6 +26121,7 @@ void CMsg3DTransformPerspectiveOrigin::Swap(CMsg3DTransformPerspectiveOrigin* ot
     std::swap(base_, other->base_);
     std::swap(transition_, other->transition_);
     std::swap(transition_data_, other->transition_data_);
+    std::swap(style_symbol_, other->style_symbol_);
     animations_.Swap(&other->animations_);
     std::swap(_has_bits_[0], other->_has_bits_[0]);
     _unknown_fields_.Swap(&other->_unknown_fields_);
@@ -25519,6 +26751,7 @@ void CMsg3DTransformOrigin_AnimationFrameData::Swap(CMsg3DTransformOrigin_Animat
 const int CMsg3DTransformOrigin::kBaseFieldNumber;
 const int CMsg3DTransformOrigin::kTransitionFieldNumber;
 const int CMsg3DTransformOrigin::kTransitionDataFieldNumber;
+const int CMsg3DTransformOrigin::kStyleSymbolFieldNumber;
 const int CMsg3DTransformOrigin::kAnimationsFieldNumber;
 #endif  // !_MSC_VER
 
@@ -25552,6 +26785,7 @@ void CMsg3DTransformOrigin::SharedCtor() {
   base_ = NULL;
   transition_ = NULL;
   transition_data_ = NULL;
+  style_symbol_ = 0u;
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
 
@@ -25590,7 +26824,7 @@ CMsg3DTransformOrigin* CMsg3DTransformOrigin::New() const {
 }
 
 void CMsg3DTransformOrigin::Clear() {
-  if (_has_bits_[0 / 32] & 7) {
+  if (_has_bits_[0 / 32] & 15) {
     if (has_base()) {
       if (base_ != NULL) base_->::CMsgTransformOriginData::Clear();
     }
@@ -25600,6 +26834,7 @@ void CMsg3DTransformOrigin::Clear() {
     if (has_transition_data()) {
       if (transition_data_ != NULL) transition_data_->::CMsgTransitionData::Clear();
     }
+    style_symbol_ = 0u;
   }
   animations_.Clear();
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
@@ -25650,20 +26885,35 @@ bool CMsg3DTransformOrigin::MergePartialFromCodedStream(
         } else {
           goto handle_unusual;
         }
-        if (input->ExpectTag(34)) goto parse_animations;
+        if (input->ExpectTag(32)) goto parse_style_symbol;
         break;
       }
 
-      // repeated .CMsgAnimationData animations = 4;
+      // optional uint32 style_symbol = 4;
       case 4: {
-        if (tag == 34) {
+        if (tag == 32) {
+         parse_style_symbol:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                 input, &style_symbol_)));
+          set_has_style_symbol();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(42)) goto parse_animations;
+        break;
+      }
+
+      // repeated .CMsgAnimationData animations = 5;
+      case 5: {
+        if (tag == 42) {
          parse_animations:
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
                 input, add_animations()));
         } else {
           goto handle_unusual;
         }
-        if (input->ExpectTag(34)) goto parse_animations;
+        if (input->ExpectTag(42)) goto parse_animations;
         if (input->ExpectAtEnd()) goto success;
         break;
       }
@@ -25711,10 +26961,15 @@ void CMsg3DTransformOrigin::SerializeWithCachedSizes(
       3, this->transition_data(), output);
   }
 
-  // repeated .CMsgAnimationData animations = 4;
+  // optional uint32 style_symbol = 4;
+  if (has_style_symbol()) {
+    ::google::protobuf::internal::WireFormatLite::WriteUInt32(4, this->style_symbol(), output);
+  }
+
+  // repeated .CMsgAnimationData animations = 5;
   for (int i = 0; i < this->animations_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      4, this->animations(i), output);
+      5, this->animations(i), output);
   }
 
   if (!unknown_fields().empty()) {
@@ -25748,11 +27003,16 @@ void CMsg3DTransformOrigin::SerializeWithCachedSizes(
         3, this->transition_data(), target);
   }
 
-  // repeated .CMsgAnimationData animations = 4;
+  // optional uint32 style_symbol = 4;
+  if (has_style_symbol()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(4, this->style_symbol(), target);
+  }
+
+  // repeated .CMsgAnimationData animations = 5;
   for (int i = 0; i < this->animations_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
-        4, this->animations(i), target);
+        5, this->animations(i), target);
   }
 
   if (!unknown_fields().empty()) {
@@ -25788,8 +27048,15 @@ int CMsg3DTransformOrigin::ByteSize() const {
           this->transition_data());
     }
 
+    // optional uint32 style_symbol = 4;
+    if (has_style_symbol()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::UInt32Size(
+          this->style_symbol());
+    }
+
   }
-  // repeated .CMsgAnimationData animations = 4;
+  // repeated .CMsgAnimationData animations = 5;
   total_size += 1 * this->animations_size();
   for (int i = 0; i < this->animations_size(); i++) {
     total_size +=
@@ -25833,6 +27100,9 @@ void CMsg3DTransformOrigin::MergeFrom(const CMsg3DTransformOrigin& from) {
     if (from.has_transition_data()) {
       mutable_transition_data()->::CMsgTransitionData::MergeFrom(from.transition_data());
     }
+    if (from.has_style_symbol()) {
+      set_style_symbol(from.style_symbol());
+    }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
 }
@@ -25860,6 +27130,7 @@ void CMsg3DTransformOrigin::Swap(CMsg3DTransformOrigin* other) {
     std::swap(base_, other->base_);
     std::swap(transition_, other->transition_);
     std::swap(transition_data_, other->transition_data_);
+    std::swap(style_symbol_, other->style_symbol_);
     animations_.Swap(&other->animations_);
     std::swap(_has_bits_[0], other->_has_bits_[0]);
     _unknown_fields_.Swap(&other->_unknown_fields_);
@@ -26109,6 +27380,7 @@ void CMsg3DTransformMatrix_AnimationFrameData::Swap(CMsg3DTransformMatrix_Animat
 const int CMsg3DTransformMatrix::kBaseFieldNumber;
 const int CMsg3DTransformMatrix::kTransitionDataFieldNumber;
 const int CMsg3DTransformMatrix::kTransitionFieldNumber;
+const int CMsg3DTransformMatrix::kStyleSymbolFieldNumber;
 const int CMsg3DTransformMatrix::kAnimationsFieldNumber;
 #endif  // !_MSC_VER
 
@@ -26142,6 +27414,7 @@ void CMsg3DTransformMatrix::SharedCtor() {
   base_ = NULL;
   transition_data_ = NULL;
   transition_ = NULL;
+  style_symbol_ = 0u;
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
 
@@ -26180,7 +27453,7 @@ CMsg3DTransformMatrix* CMsg3DTransformMatrix::New() const {
 }
 
 void CMsg3DTransformMatrix::Clear() {
-  if (_has_bits_[0 / 32] & 7) {
+  if (_has_bits_[0 / 32] & 15) {
     if (has_base()) {
       if (base_ != NULL) base_->::CMsgMatrix4x4::Clear();
     }
@@ -26190,6 +27463,7 @@ void CMsg3DTransformMatrix::Clear() {
     if (has_transition()) {
       if (transition_ != NULL) transition_->::CMsgMatrix4x4::Clear();
     }
+    style_symbol_ = 0u;
   }
   animations_.Clear();
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
@@ -26240,20 +27514,35 @@ bool CMsg3DTransformMatrix::MergePartialFromCodedStream(
         } else {
           goto handle_unusual;
         }
-        if (input->ExpectTag(34)) goto parse_animations;
+        if (input->ExpectTag(32)) goto parse_style_symbol;
         break;
       }
 
-      // repeated .CMsgAnimationData animations = 4;
+      // optional uint32 style_symbol = 4;
       case 4: {
-        if (tag == 34) {
+        if (tag == 32) {
+         parse_style_symbol:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                 input, &style_symbol_)));
+          set_has_style_symbol();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(42)) goto parse_animations;
+        break;
+      }
+
+      // repeated .CMsgAnimationData animations = 5;
+      case 5: {
+        if (tag == 42) {
          parse_animations:
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
                 input, add_animations()));
         } else {
           goto handle_unusual;
         }
-        if (input->ExpectTag(34)) goto parse_animations;
+        if (input->ExpectTag(42)) goto parse_animations;
         if (input->ExpectAtEnd()) goto success;
         break;
       }
@@ -26301,10 +27590,15 @@ void CMsg3DTransformMatrix::SerializeWithCachedSizes(
       3, this->transition(), output);
   }
 
-  // repeated .CMsgAnimationData animations = 4;
+  // optional uint32 style_symbol = 4;
+  if (has_style_symbol()) {
+    ::google::protobuf::internal::WireFormatLite::WriteUInt32(4, this->style_symbol(), output);
+  }
+
+  // repeated .CMsgAnimationData animations = 5;
   for (int i = 0; i < this->animations_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      4, this->animations(i), output);
+      5, this->animations(i), output);
   }
 
   if (!unknown_fields().empty()) {
@@ -26338,11 +27632,16 @@ void CMsg3DTransformMatrix::SerializeWithCachedSizes(
         3, this->transition(), target);
   }
 
-  // repeated .CMsgAnimationData animations = 4;
+  // optional uint32 style_symbol = 4;
+  if (has_style_symbol()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(4, this->style_symbol(), target);
+  }
+
+  // repeated .CMsgAnimationData animations = 5;
   for (int i = 0; i < this->animations_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
-        4, this->animations(i), target);
+        5, this->animations(i), target);
   }
 
   if (!unknown_fields().empty()) {
@@ -26378,8 +27677,15 @@ int CMsg3DTransformMatrix::ByteSize() const {
           this->transition());
     }
 
+    // optional uint32 style_symbol = 4;
+    if (has_style_symbol()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::UInt32Size(
+          this->style_symbol());
+    }
+
   }
-  // repeated .CMsgAnimationData animations = 4;
+  // repeated .CMsgAnimationData animations = 5;
   total_size += 1 * this->animations_size();
   for (int i = 0; i < this->animations_size(); i++) {
     total_size +=
@@ -26423,6 +27729,9 @@ void CMsg3DTransformMatrix::MergeFrom(const CMsg3DTransformMatrix& from) {
     if (from.has_transition()) {
       mutable_transition()->::CMsgMatrix4x4::MergeFrom(from.transition());
     }
+    if (from.has_style_symbol()) {
+      set_style_symbol(from.style_symbol());
+    }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
 }
@@ -26450,6 +27759,7 @@ void CMsg3DTransformMatrix::Swap(CMsg3DTransformMatrix* other) {
     std::swap(base_, other->base_);
     std::swap(transition_data_, other->transition_data_);
     std::swap(transition_, other->transition_);
+    std::swap(style_symbol_, other->style_symbol_);
     animations_.Swap(&other->animations_);
     std::swap(_has_bits_[0], other->_has_bits_[0]);
     _unknown_fields_.Swap(&other->_unknown_fields_);
@@ -26699,6 +28009,7 @@ void CMsgBorderRadius_AnimationFrameData::Swap(CMsgBorderRadius_AnimationFrameDa
 const int CMsgBorderRadius::kBaseFieldNumber;
 const int CMsgBorderRadius::kTransitionDataFieldNumber;
 const int CMsgBorderRadius::kTransitionFieldNumber;
+const int CMsgBorderRadius::kStyleSymbolFieldNumber;
 const int CMsgBorderRadius::kAnimationsFieldNumber;
 #endif  // !_MSC_VER
 
@@ -26732,6 +28043,7 @@ void CMsgBorderRadius::SharedCtor() {
   base_ = NULL;
   transition_data_ = NULL;
   transition_ = NULL;
+  style_symbol_ = 0u;
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
 
@@ -26770,7 +28082,7 @@ CMsgBorderRadius* CMsgBorderRadius::New() const {
 }
 
 void CMsgBorderRadius::Clear() {
-  if (_has_bits_[0 / 32] & 7) {
+  if (_has_bits_[0 / 32] & 15) {
     if (has_base()) {
       if (base_ != NULL) base_->::CRadiusData::Clear();
     }
@@ -26780,6 +28092,7 @@ void CMsgBorderRadius::Clear() {
     if (has_transition()) {
       if (transition_ != NULL) transition_->::CRadiusData::Clear();
     }
+    style_symbol_ = 0u;
   }
   animations_.Clear();
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
@@ -26830,20 +28143,35 @@ bool CMsgBorderRadius::MergePartialFromCodedStream(
         } else {
           goto handle_unusual;
         }
-        if (input->ExpectTag(34)) goto parse_animations;
+        if (input->ExpectTag(32)) goto parse_style_symbol;
         break;
       }
 
-      // repeated .CMsgAnimationData animations = 4;
+      // optional uint32 style_symbol = 4;
       case 4: {
-        if (tag == 34) {
+        if (tag == 32) {
+         parse_style_symbol:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                 input, &style_symbol_)));
+          set_has_style_symbol();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(42)) goto parse_animations;
+        break;
+      }
+
+      // repeated .CMsgAnimationData animations = 5;
+      case 5: {
+        if (tag == 42) {
          parse_animations:
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
                 input, add_animations()));
         } else {
           goto handle_unusual;
         }
-        if (input->ExpectTag(34)) goto parse_animations;
+        if (input->ExpectTag(42)) goto parse_animations;
         if (input->ExpectAtEnd()) goto success;
         break;
       }
@@ -26891,10 +28219,15 @@ void CMsgBorderRadius::SerializeWithCachedSizes(
       3, this->transition(), output);
   }
 
-  // repeated .CMsgAnimationData animations = 4;
+  // optional uint32 style_symbol = 4;
+  if (has_style_symbol()) {
+    ::google::protobuf::internal::WireFormatLite::WriteUInt32(4, this->style_symbol(), output);
+  }
+
+  // repeated .CMsgAnimationData animations = 5;
   for (int i = 0; i < this->animations_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      4, this->animations(i), output);
+      5, this->animations(i), output);
   }
 
   if (!unknown_fields().empty()) {
@@ -26928,11 +28261,16 @@ void CMsgBorderRadius::SerializeWithCachedSizes(
         3, this->transition(), target);
   }
 
-  // repeated .CMsgAnimationData animations = 4;
+  // optional uint32 style_symbol = 4;
+  if (has_style_symbol()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(4, this->style_symbol(), target);
+  }
+
+  // repeated .CMsgAnimationData animations = 5;
   for (int i = 0; i < this->animations_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
-        4, this->animations(i), target);
+        5, this->animations(i), target);
   }
 
   if (!unknown_fields().empty()) {
@@ -26968,8 +28306,15 @@ int CMsgBorderRadius::ByteSize() const {
           this->transition());
     }
 
+    // optional uint32 style_symbol = 4;
+    if (has_style_symbol()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::UInt32Size(
+          this->style_symbol());
+    }
+
   }
-  // repeated .CMsgAnimationData animations = 4;
+  // repeated .CMsgAnimationData animations = 5;
   total_size += 1 * this->animations_size();
   for (int i = 0; i < this->animations_size(); i++) {
     total_size +=
@@ -27013,6 +28358,9 @@ void CMsgBorderRadius::MergeFrom(const CMsgBorderRadius& from) {
     if (from.has_transition()) {
       mutable_transition()->::CRadiusData::MergeFrom(from.transition());
     }
+    if (from.has_style_symbol()) {
+      set_style_symbol(from.style_symbol());
+    }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
 }
@@ -27040,6 +28388,7 @@ void CMsgBorderRadius::Swap(CMsgBorderRadius* other) {
     std::swap(base_, other->base_);
     std::swap(transition_data_, other->transition_data_);
     std::swap(transition_, other->transition_);
+    std::swap(style_symbol_, other->style_symbol_);
     animations_.Swap(&other->animations_);
     std::swap(_has_bits_[0], other->_has_bits_[0]);
     _unknown_fields_.Swap(&other->_unknown_fields_);
@@ -27289,6 +28638,7 @@ void CMsgBorder_AnimationFrameData::Swap(CMsgBorder_AnimationFrameData* other) {
 const int CMsgBorder::kBaseFieldNumber;
 const int CMsgBorder::kTransitionDataFieldNumber;
 const int CMsgBorder::kTransitionFieldNumber;
+const int CMsgBorder::kStyleSymbolFieldNumber;
 const int CMsgBorder::kAnimationsFieldNumber;
 #endif  // !_MSC_VER
 
@@ -27322,6 +28672,7 @@ void CMsgBorder::SharedCtor() {
   base_ = NULL;
   transition_data_ = NULL;
   transition_ = NULL;
+  style_symbol_ = 0u;
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
 
@@ -27360,7 +28711,7 @@ CMsgBorder* CMsgBorder::New() const {
 }
 
 void CMsgBorder::Clear() {
-  if (_has_bits_[0 / 32] & 7) {
+  if (_has_bits_[0 / 32] & 15) {
     if (has_base()) {
       if (base_ != NULL) base_->::CBorderData::Clear();
     }
@@ -27370,6 +28721,7 @@ void CMsgBorder::Clear() {
     if (has_transition()) {
       if (transition_ != NULL) transition_->::CBorderData::Clear();
     }
+    style_symbol_ = 0u;
   }
   animations_.Clear();
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
@@ -27420,20 +28772,35 @@ bool CMsgBorder::MergePartialFromCodedStream(
         } else {
           goto handle_unusual;
         }
-        if (input->ExpectTag(34)) goto parse_animations;
+        if (input->ExpectTag(32)) goto parse_style_symbol;
         break;
       }
 
-      // repeated .CMsgAnimationData animations = 4;
+      // optional uint32 style_symbol = 4;
       case 4: {
-        if (tag == 34) {
+        if (tag == 32) {
+         parse_style_symbol:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                 input, &style_symbol_)));
+          set_has_style_symbol();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(42)) goto parse_animations;
+        break;
+      }
+
+      // repeated .CMsgAnimationData animations = 5;
+      case 5: {
+        if (tag == 42) {
          parse_animations:
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
                 input, add_animations()));
         } else {
           goto handle_unusual;
         }
-        if (input->ExpectTag(34)) goto parse_animations;
+        if (input->ExpectTag(42)) goto parse_animations;
         if (input->ExpectAtEnd()) goto success;
         break;
       }
@@ -27481,10 +28848,15 @@ void CMsgBorder::SerializeWithCachedSizes(
       3, this->transition(), output);
   }
 
-  // repeated .CMsgAnimationData animations = 4;
+  // optional uint32 style_symbol = 4;
+  if (has_style_symbol()) {
+    ::google::protobuf::internal::WireFormatLite::WriteUInt32(4, this->style_symbol(), output);
+  }
+
+  // repeated .CMsgAnimationData animations = 5;
   for (int i = 0; i < this->animations_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      4, this->animations(i), output);
+      5, this->animations(i), output);
   }
 
   if (!unknown_fields().empty()) {
@@ -27518,11 +28890,16 @@ void CMsgBorder::SerializeWithCachedSizes(
         3, this->transition(), target);
   }
 
-  // repeated .CMsgAnimationData animations = 4;
+  // optional uint32 style_symbol = 4;
+  if (has_style_symbol()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(4, this->style_symbol(), target);
+  }
+
+  // repeated .CMsgAnimationData animations = 5;
   for (int i = 0; i < this->animations_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
-        4, this->animations(i), target);
+        5, this->animations(i), target);
   }
 
   if (!unknown_fields().empty()) {
@@ -27558,8 +28935,15 @@ int CMsgBorder::ByteSize() const {
           this->transition());
     }
 
+    // optional uint32 style_symbol = 4;
+    if (has_style_symbol()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::UInt32Size(
+          this->style_symbol());
+    }
+
   }
-  // repeated .CMsgAnimationData animations = 4;
+  // repeated .CMsgAnimationData animations = 5;
   total_size += 1 * this->animations_size();
   for (int i = 0; i < this->animations_size(); i++) {
     total_size +=
@@ -27603,6 +28987,9 @@ void CMsgBorder::MergeFrom(const CMsgBorder& from) {
     if (from.has_transition()) {
       mutable_transition()->::CBorderData::MergeFrom(from.transition());
     }
+    if (from.has_style_symbol()) {
+      set_style_symbol(from.style_symbol());
+    }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
 }
@@ -27630,6 +29017,7 @@ void CMsgBorder::Swap(CMsgBorder* other) {
     std::swap(base_, other->base_);
     std::swap(transition_data_, other->transition_data_);
     std::swap(transition_, other->transition_);
+    std::swap(style_symbol_, other->style_symbol_);
     animations_.Swap(&other->animations_);
     std::swap(_has_bits_[0], other->_has_bits_[0]);
     _unknown_fields_.Swap(&other->_unknown_fields_);
@@ -27879,6 +29267,7 @@ void CMsgBoxShadow_AnimationFrameData::Swap(CMsgBoxShadow_AnimationFrameData* ot
 const int CMsgBoxShadow::kBaseFieldNumber;
 const int CMsgBoxShadow::kTransitionDataFieldNumber;
 const int CMsgBoxShadow::kTransitionFieldNumber;
+const int CMsgBoxShadow::kStyleSymbolFieldNumber;
 const int CMsgBoxShadow::kAnimationsFieldNumber;
 #endif  // !_MSC_VER
 
@@ -27912,6 +29301,7 @@ void CMsgBoxShadow::SharedCtor() {
   base_ = NULL;
   transition_data_ = NULL;
   transition_ = NULL;
+  style_symbol_ = 0u;
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
 
@@ -27950,7 +29340,7 @@ CMsgBoxShadow* CMsgBoxShadow::New() const {
 }
 
 void CMsgBoxShadow::Clear() {
-  if (_has_bits_[0 / 32] & 7) {
+  if (_has_bits_[0 / 32] & 15) {
     if (has_base()) {
       if (base_ != NULL) base_->::CBoxShadowData::Clear();
     }
@@ -27960,6 +29350,7 @@ void CMsgBoxShadow::Clear() {
     if (has_transition()) {
       if (transition_ != NULL) transition_->::CBoxShadowData::Clear();
     }
+    style_symbol_ = 0u;
   }
   animations_.Clear();
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
@@ -28010,20 +29401,35 @@ bool CMsgBoxShadow::MergePartialFromCodedStream(
         } else {
           goto handle_unusual;
         }
-        if (input->ExpectTag(34)) goto parse_animations;
+        if (input->ExpectTag(32)) goto parse_style_symbol;
         break;
       }
 
-      // repeated .CMsgAnimationData animations = 4;
+      // optional uint32 style_symbol = 4;
       case 4: {
-        if (tag == 34) {
+        if (tag == 32) {
+         parse_style_symbol:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                 input, &style_symbol_)));
+          set_has_style_symbol();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(42)) goto parse_animations;
+        break;
+      }
+
+      // repeated .CMsgAnimationData animations = 5;
+      case 5: {
+        if (tag == 42) {
          parse_animations:
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
                 input, add_animations()));
         } else {
           goto handle_unusual;
         }
-        if (input->ExpectTag(34)) goto parse_animations;
+        if (input->ExpectTag(42)) goto parse_animations;
         if (input->ExpectAtEnd()) goto success;
         break;
       }
@@ -28071,10 +29477,15 @@ void CMsgBoxShadow::SerializeWithCachedSizes(
       3, this->transition(), output);
   }
 
-  // repeated .CMsgAnimationData animations = 4;
+  // optional uint32 style_symbol = 4;
+  if (has_style_symbol()) {
+    ::google::protobuf::internal::WireFormatLite::WriteUInt32(4, this->style_symbol(), output);
+  }
+
+  // repeated .CMsgAnimationData animations = 5;
   for (int i = 0; i < this->animations_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      4, this->animations(i), output);
+      5, this->animations(i), output);
   }
 
   if (!unknown_fields().empty()) {
@@ -28108,11 +29519,16 @@ void CMsgBoxShadow::SerializeWithCachedSizes(
         3, this->transition(), target);
   }
 
-  // repeated .CMsgAnimationData animations = 4;
+  // optional uint32 style_symbol = 4;
+  if (has_style_symbol()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(4, this->style_symbol(), target);
+  }
+
+  // repeated .CMsgAnimationData animations = 5;
   for (int i = 0; i < this->animations_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
-        4, this->animations(i), target);
+        5, this->animations(i), target);
   }
 
   if (!unknown_fields().empty()) {
@@ -28148,8 +29564,15 @@ int CMsgBoxShadow::ByteSize() const {
           this->transition());
     }
 
+    // optional uint32 style_symbol = 4;
+    if (has_style_symbol()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::UInt32Size(
+          this->style_symbol());
+    }
+
   }
-  // repeated .CMsgAnimationData animations = 4;
+  // repeated .CMsgAnimationData animations = 5;
   total_size += 1 * this->animations_size();
   for (int i = 0; i < this->animations_size(); i++) {
     total_size +=
@@ -28193,6 +29616,9 @@ void CMsgBoxShadow::MergeFrom(const CMsgBoxShadow& from) {
     if (from.has_transition()) {
       mutable_transition()->::CBoxShadowData::MergeFrom(from.transition());
     }
+    if (from.has_style_symbol()) {
+      set_style_symbol(from.style_symbol());
+    }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
 }
@@ -28220,6 +29646,7 @@ void CMsgBoxShadow::Swap(CMsgBoxShadow* other) {
     std::swap(base_, other->base_);
     std::swap(transition_data_, other->transition_data_);
     std::swap(transition_, other->transition_);
+    std::swap(style_symbol_, other->style_symbol_);
     animations_.Swap(&other->animations_);
     std::swap(_has_bits_[0], other->_has_bits_[0]);
     _unknown_fields_.Swap(&other->_unknown_fields_);
@@ -28469,6 +29896,7 @@ void CMsgTextShadow_AnimationFrameData::Swap(CMsgTextShadow_AnimationFrameData* 
 const int CMsgTextShadow::kBaseFieldNumber;
 const int CMsgTextShadow::kTransitionDataFieldNumber;
 const int CMsgTextShadow::kTransitionFieldNumber;
+const int CMsgTextShadow::kStyleSymbolFieldNumber;
 const int CMsgTextShadow::kAnimationsFieldNumber;
 #endif  // !_MSC_VER
 
@@ -28502,6 +29930,7 @@ void CMsgTextShadow::SharedCtor() {
   base_ = NULL;
   transition_data_ = NULL;
   transition_ = NULL;
+  style_symbol_ = 0u;
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
 
@@ -28540,7 +29969,7 @@ CMsgTextShadow* CMsgTextShadow::New() const {
 }
 
 void CMsgTextShadow::Clear() {
-  if (_has_bits_[0 / 32] & 7) {
+  if (_has_bits_[0 / 32] & 15) {
     if (has_base()) {
       if (base_ != NULL) base_->::CTextShadowData::Clear();
     }
@@ -28550,6 +29979,7 @@ void CMsgTextShadow::Clear() {
     if (has_transition()) {
       if (transition_ != NULL) transition_->::CTextShadowData::Clear();
     }
+    style_symbol_ = 0u;
   }
   animations_.Clear();
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
@@ -28600,20 +30030,35 @@ bool CMsgTextShadow::MergePartialFromCodedStream(
         } else {
           goto handle_unusual;
         }
-        if (input->ExpectTag(34)) goto parse_animations;
+        if (input->ExpectTag(32)) goto parse_style_symbol;
         break;
       }
 
-      // repeated .CMsgAnimationData animations = 4;
+      // optional uint32 style_symbol = 4;
       case 4: {
-        if (tag == 34) {
+        if (tag == 32) {
+         parse_style_symbol:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                 input, &style_symbol_)));
+          set_has_style_symbol();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(42)) goto parse_animations;
+        break;
+      }
+
+      // repeated .CMsgAnimationData animations = 5;
+      case 5: {
+        if (tag == 42) {
          parse_animations:
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
                 input, add_animations()));
         } else {
           goto handle_unusual;
         }
-        if (input->ExpectTag(34)) goto parse_animations;
+        if (input->ExpectTag(42)) goto parse_animations;
         if (input->ExpectAtEnd()) goto success;
         break;
       }
@@ -28661,10 +30106,15 @@ void CMsgTextShadow::SerializeWithCachedSizes(
       3, this->transition(), output);
   }
 
-  // repeated .CMsgAnimationData animations = 4;
+  // optional uint32 style_symbol = 4;
+  if (has_style_symbol()) {
+    ::google::protobuf::internal::WireFormatLite::WriteUInt32(4, this->style_symbol(), output);
+  }
+
+  // repeated .CMsgAnimationData animations = 5;
   for (int i = 0; i < this->animations_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      4, this->animations(i), output);
+      5, this->animations(i), output);
   }
 
   if (!unknown_fields().empty()) {
@@ -28698,11 +30148,16 @@ void CMsgTextShadow::SerializeWithCachedSizes(
         3, this->transition(), target);
   }
 
-  // repeated .CMsgAnimationData animations = 4;
+  // optional uint32 style_symbol = 4;
+  if (has_style_symbol()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(4, this->style_symbol(), target);
+  }
+
+  // repeated .CMsgAnimationData animations = 5;
   for (int i = 0; i < this->animations_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
-        4, this->animations(i), target);
+        5, this->animations(i), target);
   }
 
   if (!unknown_fields().empty()) {
@@ -28738,8 +30193,15 @@ int CMsgTextShadow::ByteSize() const {
           this->transition());
     }
 
+    // optional uint32 style_symbol = 4;
+    if (has_style_symbol()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::UInt32Size(
+          this->style_symbol());
+    }
+
   }
-  // repeated .CMsgAnimationData animations = 4;
+  // repeated .CMsgAnimationData animations = 5;
   total_size += 1 * this->animations_size();
   for (int i = 0; i < this->animations_size(); i++) {
     total_size +=
@@ -28783,6 +30245,9 @@ void CMsgTextShadow::MergeFrom(const CMsgTextShadow& from) {
     if (from.has_transition()) {
       mutable_transition()->::CTextShadowData::MergeFrom(from.transition());
     }
+    if (from.has_style_symbol()) {
+      set_style_symbol(from.style_symbol());
+    }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
 }
@@ -28810,6 +30275,7 @@ void CMsgTextShadow::Swap(CMsgTextShadow* other) {
     std::swap(base_, other->base_);
     std::swap(transition_data_, other->transition_data_);
     std::swap(transition_, other->transition_);
+    std::swap(style_symbol_, other->style_symbol_);
     animations_.Swap(&other->animations_);
     std::swap(_has_bits_[0], other->_has_bits_[0]);
     _unknown_fields_.Swap(&other->_unknown_fields_);
@@ -29059,6 +30525,7 @@ void CMsgClip_AnimationFrameData::Swap(CMsgClip_AnimationFrameData* other) {
 const int CMsgClip::kBaseFieldNumber;
 const int CMsgClip::kTransitionDataFieldNumber;
 const int CMsgClip::kTransitionFieldNumber;
+const int CMsgClip::kStyleSymbolFieldNumber;
 const int CMsgClip::kAnimationsFieldNumber;
 #endif  // !_MSC_VER
 
@@ -29092,6 +30559,7 @@ void CMsgClip::SharedCtor() {
   base_ = NULL;
   transition_data_ = NULL;
   transition_ = NULL;
+  style_symbol_ = 0u;
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
 
@@ -29130,7 +30598,7 @@ CMsgClip* CMsgClip::New() const {
 }
 
 void CMsgClip::Clear() {
-  if (_has_bits_[0 / 32] & 7) {
+  if (_has_bits_[0 / 32] & 15) {
     if (has_base()) {
       if (base_ != NULL) base_->::CMsgClipData::Clear();
     }
@@ -29140,6 +30608,7 @@ void CMsgClip::Clear() {
     if (has_transition()) {
       if (transition_ != NULL) transition_->::CMsgClipData::Clear();
     }
+    style_symbol_ = 0u;
   }
   animations_.Clear();
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
@@ -29190,20 +30659,35 @@ bool CMsgClip::MergePartialFromCodedStream(
         } else {
           goto handle_unusual;
         }
-        if (input->ExpectTag(34)) goto parse_animations;
+        if (input->ExpectTag(32)) goto parse_style_symbol;
         break;
       }
 
-      // repeated .CMsgAnimationData animations = 4;
+      // optional uint32 style_symbol = 4;
       case 4: {
-        if (tag == 34) {
+        if (tag == 32) {
+         parse_style_symbol:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                 input, &style_symbol_)));
+          set_has_style_symbol();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(42)) goto parse_animations;
+        break;
+      }
+
+      // repeated .CMsgAnimationData animations = 5;
+      case 5: {
+        if (tag == 42) {
          parse_animations:
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
                 input, add_animations()));
         } else {
           goto handle_unusual;
         }
-        if (input->ExpectTag(34)) goto parse_animations;
+        if (input->ExpectTag(42)) goto parse_animations;
         if (input->ExpectAtEnd()) goto success;
         break;
       }
@@ -29251,10 +30735,15 @@ void CMsgClip::SerializeWithCachedSizes(
       3, this->transition(), output);
   }
 
-  // repeated .CMsgAnimationData animations = 4;
+  // optional uint32 style_symbol = 4;
+  if (has_style_symbol()) {
+    ::google::protobuf::internal::WireFormatLite::WriteUInt32(4, this->style_symbol(), output);
+  }
+
+  // repeated .CMsgAnimationData animations = 5;
   for (int i = 0; i < this->animations_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      4, this->animations(i), output);
+      5, this->animations(i), output);
   }
 
   if (!unknown_fields().empty()) {
@@ -29288,11 +30777,16 @@ void CMsgClip::SerializeWithCachedSizes(
         3, this->transition(), target);
   }
 
-  // repeated .CMsgAnimationData animations = 4;
+  // optional uint32 style_symbol = 4;
+  if (has_style_symbol()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(4, this->style_symbol(), target);
+  }
+
+  // repeated .CMsgAnimationData animations = 5;
   for (int i = 0; i < this->animations_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
-        4, this->animations(i), target);
+        5, this->animations(i), target);
   }
 
   if (!unknown_fields().empty()) {
@@ -29328,8 +30822,15 @@ int CMsgClip::ByteSize() const {
           this->transition());
     }
 
+    // optional uint32 style_symbol = 4;
+    if (has_style_symbol()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::UInt32Size(
+          this->style_symbol());
+    }
+
   }
-  // repeated .CMsgAnimationData animations = 4;
+  // repeated .CMsgAnimationData animations = 5;
   total_size += 1 * this->animations_size();
   for (int i = 0; i < this->animations_size(); i++) {
     total_size +=
@@ -29373,6 +30874,9 @@ void CMsgClip::MergeFrom(const CMsgClip& from) {
     if (from.has_transition()) {
       mutable_transition()->::CMsgClipData::MergeFrom(from.transition());
     }
+    if (from.has_style_symbol()) {
+      set_style_symbol(from.style_symbol());
+    }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
 }
@@ -29400,6 +30904,7 @@ void CMsgClip::Swap(CMsgClip* other) {
     std::swap(base_, other->base_);
     std::swap(transition_data_, other->transition_data_);
     std::swap(transition_, other->transition_);
+    std::swap(style_symbol_, other->style_symbol_);
     animations_.Swap(&other->animations_);
     std::swap(_has_bits_[0], other->_has_bits_[0]);
     _unknown_fields_.Swap(&other->_unknown_fields_);
@@ -29910,6 +31415,1316 @@ void CMsgPopClipLayer::Swap(CMsgPopClipLayer* other) {
 // ===================================================================
 
 #ifndef _MSC_VER
+const int CMsgPushPanelContextInLayer::kTransformM00FieldNumber;
+const int CMsgPushPanelContextInLayer::kTransformM01FieldNumber;
+const int CMsgPushPanelContextInLayer::kTransformM02FieldNumber;
+const int CMsgPushPanelContextInLayer::kTransformM03FieldNumber;
+const int CMsgPushPanelContextInLayer::kTransformM10FieldNumber;
+const int CMsgPushPanelContextInLayer::kTransformM11FieldNumber;
+const int CMsgPushPanelContextInLayer::kTransformM12FieldNumber;
+const int CMsgPushPanelContextInLayer::kTransformM13FieldNumber;
+const int CMsgPushPanelContextInLayer::kTransformM20FieldNumber;
+const int CMsgPushPanelContextInLayer::kTransformM21FieldNumber;
+const int CMsgPushPanelContextInLayer::kTransformM22FieldNumber;
+const int CMsgPushPanelContextInLayer::kTransformM23FieldNumber;
+const int CMsgPushPanelContextInLayer::kTransformM30FieldNumber;
+const int CMsgPushPanelContextInLayer::kTransformM31FieldNumber;
+const int CMsgPushPanelContextInLayer::kTransformM32FieldNumber;
+const int CMsgPushPanelContextInLayer::kTransformM33FieldNumber;
+const int CMsgPushPanelContextInLayer::kBoxShadowFieldNumber;
+const int CMsgPushPanelContextInLayer::kWidthFieldNumber;
+const int CMsgPushPanelContextInLayer::kHeightFieldNumber;
+const int CMsgPushPanelContextInLayer::kPositionXFieldNumber;
+const int CMsgPushPanelContextInLayer::kPositionYFieldNumber;
+const int CMsgPushPanelContextInLayer::kPositionZFieldNumber;
+const int CMsgPushPanelContextInLayer::kBorderFieldNumber;
+const int CMsgPushPanelContextInLayer::kScrollXFieldNumber;
+const int CMsgPushPanelContextInLayer::kScrollYFieldNumber;
+#endif  // !_MSC_VER
+
+CMsgPushPanelContextInLayer::CMsgPushPanelContextInLayer()
+  : ::google::protobuf::Message() {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:CMsgPushPanelContextInLayer)
+}
+
+void CMsgPushPanelContextInLayer::InitAsDefaultInstance() {
+  box_shadow_ = const_cast< ::CBoxShadowData*>(&::CBoxShadowData::default_instance());
+  border_ = const_cast< ::CBorderData*>(&::CBorderData::default_instance());
+}
+
+CMsgPushPanelContextInLayer::CMsgPushPanelContextInLayer(const CMsgPushPanelContextInLayer& from)
+  : ::google::protobuf::Message() {
+  SharedCtor();
+  MergeFrom(from);
+  // @@protoc_insertion_point(copy_constructor:CMsgPushPanelContextInLayer)
+}
+
+void CMsgPushPanelContextInLayer::SharedCtor() {
+  _cached_size_ = 0;
+  transform_m00_ = 0;
+  transform_m01_ = 0;
+  transform_m02_ = 0;
+  transform_m03_ = 0;
+  transform_m10_ = 0;
+  transform_m11_ = 0;
+  transform_m12_ = 0;
+  transform_m13_ = 0;
+  transform_m20_ = 0;
+  transform_m21_ = 0;
+  transform_m22_ = 0;
+  transform_m23_ = 0;
+  transform_m30_ = 0;
+  transform_m31_ = 0;
+  transform_m32_ = 0;
+  transform_m33_ = 0;
+  box_shadow_ = NULL;
+  width_ = 0;
+  height_ = 0;
+  position_x_ = 0;
+  position_y_ = 0;
+  position_z_ = 0;
+  border_ = NULL;
+  scroll_x_ = 0;
+  scroll_y_ = 0;
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+}
+
+CMsgPushPanelContextInLayer::~CMsgPushPanelContextInLayer() {
+  // @@protoc_insertion_point(destructor:CMsgPushPanelContextInLayer)
+  SharedDtor();
+}
+
+void CMsgPushPanelContextInLayer::SharedDtor() {
+  if (this != default_instance_) {
+    delete box_shadow_;
+    delete border_;
+  }
+}
+
+void CMsgPushPanelContextInLayer::SetCachedSize(int size) const {
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+}
+const ::google::protobuf::Descriptor* CMsgPushPanelContextInLayer::descriptor() {
+  protobuf_AssignDescriptorsOnce();
+  return CMsgPushPanelContextInLayer_descriptor_;
+}
+
+const CMsgPushPanelContextInLayer& CMsgPushPanelContextInLayer::default_instance() {
+  if (default_instance_ == NULL) protobuf_AddDesc_rendermessages_2eproto();
+  return *default_instance_;
+}
+
+CMsgPushPanelContextInLayer* CMsgPushPanelContextInLayer::default_instance_ = NULL;
+
+CMsgPushPanelContextInLayer* CMsgPushPanelContextInLayer::New() const {
+  return new CMsgPushPanelContextInLayer;
+}
+
+void CMsgPushPanelContextInLayer::Clear() {
+#define OFFSET_OF_FIELD_(f) (reinterpret_cast<char*>(      \
+  &reinterpret_cast<CMsgPushPanelContextInLayer*>(16)->f) - \
+   reinterpret_cast<char*>(16))
+
+#define ZR_(first, last) do {                              \
+    size_t f = OFFSET_OF_FIELD_(first);                    \
+    size_t n = OFFSET_OF_FIELD_(last) - f + sizeof(last);  \
+    ::memset(&first, 0, n);                                \
+  } while (0)
+
+  if (_has_bits_[0 / 32] & 255) {
+    ZR_(transform_m00_, transform_m13_);
+  }
+  if (_has_bits_[8 / 32] & 65280) {
+    ZR_(transform_m20_, transform_m33_);
+  }
+  if (_has_bits_[16 / 32] & 16711680) {
+    ZR_(width_, position_z_);
+    if (has_box_shadow()) {
+      if (box_shadow_ != NULL) box_shadow_->::CBoxShadowData::Clear();
+    }
+    if (has_border()) {
+      if (border_ != NULL) border_->::CBorderData::Clear();
+    }
+    scroll_x_ = 0;
+  }
+  scroll_y_ = 0;
+
+#undef OFFSET_OF_FIELD_
+#undef ZR_
+
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+  mutable_unknown_fields()->Clear();
+}
+
+bool CMsgPushPanelContextInLayer::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:CMsgPushPanelContextInLayer)
+  for (;;) {
+    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoff(16383);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // optional double transform_m00 = 1;
+      case 1: {
+        if (tag == 9) {
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   double, ::google::protobuf::internal::WireFormatLite::TYPE_DOUBLE>(
+                 input, &transform_m00_)));
+          set_has_transform_m00();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(17)) goto parse_transform_m01;
+        break;
+      }
+
+      // optional double transform_m01 = 2;
+      case 2: {
+        if (tag == 17) {
+         parse_transform_m01:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   double, ::google::protobuf::internal::WireFormatLite::TYPE_DOUBLE>(
+                 input, &transform_m01_)));
+          set_has_transform_m01();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(25)) goto parse_transform_m02;
+        break;
+      }
+
+      // optional double transform_m02 = 3;
+      case 3: {
+        if (tag == 25) {
+         parse_transform_m02:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   double, ::google::protobuf::internal::WireFormatLite::TYPE_DOUBLE>(
+                 input, &transform_m02_)));
+          set_has_transform_m02();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(33)) goto parse_transform_m03;
+        break;
+      }
+
+      // optional double transform_m03 = 4;
+      case 4: {
+        if (tag == 33) {
+         parse_transform_m03:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   double, ::google::protobuf::internal::WireFormatLite::TYPE_DOUBLE>(
+                 input, &transform_m03_)));
+          set_has_transform_m03();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(41)) goto parse_transform_m10;
+        break;
+      }
+
+      // optional double transform_m10 = 5;
+      case 5: {
+        if (tag == 41) {
+         parse_transform_m10:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   double, ::google::protobuf::internal::WireFormatLite::TYPE_DOUBLE>(
+                 input, &transform_m10_)));
+          set_has_transform_m10();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(49)) goto parse_transform_m11;
+        break;
+      }
+
+      // optional double transform_m11 = 6;
+      case 6: {
+        if (tag == 49) {
+         parse_transform_m11:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   double, ::google::protobuf::internal::WireFormatLite::TYPE_DOUBLE>(
+                 input, &transform_m11_)));
+          set_has_transform_m11();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(57)) goto parse_transform_m12;
+        break;
+      }
+
+      // optional double transform_m12 = 7;
+      case 7: {
+        if (tag == 57) {
+         parse_transform_m12:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   double, ::google::protobuf::internal::WireFormatLite::TYPE_DOUBLE>(
+                 input, &transform_m12_)));
+          set_has_transform_m12();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(65)) goto parse_transform_m13;
+        break;
+      }
+
+      // optional double transform_m13 = 8;
+      case 8: {
+        if (tag == 65) {
+         parse_transform_m13:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   double, ::google::protobuf::internal::WireFormatLite::TYPE_DOUBLE>(
+                 input, &transform_m13_)));
+          set_has_transform_m13();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(73)) goto parse_transform_m20;
+        break;
+      }
+
+      // optional double transform_m20 = 9;
+      case 9: {
+        if (tag == 73) {
+         parse_transform_m20:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   double, ::google::protobuf::internal::WireFormatLite::TYPE_DOUBLE>(
+                 input, &transform_m20_)));
+          set_has_transform_m20();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(81)) goto parse_transform_m21;
+        break;
+      }
+
+      // optional double transform_m21 = 10;
+      case 10: {
+        if (tag == 81) {
+         parse_transform_m21:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   double, ::google::protobuf::internal::WireFormatLite::TYPE_DOUBLE>(
+                 input, &transform_m21_)));
+          set_has_transform_m21();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(89)) goto parse_transform_m22;
+        break;
+      }
+
+      // optional double transform_m22 = 11;
+      case 11: {
+        if (tag == 89) {
+         parse_transform_m22:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   double, ::google::protobuf::internal::WireFormatLite::TYPE_DOUBLE>(
+                 input, &transform_m22_)));
+          set_has_transform_m22();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(97)) goto parse_transform_m23;
+        break;
+      }
+
+      // optional double transform_m23 = 12;
+      case 12: {
+        if (tag == 97) {
+         parse_transform_m23:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   double, ::google::protobuf::internal::WireFormatLite::TYPE_DOUBLE>(
+                 input, &transform_m23_)));
+          set_has_transform_m23();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(105)) goto parse_transform_m30;
+        break;
+      }
+
+      // optional double transform_m30 = 13;
+      case 13: {
+        if (tag == 105) {
+         parse_transform_m30:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   double, ::google::protobuf::internal::WireFormatLite::TYPE_DOUBLE>(
+                 input, &transform_m30_)));
+          set_has_transform_m30();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(113)) goto parse_transform_m31;
+        break;
+      }
+
+      // optional double transform_m31 = 14;
+      case 14: {
+        if (tag == 113) {
+         parse_transform_m31:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   double, ::google::protobuf::internal::WireFormatLite::TYPE_DOUBLE>(
+                 input, &transform_m31_)));
+          set_has_transform_m31();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(121)) goto parse_transform_m32;
+        break;
+      }
+
+      // optional double transform_m32 = 15;
+      case 15: {
+        if (tag == 121) {
+         parse_transform_m32:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   double, ::google::protobuf::internal::WireFormatLite::TYPE_DOUBLE>(
+                 input, &transform_m32_)));
+          set_has_transform_m32();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(129)) goto parse_transform_m33;
+        break;
+      }
+
+      // optional double transform_m33 = 16;
+      case 16: {
+        if (tag == 129) {
+         parse_transform_m33:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   double, ::google::protobuf::internal::WireFormatLite::TYPE_DOUBLE>(
+                 input, &transform_m33_)));
+          set_has_transform_m33();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(138)) goto parse_box_shadow;
+        break;
+      }
+
+      // optional .CBoxShadowData box_shadow = 17;
+      case 17: {
+        if (tag == 138) {
+         parse_box_shadow:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+               input, mutable_box_shadow()));
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(145)) goto parse_width;
+        break;
+      }
+
+      // optional double width = 18;
+      case 18: {
+        if (tag == 145) {
+         parse_width:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   double, ::google::protobuf::internal::WireFormatLite::TYPE_DOUBLE>(
+                 input, &width_)));
+          set_has_width();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(153)) goto parse_height;
+        break;
+      }
+
+      // optional double height = 19;
+      case 19: {
+        if (tag == 153) {
+         parse_height:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   double, ::google::protobuf::internal::WireFormatLite::TYPE_DOUBLE>(
+                 input, &height_)));
+          set_has_height();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(161)) goto parse_position_x;
+        break;
+      }
+
+      // optional double position_x = 20;
+      case 20: {
+        if (tag == 161) {
+         parse_position_x:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   double, ::google::protobuf::internal::WireFormatLite::TYPE_DOUBLE>(
+                 input, &position_x_)));
+          set_has_position_x();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(169)) goto parse_position_y;
+        break;
+      }
+
+      // optional double position_y = 21;
+      case 21: {
+        if (tag == 169) {
+         parse_position_y:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   double, ::google::protobuf::internal::WireFormatLite::TYPE_DOUBLE>(
+                 input, &position_y_)));
+          set_has_position_y();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(177)) goto parse_position_z;
+        break;
+      }
+
+      // optional double position_z = 22;
+      case 22: {
+        if (tag == 177) {
+         parse_position_z:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   double, ::google::protobuf::internal::WireFormatLite::TYPE_DOUBLE>(
+                 input, &position_z_)));
+          set_has_position_z();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(186)) goto parse_border;
+        break;
+      }
+
+      // optional .CBorderData border = 23;
+      case 23: {
+        if (tag == 186) {
+         parse_border:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+               input, mutable_border()));
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(193)) goto parse_scroll_x;
+        break;
+      }
+
+      // optional double scroll_x = 24;
+      case 24: {
+        if (tag == 193) {
+         parse_scroll_x:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   double, ::google::protobuf::internal::WireFormatLite::TYPE_DOUBLE>(
+                 input, &scroll_x_)));
+          set_has_scroll_x();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(201)) goto parse_scroll_y;
+        break;
+      }
+
+      // optional double scroll_y = 25;
+      case 25: {
+        if (tag == 201) {
+         parse_scroll_y:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   double, ::google::protobuf::internal::WireFormatLite::TYPE_DOUBLE>(
+                 input, &scroll_y_)));
+          set_has_scroll_y();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectAtEnd()) goto success;
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0 ||
+            ::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, mutable_unknown_fields()));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:CMsgPushPanelContextInLayer)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:CMsgPushPanelContextInLayer)
+  return false;
+#undef DO_
+}
+
+void CMsgPushPanelContextInLayer::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:CMsgPushPanelContextInLayer)
+  // optional double transform_m00 = 1;
+  if (has_transform_m00()) {
+    ::google::protobuf::internal::WireFormatLite::WriteDouble(1, this->transform_m00(), output);
+  }
+
+  // optional double transform_m01 = 2;
+  if (has_transform_m01()) {
+    ::google::protobuf::internal::WireFormatLite::WriteDouble(2, this->transform_m01(), output);
+  }
+
+  // optional double transform_m02 = 3;
+  if (has_transform_m02()) {
+    ::google::protobuf::internal::WireFormatLite::WriteDouble(3, this->transform_m02(), output);
+  }
+
+  // optional double transform_m03 = 4;
+  if (has_transform_m03()) {
+    ::google::protobuf::internal::WireFormatLite::WriteDouble(4, this->transform_m03(), output);
+  }
+
+  // optional double transform_m10 = 5;
+  if (has_transform_m10()) {
+    ::google::protobuf::internal::WireFormatLite::WriteDouble(5, this->transform_m10(), output);
+  }
+
+  // optional double transform_m11 = 6;
+  if (has_transform_m11()) {
+    ::google::protobuf::internal::WireFormatLite::WriteDouble(6, this->transform_m11(), output);
+  }
+
+  // optional double transform_m12 = 7;
+  if (has_transform_m12()) {
+    ::google::protobuf::internal::WireFormatLite::WriteDouble(7, this->transform_m12(), output);
+  }
+
+  // optional double transform_m13 = 8;
+  if (has_transform_m13()) {
+    ::google::protobuf::internal::WireFormatLite::WriteDouble(8, this->transform_m13(), output);
+  }
+
+  // optional double transform_m20 = 9;
+  if (has_transform_m20()) {
+    ::google::protobuf::internal::WireFormatLite::WriteDouble(9, this->transform_m20(), output);
+  }
+
+  // optional double transform_m21 = 10;
+  if (has_transform_m21()) {
+    ::google::protobuf::internal::WireFormatLite::WriteDouble(10, this->transform_m21(), output);
+  }
+
+  // optional double transform_m22 = 11;
+  if (has_transform_m22()) {
+    ::google::protobuf::internal::WireFormatLite::WriteDouble(11, this->transform_m22(), output);
+  }
+
+  // optional double transform_m23 = 12;
+  if (has_transform_m23()) {
+    ::google::protobuf::internal::WireFormatLite::WriteDouble(12, this->transform_m23(), output);
+  }
+
+  // optional double transform_m30 = 13;
+  if (has_transform_m30()) {
+    ::google::protobuf::internal::WireFormatLite::WriteDouble(13, this->transform_m30(), output);
+  }
+
+  // optional double transform_m31 = 14;
+  if (has_transform_m31()) {
+    ::google::protobuf::internal::WireFormatLite::WriteDouble(14, this->transform_m31(), output);
+  }
+
+  // optional double transform_m32 = 15;
+  if (has_transform_m32()) {
+    ::google::protobuf::internal::WireFormatLite::WriteDouble(15, this->transform_m32(), output);
+  }
+
+  // optional double transform_m33 = 16;
+  if (has_transform_m33()) {
+    ::google::protobuf::internal::WireFormatLite::WriteDouble(16, this->transform_m33(), output);
+  }
+
+  // optional .CBoxShadowData box_shadow = 17;
+  if (has_box_shadow()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      17, this->box_shadow(), output);
+  }
+
+  // optional double width = 18;
+  if (has_width()) {
+    ::google::protobuf::internal::WireFormatLite::WriteDouble(18, this->width(), output);
+  }
+
+  // optional double height = 19;
+  if (has_height()) {
+    ::google::protobuf::internal::WireFormatLite::WriteDouble(19, this->height(), output);
+  }
+
+  // optional double position_x = 20;
+  if (has_position_x()) {
+    ::google::protobuf::internal::WireFormatLite::WriteDouble(20, this->position_x(), output);
+  }
+
+  // optional double position_y = 21;
+  if (has_position_y()) {
+    ::google::protobuf::internal::WireFormatLite::WriteDouble(21, this->position_y(), output);
+  }
+
+  // optional double position_z = 22;
+  if (has_position_z()) {
+    ::google::protobuf::internal::WireFormatLite::WriteDouble(22, this->position_z(), output);
+  }
+
+  // optional .CBorderData border = 23;
+  if (has_border()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      23, this->border(), output);
+  }
+
+  // optional double scroll_x = 24;
+  if (has_scroll_x()) {
+    ::google::protobuf::internal::WireFormatLite::WriteDouble(24, this->scroll_x(), output);
+  }
+
+  // optional double scroll_y = 25;
+  if (has_scroll_y()) {
+    ::google::protobuf::internal::WireFormatLite::WriteDouble(25, this->scroll_y(), output);
+  }
+
+  if (!unknown_fields().empty()) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        unknown_fields(), output);
+  }
+  // @@protoc_insertion_point(serialize_end:CMsgPushPanelContextInLayer)
+}
+
+::google::protobuf::uint8* CMsgPushPanelContextInLayer::SerializeWithCachedSizesToArray(
+    ::google::protobuf::uint8* target) const {
+  // @@protoc_insertion_point(serialize_to_array_start:CMsgPushPanelContextInLayer)
+  // optional double transform_m00 = 1;
+  if (has_transform_m00()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteDoubleToArray(1, this->transform_m00(), target);
+  }
+
+  // optional double transform_m01 = 2;
+  if (has_transform_m01()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteDoubleToArray(2, this->transform_m01(), target);
+  }
+
+  // optional double transform_m02 = 3;
+  if (has_transform_m02()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteDoubleToArray(3, this->transform_m02(), target);
+  }
+
+  // optional double transform_m03 = 4;
+  if (has_transform_m03()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteDoubleToArray(4, this->transform_m03(), target);
+  }
+
+  // optional double transform_m10 = 5;
+  if (has_transform_m10()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteDoubleToArray(5, this->transform_m10(), target);
+  }
+
+  // optional double transform_m11 = 6;
+  if (has_transform_m11()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteDoubleToArray(6, this->transform_m11(), target);
+  }
+
+  // optional double transform_m12 = 7;
+  if (has_transform_m12()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteDoubleToArray(7, this->transform_m12(), target);
+  }
+
+  // optional double transform_m13 = 8;
+  if (has_transform_m13()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteDoubleToArray(8, this->transform_m13(), target);
+  }
+
+  // optional double transform_m20 = 9;
+  if (has_transform_m20()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteDoubleToArray(9, this->transform_m20(), target);
+  }
+
+  // optional double transform_m21 = 10;
+  if (has_transform_m21()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteDoubleToArray(10, this->transform_m21(), target);
+  }
+
+  // optional double transform_m22 = 11;
+  if (has_transform_m22()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteDoubleToArray(11, this->transform_m22(), target);
+  }
+
+  // optional double transform_m23 = 12;
+  if (has_transform_m23()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteDoubleToArray(12, this->transform_m23(), target);
+  }
+
+  // optional double transform_m30 = 13;
+  if (has_transform_m30()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteDoubleToArray(13, this->transform_m30(), target);
+  }
+
+  // optional double transform_m31 = 14;
+  if (has_transform_m31()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteDoubleToArray(14, this->transform_m31(), target);
+  }
+
+  // optional double transform_m32 = 15;
+  if (has_transform_m32()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteDoubleToArray(15, this->transform_m32(), target);
+  }
+
+  // optional double transform_m33 = 16;
+  if (has_transform_m33()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteDoubleToArray(16, this->transform_m33(), target);
+  }
+
+  // optional .CBoxShadowData box_shadow = 17;
+  if (has_box_shadow()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      WriteMessageNoVirtualToArray(
+        17, this->box_shadow(), target);
+  }
+
+  // optional double width = 18;
+  if (has_width()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteDoubleToArray(18, this->width(), target);
+  }
+
+  // optional double height = 19;
+  if (has_height()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteDoubleToArray(19, this->height(), target);
+  }
+
+  // optional double position_x = 20;
+  if (has_position_x()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteDoubleToArray(20, this->position_x(), target);
+  }
+
+  // optional double position_y = 21;
+  if (has_position_y()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteDoubleToArray(21, this->position_y(), target);
+  }
+
+  // optional double position_z = 22;
+  if (has_position_z()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteDoubleToArray(22, this->position_z(), target);
+  }
+
+  // optional .CBorderData border = 23;
+  if (has_border()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      WriteMessageNoVirtualToArray(
+        23, this->border(), target);
+  }
+
+  // optional double scroll_x = 24;
+  if (has_scroll_x()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteDoubleToArray(24, this->scroll_x(), target);
+  }
+
+  // optional double scroll_y = 25;
+  if (has_scroll_y()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteDoubleToArray(25, this->scroll_y(), target);
+  }
+
+  if (!unknown_fields().empty()) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        unknown_fields(), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:CMsgPushPanelContextInLayer)
+  return target;
+}
+
+int CMsgPushPanelContextInLayer::ByteSize() const {
+  int total_size = 0;
+
+  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    // optional double transform_m00 = 1;
+    if (has_transform_m00()) {
+      total_size += 1 + 8;
+    }
+
+    // optional double transform_m01 = 2;
+    if (has_transform_m01()) {
+      total_size += 1 + 8;
+    }
+
+    // optional double transform_m02 = 3;
+    if (has_transform_m02()) {
+      total_size += 1 + 8;
+    }
+
+    // optional double transform_m03 = 4;
+    if (has_transform_m03()) {
+      total_size += 1 + 8;
+    }
+
+    // optional double transform_m10 = 5;
+    if (has_transform_m10()) {
+      total_size += 1 + 8;
+    }
+
+    // optional double transform_m11 = 6;
+    if (has_transform_m11()) {
+      total_size += 1 + 8;
+    }
+
+    // optional double transform_m12 = 7;
+    if (has_transform_m12()) {
+      total_size += 1 + 8;
+    }
+
+    // optional double transform_m13 = 8;
+    if (has_transform_m13()) {
+      total_size += 1 + 8;
+    }
+
+  }
+  if (_has_bits_[8 / 32] & (0xffu << (8 % 32))) {
+    // optional double transform_m20 = 9;
+    if (has_transform_m20()) {
+      total_size += 1 + 8;
+    }
+
+    // optional double transform_m21 = 10;
+    if (has_transform_m21()) {
+      total_size += 1 + 8;
+    }
+
+    // optional double transform_m22 = 11;
+    if (has_transform_m22()) {
+      total_size += 1 + 8;
+    }
+
+    // optional double transform_m23 = 12;
+    if (has_transform_m23()) {
+      total_size += 1 + 8;
+    }
+
+    // optional double transform_m30 = 13;
+    if (has_transform_m30()) {
+      total_size += 1 + 8;
+    }
+
+    // optional double transform_m31 = 14;
+    if (has_transform_m31()) {
+      total_size += 1 + 8;
+    }
+
+    // optional double transform_m32 = 15;
+    if (has_transform_m32()) {
+      total_size += 1 + 8;
+    }
+
+    // optional double transform_m33 = 16;
+    if (has_transform_m33()) {
+      total_size += 2 + 8;
+    }
+
+  }
+  if (_has_bits_[16 / 32] & (0xffu << (16 % 32))) {
+    // optional .CBoxShadowData box_shadow = 17;
+    if (has_box_shadow()) {
+      total_size += 2 +
+        ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+          this->box_shadow());
+    }
+
+    // optional double width = 18;
+    if (has_width()) {
+      total_size += 2 + 8;
+    }
+
+    // optional double height = 19;
+    if (has_height()) {
+      total_size += 2 + 8;
+    }
+
+    // optional double position_x = 20;
+    if (has_position_x()) {
+      total_size += 2 + 8;
+    }
+
+    // optional double position_y = 21;
+    if (has_position_y()) {
+      total_size += 2 + 8;
+    }
+
+    // optional double position_z = 22;
+    if (has_position_z()) {
+      total_size += 2 + 8;
+    }
+
+    // optional .CBorderData border = 23;
+    if (has_border()) {
+      total_size += 2 +
+        ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+          this->border());
+    }
+
+    // optional double scroll_x = 24;
+    if (has_scroll_x()) {
+      total_size += 2 + 8;
+    }
+
+  }
+  if (_has_bits_[24 / 32] & (0xffu << (24 % 32))) {
+    // optional double scroll_y = 25;
+    if (has_scroll_y()) {
+      total_size += 2 + 8;
+    }
+
+  }
+  if (!unknown_fields().empty()) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        unknown_fields());
+  }
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = total_size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+  return total_size;
+}
+
+void CMsgPushPanelContextInLayer::MergeFrom(const ::google::protobuf::Message& from) {
+  GOOGLE_CHECK_NE(&from, this);
+  const CMsgPushPanelContextInLayer* source =
+    ::google::protobuf::internal::dynamic_cast_if_available<const CMsgPushPanelContextInLayer*>(
+      &from);
+  if (source == NULL) {
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+    MergeFrom(*source);
+  }
+}
+
+void CMsgPushPanelContextInLayer::MergeFrom(const CMsgPushPanelContextInLayer& from) {
+  GOOGLE_CHECK_NE(&from, this);
+  if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    if (from.has_transform_m00()) {
+      set_transform_m00(from.transform_m00());
+    }
+    if (from.has_transform_m01()) {
+      set_transform_m01(from.transform_m01());
+    }
+    if (from.has_transform_m02()) {
+      set_transform_m02(from.transform_m02());
+    }
+    if (from.has_transform_m03()) {
+      set_transform_m03(from.transform_m03());
+    }
+    if (from.has_transform_m10()) {
+      set_transform_m10(from.transform_m10());
+    }
+    if (from.has_transform_m11()) {
+      set_transform_m11(from.transform_m11());
+    }
+    if (from.has_transform_m12()) {
+      set_transform_m12(from.transform_m12());
+    }
+    if (from.has_transform_m13()) {
+      set_transform_m13(from.transform_m13());
+    }
+  }
+  if (from._has_bits_[8 / 32] & (0xffu << (8 % 32))) {
+    if (from.has_transform_m20()) {
+      set_transform_m20(from.transform_m20());
+    }
+    if (from.has_transform_m21()) {
+      set_transform_m21(from.transform_m21());
+    }
+    if (from.has_transform_m22()) {
+      set_transform_m22(from.transform_m22());
+    }
+    if (from.has_transform_m23()) {
+      set_transform_m23(from.transform_m23());
+    }
+    if (from.has_transform_m30()) {
+      set_transform_m30(from.transform_m30());
+    }
+    if (from.has_transform_m31()) {
+      set_transform_m31(from.transform_m31());
+    }
+    if (from.has_transform_m32()) {
+      set_transform_m32(from.transform_m32());
+    }
+    if (from.has_transform_m33()) {
+      set_transform_m33(from.transform_m33());
+    }
+  }
+  if (from._has_bits_[16 / 32] & (0xffu << (16 % 32))) {
+    if (from.has_box_shadow()) {
+      mutable_box_shadow()->::CBoxShadowData::MergeFrom(from.box_shadow());
+    }
+    if (from.has_width()) {
+      set_width(from.width());
+    }
+    if (from.has_height()) {
+      set_height(from.height());
+    }
+    if (from.has_position_x()) {
+      set_position_x(from.position_x());
+    }
+    if (from.has_position_y()) {
+      set_position_y(from.position_y());
+    }
+    if (from.has_position_z()) {
+      set_position_z(from.position_z());
+    }
+    if (from.has_border()) {
+      mutable_border()->::CBorderData::MergeFrom(from.border());
+    }
+    if (from.has_scroll_x()) {
+      set_scroll_x(from.scroll_x());
+    }
+  }
+  if (from._has_bits_[24 / 32] & (0xffu << (24 % 32))) {
+    if (from.has_scroll_y()) {
+      set_scroll_y(from.scroll_y());
+    }
+  }
+  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
+}
+
+void CMsgPushPanelContextInLayer::CopyFrom(const ::google::protobuf::Message& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void CMsgPushPanelContextInLayer::CopyFrom(const CMsgPushPanelContextInLayer& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool CMsgPushPanelContextInLayer::IsInitialized() const {
+
+  return true;
+}
+
+void CMsgPushPanelContextInLayer::Swap(CMsgPushPanelContextInLayer* other) {
+  if (other != this) {
+    std::swap(transform_m00_, other->transform_m00_);
+    std::swap(transform_m01_, other->transform_m01_);
+    std::swap(transform_m02_, other->transform_m02_);
+    std::swap(transform_m03_, other->transform_m03_);
+    std::swap(transform_m10_, other->transform_m10_);
+    std::swap(transform_m11_, other->transform_m11_);
+    std::swap(transform_m12_, other->transform_m12_);
+    std::swap(transform_m13_, other->transform_m13_);
+    std::swap(transform_m20_, other->transform_m20_);
+    std::swap(transform_m21_, other->transform_m21_);
+    std::swap(transform_m22_, other->transform_m22_);
+    std::swap(transform_m23_, other->transform_m23_);
+    std::swap(transform_m30_, other->transform_m30_);
+    std::swap(transform_m31_, other->transform_m31_);
+    std::swap(transform_m32_, other->transform_m32_);
+    std::swap(transform_m33_, other->transform_m33_);
+    std::swap(box_shadow_, other->box_shadow_);
+    std::swap(width_, other->width_);
+    std::swap(height_, other->height_);
+    std::swap(position_x_, other->position_x_);
+    std::swap(position_y_, other->position_y_);
+    std::swap(position_z_, other->position_z_);
+    std::swap(border_, other->border_);
+    std::swap(scroll_x_, other->scroll_x_);
+    std::swap(scroll_y_, other->scroll_y_);
+    std::swap(_has_bits_[0], other->_has_bits_[0]);
+    _unknown_fields_.Swap(&other->_unknown_fields_);
+    std::swap(_cached_size_, other->_cached_size_);
+  }
+}
+
+::google::protobuf::Metadata CMsgPushPanelContextInLayer::GetMetadata() const {
+  protobuf_AssignDescriptorsOnce();
+  ::google::protobuf::Metadata metadata;
+  metadata.descriptor = CMsgPushPanelContextInLayer_descriptor_;
+  metadata.reflection = CMsgPushPanelContextInLayer_reflection_;
+  return metadata;
+}
+
+
+// ===================================================================
+
+#ifndef _MSC_VER
+#endif  // !_MSC_VER
+
+CMsgPopPanelContextInLayer::CMsgPopPanelContextInLayer()
+  : ::google::protobuf::Message() {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:CMsgPopPanelContextInLayer)
+}
+
+void CMsgPopPanelContextInLayer::InitAsDefaultInstance() {
+}
+
+CMsgPopPanelContextInLayer::CMsgPopPanelContextInLayer(const CMsgPopPanelContextInLayer& from)
+  : ::google::protobuf::Message() {
+  SharedCtor();
+  MergeFrom(from);
+  // @@protoc_insertion_point(copy_constructor:CMsgPopPanelContextInLayer)
+}
+
+void CMsgPopPanelContextInLayer::SharedCtor() {
+  _cached_size_ = 0;
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+}
+
+CMsgPopPanelContextInLayer::~CMsgPopPanelContextInLayer() {
+  // @@protoc_insertion_point(destructor:CMsgPopPanelContextInLayer)
+  SharedDtor();
+}
+
+void CMsgPopPanelContextInLayer::SharedDtor() {
+  if (this != default_instance_) {
+  }
+}
+
+void CMsgPopPanelContextInLayer::SetCachedSize(int size) const {
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+}
+const ::google::protobuf::Descriptor* CMsgPopPanelContextInLayer::descriptor() {
+  protobuf_AssignDescriptorsOnce();
+  return CMsgPopPanelContextInLayer_descriptor_;
+}
+
+const CMsgPopPanelContextInLayer& CMsgPopPanelContextInLayer::default_instance() {
+  if (default_instance_ == NULL) protobuf_AddDesc_rendermessages_2eproto();
+  return *default_instance_;
+}
+
+CMsgPopPanelContextInLayer* CMsgPopPanelContextInLayer::default_instance_ = NULL;
+
+CMsgPopPanelContextInLayer* CMsgPopPanelContextInLayer::New() const {
+  return new CMsgPopPanelContextInLayer;
+}
+
+void CMsgPopPanelContextInLayer::Clear() {
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+  mutable_unknown_fields()->Clear();
+}
+
+bool CMsgPopPanelContextInLayer::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:CMsgPopPanelContextInLayer)
+  for (;;) {
+    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoff(127);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+  handle_unusual:
+    if (tag == 0 ||
+        ::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+        ::google::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {
+      goto success;
+    }
+    DO_(::google::protobuf::internal::WireFormat::SkipField(
+          input, tag, mutable_unknown_fields()));
+  }
+success:
+  // @@protoc_insertion_point(parse_success:CMsgPopPanelContextInLayer)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:CMsgPopPanelContextInLayer)
+  return false;
+#undef DO_
+}
+
+void CMsgPopPanelContextInLayer::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:CMsgPopPanelContextInLayer)
+  if (!unknown_fields().empty()) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        unknown_fields(), output);
+  }
+  // @@protoc_insertion_point(serialize_end:CMsgPopPanelContextInLayer)
+}
+
+::google::protobuf::uint8* CMsgPopPanelContextInLayer::SerializeWithCachedSizesToArray(
+    ::google::protobuf::uint8* target) const {
+  // @@protoc_insertion_point(serialize_to_array_start:CMsgPopPanelContextInLayer)
+  if (!unknown_fields().empty()) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        unknown_fields(), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:CMsgPopPanelContextInLayer)
+  return target;
+}
+
+int CMsgPopPanelContextInLayer::ByteSize() const {
+  int total_size = 0;
+
+  if (!unknown_fields().empty()) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        unknown_fields());
+  }
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = total_size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+  return total_size;
+}
+
+void CMsgPopPanelContextInLayer::MergeFrom(const ::google::protobuf::Message& from) {
+  GOOGLE_CHECK_NE(&from, this);
+  const CMsgPopPanelContextInLayer* source =
+    ::google::protobuf::internal::dynamic_cast_if_available<const CMsgPopPanelContextInLayer*>(
+      &from);
+  if (source == NULL) {
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+    MergeFrom(*source);
+  }
+}
+
+void CMsgPopPanelContextInLayer::MergeFrom(const CMsgPopPanelContextInLayer& from) {
+  GOOGLE_CHECK_NE(&from, this);
+  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
+}
+
+void CMsgPopPanelContextInLayer::CopyFrom(const ::google::protobuf::Message& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void CMsgPopPanelContextInLayer::CopyFrom(const CMsgPopPanelContextInLayer& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool CMsgPopPanelContextInLayer::IsInitialized() const {
+
+  return true;
+}
+
+void CMsgPopPanelContextInLayer::Swap(CMsgPopPanelContextInLayer* other) {
+  if (other != this) {
+    _unknown_fields_.Swap(&other->_unknown_fields_);
+    std::swap(_cached_size_, other->_cached_size_);
+  }
+}
+
+::google::protobuf::Metadata CMsgPopPanelContextInLayer::GetMetadata() const {
+  protobuf_AssignDescriptorsOnce();
+  ::google::protobuf::Metadata metadata;
+  metadata.descriptor = CMsgPopPanelContextInLayer_descriptor_;
+  metadata.reflection = CMsgPopPanelContextInLayer_reflection_;
+  return metadata;
+}
+
+
+// ===================================================================
+
+#ifndef _MSC_VER
 const int CMsgPushAAndTContext::kContextIdFieldNumber;
 const int CMsgPushAAndTContext::kWidthFieldNumber;
 const int CMsgPushAAndTContext::kHeightFieldNumber;
@@ -29937,9 +32752,15 @@ const int CMsgPushAAndTContext::kTextShadowFieldNumber;
 const int CMsgPushAAndTContext::kClipFieldNumber;
 const int CMsgPushAAndTContext::kSuppressClipToBoundsFieldNumber;
 const int CMsgPushAAndTContext::kNeedsFullRepaintFieldNumber;
+const int CMsgPushAAndTContext::kNeedsIntermediateTextureFieldNumber;
+const int CMsgPushAAndTContext::kClipAfterTransformFieldNumber;
 const int CMsgPushAAndTContext::kWantsHitTestFieldNumber;
+const int CMsgPushAAndTContext::kWantsHitTestChildrenFieldNumber;
 const int CMsgPushAAndTContext::kMixBlendModeFieldNumber;
 const int CMsgPushAAndTContext::kOpaqueBackgroundFieldNumber;
+const int CMsgPushAAndTContext::kChildPanelCountFieldNumber;
+const int CMsgPushAAndTContext::kWantsScreenspaceQuadOutputFieldNumber;
+const int CMsgPushAAndTContext::kCompositionLayerTextureNameFieldNumber;
 #endif  // !_MSC_VER
 
 CMsgPushAAndTContext::CMsgPushAAndTContext()
@@ -29979,6 +32800,7 @@ CMsgPushAAndTContext::CMsgPushAAndTContext(const CMsgPushAAndTContext& from)
 }
 
 void CMsgPushAAndTContext::SharedCtor() {
+  ::google::protobuf::internal::GetEmptyString();
   _cached_size_ = 0;
   context_id_ = GOOGLE_ULONGLONG(0);
   width_ = 0;
@@ -30007,9 +32829,15 @@ void CMsgPushAAndTContext::SharedCtor() {
   clip_ = NULL;
   suppress_clip_to_bounds_ = false;
   needs_full_repaint_ = 0;
+  needs_intermediate_texture_ = false;
+  clip_after_transform_ = false;
   wants_hit_test_ = false;
+  wants_hit_test_children_ = false;
   mix_blend_mode_ = 0u;
   opaque_background_ = false;
+  child_panel_count_ = 0u;
+  wants_screenspace_quad_output_ = false;
+  composition_layer_texture_name_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
 
@@ -30019,6 +32847,9 @@ CMsgPushAAndTContext::~CMsgPushAAndTContext() {
 }
 
 void CMsgPushAAndTContext::SharedDtor() {
+  if (composition_layer_texture_name_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete composition_layer_texture_name_;
+  }
   if (this != default_instance_) {
     delete panel_position_;
     delete transform_matrix_;
@@ -30140,11 +32971,19 @@ void CMsgPushAAndTContext::Clear() {
       if (text_shadow_ != NULL) text_shadow_->::CMsgTextShadow::Clear();
     }
   }
-  if (_has_bits_[24 / 32] & 1056964608) {
-    ZR_(suppress_clip_to_bounds_, opaque_background_);
-    ZR_(needs_full_repaint_, mix_blend_mode_);
+  if (_has_bits_[24 / 32] & 4278190080) {
+    ZR_(suppress_clip_to_bounds_, clip_after_transform_);
+    ZR_(needs_full_repaint_, wants_hit_test_children_);
     if (has_clip()) {
       if (clip_ != NULL) clip_->::CMsgClip::Clear();
+    }
+  }
+  if (_has_bits_[32 / 32] & 15) {
+    ZR_(opaque_background_, child_panel_count_);
+    if (has_composition_layer_texture_name()) {
+      if (composition_layer_texture_name_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+        composition_layer_texture_name_->clear();
+      }
     }
   }
 
@@ -30525,13 +33364,43 @@ bool CMsgPushAAndTContext::MergePartialFromCodedStream(
         } else {
           goto handle_unusual;
         }
-        if (input->ExpectTag(232)) goto parse_wants_hit_test;
+        if (input->ExpectTag(232)) goto parse_needs_intermediate_texture;
         break;
       }
 
-      // optional bool wants_hit_test = 29;
+      // optional bool needs_intermediate_texture = 29;
       case 29: {
         if (tag == 232) {
+         parse_needs_intermediate_texture:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   bool, ::google::protobuf::internal::WireFormatLite::TYPE_BOOL>(
+                 input, &needs_intermediate_texture_)));
+          set_has_needs_intermediate_texture();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(240)) goto parse_clip_after_transform;
+        break;
+      }
+
+      // optional bool clip_after_transform = 30;
+      case 30: {
+        if (tag == 240) {
+         parse_clip_after_transform:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   bool, ::google::protobuf::internal::WireFormatLite::TYPE_BOOL>(
+                 input, &clip_after_transform_)));
+          set_has_clip_after_transform();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(248)) goto parse_wants_hit_test;
+        break;
+      }
+
+      // optional bool wants_hit_test = 31;
+      case 31: {
+        if (tag == 248) {
          parse_wants_hit_test:
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    bool, ::google::protobuf::internal::WireFormatLite::TYPE_BOOL>(
@@ -30540,13 +33409,28 @@ bool CMsgPushAAndTContext::MergePartialFromCodedStream(
         } else {
           goto handle_unusual;
         }
-        if (input->ExpectTag(240)) goto parse_mix_blend_mode;
+        if (input->ExpectTag(256)) goto parse_wants_hit_test_children;
         break;
       }
 
-      // optional uint32 mix_blend_mode = 30;
-      case 30: {
-        if (tag == 240) {
+      // optional bool wants_hit_test_children = 32;
+      case 32: {
+        if (tag == 256) {
+         parse_wants_hit_test_children:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   bool, ::google::protobuf::internal::WireFormatLite::TYPE_BOOL>(
+                 input, &wants_hit_test_children_)));
+          set_has_wants_hit_test_children();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(264)) goto parse_mix_blend_mode;
+        break;
+      }
+
+      // optional uint32 mix_blend_mode = 33;
+      case 33: {
+        if (tag == 264) {
          parse_mix_blend_mode:
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
@@ -30555,18 +33439,65 @@ bool CMsgPushAAndTContext::MergePartialFromCodedStream(
         } else {
           goto handle_unusual;
         }
-        if (input->ExpectTag(248)) goto parse_opaque_background;
+        if (input->ExpectTag(272)) goto parse_opaque_background;
         break;
       }
 
-      // optional bool opaque_background = 31;
-      case 31: {
-        if (tag == 248) {
+      // optional bool opaque_background = 34;
+      case 34: {
+        if (tag == 272) {
          parse_opaque_background:
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    bool, ::google::protobuf::internal::WireFormatLite::TYPE_BOOL>(
                  input, &opaque_background_)));
           set_has_opaque_background();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(280)) goto parse_child_panel_count;
+        break;
+      }
+
+      // optional uint32 child_panel_count = 35;
+      case 35: {
+        if (tag == 280) {
+         parse_child_panel_count:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                 input, &child_panel_count_)));
+          set_has_child_panel_count();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(288)) goto parse_wants_screenspace_quad_output;
+        break;
+      }
+
+      // optional bool wants_screenspace_quad_output = 36;
+      case 36: {
+        if (tag == 288) {
+         parse_wants_screenspace_quad_output:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   bool, ::google::protobuf::internal::WireFormatLite::TYPE_BOOL>(
+                 input, &wants_screenspace_quad_output_)));
+          set_has_wants_screenspace_quad_output();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(306)) goto parse_composition_layer_texture_name;
+        break;
+      }
+
+      // optional string composition_layer_texture_name = 38;
+      case 38: {
+        if (tag == 306) {
+         parse_composition_layer_texture_name:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_composition_layer_texture_name()));
+          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+            this->composition_layer_texture_name().data(), this->composition_layer_texture_name().length(),
+            ::google::protobuf::internal::WireFormat::PARSE,
+            "composition_layer_texture_name");
         } else {
           goto handle_unusual;
         }
@@ -30754,19 +33685,54 @@ void CMsgPushAAndTContext::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt32(28, this->needs_full_repaint(), output);
   }
 
-  // optional bool wants_hit_test = 29;
+  // optional bool needs_intermediate_texture = 29;
+  if (has_needs_intermediate_texture()) {
+    ::google::protobuf::internal::WireFormatLite::WriteBool(29, this->needs_intermediate_texture(), output);
+  }
+
+  // optional bool clip_after_transform = 30;
+  if (has_clip_after_transform()) {
+    ::google::protobuf::internal::WireFormatLite::WriteBool(30, this->clip_after_transform(), output);
+  }
+
+  // optional bool wants_hit_test = 31;
   if (has_wants_hit_test()) {
-    ::google::protobuf::internal::WireFormatLite::WriteBool(29, this->wants_hit_test(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteBool(31, this->wants_hit_test(), output);
   }
 
-  // optional uint32 mix_blend_mode = 30;
+  // optional bool wants_hit_test_children = 32;
+  if (has_wants_hit_test_children()) {
+    ::google::protobuf::internal::WireFormatLite::WriteBool(32, this->wants_hit_test_children(), output);
+  }
+
+  // optional uint32 mix_blend_mode = 33;
   if (has_mix_blend_mode()) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt32(30, this->mix_blend_mode(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteUInt32(33, this->mix_blend_mode(), output);
   }
 
-  // optional bool opaque_background = 31;
+  // optional bool opaque_background = 34;
   if (has_opaque_background()) {
-    ::google::protobuf::internal::WireFormatLite::WriteBool(31, this->opaque_background(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteBool(34, this->opaque_background(), output);
+  }
+
+  // optional uint32 child_panel_count = 35;
+  if (has_child_panel_count()) {
+    ::google::protobuf::internal::WireFormatLite::WriteUInt32(35, this->child_panel_count(), output);
+  }
+
+  // optional bool wants_screenspace_quad_output = 36;
+  if (has_wants_screenspace_quad_output()) {
+    ::google::protobuf::internal::WireFormatLite::WriteBool(36, this->wants_screenspace_quad_output(), output);
+  }
+
+  // optional string composition_layer_texture_name = 38;
+  if (has_composition_layer_texture_name()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->composition_layer_texture_name().data(), this->composition_layer_texture_name().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "composition_layer_texture_name");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      38, this->composition_layer_texture_name(), output);
   }
 
   if (!unknown_fields().empty()) {
@@ -30954,19 +33920,55 @@ void CMsgPushAAndTContext::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(28, this->needs_full_repaint(), target);
   }
 
-  // optional bool wants_hit_test = 29;
+  // optional bool needs_intermediate_texture = 29;
+  if (has_needs_intermediate_texture()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(29, this->needs_intermediate_texture(), target);
+  }
+
+  // optional bool clip_after_transform = 30;
+  if (has_clip_after_transform()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(30, this->clip_after_transform(), target);
+  }
+
+  // optional bool wants_hit_test = 31;
   if (has_wants_hit_test()) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(29, this->wants_hit_test(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(31, this->wants_hit_test(), target);
   }
 
-  // optional uint32 mix_blend_mode = 30;
+  // optional bool wants_hit_test_children = 32;
+  if (has_wants_hit_test_children()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(32, this->wants_hit_test_children(), target);
+  }
+
+  // optional uint32 mix_blend_mode = 33;
   if (has_mix_blend_mode()) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(30, this->mix_blend_mode(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(33, this->mix_blend_mode(), target);
   }
 
-  // optional bool opaque_background = 31;
+  // optional bool opaque_background = 34;
   if (has_opaque_background()) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(31, this->opaque_background(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(34, this->opaque_background(), target);
+  }
+
+  // optional uint32 child_panel_count = 35;
+  if (has_child_panel_count()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(35, this->child_panel_count(), target);
+  }
+
+  // optional bool wants_screenspace_quad_output = 36;
+  if (has_wants_screenspace_quad_output()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(36, this->wants_screenspace_quad_output(), target);
+  }
+
+  // optional string composition_layer_texture_name = 38;
+  if (has_composition_layer_texture_name()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->composition_layer_texture_name().data(), this->composition_layer_texture_name().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "composition_layer_texture_name");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        38, this->composition_layer_texture_name(), target);
   }
 
   if (!unknown_fields().empty()) {
@@ -31166,21 +34168,57 @@ int CMsgPushAAndTContext::ByteSize() const {
           this->needs_full_repaint());
     }
 
-    // optional bool wants_hit_test = 29;
+    // optional bool needs_intermediate_texture = 29;
+    if (has_needs_intermediate_texture()) {
+      total_size += 2 + 1;
+    }
+
+    // optional bool clip_after_transform = 30;
+    if (has_clip_after_transform()) {
+      total_size += 2 + 1;
+    }
+
+    // optional bool wants_hit_test = 31;
     if (has_wants_hit_test()) {
       total_size += 2 + 1;
     }
 
-    // optional uint32 mix_blend_mode = 30;
+    // optional bool wants_hit_test_children = 32;
+    if (has_wants_hit_test_children()) {
+      total_size += 2 + 1;
+    }
+
+    // optional uint32 mix_blend_mode = 33;
     if (has_mix_blend_mode()) {
       total_size += 2 +
         ::google::protobuf::internal::WireFormatLite::UInt32Size(
           this->mix_blend_mode());
     }
 
-    // optional bool opaque_background = 31;
+  }
+  if (_has_bits_[32 / 32] & (0xffu << (32 % 32))) {
+    // optional bool opaque_background = 34;
     if (has_opaque_background()) {
       total_size += 2 + 1;
+    }
+
+    // optional uint32 child_panel_count = 35;
+    if (has_child_panel_count()) {
+      total_size += 2 +
+        ::google::protobuf::internal::WireFormatLite::UInt32Size(
+          this->child_panel_count());
+    }
+
+    // optional bool wants_screenspace_quad_output = 36;
+    if (has_wants_screenspace_quad_output()) {
+      total_size += 2 + 1;
+    }
+
+    // optional string composition_layer_texture_name = 38;
+    if (has_composition_layer_texture_name()) {
+      total_size += 2 +
+        ::google::protobuf::internal::WireFormatLite::StringSize(
+          this->composition_layer_texture_name());
     }
 
   }
@@ -31297,14 +34335,34 @@ void CMsgPushAAndTContext::MergeFrom(const CMsgPushAAndTContext& from) {
     if (from.has_needs_full_repaint()) {
       set_needs_full_repaint(from.needs_full_repaint());
     }
+    if (from.has_needs_intermediate_texture()) {
+      set_needs_intermediate_texture(from.needs_intermediate_texture());
+    }
+    if (from.has_clip_after_transform()) {
+      set_clip_after_transform(from.clip_after_transform());
+    }
     if (from.has_wants_hit_test()) {
       set_wants_hit_test(from.wants_hit_test());
+    }
+    if (from.has_wants_hit_test_children()) {
+      set_wants_hit_test_children(from.wants_hit_test_children());
     }
     if (from.has_mix_blend_mode()) {
       set_mix_blend_mode(from.mix_blend_mode());
     }
+  }
+  if (from._has_bits_[32 / 32] & (0xffu << (32 % 32))) {
     if (from.has_opaque_background()) {
       set_opaque_background(from.opaque_background());
+    }
+    if (from.has_child_panel_count()) {
+      set_child_panel_count(from.child_panel_count());
+    }
+    if (from.has_wants_screenspace_quad_output()) {
+      set_wants_screenspace_quad_output(from.wants_screenspace_quad_output());
+    }
+    if (from.has_composition_layer_texture_name()) {
+      set_composition_layer_texture_name(from.composition_layer_texture_name());
     }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
@@ -31416,10 +34474,17 @@ void CMsgPushAAndTContext::Swap(CMsgPushAAndTContext* other) {
     std::swap(clip_, other->clip_);
     std::swap(suppress_clip_to_bounds_, other->suppress_clip_to_bounds_);
     std::swap(needs_full_repaint_, other->needs_full_repaint_);
+    std::swap(needs_intermediate_texture_, other->needs_intermediate_texture_);
+    std::swap(clip_after_transform_, other->clip_after_transform_);
     std::swap(wants_hit_test_, other->wants_hit_test_);
+    std::swap(wants_hit_test_children_, other->wants_hit_test_children_);
     std::swap(mix_blend_mode_, other->mix_blend_mode_);
     std::swap(opaque_background_, other->opaque_background_);
+    std::swap(child_panel_count_, other->child_panel_count_);
+    std::swap(wants_screenspace_quad_output_, other->wants_screenspace_quad_output_);
+    std::swap(composition_layer_texture_name_, other->composition_layer_texture_name_);
     std::swap(_has_bits_[0], other->_has_bits_[0]);
+    std::swap(_has_bits_[1], other->_has_bits_[1]);
     _unknown_fields_.Swap(&other->_unknown_fields_);
     std::swap(_cached_size_, other->_cached_size_);
   }
@@ -33077,6 +36142,7 @@ const int CMsgDrawTexturedRect::kTextureTopLeftFieldNumber;
 const int CMsgDrawTexturedRect::kTextureBottomRightFieldNumber;
 const int CMsgDrawTexturedRect::kTextureSerialFieldNumber;
 const int CMsgDrawTexturedRect::kTextureSampleModeFieldNumber;
+const int CMsgDrawTexturedRect::kTextureOpacityFieldNumber;
 #endif  // !_MSC_VER
 
 CMsgDrawTexturedRect::CMsgDrawTexturedRect()
@@ -33090,6 +36156,7 @@ void CMsgDrawTexturedRect::InitAsDefaultInstance() {
   bottom_right_ = const_cast< ::CMsgPoint*>(&::CMsgPoint::default_instance());
   texture_top_left_ = const_cast< ::CMsgPoint*>(&::CMsgPoint::default_instance());
   texture_bottom_right_ = const_cast< ::CMsgPoint*>(&::CMsgPoint::default_instance());
+  texture_opacity_ = const_cast< ::CMsgOpacity*>(&::CMsgOpacity::default_instance());
 }
 
 CMsgDrawTexturedRect::CMsgDrawTexturedRect(const CMsgDrawTexturedRect& from)
@@ -33108,6 +36175,7 @@ void CMsgDrawTexturedRect::SharedCtor() {
   texture_bottom_right_ = NULL;
   texture_serial_ = 0;
   texture_sample_mode_ = 0u;
+  texture_opacity_ = NULL;
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
 
@@ -33122,6 +36190,7 @@ void CMsgDrawTexturedRect::SharedDtor() {
     delete bottom_right_;
     delete texture_top_left_;
     delete texture_bottom_right_;
+    delete texture_opacity_;
   }
 }
 
@@ -33157,7 +36226,7 @@ void CMsgDrawTexturedRect::Clear() {
     ::memset(&first, 0, n);                                \
   } while (0)
 
-  if (_has_bits_[0 / 32] & 127) {
+  if (_has_bits_[0 / 32] & 255) {
     ZR_(texture_id_, texture_serial_);
     if (has_top_left()) {
       if (top_left_ != NULL) top_left_->::CMsgPoint::Clear();
@@ -33172,6 +36241,9 @@ void CMsgDrawTexturedRect::Clear() {
       if (texture_bottom_right_ != NULL) texture_bottom_right_->::CMsgPoint::Clear();
     }
     texture_sample_mode_ = 0u;
+    if (has_texture_opacity()) {
+      if (texture_opacity_ != NULL) texture_opacity_->::CMsgOpacity::Clear();
+    }
   }
 
 #undef OFFSET_OF_FIELD_
@@ -33283,6 +36355,19 @@ bool CMsgDrawTexturedRect::MergePartialFromCodedStream(
         } else {
           goto handle_unusual;
         }
+        if (input->ExpectTag(66)) goto parse_texture_opacity;
+        break;
+      }
+
+      // optional .CMsgOpacity texture_opacity = 8;
+      case 8: {
+        if (tag == 66) {
+         parse_texture_opacity:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+               input, mutable_texture_opacity()));
+        } else {
+          goto handle_unusual;
+        }
         if (input->ExpectAtEnd()) goto success;
         break;
       }
@@ -33351,6 +36436,12 @@ void CMsgDrawTexturedRect::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteUInt32(7, this->texture_sample_mode(), output);
   }
 
+  // optional .CMsgOpacity texture_opacity = 8;
+  if (has_texture_opacity()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      8, this->texture_opacity(), output);
+  }
+
   if (!unknown_fields().empty()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
@@ -33402,6 +36493,13 @@ void CMsgDrawTexturedRect::SerializeWithCachedSizes(
   // optional uint32 texture_sample_mode = 7 [default = 0];
   if (has_texture_sample_mode()) {
     target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(7, this->texture_sample_mode(), target);
+  }
+
+  // optional .CMsgOpacity texture_opacity = 8;
+  if (has_texture_opacity()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      WriteMessageNoVirtualToArray(
+        8, this->texture_opacity(), target);
   }
 
   if (!unknown_fields().empty()) {
@@ -33465,6 +36563,13 @@ int CMsgDrawTexturedRect::ByteSize() const {
           this->texture_sample_mode());
     }
 
+    // optional .CMsgOpacity texture_opacity = 8;
+    if (has_texture_opacity()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+          this->texture_opacity());
+    }
+
   }
   if (!unknown_fields().empty()) {
     total_size +=
@@ -33513,6 +36618,9 @@ void CMsgDrawTexturedRect::MergeFrom(const CMsgDrawTexturedRect& from) {
     if (from.has_texture_sample_mode()) {
       set_texture_sample_mode(from.texture_sample_mode());
     }
+    if (from.has_texture_opacity()) {
+      mutable_texture_opacity()->::CMsgOpacity::MergeFrom(from.texture_opacity());
+    }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
 }
@@ -33531,6 +36639,9 @@ void CMsgDrawTexturedRect::CopyFrom(const CMsgDrawTexturedRect& from) {
 
 bool CMsgDrawTexturedRect::IsInitialized() const {
 
+  if (has_texture_opacity()) {
+    if (!this->texture_opacity().IsInitialized()) return false;
+  }
   return true;
 }
 
@@ -33543,6 +36654,7 @@ void CMsgDrawTexturedRect::Swap(CMsgDrawTexturedRect* other) {
     std::swap(texture_bottom_right_, other->texture_bottom_right_);
     std::swap(texture_serial_, other->texture_serial_);
     std::swap(texture_sample_mode_, other->texture_sample_mode_);
+    std::swap(texture_opacity_, other->texture_opacity_);
     std::swap(_has_bits_[0], other->_has_bits_[0]);
     _unknown_fields_.Swap(&other->_unknown_fields_);
     std::swap(_cached_size_, other->_cached_size_);
@@ -33561,806 +36673,6 @@ void CMsgDrawTexturedRect::Swap(CMsgDrawTexturedRect* other) {
 // ===================================================================
 
 #ifndef _MSC_VER
-const int CMsgDrawDoubleBufferedRect::kTopLeftFieldNumber;
-const int CMsgDrawDoubleBufferedRect::kBottomRightFieldNumber;
-const int CMsgDrawDoubleBufferedRect::kTextureIdFieldNumber;
-const int CMsgDrawDoubleBufferedRect::kTextureTopLeftFieldNumber;
-const int CMsgDrawDoubleBufferedRect::kTextureBottomRightFieldNumber;
-#endif  // !_MSC_VER
-
-CMsgDrawDoubleBufferedRect::CMsgDrawDoubleBufferedRect()
-  : ::google::protobuf::Message() {
-  SharedCtor();
-  // @@protoc_insertion_point(constructor:CMsgDrawDoubleBufferedRect)
-}
-
-void CMsgDrawDoubleBufferedRect::InitAsDefaultInstance() {
-  top_left_ = const_cast< ::CMsgPoint*>(&::CMsgPoint::default_instance());
-  bottom_right_ = const_cast< ::CMsgPoint*>(&::CMsgPoint::default_instance());
-  texture_top_left_ = const_cast< ::CMsgPoint*>(&::CMsgPoint::default_instance());
-  texture_bottom_right_ = const_cast< ::CMsgPoint*>(&::CMsgPoint::default_instance());
-}
-
-CMsgDrawDoubleBufferedRect::CMsgDrawDoubleBufferedRect(const CMsgDrawDoubleBufferedRect& from)
-  : ::google::protobuf::Message() {
-  SharedCtor();
-  MergeFrom(from);
-  // @@protoc_insertion_point(copy_constructor:CMsgDrawDoubleBufferedRect)
-}
-
-void CMsgDrawDoubleBufferedRect::SharedCtor() {
-  _cached_size_ = 0;
-  top_left_ = NULL;
-  bottom_right_ = NULL;
-  texture_id_ = 0u;
-  texture_top_left_ = NULL;
-  texture_bottom_right_ = NULL;
-  ::memset(_has_bits_, 0, sizeof(_has_bits_));
-}
-
-CMsgDrawDoubleBufferedRect::~CMsgDrawDoubleBufferedRect() {
-  // @@protoc_insertion_point(destructor:CMsgDrawDoubleBufferedRect)
-  SharedDtor();
-}
-
-void CMsgDrawDoubleBufferedRect::SharedDtor() {
-  if (this != default_instance_) {
-    delete top_left_;
-    delete bottom_right_;
-    delete texture_top_left_;
-    delete texture_bottom_right_;
-  }
-}
-
-void CMsgDrawDoubleBufferedRect::SetCachedSize(int size) const {
-  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
-  _cached_size_ = size;
-  GOOGLE_SAFE_CONCURRENT_WRITES_END();
-}
-const ::google::protobuf::Descriptor* CMsgDrawDoubleBufferedRect::descriptor() {
-  protobuf_AssignDescriptorsOnce();
-  return CMsgDrawDoubleBufferedRect_descriptor_;
-}
-
-const CMsgDrawDoubleBufferedRect& CMsgDrawDoubleBufferedRect::default_instance() {
-  if (default_instance_ == NULL) protobuf_AddDesc_rendermessages_2eproto();
-  return *default_instance_;
-}
-
-CMsgDrawDoubleBufferedRect* CMsgDrawDoubleBufferedRect::default_instance_ = NULL;
-
-CMsgDrawDoubleBufferedRect* CMsgDrawDoubleBufferedRect::New() const {
-  return new CMsgDrawDoubleBufferedRect;
-}
-
-void CMsgDrawDoubleBufferedRect::Clear() {
-  if (_has_bits_[0 / 32] & 31) {
-    if (has_top_left()) {
-      if (top_left_ != NULL) top_left_->::CMsgPoint::Clear();
-    }
-    if (has_bottom_right()) {
-      if (bottom_right_ != NULL) bottom_right_->::CMsgPoint::Clear();
-    }
-    texture_id_ = 0u;
-    if (has_texture_top_left()) {
-      if (texture_top_left_ != NULL) texture_top_left_->::CMsgPoint::Clear();
-    }
-    if (has_texture_bottom_right()) {
-      if (texture_bottom_right_ != NULL) texture_bottom_right_->::CMsgPoint::Clear();
-    }
-  }
-  ::memset(_has_bits_, 0, sizeof(_has_bits_));
-  mutable_unknown_fields()->Clear();
-}
-
-bool CMsgDrawDoubleBufferedRect::MergePartialFromCodedStream(
-    ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!(EXPRESSION)) goto failure
-  ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:CMsgDrawDoubleBufferedRect)
-  for (;;) {
-    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoff(127);
-    tag = p.first;
-    if (!p.second) goto handle_unusual;
-    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // optional .CMsgPoint top_left = 1;
-      case 1: {
-        if (tag == 10) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
-               input, mutable_top_left()));
-        } else {
-          goto handle_unusual;
-        }
-        if (input->ExpectTag(18)) goto parse_bottom_right;
-        break;
-      }
-
-      // optional .CMsgPoint bottom_right = 2;
-      case 2: {
-        if (tag == 18) {
-         parse_bottom_right:
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
-               input, mutable_bottom_right()));
-        } else {
-          goto handle_unusual;
-        }
-        if (input->ExpectTag(24)) goto parse_texture_id;
-        break;
-      }
-
-      // optional uint32 texture_id = 3;
-      case 3: {
-        if (tag == 24) {
-         parse_texture_id:
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
-                 input, &texture_id_)));
-          set_has_texture_id();
-        } else {
-          goto handle_unusual;
-        }
-        if (input->ExpectTag(34)) goto parse_texture_top_left;
-        break;
-      }
-
-      // optional .CMsgPoint texture_top_left = 4;
-      case 4: {
-        if (tag == 34) {
-         parse_texture_top_left:
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
-               input, mutable_texture_top_left()));
-        } else {
-          goto handle_unusual;
-        }
-        if (input->ExpectTag(42)) goto parse_texture_bottom_right;
-        break;
-      }
-
-      // optional .CMsgPoint texture_bottom_right = 5;
-      case 5: {
-        if (tag == 42) {
-         parse_texture_bottom_right:
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
-               input, mutable_texture_bottom_right()));
-        } else {
-          goto handle_unusual;
-        }
-        if (input->ExpectAtEnd()) goto success;
-        break;
-      }
-
-      default: {
-      handle_unusual:
-        if (tag == 0 ||
-            ::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
-            ::google::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {
-          goto success;
-        }
-        DO_(::google::protobuf::internal::WireFormat::SkipField(
-              input, tag, mutable_unknown_fields()));
-        break;
-      }
-    }
-  }
-success:
-  // @@protoc_insertion_point(parse_success:CMsgDrawDoubleBufferedRect)
-  return true;
-failure:
-  // @@protoc_insertion_point(parse_failure:CMsgDrawDoubleBufferedRect)
-  return false;
-#undef DO_
-}
-
-void CMsgDrawDoubleBufferedRect::SerializeWithCachedSizes(
-    ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:CMsgDrawDoubleBufferedRect)
-  // optional .CMsgPoint top_left = 1;
-  if (has_top_left()) {
-    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      1, this->top_left(), output);
-  }
-
-  // optional .CMsgPoint bottom_right = 2;
-  if (has_bottom_right()) {
-    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      2, this->bottom_right(), output);
-  }
-
-  // optional uint32 texture_id = 3;
-  if (has_texture_id()) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt32(3, this->texture_id(), output);
-  }
-
-  // optional .CMsgPoint texture_top_left = 4;
-  if (has_texture_top_left()) {
-    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      4, this->texture_top_left(), output);
-  }
-
-  // optional .CMsgPoint texture_bottom_right = 5;
-  if (has_texture_bottom_right()) {
-    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      5, this->texture_bottom_right(), output);
-  }
-
-  if (!unknown_fields().empty()) {
-    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
-        unknown_fields(), output);
-  }
-  // @@protoc_insertion_point(serialize_end:CMsgDrawDoubleBufferedRect)
-}
-
-::google::protobuf::uint8* CMsgDrawDoubleBufferedRect::SerializeWithCachedSizesToArray(
-    ::google::protobuf::uint8* target) const {
-  // @@protoc_insertion_point(serialize_to_array_start:CMsgDrawDoubleBufferedRect)
-  // optional .CMsgPoint top_left = 1;
-  if (has_top_left()) {
-    target = ::google::protobuf::internal::WireFormatLite::
-      WriteMessageNoVirtualToArray(
-        1, this->top_left(), target);
-  }
-
-  // optional .CMsgPoint bottom_right = 2;
-  if (has_bottom_right()) {
-    target = ::google::protobuf::internal::WireFormatLite::
-      WriteMessageNoVirtualToArray(
-        2, this->bottom_right(), target);
-  }
-
-  // optional uint32 texture_id = 3;
-  if (has_texture_id()) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(3, this->texture_id(), target);
-  }
-
-  // optional .CMsgPoint texture_top_left = 4;
-  if (has_texture_top_left()) {
-    target = ::google::protobuf::internal::WireFormatLite::
-      WriteMessageNoVirtualToArray(
-        4, this->texture_top_left(), target);
-  }
-
-  // optional .CMsgPoint texture_bottom_right = 5;
-  if (has_texture_bottom_right()) {
-    target = ::google::protobuf::internal::WireFormatLite::
-      WriteMessageNoVirtualToArray(
-        5, this->texture_bottom_right(), target);
-  }
-
-  if (!unknown_fields().empty()) {
-    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
-        unknown_fields(), target);
-  }
-  // @@protoc_insertion_point(serialize_to_array_end:CMsgDrawDoubleBufferedRect)
-  return target;
-}
-
-int CMsgDrawDoubleBufferedRect::ByteSize() const {
-  int total_size = 0;
-
-  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
-    // optional .CMsgPoint top_left = 1;
-    if (has_top_left()) {
-      total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
-          this->top_left());
-    }
-
-    // optional .CMsgPoint bottom_right = 2;
-    if (has_bottom_right()) {
-      total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
-          this->bottom_right());
-    }
-
-    // optional uint32 texture_id = 3;
-    if (has_texture_id()) {
-      total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::UInt32Size(
-          this->texture_id());
-    }
-
-    // optional .CMsgPoint texture_top_left = 4;
-    if (has_texture_top_left()) {
-      total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
-          this->texture_top_left());
-    }
-
-    // optional .CMsgPoint texture_bottom_right = 5;
-    if (has_texture_bottom_right()) {
-      total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
-          this->texture_bottom_right());
-    }
-
-  }
-  if (!unknown_fields().empty()) {
-    total_size +=
-      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
-        unknown_fields());
-  }
-  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
-  _cached_size_ = total_size;
-  GOOGLE_SAFE_CONCURRENT_WRITES_END();
-  return total_size;
-}
-
-void CMsgDrawDoubleBufferedRect::MergeFrom(const ::google::protobuf::Message& from) {
-  GOOGLE_CHECK_NE(&from, this);
-  const CMsgDrawDoubleBufferedRect* source =
-    ::google::protobuf::internal::dynamic_cast_if_available<const CMsgDrawDoubleBufferedRect*>(
-      &from);
-  if (source == NULL) {
-    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
-  } else {
-    MergeFrom(*source);
-  }
-}
-
-void CMsgDrawDoubleBufferedRect::MergeFrom(const CMsgDrawDoubleBufferedRect& from) {
-  GOOGLE_CHECK_NE(&from, this);
-  if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
-    if (from.has_top_left()) {
-      mutable_top_left()->::CMsgPoint::MergeFrom(from.top_left());
-    }
-    if (from.has_bottom_right()) {
-      mutable_bottom_right()->::CMsgPoint::MergeFrom(from.bottom_right());
-    }
-    if (from.has_texture_id()) {
-      set_texture_id(from.texture_id());
-    }
-    if (from.has_texture_top_left()) {
-      mutable_texture_top_left()->::CMsgPoint::MergeFrom(from.texture_top_left());
-    }
-    if (from.has_texture_bottom_right()) {
-      mutable_texture_bottom_right()->::CMsgPoint::MergeFrom(from.texture_bottom_right());
-    }
-  }
-  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
-}
-
-void CMsgDrawDoubleBufferedRect::CopyFrom(const ::google::protobuf::Message& from) {
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-void CMsgDrawDoubleBufferedRect::CopyFrom(const CMsgDrawDoubleBufferedRect& from) {
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-bool CMsgDrawDoubleBufferedRect::IsInitialized() const {
-
-  return true;
-}
-
-void CMsgDrawDoubleBufferedRect::Swap(CMsgDrawDoubleBufferedRect* other) {
-  if (other != this) {
-    std::swap(top_left_, other->top_left_);
-    std::swap(bottom_right_, other->bottom_right_);
-    std::swap(texture_id_, other->texture_id_);
-    std::swap(texture_top_left_, other->texture_top_left_);
-    std::swap(texture_bottom_right_, other->texture_bottom_right_);
-    std::swap(_has_bits_[0], other->_has_bits_[0]);
-    _unknown_fields_.Swap(&other->_unknown_fields_);
-    std::swap(_cached_size_, other->_cached_size_);
-  }
-}
-
-::google::protobuf::Metadata CMsgDrawDoubleBufferedRect::GetMetadata() const {
-  protobuf_AssignDescriptorsOnce();
-  ::google::protobuf::Metadata metadata;
-  metadata.descriptor = CMsgDrawDoubleBufferedRect_descriptor_;
-  metadata.reflection = CMsgDrawDoubleBufferedRect_reflection_;
-  return metadata;
-}
-
-
-// ===================================================================
-
-#ifndef _MSC_VER
-const int CMsgDrawYUV420DoubleBufferedRect::kTopLeftFieldNumber;
-const int CMsgDrawYUV420DoubleBufferedRect::kBottomRightFieldNumber;
-const int CMsgDrawYUV420DoubleBufferedRect::kTextureIdFieldNumber;
-const int CMsgDrawYUV420DoubleBufferedRect::kTextureTopLeftFieldNumber;
-const int CMsgDrawYUV420DoubleBufferedRect::kTextureBottomRightFieldNumber;
-#endif  // !_MSC_VER
-
-CMsgDrawYUV420DoubleBufferedRect::CMsgDrawYUV420DoubleBufferedRect()
-  : ::google::protobuf::Message() {
-  SharedCtor();
-  // @@protoc_insertion_point(constructor:CMsgDrawYUV420DoubleBufferedRect)
-}
-
-void CMsgDrawYUV420DoubleBufferedRect::InitAsDefaultInstance() {
-  top_left_ = const_cast< ::CMsgPoint*>(&::CMsgPoint::default_instance());
-  bottom_right_ = const_cast< ::CMsgPoint*>(&::CMsgPoint::default_instance());
-  texture_top_left_ = const_cast< ::CMsgPoint*>(&::CMsgPoint::default_instance());
-  texture_bottom_right_ = const_cast< ::CMsgPoint*>(&::CMsgPoint::default_instance());
-}
-
-CMsgDrawYUV420DoubleBufferedRect::CMsgDrawYUV420DoubleBufferedRect(const CMsgDrawYUV420DoubleBufferedRect& from)
-  : ::google::protobuf::Message() {
-  SharedCtor();
-  MergeFrom(from);
-  // @@protoc_insertion_point(copy_constructor:CMsgDrawYUV420DoubleBufferedRect)
-}
-
-void CMsgDrawYUV420DoubleBufferedRect::SharedCtor() {
-  _cached_size_ = 0;
-  top_left_ = NULL;
-  bottom_right_ = NULL;
-  texture_id_ = 0u;
-  texture_top_left_ = NULL;
-  texture_bottom_right_ = NULL;
-  ::memset(_has_bits_, 0, sizeof(_has_bits_));
-}
-
-CMsgDrawYUV420DoubleBufferedRect::~CMsgDrawYUV420DoubleBufferedRect() {
-  // @@protoc_insertion_point(destructor:CMsgDrawYUV420DoubleBufferedRect)
-  SharedDtor();
-}
-
-void CMsgDrawYUV420DoubleBufferedRect::SharedDtor() {
-  if (this != default_instance_) {
-    delete top_left_;
-    delete bottom_right_;
-    delete texture_top_left_;
-    delete texture_bottom_right_;
-  }
-}
-
-void CMsgDrawYUV420DoubleBufferedRect::SetCachedSize(int size) const {
-  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
-  _cached_size_ = size;
-  GOOGLE_SAFE_CONCURRENT_WRITES_END();
-}
-const ::google::protobuf::Descriptor* CMsgDrawYUV420DoubleBufferedRect::descriptor() {
-  protobuf_AssignDescriptorsOnce();
-  return CMsgDrawYUV420DoubleBufferedRect_descriptor_;
-}
-
-const CMsgDrawYUV420DoubleBufferedRect& CMsgDrawYUV420DoubleBufferedRect::default_instance() {
-  if (default_instance_ == NULL) protobuf_AddDesc_rendermessages_2eproto();
-  return *default_instance_;
-}
-
-CMsgDrawYUV420DoubleBufferedRect* CMsgDrawYUV420DoubleBufferedRect::default_instance_ = NULL;
-
-CMsgDrawYUV420DoubleBufferedRect* CMsgDrawYUV420DoubleBufferedRect::New() const {
-  return new CMsgDrawYUV420DoubleBufferedRect;
-}
-
-void CMsgDrawYUV420DoubleBufferedRect::Clear() {
-  if (_has_bits_[0 / 32] & 31) {
-    if (has_top_left()) {
-      if (top_left_ != NULL) top_left_->::CMsgPoint::Clear();
-    }
-    if (has_bottom_right()) {
-      if (bottom_right_ != NULL) bottom_right_->::CMsgPoint::Clear();
-    }
-    texture_id_ = 0u;
-    if (has_texture_top_left()) {
-      if (texture_top_left_ != NULL) texture_top_left_->::CMsgPoint::Clear();
-    }
-    if (has_texture_bottom_right()) {
-      if (texture_bottom_right_ != NULL) texture_bottom_right_->::CMsgPoint::Clear();
-    }
-  }
-  ::memset(_has_bits_, 0, sizeof(_has_bits_));
-  mutable_unknown_fields()->Clear();
-}
-
-bool CMsgDrawYUV420DoubleBufferedRect::MergePartialFromCodedStream(
-    ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!(EXPRESSION)) goto failure
-  ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:CMsgDrawYUV420DoubleBufferedRect)
-  for (;;) {
-    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoff(127);
-    tag = p.first;
-    if (!p.second) goto handle_unusual;
-    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // optional .CMsgPoint top_left = 1;
-      case 1: {
-        if (tag == 10) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
-               input, mutable_top_left()));
-        } else {
-          goto handle_unusual;
-        }
-        if (input->ExpectTag(18)) goto parse_bottom_right;
-        break;
-      }
-
-      // optional .CMsgPoint bottom_right = 2;
-      case 2: {
-        if (tag == 18) {
-         parse_bottom_right:
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
-               input, mutable_bottom_right()));
-        } else {
-          goto handle_unusual;
-        }
-        if (input->ExpectTag(24)) goto parse_texture_id;
-        break;
-      }
-
-      // optional uint32 texture_id = 3;
-      case 3: {
-        if (tag == 24) {
-         parse_texture_id:
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
-                 input, &texture_id_)));
-          set_has_texture_id();
-        } else {
-          goto handle_unusual;
-        }
-        if (input->ExpectTag(34)) goto parse_texture_top_left;
-        break;
-      }
-
-      // optional .CMsgPoint texture_top_left = 4;
-      case 4: {
-        if (tag == 34) {
-         parse_texture_top_left:
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
-               input, mutable_texture_top_left()));
-        } else {
-          goto handle_unusual;
-        }
-        if (input->ExpectTag(42)) goto parse_texture_bottom_right;
-        break;
-      }
-
-      // optional .CMsgPoint texture_bottom_right = 5;
-      case 5: {
-        if (tag == 42) {
-         parse_texture_bottom_right:
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
-               input, mutable_texture_bottom_right()));
-        } else {
-          goto handle_unusual;
-        }
-        if (input->ExpectAtEnd()) goto success;
-        break;
-      }
-
-      default: {
-      handle_unusual:
-        if (tag == 0 ||
-            ::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
-            ::google::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {
-          goto success;
-        }
-        DO_(::google::protobuf::internal::WireFormat::SkipField(
-              input, tag, mutable_unknown_fields()));
-        break;
-      }
-    }
-  }
-success:
-  // @@protoc_insertion_point(parse_success:CMsgDrawYUV420DoubleBufferedRect)
-  return true;
-failure:
-  // @@protoc_insertion_point(parse_failure:CMsgDrawYUV420DoubleBufferedRect)
-  return false;
-#undef DO_
-}
-
-void CMsgDrawYUV420DoubleBufferedRect::SerializeWithCachedSizes(
-    ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:CMsgDrawYUV420DoubleBufferedRect)
-  // optional .CMsgPoint top_left = 1;
-  if (has_top_left()) {
-    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      1, this->top_left(), output);
-  }
-
-  // optional .CMsgPoint bottom_right = 2;
-  if (has_bottom_right()) {
-    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      2, this->bottom_right(), output);
-  }
-
-  // optional uint32 texture_id = 3;
-  if (has_texture_id()) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt32(3, this->texture_id(), output);
-  }
-
-  // optional .CMsgPoint texture_top_left = 4;
-  if (has_texture_top_left()) {
-    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      4, this->texture_top_left(), output);
-  }
-
-  // optional .CMsgPoint texture_bottom_right = 5;
-  if (has_texture_bottom_right()) {
-    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      5, this->texture_bottom_right(), output);
-  }
-
-  if (!unknown_fields().empty()) {
-    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
-        unknown_fields(), output);
-  }
-  // @@protoc_insertion_point(serialize_end:CMsgDrawYUV420DoubleBufferedRect)
-}
-
-::google::protobuf::uint8* CMsgDrawYUV420DoubleBufferedRect::SerializeWithCachedSizesToArray(
-    ::google::protobuf::uint8* target) const {
-  // @@protoc_insertion_point(serialize_to_array_start:CMsgDrawYUV420DoubleBufferedRect)
-  // optional .CMsgPoint top_left = 1;
-  if (has_top_left()) {
-    target = ::google::protobuf::internal::WireFormatLite::
-      WriteMessageNoVirtualToArray(
-        1, this->top_left(), target);
-  }
-
-  // optional .CMsgPoint bottom_right = 2;
-  if (has_bottom_right()) {
-    target = ::google::protobuf::internal::WireFormatLite::
-      WriteMessageNoVirtualToArray(
-        2, this->bottom_right(), target);
-  }
-
-  // optional uint32 texture_id = 3;
-  if (has_texture_id()) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(3, this->texture_id(), target);
-  }
-
-  // optional .CMsgPoint texture_top_left = 4;
-  if (has_texture_top_left()) {
-    target = ::google::protobuf::internal::WireFormatLite::
-      WriteMessageNoVirtualToArray(
-        4, this->texture_top_left(), target);
-  }
-
-  // optional .CMsgPoint texture_bottom_right = 5;
-  if (has_texture_bottom_right()) {
-    target = ::google::protobuf::internal::WireFormatLite::
-      WriteMessageNoVirtualToArray(
-        5, this->texture_bottom_right(), target);
-  }
-
-  if (!unknown_fields().empty()) {
-    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
-        unknown_fields(), target);
-  }
-  // @@protoc_insertion_point(serialize_to_array_end:CMsgDrawYUV420DoubleBufferedRect)
-  return target;
-}
-
-int CMsgDrawYUV420DoubleBufferedRect::ByteSize() const {
-  int total_size = 0;
-
-  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
-    // optional .CMsgPoint top_left = 1;
-    if (has_top_left()) {
-      total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
-          this->top_left());
-    }
-
-    // optional .CMsgPoint bottom_right = 2;
-    if (has_bottom_right()) {
-      total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
-          this->bottom_right());
-    }
-
-    // optional uint32 texture_id = 3;
-    if (has_texture_id()) {
-      total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::UInt32Size(
-          this->texture_id());
-    }
-
-    // optional .CMsgPoint texture_top_left = 4;
-    if (has_texture_top_left()) {
-      total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
-          this->texture_top_left());
-    }
-
-    // optional .CMsgPoint texture_bottom_right = 5;
-    if (has_texture_bottom_right()) {
-      total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
-          this->texture_bottom_right());
-    }
-
-  }
-  if (!unknown_fields().empty()) {
-    total_size +=
-      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
-        unknown_fields());
-  }
-  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
-  _cached_size_ = total_size;
-  GOOGLE_SAFE_CONCURRENT_WRITES_END();
-  return total_size;
-}
-
-void CMsgDrawYUV420DoubleBufferedRect::MergeFrom(const ::google::protobuf::Message& from) {
-  GOOGLE_CHECK_NE(&from, this);
-  const CMsgDrawYUV420DoubleBufferedRect* source =
-    ::google::protobuf::internal::dynamic_cast_if_available<const CMsgDrawYUV420DoubleBufferedRect*>(
-      &from);
-  if (source == NULL) {
-    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
-  } else {
-    MergeFrom(*source);
-  }
-}
-
-void CMsgDrawYUV420DoubleBufferedRect::MergeFrom(const CMsgDrawYUV420DoubleBufferedRect& from) {
-  GOOGLE_CHECK_NE(&from, this);
-  if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
-    if (from.has_top_left()) {
-      mutable_top_left()->::CMsgPoint::MergeFrom(from.top_left());
-    }
-    if (from.has_bottom_right()) {
-      mutable_bottom_right()->::CMsgPoint::MergeFrom(from.bottom_right());
-    }
-    if (from.has_texture_id()) {
-      set_texture_id(from.texture_id());
-    }
-    if (from.has_texture_top_left()) {
-      mutable_texture_top_left()->::CMsgPoint::MergeFrom(from.texture_top_left());
-    }
-    if (from.has_texture_bottom_right()) {
-      mutable_texture_bottom_right()->::CMsgPoint::MergeFrom(from.texture_bottom_right());
-    }
-  }
-  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
-}
-
-void CMsgDrawYUV420DoubleBufferedRect::CopyFrom(const ::google::protobuf::Message& from) {
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-void CMsgDrawYUV420DoubleBufferedRect::CopyFrom(const CMsgDrawYUV420DoubleBufferedRect& from) {
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-bool CMsgDrawYUV420DoubleBufferedRect::IsInitialized() const {
-
-  return true;
-}
-
-void CMsgDrawYUV420DoubleBufferedRect::Swap(CMsgDrawYUV420DoubleBufferedRect* other) {
-  if (other != this) {
-    std::swap(top_left_, other->top_left_);
-    std::swap(bottom_right_, other->bottom_right_);
-    std::swap(texture_id_, other->texture_id_);
-    std::swap(texture_top_left_, other->texture_top_left_);
-    std::swap(texture_bottom_right_, other->texture_bottom_right_);
-    std::swap(_has_bits_[0], other->_has_bits_[0]);
-    _unknown_fields_.Swap(&other->_unknown_fields_);
-    std::swap(_cached_size_, other->_cached_size_);
-  }
-}
-
-::google::protobuf::Metadata CMsgDrawYUV420DoubleBufferedRect::GetMetadata() const {
-  protobuf_AssignDescriptorsOnce();
-  ::google::protobuf::Metadata metadata;
-  metadata.descriptor = CMsgDrawYUV420DoubleBufferedRect_descriptor_;
-  metadata.reflection = CMsgDrawYUV420DoubleBufferedRect_reflection_;
-  return metadata;
-}
-
-
-// ===================================================================
-
-#ifndef _MSC_VER
 const int CMsgRenderTexturedRect::kTopLeftFieldNumber;
 const int CMsgRenderTexturedRect::kBottomRightFieldNumber;
 const int CMsgRenderTexturedRect::kTextureIdFieldNumber;
@@ -34368,6 +36680,7 @@ const int CMsgRenderTexturedRect::kTextureTopLeftFieldNumber;
 const int CMsgRenderTexturedRect::kTextureBottomRightFieldNumber;
 const int CMsgRenderTexturedRect::kTextureSerialFieldNumber;
 const int CMsgRenderTexturedRect::kTextureSampleModeFieldNumber;
+const int CMsgRenderTexturedRect::kTextureOpacityFieldNumber;
 #endif  // !_MSC_VER
 
 CMsgRenderTexturedRect::CMsgRenderTexturedRect()
@@ -34399,6 +36712,7 @@ void CMsgRenderTexturedRect::SharedCtor() {
   texture_bottom_right_ = NULL;
   texture_serial_ = 0;
   texture_sample_mode_ = 0u;
+  texture_opacity_ = 1;
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
 
@@ -34448,7 +36762,7 @@ void CMsgRenderTexturedRect::Clear() {
     ::memset(&first, 0, n);                                \
   } while (0)
 
-  if (_has_bits_[0 / 32] & 127) {
+  if (_has_bits_[0 / 32] & 255) {
     ZR_(texture_id_, texture_serial_);
     if (has_top_left()) {
       if (top_left_ != NULL) top_left_->::CMsgPoint::Clear();
@@ -34463,6 +36777,7 @@ void CMsgRenderTexturedRect::Clear() {
       if (texture_bottom_right_ != NULL) texture_bottom_right_->::CMsgPoint::Clear();
     }
     texture_sample_mode_ = 0u;
+    texture_opacity_ = 1;
   }
 
 #undef OFFSET_OF_FIELD_
@@ -34574,6 +36889,21 @@ bool CMsgRenderTexturedRect::MergePartialFromCodedStream(
         } else {
           goto handle_unusual;
         }
+        if (input->ExpectTag(69)) goto parse_texture_opacity;
+        break;
+      }
+
+      // optional float texture_opacity = 8 [default = 1];
+      case 8: {
+        if (tag == 69) {
+         parse_texture_opacity:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
+                 input, &texture_opacity_)));
+          set_has_texture_opacity();
+        } else {
+          goto handle_unusual;
+        }
         if (input->ExpectAtEnd()) goto success;
         break;
       }
@@ -34642,6 +36972,11 @@ void CMsgRenderTexturedRect::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteUInt32(7, this->texture_sample_mode(), output);
   }
 
+  // optional float texture_opacity = 8 [default = 1];
+  if (has_texture_opacity()) {
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(8, this->texture_opacity(), output);
+  }
+
   if (!unknown_fields().empty()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
@@ -34693,6 +37028,11 @@ void CMsgRenderTexturedRect::SerializeWithCachedSizes(
   // optional uint32 texture_sample_mode = 7 [default = 0];
   if (has_texture_sample_mode()) {
     target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(7, this->texture_sample_mode(), target);
+  }
+
+  // optional float texture_opacity = 8 [default = 1];
+  if (has_texture_opacity()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(8, this->texture_opacity(), target);
   }
 
   if (!unknown_fields().empty()) {
@@ -34756,6 +37096,11 @@ int CMsgRenderTexturedRect::ByteSize() const {
           this->texture_sample_mode());
     }
 
+    // optional float texture_opacity = 8 [default = 1];
+    if (has_texture_opacity()) {
+      total_size += 1 + 4;
+    }
+
   }
   if (!unknown_fields().empty()) {
     total_size +=
@@ -34804,6 +37149,9 @@ void CMsgRenderTexturedRect::MergeFrom(const CMsgRenderTexturedRect& from) {
     if (from.has_texture_sample_mode()) {
       set_texture_sample_mode(from.texture_sample_mode());
     }
+    if (from.has_texture_opacity()) {
+      set_texture_opacity(from.texture_opacity());
+    }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
 }
@@ -34834,6 +37182,7 @@ void CMsgRenderTexturedRect::Swap(CMsgRenderTexturedRect* other) {
     std::swap(texture_bottom_right_, other->texture_bottom_right_);
     std::swap(texture_serial_, other->texture_serial_);
     std::swap(texture_sample_mode_, other->texture_sample_mode_);
+    std::swap(texture_opacity_, other->texture_opacity_);
     std::swap(_has_bits_[0], other->_has_bits_[0]);
     _unknown_fields_.Swap(&other->_unknown_fields_);
     std::swap(_cached_size_, other->_cached_size_);
@@ -37196,7 +39545,9 @@ void CMsgRenderTextRangeFormat::Swap(CMsgRenderTextRangeFormat* other) {
 // ===================================================================
 
 #ifndef _MSC_VER
-const int CMsgDrawTextRegion::kWtextFieldNumber;
+const int CMsgDrawTextRegion::kRawTextFieldNumber;
+const int CMsgDrawTextRegion::kTextCharsFieldNumber;
+const int CMsgDrawTextRegion::kTextEncodingFieldNumber;
 const int CMsgDrawTextRegion::kDefaultFormatFieldNumber;
 const int CMsgDrawTextRegion::kTextAlignFieldNumber;
 const int CMsgDrawTextRegion::kLineHeightFieldNumber;
@@ -37229,7 +39580,9 @@ CMsgDrawTextRegion::CMsgDrawTextRegion(const CMsgDrawTextRegion& from)
 void CMsgDrawTextRegion::SharedCtor() {
   ::google::protobuf::internal::GetEmptyString();
   _cached_size_ = 0;
-  wtext_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  raw_text_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  text_chars_ = 0;
+  text_encoding_ = 0;
   default_format_ = NULL;
   text_align_ = 0u;
   line_height_ = 0u;
@@ -37246,8 +39599,8 @@ CMsgDrawTextRegion::~CMsgDrawTextRegion() {
 }
 
 void CMsgDrawTextRegion::SharedDtor() {
-  if (wtext_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    delete wtext_;
+  if (raw_text_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete raw_text_;
   }
   if (this != default_instance_) {
     delete default_format_;
@@ -37289,11 +39642,11 @@ void CMsgDrawTextRegion::Clear() {
   } while (0)
 
   if (_has_bits_[0 / 32] & 255) {
+    ZR_(text_chars_, text_encoding_);
     ZR_(text_align_, line_height_);
-    ZR_(wrapping_, ellipsis_);
-    if (has_wtext()) {
-      if (wtext_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-        wtext_->clear();
+    if (has_raw_text()) {
+      if (raw_text_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+        raw_text_->clear();
       }
     }
     if (has_default_format()) {
@@ -37306,6 +39659,7 @@ void CMsgDrawTextRegion::Clear() {
       if (bottom_right_ != NULL) bottom_right_->::CMsgPoint::Clear();
     }
   }
+  ZR_(wrapping_, ellipsis_);
 
 #undef OFFSET_OF_FIELD_
 #undef ZR_
@@ -37325,22 +39679,9 @@ bool CMsgDrawTextRegion::MergePartialFromCodedStream(
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // optional bytes wtext = 2;
-      case 2: {
-        if (tag == 18) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadBytes(
-                input, this->mutable_wtext()));
-        } else {
-          goto handle_unusual;
-        }
-        if (input->ExpectTag(26)) goto parse_default_format;
-        break;
-      }
-
       // optional .CMsgTextFormat default_format = 3;
       case 3: {
         if (tag == 26) {
-         parse_default_format:
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
                input, mutable_default_format()));
         } else {
@@ -37446,6 +39787,49 @@ bool CMsgDrawTextRegion::MergePartialFromCodedStream(
           goto handle_unusual;
         }
         if (input->ExpectTag(82)) goto parse_range_formats;
+        if (input->ExpectTag(90)) goto parse_raw_text;
+        break;
+      }
+
+      // optional bytes raw_text = 11;
+      case 11: {
+        if (tag == 90) {
+         parse_raw_text:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadBytes(
+                input, this->mutable_raw_text()));
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(96)) goto parse_text_chars;
+        break;
+      }
+
+      // optional int32 text_chars = 12;
+      case 12: {
+        if (tag == 96) {
+         parse_text_chars:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
+                 input, &text_chars_)));
+          set_has_text_chars();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(104)) goto parse_text_encoding;
+        break;
+      }
+
+      // optional int32 text_encoding = 13;
+      case 13: {
+        if (tag == 104) {
+         parse_text_encoding:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
+                 input, &text_encoding_)));
+          set_has_text_encoding();
+        } else {
+          goto handle_unusual;
+        }
         if (input->ExpectAtEnd()) goto success;
         break;
       }
@@ -37475,12 +39859,6 @@ failure:
 void CMsgDrawTextRegion::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
   // @@protoc_insertion_point(serialize_start:CMsgDrawTextRegion)
-  // optional bytes wtext = 2;
-  if (has_wtext()) {
-    ::google::protobuf::internal::WireFormatLite::WriteBytesMaybeAliased(
-      2, this->wtext(), output);
-  }
-
   // optional .CMsgTextFormat default_format = 3;
   if (has_default_format()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
@@ -37525,6 +39903,22 @@ void CMsgDrawTextRegion::SerializeWithCachedSizes(
       10, this->range_formats(i), output);
   }
 
+  // optional bytes raw_text = 11;
+  if (has_raw_text()) {
+    ::google::protobuf::internal::WireFormatLite::WriteBytesMaybeAliased(
+      11, this->raw_text(), output);
+  }
+
+  // optional int32 text_chars = 12;
+  if (has_text_chars()) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(12, this->text_chars(), output);
+  }
+
+  // optional int32 text_encoding = 13;
+  if (has_text_encoding()) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(13, this->text_encoding(), output);
+  }
+
   if (!unknown_fields().empty()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
@@ -37535,13 +39929,6 @@ void CMsgDrawTextRegion::SerializeWithCachedSizes(
 ::google::protobuf::uint8* CMsgDrawTextRegion::SerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
   // @@protoc_insertion_point(serialize_to_array_start:CMsgDrawTextRegion)
-  // optional bytes wtext = 2;
-  if (has_wtext()) {
-    target =
-      ::google::protobuf::internal::WireFormatLite::WriteBytesToArray(
-        2, this->wtext(), target);
-  }
-
   // optional .CMsgTextFormat default_format = 3;
   if (has_default_format()) {
     target = ::google::protobuf::internal::WireFormatLite::
@@ -37590,6 +39977,23 @@ void CMsgDrawTextRegion::SerializeWithCachedSizes(
         10, this->range_formats(i), target);
   }
 
+  // optional bytes raw_text = 11;
+  if (has_raw_text()) {
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteBytesToArray(
+        11, this->raw_text(), target);
+  }
+
+  // optional int32 text_chars = 12;
+  if (has_text_chars()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(12, this->text_chars(), target);
+  }
+
+  // optional int32 text_encoding = 13;
+  if (has_text_encoding()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(13, this->text_encoding(), target);
+  }
+
   if (!unknown_fields().empty()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
@@ -37602,11 +40006,25 @@ int CMsgDrawTextRegion::ByteSize() const {
   int total_size = 0;
 
   if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
-    // optional bytes wtext = 2;
-    if (has_wtext()) {
+    // optional bytes raw_text = 11;
+    if (has_raw_text()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::BytesSize(
-          this->wtext());
+          this->raw_text());
+    }
+
+    // optional int32 text_chars = 12;
+    if (has_text_chars()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::Int32Size(
+          this->text_chars());
+    }
+
+    // optional int32 text_encoding = 13;
+    if (has_text_encoding()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::Int32Size(
+          this->text_encoding());
     }
 
     // optional .CMsgTextFormat default_format = 3;
@@ -37644,6 +40062,8 @@ int CMsgDrawTextRegion::ByteSize() const {
           this->bottom_right());
     }
 
+  }
+  if (_has_bits_[8 / 32] & (0xffu << (8 % 32))) {
     // optional bool wrapping = 8;
     if (has_wrapping()) {
       total_size += 1 + 1;
@@ -37690,8 +40110,14 @@ void CMsgDrawTextRegion::MergeFrom(const CMsgDrawTextRegion& from) {
   GOOGLE_CHECK_NE(&from, this);
   range_formats_.MergeFrom(from.range_formats_);
   if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
-    if (from.has_wtext()) {
-      set_wtext(from.wtext());
+    if (from.has_raw_text()) {
+      set_raw_text(from.raw_text());
+    }
+    if (from.has_text_chars()) {
+      set_text_chars(from.text_chars());
+    }
+    if (from.has_text_encoding()) {
+      set_text_encoding(from.text_encoding());
     }
     if (from.has_default_format()) {
       mutable_default_format()->::CMsgTextFormat::MergeFrom(from.default_format());
@@ -37708,6 +40134,8 @@ void CMsgDrawTextRegion::MergeFrom(const CMsgDrawTextRegion& from) {
     if (from.has_bottom_right()) {
       mutable_bottom_right()->::CMsgPoint::MergeFrom(from.bottom_right());
     }
+  }
+  if (from._has_bits_[8 / 32] & (0xffu << (8 % 32))) {
     if (from.has_wrapping()) {
       set_wrapping(from.wrapping());
     }
@@ -37741,7 +40169,9 @@ bool CMsgDrawTextRegion::IsInitialized() const {
 
 void CMsgDrawTextRegion::Swap(CMsgDrawTextRegion* other) {
   if (other != this) {
-    std::swap(wtext_, other->wtext_);
+    std::swap(raw_text_, other->raw_text_);
+    std::swap(text_chars_, other->text_chars_);
+    std::swap(text_encoding_, other->text_encoding_);
     std::swap(default_format_, other->default_format_);
     std::swap(text_align_, other->text_align_);
     std::swap(line_height_, other->line_height_);
@@ -37768,7 +40198,9 @@ void CMsgDrawTextRegion::Swap(CMsgDrawTextRegion* other) {
 // ===================================================================
 
 #ifndef _MSC_VER
-const int CMsgRenderTextRegion::kWtextFieldNumber;
+const int CMsgRenderTextRegion::kRawTextFieldNumber;
+const int CMsgRenderTextRegion::kTextCharsFieldNumber;
+const int CMsgRenderTextRegion::kTextEncodingFieldNumber;
 const int CMsgRenderTextRegion::kDefaultFormatFieldNumber;
 const int CMsgRenderTextRegion::kTextAlignFieldNumber;
 const int CMsgRenderTextRegion::kLineHeightFieldNumber;
@@ -37803,7 +40235,9 @@ CMsgRenderTextRegion::CMsgRenderTextRegion(const CMsgRenderTextRegion& from)
 void CMsgRenderTextRegion::SharedCtor() {
   ::google::protobuf::internal::GetEmptyString();
   _cached_size_ = 0;
-  wtext_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  raw_text_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  text_chars_ = 0;
+  text_encoding_ = 0;
   default_format_ = NULL;
   text_align_ = 0u;
   line_height_ = 0u;
@@ -37821,8 +40255,8 @@ CMsgRenderTextRegion::~CMsgRenderTextRegion() {
 }
 
 void CMsgRenderTextRegion::SharedDtor() {
-  if (wtext_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    delete wtext_;
+  if (raw_text_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete raw_text_;
   }
   if (this != default_instance_) {
     delete default_format_;
@@ -37865,11 +40299,11 @@ void CMsgRenderTextRegion::Clear() {
   } while (0)
 
   if (_has_bits_[0 / 32] & 255) {
+    ZR_(text_chars_, text_encoding_);
     ZR_(text_align_, line_height_);
-    ZR_(wrapping_, ellipsis_);
-    if (has_wtext()) {
-      if (wtext_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-        wtext_->clear();
+    if (has_raw_text()) {
+      if (raw_text_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+        raw_text_->clear();
       }
     }
     if (has_default_format()) {
@@ -37882,8 +40316,11 @@ void CMsgRenderTextRegion::Clear() {
       if (bottom_right_ != NULL) bottom_right_->::CMsgPoint::Clear();
     }
   }
-  if (has_text_shadow()) {
-    if (text_shadow_ != NULL) text_shadow_->::CTextShadowData::Clear();
+  if (_has_bits_[8 / 32] & 2816) {
+    ZR_(wrapping_, ellipsis_);
+    if (has_text_shadow()) {
+      if (text_shadow_ != NULL) text_shadow_->::CTextShadowData::Clear();
+    }
   }
 
 #undef OFFSET_OF_FIELD_
@@ -37904,22 +40341,9 @@ bool CMsgRenderTextRegion::MergePartialFromCodedStream(
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // optional bytes wtext = 2;
-      case 2: {
-        if (tag == 18) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadBytes(
-                input, this->mutable_wtext()));
-        } else {
-          goto handle_unusual;
-        }
-        if (input->ExpectTag(26)) goto parse_default_format;
-        break;
-      }
-
       // optional .CMsgRenderTextFormat default_format = 3;
       case 3: {
         if (tag == 26) {
-         parse_default_format:
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
                input, mutable_default_format()));
         } else {
@@ -38038,6 +40462,49 @@ bool CMsgRenderTextRegion::MergePartialFromCodedStream(
         } else {
           goto handle_unusual;
         }
+        if (input->ExpectTag(98)) goto parse_raw_text;
+        break;
+      }
+
+      // optional bytes raw_text = 12;
+      case 12: {
+        if (tag == 98) {
+         parse_raw_text:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadBytes(
+                input, this->mutable_raw_text()));
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(104)) goto parse_text_chars;
+        break;
+      }
+
+      // optional int32 text_chars = 13;
+      case 13: {
+        if (tag == 104) {
+         parse_text_chars:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
+                 input, &text_chars_)));
+          set_has_text_chars();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(112)) goto parse_text_encoding;
+        break;
+      }
+
+      // optional int32 text_encoding = 14;
+      case 14: {
+        if (tag == 112) {
+         parse_text_encoding:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
+                 input, &text_encoding_)));
+          set_has_text_encoding();
+        } else {
+          goto handle_unusual;
+        }
         if (input->ExpectAtEnd()) goto success;
         break;
       }
@@ -38067,12 +40534,6 @@ failure:
 void CMsgRenderTextRegion::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
   // @@protoc_insertion_point(serialize_start:CMsgRenderTextRegion)
-  // optional bytes wtext = 2;
-  if (has_wtext()) {
-    ::google::protobuf::internal::WireFormatLite::WriteBytesMaybeAliased(
-      2, this->wtext(), output);
-  }
-
   // optional .CMsgRenderTextFormat default_format = 3;
   if (has_default_format()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
@@ -38123,6 +40584,22 @@ void CMsgRenderTextRegion::SerializeWithCachedSizes(
       11, this->text_shadow(), output);
   }
 
+  // optional bytes raw_text = 12;
+  if (has_raw_text()) {
+    ::google::protobuf::internal::WireFormatLite::WriteBytesMaybeAliased(
+      12, this->raw_text(), output);
+  }
+
+  // optional int32 text_chars = 13;
+  if (has_text_chars()) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(13, this->text_chars(), output);
+  }
+
+  // optional int32 text_encoding = 14;
+  if (has_text_encoding()) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(14, this->text_encoding(), output);
+  }
+
   if (!unknown_fields().empty()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
@@ -38133,13 +40610,6 @@ void CMsgRenderTextRegion::SerializeWithCachedSizes(
 ::google::protobuf::uint8* CMsgRenderTextRegion::SerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
   // @@protoc_insertion_point(serialize_to_array_start:CMsgRenderTextRegion)
-  // optional bytes wtext = 2;
-  if (has_wtext()) {
-    target =
-      ::google::protobuf::internal::WireFormatLite::WriteBytesToArray(
-        2, this->wtext(), target);
-  }
-
   // optional .CMsgRenderTextFormat default_format = 3;
   if (has_default_format()) {
     target = ::google::protobuf::internal::WireFormatLite::
@@ -38195,6 +40665,23 @@ void CMsgRenderTextRegion::SerializeWithCachedSizes(
         11, this->text_shadow(), target);
   }
 
+  // optional bytes raw_text = 12;
+  if (has_raw_text()) {
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteBytesToArray(
+        12, this->raw_text(), target);
+  }
+
+  // optional int32 text_chars = 13;
+  if (has_text_chars()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(13, this->text_chars(), target);
+  }
+
+  // optional int32 text_encoding = 14;
+  if (has_text_encoding()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(14, this->text_encoding(), target);
+  }
+
   if (!unknown_fields().empty()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
@@ -38207,11 +40694,25 @@ int CMsgRenderTextRegion::ByteSize() const {
   int total_size = 0;
 
   if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
-    // optional bytes wtext = 2;
-    if (has_wtext()) {
+    // optional bytes raw_text = 12;
+    if (has_raw_text()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::BytesSize(
-          this->wtext());
+          this->raw_text());
+    }
+
+    // optional int32 text_chars = 13;
+    if (has_text_chars()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::Int32Size(
+          this->text_chars());
+    }
+
+    // optional int32 text_encoding = 14;
+    if (has_text_encoding()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::Int32Size(
+          this->text_encoding());
     }
 
     // optional .CMsgRenderTextFormat default_format = 3;
@@ -38249,6 +40750,8 @@ int CMsgRenderTextRegion::ByteSize() const {
           this->bottom_right());
     }
 
+  }
+  if (_has_bits_[8 / 32] & (0xffu << (8 % 32))) {
     // optional bool wrapping = 8;
     if (has_wrapping()) {
       total_size += 1 + 1;
@@ -38259,8 +40762,6 @@ int CMsgRenderTextRegion::ByteSize() const {
       total_size += 1 + 1;
     }
 
-  }
-  if (_has_bits_[9 / 32] & (0xffu << (9 % 32))) {
     // optional .CTextShadowData text_shadow = 11;
     if (has_text_shadow()) {
       total_size += 1 +
@@ -38304,8 +40805,14 @@ void CMsgRenderTextRegion::MergeFrom(const CMsgRenderTextRegion& from) {
   GOOGLE_CHECK_NE(&from, this);
   range_formats_.MergeFrom(from.range_formats_);
   if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
-    if (from.has_wtext()) {
-      set_wtext(from.wtext());
+    if (from.has_raw_text()) {
+      set_raw_text(from.raw_text());
+    }
+    if (from.has_text_chars()) {
+      set_text_chars(from.text_chars());
+    }
+    if (from.has_text_encoding()) {
+      set_text_encoding(from.text_encoding());
     }
     if (from.has_default_format()) {
       mutable_default_format()->::CMsgRenderTextFormat::MergeFrom(from.default_format());
@@ -38322,14 +40829,14 @@ void CMsgRenderTextRegion::MergeFrom(const CMsgRenderTextRegion& from) {
     if (from.has_bottom_right()) {
       mutable_bottom_right()->::CMsgPoint::MergeFrom(from.bottom_right());
     }
+  }
+  if (from._has_bits_[8 / 32] & (0xffu << (8 % 32))) {
     if (from.has_wrapping()) {
       set_wrapping(from.wrapping());
     }
     if (from.has_ellipsis()) {
       set_ellipsis(from.ellipsis());
     }
-  }
-  if (from._has_bits_[9 / 32] & (0xffu << (9 % 32))) {
     if (from.has_text_shadow()) {
       mutable_text_shadow()->::CTextShadowData::MergeFrom(from.text_shadow());
     }
@@ -38356,7 +40863,9 @@ bool CMsgRenderTextRegion::IsInitialized() const {
 
 void CMsgRenderTextRegion::Swap(CMsgRenderTextRegion* other) {
   if (other != this) {
-    std::swap(wtext_, other->wtext_);
+    std::swap(raw_text_, other->raw_text_);
+    std::swap(text_chars_, other->text_chars_);
+    std::swap(text_encoding_, other->text_encoding_);
     std::swap(default_format_, other->default_format_);
     std::swap(text_align_, other->text_align_);
     std::swap(line_height_, other->line_height_);

@@ -49,6 +49,8 @@ class CMsgGCMultiplexMessage;
 class CGCToGCMsgMasterAck;
 class CGCToGCMsgMasterAck_Process;
 class CGCToGCMsgMasterAck_Response;
+class CMsgGCToGCUniverseStartup;
+class CMsgGCToGCUniverseStartupResponse;
 class CGCToGCMsgMasterStartupComplete;
 class CGCToGCMsgMasterStartupComplete_GCInfo;
 class CGCToGCMsgRouted;
@@ -66,6 +68,7 @@ class CMsgGCToGCSOCacheSubscribe;
 class CMsgGCToGCSOCacheSubscribe_CMsgHaveVersions;
 class CMsgGCToGCSOCacheUnsubscribe;
 class CMsgGCClientPing;
+class CMsgGCToGCForwardAccountDetails;
 class CMsgGCToGCLoadSessionSOCache;
 class CMsgGCToGCLoadSessionSOCacheResponse;
 class CMsgGCToGCUpdateSessionStats;
@@ -79,6 +82,12 @@ class CWorkshop_SetItemPaymentRules_Request_WorkshopItemPaymentRule;
 class CWorkshop_SetItemPaymentRules_Request_PartnerItemPaymentRule;
 class CWorkshop_SetItemPaymentRules_Response;
 class CBroadcast_PostGameDataFrame_Request;
+class CMsgSerializedSOCache;
+class CMsgSerializedSOCache_TypeCache;
+class CMsgSerializedSOCache_Cache;
+class CMsgSerializedSOCache_Cache_Version;
+class CMsgGCToClientPollConvarRequest;
+class CMsgGCToClientPollConvarResponse;
 
 enum ESourceEngine {
   k_ESE_Source1 = 0,
@@ -126,11 +135,12 @@ enum GCConnectionStatus {
   GCConnectionStatus_NO_SESSION = 2,
   GCConnectionStatus_NO_SESSION_IN_LOGON_QUEUE = 3,
   GCConnectionStatus_NO_STEAM = 4,
-  GCConnectionStatus_SUSPENDED = 5
+  GCConnectionStatus_SUSPENDED = 5,
+  GCConnectionStatus_STEAM_GOING_DOWN = 6
 };
 bool GCConnectionStatus_IsValid(int value);
 const GCConnectionStatus GCConnectionStatus_MIN = GCConnectionStatus_HAVE_SESSION;
-const GCConnectionStatus GCConnectionStatus_MAX = GCConnectionStatus_SUSPENDED;
+const GCConnectionStatus GCConnectionStatus_MAX = GCConnectionStatus_STEAM_GOING_DOWN;
 const int GCConnectionStatus_ARRAYSIZE = GCConnectionStatus_MAX + 1;
 
 const ::google::protobuf::EnumDescriptor* GCConnectionStatus_descriptor();
@@ -1821,6 +1831,164 @@ class CGCToGCMsgMasterAck_Response : public ::google::protobuf::Message {
 };
 // -------------------------------------------------------------------
 
+class CMsgGCToGCUniverseStartup : public ::google::protobuf::Message {
+ public:
+  CMsgGCToGCUniverseStartup();
+  virtual ~CMsgGCToGCUniverseStartup();
+
+  CMsgGCToGCUniverseStartup(const CMsgGCToGCUniverseStartup& from);
+
+  inline CMsgGCToGCUniverseStartup& operator=(const CMsgGCToGCUniverseStartup& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+    return _unknown_fields_;
+  }
+
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+    return &_unknown_fields_;
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const CMsgGCToGCUniverseStartup& default_instance();
+
+  void Swap(CMsgGCToGCUniverseStartup* other);
+
+  // implements Message ----------------------------------------------
+
+  CMsgGCToGCUniverseStartup* New() const;
+  void CopyFrom(const ::google::protobuf::Message& from);
+  void MergeFrom(const ::google::protobuf::Message& from);
+  void CopyFrom(const CMsgGCToGCUniverseStartup& from);
+  void MergeFrom(const CMsgGCToGCUniverseStartup& from);
+  void Clear();
+  bool IsInitialized() const;
+
+  int ByteSize() const;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input);
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  int GetCachedSize() const { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const;
+  public:
+  ::google::protobuf::Metadata GetMetadata() const;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // optional bool is_initial_startup = 1;
+  inline bool has_is_initial_startup() const;
+  inline void clear_is_initial_startup();
+  static const int kIsInitialStartupFieldNumber = 1;
+  inline bool is_initial_startup() const;
+  inline void set_is_initial_startup(bool value);
+
+  // @@protoc_insertion_point(class_scope:CMsgGCToGCUniverseStartup)
+ private:
+  inline void set_has_is_initial_startup();
+  inline void clear_has_is_initial_startup();
+
+  ::google::protobuf::UnknownFieldSet _unknown_fields_;
+
+  ::google::protobuf::uint32 _has_bits_[1];
+  mutable int _cached_size_;
+  bool is_initial_startup_;
+  friend void  protobuf_AddDesc_gcsdk_5fgcmessages_2eproto();
+  friend void protobuf_AssignDesc_gcsdk_5fgcmessages_2eproto();
+  friend void protobuf_ShutdownFile_gcsdk_5fgcmessages_2eproto();
+
+  void InitAsDefaultInstance();
+  static CMsgGCToGCUniverseStartup* default_instance_;
+};
+// -------------------------------------------------------------------
+
+class CMsgGCToGCUniverseStartupResponse : public ::google::protobuf::Message {
+ public:
+  CMsgGCToGCUniverseStartupResponse();
+  virtual ~CMsgGCToGCUniverseStartupResponse();
+
+  CMsgGCToGCUniverseStartupResponse(const CMsgGCToGCUniverseStartupResponse& from);
+
+  inline CMsgGCToGCUniverseStartupResponse& operator=(const CMsgGCToGCUniverseStartupResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+    return _unknown_fields_;
+  }
+
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+    return &_unknown_fields_;
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const CMsgGCToGCUniverseStartupResponse& default_instance();
+
+  void Swap(CMsgGCToGCUniverseStartupResponse* other);
+
+  // implements Message ----------------------------------------------
+
+  CMsgGCToGCUniverseStartupResponse* New() const;
+  void CopyFrom(const ::google::protobuf::Message& from);
+  void MergeFrom(const ::google::protobuf::Message& from);
+  void CopyFrom(const CMsgGCToGCUniverseStartupResponse& from);
+  void MergeFrom(const CMsgGCToGCUniverseStartupResponse& from);
+  void Clear();
+  bool IsInitialized() const;
+
+  int ByteSize() const;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input);
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  int GetCachedSize() const { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const;
+  public:
+  ::google::protobuf::Metadata GetMetadata() const;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // optional int32 eresult = 1;
+  inline bool has_eresult() const;
+  inline void clear_eresult();
+  static const int kEresultFieldNumber = 1;
+  inline ::google::protobuf::int32 eresult() const;
+  inline void set_eresult(::google::protobuf::int32 value);
+
+  // @@protoc_insertion_point(class_scope:CMsgGCToGCUniverseStartupResponse)
+ private:
+  inline void set_has_eresult();
+  inline void clear_has_eresult();
+
+  ::google::protobuf::UnknownFieldSet _unknown_fields_;
+
+  ::google::protobuf::uint32 _has_bits_[1];
+  mutable int _cached_size_;
+  ::google::protobuf::int32 eresult_;
+  friend void  protobuf_AddDesc_gcsdk_5fgcmessages_2eproto();
+  friend void protobuf_AssignDesc_gcsdk_5fgcmessages_2eproto();
+  friend void protobuf_ShutdownFile_gcsdk_5fgcmessages_2eproto();
+
+  void InitAsDefaultInstance();
+  static CMsgGCToGCUniverseStartupResponse* default_instance_;
+};
+// -------------------------------------------------------------------
+
 class CGCToGCMsgMasterStartupComplete_GCInfo : public ::google::protobuf::Message {
  public:
   CGCToGCMsgMasterStartupComplete_GCInfo();
@@ -2526,19 +2694,39 @@ class CMsgGCRequestSubGCSessionInfoResponse : public ::google::protobuf::Message
   inline bool trusted() const;
   inline void set_trusted(bool value);
 
+  // optional uint32 port = 3;
+  inline bool has_port() const;
+  inline void clear_port();
+  static const int kPortFieldNumber = 3;
+  inline ::google::protobuf::uint32 port() const;
+  inline void set_port(::google::protobuf::uint32 value);
+
+  // optional bool success = 4;
+  inline bool has_success() const;
+  inline void clear_success();
+  static const int kSuccessFieldNumber = 4;
+  inline bool success() const;
+  inline void set_success(bool value);
+
   // @@protoc_insertion_point(class_scope:CMsgGCRequestSubGCSessionInfoResponse)
  private:
   inline void set_has_ip();
   inline void clear_has_ip();
   inline void set_has_trusted();
   inline void clear_has_trusted();
+  inline void set_has_port();
+  inline void clear_has_port();
+  inline void set_has_success();
+  inline void clear_has_success();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
   ::google::protobuf::uint32 _has_bits_[1];
   mutable int _cached_size_;
   ::google::protobuf::uint32 ip_;
+  ::google::protobuf::uint32 port_;
   bool trusted_;
+  bool success_;
   friend void  protobuf_AddDesc_gcsdk_5fgcmessages_2eproto();
   friend void protobuf_AssignDesc_gcsdk_5fgcmessages_2eproto();
   friend void protobuf_ShutdownFile_gcsdk_5fgcmessages_2eproto();
@@ -3048,6 +3236,13 @@ class CMsgClientWelcome : public ::google::protobuf::Message {
   inline ::std::string* release_items_game_url();
   inline void set_allocated_items_game_url(::std::string* items_game_url);
 
+  // optional uint32 gc_socache_file_version = 9;
+  inline bool has_gc_socache_file_version() const;
+  inline void clear_gc_socache_file_version();
+  static const int kGcSocacheFileVersionFieldNumber = 9;
+  inline ::google::protobuf::uint32 gc_socache_file_version() const;
+  inline void set_gc_socache_file_version(::google::protobuf::uint32 value);
+
   // @@protoc_insertion_point(class_scope:CMsgClientWelcome)
  private:
   inline void set_has_version();
@@ -3062,6 +3257,8 @@ class CMsgClientWelcome : public ::google::protobuf::Message {
   inline void clear_has_item_schema_crc();
   inline void set_has_items_game_url();
   inline void clear_has_items_game_url();
+  inline void set_has_gc_socache_file_version();
+  inline void clear_has_gc_socache_file_version();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
@@ -3075,6 +3272,7 @@ class CMsgClientWelcome : public ::google::protobuf::Message {
   ::CMsgClientWelcome_Location* location_;
   ::std::string* save_game_key_;
   ::std::string* items_game_url_;
+  ::google::protobuf::uint32 gc_socache_file_version_;
   friend void  protobuf_AddDesc_gcsdk_5fgcmessages_2eproto();
   friend void protobuf_AssignDesc_gcsdk_5fgcmessages_2eproto();
   friend void protobuf_ShutdownFile_gcsdk_5fgcmessages_2eproto();
@@ -3364,12 +3562,12 @@ class CMsgGCToGCSOCacheSubscribe : public ::google::protobuf::Message {
   inline ::google::protobuf::uint64 subscriber() const;
   inline void set_subscriber(::google::protobuf::uint64 value);
 
-  // optional fixed64 subscribe_to = 2;
-  inline bool has_subscribe_to() const;
-  inline void clear_subscribe_to();
-  static const int kSubscribeToFieldNumber = 2;
-  inline ::google::protobuf::uint64 subscribe_to() const;
-  inline void set_subscribe_to(::google::protobuf::uint64 value);
+  // optional fixed64 subscribe_to_id = 2;
+  inline bool has_subscribe_to_id() const;
+  inline void clear_subscribe_to_id();
+  static const int kSubscribeToIdFieldNumber = 2;
+  inline ::google::protobuf::uint64 subscribe_to_id() const;
+  inline void set_subscribe_to_id(::google::protobuf::uint64 value);
 
   // optional fixed64 sync_version = 3;
   inline bool has_sync_version() const;
@@ -3390,23 +3588,33 @@ class CMsgGCToGCSOCacheSubscribe : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedPtrField< ::CMsgGCToGCSOCacheSubscribe_CMsgHaveVersions >*
       mutable_have_versions();
 
+  // optional uint32 subscribe_to_type = 5;
+  inline bool has_subscribe_to_type() const;
+  inline void clear_subscribe_to_type();
+  static const int kSubscribeToTypeFieldNumber = 5;
+  inline ::google::protobuf::uint32 subscribe_to_type() const;
+  inline void set_subscribe_to_type(::google::protobuf::uint32 value);
+
   // @@protoc_insertion_point(class_scope:CMsgGCToGCSOCacheSubscribe)
  private:
   inline void set_has_subscriber();
   inline void clear_has_subscriber();
-  inline void set_has_subscribe_to();
-  inline void clear_has_subscribe_to();
+  inline void set_has_subscribe_to_id();
+  inline void clear_has_subscribe_to_id();
   inline void set_has_sync_version();
   inline void clear_has_sync_version();
+  inline void set_has_subscribe_to_type();
+  inline void clear_has_subscribe_to_type();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
   ::google::protobuf::uint32 _has_bits_[1];
   mutable int _cached_size_;
   ::google::protobuf::uint64 subscriber_;
-  ::google::protobuf::uint64 subscribe_to_;
+  ::google::protobuf::uint64 subscribe_to_id_;
   ::google::protobuf::uint64 sync_version_;
   ::google::protobuf::RepeatedPtrField< ::CMsgGCToGCSOCacheSubscribe_CMsgHaveVersions > have_versions_;
+  ::google::protobuf::uint32 subscribe_to_type_;
   friend void  protobuf_AddDesc_gcsdk_5fgcmessages_2eproto();
   friend void protobuf_AssignDesc_gcsdk_5fgcmessages_2eproto();
   friend void protobuf_ShutdownFile_gcsdk_5fgcmessages_2eproto();
@@ -3476,26 +3684,36 @@ class CMsgGCToGCSOCacheUnsubscribe : public ::google::protobuf::Message {
   inline ::google::protobuf::uint64 subscriber() const;
   inline void set_subscriber(::google::protobuf::uint64 value);
 
-  // optional fixed64 unsubscribe_from = 2;
-  inline bool has_unsubscribe_from() const;
-  inline void clear_unsubscribe_from();
-  static const int kUnsubscribeFromFieldNumber = 2;
-  inline ::google::protobuf::uint64 unsubscribe_from() const;
-  inline void set_unsubscribe_from(::google::protobuf::uint64 value);
+  // optional fixed64 unsubscribe_from_id = 2;
+  inline bool has_unsubscribe_from_id() const;
+  inline void clear_unsubscribe_from_id();
+  static const int kUnsubscribeFromIdFieldNumber = 2;
+  inline ::google::protobuf::uint64 unsubscribe_from_id() const;
+  inline void set_unsubscribe_from_id(::google::protobuf::uint64 value);
+
+  // optional uint32 unsubscribe_from_type = 3;
+  inline bool has_unsubscribe_from_type() const;
+  inline void clear_unsubscribe_from_type();
+  static const int kUnsubscribeFromTypeFieldNumber = 3;
+  inline ::google::protobuf::uint32 unsubscribe_from_type() const;
+  inline void set_unsubscribe_from_type(::google::protobuf::uint32 value);
 
   // @@protoc_insertion_point(class_scope:CMsgGCToGCSOCacheUnsubscribe)
  private:
   inline void set_has_subscriber();
   inline void clear_has_subscriber();
-  inline void set_has_unsubscribe_from();
-  inline void clear_has_unsubscribe_from();
+  inline void set_has_unsubscribe_from_id();
+  inline void clear_has_unsubscribe_from_id();
+  inline void set_has_unsubscribe_from_type();
+  inline void clear_has_unsubscribe_from_type();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
   ::google::protobuf::uint32 _has_bits_[1];
   mutable int _cached_size_;
   ::google::protobuf::uint64 subscriber_;
-  ::google::protobuf::uint64 unsubscribe_from_;
+  ::google::protobuf::uint64 unsubscribe_from_id_;
+  ::google::protobuf::uint32 unsubscribe_from_type_;
   friend void  protobuf_AddDesc_gcsdk_5fgcmessages_2eproto();
   friend void protobuf_AssignDesc_gcsdk_5fgcmessages_2eproto();
   friend void protobuf_ShutdownFile_gcsdk_5fgcmessages_2eproto();
@@ -3574,6 +3792,107 @@ class CMsgGCClientPing : public ::google::protobuf::Message {
 };
 // -------------------------------------------------------------------
 
+class CMsgGCToGCForwardAccountDetails : public ::google::protobuf::Message {
+ public:
+  CMsgGCToGCForwardAccountDetails();
+  virtual ~CMsgGCToGCForwardAccountDetails();
+
+  CMsgGCToGCForwardAccountDetails(const CMsgGCToGCForwardAccountDetails& from);
+
+  inline CMsgGCToGCForwardAccountDetails& operator=(const CMsgGCToGCForwardAccountDetails& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+    return _unknown_fields_;
+  }
+
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+    return &_unknown_fields_;
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const CMsgGCToGCForwardAccountDetails& default_instance();
+
+  void Swap(CMsgGCToGCForwardAccountDetails* other);
+
+  // implements Message ----------------------------------------------
+
+  CMsgGCToGCForwardAccountDetails* New() const;
+  void CopyFrom(const ::google::protobuf::Message& from);
+  void MergeFrom(const ::google::protobuf::Message& from);
+  void CopyFrom(const CMsgGCToGCForwardAccountDetails& from);
+  void MergeFrom(const CMsgGCToGCForwardAccountDetails& from);
+  void Clear();
+  bool IsInitialized() const;
+
+  int ByteSize() const;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input);
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  int GetCachedSize() const { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const;
+  public:
+  ::google::protobuf::Metadata GetMetadata() const;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // optional fixed64 steamid = 1;
+  inline bool has_steamid() const;
+  inline void clear_steamid();
+  static const int kSteamidFieldNumber = 1;
+  inline ::google::protobuf::uint64 steamid() const;
+  inline void set_steamid(::google::protobuf::uint64 value);
+
+  // optional .CGCSystemMsg_GetAccountDetails_Response account_details = 2;
+  inline bool has_account_details() const;
+  inline void clear_account_details();
+  static const int kAccountDetailsFieldNumber = 2;
+  inline const ::CGCSystemMsg_GetAccountDetails_Response& account_details() const;
+  inline ::CGCSystemMsg_GetAccountDetails_Response* mutable_account_details();
+  inline ::CGCSystemMsg_GetAccountDetails_Response* release_account_details();
+  inline void set_allocated_account_details(::CGCSystemMsg_GetAccountDetails_Response* account_details);
+
+  // optional uint32 age_seconds = 3;
+  inline bool has_age_seconds() const;
+  inline void clear_age_seconds();
+  static const int kAgeSecondsFieldNumber = 3;
+  inline ::google::protobuf::uint32 age_seconds() const;
+  inline void set_age_seconds(::google::protobuf::uint32 value);
+
+  // @@protoc_insertion_point(class_scope:CMsgGCToGCForwardAccountDetails)
+ private:
+  inline void set_has_steamid();
+  inline void clear_has_steamid();
+  inline void set_has_account_details();
+  inline void clear_has_account_details();
+  inline void set_has_age_seconds();
+  inline void clear_has_age_seconds();
+
+  ::google::protobuf::UnknownFieldSet _unknown_fields_;
+
+  ::google::protobuf::uint32 _has_bits_[1];
+  mutable int _cached_size_;
+  ::google::protobuf::uint64 steamid_;
+  ::CGCSystemMsg_GetAccountDetails_Response* account_details_;
+  ::google::protobuf::uint32 age_seconds_;
+  friend void  protobuf_AddDesc_gcsdk_5fgcmessages_2eproto();
+  friend void protobuf_AssignDesc_gcsdk_5fgcmessages_2eproto();
+  friend void protobuf_ShutdownFile_gcsdk_5fgcmessages_2eproto();
+
+  void InitAsDefaultInstance();
+  static CMsgGCToGCForwardAccountDetails* default_instance_;
+};
+// -------------------------------------------------------------------
+
 class CMsgGCToGCLoadSessionSOCache : public ::google::protobuf::Message {
  public:
   CMsgGCToGCLoadSessionSOCache();
@@ -3634,15 +3953,27 @@ class CMsgGCToGCLoadSessionSOCache : public ::google::protobuf::Message {
   inline ::google::protobuf::uint32 account_id() const;
   inline void set_account_id(::google::protobuf::uint32 value);
 
+  // optional .CMsgGCToGCForwardAccountDetails forward_account_details = 2;
+  inline bool has_forward_account_details() const;
+  inline void clear_forward_account_details();
+  static const int kForwardAccountDetailsFieldNumber = 2;
+  inline const ::CMsgGCToGCForwardAccountDetails& forward_account_details() const;
+  inline ::CMsgGCToGCForwardAccountDetails* mutable_forward_account_details();
+  inline ::CMsgGCToGCForwardAccountDetails* release_forward_account_details();
+  inline void set_allocated_forward_account_details(::CMsgGCToGCForwardAccountDetails* forward_account_details);
+
   // @@protoc_insertion_point(class_scope:CMsgGCToGCLoadSessionSOCache)
  private:
   inline void set_has_account_id();
   inline void clear_has_account_id();
+  inline void set_has_forward_account_details();
+  inline void clear_has_forward_account_details();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
   ::google::protobuf::uint32 _has_bits_[1];
   mutable int _cached_size_;
+  ::CMsgGCToGCForwardAccountDetails* forward_account_details_;
   ::google::protobuf::uint32 account_id_;
   friend void  protobuf_AddDesc_gcsdk_5fgcmessages_2eproto();
   friend void protobuf_AssignDesc_gcsdk_5fgcmessages_2eproto();
@@ -4784,6 +5115,611 @@ class CBroadcast_PostGameDataFrame_Request : public ::google::protobuf::Message 
 
   void InitAsDefaultInstance();
   static CBroadcast_PostGameDataFrame_Request* default_instance_;
+};
+// -------------------------------------------------------------------
+
+class CMsgSerializedSOCache_TypeCache : public ::google::protobuf::Message {
+ public:
+  CMsgSerializedSOCache_TypeCache();
+  virtual ~CMsgSerializedSOCache_TypeCache();
+
+  CMsgSerializedSOCache_TypeCache(const CMsgSerializedSOCache_TypeCache& from);
+
+  inline CMsgSerializedSOCache_TypeCache& operator=(const CMsgSerializedSOCache_TypeCache& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+    return _unknown_fields_;
+  }
+
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+    return &_unknown_fields_;
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const CMsgSerializedSOCache_TypeCache& default_instance();
+
+  void Swap(CMsgSerializedSOCache_TypeCache* other);
+
+  // implements Message ----------------------------------------------
+
+  CMsgSerializedSOCache_TypeCache* New() const;
+  void CopyFrom(const ::google::protobuf::Message& from);
+  void MergeFrom(const ::google::protobuf::Message& from);
+  void CopyFrom(const CMsgSerializedSOCache_TypeCache& from);
+  void MergeFrom(const CMsgSerializedSOCache_TypeCache& from);
+  void Clear();
+  bool IsInitialized() const;
+
+  int ByteSize() const;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input);
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  int GetCachedSize() const { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const;
+  public:
+  ::google::protobuf::Metadata GetMetadata() const;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // optional uint32 type = 1;
+  inline bool has_type() const;
+  inline void clear_type();
+  static const int kTypeFieldNumber = 1;
+  inline ::google::protobuf::uint32 type() const;
+  inline void set_type(::google::protobuf::uint32 value);
+
+  // repeated bytes objects = 2;
+  inline int objects_size() const;
+  inline void clear_objects();
+  static const int kObjectsFieldNumber = 2;
+  inline const ::std::string& objects(int index) const;
+  inline ::std::string* mutable_objects(int index);
+  inline void set_objects(int index, const ::std::string& value);
+  inline void set_objects(int index, const char* value);
+  inline void set_objects(int index, const void* value, size_t size);
+  inline ::std::string* add_objects();
+  inline void add_objects(const ::std::string& value);
+  inline void add_objects(const char* value);
+  inline void add_objects(const void* value, size_t size);
+  inline const ::google::protobuf::RepeatedPtrField< ::std::string>& objects() const;
+  inline ::google::protobuf::RepeatedPtrField< ::std::string>* mutable_objects();
+
+  // optional uint32 service_id = 3;
+  inline bool has_service_id() const;
+  inline void clear_service_id();
+  static const int kServiceIdFieldNumber = 3;
+  inline ::google::protobuf::uint32 service_id() const;
+  inline void set_service_id(::google::protobuf::uint32 value);
+
+  // @@protoc_insertion_point(class_scope:CMsgSerializedSOCache.TypeCache)
+ private:
+  inline void set_has_type();
+  inline void clear_has_type();
+  inline void set_has_service_id();
+  inline void clear_has_service_id();
+
+  ::google::protobuf::UnknownFieldSet _unknown_fields_;
+
+  ::google::protobuf::uint32 _has_bits_[1];
+  mutable int _cached_size_;
+  ::google::protobuf::RepeatedPtrField< ::std::string> objects_;
+  ::google::protobuf::uint32 type_;
+  ::google::protobuf::uint32 service_id_;
+  friend void  protobuf_AddDesc_gcsdk_5fgcmessages_2eproto();
+  friend void protobuf_AssignDesc_gcsdk_5fgcmessages_2eproto();
+  friend void protobuf_ShutdownFile_gcsdk_5fgcmessages_2eproto();
+
+  void InitAsDefaultInstance();
+  static CMsgSerializedSOCache_TypeCache* default_instance_;
+};
+// -------------------------------------------------------------------
+
+class CMsgSerializedSOCache_Cache_Version : public ::google::protobuf::Message {
+ public:
+  CMsgSerializedSOCache_Cache_Version();
+  virtual ~CMsgSerializedSOCache_Cache_Version();
+
+  CMsgSerializedSOCache_Cache_Version(const CMsgSerializedSOCache_Cache_Version& from);
+
+  inline CMsgSerializedSOCache_Cache_Version& operator=(const CMsgSerializedSOCache_Cache_Version& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+    return _unknown_fields_;
+  }
+
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+    return &_unknown_fields_;
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const CMsgSerializedSOCache_Cache_Version& default_instance();
+
+  void Swap(CMsgSerializedSOCache_Cache_Version* other);
+
+  // implements Message ----------------------------------------------
+
+  CMsgSerializedSOCache_Cache_Version* New() const;
+  void CopyFrom(const ::google::protobuf::Message& from);
+  void MergeFrom(const ::google::protobuf::Message& from);
+  void CopyFrom(const CMsgSerializedSOCache_Cache_Version& from);
+  void MergeFrom(const CMsgSerializedSOCache_Cache_Version& from);
+  void Clear();
+  bool IsInitialized() const;
+
+  int ByteSize() const;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input);
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  int GetCachedSize() const { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const;
+  public:
+  ::google::protobuf::Metadata GetMetadata() const;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // optional uint32 service = 1;
+  inline bool has_service() const;
+  inline void clear_service();
+  static const int kServiceFieldNumber = 1;
+  inline ::google::protobuf::uint32 service() const;
+  inline void set_service(::google::protobuf::uint32 value);
+
+  // optional uint64 version = 2;
+  inline bool has_version() const;
+  inline void clear_version();
+  static const int kVersionFieldNumber = 2;
+  inline ::google::protobuf::uint64 version() const;
+  inline void set_version(::google::protobuf::uint64 value);
+
+  // @@protoc_insertion_point(class_scope:CMsgSerializedSOCache.Cache.Version)
+ private:
+  inline void set_has_service();
+  inline void clear_has_service();
+  inline void set_has_version();
+  inline void clear_has_version();
+
+  ::google::protobuf::UnknownFieldSet _unknown_fields_;
+
+  ::google::protobuf::uint32 _has_bits_[1];
+  mutable int _cached_size_;
+  ::google::protobuf::uint64 version_;
+  ::google::protobuf::uint32 service_;
+  friend void  protobuf_AddDesc_gcsdk_5fgcmessages_2eproto();
+  friend void protobuf_AssignDesc_gcsdk_5fgcmessages_2eproto();
+  friend void protobuf_ShutdownFile_gcsdk_5fgcmessages_2eproto();
+
+  void InitAsDefaultInstance();
+  static CMsgSerializedSOCache_Cache_Version* default_instance_;
+};
+// -------------------------------------------------------------------
+
+class CMsgSerializedSOCache_Cache : public ::google::protobuf::Message {
+ public:
+  CMsgSerializedSOCache_Cache();
+  virtual ~CMsgSerializedSOCache_Cache();
+
+  CMsgSerializedSOCache_Cache(const CMsgSerializedSOCache_Cache& from);
+
+  inline CMsgSerializedSOCache_Cache& operator=(const CMsgSerializedSOCache_Cache& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+    return _unknown_fields_;
+  }
+
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+    return &_unknown_fields_;
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const CMsgSerializedSOCache_Cache& default_instance();
+
+  void Swap(CMsgSerializedSOCache_Cache* other);
+
+  // implements Message ----------------------------------------------
+
+  CMsgSerializedSOCache_Cache* New() const;
+  void CopyFrom(const ::google::protobuf::Message& from);
+  void MergeFrom(const ::google::protobuf::Message& from);
+  void CopyFrom(const CMsgSerializedSOCache_Cache& from);
+  void MergeFrom(const CMsgSerializedSOCache_Cache& from);
+  void Clear();
+  bool IsInitialized() const;
+
+  int ByteSize() const;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input);
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  int GetCachedSize() const { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const;
+  public:
+  ::google::protobuf::Metadata GetMetadata() const;
+
+  // nested types ----------------------------------------------------
+
+  typedef CMsgSerializedSOCache_Cache_Version Version;
+
+  // accessors -------------------------------------------------------
+
+  // optional uint32 type = 1;
+  inline bool has_type() const;
+  inline void clear_type();
+  static const int kTypeFieldNumber = 1;
+  inline ::google::protobuf::uint32 type() const;
+  inline void set_type(::google::protobuf::uint32 value);
+
+  // optional uint64 id = 2;
+  inline bool has_id() const;
+  inline void clear_id();
+  static const int kIdFieldNumber = 2;
+  inline ::google::protobuf::uint64 id() const;
+  inline void set_id(::google::protobuf::uint64 value);
+
+  // repeated .CMsgSerializedSOCache.Cache.Version versions = 3;
+  inline int versions_size() const;
+  inline void clear_versions();
+  static const int kVersionsFieldNumber = 3;
+  inline const ::CMsgSerializedSOCache_Cache_Version& versions(int index) const;
+  inline ::CMsgSerializedSOCache_Cache_Version* mutable_versions(int index);
+  inline ::CMsgSerializedSOCache_Cache_Version* add_versions();
+  inline const ::google::protobuf::RepeatedPtrField< ::CMsgSerializedSOCache_Cache_Version >&
+      versions() const;
+  inline ::google::protobuf::RepeatedPtrField< ::CMsgSerializedSOCache_Cache_Version >*
+      mutable_versions();
+
+  // repeated .CMsgSerializedSOCache.TypeCache type_caches = 4;
+  inline int type_caches_size() const;
+  inline void clear_type_caches();
+  static const int kTypeCachesFieldNumber = 4;
+  inline const ::CMsgSerializedSOCache_TypeCache& type_caches(int index) const;
+  inline ::CMsgSerializedSOCache_TypeCache* mutable_type_caches(int index);
+  inline ::CMsgSerializedSOCache_TypeCache* add_type_caches();
+  inline const ::google::protobuf::RepeatedPtrField< ::CMsgSerializedSOCache_TypeCache >&
+      type_caches() const;
+  inline ::google::protobuf::RepeatedPtrField< ::CMsgSerializedSOCache_TypeCache >*
+      mutable_type_caches();
+
+  // @@protoc_insertion_point(class_scope:CMsgSerializedSOCache.Cache)
+ private:
+  inline void set_has_type();
+  inline void clear_has_type();
+  inline void set_has_id();
+  inline void clear_has_id();
+
+  ::google::protobuf::UnknownFieldSet _unknown_fields_;
+
+  ::google::protobuf::uint32 _has_bits_[1];
+  mutable int _cached_size_;
+  ::google::protobuf::uint64 id_;
+  ::google::protobuf::RepeatedPtrField< ::CMsgSerializedSOCache_Cache_Version > versions_;
+  ::google::protobuf::RepeatedPtrField< ::CMsgSerializedSOCache_TypeCache > type_caches_;
+  ::google::protobuf::uint32 type_;
+  friend void  protobuf_AddDesc_gcsdk_5fgcmessages_2eproto();
+  friend void protobuf_AssignDesc_gcsdk_5fgcmessages_2eproto();
+  friend void protobuf_ShutdownFile_gcsdk_5fgcmessages_2eproto();
+
+  void InitAsDefaultInstance();
+  static CMsgSerializedSOCache_Cache* default_instance_;
+};
+// -------------------------------------------------------------------
+
+class CMsgSerializedSOCache : public ::google::protobuf::Message {
+ public:
+  CMsgSerializedSOCache();
+  virtual ~CMsgSerializedSOCache();
+
+  CMsgSerializedSOCache(const CMsgSerializedSOCache& from);
+
+  inline CMsgSerializedSOCache& operator=(const CMsgSerializedSOCache& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+    return _unknown_fields_;
+  }
+
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+    return &_unknown_fields_;
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const CMsgSerializedSOCache& default_instance();
+
+  void Swap(CMsgSerializedSOCache* other);
+
+  // implements Message ----------------------------------------------
+
+  CMsgSerializedSOCache* New() const;
+  void CopyFrom(const ::google::protobuf::Message& from);
+  void MergeFrom(const ::google::protobuf::Message& from);
+  void CopyFrom(const CMsgSerializedSOCache& from);
+  void MergeFrom(const CMsgSerializedSOCache& from);
+  void Clear();
+  bool IsInitialized() const;
+
+  int ByteSize() const;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input);
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  int GetCachedSize() const { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const;
+  public:
+  ::google::protobuf::Metadata GetMetadata() const;
+
+  // nested types ----------------------------------------------------
+
+  typedef CMsgSerializedSOCache_TypeCache TypeCache;
+  typedef CMsgSerializedSOCache_Cache Cache;
+
+  // accessors -------------------------------------------------------
+
+  // optional uint32 file_version = 1;
+  inline bool has_file_version() const;
+  inline void clear_file_version();
+  static const int kFileVersionFieldNumber = 1;
+  inline ::google::protobuf::uint32 file_version() const;
+  inline void set_file_version(::google::protobuf::uint32 value);
+
+  // repeated .CMsgSerializedSOCache.Cache caches = 2;
+  inline int caches_size() const;
+  inline void clear_caches();
+  static const int kCachesFieldNumber = 2;
+  inline const ::CMsgSerializedSOCache_Cache& caches(int index) const;
+  inline ::CMsgSerializedSOCache_Cache* mutable_caches(int index);
+  inline ::CMsgSerializedSOCache_Cache* add_caches();
+  inline const ::google::protobuf::RepeatedPtrField< ::CMsgSerializedSOCache_Cache >&
+      caches() const;
+  inline ::google::protobuf::RepeatedPtrField< ::CMsgSerializedSOCache_Cache >*
+      mutable_caches();
+
+  // optional uint32 gc_socache_file_version = 3;
+  inline bool has_gc_socache_file_version() const;
+  inline void clear_gc_socache_file_version();
+  static const int kGcSocacheFileVersionFieldNumber = 3;
+  inline ::google::protobuf::uint32 gc_socache_file_version() const;
+  inline void set_gc_socache_file_version(::google::protobuf::uint32 value);
+
+  // @@protoc_insertion_point(class_scope:CMsgSerializedSOCache)
+ private:
+  inline void set_has_file_version();
+  inline void clear_has_file_version();
+  inline void set_has_gc_socache_file_version();
+  inline void clear_has_gc_socache_file_version();
+
+  ::google::protobuf::UnknownFieldSet _unknown_fields_;
+
+  ::google::protobuf::uint32 _has_bits_[1];
+  mutable int _cached_size_;
+  ::google::protobuf::RepeatedPtrField< ::CMsgSerializedSOCache_Cache > caches_;
+  ::google::protobuf::uint32 file_version_;
+  ::google::protobuf::uint32 gc_socache_file_version_;
+  friend void  protobuf_AddDesc_gcsdk_5fgcmessages_2eproto();
+  friend void protobuf_AssignDesc_gcsdk_5fgcmessages_2eproto();
+  friend void protobuf_ShutdownFile_gcsdk_5fgcmessages_2eproto();
+
+  void InitAsDefaultInstance();
+  static CMsgSerializedSOCache* default_instance_;
+};
+// -------------------------------------------------------------------
+
+class CMsgGCToClientPollConvarRequest : public ::google::protobuf::Message {
+ public:
+  CMsgGCToClientPollConvarRequest();
+  virtual ~CMsgGCToClientPollConvarRequest();
+
+  CMsgGCToClientPollConvarRequest(const CMsgGCToClientPollConvarRequest& from);
+
+  inline CMsgGCToClientPollConvarRequest& operator=(const CMsgGCToClientPollConvarRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+    return _unknown_fields_;
+  }
+
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+    return &_unknown_fields_;
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const CMsgGCToClientPollConvarRequest& default_instance();
+
+  void Swap(CMsgGCToClientPollConvarRequest* other);
+
+  // implements Message ----------------------------------------------
+
+  CMsgGCToClientPollConvarRequest* New() const;
+  void CopyFrom(const ::google::protobuf::Message& from);
+  void MergeFrom(const ::google::protobuf::Message& from);
+  void CopyFrom(const CMsgGCToClientPollConvarRequest& from);
+  void MergeFrom(const CMsgGCToClientPollConvarRequest& from);
+  void Clear();
+  bool IsInitialized() const;
+
+  int ByteSize() const;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input);
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  int GetCachedSize() const { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const;
+  public:
+  ::google::protobuf::Metadata GetMetadata() const;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // optional string convar_name = 1;
+  inline bool has_convar_name() const;
+  inline void clear_convar_name();
+  static const int kConvarNameFieldNumber = 1;
+  inline const ::std::string& convar_name() const;
+  inline void set_convar_name(const ::std::string& value);
+  inline void set_convar_name(const char* value);
+  inline void set_convar_name(const char* value, size_t size);
+  inline ::std::string* mutable_convar_name();
+  inline ::std::string* release_convar_name();
+  inline void set_allocated_convar_name(::std::string* convar_name);
+
+  // optional uint32 poll_id = 2;
+  inline bool has_poll_id() const;
+  inline void clear_poll_id();
+  static const int kPollIdFieldNumber = 2;
+  inline ::google::protobuf::uint32 poll_id() const;
+  inline void set_poll_id(::google::protobuf::uint32 value);
+
+  // @@protoc_insertion_point(class_scope:CMsgGCToClientPollConvarRequest)
+ private:
+  inline void set_has_convar_name();
+  inline void clear_has_convar_name();
+  inline void set_has_poll_id();
+  inline void clear_has_poll_id();
+
+  ::google::protobuf::UnknownFieldSet _unknown_fields_;
+
+  ::google::protobuf::uint32 _has_bits_[1];
+  mutable int _cached_size_;
+  ::std::string* convar_name_;
+  ::google::protobuf::uint32 poll_id_;
+  friend void  protobuf_AddDesc_gcsdk_5fgcmessages_2eproto();
+  friend void protobuf_AssignDesc_gcsdk_5fgcmessages_2eproto();
+  friend void protobuf_ShutdownFile_gcsdk_5fgcmessages_2eproto();
+
+  void InitAsDefaultInstance();
+  static CMsgGCToClientPollConvarRequest* default_instance_;
+};
+// -------------------------------------------------------------------
+
+class CMsgGCToClientPollConvarResponse : public ::google::protobuf::Message {
+ public:
+  CMsgGCToClientPollConvarResponse();
+  virtual ~CMsgGCToClientPollConvarResponse();
+
+  CMsgGCToClientPollConvarResponse(const CMsgGCToClientPollConvarResponse& from);
+
+  inline CMsgGCToClientPollConvarResponse& operator=(const CMsgGCToClientPollConvarResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+    return _unknown_fields_;
+  }
+
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+    return &_unknown_fields_;
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const CMsgGCToClientPollConvarResponse& default_instance();
+
+  void Swap(CMsgGCToClientPollConvarResponse* other);
+
+  // implements Message ----------------------------------------------
+
+  CMsgGCToClientPollConvarResponse* New() const;
+  void CopyFrom(const ::google::protobuf::Message& from);
+  void MergeFrom(const ::google::protobuf::Message& from);
+  void CopyFrom(const CMsgGCToClientPollConvarResponse& from);
+  void MergeFrom(const CMsgGCToClientPollConvarResponse& from);
+  void Clear();
+  bool IsInitialized() const;
+
+  int ByteSize() const;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input);
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  int GetCachedSize() const { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const;
+  public:
+  ::google::protobuf::Metadata GetMetadata() const;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // optional uint32 poll_id = 1;
+  inline bool has_poll_id() const;
+  inline void clear_poll_id();
+  static const int kPollIdFieldNumber = 1;
+  inline ::google::protobuf::uint32 poll_id() const;
+  inline void set_poll_id(::google::protobuf::uint32 value);
+
+  // optional string convar_value = 2;
+  inline bool has_convar_value() const;
+  inline void clear_convar_value();
+  static const int kConvarValueFieldNumber = 2;
+  inline const ::std::string& convar_value() const;
+  inline void set_convar_value(const ::std::string& value);
+  inline void set_convar_value(const char* value);
+  inline void set_convar_value(const char* value, size_t size);
+  inline ::std::string* mutable_convar_value();
+  inline ::std::string* release_convar_value();
+  inline void set_allocated_convar_value(::std::string* convar_value);
+
+  // @@protoc_insertion_point(class_scope:CMsgGCToClientPollConvarResponse)
+ private:
+  inline void set_has_poll_id();
+  inline void clear_has_poll_id();
+  inline void set_has_convar_value();
+  inline void clear_has_convar_value();
+
+  ::google::protobuf::UnknownFieldSet _unknown_fields_;
+
+  ::google::protobuf::uint32 _has_bits_[1];
+  mutable int _cached_size_;
+  ::std::string* convar_value_;
+  ::google::protobuf::uint32 poll_id_;
+  friend void  protobuf_AddDesc_gcsdk_5fgcmessages_2eproto();
+  friend void protobuf_AssignDesc_gcsdk_5fgcmessages_2eproto();
+  friend void protobuf_ShutdownFile_gcsdk_5fgcmessages_2eproto();
+
+  void InitAsDefaultInstance();
+  static CMsgGCToClientPollConvarResponse* default_instance_;
 };
 // ===================================================================
 
@@ -6499,6 +7435,62 @@ inline void CGCToGCMsgMasterAck_Response::set_eresult(::google::protobuf::int32 
 
 // -------------------------------------------------------------------
 
+// CMsgGCToGCUniverseStartup
+
+// optional bool is_initial_startup = 1;
+inline bool CMsgGCToGCUniverseStartup::has_is_initial_startup() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+inline void CMsgGCToGCUniverseStartup::set_has_is_initial_startup() {
+  _has_bits_[0] |= 0x00000001u;
+}
+inline void CMsgGCToGCUniverseStartup::clear_has_is_initial_startup() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+inline void CMsgGCToGCUniverseStartup::clear_is_initial_startup() {
+  is_initial_startup_ = false;
+  clear_has_is_initial_startup();
+}
+inline bool CMsgGCToGCUniverseStartup::is_initial_startup() const {
+  // @@protoc_insertion_point(field_get:CMsgGCToGCUniverseStartup.is_initial_startup)
+  return is_initial_startup_;
+}
+inline void CMsgGCToGCUniverseStartup::set_is_initial_startup(bool value) {
+  set_has_is_initial_startup();
+  is_initial_startup_ = value;
+  // @@protoc_insertion_point(field_set:CMsgGCToGCUniverseStartup.is_initial_startup)
+}
+
+// -------------------------------------------------------------------
+
+// CMsgGCToGCUniverseStartupResponse
+
+// optional int32 eresult = 1;
+inline bool CMsgGCToGCUniverseStartupResponse::has_eresult() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+inline void CMsgGCToGCUniverseStartupResponse::set_has_eresult() {
+  _has_bits_[0] |= 0x00000001u;
+}
+inline void CMsgGCToGCUniverseStartupResponse::clear_has_eresult() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+inline void CMsgGCToGCUniverseStartupResponse::clear_eresult() {
+  eresult_ = 0;
+  clear_has_eresult();
+}
+inline ::google::protobuf::int32 CMsgGCToGCUniverseStartupResponse::eresult() const {
+  // @@protoc_insertion_point(field_get:CMsgGCToGCUniverseStartupResponse.eresult)
+  return eresult_;
+}
+inline void CMsgGCToGCUniverseStartupResponse::set_eresult(::google::protobuf::int32 value) {
+  set_has_eresult();
+  eresult_ = value;
+  // @@protoc_insertion_point(field_set:CMsgGCToGCUniverseStartupResponse.eresult)
+}
+
+// -------------------------------------------------------------------
+
 // CGCToGCMsgMasterStartupComplete_GCInfo
 
 // optional uint32 dir_index = 1;
@@ -7055,6 +8047,54 @@ inline void CMsgGCRequestSubGCSessionInfoResponse::set_trusted(bool value) {
   set_has_trusted();
   trusted_ = value;
   // @@protoc_insertion_point(field_set:CMsgGCRequestSubGCSessionInfoResponse.trusted)
+}
+
+// optional uint32 port = 3;
+inline bool CMsgGCRequestSubGCSessionInfoResponse::has_port() const {
+  return (_has_bits_[0] & 0x00000004u) != 0;
+}
+inline void CMsgGCRequestSubGCSessionInfoResponse::set_has_port() {
+  _has_bits_[0] |= 0x00000004u;
+}
+inline void CMsgGCRequestSubGCSessionInfoResponse::clear_has_port() {
+  _has_bits_[0] &= ~0x00000004u;
+}
+inline void CMsgGCRequestSubGCSessionInfoResponse::clear_port() {
+  port_ = 0u;
+  clear_has_port();
+}
+inline ::google::protobuf::uint32 CMsgGCRequestSubGCSessionInfoResponse::port() const {
+  // @@protoc_insertion_point(field_get:CMsgGCRequestSubGCSessionInfoResponse.port)
+  return port_;
+}
+inline void CMsgGCRequestSubGCSessionInfoResponse::set_port(::google::protobuf::uint32 value) {
+  set_has_port();
+  port_ = value;
+  // @@protoc_insertion_point(field_set:CMsgGCRequestSubGCSessionInfoResponse.port)
+}
+
+// optional bool success = 4;
+inline bool CMsgGCRequestSubGCSessionInfoResponse::has_success() const {
+  return (_has_bits_[0] & 0x00000008u) != 0;
+}
+inline void CMsgGCRequestSubGCSessionInfoResponse::set_has_success() {
+  _has_bits_[0] |= 0x00000008u;
+}
+inline void CMsgGCRequestSubGCSessionInfoResponse::clear_has_success() {
+  _has_bits_[0] &= ~0x00000008u;
+}
+inline void CMsgGCRequestSubGCSessionInfoResponse::clear_success() {
+  success_ = false;
+  clear_has_success();
+}
+inline bool CMsgGCRequestSubGCSessionInfoResponse::success() const {
+  // @@protoc_insertion_point(field_get:CMsgGCRequestSubGCSessionInfoResponse.success)
+  return success_;
+}
+inline void CMsgGCRequestSubGCSessionInfoResponse::set_success(bool value) {
+  set_has_success();
+  success_ = value;
+  // @@protoc_insertion_point(field_set:CMsgGCRequestSubGCSessionInfoResponse.success)
 }
 
 // -------------------------------------------------------------------
@@ -7915,6 +8955,30 @@ inline void CMsgClientWelcome::set_allocated_items_game_url(::std::string* items
   // @@protoc_insertion_point(field_set_allocated:CMsgClientWelcome.items_game_url)
 }
 
+// optional uint32 gc_socache_file_version = 9;
+inline bool CMsgClientWelcome::has_gc_socache_file_version() const {
+  return (_has_bits_[0] & 0x00000100u) != 0;
+}
+inline void CMsgClientWelcome::set_has_gc_socache_file_version() {
+  _has_bits_[0] |= 0x00000100u;
+}
+inline void CMsgClientWelcome::clear_has_gc_socache_file_version() {
+  _has_bits_[0] &= ~0x00000100u;
+}
+inline void CMsgClientWelcome::clear_gc_socache_file_version() {
+  gc_socache_file_version_ = 0u;
+  clear_has_gc_socache_file_version();
+}
+inline ::google::protobuf::uint32 CMsgClientWelcome::gc_socache_file_version() const {
+  // @@protoc_insertion_point(field_get:CMsgClientWelcome.gc_socache_file_version)
+  return gc_socache_file_version_;
+}
+inline void CMsgClientWelcome::set_gc_socache_file_version(::google::protobuf::uint32 value) {
+  set_has_gc_socache_file_version();
+  gc_socache_file_version_ = value;
+  // @@protoc_insertion_point(field_set:CMsgClientWelcome.gc_socache_file_version)
+}
+
 // -------------------------------------------------------------------
 
 // CMsgConnectionStatus
@@ -8144,28 +9208,28 @@ inline void CMsgGCToGCSOCacheSubscribe::set_subscriber(::google::protobuf::uint6
   // @@protoc_insertion_point(field_set:CMsgGCToGCSOCacheSubscribe.subscriber)
 }
 
-// optional fixed64 subscribe_to = 2;
-inline bool CMsgGCToGCSOCacheSubscribe::has_subscribe_to() const {
+// optional fixed64 subscribe_to_id = 2;
+inline bool CMsgGCToGCSOCacheSubscribe::has_subscribe_to_id() const {
   return (_has_bits_[0] & 0x00000002u) != 0;
 }
-inline void CMsgGCToGCSOCacheSubscribe::set_has_subscribe_to() {
+inline void CMsgGCToGCSOCacheSubscribe::set_has_subscribe_to_id() {
   _has_bits_[0] |= 0x00000002u;
 }
-inline void CMsgGCToGCSOCacheSubscribe::clear_has_subscribe_to() {
+inline void CMsgGCToGCSOCacheSubscribe::clear_has_subscribe_to_id() {
   _has_bits_[0] &= ~0x00000002u;
 }
-inline void CMsgGCToGCSOCacheSubscribe::clear_subscribe_to() {
-  subscribe_to_ = GOOGLE_ULONGLONG(0);
-  clear_has_subscribe_to();
+inline void CMsgGCToGCSOCacheSubscribe::clear_subscribe_to_id() {
+  subscribe_to_id_ = GOOGLE_ULONGLONG(0);
+  clear_has_subscribe_to_id();
 }
-inline ::google::protobuf::uint64 CMsgGCToGCSOCacheSubscribe::subscribe_to() const {
-  // @@protoc_insertion_point(field_get:CMsgGCToGCSOCacheSubscribe.subscribe_to)
-  return subscribe_to_;
+inline ::google::protobuf::uint64 CMsgGCToGCSOCacheSubscribe::subscribe_to_id() const {
+  // @@protoc_insertion_point(field_get:CMsgGCToGCSOCacheSubscribe.subscribe_to_id)
+  return subscribe_to_id_;
 }
-inline void CMsgGCToGCSOCacheSubscribe::set_subscribe_to(::google::protobuf::uint64 value) {
-  set_has_subscribe_to();
-  subscribe_to_ = value;
-  // @@protoc_insertion_point(field_set:CMsgGCToGCSOCacheSubscribe.subscribe_to)
+inline void CMsgGCToGCSOCacheSubscribe::set_subscribe_to_id(::google::protobuf::uint64 value) {
+  set_has_subscribe_to_id();
+  subscribe_to_id_ = value;
+  // @@protoc_insertion_point(field_set:CMsgGCToGCSOCacheSubscribe.subscribe_to_id)
 }
 
 // optional fixed64 sync_version = 3;
@@ -8222,6 +9286,30 @@ CMsgGCToGCSOCacheSubscribe::mutable_have_versions() {
   return &have_versions_;
 }
 
+// optional uint32 subscribe_to_type = 5;
+inline bool CMsgGCToGCSOCacheSubscribe::has_subscribe_to_type() const {
+  return (_has_bits_[0] & 0x00000010u) != 0;
+}
+inline void CMsgGCToGCSOCacheSubscribe::set_has_subscribe_to_type() {
+  _has_bits_[0] |= 0x00000010u;
+}
+inline void CMsgGCToGCSOCacheSubscribe::clear_has_subscribe_to_type() {
+  _has_bits_[0] &= ~0x00000010u;
+}
+inline void CMsgGCToGCSOCacheSubscribe::clear_subscribe_to_type() {
+  subscribe_to_type_ = 0u;
+  clear_has_subscribe_to_type();
+}
+inline ::google::protobuf::uint32 CMsgGCToGCSOCacheSubscribe::subscribe_to_type() const {
+  // @@protoc_insertion_point(field_get:CMsgGCToGCSOCacheSubscribe.subscribe_to_type)
+  return subscribe_to_type_;
+}
+inline void CMsgGCToGCSOCacheSubscribe::set_subscribe_to_type(::google::protobuf::uint32 value) {
+  set_has_subscribe_to_type();
+  subscribe_to_type_ = value;
+  // @@protoc_insertion_point(field_set:CMsgGCToGCSOCacheSubscribe.subscribe_to_type)
+}
+
 // -------------------------------------------------------------------
 
 // CMsgGCToGCSOCacheUnsubscribe
@@ -8250,33 +9338,150 @@ inline void CMsgGCToGCSOCacheUnsubscribe::set_subscriber(::google::protobuf::uin
   // @@protoc_insertion_point(field_set:CMsgGCToGCSOCacheUnsubscribe.subscriber)
 }
 
-// optional fixed64 unsubscribe_from = 2;
-inline bool CMsgGCToGCSOCacheUnsubscribe::has_unsubscribe_from() const {
+// optional fixed64 unsubscribe_from_id = 2;
+inline bool CMsgGCToGCSOCacheUnsubscribe::has_unsubscribe_from_id() const {
   return (_has_bits_[0] & 0x00000002u) != 0;
 }
-inline void CMsgGCToGCSOCacheUnsubscribe::set_has_unsubscribe_from() {
+inline void CMsgGCToGCSOCacheUnsubscribe::set_has_unsubscribe_from_id() {
   _has_bits_[0] |= 0x00000002u;
 }
-inline void CMsgGCToGCSOCacheUnsubscribe::clear_has_unsubscribe_from() {
+inline void CMsgGCToGCSOCacheUnsubscribe::clear_has_unsubscribe_from_id() {
   _has_bits_[0] &= ~0x00000002u;
 }
-inline void CMsgGCToGCSOCacheUnsubscribe::clear_unsubscribe_from() {
-  unsubscribe_from_ = GOOGLE_ULONGLONG(0);
-  clear_has_unsubscribe_from();
+inline void CMsgGCToGCSOCacheUnsubscribe::clear_unsubscribe_from_id() {
+  unsubscribe_from_id_ = GOOGLE_ULONGLONG(0);
+  clear_has_unsubscribe_from_id();
 }
-inline ::google::protobuf::uint64 CMsgGCToGCSOCacheUnsubscribe::unsubscribe_from() const {
-  // @@protoc_insertion_point(field_get:CMsgGCToGCSOCacheUnsubscribe.unsubscribe_from)
-  return unsubscribe_from_;
+inline ::google::protobuf::uint64 CMsgGCToGCSOCacheUnsubscribe::unsubscribe_from_id() const {
+  // @@protoc_insertion_point(field_get:CMsgGCToGCSOCacheUnsubscribe.unsubscribe_from_id)
+  return unsubscribe_from_id_;
 }
-inline void CMsgGCToGCSOCacheUnsubscribe::set_unsubscribe_from(::google::protobuf::uint64 value) {
-  set_has_unsubscribe_from();
-  unsubscribe_from_ = value;
-  // @@protoc_insertion_point(field_set:CMsgGCToGCSOCacheUnsubscribe.unsubscribe_from)
+inline void CMsgGCToGCSOCacheUnsubscribe::set_unsubscribe_from_id(::google::protobuf::uint64 value) {
+  set_has_unsubscribe_from_id();
+  unsubscribe_from_id_ = value;
+  // @@protoc_insertion_point(field_set:CMsgGCToGCSOCacheUnsubscribe.unsubscribe_from_id)
+}
+
+// optional uint32 unsubscribe_from_type = 3;
+inline bool CMsgGCToGCSOCacheUnsubscribe::has_unsubscribe_from_type() const {
+  return (_has_bits_[0] & 0x00000004u) != 0;
+}
+inline void CMsgGCToGCSOCacheUnsubscribe::set_has_unsubscribe_from_type() {
+  _has_bits_[0] |= 0x00000004u;
+}
+inline void CMsgGCToGCSOCacheUnsubscribe::clear_has_unsubscribe_from_type() {
+  _has_bits_[0] &= ~0x00000004u;
+}
+inline void CMsgGCToGCSOCacheUnsubscribe::clear_unsubscribe_from_type() {
+  unsubscribe_from_type_ = 0u;
+  clear_has_unsubscribe_from_type();
+}
+inline ::google::protobuf::uint32 CMsgGCToGCSOCacheUnsubscribe::unsubscribe_from_type() const {
+  // @@protoc_insertion_point(field_get:CMsgGCToGCSOCacheUnsubscribe.unsubscribe_from_type)
+  return unsubscribe_from_type_;
+}
+inline void CMsgGCToGCSOCacheUnsubscribe::set_unsubscribe_from_type(::google::protobuf::uint32 value) {
+  set_has_unsubscribe_from_type();
+  unsubscribe_from_type_ = value;
+  // @@protoc_insertion_point(field_set:CMsgGCToGCSOCacheUnsubscribe.unsubscribe_from_type)
 }
 
 // -------------------------------------------------------------------
 
 // CMsgGCClientPing
+
+// -------------------------------------------------------------------
+
+// CMsgGCToGCForwardAccountDetails
+
+// optional fixed64 steamid = 1;
+inline bool CMsgGCToGCForwardAccountDetails::has_steamid() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+inline void CMsgGCToGCForwardAccountDetails::set_has_steamid() {
+  _has_bits_[0] |= 0x00000001u;
+}
+inline void CMsgGCToGCForwardAccountDetails::clear_has_steamid() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+inline void CMsgGCToGCForwardAccountDetails::clear_steamid() {
+  steamid_ = GOOGLE_ULONGLONG(0);
+  clear_has_steamid();
+}
+inline ::google::protobuf::uint64 CMsgGCToGCForwardAccountDetails::steamid() const {
+  // @@protoc_insertion_point(field_get:CMsgGCToGCForwardAccountDetails.steamid)
+  return steamid_;
+}
+inline void CMsgGCToGCForwardAccountDetails::set_steamid(::google::protobuf::uint64 value) {
+  set_has_steamid();
+  steamid_ = value;
+  // @@protoc_insertion_point(field_set:CMsgGCToGCForwardAccountDetails.steamid)
+}
+
+// optional .CGCSystemMsg_GetAccountDetails_Response account_details = 2;
+inline bool CMsgGCToGCForwardAccountDetails::has_account_details() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+inline void CMsgGCToGCForwardAccountDetails::set_has_account_details() {
+  _has_bits_[0] |= 0x00000002u;
+}
+inline void CMsgGCToGCForwardAccountDetails::clear_has_account_details() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+inline void CMsgGCToGCForwardAccountDetails::clear_account_details() {
+  if (account_details_ != NULL) account_details_->::CGCSystemMsg_GetAccountDetails_Response::Clear();
+  clear_has_account_details();
+}
+inline const ::CGCSystemMsg_GetAccountDetails_Response& CMsgGCToGCForwardAccountDetails::account_details() const {
+  // @@protoc_insertion_point(field_get:CMsgGCToGCForwardAccountDetails.account_details)
+  return account_details_ != NULL ? *account_details_ : *default_instance_->account_details_;
+}
+inline ::CGCSystemMsg_GetAccountDetails_Response* CMsgGCToGCForwardAccountDetails::mutable_account_details() {
+  set_has_account_details();
+  if (account_details_ == NULL) account_details_ = new ::CGCSystemMsg_GetAccountDetails_Response;
+  // @@protoc_insertion_point(field_mutable:CMsgGCToGCForwardAccountDetails.account_details)
+  return account_details_;
+}
+inline ::CGCSystemMsg_GetAccountDetails_Response* CMsgGCToGCForwardAccountDetails::release_account_details() {
+  clear_has_account_details();
+  ::CGCSystemMsg_GetAccountDetails_Response* temp = account_details_;
+  account_details_ = NULL;
+  return temp;
+}
+inline void CMsgGCToGCForwardAccountDetails::set_allocated_account_details(::CGCSystemMsg_GetAccountDetails_Response* account_details) {
+  delete account_details_;
+  account_details_ = account_details;
+  if (account_details) {
+    set_has_account_details();
+  } else {
+    clear_has_account_details();
+  }
+  // @@protoc_insertion_point(field_set_allocated:CMsgGCToGCForwardAccountDetails.account_details)
+}
+
+// optional uint32 age_seconds = 3;
+inline bool CMsgGCToGCForwardAccountDetails::has_age_seconds() const {
+  return (_has_bits_[0] & 0x00000004u) != 0;
+}
+inline void CMsgGCToGCForwardAccountDetails::set_has_age_seconds() {
+  _has_bits_[0] |= 0x00000004u;
+}
+inline void CMsgGCToGCForwardAccountDetails::clear_has_age_seconds() {
+  _has_bits_[0] &= ~0x00000004u;
+}
+inline void CMsgGCToGCForwardAccountDetails::clear_age_seconds() {
+  age_seconds_ = 0u;
+  clear_has_age_seconds();
+}
+inline ::google::protobuf::uint32 CMsgGCToGCForwardAccountDetails::age_seconds() const {
+  // @@protoc_insertion_point(field_get:CMsgGCToGCForwardAccountDetails.age_seconds)
+  return age_seconds_;
+}
+inline void CMsgGCToGCForwardAccountDetails::set_age_seconds(::google::protobuf::uint32 value) {
+  set_has_age_seconds();
+  age_seconds_ = value;
+  // @@protoc_insertion_point(field_set:CMsgGCToGCForwardAccountDetails.age_seconds)
+}
 
 // -------------------------------------------------------------------
 
@@ -8304,6 +9509,47 @@ inline void CMsgGCToGCLoadSessionSOCache::set_account_id(::google::protobuf::uin
   set_has_account_id();
   account_id_ = value;
   // @@protoc_insertion_point(field_set:CMsgGCToGCLoadSessionSOCache.account_id)
+}
+
+// optional .CMsgGCToGCForwardAccountDetails forward_account_details = 2;
+inline bool CMsgGCToGCLoadSessionSOCache::has_forward_account_details() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+inline void CMsgGCToGCLoadSessionSOCache::set_has_forward_account_details() {
+  _has_bits_[0] |= 0x00000002u;
+}
+inline void CMsgGCToGCLoadSessionSOCache::clear_has_forward_account_details() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+inline void CMsgGCToGCLoadSessionSOCache::clear_forward_account_details() {
+  if (forward_account_details_ != NULL) forward_account_details_->::CMsgGCToGCForwardAccountDetails::Clear();
+  clear_has_forward_account_details();
+}
+inline const ::CMsgGCToGCForwardAccountDetails& CMsgGCToGCLoadSessionSOCache::forward_account_details() const {
+  // @@protoc_insertion_point(field_get:CMsgGCToGCLoadSessionSOCache.forward_account_details)
+  return forward_account_details_ != NULL ? *forward_account_details_ : *default_instance_->forward_account_details_;
+}
+inline ::CMsgGCToGCForwardAccountDetails* CMsgGCToGCLoadSessionSOCache::mutable_forward_account_details() {
+  set_has_forward_account_details();
+  if (forward_account_details_ == NULL) forward_account_details_ = new ::CMsgGCToGCForwardAccountDetails;
+  // @@protoc_insertion_point(field_mutable:CMsgGCToGCLoadSessionSOCache.forward_account_details)
+  return forward_account_details_;
+}
+inline ::CMsgGCToGCForwardAccountDetails* CMsgGCToGCLoadSessionSOCache::release_forward_account_details() {
+  clear_has_forward_account_details();
+  ::CMsgGCToGCForwardAccountDetails* temp = forward_account_details_;
+  forward_account_details_ = NULL;
+  return temp;
+}
+inline void CMsgGCToGCLoadSessionSOCache::set_allocated_forward_account_details(::CMsgGCToGCForwardAccountDetails* forward_account_details) {
+  delete forward_account_details_;
+  forward_account_details_ = forward_account_details;
+  if (forward_account_details) {
+    set_has_forward_account_details();
+  } else {
+    clear_has_forward_account_details();
+  }
+  // @@protoc_insertion_point(field_set_allocated:CMsgGCToGCLoadSessionSOCache.forward_account_details)
 }
 
 // -------------------------------------------------------------------
@@ -9266,6 +10512,566 @@ inline void CBroadcast_PostGameDataFrame_Request::set_allocated_frame_data(::std
     frame_data_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   }
   // @@protoc_insertion_point(field_set_allocated:CBroadcast_PostGameDataFrame_Request.frame_data)
+}
+
+// -------------------------------------------------------------------
+
+// CMsgSerializedSOCache_TypeCache
+
+// optional uint32 type = 1;
+inline bool CMsgSerializedSOCache_TypeCache::has_type() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+inline void CMsgSerializedSOCache_TypeCache::set_has_type() {
+  _has_bits_[0] |= 0x00000001u;
+}
+inline void CMsgSerializedSOCache_TypeCache::clear_has_type() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+inline void CMsgSerializedSOCache_TypeCache::clear_type() {
+  type_ = 0u;
+  clear_has_type();
+}
+inline ::google::protobuf::uint32 CMsgSerializedSOCache_TypeCache::type() const {
+  // @@protoc_insertion_point(field_get:CMsgSerializedSOCache.TypeCache.type)
+  return type_;
+}
+inline void CMsgSerializedSOCache_TypeCache::set_type(::google::protobuf::uint32 value) {
+  set_has_type();
+  type_ = value;
+  // @@protoc_insertion_point(field_set:CMsgSerializedSOCache.TypeCache.type)
+}
+
+// repeated bytes objects = 2;
+inline int CMsgSerializedSOCache_TypeCache::objects_size() const {
+  return objects_.size();
+}
+inline void CMsgSerializedSOCache_TypeCache::clear_objects() {
+  objects_.Clear();
+}
+inline const ::std::string& CMsgSerializedSOCache_TypeCache::objects(int index) const {
+  // @@protoc_insertion_point(field_get:CMsgSerializedSOCache.TypeCache.objects)
+  return objects_.Get(index);
+}
+inline ::std::string* CMsgSerializedSOCache_TypeCache::mutable_objects(int index) {
+  // @@protoc_insertion_point(field_mutable:CMsgSerializedSOCache.TypeCache.objects)
+  return objects_.Mutable(index);
+}
+inline void CMsgSerializedSOCache_TypeCache::set_objects(int index, const ::std::string& value) {
+  // @@protoc_insertion_point(field_set:CMsgSerializedSOCache.TypeCache.objects)
+  objects_.Mutable(index)->assign(value);
+}
+inline void CMsgSerializedSOCache_TypeCache::set_objects(int index, const char* value) {
+  objects_.Mutable(index)->assign(value);
+  // @@protoc_insertion_point(field_set_char:CMsgSerializedSOCache.TypeCache.objects)
+}
+inline void CMsgSerializedSOCache_TypeCache::set_objects(int index, const void* value, size_t size) {
+  objects_.Mutable(index)->assign(
+    reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:CMsgSerializedSOCache.TypeCache.objects)
+}
+inline ::std::string* CMsgSerializedSOCache_TypeCache::add_objects() {
+  return objects_.Add();
+}
+inline void CMsgSerializedSOCache_TypeCache::add_objects(const ::std::string& value) {
+  objects_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add:CMsgSerializedSOCache.TypeCache.objects)
+}
+inline void CMsgSerializedSOCache_TypeCache::add_objects(const char* value) {
+  objects_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add_char:CMsgSerializedSOCache.TypeCache.objects)
+}
+inline void CMsgSerializedSOCache_TypeCache::add_objects(const void* value, size_t size) {
+  objects_.Add()->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_add_pointer:CMsgSerializedSOCache.TypeCache.objects)
+}
+inline const ::google::protobuf::RepeatedPtrField< ::std::string>&
+CMsgSerializedSOCache_TypeCache::objects() const {
+  // @@protoc_insertion_point(field_list:CMsgSerializedSOCache.TypeCache.objects)
+  return objects_;
+}
+inline ::google::protobuf::RepeatedPtrField< ::std::string>*
+CMsgSerializedSOCache_TypeCache::mutable_objects() {
+  // @@protoc_insertion_point(field_mutable_list:CMsgSerializedSOCache.TypeCache.objects)
+  return &objects_;
+}
+
+// optional uint32 service_id = 3;
+inline bool CMsgSerializedSOCache_TypeCache::has_service_id() const {
+  return (_has_bits_[0] & 0x00000004u) != 0;
+}
+inline void CMsgSerializedSOCache_TypeCache::set_has_service_id() {
+  _has_bits_[0] |= 0x00000004u;
+}
+inline void CMsgSerializedSOCache_TypeCache::clear_has_service_id() {
+  _has_bits_[0] &= ~0x00000004u;
+}
+inline void CMsgSerializedSOCache_TypeCache::clear_service_id() {
+  service_id_ = 0u;
+  clear_has_service_id();
+}
+inline ::google::protobuf::uint32 CMsgSerializedSOCache_TypeCache::service_id() const {
+  // @@protoc_insertion_point(field_get:CMsgSerializedSOCache.TypeCache.service_id)
+  return service_id_;
+}
+inline void CMsgSerializedSOCache_TypeCache::set_service_id(::google::protobuf::uint32 value) {
+  set_has_service_id();
+  service_id_ = value;
+  // @@protoc_insertion_point(field_set:CMsgSerializedSOCache.TypeCache.service_id)
+}
+
+// -------------------------------------------------------------------
+
+// CMsgSerializedSOCache_Cache_Version
+
+// optional uint32 service = 1;
+inline bool CMsgSerializedSOCache_Cache_Version::has_service() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+inline void CMsgSerializedSOCache_Cache_Version::set_has_service() {
+  _has_bits_[0] |= 0x00000001u;
+}
+inline void CMsgSerializedSOCache_Cache_Version::clear_has_service() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+inline void CMsgSerializedSOCache_Cache_Version::clear_service() {
+  service_ = 0u;
+  clear_has_service();
+}
+inline ::google::protobuf::uint32 CMsgSerializedSOCache_Cache_Version::service() const {
+  // @@protoc_insertion_point(field_get:CMsgSerializedSOCache.Cache.Version.service)
+  return service_;
+}
+inline void CMsgSerializedSOCache_Cache_Version::set_service(::google::protobuf::uint32 value) {
+  set_has_service();
+  service_ = value;
+  // @@protoc_insertion_point(field_set:CMsgSerializedSOCache.Cache.Version.service)
+}
+
+// optional uint64 version = 2;
+inline bool CMsgSerializedSOCache_Cache_Version::has_version() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+inline void CMsgSerializedSOCache_Cache_Version::set_has_version() {
+  _has_bits_[0] |= 0x00000002u;
+}
+inline void CMsgSerializedSOCache_Cache_Version::clear_has_version() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+inline void CMsgSerializedSOCache_Cache_Version::clear_version() {
+  version_ = GOOGLE_ULONGLONG(0);
+  clear_has_version();
+}
+inline ::google::protobuf::uint64 CMsgSerializedSOCache_Cache_Version::version() const {
+  // @@protoc_insertion_point(field_get:CMsgSerializedSOCache.Cache.Version.version)
+  return version_;
+}
+inline void CMsgSerializedSOCache_Cache_Version::set_version(::google::protobuf::uint64 value) {
+  set_has_version();
+  version_ = value;
+  // @@protoc_insertion_point(field_set:CMsgSerializedSOCache.Cache.Version.version)
+}
+
+// -------------------------------------------------------------------
+
+// CMsgSerializedSOCache_Cache
+
+// optional uint32 type = 1;
+inline bool CMsgSerializedSOCache_Cache::has_type() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+inline void CMsgSerializedSOCache_Cache::set_has_type() {
+  _has_bits_[0] |= 0x00000001u;
+}
+inline void CMsgSerializedSOCache_Cache::clear_has_type() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+inline void CMsgSerializedSOCache_Cache::clear_type() {
+  type_ = 0u;
+  clear_has_type();
+}
+inline ::google::protobuf::uint32 CMsgSerializedSOCache_Cache::type() const {
+  // @@protoc_insertion_point(field_get:CMsgSerializedSOCache.Cache.type)
+  return type_;
+}
+inline void CMsgSerializedSOCache_Cache::set_type(::google::protobuf::uint32 value) {
+  set_has_type();
+  type_ = value;
+  // @@protoc_insertion_point(field_set:CMsgSerializedSOCache.Cache.type)
+}
+
+// optional uint64 id = 2;
+inline bool CMsgSerializedSOCache_Cache::has_id() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+inline void CMsgSerializedSOCache_Cache::set_has_id() {
+  _has_bits_[0] |= 0x00000002u;
+}
+inline void CMsgSerializedSOCache_Cache::clear_has_id() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+inline void CMsgSerializedSOCache_Cache::clear_id() {
+  id_ = GOOGLE_ULONGLONG(0);
+  clear_has_id();
+}
+inline ::google::protobuf::uint64 CMsgSerializedSOCache_Cache::id() const {
+  // @@protoc_insertion_point(field_get:CMsgSerializedSOCache.Cache.id)
+  return id_;
+}
+inline void CMsgSerializedSOCache_Cache::set_id(::google::protobuf::uint64 value) {
+  set_has_id();
+  id_ = value;
+  // @@protoc_insertion_point(field_set:CMsgSerializedSOCache.Cache.id)
+}
+
+// repeated .CMsgSerializedSOCache.Cache.Version versions = 3;
+inline int CMsgSerializedSOCache_Cache::versions_size() const {
+  return versions_.size();
+}
+inline void CMsgSerializedSOCache_Cache::clear_versions() {
+  versions_.Clear();
+}
+inline const ::CMsgSerializedSOCache_Cache_Version& CMsgSerializedSOCache_Cache::versions(int index) const {
+  // @@protoc_insertion_point(field_get:CMsgSerializedSOCache.Cache.versions)
+  return versions_.Get(index);
+}
+inline ::CMsgSerializedSOCache_Cache_Version* CMsgSerializedSOCache_Cache::mutable_versions(int index) {
+  // @@protoc_insertion_point(field_mutable:CMsgSerializedSOCache.Cache.versions)
+  return versions_.Mutable(index);
+}
+inline ::CMsgSerializedSOCache_Cache_Version* CMsgSerializedSOCache_Cache::add_versions() {
+  // @@protoc_insertion_point(field_add:CMsgSerializedSOCache.Cache.versions)
+  return versions_.Add();
+}
+inline const ::google::protobuf::RepeatedPtrField< ::CMsgSerializedSOCache_Cache_Version >&
+CMsgSerializedSOCache_Cache::versions() const {
+  // @@protoc_insertion_point(field_list:CMsgSerializedSOCache.Cache.versions)
+  return versions_;
+}
+inline ::google::protobuf::RepeatedPtrField< ::CMsgSerializedSOCache_Cache_Version >*
+CMsgSerializedSOCache_Cache::mutable_versions() {
+  // @@protoc_insertion_point(field_mutable_list:CMsgSerializedSOCache.Cache.versions)
+  return &versions_;
+}
+
+// repeated .CMsgSerializedSOCache.TypeCache type_caches = 4;
+inline int CMsgSerializedSOCache_Cache::type_caches_size() const {
+  return type_caches_.size();
+}
+inline void CMsgSerializedSOCache_Cache::clear_type_caches() {
+  type_caches_.Clear();
+}
+inline const ::CMsgSerializedSOCache_TypeCache& CMsgSerializedSOCache_Cache::type_caches(int index) const {
+  // @@protoc_insertion_point(field_get:CMsgSerializedSOCache.Cache.type_caches)
+  return type_caches_.Get(index);
+}
+inline ::CMsgSerializedSOCache_TypeCache* CMsgSerializedSOCache_Cache::mutable_type_caches(int index) {
+  // @@protoc_insertion_point(field_mutable:CMsgSerializedSOCache.Cache.type_caches)
+  return type_caches_.Mutable(index);
+}
+inline ::CMsgSerializedSOCache_TypeCache* CMsgSerializedSOCache_Cache::add_type_caches() {
+  // @@protoc_insertion_point(field_add:CMsgSerializedSOCache.Cache.type_caches)
+  return type_caches_.Add();
+}
+inline const ::google::protobuf::RepeatedPtrField< ::CMsgSerializedSOCache_TypeCache >&
+CMsgSerializedSOCache_Cache::type_caches() const {
+  // @@protoc_insertion_point(field_list:CMsgSerializedSOCache.Cache.type_caches)
+  return type_caches_;
+}
+inline ::google::protobuf::RepeatedPtrField< ::CMsgSerializedSOCache_TypeCache >*
+CMsgSerializedSOCache_Cache::mutable_type_caches() {
+  // @@protoc_insertion_point(field_mutable_list:CMsgSerializedSOCache.Cache.type_caches)
+  return &type_caches_;
+}
+
+// -------------------------------------------------------------------
+
+// CMsgSerializedSOCache
+
+// optional uint32 file_version = 1;
+inline bool CMsgSerializedSOCache::has_file_version() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+inline void CMsgSerializedSOCache::set_has_file_version() {
+  _has_bits_[0] |= 0x00000001u;
+}
+inline void CMsgSerializedSOCache::clear_has_file_version() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+inline void CMsgSerializedSOCache::clear_file_version() {
+  file_version_ = 0u;
+  clear_has_file_version();
+}
+inline ::google::protobuf::uint32 CMsgSerializedSOCache::file_version() const {
+  // @@protoc_insertion_point(field_get:CMsgSerializedSOCache.file_version)
+  return file_version_;
+}
+inline void CMsgSerializedSOCache::set_file_version(::google::protobuf::uint32 value) {
+  set_has_file_version();
+  file_version_ = value;
+  // @@protoc_insertion_point(field_set:CMsgSerializedSOCache.file_version)
+}
+
+// repeated .CMsgSerializedSOCache.Cache caches = 2;
+inline int CMsgSerializedSOCache::caches_size() const {
+  return caches_.size();
+}
+inline void CMsgSerializedSOCache::clear_caches() {
+  caches_.Clear();
+}
+inline const ::CMsgSerializedSOCache_Cache& CMsgSerializedSOCache::caches(int index) const {
+  // @@protoc_insertion_point(field_get:CMsgSerializedSOCache.caches)
+  return caches_.Get(index);
+}
+inline ::CMsgSerializedSOCache_Cache* CMsgSerializedSOCache::mutable_caches(int index) {
+  // @@protoc_insertion_point(field_mutable:CMsgSerializedSOCache.caches)
+  return caches_.Mutable(index);
+}
+inline ::CMsgSerializedSOCache_Cache* CMsgSerializedSOCache::add_caches() {
+  // @@protoc_insertion_point(field_add:CMsgSerializedSOCache.caches)
+  return caches_.Add();
+}
+inline const ::google::protobuf::RepeatedPtrField< ::CMsgSerializedSOCache_Cache >&
+CMsgSerializedSOCache::caches() const {
+  // @@protoc_insertion_point(field_list:CMsgSerializedSOCache.caches)
+  return caches_;
+}
+inline ::google::protobuf::RepeatedPtrField< ::CMsgSerializedSOCache_Cache >*
+CMsgSerializedSOCache::mutable_caches() {
+  // @@protoc_insertion_point(field_mutable_list:CMsgSerializedSOCache.caches)
+  return &caches_;
+}
+
+// optional uint32 gc_socache_file_version = 3;
+inline bool CMsgSerializedSOCache::has_gc_socache_file_version() const {
+  return (_has_bits_[0] & 0x00000004u) != 0;
+}
+inline void CMsgSerializedSOCache::set_has_gc_socache_file_version() {
+  _has_bits_[0] |= 0x00000004u;
+}
+inline void CMsgSerializedSOCache::clear_has_gc_socache_file_version() {
+  _has_bits_[0] &= ~0x00000004u;
+}
+inline void CMsgSerializedSOCache::clear_gc_socache_file_version() {
+  gc_socache_file_version_ = 0u;
+  clear_has_gc_socache_file_version();
+}
+inline ::google::protobuf::uint32 CMsgSerializedSOCache::gc_socache_file_version() const {
+  // @@protoc_insertion_point(field_get:CMsgSerializedSOCache.gc_socache_file_version)
+  return gc_socache_file_version_;
+}
+inline void CMsgSerializedSOCache::set_gc_socache_file_version(::google::protobuf::uint32 value) {
+  set_has_gc_socache_file_version();
+  gc_socache_file_version_ = value;
+  // @@protoc_insertion_point(field_set:CMsgSerializedSOCache.gc_socache_file_version)
+}
+
+// -------------------------------------------------------------------
+
+// CMsgGCToClientPollConvarRequest
+
+// optional string convar_name = 1;
+inline bool CMsgGCToClientPollConvarRequest::has_convar_name() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+inline void CMsgGCToClientPollConvarRequest::set_has_convar_name() {
+  _has_bits_[0] |= 0x00000001u;
+}
+inline void CMsgGCToClientPollConvarRequest::clear_has_convar_name() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+inline void CMsgGCToClientPollConvarRequest::clear_convar_name() {
+  if (convar_name_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    convar_name_->clear();
+  }
+  clear_has_convar_name();
+}
+inline const ::std::string& CMsgGCToClientPollConvarRequest::convar_name() const {
+  // @@protoc_insertion_point(field_get:CMsgGCToClientPollConvarRequest.convar_name)
+  return *convar_name_;
+}
+inline void CMsgGCToClientPollConvarRequest::set_convar_name(const ::std::string& value) {
+  set_has_convar_name();
+  if (convar_name_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    convar_name_ = new ::std::string;
+  }
+  convar_name_->assign(value);
+  // @@protoc_insertion_point(field_set:CMsgGCToClientPollConvarRequest.convar_name)
+}
+inline void CMsgGCToClientPollConvarRequest::set_convar_name(const char* value) {
+  set_has_convar_name();
+  if (convar_name_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    convar_name_ = new ::std::string;
+  }
+  convar_name_->assign(value);
+  // @@protoc_insertion_point(field_set_char:CMsgGCToClientPollConvarRequest.convar_name)
+}
+inline void CMsgGCToClientPollConvarRequest::set_convar_name(const char* value, size_t size) {
+  set_has_convar_name();
+  if (convar_name_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    convar_name_ = new ::std::string;
+  }
+  convar_name_->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:CMsgGCToClientPollConvarRequest.convar_name)
+}
+inline ::std::string* CMsgGCToClientPollConvarRequest::mutable_convar_name() {
+  set_has_convar_name();
+  if (convar_name_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    convar_name_ = new ::std::string;
+  }
+  // @@protoc_insertion_point(field_mutable:CMsgGCToClientPollConvarRequest.convar_name)
+  return convar_name_;
+}
+inline ::std::string* CMsgGCToClientPollConvarRequest::release_convar_name() {
+  clear_has_convar_name();
+  if (convar_name_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    return NULL;
+  } else {
+    ::std::string* temp = convar_name_;
+    convar_name_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    return temp;
+  }
+}
+inline void CMsgGCToClientPollConvarRequest::set_allocated_convar_name(::std::string* convar_name) {
+  if (convar_name_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete convar_name_;
+  }
+  if (convar_name) {
+    set_has_convar_name();
+    convar_name_ = convar_name;
+  } else {
+    clear_has_convar_name();
+    convar_name_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_set_allocated:CMsgGCToClientPollConvarRequest.convar_name)
+}
+
+// optional uint32 poll_id = 2;
+inline bool CMsgGCToClientPollConvarRequest::has_poll_id() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+inline void CMsgGCToClientPollConvarRequest::set_has_poll_id() {
+  _has_bits_[0] |= 0x00000002u;
+}
+inline void CMsgGCToClientPollConvarRequest::clear_has_poll_id() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+inline void CMsgGCToClientPollConvarRequest::clear_poll_id() {
+  poll_id_ = 0u;
+  clear_has_poll_id();
+}
+inline ::google::protobuf::uint32 CMsgGCToClientPollConvarRequest::poll_id() const {
+  // @@protoc_insertion_point(field_get:CMsgGCToClientPollConvarRequest.poll_id)
+  return poll_id_;
+}
+inline void CMsgGCToClientPollConvarRequest::set_poll_id(::google::protobuf::uint32 value) {
+  set_has_poll_id();
+  poll_id_ = value;
+  // @@protoc_insertion_point(field_set:CMsgGCToClientPollConvarRequest.poll_id)
+}
+
+// -------------------------------------------------------------------
+
+// CMsgGCToClientPollConvarResponse
+
+// optional uint32 poll_id = 1;
+inline bool CMsgGCToClientPollConvarResponse::has_poll_id() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+inline void CMsgGCToClientPollConvarResponse::set_has_poll_id() {
+  _has_bits_[0] |= 0x00000001u;
+}
+inline void CMsgGCToClientPollConvarResponse::clear_has_poll_id() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+inline void CMsgGCToClientPollConvarResponse::clear_poll_id() {
+  poll_id_ = 0u;
+  clear_has_poll_id();
+}
+inline ::google::protobuf::uint32 CMsgGCToClientPollConvarResponse::poll_id() const {
+  // @@protoc_insertion_point(field_get:CMsgGCToClientPollConvarResponse.poll_id)
+  return poll_id_;
+}
+inline void CMsgGCToClientPollConvarResponse::set_poll_id(::google::protobuf::uint32 value) {
+  set_has_poll_id();
+  poll_id_ = value;
+  // @@protoc_insertion_point(field_set:CMsgGCToClientPollConvarResponse.poll_id)
+}
+
+// optional string convar_value = 2;
+inline bool CMsgGCToClientPollConvarResponse::has_convar_value() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+inline void CMsgGCToClientPollConvarResponse::set_has_convar_value() {
+  _has_bits_[0] |= 0x00000002u;
+}
+inline void CMsgGCToClientPollConvarResponse::clear_has_convar_value() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+inline void CMsgGCToClientPollConvarResponse::clear_convar_value() {
+  if (convar_value_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    convar_value_->clear();
+  }
+  clear_has_convar_value();
+}
+inline const ::std::string& CMsgGCToClientPollConvarResponse::convar_value() const {
+  // @@protoc_insertion_point(field_get:CMsgGCToClientPollConvarResponse.convar_value)
+  return *convar_value_;
+}
+inline void CMsgGCToClientPollConvarResponse::set_convar_value(const ::std::string& value) {
+  set_has_convar_value();
+  if (convar_value_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    convar_value_ = new ::std::string;
+  }
+  convar_value_->assign(value);
+  // @@protoc_insertion_point(field_set:CMsgGCToClientPollConvarResponse.convar_value)
+}
+inline void CMsgGCToClientPollConvarResponse::set_convar_value(const char* value) {
+  set_has_convar_value();
+  if (convar_value_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    convar_value_ = new ::std::string;
+  }
+  convar_value_->assign(value);
+  // @@protoc_insertion_point(field_set_char:CMsgGCToClientPollConvarResponse.convar_value)
+}
+inline void CMsgGCToClientPollConvarResponse::set_convar_value(const char* value, size_t size) {
+  set_has_convar_value();
+  if (convar_value_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    convar_value_ = new ::std::string;
+  }
+  convar_value_->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:CMsgGCToClientPollConvarResponse.convar_value)
+}
+inline ::std::string* CMsgGCToClientPollConvarResponse::mutable_convar_value() {
+  set_has_convar_value();
+  if (convar_value_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    convar_value_ = new ::std::string;
+  }
+  // @@protoc_insertion_point(field_mutable:CMsgGCToClientPollConvarResponse.convar_value)
+  return convar_value_;
+}
+inline ::std::string* CMsgGCToClientPollConvarResponse::release_convar_value() {
+  clear_has_convar_value();
+  if (convar_value_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    return NULL;
+  } else {
+    ::std::string* temp = convar_value_;
+    convar_value_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    return temp;
+  }
+}
+inline void CMsgGCToClientPollConvarResponse::set_allocated_convar_value(::std::string* convar_value) {
+  if (convar_value_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete convar_value_;
+  }
+  if (convar_value) {
+    set_has_convar_value();
+    convar_value_ = convar_value;
+  } else {
+    clear_has_convar_value();
+    convar_value_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_set_allocated:CMsgGCToClientPollConvarResponse.convar_value)
 }
 
 

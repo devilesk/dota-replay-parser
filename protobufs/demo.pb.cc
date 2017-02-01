@@ -589,7 +589,7 @@ void protobuf_AddDesc_demo_2eproto() {
     "_clientside_particles\030\t \001(\010\022\016\n\006addons\030\n "
     "\001(\t\"\264\004\n\tCGameInfo\022&\n\004dota\030\004 \001(\0132\030.CGameI"
     "nfo.CDotaGameInfo\032\376\003\n\rCDotaGameInfo\022\020\n\010m"
-    "atch_id\030\001 \001(\r\022\021\n\tgame_mode\030\002 \001(\005\022\023\n\013game"
+    "atch_id\030\001 \001(\004\022\021\n\tgame_mode\030\002 \001(\005\022\023\n\013game"
     "_winner\030\003 \001(\005\0229\n\013player_info\030\004 \003(\0132$.CGa"
     "meInfo.CDotaGameInfo.CPlayerInfo\022\020\n\010leag"
     "ueid\030\005 \001(\r\022=\n\npicks_bans\030\006 \003(\0132).CGameIn"
@@ -2213,7 +2213,7 @@ CGameInfo_CDotaGameInfo::CGameInfo_CDotaGameInfo(const CGameInfo_CDotaGameInfo& 
 void CGameInfo_CDotaGameInfo::SharedCtor() {
   ::google::protobuf::internal::GetEmptyString();
   _cached_size_ = 0;
-  match_id_ = 0u;
+  match_id_ = GOOGLE_ULONGLONG(0);
   game_mode_ = 0;
   game_winner_ = 0;
   leagueid_ = 0u;
@@ -2274,9 +2274,9 @@ void CGameInfo_CDotaGameInfo::Clear() {
   } while (0)
 
   if (_has_bits_[0 / 32] & 215) {
-    ZR_(match_id_, game_mode_);
-    ZR_(game_winner_, leagueid_);
-    ZR_(radiant_team_id_, dire_team_id_);
+    ZR_(match_id_, game_winner_);
+    ZR_(leagueid_, radiant_team_id_);
+    dire_team_id_ = 0u;
   }
   if (_has_bits_[8 / 32] & 1792) {
     if (has_radiant_team_tag()) {
@@ -2311,11 +2311,11 @@ bool CGameInfo_CDotaGameInfo::MergePartialFromCodedStream(
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // optional uint32 match_id = 1;
+      // optional uint64 match_id = 1;
       case 1: {
         if (tag == 8) {
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                   ::google::protobuf::uint64, ::google::protobuf::internal::WireFormatLite::TYPE_UINT64>(
                  input, &match_id_)));
           set_has_match_id();
         } else {
@@ -2502,9 +2502,9 @@ failure:
 void CGameInfo_CDotaGameInfo::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
   // @@protoc_insertion_point(serialize_start:CGameInfo.CDotaGameInfo)
-  // optional uint32 match_id = 1;
+  // optional uint64 match_id = 1;
   if (has_match_id()) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt32(1, this->match_id(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteUInt64(1, this->match_id(), output);
   }
 
   // optional int32 game_mode = 2;
@@ -2579,9 +2579,9 @@ void CGameInfo_CDotaGameInfo::SerializeWithCachedSizes(
 ::google::protobuf::uint8* CGameInfo_CDotaGameInfo::SerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
   // @@protoc_insertion_point(serialize_to_array_start:CGameInfo.CDotaGameInfo)
-  // optional uint32 match_id = 1;
+  // optional uint64 match_id = 1;
   if (has_match_id()) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(1, this->match_id(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt64ToArray(1, this->match_id(), target);
   }
 
   // optional int32 game_mode = 2;
@@ -2662,10 +2662,10 @@ int CGameInfo_CDotaGameInfo::ByteSize() const {
   int total_size = 0;
 
   if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
-    // optional uint32 match_id = 1;
+    // optional uint64 match_id = 1;
     if (has_match_id()) {
       total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::UInt32Size(
+        ::google::protobuf::internal::WireFormatLite::UInt64Size(
           this->match_id());
     }
 

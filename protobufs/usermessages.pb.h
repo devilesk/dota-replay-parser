@@ -92,6 +92,7 @@ class CUserMsg_ParticleManager_UpdateParticleShouldDraw;
 class CUserMsg_ParticleManager_ChangeControlPointAttachment;
 class CUserMsg_HudError;
 class CUserMsg_CustomGameEvent;
+class CUserMessageHapticPulse;
 
 enum EBaseUserMessages {
   UM_AchievementEvent = 101,
@@ -132,6 +133,7 @@ enum EBaseUserMessages {
   UM_ParticleManager = 145,
   UM_HudError = 146,
   UM_CustomGameEvent = 148,
+  UM_HandHapticPulse = 149,
   UM_MAX_BASE = 200
 };
 bool EBaseUserMessages_IsValid(int value);
@@ -224,6 +226,26 @@ inline bool PARTICLE_MESSAGE_Parse(
     const ::std::string& name, PARTICLE_MESSAGE* value) {
   return ::google::protobuf::internal::ParseNamedEnum<PARTICLE_MESSAGE>(
     PARTICLE_MESSAGE_descriptor(), name, value);
+}
+enum EHapticPulseType {
+  VR_HAND_HAPTIC_PULSE_LIGHT = 0,
+  VR_HAND_HAPTIC_PULSE_MEDIUM = 1,
+  VR_HAND_HAPTIC_PULSE_STRONG = 2
+};
+bool EHapticPulseType_IsValid(int value);
+const EHapticPulseType EHapticPulseType_MIN = VR_HAND_HAPTIC_PULSE_LIGHT;
+const EHapticPulseType EHapticPulseType_MAX = VR_HAND_HAPTIC_PULSE_STRONG;
+const int EHapticPulseType_ARRAYSIZE = EHapticPulseType_MAX + 1;
+
+const ::google::protobuf::EnumDescriptor* EHapticPulseType_descriptor();
+inline const ::std::string& EHapticPulseType_Name(EHapticPulseType value) {
+  return ::google::protobuf::internal::NameOfEnum(
+    EHapticPulseType_descriptor(), value);
+}
+inline bool EHapticPulseType_Parse(
+    const ::std::string& name, EHapticPulseType* value) {
+  return ::google::protobuf::internal::ParseNamedEnum<EHapticPulseType>(
+    EHapticPulseType_descriptor(), name, value);
 }
 // ===================================================================
 
@@ -2196,6 +2218,13 @@ class CUserMessageAudioParameter : public ::google::protobuf::Message {
   inline float value() const;
   inline void set_value(float value);
 
+  // optional uint32 int_value = 4;
+  inline bool has_int_value() const;
+  inline void clear_int_value();
+  static const int kIntValueFieldNumber = 4;
+  inline ::google::protobuf::uint32 int_value() const;
+  inline void set_int_value(::google::protobuf::uint32 value);
+
   // @@protoc_insertion_point(class_scope:CUserMessageAudioParameter)
  private:
   inline void set_has_parameter_type();
@@ -2204,6 +2233,8 @@ class CUserMessageAudioParameter : public ::google::protobuf::Message {
   inline void clear_has_name_hash_code();
   inline void set_has_value();
   inline void clear_has_value();
+  inline void set_has_int_value();
+  inline void clear_has_int_value();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
@@ -2212,6 +2243,7 @@ class CUserMessageAudioParameter : public ::google::protobuf::Message {
   ::google::protobuf::uint32 parameter_type_;
   ::google::protobuf::uint32 name_hash_code_;
   float value_;
+  ::google::protobuf::uint32 int_value_;
   friend void  protobuf_AddDesc_usermessages_2eproto();
   friend void protobuf_AssignDesc_usermessages_2eproto();
   friend void protobuf_ShutdownFile_usermessages_2eproto();
@@ -3706,16 +3738,26 @@ class CUserMessageCreditsMsg : public ::google::protobuf::Message {
   inline ::eRollType rolltype() const;
   inline void set_rolltype(::eRollType value);
 
+  // optional float logo_length = 2;
+  inline bool has_logo_length() const;
+  inline void clear_logo_length();
+  static const int kLogoLengthFieldNumber = 2;
+  inline float logo_length() const;
+  inline void set_logo_length(float value);
+
   // @@protoc_insertion_point(class_scope:CUserMessageCreditsMsg)
  private:
   inline void set_has_rolltype();
   inline void clear_has_rolltype();
+  inline void set_has_logo_length();
+  inline void clear_has_logo_length();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
   ::google::protobuf::uint32 _has_bits_[1];
   mutable int _cached_size_;
   int rolltype_;
+  float logo_length_;
   friend void  protobuf_AddDesc_usermessages_2eproto();
   friend void protobuf_AssignDesc_usermessages_2eproto();
   friend void protobuf_ShutdownFile_usermessages_2eproto();
@@ -6100,6 +6142,95 @@ class CUserMsg_CustomGameEvent : public ::google::protobuf::Message {
   void InitAsDefaultInstance();
   static CUserMsg_CustomGameEvent* default_instance_;
 };
+// -------------------------------------------------------------------
+
+class CUserMessageHapticPulse : public ::google::protobuf::Message {
+ public:
+  CUserMessageHapticPulse();
+  virtual ~CUserMessageHapticPulse();
+
+  CUserMessageHapticPulse(const CUserMessageHapticPulse& from);
+
+  inline CUserMessageHapticPulse& operator=(const CUserMessageHapticPulse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+    return _unknown_fields_;
+  }
+
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+    return &_unknown_fields_;
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const CUserMessageHapticPulse& default_instance();
+
+  void Swap(CUserMessageHapticPulse* other);
+
+  // implements Message ----------------------------------------------
+
+  CUserMessageHapticPulse* New() const;
+  void CopyFrom(const ::google::protobuf::Message& from);
+  void MergeFrom(const ::google::protobuf::Message& from);
+  void CopyFrom(const CUserMessageHapticPulse& from);
+  void MergeFrom(const CUserMessageHapticPulse& from);
+  void Clear();
+  bool IsInitialized() const;
+
+  int ByteSize() const;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input);
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  int GetCachedSize() const { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const;
+  public:
+  ::google::protobuf::Metadata GetMetadata() const;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // optional int32 hand_id = 1;
+  inline bool has_hand_id() const;
+  inline void clear_hand_id();
+  static const int kHandIdFieldNumber = 1;
+  inline ::google::protobuf::int32 hand_id() const;
+  inline void set_hand_id(::google::protobuf::int32 value);
+
+  // optional .EHapticPulseType pulse_type = 2 [default = VR_HAND_HAPTIC_PULSE_LIGHT];
+  inline bool has_pulse_type() const;
+  inline void clear_pulse_type();
+  static const int kPulseTypeFieldNumber = 2;
+  inline ::EHapticPulseType pulse_type() const;
+  inline void set_pulse_type(::EHapticPulseType value);
+
+  // @@protoc_insertion_point(class_scope:CUserMessageHapticPulse)
+ private:
+  inline void set_has_hand_id();
+  inline void clear_has_hand_id();
+  inline void set_has_pulse_type();
+  inline void clear_has_pulse_type();
+
+  ::google::protobuf::UnknownFieldSet _unknown_fields_;
+
+  ::google::protobuf::uint32 _has_bits_[1];
+  mutable int _cached_size_;
+  ::google::protobuf::int32 hand_id_;
+  int pulse_type_;
+  friend void  protobuf_AddDesc_usermessages_2eproto();
+  friend void protobuf_AssignDesc_usermessages_2eproto();
+  friend void protobuf_ShutdownFile_usermessages_2eproto();
+
+  void InitAsDefaultInstance();
+  static CUserMessageHapticPulse* default_instance_;
+};
 // ===================================================================
 
 
@@ -8268,6 +8399,30 @@ inline void CUserMessageAudioParameter::set_value(float value) {
   // @@protoc_insertion_point(field_set:CUserMessageAudioParameter.value)
 }
 
+// optional uint32 int_value = 4;
+inline bool CUserMessageAudioParameter::has_int_value() const {
+  return (_has_bits_[0] & 0x00000008u) != 0;
+}
+inline void CUserMessageAudioParameter::set_has_int_value() {
+  _has_bits_[0] |= 0x00000008u;
+}
+inline void CUserMessageAudioParameter::clear_has_int_value() {
+  _has_bits_[0] &= ~0x00000008u;
+}
+inline void CUserMessageAudioParameter::clear_int_value() {
+  int_value_ = 0u;
+  clear_has_int_value();
+}
+inline ::google::protobuf::uint32 CUserMessageAudioParameter::int_value() const {
+  // @@protoc_insertion_point(field_get:CUserMessageAudioParameter.int_value)
+  return int_value_;
+}
+inline void CUserMessageAudioParameter::set_int_value(::google::protobuf::uint32 value) {
+  set_has_int_value();
+  int_value_ = value;
+  // @@protoc_insertion_point(field_set:CUserMessageAudioParameter.int_value)
+}
+
 // -------------------------------------------------------------------
 
 // CUserMessageVoiceMask
@@ -9628,6 +9783,30 @@ inline void CUserMessageCreditsMsg::set_rolltype(::eRollType value) {
   set_has_rolltype();
   rolltype_ = value;
   // @@protoc_insertion_point(field_set:CUserMessageCreditsMsg.rolltype)
+}
+
+// optional float logo_length = 2;
+inline bool CUserMessageCreditsMsg::has_logo_length() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+inline void CUserMessageCreditsMsg::set_has_logo_length() {
+  _has_bits_[0] |= 0x00000002u;
+}
+inline void CUserMessageCreditsMsg::clear_has_logo_length() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+inline void CUserMessageCreditsMsg::clear_logo_length() {
+  logo_length_ = 0;
+  clear_has_logo_length();
+}
+inline float CUserMessageCreditsMsg::logo_length() const {
+  // @@protoc_insertion_point(field_get:CUserMessageCreditsMsg.logo_length)
+  return logo_length_;
+}
+inline void CUserMessageCreditsMsg::set_logo_length(float value) {
+  set_has_logo_length();
+  logo_length_ = value;
+  // @@protoc_insertion_point(field_set:CUserMessageCreditsMsg.logo_length)
 }
 
 // -------------------------------------------------------------------
@@ -11844,6 +12023,59 @@ inline void CUserMsg_CustomGameEvent::set_allocated_data(::std::string* data) {
   // @@protoc_insertion_point(field_set_allocated:CUserMsg_CustomGameEvent.data)
 }
 
+// -------------------------------------------------------------------
+
+// CUserMessageHapticPulse
+
+// optional int32 hand_id = 1;
+inline bool CUserMessageHapticPulse::has_hand_id() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+inline void CUserMessageHapticPulse::set_has_hand_id() {
+  _has_bits_[0] |= 0x00000001u;
+}
+inline void CUserMessageHapticPulse::clear_has_hand_id() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+inline void CUserMessageHapticPulse::clear_hand_id() {
+  hand_id_ = 0;
+  clear_has_hand_id();
+}
+inline ::google::protobuf::int32 CUserMessageHapticPulse::hand_id() const {
+  // @@protoc_insertion_point(field_get:CUserMessageHapticPulse.hand_id)
+  return hand_id_;
+}
+inline void CUserMessageHapticPulse::set_hand_id(::google::protobuf::int32 value) {
+  set_has_hand_id();
+  hand_id_ = value;
+  // @@protoc_insertion_point(field_set:CUserMessageHapticPulse.hand_id)
+}
+
+// optional .EHapticPulseType pulse_type = 2 [default = VR_HAND_HAPTIC_PULSE_LIGHT];
+inline bool CUserMessageHapticPulse::has_pulse_type() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+inline void CUserMessageHapticPulse::set_has_pulse_type() {
+  _has_bits_[0] |= 0x00000002u;
+}
+inline void CUserMessageHapticPulse::clear_has_pulse_type() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+inline void CUserMessageHapticPulse::clear_pulse_type() {
+  pulse_type_ = 0;
+  clear_has_pulse_type();
+}
+inline ::EHapticPulseType CUserMessageHapticPulse::pulse_type() const {
+  // @@protoc_insertion_point(field_get:CUserMessageHapticPulse.pulse_type)
+  return static_cast< ::EHapticPulseType >(pulse_type_);
+}
+inline void CUserMessageHapticPulse::set_pulse_type(::EHapticPulseType value) {
+  assert(::EHapticPulseType_IsValid(value));
+  set_has_pulse_type();
+  pulse_type_ = value;
+  // @@protoc_insertion_point(field_set:CUserMessageHapticPulse.pulse_type)
+}
+
 
 // @@protoc_insertion_point(namespace_scope)
 
@@ -11870,6 +12102,11 @@ template <> struct is_proto_enum< ::PARTICLE_MESSAGE> : ::google::protobuf::inte
 template <>
 inline const EnumDescriptor* GetEnumDescriptor< ::PARTICLE_MESSAGE>() {
   return ::PARTICLE_MESSAGE_descriptor();
+}
+template <> struct is_proto_enum< ::EHapticPulseType> : ::google::protobuf::internal::true_type {};
+template <>
+inline const EnumDescriptor* GetEnumDescriptor< ::EHapticPulseType>() {
+  return ::EHapticPulseType_descriptor();
 }
 
 }  // namespace google

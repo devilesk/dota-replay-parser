@@ -62,7 +62,7 @@ void protobuf_AddDesc_gcsystemmsgs_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-    "\n\022gcsystemmsgs.proto*\343\025\n\014EGCSystemMsg\022\023\n"
+    "\n\022gcsystemmsgs.proto*\256\026\n\014EGCSystemMsg\022\023\n"
     "\017k_EGCMsgInvalid\020\000\022\021\n\rk_EGCMsgMulti\020\001\022\030\n"
     "\024k_EGCMsgGenericReply\020\n\022\026\n\022k_EGCMsgSyste"
     "mBase\0202\022\036\n\032k_EGCMsgAchievementAwarded\0203\022"
@@ -132,32 +132,38 @@ void protobuf_AddDesc_gcsystemmsgs_2eproto() {
     "e\020\201\004\022\025\n\020k_EGCMsgGetIPASN\020\202\004\022\035\n\030k_EGCMsgG"
     "etIPASNResponse\020\203\004\022\036\n\031k_EGCMsgGetAppFrie"
     "ndsList\020\204\004\022&\n!k_EGCMsgGetAppFriendsListR"
-    "esponse\020\205\004*\360\001\n\006ESOMsg\022\023\n\017k_ESOMsg_Create"
-    "\020\025\022\023\n\017k_ESOMsg_Update\020\026\022\024\n\020k_ESOMsg_Dest"
-    "roy\020\027\022\034\n\030k_ESOMsg_CacheSubscribed\020\030\022\036\n\032k"
-    "_ESOMsg_CacheUnsubscribed\020\031\022\033\n\027k_ESOMsg_"
-    "UpdateMultiple\020\032\022%\n!k_ESOMsg_CacheSubscr"
-    "iptionRefresh\020\034\022$\n k_ESOMsg_CacheSubscri"
-    "bedUpToDate\020\035*\375\001\n\020EGCBaseClientMsg\022\030\n\023k_"
-    "EMsgGCPingRequest\020\271\027\022\031\n\024k_EMsgGCPingResp"
-    "onse\020\272\027\022\032\n\025k_EMsgGCClientWelcome\020\244\037\022\032\n\025k"
-    "_EMsgGCServerWelcome\020\245\037\022\030\n\023k_EMsgGCClien"
-    "tHello\020\246\037\022\030\n\023k_EMsgGCServerHello\020\247\037\022#\n\036k"
-    "_EMsgGCClientConnectionStatus\020\251\037\022#\n\036k_EM"
-    "sgGCServerConnectionStatus\020\252\037*\343\003\n\nEGCToG"
-    "CMsg\022\032\n\025k_EGCToGCMsgMasterAck\020\226\001\022\"\n\035k_EG"
-    "CToGCMsgMasterAckResponse\020\227\001\022\027\n\022k_EGCToG"
-    "CMsgRouted\020\230\001\022\034\n\027k_EGCToGCMsgRoutedReply"
-    "\020\231\001\022#\n\036k_EMsgGCUpdateSubGCSessionInfo\020\232\001"
-    "\022$\n\037k_EMsgGCRequestSubGCSessionInfo\020\233\001\022,"
-    "\n\'k_EMsgGCRequestSubGCSessionInfoRespons"
-    "e\020\234\001\022&\n!k_EGCToGCMsgMasterStartupComplet"
-    "e\020\235\001\022!\n\034k_EMsgGCToGCSOCacheSubscribe\020\236\001\022"
-    "#\n\036k_EMsgGCToGCSOCacheUnsubscribe\020\237\001\022#\n\036"
-    "k_EMsgGCToGCLoadSessionSOCache\020\240\001\022+\n&k_E"
-    "MsgGCToGCLoadSessionSOCacheResponse\020\241\001\022#"
-    "\n\036k_EMsgGCToGCUpdateSessionStats\020\242\001B\005H\001\200"
-    "\001\000", 3802);
+    "esponse\020\205\004\022\"\n\035k_EGCMsgVacVerificationCha"
+    "nge\020\206\004\022%\n k_EGCMsgAccountPhoneNumberChan"
+    "ge\020\207\004*\360\001\n\006ESOMsg\022\023\n\017k_ESOMsg_Create\020\025\022\023\n"
+    "\017k_ESOMsg_Update\020\026\022\024\n\020k_ESOMsg_Destroy\020\027"
+    "\022\034\n\030k_ESOMsg_CacheSubscribed\020\030\022\036\n\032k_ESOM"
+    "sg_CacheUnsubscribed\020\031\022\033\n\027k_ESOMsg_Updat"
+    "eMultiple\020\032\022%\n!k_ESOMsg_CacheSubscriptio"
+    "nRefresh\020\034\022$\n k_ESOMsg_CacheSubscribedUp"
+    "ToDate\020\035*\316\002\n\020EGCBaseClientMsg\022\030\n\023k_EMsgG"
+    "CPingRequest\020\271\027\022\031\n\024k_EMsgGCPingResponse\020"
+    "\272\027\022&\n!k_EMsgGCToClientPollConvarRequest\020"
+    "\273\027\022\'\n\"k_EMsgGCToClientPollConvarResponse"
+    "\020\274\027\022\032\n\025k_EMsgGCClientWelcome\020\244\037\022\032\n\025k_EMs"
+    "gGCServerWelcome\020\245\037\022\030\n\023k_EMsgGCClientHel"
+    "lo\020\246\037\022\030\n\023k_EMsgGCServerHello\020\247\037\022#\n\036k_EMs"
+    "gGCClientConnectionStatus\020\251\037\022#\n\036k_EMsgGC"
+    "ServerConnectionStatus\020\252\037*\327\004\n\nEGCToGCMsg"
+    "\022\032\n\025k_EGCToGCMsgMasterAck\020\226\001\022\"\n\035k_EGCToG"
+    "CMsgMasterAckResponse\020\227\001\022\027\n\022k_EGCToGCMsg"
+    "Routed\020\230\001\022\034\n\027k_EGCToGCMsgRoutedReply\020\231\001\022"
+    "#\n\036k_EMsgGCUpdateSubGCSessionInfo\020\232\001\022$\n\037"
+    "k_EMsgGCRequestSubGCSessionInfo\020\233\001\022,\n\'k_"
+    "EMsgGCRequestSubGCSessionInfoResponse\020\234\001"
+    "\022&\n!k_EGCToGCMsgMasterStartupComplete\020\235\001"
+    "\022!\n\034k_EMsgGCToGCSOCacheSubscribe\020\236\001\022#\n\036k"
+    "_EMsgGCToGCSOCacheUnsubscribe\020\237\001\022#\n\036k_EM"
+    "sgGCToGCLoadSessionSOCache\020\240\001\022+\n&k_EMsgG"
+    "CToGCLoadSessionSOCacheResponse\020\241\001\022#\n\036k_"
+    "EMsgGCToGCUpdateSessionStats\020\242\001\022 \n\033k_EMs"
+    "gGCToGCUniverseStartup\020\243\001\022(\n#k_EMsgGCToG"
+    "CUniverseStartupResponse\020\244\001\022&\n!k_EMsgGCT"
+    "oGCForwardAccountDetails\020\245\001B\005H\001\200\001\000", 4074);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "gcsystemmsgs.proto", &protobuf_RegisterTypes);
   ::google::protobuf::internal::OnShutdown(&protobuf_ShutdownFile_gcsystemmsgs_2eproto);
@@ -261,6 +267,8 @@ bool EGCSystemMsg_IsValid(int value) {
     case 515:
     case 516:
     case 517:
+    case 518:
+    case 519:
       return true;
     default:
       return false;
@@ -295,6 +303,8 @@ bool EGCBaseClientMsg_IsValid(int value) {
   switch(value) {
     case 3001:
     case 3002:
+    case 3003:
+    case 3004:
     case 4004:
     case 4005:
     case 4006:
@@ -326,6 +336,9 @@ bool EGCToGCMsg_IsValid(int value) {
     case 160:
     case 161:
     case 162:
+    case 163:
+    case 164:
+    case 165:
       return true;
     default:
       return false;

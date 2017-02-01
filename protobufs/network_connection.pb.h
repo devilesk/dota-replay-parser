@@ -104,11 +104,13 @@ enum ENetworkDisconnectionReason {
   NETWORK_DISCONNECT_STEAM_DENY_BAD_ANTI_CHEAT = 68,
   NETWORK_DISCONNECT_SERVER_SHUTDOWN = 69,
   NETWORK_DISCONNECT_SPLITPACKET_SEND_OVERFLOW = 70,
-  NETWORK_DISCONNECT_REPLAY_INCOMPATIBLE = 71
+  NETWORK_DISCONNECT_REPLAY_INCOMPATIBLE = 71,
+  NETWORK_DISCONNECT_CONNECT_REQUEST_TIMEDOUT = 72,
+  NETWORK_DISCONNECT_SERVER_INCOMPATIBLE = 73
 };
 bool ENetworkDisconnectionReason_IsValid(int value);
 const ENetworkDisconnectionReason ENetworkDisconnectionReason_MIN = NETWORK_DISCONNECT_INVALID;
-const ENetworkDisconnectionReason ENetworkDisconnectionReason_MAX = NETWORK_DISCONNECT_REPLAY_INCOMPATIBLE;
+const ENetworkDisconnectionReason ENetworkDisconnectionReason_MAX = NETWORK_DISCONNECT_SERVER_INCOMPATIBLE;
 const int ENetworkDisconnectionReason_ARRAYSIZE = ENetworkDisconnectionReason_MAX + 1;
 
 const ::google::protobuf::EnumDescriptor* ENetworkDisconnectionReason_descriptor();

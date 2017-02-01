@@ -195,10 +195,14 @@ const ::google::protobuf::internal::GeneratedMessageReflection*
 const ::google::protobuf::Descriptor* CUserMsg_CustomGameEvent_descriptor_ = NULL;
 const ::google::protobuf::internal::GeneratedMessageReflection*
   CUserMsg_CustomGameEvent_reflection_ = NULL;
+const ::google::protobuf::Descriptor* CUserMessageHapticPulse_descriptor_ = NULL;
+const ::google::protobuf::internal::GeneratedMessageReflection*
+  CUserMessageHapticPulse_reflection_ = NULL;
 const ::google::protobuf::EnumDescriptor* EBaseUserMessages_descriptor_ = NULL;
 const ::google::protobuf::EnumDescriptor* EBaseEntityMessages_descriptor_ = NULL;
 const ::google::protobuf::EnumDescriptor* eRollType_descriptor_ = NULL;
 const ::google::protobuf::EnumDescriptor* PARTICLE_MESSAGE_descriptor_ = NULL;
+const ::google::protobuf::EnumDescriptor* EHapticPulseType_descriptor_ = NULL;
 
 }  // namespace
 
@@ -521,10 +525,11 @@ void protobuf_AssignDesc_usermessages_2eproto() {
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(CUserMessageSendAudio));
   CUserMessageAudioParameter_descriptor_ = file->message_type(18);
-  static const int CUserMessageAudioParameter_offsets_[3] = {
+  static const int CUserMessageAudioParameter_offsets_[4] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CUserMessageAudioParameter, parameter_type_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CUserMessageAudioParameter, name_hash_code_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CUserMessageAudioParameter, value_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CUserMessageAudioParameter, int_value_),
   };
   CUserMessageAudioParameter_reflection_ =
     new ::google::protobuf::internal::GeneratedMessageReflection(
@@ -781,8 +786,9 @@ void protobuf_AssignDesc_usermessages_2eproto() {
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(CUserMessageShowMenu));
   CUserMessageCreditsMsg_descriptor_ = file->message_type(33);
-  static const int CUserMessageCreditsMsg_offsets_[1] = {
+  static const int CUserMessageCreditsMsg_offsets_[2] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CUserMessageCreditsMsg, rolltype_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CUserMessageCreditsMsg, logo_length_),
   };
   CUserMessageCreditsMsg_reflection_ =
     new ::google::protobuf::internal::GeneratedMessageReflection(
@@ -1195,10 +1201,27 @@ void protobuf_AssignDesc_usermessages_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(CUserMsg_CustomGameEvent));
+  CUserMessageHapticPulse_descriptor_ = file->message_type(44);
+  static const int CUserMessageHapticPulse_offsets_[2] = {
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CUserMessageHapticPulse, hand_id_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CUserMessageHapticPulse, pulse_type_),
+  };
+  CUserMessageHapticPulse_reflection_ =
+    new ::google::protobuf::internal::GeneratedMessageReflection(
+      CUserMessageHapticPulse_descriptor_,
+      CUserMessageHapticPulse::default_instance_,
+      CUserMessageHapticPulse_offsets_,
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CUserMessageHapticPulse, _has_bits_[0]),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CUserMessageHapticPulse, _unknown_fields_),
+      -1,
+      ::google::protobuf::DescriptorPool::generated_pool(),
+      ::google::protobuf::MessageFactory::generated_factory(),
+      sizeof(CUserMessageHapticPulse));
   EBaseUserMessages_descriptor_ = file->enum_type(0);
   EBaseEntityMessages_descriptor_ = file->enum_type(1);
   eRollType_descriptor_ = file->enum_type(2);
   PARTICLE_MESSAGE_descriptor_ = file->enum_type(3);
+  EHapticPulseType_descriptor_ = file->enum_type(4);
 }
 
 namespace {
@@ -1329,6 +1352,8 @@ void protobuf_RegisterTypes(const ::std::string&) {
     CUserMsg_HudError_descriptor_, &CUserMsg_HudError::default_instance());
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
     CUserMsg_CustomGameEvent_descriptor_, &CUserMsg_CustomGameEvent::default_instance());
+  ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
+    CUserMessageHapticPulse_descriptor_, &CUserMessageHapticPulse::default_instance());
 }
 
 }  // namespace
@@ -1452,6 +1477,8 @@ void protobuf_ShutdownFile_usermessages_2eproto() {
   delete CUserMsg_HudError_reflection_;
   delete CUserMsg_CustomGameEvent::default_instance_;
   delete CUserMsg_CustomGameEvent_reflection_;
+  delete CUserMessageHapticPulse::default_instance_;
+  delete CUserMessageHapticPulse_reflection_;
 }
 
 void protobuf_AddDesc_usermessages_2eproto() {
@@ -1502,35 +1529,36 @@ void protobuf_AddDesc_usermessages_2eproto() {
     "\030\001 \001(\r\022\r\n\005param\030\002 \003(\t\"\027\n\025CUserMessageGam"
     "eTitle\"\026\n\024CUserMessageResetHUD\"8\n\025CUserM"
     "essageSendAudio\022\021\n\tsoundname\030\001 \001(\t\022\014\n\004st"
-    "op\030\002 \001(\010\"[\n\032CUserMessageAudioParameter\022\026"
+    "op\030\002 \001(\010\"n\n\032CUserMessageAudioParameter\022\026"
     "\n\016parameter_type\030\001 \001(\r\022\026\n\016name_hash_code"
-    "\030\002 \001(\r\022\r\n\005value\030\003 \001(\002\"W\n\025CUserMessageVoi"
-    "ceMask\022\027\n\017gamerules_masks\030\001 \003(\r\022\021\n\tban_m"
-    "asks\030\002 \003(\r\022\022\n\nmod_enable\030\003 \001(\010\"\032\n\030CUserM"
-    "essageRequestState\"\'\n\024CUserMessageHintTe"
-    "xt\022\017\n\007message\030\001 \001(\t\"+\n\027CUserMessageKeyHi"
-    "ntText\022\020\n\010messages\030\001 \003(\t\"G\n\031CUserMessage"
-    "VoiceSubtitle\022\016\n\006player\030\001 \001(\005\022\014\n\004menu\030\002 "
-    "\001(\005\022\014\n\004item\030\003 \001(\005\"\201\001\n\024CUserMessageVGUIMe"
-    "nu\022\014\n\004name\030\001 \001(\t\022\014\n\004show\030\002 \001(\010\022(\n\004keys\030\003"
-    " \003(\0132\032.CUserMessageVGUIMenu.Keys\032#\n\004Keys"
-    "\022\014\n\004name\030\001 \001(\t\022\r\n\005value\030\002 \001(\t\"@\n\022CUserMe"
-    "ssageRumble\022\r\n\005index\030\001 \001(\005\022\014\n\004data\030\002 \001(\005"
-    "\022\r\n\005flags\030\003 \001(\005\"%\n\021CUserMessageTrain\022\020\n\010"
-    "position\030\001 \001(\r\"K\n\032CUserMessageSayTextCha"
-    "nnel\022\016\n\006player\030\001 \001(\005\022\017\n\007channel\030\002 \001(\005\022\014\n"
-    "\004text\030\003 \001(\t\"\220\001\n\027CUserMessageColoredText\022"
-    "\r\n\005color\030\001 \001(\r\022\014\n\004text\030\002 \001(\t\022\r\n\005reset\030\003 "
-    "\001(\010\022\031\n\021context_player_id\030\004 \001(\005\022\025\n\rcontex"
-    "t_value\030\005 \001(\005\022\027\n\017context_team_id\030\006 \001(\005\"*"
-    "\n\026CUserMessageItemPickup\022\020\n\010itemname\030\001 \001"
-    "(\t\")\n\026CUserMessageAmmoDenied\022\017\n\007ammo_id\030"
-    "\001 \001(\r\"\?\n\032CUserMessageCrosshairAngle\022!\n\014a"
-    "ngcrosshair\030\001 \001(\0132\013.CMsgQAngle\"e\n\024CUserM"
-    "essageShowMenu\022\022\n\nvalidslots\030\001 \001(\r\022\023\n\013di"
-    "splaytime\030\002 \001(\r\022\020\n\010needmore\030\003 \001(\010\022\022\n\nmen"
-    "ustring\030\004 \001(\t\"A\n\026CUserMessageCreditsMsg\022"
-    "\'\n\010rolltype\030\001 \001(\0162\n.eRollType:\tROLL_NONE"
+    "\030\002 \001(\r\022\r\n\005value\030\003 \001(\002\022\021\n\tint_value\030\004 \001(\r"
+    "\"W\n\025CUserMessageVoiceMask\022\027\n\017gamerules_m"
+    "asks\030\001 \003(\r\022\021\n\tban_masks\030\002 \003(\r\022\022\n\nmod_ena"
+    "ble\030\003 \001(\010\"\032\n\030CUserMessageRequestState\"\'\n"
+    "\024CUserMessageHintText\022\017\n\007message\030\001 \001(\t\"+"
+    "\n\027CUserMessageKeyHintText\022\020\n\010messages\030\001 "
+    "\003(\t\"G\n\031CUserMessageVoiceSubtitle\022\016\n\006play"
+    "er\030\001 \001(\005\022\014\n\004menu\030\002 \001(\005\022\014\n\004item\030\003 \001(\005\"\201\001\n"
+    "\024CUserMessageVGUIMenu\022\014\n\004name\030\001 \001(\t\022\014\n\004s"
+    "how\030\002 \001(\010\022(\n\004keys\030\003 \003(\0132\032.CUserMessageVG"
+    "UIMenu.Keys\032#\n\004Keys\022\014\n\004name\030\001 \001(\t\022\r\n\005val"
+    "ue\030\002 \001(\t\"@\n\022CUserMessageRumble\022\r\n\005index\030"
+    "\001 \001(\005\022\014\n\004data\030\002 \001(\005\022\r\n\005flags\030\003 \001(\005\"%\n\021CU"
+    "serMessageTrain\022\020\n\010position\030\001 \001(\r\"K\n\032CUs"
+    "erMessageSayTextChannel\022\016\n\006player\030\001 \001(\005\022"
+    "\017\n\007channel\030\002 \001(\005\022\014\n\004text\030\003 \001(\t\"\220\001\n\027CUser"
+    "MessageColoredText\022\r\n\005color\030\001 \001(\r\022\014\n\004tex"
+    "t\030\002 \001(\t\022\r\n\005reset\030\003 \001(\010\022\031\n\021context_player"
+    "_id\030\004 \001(\005\022\025\n\rcontext_value\030\005 \001(\005\022\027\n\017cont"
+    "ext_team_id\030\006 \001(\005\"*\n\026CUserMessageItemPic"
+    "kup\022\020\n\010itemname\030\001 \001(\t\")\n\026CUserMessageAmm"
+    "oDenied\022\017\n\007ammo_id\030\001 \001(\r\"\?\n\032CUserMessage"
+    "CrosshairAngle\022!\n\014angcrosshair\030\001 \001(\0132\013.C"
+    "MsgQAngle\"e\n\024CUserMessageShowMenu\022\022\n\nval"
+    "idslots\030\001 \001(\r\022\023\n\013displaytime\030\002 \001(\r\022\020\n\010ne"
+    "edmore\030\003 \001(\010\022\022\n\nmenustring\030\004 \001(\t\"V\n\026CUse"
+    "rMessageCreditsMsg\022\'\n\010rolltype\030\001 \001(\0162\n.e"
+    "RollType:\tROLL_NONE\022\023\n\013logo_length\030\002 \001(\002"
     "\"\032\n\030CEntityMessagePlayJingle\"3\n\033CEntityM"
     "essageScreenOverlay\022\024\n\014start_effect\030\001 \001("
     "\010\"6\n\035CEntityMessageRemoveAllDecals\022\025\n\rre"
@@ -1604,51 +1632,57 @@ void protobuf_AddDesc_usermessages_2eproto() {
     "ld\030\001 \001(\005\022\026\n\016attachment_new\030\002 \001(\005\022\025\n\renti"
     "ty_handle\030\003 \001(\005\"%\n\021CUserMsg_HudError\022\020\n\010"
     "order_id\030\001 \001(\005\"<\n\030CUserMsg_CustomGameEve"
-    "nt\022\022\n\nevent_name\030\001 \001(\t\022\014\n\004data\030\002 \001(\014*\237\006\n"
-    "\021EBaseUserMessages\022\027\n\023UM_AchievementEven"
-    "t\020e\022\023\n\017UM_CloseCaption\020f\022\031\n\025UM_CloseCapt"
-    "ionDirect\020g\022\027\n\023UM_CurrentTimescale\020h\022\027\n\023"
-    "UM_DesiredTimescale\020i\022\013\n\007UM_Fade\020j\022\020\n\014UM"
-    "_GameTitle\020k\022\017\n\013UM_HintText\020m\022\r\n\tUM_HudM"
-    "sg\020n\022\016\n\nUM_HudText\020o\022\022\n\016UM_KeyHintText\020p"
-    "\022\022\n\016UM_ColoredText\020q\022\023\n\017UM_RequestState\020"
-    "r\022\017\n\013UM_ResetHUD\020s\022\r\n\tUM_Rumble\020t\022\016\n\nUM_"
-    "SayText\020u\022\017\n\013UM_SayText2\020v\022\025\n\021UM_SayText"
-    "Channel\020w\022\014\n\010UM_Shake\020x\022\017\n\013UM_ShakeDir\020y"
-    "\022\016\n\nUM_TextMsg\020|\022\021\n\rUM_ScreenTilt\020}\022\014\n\010U"
-    "M_Train\020~\022\017\n\013UM_VGUIMenu\020\177\022\021\n\014UM_VoiceMa"
-    "sk\020\200\001\022\025\n\020UM_VoiceSubtitle\020\201\001\022\021\n\014UM_SendA"
-    "udio\020\202\001\022\022\n\rUM_ItemPickup\020\203\001\022\022\n\rUM_AmmoDe"
-    "nied\020\204\001\022\026\n\021UM_CrosshairAngle\020\205\001\022\020\n\013UM_Sh"
-    "owMenu\020\206\001\022\022\n\rUM_CreditsMsg\020\207\001\022\037\n\032UM_Clos"
-    "eCaptionPlaceholder\020\216\001\022\030\n\023UM_CameraTrans"
-    "ition\020\217\001\022\026\n\021UM_AudioParameter\020\220\001\022\027\n\022UM_P"
-    "articleManager\020\221\001\022\020\n\013UM_HudError\020\222\001\022\027\n\022U"
-    "M_CustomGameEvent\020\224\001\022\020\n\013UM_MAX_BASE\020\310\001*\224"
-    "\001\n\023EBaseEntityMessages\022\022\n\rEM_PlayJingle\020"
-    "\210\001\022\025\n\020EM_ScreenOverlay\020\211\001\022\027\n\022EM_RemoveAl"
-    "lDecals\020\212\001\022\026\n\021EM_PropagateForce\020\213\001\022\017\n\nEM"
-    "_DoSpark\020\214\001\022\020\n\013EM_FixAngle\020\215\001*o\n\teRollTy"
-    "pe\022\026\n\tROLL_NONE\020\377\377\377\377\377\377\377\377\377\001\022\016\n\nROLL_STATS"
-    "\020\000\022\020\n\014ROLL_CREDITS\020\001\022\027\n\023ROLL_LATE_JOIN_L"
-    "OGO\020\002\022\017\n\013ROLL_OUTTRO\020\003*\226\005\n\020PARTICLE_MESS"
-    "AGE\022&\n\"GAME_PARTICLE_MANAGER_EVENT_CREAT"
-    "E\020\000\022&\n\"GAME_PARTICLE_MANAGER_EVENT_UPDAT"
-    "E\020\001\022.\n*GAME_PARTICLE_MANAGER_EVENT_UPDAT"
-    "E_FORWARD\020\002\0222\n.GAME_PARTICLE_MANAGER_EVE"
-    "NT_UPDATE_ORIENTATION\020\003\022/\n+GAME_PARTICLE"
-    "_MANAGER_EVENT_UPDATE_FALLBACK\020\004\022*\n&GAME"
-    "_PARTICLE_MANAGER_EVENT_UPDATE_ENT\020\005\022-\n)"
-    "GAME_PARTICLE_MANAGER_EVENT_UPDATE_OFFSE"
-    "T\020\006\022\'\n#GAME_PARTICLE_MANAGER_EVENT_DESTR"
-    "OY\020\007\0221\n-GAME_PARTICLE_MANAGER_EVENT_DEST"
-    "ROY_INVOLVING\020\010\022\'\n#GAME_PARTICLE_MANAGER"
-    "_EVENT_RELEASE\020\t\022\'\n#GAME_PARTICLE_MANAGE"
-    "R_EVENT_LATENCY\020\n\022+\n\'GAME_PARTICLE_MANAG"
-    "ER_EVENT_SHOULD_DRAW\020\013\022&\n\"GAME_PARTICLE_"
-    "MANAGER_EVENT_FROZEN\020\014\022\?\n;GAME_PARTICLE_"
-    "MANAGER_EVENT_CHANGE_CONTROL_POINT_ATTAC"
-    "HMENT\020\rB\005H\001\200\001\000", 7454);
+    "nt\022\022\n\nevent_name\030\001 \001(\t\022\014\n\004data\030\002 \001(\014\"m\n\027"
+    "CUserMessageHapticPulse\022\017\n\007hand_id\030\001 \001(\005"
+    "\022A\n\npulse_type\030\002 \001(\0162\021.EHapticPulseType:"
+    "\032VR_HAND_HAPTIC_PULSE_LIGHT*\270\006\n\021EBaseUse"
+    "rMessages\022\027\n\023UM_AchievementEvent\020e\022\023\n\017UM"
+    "_CloseCaption\020f\022\031\n\025UM_CloseCaptionDirect"
+    "\020g\022\027\n\023UM_CurrentTimescale\020h\022\027\n\023UM_Desire"
+    "dTimescale\020i\022\013\n\007UM_Fade\020j\022\020\n\014UM_GameTitl"
+    "e\020k\022\017\n\013UM_HintText\020m\022\r\n\tUM_HudMsg\020n\022\016\n\nU"
+    "M_HudText\020o\022\022\n\016UM_KeyHintText\020p\022\022\n\016UM_Co"
+    "loredText\020q\022\023\n\017UM_RequestState\020r\022\017\n\013UM_R"
+    "esetHUD\020s\022\r\n\tUM_Rumble\020t\022\016\n\nUM_SayText\020u"
+    "\022\017\n\013UM_SayText2\020v\022\025\n\021UM_SayTextChannel\020w"
+    "\022\014\n\010UM_Shake\020x\022\017\n\013UM_ShakeDir\020y\022\016\n\nUM_Te"
+    "xtMsg\020|\022\021\n\rUM_ScreenTilt\020}\022\014\n\010UM_Train\020~"
+    "\022\017\n\013UM_VGUIMenu\020\177\022\021\n\014UM_VoiceMask\020\200\001\022\025\n\020"
+    "UM_VoiceSubtitle\020\201\001\022\021\n\014UM_SendAudio\020\202\001\022\022"
+    "\n\rUM_ItemPickup\020\203\001\022\022\n\rUM_AmmoDenied\020\204\001\022\026"
+    "\n\021UM_CrosshairAngle\020\205\001\022\020\n\013UM_ShowMenu\020\206\001"
+    "\022\022\n\rUM_CreditsMsg\020\207\001\022\037\n\032UM_CloseCaptionP"
+    "laceholder\020\216\001\022\030\n\023UM_CameraTransition\020\217\001\022"
+    "\026\n\021UM_AudioParameter\020\220\001\022\027\n\022UM_ParticleMa"
+    "nager\020\221\001\022\020\n\013UM_HudError\020\222\001\022\027\n\022UM_CustomG"
+    "ameEvent\020\224\001\022\027\n\022UM_HandHapticPulse\020\225\001\022\020\n\013"
+    "UM_MAX_BASE\020\310\001*\224\001\n\023EBaseEntityMessages\022\022"
+    "\n\rEM_PlayJingle\020\210\001\022\025\n\020EM_ScreenOverlay\020\211"
+    "\001\022\027\n\022EM_RemoveAllDecals\020\212\001\022\026\n\021EM_Propaga"
+    "teForce\020\213\001\022\017\n\nEM_DoSpark\020\214\001\022\020\n\013EM_FixAng"
+    "le\020\215\001*o\n\teRollType\022\026\n\tROLL_NONE\020\377\377\377\377\377\377\377\377"
+    "\377\001\022\016\n\nROLL_STATS\020\000\022\020\n\014ROLL_CREDITS\020\001\022\027\n\023"
+    "ROLL_LATE_JOIN_LOGO\020\002\022\017\n\013ROLL_OUTTRO\020\003*\226"
+    "\005\n\020PARTICLE_MESSAGE\022&\n\"GAME_PARTICLE_MAN"
+    "AGER_EVENT_CREATE\020\000\022&\n\"GAME_PARTICLE_MAN"
+    "AGER_EVENT_UPDATE\020\001\022.\n*GAME_PARTICLE_MAN"
+    "AGER_EVENT_UPDATE_FORWARD\020\002\0222\n.GAME_PART"
+    "ICLE_MANAGER_EVENT_UPDATE_ORIENTATION\020\003\022"
+    "/\n+GAME_PARTICLE_MANAGER_EVENT_UPDATE_FA"
+    "LLBACK\020\004\022*\n&GAME_PARTICLE_MANAGER_EVENT_"
+    "UPDATE_ENT\020\005\022-\n)GAME_PARTICLE_MANAGER_EV"
+    "ENT_UPDATE_OFFSET\020\006\022\'\n#GAME_PARTICLE_MAN"
+    "AGER_EVENT_DESTROY\020\007\0221\n-GAME_PARTICLE_MA"
+    "NAGER_EVENT_DESTROY_INVOLVING\020\010\022\'\n#GAME_"
+    "PARTICLE_MANAGER_EVENT_RELEASE\020\t\022\'\n#GAME"
+    "_PARTICLE_MANAGER_EVENT_LATENCY\020\n\022+\n\'GAM"
+    "E_PARTICLE_MANAGER_EVENT_SHOULD_DRAW\020\013\022&"
+    "\n\"GAME_PARTICLE_MANAGER_EVENT_FROZEN\020\014\022\?"
+    "\n;GAME_PARTICLE_MANAGER_EVENT_CHANGE_CON"
+    "TROL_POINT_ATTACHMENT\020\r*t\n\020EHapticPulseT"
+    "ype\022\036\n\032VR_HAND_HAPTIC_PULSE_LIGHT\020\000\022\037\n\033V"
+    "R_HAND_HAPTIC_PULSE_MEDIUM\020\001\022\037\n\033VR_HAND_"
+    "HAPTIC_PULSE_STRONG\020\002B\005H\001\200\001\000", 7748);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "usermessages.proto", &protobuf_RegisterTypes);
   CUserMessageAchievementEvent::default_instance_ = new CUserMessageAchievementEvent();
@@ -1710,6 +1744,7 @@ void protobuf_AddDesc_usermessages_2eproto() {
   CUserMsg_ParticleManager_ChangeControlPointAttachment::default_instance_ = new CUserMsg_ParticleManager_ChangeControlPointAttachment();
   CUserMsg_HudError::default_instance_ = new CUserMsg_HudError();
   CUserMsg_CustomGameEvent::default_instance_ = new CUserMsg_CustomGameEvent();
+  CUserMessageHapticPulse::default_instance_ = new CUserMessageHapticPulse();
   CUserMessageAchievementEvent::default_instance_->InitAsDefaultInstance();
   CUserMessageCloseCaption::default_instance_->InitAsDefaultInstance();
   CUserMessageCloseCaptionDirect::default_instance_->InitAsDefaultInstance();
@@ -1769,6 +1804,7 @@ void protobuf_AddDesc_usermessages_2eproto() {
   CUserMsg_ParticleManager_ChangeControlPointAttachment::default_instance_->InitAsDefaultInstance();
   CUserMsg_HudError::default_instance_->InitAsDefaultInstance();
   CUserMsg_CustomGameEvent::default_instance_->InitAsDefaultInstance();
+  CUserMessageHapticPulse::default_instance_->InitAsDefaultInstance();
   ::google::protobuf::internal::OnShutdown(&protobuf_ShutdownFile_usermessages_2eproto);
 }
 
@@ -1822,6 +1858,7 @@ bool EBaseUserMessages_IsValid(int value) {
     case 145:
     case 146:
     case 148:
+    case 149:
     case 200:
       return true;
     default:
@@ -1884,6 +1921,21 @@ bool PARTICLE_MESSAGE_IsValid(int value) {
     case 11:
     case 12:
     case 13:
+      return true;
+    default:
+      return false;
+  }
+}
+
+const ::google::protobuf::EnumDescriptor* EHapticPulseType_descriptor() {
+  protobuf_AssignDescriptorsOnce();
+  return EHapticPulseType_descriptor_;
+}
+bool EHapticPulseType_IsValid(int value) {
+  switch(value) {
+    case 0:
+    case 1:
+    case 2:
       return true;
     default:
       return false;
@@ -7776,6 +7828,7 @@ void CUserMessageSendAudio::Swap(CUserMessageSendAudio* other) {
 const int CUserMessageAudioParameter::kParameterTypeFieldNumber;
 const int CUserMessageAudioParameter::kNameHashCodeFieldNumber;
 const int CUserMessageAudioParameter::kValueFieldNumber;
+const int CUserMessageAudioParameter::kIntValueFieldNumber;
 #endif  // !_MSC_VER
 
 CUserMessageAudioParameter::CUserMessageAudioParameter()
@@ -7799,6 +7852,7 @@ void CUserMessageAudioParameter::SharedCtor() {
   parameter_type_ = 0u;
   name_hash_code_ = 0u;
   value_ = 0;
+  int_value_ = 0u;
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
 
@@ -7844,7 +7898,7 @@ void CUserMessageAudioParameter::Clear() {
     ::memset(&first, 0, n);                                \
   } while (0)
 
-  ZR_(parameter_type_, value_);
+  ZR_(parameter_type_, int_value_);
 
 #undef OFFSET_OF_FIELD_
 #undef ZR_
@@ -7903,6 +7957,21 @@ bool CUserMessageAudioParameter::MergePartialFromCodedStream(
         } else {
           goto handle_unusual;
         }
+        if (input->ExpectTag(32)) goto parse_int_value;
+        break;
+      }
+
+      // optional uint32 int_value = 4;
+      case 4: {
+        if (tag == 32) {
+         parse_int_value:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                 input, &int_value_)));
+          set_has_int_value();
+        } else {
+          goto handle_unusual;
+        }
         if (input->ExpectAtEnd()) goto success;
         break;
       }
@@ -7947,6 +8016,11 @@ void CUserMessageAudioParameter::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteFloat(3, this->value(), output);
   }
 
+  // optional uint32 int_value = 4;
+  if (has_int_value()) {
+    ::google::protobuf::internal::WireFormatLite::WriteUInt32(4, this->int_value(), output);
+  }
+
   if (!unknown_fields().empty()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
@@ -7970,6 +8044,11 @@ void CUserMessageAudioParameter::SerializeWithCachedSizes(
   // optional float value = 3;
   if (has_value()) {
     target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(3, this->value(), target);
+  }
+
+  // optional uint32 int_value = 4;
+  if (has_int_value()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(4, this->int_value(), target);
   }
 
   if (!unknown_fields().empty()) {
@@ -8001,6 +8080,13 @@ int CUserMessageAudioParameter::ByteSize() const {
     // optional float value = 3;
     if (has_value()) {
       total_size += 1 + 4;
+    }
+
+    // optional uint32 int_value = 4;
+    if (has_int_value()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::UInt32Size(
+          this->int_value());
     }
 
   }
@@ -8039,6 +8125,9 @@ void CUserMessageAudioParameter::MergeFrom(const CUserMessageAudioParameter& fro
     if (from.has_value()) {
       set_value(from.value());
     }
+    if (from.has_int_value()) {
+      set_int_value(from.int_value());
+    }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
 }
@@ -8065,6 +8154,7 @@ void CUserMessageAudioParameter::Swap(CUserMessageAudioParameter* other) {
     std::swap(parameter_type_, other->parameter_type_);
     std::swap(name_hash_code_, other->name_hash_code_);
     std::swap(value_, other->value_);
+    std::swap(int_value_, other->int_value_);
     std::swap(_has_bits_[0], other->_has_bits_[0]);
     _unknown_fields_.Swap(&other->_unknown_fields_);
     std::swap(_cached_size_, other->_cached_size_);
@@ -12363,6 +12453,7 @@ void CUserMessageShowMenu::Swap(CUserMessageShowMenu* other) {
 
 #ifndef _MSC_VER
 const int CUserMessageCreditsMsg::kRolltypeFieldNumber;
+const int CUserMessageCreditsMsg::kLogoLengthFieldNumber;
 #endif  // !_MSC_VER
 
 CUserMessageCreditsMsg::CUserMessageCreditsMsg()
@@ -12384,6 +12475,7 @@ CUserMessageCreditsMsg::CUserMessageCreditsMsg(const CUserMessageCreditsMsg& fro
 void CUserMessageCreditsMsg::SharedCtor() {
   _cached_size_ = 0;
   rolltype_ = -1;
+  logo_length_ = 0;
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
 
@@ -12419,7 +12511,10 @@ CUserMessageCreditsMsg* CUserMessageCreditsMsg::New() const {
 }
 
 void CUserMessageCreditsMsg::Clear() {
-  rolltype_ = -1;
+  if (_has_bits_[0 / 32] & 3) {
+    rolltype_ = -1;
+    logo_length_ = 0;
+  }
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
   mutable_unknown_fields()->Clear();
 }
@@ -12446,6 +12541,21 @@ bool CUserMessageCreditsMsg::MergePartialFromCodedStream(
           } else {
             mutable_unknown_fields()->AddVarint(1, value);
           }
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(21)) goto parse_logo_length;
+        break;
+      }
+
+      // optional float logo_length = 2;
+      case 2: {
+        if (tag == 21) {
+         parse_logo_length:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
+                 input, &logo_length_)));
+          set_has_logo_length();
         } else {
           goto handle_unusual;
         }
@@ -12484,6 +12594,11 @@ void CUserMessageCreditsMsg::SerializeWithCachedSizes(
       1, this->rolltype(), output);
   }
 
+  // optional float logo_length = 2;
+  if (has_logo_length()) {
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(2, this->logo_length(), output);
+  }
+
   if (!unknown_fields().empty()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
@@ -12498,6 +12613,11 @@ void CUserMessageCreditsMsg::SerializeWithCachedSizes(
   if (has_rolltype()) {
     target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
       1, this->rolltype(), target);
+  }
+
+  // optional float logo_length = 2;
+  if (has_logo_length()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(2, this->logo_length(), target);
   }
 
   if (!unknown_fields().empty()) {
@@ -12516,6 +12636,11 @@ int CUserMessageCreditsMsg::ByteSize() const {
     if (has_rolltype()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::EnumSize(this->rolltype());
+    }
+
+    // optional float logo_length = 2;
+    if (has_logo_length()) {
+      total_size += 1 + 4;
     }
 
   }
@@ -12548,6 +12673,9 @@ void CUserMessageCreditsMsg::MergeFrom(const CUserMessageCreditsMsg& from) {
     if (from.has_rolltype()) {
       set_rolltype(from.rolltype());
     }
+    if (from.has_logo_length()) {
+      set_logo_length(from.logo_length());
+    }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
 }
@@ -12572,6 +12700,7 @@ bool CUserMessageCreditsMsg::IsInitialized() const {
 void CUserMessageCreditsMsg::Swap(CUserMessageCreditsMsg* other) {
   if (other != this) {
     std::swap(rolltype_, other->rolltype_);
+    std::swap(logo_length_, other->logo_length_);
     std::swap(_has_bits_[0], other->_has_bits_[0]);
     _unknown_fields_.Swap(&other->_unknown_fields_);
     std::swap(_cached_size_, other->_cached_size_);
@@ -19720,6 +19849,286 @@ void CUserMsg_CustomGameEvent::Swap(CUserMsg_CustomGameEvent* other) {
   ::google::protobuf::Metadata metadata;
   metadata.descriptor = CUserMsg_CustomGameEvent_descriptor_;
   metadata.reflection = CUserMsg_CustomGameEvent_reflection_;
+  return metadata;
+}
+
+
+// ===================================================================
+
+#ifndef _MSC_VER
+const int CUserMessageHapticPulse::kHandIdFieldNumber;
+const int CUserMessageHapticPulse::kPulseTypeFieldNumber;
+#endif  // !_MSC_VER
+
+CUserMessageHapticPulse::CUserMessageHapticPulse()
+  : ::google::protobuf::Message() {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:CUserMessageHapticPulse)
+}
+
+void CUserMessageHapticPulse::InitAsDefaultInstance() {
+}
+
+CUserMessageHapticPulse::CUserMessageHapticPulse(const CUserMessageHapticPulse& from)
+  : ::google::protobuf::Message() {
+  SharedCtor();
+  MergeFrom(from);
+  // @@protoc_insertion_point(copy_constructor:CUserMessageHapticPulse)
+}
+
+void CUserMessageHapticPulse::SharedCtor() {
+  _cached_size_ = 0;
+  hand_id_ = 0;
+  pulse_type_ = 0;
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+}
+
+CUserMessageHapticPulse::~CUserMessageHapticPulse() {
+  // @@protoc_insertion_point(destructor:CUserMessageHapticPulse)
+  SharedDtor();
+}
+
+void CUserMessageHapticPulse::SharedDtor() {
+  if (this != default_instance_) {
+  }
+}
+
+void CUserMessageHapticPulse::SetCachedSize(int size) const {
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+}
+const ::google::protobuf::Descriptor* CUserMessageHapticPulse::descriptor() {
+  protobuf_AssignDescriptorsOnce();
+  return CUserMessageHapticPulse_descriptor_;
+}
+
+const CUserMessageHapticPulse& CUserMessageHapticPulse::default_instance() {
+  if (default_instance_ == NULL) protobuf_AddDesc_usermessages_2eproto();
+  return *default_instance_;
+}
+
+CUserMessageHapticPulse* CUserMessageHapticPulse::default_instance_ = NULL;
+
+CUserMessageHapticPulse* CUserMessageHapticPulse::New() const {
+  return new CUserMessageHapticPulse;
+}
+
+void CUserMessageHapticPulse::Clear() {
+#define OFFSET_OF_FIELD_(f) (reinterpret_cast<char*>(      \
+  &reinterpret_cast<CUserMessageHapticPulse*>(16)->f) - \
+   reinterpret_cast<char*>(16))
+
+#define ZR_(first, last) do {                              \
+    size_t f = OFFSET_OF_FIELD_(first);                    \
+    size_t n = OFFSET_OF_FIELD_(last) - f + sizeof(last);  \
+    ::memset(&first, 0, n);                                \
+  } while (0)
+
+  ZR_(hand_id_, pulse_type_);
+
+#undef OFFSET_OF_FIELD_
+#undef ZR_
+
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+  mutable_unknown_fields()->Clear();
+}
+
+bool CUserMessageHapticPulse::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:CUserMessageHapticPulse)
+  for (;;) {
+    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoff(127);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // optional int32 hand_id = 1;
+      case 1: {
+        if (tag == 8) {
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
+                 input, &hand_id_)));
+          set_has_hand_id();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(16)) goto parse_pulse_type;
+        break;
+      }
+
+      // optional .EHapticPulseType pulse_type = 2 [default = VR_HAND_HAPTIC_PULSE_LIGHT];
+      case 2: {
+        if (tag == 16) {
+         parse_pulse_type:
+          int value;
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
+                 input, &value)));
+          if (::EHapticPulseType_IsValid(value)) {
+            set_pulse_type(static_cast< ::EHapticPulseType >(value));
+          } else {
+            mutable_unknown_fields()->AddVarint(2, value);
+          }
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectAtEnd()) goto success;
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0 ||
+            ::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, mutable_unknown_fields()));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:CUserMessageHapticPulse)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:CUserMessageHapticPulse)
+  return false;
+#undef DO_
+}
+
+void CUserMessageHapticPulse::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:CUserMessageHapticPulse)
+  // optional int32 hand_id = 1;
+  if (has_hand_id()) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(1, this->hand_id(), output);
+  }
+
+  // optional .EHapticPulseType pulse_type = 2 [default = VR_HAND_HAPTIC_PULSE_LIGHT];
+  if (has_pulse_type()) {
+    ::google::protobuf::internal::WireFormatLite::WriteEnum(
+      2, this->pulse_type(), output);
+  }
+
+  if (!unknown_fields().empty()) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        unknown_fields(), output);
+  }
+  // @@protoc_insertion_point(serialize_end:CUserMessageHapticPulse)
+}
+
+::google::protobuf::uint8* CUserMessageHapticPulse::SerializeWithCachedSizesToArray(
+    ::google::protobuf::uint8* target) const {
+  // @@protoc_insertion_point(serialize_to_array_start:CUserMessageHapticPulse)
+  // optional int32 hand_id = 1;
+  if (has_hand_id()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(1, this->hand_id(), target);
+  }
+
+  // optional .EHapticPulseType pulse_type = 2 [default = VR_HAND_HAPTIC_PULSE_LIGHT];
+  if (has_pulse_type()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
+      2, this->pulse_type(), target);
+  }
+
+  if (!unknown_fields().empty()) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        unknown_fields(), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:CUserMessageHapticPulse)
+  return target;
+}
+
+int CUserMessageHapticPulse::ByteSize() const {
+  int total_size = 0;
+
+  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    // optional int32 hand_id = 1;
+    if (has_hand_id()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::Int32Size(
+          this->hand_id());
+    }
+
+    // optional .EHapticPulseType pulse_type = 2 [default = VR_HAND_HAPTIC_PULSE_LIGHT];
+    if (has_pulse_type()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::EnumSize(this->pulse_type());
+    }
+
+  }
+  if (!unknown_fields().empty()) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        unknown_fields());
+  }
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = total_size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+  return total_size;
+}
+
+void CUserMessageHapticPulse::MergeFrom(const ::google::protobuf::Message& from) {
+  GOOGLE_CHECK_NE(&from, this);
+  const CUserMessageHapticPulse* source =
+    ::google::protobuf::internal::dynamic_cast_if_available<const CUserMessageHapticPulse*>(
+      &from);
+  if (source == NULL) {
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+    MergeFrom(*source);
+  }
+}
+
+void CUserMessageHapticPulse::MergeFrom(const CUserMessageHapticPulse& from) {
+  GOOGLE_CHECK_NE(&from, this);
+  if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    if (from.has_hand_id()) {
+      set_hand_id(from.hand_id());
+    }
+    if (from.has_pulse_type()) {
+      set_pulse_type(from.pulse_type());
+    }
+  }
+  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
+}
+
+void CUserMessageHapticPulse::CopyFrom(const ::google::protobuf::Message& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void CUserMessageHapticPulse::CopyFrom(const CUserMessageHapticPulse& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool CUserMessageHapticPulse::IsInitialized() const {
+
+  return true;
+}
+
+void CUserMessageHapticPulse::Swap(CUserMessageHapticPulse* other) {
+  if (other != this) {
+    std::swap(hand_id_, other->hand_id_);
+    std::swap(pulse_type_, other->pulse_type_);
+    std::swap(_has_bits_[0], other->_has_bits_[0]);
+    _unknown_fields_.Swap(&other->_unknown_fields_);
+    std::swap(_cached_size_, other->_cached_size_);
+  }
+}
+
+::google::protobuf::Metadata CUserMessageHapticPulse::GetMetadata() const {
+  protobuf_AssignDescriptorsOnce();
+  ::google::protobuf::Metadata metadata;
+  metadata.descriptor = CUserMessageHapticPulse_descriptor_;
+  metadata.reflection = CUserMessageHapticPulse_reflection_;
   return metadata;
 }
 

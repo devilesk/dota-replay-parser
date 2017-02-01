@@ -326,6 +326,13 @@ class CMsgPlaceDecalEvent : public ::google::protobuf::Message {
   inline bool translucenthit() const;
   inline void set_translucenthit(bool value);
 
+  // optional bool is_adjacent = 14;
+  inline bool has_is_adjacent() const;
+  inline void clear_is_adjacent();
+  static const int kIsAdjacentFieldNumber = 14;
+  inline bool is_adjacent() const;
+  inline void set_is_adjacent(bool value);
+
   // @@protoc_insertion_point(class_scope:CMsgPlaceDecalEvent)
  private:
   inline void set_has_position();
@@ -354,6 +361,8 @@ class CMsgPlaceDecalEvent : public ::google::protobuf::Message {
   inline void clear_has_boneindex();
   inline void set_has_translucenthit();
   inline void clear_has_translucenthit();
+  inline void set_has_is_adjacent();
+  inline void clear_has_is_adjacent();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
@@ -372,6 +381,7 @@ class CMsgPlaceDecalEvent : public ::google::protobuf::Message {
   ::google::protobuf::uint32 skeletoninstancehash_;
   ::google::protobuf::int32 boneindex_;
   bool translucenthit_;
+  bool is_adjacent_;
   friend void  protobuf_AddDesc_gameevents_2eproto();
   friend void protobuf_AssignDesc_gameevents_2eproto();
   friend void protobuf_ShutdownFile_gameevents_2eproto();
@@ -1372,6 +1382,13 @@ class CMsgSosStartSoundEvent : public ::google::protobuf::Message {
   inline ::std::string* release_packed_params();
   inline void set_allocated_packed_params(::std::string* packed_params);
 
+  // optional float start_time = 6;
+  inline bool has_start_time() const;
+  inline void clear_start_time();
+  static const int kStartTimeFieldNumber = 6;
+  inline float start_time() const;
+  inline void set_start_time(float value);
+
   // @@protoc_insertion_point(class_scope:CMsgSosStartSoundEvent)
  private:
   inline void set_has_soundevent_guid();
@@ -1384,6 +1401,8 @@ class CMsgSosStartSoundEvent : public ::google::protobuf::Message {
   inline void clear_has_seed();
   inline void set_has_packed_params();
   inline void clear_has_packed_params();
+  inline void set_has_start_time();
+  inline void clear_has_start_time();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
@@ -1394,6 +1413,7 @@ class CMsgSosStartSoundEvent : public ::google::protobuf::Message {
   ::google::protobuf::int32 source_entity_index_;
   ::google::protobuf::int32 seed_;
   ::std::string* packed_params_;
+  float start_time_;
   friend void  protobuf_AddDesc_gameevents_2eproto();
   friend void protobuf_AssignDesc_gameevents_2eproto();
   friend void protobuf_ShutdownFile_gameevents_2eproto();
@@ -2229,6 +2249,30 @@ inline void CMsgPlaceDecalEvent::set_translucenthit(bool value) {
   set_has_translucenthit();
   translucenthit_ = value;
   // @@protoc_insertion_point(field_set:CMsgPlaceDecalEvent.translucenthit)
+}
+
+// optional bool is_adjacent = 14;
+inline bool CMsgPlaceDecalEvent::has_is_adjacent() const {
+  return (_has_bits_[0] & 0x00002000u) != 0;
+}
+inline void CMsgPlaceDecalEvent::set_has_is_adjacent() {
+  _has_bits_[0] |= 0x00002000u;
+}
+inline void CMsgPlaceDecalEvent::clear_has_is_adjacent() {
+  _has_bits_[0] &= ~0x00002000u;
+}
+inline void CMsgPlaceDecalEvent::clear_is_adjacent() {
+  is_adjacent_ = false;
+  clear_has_is_adjacent();
+}
+inline bool CMsgPlaceDecalEvent::is_adjacent() const {
+  // @@protoc_insertion_point(field_get:CMsgPlaceDecalEvent.is_adjacent)
+  return is_adjacent_;
+}
+inline void CMsgPlaceDecalEvent::set_is_adjacent(bool value) {
+  set_has_is_adjacent();
+  is_adjacent_ = value;
+  // @@protoc_insertion_point(field_set:CMsgPlaceDecalEvent.is_adjacent)
 }
 
 // -------------------------------------------------------------------
@@ -3249,6 +3293,30 @@ inline void CMsgSosStartSoundEvent::set_allocated_packed_params(::std::string* p
     packed_params_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   }
   // @@protoc_insertion_point(field_set_allocated:CMsgSosStartSoundEvent.packed_params)
+}
+
+// optional float start_time = 6;
+inline bool CMsgSosStartSoundEvent::has_start_time() const {
+  return (_has_bits_[0] & 0x00000020u) != 0;
+}
+inline void CMsgSosStartSoundEvent::set_has_start_time() {
+  _has_bits_[0] |= 0x00000020u;
+}
+inline void CMsgSosStartSoundEvent::clear_has_start_time() {
+  _has_bits_[0] &= ~0x00000020u;
+}
+inline void CMsgSosStartSoundEvent::clear_start_time() {
+  start_time_ = 0;
+  clear_has_start_time();
+}
+inline float CMsgSosStartSoundEvent::start_time() const {
+  // @@protoc_insertion_point(field_get:CMsgSosStartSoundEvent.start_time)
+  return start_time_;
+}
+inline void CMsgSosStartSoundEvent::set_start_time(float value) {
+  set_has_start_time();
+  start_time_ = value;
+  // @@protoc_insertion_point(field_set:CMsgSosStartSoundEvent.start_time)
 }
 
 // -------------------------------------------------------------------

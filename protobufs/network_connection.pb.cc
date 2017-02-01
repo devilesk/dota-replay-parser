@@ -58,7 +58,7 @@ void protobuf_AddDesc_network_5fconnection_2eproto() {
   ::google::protobuf::protobuf_AddDesc_google_2fprotobuf_2fdescriptor_2eproto();
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
     "\n\030network_connection.proto\032 google/proto"
-    "buf/descriptor.proto*\334+\n\033ENetworkDisconn"
+    "buf/descriptor.proto*\217-\n\033ENetworkDisconn"
     "ectionReason\022\036\n\032NETWORK_DISCONNECT_INVAL"
     "ID\020\000\022\037\n\033NETWORK_DISCONNECT_SHUTDOWN\020\001\022F\n"
     "%NETWORK_DISCONNECT_DISCONNECT_BY_USER\020\002"
@@ -198,9 +198,13 @@ void protobuf_AddDesc_network_5fconnection_2eproto() {
     "\020F\0320\242\324\030,#GameUI_Disconnect_Splitpacket_S"
     "end_Overflow\022U\n&NETWORK_DISCONNECT_REPLA"
     "Y_INCOMPATIBLE\020G\032)\242\324\030%#GameUI_Disconnect"
-    "_ReplayIncompatible:E\n\030network_connectio"
-    "n_token\022!.google.protobuf.EnumValueOptio"
-    "ns\030\304\212\003 \001(\tB\003\200\001\000", 5735);
+    "_ReplayIncompatible\022Z\n+NETWORK_DISCONNEC"
+    "T_CONNECT_REQUEST_TIMEDOUT\020H\032)\242\324\030%#GameU"
+    "I_Disconnect_ConnectionTimedout\022U\n&NETWO"
+    "RK_DISCONNECT_SERVER_INCOMPATIBLE\020I\032)\242\324\030"
+    "%#GameUI_Disconnect_ServerIncompatible:E"
+    "\n\030network_connection_token\022!.google.prot"
+    "obuf.EnumValueOptions\030\304\212\003 \001(\tB\003\200\001\000", 5914);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "network_connection.proto", &protobuf_RegisterTypes);
   ::google::protobuf::internal::ExtensionSet::RegisterExtension(
@@ -293,6 +297,8 @@ bool ENetworkDisconnectionReason_IsValid(int value) {
     case 69:
     case 70:
     case 71:
+    case 72:
+    case 73:
       return true;
     default:
       return false;

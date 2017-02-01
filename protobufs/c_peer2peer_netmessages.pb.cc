@@ -31,6 +31,15 @@ const ::google::protobuf::EnumDescriptor* CP2P_Voice_Handler_Flags_descriptor_ =
 const ::google::protobuf::Descriptor* CP2P_Ping_descriptor_ = NULL;
 const ::google::protobuf::internal::GeneratedMessageReflection*
   CP2P_Ping_reflection_ = NULL;
+const ::google::protobuf::Descriptor* CP2P_VRAvatarPosition_descriptor_ = NULL;
+const ::google::protobuf::internal::GeneratedMessageReflection*
+  CP2P_VRAvatarPosition_reflection_ = NULL;
+const ::google::protobuf::Descriptor* CP2P_VRAvatarPosition_COrientation_descriptor_ = NULL;
+const ::google::protobuf::internal::GeneratedMessageReflection*
+  CP2P_VRAvatarPosition_COrientation_reflection_ = NULL;
+const ::google::protobuf::Descriptor* CP2P_WatchSynchronization_descriptor_ = NULL;
+const ::google::protobuf::internal::GeneratedMessageReflection*
+  CP2P_WatchSynchronization_reflection_ = NULL;
 const ::google::protobuf::EnumDescriptor* P2P_Messages_descriptor_ = NULL;
 
 }  // namespace
@@ -105,6 +114,62 @@ void protobuf_AssignDesc_c_5fpeer2peer_5fnetmessages_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(CP2P_Ping));
+  CP2P_VRAvatarPosition_descriptor_ = file->message_type(4);
+  static const int CP2P_VRAvatarPosition_offsets_[4] = {
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CP2P_VRAvatarPosition, body_parts_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CP2P_VRAvatarPosition, hat_id_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CP2P_VRAvatarPosition, scene_id_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CP2P_VRAvatarPosition, world_scale_),
+  };
+  CP2P_VRAvatarPosition_reflection_ =
+    new ::google::protobuf::internal::GeneratedMessageReflection(
+      CP2P_VRAvatarPosition_descriptor_,
+      CP2P_VRAvatarPosition::default_instance_,
+      CP2P_VRAvatarPosition_offsets_,
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CP2P_VRAvatarPosition, _has_bits_[0]),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CP2P_VRAvatarPosition, _unknown_fields_),
+      -1,
+      ::google::protobuf::DescriptorPool::generated_pool(),
+      ::google::protobuf::MessageFactory::generated_factory(),
+      sizeof(CP2P_VRAvatarPosition));
+  CP2P_VRAvatarPosition_COrientation_descriptor_ = CP2P_VRAvatarPosition_descriptor_->nested_type(0);
+  static const int CP2P_VRAvatarPosition_COrientation_offsets_[2] = {
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CP2P_VRAvatarPosition_COrientation, pos_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CP2P_VRAvatarPosition_COrientation, ang_),
+  };
+  CP2P_VRAvatarPosition_COrientation_reflection_ =
+    new ::google::protobuf::internal::GeneratedMessageReflection(
+      CP2P_VRAvatarPosition_COrientation_descriptor_,
+      CP2P_VRAvatarPosition_COrientation::default_instance_,
+      CP2P_VRAvatarPosition_COrientation_offsets_,
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CP2P_VRAvatarPosition_COrientation, _has_bits_[0]),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CP2P_VRAvatarPosition_COrientation, _unknown_fields_),
+      -1,
+      ::google::protobuf::DescriptorPool::generated_pool(),
+      ::google::protobuf::MessageFactory::generated_factory(),
+      sizeof(CP2P_VRAvatarPosition_COrientation));
+  CP2P_WatchSynchronization_descriptor_ = file->message_type(5);
+  static const int CP2P_WatchSynchronization_offsets_[8] = {
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CP2P_WatchSynchronization, demo_tick_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CP2P_WatchSynchronization, paused_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CP2P_WatchSynchronization, tv_listen_voice_indices_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CP2P_WatchSynchronization, dota_spectator_mode_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CP2P_WatchSynchronization, dota_spectator_watching_broadcaster_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CP2P_WatchSynchronization, dota_spectator_hero_index_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CP2P_WatchSynchronization, dota_spectator_autospeed_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CP2P_WatchSynchronization, dota_replay_speed_),
+  };
+  CP2P_WatchSynchronization_reflection_ =
+    new ::google::protobuf::internal::GeneratedMessageReflection(
+      CP2P_WatchSynchronization_descriptor_,
+      CP2P_WatchSynchronization::default_instance_,
+      CP2P_WatchSynchronization_offsets_,
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CP2P_WatchSynchronization, _has_bits_[0]),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CP2P_WatchSynchronization, _unknown_fields_),
+      -1,
+      ::google::protobuf::DescriptorPool::generated_pool(),
+      ::google::protobuf::MessageFactory::generated_factory(),
+      sizeof(CP2P_WatchSynchronization));
   P2P_Messages_descriptor_ = file->enum_type(0);
 }
 
@@ -126,6 +191,12 @@ void protobuf_RegisterTypes(const ::std::string&) {
     CP2P_Voice_descriptor_, &CP2P_Voice::default_instance());
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
     CP2P_Ping_descriptor_, &CP2P_Ping::default_instance());
+  ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
+    CP2P_VRAvatarPosition_descriptor_, &CP2P_VRAvatarPosition::default_instance());
+  ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
+    CP2P_VRAvatarPosition_COrientation_descriptor_, &CP2P_VRAvatarPosition_COrientation::default_instance());
+  ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
+    CP2P_WatchSynchronization_descriptor_, &CP2P_WatchSynchronization::default_instance());
 }
 
 }  // namespace
@@ -139,6 +210,12 @@ void protobuf_ShutdownFile_c_5fpeer2peer_5fnetmessages_2eproto() {
   delete CP2P_Voice_reflection_;
   delete CP2P_Ping::default_instance_;
   delete CP2P_Ping_reflection_;
+  delete CP2P_VRAvatarPosition::default_instance_;
+  delete CP2P_VRAvatarPosition_reflection_;
+  delete CP2P_VRAvatarPosition_COrientation::default_instance_;
+  delete CP2P_VRAvatarPosition_COrientation_reflection_;
+  delete CP2P_WatchSynchronization::default_instance_;
+  delete CP2P_WatchSynchronization_reflection_;
 }
 
 void protobuf_AddDesc_c_5fpeer2peer_5fnetmessages_2eproto() {
@@ -148,26 +225,47 @@ void protobuf_AddDesc_c_5fpeer2peer_5fnetmessages_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   ::protobuf_AddDesc_netmessages_2eproto();
+  ::protobuf_AddDesc_networkbasetypes_2eproto();
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
     "\n\035c_peer2peer_netmessages.proto\032\021netmess"
-    "ages.proto\" \n\020CP2P_TextMessage\022\014\n\004text\030\001"
-    " \001(\014\"+\n\025CSteam_Voice_Encoding\022\022\n\nvoice_d"
-    "ata\030\001 \001(\014\"h\n\nCP2P_Voice\022\036\n\005audio\030\001 \001(\0132\017"
-    ".CMsgVoiceAudio\022\027\n\017broadcast_group\030\002 \001(\r"
-    "\"!\n\rHandler_Flags\022\020\n\014Played_Audio\020\001\"0\n\tC"
-    "P2P_Ping\022\021\n\tsend_time\030\001 \002(\004\022\020\n\010is_reply\030"
-    "\002 \002(\010*C\n\014P2P_Messages\022\024\n\017p2p_TextMessage"
-    "\020\200\002\022\016\n\tp2p_Voice\020\201\002\022\r\n\010p2p_Ping\020\202\002B\003\200\001\000", 359);
+    "ages.proto\032\026networkbasetypes.proto\" \n\020CP"
+    "2P_TextMessage\022\014\n\004text\030\001 \001(\014\"+\n\025CSteam_V"
+    "oice_Encoding\022\022\n\nvoice_data\030\001 \001(\014\"h\n\nCP2"
+    "P_Voice\022\036\n\005audio\030\001 \001(\0132\017.CMsgVoiceAudio\022"
+    "\027\n\017broadcast_group\030\002 \001(\r\"!\n\rHandler_Flag"
+    "s\022\020\n\014Played_Audio\020\001\"0\n\tCP2P_Ping\022\021\n\tsend"
+    "_time\030\001 \002(\004\022\020\n\010is_reply\030\002 \002(\010\"\313\001\n\025CP2P_V"
+    "RAvatarPosition\0227\n\nbody_parts\030\001 \003(\0132#.CP"
+    "2P_VRAvatarPosition.COrientation\022\016\n\006hat_"
+    "id\030\002 \001(\005\022\020\n\010scene_id\030\003 \001(\005\022\023\n\013world_scal"
+    "e\030\004 \001(\005\032B\n\014COrientation\022\030\n\003pos\030\001 \001(\0132\013.C"
+    "MsgVector\022\030\n\003ang\030\002 \001(\0132\013.CMsgQAngle\"\211\002\n\031"
+    "CP2P_WatchSynchronization\022\021\n\tdemo_tick\030\001"
+    " \001(\005\022\016\n\006paused\030\002 \001(\010\022\037\n\027tv_listen_voice_"
+    "indices\030\003 \001(\005\022\033\n\023dota_spectator_mode\030\004 \001"
+    "(\005\022+\n#dota_spectator_watching_broadcaste"
+    "r\030\005 \001(\005\022!\n\031dota_spectator_hero_index\030\006 \001"
+    "(\005\022 \n\030dota_spectator_autospeed\030\007 \001(\005\022\031\n\021"
+    "dota_replay_speed\030\010 \001(\005*}\n\014P2P_Messages\022"
+    "\024\n\017p2p_TextMessage\020\200\002\022\016\n\tp2p_Voice\020\201\002\022\r\n"
+    "\010p2p_Ping\020\202\002\022\031\n\024p2p_VRAvatarPosition\020\203\002\022"
+    "\035\n\030p2p_WatchSynchronization\020\204\002B\003\200\001\000", 915);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "c_peer2peer_netmessages.proto", &protobuf_RegisterTypes);
   CP2P_TextMessage::default_instance_ = new CP2P_TextMessage();
   CSteam_Voice_Encoding::default_instance_ = new CSteam_Voice_Encoding();
   CP2P_Voice::default_instance_ = new CP2P_Voice();
   CP2P_Ping::default_instance_ = new CP2P_Ping();
+  CP2P_VRAvatarPosition::default_instance_ = new CP2P_VRAvatarPosition();
+  CP2P_VRAvatarPosition_COrientation::default_instance_ = new CP2P_VRAvatarPosition_COrientation();
+  CP2P_WatchSynchronization::default_instance_ = new CP2P_WatchSynchronization();
   CP2P_TextMessage::default_instance_->InitAsDefaultInstance();
   CSteam_Voice_Encoding::default_instance_->InitAsDefaultInstance();
   CP2P_Voice::default_instance_->InitAsDefaultInstance();
   CP2P_Ping::default_instance_->InitAsDefaultInstance();
+  CP2P_VRAvatarPosition::default_instance_->InitAsDefaultInstance();
+  CP2P_VRAvatarPosition_COrientation::default_instance_->InitAsDefaultInstance();
+  CP2P_WatchSynchronization::default_instance_->InitAsDefaultInstance();
   ::google::protobuf::internal::OnShutdown(&protobuf_ShutdownFile_c_5fpeer2peer_5fnetmessages_2eproto);
 }
 
@@ -186,6 +284,8 @@ bool P2P_Messages_IsValid(int value) {
     case 256:
     case 257:
     case 258:
+    case 259:
+    case 260:
       return true;
     default:
       return false;
@@ -1211,6 +1311,1133 @@ void CP2P_Ping::Swap(CP2P_Ping* other) {
   ::google::protobuf::Metadata metadata;
   metadata.descriptor = CP2P_Ping_descriptor_;
   metadata.reflection = CP2P_Ping_reflection_;
+  return metadata;
+}
+
+
+// ===================================================================
+
+#ifndef _MSC_VER
+const int CP2P_VRAvatarPosition_COrientation::kPosFieldNumber;
+const int CP2P_VRAvatarPosition_COrientation::kAngFieldNumber;
+#endif  // !_MSC_VER
+
+CP2P_VRAvatarPosition_COrientation::CP2P_VRAvatarPosition_COrientation()
+  : ::google::protobuf::Message() {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:CP2P_VRAvatarPosition.COrientation)
+}
+
+void CP2P_VRAvatarPosition_COrientation::InitAsDefaultInstance() {
+  pos_ = const_cast< ::CMsgVector*>(&::CMsgVector::default_instance());
+  ang_ = const_cast< ::CMsgQAngle*>(&::CMsgQAngle::default_instance());
+}
+
+CP2P_VRAvatarPosition_COrientation::CP2P_VRAvatarPosition_COrientation(const CP2P_VRAvatarPosition_COrientation& from)
+  : ::google::protobuf::Message() {
+  SharedCtor();
+  MergeFrom(from);
+  // @@protoc_insertion_point(copy_constructor:CP2P_VRAvatarPosition.COrientation)
+}
+
+void CP2P_VRAvatarPosition_COrientation::SharedCtor() {
+  _cached_size_ = 0;
+  pos_ = NULL;
+  ang_ = NULL;
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+}
+
+CP2P_VRAvatarPosition_COrientation::~CP2P_VRAvatarPosition_COrientation() {
+  // @@protoc_insertion_point(destructor:CP2P_VRAvatarPosition.COrientation)
+  SharedDtor();
+}
+
+void CP2P_VRAvatarPosition_COrientation::SharedDtor() {
+  if (this != default_instance_) {
+    delete pos_;
+    delete ang_;
+  }
+}
+
+void CP2P_VRAvatarPosition_COrientation::SetCachedSize(int size) const {
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+}
+const ::google::protobuf::Descriptor* CP2P_VRAvatarPosition_COrientation::descriptor() {
+  protobuf_AssignDescriptorsOnce();
+  return CP2P_VRAvatarPosition_COrientation_descriptor_;
+}
+
+const CP2P_VRAvatarPosition_COrientation& CP2P_VRAvatarPosition_COrientation::default_instance() {
+  if (default_instance_ == NULL) protobuf_AddDesc_c_5fpeer2peer_5fnetmessages_2eproto();
+  return *default_instance_;
+}
+
+CP2P_VRAvatarPosition_COrientation* CP2P_VRAvatarPosition_COrientation::default_instance_ = NULL;
+
+CP2P_VRAvatarPosition_COrientation* CP2P_VRAvatarPosition_COrientation::New() const {
+  return new CP2P_VRAvatarPosition_COrientation;
+}
+
+void CP2P_VRAvatarPosition_COrientation::Clear() {
+  if (_has_bits_[0 / 32] & 3) {
+    if (has_pos()) {
+      if (pos_ != NULL) pos_->::CMsgVector::Clear();
+    }
+    if (has_ang()) {
+      if (ang_ != NULL) ang_->::CMsgQAngle::Clear();
+    }
+  }
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+  mutable_unknown_fields()->Clear();
+}
+
+bool CP2P_VRAvatarPosition_COrientation::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:CP2P_VRAvatarPosition.COrientation)
+  for (;;) {
+    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoff(127);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // optional .CMsgVector pos = 1;
+      case 1: {
+        if (tag == 10) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+               input, mutable_pos()));
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(18)) goto parse_ang;
+        break;
+      }
+
+      // optional .CMsgQAngle ang = 2;
+      case 2: {
+        if (tag == 18) {
+         parse_ang:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+               input, mutable_ang()));
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectAtEnd()) goto success;
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0 ||
+            ::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, mutable_unknown_fields()));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:CP2P_VRAvatarPosition.COrientation)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:CP2P_VRAvatarPosition.COrientation)
+  return false;
+#undef DO_
+}
+
+void CP2P_VRAvatarPosition_COrientation::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:CP2P_VRAvatarPosition.COrientation)
+  // optional .CMsgVector pos = 1;
+  if (has_pos()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      1, this->pos(), output);
+  }
+
+  // optional .CMsgQAngle ang = 2;
+  if (has_ang()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      2, this->ang(), output);
+  }
+
+  if (!unknown_fields().empty()) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        unknown_fields(), output);
+  }
+  // @@protoc_insertion_point(serialize_end:CP2P_VRAvatarPosition.COrientation)
+}
+
+::google::protobuf::uint8* CP2P_VRAvatarPosition_COrientation::SerializeWithCachedSizesToArray(
+    ::google::protobuf::uint8* target) const {
+  // @@protoc_insertion_point(serialize_to_array_start:CP2P_VRAvatarPosition.COrientation)
+  // optional .CMsgVector pos = 1;
+  if (has_pos()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      WriteMessageNoVirtualToArray(
+        1, this->pos(), target);
+  }
+
+  // optional .CMsgQAngle ang = 2;
+  if (has_ang()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      WriteMessageNoVirtualToArray(
+        2, this->ang(), target);
+  }
+
+  if (!unknown_fields().empty()) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        unknown_fields(), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:CP2P_VRAvatarPosition.COrientation)
+  return target;
+}
+
+int CP2P_VRAvatarPosition_COrientation::ByteSize() const {
+  int total_size = 0;
+
+  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    // optional .CMsgVector pos = 1;
+    if (has_pos()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+          this->pos());
+    }
+
+    // optional .CMsgQAngle ang = 2;
+    if (has_ang()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+          this->ang());
+    }
+
+  }
+  if (!unknown_fields().empty()) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        unknown_fields());
+  }
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = total_size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+  return total_size;
+}
+
+void CP2P_VRAvatarPosition_COrientation::MergeFrom(const ::google::protobuf::Message& from) {
+  GOOGLE_CHECK_NE(&from, this);
+  const CP2P_VRAvatarPosition_COrientation* source =
+    ::google::protobuf::internal::dynamic_cast_if_available<const CP2P_VRAvatarPosition_COrientation*>(
+      &from);
+  if (source == NULL) {
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+    MergeFrom(*source);
+  }
+}
+
+void CP2P_VRAvatarPosition_COrientation::MergeFrom(const CP2P_VRAvatarPosition_COrientation& from) {
+  GOOGLE_CHECK_NE(&from, this);
+  if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    if (from.has_pos()) {
+      mutable_pos()->::CMsgVector::MergeFrom(from.pos());
+    }
+    if (from.has_ang()) {
+      mutable_ang()->::CMsgQAngle::MergeFrom(from.ang());
+    }
+  }
+  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
+}
+
+void CP2P_VRAvatarPosition_COrientation::CopyFrom(const ::google::protobuf::Message& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void CP2P_VRAvatarPosition_COrientation::CopyFrom(const CP2P_VRAvatarPosition_COrientation& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool CP2P_VRAvatarPosition_COrientation::IsInitialized() const {
+
+  return true;
+}
+
+void CP2P_VRAvatarPosition_COrientation::Swap(CP2P_VRAvatarPosition_COrientation* other) {
+  if (other != this) {
+    std::swap(pos_, other->pos_);
+    std::swap(ang_, other->ang_);
+    std::swap(_has_bits_[0], other->_has_bits_[0]);
+    _unknown_fields_.Swap(&other->_unknown_fields_);
+    std::swap(_cached_size_, other->_cached_size_);
+  }
+}
+
+::google::protobuf::Metadata CP2P_VRAvatarPosition_COrientation::GetMetadata() const {
+  protobuf_AssignDescriptorsOnce();
+  ::google::protobuf::Metadata metadata;
+  metadata.descriptor = CP2P_VRAvatarPosition_COrientation_descriptor_;
+  metadata.reflection = CP2P_VRAvatarPosition_COrientation_reflection_;
+  return metadata;
+}
+
+
+// -------------------------------------------------------------------
+
+#ifndef _MSC_VER
+const int CP2P_VRAvatarPosition::kBodyPartsFieldNumber;
+const int CP2P_VRAvatarPosition::kHatIdFieldNumber;
+const int CP2P_VRAvatarPosition::kSceneIdFieldNumber;
+const int CP2P_VRAvatarPosition::kWorldScaleFieldNumber;
+#endif  // !_MSC_VER
+
+CP2P_VRAvatarPosition::CP2P_VRAvatarPosition()
+  : ::google::protobuf::Message() {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:CP2P_VRAvatarPosition)
+}
+
+void CP2P_VRAvatarPosition::InitAsDefaultInstance() {
+}
+
+CP2P_VRAvatarPosition::CP2P_VRAvatarPosition(const CP2P_VRAvatarPosition& from)
+  : ::google::protobuf::Message() {
+  SharedCtor();
+  MergeFrom(from);
+  // @@protoc_insertion_point(copy_constructor:CP2P_VRAvatarPosition)
+}
+
+void CP2P_VRAvatarPosition::SharedCtor() {
+  _cached_size_ = 0;
+  hat_id_ = 0;
+  scene_id_ = 0;
+  world_scale_ = 0;
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+}
+
+CP2P_VRAvatarPosition::~CP2P_VRAvatarPosition() {
+  // @@protoc_insertion_point(destructor:CP2P_VRAvatarPosition)
+  SharedDtor();
+}
+
+void CP2P_VRAvatarPosition::SharedDtor() {
+  if (this != default_instance_) {
+  }
+}
+
+void CP2P_VRAvatarPosition::SetCachedSize(int size) const {
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+}
+const ::google::protobuf::Descriptor* CP2P_VRAvatarPosition::descriptor() {
+  protobuf_AssignDescriptorsOnce();
+  return CP2P_VRAvatarPosition_descriptor_;
+}
+
+const CP2P_VRAvatarPosition& CP2P_VRAvatarPosition::default_instance() {
+  if (default_instance_ == NULL) protobuf_AddDesc_c_5fpeer2peer_5fnetmessages_2eproto();
+  return *default_instance_;
+}
+
+CP2P_VRAvatarPosition* CP2P_VRAvatarPosition::default_instance_ = NULL;
+
+CP2P_VRAvatarPosition* CP2P_VRAvatarPosition::New() const {
+  return new CP2P_VRAvatarPosition;
+}
+
+void CP2P_VRAvatarPosition::Clear() {
+#define OFFSET_OF_FIELD_(f) (reinterpret_cast<char*>(      \
+  &reinterpret_cast<CP2P_VRAvatarPosition*>(16)->f) - \
+   reinterpret_cast<char*>(16))
+
+#define ZR_(first, last) do {                              \
+    size_t f = OFFSET_OF_FIELD_(first);                    \
+    size_t n = OFFSET_OF_FIELD_(last) - f + sizeof(last);  \
+    ::memset(&first, 0, n);                                \
+  } while (0)
+
+  ZR_(hat_id_, world_scale_);
+
+#undef OFFSET_OF_FIELD_
+#undef ZR_
+
+  body_parts_.Clear();
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+  mutable_unknown_fields()->Clear();
+}
+
+bool CP2P_VRAvatarPosition::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:CP2P_VRAvatarPosition)
+  for (;;) {
+    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoff(127);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // repeated .CP2P_VRAvatarPosition.COrientation body_parts = 1;
+      case 1: {
+        if (tag == 10) {
+         parse_body_parts:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+                input, add_body_parts()));
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(10)) goto parse_body_parts;
+        if (input->ExpectTag(16)) goto parse_hat_id;
+        break;
+      }
+
+      // optional int32 hat_id = 2;
+      case 2: {
+        if (tag == 16) {
+         parse_hat_id:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
+                 input, &hat_id_)));
+          set_has_hat_id();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(24)) goto parse_scene_id;
+        break;
+      }
+
+      // optional int32 scene_id = 3;
+      case 3: {
+        if (tag == 24) {
+         parse_scene_id:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
+                 input, &scene_id_)));
+          set_has_scene_id();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(32)) goto parse_world_scale;
+        break;
+      }
+
+      // optional int32 world_scale = 4;
+      case 4: {
+        if (tag == 32) {
+         parse_world_scale:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
+                 input, &world_scale_)));
+          set_has_world_scale();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectAtEnd()) goto success;
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0 ||
+            ::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, mutable_unknown_fields()));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:CP2P_VRAvatarPosition)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:CP2P_VRAvatarPosition)
+  return false;
+#undef DO_
+}
+
+void CP2P_VRAvatarPosition::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:CP2P_VRAvatarPosition)
+  // repeated .CP2P_VRAvatarPosition.COrientation body_parts = 1;
+  for (int i = 0; i < this->body_parts_size(); i++) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      1, this->body_parts(i), output);
+  }
+
+  // optional int32 hat_id = 2;
+  if (has_hat_id()) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(2, this->hat_id(), output);
+  }
+
+  // optional int32 scene_id = 3;
+  if (has_scene_id()) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(3, this->scene_id(), output);
+  }
+
+  // optional int32 world_scale = 4;
+  if (has_world_scale()) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(4, this->world_scale(), output);
+  }
+
+  if (!unknown_fields().empty()) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        unknown_fields(), output);
+  }
+  // @@protoc_insertion_point(serialize_end:CP2P_VRAvatarPosition)
+}
+
+::google::protobuf::uint8* CP2P_VRAvatarPosition::SerializeWithCachedSizesToArray(
+    ::google::protobuf::uint8* target) const {
+  // @@protoc_insertion_point(serialize_to_array_start:CP2P_VRAvatarPosition)
+  // repeated .CP2P_VRAvatarPosition.COrientation body_parts = 1;
+  for (int i = 0; i < this->body_parts_size(); i++) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      WriteMessageNoVirtualToArray(
+        1, this->body_parts(i), target);
+  }
+
+  // optional int32 hat_id = 2;
+  if (has_hat_id()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(2, this->hat_id(), target);
+  }
+
+  // optional int32 scene_id = 3;
+  if (has_scene_id()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(3, this->scene_id(), target);
+  }
+
+  // optional int32 world_scale = 4;
+  if (has_world_scale()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(4, this->world_scale(), target);
+  }
+
+  if (!unknown_fields().empty()) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        unknown_fields(), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:CP2P_VRAvatarPosition)
+  return target;
+}
+
+int CP2P_VRAvatarPosition::ByteSize() const {
+  int total_size = 0;
+
+  if (_has_bits_[1 / 32] & (0xffu << (1 % 32))) {
+    // optional int32 hat_id = 2;
+    if (has_hat_id()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::Int32Size(
+          this->hat_id());
+    }
+
+    // optional int32 scene_id = 3;
+    if (has_scene_id()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::Int32Size(
+          this->scene_id());
+    }
+
+    // optional int32 world_scale = 4;
+    if (has_world_scale()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::Int32Size(
+          this->world_scale());
+    }
+
+  }
+  // repeated .CP2P_VRAvatarPosition.COrientation body_parts = 1;
+  total_size += 1 * this->body_parts_size();
+  for (int i = 0; i < this->body_parts_size(); i++) {
+    total_size +=
+      ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+        this->body_parts(i));
+  }
+
+  if (!unknown_fields().empty()) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        unknown_fields());
+  }
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = total_size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+  return total_size;
+}
+
+void CP2P_VRAvatarPosition::MergeFrom(const ::google::protobuf::Message& from) {
+  GOOGLE_CHECK_NE(&from, this);
+  const CP2P_VRAvatarPosition* source =
+    ::google::protobuf::internal::dynamic_cast_if_available<const CP2P_VRAvatarPosition*>(
+      &from);
+  if (source == NULL) {
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+    MergeFrom(*source);
+  }
+}
+
+void CP2P_VRAvatarPosition::MergeFrom(const CP2P_VRAvatarPosition& from) {
+  GOOGLE_CHECK_NE(&from, this);
+  body_parts_.MergeFrom(from.body_parts_);
+  if (from._has_bits_[1 / 32] & (0xffu << (1 % 32))) {
+    if (from.has_hat_id()) {
+      set_hat_id(from.hat_id());
+    }
+    if (from.has_scene_id()) {
+      set_scene_id(from.scene_id());
+    }
+    if (from.has_world_scale()) {
+      set_world_scale(from.world_scale());
+    }
+  }
+  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
+}
+
+void CP2P_VRAvatarPosition::CopyFrom(const ::google::protobuf::Message& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void CP2P_VRAvatarPosition::CopyFrom(const CP2P_VRAvatarPosition& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool CP2P_VRAvatarPosition::IsInitialized() const {
+
+  return true;
+}
+
+void CP2P_VRAvatarPosition::Swap(CP2P_VRAvatarPosition* other) {
+  if (other != this) {
+    body_parts_.Swap(&other->body_parts_);
+    std::swap(hat_id_, other->hat_id_);
+    std::swap(scene_id_, other->scene_id_);
+    std::swap(world_scale_, other->world_scale_);
+    std::swap(_has_bits_[0], other->_has_bits_[0]);
+    _unknown_fields_.Swap(&other->_unknown_fields_);
+    std::swap(_cached_size_, other->_cached_size_);
+  }
+}
+
+::google::protobuf::Metadata CP2P_VRAvatarPosition::GetMetadata() const {
+  protobuf_AssignDescriptorsOnce();
+  ::google::protobuf::Metadata metadata;
+  metadata.descriptor = CP2P_VRAvatarPosition_descriptor_;
+  metadata.reflection = CP2P_VRAvatarPosition_reflection_;
+  return metadata;
+}
+
+
+// ===================================================================
+
+#ifndef _MSC_VER
+const int CP2P_WatchSynchronization::kDemoTickFieldNumber;
+const int CP2P_WatchSynchronization::kPausedFieldNumber;
+const int CP2P_WatchSynchronization::kTvListenVoiceIndicesFieldNumber;
+const int CP2P_WatchSynchronization::kDotaSpectatorModeFieldNumber;
+const int CP2P_WatchSynchronization::kDotaSpectatorWatchingBroadcasterFieldNumber;
+const int CP2P_WatchSynchronization::kDotaSpectatorHeroIndexFieldNumber;
+const int CP2P_WatchSynchronization::kDotaSpectatorAutospeedFieldNumber;
+const int CP2P_WatchSynchronization::kDotaReplaySpeedFieldNumber;
+#endif  // !_MSC_VER
+
+CP2P_WatchSynchronization::CP2P_WatchSynchronization()
+  : ::google::protobuf::Message() {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:CP2P_WatchSynchronization)
+}
+
+void CP2P_WatchSynchronization::InitAsDefaultInstance() {
+}
+
+CP2P_WatchSynchronization::CP2P_WatchSynchronization(const CP2P_WatchSynchronization& from)
+  : ::google::protobuf::Message() {
+  SharedCtor();
+  MergeFrom(from);
+  // @@protoc_insertion_point(copy_constructor:CP2P_WatchSynchronization)
+}
+
+void CP2P_WatchSynchronization::SharedCtor() {
+  _cached_size_ = 0;
+  demo_tick_ = 0;
+  paused_ = false;
+  tv_listen_voice_indices_ = 0;
+  dota_spectator_mode_ = 0;
+  dota_spectator_watching_broadcaster_ = 0;
+  dota_spectator_hero_index_ = 0;
+  dota_spectator_autospeed_ = 0;
+  dota_replay_speed_ = 0;
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+}
+
+CP2P_WatchSynchronization::~CP2P_WatchSynchronization() {
+  // @@protoc_insertion_point(destructor:CP2P_WatchSynchronization)
+  SharedDtor();
+}
+
+void CP2P_WatchSynchronization::SharedDtor() {
+  if (this != default_instance_) {
+  }
+}
+
+void CP2P_WatchSynchronization::SetCachedSize(int size) const {
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+}
+const ::google::protobuf::Descriptor* CP2P_WatchSynchronization::descriptor() {
+  protobuf_AssignDescriptorsOnce();
+  return CP2P_WatchSynchronization_descriptor_;
+}
+
+const CP2P_WatchSynchronization& CP2P_WatchSynchronization::default_instance() {
+  if (default_instance_ == NULL) protobuf_AddDesc_c_5fpeer2peer_5fnetmessages_2eproto();
+  return *default_instance_;
+}
+
+CP2P_WatchSynchronization* CP2P_WatchSynchronization::default_instance_ = NULL;
+
+CP2P_WatchSynchronization* CP2P_WatchSynchronization::New() const {
+  return new CP2P_WatchSynchronization;
+}
+
+void CP2P_WatchSynchronization::Clear() {
+#define OFFSET_OF_FIELD_(f) (reinterpret_cast<char*>(      \
+  &reinterpret_cast<CP2P_WatchSynchronization*>(16)->f) - \
+   reinterpret_cast<char*>(16))
+
+#define ZR_(first, last) do {                              \
+    size_t f = OFFSET_OF_FIELD_(first);                    \
+    size_t n = OFFSET_OF_FIELD_(last) - f + sizeof(last);  \
+    ::memset(&first, 0, n);                                \
+  } while (0)
+
+  if (_has_bits_[0 / 32] & 255) {
+    ZR_(demo_tick_, dota_replay_speed_);
+  }
+
+#undef OFFSET_OF_FIELD_
+#undef ZR_
+
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+  mutable_unknown_fields()->Clear();
+}
+
+bool CP2P_WatchSynchronization::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:CP2P_WatchSynchronization)
+  for (;;) {
+    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoff(127);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // optional int32 demo_tick = 1;
+      case 1: {
+        if (tag == 8) {
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
+                 input, &demo_tick_)));
+          set_has_demo_tick();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(16)) goto parse_paused;
+        break;
+      }
+
+      // optional bool paused = 2;
+      case 2: {
+        if (tag == 16) {
+         parse_paused:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   bool, ::google::protobuf::internal::WireFormatLite::TYPE_BOOL>(
+                 input, &paused_)));
+          set_has_paused();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(24)) goto parse_tv_listen_voice_indices;
+        break;
+      }
+
+      // optional int32 tv_listen_voice_indices = 3;
+      case 3: {
+        if (tag == 24) {
+         parse_tv_listen_voice_indices:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
+                 input, &tv_listen_voice_indices_)));
+          set_has_tv_listen_voice_indices();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(32)) goto parse_dota_spectator_mode;
+        break;
+      }
+
+      // optional int32 dota_spectator_mode = 4;
+      case 4: {
+        if (tag == 32) {
+         parse_dota_spectator_mode:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
+                 input, &dota_spectator_mode_)));
+          set_has_dota_spectator_mode();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(40)) goto parse_dota_spectator_watching_broadcaster;
+        break;
+      }
+
+      // optional int32 dota_spectator_watching_broadcaster = 5;
+      case 5: {
+        if (tag == 40) {
+         parse_dota_spectator_watching_broadcaster:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
+                 input, &dota_spectator_watching_broadcaster_)));
+          set_has_dota_spectator_watching_broadcaster();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(48)) goto parse_dota_spectator_hero_index;
+        break;
+      }
+
+      // optional int32 dota_spectator_hero_index = 6;
+      case 6: {
+        if (tag == 48) {
+         parse_dota_spectator_hero_index:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
+                 input, &dota_spectator_hero_index_)));
+          set_has_dota_spectator_hero_index();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(56)) goto parse_dota_spectator_autospeed;
+        break;
+      }
+
+      // optional int32 dota_spectator_autospeed = 7;
+      case 7: {
+        if (tag == 56) {
+         parse_dota_spectator_autospeed:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
+                 input, &dota_spectator_autospeed_)));
+          set_has_dota_spectator_autospeed();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(64)) goto parse_dota_replay_speed;
+        break;
+      }
+
+      // optional int32 dota_replay_speed = 8;
+      case 8: {
+        if (tag == 64) {
+         parse_dota_replay_speed:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
+                 input, &dota_replay_speed_)));
+          set_has_dota_replay_speed();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectAtEnd()) goto success;
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0 ||
+            ::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, mutable_unknown_fields()));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:CP2P_WatchSynchronization)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:CP2P_WatchSynchronization)
+  return false;
+#undef DO_
+}
+
+void CP2P_WatchSynchronization::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:CP2P_WatchSynchronization)
+  // optional int32 demo_tick = 1;
+  if (has_demo_tick()) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(1, this->demo_tick(), output);
+  }
+
+  // optional bool paused = 2;
+  if (has_paused()) {
+    ::google::protobuf::internal::WireFormatLite::WriteBool(2, this->paused(), output);
+  }
+
+  // optional int32 tv_listen_voice_indices = 3;
+  if (has_tv_listen_voice_indices()) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(3, this->tv_listen_voice_indices(), output);
+  }
+
+  // optional int32 dota_spectator_mode = 4;
+  if (has_dota_spectator_mode()) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(4, this->dota_spectator_mode(), output);
+  }
+
+  // optional int32 dota_spectator_watching_broadcaster = 5;
+  if (has_dota_spectator_watching_broadcaster()) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(5, this->dota_spectator_watching_broadcaster(), output);
+  }
+
+  // optional int32 dota_spectator_hero_index = 6;
+  if (has_dota_spectator_hero_index()) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(6, this->dota_spectator_hero_index(), output);
+  }
+
+  // optional int32 dota_spectator_autospeed = 7;
+  if (has_dota_spectator_autospeed()) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(7, this->dota_spectator_autospeed(), output);
+  }
+
+  // optional int32 dota_replay_speed = 8;
+  if (has_dota_replay_speed()) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(8, this->dota_replay_speed(), output);
+  }
+
+  if (!unknown_fields().empty()) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        unknown_fields(), output);
+  }
+  // @@protoc_insertion_point(serialize_end:CP2P_WatchSynchronization)
+}
+
+::google::protobuf::uint8* CP2P_WatchSynchronization::SerializeWithCachedSizesToArray(
+    ::google::protobuf::uint8* target) const {
+  // @@protoc_insertion_point(serialize_to_array_start:CP2P_WatchSynchronization)
+  // optional int32 demo_tick = 1;
+  if (has_demo_tick()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(1, this->demo_tick(), target);
+  }
+
+  // optional bool paused = 2;
+  if (has_paused()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(2, this->paused(), target);
+  }
+
+  // optional int32 tv_listen_voice_indices = 3;
+  if (has_tv_listen_voice_indices()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(3, this->tv_listen_voice_indices(), target);
+  }
+
+  // optional int32 dota_spectator_mode = 4;
+  if (has_dota_spectator_mode()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(4, this->dota_spectator_mode(), target);
+  }
+
+  // optional int32 dota_spectator_watching_broadcaster = 5;
+  if (has_dota_spectator_watching_broadcaster()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(5, this->dota_spectator_watching_broadcaster(), target);
+  }
+
+  // optional int32 dota_spectator_hero_index = 6;
+  if (has_dota_spectator_hero_index()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(6, this->dota_spectator_hero_index(), target);
+  }
+
+  // optional int32 dota_spectator_autospeed = 7;
+  if (has_dota_spectator_autospeed()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(7, this->dota_spectator_autospeed(), target);
+  }
+
+  // optional int32 dota_replay_speed = 8;
+  if (has_dota_replay_speed()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(8, this->dota_replay_speed(), target);
+  }
+
+  if (!unknown_fields().empty()) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        unknown_fields(), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:CP2P_WatchSynchronization)
+  return target;
+}
+
+int CP2P_WatchSynchronization::ByteSize() const {
+  int total_size = 0;
+
+  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    // optional int32 demo_tick = 1;
+    if (has_demo_tick()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::Int32Size(
+          this->demo_tick());
+    }
+
+    // optional bool paused = 2;
+    if (has_paused()) {
+      total_size += 1 + 1;
+    }
+
+    // optional int32 tv_listen_voice_indices = 3;
+    if (has_tv_listen_voice_indices()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::Int32Size(
+          this->tv_listen_voice_indices());
+    }
+
+    // optional int32 dota_spectator_mode = 4;
+    if (has_dota_spectator_mode()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::Int32Size(
+          this->dota_spectator_mode());
+    }
+
+    // optional int32 dota_spectator_watching_broadcaster = 5;
+    if (has_dota_spectator_watching_broadcaster()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::Int32Size(
+          this->dota_spectator_watching_broadcaster());
+    }
+
+    // optional int32 dota_spectator_hero_index = 6;
+    if (has_dota_spectator_hero_index()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::Int32Size(
+          this->dota_spectator_hero_index());
+    }
+
+    // optional int32 dota_spectator_autospeed = 7;
+    if (has_dota_spectator_autospeed()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::Int32Size(
+          this->dota_spectator_autospeed());
+    }
+
+    // optional int32 dota_replay_speed = 8;
+    if (has_dota_replay_speed()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::Int32Size(
+          this->dota_replay_speed());
+    }
+
+  }
+  if (!unknown_fields().empty()) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        unknown_fields());
+  }
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = total_size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+  return total_size;
+}
+
+void CP2P_WatchSynchronization::MergeFrom(const ::google::protobuf::Message& from) {
+  GOOGLE_CHECK_NE(&from, this);
+  const CP2P_WatchSynchronization* source =
+    ::google::protobuf::internal::dynamic_cast_if_available<const CP2P_WatchSynchronization*>(
+      &from);
+  if (source == NULL) {
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+    MergeFrom(*source);
+  }
+}
+
+void CP2P_WatchSynchronization::MergeFrom(const CP2P_WatchSynchronization& from) {
+  GOOGLE_CHECK_NE(&from, this);
+  if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    if (from.has_demo_tick()) {
+      set_demo_tick(from.demo_tick());
+    }
+    if (from.has_paused()) {
+      set_paused(from.paused());
+    }
+    if (from.has_tv_listen_voice_indices()) {
+      set_tv_listen_voice_indices(from.tv_listen_voice_indices());
+    }
+    if (from.has_dota_spectator_mode()) {
+      set_dota_spectator_mode(from.dota_spectator_mode());
+    }
+    if (from.has_dota_spectator_watching_broadcaster()) {
+      set_dota_spectator_watching_broadcaster(from.dota_spectator_watching_broadcaster());
+    }
+    if (from.has_dota_spectator_hero_index()) {
+      set_dota_spectator_hero_index(from.dota_spectator_hero_index());
+    }
+    if (from.has_dota_spectator_autospeed()) {
+      set_dota_spectator_autospeed(from.dota_spectator_autospeed());
+    }
+    if (from.has_dota_replay_speed()) {
+      set_dota_replay_speed(from.dota_replay_speed());
+    }
+  }
+  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
+}
+
+void CP2P_WatchSynchronization::CopyFrom(const ::google::protobuf::Message& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void CP2P_WatchSynchronization::CopyFrom(const CP2P_WatchSynchronization& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool CP2P_WatchSynchronization::IsInitialized() const {
+
+  return true;
+}
+
+void CP2P_WatchSynchronization::Swap(CP2P_WatchSynchronization* other) {
+  if (other != this) {
+    std::swap(demo_tick_, other->demo_tick_);
+    std::swap(paused_, other->paused_);
+    std::swap(tv_listen_voice_indices_, other->tv_listen_voice_indices_);
+    std::swap(dota_spectator_mode_, other->dota_spectator_mode_);
+    std::swap(dota_spectator_watching_broadcaster_, other->dota_spectator_watching_broadcaster_);
+    std::swap(dota_spectator_hero_index_, other->dota_spectator_hero_index_);
+    std::swap(dota_spectator_autospeed_, other->dota_spectator_autospeed_);
+    std::swap(dota_replay_speed_, other->dota_replay_speed_);
+    std::swap(_has_bits_[0], other->_has_bits_[0]);
+    _unknown_fields_.Swap(&other->_unknown_fields_);
+    std::swap(_cached_size_, other->_cached_size_);
+  }
+}
+
+::google::protobuf::Metadata CP2P_WatchSynchronization::GetMetadata() const {
+  protobuf_AssignDescriptorsOnce();
+  ::google::protobuf::Metadata metadata;
+  metadata.descriptor = CP2P_WatchSynchronization_descriptor_;
+  metadata.reflection = CP2P_WatchSynchronization_reflection_;
   return metadata;
 }
 

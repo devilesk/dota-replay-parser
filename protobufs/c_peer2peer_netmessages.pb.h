@@ -26,6 +26,7 @@
 #include <google/protobuf/generated_enum_reflection.h>
 #include <google/protobuf/unknown_field_set.h>
 #include "netmessages.pb.h"
+#include "networkbasetypes.pb.h"
 // @@protoc_insertion_point(includes)
 
 // Internal implementation detail -- do not call these.
@@ -37,6 +38,9 @@ class CP2P_TextMessage;
 class CSteam_Voice_Encoding;
 class CP2P_Voice;
 class CP2P_Ping;
+class CP2P_VRAvatarPosition;
+class CP2P_VRAvatarPosition_COrientation;
+class CP2P_WatchSynchronization;
 
 enum CP2P_Voice_Handler_Flags {
   CP2P_Voice_Handler_Flags_Played_Audio = 1
@@ -59,11 +63,13 @@ inline bool CP2P_Voice_Handler_Flags_Parse(
 enum P2P_Messages {
   p2p_TextMessage = 256,
   p2p_Voice = 257,
-  p2p_Ping = 258
+  p2p_Ping = 258,
+  p2p_VRAvatarPosition = 259,
+  p2p_WatchSynchronization = 260
 };
 bool P2P_Messages_IsValid(int value);
 const P2P_Messages P2P_Messages_MIN = p2p_TextMessage;
-const P2P_Messages P2P_Messages_MAX = p2p_Ping;
+const P2P_Messages P2P_Messages_MAX = p2p_WatchSynchronization;
 const int P2P_Messages_ARRAYSIZE = P2P_Messages_MAX + 1;
 
 const ::google::protobuf::EnumDescriptor* P2P_Messages_descriptor();
@@ -447,6 +453,362 @@ class CP2P_Ping : public ::google::protobuf::Message {
   void InitAsDefaultInstance();
   static CP2P_Ping* default_instance_;
 };
+// -------------------------------------------------------------------
+
+class CP2P_VRAvatarPosition_COrientation : public ::google::protobuf::Message {
+ public:
+  CP2P_VRAvatarPosition_COrientation();
+  virtual ~CP2P_VRAvatarPosition_COrientation();
+
+  CP2P_VRAvatarPosition_COrientation(const CP2P_VRAvatarPosition_COrientation& from);
+
+  inline CP2P_VRAvatarPosition_COrientation& operator=(const CP2P_VRAvatarPosition_COrientation& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+    return _unknown_fields_;
+  }
+
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+    return &_unknown_fields_;
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const CP2P_VRAvatarPosition_COrientation& default_instance();
+
+  void Swap(CP2P_VRAvatarPosition_COrientation* other);
+
+  // implements Message ----------------------------------------------
+
+  CP2P_VRAvatarPosition_COrientation* New() const;
+  void CopyFrom(const ::google::protobuf::Message& from);
+  void MergeFrom(const ::google::protobuf::Message& from);
+  void CopyFrom(const CP2P_VRAvatarPosition_COrientation& from);
+  void MergeFrom(const CP2P_VRAvatarPosition_COrientation& from);
+  void Clear();
+  bool IsInitialized() const;
+
+  int ByteSize() const;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input);
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  int GetCachedSize() const { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const;
+  public:
+  ::google::protobuf::Metadata GetMetadata() const;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // optional .CMsgVector pos = 1;
+  inline bool has_pos() const;
+  inline void clear_pos();
+  static const int kPosFieldNumber = 1;
+  inline const ::CMsgVector& pos() const;
+  inline ::CMsgVector* mutable_pos();
+  inline ::CMsgVector* release_pos();
+  inline void set_allocated_pos(::CMsgVector* pos);
+
+  // optional .CMsgQAngle ang = 2;
+  inline bool has_ang() const;
+  inline void clear_ang();
+  static const int kAngFieldNumber = 2;
+  inline const ::CMsgQAngle& ang() const;
+  inline ::CMsgQAngle* mutable_ang();
+  inline ::CMsgQAngle* release_ang();
+  inline void set_allocated_ang(::CMsgQAngle* ang);
+
+  // @@protoc_insertion_point(class_scope:CP2P_VRAvatarPosition.COrientation)
+ private:
+  inline void set_has_pos();
+  inline void clear_has_pos();
+  inline void set_has_ang();
+  inline void clear_has_ang();
+
+  ::google::protobuf::UnknownFieldSet _unknown_fields_;
+
+  ::google::protobuf::uint32 _has_bits_[1];
+  mutable int _cached_size_;
+  ::CMsgVector* pos_;
+  ::CMsgQAngle* ang_;
+  friend void  protobuf_AddDesc_c_5fpeer2peer_5fnetmessages_2eproto();
+  friend void protobuf_AssignDesc_c_5fpeer2peer_5fnetmessages_2eproto();
+  friend void protobuf_ShutdownFile_c_5fpeer2peer_5fnetmessages_2eproto();
+
+  void InitAsDefaultInstance();
+  static CP2P_VRAvatarPosition_COrientation* default_instance_;
+};
+// -------------------------------------------------------------------
+
+class CP2P_VRAvatarPosition : public ::google::protobuf::Message {
+ public:
+  CP2P_VRAvatarPosition();
+  virtual ~CP2P_VRAvatarPosition();
+
+  CP2P_VRAvatarPosition(const CP2P_VRAvatarPosition& from);
+
+  inline CP2P_VRAvatarPosition& operator=(const CP2P_VRAvatarPosition& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+    return _unknown_fields_;
+  }
+
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+    return &_unknown_fields_;
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const CP2P_VRAvatarPosition& default_instance();
+
+  void Swap(CP2P_VRAvatarPosition* other);
+
+  // implements Message ----------------------------------------------
+
+  CP2P_VRAvatarPosition* New() const;
+  void CopyFrom(const ::google::protobuf::Message& from);
+  void MergeFrom(const ::google::protobuf::Message& from);
+  void CopyFrom(const CP2P_VRAvatarPosition& from);
+  void MergeFrom(const CP2P_VRAvatarPosition& from);
+  void Clear();
+  bool IsInitialized() const;
+
+  int ByteSize() const;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input);
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  int GetCachedSize() const { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const;
+  public:
+  ::google::protobuf::Metadata GetMetadata() const;
+
+  // nested types ----------------------------------------------------
+
+  typedef CP2P_VRAvatarPosition_COrientation COrientation;
+
+  // accessors -------------------------------------------------------
+
+  // repeated .CP2P_VRAvatarPosition.COrientation body_parts = 1;
+  inline int body_parts_size() const;
+  inline void clear_body_parts();
+  static const int kBodyPartsFieldNumber = 1;
+  inline const ::CP2P_VRAvatarPosition_COrientation& body_parts(int index) const;
+  inline ::CP2P_VRAvatarPosition_COrientation* mutable_body_parts(int index);
+  inline ::CP2P_VRAvatarPosition_COrientation* add_body_parts();
+  inline const ::google::protobuf::RepeatedPtrField< ::CP2P_VRAvatarPosition_COrientation >&
+      body_parts() const;
+  inline ::google::protobuf::RepeatedPtrField< ::CP2P_VRAvatarPosition_COrientation >*
+      mutable_body_parts();
+
+  // optional int32 hat_id = 2;
+  inline bool has_hat_id() const;
+  inline void clear_hat_id();
+  static const int kHatIdFieldNumber = 2;
+  inline ::google::protobuf::int32 hat_id() const;
+  inline void set_hat_id(::google::protobuf::int32 value);
+
+  // optional int32 scene_id = 3;
+  inline bool has_scene_id() const;
+  inline void clear_scene_id();
+  static const int kSceneIdFieldNumber = 3;
+  inline ::google::protobuf::int32 scene_id() const;
+  inline void set_scene_id(::google::protobuf::int32 value);
+
+  // optional int32 world_scale = 4;
+  inline bool has_world_scale() const;
+  inline void clear_world_scale();
+  static const int kWorldScaleFieldNumber = 4;
+  inline ::google::protobuf::int32 world_scale() const;
+  inline void set_world_scale(::google::protobuf::int32 value);
+
+  // @@protoc_insertion_point(class_scope:CP2P_VRAvatarPosition)
+ private:
+  inline void set_has_hat_id();
+  inline void clear_has_hat_id();
+  inline void set_has_scene_id();
+  inline void clear_has_scene_id();
+  inline void set_has_world_scale();
+  inline void clear_has_world_scale();
+
+  ::google::protobuf::UnknownFieldSet _unknown_fields_;
+
+  ::google::protobuf::uint32 _has_bits_[1];
+  mutable int _cached_size_;
+  ::google::protobuf::RepeatedPtrField< ::CP2P_VRAvatarPosition_COrientation > body_parts_;
+  ::google::protobuf::int32 hat_id_;
+  ::google::protobuf::int32 scene_id_;
+  ::google::protobuf::int32 world_scale_;
+  friend void  protobuf_AddDesc_c_5fpeer2peer_5fnetmessages_2eproto();
+  friend void protobuf_AssignDesc_c_5fpeer2peer_5fnetmessages_2eproto();
+  friend void protobuf_ShutdownFile_c_5fpeer2peer_5fnetmessages_2eproto();
+
+  void InitAsDefaultInstance();
+  static CP2P_VRAvatarPosition* default_instance_;
+};
+// -------------------------------------------------------------------
+
+class CP2P_WatchSynchronization : public ::google::protobuf::Message {
+ public:
+  CP2P_WatchSynchronization();
+  virtual ~CP2P_WatchSynchronization();
+
+  CP2P_WatchSynchronization(const CP2P_WatchSynchronization& from);
+
+  inline CP2P_WatchSynchronization& operator=(const CP2P_WatchSynchronization& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+    return _unknown_fields_;
+  }
+
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+    return &_unknown_fields_;
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const CP2P_WatchSynchronization& default_instance();
+
+  void Swap(CP2P_WatchSynchronization* other);
+
+  // implements Message ----------------------------------------------
+
+  CP2P_WatchSynchronization* New() const;
+  void CopyFrom(const ::google::protobuf::Message& from);
+  void MergeFrom(const ::google::protobuf::Message& from);
+  void CopyFrom(const CP2P_WatchSynchronization& from);
+  void MergeFrom(const CP2P_WatchSynchronization& from);
+  void Clear();
+  bool IsInitialized() const;
+
+  int ByteSize() const;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input);
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  int GetCachedSize() const { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const;
+  public:
+  ::google::protobuf::Metadata GetMetadata() const;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // optional int32 demo_tick = 1;
+  inline bool has_demo_tick() const;
+  inline void clear_demo_tick();
+  static const int kDemoTickFieldNumber = 1;
+  inline ::google::protobuf::int32 demo_tick() const;
+  inline void set_demo_tick(::google::protobuf::int32 value);
+
+  // optional bool paused = 2;
+  inline bool has_paused() const;
+  inline void clear_paused();
+  static const int kPausedFieldNumber = 2;
+  inline bool paused() const;
+  inline void set_paused(bool value);
+
+  // optional int32 tv_listen_voice_indices = 3;
+  inline bool has_tv_listen_voice_indices() const;
+  inline void clear_tv_listen_voice_indices();
+  static const int kTvListenVoiceIndicesFieldNumber = 3;
+  inline ::google::protobuf::int32 tv_listen_voice_indices() const;
+  inline void set_tv_listen_voice_indices(::google::protobuf::int32 value);
+
+  // optional int32 dota_spectator_mode = 4;
+  inline bool has_dota_spectator_mode() const;
+  inline void clear_dota_spectator_mode();
+  static const int kDotaSpectatorModeFieldNumber = 4;
+  inline ::google::protobuf::int32 dota_spectator_mode() const;
+  inline void set_dota_spectator_mode(::google::protobuf::int32 value);
+
+  // optional int32 dota_spectator_watching_broadcaster = 5;
+  inline bool has_dota_spectator_watching_broadcaster() const;
+  inline void clear_dota_spectator_watching_broadcaster();
+  static const int kDotaSpectatorWatchingBroadcasterFieldNumber = 5;
+  inline ::google::protobuf::int32 dota_spectator_watching_broadcaster() const;
+  inline void set_dota_spectator_watching_broadcaster(::google::protobuf::int32 value);
+
+  // optional int32 dota_spectator_hero_index = 6;
+  inline bool has_dota_spectator_hero_index() const;
+  inline void clear_dota_spectator_hero_index();
+  static const int kDotaSpectatorHeroIndexFieldNumber = 6;
+  inline ::google::protobuf::int32 dota_spectator_hero_index() const;
+  inline void set_dota_spectator_hero_index(::google::protobuf::int32 value);
+
+  // optional int32 dota_spectator_autospeed = 7;
+  inline bool has_dota_spectator_autospeed() const;
+  inline void clear_dota_spectator_autospeed();
+  static const int kDotaSpectatorAutospeedFieldNumber = 7;
+  inline ::google::protobuf::int32 dota_spectator_autospeed() const;
+  inline void set_dota_spectator_autospeed(::google::protobuf::int32 value);
+
+  // optional int32 dota_replay_speed = 8;
+  inline bool has_dota_replay_speed() const;
+  inline void clear_dota_replay_speed();
+  static const int kDotaReplaySpeedFieldNumber = 8;
+  inline ::google::protobuf::int32 dota_replay_speed() const;
+  inline void set_dota_replay_speed(::google::protobuf::int32 value);
+
+  // @@protoc_insertion_point(class_scope:CP2P_WatchSynchronization)
+ private:
+  inline void set_has_demo_tick();
+  inline void clear_has_demo_tick();
+  inline void set_has_paused();
+  inline void clear_has_paused();
+  inline void set_has_tv_listen_voice_indices();
+  inline void clear_has_tv_listen_voice_indices();
+  inline void set_has_dota_spectator_mode();
+  inline void clear_has_dota_spectator_mode();
+  inline void set_has_dota_spectator_watching_broadcaster();
+  inline void clear_has_dota_spectator_watching_broadcaster();
+  inline void set_has_dota_spectator_hero_index();
+  inline void clear_has_dota_spectator_hero_index();
+  inline void set_has_dota_spectator_autospeed();
+  inline void clear_has_dota_spectator_autospeed();
+  inline void set_has_dota_replay_speed();
+  inline void clear_has_dota_replay_speed();
+
+  ::google::protobuf::UnknownFieldSet _unknown_fields_;
+
+  ::google::protobuf::uint32 _has_bits_[1];
+  mutable int _cached_size_;
+  ::google::protobuf::int32 demo_tick_;
+  bool paused_;
+  ::google::protobuf::int32 tv_listen_voice_indices_;
+  ::google::protobuf::int32 dota_spectator_mode_;
+  ::google::protobuf::int32 dota_spectator_watching_broadcaster_;
+  ::google::protobuf::int32 dota_spectator_hero_index_;
+  ::google::protobuf::int32 dota_spectator_autospeed_;
+  ::google::protobuf::int32 dota_replay_speed_;
+  friend void  protobuf_AddDesc_c_5fpeer2peer_5fnetmessages_2eproto();
+  friend void protobuf_AssignDesc_c_5fpeer2peer_5fnetmessages_2eproto();
+  friend void protobuf_ShutdownFile_c_5fpeer2peer_5fnetmessages_2eproto();
+
+  void InitAsDefaultInstance();
+  static CP2P_WatchSynchronization* default_instance_;
+};
 // ===================================================================
 
 
@@ -729,6 +1091,394 @@ inline void CP2P_Ping::set_is_reply(bool value) {
   set_has_is_reply();
   is_reply_ = value;
   // @@protoc_insertion_point(field_set:CP2P_Ping.is_reply)
+}
+
+// -------------------------------------------------------------------
+
+// CP2P_VRAvatarPosition_COrientation
+
+// optional .CMsgVector pos = 1;
+inline bool CP2P_VRAvatarPosition_COrientation::has_pos() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+inline void CP2P_VRAvatarPosition_COrientation::set_has_pos() {
+  _has_bits_[0] |= 0x00000001u;
+}
+inline void CP2P_VRAvatarPosition_COrientation::clear_has_pos() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+inline void CP2P_VRAvatarPosition_COrientation::clear_pos() {
+  if (pos_ != NULL) pos_->::CMsgVector::Clear();
+  clear_has_pos();
+}
+inline const ::CMsgVector& CP2P_VRAvatarPosition_COrientation::pos() const {
+  // @@protoc_insertion_point(field_get:CP2P_VRAvatarPosition.COrientation.pos)
+  return pos_ != NULL ? *pos_ : *default_instance_->pos_;
+}
+inline ::CMsgVector* CP2P_VRAvatarPosition_COrientation::mutable_pos() {
+  set_has_pos();
+  if (pos_ == NULL) pos_ = new ::CMsgVector;
+  // @@protoc_insertion_point(field_mutable:CP2P_VRAvatarPosition.COrientation.pos)
+  return pos_;
+}
+inline ::CMsgVector* CP2P_VRAvatarPosition_COrientation::release_pos() {
+  clear_has_pos();
+  ::CMsgVector* temp = pos_;
+  pos_ = NULL;
+  return temp;
+}
+inline void CP2P_VRAvatarPosition_COrientation::set_allocated_pos(::CMsgVector* pos) {
+  delete pos_;
+  pos_ = pos;
+  if (pos) {
+    set_has_pos();
+  } else {
+    clear_has_pos();
+  }
+  // @@protoc_insertion_point(field_set_allocated:CP2P_VRAvatarPosition.COrientation.pos)
+}
+
+// optional .CMsgQAngle ang = 2;
+inline bool CP2P_VRAvatarPosition_COrientation::has_ang() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+inline void CP2P_VRAvatarPosition_COrientation::set_has_ang() {
+  _has_bits_[0] |= 0x00000002u;
+}
+inline void CP2P_VRAvatarPosition_COrientation::clear_has_ang() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+inline void CP2P_VRAvatarPosition_COrientation::clear_ang() {
+  if (ang_ != NULL) ang_->::CMsgQAngle::Clear();
+  clear_has_ang();
+}
+inline const ::CMsgQAngle& CP2P_VRAvatarPosition_COrientation::ang() const {
+  // @@protoc_insertion_point(field_get:CP2P_VRAvatarPosition.COrientation.ang)
+  return ang_ != NULL ? *ang_ : *default_instance_->ang_;
+}
+inline ::CMsgQAngle* CP2P_VRAvatarPosition_COrientation::mutable_ang() {
+  set_has_ang();
+  if (ang_ == NULL) ang_ = new ::CMsgQAngle;
+  // @@protoc_insertion_point(field_mutable:CP2P_VRAvatarPosition.COrientation.ang)
+  return ang_;
+}
+inline ::CMsgQAngle* CP2P_VRAvatarPosition_COrientation::release_ang() {
+  clear_has_ang();
+  ::CMsgQAngle* temp = ang_;
+  ang_ = NULL;
+  return temp;
+}
+inline void CP2P_VRAvatarPosition_COrientation::set_allocated_ang(::CMsgQAngle* ang) {
+  delete ang_;
+  ang_ = ang;
+  if (ang) {
+    set_has_ang();
+  } else {
+    clear_has_ang();
+  }
+  // @@protoc_insertion_point(field_set_allocated:CP2P_VRAvatarPosition.COrientation.ang)
+}
+
+// -------------------------------------------------------------------
+
+// CP2P_VRAvatarPosition
+
+// repeated .CP2P_VRAvatarPosition.COrientation body_parts = 1;
+inline int CP2P_VRAvatarPosition::body_parts_size() const {
+  return body_parts_.size();
+}
+inline void CP2P_VRAvatarPosition::clear_body_parts() {
+  body_parts_.Clear();
+}
+inline const ::CP2P_VRAvatarPosition_COrientation& CP2P_VRAvatarPosition::body_parts(int index) const {
+  // @@protoc_insertion_point(field_get:CP2P_VRAvatarPosition.body_parts)
+  return body_parts_.Get(index);
+}
+inline ::CP2P_VRAvatarPosition_COrientation* CP2P_VRAvatarPosition::mutable_body_parts(int index) {
+  // @@protoc_insertion_point(field_mutable:CP2P_VRAvatarPosition.body_parts)
+  return body_parts_.Mutable(index);
+}
+inline ::CP2P_VRAvatarPosition_COrientation* CP2P_VRAvatarPosition::add_body_parts() {
+  // @@protoc_insertion_point(field_add:CP2P_VRAvatarPosition.body_parts)
+  return body_parts_.Add();
+}
+inline const ::google::protobuf::RepeatedPtrField< ::CP2P_VRAvatarPosition_COrientation >&
+CP2P_VRAvatarPosition::body_parts() const {
+  // @@protoc_insertion_point(field_list:CP2P_VRAvatarPosition.body_parts)
+  return body_parts_;
+}
+inline ::google::protobuf::RepeatedPtrField< ::CP2P_VRAvatarPosition_COrientation >*
+CP2P_VRAvatarPosition::mutable_body_parts() {
+  // @@protoc_insertion_point(field_mutable_list:CP2P_VRAvatarPosition.body_parts)
+  return &body_parts_;
+}
+
+// optional int32 hat_id = 2;
+inline bool CP2P_VRAvatarPosition::has_hat_id() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+inline void CP2P_VRAvatarPosition::set_has_hat_id() {
+  _has_bits_[0] |= 0x00000002u;
+}
+inline void CP2P_VRAvatarPosition::clear_has_hat_id() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+inline void CP2P_VRAvatarPosition::clear_hat_id() {
+  hat_id_ = 0;
+  clear_has_hat_id();
+}
+inline ::google::protobuf::int32 CP2P_VRAvatarPosition::hat_id() const {
+  // @@protoc_insertion_point(field_get:CP2P_VRAvatarPosition.hat_id)
+  return hat_id_;
+}
+inline void CP2P_VRAvatarPosition::set_hat_id(::google::protobuf::int32 value) {
+  set_has_hat_id();
+  hat_id_ = value;
+  // @@protoc_insertion_point(field_set:CP2P_VRAvatarPosition.hat_id)
+}
+
+// optional int32 scene_id = 3;
+inline bool CP2P_VRAvatarPosition::has_scene_id() const {
+  return (_has_bits_[0] & 0x00000004u) != 0;
+}
+inline void CP2P_VRAvatarPosition::set_has_scene_id() {
+  _has_bits_[0] |= 0x00000004u;
+}
+inline void CP2P_VRAvatarPosition::clear_has_scene_id() {
+  _has_bits_[0] &= ~0x00000004u;
+}
+inline void CP2P_VRAvatarPosition::clear_scene_id() {
+  scene_id_ = 0;
+  clear_has_scene_id();
+}
+inline ::google::protobuf::int32 CP2P_VRAvatarPosition::scene_id() const {
+  // @@protoc_insertion_point(field_get:CP2P_VRAvatarPosition.scene_id)
+  return scene_id_;
+}
+inline void CP2P_VRAvatarPosition::set_scene_id(::google::protobuf::int32 value) {
+  set_has_scene_id();
+  scene_id_ = value;
+  // @@protoc_insertion_point(field_set:CP2P_VRAvatarPosition.scene_id)
+}
+
+// optional int32 world_scale = 4;
+inline bool CP2P_VRAvatarPosition::has_world_scale() const {
+  return (_has_bits_[0] & 0x00000008u) != 0;
+}
+inline void CP2P_VRAvatarPosition::set_has_world_scale() {
+  _has_bits_[0] |= 0x00000008u;
+}
+inline void CP2P_VRAvatarPosition::clear_has_world_scale() {
+  _has_bits_[0] &= ~0x00000008u;
+}
+inline void CP2P_VRAvatarPosition::clear_world_scale() {
+  world_scale_ = 0;
+  clear_has_world_scale();
+}
+inline ::google::protobuf::int32 CP2P_VRAvatarPosition::world_scale() const {
+  // @@protoc_insertion_point(field_get:CP2P_VRAvatarPosition.world_scale)
+  return world_scale_;
+}
+inline void CP2P_VRAvatarPosition::set_world_scale(::google::protobuf::int32 value) {
+  set_has_world_scale();
+  world_scale_ = value;
+  // @@protoc_insertion_point(field_set:CP2P_VRAvatarPosition.world_scale)
+}
+
+// -------------------------------------------------------------------
+
+// CP2P_WatchSynchronization
+
+// optional int32 demo_tick = 1;
+inline bool CP2P_WatchSynchronization::has_demo_tick() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+inline void CP2P_WatchSynchronization::set_has_demo_tick() {
+  _has_bits_[0] |= 0x00000001u;
+}
+inline void CP2P_WatchSynchronization::clear_has_demo_tick() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+inline void CP2P_WatchSynchronization::clear_demo_tick() {
+  demo_tick_ = 0;
+  clear_has_demo_tick();
+}
+inline ::google::protobuf::int32 CP2P_WatchSynchronization::demo_tick() const {
+  // @@protoc_insertion_point(field_get:CP2P_WatchSynchronization.demo_tick)
+  return demo_tick_;
+}
+inline void CP2P_WatchSynchronization::set_demo_tick(::google::protobuf::int32 value) {
+  set_has_demo_tick();
+  demo_tick_ = value;
+  // @@protoc_insertion_point(field_set:CP2P_WatchSynchronization.demo_tick)
+}
+
+// optional bool paused = 2;
+inline bool CP2P_WatchSynchronization::has_paused() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+inline void CP2P_WatchSynchronization::set_has_paused() {
+  _has_bits_[0] |= 0x00000002u;
+}
+inline void CP2P_WatchSynchronization::clear_has_paused() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+inline void CP2P_WatchSynchronization::clear_paused() {
+  paused_ = false;
+  clear_has_paused();
+}
+inline bool CP2P_WatchSynchronization::paused() const {
+  // @@protoc_insertion_point(field_get:CP2P_WatchSynchronization.paused)
+  return paused_;
+}
+inline void CP2P_WatchSynchronization::set_paused(bool value) {
+  set_has_paused();
+  paused_ = value;
+  // @@protoc_insertion_point(field_set:CP2P_WatchSynchronization.paused)
+}
+
+// optional int32 tv_listen_voice_indices = 3;
+inline bool CP2P_WatchSynchronization::has_tv_listen_voice_indices() const {
+  return (_has_bits_[0] & 0x00000004u) != 0;
+}
+inline void CP2P_WatchSynchronization::set_has_tv_listen_voice_indices() {
+  _has_bits_[0] |= 0x00000004u;
+}
+inline void CP2P_WatchSynchronization::clear_has_tv_listen_voice_indices() {
+  _has_bits_[0] &= ~0x00000004u;
+}
+inline void CP2P_WatchSynchronization::clear_tv_listen_voice_indices() {
+  tv_listen_voice_indices_ = 0;
+  clear_has_tv_listen_voice_indices();
+}
+inline ::google::protobuf::int32 CP2P_WatchSynchronization::tv_listen_voice_indices() const {
+  // @@protoc_insertion_point(field_get:CP2P_WatchSynchronization.tv_listen_voice_indices)
+  return tv_listen_voice_indices_;
+}
+inline void CP2P_WatchSynchronization::set_tv_listen_voice_indices(::google::protobuf::int32 value) {
+  set_has_tv_listen_voice_indices();
+  tv_listen_voice_indices_ = value;
+  // @@protoc_insertion_point(field_set:CP2P_WatchSynchronization.tv_listen_voice_indices)
+}
+
+// optional int32 dota_spectator_mode = 4;
+inline bool CP2P_WatchSynchronization::has_dota_spectator_mode() const {
+  return (_has_bits_[0] & 0x00000008u) != 0;
+}
+inline void CP2P_WatchSynchronization::set_has_dota_spectator_mode() {
+  _has_bits_[0] |= 0x00000008u;
+}
+inline void CP2P_WatchSynchronization::clear_has_dota_spectator_mode() {
+  _has_bits_[0] &= ~0x00000008u;
+}
+inline void CP2P_WatchSynchronization::clear_dota_spectator_mode() {
+  dota_spectator_mode_ = 0;
+  clear_has_dota_spectator_mode();
+}
+inline ::google::protobuf::int32 CP2P_WatchSynchronization::dota_spectator_mode() const {
+  // @@protoc_insertion_point(field_get:CP2P_WatchSynchronization.dota_spectator_mode)
+  return dota_spectator_mode_;
+}
+inline void CP2P_WatchSynchronization::set_dota_spectator_mode(::google::protobuf::int32 value) {
+  set_has_dota_spectator_mode();
+  dota_spectator_mode_ = value;
+  // @@protoc_insertion_point(field_set:CP2P_WatchSynchronization.dota_spectator_mode)
+}
+
+// optional int32 dota_spectator_watching_broadcaster = 5;
+inline bool CP2P_WatchSynchronization::has_dota_spectator_watching_broadcaster() const {
+  return (_has_bits_[0] & 0x00000010u) != 0;
+}
+inline void CP2P_WatchSynchronization::set_has_dota_spectator_watching_broadcaster() {
+  _has_bits_[0] |= 0x00000010u;
+}
+inline void CP2P_WatchSynchronization::clear_has_dota_spectator_watching_broadcaster() {
+  _has_bits_[0] &= ~0x00000010u;
+}
+inline void CP2P_WatchSynchronization::clear_dota_spectator_watching_broadcaster() {
+  dota_spectator_watching_broadcaster_ = 0;
+  clear_has_dota_spectator_watching_broadcaster();
+}
+inline ::google::protobuf::int32 CP2P_WatchSynchronization::dota_spectator_watching_broadcaster() const {
+  // @@protoc_insertion_point(field_get:CP2P_WatchSynchronization.dota_spectator_watching_broadcaster)
+  return dota_spectator_watching_broadcaster_;
+}
+inline void CP2P_WatchSynchronization::set_dota_spectator_watching_broadcaster(::google::protobuf::int32 value) {
+  set_has_dota_spectator_watching_broadcaster();
+  dota_spectator_watching_broadcaster_ = value;
+  // @@protoc_insertion_point(field_set:CP2P_WatchSynchronization.dota_spectator_watching_broadcaster)
+}
+
+// optional int32 dota_spectator_hero_index = 6;
+inline bool CP2P_WatchSynchronization::has_dota_spectator_hero_index() const {
+  return (_has_bits_[0] & 0x00000020u) != 0;
+}
+inline void CP2P_WatchSynchronization::set_has_dota_spectator_hero_index() {
+  _has_bits_[0] |= 0x00000020u;
+}
+inline void CP2P_WatchSynchronization::clear_has_dota_spectator_hero_index() {
+  _has_bits_[0] &= ~0x00000020u;
+}
+inline void CP2P_WatchSynchronization::clear_dota_spectator_hero_index() {
+  dota_spectator_hero_index_ = 0;
+  clear_has_dota_spectator_hero_index();
+}
+inline ::google::protobuf::int32 CP2P_WatchSynchronization::dota_spectator_hero_index() const {
+  // @@protoc_insertion_point(field_get:CP2P_WatchSynchronization.dota_spectator_hero_index)
+  return dota_spectator_hero_index_;
+}
+inline void CP2P_WatchSynchronization::set_dota_spectator_hero_index(::google::protobuf::int32 value) {
+  set_has_dota_spectator_hero_index();
+  dota_spectator_hero_index_ = value;
+  // @@protoc_insertion_point(field_set:CP2P_WatchSynchronization.dota_spectator_hero_index)
+}
+
+// optional int32 dota_spectator_autospeed = 7;
+inline bool CP2P_WatchSynchronization::has_dota_spectator_autospeed() const {
+  return (_has_bits_[0] & 0x00000040u) != 0;
+}
+inline void CP2P_WatchSynchronization::set_has_dota_spectator_autospeed() {
+  _has_bits_[0] |= 0x00000040u;
+}
+inline void CP2P_WatchSynchronization::clear_has_dota_spectator_autospeed() {
+  _has_bits_[0] &= ~0x00000040u;
+}
+inline void CP2P_WatchSynchronization::clear_dota_spectator_autospeed() {
+  dota_spectator_autospeed_ = 0;
+  clear_has_dota_spectator_autospeed();
+}
+inline ::google::protobuf::int32 CP2P_WatchSynchronization::dota_spectator_autospeed() const {
+  // @@protoc_insertion_point(field_get:CP2P_WatchSynchronization.dota_spectator_autospeed)
+  return dota_spectator_autospeed_;
+}
+inline void CP2P_WatchSynchronization::set_dota_spectator_autospeed(::google::protobuf::int32 value) {
+  set_has_dota_spectator_autospeed();
+  dota_spectator_autospeed_ = value;
+  // @@protoc_insertion_point(field_set:CP2P_WatchSynchronization.dota_spectator_autospeed)
+}
+
+// optional int32 dota_replay_speed = 8;
+inline bool CP2P_WatchSynchronization::has_dota_replay_speed() const {
+  return (_has_bits_[0] & 0x00000080u) != 0;
+}
+inline void CP2P_WatchSynchronization::set_has_dota_replay_speed() {
+  _has_bits_[0] |= 0x00000080u;
+}
+inline void CP2P_WatchSynchronization::clear_has_dota_replay_speed() {
+  _has_bits_[0] &= ~0x00000080u;
+}
+inline void CP2P_WatchSynchronization::clear_dota_replay_speed() {
+  dota_replay_speed_ = 0;
+  clear_has_dota_replay_speed();
+}
+inline ::google::protobuf::int32 CP2P_WatchSynchronization::dota_replay_speed() const {
+  // @@protoc_insertion_point(field_get:CP2P_WatchSynchronization.dota_replay_speed)
+  return dota_replay_speed_;
+}
+inline void CP2P_WatchSynchronization::set_dota_replay_speed(::google::protobuf::int32 value) {
+  set_has_dota_replay_speed();
+  dota_replay_speed_ = value;
+  // @@protoc_insertion_point(field_set:CP2P_WatchSynchronization.dota_replay_speed)
 }
 
 

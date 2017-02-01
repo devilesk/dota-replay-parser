@@ -1344,6 +1344,18 @@ class CNETMsg_SignonState : public ::google::protobuf::Message {
   inline ::std::string* release_map_name();
   inline void set_allocated_map_name(::std::string* map_name);
 
+  // optional string addons = 6;
+  inline bool has_addons() const;
+  inline void clear_addons();
+  static const int kAddonsFieldNumber = 6;
+  inline const ::std::string& addons() const;
+  inline void set_addons(const ::std::string& value);
+  inline void set_addons(const char* value);
+  inline void set_addons(const char* value, size_t size);
+  inline ::std::string* mutable_addons();
+  inline ::std::string* release_addons();
+  inline void set_allocated_addons(::std::string* addons);
+
   // @@protoc_insertion_point(class_scope:CNETMsg_SignonState)
  private:
   inline void set_has_signon_state();
@@ -1354,6 +1366,8 @@ class CNETMsg_SignonState : public ::google::protobuf::Message {
   inline void clear_has_num_server_players();
   inline void set_has_map_name();
   inline void clear_has_map_name();
+  inline void set_has_addons();
+  inline void clear_has_addons();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
@@ -1363,6 +1377,7 @@ class CNETMsg_SignonState : public ::google::protobuf::Message {
   ::google::protobuf::uint32 spawn_count_;
   ::google::protobuf::RepeatedPtrField< ::std::string> players_networkids_;
   ::std::string* map_name_;
+  ::std::string* addons_;
   ::google::protobuf::uint32 num_server_players_;
   friend void  protobuf_AddDesc_networkbasetypes_2eproto();
   friend void protobuf_AssignDesc_networkbasetypes_2eproto();
@@ -2279,6 +2294,25 @@ class CNETMsg_SpawnGroup_Load : public ::google::protobuf::Message {
   inline ::google::protobuf::uint32 creationsequence() const;
   inline void set_creationsequence(::google::protobuf::uint32 value);
 
+  // optional string savegamefilename = 17;
+  inline bool has_savegamefilename() const;
+  inline void clear_savegamefilename();
+  static const int kSavegamefilenameFieldNumber = 17;
+  inline const ::std::string& savegamefilename() const;
+  inline void set_savegamefilename(const ::std::string& value);
+  inline void set_savegamefilename(const char* value);
+  inline void set_savegamefilename(const char* value, size_t size);
+  inline ::std::string* mutable_savegamefilename();
+  inline ::std::string* release_savegamefilename();
+  inline void set_allocated_savegamefilename(::std::string* savegamefilename);
+
+  // optional uint32 spawngroupparenthandle = 18;
+  inline bool has_spawngroupparenthandle() const;
+  inline void clear_spawngroupparenthandle();
+  static const int kSpawngroupparenthandleFieldNumber = 18;
+  inline ::google::protobuf::uint32 spawngroupparenthandle() const;
+  inline void set_spawngroupparenthandle(::google::protobuf::uint32 value);
+
   // @@protoc_insertion_point(class_scope:CNETMsg_SpawnGroup_Load)
  private:
   inline void set_has_worldname();
@@ -2313,6 +2347,10 @@ class CNETMsg_SpawnGroup_Load : public ::google::protobuf::Message {
   inline void clear_has_worldgroupid();
   inline void set_has_creationsequence();
   inline void clear_has_creationsequence();
+  inline void set_has_savegamefilename();
+  inline void clear_has_savegamefilename();
+  inline void set_has_spawngroupparenthandle();
+  inline void clear_has_spawngroupparenthandle();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
@@ -2334,6 +2372,8 @@ class CNETMsg_SpawnGroup_Load : public ::google::protobuf::Message {
   ::std::string* parentnamefixup_;
   ::google::protobuf::uint32 worldgroupid_;
   ::google::protobuf::uint32 creationsequence_;
+  ::std::string* savegamefilename_;
+  ::google::protobuf::uint32 spawngroupparenthandle_;
   friend void  protobuf_AddDesc_networkbasetypes_2eproto();
   friend void protobuf_AssignDesc_networkbasetypes_2eproto();
   friend void protobuf_ShutdownFile_networkbasetypes_2eproto();
@@ -2912,6 +2952,37 @@ class CSVCMsg_GameSessionConfiguration : public ::google::protobuf::Message {
   inline bool is_localonly() const;
   inline void set_is_localonly(bool value);
 
+  // optional bool is_transition = 16;
+  inline bool has_is_transition() const;
+  inline void clear_is_transition();
+  static const int kIsTransitionFieldNumber = 16;
+  inline bool is_transition() const;
+  inline void set_is_transition(bool value);
+
+  // optional string previouslevel = 17;
+  inline bool has_previouslevel() const;
+  inline void clear_previouslevel();
+  static const int kPreviouslevelFieldNumber = 17;
+  inline const ::std::string& previouslevel() const;
+  inline void set_previouslevel(const ::std::string& value);
+  inline void set_previouslevel(const char* value);
+  inline void set_previouslevel(const char* value, size_t size);
+  inline ::std::string* mutable_previouslevel();
+  inline ::std::string* release_previouslevel();
+  inline void set_allocated_previouslevel(::std::string* previouslevel);
+
+  // optional string landmarkname = 18;
+  inline bool has_landmarkname() const;
+  inline void clear_landmarkname();
+  static const int kLandmarknameFieldNumber = 18;
+  inline const ::std::string& landmarkname() const;
+  inline void set_landmarkname(const ::std::string& value);
+  inline void set_landmarkname(const char* value);
+  inline void set_landmarkname(const char* value, size_t size);
+  inline ::std::string* mutable_landmarkname();
+  inline ::std::string* release_landmarkname();
+  inline void set_allocated_landmarkname(::std::string* landmarkname);
+
   // @@protoc_insertion_point(class_scope:CSVCMsg_GameSessionConfiguration)
  private:
   inline void set_has_is_multiplayer();
@@ -2944,6 +3015,12 @@ class CSVCMsg_GameSessionConfiguration : public ::google::protobuf::Message {
   inline void clear_has_data();
   inline void set_has_is_localonly();
   inline void clear_has_is_localonly();
+  inline void set_has_is_transition();
+  inline void clear_has_is_transition();
+  inline void set_has_previouslevel();
+  inline void clear_has_previouslevel();
+  inline void set_has_landmarkname();
+  inline void clear_has_landmarkname();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
@@ -2959,11 +3036,14 @@ class CSVCMsg_GameSessionConfiguration : public ::google::protobuf::Message {
   ::std::string* hostname_;
   ::std::string* savegamename_;
   ::std::string* s1_mapname_;
-  ::google::protobuf::uint32 tick_interval_;
-  bool is_localonly_;
   ::std::string* gamemode_;
   ::std::string* server_ip_address_;
+  ::google::protobuf::uint32 tick_interval_;
+  bool is_localonly_;
+  bool is_transition_;
   ::std::string* data_;
+  ::std::string* previouslevel_;
+  ::std::string* landmarkname_;
   friend void  protobuf_AddDesc_networkbasetypes_2eproto();
   friend void protobuf_AssignDesc_networkbasetypes_2eproto();
   friend void protobuf_ShutdownFile_networkbasetypes_2eproto();
@@ -4106,6 +4186,82 @@ inline void CNETMsg_SignonState::set_allocated_map_name(::std::string* map_name)
     map_name_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   }
   // @@protoc_insertion_point(field_set_allocated:CNETMsg_SignonState.map_name)
+}
+
+// optional string addons = 6;
+inline bool CNETMsg_SignonState::has_addons() const {
+  return (_has_bits_[0] & 0x00000020u) != 0;
+}
+inline void CNETMsg_SignonState::set_has_addons() {
+  _has_bits_[0] |= 0x00000020u;
+}
+inline void CNETMsg_SignonState::clear_has_addons() {
+  _has_bits_[0] &= ~0x00000020u;
+}
+inline void CNETMsg_SignonState::clear_addons() {
+  if (addons_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    addons_->clear();
+  }
+  clear_has_addons();
+}
+inline const ::std::string& CNETMsg_SignonState::addons() const {
+  // @@protoc_insertion_point(field_get:CNETMsg_SignonState.addons)
+  return *addons_;
+}
+inline void CNETMsg_SignonState::set_addons(const ::std::string& value) {
+  set_has_addons();
+  if (addons_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    addons_ = new ::std::string;
+  }
+  addons_->assign(value);
+  // @@protoc_insertion_point(field_set:CNETMsg_SignonState.addons)
+}
+inline void CNETMsg_SignonState::set_addons(const char* value) {
+  set_has_addons();
+  if (addons_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    addons_ = new ::std::string;
+  }
+  addons_->assign(value);
+  // @@protoc_insertion_point(field_set_char:CNETMsg_SignonState.addons)
+}
+inline void CNETMsg_SignonState::set_addons(const char* value, size_t size) {
+  set_has_addons();
+  if (addons_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    addons_ = new ::std::string;
+  }
+  addons_->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:CNETMsg_SignonState.addons)
+}
+inline ::std::string* CNETMsg_SignonState::mutable_addons() {
+  set_has_addons();
+  if (addons_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    addons_ = new ::std::string;
+  }
+  // @@protoc_insertion_point(field_mutable:CNETMsg_SignonState.addons)
+  return addons_;
+}
+inline ::std::string* CNETMsg_SignonState::release_addons() {
+  clear_has_addons();
+  if (addons_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    return NULL;
+  } else {
+    ::std::string* temp = addons_;
+    addons_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    return temp;
+  }
+}
+inline void CNETMsg_SignonState::set_allocated_addons(::std::string* addons) {
+  if (addons_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete addons_;
+  }
+  if (addons) {
+    set_has_addons();
+    addons_ = addons;
+  } else {
+    clear_has_addons();
+    addons_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_set_allocated:CNETMsg_SignonState.addons)
 }
 
 // -------------------------------------------------------------------
@@ -5534,6 +5690,106 @@ inline void CNETMsg_SpawnGroup_Load::set_creationsequence(::google::protobuf::ui
   // @@protoc_insertion_point(field_set:CNETMsg_SpawnGroup_Load.creationsequence)
 }
 
+// optional string savegamefilename = 17;
+inline bool CNETMsg_SpawnGroup_Load::has_savegamefilename() const {
+  return (_has_bits_[0] & 0x00010000u) != 0;
+}
+inline void CNETMsg_SpawnGroup_Load::set_has_savegamefilename() {
+  _has_bits_[0] |= 0x00010000u;
+}
+inline void CNETMsg_SpawnGroup_Load::clear_has_savegamefilename() {
+  _has_bits_[0] &= ~0x00010000u;
+}
+inline void CNETMsg_SpawnGroup_Load::clear_savegamefilename() {
+  if (savegamefilename_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    savegamefilename_->clear();
+  }
+  clear_has_savegamefilename();
+}
+inline const ::std::string& CNETMsg_SpawnGroup_Load::savegamefilename() const {
+  // @@protoc_insertion_point(field_get:CNETMsg_SpawnGroup_Load.savegamefilename)
+  return *savegamefilename_;
+}
+inline void CNETMsg_SpawnGroup_Load::set_savegamefilename(const ::std::string& value) {
+  set_has_savegamefilename();
+  if (savegamefilename_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    savegamefilename_ = new ::std::string;
+  }
+  savegamefilename_->assign(value);
+  // @@protoc_insertion_point(field_set:CNETMsg_SpawnGroup_Load.savegamefilename)
+}
+inline void CNETMsg_SpawnGroup_Load::set_savegamefilename(const char* value) {
+  set_has_savegamefilename();
+  if (savegamefilename_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    savegamefilename_ = new ::std::string;
+  }
+  savegamefilename_->assign(value);
+  // @@protoc_insertion_point(field_set_char:CNETMsg_SpawnGroup_Load.savegamefilename)
+}
+inline void CNETMsg_SpawnGroup_Load::set_savegamefilename(const char* value, size_t size) {
+  set_has_savegamefilename();
+  if (savegamefilename_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    savegamefilename_ = new ::std::string;
+  }
+  savegamefilename_->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:CNETMsg_SpawnGroup_Load.savegamefilename)
+}
+inline ::std::string* CNETMsg_SpawnGroup_Load::mutable_savegamefilename() {
+  set_has_savegamefilename();
+  if (savegamefilename_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    savegamefilename_ = new ::std::string;
+  }
+  // @@protoc_insertion_point(field_mutable:CNETMsg_SpawnGroup_Load.savegamefilename)
+  return savegamefilename_;
+}
+inline ::std::string* CNETMsg_SpawnGroup_Load::release_savegamefilename() {
+  clear_has_savegamefilename();
+  if (savegamefilename_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    return NULL;
+  } else {
+    ::std::string* temp = savegamefilename_;
+    savegamefilename_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    return temp;
+  }
+}
+inline void CNETMsg_SpawnGroup_Load::set_allocated_savegamefilename(::std::string* savegamefilename) {
+  if (savegamefilename_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete savegamefilename_;
+  }
+  if (savegamefilename) {
+    set_has_savegamefilename();
+    savegamefilename_ = savegamefilename;
+  } else {
+    clear_has_savegamefilename();
+    savegamefilename_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_set_allocated:CNETMsg_SpawnGroup_Load.savegamefilename)
+}
+
+// optional uint32 spawngroupparenthandle = 18;
+inline bool CNETMsg_SpawnGroup_Load::has_spawngroupparenthandle() const {
+  return (_has_bits_[0] & 0x00020000u) != 0;
+}
+inline void CNETMsg_SpawnGroup_Load::set_has_spawngroupparenthandle() {
+  _has_bits_[0] |= 0x00020000u;
+}
+inline void CNETMsg_SpawnGroup_Load::clear_has_spawngroupparenthandle() {
+  _has_bits_[0] &= ~0x00020000u;
+}
+inline void CNETMsg_SpawnGroup_Load::clear_spawngroupparenthandle() {
+  spawngroupparenthandle_ = 0u;
+  clear_has_spawngroupparenthandle();
+}
+inline ::google::protobuf::uint32 CNETMsg_SpawnGroup_Load::spawngroupparenthandle() const {
+  // @@protoc_insertion_point(field_get:CNETMsg_SpawnGroup_Load.spawngroupparenthandle)
+  return spawngroupparenthandle_;
+}
+inline void CNETMsg_SpawnGroup_Load::set_spawngroupparenthandle(::google::protobuf::uint32 value) {
+  set_has_spawngroupparenthandle();
+  spawngroupparenthandle_ = value;
+  // @@protoc_insertion_point(field_set:CNETMsg_SpawnGroup_Load.spawngroupparenthandle)
+}
+
 // -------------------------------------------------------------------
 
 // CNETMsg_SpawnGroup_ManifestUpdate
@@ -6516,6 +6772,182 @@ inline void CSVCMsg_GameSessionConfiguration::set_is_localonly(bool value) {
   set_has_is_localonly();
   is_localonly_ = value;
   // @@protoc_insertion_point(field_set:CSVCMsg_GameSessionConfiguration.is_localonly)
+}
+
+// optional bool is_transition = 16;
+inline bool CSVCMsg_GameSessionConfiguration::has_is_transition() const {
+  return (_has_bits_[0] & 0x00008000u) != 0;
+}
+inline void CSVCMsg_GameSessionConfiguration::set_has_is_transition() {
+  _has_bits_[0] |= 0x00008000u;
+}
+inline void CSVCMsg_GameSessionConfiguration::clear_has_is_transition() {
+  _has_bits_[0] &= ~0x00008000u;
+}
+inline void CSVCMsg_GameSessionConfiguration::clear_is_transition() {
+  is_transition_ = false;
+  clear_has_is_transition();
+}
+inline bool CSVCMsg_GameSessionConfiguration::is_transition() const {
+  // @@protoc_insertion_point(field_get:CSVCMsg_GameSessionConfiguration.is_transition)
+  return is_transition_;
+}
+inline void CSVCMsg_GameSessionConfiguration::set_is_transition(bool value) {
+  set_has_is_transition();
+  is_transition_ = value;
+  // @@protoc_insertion_point(field_set:CSVCMsg_GameSessionConfiguration.is_transition)
+}
+
+// optional string previouslevel = 17;
+inline bool CSVCMsg_GameSessionConfiguration::has_previouslevel() const {
+  return (_has_bits_[0] & 0x00010000u) != 0;
+}
+inline void CSVCMsg_GameSessionConfiguration::set_has_previouslevel() {
+  _has_bits_[0] |= 0x00010000u;
+}
+inline void CSVCMsg_GameSessionConfiguration::clear_has_previouslevel() {
+  _has_bits_[0] &= ~0x00010000u;
+}
+inline void CSVCMsg_GameSessionConfiguration::clear_previouslevel() {
+  if (previouslevel_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    previouslevel_->clear();
+  }
+  clear_has_previouslevel();
+}
+inline const ::std::string& CSVCMsg_GameSessionConfiguration::previouslevel() const {
+  // @@protoc_insertion_point(field_get:CSVCMsg_GameSessionConfiguration.previouslevel)
+  return *previouslevel_;
+}
+inline void CSVCMsg_GameSessionConfiguration::set_previouslevel(const ::std::string& value) {
+  set_has_previouslevel();
+  if (previouslevel_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    previouslevel_ = new ::std::string;
+  }
+  previouslevel_->assign(value);
+  // @@protoc_insertion_point(field_set:CSVCMsg_GameSessionConfiguration.previouslevel)
+}
+inline void CSVCMsg_GameSessionConfiguration::set_previouslevel(const char* value) {
+  set_has_previouslevel();
+  if (previouslevel_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    previouslevel_ = new ::std::string;
+  }
+  previouslevel_->assign(value);
+  // @@protoc_insertion_point(field_set_char:CSVCMsg_GameSessionConfiguration.previouslevel)
+}
+inline void CSVCMsg_GameSessionConfiguration::set_previouslevel(const char* value, size_t size) {
+  set_has_previouslevel();
+  if (previouslevel_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    previouslevel_ = new ::std::string;
+  }
+  previouslevel_->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:CSVCMsg_GameSessionConfiguration.previouslevel)
+}
+inline ::std::string* CSVCMsg_GameSessionConfiguration::mutable_previouslevel() {
+  set_has_previouslevel();
+  if (previouslevel_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    previouslevel_ = new ::std::string;
+  }
+  // @@protoc_insertion_point(field_mutable:CSVCMsg_GameSessionConfiguration.previouslevel)
+  return previouslevel_;
+}
+inline ::std::string* CSVCMsg_GameSessionConfiguration::release_previouslevel() {
+  clear_has_previouslevel();
+  if (previouslevel_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    return NULL;
+  } else {
+    ::std::string* temp = previouslevel_;
+    previouslevel_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    return temp;
+  }
+}
+inline void CSVCMsg_GameSessionConfiguration::set_allocated_previouslevel(::std::string* previouslevel) {
+  if (previouslevel_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete previouslevel_;
+  }
+  if (previouslevel) {
+    set_has_previouslevel();
+    previouslevel_ = previouslevel;
+  } else {
+    clear_has_previouslevel();
+    previouslevel_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_set_allocated:CSVCMsg_GameSessionConfiguration.previouslevel)
+}
+
+// optional string landmarkname = 18;
+inline bool CSVCMsg_GameSessionConfiguration::has_landmarkname() const {
+  return (_has_bits_[0] & 0x00020000u) != 0;
+}
+inline void CSVCMsg_GameSessionConfiguration::set_has_landmarkname() {
+  _has_bits_[0] |= 0x00020000u;
+}
+inline void CSVCMsg_GameSessionConfiguration::clear_has_landmarkname() {
+  _has_bits_[0] &= ~0x00020000u;
+}
+inline void CSVCMsg_GameSessionConfiguration::clear_landmarkname() {
+  if (landmarkname_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    landmarkname_->clear();
+  }
+  clear_has_landmarkname();
+}
+inline const ::std::string& CSVCMsg_GameSessionConfiguration::landmarkname() const {
+  // @@protoc_insertion_point(field_get:CSVCMsg_GameSessionConfiguration.landmarkname)
+  return *landmarkname_;
+}
+inline void CSVCMsg_GameSessionConfiguration::set_landmarkname(const ::std::string& value) {
+  set_has_landmarkname();
+  if (landmarkname_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    landmarkname_ = new ::std::string;
+  }
+  landmarkname_->assign(value);
+  // @@protoc_insertion_point(field_set:CSVCMsg_GameSessionConfiguration.landmarkname)
+}
+inline void CSVCMsg_GameSessionConfiguration::set_landmarkname(const char* value) {
+  set_has_landmarkname();
+  if (landmarkname_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    landmarkname_ = new ::std::string;
+  }
+  landmarkname_->assign(value);
+  // @@protoc_insertion_point(field_set_char:CSVCMsg_GameSessionConfiguration.landmarkname)
+}
+inline void CSVCMsg_GameSessionConfiguration::set_landmarkname(const char* value, size_t size) {
+  set_has_landmarkname();
+  if (landmarkname_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    landmarkname_ = new ::std::string;
+  }
+  landmarkname_->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:CSVCMsg_GameSessionConfiguration.landmarkname)
+}
+inline ::std::string* CSVCMsg_GameSessionConfiguration::mutable_landmarkname() {
+  set_has_landmarkname();
+  if (landmarkname_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    landmarkname_ = new ::std::string;
+  }
+  // @@protoc_insertion_point(field_mutable:CSVCMsg_GameSessionConfiguration.landmarkname)
+  return landmarkname_;
+}
+inline ::std::string* CSVCMsg_GameSessionConfiguration::release_landmarkname() {
+  clear_has_landmarkname();
+  if (landmarkname_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    return NULL;
+  } else {
+    ::std::string* temp = landmarkname_;
+    landmarkname_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    return temp;
+  }
+}
+inline void CSVCMsg_GameSessionConfiguration::set_allocated_landmarkname(::std::string* landmarkname) {
+  if (landmarkname_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete landmarkname_;
+  }
+  if (landmarkname) {
+    set_has_landmarkname();
+    landmarkname_ = landmarkname;
+  } else {
+    clear_has_landmarkname();
+    landmarkname_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_set_allocated:CSVCMsg_GameSessionConfiguration.landmarkname)
 }
 
 

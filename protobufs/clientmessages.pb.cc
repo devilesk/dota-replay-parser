@@ -21,10 +21,20 @@ namespace {
 const ::google::protobuf::Descriptor* CClientMsg_CustomGameEvent_descriptor_ = NULL;
 const ::google::protobuf::internal::GeneratedMessageReflection*
   CClientMsg_CustomGameEvent_reflection_ = NULL;
-const ::google::protobuf::Descriptor* CClientMsg_TrackedControllerInput_descriptor_ = NULL;
+const ::google::protobuf::Descriptor* CClientMsg_ClientUIEvent_descriptor_ = NULL;
 const ::google::protobuf::internal::GeneratedMessageReflection*
-  CClientMsg_TrackedControllerInput_reflection_ = NULL;
+  CClientMsg_ClientUIEvent_reflection_ = NULL;
+const ::google::protobuf::Descriptor* CClientMsg_DevPaletteVisibilityChangedEvent_descriptor_ = NULL;
+const ::google::protobuf::internal::GeneratedMessageReflection*
+  CClientMsg_DevPaletteVisibilityChangedEvent_reflection_ = NULL;
+const ::google::protobuf::Descriptor* CClientMsg_WorldUIControllerHasPanelChangedEvent_descriptor_ = NULL;
+const ::google::protobuf::internal::GeneratedMessageReflection*
+  CClientMsg_WorldUIControllerHasPanelChangedEvent_reflection_ = NULL;
+const ::google::protobuf::Descriptor* CClientMsg_RotateAnchor_descriptor_ = NULL;
+const ::google::protobuf::internal::GeneratedMessageReflection*
+  CClientMsg_RotateAnchor_reflection_ = NULL;
 const ::google::protobuf::EnumDescriptor* EBaseClientMessages_descriptor_ = NULL;
+const ::google::protobuf::EnumDescriptor* EClientUIEvent_descriptor_ = NULL;
 
 }  // namespace
 
@@ -51,22 +61,74 @@ void protobuf_AssignDesc_clientmessages_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(CClientMsg_CustomGameEvent));
-  CClientMsg_TrackedControllerInput_descriptor_ = file->message_type(1);
-  static const int CClientMsg_TrackedControllerInput_offsets_[1] = {
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CClientMsg_TrackedControllerInput, data_),
+  CClientMsg_ClientUIEvent_descriptor_ = file->message_type(1);
+  static const int CClientMsg_ClientUIEvent_offsets_[5] = {
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CClientMsg_ClientUIEvent, event_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CClientMsg_ClientUIEvent, ent_ehandle_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CClientMsg_ClientUIEvent, client_ehandle_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CClientMsg_ClientUIEvent, data1_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CClientMsg_ClientUIEvent, data2_),
   };
-  CClientMsg_TrackedControllerInput_reflection_ =
+  CClientMsg_ClientUIEvent_reflection_ =
     new ::google::protobuf::internal::GeneratedMessageReflection(
-      CClientMsg_TrackedControllerInput_descriptor_,
-      CClientMsg_TrackedControllerInput::default_instance_,
-      CClientMsg_TrackedControllerInput_offsets_,
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CClientMsg_TrackedControllerInput, _has_bits_[0]),
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CClientMsg_TrackedControllerInput, _unknown_fields_),
+      CClientMsg_ClientUIEvent_descriptor_,
+      CClientMsg_ClientUIEvent::default_instance_,
+      CClientMsg_ClientUIEvent_offsets_,
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CClientMsg_ClientUIEvent, _has_bits_[0]),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CClientMsg_ClientUIEvent, _unknown_fields_),
       -1,
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
-      sizeof(CClientMsg_TrackedControllerInput));
+      sizeof(CClientMsg_ClientUIEvent));
+  CClientMsg_DevPaletteVisibilityChangedEvent_descriptor_ = file->message_type(2);
+  static const int CClientMsg_DevPaletteVisibilityChangedEvent_offsets_[1] = {
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CClientMsg_DevPaletteVisibilityChangedEvent, visible_),
+  };
+  CClientMsg_DevPaletteVisibilityChangedEvent_reflection_ =
+    new ::google::protobuf::internal::GeneratedMessageReflection(
+      CClientMsg_DevPaletteVisibilityChangedEvent_descriptor_,
+      CClientMsg_DevPaletteVisibilityChangedEvent::default_instance_,
+      CClientMsg_DevPaletteVisibilityChangedEvent_offsets_,
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CClientMsg_DevPaletteVisibilityChangedEvent, _has_bits_[0]),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CClientMsg_DevPaletteVisibilityChangedEvent, _unknown_fields_),
+      -1,
+      ::google::protobuf::DescriptorPool::generated_pool(),
+      ::google::protobuf::MessageFactory::generated_factory(),
+      sizeof(CClientMsg_DevPaletteVisibilityChangedEvent));
+  CClientMsg_WorldUIControllerHasPanelChangedEvent_descriptor_ = file->message_type(3);
+  static const int CClientMsg_WorldUIControllerHasPanelChangedEvent_offsets_[3] = {
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CClientMsg_WorldUIControllerHasPanelChangedEvent, has_panel_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CClientMsg_WorldUIControllerHasPanelChangedEvent, client_ehandle_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CClientMsg_WorldUIControllerHasPanelChangedEvent, literal_hand_type_),
+  };
+  CClientMsg_WorldUIControllerHasPanelChangedEvent_reflection_ =
+    new ::google::protobuf::internal::GeneratedMessageReflection(
+      CClientMsg_WorldUIControllerHasPanelChangedEvent_descriptor_,
+      CClientMsg_WorldUIControllerHasPanelChangedEvent::default_instance_,
+      CClientMsg_WorldUIControllerHasPanelChangedEvent_offsets_,
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CClientMsg_WorldUIControllerHasPanelChangedEvent, _has_bits_[0]),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CClientMsg_WorldUIControllerHasPanelChangedEvent, _unknown_fields_),
+      -1,
+      ::google::protobuf::DescriptorPool::generated_pool(),
+      ::google::protobuf::MessageFactory::generated_factory(),
+      sizeof(CClientMsg_WorldUIControllerHasPanelChangedEvent));
+  CClientMsg_RotateAnchor_descriptor_ = file->message_type(4);
+  static const int CClientMsg_RotateAnchor_offsets_[1] = {
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CClientMsg_RotateAnchor, angle_),
+  };
+  CClientMsg_RotateAnchor_reflection_ =
+    new ::google::protobuf::internal::GeneratedMessageReflection(
+      CClientMsg_RotateAnchor_descriptor_,
+      CClientMsg_RotateAnchor::default_instance_,
+      CClientMsg_RotateAnchor_offsets_,
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CClientMsg_RotateAnchor, _has_bits_[0]),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CClientMsg_RotateAnchor, _unknown_fields_),
+      -1,
+      ::google::protobuf::DescriptorPool::generated_pool(),
+      ::google::protobuf::MessageFactory::generated_factory(),
+      sizeof(CClientMsg_RotateAnchor));
   EBaseClientMessages_descriptor_ = file->enum_type(0);
+  EClientUIEvent_descriptor_ = file->enum_type(1);
 }
 
 namespace {
@@ -82,7 +144,13 @@ void protobuf_RegisterTypes(const ::std::string&) {
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
     CClientMsg_CustomGameEvent_descriptor_, &CClientMsg_CustomGameEvent::default_instance());
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
-    CClientMsg_TrackedControllerInput_descriptor_, &CClientMsg_TrackedControllerInput::default_instance());
+    CClientMsg_ClientUIEvent_descriptor_, &CClientMsg_ClientUIEvent::default_instance());
+  ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
+    CClientMsg_DevPaletteVisibilityChangedEvent_descriptor_, &CClientMsg_DevPaletteVisibilityChangedEvent::default_instance());
+  ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
+    CClientMsg_WorldUIControllerHasPanelChangedEvent_descriptor_, &CClientMsg_WorldUIControllerHasPanelChangedEvent::default_instance());
+  ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
+    CClientMsg_RotateAnchor_descriptor_, &CClientMsg_RotateAnchor::default_instance());
 }
 
 }  // namespace
@@ -90,8 +158,14 @@ void protobuf_RegisterTypes(const ::std::string&) {
 void protobuf_ShutdownFile_clientmessages_2eproto() {
   delete CClientMsg_CustomGameEvent::default_instance_;
   delete CClientMsg_CustomGameEvent_reflection_;
-  delete CClientMsg_TrackedControllerInput::default_instance_;
-  delete CClientMsg_TrackedControllerInput_reflection_;
+  delete CClientMsg_ClientUIEvent::default_instance_;
+  delete CClientMsg_ClientUIEvent_reflection_;
+  delete CClientMsg_DevPaletteVisibilityChangedEvent::default_instance_;
+  delete CClientMsg_DevPaletteVisibilityChangedEvent_reflection_;
+  delete CClientMsg_WorldUIControllerHasPanelChangedEvent::default_instance_;
+  delete CClientMsg_WorldUIControllerHasPanelChangedEvent_reflection_;
+  delete CClientMsg_RotateAnchor::default_instance_;
+  delete CClientMsg_RotateAnchor_reflection_;
 }
 
 void protobuf_AddDesc_clientmessages_2eproto() {
@@ -103,17 +177,36 @@ void protobuf_AddDesc_clientmessages_2eproto() {
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
     "\n\024clientmessages.proto\">\n\032CClientMsg_Cus"
     "tomGameEvent\022\022\n\nevent_name\030\001 \001(\t\022\014\n\004data"
-    "\030\002 \001(\014\"1\n!CClientMsg_TrackedControllerIn"
-    "put\022\014\n\004data\030\001 \001(\014*`\n\023EBaseClientMessages"
-    "\022\027\n\022CM_CustomGameEvent\020\230\002\022\036\n\031CM_TrackedC"
-    "ontrollerInput\020\231\002\022\020\n\013CM_MAX_BASE\020\254\002B\005H\001\200"
-    "\001\000", 242);
+    "\030\002 \001(\014\"\235\001\n\030CClientMsg_ClientUIEvent\0226\n\005e"
+    "vent\030\001 \001(\0162\017.EClientUIEvent:\026EClientUIEv"
+    "ent_Invalid\022\023\n\013ent_ehandle\030\002 \001(\r\022\026\n\016clie"
+    "nt_ehandle\030\003 \001(\r\022\r\n\005data1\030\004 \001(\t\022\r\n\005data2"
+    "\030\005 \001(\t\">\n+CClientMsg_DevPaletteVisibilit"
+    "yChangedEvent\022\017\n\007visible\030\001 \001(\010\"x\n0CClien"
+    "tMsg_WorldUIControllerHasPanelChangedEve"
+    "nt\022\021\n\thas_panel\030\001 \001(\010\022\026\n\016client_ehandle\030"
+    "\002 \001(\r\022\031\n\021literal_hand_type\030\003 \001(\r\"(\n\027CCli"
+    "entMsg_RotateAnchor\022\r\n\005angle\030\001 \001(\002*\274\001\n\023E"
+    "BaseClientMessages\022\027\n\022CM_CustomGameEvent"
+    "\020\230\002\022\025\n\020CM_ClientUIEvent\020\232\002\022#\n\036CM_DevPale"
+    "tteVisibilityChanged\020\233\002\022(\n#CM_WorldUICon"
+    "trollerHasPanelChanged\020\234\002\022\024\n\017CM_RotateAn"
+    "chor\020\235\002\022\020\n\013CM_MAX_BASE\020\254\002*n\n\016EClientUIEv"
+    "ent\022\032\n\026EClientUIEvent_Invalid\020\000\022!\n\035EClie"
+    "ntUIEvent_DialogFinished\020\001\022\035\n\031EClientUIE"
+    "vent_FireOutput\020\002B\005H\001\200\001\000", 784);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "clientmessages.proto", &protobuf_RegisterTypes);
   CClientMsg_CustomGameEvent::default_instance_ = new CClientMsg_CustomGameEvent();
-  CClientMsg_TrackedControllerInput::default_instance_ = new CClientMsg_TrackedControllerInput();
+  CClientMsg_ClientUIEvent::default_instance_ = new CClientMsg_ClientUIEvent();
+  CClientMsg_DevPaletteVisibilityChangedEvent::default_instance_ = new CClientMsg_DevPaletteVisibilityChangedEvent();
+  CClientMsg_WorldUIControllerHasPanelChangedEvent::default_instance_ = new CClientMsg_WorldUIControllerHasPanelChangedEvent();
+  CClientMsg_RotateAnchor::default_instance_ = new CClientMsg_RotateAnchor();
   CClientMsg_CustomGameEvent::default_instance_->InitAsDefaultInstance();
-  CClientMsg_TrackedControllerInput::default_instance_->InitAsDefaultInstance();
+  CClientMsg_ClientUIEvent::default_instance_->InitAsDefaultInstance();
+  CClientMsg_DevPaletteVisibilityChangedEvent::default_instance_->InitAsDefaultInstance();
+  CClientMsg_WorldUIControllerHasPanelChangedEvent::default_instance_->InitAsDefaultInstance();
+  CClientMsg_RotateAnchor::default_instance_->InitAsDefaultInstance();
   ::google::protobuf::internal::OnShutdown(&protobuf_ShutdownFile_clientmessages_2eproto);
 }
 
@@ -130,8 +223,26 @@ const ::google::protobuf::EnumDescriptor* EBaseClientMessages_descriptor() {
 bool EBaseClientMessages_IsValid(int value) {
   switch(value) {
     case 280:
-    case 281:
+    case 282:
+    case 283:
+    case 284:
+    case 285:
     case 300:
+      return true;
+    default:
+      return false;
+  }
+}
+
+const ::google::protobuf::EnumDescriptor* EClientUIEvent_descriptor() {
+  protobuf_AssignDescriptorsOnce();
+  return EClientUIEvent_descriptor_;
+}
+bool EClientUIEvent_IsValid(int value) {
+  switch(value) {
+    case 0:
+    case 1:
+    case 2:
       return true;
     default:
       return false;
@@ -434,91 +545,196 @@ void CClientMsg_CustomGameEvent::Swap(CClientMsg_CustomGameEvent* other) {
 // ===================================================================
 
 #ifndef _MSC_VER
-const int CClientMsg_TrackedControllerInput::kDataFieldNumber;
+const int CClientMsg_ClientUIEvent::kEventFieldNumber;
+const int CClientMsg_ClientUIEvent::kEntEhandleFieldNumber;
+const int CClientMsg_ClientUIEvent::kClientEhandleFieldNumber;
+const int CClientMsg_ClientUIEvent::kData1FieldNumber;
+const int CClientMsg_ClientUIEvent::kData2FieldNumber;
 #endif  // !_MSC_VER
 
-CClientMsg_TrackedControllerInput::CClientMsg_TrackedControllerInput()
+CClientMsg_ClientUIEvent::CClientMsg_ClientUIEvent()
   : ::google::protobuf::Message() {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:CClientMsg_TrackedControllerInput)
+  // @@protoc_insertion_point(constructor:CClientMsg_ClientUIEvent)
 }
 
-void CClientMsg_TrackedControllerInput::InitAsDefaultInstance() {
+void CClientMsg_ClientUIEvent::InitAsDefaultInstance() {
 }
 
-CClientMsg_TrackedControllerInput::CClientMsg_TrackedControllerInput(const CClientMsg_TrackedControllerInput& from)
+CClientMsg_ClientUIEvent::CClientMsg_ClientUIEvent(const CClientMsg_ClientUIEvent& from)
   : ::google::protobuf::Message() {
   SharedCtor();
   MergeFrom(from);
-  // @@protoc_insertion_point(copy_constructor:CClientMsg_TrackedControllerInput)
+  // @@protoc_insertion_point(copy_constructor:CClientMsg_ClientUIEvent)
 }
 
-void CClientMsg_TrackedControllerInput::SharedCtor() {
+void CClientMsg_ClientUIEvent::SharedCtor() {
   ::google::protobuf::internal::GetEmptyString();
   _cached_size_ = 0;
-  data_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  event_ = 0;
+  ent_ehandle_ = 0u;
+  client_ehandle_ = 0u;
+  data1_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  data2_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
 
-CClientMsg_TrackedControllerInput::~CClientMsg_TrackedControllerInput() {
-  // @@protoc_insertion_point(destructor:CClientMsg_TrackedControllerInput)
+CClientMsg_ClientUIEvent::~CClientMsg_ClientUIEvent() {
+  // @@protoc_insertion_point(destructor:CClientMsg_ClientUIEvent)
   SharedDtor();
 }
 
-void CClientMsg_TrackedControllerInput::SharedDtor() {
-  if (data_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    delete data_;
+void CClientMsg_ClientUIEvent::SharedDtor() {
+  if (data1_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete data1_;
+  }
+  if (data2_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete data2_;
   }
   if (this != default_instance_) {
   }
 }
 
-void CClientMsg_TrackedControllerInput::SetCachedSize(int size) const {
+void CClientMsg_ClientUIEvent::SetCachedSize(int size) const {
   GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
   _cached_size_ = size;
   GOOGLE_SAFE_CONCURRENT_WRITES_END();
 }
-const ::google::protobuf::Descriptor* CClientMsg_TrackedControllerInput::descriptor() {
+const ::google::protobuf::Descriptor* CClientMsg_ClientUIEvent::descriptor() {
   protobuf_AssignDescriptorsOnce();
-  return CClientMsg_TrackedControllerInput_descriptor_;
+  return CClientMsg_ClientUIEvent_descriptor_;
 }
 
-const CClientMsg_TrackedControllerInput& CClientMsg_TrackedControllerInput::default_instance() {
+const CClientMsg_ClientUIEvent& CClientMsg_ClientUIEvent::default_instance() {
   if (default_instance_ == NULL) protobuf_AddDesc_clientmessages_2eproto();
   return *default_instance_;
 }
 
-CClientMsg_TrackedControllerInput* CClientMsg_TrackedControllerInput::default_instance_ = NULL;
+CClientMsg_ClientUIEvent* CClientMsg_ClientUIEvent::default_instance_ = NULL;
 
-CClientMsg_TrackedControllerInput* CClientMsg_TrackedControllerInput::New() const {
-  return new CClientMsg_TrackedControllerInput;
+CClientMsg_ClientUIEvent* CClientMsg_ClientUIEvent::New() const {
+  return new CClientMsg_ClientUIEvent;
 }
 
-void CClientMsg_TrackedControllerInput::Clear() {
-  if (has_data()) {
-    if (data_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-      data_->clear();
+void CClientMsg_ClientUIEvent::Clear() {
+#define OFFSET_OF_FIELD_(f) (reinterpret_cast<char*>(      \
+  &reinterpret_cast<CClientMsg_ClientUIEvent*>(16)->f) - \
+   reinterpret_cast<char*>(16))
+
+#define ZR_(first, last) do {                              \
+    size_t f = OFFSET_OF_FIELD_(first);                    \
+    size_t n = OFFSET_OF_FIELD_(last) - f + sizeof(last);  \
+    ::memset(&first, 0, n);                                \
+  } while (0)
+
+  if (_has_bits_[0 / 32] & 31) {
+    ZR_(event_, ent_ehandle_);
+    client_ehandle_ = 0u;
+    if (has_data1()) {
+      if (data1_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+        data1_->clear();
+      }
+    }
+    if (has_data2()) {
+      if (data2_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+        data2_->clear();
+      }
     }
   }
+
+#undef OFFSET_OF_FIELD_
+#undef ZR_
+
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
   mutable_unknown_fields()->Clear();
 }
 
-bool CClientMsg_TrackedControllerInput::MergePartialFromCodedStream(
+bool CClientMsg_ClientUIEvent::MergePartialFromCodedStream(
     ::google::protobuf::io::CodedInputStream* input) {
 #define DO_(EXPRESSION) if (!(EXPRESSION)) goto failure
   ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:CClientMsg_TrackedControllerInput)
+  // @@protoc_insertion_point(parse_start:CClientMsg_ClientUIEvent)
   for (;;) {
     ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoff(127);
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // optional bytes data = 1;
+      // optional .EClientUIEvent event = 1 [default = EClientUIEvent_Invalid];
       case 1: {
-        if (tag == 10) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadBytes(
-                input, this->mutable_data()));
+        if (tag == 8) {
+          int value;
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
+                 input, &value)));
+          if (::EClientUIEvent_IsValid(value)) {
+            set_event(static_cast< ::EClientUIEvent >(value));
+          } else {
+            mutable_unknown_fields()->AddVarint(1, value);
+          }
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(16)) goto parse_ent_ehandle;
+        break;
+      }
+
+      // optional uint32 ent_ehandle = 2;
+      case 2: {
+        if (tag == 16) {
+         parse_ent_ehandle:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                 input, &ent_ehandle_)));
+          set_has_ent_ehandle();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(24)) goto parse_client_ehandle;
+        break;
+      }
+
+      // optional uint32 client_ehandle = 3;
+      case 3: {
+        if (tag == 24) {
+         parse_client_ehandle:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                 input, &client_ehandle_)));
+          set_has_client_ehandle();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(34)) goto parse_data1;
+        break;
+      }
+
+      // optional string data1 = 4;
+      case 4: {
+        if (tag == 34) {
+         parse_data1:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_data1()));
+          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+            this->data1().data(), this->data1().length(),
+            ::google::protobuf::internal::WireFormat::PARSE,
+            "data1");
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(42)) goto parse_data2;
+        break;
+      }
+
+      // optional string data2 = 5;
+      case 5: {
+        if (tag == 42) {
+         parse_data2:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_data2()));
+          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+            this->data2().data(), this->data2().length(),
+            ::google::protobuf::internal::WireFormat::PARSE,
+            "data2");
         } else {
           goto handle_unusual;
         }
@@ -540,57 +756,145 @@ bool CClientMsg_TrackedControllerInput::MergePartialFromCodedStream(
     }
   }
 success:
-  // @@protoc_insertion_point(parse_success:CClientMsg_TrackedControllerInput)
+  // @@protoc_insertion_point(parse_success:CClientMsg_ClientUIEvent)
   return true;
 failure:
-  // @@protoc_insertion_point(parse_failure:CClientMsg_TrackedControllerInput)
+  // @@protoc_insertion_point(parse_failure:CClientMsg_ClientUIEvent)
   return false;
 #undef DO_
 }
 
-void CClientMsg_TrackedControllerInput::SerializeWithCachedSizes(
+void CClientMsg_ClientUIEvent::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:CClientMsg_TrackedControllerInput)
-  // optional bytes data = 1;
-  if (has_data()) {
-    ::google::protobuf::internal::WireFormatLite::WriteBytesMaybeAliased(
-      1, this->data(), output);
+  // @@protoc_insertion_point(serialize_start:CClientMsg_ClientUIEvent)
+  // optional .EClientUIEvent event = 1 [default = EClientUIEvent_Invalid];
+  if (has_event()) {
+    ::google::protobuf::internal::WireFormatLite::WriteEnum(
+      1, this->event(), output);
+  }
+
+  // optional uint32 ent_ehandle = 2;
+  if (has_ent_ehandle()) {
+    ::google::protobuf::internal::WireFormatLite::WriteUInt32(2, this->ent_ehandle(), output);
+  }
+
+  // optional uint32 client_ehandle = 3;
+  if (has_client_ehandle()) {
+    ::google::protobuf::internal::WireFormatLite::WriteUInt32(3, this->client_ehandle(), output);
+  }
+
+  // optional string data1 = 4;
+  if (has_data1()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->data1().data(), this->data1().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "data1");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      4, this->data1(), output);
+  }
+
+  // optional string data2 = 5;
+  if (has_data2()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->data2().data(), this->data2().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "data2");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      5, this->data2(), output);
   }
 
   if (!unknown_fields().empty()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
   }
-  // @@protoc_insertion_point(serialize_end:CClientMsg_TrackedControllerInput)
+  // @@protoc_insertion_point(serialize_end:CClientMsg_ClientUIEvent)
 }
 
-::google::protobuf::uint8* CClientMsg_TrackedControllerInput::SerializeWithCachedSizesToArray(
+::google::protobuf::uint8* CClientMsg_ClientUIEvent::SerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
-  // @@protoc_insertion_point(serialize_to_array_start:CClientMsg_TrackedControllerInput)
-  // optional bytes data = 1;
-  if (has_data()) {
+  // @@protoc_insertion_point(serialize_to_array_start:CClientMsg_ClientUIEvent)
+  // optional .EClientUIEvent event = 1 [default = EClientUIEvent_Invalid];
+  if (has_event()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
+      1, this->event(), target);
+  }
+
+  // optional uint32 ent_ehandle = 2;
+  if (has_ent_ehandle()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(2, this->ent_ehandle(), target);
+  }
+
+  // optional uint32 client_ehandle = 3;
+  if (has_client_ehandle()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(3, this->client_ehandle(), target);
+  }
+
+  // optional string data1 = 4;
+  if (has_data1()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->data1().data(), this->data1().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "data1");
     target =
-      ::google::protobuf::internal::WireFormatLite::WriteBytesToArray(
-        1, this->data(), target);
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        4, this->data1(), target);
+  }
+
+  // optional string data2 = 5;
+  if (has_data2()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->data2().data(), this->data2().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "data2");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        5, this->data2(), target);
   }
 
   if (!unknown_fields().empty()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:CClientMsg_TrackedControllerInput)
+  // @@protoc_insertion_point(serialize_to_array_end:CClientMsg_ClientUIEvent)
   return target;
 }
 
-int CClientMsg_TrackedControllerInput::ByteSize() const {
+int CClientMsg_ClientUIEvent::ByteSize() const {
   int total_size = 0;
 
   if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
-    // optional bytes data = 1;
-    if (has_data()) {
+    // optional .EClientUIEvent event = 1 [default = EClientUIEvent_Invalid];
+    if (has_event()) {
       total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::BytesSize(
-          this->data());
+        ::google::protobuf::internal::WireFormatLite::EnumSize(this->event());
+    }
+
+    // optional uint32 ent_ehandle = 2;
+    if (has_ent_ehandle()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::UInt32Size(
+          this->ent_ehandle());
+    }
+
+    // optional uint32 client_ehandle = 3;
+    if (has_client_ehandle()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::UInt32Size(
+          this->client_ehandle());
+    }
+
+    // optional string data1 = 4;
+    if (has_data1()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::StringSize(
+          this->data1());
+    }
+
+    // optional string data2 = 5;
+    if (has_data2()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::StringSize(
+          this->data2());
     }
 
   }
@@ -605,10 +909,10 @@ int CClientMsg_TrackedControllerInput::ByteSize() const {
   return total_size;
 }
 
-void CClientMsg_TrackedControllerInput::MergeFrom(const ::google::protobuf::Message& from) {
+void CClientMsg_ClientUIEvent::MergeFrom(const ::google::protobuf::Message& from) {
   GOOGLE_CHECK_NE(&from, this);
-  const CClientMsg_TrackedControllerInput* source =
-    ::google::protobuf::internal::dynamic_cast_if_available<const CClientMsg_TrackedControllerInput*>(
+  const CClientMsg_ClientUIEvent* source =
+    ::google::protobuf::internal::dynamic_cast_if_available<const CClientMsg_ClientUIEvent*>(
       &from);
   if (source == NULL) {
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
@@ -617,47 +921,813 @@ void CClientMsg_TrackedControllerInput::MergeFrom(const ::google::protobuf::Mess
   }
 }
 
-void CClientMsg_TrackedControllerInput::MergeFrom(const CClientMsg_TrackedControllerInput& from) {
+void CClientMsg_ClientUIEvent::MergeFrom(const CClientMsg_ClientUIEvent& from) {
   GOOGLE_CHECK_NE(&from, this);
   if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
-    if (from.has_data()) {
-      set_data(from.data());
+    if (from.has_event()) {
+      set_event(from.event());
+    }
+    if (from.has_ent_ehandle()) {
+      set_ent_ehandle(from.ent_ehandle());
+    }
+    if (from.has_client_ehandle()) {
+      set_client_ehandle(from.client_ehandle());
+    }
+    if (from.has_data1()) {
+      set_data1(from.data1());
+    }
+    if (from.has_data2()) {
+      set_data2(from.data2());
     }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
 }
 
-void CClientMsg_TrackedControllerInput::CopyFrom(const ::google::protobuf::Message& from) {
+void CClientMsg_ClientUIEvent::CopyFrom(const ::google::protobuf::Message& from) {
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-void CClientMsg_TrackedControllerInput::CopyFrom(const CClientMsg_TrackedControllerInput& from) {
+void CClientMsg_ClientUIEvent::CopyFrom(const CClientMsg_ClientUIEvent& from) {
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-bool CClientMsg_TrackedControllerInput::IsInitialized() const {
+bool CClientMsg_ClientUIEvent::IsInitialized() const {
 
   return true;
 }
 
-void CClientMsg_TrackedControllerInput::Swap(CClientMsg_TrackedControllerInput* other) {
+void CClientMsg_ClientUIEvent::Swap(CClientMsg_ClientUIEvent* other) {
   if (other != this) {
-    std::swap(data_, other->data_);
+    std::swap(event_, other->event_);
+    std::swap(ent_ehandle_, other->ent_ehandle_);
+    std::swap(client_ehandle_, other->client_ehandle_);
+    std::swap(data1_, other->data1_);
+    std::swap(data2_, other->data2_);
     std::swap(_has_bits_[0], other->_has_bits_[0]);
     _unknown_fields_.Swap(&other->_unknown_fields_);
     std::swap(_cached_size_, other->_cached_size_);
   }
 }
 
-::google::protobuf::Metadata CClientMsg_TrackedControllerInput::GetMetadata() const {
+::google::protobuf::Metadata CClientMsg_ClientUIEvent::GetMetadata() const {
   protobuf_AssignDescriptorsOnce();
   ::google::protobuf::Metadata metadata;
-  metadata.descriptor = CClientMsg_TrackedControllerInput_descriptor_;
-  metadata.reflection = CClientMsg_TrackedControllerInput_reflection_;
+  metadata.descriptor = CClientMsg_ClientUIEvent_descriptor_;
+  metadata.reflection = CClientMsg_ClientUIEvent_reflection_;
+  return metadata;
+}
+
+
+// ===================================================================
+
+#ifndef _MSC_VER
+const int CClientMsg_DevPaletteVisibilityChangedEvent::kVisibleFieldNumber;
+#endif  // !_MSC_VER
+
+CClientMsg_DevPaletteVisibilityChangedEvent::CClientMsg_DevPaletteVisibilityChangedEvent()
+  : ::google::protobuf::Message() {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:CClientMsg_DevPaletteVisibilityChangedEvent)
+}
+
+void CClientMsg_DevPaletteVisibilityChangedEvent::InitAsDefaultInstance() {
+}
+
+CClientMsg_DevPaletteVisibilityChangedEvent::CClientMsg_DevPaletteVisibilityChangedEvent(const CClientMsg_DevPaletteVisibilityChangedEvent& from)
+  : ::google::protobuf::Message() {
+  SharedCtor();
+  MergeFrom(from);
+  // @@protoc_insertion_point(copy_constructor:CClientMsg_DevPaletteVisibilityChangedEvent)
+}
+
+void CClientMsg_DevPaletteVisibilityChangedEvent::SharedCtor() {
+  _cached_size_ = 0;
+  visible_ = false;
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+}
+
+CClientMsg_DevPaletteVisibilityChangedEvent::~CClientMsg_DevPaletteVisibilityChangedEvent() {
+  // @@protoc_insertion_point(destructor:CClientMsg_DevPaletteVisibilityChangedEvent)
+  SharedDtor();
+}
+
+void CClientMsg_DevPaletteVisibilityChangedEvent::SharedDtor() {
+  if (this != default_instance_) {
+  }
+}
+
+void CClientMsg_DevPaletteVisibilityChangedEvent::SetCachedSize(int size) const {
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+}
+const ::google::protobuf::Descriptor* CClientMsg_DevPaletteVisibilityChangedEvent::descriptor() {
+  protobuf_AssignDescriptorsOnce();
+  return CClientMsg_DevPaletteVisibilityChangedEvent_descriptor_;
+}
+
+const CClientMsg_DevPaletteVisibilityChangedEvent& CClientMsg_DevPaletteVisibilityChangedEvent::default_instance() {
+  if (default_instance_ == NULL) protobuf_AddDesc_clientmessages_2eproto();
+  return *default_instance_;
+}
+
+CClientMsg_DevPaletteVisibilityChangedEvent* CClientMsg_DevPaletteVisibilityChangedEvent::default_instance_ = NULL;
+
+CClientMsg_DevPaletteVisibilityChangedEvent* CClientMsg_DevPaletteVisibilityChangedEvent::New() const {
+  return new CClientMsg_DevPaletteVisibilityChangedEvent;
+}
+
+void CClientMsg_DevPaletteVisibilityChangedEvent::Clear() {
+  visible_ = false;
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+  mutable_unknown_fields()->Clear();
+}
+
+bool CClientMsg_DevPaletteVisibilityChangedEvent::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:CClientMsg_DevPaletteVisibilityChangedEvent)
+  for (;;) {
+    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoff(127);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // optional bool visible = 1;
+      case 1: {
+        if (tag == 8) {
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   bool, ::google::protobuf::internal::WireFormatLite::TYPE_BOOL>(
+                 input, &visible_)));
+          set_has_visible();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectAtEnd()) goto success;
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0 ||
+            ::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, mutable_unknown_fields()));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:CClientMsg_DevPaletteVisibilityChangedEvent)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:CClientMsg_DevPaletteVisibilityChangedEvent)
+  return false;
+#undef DO_
+}
+
+void CClientMsg_DevPaletteVisibilityChangedEvent::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:CClientMsg_DevPaletteVisibilityChangedEvent)
+  // optional bool visible = 1;
+  if (has_visible()) {
+    ::google::protobuf::internal::WireFormatLite::WriteBool(1, this->visible(), output);
+  }
+
+  if (!unknown_fields().empty()) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        unknown_fields(), output);
+  }
+  // @@protoc_insertion_point(serialize_end:CClientMsg_DevPaletteVisibilityChangedEvent)
+}
+
+::google::protobuf::uint8* CClientMsg_DevPaletteVisibilityChangedEvent::SerializeWithCachedSizesToArray(
+    ::google::protobuf::uint8* target) const {
+  // @@protoc_insertion_point(serialize_to_array_start:CClientMsg_DevPaletteVisibilityChangedEvent)
+  // optional bool visible = 1;
+  if (has_visible()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(1, this->visible(), target);
+  }
+
+  if (!unknown_fields().empty()) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        unknown_fields(), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:CClientMsg_DevPaletteVisibilityChangedEvent)
+  return target;
+}
+
+int CClientMsg_DevPaletteVisibilityChangedEvent::ByteSize() const {
+  int total_size = 0;
+
+  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    // optional bool visible = 1;
+    if (has_visible()) {
+      total_size += 1 + 1;
+    }
+
+  }
+  if (!unknown_fields().empty()) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        unknown_fields());
+  }
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = total_size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+  return total_size;
+}
+
+void CClientMsg_DevPaletteVisibilityChangedEvent::MergeFrom(const ::google::protobuf::Message& from) {
+  GOOGLE_CHECK_NE(&from, this);
+  const CClientMsg_DevPaletteVisibilityChangedEvent* source =
+    ::google::protobuf::internal::dynamic_cast_if_available<const CClientMsg_DevPaletteVisibilityChangedEvent*>(
+      &from);
+  if (source == NULL) {
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+    MergeFrom(*source);
+  }
+}
+
+void CClientMsg_DevPaletteVisibilityChangedEvent::MergeFrom(const CClientMsg_DevPaletteVisibilityChangedEvent& from) {
+  GOOGLE_CHECK_NE(&from, this);
+  if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    if (from.has_visible()) {
+      set_visible(from.visible());
+    }
+  }
+  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
+}
+
+void CClientMsg_DevPaletteVisibilityChangedEvent::CopyFrom(const ::google::protobuf::Message& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void CClientMsg_DevPaletteVisibilityChangedEvent::CopyFrom(const CClientMsg_DevPaletteVisibilityChangedEvent& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool CClientMsg_DevPaletteVisibilityChangedEvent::IsInitialized() const {
+
+  return true;
+}
+
+void CClientMsg_DevPaletteVisibilityChangedEvent::Swap(CClientMsg_DevPaletteVisibilityChangedEvent* other) {
+  if (other != this) {
+    std::swap(visible_, other->visible_);
+    std::swap(_has_bits_[0], other->_has_bits_[0]);
+    _unknown_fields_.Swap(&other->_unknown_fields_);
+    std::swap(_cached_size_, other->_cached_size_);
+  }
+}
+
+::google::protobuf::Metadata CClientMsg_DevPaletteVisibilityChangedEvent::GetMetadata() const {
+  protobuf_AssignDescriptorsOnce();
+  ::google::protobuf::Metadata metadata;
+  metadata.descriptor = CClientMsg_DevPaletteVisibilityChangedEvent_descriptor_;
+  metadata.reflection = CClientMsg_DevPaletteVisibilityChangedEvent_reflection_;
+  return metadata;
+}
+
+
+// ===================================================================
+
+#ifndef _MSC_VER
+const int CClientMsg_WorldUIControllerHasPanelChangedEvent::kHasPanelFieldNumber;
+const int CClientMsg_WorldUIControllerHasPanelChangedEvent::kClientEhandleFieldNumber;
+const int CClientMsg_WorldUIControllerHasPanelChangedEvent::kLiteralHandTypeFieldNumber;
+#endif  // !_MSC_VER
+
+CClientMsg_WorldUIControllerHasPanelChangedEvent::CClientMsg_WorldUIControllerHasPanelChangedEvent()
+  : ::google::protobuf::Message() {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:CClientMsg_WorldUIControllerHasPanelChangedEvent)
+}
+
+void CClientMsg_WorldUIControllerHasPanelChangedEvent::InitAsDefaultInstance() {
+}
+
+CClientMsg_WorldUIControllerHasPanelChangedEvent::CClientMsg_WorldUIControllerHasPanelChangedEvent(const CClientMsg_WorldUIControllerHasPanelChangedEvent& from)
+  : ::google::protobuf::Message() {
+  SharedCtor();
+  MergeFrom(from);
+  // @@protoc_insertion_point(copy_constructor:CClientMsg_WorldUIControllerHasPanelChangedEvent)
+}
+
+void CClientMsg_WorldUIControllerHasPanelChangedEvent::SharedCtor() {
+  _cached_size_ = 0;
+  has_panel_ = false;
+  client_ehandle_ = 0u;
+  literal_hand_type_ = 0u;
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+}
+
+CClientMsg_WorldUIControllerHasPanelChangedEvent::~CClientMsg_WorldUIControllerHasPanelChangedEvent() {
+  // @@protoc_insertion_point(destructor:CClientMsg_WorldUIControllerHasPanelChangedEvent)
+  SharedDtor();
+}
+
+void CClientMsg_WorldUIControllerHasPanelChangedEvent::SharedDtor() {
+  if (this != default_instance_) {
+  }
+}
+
+void CClientMsg_WorldUIControllerHasPanelChangedEvent::SetCachedSize(int size) const {
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+}
+const ::google::protobuf::Descriptor* CClientMsg_WorldUIControllerHasPanelChangedEvent::descriptor() {
+  protobuf_AssignDescriptorsOnce();
+  return CClientMsg_WorldUIControllerHasPanelChangedEvent_descriptor_;
+}
+
+const CClientMsg_WorldUIControllerHasPanelChangedEvent& CClientMsg_WorldUIControllerHasPanelChangedEvent::default_instance() {
+  if (default_instance_ == NULL) protobuf_AddDesc_clientmessages_2eproto();
+  return *default_instance_;
+}
+
+CClientMsg_WorldUIControllerHasPanelChangedEvent* CClientMsg_WorldUIControllerHasPanelChangedEvent::default_instance_ = NULL;
+
+CClientMsg_WorldUIControllerHasPanelChangedEvent* CClientMsg_WorldUIControllerHasPanelChangedEvent::New() const {
+  return new CClientMsg_WorldUIControllerHasPanelChangedEvent;
+}
+
+void CClientMsg_WorldUIControllerHasPanelChangedEvent::Clear() {
+#define OFFSET_OF_FIELD_(f) (reinterpret_cast<char*>(      \
+  &reinterpret_cast<CClientMsg_WorldUIControllerHasPanelChangedEvent*>(16)->f) - \
+   reinterpret_cast<char*>(16))
+
+#define ZR_(first, last) do {                              \
+    size_t f = OFFSET_OF_FIELD_(first);                    \
+    size_t n = OFFSET_OF_FIELD_(last) - f + sizeof(last);  \
+    ::memset(&first, 0, n);                                \
+  } while (0)
+
+  ZR_(has_panel_, literal_hand_type_);
+
+#undef OFFSET_OF_FIELD_
+#undef ZR_
+
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+  mutable_unknown_fields()->Clear();
+}
+
+bool CClientMsg_WorldUIControllerHasPanelChangedEvent::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:CClientMsg_WorldUIControllerHasPanelChangedEvent)
+  for (;;) {
+    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoff(127);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // optional bool has_panel = 1;
+      case 1: {
+        if (tag == 8) {
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   bool, ::google::protobuf::internal::WireFormatLite::TYPE_BOOL>(
+                 input, &has_panel_)));
+          set_has_has_panel();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(16)) goto parse_client_ehandle;
+        break;
+      }
+
+      // optional uint32 client_ehandle = 2;
+      case 2: {
+        if (tag == 16) {
+         parse_client_ehandle:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                 input, &client_ehandle_)));
+          set_has_client_ehandle();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(24)) goto parse_literal_hand_type;
+        break;
+      }
+
+      // optional uint32 literal_hand_type = 3;
+      case 3: {
+        if (tag == 24) {
+         parse_literal_hand_type:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                 input, &literal_hand_type_)));
+          set_has_literal_hand_type();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectAtEnd()) goto success;
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0 ||
+            ::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, mutable_unknown_fields()));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:CClientMsg_WorldUIControllerHasPanelChangedEvent)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:CClientMsg_WorldUIControllerHasPanelChangedEvent)
+  return false;
+#undef DO_
+}
+
+void CClientMsg_WorldUIControllerHasPanelChangedEvent::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:CClientMsg_WorldUIControllerHasPanelChangedEvent)
+  // optional bool has_panel = 1;
+  if (has_has_panel()) {
+    ::google::protobuf::internal::WireFormatLite::WriteBool(1, this->has_panel(), output);
+  }
+
+  // optional uint32 client_ehandle = 2;
+  if (has_client_ehandle()) {
+    ::google::protobuf::internal::WireFormatLite::WriteUInt32(2, this->client_ehandle(), output);
+  }
+
+  // optional uint32 literal_hand_type = 3;
+  if (has_literal_hand_type()) {
+    ::google::protobuf::internal::WireFormatLite::WriteUInt32(3, this->literal_hand_type(), output);
+  }
+
+  if (!unknown_fields().empty()) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        unknown_fields(), output);
+  }
+  // @@protoc_insertion_point(serialize_end:CClientMsg_WorldUIControllerHasPanelChangedEvent)
+}
+
+::google::protobuf::uint8* CClientMsg_WorldUIControllerHasPanelChangedEvent::SerializeWithCachedSizesToArray(
+    ::google::protobuf::uint8* target) const {
+  // @@protoc_insertion_point(serialize_to_array_start:CClientMsg_WorldUIControllerHasPanelChangedEvent)
+  // optional bool has_panel = 1;
+  if (has_has_panel()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(1, this->has_panel(), target);
+  }
+
+  // optional uint32 client_ehandle = 2;
+  if (has_client_ehandle()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(2, this->client_ehandle(), target);
+  }
+
+  // optional uint32 literal_hand_type = 3;
+  if (has_literal_hand_type()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(3, this->literal_hand_type(), target);
+  }
+
+  if (!unknown_fields().empty()) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        unknown_fields(), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:CClientMsg_WorldUIControllerHasPanelChangedEvent)
+  return target;
+}
+
+int CClientMsg_WorldUIControllerHasPanelChangedEvent::ByteSize() const {
+  int total_size = 0;
+
+  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    // optional bool has_panel = 1;
+    if (has_has_panel()) {
+      total_size += 1 + 1;
+    }
+
+    // optional uint32 client_ehandle = 2;
+    if (has_client_ehandle()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::UInt32Size(
+          this->client_ehandle());
+    }
+
+    // optional uint32 literal_hand_type = 3;
+    if (has_literal_hand_type()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::UInt32Size(
+          this->literal_hand_type());
+    }
+
+  }
+  if (!unknown_fields().empty()) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        unknown_fields());
+  }
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = total_size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+  return total_size;
+}
+
+void CClientMsg_WorldUIControllerHasPanelChangedEvent::MergeFrom(const ::google::protobuf::Message& from) {
+  GOOGLE_CHECK_NE(&from, this);
+  const CClientMsg_WorldUIControllerHasPanelChangedEvent* source =
+    ::google::protobuf::internal::dynamic_cast_if_available<const CClientMsg_WorldUIControllerHasPanelChangedEvent*>(
+      &from);
+  if (source == NULL) {
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+    MergeFrom(*source);
+  }
+}
+
+void CClientMsg_WorldUIControllerHasPanelChangedEvent::MergeFrom(const CClientMsg_WorldUIControllerHasPanelChangedEvent& from) {
+  GOOGLE_CHECK_NE(&from, this);
+  if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    if (from.has_has_panel()) {
+      set_has_panel(from.has_panel());
+    }
+    if (from.has_client_ehandle()) {
+      set_client_ehandle(from.client_ehandle());
+    }
+    if (from.has_literal_hand_type()) {
+      set_literal_hand_type(from.literal_hand_type());
+    }
+  }
+  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
+}
+
+void CClientMsg_WorldUIControllerHasPanelChangedEvent::CopyFrom(const ::google::protobuf::Message& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void CClientMsg_WorldUIControllerHasPanelChangedEvent::CopyFrom(const CClientMsg_WorldUIControllerHasPanelChangedEvent& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool CClientMsg_WorldUIControllerHasPanelChangedEvent::IsInitialized() const {
+
+  return true;
+}
+
+void CClientMsg_WorldUIControllerHasPanelChangedEvent::Swap(CClientMsg_WorldUIControllerHasPanelChangedEvent* other) {
+  if (other != this) {
+    std::swap(has_panel_, other->has_panel_);
+    std::swap(client_ehandle_, other->client_ehandle_);
+    std::swap(literal_hand_type_, other->literal_hand_type_);
+    std::swap(_has_bits_[0], other->_has_bits_[0]);
+    _unknown_fields_.Swap(&other->_unknown_fields_);
+    std::swap(_cached_size_, other->_cached_size_);
+  }
+}
+
+::google::protobuf::Metadata CClientMsg_WorldUIControllerHasPanelChangedEvent::GetMetadata() const {
+  protobuf_AssignDescriptorsOnce();
+  ::google::protobuf::Metadata metadata;
+  metadata.descriptor = CClientMsg_WorldUIControllerHasPanelChangedEvent_descriptor_;
+  metadata.reflection = CClientMsg_WorldUIControllerHasPanelChangedEvent_reflection_;
+  return metadata;
+}
+
+
+// ===================================================================
+
+#ifndef _MSC_VER
+const int CClientMsg_RotateAnchor::kAngleFieldNumber;
+#endif  // !_MSC_VER
+
+CClientMsg_RotateAnchor::CClientMsg_RotateAnchor()
+  : ::google::protobuf::Message() {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:CClientMsg_RotateAnchor)
+}
+
+void CClientMsg_RotateAnchor::InitAsDefaultInstance() {
+}
+
+CClientMsg_RotateAnchor::CClientMsg_RotateAnchor(const CClientMsg_RotateAnchor& from)
+  : ::google::protobuf::Message() {
+  SharedCtor();
+  MergeFrom(from);
+  // @@protoc_insertion_point(copy_constructor:CClientMsg_RotateAnchor)
+}
+
+void CClientMsg_RotateAnchor::SharedCtor() {
+  _cached_size_ = 0;
+  angle_ = 0;
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+}
+
+CClientMsg_RotateAnchor::~CClientMsg_RotateAnchor() {
+  // @@protoc_insertion_point(destructor:CClientMsg_RotateAnchor)
+  SharedDtor();
+}
+
+void CClientMsg_RotateAnchor::SharedDtor() {
+  if (this != default_instance_) {
+  }
+}
+
+void CClientMsg_RotateAnchor::SetCachedSize(int size) const {
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+}
+const ::google::protobuf::Descriptor* CClientMsg_RotateAnchor::descriptor() {
+  protobuf_AssignDescriptorsOnce();
+  return CClientMsg_RotateAnchor_descriptor_;
+}
+
+const CClientMsg_RotateAnchor& CClientMsg_RotateAnchor::default_instance() {
+  if (default_instance_ == NULL) protobuf_AddDesc_clientmessages_2eproto();
+  return *default_instance_;
+}
+
+CClientMsg_RotateAnchor* CClientMsg_RotateAnchor::default_instance_ = NULL;
+
+CClientMsg_RotateAnchor* CClientMsg_RotateAnchor::New() const {
+  return new CClientMsg_RotateAnchor;
+}
+
+void CClientMsg_RotateAnchor::Clear() {
+  angle_ = 0;
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+  mutable_unknown_fields()->Clear();
+}
+
+bool CClientMsg_RotateAnchor::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:CClientMsg_RotateAnchor)
+  for (;;) {
+    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoff(127);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // optional float angle = 1;
+      case 1: {
+        if (tag == 13) {
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
+                 input, &angle_)));
+          set_has_angle();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectAtEnd()) goto success;
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0 ||
+            ::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, mutable_unknown_fields()));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:CClientMsg_RotateAnchor)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:CClientMsg_RotateAnchor)
+  return false;
+#undef DO_
+}
+
+void CClientMsg_RotateAnchor::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:CClientMsg_RotateAnchor)
+  // optional float angle = 1;
+  if (has_angle()) {
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(1, this->angle(), output);
+  }
+
+  if (!unknown_fields().empty()) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        unknown_fields(), output);
+  }
+  // @@protoc_insertion_point(serialize_end:CClientMsg_RotateAnchor)
+}
+
+::google::protobuf::uint8* CClientMsg_RotateAnchor::SerializeWithCachedSizesToArray(
+    ::google::protobuf::uint8* target) const {
+  // @@protoc_insertion_point(serialize_to_array_start:CClientMsg_RotateAnchor)
+  // optional float angle = 1;
+  if (has_angle()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(1, this->angle(), target);
+  }
+
+  if (!unknown_fields().empty()) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        unknown_fields(), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:CClientMsg_RotateAnchor)
+  return target;
+}
+
+int CClientMsg_RotateAnchor::ByteSize() const {
+  int total_size = 0;
+
+  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    // optional float angle = 1;
+    if (has_angle()) {
+      total_size += 1 + 4;
+    }
+
+  }
+  if (!unknown_fields().empty()) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        unknown_fields());
+  }
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = total_size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+  return total_size;
+}
+
+void CClientMsg_RotateAnchor::MergeFrom(const ::google::protobuf::Message& from) {
+  GOOGLE_CHECK_NE(&from, this);
+  const CClientMsg_RotateAnchor* source =
+    ::google::protobuf::internal::dynamic_cast_if_available<const CClientMsg_RotateAnchor*>(
+      &from);
+  if (source == NULL) {
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+    MergeFrom(*source);
+  }
+}
+
+void CClientMsg_RotateAnchor::MergeFrom(const CClientMsg_RotateAnchor& from) {
+  GOOGLE_CHECK_NE(&from, this);
+  if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    if (from.has_angle()) {
+      set_angle(from.angle());
+    }
+  }
+  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
+}
+
+void CClientMsg_RotateAnchor::CopyFrom(const ::google::protobuf::Message& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void CClientMsg_RotateAnchor::CopyFrom(const CClientMsg_RotateAnchor& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool CClientMsg_RotateAnchor::IsInitialized() const {
+
+  return true;
+}
+
+void CClientMsg_RotateAnchor::Swap(CClientMsg_RotateAnchor* other) {
+  if (other != this) {
+    std::swap(angle_, other->angle_);
+    std::swap(_has_bits_[0], other->_has_bits_[0]);
+    _unknown_fields_.Swap(&other->_unknown_fields_);
+    std::swap(_cached_size_, other->_cached_size_);
+  }
+}
+
+::google::protobuf::Metadata CClientMsg_RotateAnchor::GetMetadata() const {
+  protobuf_AssignDescriptorsOnce();
+  ::google::protobuf::Metadata metadata;
+  metadata.descriptor = CClientMsg_RotateAnchor_descriptor_;
+  metadata.reflection = CClientMsg_RotateAnchor_reflection_;
   return metadata;
 }
 

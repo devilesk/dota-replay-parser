@@ -274,6 +274,9 @@ const ::google::protobuf::Descriptor* CMsgDPPartnerMicroTxnsResponse_descriptor_
 const ::google::protobuf::internal::GeneratedMessageReflection*
   CMsgDPPartnerMicroTxnsResponse_reflection_ = NULL;
 const ::google::protobuf::EnumDescriptor* CMsgDPPartnerMicroTxnsResponse_EErrorCode_descriptor_ = NULL;
+const ::google::protobuf::Descriptor* CMsgGCHVacVerificationChange_descriptor_ = NULL;
+const ::google::protobuf::internal::GeneratedMessageReflection*
+  CMsgGCHVacVerificationChange_reflection_ = NULL;
 const ::google::protobuf::EnumDescriptor* GCProtoBufMsgSrc_descriptor_ = NULL;
 
 }  // namespace
@@ -471,11 +474,11 @@ void protobuf_AssignDesc_steammessages_2eproto() {
   static const int CMsgNotifyWatchdog_offsets_[7] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgNotifyWatchdog, source_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgNotifyWatchdog, alert_type_),
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgNotifyWatchdog, alert_destination_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgNotifyWatchdog, critical_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgNotifyWatchdog, time_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgNotifyWatchdog, appid_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgNotifyWatchdog, text_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgNotifyWatchdog, recipient_),
   };
   CMsgNotifyWatchdog_reflection_ =
     new ::google::protobuf::internal::GeneratedMessageReflection(
@@ -1150,7 +1153,7 @@ void protobuf_AssignDesc_steammessages_2eproto() {
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(CGCSystemMsg_GetAccountDetails));
   CGCSystemMsg_GetAccountDetails_Response_descriptor_ = file->message_type(41);
-  static const int CGCSystemMsg_GetAccountDetails_Response_offsets_[25] = {
+  static const int CGCSystemMsg_GetAccountDetails_Response_offsets_[32] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CGCSystemMsg_GetAccountDetails_Response, eresult_deprecated_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CGCSystemMsg_GetAccountDetails_Response, account_name_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CGCSystemMsg_GetAccountDetails_Response, persona_name_),
@@ -1176,6 +1179,13 @@ void protobuf_AssignDesc_steammessages_2eproto() {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CGCSystemMsg_GetAccountDetails_Response, steam_level_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CGCSystemMsg_GetAccountDetails_Response, friend_count_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CGCSystemMsg_GetAccountDetails_Response, account_creation_time_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CGCSystemMsg_GetAccountDetails_Response, is_steamguard_enabled_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CGCSystemMsg_GetAccountDetails_Response, is_phone_verified_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CGCSystemMsg_GetAccountDetails_Response, is_two_factor_auth_enabled_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CGCSystemMsg_GetAccountDetails_Response, two_factor_enabled_time_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CGCSystemMsg_GetAccountDetails_Response, phone_verification_time_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CGCSystemMsg_GetAccountDetails_Response, phone_id_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CGCSystemMsg_GetAccountDetails_Response, is_phone_identifying_),
   };
   CGCSystemMsg_GetAccountDetails_Response_reflection_ =
     new ::google::protobuf::internal::GeneratedMessageReflection(
@@ -1268,8 +1278,9 @@ void protobuf_AssignDesc_steammessages_2eproto() {
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(CMsgGCCheckFriendship_Response));
   CMsgGCGetAppFriendsList_descriptor_ = file->message_type(46);
-  static const int CMsgGCGetAppFriendsList_offsets_[1] = {
+  static const int CMsgGCGetAppFriendsList_offsets_[2] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgGCGetAppFriendsList, steamid_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgGCGetAppFriendsList, include_friendship_timestamps_),
   };
   CMsgGCGetAppFriendsList_reflection_ =
     new ::google::protobuf::internal::GeneratedMessageReflection(
@@ -1283,9 +1294,10 @@ void protobuf_AssignDesc_steammessages_2eproto() {
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(CMsgGCGetAppFriendsList));
   CMsgGCGetAppFriendsList_Response_descriptor_ = file->message_type(47);
-  static const int CMsgGCGetAppFriendsList_Response_offsets_[2] = {
+  static const int CMsgGCGetAppFriendsList_Response_offsets_[3] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgGCGetAppFriendsList_Response, success_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgGCGetAppFriendsList_Response, steamids_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgGCGetAppFriendsList_Response, friendship_timestamps_),
   };
   CMsgGCGetAppFriendsList_Response_reflection_ =
     new ::google::protobuf::internal::GeneratedMessageReflection(
@@ -1334,8 +1346,9 @@ void protobuf_AssignDesc_steammessages_2eproto() {
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(CMsgGCMsgMasterSetDirectory_SubGC));
   CMsgGCMsgMasterSetDirectory_Response_descriptor_ = file->message_type(49);
-  static const int CMsgGCMsgMasterSetDirectory_Response_offsets_[1] = {
+  static const int CMsgGCMsgMasterSetDirectory_Response_offsets_[2] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgGCMsgMasterSetDirectory_Response, eresult_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgGCMsgMasterSetDirectory_Response, message_),
   };
   CMsgGCMsgMasterSetDirectory_Response_reflection_ =
     new ::google::protobuf::internal::GeneratedMessageReflection(
@@ -1750,6 +1763,23 @@ void protobuf_AssignDesc_steammessages_2eproto() {
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(CMsgDPPartnerMicroTxnsResponse));
   CMsgDPPartnerMicroTxnsResponse_EErrorCode_descriptor_ = CMsgDPPartnerMicroTxnsResponse_descriptor_->enum_type(0);
+  CMsgGCHVacVerificationChange_descriptor_ = file->message_type(66);
+  static const int CMsgGCHVacVerificationChange_offsets_[3] = {
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgGCHVacVerificationChange, steamid_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgGCHVacVerificationChange, appid_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgGCHVacVerificationChange, is_verified_),
+  };
+  CMsgGCHVacVerificationChange_reflection_ =
+    new ::google::protobuf::internal::GeneratedMessageReflection(
+      CMsgGCHVacVerificationChange_descriptor_,
+      CMsgGCHVacVerificationChange::default_instance_,
+      CMsgGCHVacVerificationChange_offsets_,
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgGCHVacVerificationChange, _has_bits_[0]),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgGCHVacVerificationChange, _unknown_fields_),
+      -1,
+      ::google::protobuf::DescriptorPool::generated_pool(),
+      ::google::protobuf::MessageFactory::generated_factory(),
+      sizeof(CMsgGCHVacVerificationChange));
   GCProtoBufMsgSrc_descriptor_ = file->enum_type(0);
 }
 
@@ -1931,6 +1961,8 @@ void protobuf_RegisterTypes(const ::std::string&) {
     CMsgDPPartnerMicroTxns_PartnerInfo_descriptor_, &CMsgDPPartnerMicroTxns_PartnerInfo::default_instance());
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
     CMsgDPPartnerMicroTxnsResponse_descriptor_, &CMsgDPPartnerMicroTxnsResponse::default_instance());
+  ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
+    CMsgGCHVacVerificationChange_descriptor_, &CMsgGCHVacVerificationChange::default_instance());
 }
 
 }  // namespace
@@ -2104,6 +2136,8 @@ void protobuf_ShutdownFile_steammessages_2eproto() {
   delete CMsgDPPartnerMicroTxns_PartnerInfo_reflection_;
   delete CMsgDPPartnerMicroTxnsResponse::default_instance_;
   delete CMsgDPPartnerMicroTxnsResponse_reflection_;
+  delete CMsgGCHVacVerificationChange::default_instance_;
+  delete CMsgGCHVacVerificationChange_reflection_;
 }
 
 void protobuf_AddDesc_steammessages_2eproto() {
@@ -2148,117 +2182,122 @@ void protobuf_AddDesc_steammessages_2eproto() {
     "\r\n\005value\030\002 \001(\t\"@\n\022CMsgAMFindAccounts\022\023\n\013"
     "search_type\030\001 \001(\r\022\025\n\rsearch_string\030\002 \001(\t"
     "\".\n\032CMsgAMFindAccountsResponse\022\020\n\010steam_"
-    "id\030\001 \003(\006\"\220\001\n\022CMsgNotifyWatchdog\022\016\n\006sourc"
-    "e\030\001 \001(\r\022\022\n\nalert_type\030\002 \001(\r\022\031\n\021alert_des"
-    "tination\030\003 \001(\r\022\020\n\010critical\030\004 \001(\010\022\014\n\004time"
-    "\030\005 \001(\r\022\r\n\005appid\030\006 \001(\r\022\014\n\004text\030\007 \001(\t\"$\n\021C"
-    "MsgAMGetLicenses\022\017\n\007steamid\030\001 \001(\006\"P\n\022CMs"
-    "gPackageLicense\022\022\n\npackage_id\030\001 \001(\r\022\024\n\014t"
-    "ime_created\030\002 \001(\r\022\020\n\010owner_id\030\003 \001(\r\"Q\n\031C"
-    "MsgAMGetLicensesResponse\022$\n\007license\030\001 \003("
-    "\0132\023.CMsgPackageLicense\022\016\n\006result\030\002 \001(\r\"J"
-    "\n\026CMsgAMGetUserGameStats\022\020\n\010steam_id\030\001 \001"
-    "(\006\022\017\n\007game_id\030\002 \001(\006\022\r\n\005stats\030\003 \003(\r\"\352\002\n\036C"
-    "MsgAMGetUserGameStatsResponse\022\020\n\010steam_i"
-    "d\030\001 \001(\006\022\017\n\007game_id\030\002 \001(\006\022\022\n\007eresult\030\003 \001("
-    "\005:\0012\0224\n\005stats\030\004 \003(\0132%.CMsgAMGetUserGameS"
-    "tatsResponse.Stats\022N\n\022achievement_blocks"
-    "\030\005 \003(\01322.CMsgAMGetUserGameStatsResponse."
-    "Achievement_Blocks\032,\n\005Stats\022\017\n\007stat_id\030\001"
-    " \001(\r\022\022\n\nstat_value\030\002 \001(\r\032]\n\022Achievement_"
-    "Blocks\022\026\n\016achievement_id\030\001 \001(\r\022\032\n\022achiev"
-    "ement_bit_id\030\002 \001(\r\022\023\n\013unlock_time\030\003 \001(\007\""
-    ">\n\024CMsgGCGetCommandList\022\016\n\006app_id\030\001 \001(\r\022"
-    "\026\n\016command_prefix\030\002 \001(\t\"4\n\034CMsgGCGetComm"
-    "andListResponse\022\024\n\014command_name\030\001 \003(\t\"\"\n"
-    "\022CGCMsgMemCachedGet\022\014\n\004keys\030\001 \003(\t\"|\n\032CGC"
-    "MsgMemCachedGetResponse\0224\n\006values\030\001 \003(\0132"
-    "$.CGCMsgMemCachedGetResponse.ValueTag\032(\n"
-    "\010ValueTag\022\r\n\005found\030\001 \001(\010\022\r\n\005value\030\002 \001(\014\""
-    "g\n\022CGCMsgMemCachedSet\022)\n\004keys\030\001 \003(\0132\033.CG"
-    "CMsgMemCachedSet.KeyPair\032&\n\007KeyPair\022\014\n\004n"
-    "ame\030\001 \001(\t\022\r\n\005value\030\002 \001(\014\"%\n\025CGCMsgMemCac"
-    "hedDelete\022\014\n\004keys\030\001 \003(\t\"\026\n\024CGCMsgMemCach"
-    "edStats\"\270\002\n\034CGCMsgMemCachedStatsResponse"
-    "\022\030\n\020curr_connections\030\001 \001(\004\022\017\n\007cmd_get\030\002 "
-    "\001(\004\022\017\n\007cmd_set\030\003 \001(\004\022\021\n\tcmd_flush\030\004 \001(\004\022"
-    "\020\n\010get_hits\030\005 \001(\004\022\022\n\nget_misses\030\006 \001(\004\022\023\n"
-    "\013delete_hits\030\007 \001(\004\022\025\n\rdelete_misses\030\010 \001("
-    "\004\022\022\n\nbytes_read\030\t \001(\004\022\025\n\rbytes_written\030\n"
-    " \001(\004\022\026\n\016limit_maxbytes\030\013 \001(\004\022\022\n\ncurr_ite"
-    "ms\030\014 \001(\004\022\021\n\tevictions\030\r \001(\004\022\r\n\005bytes\030\016 \001"
-    "(\004\"(\n\016CGCMsgSQLStats\022\026\n\016schema_catalog\030\001"
-    " \001(\r\"\233\002\n\026CGCMsgSQLStatsResponse\022\017\n\007threa"
-    "ds\030\001 \001(\r\022\031\n\021threads_connected\030\002 \001(\r\022\026\n\016t"
-    "hreads_active\030\003 \001(\r\022\034\n\024operations_submit"
-    "ted\030\004 \001(\r\022$\n\034prepared_statements_execute"
-    "d\030\005 \001(\r\022(\n non_prepared_statements_execu"
-    "ted\030\006 \001(\r\022\030\n\020deadlock_retries\030\007 \001(\r\022%\n\035o"
-    "perations_timed_out_in_queue\030\010 \001(\r\022\016\n\006er"
-    "rors\030\t \001(\r\"i\n\024CMsgAMAddFreeLicense\022\017\n\007st"
-    "eamid\030\001 \001(\006\022\021\n\tip_public\030\002 \001(\r\022\021\n\tpackag"
-    "eid\030\003 \001(\r\022\032\n\022store_country_code\030\004 \001(\t\"c\n"
-    "\034CMsgAMAddFreeLicenseResponse\022\022\n\007eresult"
-    "\030\001 \001(\005:\0012\022\036\n\026purchase_result_detail\030\002 \001("
-    "\005\022\017\n\007transid\030\003 \001(\006\"\"\n\023CGCMsgGetIPLocatio"
-    "n\022\013\n\003ips\030\001 \003(\007\"p\n\017CIPLocationInfo\022\n\n\002ip\030"
-    "\001 \001(\r\022\020\n\010latitude\030\002 \001(\002\022\021\n\tlongitude\030\003 \001"
-    "(\002\022\017\n\007country\030\004 \001(\t\022\r\n\005state\030\005 \001(\t\022\014\n\004ci"
-    "ty\030\006 \001(\t\">\n\033CGCMsgGetIPLocationResponse\022"
-    "\037\n\005infos\030\001 \003(\0132\020.CIPLocationInfo\"\035\n\016CGCM"
-    "sgGetIPASN\022\013\n\003ips\030\001 \003(\007\"%\n\nCIPASNInfo\022\n\n"
-    "\002ip\030\001 \001(\007\022\013\n\003asn\030\002 \001(\r\"4\n\026CGCMsgGetIPASN"
-    "Response\022\032\n\005infos\030\001 \003(\0132\013.CIPASNInfo\"\?\n\027"
-    "CGCMsgSystemStatsSchema\022\021\n\tgc_app_id\030\001 \001"
-    "(\r\022\021\n\tschema_kv\030\002 \001(\014\"\026\n\024CGCMsgGetSystem"
-    "Stats\"\305\002\n\034CGCMsgGetSystemStatsResponse\022\021"
-    "\n\tgc_app_id\030\001 \001(\r\022\020\n\010stats_kv\030\002 \001(\014\022\023\n\013a"
-    "ctive_jobs\030\003 \001(\r\022\025\n\ryielding_jobs\030\004 \001(\r\022"
-    "\025\n\ruser_sessions\030\005 \001(\r\022\034\n\024game_server_se"
-    "ssions\030\006 \001(\r\022\020\n\010socaches\030\007 \001(\r\022\032\n\022socach"
-    "es_to_unload\030\010 \001(\r\022\030\n\020socaches_loading\030\t"
-    " \001(\r\022\027\n\017writeback_queue\030\n \001(\r\022\025\n\rsteamid"
-    "_locks\030\013 \001(\r\022\023\n\013logon_queue\030\014 \001(\r\022\022\n\nlog"
-    "on_jobs\030\r \001(\r\"\342\002\n\017CMsgAMSendEmail\022\017\n\007ste"
-    "amid\030\001 \001(\006\022\026\n\016email_msg_type\030\002 \001(\r\022\024\n\014em"
-    "ail_format\030\003 \001(\r\022I\n\023persona_name_tokens\030"
-    "\005 \003(\0132,.CMsgAMSendEmail.PersonaNameRepla"
-    "cementToken\022\021\n\tsource_gc\030\006 \001(\r\0221\n\006tokens"
-    "\030\007 \003(\0132!.CMsgAMSendEmail.ReplacementToke"
-    "n\032;\n\020ReplacementToken\022\022\n\ntoken_name\030\001 \001("
-    "\t\022\023\n\013token_value\030\002 \001(\t\032B\n\033PersonaNameRep"
-    "lacementToken\022\017\n\007steamid\030\001 \001(\006\022\022\n\ntoken_"
-    "name\030\002 \001(\t\"-\n\027CMsgAMSendEmailResponse\022\022\n"
-    "\007eresult\030\001 \001(\r:\0012\"j\n\026CMsgGCGetEmailTempl"
-    "ate\022\016\n\006app_id\030\001 \001(\r\022\026\n\016email_msg_type\030\002 "
-    "\001(\r\022\022\n\nemail_lang\030\003 \001(\005\022\024\n\014email_format\030"
-    "\004 \001(\005\"_\n\036CMsgGCGetEmailTemplateResponse\022"
-    "\022\n\007eresult\030\001 \001(\r:\0012\022\027\n\017template_exists\030\002"
-    " \001(\010\022\020\n\010template\030\003 \001(\t\"\204\001\n\027CMsgAMGrantGu"
-    "estPasses2\022\020\n\010steam_id\030\001 \001(\006\022\022\n\npackage_"
-    "id\030\002 \001(\r\022\027\n\017passes_to_grant\030\003 \001(\005\022\032\n\022day"
-    "s_to_expiration\030\004 \001(\005\022\016\n\006action\030\005 \001(\005\"P\n"
-    "\037CMsgAMGrantGuestPasses2Response\022\022\n\007eres"
-    "ult\030\001 \001(\005:\0012\022\031\n\016passes_granted\030\002 \001(\005:\0010\""
-    "L\n\036CGCSystemMsg_GetAccountDetails\022\017\n\007ste"
-    "amid\030\001 \001(\006\022\r\n\005appid\030\002 \001(\r:\n\200\246\035\200\001\210\246\035\200\004\"\260\005"
-    "\n\'CGCSystemMsg_GetAccountDetails_Respons"
-    "e\022\035\n\022eresult_deprecated\030\001 \001(\r:\0012\022\024\n\014acco"
-    "unt_name\030\002 \001(\t\022\024\n\014persona_name\030\003 \001(\t\022\032\n\022"
-    "is_profile_created\030\032 \001(\010\022\031\n\021is_profile_p"
-    "ublic\030\004 \001(\010\022\033\n\023is_inventory_public\030\005 \001(\010"
-    "\022\025\n\ris_vac_banned\030\007 \001(\010\022\025\n\ris_cyber_cafe"
-    "\030\010 \001(\010\022\031\n\021is_school_account\030\t \001(\010\022\022\n\nis_"
-    "limited\030\n \001(\010\022\025\n\ris_subscribed\030\013 \001(\010\022\017\n\007"
-    "package\030\014 \001(\r\022\035\n\025is_free_trial_account\030\r"
-    " \001(\010\022\035\n\025free_trial_expiration\030\016 \001(\r\022\027\n\017i"
-    "s_low_violence\030\017 \001(\010\022\036\n\026is_account_locke"
-    "d_down\030\020 \001(\010\022\033\n\023is_community_banned\030\021 \001("
-    "\010\022\027\n\017is_trade_banned\030\022 \001(\010\022\034\n\024trade_ban_"
-    "expiration\030\023 \001(\r\022\021\n\taccountid\030\024 \001(\r\022\033\n\023s"
-    "uspension_end_time\030\025 \001(\r\022\020\n\010currency\030\026 \001"
-    "(\t\022\023\n\013steam_level\030\027 \001(\r\022\024\n\014friend_count\030"
-    "\030 \001(\r\022\035\n\025account_creation_time\030\031 \001(\r:\n\200\246"
+    "id\030\001 \003(\006\"\210\001\n\022CMsgNotifyWatchdog\022\016\n\006sourc"
+    "e\030\001 \001(\r\022\022\n\nalert_type\030\002 \001(\r\022\020\n\010critical\030"
+    "\004 \001(\010\022\014\n\004time\030\005 \001(\r\022\r\n\005appid\030\006 \001(\r\022\014\n\004te"
+    "xt\030\007 \001(\t\022\021\n\trecipient\030\014 \001(\t\"$\n\021CMsgAMGet"
+    "Licenses\022\017\n\007steamid\030\001 \001(\006\"P\n\022CMsgPackage"
+    "License\022\022\n\npackage_id\030\001 \001(\r\022\024\n\014time_crea"
+    "ted\030\002 \001(\r\022\020\n\010owner_id\030\003 \001(\r\"Q\n\031CMsgAMGet"
+    "LicensesResponse\022$\n\007license\030\001 \003(\0132\023.CMsg"
+    "PackageLicense\022\016\n\006result\030\002 \001(\r\"J\n\026CMsgAM"
+    "GetUserGameStats\022\020\n\010steam_id\030\001 \001(\006\022\017\n\007ga"
+    "me_id\030\002 \001(\006\022\r\n\005stats\030\003 \003(\r\"\352\002\n\036CMsgAMGet"
+    "UserGameStatsResponse\022\020\n\010steam_id\030\001 \001(\006\022"
+    "\017\n\007game_id\030\002 \001(\006\022\022\n\007eresult\030\003 \001(\005:\0012\0224\n\005"
+    "stats\030\004 \003(\0132%.CMsgAMGetUserGameStatsResp"
+    "onse.Stats\022N\n\022achievement_blocks\030\005 \003(\01322"
+    ".CMsgAMGetUserGameStatsResponse.Achievem"
+    "ent_Blocks\032,\n\005Stats\022\017\n\007stat_id\030\001 \001(\r\022\022\n\n"
+    "stat_value\030\002 \001(\r\032]\n\022Achievement_Blocks\022\026"
+    "\n\016achievement_id\030\001 \001(\r\022\032\n\022achievement_bi"
+    "t_id\030\002 \001(\r\022\023\n\013unlock_time\030\003 \001(\007\">\n\024CMsgG"
+    "CGetCommandList\022\016\n\006app_id\030\001 \001(\r\022\026\n\016comma"
+    "nd_prefix\030\002 \001(\t\"4\n\034CMsgGCGetCommandListR"
+    "esponse\022\024\n\014command_name\030\001 \003(\t\"\"\n\022CGCMsgM"
+    "emCachedGet\022\014\n\004keys\030\001 \003(\t\"|\n\032CGCMsgMemCa"
+    "chedGetResponse\0224\n\006values\030\001 \003(\0132$.CGCMsg"
+    "MemCachedGetResponse.ValueTag\032(\n\010ValueTa"
+    "g\022\r\n\005found\030\001 \001(\010\022\r\n\005value\030\002 \001(\014\"g\n\022CGCMs"
+    "gMemCachedSet\022)\n\004keys\030\001 \003(\0132\033.CGCMsgMemC"
+    "achedSet.KeyPair\032&\n\007KeyPair\022\014\n\004name\030\001 \001("
+    "\t\022\r\n\005value\030\002 \001(\014\"%\n\025CGCMsgMemCachedDelet"
+    "e\022\014\n\004keys\030\001 \003(\t\"\026\n\024CGCMsgMemCachedStats\""
+    "\270\002\n\034CGCMsgMemCachedStatsResponse\022\030\n\020curr"
+    "_connections\030\001 \001(\004\022\017\n\007cmd_get\030\002 \001(\004\022\017\n\007c"
+    "md_set\030\003 \001(\004\022\021\n\tcmd_flush\030\004 \001(\004\022\020\n\010get_h"
+    "its\030\005 \001(\004\022\022\n\nget_misses\030\006 \001(\004\022\023\n\013delete_"
+    "hits\030\007 \001(\004\022\025\n\rdelete_misses\030\010 \001(\004\022\022\n\nbyt"
+    "es_read\030\t \001(\004\022\025\n\rbytes_written\030\n \001(\004\022\026\n\016"
+    "limit_maxbytes\030\013 \001(\004\022\022\n\ncurr_items\030\014 \001(\004"
+    "\022\021\n\tevictions\030\r \001(\004\022\r\n\005bytes\030\016 \001(\004\"(\n\016CG"
+    "CMsgSQLStats\022\026\n\016schema_catalog\030\001 \001(\r\"\233\002\n"
+    "\026CGCMsgSQLStatsResponse\022\017\n\007threads\030\001 \001(\r"
+    "\022\031\n\021threads_connected\030\002 \001(\r\022\026\n\016threads_a"
+    "ctive\030\003 \001(\r\022\034\n\024operations_submitted\030\004 \001("
+    "\r\022$\n\034prepared_statements_executed\030\005 \001(\r\022"
+    "(\n non_prepared_statements_executed\030\006 \001("
+    "\r\022\030\n\020deadlock_retries\030\007 \001(\r\022%\n\035operation"
+    "s_timed_out_in_queue\030\010 \001(\r\022\016\n\006errors\030\t \001"
+    "(\r\"i\n\024CMsgAMAddFreeLicense\022\017\n\007steamid\030\001 "
+    "\001(\006\022\021\n\tip_public\030\002 \001(\r\022\021\n\tpackageid\030\003 \001("
+    "\r\022\032\n\022store_country_code\030\004 \001(\t\"c\n\034CMsgAMA"
+    "ddFreeLicenseResponse\022\022\n\007eresult\030\001 \001(\005:\001"
+    "2\022\036\n\026purchase_result_detail\030\002 \001(\005\022\017\n\007tra"
+    "nsid\030\003 \001(\006\"\"\n\023CGCMsgGetIPLocation\022\013\n\003ips"
+    "\030\001 \003(\007\"p\n\017CIPLocationInfo\022\n\n\002ip\030\001 \001(\r\022\020\n"
+    "\010latitude\030\002 \001(\002\022\021\n\tlongitude\030\003 \001(\002\022\017\n\007co"
+    "untry\030\004 \001(\t\022\r\n\005state\030\005 \001(\t\022\014\n\004city\030\006 \001(\t"
+    "\">\n\033CGCMsgGetIPLocationResponse\022\037\n\005infos"
+    "\030\001 \003(\0132\020.CIPLocationInfo\"\035\n\016CGCMsgGetIPA"
+    "SN\022\013\n\003ips\030\001 \003(\007\"%\n\nCIPASNInfo\022\n\n\002ip\030\001 \001("
+    "\007\022\013\n\003asn\030\002 \001(\r\"4\n\026CGCMsgGetIPASNResponse"
+    "\022\032\n\005infos\030\001 \003(\0132\013.CIPASNInfo\"\?\n\027CGCMsgSy"
+    "stemStatsSchema\022\021\n\tgc_app_id\030\001 \001(\r\022\021\n\tsc"
+    "hema_kv\030\002 \001(\014\"\026\n\024CGCMsgGetSystemStats\"\305\002"
+    "\n\034CGCMsgGetSystemStatsResponse\022\021\n\tgc_app"
+    "_id\030\001 \001(\r\022\020\n\010stats_kv\030\002 \001(\014\022\023\n\013active_jo"
+    "bs\030\003 \001(\r\022\025\n\ryielding_jobs\030\004 \001(\r\022\025\n\ruser_"
+    "sessions\030\005 \001(\r\022\034\n\024game_server_sessions\030\006"
+    " \001(\r\022\020\n\010socaches\030\007 \001(\r\022\032\n\022socaches_to_un"
+    "load\030\010 \001(\r\022\030\n\020socaches_loading\030\t \001(\r\022\027\n\017"
+    "writeback_queue\030\n \001(\r\022\025\n\rsteamid_locks\030\013"
+    " \001(\r\022\023\n\013logon_queue\030\014 \001(\r\022\022\n\nlogon_jobs\030"
+    "\r \001(\r\"\342\002\n\017CMsgAMSendEmail\022\017\n\007steamid\030\001 \001"
+    "(\006\022\026\n\016email_msg_type\030\002 \001(\r\022\024\n\014email_form"
+    "at\030\003 \001(\r\022I\n\023persona_name_tokens\030\005 \003(\0132,."
+    "CMsgAMSendEmail.PersonaNameReplacementTo"
+    "ken\022\021\n\tsource_gc\030\006 \001(\r\0221\n\006tokens\030\007 \003(\0132!"
+    ".CMsgAMSendEmail.ReplacementToken\032;\n\020Rep"
+    "lacementToken\022\022\n\ntoken_name\030\001 \001(\t\022\023\n\013tok"
+    "en_value\030\002 \001(\t\032B\n\033PersonaNameReplacement"
+    "Token\022\017\n\007steamid\030\001 \001(\006\022\022\n\ntoken_name\030\002 \001"
+    "(\t\"-\n\027CMsgAMSendEmailResponse\022\022\n\007eresult"
+    "\030\001 \001(\r:\0012\"j\n\026CMsgGCGetEmailTemplate\022\016\n\006a"
+    "pp_id\030\001 \001(\r\022\026\n\016email_msg_type\030\002 \001(\r\022\022\n\ne"
+    "mail_lang\030\003 \001(\005\022\024\n\014email_format\030\004 \001(\005\"_\n"
+    "\036CMsgGCGetEmailTemplateResponse\022\022\n\007eresu"
+    "lt\030\001 \001(\r:\0012\022\027\n\017template_exists\030\002 \001(\010\022\020\n\010"
+    "template\030\003 \001(\t\"\204\001\n\027CMsgAMGrantGuestPasse"
+    "s2\022\020\n\010steam_id\030\001 \001(\006\022\022\n\npackage_id\030\002 \001(\r"
+    "\022\027\n\017passes_to_grant\030\003 \001(\005\022\032\n\022days_to_exp"
+    "iration\030\004 \001(\005\022\016\n\006action\030\005 \001(\005\"P\n\037CMsgAMG"
+    "rantGuestPasses2Response\022\022\n\007eresult\030\001 \001("
+    "\005:\0012\022\031\n\016passes_granted\030\002 \001(\005:\0010\"L\n\036CGCSy"
+    "stemMsg_GetAccountDetails\022\017\n\007steamid\030\001 \001"
+    "(\006\022\r\n\005appid\030\002 \001(\r:\n\200\246\035\200\001\210\246\035\200\004\"\200\007\n\'CGCSys"
+    "temMsg_GetAccountDetails_Response\022\035\n\022ere"
+    "sult_deprecated\030\001 \001(\r:\0012\022\024\n\014account_name"
+    "\030\002 \001(\t\022\024\n\014persona_name\030\003 \001(\t\022\032\n\022is_profi"
+    "le_created\030\032 \001(\010\022\031\n\021is_profile_public\030\004 "
+    "\001(\010\022\033\n\023is_inventory_public\030\005 \001(\010\022\025\n\ris_v"
+    "ac_banned\030\007 \001(\010\022\025\n\ris_cyber_cafe\030\010 \001(\010\022\031"
+    "\n\021is_school_account\030\t \001(\010\022\022\n\nis_limited\030"
+    "\n \001(\010\022\025\n\ris_subscribed\030\013 \001(\010\022\017\n\007package\030"
+    "\014 \001(\r\022\035\n\025is_free_trial_account\030\r \001(\010\022\035\n\025"
+    "free_trial_expiration\030\016 \001(\r\022\027\n\017is_low_vi"
+    "olence\030\017 \001(\010\022\036\n\026is_account_locked_down\030\020"
+    " \001(\010\022\033\n\023is_community_banned\030\021 \001(\010\022\027\n\017is_"
+    "trade_banned\030\022 \001(\010\022\034\n\024trade_ban_expirati"
+    "on\030\023 \001(\r\022\021\n\taccountid\030\024 \001(\r\022\033\n\023suspensio"
+    "n_end_time\030\025 \001(\r\022\020\n\010currency\030\026 \001(\t\022\023\n\013st"
+    "eam_level\030\027 \001(\r\022\024\n\014friend_count\030\030 \001(\r\022\035\n"
+    "\025account_creation_time\030\031 \001(\r\022\035\n\025is_steam"
+    "guard_enabled\030\033 \001(\010\022\031\n\021is_phone_verified"
+    "\030\034 \001(\010\022\"\n\032is_two_factor_auth_enabled\030\035 \001"
+    "(\010\022\037\n\027two_factor_enabled_time\030\036 \001(\r\022\037\n\027p"
+    "hone_verification_time\030\037 \001(\r\022\020\n\010phone_id"
+    "\030! \001(\004\022\034\n\024is_phone_identifying\030\" \001(\010:\n\200\246"
     "\035\200\001\210\246\035\200\004\")\n\025CMsgGCGetPersonaNames\022\020\n\010ste"
     "amids\030\001 \003(\006\"\276\001\n\036CMsgGCGetPersonaNames_Re"
     "sponse\022F\n\021succeeded_lookups\030\001 \003(\0132+.CMsg"
@@ -2268,110 +2307,116 @@ void protobuf_AddDesc_steammessages_2eproto() {
     " \001(\t\"D\n\025CMsgGCCheckFriendship\022\024\n\014steamid"
     "_left\030\001 \001(\006\022\025\n\rsteamid_right\030\002 \001(\006\"K\n\036CM"
     "sgGCCheckFriendship_Response\022\017\n\007success\030"
-    "\001 \001(\010\022\030\n\020found_friendship\030\002 \001(\010\"*\n\027CMsgG"
-    "CGetAppFriendsList\022\017\n\007steamid\030\001 \001(\006\"E\n C"
-    "MsgGCGetAppFriendsList_Response\022\017\n\007succe"
-    "ss\030\001 \001(\010\022\020\n\010steamids\030\002 \003(\006\"\310\001\n\033CMsgGCMsg"
-    "MasterSetDirectory\022\030\n\020master_dir_index\030\001"
-    " \001(\r\022/\n\003dir\030\002 \003(\0132\".CMsgGCMsgMasterSetDi"
-    "rectory.SubGC\032^\n\005SubGC\022\021\n\tdir_index\030\001 \001("
-    "\r\022\014\n\004name\030\002 \001(\t\022\013\n\003box\030\003 \001(\t\022\024\n\014command_"
-    "line\030\004 \001(\t\022\021\n\tgc_binary\030\005 \001(\t\":\n$CMsgGCM"
-    "sgMasterSetDirectory_Response\022\022\n\007eresult"
-    "\030\001 \001(\005:\0012\"=\n(CMsgGCMsgWebAPIJobRequestFo"
-    "rwardResponse\022\021\n\tdir_index\030\001 \001(\r\"8\n%CGCS"
-    "ystemMsg_GetPurchaseTrust_Request\022\017\n\007ste"
-    "amid\030\001 \001(\006\"\255\001\n&CGCSystemMsg_GetPurchaseT"
-    "rust_Response\022\"\n\032has_prior_purchase_hist"
-    "ory\030\001 \001(\010\022%\n\035has_no_recent_password_rese"
-    "ts\030\002 \001(\010\022\036\n\026is_wallet_cash_trusted\030\003 \001(\010"
-    "\022\030\n\020time_all_trusted\030\004 \001(\r\"\217\001\n\035CMsgGCHAc"
-    "countVacStatusChange\022\020\n\010steam_id\030\001 \001(\006\022\016"
-    "\n\006app_id\030\002 \001(\r\022\033\n\023rtime_vacban_starts\030\003 "
-    "\001(\r\022\025\n\ris_banned_now\030\004 \001(\010\022\030\n\020is_banned_"
-    "future\030\005 \001(\010\".\n\033CMsgGCGetPartnerAccountL"
-    "ink\022\017\n\007steamid\030\001 \001(\006\"E\n$CMsgGCGetPartner"
-    "AccountLink_Response\022\014\n\004pwid\030\001 \001(\r\022\017\n\007ne"
-    "xonid\030\002 \001(\r\"\275\002\n\021CMsgGCRoutingInfo\022\021\n\tdir"
-    "_index\030\001 \003(\r\0228\n\006method\030\002 \001(\0162 .CMsgGCRou"
-    "tingInfo.RoutingMethod:\006RANDOM\022;\n\010fallba"
-    "ck\030\003 \001(\0162 .CMsgGCRoutingInfo.RoutingMeth"
-    "od:\007DISCARD\022\026\n\016protobuf_field\030\004 \001(\r\022\024\n\014w"
-    "ebapi_param\030\005 \001(\t\"p\n\rRoutingMethod\022\n\n\006RA"
-    "NDOM\020\000\022\013\n\007DISCARD\020\001\022\022\n\016CLIENT_STEAMID\020\002\022"
-    "\031\n\025PROTOBUF_FIELD_UINT64\020\003\022\027\n\023WEBAPI_PAR"
-    "AM_UINT64\020\004\"\265\001\n\037CMsgGCMsgMasterSetWebAPI"
-    "Routing\0227\n\007entries\030\001 \003(\0132&.CMsgGCMsgMast"
-    "erSetWebAPIRouting.Entry\032Y\n\005Entry\022\026\n\016int"
-    "erface_name\030\001 \001(\t\022\023\n\013method_name\030\002 \001(\t\022#"
-    "\n\007routing\030\003 \001(\0132\022.CMsgGCRoutingInfo\"\240\001\n\""
-    "CMsgGCMsgMasterSetClientMsgRouting\022:\n\007en"
-    "tries\030\001 \003(\0132).CMsgGCMsgMasterSetClientMs"
-    "gRouting.Entry\032>\n\005Entry\022\020\n\010msg_type\030\001 \001("
-    "\r\022#\n\007routing\030\002 \001(\0132\022.CMsgGCRoutingInfo\">"
-    "\n(CMsgGCMsgMasterSetWebAPIRouting_Respon"
-    "se\022\022\n\007eresult\030\001 \001(\005:\0012\"A\n+CMsgGCMsgMaste"
-    "rSetClientMsgRouting_Response\022\022\n\007eresult"
-    "\030\001 \001(\005:\0012\"\266\003\n\023CMsgGCMsgSetOptions\022,\n\007opt"
-    "ions\030\001 \003(\0162\033.CMsgGCMsgSetOptions.Option\022"
-    "<\n\021client_msg_ranges\030\002 \003(\0132!.CMsgGCMsgSe"
-    "tOptions.MessageRange\022P\n\rgcsql_version\030\003"
-    " \001(\0162!.CMsgGCMsgSetOptions.GCSQLVersion:"
-    "\026GCSQL_VERSION_BASELINE\032)\n\014MessageRange\022"
-    "\013\n\003low\030\001 \002(\r\022\014\n\004high\030\002 \002(\r\"n\n\006Option\022\030\n\024"
-    "NOTIFY_USER_SESSIONS\020\000\022\032\n\026NOTIFY_SERVER_"
-    "SESSIONS\020\001\022\027\n\023NOTIFY_ACHIEVEMENTS\020\002\022\025\n\021N"
-    "OTIFY_VAC_ACTION\020\003\"F\n\014GCSQLVersion\022\032\n\026GC"
-    "SQL_VERSION_BASELINE\020\001\022\032\n\026GCSQL_VERSION_"
-    "BOOLTYPE\020\002\"\224\002\n\024CMsgGCHUpdateSession\022\020\n\010s"
-    "team_id\030\001 \001(\006\022\016\n\006app_id\030\002 \001(\r\022\016\n\006online\030"
-    "\003 \001(\010\022\027\n\017server_steam_id\030\004 \001(\006\022\023\n\013server"
-    "_addr\030\005 \001(\r\022\023\n\013server_port\030\006 \001(\r\022\017\n\007os_t"
-    "ype\030\007 \001(\r\022\023\n\013client_addr\030\010 \001(\r\0226\n\014extra_"
-    "fields\030\t \003(\0132 .CMsgGCHUpdateSession.Extr"
-    "aField\032)\n\nExtraField\022\014\n\004name\030\001 \001(\t\022\r\n\005va"
-    "lue\030\002 \001(\t\"\354\001\n$CMsgNotificationOfSuspicio"
-    "usActivity\022\017\n\007steamid\030\001 \001(\006\022\r\n\005appid\030\002 \001"
-    "(\r\022W\n\022multiple_instances\030\003 \001(\0132;.CMsgNot"
-    "ificationOfSuspiciousActivity.MultipleGa"
-    "meInstances\032K\n\025MultipleGameInstances\022\032\n\022"
-    "app_instance_count\030\001 \001(\r\022\026\n\016other_steami"
-    "ds\030\002 \003(\006\"\362\004\n\026CMsgDPPartnerMicroTxns\022\r\n\005a"
-    "ppid\030\001 \001(\r\022\017\n\007gc_name\030\002 \001(\t\0224\n\007partner\030\003"
-    " \001(\0132#.CMsgDPPartnerMicroTxns.PartnerInf"
-    "o\022=\n\014transactions\030\004 \003(\0132\'.CMsgDPPartnerM"
-    "icroTxns.PartnerMicroTxn\032\333\002\n\017PartnerMicr"
-    "oTxn\022\021\n\tinit_time\030\001 \001(\r\022\030\n\020last_update_t"
-    "ime\030\002 \001(\r\022\016\n\006txn_id\030\003 \001(\004\022\022\n\naccount_id\030"
-    "\004 \001(\r\022\021\n\tline_item\030\005 \001(\r\022\017\n\007item_id\030\006 \001("
-    "\004\022\021\n\tdef_index\030\007 \001(\r\022\r\n\005price\030\010 \001(\r\022\013\n\003t"
-    "ax\030\t \001(\r\022\021\n\tprice_usd\030\n \001(\r\022\017\n\007tax_usd\030\013"
-    " \001(\r\022\025\n\rpurchase_type\030\014 \001(\r\022\026\n\016steam_txn"
-    "_type\030\r \001(\r\022\024\n\014country_code\030\016 \001(\t\022\023\n\013reg"
-    "ion_code\030\017 \001(\t\022\020\n\010quantity\030\020 \001(\005\022\024\n\014ref_"
-    "trans_id\030\021 \001(\004\032e\n\013PartnerInfo\022\022\n\npartner"
-    "_id\030\001 \001(\r\022\024\n\014partner_name\030\002 \001(\t\022\025\n\rcurre"
-    "ncy_code\030\003 \001(\t\022\025\n\rcurrency_name\030\004 \001(\t\"\376\002"
-    "\n\036CMsgDPPartnerMicroTxnsResponse\022\022\n\007eres"
-    "ult\030\001 \001(\r:\0012\022J\n\neerrorcode\030\002 \001(\0162*.CMsgD"
-    "PPartnerMicroTxnsResponse.EErrorCode:\nk_"
-    "MsgValid\"\373\001\n\nEErrorCode\022\016\n\nk_MsgValid\020\000\022"
-    "\025\n\021k_MsgInvalidAppID\020\001\022\033\n\027k_MsgInvalidPa"
-    "rtnerInfo\020\002\022\027\n\023k_MsgNoTransactions\020\003\022\023\n\017"
-    "k_MsgSQLFailure\020\004\022\037\n\033k_MsgPartnerInfoDis"
-    "crepancy\020\005\022 \n\034k_MsgTransactionInsertFail"
-    "ed\020\007\022\027\n\023k_MsgAlreadyRunning\020\010\022\037\n\033k_MsgIn"
-    "validTransactionData\020\t*\266\001\n\020GCProtoBufMsg"
-    "Src\022 \n\034GCProtoBufMsgSrc_Unspecified\020\000\022\037\n"
-    "\033GCProtoBufMsgSrc_FromSystem\020\001\022 \n\034GCProt"
-    "oBufMsgSrc_FromSteamID\020\002\022\033\n\027GCProtoBufMs"
-    "gSrc_FromGC\020\003\022 \n\034GCProtoBufMsgSrc_ReplyS"
-    "ystem\020\004:9\n\tkey_field\022\035.google.protobuf.F"
-    "ieldOptions\030\340\324\003 \001(\010:\005false:A\n\022msgpool_so"
-    "ft_limit\022\037.google.protobuf.MessageOption"
-    "s\030\340\324\003 \001(\005:\00232:B\n\022msgpool_hard_limit\022\037.go"
-    "ogle.protobuf.MessageOptions\030\341\324\003 \001(\005:\00338"
-    "4B\005H\001\200\001\000", 10288);
+    "\001 \001(\010\022\030\n\020found_friendship\030\002 \001(\010\"Q\n\027CMsgG"
+    "CGetAppFriendsList\022\017\n\007steamid\030\001 \001(\006\022%\n\035i"
+    "nclude_friendship_timestamps\030\002 \001(\010\"d\n CM"
+    "sgGCGetAppFriendsList_Response\022\017\n\007succes"
+    "s\030\001 \001(\010\022\020\n\010steamids\030\002 \003(\006\022\035\n\025friendship_"
+    "timestamps\030\003 \003(\007\"\310\001\n\033CMsgGCMsgMasterSetD"
+    "irectory\022\030\n\020master_dir_index\030\001 \001(\r\022/\n\003di"
+    "r\030\002 \003(\0132\".CMsgGCMsgMasterSetDirectory.Su"
+    "bGC\032^\n\005SubGC\022\021\n\tdir_index\030\001 \001(\r\022\014\n\004name\030"
+    "\002 \001(\t\022\013\n\003box\030\003 \001(\t\022\024\n\014command_line\030\004 \001(\t"
+    "\022\021\n\tgc_binary\030\005 \001(\t\"K\n$CMsgGCMsgMasterSe"
+    "tDirectory_Response\022\022\n\007eresult\030\001 \001(\005:\0012\022"
+    "\017\n\007message\030\002 \001(\t\"=\n(CMsgGCMsgWebAPIJobRe"
+    "questForwardResponse\022\021\n\tdir_index\030\001 \001(\r\""
+    "8\n%CGCSystemMsg_GetPurchaseTrust_Request"
+    "\022\017\n\007steamid\030\001 \001(\006\"\255\001\n&CGCSystemMsg_GetPu"
+    "rchaseTrust_Response\022\"\n\032has_prior_purcha"
+    "se_history\030\001 \001(\010\022%\n\035has_no_recent_passwo"
+    "rd_resets\030\002 \001(\010\022\036\n\026is_wallet_cash_truste"
+    "d\030\003 \001(\010\022\030\n\020time_all_trusted\030\004 \001(\r\"\217\001\n\035CM"
+    "sgGCHAccountVacStatusChange\022\020\n\010steam_id\030"
+    "\001 \001(\006\022\016\n\006app_id\030\002 \001(\r\022\033\n\023rtime_vacban_st"
+    "arts\030\003 \001(\r\022\025\n\ris_banned_now\030\004 \001(\010\022\030\n\020is_"
+    "banned_future\030\005 \001(\010\".\n\033CMsgGCGetPartnerA"
+    "ccountLink\022\017\n\007steamid\030\001 \001(\006\"E\n$CMsgGCGet"
+    "PartnerAccountLink_Response\022\014\n\004pwid\030\001 \001("
+    "\r\022\017\n\007nexonid\030\002 \001(\r\"\333\002\n\021CMsgGCRoutingInfo"
+    "\022\021\n\tdir_index\030\001 \003(\r\0228\n\006method\030\002 \001(\0162 .CM"
+    "sgGCRoutingInfo.RoutingMethod:\006RANDOM\022;\n"
+    "\010fallback\030\003 \001(\0162 .CMsgGCRoutingInfo.Rout"
+    "ingMethod:\007DISCARD\022\026\n\016protobuf_field\030\004 \001"
+    "(\r\022\024\n\014webapi_param\030\005 \001(\t\"\215\001\n\rRoutingMeth"
+    "od\022\n\n\006RANDOM\020\000\022\013\n\007DISCARD\020\001\022\022\n\016CLIENT_ST"
+    "EAMID\020\002\022\031\n\025PROTOBUF_FIELD_UINT64\020\003\022\020\n\014WE"
+    "BAPI_PARAM\020\004\022\"\n\036WEBAPI_PARAM_STEAMID_ACC"
+    "OUNTID\020\005\"\265\001\n\037CMsgGCMsgMasterSetWebAPIRou"
+    "ting\0227\n\007entries\030\001 \003(\0132&.CMsgGCMsgMasterS"
+    "etWebAPIRouting.Entry\032Y\n\005Entry\022\026\n\016interf"
+    "ace_name\030\001 \001(\t\022\023\n\013method_name\030\002 \001(\t\022#\n\007r"
+    "outing\030\003 \001(\0132\022.CMsgGCRoutingInfo\"\240\001\n\"CMs"
+    "gGCMsgMasterSetClientMsgRouting\022:\n\007entri"
+    "es\030\001 \003(\0132).CMsgGCMsgMasterSetClientMsgRo"
+    "uting.Entry\032>\n\005Entry\022\020\n\010msg_type\030\001 \001(\r\022#"
+    "\n\007routing\030\002 \001(\0132\022.CMsgGCRoutingInfo\">\n(C"
+    "MsgGCMsgMasterSetWebAPIRouting_Response\022"
+    "\022\n\007eresult\030\001 \001(\005:\0012\"A\n+CMsgGCMsgMasterSe"
+    "tClientMsgRouting_Response\022\022\n\007eresult\030\001 "
+    "\001(\005:\0012\"\266\003\n\023CMsgGCMsgSetOptions\022,\n\007option"
+    "s\030\001 \003(\0162\033.CMsgGCMsgSetOptions.Option\022<\n\021"
+    "client_msg_ranges\030\002 \003(\0132!.CMsgGCMsgSetOp"
+    "tions.MessageRange\022P\n\rgcsql_version\030\003 \001("
+    "\0162!.CMsgGCMsgSetOptions.GCSQLVersion:\026GC"
+    "SQL_VERSION_BASELINE\032)\n\014MessageRange\022\013\n\003"
+    "low\030\001 \002(\r\022\014\n\004high\030\002 \002(\r\"n\n\006Option\022\030\n\024NOT"
+    "IFY_USER_SESSIONS\020\000\022\032\n\026NOTIFY_SERVER_SES"
+    "SIONS\020\001\022\027\n\023NOTIFY_ACHIEVEMENTS\020\002\022\025\n\021NOTI"
+    "FY_VAC_ACTION\020\003\"F\n\014GCSQLVersion\022\032\n\026GCSQL"
+    "_VERSION_BASELINE\020\001\022\032\n\026GCSQL_VERSION_BOO"
+    "LTYPE\020\002\"\224\002\n\024CMsgGCHUpdateSession\022\020\n\010stea"
+    "m_id\030\001 \001(\006\022\016\n\006app_id\030\002 \001(\r\022\016\n\006online\030\003 \001"
+    "(\010\022\027\n\017server_steam_id\030\004 \001(\006\022\023\n\013server_ad"
+    "dr\030\005 \001(\r\022\023\n\013server_port\030\006 \001(\r\022\017\n\007os_type"
+    "\030\007 \001(\r\022\023\n\013client_addr\030\010 \001(\r\0226\n\014extra_fie"
+    "lds\030\t \003(\0132 .CMsgGCHUpdateSession.ExtraFi"
+    "eld\032)\n\nExtraField\022\014\n\004name\030\001 \001(\t\022\r\n\005value"
+    "\030\002 \001(\t\"\354\001\n$CMsgNotificationOfSuspiciousA"
+    "ctivity\022\017\n\007steamid\030\001 \001(\006\022\r\n\005appid\030\002 \001(\r\022"
+    "W\n\022multiple_instances\030\003 \001(\0132;.CMsgNotifi"
+    "cationOfSuspiciousActivity.MultipleGameI"
+    "nstances\032K\n\025MultipleGameInstances\022\032\n\022app"
+    "_instance_count\030\001 \001(\r\022\026\n\016other_steamids\030"
+    "\002 \003(\006\"\362\004\n\026CMsgDPPartnerMicroTxns\022\r\n\005appi"
+    "d\030\001 \001(\r\022\017\n\007gc_name\030\002 \001(\t\0224\n\007partner\030\003 \001("
+    "\0132#.CMsgDPPartnerMicroTxns.PartnerInfo\022="
+    "\n\014transactions\030\004 \003(\0132\'.CMsgDPPartnerMicr"
+    "oTxns.PartnerMicroTxn\032\333\002\n\017PartnerMicroTx"
+    "n\022\021\n\tinit_time\030\001 \001(\r\022\030\n\020last_update_time"
+    "\030\002 \001(\r\022\016\n\006txn_id\030\003 \001(\004\022\022\n\naccount_id\030\004 \001"
+    "(\r\022\021\n\tline_item\030\005 \001(\r\022\017\n\007item_id\030\006 \001(\004\022\021"
+    "\n\tdef_index\030\007 \001(\r\022\r\n\005price\030\010 \001(\r\022\013\n\003tax\030"
+    "\t \001(\r\022\021\n\tprice_usd\030\n \001(\r\022\017\n\007tax_usd\030\013 \001("
+    "\r\022\025\n\rpurchase_type\030\014 \001(\r\022\026\n\016steam_txn_ty"
+    "pe\030\r \001(\r\022\024\n\014country_code\030\016 \001(\t\022\023\n\013region"
+    "_code\030\017 \001(\t\022\020\n\010quantity\030\020 \001(\005\022\024\n\014ref_tra"
+    "ns_id\030\021 \001(\004\032e\n\013PartnerInfo\022\022\n\npartner_id"
+    "\030\001 \001(\r\022\024\n\014partner_name\030\002 \001(\t\022\025\n\rcurrency"
+    "_code\030\003 \001(\t\022\025\n\rcurrency_name\030\004 \001(\t\"\376\002\n\036C"
+    "MsgDPPartnerMicroTxnsResponse\022\022\n\007eresult"
+    "\030\001 \001(\r:\0012\022J\n\neerrorcode\030\002 \001(\0162*.CMsgDPPa"
+    "rtnerMicroTxnsResponse.EErrorCode:\nk_Msg"
+    "Valid\"\373\001\n\nEErrorCode\022\016\n\nk_MsgValid\020\000\022\025\n\021"
+    "k_MsgInvalidAppID\020\001\022\033\n\027k_MsgInvalidPartn"
+    "erInfo\020\002\022\027\n\023k_MsgNoTransactions\020\003\022\023\n\017k_M"
+    "sgSQLFailure\020\004\022\037\n\033k_MsgPartnerInfoDiscre"
+    "pancy\020\005\022 \n\034k_MsgTransactionInsertFailed\020"
+    "\007\022\027\n\023k_MsgAlreadyRunning\020\010\022\037\n\033k_MsgInval"
+    "idTransactionData\020\t\"S\n\034CMsgGCHVacVerific"
+    "ationChange\022\017\n\007steamid\030\001 \001(\006\022\r\n\005appid\030\002 "
+    "\001(\r\022\023\n\013is_verified\030\003 \001(\010*\333\001\n\020GCProtoBufM"
+    "sgSrc\022 \n\034GCProtoBufMsgSrc_Unspecified\020\000\022"
+    "\037\n\033GCProtoBufMsgSrc_FromSystem\020\001\022 \n\034GCPr"
+    "otoBufMsgSrc_FromSteamID\020\002\022\033\n\027GCProtoBuf"
+    "MsgSrc_FromGC\020\003\022 \n\034GCProtoBufMsgSrc_Repl"
+    "ySystem\020\004\022#\n\037GCProtoBufMsgSrc_SpoofedSte"
+    "amID\020\005:9\n\tkey_field\022\035.google.protobuf.Fi"
+    "eldOptions\030\340\324\003 \001(\010:\005false:A\n\022msgpool_sof"
+    "t_limit\022\037.google.protobuf.MessageOptions"
+    "\030\340\324\003 \001(\005:\00232:B\n\022msgpool_hard_limit\022\037.goo"
+    "gle.protobuf.MessageOptions\030\341\324\003 \001(\005:\003384"
+    "B\005H\001\200\001\000", 10727);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "steammessages.proto", &protobuf_RegisterTypes);
   CMsgProtoBufHeader::default_instance_ = new CMsgProtoBufHeader();
@@ -2458,6 +2503,7 @@ void protobuf_AddDesc_steammessages_2eproto() {
   CMsgDPPartnerMicroTxns_PartnerMicroTxn::default_instance_ = new CMsgDPPartnerMicroTxns_PartnerMicroTxn();
   CMsgDPPartnerMicroTxns_PartnerInfo::default_instance_ = new CMsgDPPartnerMicroTxns_PartnerInfo();
   CMsgDPPartnerMicroTxnsResponse::default_instance_ = new CMsgDPPartnerMicroTxnsResponse();
+  CMsgGCHVacVerificationChange::default_instance_ = new CMsgGCHVacVerificationChange();
   ::google::protobuf::internal::ExtensionSet::RegisterExtension(
     &::google::protobuf::FieldOptions::default_instance(),
     60000, 8, false, false);
@@ -2551,6 +2597,7 @@ void protobuf_AddDesc_steammessages_2eproto() {
   CMsgDPPartnerMicroTxns_PartnerMicroTxn::default_instance_->InitAsDefaultInstance();
   CMsgDPPartnerMicroTxns_PartnerInfo::default_instance_->InitAsDefaultInstance();
   CMsgDPPartnerMicroTxnsResponse::default_instance_->InitAsDefaultInstance();
+  CMsgGCHVacVerificationChange::default_instance_->InitAsDefaultInstance();
   ::google::protobuf::internal::OnShutdown(&protobuf_ShutdownFile_steammessages_2eproto);
 }
 
@@ -2571,6 +2618,7 @@ bool GCProtoBufMsgSrc_IsValid(int value) {
     case 2:
     case 3:
     case 4:
+    case 5:
       return true;
     default:
       return false;
@@ -6445,11 +6493,11 @@ void CMsgAMFindAccountsResponse::Swap(CMsgAMFindAccountsResponse* other) {
 #ifndef _MSC_VER
 const int CMsgNotifyWatchdog::kSourceFieldNumber;
 const int CMsgNotifyWatchdog::kAlertTypeFieldNumber;
-const int CMsgNotifyWatchdog::kAlertDestinationFieldNumber;
 const int CMsgNotifyWatchdog::kCriticalFieldNumber;
 const int CMsgNotifyWatchdog::kTimeFieldNumber;
 const int CMsgNotifyWatchdog::kAppidFieldNumber;
 const int CMsgNotifyWatchdog::kTextFieldNumber;
+const int CMsgNotifyWatchdog::kRecipientFieldNumber;
 #endif  // !_MSC_VER
 
 CMsgNotifyWatchdog::CMsgNotifyWatchdog()
@@ -6473,11 +6521,11 @@ void CMsgNotifyWatchdog::SharedCtor() {
   _cached_size_ = 0;
   source_ = 0u;
   alert_type_ = 0u;
-  alert_destination_ = 0u;
   critical_ = false;
   time_ = 0u;
   appid_ = 0u;
   text_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  recipient_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
 
@@ -6489,6 +6537,9 @@ CMsgNotifyWatchdog::~CMsgNotifyWatchdog() {
 void CMsgNotifyWatchdog::SharedDtor() {
   if (text_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
     delete text_;
+  }
+  if (recipient_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete recipient_;
   }
   if (this != default_instance_) {
   }
@@ -6527,10 +6578,16 @@ void CMsgNotifyWatchdog::Clear() {
   } while (0)
 
   if (_has_bits_[0 / 32] & 127) {
-    ZR_(source_, appid_);
+    ZR_(source_, time_);
+    appid_ = 0u;
     if (has_text()) {
       if (text_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
         text_->clear();
+      }
+    }
+    if (has_recipient()) {
+      if (recipient_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+        recipient_->clear();
       }
     }
   }
@@ -6574,21 +6631,6 @@ bool CMsgNotifyWatchdog::MergePartialFromCodedStream(
                    ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
                  input, &alert_type_)));
           set_has_alert_type();
-        } else {
-          goto handle_unusual;
-        }
-        if (input->ExpectTag(24)) goto parse_alert_destination;
-        break;
-      }
-
-      // optional uint32 alert_destination = 3;
-      case 3: {
-        if (tag == 24) {
-         parse_alert_destination:
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
-                 input, &alert_destination_)));
-          set_has_alert_destination();
         } else {
           goto handle_unusual;
         }
@@ -6654,6 +6696,23 @@ bool CMsgNotifyWatchdog::MergePartialFromCodedStream(
         } else {
           goto handle_unusual;
         }
+        if (input->ExpectTag(98)) goto parse_recipient;
+        break;
+      }
+
+      // optional string recipient = 12;
+      case 12: {
+        if (tag == 98) {
+         parse_recipient:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_recipient()));
+          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+            this->recipient().data(), this->recipient().length(),
+            ::google::protobuf::internal::WireFormat::PARSE,
+            "recipient");
+        } else {
+          goto handle_unusual;
+        }
         if (input->ExpectAtEnd()) goto success;
         break;
       }
@@ -6693,11 +6752,6 @@ void CMsgNotifyWatchdog::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteUInt32(2, this->alert_type(), output);
   }
 
-  // optional uint32 alert_destination = 3;
-  if (has_alert_destination()) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt32(3, this->alert_destination(), output);
-  }
-
   // optional bool critical = 4;
   if (has_critical()) {
     ::google::protobuf::internal::WireFormatLite::WriteBool(4, this->critical(), output);
@@ -6723,6 +6777,16 @@ void CMsgNotifyWatchdog::SerializeWithCachedSizes(
       7, this->text(), output);
   }
 
+  // optional string recipient = 12;
+  if (has_recipient()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->recipient().data(), this->recipient().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "recipient");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      12, this->recipient(), output);
+  }
+
   if (!unknown_fields().empty()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
@@ -6741,11 +6805,6 @@ void CMsgNotifyWatchdog::SerializeWithCachedSizes(
   // optional uint32 alert_type = 2;
   if (has_alert_type()) {
     target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(2, this->alert_type(), target);
-  }
-
-  // optional uint32 alert_destination = 3;
-  if (has_alert_destination()) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(3, this->alert_destination(), target);
   }
 
   // optional bool critical = 4;
@@ -6774,6 +6833,17 @@ void CMsgNotifyWatchdog::SerializeWithCachedSizes(
         7, this->text(), target);
   }
 
+  // optional string recipient = 12;
+  if (has_recipient()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->recipient().data(), this->recipient().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "recipient");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        12, this->recipient(), target);
+  }
+
   if (!unknown_fields().empty()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
@@ -6800,13 +6870,6 @@ int CMsgNotifyWatchdog::ByteSize() const {
           this->alert_type());
     }
 
-    // optional uint32 alert_destination = 3;
-    if (has_alert_destination()) {
-      total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::UInt32Size(
-          this->alert_destination());
-    }
-
     // optional bool critical = 4;
     if (has_critical()) {
       total_size += 1 + 1;
@@ -6831,6 +6894,13 @@ int CMsgNotifyWatchdog::ByteSize() const {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::StringSize(
           this->text());
+    }
+
+    // optional string recipient = 12;
+    if (has_recipient()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::StringSize(
+          this->recipient());
     }
 
   }
@@ -6866,9 +6936,6 @@ void CMsgNotifyWatchdog::MergeFrom(const CMsgNotifyWatchdog& from) {
     if (from.has_alert_type()) {
       set_alert_type(from.alert_type());
     }
-    if (from.has_alert_destination()) {
-      set_alert_destination(from.alert_destination());
-    }
     if (from.has_critical()) {
       set_critical(from.critical());
     }
@@ -6880,6 +6947,9 @@ void CMsgNotifyWatchdog::MergeFrom(const CMsgNotifyWatchdog& from) {
     }
     if (from.has_text()) {
       set_text(from.text());
+    }
+    if (from.has_recipient()) {
+      set_recipient(from.recipient());
     }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
@@ -6906,11 +6976,11 @@ void CMsgNotifyWatchdog::Swap(CMsgNotifyWatchdog* other) {
   if (other != this) {
     std::swap(source_, other->source_);
     std::swap(alert_type_, other->alert_type_);
-    std::swap(alert_destination_, other->alert_destination_);
     std::swap(critical_, other->critical_);
     std::swap(time_, other->time_);
     std::swap(appid_, other->appid_);
     std::swap(text_, other->text_);
+    std::swap(recipient_, other->recipient_);
     std::swap(_has_bits_[0], other->_has_bits_[0]);
     _unknown_fields_.Swap(&other->_unknown_fields_);
     std::swap(_cached_size_, other->_cached_size_);
@@ -19011,6 +19081,13 @@ const int CGCSystemMsg_GetAccountDetails_Response::kCurrencyFieldNumber;
 const int CGCSystemMsg_GetAccountDetails_Response::kSteamLevelFieldNumber;
 const int CGCSystemMsg_GetAccountDetails_Response::kFriendCountFieldNumber;
 const int CGCSystemMsg_GetAccountDetails_Response::kAccountCreationTimeFieldNumber;
+const int CGCSystemMsg_GetAccountDetails_Response::kIsSteamguardEnabledFieldNumber;
+const int CGCSystemMsg_GetAccountDetails_Response::kIsPhoneVerifiedFieldNumber;
+const int CGCSystemMsg_GetAccountDetails_Response::kIsTwoFactorAuthEnabledFieldNumber;
+const int CGCSystemMsg_GetAccountDetails_Response::kTwoFactorEnabledTimeFieldNumber;
+const int CGCSystemMsg_GetAccountDetails_Response::kPhoneVerificationTimeFieldNumber;
+const int CGCSystemMsg_GetAccountDetails_Response::kPhoneIdFieldNumber;
+const int CGCSystemMsg_GetAccountDetails_Response::kIsPhoneIdentifyingFieldNumber;
 #endif  // !_MSC_VER
 
 CGCSystemMsg_GetAccountDetails_Response::CGCSystemMsg_GetAccountDetails_Response()
@@ -19057,6 +19134,13 @@ void CGCSystemMsg_GetAccountDetails_Response::SharedCtor() {
   steam_level_ = 0u;
   friend_count_ = 0u;
   account_creation_time_ = 0u;
+  is_steamguard_enabled_ = false;
+  is_phone_verified_ = false;
+  is_two_factor_auth_enabled_ = false;
+  two_factor_enabled_time_ = 0u;
+  phone_verification_time_ = 0u;
+  phone_id_ = GOOGLE_ULONGLONG(0);
+  is_phone_identifying_ = false;
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
 
@@ -19129,15 +19213,17 @@ void CGCSystemMsg_GetAccountDetails_Response::Clear() {
     ZR_(is_school_account_, is_account_locked_down_);
   }
   if (_has_bits_[16 / 32] & 16711680) {
-    ZR_(is_community_banned_, suspension_end_time_);
-    ZR_(steam_level_, friend_count_);
+    ZR_(is_community_banned_, accountid_);
+    ZR_(suspension_end_time_, is_trade_banned_);
     if (has_currency()) {
       if (currency_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
         currency_->clear();
       }
     }
   }
-  account_creation_time_ = 0u;
+  if (_has_bits_[24 / 32] & 4278190080) {
+    ZR_(is_steamguard_enabled_, is_phone_identifying_);
+  }
 
 #undef OFFSET_OF_FIELD_
 #undef ZR_
@@ -19532,6 +19618,111 @@ bool CGCSystemMsg_GetAccountDetails_Response::MergePartialFromCodedStream(
         } else {
           goto handle_unusual;
         }
+        if (input->ExpectTag(216)) goto parse_is_steamguard_enabled;
+        break;
+      }
+
+      // optional bool is_steamguard_enabled = 27;
+      case 27: {
+        if (tag == 216) {
+         parse_is_steamguard_enabled:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   bool, ::google::protobuf::internal::WireFormatLite::TYPE_BOOL>(
+                 input, &is_steamguard_enabled_)));
+          set_has_is_steamguard_enabled();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(224)) goto parse_is_phone_verified;
+        break;
+      }
+
+      // optional bool is_phone_verified = 28;
+      case 28: {
+        if (tag == 224) {
+         parse_is_phone_verified:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   bool, ::google::protobuf::internal::WireFormatLite::TYPE_BOOL>(
+                 input, &is_phone_verified_)));
+          set_has_is_phone_verified();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(232)) goto parse_is_two_factor_auth_enabled;
+        break;
+      }
+
+      // optional bool is_two_factor_auth_enabled = 29;
+      case 29: {
+        if (tag == 232) {
+         parse_is_two_factor_auth_enabled:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   bool, ::google::protobuf::internal::WireFormatLite::TYPE_BOOL>(
+                 input, &is_two_factor_auth_enabled_)));
+          set_has_is_two_factor_auth_enabled();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(240)) goto parse_two_factor_enabled_time;
+        break;
+      }
+
+      // optional uint32 two_factor_enabled_time = 30;
+      case 30: {
+        if (tag == 240) {
+         parse_two_factor_enabled_time:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                 input, &two_factor_enabled_time_)));
+          set_has_two_factor_enabled_time();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(248)) goto parse_phone_verification_time;
+        break;
+      }
+
+      // optional uint32 phone_verification_time = 31;
+      case 31: {
+        if (tag == 248) {
+         parse_phone_verification_time:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                 input, &phone_verification_time_)));
+          set_has_phone_verification_time();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(264)) goto parse_phone_id;
+        break;
+      }
+
+      // optional uint64 phone_id = 33;
+      case 33: {
+        if (tag == 264) {
+         parse_phone_id:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::uint64, ::google::protobuf::internal::WireFormatLite::TYPE_UINT64>(
+                 input, &phone_id_)));
+          set_has_phone_id();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(272)) goto parse_is_phone_identifying;
+        break;
+      }
+
+      // optional bool is_phone_identifying = 34;
+      case 34: {
+        if (tag == 272) {
+         parse_is_phone_identifying:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   bool, ::google::protobuf::internal::WireFormatLite::TYPE_BOOL>(
+                 input, &is_phone_identifying_)));
+          set_has_is_phone_identifying();
+        } else {
+          goto handle_unusual;
+        }
         if (input->ExpectAtEnd()) goto success;
         break;
       }
@@ -19701,6 +19892,41 @@ void CGCSystemMsg_GetAccountDetails_Response::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteBool(26, this->is_profile_created(), output);
   }
 
+  // optional bool is_steamguard_enabled = 27;
+  if (has_is_steamguard_enabled()) {
+    ::google::protobuf::internal::WireFormatLite::WriteBool(27, this->is_steamguard_enabled(), output);
+  }
+
+  // optional bool is_phone_verified = 28;
+  if (has_is_phone_verified()) {
+    ::google::protobuf::internal::WireFormatLite::WriteBool(28, this->is_phone_verified(), output);
+  }
+
+  // optional bool is_two_factor_auth_enabled = 29;
+  if (has_is_two_factor_auth_enabled()) {
+    ::google::protobuf::internal::WireFormatLite::WriteBool(29, this->is_two_factor_auth_enabled(), output);
+  }
+
+  // optional uint32 two_factor_enabled_time = 30;
+  if (has_two_factor_enabled_time()) {
+    ::google::protobuf::internal::WireFormatLite::WriteUInt32(30, this->two_factor_enabled_time(), output);
+  }
+
+  // optional uint32 phone_verification_time = 31;
+  if (has_phone_verification_time()) {
+    ::google::protobuf::internal::WireFormatLite::WriteUInt32(31, this->phone_verification_time(), output);
+  }
+
+  // optional uint64 phone_id = 33;
+  if (has_phone_id()) {
+    ::google::protobuf::internal::WireFormatLite::WriteUInt64(33, this->phone_id(), output);
+  }
+
+  // optional bool is_phone_identifying = 34;
+  if (has_is_phone_identifying()) {
+    ::google::protobuf::internal::WireFormatLite::WriteBool(34, this->is_phone_identifying(), output);
+  }
+
   if (!unknown_fields().empty()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
@@ -19852,6 +20078,41 @@ void CGCSystemMsg_GetAccountDetails_Response::SerializeWithCachedSizes(
   // optional bool is_profile_created = 26;
   if (has_is_profile_created()) {
     target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(26, this->is_profile_created(), target);
+  }
+
+  // optional bool is_steamguard_enabled = 27;
+  if (has_is_steamguard_enabled()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(27, this->is_steamguard_enabled(), target);
+  }
+
+  // optional bool is_phone_verified = 28;
+  if (has_is_phone_verified()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(28, this->is_phone_verified(), target);
+  }
+
+  // optional bool is_two_factor_auth_enabled = 29;
+  if (has_is_two_factor_auth_enabled()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(29, this->is_two_factor_auth_enabled(), target);
+  }
+
+  // optional uint32 two_factor_enabled_time = 30;
+  if (has_two_factor_enabled_time()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(30, this->two_factor_enabled_time(), target);
+  }
+
+  // optional uint32 phone_verification_time = 31;
+  if (has_phone_verification_time()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(31, this->phone_verification_time(), target);
+  }
+
+  // optional uint64 phone_id = 33;
+  if (has_phone_id()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt64ToArray(33, this->phone_id(), target);
+  }
+
+  // optional bool is_phone_identifying = 34;
+  if (has_is_phone_identifying()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(34, this->is_phone_identifying(), target);
   }
 
   if (!unknown_fields().empty()) {
@@ -20021,6 +20282,47 @@ int CGCSystemMsg_GetAccountDetails_Response::ByteSize() const {
           this->account_creation_time());
     }
 
+    // optional bool is_steamguard_enabled = 27;
+    if (has_is_steamguard_enabled()) {
+      total_size += 2 + 1;
+    }
+
+    // optional bool is_phone_verified = 28;
+    if (has_is_phone_verified()) {
+      total_size += 2 + 1;
+    }
+
+    // optional bool is_two_factor_auth_enabled = 29;
+    if (has_is_two_factor_auth_enabled()) {
+      total_size += 2 + 1;
+    }
+
+    // optional uint32 two_factor_enabled_time = 30;
+    if (has_two_factor_enabled_time()) {
+      total_size += 2 +
+        ::google::protobuf::internal::WireFormatLite::UInt32Size(
+          this->two_factor_enabled_time());
+    }
+
+    // optional uint32 phone_verification_time = 31;
+    if (has_phone_verification_time()) {
+      total_size += 2 +
+        ::google::protobuf::internal::WireFormatLite::UInt32Size(
+          this->phone_verification_time());
+    }
+
+    // optional uint64 phone_id = 33;
+    if (has_phone_id()) {
+      total_size += 2 +
+        ::google::protobuf::internal::WireFormatLite::UInt64Size(
+          this->phone_id());
+    }
+
+    // optional bool is_phone_identifying = 34;
+    if (has_is_phone_identifying()) {
+      total_size += 2 + 1;
+    }
+
   }
   if (!unknown_fields().empty()) {
     total_size +=
@@ -20129,6 +20431,27 @@ void CGCSystemMsg_GetAccountDetails_Response::MergeFrom(const CGCSystemMsg_GetAc
     if (from.has_account_creation_time()) {
       set_account_creation_time(from.account_creation_time());
     }
+    if (from.has_is_steamguard_enabled()) {
+      set_is_steamguard_enabled(from.is_steamguard_enabled());
+    }
+    if (from.has_is_phone_verified()) {
+      set_is_phone_verified(from.is_phone_verified());
+    }
+    if (from.has_is_two_factor_auth_enabled()) {
+      set_is_two_factor_auth_enabled(from.is_two_factor_auth_enabled());
+    }
+    if (from.has_two_factor_enabled_time()) {
+      set_two_factor_enabled_time(from.two_factor_enabled_time());
+    }
+    if (from.has_phone_verification_time()) {
+      set_phone_verification_time(from.phone_verification_time());
+    }
+    if (from.has_phone_id()) {
+      set_phone_id(from.phone_id());
+    }
+    if (from.has_is_phone_identifying()) {
+      set_is_phone_identifying(from.is_phone_identifying());
+    }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
 }
@@ -20177,6 +20500,13 @@ void CGCSystemMsg_GetAccountDetails_Response::Swap(CGCSystemMsg_GetAccountDetail
     std::swap(steam_level_, other->steam_level_);
     std::swap(friend_count_, other->friend_count_);
     std::swap(account_creation_time_, other->account_creation_time_);
+    std::swap(is_steamguard_enabled_, other->is_steamguard_enabled_);
+    std::swap(is_phone_verified_, other->is_phone_verified_);
+    std::swap(is_two_factor_auth_enabled_, other->is_two_factor_auth_enabled_);
+    std::swap(two_factor_enabled_time_, other->two_factor_enabled_time_);
+    std::swap(phone_verification_time_, other->phone_verification_time_);
+    std::swap(phone_id_, other->phone_id_);
+    std::swap(is_phone_identifying_, other->is_phone_identifying_);
     std::swap(_has_bits_[0], other->_has_bits_[0]);
     _unknown_fields_.Swap(&other->_unknown_fields_);
     std::swap(_cached_size_, other->_cached_size_);
@@ -21501,6 +21831,7 @@ void CMsgGCCheckFriendship_Response::Swap(CMsgGCCheckFriendship_Response* other)
 
 #ifndef _MSC_VER
 const int CMsgGCGetAppFriendsList::kSteamidFieldNumber;
+const int CMsgGCGetAppFriendsList::kIncludeFriendshipTimestampsFieldNumber;
 #endif  // !_MSC_VER
 
 CMsgGCGetAppFriendsList::CMsgGCGetAppFriendsList()
@@ -21522,6 +21853,7 @@ CMsgGCGetAppFriendsList::CMsgGCGetAppFriendsList(const CMsgGCGetAppFriendsList& 
 void CMsgGCGetAppFriendsList::SharedCtor() {
   _cached_size_ = 0;
   steamid_ = GOOGLE_ULONGLONG(0);
+  include_friendship_timestamps_ = false;
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
 
@@ -21557,7 +21889,21 @@ CMsgGCGetAppFriendsList* CMsgGCGetAppFriendsList::New() const {
 }
 
 void CMsgGCGetAppFriendsList::Clear() {
-  steamid_ = GOOGLE_ULONGLONG(0);
+#define OFFSET_OF_FIELD_(f) (reinterpret_cast<char*>(      \
+  &reinterpret_cast<CMsgGCGetAppFriendsList*>(16)->f) - \
+   reinterpret_cast<char*>(16))
+
+#define ZR_(first, last) do {                              \
+    size_t f = OFFSET_OF_FIELD_(first);                    \
+    size_t n = OFFSET_OF_FIELD_(last) - f + sizeof(last);  \
+    ::memset(&first, 0, n);                                \
+  } while (0)
+
+  ZR_(steamid_, include_friendship_timestamps_);
+
+#undef OFFSET_OF_FIELD_
+#undef ZR_
+
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
   mutable_unknown_fields()->Clear();
 }
@@ -21579,6 +21925,21 @@ bool CMsgGCGetAppFriendsList::MergePartialFromCodedStream(
                    ::google::protobuf::uint64, ::google::protobuf::internal::WireFormatLite::TYPE_FIXED64>(
                  input, &steamid_)));
           set_has_steamid();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(16)) goto parse_include_friendship_timestamps;
+        break;
+      }
+
+      // optional bool include_friendship_timestamps = 2;
+      case 2: {
+        if (tag == 16) {
+         parse_include_friendship_timestamps:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   bool, ::google::protobuf::internal::WireFormatLite::TYPE_BOOL>(
+                 input, &include_friendship_timestamps_)));
+          set_has_include_friendship_timestamps();
         } else {
           goto handle_unusual;
         }
@@ -21616,6 +21977,11 @@ void CMsgGCGetAppFriendsList::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteFixed64(1, this->steamid(), output);
   }
 
+  // optional bool include_friendship_timestamps = 2;
+  if (has_include_friendship_timestamps()) {
+    ::google::protobuf::internal::WireFormatLite::WriteBool(2, this->include_friendship_timestamps(), output);
+  }
+
   if (!unknown_fields().empty()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
@@ -21629,6 +21995,11 @@ void CMsgGCGetAppFriendsList::SerializeWithCachedSizes(
   // optional fixed64 steamid = 1;
   if (has_steamid()) {
     target = ::google::protobuf::internal::WireFormatLite::WriteFixed64ToArray(1, this->steamid(), target);
+  }
+
+  // optional bool include_friendship_timestamps = 2;
+  if (has_include_friendship_timestamps()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(2, this->include_friendship_timestamps(), target);
   }
 
   if (!unknown_fields().empty()) {
@@ -21646,6 +22017,11 @@ int CMsgGCGetAppFriendsList::ByteSize() const {
     // optional fixed64 steamid = 1;
     if (has_steamid()) {
       total_size += 1 + 8;
+    }
+
+    // optional bool include_friendship_timestamps = 2;
+    if (has_include_friendship_timestamps()) {
+      total_size += 1 + 1;
     }
 
   }
@@ -21678,6 +22054,9 @@ void CMsgGCGetAppFriendsList::MergeFrom(const CMsgGCGetAppFriendsList& from) {
     if (from.has_steamid()) {
       set_steamid(from.steamid());
     }
+    if (from.has_include_friendship_timestamps()) {
+      set_include_friendship_timestamps(from.include_friendship_timestamps());
+    }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
 }
@@ -21702,6 +22081,7 @@ bool CMsgGCGetAppFriendsList::IsInitialized() const {
 void CMsgGCGetAppFriendsList::Swap(CMsgGCGetAppFriendsList* other) {
   if (other != this) {
     std::swap(steamid_, other->steamid_);
+    std::swap(include_friendship_timestamps_, other->include_friendship_timestamps_);
     std::swap(_has_bits_[0], other->_has_bits_[0]);
     _unknown_fields_.Swap(&other->_unknown_fields_);
     std::swap(_cached_size_, other->_cached_size_);
@@ -21722,6 +22102,7 @@ void CMsgGCGetAppFriendsList::Swap(CMsgGCGetAppFriendsList* other) {
 #ifndef _MSC_VER
 const int CMsgGCGetAppFriendsList_Response::kSuccessFieldNumber;
 const int CMsgGCGetAppFriendsList_Response::kSteamidsFieldNumber;
+const int CMsgGCGetAppFriendsList_Response::kFriendshipTimestampsFieldNumber;
 #endif  // !_MSC_VER
 
 CMsgGCGetAppFriendsList_Response::CMsgGCGetAppFriendsList_Response()
@@ -21780,6 +22161,7 @@ CMsgGCGetAppFriendsList_Response* CMsgGCGetAppFriendsList_Response::New() const 
 void CMsgGCGetAppFriendsList_Response::Clear() {
   success_ = false;
   steamids_.Clear();
+  friendship_timestamps_.Clear();
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
   mutable_unknown_fields()->Clear();
 }
@@ -21823,6 +22205,25 @@ bool CMsgGCGetAppFriendsList_Response::MergePartialFromCodedStream(
           goto handle_unusual;
         }
         if (input->ExpectTag(17)) goto parse_steamids;
+        if (input->ExpectTag(29)) goto parse_friendship_timestamps;
+        break;
+      }
+
+      // repeated fixed32 friendship_timestamps = 3;
+      case 3: {
+        if (tag == 29) {
+         parse_friendship_timestamps:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadRepeatedPrimitive<
+                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_FIXED32>(
+                 1, 29, input, this->mutable_friendship_timestamps())));
+        } else if (tag == 26) {
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPackedPrimitiveNoInline<
+                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_FIXED32>(
+                 input, this->mutable_friendship_timestamps())));
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(29)) goto parse_friendship_timestamps;
         if (input->ExpectAtEnd()) goto success;
         break;
       }
@@ -21863,6 +22264,12 @@ void CMsgGCGetAppFriendsList_Response::SerializeWithCachedSizes(
       2, this->steamids(i), output);
   }
 
+  // repeated fixed32 friendship_timestamps = 3;
+  for (int i = 0; i < this->friendship_timestamps_size(); i++) {
+    ::google::protobuf::internal::WireFormatLite::WriteFixed32(
+      3, this->friendship_timestamps(i), output);
+  }
+
   if (!unknown_fields().empty()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
@@ -21882,6 +22289,12 @@ void CMsgGCGetAppFriendsList_Response::SerializeWithCachedSizes(
   for (int i = 0; i < this->steamids_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteFixed64ToArray(2, this->steamids(i), target);
+  }
+
+  // repeated fixed32 friendship_timestamps = 3;
+  for (int i = 0; i < this->friendship_timestamps_size(); i++) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      WriteFixed32ToArray(3, this->friendship_timestamps(i), target);
   }
 
   if (!unknown_fields().empty()) {
@@ -21907,6 +22320,13 @@ int CMsgGCGetAppFriendsList_Response::ByteSize() const {
     int data_size = 0;
     data_size = 8 * this->steamids_size();
     total_size += 1 * this->steamids_size() + data_size;
+  }
+
+  // repeated fixed32 friendship_timestamps = 3;
+  {
+    int data_size = 0;
+    data_size = 4 * this->friendship_timestamps_size();
+    total_size += 1 * this->friendship_timestamps_size() + data_size;
   }
 
   if (!unknown_fields().empty()) {
@@ -21935,6 +22355,7 @@ void CMsgGCGetAppFriendsList_Response::MergeFrom(const ::google::protobuf::Messa
 void CMsgGCGetAppFriendsList_Response::MergeFrom(const CMsgGCGetAppFriendsList_Response& from) {
   GOOGLE_CHECK_NE(&from, this);
   steamids_.MergeFrom(from.steamids_);
+  friendship_timestamps_.MergeFrom(from.friendship_timestamps_);
   if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (from.has_success()) {
       set_success(from.success());
@@ -21964,6 +22385,7 @@ void CMsgGCGetAppFriendsList_Response::Swap(CMsgGCGetAppFriendsList_Response* ot
   if (other != this) {
     std::swap(success_, other->success_);
     steamids_.Swap(&other->steamids_);
+    friendship_timestamps_.Swap(&other->friendship_timestamps_);
     std::swap(_has_bits_[0], other->_has_bits_[0]);
     _unknown_fields_.Swap(&other->_unknown_fields_);
     std::swap(_cached_size_, other->_cached_size_);
@@ -22705,6 +23127,7 @@ void CMsgGCMsgMasterSetDirectory::Swap(CMsgGCMsgMasterSetDirectory* other) {
 
 #ifndef _MSC_VER
 const int CMsgGCMsgMasterSetDirectory_Response::kEresultFieldNumber;
+const int CMsgGCMsgMasterSetDirectory_Response::kMessageFieldNumber;
 #endif  // !_MSC_VER
 
 CMsgGCMsgMasterSetDirectory_Response::CMsgGCMsgMasterSetDirectory_Response()
@@ -22724,8 +23147,10 @@ CMsgGCMsgMasterSetDirectory_Response::CMsgGCMsgMasterSetDirectory_Response(const
 }
 
 void CMsgGCMsgMasterSetDirectory_Response::SharedCtor() {
+  ::google::protobuf::internal::GetEmptyString();
   _cached_size_ = 0;
   eresult_ = 2;
+  message_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
 
@@ -22735,6 +23160,9 @@ CMsgGCMsgMasterSetDirectory_Response::~CMsgGCMsgMasterSetDirectory_Response() {
 }
 
 void CMsgGCMsgMasterSetDirectory_Response::SharedDtor() {
+  if (message_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete message_;
+  }
   if (this != default_instance_) {
   }
 }
@@ -22761,7 +23189,14 @@ CMsgGCMsgMasterSetDirectory_Response* CMsgGCMsgMasterSetDirectory_Response::New(
 }
 
 void CMsgGCMsgMasterSetDirectory_Response::Clear() {
-  eresult_ = 2;
+  if (_has_bits_[0 / 32] & 3) {
+    eresult_ = 2;
+    if (has_message()) {
+      if (message_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+        message_->clear();
+      }
+    }
+  }
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
   mutable_unknown_fields()->Clear();
 }
@@ -22783,6 +23218,23 @@ bool CMsgGCMsgMasterSetDirectory_Response::MergePartialFromCodedStream(
                    ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
                  input, &eresult_)));
           set_has_eresult();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(18)) goto parse_message;
+        break;
+      }
+
+      // optional string message = 2;
+      case 2: {
+        if (tag == 18) {
+         parse_message:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_message()));
+          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+            this->message().data(), this->message().length(),
+            ::google::protobuf::internal::WireFormat::PARSE,
+            "message");
         } else {
           goto handle_unusual;
         }
@@ -22820,6 +23272,16 @@ void CMsgGCMsgMasterSetDirectory_Response::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt32(1, this->eresult(), output);
   }
 
+  // optional string message = 2;
+  if (has_message()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->message().data(), this->message().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "message");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      2, this->message(), output);
+  }
+
   if (!unknown_fields().empty()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
@@ -22833,6 +23295,17 @@ void CMsgGCMsgMasterSetDirectory_Response::SerializeWithCachedSizes(
   // optional int32 eresult = 1 [default = 2];
   if (has_eresult()) {
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(1, this->eresult(), target);
+  }
+
+  // optional string message = 2;
+  if (has_message()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->message().data(), this->message().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "message");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        2, this->message(), target);
   }
 
   if (!unknown_fields().empty()) {
@@ -22852,6 +23325,13 @@ int CMsgGCMsgMasterSetDirectory_Response::ByteSize() const {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::Int32Size(
           this->eresult());
+    }
+
+    // optional string message = 2;
+    if (has_message()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::StringSize(
+          this->message());
     }
 
   }
@@ -22884,6 +23364,9 @@ void CMsgGCMsgMasterSetDirectory_Response::MergeFrom(const CMsgGCMsgMasterSetDir
     if (from.has_eresult()) {
       set_eresult(from.eresult());
     }
+    if (from.has_message()) {
+      set_message(from.message());
+    }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
 }
@@ -22908,6 +23391,7 @@ bool CMsgGCMsgMasterSetDirectory_Response::IsInitialized() const {
 void CMsgGCMsgMasterSetDirectory_Response::Swap(CMsgGCMsgMasterSetDirectory_Response* other) {
   if (other != this) {
     std::swap(eresult_, other->eresult_);
+    std::swap(message_, other->message_);
     std::swap(_has_bits_[0], other->_has_bits_[0]);
     _unknown_fields_.Swap(&other->_unknown_fields_);
     std::swap(_cached_size_, other->_cached_size_);
@@ -24600,6 +25084,7 @@ bool CMsgGCRoutingInfo_RoutingMethod_IsValid(int value) {
     case 2:
     case 3:
     case 4:
+    case 5:
       return true;
     default:
       return false;
@@ -24611,7 +25096,8 @@ const CMsgGCRoutingInfo_RoutingMethod CMsgGCRoutingInfo::RANDOM;
 const CMsgGCRoutingInfo_RoutingMethod CMsgGCRoutingInfo::DISCARD;
 const CMsgGCRoutingInfo_RoutingMethod CMsgGCRoutingInfo::CLIENT_STEAMID;
 const CMsgGCRoutingInfo_RoutingMethod CMsgGCRoutingInfo::PROTOBUF_FIELD_UINT64;
-const CMsgGCRoutingInfo_RoutingMethod CMsgGCRoutingInfo::WEBAPI_PARAM_UINT64;
+const CMsgGCRoutingInfo_RoutingMethod CMsgGCRoutingInfo::WEBAPI_PARAM;
+const CMsgGCRoutingInfo_RoutingMethod CMsgGCRoutingInfo::WEBAPI_PARAM_STEAMID_ACCOUNTID;
 const CMsgGCRoutingInfo_RoutingMethod CMsgGCRoutingInfo::RoutingMethod_MIN;
 const CMsgGCRoutingInfo_RoutingMethod CMsgGCRoutingInfo::RoutingMethod_MAX;
 const int CMsgGCRoutingInfo::RoutingMethod_ARRAYSIZE;
@@ -30555,6 +31041,314 @@ void CMsgDPPartnerMicroTxnsResponse::Swap(CMsgDPPartnerMicroTxnsResponse* other)
   ::google::protobuf::Metadata metadata;
   metadata.descriptor = CMsgDPPartnerMicroTxnsResponse_descriptor_;
   metadata.reflection = CMsgDPPartnerMicroTxnsResponse_reflection_;
+  return metadata;
+}
+
+
+// ===================================================================
+
+#ifndef _MSC_VER
+const int CMsgGCHVacVerificationChange::kSteamidFieldNumber;
+const int CMsgGCHVacVerificationChange::kAppidFieldNumber;
+const int CMsgGCHVacVerificationChange::kIsVerifiedFieldNumber;
+#endif  // !_MSC_VER
+
+CMsgGCHVacVerificationChange::CMsgGCHVacVerificationChange()
+  : ::google::protobuf::Message() {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:CMsgGCHVacVerificationChange)
+}
+
+void CMsgGCHVacVerificationChange::InitAsDefaultInstance() {
+}
+
+CMsgGCHVacVerificationChange::CMsgGCHVacVerificationChange(const CMsgGCHVacVerificationChange& from)
+  : ::google::protobuf::Message() {
+  SharedCtor();
+  MergeFrom(from);
+  // @@protoc_insertion_point(copy_constructor:CMsgGCHVacVerificationChange)
+}
+
+void CMsgGCHVacVerificationChange::SharedCtor() {
+  _cached_size_ = 0;
+  steamid_ = GOOGLE_ULONGLONG(0);
+  appid_ = 0u;
+  is_verified_ = false;
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+}
+
+CMsgGCHVacVerificationChange::~CMsgGCHVacVerificationChange() {
+  // @@protoc_insertion_point(destructor:CMsgGCHVacVerificationChange)
+  SharedDtor();
+}
+
+void CMsgGCHVacVerificationChange::SharedDtor() {
+  if (this != default_instance_) {
+  }
+}
+
+void CMsgGCHVacVerificationChange::SetCachedSize(int size) const {
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+}
+const ::google::protobuf::Descriptor* CMsgGCHVacVerificationChange::descriptor() {
+  protobuf_AssignDescriptorsOnce();
+  return CMsgGCHVacVerificationChange_descriptor_;
+}
+
+const CMsgGCHVacVerificationChange& CMsgGCHVacVerificationChange::default_instance() {
+  if (default_instance_ == NULL) protobuf_AddDesc_steammessages_2eproto();
+  return *default_instance_;
+}
+
+CMsgGCHVacVerificationChange* CMsgGCHVacVerificationChange::default_instance_ = NULL;
+
+CMsgGCHVacVerificationChange* CMsgGCHVacVerificationChange::New() const {
+  return new CMsgGCHVacVerificationChange;
+}
+
+void CMsgGCHVacVerificationChange::Clear() {
+#define OFFSET_OF_FIELD_(f) (reinterpret_cast<char*>(      \
+  &reinterpret_cast<CMsgGCHVacVerificationChange*>(16)->f) - \
+   reinterpret_cast<char*>(16))
+
+#define ZR_(first, last) do {                              \
+    size_t f = OFFSET_OF_FIELD_(first);                    \
+    size_t n = OFFSET_OF_FIELD_(last) - f + sizeof(last);  \
+    ::memset(&first, 0, n);                                \
+  } while (0)
+
+  ZR_(steamid_, is_verified_);
+
+#undef OFFSET_OF_FIELD_
+#undef ZR_
+
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+  mutable_unknown_fields()->Clear();
+}
+
+bool CMsgGCHVacVerificationChange::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:CMsgGCHVacVerificationChange)
+  for (;;) {
+    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoff(127);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // optional fixed64 steamid = 1;
+      case 1: {
+        if (tag == 9) {
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::uint64, ::google::protobuf::internal::WireFormatLite::TYPE_FIXED64>(
+                 input, &steamid_)));
+          set_has_steamid();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(16)) goto parse_appid;
+        break;
+      }
+
+      // optional uint32 appid = 2;
+      case 2: {
+        if (tag == 16) {
+         parse_appid:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                 input, &appid_)));
+          set_has_appid();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(24)) goto parse_is_verified;
+        break;
+      }
+
+      // optional bool is_verified = 3;
+      case 3: {
+        if (tag == 24) {
+         parse_is_verified:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   bool, ::google::protobuf::internal::WireFormatLite::TYPE_BOOL>(
+                 input, &is_verified_)));
+          set_has_is_verified();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectAtEnd()) goto success;
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0 ||
+            ::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, mutable_unknown_fields()));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:CMsgGCHVacVerificationChange)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:CMsgGCHVacVerificationChange)
+  return false;
+#undef DO_
+}
+
+void CMsgGCHVacVerificationChange::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:CMsgGCHVacVerificationChange)
+  // optional fixed64 steamid = 1;
+  if (has_steamid()) {
+    ::google::protobuf::internal::WireFormatLite::WriteFixed64(1, this->steamid(), output);
+  }
+
+  // optional uint32 appid = 2;
+  if (has_appid()) {
+    ::google::protobuf::internal::WireFormatLite::WriteUInt32(2, this->appid(), output);
+  }
+
+  // optional bool is_verified = 3;
+  if (has_is_verified()) {
+    ::google::protobuf::internal::WireFormatLite::WriteBool(3, this->is_verified(), output);
+  }
+
+  if (!unknown_fields().empty()) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        unknown_fields(), output);
+  }
+  // @@protoc_insertion_point(serialize_end:CMsgGCHVacVerificationChange)
+}
+
+::google::protobuf::uint8* CMsgGCHVacVerificationChange::SerializeWithCachedSizesToArray(
+    ::google::protobuf::uint8* target) const {
+  // @@protoc_insertion_point(serialize_to_array_start:CMsgGCHVacVerificationChange)
+  // optional fixed64 steamid = 1;
+  if (has_steamid()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteFixed64ToArray(1, this->steamid(), target);
+  }
+
+  // optional uint32 appid = 2;
+  if (has_appid()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(2, this->appid(), target);
+  }
+
+  // optional bool is_verified = 3;
+  if (has_is_verified()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(3, this->is_verified(), target);
+  }
+
+  if (!unknown_fields().empty()) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        unknown_fields(), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:CMsgGCHVacVerificationChange)
+  return target;
+}
+
+int CMsgGCHVacVerificationChange::ByteSize() const {
+  int total_size = 0;
+
+  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    // optional fixed64 steamid = 1;
+    if (has_steamid()) {
+      total_size += 1 + 8;
+    }
+
+    // optional uint32 appid = 2;
+    if (has_appid()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::UInt32Size(
+          this->appid());
+    }
+
+    // optional bool is_verified = 3;
+    if (has_is_verified()) {
+      total_size += 1 + 1;
+    }
+
+  }
+  if (!unknown_fields().empty()) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        unknown_fields());
+  }
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = total_size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+  return total_size;
+}
+
+void CMsgGCHVacVerificationChange::MergeFrom(const ::google::protobuf::Message& from) {
+  GOOGLE_CHECK_NE(&from, this);
+  const CMsgGCHVacVerificationChange* source =
+    ::google::protobuf::internal::dynamic_cast_if_available<const CMsgGCHVacVerificationChange*>(
+      &from);
+  if (source == NULL) {
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+    MergeFrom(*source);
+  }
+}
+
+void CMsgGCHVacVerificationChange::MergeFrom(const CMsgGCHVacVerificationChange& from) {
+  GOOGLE_CHECK_NE(&from, this);
+  if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    if (from.has_steamid()) {
+      set_steamid(from.steamid());
+    }
+    if (from.has_appid()) {
+      set_appid(from.appid());
+    }
+    if (from.has_is_verified()) {
+      set_is_verified(from.is_verified());
+    }
+  }
+  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
+}
+
+void CMsgGCHVacVerificationChange::CopyFrom(const ::google::protobuf::Message& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void CMsgGCHVacVerificationChange::CopyFrom(const CMsgGCHVacVerificationChange& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool CMsgGCHVacVerificationChange::IsInitialized() const {
+
+  return true;
+}
+
+void CMsgGCHVacVerificationChange::Swap(CMsgGCHVacVerificationChange* other) {
+  if (other != this) {
+    std::swap(steamid_, other->steamid_);
+    std::swap(appid_, other->appid_);
+    std::swap(is_verified_, other->is_verified_);
+    std::swap(_has_bits_[0], other->_has_bits_[0]);
+    _unknown_fields_.Swap(&other->_unknown_fields_);
+    std::swap(_cached_size_, other->_cached_size_);
+  }
+}
+
+::google::protobuf::Metadata CMsgGCHVacVerificationChange::GetMetadata() const {
+  protobuf_AssignDescriptorsOnce();
+  ::google::protobuf::Metadata metadata;
+  metadata.descriptor = CMsgGCHVacVerificationChange_descriptor_;
+  metadata.reflection = CMsgGCHVacVerificationChange_reflection_;
   return metadata;
 }
 

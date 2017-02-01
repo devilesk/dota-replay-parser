@@ -78,6 +78,7 @@ class CSVCMsg_VoiceData;
 class CSVCMsg_PacketReliable;
 class CSVCMsg_FullFrameSplit;
 class CSVCMsg_HLTVStatus;
+class CSVCMsg_ServerSteamID;
 class CSVCMsg_CmdKeyValues;
 class CMsgIPCAddress;
 class CMsgServerPeer;
@@ -94,6 +95,9 @@ class CBidirMsg_RelayInfo;
 class SignedPayload_t;
 class CBidirMsg_RelayPacket;
 class CBidirMsg_RelayPacket_SignedDestinationAddress_t;
+class CMsgServerNetworkStats;
+class CMsgServerNetworkStats_Port;
+class CMsgServerNetworkStats_Player;
 
 enum CBidirMsg_RelayInfo_Operation_t {
   CBidirMsg_RelayInfo_Operation_t_RIO_REQUEST_RELAY = 0,
@@ -173,6 +177,7 @@ enum SVC_Messages {
   svc_PeerList = 60,
   svc_PacketReliable = 61,
   svc_HLTVStatus = 62,
+  svc_ServerSteamID = 63,
   svc_FullFrameSplit = 70
 };
 bool SVC_Messages_IsValid(int value);
@@ -5382,6 +5387,85 @@ class CSVCMsg_HLTVStatus : public ::google::protobuf::Message {
 };
 // -------------------------------------------------------------------
 
+class CSVCMsg_ServerSteamID : public ::google::protobuf::Message {
+ public:
+  CSVCMsg_ServerSteamID();
+  virtual ~CSVCMsg_ServerSteamID();
+
+  CSVCMsg_ServerSteamID(const CSVCMsg_ServerSteamID& from);
+
+  inline CSVCMsg_ServerSteamID& operator=(const CSVCMsg_ServerSteamID& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+    return _unknown_fields_;
+  }
+
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+    return &_unknown_fields_;
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const CSVCMsg_ServerSteamID& default_instance();
+
+  void Swap(CSVCMsg_ServerSteamID* other);
+
+  // implements Message ----------------------------------------------
+
+  CSVCMsg_ServerSteamID* New() const;
+  void CopyFrom(const ::google::protobuf::Message& from);
+  void MergeFrom(const ::google::protobuf::Message& from);
+  void CopyFrom(const CSVCMsg_ServerSteamID& from);
+  void MergeFrom(const CSVCMsg_ServerSteamID& from);
+  void Clear();
+  bool IsInitialized() const;
+
+  int ByteSize() const;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input);
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  int GetCachedSize() const { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const;
+  public:
+  ::google::protobuf::Metadata GetMetadata() const;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // optional uint64 steam_id = 1;
+  inline bool has_steam_id() const;
+  inline void clear_steam_id();
+  static const int kSteamIdFieldNumber = 1;
+  inline ::google::protobuf::uint64 steam_id() const;
+  inline void set_steam_id(::google::protobuf::uint64 value);
+
+  // @@protoc_insertion_point(class_scope:CSVCMsg_ServerSteamID)
+ private:
+  inline void set_has_steam_id();
+  inline void clear_has_steam_id();
+
+  ::google::protobuf::UnknownFieldSet _unknown_fields_;
+
+  ::google::protobuf::uint32 _has_bits_[1];
+  mutable int _cached_size_;
+  ::google::protobuf::uint64 steam_id_;
+  friend void  protobuf_AddDesc_netmessages_2eproto();
+  friend void protobuf_AssignDesc_netmessages_2eproto();
+  friend void protobuf_ShutdownFile_netmessages_2eproto();
+
+  void InitAsDefaultInstance();
+  static CSVCMsg_ServerSteamID* default_instance_;
+};
+// -------------------------------------------------------------------
+
 class CSVCMsg_CmdKeyValues : public ::google::protobuf::Message {
  public:
   CSVCMsg_CmdKeyValues();
@@ -7049,6 +7133,562 @@ class CBidirMsg_RelayPacket : public ::google::protobuf::Message {
 
   void InitAsDefaultInstance();
   static CBidirMsg_RelayPacket* default_instance_;
+};
+// -------------------------------------------------------------------
+
+class CMsgServerNetworkStats_Port : public ::google::protobuf::Message {
+ public:
+  CMsgServerNetworkStats_Port();
+  virtual ~CMsgServerNetworkStats_Port();
+
+  CMsgServerNetworkStats_Port(const CMsgServerNetworkStats_Port& from);
+
+  inline CMsgServerNetworkStats_Port& operator=(const CMsgServerNetworkStats_Port& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+    return _unknown_fields_;
+  }
+
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+    return &_unknown_fields_;
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const CMsgServerNetworkStats_Port& default_instance();
+
+  void Swap(CMsgServerNetworkStats_Port* other);
+
+  // implements Message ----------------------------------------------
+
+  CMsgServerNetworkStats_Port* New() const;
+  void CopyFrom(const ::google::protobuf::Message& from);
+  void MergeFrom(const ::google::protobuf::Message& from);
+  void CopyFrom(const CMsgServerNetworkStats_Port& from);
+  void MergeFrom(const CMsgServerNetworkStats_Port& from);
+  void Clear();
+  bool IsInitialized() const;
+
+  int ByteSize() const;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input);
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  int GetCachedSize() const { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const;
+  public:
+  ::google::protobuf::Metadata GetMetadata() const;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // optional int32 port = 1;
+  inline bool has_port() const;
+  inline void clear_port();
+  static const int kPortFieldNumber = 1;
+  inline ::google::protobuf::int32 port() const;
+  inline void set_port(::google::protobuf::int32 value);
+
+  // optional string name = 2;
+  inline bool has_name() const;
+  inline void clear_name();
+  static const int kNameFieldNumber = 2;
+  inline const ::std::string& name() const;
+  inline void set_name(const ::std::string& value);
+  inline void set_name(const char* value);
+  inline void set_name(const char* value, size_t size);
+  inline ::std::string* mutable_name();
+  inline ::std::string* release_name();
+  inline void set_allocated_name(::std::string* name);
+
+  // @@protoc_insertion_point(class_scope:CMsgServerNetworkStats.Port)
+ private:
+  inline void set_has_port();
+  inline void clear_has_port();
+  inline void set_has_name();
+  inline void clear_has_name();
+
+  ::google::protobuf::UnknownFieldSet _unknown_fields_;
+
+  ::google::protobuf::uint32 _has_bits_[1];
+  mutable int _cached_size_;
+  ::std::string* name_;
+  ::google::protobuf::int32 port_;
+  friend void  protobuf_AddDesc_netmessages_2eproto();
+  friend void protobuf_AssignDesc_netmessages_2eproto();
+  friend void protobuf_ShutdownFile_netmessages_2eproto();
+
+  void InitAsDefaultInstance();
+  static CMsgServerNetworkStats_Port* default_instance_;
+};
+// -------------------------------------------------------------------
+
+class CMsgServerNetworkStats_Player : public ::google::protobuf::Message {
+ public:
+  CMsgServerNetworkStats_Player();
+  virtual ~CMsgServerNetworkStats_Player();
+
+  CMsgServerNetworkStats_Player(const CMsgServerNetworkStats_Player& from);
+
+  inline CMsgServerNetworkStats_Player& operator=(const CMsgServerNetworkStats_Player& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+    return _unknown_fields_;
+  }
+
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+    return &_unknown_fields_;
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const CMsgServerNetworkStats_Player& default_instance();
+
+  void Swap(CMsgServerNetworkStats_Player* other);
+
+  // implements Message ----------------------------------------------
+
+  CMsgServerNetworkStats_Player* New() const;
+  void CopyFrom(const ::google::protobuf::Message& from);
+  void MergeFrom(const ::google::protobuf::Message& from);
+  void CopyFrom(const CMsgServerNetworkStats_Player& from);
+  void MergeFrom(const CMsgServerNetworkStats_Player& from);
+  void Clear();
+  bool IsInitialized() const;
+
+  int ByteSize() const;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input);
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  int GetCachedSize() const { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const;
+  public:
+  ::google::protobuf::Metadata GetMetadata() const;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // optional uint64 steamid = 1;
+  inline bool has_steamid() const;
+  inline void clear_steamid();
+  static const int kSteamidFieldNumber = 1;
+  inline ::google::protobuf::uint64 steamid() const;
+  inline void set_steamid(::google::protobuf::uint64 value);
+
+  // optional string remote_addr = 2;
+  inline bool has_remote_addr() const;
+  inline void clear_remote_addr();
+  static const int kRemoteAddrFieldNumber = 2;
+  inline const ::std::string& remote_addr() const;
+  inline void set_remote_addr(const ::std::string& value);
+  inline void set_remote_addr(const char* value);
+  inline void set_remote_addr(const char* value, size_t size);
+  inline ::std::string* mutable_remote_addr();
+  inline ::std::string* release_remote_addr();
+  inline void set_allocated_remote_addr(::std::string* remote_addr);
+
+  // optional int32 ping_stddev_ms = 3;
+  inline bool has_ping_stddev_ms() const;
+  inline void clear_ping_stddev_ms();
+  static const int kPingStddevMsFieldNumber = 3;
+  inline ::google::protobuf::int32 ping_stddev_ms() const;
+  inline void set_ping_stddev_ms(::google::protobuf::int32 value);
+
+  // optional int32 ping_avg_ms = 4;
+  inline bool has_ping_avg_ms() const;
+  inline void clear_ping_avg_ms();
+  static const int kPingAvgMsFieldNumber = 4;
+  inline ::google::protobuf::int32 ping_avg_ms() const;
+  inline void set_ping_avg_ms(::google::protobuf::int32 value);
+
+  // optional float packet_loss_pct = 5;
+  inline bool has_packet_loss_pct() const;
+  inline void clear_packet_loss_pct();
+  static const int kPacketLossPctFieldNumber = 5;
+  inline float packet_loss_pct() const;
+  inline void set_packet_loss_pct(float value);
+
+  // optional bool is_bot = 6;
+  inline bool has_is_bot() const;
+  inline void clear_is_bot();
+  static const int kIsBotFieldNumber = 6;
+  inline bool is_bot() const;
+  inline void set_is_bot(bool value);
+
+  // @@protoc_insertion_point(class_scope:CMsgServerNetworkStats.Player)
+ private:
+  inline void set_has_steamid();
+  inline void clear_has_steamid();
+  inline void set_has_remote_addr();
+  inline void clear_has_remote_addr();
+  inline void set_has_ping_stddev_ms();
+  inline void clear_has_ping_stddev_ms();
+  inline void set_has_ping_avg_ms();
+  inline void clear_has_ping_avg_ms();
+  inline void set_has_packet_loss_pct();
+  inline void clear_has_packet_loss_pct();
+  inline void set_has_is_bot();
+  inline void clear_has_is_bot();
+
+  ::google::protobuf::UnknownFieldSet _unknown_fields_;
+
+  ::google::protobuf::uint32 _has_bits_[1];
+  mutable int _cached_size_;
+  ::google::protobuf::uint64 steamid_;
+  ::std::string* remote_addr_;
+  ::google::protobuf::int32 ping_stddev_ms_;
+  ::google::protobuf::int32 ping_avg_ms_;
+  float packet_loss_pct_;
+  bool is_bot_;
+  friend void  protobuf_AddDesc_netmessages_2eproto();
+  friend void protobuf_AssignDesc_netmessages_2eproto();
+  friend void protobuf_ShutdownFile_netmessages_2eproto();
+
+  void InitAsDefaultInstance();
+  static CMsgServerNetworkStats_Player* default_instance_;
+};
+// -------------------------------------------------------------------
+
+class CMsgServerNetworkStats : public ::google::protobuf::Message {
+ public:
+  CMsgServerNetworkStats();
+  virtual ~CMsgServerNetworkStats();
+
+  CMsgServerNetworkStats(const CMsgServerNetworkStats& from);
+
+  inline CMsgServerNetworkStats& operator=(const CMsgServerNetworkStats& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+    return _unknown_fields_;
+  }
+
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+    return &_unknown_fields_;
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const CMsgServerNetworkStats& default_instance();
+
+  void Swap(CMsgServerNetworkStats* other);
+
+  // implements Message ----------------------------------------------
+
+  CMsgServerNetworkStats* New() const;
+  void CopyFrom(const ::google::protobuf::Message& from);
+  void MergeFrom(const ::google::protobuf::Message& from);
+  void CopyFrom(const CMsgServerNetworkStats& from);
+  void MergeFrom(const CMsgServerNetworkStats& from);
+  void Clear();
+  bool IsInitialized() const;
+
+  int ByteSize() const;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input);
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  int GetCachedSize() const { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const;
+  public:
+  ::google::protobuf::Metadata GetMetadata() const;
+
+  // nested types ----------------------------------------------------
+
+  typedef CMsgServerNetworkStats_Port Port;
+  typedef CMsgServerNetworkStats_Player Player;
+
+  // accessors -------------------------------------------------------
+
+  // optional bool dedicated = 1;
+  inline bool has_dedicated() const;
+  inline void clear_dedicated();
+  static const int kDedicatedFieldNumber = 1;
+  inline bool dedicated() const;
+  inline void set_dedicated(bool value);
+
+  // optional int32 cpu_usage = 2;
+  inline bool has_cpu_usage() const;
+  inline void clear_cpu_usage();
+  static const int kCpuUsageFieldNumber = 2;
+  inline ::google::protobuf::int32 cpu_usage() const;
+  inline void set_cpu_usage(::google::protobuf::int32 value);
+
+  // optional int32 memory_used_mb = 3;
+  inline bool has_memory_used_mb() const;
+  inline void clear_memory_used_mb();
+  static const int kMemoryUsedMbFieldNumber = 3;
+  inline ::google::protobuf::int32 memory_used_mb() const;
+  inline void set_memory_used_mb(::google::protobuf::int32 value);
+
+  // optional int32 memory_free_mb = 4;
+  inline bool has_memory_free_mb() const;
+  inline void clear_memory_free_mb();
+  static const int kMemoryFreeMbFieldNumber = 4;
+  inline ::google::protobuf::int32 memory_free_mb() const;
+  inline void set_memory_free_mb(::google::protobuf::int32 value);
+
+  // optional int32 uptime = 5;
+  inline bool has_uptime() const;
+  inline void clear_uptime();
+  static const int kUptimeFieldNumber = 5;
+  inline ::google::protobuf::int32 uptime() const;
+  inline void set_uptime(::google::protobuf::int32 value);
+
+  // optional int32 spawn_count = 6;
+  inline bool has_spawn_count() const;
+  inline void clear_spawn_count();
+  static const int kSpawnCountFieldNumber = 6;
+  inline ::google::protobuf::int32 spawn_count() const;
+  inline void set_spawn_count(::google::protobuf::int32 value);
+
+  // optional int32 num_clients = 8;
+  inline bool has_num_clients() const;
+  inline void clear_num_clients();
+  static const int kNumClientsFieldNumber = 8;
+  inline ::google::protobuf::int32 num_clients() const;
+  inline void set_num_clients(::google::protobuf::int32 value);
+
+  // optional int32 num_bots = 9;
+  inline bool has_num_bots() const;
+  inline void clear_num_bots();
+  static const int kNumBotsFieldNumber = 9;
+  inline ::google::protobuf::int32 num_bots() const;
+  inline void set_num_bots(::google::protobuf::int32 value);
+
+  // optional int32 num_spectators = 10;
+  inline bool has_num_spectators() const;
+  inline void clear_num_spectators();
+  static const int kNumSpectatorsFieldNumber = 10;
+  inline ::google::protobuf::int32 num_spectators() const;
+  inline void set_num_spectators(::google::protobuf::int32 value);
+
+  // optional int32 num_tv_relays = 11;
+  inline bool has_num_tv_relays() const;
+  inline void clear_num_tv_relays();
+  static const int kNumTvRelaysFieldNumber = 11;
+  inline ::google::protobuf::int32 num_tv_relays() const;
+  inline void set_num_tv_relays(::google::protobuf::int32 value);
+
+  // optional float fps = 12;
+  inline bool has_fps() const;
+  inline void clear_fps();
+  static const int kFpsFieldNumber = 12;
+  inline float fps() const;
+  inline void set_fps(float value);
+
+  // repeated .CMsgServerNetworkStats.Port ports = 17;
+  inline int ports_size() const;
+  inline void clear_ports();
+  static const int kPortsFieldNumber = 17;
+  inline const ::CMsgServerNetworkStats_Port& ports(int index) const;
+  inline ::CMsgServerNetworkStats_Port* mutable_ports(int index);
+  inline ::CMsgServerNetworkStats_Port* add_ports();
+  inline const ::google::protobuf::RepeatedPtrField< ::CMsgServerNetworkStats_Port >&
+      ports() const;
+  inline ::google::protobuf::RepeatedPtrField< ::CMsgServerNetworkStats_Port >*
+      mutable_ports();
+
+  // optional float avg_latency_out = 18;
+  inline bool has_avg_latency_out() const;
+  inline void clear_avg_latency_out();
+  static const int kAvgLatencyOutFieldNumber = 18;
+  inline float avg_latency_out() const;
+  inline void set_avg_latency_out(float value);
+
+  // optional float avg_latency_in = 19;
+  inline bool has_avg_latency_in() const;
+  inline void clear_avg_latency_in();
+  static const int kAvgLatencyInFieldNumber = 19;
+  inline float avg_latency_in() const;
+  inline void set_avg_latency_in(float value);
+
+  // optional float avg_packets_out = 20;
+  inline bool has_avg_packets_out() const;
+  inline void clear_avg_packets_out();
+  static const int kAvgPacketsOutFieldNumber = 20;
+  inline float avg_packets_out() const;
+  inline void set_avg_packets_out(float value);
+
+  // optional float avg_packets_in = 21;
+  inline bool has_avg_packets_in() const;
+  inline void clear_avg_packets_in();
+  static const int kAvgPacketsInFieldNumber = 21;
+  inline float avg_packets_in() const;
+  inline void set_avg_packets_in(float value);
+
+  // optional float avg_loss_out = 22;
+  inline bool has_avg_loss_out() const;
+  inline void clear_avg_loss_out();
+  static const int kAvgLossOutFieldNumber = 22;
+  inline float avg_loss_out() const;
+  inline void set_avg_loss_out(float value);
+
+  // optional float avg_loss_in = 23;
+  inline bool has_avg_loss_in() const;
+  inline void clear_avg_loss_in();
+  static const int kAvgLossInFieldNumber = 23;
+  inline float avg_loss_in() const;
+  inline void set_avg_loss_in(float value);
+
+  // optional float avg_data_out = 24;
+  inline bool has_avg_data_out() const;
+  inline void clear_avg_data_out();
+  static const int kAvgDataOutFieldNumber = 24;
+  inline float avg_data_out() const;
+  inline void set_avg_data_out(float value);
+
+  // optional float avg_data_in = 25;
+  inline bool has_avg_data_in() const;
+  inline void clear_avg_data_in();
+  static const int kAvgDataInFieldNumber = 25;
+  inline float avg_data_in() const;
+  inline void set_avg_data_in(float value);
+
+  // optional uint64 total_data_in = 26;
+  inline bool has_total_data_in() const;
+  inline void clear_total_data_in();
+  static const int kTotalDataInFieldNumber = 26;
+  inline ::google::protobuf::uint64 total_data_in() const;
+  inline void set_total_data_in(::google::protobuf::uint64 value);
+
+  // optional uint64 total_packets_in = 27;
+  inline bool has_total_packets_in() const;
+  inline void clear_total_packets_in();
+  static const int kTotalPacketsInFieldNumber = 27;
+  inline ::google::protobuf::uint64 total_packets_in() const;
+  inline void set_total_packets_in(::google::protobuf::uint64 value);
+
+  // optional uint64 total_data_out = 28;
+  inline bool has_total_data_out() const;
+  inline void clear_total_data_out();
+  static const int kTotalDataOutFieldNumber = 28;
+  inline ::google::protobuf::uint64 total_data_out() const;
+  inline void set_total_data_out(::google::protobuf::uint64 value);
+
+  // optional uint64 total_packets_out = 29;
+  inline bool has_total_packets_out() const;
+  inline void clear_total_packets_out();
+  static const int kTotalPacketsOutFieldNumber = 29;
+  inline ::google::protobuf::uint64 total_packets_out() const;
+  inline void set_total_packets_out(::google::protobuf::uint64 value);
+
+  // repeated .CMsgServerNetworkStats.Player players = 30;
+  inline int players_size() const;
+  inline void clear_players();
+  static const int kPlayersFieldNumber = 30;
+  inline const ::CMsgServerNetworkStats_Player& players(int index) const;
+  inline ::CMsgServerNetworkStats_Player* mutable_players(int index);
+  inline ::CMsgServerNetworkStats_Player* add_players();
+  inline const ::google::protobuf::RepeatedPtrField< ::CMsgServerNetworkStats_Player >&
+      players() const;
+  inline ::google::protobuf::RepeatedPtrField< ::CMsgServerNetworkStats_Player >*
+      mutable_players();
+
+  // @@protoc_insertion_point(class_scope:CMsgServerNetworkStats)
+ private:
+  inline void set_has_dedicated();
+  inline void clear_has_dedicated();
+  inline void set_has_cpu_usage();
+  inline void clear_has_cpu_usage();
+  inline void set_has_memory_used_mb();
+  inline void clear_has_memory_used_mb();
+  inline void set_has_memory_free_mb();
+  inline void clear_has_memory_free_mb();
+  inline void set_has_uptime();
+  inline void clear_has_uptime();
+  inline void set_has_spawn_count();
+  inline void clear_has_spawn_count();
+  inline void set_has_num_clients();
+  inline void clear_has_num_clients();
+  inline void set_has_num_bots();
+  inline void clear_has_num_bots();
+  inline void set_has_num_spectators();
+  inline void clear_has_num_spectators();
+  inline void set_has_num_tv_relays();
+  inline void clear_has_num_tv_relays();
+  inline void set_has_fps();
+  inline void clear_has_fps();
+  inline void set_has_avg_latency_out();
+  inline void clear_has_avg_latency_out();
+  inline void set_has_avg_latency_in();
+  inline void clear_has_avg_latency_in();
+  inline void set_has_avg_packets_out();
+  inline void clear_has_avg_packets_out();
+  inline void set_has_avg_packets_in();
+  inline void clear_has_avg_packets_in();
+  inline void set_has_avg_loss_out();
+  inline void clear_has_avg_loss_out();
+  inline void set_has_avg_loss_in();
+  inline void clear_has_avg_loss_in();
+  inline void set_has_avg_data_out();
+  inline void clear_has_avg_data_out();
+  inline void set_has_avg_data_in();
+  inline void clear_has_avg_data_in();
+  inline void set_has_total_data_in();
+  inline void clear_has_total_data_in();
+  inline void set_has_total_packets_in();
+  inline void clear_has_total_packets_in();
+  inline void set_has_total_data_out();
+  inline void clear_has_total_data_out();
+  inline void set_has_total_packets_out();
+  inline void clear_has_total_packets_out();
+
+  ::google::protobuf::UnknownFieldSet _unknown_fields_;
+
+  ::google::protobuf::uint32 _has_bits_[1];
+  mutable int _cached_size_;
+  bool dedicated_;
+  ::google::protobuf::int32 cpu_usage_;
+  ::google::protobuf::int32 memory_used_mb_;
+  ::google::protobuf::int32 memory_free_mb_;
+  ::google::protobuf::int32 uptime_;
+  ::google::protobuf::int32 spawn_count_;
+  ::google::protobuf::int32 num_clients_;
+  ::google::protobuf::int32 num_bots_;
+  ::google::protobuf::int32 num_spectators_;
+  ::google::protobuf::int32 num_tv_relays_;
+  ::google::protobuf::RepeatedPtrField< ::CMsgServerNetworkStats_Port > ports_;
+  float fps_;
+  float avg_latency_out_;
+  float avg_latency_in_;
+  float avg_packets_out_;
+  float avg_packets_in_;
+  float avg_loss_out_;
+  float avg_loss_in_;
+  float avg_data_out_;
+  ::google::protobuf::uint64 total_data_in_;
+  ::google::protobuf::uint64 total_packets_in_;
+  ::google::protobuf::uint64 total_data_out_;
+  ::google::protobuf::uint64 total_packets_out_;
+  ::google::protobuf::RepeatedPtrField< ::CMsgServerNetworkStats_Player > players_;
+  float avg_data_in_;
+  friend void  protobuf_AddDesc_netmessages_2eproto();
+  friend void protobuf_AssignDesc_netmessages_2eproto();
+  friend void protobuf_ShutdownFile_netmessages_2eproto();
+
+  void InitAsDefaultInstance();
+  static CMsgServerNetworkStats* default_instance_;
 };
 // ===================================================================
 
@@ -13225,6 +13865,34 @@ inline void CSVCMsg_HLTVStatus::set_proxies(::google::protobuf::int32 value) {
 
 // -------------------------------------------------------------------
 
+// CSVCMsg_ServerSteamID
+
+// optional uint64 steam_id = 1;
+inline bool CSVCMsg_ServerSteamID::has_steam_id() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+inline void CSVCMsg_ServerSteamID::set_has_steam_id() {
+  _has_bits_[0] |= 0x00000001u;
+}
+inline void CSVCMsg_ServerSteamID::clear_has_steam_id() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+inline void CSVCMsg_ServerSteamID::clear_steam_id() {
+  steam_id_ = GOOGLE_ULONGLONG(0);
+  clear_has_steam_id();
+}
+inline ::google::protobuf::uint64 CSVCMsg_ServerSteamID::steam_id() const {
+  // @@protoc_insertion_point(field_get:CSVCMsg_ServerSteamID.steam_id)
+  return steam_id_;
+}
+inline void CSVCMsg_ServerSteamID::set_steam_id(::google::protobuf::uint64 value) {
+  set_has_steam_id();
+  steam_id_ = value;
+  // @@protoc_insertion_point(field_set:CSVCMsg_ServerSteamID.steam_id)
+}
+
+// -------------------------------------------------------------------
+
 // CSVCMsg_CmdKeyValues
 
 // optional bytes data = 1;
@@ -14843,6 +15511,926 @@ inline ::google::protobuf::RepeatedPtrField< ::CBidirMsg_RelayPacket_SignedDesti
 CBidirMsg_RelayPacket::mutable_recipientlist() {
   // @@protoc_insertion_point(field_mutable_list:CBidirMsg_RelayPacket.recipientList)
   return &recipientlist_;
+}
+
+// -------------------------------------------------------------------
+
+// CMsgServerNetworkStats_Port
+
+// optional int32 port = 1;
+inline bool CMsgServerNetworkStats_Port::has_port() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+inline void CMsgServerNetworkStats_Port::set_has_port() {
+  _has_bits_[0] |= 0x00000001u;
+}
+inline void CMsgServerNetworkStats_Port::clear_has_port() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+inline void CMsgServerNetworkStats_Port::clear_port() {
+  port_ = 0;
+  clear_has_port();
+}
+inline ::google::protobuf::int32 CMsgServerNetworkStats_Port::port() const {
+  // @@protoc_insertion_point(field_get:CMsgServerNetworkStats.Port.port)
+  return port_;
+}
+inline void CMsgServerNetworkStats_Port::set_port(::google::protobuf::int32 value) {
+  set_has_port();
+  port_ = value;
+  // @@protoc_insertion_point(field_set:CMsgServerNetworkStats.Port.port)
+}
+
+// optional string name = 2;
+inline bool CMsgServerNetworkStats_Port::has_name() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+inline void CMsgServerNetworkStats_Port::set_has_name() {
+  _has_bits_[0] |= 0x00000002u;
+}
+inline void CMsgServerNetworkStats_Port::clear_has_name() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+inline void CMsgServerNetworkStats_Port::clear_name() {
+  if (name_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    name_->clear();
+  }
+  clear_has_name();
+}
+inline const ::std::string& CMsgServerNetworkStats_Port::name() const {
+  // @@protoc_insertion_point(field_get:CMsgServerNetworkStats.Port.name)
+  return *name_;
+}
+inline void CMsgServerNetworkStats_Port::set_name(const ::std::string& value) {
+  set_has_name();
+  if (name_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    name_ = new ::std::string;
+  }
+  name_->assign(value);
+  // @@protoc_insertion_point(field_set:CMsgServerNetworkStats.Port.name)
+}
+inline void CMsgServerNetworkStats_Port::set_name(const char* value) {
+  set_has_name();
+  if (name_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    name_ = new ::std::string;
+  }
+  name_->assign(value);
+  // @@protoc_insertion_point(field_set_char:CMsgServerNetworkStats.Port.name)
+}
+inline void CMsgServerNetworkStats_Port::set_name(const char* value, size_t size) {
+  set_has_name();
+  if (name_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    name_ = new ::std::string;
+  }
+  name_->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:CMsgServerNetworkStats.Port.name)
+}
+inline ::std::string* CMsgServerNetworkStats_Port::mutable_name() {
+  set_has_name();
+  if (name_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    name_ = new ::std::string;
+  }
+  // @@protoc_insertion_point(field_mutable:CMsgServerNetworkStats.Port.name)
+  return name_;
+}
+inline ::std::string* CMsgServerNetworkStats_Port::release_name() {
+  clear_has_name();
+  if (name_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    return NULL;
+  } else {
+    ::std::string* temp = name_;
+    name_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    return temp;
+  }
+}
+inline void CMsgServerNetworkStats_Port::set_allocated_name(::std::string* name) {
+  if (name_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete name_;
+  }
+  if (name) {
+    set_has_name();
+    name_ = name;
+  } else {
+    clear_has_name();
+    name_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_set_allocated:CMsgServerNetworkStats.Port.name)
+}
+
+// -------------------------------------------------------------------
+
+// CMsgServerNetworkStats_Player
+
+// optional uint64 steamid = 1;
+inline bool CMsgServerNetworkStats_Player::has_steamid() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+inline void CMsgServerNetworkStats_Player::set_has_steamid() {
+  _has_bits_[0] |= 0x00000001u;
+}
+inline void CMsgServerNetworkStats_Player::clear_has_steamid() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+inline void CMsgServerNetworkStats_Player::clear_steamid() {
+  steamid_ = GOOGLE_ULONGLONG(0);
+  clear_has_steamid();
+}
+inline ::google::protobuf::uint64 CMsgServerNetworkStats_Player::steamid() const {
+  // @@protoc_insertion_point(field_get:CMsgServerNetworkStats.Player.steamid)
+  return steamid_;
+}
+inline void CMsgServerNetworkStats_Player::set_steamid(::google::protobuf::uint64 value) {
+  set_has_steamid();
+  steamid_ = value;
+  // @@protoc_insertion_point(field_set:CMsgServerNetworkStats.Player.steamid)
+}
+
+// optional string remote_addr = 2;
+inline bool CMsgServerNetworkStats_Player::has_remote_addr() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+inline void CMsgServerNetworkStats_Player::set_has_remote_addr() {
+  _has_bits_[0] |= 0x00000002u;
+}
+inline void CMsgServerNetworkStats_Player::clear_has_remote_addr() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+inline void CMsgServerNetworkStats_Player::clear_remote_addr() {
+  if (remote_addr_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    remote_addr_->clear();
+  }
+  clear_has_remote_addr();
+}
+inline const ::std::string& CMsgServerNetworkStats_Player::remote_addr() const {
+  // @@protoc_insertion_point(field_get:CMsgServerNetworkStats.Player.remote_addr)
+  return *remote_addr_;
+}
+inline void CMsgServerNetworkStats_Player::set_remote_addr(const ::std::string& value) {
+  set_has_remote_addr();
+  if (remote_addr_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    remote_addr_ = new ::std::string;
+  }
+  remote_addr_->assign(value);
+  // @@protoc_insertion_point(field_set:CMsgServerNetworkStats.Player.remote_addr)
+}
+inline void CMsgServerNetworkStats_Player::set_remote_addr(const char* value) {
+  set_has_remote_addr();
+  if (remote_addr_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    remote_addr_ = new ::std::string;
+  }
+  remote_addr_->assign(value);
+  // @@protoc_insertion_point(field_set_char:CMsgServerNetworkStats.Player.remote_addr)
+}
+inline void CMsgServerNetworkStats_Player::set_remote_addr(const char* value, size_t size) {
+  set_has_remote_addr();
+  if (remote_addr_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    remote_addr_ = new ::std::string;
+  }
+  remote_addr_->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:CMsgServerNetworkStats.Player.remote_addr)
+}
+inline ::std::string* CMsgServerNetworkStats_Player::mutable_remote_addr() {
+  set_has_remote_addr();
+  if (remote_addr_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    remote_addr_ = new ::std::string;
+  }
+  // @@protoc_insertion_point(field_mutable:CMsgServerNetworkStats.Player.remote_addr)
+  return remote_addr_;
+}
+inline ::std::string* CMsgServerNetworkStats_Player::release_remote_addr() {
+  clear_has_remote_addr();
+  if (remote_addr_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    return NULL;
+  } else {
+    ::std::string* temp = remote_addr_;
+    remote_addr_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    return temp;
+  }
+}
+inline void CMsgServerNetworkStats_Player::set_allocated_remote_addr(::std::string* remote_addr) {
+  if (remote_addr_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete remote_addr_;
+  }
+  if (remote_addr) {
+    set_has_remote_addr();
+    remote_addr_ = remote_addr;
+  } else {
+    clear_has_remote_addr();
+    remote_addr_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_set_allocated:CMsgServerNetworkStats.Player.remote_addr)
+}
+
+// optional int32 ping_stddev_ms = 3;
+inline bool CMsgServerNetworkStats_Player::has_ping_stddev_ms() const {
+  return (_has_bits_[0] & 0x00000004u) != 0;
+}
+inline void CMsgServerNetworkStats_Player::set_has_ping_stddev_ms() {
+  _has_bits_[0] |= 0x00000004u;
+}
+inline void CMsgServerNetworkStats_Player::clear_has_ping_stddev_ms() {
+  _has_bits_[0] &= ~0x00000004u;
+}
+inline void CMsgServerNetworkStats_Player::clear_ping_stddev_ms() {
+  ping_stddev_ms_ = 0;
+  clear_has_ping_stddev_ms();
+}
+inline ::google::protobuf::int32 CMsgServerNetworkStats_Player::ping_stddev_ms() const {
+  // @@protoc_insertion_point(field_get:CMsgServerNetworkStats.Player.ping_stddev_ms)
+  return ping_stddev_ms_;
+}
+inline void CMsgServerNetworkStats_Player::set_ping_stddev_ms(::google::protobuf::int32 value) {
+  set_has_ping_stddev_ms();
+  ping_stddev_ms_ = value;
+  // @@protoc_insertion_point(field_set:CMsgServerNetworkStats.Player.ping_stddev_ms)
+}
+
+// optional int32 ping_avg_ms = 4;
+inline bool CMsgServerNetworkStats_Player::has_ping_avg_ms() const {
+  return (_has_bits_[0] & 0x00000008u) != 0;
+}
+inline void CMsgServerNetworkStats_Player::set_has_ping_avg_ms() {
+  _has_bits_[0] |= 0x00000008u;
+}
+inline void CMsgServerNetworkStats_Player::clear_has_ping_avg_ms() {
+  _has_bits_[0] &= ~0x00000008u;
+}
+inline void CMsgServerNetworkStats_Player::clear_ping_avg_ms() {
+  ping_avg_ms_ = 0;
+  clear_has_ping_avg_ms();
+}
+inline ::google::protobuf::int32 CMsgServerNetworkStats_Player::ping_avg_ms() const {
+  // @@protoc_insertion_point(field_get:CMsgServerNetworkStats.Player.ping_avg_ms)
+  return ping_avg_ms_;
+}
+inline void CMsgServerNetworkStats_Player::set_ping_avg_ms(::google::protobuf::int32 value) {
+  set_has_ping_avg_ms();
+  ping_avg_ms_ = value;
+  // @@protoc_insertion_point(field_set:CMsgServerNetworkStats.Player.ping_avg_ms)
+}
+
+// optional float packet_loss_pct = 5;
+inline bool CMsgServerNetworkStats_Player::has_packet_loss_pct() const {
+  return (_has_bits_[0] & 0x00000010u) != 0;
+}
+inline void CMsgServerNetworkStats_Player::set_has_packet_loss_pct() {
+  _has_bits_[0] |= 0x00000010u;
+}
+inline void CMsgServerNetworkStats_Player::clear_has_packet_loss_pct() {
+  _has_bits_[0] &= ~0x00000010u;
+}
+inline void CMsgServerNetworkStats_Player::clear_packet_loss_pct() {
+  packet_loss_pct_ = 0;
+  clear_has_packet_loss_pct();
+}
+inline float CMsgServerNetworkStats_Player::packet_loss_pct() const {
+  // @@protoc_insertion_point(field_get:CMsgServerNetworkStats.Player.packet_loss_pct)
+  return packet_loss_pct_;
+}
+inline void CMsgServerNetworkStats_Player::set_packet_loss_pct(float value) {
+  set_has_packet_loss_pct();
+  packet_loss_pct_ = value;
+  // @@protoc_insertion_point(field_set:CMsgServerNetworkStats.Player.packet_loss_pct)
+}
+
+// optional bool is_bot = 6;
+inline bool CMsgServerNetworkStats_Player::has_is_bot() const {
+  return (_has_bits_[0] & 0x00000020u) != 0;
+}
+inline void CMsgServerNetworkStats_Player::set_has_is_bot() {
+  _has_bits_[0] |= 0x00000020u;
+}
+inline void CMsgServerNetworkStats_Player::clear_has_is_bot() {
+  _has_bits_[0] &= ~0x00000020u;
+}
+inline void CMsgServerNetworkStats_Player::clear_is_bot() {
+  is_bot_ = false;
+  clear_has_is_bot();
+}
+inline bool CMsgServerNetworkStats_Player::is_bot() const {
+  // @@protoc_insertion_point(field_get:CMsgServerNetworkStats.Player.is_bot)
+  return is_bot_;
+}
+inline void CMsgServerNetworkStats_Player::set_is_bot(bool value) {
+  set_has_is_bot();
+  is_bot_ = value;
+  // @@protoc_insertion_point(field_set:CMsgServerNetworkStats.Player.is_bot)
+}
+
+// -------------------------------------------------------------------
+
+// CMsgServerNetworkStats
+
+// optional bool dedicated = 1;
+inline bool CMsgServerNetworkStats::has_dedicated() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+inline void CMsgServerNetworkStats::set_has_dedicated() {
+  _has_bits_[0] |= 0x00000001u;
+}
+inline void CMsgServerNetworkStats::clear_has_dedicated() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+inline void CMsgServerNetworkStats::clear_dedicated() {
+  dedicated_ = false;
+  clear_has_dedicated();
+}
+inline bool CMsgServerNetworkStats::dedicated() const {
+  // @@protoc_insertion_point(field_get:CMsgServerNetworkStats.dedicated)
+  return dedicated_;
+}
+inline void CMsgServerNetworkStats::set_dedicated(bool value) {
+  set_has_dedicated();
+  dedicated_ = value;
+  // @@protoc_insertion_point(field_set:CMsgServerNetworkStats.dedicated)
+}
+
+// optional int32 cpu_usage = 2;
+inline bool CMsgServerNetworkStats::has_cpu_usage() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+inline void CMsgServerNetworkStats::set_has_cpu_usage() {
+  _has_bits_[0] |= 0x00000002u;
+}
+inline void CMsgServerNetworkStats::clear_has_cpu_usage() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+inline void CMsgServerNetworkStats::clear_cpu_usage() {
+  cpu_usage_ = 0;
+  clear_has_cpu_usage();
+}
+inline ::google::protobuf::int32 CMsgServerNetworkStats::cpu_usage() const {
+  // @@protoc_insertion_point(field_get:CMsgServerNetworkStats.cpu_usage)
+  return cpu_usage_;
+}
+inline void CMsgServerNetworkStats::set_cpu_usage(::google::protobuf::int32 value) {
+  set_has_cpu_usage();
+  cpu_usage_ = value;
+  // @@protoc_insertion_point(field_set:CMsgServerNetworkStats.cpu_usage)
+}
+
+// optional int32 memory_used_mb = 3;
+inline bool CMsgServerNetworkStats::has_memory_used_mb() const {
+  return (_has_bits_[0] & 0x00000004u) != 0;
+}
+inline void CMsgServerNetworkStats::set_has_memory_used_mb() {
+  _has_bits_[0] |= 0x00000004u;
+}
+inline void CMsgServerNetworkStats::clear_has_memory_used_mb() {
+  _has_bits_[0] &= ~0x00000004u;
+}
+inline void CMsgServerNetworkStats::clear_memory_used_mb() {
+  memory_used_mb_ = 0;
+  clear_has_memory_used_mb();
+}
+inline ::google::protobuf::int32 CMsgServerNetworkStats::memory_used_mb() const {
+  // @@protoc_insertion_point(field_get:CMsgServerNetworkStats.memory_used_mb)
+  return memory_used_mb_;
+}
+inline void CMsgServerNetworkStats::set_memory_used_mb(::google::protobuf::int32 value) {
+  set_has_memory_used_mb();
+  memory_used_mb_ = value;
+  // @@protoc_insertion_point(field_set:CMsgServerNetworkStats.memory_used_mb)
+}
+
+// optional int32 memory_free_mb = 4;
+inline bool CMsgServerNetworkStats::has_memory_free_mb() const {
+  return (_has_bits_[0] & 0x00000008u) != 0;
+}
+inline void CMsgServerNetworkStats::set_has_memory_free_mb() {
+  _has_bits_[0] |= 0x00000008u;
+}
+inline void CMsgServerNetworkStats::clear_has_memory_free_mb() {
+  _has_bits_[0] &= ~0x00000008u;
+}
+inline void CMsgServerNetworkStats::clear_memory_free_mb() {
+  memory_free_mb_ = 0;
+  clear_has_memory_free_mb();
+}
+inline ::google::protobuf::int32 CMsgServerNetworkStats::memory_free_mb() const {
+  // @@protoc_insertion_point(field_get:CMsgServerNetworkStats.memory_free_mb)
+  return memory_free_mb_;
+}
+inline void CMsgServerNetworkStats::set_memory_free_mb(::google::protobuf::int32 value) {
+  set_has_memory_free_mb();
+  memory_free_mb_ = value;
+  // @@protoc_insertion_point(field_set:CMsgServerNetworkStats.memory_free_mb)
+}
+
+// optional int32 uptime = 5;
+inline bool CMsgServerNetworkStats::has_uptime() const {
+  return (_has_bits_[0] & 0x00000010u) != 0;
+}
+inline void CMsgServerNetworkStats::set_has_uptime() {
+  _has_bits_[0] |= 0x00000010u;
+}
+inline void CMsgServerNetworkStats::clear_has_uptime() {
+  _has_bits_[0] &= ~0x00000010u;
+}
+inline void CMsgServerNetworkStats::clear_uptime() {
+  uptime_ = 0;
+  clear_has_uptime();
+}
+inline ::google::protobuf::int32 CMsgServerNetworkStats::uptime() const {
+  // @@protoc_insertion_point(field_get:CMsgServerNetworkStats.uptime)
+  return uptime_;
+}
+inline void CMsgServerNetworkStats::set_uptime(::google::protobuf::int32 value) {
+  set_has_uptime();
+  uptime_ = value;
+  // @@protoc_insertion_point(field_set:CMsgServerNetworkStats.uptime)
+}
+
+// optional int32 spawn_count = 6;
+inline bool CMsgServerNetworkStats::has_spawn_count() const {
+  return (_has_bits_[0] & 0x00000020u) != 0;
+}
+inline void CMsgServerNetworkStats::set_has_spawn_count() {
+  _has_bits_[0] |= 0x00000020u;
+}
+inline void CMsgServerNetworkStats::clear_has_spawn_count() {
+  _has_bits_[0] &= ~0x00000020u;
+}
+inline void CMsgServerNetworkStats::clear_spawn_count() {
+  spawn_count_ = 0;
+  clear_has_spawn_count();
+}
+inline ::google::protobuf::int32 CMsgServerNetworkStats::spawn_count() const {
+  // @@protoc_insertion_point(field_get:CMsgServerNetworkStats.spawn_count)
+  return spawn_count_;
+}
+inline void CMsgServerNetworkStats::set_spawn_count(::google::protobuf::int32 value) {
+  set_has_spawn_count();
+  spawn_count_ = value;
+  // @@protoc_insertion_point(field_set:CMsgServerNetworkStats.spawn_count)
+}
+
+// optional int32 num_clients = 8;
+inline bool CMsgServerNetworkStats::has_num_clients() const {
+  return (_has_bits_[0] & 0x00000040u) != 0;
+}
+inline void CMsgServerNetworkStats::set_has_num_clients() {
+  _has_bits_[0] |= 0x00000040u;
+}
+inline void CMsgServerNetworkStats::clear_has_num_clients() {
+  _has_bits_[0] &= ~0x00000040u;
+}
+inline void CMsgServerNetworkStats::clear_num_clients() {
+  num_clients_ = 0;
+  clear_has_num_clients();
+}
+inline ::google::protobuf::int32 CMsgServerNetworkStats::num_clients() const {
+  // @@protoc_insertion_point(field_get:CMsgServerNetworkStats.num_clients)
+  return num_clients_;
+}
+inline void CMsgServerNetworkStats::set_num_clients(::google::protobuf::int32 value) {
+  set_has_num_clients();
+  num_clients_ = value;
+  // @@protoc_insertion_point(field_set:CMsgServerNetworkStats.num_clients)
+}
+
+// optional int32 num_bots = 9;
+inline bool CMsgServerNetworkStats::has_num_bots() const {
+  return (_has_bits_[0] & 0x00000080u) != 0;
+}
+inline void CMsgServerNetworkStats::set_has_num_bots() {
+  _has_bits_[0] |= 0x00000080u;
+}
+inline void CMsgServerNetworkStats::clear_has_num_bots() {
+  _has_bits_[0] &= ~0x00000080u;
+}
+inline void CMsgServerNetworkStats::clear_num_bots() {
+  num_bots_ = 0;
+  clear_has_num_bots();
+}
+inline ::google::protobuf::int32 CMsgServerNetworkStats::num_bots() const {
+  // @@protoc_insertion_point(field_get:CMsgServerNetworkStats.num_bots)
+  return num_bots_;
+}
+inline void CMsgServerNetworkStats::set_num_bots(::google::protobuf::int32 value) {
+  set_has_num_bots();
+  num_bots_ = value;
+  // @@protoc_insertion_point(field_set:CMsgServerNetworkStats.num_bots)
+}
+
+// optional int32 num_spectators = 10;
+inline bool CMsgServerNetworkStats::has_num_spectators() const {
+  return (_has_bits_[0] & 0x00000100u) != 0;
+}
+inline void CMsgServerNetworkStats::set_has_num_spectators() {
+  _has_bits_[0] |= 0x00000100u;
+}
+inline void CMsgServerNetworkStats::clear_has_num_spectators() {
+  _has_bits_[0] &= ~0x00000100u;
+}
+inline void CMsgServerNetworkStats::clear_num_spectators() {
+  num_spectators_ = 0;
+  clear_has_num_spectators();
+}
+inline ::google::protobuf::int32 CMsgServerNetworkStats::num_spectators() const {
+  // @@protoc_insertion_point(field_get:CMsgServerNetworkStats.num_spectators)
+  return num_spectators_;
+}
+inline void CMsgServerNetworkStats::set_num_spectators(::google::protobuf::int32 value) {
+  set_has_num_spectators();
+  num_spectators_ = value;
+  // @@protoc_insertion_point(field_set:CMsgServerNetworkStats.num_spectators)
+}
+
+// optional int32 num_tv_relays = 11;
+inline bool CMsgServerNetworkStats::has_num_tv_relays() const {
+  return (_has_bits_[0] & 0x00000200u) != 0;
+}
+inline void CMsgServerNetworkStats::set_has_num_tv_relays() {
+  _has_bits_[0] |= 0x00000200u;
+}
+inline void CMsgServerNetworkStats::clear_has_num_tv_relays() {
+  _has_bits_[0] &= ~0x00000200u;
+}
+inline void CMsgServerNetworkStats::clear_num_tv_relays() {
+  num_tv_relays_ = 0;
+  clear_has_num_tv_relays();
+}
+inline ::google::protobuf::int32 CMsgServerNetworkStats::num_tv_relays() const {
+  // @@protoc_insertion_point(field_get:CMsgServerNetworkStats.num_tv_relays)
+  return num_tv_relays_;
+}
+inline void CMsgServerNetworkStats::set_num_tv_relays(::google::protobuf::int32 value) {
+  set_has_num_tv_relays();
+  num_tv_relays_ = value;
+  // @@protoc_insertion_point(field_set:CMsgServerNetworkStats.num_tv_relays)
+}
+
+// optional float fps = 12;
+inline bool CMsgServerNetworkStats::has_fps() const {
+  return (_has_bits_[0] & 0x00000400u) != 0;
+}
+inline void CMsgServerNetworkStats::set_has_fps() {
+  _has_bits_[0] |= 0x00000400u;
+}
+inline void CMsgServerNetworkStats::clear_has_fps() {
+  _has_bits_[0] &= ~0x00000400u;
+}
+inline void CMsgServerNetworkStats::clear_fps() {
+  fps_ = 0;
+  clear_has_fps();
+}
+inline float CMsgServerNetworkStats::fps() const {
+  // @@protoc_insertion_point(field_get:CMsgServerNetworkStats.fps)
+  return fps_;
+}
+inline void CMsgServerNetworkStats::set_fps(float value) {
+  set_has_fps();
+  fps_ = value;
+  // @@protoc_insertion_point(field_set:CMsgServerNetworkStats.fps)
+}
+
+// repeated .CMsgServerNetworkStats.Port ports = 17;
+inline int CMsgServerNetworkStats::ports_size() const {
+  return ports_.size();
+}
+inline void CMsgServerNetworkStats::clear_ports() {
+  ports_.Clear();
+}
+inline const ::CMsgServerNetworkStats_Port& CMsgServerNetworkStats::ports(int index) const {
+  // @@protoc_insertion_point(field_get:CMsgServerNetworkStats.ports)
+  return ports_.Get(index);
+}
+inline ::CMsgServerNetworkStats_Port* CMsgServerNetworkStats::mutable_ports(int index) {
+  // @@protoc_insertion_point(field_mutable:CMsgServerNetworkStats.ports)
+  return ports_.Mutable(index);
+}
+inline ::CMsgServerNetworkStats_Port* CMsgServerNetworkStats::add_ports() {
+  // @@protoc_insertion_point(field_add:CMsgServerNetworkStats.ports)
+  return ports_.Add();
+}
+inline const ::google::protobuf::RepeatedPtrField< ::CMsgServerNetworkStats_Port >&
+CMsgServerNetworkStats::ports() const {
+  // @@protoc_insertion_point(field_list:CMsgServerNetworkStats.ports)
+  return ports_;
+}
+inline ::google::protobuf::RepeatedPtrField< ::CMsgServerNetworkStats_Port >*
+CMsgServerNetworkStats::mutable_ports() {
+  // @@protoc_insertion_point(field_mutable_list:CMsgServerNetworkStats.ports)
+  return &ports_;
+}
+
+// optional float avg_latency_out = 18;
+inline bool CMsgServerNetworkStats::has_avg_latency_out() const {
+  return (_has_bits_[0] & 0x00001000u) != 0;
+}
+inline void CMsgServerNetworkStats::set_has_avg_latency_out() {
+  _has_bits_[0] |= 0x00001000u;
+}
+inline void CMsgServerNetworkStats::clear_has_avg_latency_out() {
+  _has_bits_[0] &= ~0x00001000u;
+}
+inline void CMsgServerNetworkStats::clear_avg_latency_out() {
+  avg_latency_out_ = 0;
+  clear_has_avg_latency_out();
+}
+inline float CMsgServerNetworkStats::avg_latency_out() const {
+  // @@protoc_insertion_point(field_get:CMsgServerNetworkStats.avg_latency_out)
+  return avg_latency_out_;
+}
+inline void CMsgServerNetworkStats::set_avg_latency_out(float value) {
+  set_has_avg_latency_out();
+  avg_latency_out_ = value;
+  // @@protoc_insertion_point(field_set:CMsgServerNetworkStats.avg_latency_out)
+}
+
+// optional float avg_latency_in = 19;
+inline bool CMsgServerNetworkStats::has_avg_latency_in() const {
+  return (_has_bits_[0] & 0x00002000u) != 0;
+}
+inline void CMsgServerNetworkStats::set_has_avg_latency_in() {
+  _has_bits_[0] |= 0x00002000u;
+}
+inline void CMsgServerNetworkStats::clear_has_avg_latency_in() {
+  _has_bits_[0] &= ~0x00002000u;
+}
+inline void CMsgServerNetworkStats::clear_avg_latency_in() {
+  avg_latency_in_ = 0;
+  clear_has_avg_latency_in();
+}
+inline float CMsgServerNetworkStats::avg_latency_in() const {
+  // @@protoc_insertion_point(field_get:CMsgServerNetworkStats.avg_latency_in)
+  return avg_latency_in_;
+}
+inline void CMsgServerNetworkStats::set_avg_latency_in(float value) {
+  set_has_avg_latency_in();
+  avg_latency_in_ = value;
+  // @@protoc_insertion_point(field_set:CMsgServerNetworkStats.avg_latency_in)
+}
+
+// optional float avg_packets_out = 20;
+inline bool CMsgServerNetworkStats::has_avg_packets_out() const {
+  return (_has_bits_[0] & 0x00004000u) != 0;
+}
+inline void CMsgServerNetworkStats::set_has_avg_packets_out() {
+  _has_bits_[0] |= 0x00004000u;
+}
+inline void CMsgServerNetworkStats::clear_has_avg_packets_out() {
+  _has_bits_[0] &= ~0x00004000u;
+}
+inline void CMsgServerNetworkStats::clear_avg_packets_out() {
+  avg_packets_out_ = 0;
+  clear_has_avg_packets_out();
+}
+inline float CMsgServerNetworkStats::avg_packets_out() const {
+  // @@protoc_insertion_point(field_get:CMsgServerNetworkStats.avg_packets_out)
+  return avg_packets_out_;
+}
+inline void CMsgServerNetworkStats::set_avg_packets_out(float value) {
+  set_has_avg_packets_out();
+  avg_packets_out_ = value;
+  // @@protoc_insertion_point(field_set:CMsgServerNetworkStats.avg_packets_out)
+}
+
+// optional float avg_packets_in = 21;
+inline bool CMsgServerNetworkStats::has_avg_packets_in() const {
+  return (_has_bits_[0] & 0x00008000u) != 0;
+}
+inline void CMsgServerNetworkStats::set_has_avg_packets_in() {
+  _has_bits_[0] |= 0x00008000u;
+}
+inline void CMsgServerNetworkStats::clear_has_avg_packets_in() {
+  _has_bits_[0] &= ~0x00008000u;
+}
+inline void CMsgServerNetworkStats::clear_avg_packets_in() {
+  avg_packets_in_ = 0;
+  clear_has_avg_packets_in();
+}
+inline float CMsgServerNetworkStats::avg_packets_in() const {
+  // @@protoc_insertion_point(field_get:CMsgServerNetworkStats.avg_packets_in)
+  return avg_packets_in_;
+}
+inline void CMsgServerNetworkStats::set_avg_packets_in(float value) {
+  set_has_avg_packets_in();
+  avg_packets_in_ = value;
+  // @@protoc_insertion_point(field_set:CMsgServerNetworkStats.avg_packets_in)
+}
+
+// optional float avg_loss_out = 22;
+inline bool CMsgServerNetworkStats::has_avg_loss_out() const {
+  return (_has_bits_[0] & 0x00010000u) != 0;
+}
+inline void CMsgServerNetworkStats::set_has_avg_loss_out() {
+  _has_bits_[0] |= 0x00010000u;
+}
+inline void CMsgServerNetworkStats::clear_has_avg_loss_out() {
+  _has_bits_[0] &= ~0x00010000u;
+}
+inline void CMsgServerNetworkStats::clear_avg_loss_out() {
+  avg_loss_out_ = 0;
+  clear_has_avg_loss_out();
+}
+inline float CMsgServerNetworkStats::avg_loss_out() const {
+  // @@protoc_insertion_point(field_get:CMsgServerNetworkStats.avg_loss_out)
+  return avg_loss_out_;
+}
+inline void CMsgServerNetworkStats::set_avg_loss_out(float value) {
+  set_has_avg_loss_out();
+  avg_loss_out_ = value;
+  // @@protoc_insertion_point(field_set:CMsgServerNetworkStats.avg_loss_out)
+}
+
+// optional float avg_loss_in = 23;
+inline bool CMsgServerNetworkStats::has_avg_loss_in() const {
+  return (_has_bits_[0] & 0x00020000u) != 0;
+}
+inline void CMsgServerNetworkStats::set_has_avg_loss_in() {
+  _has_bits_[0] |= 0x00020000u;
+}
+inline void CMsgServerNetworkStats::clear_has_avg_loss_in() {
+  _has_bits_[0] &= ~0x00020000u;
+}
+inline void CMsgServerNetworkStats::clear_avg_loss_in() {
+  avg_loss_in_ = 0;
+  clear_has_avg_loss_in();
+}
+inline float CMsgServerNetworkStats::avg_loss_in() const {
+  // @@protoc_insertion_point(field_get:CMsgServerNetworkStats.avg_loss_in)
+  return avg_loss_in_;
+}
+inline void CMsgServerNetworkStats::set_avg_loss_in(float value) {
+  set_has_avg_loss_in();
+  avg_loss_in_ = value;
+  // @@protoc_insertion_point(field_set:CMsgServerNetworkStats.avg_loss_in)
+}
+
+// optional float avg_data_out = 24;
+inline bool CMsgServerNetworkStats::has_avg_data_out() const {
+  return (_has_bits_[0] & 0x00040000u) != 0;
+}
+inline void CMsgServerNetworkStats::set_has_avg_data_out() {
+  _has_bits_[0] |= 0x00040000u;
+}
+inline void CMsgServerNetworkStats::clear_has_avg_data_out() {
+  _has_bits_[0] &= ~0x00040000u;
+}
+inline void CMsgServerNetworkStats::clear_avg_data_out() {
+  avg_data_out_ = 0;
+  clear_has_avg_data_out();
+}
+inline float CMsgServerNetworkStats::avg_data_out() const {
+  // @@protoc_insertion_point(field_get:CMsgServerNetworkStats.avg_data_out)
+  return avg_data_out_;
+}
+inline void CMsgServerNetworkStats::set_avg_data_out(float value) {
+  set_has_avg_data_out();
+  avg_data_out_ = value;
+  // @@protoc_insertion_point(field_set:CMsgServerNetworkStats.avg_data_out)
+}
+
+// optional float avg_data_in = 25;
+inline bool CMsgServerNetworkStats::has_avg_data_in() const {
+  return (_has_bits_[0] & 0x00080000u) != 0;
+}
+inline void CMsgServerNetworkStats::set_has_avg_data_in() {
+  _has_bits_[0] |= 0x00080000u;
+}
+inline void CMsgServerNetworkStats::clear_has_avg_data_in() {
+  _has_bits_[0] &= ~0x00080000u;
+}
+inline void CMsgServerNetworkStats::clear_avg_data_in() {
+  avg_data_in_ = 0;
+  clear_has_avg_data_in();
+}
+inline float CMsgServerNetworkStats::avg_data_in() const {
+  // @@protoc_insertion_point(field_get:CMsgServerNetworkStats.avg_data_in)
+  return avg_data_in_;
+}
+inline void CMsgServerNetworkStats::set_avg_data_in(float value) {
+  set_has_avg_data_in();
+  avg_data_in_ = value;
+  // @@protoc_insertion_point(field_set:CMsgServerNetworkStats.avg_data_in)
+}
+
+// optional uint64 total_data_in = 26;
+inline bool CMsgServerNetworkStats::has_total_data_in() const {
+  return (_has_bits_[0] & 0x00100000u) != 0;
+}
+inline void CMsgServerNetworkStats::set_has_total_data_in() {
+  _has_bits_[0] |= 0x00100000u;
+}
+inline void CMsgServerNetworkStats::clear_has_total_data_in() {
+  _has_bits_[0] &= ~0x00100000u;
+}
+inline void CMsgServerNetworkStats::clear_total_data_in() {
+  total_data_in_ = GOOGLE_ULONGLONG(0);
+  clear_has_total_data_in();
+}
+inline ::google::protobuf::uint64 CMsgServerNetworkStats::total_data_in() const {
+  // @@protoc_insertion_point(field_get:CMsgServerNetworkStats.total_data_in)
+  return total_data_in_;
+}
+inline void CMsgServerNetworkStats::set_total_data_in(::google::protobuf::uint64 value) {
+  set_has_total_data_in();
+  total_data_in_ = value;
+  // @@protoc_insertion_point(field_set:CMsgServerNetworkStats.total_data_in)
+}
+
+// optional uint64 total_packets_in = 27;
+inline bool CMsgServerNetworkStats::has_total_packets_in() const {
+  return (_has_bits_[0] & 0x00200000u) != 0;
+}
+inline void CMsgServerNetworkStats::set_has_total_packets_in() {
+  _has_bits_[0] |= 0x00200000u;
+}
+inline void CMsgServerNetworkStats::clear_has_total_packets_in() {
+  _has_bits_[0] &= ~0x00200000u;
+}
+inline void CMsgServerNetworkStats::clear_total_packets_in() {
+  total_packets_in_ = GOOGLE_ULONGLONG(0);
+  clear_has_total_packets_in();
+}
+inline ::google::protobuf::uint64 CMsgServerNetworkStats::total_packets_in() const {
+  // @@protoc_insertion_point(field_get:CMsgServerNetworkStats.total_packets_in)
+  return total_packets_in_;
+}
+inline void CMsgServerNetworkStats::set_total_packets_in(::google::protobuf::uint64 value) {
+  set_has_total_packets_in();
+  total_packets_in_ = value;
+  // @@protoc_insertion_point(field_set:CMsgServerNetworkStats.total_packets_in)
+}
+
+// optional uint64 total_data_out = 28;
+inline bool CMsgServerNetworkStats::has_total_data_out() const {
+  return (_has_bits_[0] & 0x00400000u) != 0;
+}
+inline void CMsgServerNetworkStats::set_has_total_data_out() {
+  _has_bits_[0] |= 0x00400000u;
+}
+inline void CMsgServerNetworkStats::clear_has_total_data_out() {
+  _has_bits_[0] &= ~0x00400000u;
+}
+inline void CMsgServerNetworkStats::clear_total_data_out() {
+  total_data_out_ = GOOGLE_ULONGLONG(0);
+  clear_has_total_data_out();
+}
+inline ::google::protobuf::uint64 CMsgServerNetworkStats::total_data_out() const {
+  // @@protoc_insertion_point(field_get:CMsgServerNetworkStats.total_data_out)
+  return total_data_out_;
+}
+inline void CMsgServerNetworkStats::set_total_data_out(::google::protobuf::uint64 value) {
+  set_has_total_data_out();
+  total_data_out_ = value;
+  // @@protoc_insertion_point(field_set:CMsgServerNetworkStats.total_data_out)
+}
+
+// optional uint64 total_packets_out = 29;
+inline bool CMsgServerNetworkStats::has_total_packets_out() const {
+  return (_has_bits_[0] & 0x00800000u) != 0;
+}
+inline void CMsgServerNetworkStats::set_has_total_packets_out() {
+  _has_bits_[0] |= 0x00800000u;
+}
+inline void CMsgServerNetworkStats::clear_has_total_packets_out() {
+  _has_bits_[0] &= ~0x00800000u;
+}
+inline void CMsgServerNetworkStats::clear_total_packets_out() {
+  total_packets_out_ = GOOGLE_ULONGLONG(0);
+  clear_has_total_packets_out();
+}
+inline ::google::protobuf::uint64 CMsgServerNetworkStats::total_packets_out() const {
+  // @@protoc_insertion_point(field_get:CMsgServerNetworkStats.total_packets_out)
+  return total_packets_out_;
+}
+inline void CMsgServerNetworkStats::set_total_packets_out(::google::protobuf::uint64 value) {
+  set_has_total_packets_out();
+  total_packets_out_ = value;
+  // @@protoc_insertion_point(field_set:CMsgServerNetworkStats.total_packets_out)
+}
+
+// repeated .CMsgServerNetworkStats.Player players = 30;
+inline int CMsgServerNetworkStats::players_size() const {
+  return players_.size();
+}
+inline void CMsgServerNetworkStats::clear_players() {
+  players_.Clear();
+}
+inline const ::CMsgServerNetworkStats_Player& CMsgServerNetworkStats::players(int index) const {
+  // @@protoc_insertion_point(field_get:CMsgServerNetworkStats.players)
+  return players_.Get(index);
+}
+inline ::CMsgServerNetworkStats_Player* CMsgServerNetworkStats::mutable_players(int index) {
+  // @@protoc_insertion_point(field_mutable:CMsgServerNetworkStats.players)
+  return players_.Mutable(index);
+}
+inline ::CMsgServerNetworkStats_Player* CMsgServerNetworkStats::add_players() {
+  // @@protoc_insertion_point(field_add:CMsgServerNetworkStats.players)
+  return players_.Add();
+}
+inline const ::google::protobuf::RepeatedPtrField< ::CMsgServerNetworkStats_Player >&
+CMsgServerNetworkStats::players() const {
+  // @@protoc_insertion_point(field_list:CMsgServerNetworkStats.players)
+  return players_;
+}
+inline ::google::protobuf::RepeatedPtrField< ::CMsgServerNetworkStats_Player >*
+CMsgServerNetworkStats::mutable_players() {
+  // @@protoc_insertion_point(field_mutable_list:CMsgServerNetworkStats.players)
+  return &players_;
 }
 
 

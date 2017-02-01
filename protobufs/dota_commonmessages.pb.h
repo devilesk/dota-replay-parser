@@ -194,11 +194,16 @@ enum dotaunitorder_t {
   DOTA_UNIT_ORDER_EJECT_ITEM_FROM_STASH = 25,
   DOTA_UNIT_ORDER_CAST_RUNE = 26,
   DOTA_UNIT_ORDER_PING_ABILITY = 27,
-  DOTA_UNIT_ORDER_MOVE_TO_DIRECTION = 28
+  DOTA_UNIT_ORDER_MOVE_TO_DIRECTION = 28,
+  DOTA_UNIT_ORDER_PATROL = 29,
+  DOTA_UNIT_ORDER_VECTOR_TARGET_POSITION = 30,
+  DOTA_UNIT_ORDER_RADAR = 31,
+  DOTA_UNIT_ORDER_SET_ITEM_COMBINE_LOCK = 32,
+  DOTA_UNIT_ORDER_CONTINUE = 33
 };
 bool dotaunitorder_t_IsValid(int value);
 const dotaunitorder_t dotaunitorder_t_MIN = DOTA_UNIT_ORDER_NONE;
-const dotaunitorder_t dotaunitorder_t_MAX = DOTA_UNIT_ORDER_MOVE_TO_DIRECTION;
+const dotaunitorder_t dotaunitorder_t_MAX = DOTA_UNIT_ORDER_CONTINUE;
 const int dotaunitorder_t_ARRAYSIZE = dotaunitorder_t_MAX + 1;
 
 const ::google::protobuf::EnumDescriptor* dotaunitorder_t_descriptor();

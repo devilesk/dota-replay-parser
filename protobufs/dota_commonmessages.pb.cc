@@ -316,7 +316,7 @@ void protobuf_AddDesc_dota_5fcommonmessages_2eproto() {
     "\020T\022\027\n\023k_EDOTA_CW_Zeus_Ult\020U*r\n\023EDOTAStat"
     "PopupTypes\022\030\n\024k_EDOTA_SPT_Textline\020\000\022\025\n\021"
     "k_EDOTA_SPT_Basic\020\001\022\024\n\020k_EDOTA_SPT_Poll\020"
-    "\002\022\024\n\020k_EDOTA_SPT_Grid\020\003*\333\007\n\017dotaunitorde"
+    "\002\022\024\n\020k_EDOTA_SPT_Grid\020\003*\207\t\n\017dotaunitorde"
     "r_t\022\030\n\024DOTA_UNIT_ORDER_NONE\020\000\022$\n DOTA_UN"
     "IT_ORDER_MOVE_TO_POSITION\020\001\022\"\n\036DOTA_UNIT"
     "_ORDER_MOVE_TO_TARGET\020\002\022\037\n\033DOTA_UNIT_ORD"
@@ -341,7 +341,11 @@ void protobuf_AddDesc_dota_5fcommonmessages_2eproto() {
     "ORDER_EJECT_ITEM_FROM_STASH\020\031\022\035\n\031DOTA_UN"
     "IT_ORDER_CAST_RUNE\020\032\022 \n\034DOTA_UNIT_ORDER_"
     "PING_ABILITY\020\033\022%\n!DOTA_UNIT_ORDER_MOVE_T"
-    "O_DIRECTION\020\034B\005H\001\200\001\000", 4140);
+    "O_DIRECTION\020\034\022\032\n\026DOTA_UNIT_ORDER_PATROL\020"
+    "\035\022*\n&DOTA_UNIT_ORDER_VECTOR_TARGET_POSIT"
+    "ION\020\036\022\031\n\025DOTA_UNIT_ORDER_RADAR\020\037\022)\n%DOTA"
+    "_UNIT_ORDER_SET_ITEM_COMBINE_LOCK\020 \022\034\n\030D"
+    "OTA_UNIT_ORDER_CONTINUE\020!B\005H\001\200\001\000", 4312);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "dota_commonmessages.proto", &protobuf_RegisterTypes);
   CDOTAMsg_LocationPing::default_instance_ = new CDOTAMsg_LocationPing();
@@ -516,6 +520,11 @@ bool dotaunitorder_t_IsValid(int value) {
     case 26:
     case 27:
     case 28:
+    case 29:
+    case 30:
+    case 31:
+    case 32:
+    case 33:
       return true;
     default:
       return false;

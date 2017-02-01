@@ -117,11 +117,13 @@ enum EGCSystemMsg {
   k_EGCMsgGetIPASN = 514,
   k_EGCMsgGetIPASNResponse = 515,
   k_EGCMsgGetAppFriendsList = 516,
-  k_EGCMsgGetAppFriendsListResponse = 517
+  k_EGCMsgGetAppFriendsListResponse = 517,
+  k_EGCMsgVacVerificationChange = 518,
+  k_EGCMsgAccountPhoneNumberChange = 519
 };
 bool EGCSystemMsg_IsValid(int value);
 const EGCSystemMsg EGCSystemMsg_MIN = k_EGCMsgInvalid;
-const EGCSystemMsg EGCSystemMsg_MAX = k_EGCMsgGetAppFriendsListResponse;
+const EGCSystemMsg EGCSystemMsg_MAX = k_EGCMsgAccountPhoneNumberChange;
 const int EGCSystemMsg_ARRAYSIZE = EGCSystemMsg_MAX + 1;
 
 const ::google::protobuf::EnumDescriptor* EGCSystemMsg_descriptor();
@@ -162,6 +164,8 @@ inline bool ESOMsg_Parse(
 enum EGCBaseClientMsg {
   k_EMsgGCPingRequest = 3001,
   k_EMsgGCPingResponse = 3002,
+  k_EMsgGCToClientPollConvarRequest = 3003,
+  k_EMsgGCToClientPollConvarResponse = 3004,
   k_EMsgGCClientWelcome = 4004,
   k_EMsgGCServerWelcome = 4005,
   k_EMsgGCClientHello = 4006,
@@ -197,11 +201,14 @@ enum EGCToGCMsg {
   k_EMsgGCToGCSOCacheUnsubscribe = 159,
   k_EMsgGCToGCLoadSessionSOCache = 160,
   k_EMsgGCToGCLoadSessionSOCacheResponse = 161,
-  k_EMsgGCToGCUpdateSessionStats = 162
+  k_EMsgGCToGCUpdateSessionStats = 162,
+  k_EMsgGCToGCUniverseStartup = 163,
+  k_EMsgGCToGCUniverseStartupResponse = 164,
+  k_EMsgGCToGCForwardAccountDetails = 165
 };
 bool EGCToGCMsg_IsValid(int value);
 const EGCToGCMsg EGCToGCMsg_MIN = k_EGCToGCMsgMasterAck;
-const EGCToGCMsg EGCToGCMsg_MAX = k_EMsgGCToGCUpdateSessionStats;
+const EGCToGCMsg EGCToGCMsg_MAX = k_EMsgGCToGCForwardAccountDetails;
 const int EGCToGCMsg_ARRAYSIZE = EGCToGCMsg_MAX + 1;
 
 const ::google::protobuf::EnumDescriptor* EGCToGCMsg_descriptor();

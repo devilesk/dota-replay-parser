@@ -49,13 +49,17 @@ class CMsgSteamDatagramConnectionQuality;
 class CMsgSteamDatagramConnectionStatsClientToRouter;
 class CMsgSteamDatagramConnectionStatsRouterToClient;
 class CMsgSteamDatagramConnectionStatsRouterToServer;
+class CMsgSteamDatagramConnectionStatsServerToRouter;
 class CMsgSteamDatagramClientPingSampleRequest;
 class CMsgSteamDatagramClientPingSampleReply;
 class CMsgSteamDatagramClientPingSampleReply_RoutingCluster;
 class CMsgSteamDatagramClientSwitchedPrimary;
 class CMsgSteamDatagramClientSwitchedPrimary_RouterQuality;
+class CMsgSteamDatagramRouterHealth;
+class CMsgSteamDatagramRouterHealth_DataCenter;
 
 enum ESteamDatagramMsgID {
+  k_ESteamDatagramMsg_Invalid = 0,
   k_ESteamDatagramMsg_RouterPingRequest = 1,
   k_ESteamDatagramMsg_RouterPingReply = 2,
   k_ESteamDatagramMsg_GameserverPingRequest = 3,
@@ -71,11 +75,12 @@ enum ESteamDatagramMsgID {
   k_ESteamDatagramMsg_Stats = 13,
   k_ESteamDatagramMsg_ClientPingSampleRequest = 14,
   k_ESteamDatagramMsg_ClientPingSampleReply = 15,
-  k_ESteamDatagramMsg_ClientToRouterSwitchedPrimary = 16
+  k_ESteamDatagramMsg_ClientToRouterSwitchedPrimary = 16,
+  k_ESteamDatagramMsg_RelayHealth = 17
 };
 bool ESteamDatagramMsgID_IsValid(int value);
-const ESteamDatagramMsgID ESteamDatagramMsgID_MIN = k_ESteamDatagramMsg_RouterPingRequest;
-const ESteamDatagramMsgID ESteamDatagramMsgID_MAX = k_ESteamDatagramMsg_ClientToRouterSwitchedPrimary;
+const ESteamDatagramMsgID ESteamDatagramMsgID_MIN = k_ESteamDatagramMsg_Invalid;
+const ESteamDatagramMsgID ESteamDatagramMsgID_MAX = k_ESteamDatagramMsg_RelayHealth;
 const int ESteamDatagramMsgID_ARRAYSIZE = ESteamDatagramMsgID_MAX + 1;
 
 const ::google::protobuf::EnumDescriptor* ESteamDatagramMsgID_descriptor();
@@ -209,6 +214,37 @@ class CMsgSteamDatagramRouterPingReply : public ::google::protobuf::Message {
   inline ::google::protobuf::uint32 client_cookie() const;
   inline void set_client_cookie(::google::protobuf::uint32 value);
 
+  // optional uint32 scoring_penalty_relay_cluster = 9;
+  inline bool has_scoring_penalty_relay_cluster() const;
+  inline void clear_scoring_penalty_relay_cluster();
+  static const int kScoringPenaltyRelayClusterFieldNumber = 9;
+  inline ::google::protobuf::uint32 scoring_penalty_relay_cluster() const;
+  inline void set_scoring_penalty_relay_cluster(::google::protobuf::uint32 value);
+
+  // repeated fixed32 scoring_penalty_datacenter_ids = 10 [packed = true];
+  inline int scoring_penalty_datacenter_ids_size() const;
+  inline void clear_scoring_penalty_datacenter_ids();
+  static const int kScoringPenaltyDatacenterIdsFieldNumber = 10;
+  inline ::google::protobuf::uint32 scoring_penalty_datacenter_ids(int index) const;
+  inline void set_scoring_penalty_datacenter_ids(int index, ::google::protobuf::uint32 value);
+  inline void add_scoring_penalty_datacenter_ids(::google::protobuf::uint32 value);
+  inline const ::google::protobuf::RepeatedField< ::google::protobuf::uint32 >&
+      scoring_penalty_datacenter_ids() const;
+  inline ::google::protobuf::RepeatedField< ::google::protobuf::uint32 >*
+      mutable_scoring_penalty_datacenter_ids();
+
+  // repeated uint32 scoring_penalty_values = 11 [packed = true];
+  inline int scoring_penalty_values_size() const;
+  inline void clear_scoring_penalty_values();
+  static const int kScoringPenaltyValuesFieldNumber = 11;
+  inline ::google::protobuf::uint32 scoring_penalty_values(int index) const;
+  inline void set_scoring_penalty_values(int index, ::google::protobuf::uint32 value);
+  inline void add_scoring_penalty_values(::google::protobuf::uint32 value);
+  inline const ::google::protobuf::RepeatedField< ::google::protobuf::uint32 >&
+      scoring_penalty_values() const;
+  inline ::google::protobuf::RepeatedField< ::google::protobuf::uint32 >*
+      mutable_scoring_penalty_values();
+
   // @@protoc_insertion_point(class_scope:CMsgSteamDatagramRouterPingReply)
  private:
   inline void set_has_client_timestamp();
@@ -223,6 +259,8 @@ class CMsgSteamDatagramRouterPingReply : public ::google::protobuf::Message {
   inline void clear_has_seconds_until_shutdown();
   inline void set_has_client_cookie();
   inline void clear_has_client_cookie();
+  inline void set_has_scoring_penalty_relay_cluster();
+  inline void clear_has_scoring_penalty_relay_cluster();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
@@ -238,6 +276,11 @@ class CMsgSteamDatagramRouterPingReply : public ::google::protobuf::Message {
   ::google::protobuf::uint32 server_time_;
   ::google::protobuf::uint32 seconds_until_shutdown_;
   ::google::protobuf::uint32 client_cookie_;
+  ::google::protobuf::uint32 scoring_penalty_relay_cluster_;
+  ::google::protobuf::RepeatedField< ::google::protobuf::uint32 > scoring_penalty_datacenter_ids_;
+  mutable int _scoring_penalty_datacenter_ids_cached_byte_size_;
+  ::google::protobuf::RepeatedField< ::google::protobuf::uint32 > scoring_penalty_values_;
+  mutable int _scoring_penalty_values_cached_byte_size_;
   friend void  protobuf_AddDesc_steamdatagram_5fmessages_2eproto();
   friend void protobuf_AssignDesc_steamdatagram_5fmessages_2eproto();
   friend void protobuf_ShutdownFile_steamdatagram_5fmessages_2eproto();
@@ -757,6 +800,13 @@ class CMsgSteamDatagramGameserverSessionRequest : public ::google::protobuf::Mes
   inline ::google::protobuf::uint32 client_cookie() const;
   inline void set_client_cookie(::google::protobuf::uint32 value);
 
+  // optional uint32 network_config_version = 6;
+  inline bool has_network_config_version() const;
+  inline void clear_network_config_version();
+  static const int kNetworkConfigVersionFieldNumber = 6;
+  inline ::google::protobuf::uint32 network_config_version() const;
+  inline void set_network_config_version(::google::protobuf::uint32 value);
+
   // @@protoc_insertion_point(class_scope:CMsgSteamDatagramGameserverSessionRequest)
  private:
   inline void set_has_ticket();
@@ -767,6 +817,8 @@ class CMsgSteamDatagramGameserverSessionRequest : public ::google::protobuf::Mes
   inline void clear_has_challenge();
   inline void set_has_client_cookie();
   inline void clear_has_client_cookie();
+  inline void set_has_network_config_version();
+  inline void clear_has_network_config_version();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
@@ -776,6 +828,7 @@ class CMsgSteamDatagramGameserverSessionRequest : public ::google::protobuf::Mes
   ::google::protobuf::uint64 challenge_;
   ::google::protobuf::uint32 challenge_time_;
   ::google::protobuf::uint32 client_cookie_;
+  ::google::protobuf::uint32 network_config_version_;
   friend void  protobuf_AddDesc_steamdatagram_5fmessages_2eproto();
   friend void protobuf_AssignDesc_steamdatagram_5fmessages_2eproto();
   friend void protobuf_ShutdownFile_steamdatagram_5fmessages_2eproto();
@@ -859,6 +912,13 @@ class CMsgSteamDatagramGameserverSessionEstablished : public ::google::protobuf:
   inline ::google::protobuf::uint32 seconds_until_shutdown() const;
   inline void set_seconds_until_shutdown(::google::protobuf::uint32 value);
 
+  // optional uint32 session_id = 5;
+  inline bool has_session_id() const;
+  inline void clear_session_id();
+  static const int kSessionIdFieldNumber = 5;
+  inline ::google::protobuf::uint32 session_id() const;
+  inline void set_session_id(::google::protobuf::uint32 value);
+
   // @@protoc_insertion_point(class_scope:CMsgSteamDatagramGameserverSessionEstablished)
  private:
   inline void set_has_client_cookie();
@@ -867,6 +927,8 @@ class CMsgSteamDatagramGameserverSessionEstablished : public ::google::protobuf:
   inline void clear_has_gameserver_steam_id();
   inline void set_has_seconds_until_shutdown();
   inline void clear_has_seconds_until_shutdown();
+  inline void set_has_session_id();
+  inline void clear_has_session_id();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
@@ -875,6 +937,7 @@ class CMsgSteamDatagramGameserverSessionEstablished : public ::google::protobuf:
   ::google::protobuf::uint64 gameserver_steam_id_;
   ::google::protobuf::uint32 client_cookie_;
   ::google::protobuf::uint32 seconds_until_shutdown_;
+  ::google::protobuf::uint32 session_id_;
   friend void  protobuf_AddDesc_steamdatagram_5fmessages_2eproto();
   friend void protobuf_AssignDesc_steamdatagram_5fmessages_2eproto();
   friend void protobuf_ShutdownFile_steamdatagram_5fmessages_2eproto();
@@ -1475,6 +1538,13 @@ class CMsgSteamDatagramLinkInstantaneousStats : public ::google::protobuf::Messa
   inline ::google::protobuf::uint32 packets_weird_sequence_pct() const;
   inline void set_packets_weird_sequence_pct(::google::protobuf::uint32 value);
 
+  // optional uint32 peak_jitter_usec = 8;
+  inline bool has_peak_jitter_usec() const;
+  inline void clear_peak_jitter_usec();
+  static const int kPeakJitterUsecFieldNumber = 8;
+  inline ::google::protobuf::uint32 peak_jitter_usec() const;
+  inline void set_peak_jitter_usec(::google::protobuf::uint32 value);
+
   // @@protoc_insertion_point(class_scope:CMsgSteamDatagramLinkInstantaneousStats)
  private:
   inline void set_has_out_packets_per_sec_x10();
@@ -1491,6 +1561,8 @@ class CMsgSteamDatagramLinkInstantaneousStats : public ::google::protobuf::Messa
   inline void clear_has_packets_dropped_pct();
   inline void set_has_packets_weird_sequence_pct();
   inline void clear_has_packets_weird_sequence_pct();
+  inline void set_has_peak_jitter_usec();
+  inline void clear_has_peak_jitter_usec();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
@@ -1503,6 +1575,7 @@ class CMsgSteamDatagramLinkInstantaneousStats : public ::google::protobuf::Messa
   ::google::protobuf::uint32 ping_ms_;
   ::google::protobuf::uint32 packets_dropped_pct_;
   ::google::protobuf::uint32 packets_weird_sequence_pct_;
+  ::google::protobuf::uint32 peak_jitter_usec_;
   friend void  protobuf_AddDesc_steamdatagram_5fmessages_2eproto();
   friend void protobuf_AssignDesc_steamdatagram_5fmessages_2eproto();
   friend void protobuf_ShutdownFile_steamdatagram_5fmessages_2eproto();
@@ -1628,6 +1701,237 @@ class CMsgSteamDatagramLinkLifetimeStats : public ::google::protobuf::Message {
   inline ::google::protobuf::uint64 packets_recv_lurch() const;
   inline void set_packets_recv_lurch(::google::protobuf::uint64 value);
 
+  // optional uint32 quality_histogram_100 = 21;
+  inline bool has_quality_histogram_100() const;
+  inline void clear_quality_histogram_100();
+  static const int kQualityHistogram100FieldNumber = 21;
+  inline ::google::protobuf::uint32 quality_histogram_100() const;
+  inline void set_quality_histogram_100(::google::protobuf::uint32 value);
+
+  // optional uint32 quality_histogram_99 = 22;
+  inline bool has_quality_histogram_99() const;
+  inline void clear_quality_histogram_99();
+  static const int kQualityHistogram99FieldNumber = 22;
+  inline ::google::protobuf::uint32 quality_histogram_99() const;
+  inline void set_quality_histogram_99(::google::protobuf::uint32 value);
+
+  // optional uint32 quality_histogram_97 = 23;
+  inline bool has_quality_histogram_97() const;
+  inline void clear_quality_histogram_97();
+  static const int kQualityHistogram97FieldNumber = 23;
+  inline ::google::protobuf::uint32 quality_histogram_97() const;
+  inline void set_quality_histogram_97(::google::protobuf::uint32 value);
+
+  // optional uint32 quality_histogram_95 = 24;
+  inline bool has_quality_histogram_95() const;
+  inline void clear_quality_histogram_95();
+  static const int kQualityHistogram95FieldNumber = 24;
+  inline ::google::protobuf::uint32 quality_histogram_95() const;
+  inline void set_quality_histogram_95(::google::protobuf::uint32 value);
+
+  // optional uint32 quality_histogram_90 = 25;
+  inline bool has_quality_histogram_90() const;
+  inline void clear_quality_histogram_90();
+  static const int kQualityHistogram90FieldNumber = 25;
+  inline ::google::protobuf::uint32 quality_histogram_90() const;
+  inline void set_quality_histogram_90(::google::protobuf::uint32 value);
+
+  // optional uint32 quality_histogram_75 = 26;
+  inline bool has_quality_histogram_75() const;
+  inline void clear_quality_histogram_75();
+  static const int kQualityHistogram75FieldNumber = 26;
+  inline ::google::protobuf::uint32 quality_histogram_75() const;
+  inline void set_quality_histogram_75(::google::protobuf::uint32 value);
+
+  // optional uint32 quality_histogram_50 = 27;
+  inline bool has_quality_histogram_50() const;
+  inline void clear_quality_histogram_50();
+  static const int kQualityHistogram50FieldNumber = 27;
+  inline ::google::protobuf::uint32 quality_histogram_50() const;
+  inline void set_quality_histogram_50(::google::protobuf::uint32 value);
+
+  // optional uint32 quality_histogram_1 = 28;
+  inline bool has_quality_histogram_1() const;
+  inline void clear_quality_histogram_1();
+  static const int kQualityHistogram1FieldNumber = 28;
+  inline ::google::protobuf::uint32 quality_histogram_1() const;
+  inline void set_quality_histogram_1(::google::protobuf::uint32 value);
+
+  // optional uint32 quality_histogram_dead = 29;
+  inline bool has_quality_histogram_dead() const;
+  inline void clear_quality_histogram_dead();
+  static const int kQualityHistogramDeadFieldNumber = 29;
+  inline ::google::protobuf::uint32 quality_histogram_dead() const;
+  inline void set_quality_histogram_dead(::google::protobuf::uint32 value);
+
+  // optional uint32 quality_ntile_2nd = 30;
+  inline bool has_quality_ntile_2nd() const;
+  inline void clear_quality_ntile_2nd();
+  static const int kQualityNtile2NdFieldNumber = 30;
+  inline ::google::protobuf::uint32 quality_ntile_2nd() const;
+  inline void set_quality_ntile_2nd(::google::protobuf::uint32 value);
+
+  // optional uint32 quality_ntile_5th = 31;
+  inline bool has_quality_ntile_5th() const;
+  inline void clear_quality_ntile_5th();
+  static const int kQualityNtile5ThFieldNumber = 31;
+  inline ::google::protobuf::uint32 quality_ntile_5th() const;
+  inline void set_quality_ntile_5th(::google::protobuf::uint32 value);
+
+  // optional uint32 quality_ntile_25th = 32;
+  inline bool has_quality_ntile_25th() const;
+  inline void clear_quality_ntile_25th();
+  static const int kQualityNtile25ThFieldNumber = 32;
+  inline ::google::protobuf::uint32 quality_ntile_25th() const;
+  inline void set_quality_ntile_25th(::google::protobuf::uint32 value);
+
+  // optional uint32 quality_ntile_50th = 33;
+  inline bool has_quality_ntile_50th() const;
+  inline void clear_quality_ntile_50th();
+  static const int kQualityNtile50ThFieldNumber = 33;
+  inline ::google::protobuf::uint32 quality_ntile_50th() const;
+  inline void set_quality_ntile_50th(::google::protobuf::uint32 value);
+
+  // optional uint32 ping_histogram_25 = 41;
+  inline bool has_ping_histogram_25() const;
+  inline void clear_ping_histogram_25();
+  static const int kPingHistogram25FieldNumber = 41;
+  inline ::google::protobuf::uint32 ping_histogram_25() const;
+  inline void set_ping_histogram_25(::google::protobuf::uint32 value);
+
+  // optional uint32 ping_histogram_50 = 42;
+  inline bool has_ping_histogram_50() const;
+  inline void clear_ping_histogram_50();
+  static const int kPingHistogram50FieldNumber = 42;
+  inline ::google::protobuf::uint32 ping_histogram_50() const;
+  inline void set_ping_histogram_50(::google::protobuf::uint32 value);
+
+  // optional uint32 ping_histogram_75 = 43;
+  inline bool has_ping_histogram_75() const;
+  inline void clear_ping_histogram_75();
+  static const int kPingHistogram75FieldNumber = 43;
+  inline ::google::protobuf::uint32 ping_histogram_75() const;
+  inline void set_ping_histogram_75(::google::protobuf::uint32 value);
+
+  // optional uint32 ping_histogram_100 = 44;
+  inline bool has_ping_histogram_100() const;
+  inline void clear_ping_histogram_100();
+  static const int kPingHistogram100FieldNumber = 44;
+  inline ::google::protobuf::uint32 ping_histogram_100() const;
+  inline void set_ping_histogram_100(::google::protobuf::uint32 value);
+
+  // optional uint32 ping_histogram_125 = 45;
+  inline bool has_ping_histogram_125() const;
+  inline void clear_ping_histogram_125();
+  static const int kPingHistogram125FieldNumber = 45;
+  inline ::google::protobuf::uint32 ping_histogram_125() const;
+  inline void set_ping_histogram_125(::google::protobuf::uint32 value);
+
+  // optional uint32 ping_histogram_150 = 46;
+  inline bool has_ping_histogram_150() const;
+  inline void clear_ping_histogram_150();
+  static const int kPingHistogram150FieldNumber = 46;
+  inline ::google::protobuf::uint32 ping_histogram_150() const;
+  inline void set_ping_histogram_150(::google::protobuf::uint32 value);
+
+  // optional uint32 ping_histogram_200 = 47;
+  inline bool has_ping_histogram_200() const;
+  inline void clear_ping_histogram_200();
+  static const int kPingHistogram200FieldNumber = 47;
+  inline ::google::protobuf::uint32 ping_histogram_200() const;
+  inline void set_ping_histogram_200(::google::protobuf::uint32 value);
+
+  // optional uint32 ping_histogram_300 = 48;
+  inline bool has_ping_histogram_300() const;
+  inline void clear_ping_histogram_300();
+  static const int kPingHistogram300FieldNumber = 48;
+  inline ::google::protobuf::uint32 ping_histogram_300() const;
+  inline void set_ping_histogram_300(::google::protobuf::uint32 value);
+
+  // optional uint32 ping_histogram_max = 49;
+  inline bool has_ping_histogram_max() const;
+  inline void clear_ping_histogram_max();
+  static const int kPingHistogramMaxFieldNumber = 49;
+  inline ::google::protobuf::uint32 ping_histogram_max() const;
+  inline void set_ping_histogram_max(::google::protobuf::uint32 value);
+
+  // optional uint32 ping_ntile_5th = 50;
+  inline bool has_ping_ntile_5th() const;
+  inline void clear_ping_ntile_5th();
+  static const int kPingNtile5ThFieldNumber = 50;
+  inline ::google::protobuf::uint32 ping_ntile_5th() const;
+  inline void set_ping_ntile_5th(::google::protobuf::uint32 value);
+
+  // optional uint32 ping_ntile_50th = 51;
+  inline bool has_ping_ntile_50th() const;
+  inline void clear_ping_ntile_50th();
+  static const int kPingNtile50ThFieldNumber = 51;
+  inline ::google::protobuf::uint32 ping_ntile_50th() const;
+  inline void set_ping_ntile_50th(::google::protobuf::uint32 value);
+
+  // optional uint32 ping_ntile_75th = 52;
+  inline bool has_ping_ntile_75th() const;
+  inline void clear_ping_ntile_75th();
+  static const int kPingNtile75ThFieldNumber = 52;
+  inline ::google::protobuf::uint32 ping_ntile_75th() const;
+  inline void set_ping_ntile_75th(::google::protobuf::uint32 value);
+
+  // optional uint32 ping_ntile_95th = 53;
+  inline bool has_ping_ntile_95th() const;
+  inline void clear_ping_ntile_95th();
+  static const int kPingNtile95ThFieldNumber = 53;
+  inline ::google::protobuf::uint32 ping_ntile_95th() const;
+  inline void set_ping_ntile_95th(::google::protobuf::uint32 value);
+
+  // optional uint32 ping_ntile_98th = 54;
+  inline bool has_ping_ntile_98th() const;
+  inline void clear_ping_ntile_98th();
+  static const int kPingNtile98ThFieldNumber = 54;
+  inline ::google::protobuf::uint32 ping_ntile_98th() const;
+  inline void set_ping_ntile_98th(::google::protobuf::uint32 value);
+
+  // optional uint32 jitter_histogram_negligible = 61;
+  inline bool has_jitter_histogram_negligible() const;
+  inline void clear_jitter_histogram_negligible();
+  static const int kJitterHistogramNegligibleFieldNumber = 61;
+  inline ::google::protobuf::uint32 jitter_histogram_negligible() const;
+  inline void set_jitter_histogram_negligible(::google::protobuf::uint32 value);
+
+  // optional uint32 jitter_histogram_1 = 62;
+  inline bool has_jitter_histogram_1() const;
+  inline void clear_jitter_histogram_1();
+  static const int kJitterHistogram1FieldNumber = 62;
+  inline ::google::protobuf::uint32 jitter_histogram_1() const;
+  inline void set_jitter_histogram_1(::google::protobuf::uint32 value);
+
+  // optional uint32 jitter_histogram_2 = 63;
+  inline bool has_jitter_histogram_2() const;
+  inline void clear_jitter_histogram_2();
+  static const int kJitterHistogram2FieldNumber = 63;
+  inline ::google::protobuf::uint32 jitter_histogram_2() const;
+  inline void set_jitter_histogram_2(::google::protobuf::uint32 value);
+
+  // optional uint32 jitter_histogram_5 = 64;
+  inline bool has_jitter_histogram_5() const;
+  inline void clear_jitter_histogram_5();
+  static const int kJitterHistogram5FieldNumber = 64;
+  inline ::google::protobuf::uint32 jitter_histogram_5() const;
+  inline void set_jitter_histogram_5(::google::protobuf::uint32 value);
+
+  // optional uint32 jitter_histogram_10 = 65;
+  inline bool has_jitter_histogram_10() const;
+  inline void clear_jitter_histogram_10();
+  static const int kJitterHistogram10FieldNumber = 65;
+  inline ::google::protobuf::uint32 jitter_histogram_10() const;
+  inline void set_jitter_histogram_10(::google::protobuf::uint32 value);
+
+  // optional uint32 jitter_histogram_20 = 66;
+  inline bool has_jitter_histogram_20() const;
+  inline void clear_jitter_histogram_20();
+  static const int kJitterHistogram20FieldNumber = 66;
+  inline ::google::protobuf::uint32 jitter_histogram_20() const;
+  inline void set_jitter_histogram_20(::google::protobuf::uint32 value);
+
   // @@protoc_insertion_point(class_scope:CMsgSteamDatagramLinkLifetimeStats)
  private:
   inline void set_has_packets_sent();
@@ -1648,11 +1952,76 @@ class CMsgSteamDatagramLinkLifetimeStats : public ::google::protobuf::Message {
   inline void clear_has_packets_recv_duplicate();
   inline void set_has_packets_recv_lurch();
   inline void clear_has_packets_recv_lurch();
+  inline void set_has_quality_histogram_100();
+  inline void clear_has_quality_histogram_100();
+  inline void set_has_quality_histogram_99();
+  inline void clear_has_quality_histogram_99();
+  inline void set_has_quality_histogram_97();
+  inline void clear_has_quality_histogram_97();
+  inline void set_has_quality_histogram_95();
+  inline void clear_has_quality_histogram_95();
+  inline void set_has_quality_histogram_90();
+  inline void clear_has_quality_histogram_90();
+  inline void set_has_quality_histogram_75();
+  inline void clear_has_quality_histogram_75();
+  inline void set_has_quality_histogram_50();
+  inline void clear_has_quality_histogram_50();
+  inline void set_has_quality_histogram_1();
+  inline void clear_has_quality_histogram_1();
+  inline void set_has_quality_histogram_dead();
+  inline void clear_has_quality_histogram_dead();
+  inline void set_has_quality_ntile_2nd();
+  inline void clear_has_quality_ntile_2nd();
+  inline void set_has_quality_ntile_5th();
+  inline void clear_has_quality_ntile_5th();
+  inline void set_has_quality_ntile_25th();
+  inline void clear_has_quality_ntile_25th();
+  inline void set_has_quality_ntile_50th();
+  inline void clear_has_quality_ntile_50th();
+  inline void set_has_ping_histogram_25();
+  inline void clear_has_ping_histogram_25();
+  inline void set_has_ping_histogram_50();
+  inline void clear_has_ping_histogram_50();
+  inline void set_has_ping_histogram_75();
+  inline void clear_has_ping_histogram_75();
+  inline void set_has_ping_histogram_100();
+  inline void clear_has_ping_histogram_100();
+  inline void set_has_ping_histogram_125();
+  inline void clear_has_ping_histogram_125();
+  inline void set_has_ping_histogram_150();
+  inline void clear_has_ping_histogram_150();
+  inline void set_has_ping_histogram_200();
+  inline void clear_has_ping_histogram_200();
+  inline void set_has_ping_histogram_300();
+  inline void clear_has_ping_histogram_300();
+  inline void set_has_ping_histogram_max();
+  inline void clear_has_ping_histogram_max();
+  inline void set_has_ping_ntile_5th();
+  inline void clear_has_ping_ntile_5th();
+  inline void set_has_ping_ntile_50th();
+  inline void clear_has_ping_ntile_50th();
+  inline void set_has_ping_ntile_75th();
+  inline void clear_has_ping_ntile_75th();
+  inline void set_has_ping_ntile_95th();
+  inline void clear_has_ping_ntile_95th();
+  inline void set_has_ping_ntile_98th();
+  inline void clear_has_ping_ntile_98th();
+  inline void set_has_jitter_histogram_negligible();
+  inline void clear_has_jitter_histogram_negligible();
+  inline void set_has_jitter_histogram_1();
+  inline void clear_has_jitter_histogram_1();
+  inline void set_has_jitter_histogram_2();
+  inline void clear_has_jitter_histogram_2();
+  inline void set_has_jitter_histogram_5();
+  inline void clear_has_jitter_histogram_5();
+  inline void set_has_jitter_histogram_10();
+  inline void clear_has_jitter_histogram_10();
+  inline void set_has_jitter_histogram_20();
+  inline void clear_has_jitter_histogram_20();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
-  ::google::protobuf::uint32 _has_bits_[1];
-  mutable int _cached_size_;
+  ::google::protobuf::uint32 _has_bits_[2];
   ::google::protobuf::uint64 packets_sent_;
   ::google::protobuf::uint64 kb_sent_;
   ::google::protobuf::uint64 packets_recv_;
@@ -1662,6 +2031,40 @@ class CMsgSteamDatagramLinkLifetimeStats : public ::google::protobuf::Message {
   ::google::protobuf::uint64 packets_recv_out_of_order_;
   ::google::protobuf::uint64 packets_recv_duplicate_;
   ::google::protobuf::uint64 packets_recv_lurch_;
+  ::google::protobuf::uint32 quality_histogram_100_;
+  ::google::protobuf::uint32 quality_histogram_99_;
+  ::google::protobuf::uint32 quality_histogram_97_;
+  ::google::protobuf::uint32 quality_histogram_95_;
+  ::google::protobuf::uint32 quality_histogram_90_;
+  ::google::protobuf::uint32 quality_histogram_75_;
+  ::google::protobuf::uint32 quality_histogram_50_;
+  ::google::protobuf::uint32 quality_histogram_1_;
+  ::google::protobuf::uint32 quality_histogram_dead_;
+  ::google::protobuf::uint32 quality_ntile_2nd_;
+  ::google::protobuf::uint32 quality_ntile_5th_;
+  ::google::protobuf::uint32 quality_ntile_25th_;
+  ::google::protobuf::uint32 quality_ntile_50th_;
+  ::google::protobuf::uint32 ping_histogram_25_;
+  ::google::protobuf::uint32 ping_histogram_50_;
+  ::google::protobuf::uint32 ping_histogram_75_;
+  ::google::protobuf::uint32 ping_histogram_100_;
+  ::google::protobuf::uint32 ping_histogram_125_;
+  ::google::protobuf::uint32 ping_histogram_150_;
+  ::google::protobuf::uint32 ping_histogram_200_;
+  ::google::protobuf::uint32 ping_histogram_300_;
+  ::google::protobuf::uint32 ping_histogram_max_;
+  ::google::protobuf::uint32 ping_ntile_5th_;
+  ::google::protobuf::uint32 ping_ntile_50th_;
+  ::google::protobuf::uint32 ping_ntile_75th_;
+  ::google::protobuf::uint32 ping_ntile_95th_;
+  ::google::protobuf::uint32 ping_ntile_98th_;
+  ::google::protobuf::uint32 jitter_histogram_negligible_;
+  ::google::protobuf::uint32 jitter_histogram_1_;
+  ::google::protobuf::uint32 jitter_histogram_2_;
+  ::google::protobuf::uint32 jitter_histogram_5_;
+  ::google::protobuf::uint32 jitter_histogram_10_;
+  ::google::protobuf::uint32 jitter_histogram_20_;
+  mutable int _cached_size_;
   friend void  protobuf_AddDesc_steamdatagram_5fmessages_2eproto();
   friend void protobuf_AssignDesc_steamdatagram_5fmessages_2eproto();
   friend void protobuf_ShutdownFile_steamdatagram_5fmessages_2eproto();
@@ -1996,6 +2399,27 @@ class CMsgSteamDatagramConnectionStatsRouterToClient : public ::google::protobuf
   inline ::google::protobuf::uint32 seconds_until_shutdown() const;
   inline void set_seconds_until_shutdown(::google::protobuf::uint32 value);
 
+  // optional fixed32 migrate_request_ip = 10;
+  inline bool has_migrate_request_ip() const;
+  inline void clear_migrate_request_ip();
+  static const int kMigrateRequestIpFieldNumber = 10;
+  inline ::google::protobuf::uint32 migrate_request_ip() const;
+  inline void set_migrate_request_ip(::google::protobuf::uint32 value);
+
+  // optional uint32 migrate_request_port = 11;
+  inline bool has_migrate_request_port() const;
+  inline void clear_migrate_request_port();
+  static const int kMigrateRequestPortFieldNumber = 11;
+  inline ::google::protobuf::uint32 migrate_request_port() const;
+  inline void set_migrate_request_port(::google::protobuf::uint32 value);
+
+  // optional uint32 scoring_penalty_relay_cluster = 12;
+  inline bool has_scoring_penalty_relay_cluster() const;
+  inline void clear_scoring_penalty_relay_cluster();
+  static const int kScoringPenaltyRelayClusterFieldNumber = 12;
+  inline ::google::protobuf::uint32 scoring_penalty_relay_cluster() const;
+  inline void set_scoring_penalty_relay_cluster(::google::protobuf::uint32 value);
+
   // optional fixed32 client_cookie = 7;
   inline bool has_client_cookie() const;
   inline void clear_client_cookie();
@@ -2031,6 +2455,12 @@ class CMsgSteamDatagramConnectionStatsRouterToClient : public ::google::protobuf
   inline void clear_has_router_gameserver_latency();
   inline void set_has_seconds_until_shutdown();
   inline void clear_has_seconds_until_shutdown();
+  inline void set_has_migrate_request_ip();
+  inline void clear_has_migrate_request_ip();
+  inline void set_has_migrate_request_port();
+  inline void clear_has_migrate_request_port();
+  inline void set_has_scoring_penalty_relay_cluster();
+  inline void clear_has_scoring_penalty_relay_cluster();
   inline void set_has_client_cookie();
   inline void clear_has_client_cookie();
   inline void set_has_seq_num_r2c();
@@ -2048,6 +2478,9 @@ class CMsgSteamDatagramConnectionStatsRouterToClient : public ::google::protobuf
   ::google::protobuf::uint32 client_timestamp_from_server_;
   ::google::protobuf::uint32 router_gameserver_latency_;
   ::google::protobuf::uint32 seconds_until_shutdown_;
+  ::google::protobuf::uint32 migrate_request_ip_;
+  ::google::protobuf::uint32 migrate_request_port_;
+  ::google::protobuf::uint32 scoring_penalty_relay_cluster_;
   ::google::protobuf::uint32 client_cookie_;
   ::google::protobuf::uint32 seq_num_r2c_;
   ::google::protobuf::uint32 seq_num_s2c_;
@@ -2113,6 +2546,15 @@ class CMsgSteamDatagramConnectionStatsRouterToServer : public ::google::protobuf
 
   // accessors -------------------------------------------------------
 
+  // optional .CMsgSteamDatagramConnectionQuality r2s = 1;
+  inline bool has_r2s() const;
+  inline void clear_r2s();
+  static const int kR2SFieldNumber = 1;
+  inline const ::CMsgSteamDatagramConnectionQuality& r2s() const;
+  inline ::CMsgSteamDatagramConnectionQuality* mutable_r2s();
+  inline ::CMsgSteamDatagramConnectionQuality* release_r2s();
+  inline void set_allocated_r2s(::CMsgSteamDatagramConnectionQuality* r2s);
+
   // optional .CMsgSteamDatagramConnectionQuality c2s = 2;
   inline bool has_c2s() const;
   inline void clear_c2s();
@@ -2135,6 +2577,13 @@ class CMsgSteamDatagramConnectionStatsRouterToServer : public ::google::protobuf
   static const int kRouterTimestampFieldNumber = 4;
   inline ::google::protobuf::uint32 router_timestamp() const;
   inline void set_router_timestamp(::google::protobuf::uint32 value);
+
+  // optional uint32 seq_num_r2s = 5;
+  inline bool has_seq_num_r2s() const;
+  inline void clear_seq_num_r2s();
+  static const int kSeqNumR2SFieldNumber = 5;
+  inline ::google::protobuf::uint32 seq_num_r2s() const;
+  inline void set_seq_num_r2s(::google::protobuf::uint32 value);
 
   // optional uint32 seq_num_c2s = 6;
   inline bool has_seq_num_c2s() const;
@@ -2159,12 +2608,16 @@ class CMsgSteamDatagramConnectionStatsRouterToServer : public ::google::protobuf
 
   // @@protoc_insertion_point(class_scope:CMsgSteamDatagramConnectionStatsRouterToServer)
  private:
+  inline void set_has_r2s();
+  inline void clear_has_r2s();
   inline void set_has_c2s();
   inline void clear_has_c2s();
   inline void set_has_client_timestamp();
   inline void clear_has_client_timestamp();
   inline void set_has_router_timestamp();
   inline void clear_has_router_timestamp();
+  inline void set_has_seq_num_r2s();
+  inline void clear_has_seq_num_r2s();
   inline void set_has_seq_num_c2s();
   inline void clear_has_seq_num_c2s();
   inline void set_has_client_steam_id();
@@ -2176,11 +2629,13 @@ class CMsgSteamDatagramConnectionStatsRouterToServer : public ::google::protobuf
 
   ::google::protobuf::uint32 _has_bits_[1];
   mutable int _cached_size_;
+  ::CMsgSteamDatagramConnectionQuality* r2s_;
   ::CMsgSteamDatagramConnectionQuality* c2s_;
   ::google::protobuf::uint32 client_timestamp_;
   ::google::protobuf::uint32 router_timestamp_;
-  ::google::protobuf::uint64 client_steam_id_;
+  ::google::protobuf::uint32 seq_num_r2s_;
   ::google::protobuf::uint32 seq_num_c2s_;
+  ::google::protobuf::uint64 client_steam_id_;
   ::google::protobuf::uint32 client_session_id_;
   friend void  protobuf_AddDesc_steamdatagram_5fmessages_2eproto();
   friend void protobuf_AssignDesc_steamdatagram_5fmessages_2eproto();
@@ -2188,6 +2643,139 @@ class CMsgSteamDatagramConnectionStatsRouterToServer : public ::google::protobuf
 
   void InitAsDefaultInstance();
   static CMsgSteamDatagramConnectionStatsRouterToServer* default_instance_;
+};
+// -------------------------------------------------------------------
+
+class CMsgSteamDatagramConnectionStatsServerToRouter : public ::google::protobuf::Message {
+ public:
+  CMsgSteamDatagramConnectionStatsServerToRouter();
+  virtual ~CMsgSteamDatagramConnectionStatsServerToRouter();
+
+  CMsgSteamDatagramConnectionStatsServerToRouter(const CMsgSteamDatagramConnectionStatsServerToRouter& from);
+
+  inline CMsgSteamDatagramConnectionStatsServerToRouter& operator=(const CMsgSteamDatagramConnectionStatsServerToRouter& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+    return _unknown_fields_;
+  }
+
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+    return &_unknown_fields_;
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const CMsgSteamDatagramConnectionStatsServerToRouter& default_instance();
+
+  void Swap(CMsgSteamDatagramConnectionStatsServerToRouter* other);
+
+  // implements Message ----------------------------------------------
+
+  CMsgSteamDatagramConnectionStatsServerToRouter* New() const;
+  void CopyFrom(const ::google::protobuf::Message& from);
+  void MergeFrom(const ::google::protobuf::Message& from);
+  void CopyFrom(const CMsgSteamDatagramConnectionStatsServerToRouter& from);
+  void MergeFrom(const CMsgSteamDatagramConnectionStatsServerToRouter& from);
+  void Clear();
+  bool IsInitialized() const;
+
+  int ByteSize() const;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input);
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  int GetCachedSize() const { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const;
+  public:
+  ::google::protobuf::Metadata GetMetadata() const;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // optional .CMsgSteamDatagramConnectionQuality s2r = 1;
+  inline bool has_s2r() const;
+  inline void clear_s2r();
+  static const int kS2RFieldNumber = 1;
+  inline const ::CMsgSteamDatagramConnectionQuality& s2r() const;
+  inline ::CMsgSteamDatagramConnectionQuality* mutable_s2r();
+  inline ::CMsgSteamDatagramConnectionQuality* release_s2r();
+  inline void set_allocated_s2r(::CMsgSteamDatagramConnectionQuality* s2r);
+
+  // optional .CMsgSteamDatagramConnectionQuality s2c = 2;
+  inline bool has_s2c() const;
+  inline void clear_s2c();
+  static const int kS2CFieldNumber = 2;
+  inline const ::CMsgSteamDatagramConnectionQuality& s2c() const;
+  inline ::CMsgSteamDatagramConnectionQuality* mutable_s2c();
+  inline ::CMsgSteamDatagramConnectionQuality* release_s2c();
+  inline void set_allocated_s2c(::CMsgSteamDatagramConnectionQuality* s2c);
+
+  // optional uint32 seq_num_s2r = 3;
+  inline bool has_seq_num_s2r() const;
+  inline void clear_seq_num_s2r();
+  static const int kSeqNumS2RFieldNumber = 3;
+  inline ::google::protobuf::uint32 seq_num_s2r() const;
+  inline void set_seq_num_s2r(::google::protobuf::uint32 value);
+
+  // optional uint32 seq_num_s2c = 4;
+  inline bool has_seq_num_s2c() const;
+  inline void clear_seq_num_s2c();
+  static const int kSeqNumS2CFieldNumber = 4;
+  inline ::google::protobuf::uint32 seq_num_s2c() const;
+  inline void set_seq_num_s2c(::google::protobuf::uint32 value);
+
+  // optional fixed64 client_steam_id = 5;
+  inline bool has_client_steam_id() const;
+  inline void clear_client_steam_id();
+  static const int kClientSteamIdFieldNumber = 5;
+  inline ::google::protobuf::uint64 client_steam_id() const;
+  inline void set_client_steam_id(::google::protobuf::uint64 value);
+
+  // optional uint32 client_session_id = 6;
+  inline bool has_client_session_id() const;
+  inline void clear_client_session_id();
+  static const int kClientSessionIdFieldNumber = 6;
+  inline ::google::protobuf::uint32 client_session_id() const;
+  inline void set_client_session_id(::google::protobuf::uint32 value);
+
+  // @@protoc_insertion_point(class_scope:CMsgSteamDatagramConnectionStatsServerToRouter)
+ private:
+  inline void set_has_s2r();
+  inline void clear_has_s2r();
+  inline void set_has_s2c();
+  inline void clear_has_s2c();
+  inline void set_has_seq_num_s2r();
+  inline void clear_has_seq_num_s2r();
+  inline void set_has_seq_num_s2c();
+  inline void clear_has_seq_num_s2c();
+  inline void set_has_client_steam_id();
+  inline void clear_has_client_steam_id();
+  inline void set_has_client_session_id();
+  inline void clear_has_client_session_id();
+
+  ::google::protobuf::UnknownFieldSet _unknown_fields_;
+
+  ::google::protobuf::uint32 _has_bits_[1];
+  mutable int _cached_size_;
+  ::CMsgSteamDatagramConnectionQuality* s2r_;
+  ::CMsgSteamDatagramConnectionQuality* s2c_;
+  ::google::protobuf::uint32 seq_num_s2r_;
+  ::google::protobuf::uint32 seq_num_s2c_;
+  ::google::protobuf::uint64 client_steam_id_;
+  ::google::protobuf::uint32 client_session_id_;
+  friend void  protobuf_AddDesc_steamdatagram_5fmessages_2eproto();
+  friend void protobuf_AssignDesc_steamdatagram_5fmessages_2eproto();
+  friend void protobuf_ShutdownFile_steamdatagram_5fmessages_2eproto();
+
+  void InitAsDefaultInstance();
+  static CMsgSteamDatagramConnectionStatsServerToRouter* default_instance_;
 };
 // -------------------------------------------------------------------
 
@@ -2774,6 +3362,259 @@ class CMsgSteamDatagramClientSwitchedPrimary : public ::google::protobuf::Messag
   void InitAsDefaultInstance();
   static CMsgSteamDatagramClientSwitchedPrimary* default_instance_;
 };
+// -------------------------------------------------------------------
+
+class CMsgSteamDatagramRouterHealth_DataCenter : public ::google::protobuf::Message {
+ public:
+  CMsgSteamDatagramRouterHealth_DataCenter();
+  virtual ~CMsgSteamDatagramRouterHealth_DataCenter();
+
+  CMsgSteamDatagramRouterHealth_DataCenter(const CMsgSteamDatagramRouterHealth_DataCenter& from);
+
+  inline CMsgSteamDatagramRouterHealth_DataCenter& operator=(const CMsgSteamDatagramRouterHealth_DataCenter& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+    return _unknown_fields_;
+  }
+
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+    return &_unknown_fields_;
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const CMsgSteamDatagramRouterHealth_DataCenter& default_instance();
+
+  void Swap(CMsgSteamDatagramRouterHealth_DataCenter* other);
+
+  // implements Message ----------------------------------------------
+
+  CMsgSteamDatagramRouterHealth_DataCenter* New() const;
+  void CopyFrom(const ::google::protobuf::Message& from);
+  void MergeFrom(const ::google::protobuf::Message& from);
+  void CopyFrom(const CMsgSteamDatagramRouterHealth_DataCenter& from);
+  void MergeFrom(const CMsgSteamDatagramRouterHealth_DataCenter& from);
+  void Clear();
+  bool IsInitialized() const;
+
+  int ByteSize() const;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input);
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  int GetCachedSize() const { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const;
+  public:
+  ::google::protobuf::Metadata GetMetadata() const;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // optional fixed32 datacenter_id = 1;
+  inline bool has_datacenter_id() const;
+  inline void clear_datacenter_id();
+  static const int kDatacenterIdFieldNumber = 1;
+  inline ::google::protobuf::uint32 datacenter_id() const;
+  inline void set_datacenter_id(::google::protobuf::uint32 value);
+
+  // optional uint32 state = 2;
+  inline bool has_state() const;
+  inline void clear_state();
+  static const int kStateFieldNumber = 2;
+  inline ::google::protobuf::uint32 state() const;
+  inline void set_state(::google::protobuf::uint32 value);
+
+  // @@protoc_insertion_point(class_scope:CMsgSteamDatagramRouterHealth.DataCenter)
+ private:
+  inline void set_has_datacenter_id();
+  inline void clear_has_datacenter_id();
+  inline void set_has_state();
+  inline void clear_has_state();
+
+  ::google::protobuf::UnknownFieldSet _unknown_fields_;
+
+  ::google::protobuf::uint32 _has_bits_[1];
+  mutable int _cached_size_;
+  ::google::protobuf::uint32 datacenter_id_;
+  ::google::protobuf::uint32 state_;
+  friend void  protobuf_AddDesc_steamdatagram_5fmessages_2eproto();
+  friend void protobuf_AssignDesc_steamdatagram_5fmessages_2eproto();
+  friend void protobuf_ShutdownFile_steamdatagram_5fmessages_2eproto();
+
+  void InitAsDefaultInstance();
+  static CMsgSteamDatagramRouterHealth_DataCenter* default_instance_;
+};
+// -------------------------------------------------------------------
+
+class CMsgSteamDatagramRouterHealth : public ::google::protobuf::Message {
+ public:
+  CMsgSteamDatagramRouterHealth();
+  virtual ~CMsgSteamDatagramRouterHealth();
+
+  CMsgSteamDatagramRouterHealth(const CMsgSteamDatagramRouterHealth& from);
+
+  inline CMsgSteamDatagramRouterHealth& operator=(const CMsgSteamDatagramRouterHealth& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+    return _unknown_fields_;
+  }
+
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+    return &_unknown_fields_;
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const CMsgSteamDatagramRouterHealth& default_instance();
+
+  void Swap(CMsgSteamDatagramRouterHealth* other);
+
+  // implements Message ----------------------------------------------
+
+  CMsgSteamDatagramRouterHealth* New() const;
+  void CopyFrom(const ::google::protobuf::Message& from);
+  void MergeFrom(const ::google::protobuf::Message& from);
+  void CopyFrom(const CMsgSteamDatagramRouterHealth& from);
+  void MergeFrom(const CMsgSteamDatagramRouterHealth& from);
+  void Clear();
+  bool IsInitialized() const;
+
+  int ByteSize() const;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input);
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  int GetCachedSize() const { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const;
+  public:
+  ::google::protobuf::Metadata GetMetadata() const;
+
+  // nested types ----------------------------------------------------
+
+  typedef CMsgSteamDatagramRouterHealth_DataCenter DataCenter;
+
+  // accessors -------------------------------------------------------
+
+  // optional float cpu_load = 1;
+  inline bool has_cpu_load() const;
+  inline void clear_cpu_load();
+  static const int kCpuLoadFieldNumber = 1;
+  inline float cpu_load() const;
+  inline void set_cpu_load(float value);
+
+  // optional uint32 active_sessions = 2;
+  inline bool has_active_sessions() const;
+  inline void clear_active_sessions();
+  static const int kActiveSessionsFieldNumber = 2;
+  inline ::google::protobuf::uint32 active_sessions() const;
+  inline void set_active_sessions(::google::protobuf::uint32 value);
+
+  // optional uint32 data_pkts_sec = 3;
+  inline bool has_data_pkts_sec() const;
+  inline void clear_data_pkts_sec();
+  static const int kDataPktsSecFieldNumber = 3;
+  inline ::google::protobuf::uint32 data_pkts_sec() const;
+  inline void set_data_pkts_sec(::google::protobuf::uint32 value);
+
+  // optional uint32 other_pkts_sec = 4;
+  inline bool has_other_pkts_sec() const;
+  inline void clear_other_pkts_sec();
+  static const int kOtherPktsSecFieldNumber = 4;
+  inline ::google::protobuf::uint32 other_pkts_sec() const;
+  inline void set_other_pkts_sec(::google::protobuf::uint32 value);
+
+  // optional uint32 seconds_until_shutdown = 5;
+  inline bool has_seconds_until_shutdown() const;
+  inline void clear_seconds_until_shutdown();
+  static const int kSecondsUntilShutdownFieldNumber = 5;
+  inline ::google::protobuf::uint32 seconds_until_shutdown() const;
+  inline void set_seconds_until_shutdown(::google::protobuf::uint32 value);
+
+  // optional float cpu_cost_per_user = 8;
+  inline bool has_cpu_cost_per_user() const;
+  inline void clear_cpu_cost_per_user();
+  static const int kCpuCostPerUserFieldNumber = 8;
+  inline float cpu_cost_per_user() const;
+  inline void set_cpu_cost_per_user(float value);
+
+  // optional float cpu_cost_per_packet = 9;
+  inline bool has_cpu_cost_per_packet() const;
+  inline void clear_cpu_cost_per_packet();
+  static const int kCpuCostPerPacketFieldNumber = 9;
+  inline float cpu_cost_per_packet() const;
+  inline void set_cpu_cost_per_packet(float value);
+
+  // repeated .CMsgSteamDatagramRouterHealth.DataCenter data_centers = 6;
+  inline int data_centers_size() const;
+  inline void clear_data_centers();
+  static const int kDataCentersFieldNumber = 6;
+  inline const ::CMsgSteamDatagramRouterHealth_DataCenter& data_centers(int index) const;
+  inline ::CMsgSteamDatagramRouterHealth_DataCenter* mutable_data_centers(int index);
+  inline ::CMsgSteamDatagramRouterHealth_DataCenter* add_data_centers();
+  inline const ::google::protobuf::RepeatedPtrField< ::CMsgSteamDatagramRouterHealth_DataCenter >&
+      data_centers() const;
+  inline ::google::protobuf::RepeatedPtrField< ::CMsgSteamDatagramRouterHealth_DataCenter >*
+      mutable_data_centers();
+
+  // optional fixed64 magic = 7;
+  inline bool has_magic() const;
+  inline void clear_magic();
+  static const int kMagicFieldNumber = 7;
+  inline ::google::protobuf::uint64 magic() const;
+  inline void set_magic(::google::protobuf::uint64 value);
+
+  // @@protoc_insertion_point(class_scope:CMsgSteamDatagramRouterHealth)
+ private:
+  inline void set_has_cpu_load();
+  inline void clear_has_cpu_load();
+  inline void set_has_active_sessions();
+  inline void clear_has_active_sessions();
+  inline void set_has_data_pkts_sec();
+  inline void clear_has_data_pkts_sec();
+  inline void set_has_other_pkts_sec();
+  inline void clear_has_other_pkts_sec();
+  inline void set_has_seconds_until_shutdown();
+  inline void clear_has_seconds_until_shutdown();
+  inline void set_has_cpu_cost_per_user();
+  inline void clear_has_cpu_cost_per_user();
+  inline void set_has_cpu_cost_per_packet();
+  inline void clear_has_cpu_cost_per_packet();
+  inline void set_has_magic();
+  inline void clear_has_magic();
+
+  ::google::protobuf::UnknownFieldSet _unknown_fields_;
+
+  ::google::protobuf::uint32 _has_bits_[1];
+  mutable int _cached_size_;
+  float cpu_load_;
+  ::google::protobuf::uint32 active_sessions_;
+  ::google::protobuf::uint32 data_pkts_sec_;
+  ::google::protobuf::uint32 other_pkts_sec_;
+  ::google::protobuf::uint32 seconds_until_shutdown_;
+  float cpu_cost_per_user_;
+  ::google::protobuf::RepeatedPtrField< ::CMsgSteamDatagramRouterHealth_DataCenter > data_centers_;
+  ::google::protobuf::uint64 magic_;
+  float cpu_cost_per_packet_;
+  friend void  protobuf_AddDesc_steamdatagram_5fmessages_2eproto();
+  friend void protobuf_AssignDesc_steamdatagram_5fmessages_2eproto();
+  friend void protobuf_ShutdownFile_steamdatagram_5fmessages_2eproto();
+
+  void InitAsDefaultInstance();
+  static CMsgSteamDatagramRouterHealth* default_instance_;
+};
 // ===================================================================
 
 
@@ -2983,6 +3824,90 @@ inline void CMsgSteamDatagramRouterPingReply::set_client_cookie(::google::protob
   set_has_client_cookie();
   client_cookie_ = value;
   // @@protoc_insertion_point(field_set:CMsgSteamDatagramRouterPingReply.client_cookie)
+}
+
+// optional uint32 scoring_penalty_relay_cluster = 9;
+inline bool CMsgSteamDatagramRouterPingReply::has_scoring_penalty_relay_cluster() const {
+  return (_has_bits_[0] & 0x00000100u) != 0;
+}
+inline void CMsgSteamDatagramRouterPingReply::set_has_scoring_penalty_relay_cluster() {
+  _has_bits_[0] |= 0x00000100u;
+}
+inline void CMsgSteamDatagramRouterPingReply::clear_has_scoring_penalty_relay_cluster() {
+  _has_bits_[0] &= ~0x00000100u;
+}
+inline void CMsgSteamDatagramRouterPingReply::clear_scoring_penalty_relay_cluster() {
+  scoring_penalty_relay_cluster_ = 0u;
+  clear_has_scoring_penalty_relay_cluster();
+}
+inline ::google::protobuf::uint32 CMsgSteamDatagramRouterPingReply::scoring_penalty_relay_cluster() const {
+  // @@protoc_insertion_point(field_get:CMsgSteamDatagramRouterPingReply.scoring_penalty_relay_cluster)
+  return scoring_penalty_relay_cluster_;
+}
+inline void CMsgSteamDatagramRouterPingReply::set_scoring_penalty_relay_cluster(::google::protobuf::uint32 value) {
+  set_has_scoring_penalty_relay_cluster();
+  scoring_penalty_relay_cluster_ = value;
+  // @@protoc_insertion_point(field_set:CMsgSteamDatagramRouterPingReply.scoring_penalty_relay_cluster)
+}
+
+// repeated fixed32 scoring_penalty_datacenter_ids = 10 [packed = true];
+inline int CMsgSteamDatagramRouterPingReply::scoring_penalty_datacenter_ids_size() const {
+  return scoring_penalty_datacenter_ids_.size();
+}
+inline void CMsgSteamDatagramRouterPingReply::clear_scoring_penalty_datacenter_ids() {
+  scoring_penalty_datacenter_ids_.Clear();
+}
+inline ::google::protobuf::uint32 CMsgSteamDatagramRouterPingReply::scoring_penalty_datacenter_ids(int index) const {
+  // @@protoc_insertion_point(field_get:CMsgSteamDatagramRouterPingReply.scoring_penalty_datacenter_ids)
+  return scoring_penalty_datacenter_ids_.Get(index);
+}
+inline void CMsgSteamDatagramRouterPingReply::set_scoring_penalty_datacenter_ids(int index, ::google::protobuf::uint32 value) {
+  scoring_penalty_datacenter_ids_.Set(index, value);
+  // @@protoc_insertion_point(field_set:CMsgSteamDatagramRouterPingReply.scoring_penalty_datacenter_ids)
+}
+inline void CMsgSteamDatagramRouterPingReply::add_scoring_penalty_datacenter_ids(::google::protobuf::uint32 value) {
+  scoring_penalty_datacenter_ids_.Add(value);
+  // @@protoc_insertion_point(field_add:CMsgSteamDatagramRouterPingReply.scoring_penalty_datacenter_ids)
+}
+inline const ::google::protobuf::RepeatedField< ::google::protobuf::uint32 >&
+CMsgSteamDatagramRouterPingReply::scoring_penalty_datacenter_ids() const {
+  // @@protoc_insertion_point(field_list:CMsgSteamDatagramRouterPingReply.scoring_penalty_datacenter_ids)
+  return scoring_penalty_datacenter_ids_;
+}
+inline ::google::protobuf::RepeatedField< ::google::protobuf::uint32 >*
+CMsgSteamDatagramRouterPingReply::mutable_scoring_penalty_datacenter_ids() {
+  // @@protoc_insertion_point(field_mutable_list:CMsgSteamDatagramRouterPingReply.scoring_penalty_datacenter_ids)
+  return &scoring_penalty_datacenter_ids_;
+}
+
+// repeated uint32 scoring_penalty_values = 11 [packed = true];
+inline int CMsgSteamDatagramRouterPingReply::scoring_penalty_values_size() const {
+  return scoring_penalty_values_.size();
+}
+inline void CMsgSteamDatagramRouterPingReply::clear_scoring_penalty_values() {
+  scoring_penalty_values_.Clear();
+}
+inline ::google::protobuf::uint32 CMsgSteamDatagramRouterPingReply::scoring_penalty_values(int index) const {
+  // @@protoc_insertion_point(field_get:CMsgSteamDatagramRouterPingReply.scoring_penalty_values)
+  return scoring_penalty_values_.Get(index);
+}
+inline void CMsgSteamDatagramRouterPingReply::set_scoring_penalty_values(int index, ::google::protobuf::uint32 value) {
+  scoring_penalty_values_.Set(index, value);
+  // @@protoc_insertion_point(field_set:CMsgSteamDatagramRouterPingReply.scoring_penalty_values)
+}
+inline void CMsgSteamDatagramRouterPingReply::add_scoring_penalty_values(::google::protobuf::uint32 value) {
+  scoring_penalty_values_.Add(value);
+  // @@protoc_insertion_point(field_add:CMsgSteamDatagramRouterPingReply.scoring_penalty_values)
+}
+inline const ::google::protobuf::RepeatedField< ::google::protobuf::uint32 >&
+CMsgSteamDatagramRouterPingReply::scoring_penalty_values() const {
+  // @@protoc_insertion_point(field_list:CMsgSteamDatagramRouterPingReply.scoring_penalty_values)
+  return scoring_penalty_values_;
+}
+inline ::google::protobuf::RepeatedField< ::google::protobuf::uint32 >*
+CMsgSteamDatagramRouterPingReply::mutable_scoring_penalty_values() {
+  // @@protoc_insertion_point(field_mutable_list:CMsgSteamDatagramRouterPingReply.scoring_penalty_values)
+  return &scoring_penalty_values_;
 }
 
 // -------------------------------------------------------------------
@@ -3756,6 +4681,30 @@ inline void CMsgSteamDatagramGameserverSessionRequest::set_client_cookie(::googl
   // @@protoc_insertion_point(field_set:CMsgSteamDatagramGameserverSessionRequest.client_cookie)
 }
 
+// optional uint32 network_config_version = 6;
+inline bool CMsgSteamDatagramGameserverSessionRequest::has_network_config_version() const {
+  return (_has_bits_[0] & 0x00000010u) != 0;
+}
+inline void CMsgSteamDatagramGameserverSessionRequest::set_has_network_config_version() {
+  _has_bits_[0] |= 0x00000010u;
+}
+inline void CMsgSteamDatagramGameserverSessionRequest::clear_has_network_config_version() {
+  _has_bits_[0] &= ~0x00000010u;
+}
+inline void CMsgSteamDatagramGameserverSessionRequest::clear_network_config_version() {
+  network_config_version_ = 0u;
+  clear_has_network_config_version();
+}
+inline ::google::protobuf::uint32 CMsgSteamDatagramGameserverSessionRequest::network_config_version() const {
+  // @@protoc_insertion_point(field_get:CMsgSteamDatagramGameserverSessionRequest.network_config_version)
+  return network_config_version_;
+}
+inline void CMsgSteamDatagramGameserverSessionRequest::set_network_config_version(::google::protobuf::uint32 value) {
+  set_has_network_config_version();
+  network_config_version_ = value;
+  // @@protoc_insertion_point(field_set:CMsgSteamDatagramGameserverSessionRequest.network_config_version)
+}
+
 // -------------------------------------------------------------------
 
 // CMsgSteamDatagramGameserverSessionEstablished
@@ -3830,6 +4779,30 @@ inline void CMsgSteamDatagramGameserverSessionEstablished::set_seconds_until_shu
   set_has_seconds_until_shutdown();
   seconds_until_shutdown_ = value;
   // @@protoc_insertion_point(field_set:CMsgSteamDatagramGameserverSessionEstablished.seconds_until_shutdown)
+}
+
+// optional uint32 session_id = 5;
+inline bool CMsgSteamDatagramGameserverSessionEstablished::has_session_id() const {
+  return (_has_bits_[0] & 0x00000008u) != 0;
+}
+inline void CMsgSteamDatagramGameserverSessionEstablished::set_has_session_id() {
+  _has_bits_[0] |= 0x00000008u;
+}
+inline void CMsgSteamDatagramGameserverSessionEstablished::clear_has_session_id() {
+  _has_bits_[0] &= ~0x00000008u;
+}
+inline void CMsgSteamDatagramGameserverSessionEstablished::clear_session_id() {
+  session_id_ = 0u;
+  clear_has_session_id();
+}
+inline ::google::protobuf::uint32 CMsgSteamDatagramGameserverSessionEstablished::session_id() const {
+  // @@protoc_insertion_point(field_get:CMsgSteamDatagramGameserverSessionEstablished.session_id)
+  return session_id_;
+}
+inline void CMsgSteamDatagramGameserverSessionEstablished::set_session_id(::google::protobuf::uint32 value) {
+  set_has_session_id();
+  session_id_ = value;
+  // @@protoc_insertion_point(field_set:CMsgSteamDatagramGameserverSessionEstablished.session_id)
 }
 
 // -------------------------------------------------------------------
@@ -4480,6 +5453,30 @@ inline void CMsgSteamDatagramLinkInstantaneousStats::set_packets_weird_sequence_
   // @@protoc_insertion_point(field_set:CMsgSteamDatagramLinkInstantaneousStats.packets_weird_sequence_pct)
 }
 
+// optional uint32 peak_jitter_usec = 8;
+inline bool CMsgSteamDatagramLinkInstantaneousStats::has_peak_jitter_usec() const {
+  return (_has_bits_[0] & 0x00000080u) != 0;
+}
+inline void CMsgSteamDatagramLinkInstantaneousStats::set_has_peak_jitter_usec() {
+  _has_bits_[0] |= 0x00000080u;
+}
+inline void CMsgSteamDatagramLinkInstantaneousStats::clear_has_peak_jitter_usec() {
+  _has_bits_[0] &= ~0x00000080u;
+}
+inline void CMsgSteamDatagramLinkInstantaneousStats::clear_peak_jitter_usec() {
+  peak_jitter_usec_ = 0u;
+  clear_has_peak_jitter_usec();
+}
+inline ::google::protobuf::uint32 CMsgSteamDatagramLinkInstantaneousStats::peak_jitter_usec() const {
+  // @@protoc_insertion_point(field_get:CMsgSteamDatagramLinkInstantaneousStats.peak_jitter_usec)
+  return peak_jitter_usec_;
+}
+inline void CMsgSteamDatagramLinkInstantaneousStats::set_peak_jitter_usec(::google::protobuf::uint32 value) {
+  set_has_peak_jitter_usec();
+  peak_jitter_usec_ = value;
+  // @@protoc_insertion_point(field_set:CMsgSteamDatagramLinkInstantaneousStats.peak_jitter_usec)
+}
+
 // -------------------------------------------------------------------
 
 // CMsgSteamDatagramLinkLifetimeStats
@@ -4698,6 +5695,798 @@ inline void CMsgSteamDatagramLinkLifetimeStats::set_packets_recv_lurch(::google:
   set_has_packets_recv_lurch();
   packets_recv_lurch_ = value;
   // @@protoc_insertion_point(field_set:CMsgSteamDatagramLinkLifetimeStats.packets_recv_lurch)
+}
+
+// optional uint32 quality_histogram_100 = 21;
+inline bool CMsgSteamDatagramLinkLifetimeStats::has_quality_histogram_100() const {
+  return (_has_bits_[0] & 0x00000200u) != 0;
+}
+inline void CMsgSteamDatagramLinkLifetimeStats::set_has_quality_histogram_100() {
+  _has_bits_[0] |= 0x00000200u;
+}
+inline void CMsgSteamDatagramLinkLifetimeStats::clear_has_quality_histogram_100() {
+  _has_bits_[0] &= ~0x00000200u;
+}
+inline void CMsgSteamDatagramLinkLifetimeStats::clear_quality_histogram_100() {
+  quality_histogram_100_ = 0u;
+  clear_has_quality_histogram_100();
+}
+inline ::google::protobuf::uint32 CMsgSteamDatagramLinkLifetimeStats::quality_histogram_100() const {
+  // @@protoc_insertion_point(field_get:CMsgSteamDatagramLinkLifetimeStats.quality_histogram_100)
+  return quality_histogram_100_;
+}
+inline void CMsgSteamDatagramLinkLifetimeStats::set_quality_histogram_100(::google::protobuf::uint32 value) {
+  set_has_quality_histogram_100();
+  quality_histogram_100_ = value;
+  // @@protoc_insertion_point(field_set:CMsgSteamDatagramLinkLifetimeStats.quality_histogram_100)
+}
+
+// optional uint32 quality_histogram_99 = 22;
+inline bool CMsgSteamDatagramLinkLifetimeStats::has_quality_histogram_99() const {
+  return (_has_bits_[0] & 0x00000400u) != 0;
+}
+inline void CMsgSteamDatagramLinkLifetimeStats::set_has_quality_histogram_99() {
+  _has_bits_[0] |= 0x00000400u;
+}
+inline void CMsgSteamDatagramLinkLifetimeStats::clear_has_quality_histogram_99() {
+  _has_bits_[0] &= ~0x00000400u;
+}
+inline void CMsgSteamDatagramLinkLifetimeStats::clear_quality_histogram_99() {
+  quality_histogram_99_ = 0u;
+  clear_has_quality_histogram_99();
+}
+inline ::google::protobuf::uint32 CMsgSteamDatagramLinkLifetimeStats::quality_histogram_99() const {
+  // @@protoc_insertion_point(field_get:CMsgSteamDatagramLinkLifetimeStats.quality_histogram_99)
+  return quality_histogram_99_;
+}
+inline void CMsgSteamDatagramLinkLifetimeStats::set_quality_histogram_99(::google::protobuf::uint32 value) {
+  set_has_quality_histogram_99();
+  quality_histogram_99_ = value;
+  // @@protoc_insertion_point(field_set:CMsgSteamDatagramLinkLifetimeStats.quality_histogram_99)
+}
+
+// optional uint32 quality_histogram_97 = 23;
+inline bool CMsgSteamDatagramLinkLifetimeStats::has_quality_histogram_97() const {
+  return (_has_bits_[0] & 0x00000800u) != 0;
+}
+inline void CMsgSteamDatagramLinkLifetimeStats::set_has_quality_histogram_97() {
+  _has_bits_[0] |= 0x00000800u;
+}
+inline void CMsgSteamDatagramLinkLifetimeStats::clear_has_quality_histogram_97() {
+  _has_bits_[0] &= ~0x00000800u;
+}
+inline void CMsgSteamDatagramLinkLifetimeStats::clear_quality_histogram_97() {
+  quality_histogram_97_ = 0u;
+  clear_has_quality_histogram_97();
+}
+inline ::google::protobuf::uint32 CMsgSteamDatagramLinkLifetimeStats::quality_histogram_97() const {
+  // @@protoc_insertion_point(field_get:CMsgSteamDatagramLinkLifetimeStats.quality_histogram_97)
+  return quality_histogram_97_;
+}
+inline void CMsgSteamDatagramLinkLifetimeStats::set_quality_histogram_97(::google::protobuf::uint32 value) {
+  set_has_quality_histogram_97();
+  quality_histogram_97_ = value;
+  // @@protoc_insertion_point(field_set:CMsgSteamDatagramLinkLifetimeStats.quality_histogram_97)
+}
+
+// optional uint32 quality_histogram_95 = 24;
+inline bool CMsgSteamDatagramLinkLifetimeStats::has_quality_histogram_95() const {
+  return (_has_bits_[0] & 0x00001000u) != 0;
+}
+inline void CMsgSteamDatagramLinkLifetimeStats::set_has_quality_histogram_95() {
+  _has_bits_[0] |= 0x00001000u;
+}
+inline void CMsgSteamDatagramLinkLifetimeStats::clear_has_quality_histogram_95() {
+  _has_bits_[0] &= ~0x00001000u;
+}
+inline void CMsgSteamDatagramLinkLifetimeStats::clear_quality_histogram_95() {
+  quality_histogram_95_ = 0u;
+  clear_has_quality_histogram_95();
+}
+inline ::google::protobuf::uint32 CMsgSteamDatagramLinkLifetimeStats::quality_histogram_95() const {
+  // @@protoc_insertion_point(field_get:CMsgSteamDatagramLinkLifetimeStats.quality_histogram_95)
+  return quality_histogram_95_;
+}
+inline void CMsgSteamDatagramLinkLifetimeStats::set_quality_histogram_95(::google::protobuf::uint32 value) {
+  set_has_quality_histogram_95();
+  quality_histogram_95_ = value;
+  // @@protoc_insertion_point(field_set:CMsgSteamDatagramLinkLifetimeStats.quality_histogram_95)
+}
+
+// optional uint32 quality_histogram_90 = 25;
+inline bool CMsgSteamDatagramLinkLifetimeStats::has_quality_histogram_90() const {
+  return (_has_bits_[0] & 0x00002000u) != 0;
+}
+inline void CMsgSteamDatagramLinkLifetimeStats::set_has_quality_histogram_90() {
+  _has_bits_[0] |= 0x00002000u;
+}
+inline void CMsgSteamDatagramLinkLifetimeStats::clear_has_quality_histogram_90() {
+  _has_bits_[0] &= ~0x00002000u;
+}
+inline void CMsgSteamDatagramLinkLifetimeStats::clear_quality_histogram_90() {
+  quality_histogram_90_ = 0u;
+  clear_has_quality_histogram_90();
+}
+inline ::google::protobuf::uint32 CMsgSteamDatagramLinkLifetimeStats::quality_histogram_90() const {
+  // @@protoc_insertion_point(field_get:CMsgSteamDatagramLinkLifetimeStats.quality_histogram_90)
+  return quality_histogram_90_;
+}
+inline void CMsgSteamDatagramLinkLifetimeStats::set_quality_histogram_90(::google::protobuf::uint32 value) {
+  set_has_quality_histogram_90();
+  quality_histogram_90_ = value;
+  // @@protoc_insertion_point(field_set:CMsgSteamDatagramLinkLifetimeStats.quality_histogram_90)
+}
+
+// optional uint32 quality_histogram_75 = 26;
+inline bool CMsgSteamDatagramLinkLifetimeStats::has_quality_histogram_75() const {
+  return (_has_bits_[0] & 0x00004000u) != 0;
+}
+inline void CMsgSteamDatagramLinkLifetimeStats::set_has_quality_histogram_75() {
+  _has_bits_[0] |= 0x00004000u;
+}
+inline void CMsgSteamDatagramLinkLifetimeStats::clear_has_quality_histogram_75() {
+  _has_bits_[0] &= ~0x00004000u;
+}
+inline void CMsgSteamDatagramLinkLifetimeStats::clear_quality_histogram_75() {
+  quality_histogram_75_ = 0u;
+  clear_has_quality_histogram_75();
+}
+inline ::google::protobuf::uint32 CMsgSteamDatagramLinkLifetimeStats::quality_histogram_75() const {
+  // @@protoc_insertion_point(field_get:CMsgSteamDatagramLinkLifetimeStats.quality_histogram_75)
+  return quality_histogram_75_;
+}
+inline void CMsgSteamDatagramLinkLifetimeStats::set_quality_histogram_75(::google::protobuf::uint32 value) {
+  set_has_quality_histogram_75();
+  quality_histogram_75_ = value;
+  // @@protoc_insertion_point(field_set:CMsgSteamDatagramLinkLifetimeStats.quality_histogram_75)
+}
+
+// optional uint32 quality_histogram_50 = 27;
+inline bool CMsgSteamDatagramLinkLifetimeStats::has_quality_histogram_50() const {
+  return (_has_bits_[0] & 0x00008000u) != 0;
+}
+inline void CMsgSteamDatagramLinkLifetimeStats::set_has_quality_histogram_50() {
+  _has_bits_[0] |= 0x00008000u;
+}
+inline void CMsgSteamDatagramLinkLifetimeStats::clear_has_quality_histogram_50() {
+  _has_bits_[0] &= ~0x00008000u;
+}
+inline void CMsgSteamDatagramLinkLifetimeStats::clear_quality_histogram_50() {
+  quality_histogram_50_ = 0u;
+  clear_has_quality_histogram_50();
+}
+inline ::google::protobuf::uint32 CMsgSteamDatagramLinkLifetimeStats::quality_histogram_50() const {
+  // @@protoc_insertion_point(field_get:CMsgSteamDatagramLinkLifetimeStats.quality_histogram_50)
+  return quality_histogram_50_;
+}
+inline void CMsgSteamDatagramLinkLifetimeStats::set_quality_histogram_50(::google::protobuf::uint32 value) {
+  set_has_quality_histogram_50();
+  quality_histogram_50_ = value;
+  // @@protoc_insertion_point(field_set:CMsgSteamDatagramLinkLifetimeStats.quality_histogram_50)
+}
+
+// optional uint32 quality_histogram_1 = 28;
+inline bool CMsgSteamDatagramLinkLifetimeStats::has_quality_histogram_1() const {
+  return (_has_bits_[0] & 0x00010000u) != 0;
+}
+inline void CMsgSteamDatagramLinkLifetimeStats::set_has_quality_histogram_1() {
+  _has_bits_[0] |= 0x00010000u;
+}
+inline void CMsgSteamDatagramLinkLifetimeStats::clear_has_quality_histogram_1() {
+  _has_bits_[0] &= ~0x00010000u;
+}
+inline void CMsgSteamDatagramLinkLifetimeStats::clear_quality_histogram_1() {
+  quality_histogram_1_ = 0u;
+  clear_has_quality_histogram_1();
+}
+inline ::google::protobuf::uint32 CMsgSteamDatagramLinkLifetimeStats::quality_histogram_1() const {
+  // @@protoc_insertion_point(field_get:CMsgSteamDatagramLinkLifetimeStats.quality_histogram_1)
+  return quality_histogram_1_;
+}
+inline void CMsgSteamDatagramLinkLifetimeStats::set_quality_histogram_1(::google::protobuf::uint32 value) {
+  set_has_quality_histogram_1();
+  quality_histogram_1_ = value;
+  // @@protoc_insertion_point(field_set:CMsgSteamDatagramLinkLifetimeStats.quality_histogram_1)
+}
+
+// optional uint32 quality_histogram_dead = 29;
+inline bool CMsgSteamDatagramLinkLifetimeStats::has_quality_histogram_dead() const {
+  return (_has_bits_[0] & 0x00020000u) != 0;
+}
+inline void CMsgSteamDatagramLinkLifetimeStats::set_has_quality_histogram_dead() {
+  _has_bits_[0] |= 0x00020000u;
+}
+inline void CMsgSteamDatagramLinkLifetimeStats::clear_has_quality_histogram_dead() {
+  _has_bits_[0] &= ~0x00020000u;
+}
+inline void CMsgSteamDatagramLinkLifetimeStats::clear_quality_histogram_dead() {
+  quality_histogram_dead_ = 0u;
+  clear_has_quality_histogram_dead();
+}
+inline ::google::protobuf::uint32 CMsgSteamDatagramLinkLifetimeStats::quality_histogram_dead() const {
+  // @@protoc_insertion_point(field_get:CMsgSteamDatagramLinkLifetimeStats.quality_histogram_dead)
+  return quality_histogram_dead_;
+}
+inline void CMsgSteamDatagramLinkLifetimeStats::set_quality_histogram_dead(::google::protobuf::uint32 value) {
+  set_has_quality_histogram_dead();
+  quality_histogram_dead_ = value;
+  // @@protoc_insertion_point(field_set:CMsgSteamDatagramLinkLifetimeStats.quality_histogram_dead)
+}
+
+// optional uint32 quality_ntile_2nd = 30;
+inline bool CMsgSteamDatagramLinkLifetimeStats::has_quality_ntile_2nd() const {
+  return (_has_bits_[0] & 0x00040000u) != 0;
+}
+inline void CMsgSteamDatagramLinkLifetimeStats::set_has_quality_ntile_2nd() {
+  _has_bits_[0] |= 0x00040000u;
+}
+inline void CMsgSteamDatagramLinkLifetimeStats::clear_has_quality_ntile_2nd() {
+  _has_bits_[0] &= ~0x00040000u;
+}
+inline void CMsgSteamDatagramLinkLifetimeStats::clear_quality_ntile_2nd() {
+  quality_ntile_2nd_ = 0u;
+  clear_has_quality_ntile_2nd();
+}
+inline ::google::protobuf::uint32 CMsgSteamDatagramLinkLifetimeStats::quality_ntile_2nd() const {
+  // @@protoc_insertion_point(field_get:CMsgSteamDatagramLinkLifetimeStats.quality_ntile_2nd)
+  return quality_ntile_2nd_;
+}
+inline void CMsgSteamDatagramLinkLifetimeStats::set_quality_ntile_2nd(::google::protobuf::uint32 value) {
+  set_has_quality_ntile_2nd();
+  quality_ntile_2nd_ = value;
+  // @@protoc_insertion_point(field_set:CMsgSteamDatagramLinkLifetimeStats.quality_ntile_2nd)
+}
+
+// optional uint32 quality_ntile_5th = 31;
+inline bool CMsgSteamDatagramLinkLifetimeStats::has_quality_ntile_5th() const {
+  return (_has_bits_[0] & 0x00080000u) != 0;
+}
+inline void CMsgSteamDatagramLinkLifetimeStats::set_has_quality_ntile_5th() {
+  _has_bits_[0] |= 0x00080000u;
+}
+inline void CMsgSteamDatagramLinkLifetimeStats::clear_has_quality_ntile_5th() {
+  _has_bits_[0] &= ~0x00080000u;
+}
+inline void CMsgSteamDatagramLinkLifetimeStats::clear_quality_ntile_5th() {
+  quality_ntile_5th_ = 0u;
+  clear_has_quality_ntile_5th();
+}
+inline ::google::protobuf::uint32 CMsgSteamDatagramLinkLifetimeStats::quality_ntile_5th() const {
+  // @@protoc_insertion_point(field_get:CMsgSteamDatagramLinkLifetimeStats.quality_ntile_5th)
+  return quality_ntile_5th_;
+}
+inline void CMsgSteamDatagramLinkLifetimeStats::set_quality_ntile_5th(::google::protobuf::uint32 value) {
+  set_has_quality_ntile_5th();
+  quality_ntile_5th_ = value;
+  // @@protoc_insertion_point(field_set:CMsgSteamDatagramLinkLifetimeStats.quality_ntile_5th)
+}
+
+// optional uint32 quality_ntile_25th = 32;
+inline bool CMsgSteamDatagramLinkLifetimeStats::has_quality_ntile_25th() const {
+  return (_has_bits_[0] & 0x00100000u) != 0;
+}
+inline void CMsgSteamDatagramLinkLifetimeStats::set_has_quality_ntile_25th() {
+  _has_bits_[0] |= 0x00100000u;
+}
+inline void CMsgSteamDatagramLinkLifetimeStats::clear_has_quality_ntile_25th() {
+  _has_bits_[0] &= ~0x00100000u;
+}
+inline void CMsgSteamDatagramLinkLifetimeStats::clear_quality_ntile_25th() {
+  quality_ntile_25th_ = 0u;
+  clear_has_quality_ntile_25th();
+}
+inline ::google::protobuf::uint32 CMsgSteamDatagramLinkLifetimeStats::quality_ntile_25th() const {
+  // @@protoc_insertion_point(field_get:CMsgSteamDatagramLinkLifetimeStats.quality_ntile_25th)
+  return quality_ntile_25th_;
+}
+inline void CMsgSteamDatagramLinkLifetimeStats::set_quality_ntile_25th(::google::protobuf::uint32 value) {
+  set_has_quality_ntile_25th();
+  quality_ntile_25th_ = value;
+  // @@protoc_insertion_point(field_set:CMsgSteamDatagramLinkLifetimeStats.quality_ntile_25th)
+}
+
+// optional uint32 quality_ntile_50th = 33;
+inline bool CMsgSteamDatagramLinkLifetimeStats::has_quality_ntile_50th() const {
+  return (_has_bits_[0] & 0x00200000u) != 0;
+}
+inline void CMsgSteamDatagramLinkLifetimeStats::set_has_quality_ntile_50th() {
+  _has_bits_[0] |= 0x00200000u;
+}
+inline void CMsgSteamDatagramLinkLifetimeStats::clear_has_quality_ntile_50th() {
+  _has_bits_[0] &= ~0x00200000u;
+}
+inline void CMsgSteamDatagramLinkLifetimeStats::clear_quality_ntile_50th() {
+  quality_ntile_50th_ = 0u;
+  clear_has_quality_ntile_50th();
+}
+inline ::google::protobuf::uint32 CMsgSteamDatagramLinkLifetimeStats::quality_ntile_50th() const {
+  // @@protoc_insertion_point(field_get:CMsgSteamDatagramLinkLifetimeStats.quality_ntile_50th)
+  return quality_ntile_50th_;
+}
+inline void CMsgSteamDatagramLinkLifetimeStats::set_quality_ntile_50th(::google::protobuf::uint32 value) {
+  set_has_quality_ntile_50th();
+  quality_ntile_50th_ = value;
+  // @@protoc_insertion_point(field_set:CMsgSteamDatagramLinkLifetimeStats.quality_ntile_50th)
+}
+
+// optional uint32 ping_histogram_25 = 41;
+inline bool CMsgSteamDatagramLinkLifetimeStats::has_ping_histogram_25() const {
+  return (_has_bits_[0] & 0x00400000u) != 0;
+}
+inline void CMsgSteamDatagramLinkLifetimeStats::set_has_ping_histogram_25() {
+  _has_bits_[0] |= 0x00400000u;
+}
+inline void CMsgSteamDatagramLinkLifetimeStats::clear_has_ping_histogram_25() {
+  _has_bits_[0] &= ~0x00400000u;
+}
+inline void CMsgSteamDatagramLinkLifetimeStats::clear_ping_histogram_25() {
+  ping_histogram_25_ = 0u;
+  clear_has_ping_histogram_25();
+}
+inline ::google::protobuf::uint32 CMsgSteamDatagramLinkLifetimeStats::ping_histogram_25() const {
+  // @@protoc_insertion_point(field_get:CMsgSteamDatagramLinkLifetimeStats.ping_histogram_25)
+  return ping_histogram_25_;
+}
+inline void CMsgSteamDatagramLinkLifetimeStats::set_ping_histogram_25(::google::protobuf::uint32 value) {
+  set_has_ping_histogram_25();
+  ping_histogram_25_ = value;
+  // @@protoc_insertion_point(field_set:CMsgSteamDatagramLinkLifetimeStats.ping_histogram_25)
+}
+
+// optional uint32 ping_histogram_50 = 42;
+inline bool CMsgSteamDatagramLinkLifetimeStats::has_ping_histogram_50() const {
+  return (_has_bits_[0] & 0x00800000u) != 0;
+}
+inline void CMsgSteamDatagramLinkLifetimeStats::set_has_ping_histogram_50() {
+  _has_bits_[0] |= 0x00800000u;
+}
+inline void CMsgSteamDatagramLinkLifetimeStats::clear_has_ping_histogram_50() {
+  _has_bits_[0] &= ~0x00800000u;
+}
+inline void CMsgSteamDatagramLinkLifetimeStats::clear_ping_histogram_50() {
+  ping_histogram_50_ = 0u;
+  clear_has_ping_histogram_50();
+}
+inline ::google::protobuf::uint32 CMsgSteamDatagramLinkLifetimeStats::ping_histogram_50() const {
+  // @@protoc_insertion_point(field_get:CMsgSteamDatagramLinkLifetimeStats.ping_histogram_50)
+  return ping_histogram_50_;
+}
+inline void CMsgSteamDatagramLinkLifetimeStats::set_ping_histogram_50(::google::protobuf::uint32 value) {
+  set_has_ping_histogram_50();
+  ping_histogram_50_ = value;
+  // @@protoc_insertion_point(field_set:CMsgSteamDatagramLinkLifetimeStats.ping_histogram_50)
+}
+
+// optional uint32 ping_histogram_75 = 43;
+inline bool CMsgSteamDatagramLinkLifetimeStats::has_ping_histogram_75() const {
+  return (_has_bits_[0] & 0x01000000u) != 0;
+}
+inline void CMsgSteamDatagramLinkLifetimeStats::set_has_ping_histogram_75() {
+  _has_bits_[0] |= 0x01000000u;
+}
+inline void CMsgSteamDatagramLinkLifetimeStats::clear_has_ping_histogram_75() {
+  _has_bits_[0] &= ~0x01000000u;
+}
+inline void CMsgSteamDatagramLinkLifetimeStats::clear_ping_histogram_75() {
+  ping_histogram_75_ = 0u;
+  clear_has_ping_histogram_75();
+}
+inline ::google::protobuf::uint32 CMsgSteamDatagramLinkLifetimeStats::ping_histogram_75() const {
+  // @@protoc_insertion_point(field_get:CMsgSteamDatagramLinkLifetimeStats.ping_histogram_75)
+  return ping_histogram_75_;
+}
+inline void CMsgSteamDatagramLinkLifetimeStats::set_ping_histogram_75(::google::protobuf::uint32 value) {
+  set_has_ping_histogram_75();
+  ping_histogram_75_ = value;
+  // @@protoc_insertion_point(field_set:CMsgSteamDatagramLinkLifetimeStats.ping_histogram_75)
+}
+
+// optional uint32 ping_histogram_100 = 44;
+inline bool CMsgSteamDatagramLinkLifetimeStats::has_ping_histogram_100() const {
+  return (_has_bits_[0] & 0x02000000u) != 0;
+}
+inline void CMsgSteamDatagramLinkLifetimeStats::set_has_ping_histogram_100() {
+  _has_bits_[0] |= 0x02000000u;
+}
+inline void CMsgSteamDatagramLinkLifetimeStats::clear_has_ping_histogram_100() {
+  _has_bits_[0] &= ~0x02000000u;
+}
+inline void CMsgSteamDatagramLinkLifetimeStats::clear_ping_histogram_100() {
+  ping_histogram_100_ = 0u;
+  clear_has_ping_histogram_100();
+}
+inline ::google::protobuf::uint32 CMsgSteamDatagramLinkLifetimeStats::ping_histogram_100() const {
+  // @@protoc_insertion_point(field_get:CMsgSteamDatagramLinkLifetimeStats.ping_histogram_100)
+  return ping_histogram_100_;
+}
+inline void CMsgSteamDatagramLinkLifetimeStats::set_ping_histogram_100(::google::protobuf::uint32 value) {
+  set_has_ping_histogram_100();
+  ping_histogram_100_ = value;
+  // @@protoc_insertion_point(field_set:CMsgSteamDatagramLinkLifetimeStats.ping_histogram_100)
+}
+
+// optional uint32 ping_histogram_125 = 45;
+inline bool CMsgSteamDatagramLinkLifetimeStats::has_ping_histogram_125() const {
+  return (_has_bits_[0] & 0x04000000u) != 0;
+}
+inline void CMsgSteamDatagramLinkLifetimeStats::set_has_ping_histogram_125() {
+  _has_bits_[0] |= 0x04000000u;
+}
+inline void CMsgSteamDatagramLinkLifetimeStats::clear_has_ping_histogram_125() {
+  _has_bits_[0] &= ~0x04000000u;
+}
+inline void CMsgSteamDatagramLinkLifetimeStats::clear_ping_histogram_125() {
+  ping_histogram_125_ = 0u;
+  clear_has_ping_histogram_125();
+}
+inline ::google::protobuf::uint32 CMsgSteamDatagramLinkLifetimeStats::ping_histogram_125() const {
+  // @@protoc_insertion_point(field_get:CMsgSteamDatagramLinkLifetimeStats.ping_histogram_125)
+  return ping_histogram_125_;
+}
+inline void CMsgSteamDatagramLinkLifetimeStats::set_ping_histogram_125(::google::protobuf::uint32 value) {
+  set_has_ping_histogram_125();
+  ping_histogram_125_ = value;
+  // @@protoc_insertion_point(field_set:CMsgSteamDatagramLinkLifetimeStats.ping_histogram_125)
+}
+
+// optional uint32 ping_histogram_150 = 46;
+inline bool CMsgSteamDatagramLinkLifetimeStats::has_ping_histogram_150() const {
+  return (_has_bits_[0] & 0x08000000u) != 0;
+}
+inline void CMsgSteamDatagramLinkLifetimeStats::set_has_ping_histogram_150() {
+  _has_bits_[0] |= 0x08000000u;
+}
+inline void CMsgSteamDatagramLinkLifetimeStats::clear_has_ping_histogram_150() {
+  _has_bits_[0] &= ~0x08000000u;
+}
+inline void CMsgSteamDatagramLinkLifetimeStats::clear_ping_histogram_150() {
+  ping_histogram_150_ = 0u;
+  clear_has_ping_histogram_150();
+}
+inline ::google::protobuf::uint32 CMsgSteamDatagramLinkLifetimeStats::ping_histogram_150() const {
+  // @@protoc_insertion_point(field_get:CMsgSteamDatagramLinkLifetimeStats.ping_histogram_150)
+  return ping_histogram_150_;
+}
+inline void CMsgSteamDatagramLinkLifetimeStats::set_ping_histogram_150(::google::protobuf::uint32 value) {
+  set_has_ping_histogram_150();
+  ping_histogram_150_ = value;
+  // @@protoc_insertion_point(field_set:CMsgSteamDatagramLinkLifetimeStats.ping_histogram_150)
+}
+
+// optional uint32 ping_histogram_200 = 47;
+inline bool CMsgSteamDatagramLinkLifetimeStats::has_ping_histogram_200() const {
+  return (_has_bits_[0] & 0x10000000u) != 0;
+}
+inline void CMsgSteamDatagramLinkLifetimeStats::set_has_ping_histogram_200() {
+  _has_bits_[0] |= 0x10000000u;
+}
+inline void CMsgSteamDatagramLinkLifetimeStats::clear_has_ping_histogram_200() {
+  _has_bits_[0] &= ~0x10000000u;
+}
+inline void CMsgSteamDatagramLinkLifetimeStats::clear_ping_histogram_200() {
+  ping_histogram_200_ = 0u;
+  clear_has_ping_histogram_200();
+}
+inline ::google::protobuf::uint32 CMsgSteamDatagramLinkLifetimeStats::ping_histogram_200() const {
+  // @@protoc_insertion_point(field_get:CMsgSteamDatagramLinkLifetimeStats.ping_histogram_200)
+  return ping_histogram_200_;
+}
+inline void CMsgSteamDatagramLinkLifetimeStats::set_ping_histogram_200(::google::protobuf::uint32 value) {
+  set_has_ping_histogram_200();
+  ping_histogram_200_ = value;
+  // @@protoc_insertion_point(field_set:CMsgSteamDatagramLinkLifetimeStats.ping_histogram_200)
+}
+
+// optional uint32 ping_histogram_300 = 48;
+inline bool CMsgSteamDatagramLinkLifetimeStats::has_ping_histogram_300() const {
+  return (_has_bits_[0] & 0x20000000u) != 0;
+}
+inline void CMsgSteamDatagramLinkLifetimeStats::set_has_ping_histogram_300() {
+  _has_bits_[0] |= 0x20000000u;
+}
+inline void CMsgSteamDatagramLinkLifetimeStats::clear_has_ping_histogram_300() {
+  _has_bits_[0] &= ~0x20000000u;
+}
+inline void CMsgSteamDatagramLinkLifetimeStats::clear_ping_histogram_300() {
+  ping_histogram_300_ = 0u;
+  clear_has_ping_histogram_300();
+}
+inline ::google::protobuf::uint32 CMsgSteamDatagramLinkLifetimeStats::ping_histogram_300() const {
+  // @@protoc_insertion_point(field_get:CMsgSteamDatagramLinkLifetimeStats.ping_histogram_300)
+  return ping_histogram_300_;
+}
+inline void CMsgSteamDatagramLinkLifetimeStats::set_ping_histogram_300(::google::protobuf::uint32 value) {
+  set_has_ping_histogram_300();
+  ping_histogram_300_ = value;
+  // @@protoc_insertion_point(field_set:CMsgSteamDatagramLinkLifetimeStats.ping_histogram_300)
+}
+
+// optional uint32 ping_histogram_max = 49;
+inline bool CMsgSteamDatagramLinkLifetimeStats::has_ping_histogram_max() const {
+  return (_has_bits_[0] & 0x40000000u) != 0;
+}
+inline void CMsgSteamDatagramLinkLifetimeStats::set_has_ping_histogram_max() {
+  _has_bits_[0] |= 0x40000000u;
+}
+inline void CMsgSteamDatagramLinkLifetimeStats::clear_has_ping_histogram_max() {
+  _has_bits_[0] &= ~0x40000000u;
+}
+inline void CMsgSteamDatagramLinkLifetimeStats::clear_ping_histogram_max() {
+  ping_histogram_max_ = 0u;
+  clear_has_ping_histogram_max();
+}
+inline ::google::protobuf::uint32 CMsgSteamDatagramLinkLifetimeStats::ping_histogram_max() const {
+  // @@protoc_insertion_point(field_get:CMsgSteamDatagramLinkLifetimeStats.ping_histogram_max)
+  return ping_histogram_max_;
+}
+inline void CMsgSteamDatagramLinkLifetimeStats::set_ping_histogram_max(::google::protobuf::uint32 value) {
+  set_has_ping_histogram_max();
+  ping_histogram_max_ = value;
+  // @@protoc_insertion_point(field_set:CMsgSteamDatagramLinkLifetimeStats.ping_histogram_max)
+}
+
+// optional uint32 ping_ntile_5th = 50;
+inline bool CMsgSteamDatagramLinkLifetimeStats::has_ping_ntile_5th() const {
+  return (_has_bits_[0] & 0x80000000u) != 0;
+}
+inline void CMsgSteamDatagramLinkLifetimeStats::set_has_ping_ntile_5th() {
+  _has_bits_[0] |= 0x80000000u;
+}
+inline void CMsgSteamDatagramLinkLifetimeStats::clear_has_ping_ntile_5th() {
+  _has_bits_[0] &= ~0x80000000u;
+}
+inline void CMsgSteamDatagramLinkLifetimeStats::clear_ping_ntile_5th() {
+  ping_ntile_5th_ = 0u;
+  clear_has_ping_ntile_5th();
+}
+inline ::google::protobuf::uint32 CMsgSteamDatagramLinkLifetimeStats::ping_ntile_5th() const {
+  // @@protoc_insertion_point(field_get:CMsgSteamDatagramLinkLifetimeStats.ping_ntile_5th)
+  return ping_ntile_5th_;
+}
+inline void CMsgSteamDatagramLinkLifetimeStats::set_ping_ntile_5th(::google::protobuf::uint32 value) {
+  set_has_ping_ntile_5th();
+  ping_ntile_5th_ = value;
+  // @@protoc_insertion_point(field_set:CMsgSteamDatagramLinkLifetimeStats.ping_ntile_5th)
+}
+
+// optional uint32 ping_ntile_50th = 51;
+inline bool CMsgSteamDatagramLinkLifetimeStats::has_ping_ntile_50th() const {
+  return (_has_bits_[1] & 0x00000001u) != 0;
+}
+inline void CMsgSteamDatagramLinkLifetimeStats::set_has_ping_ntile_50th() {
+  _has_bits_[1] |= 0x00000001u;
+}
+inline void CMsgSteamDatagramLinkLifetimeStats::clear_has_ping_ntile_50th() {
+  _has_bits_[1] &= ~0x00000001u;
+}
+inline void CMsgSteamDatagramLinkLifetimeStats::clear_ping_ntile_50th() {
+  ping_ntile_50th_ = 0u;
+  clear_has_ping_ntile_50th();
+}
+inline ::google::protobuf::uint32 CMsgSteamDatagramLinkLifetimeStats::ping_ntile_50th() const {
+  // @@protoc_insertion_point(field_get:CMsgSteamDatagramLinkLifetimeStats.ping_ntile_50th)
+  return ping_ntile_50th_;
+}
+inline void CMsgSteamDatagramLinkLifetimeStats::set_ping_ntile_50th(::google::protobuf::uint32 value) {
+  set_has_ping_ntile_50th();
+  ping_ntile_50th_ = value;
+  // @@protoc_insertion_point(field_set:CMsgSteamDatagramLinkLifetimeStats.ping_ntile_50th)
+}
+
+// optional uint32 ping_ntile_75th = 52;
+inline bool CMsgSteamDatagramLinkLifetimeStats::has_ping_ntile_75th() const {
+  return (_has_bits_[1] & 0x00000002u) != 0;
+}
+inline void CMsgSteamDatagramLinkLifetimeStats::set_has_ping_ntile_75th() {
+  _has_bits_[1] |= 0x00000002u;
+}
+inline void CMsgSteamDatagramLinkLifetimeStats::clear_has_ping_ntile_75th() {
+  _has_bits_[1] &= ~0x00000002u;
+}
+inline void CMsgSteamDatagramLinkLifetimeStats::clear_ping_ntile_75th() {
+  ping_ntile_75th_ = 0u;
+  clear_has_ping_ntile_75th();
+}
+inline ::google::protobuf::uint32 CMsgSteamDatagramLinkLifetimeStats::ping_ntile_75th() const {
+  // @@protoc_insertion_point(field_get:CMsgSteamDatagramLinkLifetimeStats.ping_ntile_75th)
+  return ping_ntile_75th_;
+}
+inline void CMsgSteamDatagramLinkLifetimeStats::set_ping_ntile_75th(::google::protobuf::uint32 value) {
+  set_has_ping_ntile_75th();
+  ping_ntile_75th_ = value;
+  // @@protoc_insertion_point(field_set:CMsgSteamDatagramLinkLifetimeStats.ping_ntile_75th)
+}
+
+// optional uint32 ping_ntile_95th = 53;
+inline bool CMsgSteamDatagramLinkLifetimeStats::has_ping_ntile_95th() const {
+  return (_has_bits_[1] & 0x00000004u) != 0;
+}
+inline void CMsgSteamDatagramLinkLifetimeStats::set_has_ping_ntile_95th() {
+  _has_bits_[1] |= 0x00000004u;
+}
+inline void CMsgSteamDatagramLinkLifetimeStats::clear_has_ping_ntile_95th() {
+  _has_bits_[1] &= ~0x00000004u;
+}
+inline void CMsgSteamDatagramLinkLifetimeStats::clear_ping_ntile_95th() {
+  ping_ntile_95th_ = 0u;
+  clear_has_ping_ntile_95th();
+}
+inline ::google::protobuf::uint32 CMsgSteamDatagramLinkLifetimeStats::ping_ntile_95th() const {
+  // @@protoc_insertion_point(field_get:CMsgSteamDatagramLinkLifetimeStats.ping_ntile_95th)
+  return ping_ntile_95th_;
+}
+inline void CMsgSteamDatagramLinkLifetimeStats::set_ping_ntile_95th(::google::protobuf::uint32 value) {
+  set_has_ping_ntile_95th();
+  ping_ntile_95th_ = value;
+  // @@protoc_insertion_point(field_set:CMsgSteamDatagramLinkLifetimeStats.ping_ntile_95th)
+}
+
+// optional uint32 ping_ntile_98th = 54;
+inline bool CMsgSteamDatagramLinkLifetimeStats::has_ping_ntile_98th() const {
+  return (_has_bits_[1] & 0x00000008u) != 0;
+}
+inline void CMsgSteamDatagramLinkLifetimeStats::set_has_ping_ntile_98th() {
+  _has_bits_[1] |= 0x00000008u;
+}
+inline void CMsgSteamDatagramLinkLifetimeStats::clear_has_ping_ntile_98th() {
+  _has_bits_[1] &= ~0x00000008u;
+}
+inline void CMsgSteamDatagramLinkLifetimeStats::clear_ping_ntile_98th() {
+  ping_ntile_98th_ = 0u;
+  clear_has_ping_ntile_98th();
+}
+inline ::google::protobuf::uint32 CMsgSteamDatagramLinkLifetimeStats::ping_ntile_98th() const {
+  // @@protoc_insertion_point(field_get:CMsgSteamDatagramLinkLifetimeStats.ping_ntile_98th)
+  return ping_ntile_98th_;
+}
+inline void CMsgSteamDatagramLinkLifetimeStats::set_ping_ntile_98th(::google::protobuf::uint32 value) {
+  set_has_ping_ntile_98th();
+  ping_ntile_98th_ = value;
+  // @@protoc_insertion_point(field_set:CMsgSteamDatagramLinkLifetimeStats.ping_ntile_98th)
+}
+
+// optional uint32 jitter_histogram_negligible = 61;
+inline bool CMsgSteamDatagramLinkLifetimeStats::has_jitter_histogram_negligible() const {
+  return (_has_bits_[1] & 0x00000010u) != 0;
+}
+inline void CMsgSteamDatagramLinkLifetimeStats::set_has_jitter_histogram_negligible() {
+  _has_bits_[1] |= 0x00000010u;
+}
+inline void CMsgSteamDatagramLinkLifetimeStats::clear_has_jitter_histogram_negligible() {
+  _has_bits_[1] &= ~0x00000010u;
+}
+inline void CMsgSteamDatagramLinkLifetimeStats::clear_jitter_histogram_negligible() {
+  jitter_histogram_negligible_ = 0u;
+  clear_has_jitter_histogram_negligible();
+}
+inline ::google::protobuf::uint32 CMsgSteamDatagramLinkLifetimeStats::jitter_histogram_negligible() const {
+  // @@protoc_insertion_point(field_get:CMsgSteamDatagramLinkLifetimeStats.jitter_histogram_negligible)
+  return jitter_histogram_negligible_;
+}
+inline void CMsgSteamDatagramLinkLifetimeStats::set_jitter_histogram_negligible(::google::protobuf::uint32 value) {
+  set_has_jitter_histogram_negligible();
+  jitter_histogram_negligible_ = value;
+  // @@protoc_insertion_point(field_set:CMsgSteamDatagramLinkLifetimeStats.jitter_histogram_negligible)
+}
+
+// optional uint32 jitter_histogram_1 = 62;
+inline bool CMsgSteamDatagramLinkLifetimeStats::has_jitter_histogram_1() const {
+  return (_has_bits_[1] & 0x00000020u) != 0;
+}
+inline void CMsgSteamDatagramLinkLifetimeStats::set_has_jitter_histogram_1() {
+  _has_bits_[1] |= 0x00000020u;
+}
+inline void CMsgSteamDatagramLinkLifetimeStats::clear_has_jitter_histogram_1() {
+  _has_bits_[1] &= ~0x00000020u;
+}
+inline void CMsgSteamDatagramLinkLifetimeStats::clear_jitter_histogram_1() {
+  jitter_histogram_1_ = 0u;
+  clear_has_jitter_histogram_1();
+}
+inline ::google::protobuf::uint32 CMsgSteamDatagramLinkLifetimeStats::jitter_histogram_1() const {
+  // @@protoc_insertion_point(field_get:CMsgSteamDatagramLinkLifetimeStats.jitter_histogram_1)
+  return jitter_histogram_1_;
+}
+inline void CMsgSteamDatagramLinkLifetimeStats::set_jitter_histogram_1(::google::protobuf::uint32 value) {
+  set_has_jitter_histogram_1();
+  jitter_histogram_1_ = value;
+  // @@protoc_insertion_point(field_set:CMsgSteamDatagramLinkLifetimeStats.jitter_histogram_1)
+}
+
+// optional uint32 jitter_histogram_2 = 63;
+inline bool CMsgSteamDatagramLinkLifetimeStats::has_jitter_histogram_2() const {
+  return (_has_bits_[1] & 0x00000040u) != 0;
+}
+inline void CMsgSteamDatagramLinkLifetimeStats::set_has_jitter_histogram_2() {
+  _has_bits_[1] |= 0x00000040u;
+}
+inline void CMsgSteamDatagramLinkLifetimeStats::clear_has_jitter_histogram_2() {
+  _has_bits_[1] &= ~0x00000040u;
+}
+inline void CMsgSteamDatagramLinkLifetimeStats::clear_jitter_histogram_2() {
+  jitter_histogram_2_ = 0u;
+  clear_has_jitter_histogram_2();
+}
+inline ::google::protobuf::uint32 CMsgSteamDatagramLinkLifetimeStats::jitter_histogram_2() const {
+  // @@protoc_insertion_point(field_get:CMsgSteamDatagramLinkLifetimeStats.jitter_histogram_2)
+  return jitter_histogram_2_;
+}
+inline void CMsgSteamDatagramLinkLifetimeStats::set_jitter_histogram_2(::google::protobuf::uint32 value) {
+  set_has_jitter_histogram_2();
+  jitter_histogram_2_ = value;
+  // @@protoc_insertion_point(field_set:CMsgSteamDatagramLinkLifetimeStats.jitter_histogram_2)
+}
+
+// optional uint32 jitter_histogram_5 = 64;
+inline bool CMsgSteamDatagramLinkLifetimeStats::has_jitter_histogram_5() const {
+  return (_has_bits_[1] & 0x00000080u) != 0;
+}
+inline void CMsgSteamDatagramLinkLifetimeStats::set_has_jitter_histogram_5() {
+  _has_bits_[1] |= 0x00000080u;
+}
+inline void CMsgSteamDatagramLinkLifetimeStats::clear_has_jitter_histogram_5() {
+  _has_bits_[1] &= ~0x00000080u;
+}
+inline void CMsgSteamDatagramLinkLifetimeStats::clear_jitter_histogram_5() {
+  jitter_histogram_5_ = 0u;
+  clear_has_jitter_histogram_5();
+}
+inline ::google::protobuf::uint32 CMsgSteamDatagramLinkLifetimeStats::jitter_histogram_5() const {
+  // @@protoc_insertion_point(field_get:CMsgSteamDatagramLinkLifetimeStats.jitter_histogram_5)
+  return jitter_histogram_5_;
+}
+inline void CMsgSteamDatagramLinkLifetimeStats::set_jitter_histogram_5(::google::protobuf::uint32 value) {
+  set_has_jitter_histogram_5();
+  jitter_histogram_5_ = value;
+  // @@protoc_insertion_point(field_set:CMsgSteamDatagramLinkLifetimeStats.jitter_histogram_5)
+}
+
+// optional uint32 jitter_histogram_10 = 65;
+inline bool CMsgSteamDatagramLinkLifetimeStats::has_jitter_histogram_10() const {
+  return (_has_bits_[1] & 0x00000100u) != 0;
+}
+inline void CMsgSteamDatagramLinkLifetimeStats::set_has_jitter_histogram_10() {
+  _has_bits_[1] |= 0x00000100u;
+}
+inline void CMsgSteamDatagramLinkLifetimeStats::clear_has_jitter_histogram_10() {
+  _has_bits_[1] &= ~0x00000100u;
+}
+inline void CMsgSteamDatagramLinkLifetimeStats::clear_jitter_histogram_10() {
+  jitter_histogram_10_ = 0u;
+  clear_has_jitter_histogram_10();
+}
+inline ::google::protobuf::uint32 CMsgSteamDatagramLinkLifetimeStats::jitter_histogram_10() const {
+  // @@protoc_insertion_point(field_get:CMsgSteamDatagramLinkLifetimeStats.jitter_histogram_10)
+  return jitter_histogram_10_;
+}
+inline void CMsgSteamDatagramLinkLifetimeStats::set_jitter_histogram_10(::google::protobuf::uint32 value) {
+  set_has_jitter_histogram_10();
+  jitter_histogram_10_ = value;
+  // @@protoc_insertion_point(field_set:CMsgSteamDatagramLinkLifetimeStats.jitter_histogram_10)
+}
+
+// optional uint32 jitter_histogram_20 = 66;
+inline bool CMsgSteamDatagramLinkLifetimeStats::has_jitter_histogram_20() const {
+  return (_has_bits_[1] & 0x00000200u) != 0;
+}
+inline void CMsgSteamDatagramLinkLifetimeStats::set_has_jitter_histogram_20() {
+  _has_bits_[1] |= 0x00000200u;
+}
+inline void CMsgSteamDatagramLinkLifetimeStats::clear_has_jitter_histogram_20() {
+  _has_bits_[1] &= ~0x00000200u;
+}
+inline void CMsgSteamDatagramLinkLifetimeStats::clear_jitter_histogram_20() {
+  jitter_histogram_20_ = 0u;
+  clear_has_jitter_histogram_20();
+}
+inline ::google::protobuf::uint32 CMsgSteamDatagramLinkLifetimeStats::jitter_histogram_20() const {
+  // @@protoc_insertion_point(field_get:CMsgSteamDatagramLinkLifetimeStats.jitter_histogram_20)
+  return jitter_histogram_20_;
+}
+inline void CMsgSteamDatagramLinkLifetimeStats::set_jitter_histogram_20(::google::protobuf::uint32 value) {
+  set_has_jitter_histogram_20();
+  jitter_histogram_20_ = value;
+  // @@protoc_insertion_point(field_set:CMsgSteamDatagramLinkLifetimeStats.jitter_histogram_20)
 }
 
 // -------------------------------------------------------------------
@@ -5150,15 +6939,87 @@ inline void CMsgSteamDatagramConnectionStatsRouterToClient::set_seconds_until_sh
   // @@protoc_insertion_point(field_set:CMsgSteamDatagramConnectionStatsRouterToClient.seconds_until_shutdown)
 }
 
-// optional fixed32 client_cookie = 7;
-inline bool CMsgSteamDatagramConnectionStatsRouterToClient::has_client_cookie() const {
+// optional fixed32 migrate_request_ip = 10;
+inline bool CMsgSteamDatagramConnectionStatsRouterToClient::has_migrate_request_ip() const {
   return (_has_bits_[0] & 0x00000040u) != 0;
 }
-inline void CMsgSteamDatagramConnectionStatsRouterToClient::set_has_client_cookie() {
+inline void CMsgSteamDatagramConnectionStatsRouterToClient::set_has_migrate_request_ip() {
   _has_bits_[0] |= 0x00000040u;
 }
-inline void CMsgSteamDatagramConnectionStatsRouterToClient::clear_has_client_cookie() {
+inline void CMsgSteamDatagramConnectionStatsRouterToClient::clear_has_migrate_request_ip() {
   _has_bits_[0] &= ~0x00000040u;
+}
+inline void CMsgSteamDatagramConnectionStatsRouterToClient::clear_migrate_request_ip() {
+  migrate_request_ip_ = 0u;
+  clear_has_migrate_request_ip();
+}
+inline ::google::protobuf::uint32 CMsgSteamDatagramConnectionStatsRouterToClient::migrate_request_ip() const {
+  // @@protoc_insertion_point(field_get:CMsgSteamDatagramConnectionStatsRouterToClient.migrate_request_ip)
+  return migrate_request_ip_;
+}
+inline void CMsgSteamDatagramConnectionStatsRouterToClient::set_migrate_request_ip(::google::protobuf::uint32 value) {
+  set_has_migrate_request_ip();
+  migrate_request_ip_ = value;
+  // @@protoc_insertion_point(field_set:CMsgSteamDatagramConnectionStatsRouterToClient.migrate_request_ip)
+}
+
+// optional uint32 migrate_request_port = 11;
+inline bool CMsgSteamDatagramConnectionStatsRouterToClient::has_migrate_request_port() const {
+  return (_has_bits_[0] & 0x00000080u) != 0;
+}
+inline void CMsgSteamDatagramConnectionStatsRouterToClient::set_has_migrate_request_port() {
+  _has_bits_[0] |= 0x00000080u;
+}
+inline void CMsgSteamDatagramConnectionStatsRouterToClient::clear_has_migrate_request_port() {
+  _has_bits_[0] &= ~0x00000080u;
+}
+inline void CMsgSteamDatagramConnectionStatsRouterToClient::clear_migrate_request_port() {
+  migrate_request_port_ = 0u;
+  clear_has_migrate_request_port();
+}
+inline ::google::protobuf::uint32 CMsgSteamDatagramConnectionStatsRouterToClient::migrate_request_port() const {
+  // @@protoc_insertion_point(field_get:CMsgSteamDatagramConnectionStatsRouterToClient.migrate_request_port)
+  return migrate_request_port_;
+}
+inline void CMsgSteamDatagramConnectionStatsRouterToClient::set_migrate_request_port(::google::protobuf::uint32 value) {
+  set_has_migrate_request_port();
+  migrate_request_port_ = value;
+  // @@protoc_insertion_point(field_set:CMsgSteamDatagramConnectionStatsRouterToClient.migrate_request_port)
+}
+
+// optional uint32 scoring_penalty_relay_cluster = 12;
+inline bool CMsgSteamDatagramConnectionStatsRouterToClient::has_scoring_penalty_relay_cluster() const {
+  return (_has_bits_[0] & 0x00000100u) != 0;
+}
+inline void CMsgSteamDatagramConnectionStatsRouterToClient::set_has_scoring_penalty_relay_cluster() {
+  _has_bits_[0] |= 0x00000100u;
+}
+inline void CMsgSteamDatagramConnectionStatsRouterToClient::clear_has_scoring_penalty_relay_cluster() {
+  _has_bits_[0] &= ~0x00000100u;
+}
+inline void CMsgSteamDatagramConnectionStatsRouterToClient::clear_scoring_penalty_relay_cluster() {
+  scoring_penalty_relay_cluster_ = 0u;
+  clear_has_scoring_penalty_relay_cluster();
+}
+inline ::google::protobuf::uint32 CMsgSteamDatagramConnectionStatsRouterToClient::scoring_penalty_relay_cluster() const {
+  // @@protoc_insertion_point(field_get:CMsgSteamDatagramConnectionStatsRouterToClient.scoring_penalty_relay_cluster)
+  return scoring_penalty_relay_cluster_;
+}
+inline void CMsgSteamDatagramConnectionStatsRouterToClient::set_scoring_penalty_relay_cluster(::google::protobuf::uint32 value) {
+  set_has_scoring_penalty_relay_cluster();
+  scoring_penalty_relay_cluster_ = value;
+  // @@protoc_insertion_point(field_set:CMsgSteamDatagramConnectionStatsRouterToClient.scoring_penalty_relay_cluster)
+}
+
+// optional fixed32 client_cookie = 7;
+inline bool CMsgSteamDatagramConnectionStatsRouterToClient::has_client_cookie() const {
+  return (_has_bits_[0] & 0x00000200u) != 0;
+}
+inline void CMsgSteamDatagramConnectionStatsRouterToClient::set_has_client_cookie() {
+  _has_bits_[0] |= 0x00000200u;
+}
+inline void CMsgSteamDatagramConnectionStatsRouterToClient::clear_has_client_cookie() {
+  _has_bits_[0] &= ~0x00000200u;
 }
 inline void CMsgSteamDatagramConnectionStatsRouterToClient::clear_client_cookie() {
   client_cookie_ = 0u;
@@ -5176,13 +7037,13 @@ inline void CMsgSteamDatagramConnectionStatsRouterToClient::set_client_cookie(::
 
 // optional uint32 seq_num_r2c = 8;
 inline bool CMsgSteamDatagramConnectionStatsRouterToClient::has_seq_num_r2c() const {
-  return (_has_bits_[0] & 0x00000080u) != 0;
+  return (_has_bits_[0] & 0x00000400u) != 0;
 }
 inline void CMsgSteamDatagramConnectionStatsRouterToClient::set_has_seq_num_r2c() {
-  _has_bits_[0] |= 0x00000080u;
+  _has_bits_[0] |= 0x00000400u;
 }
 inline void CMsgSteamDatagramConnectionStatsRouterToClient::clear_has_seq_num_r2c() {
-  _has_bits_[0] &= ~0x00000080u;
+  _has_bits_[0] &= ~0x00000400u;
 }
 inline void CMsgSteamDatagramConnectionStatsRouterToClient::clear_seq_num_r2c() {
   seq_num_r2c_ = 0u;
@@ -5200,13 +7061,13 @@ inline void CMsgSteamDatagramConnectionStatsRouterToClient::set_seq_num_r2c(::go
 
 // optional uint32 seq_num_s2c = 9;
 inline bool CMsgSteamDatagramConnectionStatsRouterToClient::has_seq_num_s2c() const {
-  return (_has_bits_[0] & 0x00000100u) != 0;
+  return (_has_bits_[0] & 0x00000800u) != 0;
 }
 inline void CMsgSteamDatagramConnectionStatsRouterToClient::set_has_seq_num_s2c() {
-  _has_bits_[0] |= 0x00000100u;
+  _has_bits_[0] |= 0x00000800u;
 }
 inline void CMsgSteamDatagramConnectionStatsRouterToClient::clear_has_seq_num_s2c() {
-  _has_bits_[0] &= ~0x00000100u;
+  _has_bits_[0] &= ~0x00000800u;
 }
 inline void CMsgSteamDatagramConnectionStatsRouterToClient::clear_seq_num_s2c() {
   seq_num_s2c_ = 0u;
@@ -5226,15 +7087,56 @@ inline void CMsgSteamDatagramConnectionStatsRouterToClient::set_seq_num_s2c(::go
 
 // CMsgSteamDatagramConnectionStatsRouterToServer
 
-// optional .CMsgSteamDatagramConnectionQuality c2s = 2;
-inline bool CMsgSteamDatagramConnectionStatsRouterToServer::has_c2s() const {
+// optional .CMsgSteamDatagramConnectionQuality r2s = 1;
+inline bool CMsgSteamDatagramConnectionStatsRouterToServer::has_r2s() const {
   return (_has_bits_[0] & 0x00000001u) != 0;
 }
-inline void CMsgSteamDatagramConnectionStatsRouterToServer::set_has_c2s() {
+inline void CMsgSteamDatagramConnectionStatsRouterToServer::set_has_r2s() {
   _has_bits_[0] |= 0x00000001u;
 }
-inline void CMsgSteamDatagramConnectionStatsRouterToServer::clear_has_c2s() {
+inline void CMsgSteamDatagramConnectionStatsRouterToServer::clear_has_r2s() {
   _has_bits_[0] &= ~0x00000001u;
+}
+inline void CMsgSteamDatagramConnectionStatsRouterToServer::clear_r2s() {
+  if (r2s_ != NULL) r2s_->::CMsgSteamDatagramConnectionQuality::Clear();
+  clear_has_r2s();
+}
+inline const ::CMsgSteamDatagramConnectionQuality& CMsgSteamDatagramConnectionStatsRouterToServer::r2s() const {
+  // @@protoc_insertion_point(field_get:CMsgSteamDatagramConnectionStatsRouterToServer.r2s)
+  return r2s_ != NULL ? *r2s_ : *default_instance_->r2s_;
+}
+inline ::CMsgSteamDatagramConnectionQuality* CMsgSteamDatagramConnectionStatsRouterToServer::mutable_r2s() {
+  set_has_r2s();
+  if (r2s_ == NULL) r2s_ = new ::CMsgSteamDatagramConnectionQuality;
+  // @@protoc_insertion_point(field_mutable:CMsgSteamDatagramConnectionStatsRouterToServer.r2s)
+  return r2s_;
+}
+inline ::CMsgSteamDatagramConnectionQuality* CMsgSteamDatagramConnectionStatsRouterToServer::release_r2s() {
+  clear_has_r2s();
+  ::CMsgSteamDatagramConnectionQuality* temp = r2s_;
+  r2s_ = NULL;
+  return temp;
+}
+inline void CMsgSteamDatagramConnectionStatsRouterToServer::set_allocated_r2s(::CMsgSteamDatagramConnectionQuality* r2s) {
+  delete r2s_;
+  r2s_ = r2s;
+  if (r2s) {
+    set_has_r2s();
+  } else {
+    clear_has_r2s();
+  }
+  // @@protoc_insertion_point(field_set_allocated:CMsgSteamDatagramConnectionStatsRouterToServer.r2s)
+}
+
+// optional .CMsgSteamDatagramConnectionQuality c2s = 2;
+inline bool CMsgSteamDatagramConnectionStatsRouterToServer::has_c2s() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+inline void CMsgSteamDatagramConnectionStatsRouterToServer::set_has_c2s() {
+  _has_bits_[0] |= 0x00000002u;
+}
+inline void CMsgSteamDatagramConnectionStatsRouterToServer::clear_has_c2s() {
+  _has_bits_[0] &= ~0x00000002u;
 }
 inline void CMsgSteamDatagramConnectionStatsRouterToServer::clear_c2s() {
   if (c2s_ != NULL) c2s_->::CMsgSteamDatagramConnectionQuality::Clear();
@@ -5269,13 +7171,13 @@ inline void CMsgSteamDatagramConnectionStatsRouterToServer::set_allocated_c2s(::
 
 // optional fixed32 client_timestamp = 3;
 inline bool CMsgSteamDatagramConnectionStatsRouterToServer::has_client_timestamp() const {
-  return (_has_bits_[0] & 0x00000002u) != 0;
+  return (_has_bits_[0] & 0x00000004u) != 0;
 }
 inline void CMsgSteamDatagramConnectionStatsRouterToServer::set_has_client_timestamp() {
-  _has_bits_[0] |= 0x00000002u;
+  _has_bits_[0] |= 0x00000004u;
 }
 inline void CMsgSteamDatagramConnectionStatsRouterToServer::clear_has_client_timestamp() {
-  _has_bits_[0] &= ~0x00000002u;
+  _has_bits_[0] &= ~0x00000004u;
 }
 inline void CMsgSteamDatagramConnectionStatsRouterToServer::clear_client_timestamp() {
   client_timestamp_ = 0u;
@@ -5293,13 +7195,13 @@ inline void CMsgSteamDatagramConnectionStatsRouterToServer::set_client_timestamp
 
 // optional fixed32 router_timestamp = 4;
 inline bool CMsgSteamDatagramConnectionStatsRouterToServer::has_router_timestamp() const {
-  return (_has_bits_[0] & 0x00000004u) != 0;
+  return (_has_bits_[0] & 0x00000008u) != 0;
 }
 inline void CMsgSteamDatagramConnectionStatsRouterToServer::set_has_router_timestamp() {
-  _has_bits_[0] |= 0x00000004u;
+  _has_bits_[0] |= 0x00000008u;
 }
 inline void CMsgSteamDatagramConnectionStatsRouterToServer::clear_has_router_timestamp() {
-  _has_bits_[0] &= ~0x00000004u;
+  _has_bits_[0] &= ~0x00000008u;
 }
 inline void CMsgSteamDatagramConnectionStatsRouterToServer::clear_router_timestamp() {
   router_timestamp_ = 0u;
@@ -5315,15 +7217,39 @@ inline void CMsgSteamDatagramConnectionStatsRouterToServer::set_router_timestamp
   // @@protoc_insertion_point(field_set:CMsgSteamDatagramConnectionStatsRouterToServer.router_timestamp)
 }
 
+// optional uint32 seq_num_r2s = 5;
+inline bool CMsgSteamDatagramConnectionStatsRouterToServer::has_seq_num_r2s() const {
+  return (_has_bits_[0] & 0x00000010u) != 0;
+}
+inline void CMsgSteamDatagramConnectionStatsRouterToServer::set_has_seq_num_r2s() {
+  _has_bits_[0] |= 0x00000010u;
+}
+inline void CMsgSteamDatagramConnectionStatsRouterToServer::clear_has_seq_num_r2s() {
+  _has_bits_[0] &= ~0x00000010u;
+}
+inline void CMsgSteamDatagramConnectionStatsRouterToServer::clear_seq_num_r2s() {
+  seq_num_r2s_ = 0u;
+  clear_has_seq_num_r2s();
+}
+inline ::google::protobuf::uint32 CMsgSteamDatagramConnectionStatsRouterToServer::seq_num_r2s() const {
+  // @@protoc_insertion_point(field_get:CMsgSteamDatagramConnectionStatsRouterToServer.seq_num_r2s)
+  return seq_num_r2s_;
+}
+inline void CMsgSteamDatagramConnectionStatsRouterToServer::set_seq_num_r2s(::google::protobuf::uint32 value) {
+  set_has_seq_num_r2s();
+  seq_num_r2s_ = value;
+  // @@protoc_insertion_point(field_set:CMsgSteamDatagramConnectionStatsRouterToServer.seq_num_r2s)
+}
+
 // optional uint32 seq_num_c2s = 6;
 inline bool CMsgSteamDatagramConnectionStatsRouterToServer::has_seq_num_c2s() const {
-  return (_has_bits_[0] & 0x00000008u) != 0;
+  return (_has_bits_[0] & 0x00000020u) != 0;
 }
 inline void CMsgSteamDatagramConnectionStatsRouterToServer::set_has_seq_num_c2s() {
-  _has_bits_[0] |= 0x00000008u;
+  _has_bits_[0] |= 0x00000020u;
 }
 inline void CMsgSteamDatagramConnectionStatsRouterToServer::clear_has_seq_num_c2s() {
-  _has_bits_[0] &= ~0x00000008u;
+  _has_bits_[0] &= ~0x00000020u;
 }
 inline void CMsgSteamDatagramConnectionStatsRouterToServer::clear_seq_num_c2s() {
   seq_num_c2s_ = 0u;
@@ -5341,13 +7267,13 @@ inline void CMsgSteamDatagramConnectionStatsRouterToServer::set_seq_num_c2s(::go
 
 // optional fixed64 client_steam_id = 7;
 inline bool CMsgSteamDatagramConnectionStatsRouterToServer::has_client_steam_id() const {
-  return (_has_bits_[0] & 0x00000010u) != 0;
+  return (_has_bits_[0] & 0x00000040u) != 0;
 }
 inline void CMsgSteamDatagramConnectionStatsRouterToServer::set_has_client_steam_id() {
-  _has_bits_[0] |= 0x00000010u;
+  _has_bits_[0] |= 0x00000040u;
 }
 inline void CMsgSteamDatagramConnectionStatsRouterToServer::clear_has_client_steam_id() {
-  _has_bits_[0] &= ~0x00000010u;
+  _has_bits_[0] &= ~0x00000040u;
 }
 inline void CMsgSteamDatagramConnectionStatsRouterToServer::clear_client_steam_id() {
   client_steam_id_ = GOOGLE_ULONGLONG(0);
@@ -5365,13 +7291,13 @@ inline void CMsgSteamDatagramConnectionStatsRouterToServer::set_client_steam_id(
 
 // optional uint32 client_session_id = 8;
 inline bool CMsgSteamDatagramConnectionStatsRouterToServer::has_client_session_id() const {
-  return (_has_bits_[0] & 0x00000020u) != 0;
+  return (_has_bits_[0] & 0x00000080u) != 0;
 }
 inline void CMsgSteamDatagramConnectionStatsRouterToServer::set_has_client_session_id() {
-  _has_bits_[0] |= 0x00000020u;
+  _has_bits_[0] |= 0x00000080u;
 }
 inline void CMsgSteamDatagramConnectionStatsRouterToServer::clear_has_client_session_id() {
-  _has_bits_[0] &= ~0x00000020u;
+  _has_bits_[0] &= ~0x00000080u;
 }
 inline void CMsgSteamDatagramConnectionStatsRouterToServer::clear_client_session_id() {
   client_session_id_ = 0u;
@@ -5385,6 +7311,188 @@ inline void CMsgSteamDatagramConnectionStatsRouterToServer::set_client_session_i
   set_has_client_session_id();
   client_session_id_ = value;
   // @@protoc_insertion_point(field_set:CMsgSteamDatagramConnectionStatsRouterToServer.client_session_id)
+}
+
+// -------------------------------------------------------------------
+
+// CMsgSteamDatagramConnectionStatsServerToRouter
+
+// optional .CMsgSteamDatagramConnectionQuality s2r = 1;
+inline bool CMsgSteamDatagramConnectionStatsServerToRouter::has_s2r() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+inline void CMsgSteamDatagramConnectionStatsServerToRouter::set_has_s2r() {
+  _has_bits_[0] |= 0x00000001u;
+}
+inline void CMsgSteamDatagramConnectionStatsServerToRouter::clear_has_s2r() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+inline void CMsgSteamDatagramConnectionStatsServerToRouter::clear_s2r() {
+  if (s2r_ != NULL) s2r_->::CMsgSteamDatagramConnectionQuality::Clear();
+  clear_has_s2r();
+}
+inline const ::CMsgSteamDatagramConnectionQuality& CMsgSteamDatagramConnectionStatsServerToRouter::s2r() const {
+  // @@protoc_insertion_point(field_get:CMsgSteamDatagramConnectionStatsServerToRouter.s2r)
+  return s2r_ != NULL ? *s2r_ : *default_instance_->s2r_;
+}
+inline ::CMsgSteamDatagramConnectionQuality* CMsgSteamDatagramConnectionStatsServerToRouter::mutable_s2r() {
+  set_has_s2r();
+  if (s2r_ == NULL) s2r_ = new ::CMsgSteamDatagramConnectionQuality;
+  // @@protoc_insertion_point(field_mutable:CMsgSteamDatagramConnectionStatsServerToRouter.s2r)
+  return s2r_;
+}
+inline ::CMsgSteamDatagramConnectionQuality* CMsgSteamDatagramConnectionStatsServerToRouter::release_s2r() {
+  clear_has_s2r();
+  ::CMsgSteamDatagramConnectionQuality* temp = s2r_;
+  s2r_ = NULL;
+  return temp;
+}
+inline void CMsgSteamDatagramConnectionStatsServerToRouter::set_allocated_s2r(::CMsgSteamDatagramConnectionQuality* s2r) {
+  delete s2r_;
+  s2r_ = s2r;
+  if (s2r) {
+    set_has_s2r();
+  } else {
+    clear_has_s2r();
+  }
+  // @@protoc_insertion_point(field_set_allocated:CMsgSteamDatagramConnectionStatsServerToRouter.s2r)
+}
+
+// optional .CMsgSteamDatagramConnectionQuality s2c = 2;
+inline bool CMsgSteamDatagramConnectionStatsServerToRouter::has_s2c() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+inline void CMsgSteamDatagramConnectionStatsServerToRouter::set_has_s2c() {
+  _has_bits_[0] |= 0x00000002u;
+}
+inline void CMsgSteamDatagramConnectionStatsServerToRouter::clear_has_s2c() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+inline void CMsgSteamDatagramConnectionStatsServerToRouter::clear_s2c() {
+  if (s2c_ != NULL) s2c_->::CMsgSteamDatagramConnectionQuality::Clear();
+  clear_has_s2c();
+}
+inline const ::CMsgSteamDatagramConnectionQuality& CMsgSteamDatagramConnectionStatsServerToRouter::s2c() const {
+  // @@protoc_insertion_point(field_get:CMsgSteamDatagramConnectionStatsServerToRouter.s2c)
+  return s2c_ != NULL ? *s2c_ : *default_instance_->s2c_;
+}
+inline ::CMsgSteamDatagramConnectionQuality* CMsgSteamDatagramConnectionStatsServerToRouter::mutable_s2c() {
+  set_has_s2c();
+  if (s2c_ == NULL) s2c_ = new ::CMsgSteamDatagramConnectionQuality;
+  // @@protoc_insertion_point(field_mutable:CMsgSteamDatagramConnectionStatsServerToRouter.s2c)
+  return s2c_;
+}
+inline ::CMsgSteamDatagramConnectionQuality* CMsgSteamDatagramConnectionStatsServerToRouter::release_s2c() {
+  clear_has_s2c();
+  ::CMsgSteamDatagramConnectionQuality* temp = s2c_;
+  s2c_ = NULL;
+  return temp;
+}
+inline void CMsgSteamDatagramConnectionStatsServerToRouter::set_allocated_s2c(::CMsgSteamDatagramConnectionQuality* s2c) {
+  delete s2c_;
+  s2c_ = s2c;
+  if (s2c) {
+    set_has_s2c();
+  } else {
+    clear_has_s2c();
+  }
+  // @@protoc_insertion_point(field_set_allocated:CMsgSteamDatagramConnectionStatsServerToRouter.s2c)
+}
+
+// optional uint32 seq_num_s2r = 3;
+inline bool CMsgSteamDatagramConnectionStatsServerToRouter::has_seq_num_s2r() const {
+  return (_has_bits_[0] & 0x00000004u) != 0;
+}
+inline void CMsgSteamDatagramConnectionStatsServerToRouter::set_has_seq_num_s2r() {
+  _has_bits_[0] |= 0x00000004u;
+}
+inline void CMsgSteamDatagramConnectionStatsServerToRouter::clear_has_seq_num_s2r() {
+  _has_bits_[0] &= ~0x00000004u;
+}
+inline void CMsgSteamDatagramConnectionStatsServerToRouter::clear_seq_num_s2r() {
+  seq_num_s2r_ = 0u;
+  clear_has_seq_num_s2r();
+}
+inline ::google::protobuf::uint32 CMsgSteamDatagramConnectionStatsServerToRouter::seq_num_s2r() const {
+  // @@protoc_insertion_point(field_get:CMsgSteamDatagramConnectionStatsServerToRouter.seq_num_s2r)
+  return seq_num_s2r_;
+}
+inline void CMsgSteamDatagramConnectionStatsServerToRouter::set_seq_num_s2r(::google::protobuf::uint32 value) {
+  set_has_seq_num_s2r();
+  seq_num_s2r_ = value;
+  // @@protoc_insertion_point(field_set:CMsgSteamDatagramConnectionStatsServerToRouter.seq_num_s2r)
+}
+
+// optional uint32 seq_num_s2c = 4;
+inline bool CMsgSteamDatagramConnectionStatsServerToRouter::has_seq_num_s2c() const {
+  return (_has_bits_[0] & 0x00000008u) != 0;
+}
+inline void CMsgSteamDatagramConnectionStatsServerToRouter::set_has_seq_num_s2c() {
+  _has_bits_[0] |= 0x00000008u;
+}
+inline void CMsgSteamDatagramConnectionStatsServerToRouter::clear_has_seq_num_s2c() {
+  _has_bits_[0] &= ~0x00000008u;
+}
+inline void CMsgSteamDatagramConnectionStatsServerToRouter::clear_seq_num_s2c() {
+  seq_num_s2c_ = 0u;
+  clear_has_seq_num_s2c();
+}
+inline ::google::protobuf::uint32 CMsgSteamDatagramConnectionStatsServerToRouter::seq_num_s2c() const {
+  // @@protoc_insertion_point(field_get:CMsgSteamDatagramConnectionStatsServerToRouter.seq_num_s2c)
+  return seq_num_s2c_;
+}
+inline void CMsgSteamDatagramConnectionStatsServerToRouter::set_seq_num_s2c(::google::protobuf::uint32 value) {
+  set_has_seq_num_s2c();
+  seq_num_s2c_ = value;
+  // @@protoc_insertion_point(field_set:CMsgSteamDatagramConnectionStatsServerToRouter.seq_num_s2c)
+}
+
+// optional fixed64 client_steam_id = 5;
+inline bool CMsgSteamDatagramConnectionStatsServerToRouter::has_client_steam_id() const {
+  return (_has_bits_[0] & 0x00000010u) != 0;
+}
+inline void CMsgSteamDatagramConnectionStatsServerToRouter::set_has_client_steam_id() {
+  _has_bits_[0] |= 0x00000010u;
+}
+inline void CMsgSteamDatagramConnectionStatsServerToRouter::clear_has_client_steam_id() {
+  _has_bits_[0] &= ~0x00000010u;
+}
+inline void CMsgSteamDatagramConnectionStatsServerToRouter::clear_client_steam_id() {
+  client_steam_id_ = GOOGLE_ULONGLONG(0);
+  clear_has_client_steam_id();
+}
+inline ::google::protobuf::uint64 CMsgSteamDatagramConnectionStatsServerToRouter::client_steam_id() const {
+  // @@protoc_insertion_point(field_get:CMsgSteamDatagramConnectionStatsServerToRouter.client_steam_id)
+  return client_steam_id_;
+}
+inline void CMsgSteamDatagramConnectionStatsServerToRouter::set_client_steam_id(::google::protobuf::uint64 value) {
+  set_has_client_steam_id();
+  client_steam_id_ = value;
+  // @@protoc_insertion_point(field_set:CMsgSteamDatagramConnectionStatsServerToRouter.client_steam_id)
+}
+
+// optional uint32 client_session_id = 6;
+inline bool CMsgSteamDatagramConnectionStatsServerToRouter::has_client_session_id() const {
+  return (_has_bits_[0] & 0x00000020u) != 0;
+}
+inline void CMsgSteamDatagramConnectionStatsServerToRouter::set_has_client_session_id() {
+  _has_bits_[0] |= 0x00000020u;
+}
+inline void CMsgSteamDatagramConnectionStatsServerToRouter::clear_has_client_session_id() {
+  _has_bits_[0] &= ~0x00000020u;
+}
+inline void CMsgSteamDatagramConnectionStatsServerToRouter::clear_client_session_id() {
+  client_session_id_ = 0u;
+  clear_has_client_session_id();
+}
+inline ::google::protobuf::uint32 CMsgSteamDatagramConnectionStatsServerToRouter::client_session_id() const {
+  // @@protoc_insertion_point(field_get:CMsgSteamDatagramConnectionStatsServerToRouter.client_session_id)
+  return client_session_id_;
+}
+inline void CMsgSteamDatagramConnectionStatsServerToRouter::set_client_session_id(::google::protobuf::uint32 value) {
+  set_has_client_session_id();
+  client_session_id_ = value;
+  // @@protoc_insertion_point(field_set:CMsgSteamDatagramConnectionStatsServerToRouter.client_session_id)
 }
 
 // -------------------------------------------------------------------
@@ -6059,6 +8167,284 @@ inline void CMsgSteamDatagramClientSwitchedPrimary::set_allocated_to_quality_the
     clear_has_to_quality_then();
   }
   // @@protoc_insertion_point(field_set_allocated:CMsgSteamDatagramClientSwitchedPrimary.to_quality_then)
+}
+
+// -------------------------------------------------------------------
+
+// CMsgSteamDatagramRouterHealth_DataCenter
+
+// optional fixed32 datacenter_id = 1;
+inline bool CMsgSteamDatagramRouterHealth_DataCenter::has_datacenter_id() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+inline void CMsgSteamDatagramRouterHealth_DataCenter::set_has_datacenter_id() {
+  _has_bits_[0] |= 0x00000001u;
+}
+inline void CMsgSteamDatagramRouterHealth_DataCenter::clear_has_datacenter_id() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+inline void CMsgSteamDatagramRouterHealth_DataCenter::clear_datacenter_id() {
+  datacenter_id_ = 0u;
+  clear_has_datacenter_id();
+}
+inline ::google::protobuf::uint32 CMsgSteamDatagramRouterHealth_DataCenter::datacenter_id() const {
+  // @@protoc_insertion_point(field_get:CMsgSteamDatagramRouterHealth.DataCenter.datacenter_id)
+  return datacenter_id_;
+}
+inline void CMsgSteamDatagramRouterHealth_DataCenter::set_datacenter_id(::google::protobuf::uint32 value) {
+  set_has_datacenter_id();
+  datacenter_id_ = value;
+  // @@protoc_insertion_point(field_set:CMsgSteamDatagramRouterHealth.DataCenter.datacenter_id)
+}
+
+// optional uint32 state = 2;
+inline bool CMsgSteamDatagramRouterHealth_DataCenter::has_state() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+inline void CMsgSteamDatagramRouterHealth_DataCenter::set_has_state() {
+  _has_bits_[0] |= 0x00000002u;
+}
+inline void CMsgSteamDatagramRouterHealth_DataCenter::clear_has_state() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+inline void CMsgSteamDatagramRouterHealth_DataCenter::clear_state() {
+  state_ = 0u;
+  clear_has_state();
+}
+inline ::google::protobuf::uint32 CMsgSteamDatagramRouterHealth_DataCenter::state() const {
+  // @@protoc_insertion_point(field_get:CMsgSteamDatagramRouterHealth.DataCenter.state)
+  return state_;
+}
+inline void CMsgSteamDatagramRouterHealth_DataCenter::set_state(::google::protobuf::uint32 value) {
+  set_has_state();
+  state_ = value;
+  // @@protoc_insertion_point(field_set:CMsgSteamDatagramRouterHealth.DataCenter.state)
+}
+
+// -------------------------------------------------------------------
+
+// CMsgSteamDatagramRouterHealth
+
+// optional float cpu_load = 1;
+inline bool CMsgSteamDatagramRouterHealth::has_cpu_load() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+inline void CMsgSteamDatagramRouterHealth::set_has_cpu_load() {
+  _has_bits_[0] |= 0x00000001u;
+}
+inline void CMsgSteamDatagramRouterHealth::clear_has_cpu_load() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+inline void CMsgSteamDatagramRouterHealth::clear_cpu_load() {
+  cpu_load_ = 0;
+  clear_has_cpu_load();
+}
+inline float CMsgSteamDatagramRouterHealth::cpu_load() const {
+  // @@protoc_insertion_point(field_get:CMsgSteamDatagramRouterHealth.cpu_load)
+  return cpu_load_;
+}
+inline void CMsgSteamDatagramRouterHealth::set_cpu_load(float value) {
+  set_has_cpu_load();
+  cpu_load_ = value;
+  // @@protoc_insertion_point(field_set:CMsgSteamDatagramRouterHealth.cpu_load)
+}
+
+// optional uint32 active_sessions = 2;
+inline bool CMsgSteamDatagramRouterHealth::has_active_sessions() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+inline void CMsgSteamDatagramRouterHealth::set_has_active_sessions() {
+  _has_bits_[0] |= 0x00000002u;
+}
+inline void CMsgSteamDatagramRouterHealth::clear_has_active_sessions() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+inline void CMsgSteamDatagramRouterHealth::clear_active_sessions() {
+  active_sessions_ = 0u;
+  clear_has_active_sessions();
+}
+inline ::google::protobuf::uint32 CMsgSteamDatagramRouterHealth::active_sessions() const {
+  // @@protoc_insertion_point(field_get:CMsgSteamDatagramRouterHealth.active_sessions)
+  return active_sessions_;
+}
+inline void CMsgSteamDatagramRouterHealth::set_active_sessions(::google::protobuf::uint32 value) {
+  set_has_active_sessions();
+  active_sessions_ = value;
+  // @@protoc_insertion_point(field_set:CMsgSteamDatagramRouterHealth.active_sessions)
+}
+
+// optional uint32 data_pkts_sec = 3;
+inline bool CMsgSteamDatagramRouterHealth::has_data_pkts_sec() const {
+  return (_has_bits_[0] & 0x00000004u) != 0;
+}
+inline void CMsgSteamDatagramRouterHealth::set_has_data_pkts_sec() {
+  _has_bits_[0] |= 0x00000004u;
+}
+inline void CMsgSteamDatagramRouterHealth::clear_has_data_pkts_sec() {
+  _has_bits_[0] &= ~0x00000004u;
+}
+inline void CMsgSteamDatagramRouterHealth::clear_data_pkts_sec() {
+  data_pkts_sec_ = 0u;
+  clear_has_data_pkts_sec();
+}
+inline ::google::protobuf::uint32 CMsgSteamDatagramRouterHealth::data_pkts_sec() const {
+  // @@protoc_insertion_point(field_get:CMsgSteamDatagramRouterHealth.data_pkts_sec)
+  return data_pkts_sec_;
+}
+inline void CMsgSteamDatagramRouterHealth::set_data_pkts_sec(::google::protobuf::uint32 value) {
+  set_has_data_pkts_sec();
+  data_pkts_sec_ = value;
+  // @@protoc_insertion_point(field_set:CMsgSteamDatagramRouterHealth.data_pkts_sec)
+}
+
+// optional uint32 other_pkts_sec = 4;
+inline bool CMsgSteamDatagramRouterHealth::has_other_pkts_sec() const {
+  return (_has_bits_[0] & 0x00000008u) != 0;
+}
+inline void CMsgSteamDatagramRouterHealth::set_has_other_pkts_sec() {
+  _has_bits_[0] |= 0x00000008u;
+}
+inline void CMsgSteamDatagramRouterHealth::clear_has_other_pkts_sec() {
+  _has_bits_[0] &= ~0x00000008u;
+}
+inline void CMsgSteamDatagramRouterHealth::clear_other_pkts_sec() {
+  other_pkts_sec_ = 0u;
+  clear_has_other_pkts_sec();
+}
+inline ::google::protobuf::uint32 CMsgSteamDatagramRouterHealth::other_pkts_sec() const {
+  // @@protoc_insertion_point(field_get:CMsgSteamDatagramRouterHealth.other_pkts_sec)
+  return other_pkts_sec_;
+}
+inline void CMsgSteamDatagramRouterHealth::set_other_pkts_sec(::google::protobuf::uint32 value) {
+  set_has_other_pkts_sec();
+  other_pkts_sec_ = value;
+  // @@protoc_insertion_point(field_set:CMsgSteamDatagramRouterHealth.other_pkts_sec)
+}
+
+// optional uint32 seconds_until_shutdown = 5;
+inline bool CMsgSteamDatagramRouterHealth::has_seconds_until_shutdown() const {
+  return (_has_bits_[0] & 0x00000010u) != 0;
+}
+inline void CMsgSteamDatagramRouterHealth::set_has_seconds_until_shutdown() {
+  _has_bits_[0] |= 0x00000010u;
+}
+inline void CMsgSteamDatagramRouterHealth::clear_has_seconds_until_shutdown() {
+  _has_bits_[0] &= ~0x00000010u;
+}
+inline void CMsgSteamDatagramRouterHealth::clear_seconds_until_shutdown() {
+  seconds_until_shutdown_ = 0u;
+  clear_has_seconds_until_shutdown();
+}
+inline ::google::protobuf::uint32 CMsgSteamDatagramRouterHealth::seconds_until_shutdown() const {
+  // @@protoc_insertion_point(field_get:CMsgSteamDatagramRouterHealth.seconds_until_shutdown)
+  return seconds_until_shutdown_;
+}
+inline void CMsgSteamDatagramRouterHealth::set_seconds_until_shutdown(::google::protobuf::uint32 value) {
+  set_has_seconds_until_shutdown();
+  seconds_until_shutdown_ = value;
+  // @@protoc_insertion_point(field_set:CMsgSteamDatagramRouterHealth.seconds_until_shutdown)
+}
+
+// optional float cpu_cost_per_user = 8;
+inline bool CMsgSteamDatagramRouterHealth::has_cpu_cost_per_user() const {
+  return (_has_bits_[0] & 0x00000020u) != 0;
+}
+inline void CMsgSteamDatagramRouterHealth::set_has_cpu_cost_per_user() {
+  _has_bits_[0] |= 0x00000020u;
+}
+inline void CMsgSteamDatagramRouterHealth::clear_has_cpu_cost_per_user() {
+  _has_bits_[0] &= ~0x00000020u;
+}
+inline void CMsgSteamDatagramRouterHealth::clear_cpu_cost_per_user() {
+  cpu_cost_per_user_ = 0;
+  clear_has_cpu_cost_per_user();
+}
+inline float CMsgSteamDatagramRouterHealth::cpu_cost_per_user() const {
+  // @@protoc_insertion_point(field_get:CMsgSteamDatagramRouterHealth.cpu_cost_per_user)
+  return cpu_cost_per_user_;
+}
+inline void CMsgSteamDatagramRouterHealth::set_cpu_cost_per_user(float value) {
+  set_has_cpu_cost_per_user();
+  cpu_cost_per_user_ = value;
+  // @@protoc_insertion_point(field_set:CMsgSteamDatagramRouterHealth.cpu_cost_per_user)
+}
+
+// optional float cpu_cost_per_packet = 9;
+inline bool CMsgSteamDatagramRouterHealth::has_cpu_cost_per_packet() const {
+  return (_has_bits_[0] & 0x00000040u) != 0;
+}
+inline void CMsgSteamDatagramRouterHealth::set_has_cpu_cost_per_packet() {
+  _has_bits_[0] |= 0x00000040u;
+}
+inline void CMsgSteamDatagramRouterHealth::clear_has_cpu_cost_per_packet() {
+  _has_bits_[0] &= ~0x00000040u;
+}
+inline void CMsgSteamDatagramRouterHealth::clear_cpu_cost_per_packet() {
+  cpu_cost_per_packet_ = 0;
+  clear_has_cpu_cost_per_packet();
+}
+inline float CMsgSteamDatagramRouterHealth::cpu_cost_per_packet() const {
+  // @@protoc_insertion_point(field_get:CMsgSteamDatagramRouterHealth.cpu_cost_per_packet)
+  return cpu_cost_per_packet_;
+}
+inline void CMsgSteamDatagramRouterHealth::set_cpu_cost_per_packet(float value) {
+  set_has_cpu_cost_per_packet();
+  cpu_cost_per_packet_ = value;
+  // @@protoc_insertion_point(field_set:CMsgSteamDatagramRouterHealth.cpu_cost_per_packet)
+}
+
+// repeated .CMsgSteamDatagramRouterHealth.DataCenter data_centers = 6;
+inline int CMsgSteamDatagramRouterHealth::data_centers_size() const {
+  return data_centers_.size();
+}
+inline void CMsgSteamDatagramRouterHealth::clear_data_centers() {
+  data_centers_.Clear();
+}
+inline const ::CMsgSteamDatagramRouterHealth_DataCenter& CMsgSteamDatagramRouterHealth::data_centers(int index) const {
+  // @@protoc_insertion_point(field_get:CMsgSteamDatagramRouterHealth.data_centers)
+  return data_centers_.Get(index);
+}
+inline ::CMsgSteamDatagramRouterHealth_DataCenter* CMsgSteamDatagramRouterHealth::mutable_data_centers(int index) {
+  // @@protoc_insertion_point(field_mutable:CMsgSteamDatagramRouterHealth.data_centers)
+  return data_centers_.Mutable(index);
+}
+inline ::CMsgSteamDatagramRouterHealth_DataCenter* CMsgSteamDatagramRouterHealth::add_data_centers() {
+  // @@protoc_insertion_point(field_add:CMsgSteamDatagramRouterHealth.data_centers)
+  return data_centers_.Add();
+}
+inline const ::google::protobuf::RepeatedPtrField< ::CMsgSteamDatagramRouterHealth_DataCenter >&
+CMsgSteamDatagramRouterHealth::data_centers() const {
+  // @@protoc_insertion_point(field_list:CMsgSteamDatagramRouterHealth.data_centers)
+  return data_centers_;
+}
+inline ::google::protobuf::RepeatedPtrField< ::CMsgSteamDatagramRouterHealth_DataCenter >*
+CMsgSteamDatagramRouterHealth::mutable_data_centers() {
+  // @@protoc_insertion_point(field_mutable_list:CMsgSteamDatagramRouterHealth.data_centers)
+  return &data_centers_;
+}
+
+// optional fixed64 magic = 7;
+inline bool CMsgSteamDatagramRouterHealth::has_magic() const {
+  return (_has_bits_[0] & 0x00000100u) != 0;
+}
+inline void CMsgSteamDatagramRouterHealth::set_has_magic() {
+  _has_bits_[0] |= 0x00000100u;
+}
+inline void CMsgSteamDatagramRouterHealth::clear_has_magic() {
+  _has_bits_[0] &= ~0x00000100u;
+}
+inline void CMsgSteamDatagramRouterHealth::clear_magic() {
+  magic_ = GOOGLE_ULONGLONG(0);
+  clear_has_magic();
+}
+inline ::google::protobuf::uint64 CMsgSteamDatagramRouterHealth::magic() const {
+  // @@protoc_insertion_point(field_get:CMsgSteamDatagramRouterHealth.magic)
+  return magic_;
+}
+inline void CMsgSteamDatagramRouterHealth::set_magic(::google::protobuf::uint64 value) {
+  set_has_magic();
+  magic_ = value;
+  // @@protoc_insertion_point(field_set:CMsgSteamDatagramRouterHealth.magic)
 }
 
 

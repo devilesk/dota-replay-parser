@@ -26,9 +26,11 @@
 #include <google/protobuf/generated_enum_reflection.h>
 #include <google/protobuf/unknown_field_set.h>
 #include "steammessages.pb.h"
+#include "dota_shared_enums.pb.h"
 #include "dota_gcmessages_common.pb.h"
 #include "econ_gcmessages.pb.h"
 #include "network_connection.pb.h"
+#include "dota_gcmessages_common_match_management.pb.h"
 // @@protoc_insertion_point(includes)
 
 // Internal implementation detail -- do not call these.
@@ -36,9 +38,6 @@ void  protobuf_AddDesc_dota_5fgcmessages_5fserver_2eproto();
 void protobuf_AssignDesc_dota_5fgcmessages_5fserver_2eproto();
 void protobuf_ShutdownFile_dota_5fgcmessages_5fserver_2eproto();
 
-class CMsgSpawnLootGreevil;
-class CMsgDismissLootGreevil;
-class CMsgDismissLootGreevilResponse;
 class CMsgPoorNetworkConditions;
 class CMsgPoorNetworkConditions_Player;
 class CMsgGameserverCrash;
@@ -47,7 +46,8 @@ class CMsgConnectedPlayers_Player;
 class CMsgGameServerInfo;
 class CMsgLeaverDetected;
 class CMsgLeaverDetectedResponse;
-class CMsgDOTAFantasyPlayerStats;
+class CMsgDOTAFantasyFinalPlayerStats;
+class CMsgDOTAFantasyLivePlayerStats;
 class CMsgDOTAFantasyMatch;
 class CMsgServerToGCRealtimeStats;
 class CMsgGCToServerRealtimeStatsStartStop;
@@ -60,16 +60,15 @@ class CMsgGameMatchSignOut_CSocialFeedMatchEvent;
 class CMsgGameMatchSignOut_CCustomGameData;
 class CMsgSignOutDraftInfo;
 class CMsgSignOutBotInfo;
-class CMsgSignOutBotInfo_CMsgBotSlotDifficulty;
 class CMsgSignOutPlayerStats;
 class CMsgSignOutCommunicationSummary;
 class CMsgSignOutCommunicationSummary_PlayerCommunication;
 class CMsgGameMatchSignoutResponse;
 class CMsgGameMatchSignoutResponse_CAdditionalSignoutMsg;
+class CMsgGameMatchSignoutResponse_PlayerMetadata;
+class CMsgTimedRewardContainer;
 class CMsgGameMatchSignOutPermissionRequest;
 class CMsgGameMatchSignOutPermissionResponse;
-class CMsgGameChatLog;
-class CMsgGameChatLog_CChatLine;
 class CMsgDOTALiveScoreboardUpdate;
 class CMsgDOTALiveScoreboardUpdate_Team;
 class CMsgDOTALiveScoreboardUpdate_Team_Player;
@@ -101,8 +100,6 @@ class CMsgDOTAAwardEventPoints;
 class CMsgDOTAAwardEventPoints_AwardPoints;
 class CMsgServerToGCSignoutAwardAdditionalDrops;
 class CMsgServerToGCSignoutAwardAdditionalDrops_AdditionalDrops;
-class CMsgDOTAUpdateTI4HeroQuest;
-class CMsgDOTAUpdateTI4HeroQuest_Player;
 class CMsgDOTAFrostivusTimeElapsed;
 class CMsgDOTAFrostivusTimeElapsed_User;
 class CMsgGCToServerPingRequest;
@@ -138,8 +135,6 @@ class CMsgServerToGCKillSummaries_KillSummary;
 class CMsgGCToServerPredictionResult;
 class CMsgGCToServerPredictionResult_Prediction;
 class CMsgServerToGCLockCharmTrading;
-class CMsgDOTACNY2015EventPointUsage;
-class CMsgDOTACNY2015EventPointUsage_PointUsage;
 class CMsgSignOutUpdatePlayerChallenge;
 class CMsgSignOutUpdatePlayerChallenge_Challenge;
 class CMsgServerToGCRerollPlayerChallenge;
@@ -149,6 +144,21 @@ class CMsgSignOutReleaseEventPointHolds;
 class CMsgGCToServerUpdateBroadcastCheers;
 class CMsgSignOutWagerStats;
 class CMsgSignOutWagerStats_Player;
+class CMsgSignOutXPCoins;
+class CMsgSignOutXPCoins_Player;
+class CMsgSignOutCommunityGoalProgress;
+class CMsgSignOutCommunityGoalProgress_EventGoalIncrement;
+class CMsgServerToGCPostMatchTip;
+class CMsgServerToGCPostMatchTipResponse;
+class CMsgServerToGCStartCompendiumInGamePredictions;
+class CMsgServerToGCStartCompendiumInGamePredictionsResponse;
+class CMsgServerToGCCloseCompendiumInGamePredictionVoting;
+class CMsgServerToGCCloseCompendiumInGamePredictionVotingResponse;
+class CMsgServerToGCEndCompendiumInGamePredictions;
+class CMsgServerToGCEndCompendiumInGamePredictionsResponse;
+class CMsgServerToGCCompendiumInGamePredictionResults;
+class CMsgServerToGCCompendiumInGamePredictionResults_PredictionResult;
+class CMsgServerToGCCompendiumInGamePredictionResultsResponse;
 
 enum CMsgConnectedPlayers_SendReason {
   CMsgConnectedPlayers_SendReason_INVALID = 0,
@@ -159,15 +169,14 @@ enum CMsgConnectedPlayers_SendReason {
   CMsgConnectedPlayers_SendReason_PLAYER_HERO = 5,
   CMsgConnectedPlayers_SendReason_PLAYER_DISCONNECTED_CONSEQUENCES = 6,
   CMsgConnectedPlayers_SendReason_PLAYER_DISCONNECTED_NOCONSEQUENCES = 7,
-  CMsgConnectedPlayers_SendReason_TOWER_STATE = 9,
   CMsgConnectedPlayers_SendReason_GAMESTATE_TIMEOUT = 10,
   CMsgConnectedPlayers_SendReason_MASS_DISCONNECT = 11,
-  CMsgConnectedPlayers_SendReason_BARRACKS_STATE = 12,
-  CMsgConnectedPlayers_SendReason_KILLS = 13
+  CMsgConnectedPlayers_SendReason_KILLS = 13,
+  CMsgConnectedPlayers_SendReason_BUILDING_STATE = 14
 };
 bool CMsgConnectedPlayers_SendReason_IsValid(int value);
 const CMsgConnectedPlayers_SendReason CMsgConnectedPlayers_SendReason_SendReason_MIN = CMsgConnectedPlayers_SendReason_INVALID;
-const CMsgConnectedPlayers_SendReason CMsgConnectedPlayers_SendReason_SendReason_MAX = CMsgConnectedPlayers_SendReason_KILLS;
+const CMsgConnectedPlayers_SendReason CMsgConnectedPlayers_SendReason_SendReason_MAX = CMsgConnectedPlayers_SendReason_BUILDING_STATE;
 const int CMsgConnectedPlayers_SendReason_SendReason_ARRAYSIZE = CMsgConnectedPlayers_SendReason_SendReason_MAX + 1;
 
 const ::google::protobuf::EnumDescriptor* CMsgConnectedPlayers_SendReason_descriptor();
@@ -199,6 +208,26 @@ inline bool CMsgGameServerInfo_ServerType_Parse(
     const ::std::string& name, CMsgGameServerInfo_ServerType* value) {
   return ::google::protobuf::internal::ParseNamedEnum<CMsgGameServerInfo_ServerType>(
     CMsgGameServerInfo_ServerType_descriptor(), name, value);
+}
+enum CMsgGameServerInfo_CustomGames {
+  CMsgGameServerInfo_CustomGames_BOTH = 0,
+  CMsgGameServerInfo_CustomGames_NONE = 1,
+  CMsgGameServerInfo_CustomGames_ONLY = 2
+};
+bool CMsgGameServerInfo_CustomGames_IsValid(int value);
+const CMsgGameServerInfo_CustomGames CMsgGameServerInfo_CustomGames_CustomGames_MIN = CMsgGameServerInfo_CustomGames_BOTH;
+const CMsgGameServerInfo_CustomGames CMsgGameServerInfo_CustomGames_CustomGames_MAX = CMsgGameServerInfo_CustomGames_ONLY;
+const int CMsgGameServerInfo_CustomGames_CustomGames_ARRAYSIZE = CMsgGameServerInfo_CustomGames_CustomGames_MAX + 1;
+
+const ::google::protobuf::EnumDescriptor* CMsgGameServerInfo_CustomGames_descriptor();
+inline const ::std::string& CMsgGameServerInfo_CustomGames_Name(CMsgGameServerInfo_CustomGames value) {
+  return ::google::protobuf::internal::NameOfEnum(
+    CMsgGameServerInfo_CustomGames_descriptor(), value);
+}
+inline bool CMsgGameServerInfo_CustomGames_Parse(
+    const ::std::string& name, CMsgGameServerInfo_CustomGames* value) {
+  return ::google::protobuf::internal::ParseNamedEnum<CMsgGameServerInfo_CustomGames>(
+    CMsgGameServerInfo_CustomGames_descriptor(), name, value);
 }
 enum CMsgDOTALiveScoreboardUpdate_Team_Player_DOTAUltimateState {
   CMsgDOTALiveScoreboardUpdate_Team_Player_DOTAUltimateState_k_EDOTAUltimateStateNotLearned = 0,
@@ -260,6 +289,25 @@ inline bool CMsgGCToServerPredictionResult_Prediction_EResult_Parse(
     const ::std::string& name, CMsgGCToServerPredictionResult_Prediction_EResult* value) {
   return ::google::protobuf::internal::ParseNamedEnum<CMsgGCToServerPredictionResult_Prediction_EResult>(
     CMsgGCToServerPredictionResult_Prediction_EResult_descriptor(), name, value);
+}
+enum CMsgServerToGCPostMatchTipResponse_Result {
+  CMsgServerToGCPostMatchTipResponse_Result_SUCCESS = 0,
+  CMsgServerToGCPostMatchTipResponse_Result_FAILURE = 1
+};
+bool CMsgServerToGCPostMatchTipResponse_Result_IsValid(int value);
+const CMsgServerToGCPostMatchTipResponse_Result CMsgServerToGCPostMatchTipResponse_Result_Result_MIN = CMsgServerToGCPostMatchTipResponse_Result_SUCCESS;
+const CMsgServerToGCPostMatchTipResponse_Result CMsgServerToGCPostMatchTipResponse_Result_Result_MAX = CMsgServerToGCPostMatchTipResponse_Result_FAILURE;
+const int CMsgServerToGCPostMatchTipResponse_Result_Result_ARRAYSIZE = CMsgServerToGCPostMatchTipResponse_Result_Result_MAX + 1;
+
+const ::google::protobuf::EnumDescriptor* CMsgServerToGCPostMatchTipResponse_Result_descriptor();
+inline const ::std::string& CMsgServerToGCPostMatchTipResponse_Result_Name(CMsgServerToGCPostMatchTipResponse_Result value) {
+  return ::google::protobuf::internal::NameOfEnum(
+    CMsgServerToGCPostMatchTipResponse_Result_descriptor(), value);
+}
+inline bool CMsgServerToGCPostMatchTipResponse_Result_Parse(
+    const ::std::string& name, CMsgServerToGCPostMatchTipResponse_Result* value) {
+  return ::google::protobuf::internal::ParseNamedEnum<CMsgServerToGCPostMatchTipResponse_Result>(
+    CMsgServerToGCPostMatchTipResponse_Result_descriptor(), name, value);
 }
 enum EPoorNetworkConditionsType {
   k_EPoorNetworkConditions_None = 0,
@@ -381,243 +429,6 @@ inline bool ESuspiciousBuildType_Parse(
     ESuspiciousBuildType_descriptor(), name, value);
 }
 // ===================================================================
-
-class CMsgSpawnLootGreevil : public ::google::protobuf::Message {
- public:
-  CMsgSpawnLootGreevil();
-  virtual ~CMsgSpawnLootGreevil();
-
-  CMsgSpawnLootGreevil(const CMsgSpawnLootGreevil& from);
-
-  inline CMsgSpawnLootGreevil& operator=(const CMsgSpawnLootGreevil& from) {
-    CopyFrom(from);
-    return *this;
-  }
-
-  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
-    return _unknown_fields_;
-  }
-
-  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
-    return &_unknown_fields_;
-  }
-
-  static const ::google::protobuf::Descriptor* descriptor();
-  static const CMsgSpawnLootGreevil& default_instance();
-
-  void Swap(CMsgSpawnLootGreevil* other);
-
-  // implements Message ----------------------------------------------
-
-  CMsgSpawnLootGreevil* New() const;
-  void CopyFrom(const ::google::protobuf::Message& from);
-  void MergeFrom(const ::google::protobuf::Message& from);
-  void CopyFrom(const CMsgSpawnLootGreevil& from);
-  void MergeFrom(const CMsgSpawnLootGreevil& from);
-  void Clear();
-  bool IsInitialized() const;
-
-  int ByteSize() const;
-  bool MergePartialFromCodedStream(
-      ::google::protobuf::io::CodedInputStream* input);
-  void SerializeWithCachedSizes(
-      ::google::protobuf::io::CodedOutputStream* output) const;
-  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
-  int GetCachedSize() const { return _cached_size_; }
-  private:
-  void SharedCtor();
-  void SharedDtor();
-  void SetCachedSize(int size) const;
-  public:
-  ::google::protobuf::Metadata GetMetadata() const;
-
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-
-  // optional bool rare = 1;
-  inline bool has_rare() const;
-  inline void clear_rare();
-  static const int kRareFieldNumber = 1;
-  inline bool rare() const;
-  inline void set_rare(bool value);
-
-  // @@protoc_insertion_point(class_scope:CMsgSpawnLootGreevil)
- private:
-  inline void set_has_rare();
-  inline void clear_has_rare();
-
-  ::google::protobuf::UnknownFieldSet _unknown_fields_;
-
-  ::google::protobuf::uint32 _has_bits_[1];
-  mutable int _cached_size_;
-  bool rare_;
-  friend void  protobuf_AddDesc_dota_5fgcmessages_5fserver_2eproto();
-  friend void protobuf_AssignDesc_dota_5fgcmessages_5fserver_2eproto();
-  friend void protobuf_ShutdownFile_dota_5fgcmessages_5fserver_2eproto();
-
-  void InitAsDefaultInstance();
-  static CMsgSpawnLootGreevil* default_instance_;
-};
-// -------------------------------------------------------------------
-
-class CMsgDismissLootGreevil : public ::google::protobuf::Message {
- public:
-  CMsgDismissLootGreevil();
-  virtual ~CMsgDismissLootGreevil();
-
-  CMsgDismissLootGreevil(const CMsgDismissLootGreevil& from);
-
-  inline CMsgDismissLootGreevil& operator=(const CMsgDismissLootGreevil& from) {
-    CopyFrom(from);
-    return *this;
-  }
-
-  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
-    return _unknown_fields_;
-  }
-
-  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
-    return &_unknown_fields_;
-  }
-
-  static const ::google::protobuf::Descriptor* descriptor();
-  static const CMsgDismissLootGreevil& default_instance();
-
-  void Swap(CMsgDismissLootGreevil* other);
-
-  // implements Message ----------------------------------------------
-
-  CMsgDismissLootGreevil* New() const;
-  void CopyFrom(const ::google::protobuf::Message& from);
-  void MergeFrom(const ::google::protobuf::Message& from);
-  void CopyFrom(const CMsgDismissLootGreevil& from);
-  void MergeFrom(const CMsgDismissLootGreevil& from);
-  void Clear();
-  bool IsInitialized() const;
-
-  int ByteSize() const;
-  bool MergePartialFromCodedStream(
-      ::google::protobuf::io::CodedInputStream* input);
-  void SerializeWithCachedSizes(
-      ::google::protobuf::io::CodedOutputStream* output) const;
-  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
-  int GetCachedSize() const { return _cached_size_; }
-  private:
-  void SharedCtor();
-  void SharedDtor();
-  void SetCachedSize(int size) const;
-  public:
-  ::google::protobuf::Metadata GetMetadata() const;
-
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-
-  // optional bool killed = 2;
-  inline bool has_killed() const;
-  inline void clear_killed();
-  static const int kKilledFieldNumber = 2;
-  inline bool killed() const;
-  inline void set_killed(bool value);
-
-  // optional bool rare = 3;
-  inline bool has_rare() const;
-  inline void clear_rare();
-  static const int kRareFieldNumber = 3;
-  inline bool rare() const;
-  inline void set_rare(bool value);
-
-  // @@protoc_insertion_point(class_scope:CMsgDismissLootGreevil)
- private:
-  inline void set_has_killed();
-  inline void clear_has_killed();
-  inline void set_has_rare();
-  inline void clear_has_rare();
-
-  ::google::protobuf::UnknownFieldSet _unknown_fields_;
-
-  ::google::protobuf::uint32 _has_bits_[1];
-  mutable int _cached_size_;
-  bool killed_;
-  bool rare_;
-  friend void  protobuf_AddDesc_dota_5fgcmessages_5fserver_2eproto();
-  friend void protobuf_AssignDesc_dota_5fgcmessages_5fserver_2eproto();
-  friend void protobuf_ShutdownFile_dota_5fgcmessages_5fserver_2eproto();
-
-  void InitAsDefaultInstance();
-  static CMsgDismissLootGreevil* default_instance_;
-};
-// -------------------------------------------------------------------
-
-class CMsgDismissLootGreevilResponse : public ::google::protobuf::Message {
- public:
-  CMsgDismissLootGreevilResponse();
-  virtual ~CMsgDismissLootGreevilResponse();
-
-  CMsgDismissLootGreevilResponse(const CMsgDismissLootGreevilResponse& from);
-
-  inline CMsgDismissLootGreevilResponse& operator=(const CMsgDismissLootGreevilResponse& from) {
-    CopyFrom(from);
-    return *this;
-  }
-
-  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
-    return _unknown_fields_;
-  }
-
-  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
-    return &_unknown_fields_;
-  }
-
-  static const ::google::protobuf::Descriptor* descriptor();
-  static const CMsgDismissLootGreevilResponse& default_instance();
-
-  void Swap(CMsgDismissLootGreevilResponse* other);
-
-  // implements Message ----------------------------------------------
-
-  CMsgDismissLootGreevilResponse* New() const;
-  void CopyFrom(const ::google::protobuf::Message& from);
-  void MergeFrom(const ::google::protobuf::Message& from);
-  void CopyFrom(const CMsgDismissLootGreevilResponse& from);
-  void MergeFrom(const CMsgDismissLootGreevilResponse& from);
-  void Clear();
-  bool IsInitialized() const;
-
-  int ByteSize() const;
-  bool MergePartialFromCodedStream(
-      ::google::protobuf::io::CodedInputStream* input);
-  void SerializeWithCachedSizes(
-      ::google::protobuf::io::CodedOutputStream* output) const;
-  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
-  int GetCachedSize() const { return _cached_size_; }
-  private:
-  void SharedCtor();
-  void SharedDtor();
-  void SetCachedSize(int size) const;
-  public:
-  ::google::protobuf::Metadata GetMetadata() const;
-
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-
-  // @@protoc_insertion_point(class_scope:CMsgDismissLootGreevilResponse)
- private:
-
-  ::google::protobuf::UnknownFieldSet _unknown_fields_;
-
-  ::google::protobuf::uint32 _has_bits_[1];
-  mutable int _cached_size_;
-  friend void  protobuf_AddDesc_dota_5fgcmessages_5fserver_2eproto();
-  friend void protobuf_AssignDesc_dota_5fgcmessages_5fserver_2eproto();
-  friend void protobuf_ShutdownFile_dota_5fgcmessages_5fserver_2eproto();
-
-  void InitAsDefaultInstance();
-  static CMsgDismissLootGreevilResponse* default_instance_;
-};
-// -------------------------------------------------------------------
 
 class CMsgPoorNetworkConditions_Player : public ::google::protobuf::Message {
  public:
@@ -910,6 +721,13 @@ class CMsgGameserverCrash : public ::google::protobuf::Message {
   inline ::google::protobuf::uint64 custom_game_id() const;
   inline void set_custom_game_id(::google::protobuf::uint64 value);
 
+  // optional uint32 tournament_id = 12;
+  inline bool has_tournament_id() const;
+  inline void clear_tournament_id();
+  static const int kTournamentIdFieldNumber = 12;
+  inline ::google::protobuf::uint32 tournament_id() const;
+  inline void set_tournament_id(::google::protobuf::uint32 value);
+
   // optional fixed64 server_steam_id = 5;
   inline bool has_server_steam_id() const;
   inline void clear_server_steam_id();
@@ -964,6 +782,8 @@ class CMsgGameserverCrash : public ::google::protobuf::Message {
   inline void clear_has_sentinel_save_time();
   inline void set_has_custom_game_id();
   inline void clear_has_custom_game_id();
+  inline void set_has_tournament_id();
+  inline void clear_has_tournament_id();
   inline void set_has_server_steam_id();
   inline void clear_has_server_steam_id();
   inline void set_has_server_public_ip_addr();
@@ -987,6 +807,7 @@ class CMsgGameserverCrash : public ::google::protobuf::Message {
   ::google::protobuf::uint32 sentinel_save_time_;
   ::google::protobuf::uint64 custom_game_id_;
   ::google::protobuf::uint64 server_steam_id_;
+  ::google::protobuf::uint32 tournament_id_;
   ::google::protobuf::uint32 server_public_ip_addr_;
   ::google::protobuf::uint32 server_port_;
   ::google::protobuf::uint32 server_cluster_;
@@ -1174,11 +995,10 @@ class CMsgConnectedPlayers : public ::google::protobuf::Message {
   static const SendReason PLAYER_HERO = CMsgConnectedPlayers_SendReason_PLAYER_HERO;
   static const SendReason PLAYER_DISCONNECTED_CONSEQUENCES = CMsgConnectedPlayers_SendReason_PLAYER_DISCONNECTED_CONSEQUENCES;
   static const SendReason PLAYER_DISCONNECTED_NOCONSEQUENCES = CMsgConnectedPlayers_SendReason_PLAYER_DISCONNECTED_NOCONSEQUENCES;
-  static const SendReason TOWER_STATE = CMsgConnectedPlayers_SendReason_TOWER_STATE;
   static const SendReason GAMESTATE_TIMEOUT = CMsgConnectedPlayers_SendReason_GAMESTATE_TIMEOUT;
   static const SendReason MASS_DISCONNECT = CMsgConnectedPlayers_SendReason_MASS_DISCONNECT;
-  static const SendReason BARRACKS_STATE = CMsgConnectedPlayers_SendReason_BARRACKS_STATE;
   static const SendReason KILLS = CMsgConnectedPlayers_SendReason_KILLS;
+  static const SendReason BUILDING_STATE = CMsgConnectedPlayers_SendReason_BUILDING_STATE;
   static inline bool SendReason_IsValid(int value) {
     return CMsgConnectedPlayers_SendReason_IsValid(value);
   }
@@ -1233,13 +1053,6 @@ class CMsgConnectedPlayers : public ::google::protobuf::Message {
   inline ::DOTA_GameState game_state() const;
   inline void set_game_state(::DOTA_GameState value);
 
-  // optional uint32 tower_state = 4;
-  inline bool has_tower_state() const;
-  inline void clear_tower_state();
-  static const int kTowerStateFieldNumber = 4;
-  inline ::google::protobuf::uint32 tower_state() const;
-  inline void set_tower_state(::google::protobuf::uint32 value);
-
   // optional bool first_blood_happened = 6;
   inline bool has_first_blood_happened() const;
   inline void clear_first_blood_happened();
@@ -1284,19 +1097,24 @@ class CMsgConnectedPlayers : public ::google::protobuf::Message {
   inline ::google::protobuf::uint32 dire_kills() const;
   inline void set_dire_kills(::google::protobuf::uint32 value);
 
-  // optional uint32 barracks_state = 13;
-  inline bool has_barracks_state() const;
-  inline void clear_barracks_state();
-  static const int kBarracksStateFieldNumber = 13;
-  inline ::google::protobuf::uint32 barracks_state() const;
-  inline void set_barracks_state(::google::protobuf::uint32 value);
+  // optional int32 radiant_lead = 14;
+  inline bool has_radiant_lead() const;
+  inline void clear_radiant_lead();
+  static const int kRadiantLeadFieldNumber = 14;
+  inline ::google::protobuf::int32 radiant_lead() const;
+  inline void set_radiant_lead(::google::protobuf::int32 value);
+
+  // optional uint32 building_state = 15;
+  inline bool has_building_state() const;
+  inline void clear_building_state();
+  static const int kBuildingStateFieldNumber = 15;
+  inline ::google::protobuf::uint32 building_state() const;
+  inline void set_building_state(::google::protobuf::uint32 value);
 
   // @@protoc_insertion_point(class_scope:CMsgConnectedPlayers)
  private:
   inline void set_has_game_state();
   inline void clear_has_game_state();
-  inline void set_has_tower_state();
-  inline void clear_has_tower_state();
   inline void set_has_first_blood_happened();
   inline void clear_has_first_blood_happened();
   inline void set_has_legacy_mass_disconnect();
@@ -1309,8 +1127,10 @@ class CMsgConnectedPlayers : public ::google::protobuf::Message {
   inline void clear_has_radiant_kills();
   inline void set_has_dire_kills();
   inline void clear_has_dire_kills();
-  inline void set_has_barracks_state();
-  inline void clear_has_barracks_state();
+  inline void set_has_radiant_lead();
+  inline void clear_has_radiant_lead();
+  inline void set_has_building_state();
+  inline void clear_has_building_state();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
@@ -1319,14 +1139,14 @@ class CMsgConnectedPlayers : public ::google::protobuf::Message {
   ::google::protobuf::RepeatedPtrField< ::CMsgConnectedPlayers_Player > connected_players_;
   ::google::protobuf::RepeatedPtrField< ::CMsgConnectedPlayers_Player > disconnected_players_;
   int game_state_;
-  ::google::protobuf::uint32 tower_state_;
   bool first_blood_happened_;
   bool legacy_mass_disconnect_;
-  int send_reason_;
   ::CMsgPoorNetworkConditions* poor_network_conditions_;
+  int send_reason_;
   ::google::protobuf::uint32 radiant_kills_;
   ::google::protobuf::uint32 dire_kills_;
-  ::google::protobuf::uint32 barracks_state_;
+  ::google::protobuf::int32 radiant_lead_;
+  ::google::protobuf::uint32 building_state_;
   friend void  protobuf_AddDesc_dota_5fgcmessages_5fserver_2eproto();
   friend void protobuf_AssignDesc_dota_5fgcmessages_5fserver_2eproto();
   friend void protobuf_ShutdownFile_dota_5fgcmessages_5fserver_2eproto();
@@ -1410,6 +1230,31 @@ class CMsgGameServerInfo : public ::google::protobuf::Message {
   static inline bool ServerType_Parse(const ::std::string& name,
       ServerType* value) {
     return CMsgGameServerInfo_ServerType_Parse(name, value);
+  }
+
+  typedef CMsgGameServerInfo_CustomGames CustomGames;
+  static const CustomGames BOTH = CMsgGameServerInfo_CustomGames_BOTH;
+  static const CustomGames NONE = CMsgGameServerInfo_CustomGames_NONE;
+  static const CustomGames ONLY = CMsgGameServerInfo_CustomGames_ONLY;
+  static inline bool CustomGames_IsValid(int value) {
+    return CMsgGameServerInfo_CustomGames_IsValid(value);
+  }
+  static const CustomGames CustomGames_MIN =
+    CMsgGameServerInfo_CustomGames_CustomGames_MIN;
+  static const CustomGames CustomGames_MAX =
+    CMsgGameServerInfo_CustomGames_CustomGames_MAX;
+  static const int CustomGames_ARRAYSIZE =
+    CMsgGameServerInfo_CustomGames_CustomGames_ARRAYSIZE;
+  static inline const ::google::protobuf::EnumDescriptor*
+  CustomGames_descriptor() {
+    return CMsgGameServerInfo_CustomGames_descriptor();
+  }
+  static inline const ::std::string& CustomGames_Name(CustomGames value) {
+    return CMsgGameServerInfo_CustomGames_Name(value);
+  }
+  static inline bool CustomGames_Parse(const ::std::string& name,
+      CustomGames* value) {
+    return CMsgGameServerInfo_CustomGames_Parse(name, value);
   }
 
   // accessors -------------------------------------------------------
@@ -1573,6 +1418,13 @@ class CMsgGameServerInfo : public ::google::protobuf::Message {
   inline ::google::protobuf::uint32 server_cluster() const;
   inline void set_server_cluster(::google::protobuf::uint32 value);
 
+  // optional .CMsgGameServerInfo.CustomGames allow_custom_games = 23 [default = BOTH];
+  inline bool has_allow_custom_games() const;
+  inline void clear_allow_custom_games();
+  static const int kAllowCustomGamesFieldNumber = 23;
+  inline ::CMsgGameServerInfo_CustomGames allow_custom_games() const;
+  inline void set_allow_custom_games(::CMsgGameServerInfo_CustomGames value);
+
   // @@protoc_insertion_point(class_scope:CMsgGameServerInfo)
  private:
   inline void set_has_server_public_ip_addr();
@@ -1619,6 +1471,8 @@ class CMsgGameServerInfo : public ::google::protobuf::Message {
   inline void clear_has_server_version();
   inline void set_has_server_cluster();
   inline void clear_has_server_cluster();
+  inline void set_has_allow_custom_games();
+  inline void clear_has_allow_custom_games();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
@@ -1646,6 +1500,7 @@ class CMsgGameServerInfo : public ::google::protobuf::Message {
   ::google::protobuf::uint64 tv_secret_code_;
   ::google::protobuf::uint32 server_version_;
   ::google::protobuf::uint32 server_cluster_;
+  int allow_custom_games_;
   friend void  protobuf_AddDesc_dota_5fgcmessages_5fserver_2eproto();
   friend void protobuf_AssignDesc_dota_5fgcmessages_5fserver_2eproto();
   friend void protobuf_ShutdownFile_dota_5fgcmessages_5fserver_2eproto();
@@ -1867,14 +1722,14 @@ class CMsgLeaverDetectedResponse : public ::google::protobuf::Message {
 };
 // -------------------------------------------------------------------
 
-class CMsgDOTAFantasyPlayerStats : public ::google::protobuf::Message {
+class CMsgDOTAFantasyFinalPlayerStats : public ::google::protobuf::Message {
  public:
-  CMsgDOTAFantasyPlayerStats();
-  virtual ~CMsgDOTAFantasyPlayerStats();
+  CMsgDOTAFantasyFinalPlayerStats();
+  virtual ~CMsgDOTAFantasyFinalPlayerStats();
 
-  CMsgDOTAFantasyPlayerStats(const CMsgDOTAFantasyPlayerStats& from);
+  CMsgDOTAFantasyFinalPlayerStats(const CMsgDOTAFantasyFinalPlayerStats& from);
 
-  inline CMsgDOTAFantasyPlayerStats& operator=(const CMsgDOTAFantasyPlayerStats& from) {
+  inline CMsgDOTAFantasyFinalPlayerStats& operator=(const CMsgDOTAFantasyFinalPlayerStats& from) {
     CopyFrom(from);
     return *this;
   }
@@ -1888,17 +1743,17 @@ class CMsgDOTAFantasyPlayerStats : public ::google::protobuf::Message {
   }
 
   static const ::google::protobuf::Descriptor* descriptor();
-  static const CMsgDOTAFantasyPlayerStats& default_instance();
+  static const CMsgDOTAFantasyFinalPlayerStats& default_instance();
 
-  void Swap(CMsgDOTAFantasyPlayerStats* other);
+  void Swap(CMsgDOTAFantasyFinalPlayerStats* other);
 
   // implements Message ----------------------------------------------
 
-  CMsgDOTAFantasyPlayerStats* New() const;
+  CMsgDOTAFantasyFinalPlayerStats* New() const;
   void CopyFrom(const ::google::protobuf::Message& from);
   void MergeFrom(const ::google::protobuf::Message& from);
-  void CopyFrom(const CMsgDOTAFantasyPlayerStats& from);
-  void MergeFrom(const CMsgDOTAFantasyPlayerStats& from);
+  void CopyFrom(const CMsgDOTAFantasyFinalPlayerStats& from);
+  void MergeFrom(const CMsgDOTAFantasyFinalPlayerStats& from);
   void Clear();
   bool IsInitialized() const;
 
@@ -1920,199 +1775,114 @@ class CMsgDOTAFantasyPlayerStats : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // optional uint32 player_account_id = 1;
-  inline bool has_player_account_id() const;
-  inline void clear_player_account_id();
-  static const int kPlayerAccountIdFieldNumber = 1;
-  inline ::google::protobuf::uint32 player_account_id() const;
-  inline void set_player_account_id(::google::protobuf::uint32 value);
+  // repeated .CMsgDOTAFantasyPlayerStats stats = 2;
+  inline int stats_size() const;
+  inline void clear_stats();
+  static const int kStatsFieldNumber = 2;
+  inline const ::CMsgDOTAFantasyPlayerStats& stats(int index) const;
+  inline ::CMsgDOTAFantasyPlayerStats* mutable_stats(int index);
+  inline ::CMsgDOTAFantasyPlayerStats* add_stats();
+  inline const ::google::protobuf::RepeatedPtrField< ::CMsgDOTAFantasyPlayerStats >&
+      stats() const;
+  inline ::google::protobuf::RepeatedPtrField< ::CMsgDOTAFantasyPlayerStats >*
+      mutable_stats();
 
-  // optional uint64 match_id = 2;
-  inline bool has_match_id() const;
-  inline void clear_match_id();
-  static const int kMatchIdFieldNumber = 2;
-  inline ::google::protobuf::uint64 match_id() const;
-  inline void set_match_id(::google::protobuf::uint64 value);
-
-  // optional bool match_completed = 3;
-  inline bool has_match_completed() const;
-  inline void clear_match_completed();
-  static const int kMatchCompletedFieldNumber = 3;
-  inline bool match_completed() const;
-  inline void set_match_completed(bool value);
-
-  // optional uint32 level = 4;
-  inline bool has_level() const;
-  inline void clear_level();
-  static const int kLevelFieldNumber = 4;
-  inline ::google::protobuf::uint32 level() const;
-  inline void set_level(::google::protobuf::uint32 value);
-
-  // optional uint32 kills = 5;
-  inline bool has_kills() const;
-  inline void clear_kills();
-  static const int kKillsFieldNumber = 5;
-  inline ::google::protobuf::uint32 kills() const;
-  inline void set_kills(::google::protobuf::uint32 value);
-
-  // optional uint32 deaths = 6;
-  inline bool has_deaths() const;
-  inline void clear_deaths();
-  static const int kDeathsFieldNumber = 6;
-  inline ::google::protobuf::uint32 deaths() const;
-  inline void set_deaths(::google::protobuf::uint32 value);
-
-  // optional uint32 assists = 7;
-  inline bool has_assists() const;
-  inline void clear_assists();
-  static const int kAssistsFieldNumber = 7;
-  inline ::google::protobuf::uint32 assists() const;
-  inline void set_assists(::google::protobuf::uint32 value);
-
-  // optional uint32 last_hits = 8;
-  inline bool has_last_hits() const;
-  inline void clear_last_hits();
-  static const int kLastHitsFieldNumber = 8;
-  inline ::google::protobuf::uint32 last_hits() const;
-  inline void set_last_hits(::google::protobuf::uint32 value);
-
-  // optional uint32 denies = 9;
-  inline bool has_denies() const;
-  inline void clear_denies();
-  static const int kDeniesFieldNumber = 9;
-  inline ::google::protobuf::uint32 denies() const;
-  inline void set_denies(::google::protobuf::uint32 value);
-
-  // optional float gpm = 10;
-  inline bool has_gpm() const;
-  inline void clear_gpm();
-  static const int kGpmFieldNumber = 10;
-  inline float gpm() const;
-  inline void set_gpm(float value);
-
-  // optional float xppm = 11;
-  inline bool has_xppm() const;
-  inline void clear_xppm();
-  static const int kXppmFieldNumber = 11;
-  inline float xppm() const;
-  inline void set_xppm(float value);
-
-  // optional float stuns = 12;
-  inline bool has_stuns() const;
-  inline void clear_stuns();
-  static const int kStunsFieldNumber = 12;
-  inline float stuns() const;
-  inline void set_stuns(float value);
-
-  // optional float healing = 13;
-  inline bool has_healing() const;
-  inline void clear_healing();
-  static const int kHealingFieldNumber = 13;
-  inline float healing() const;
-  inline void set_healing(float value);
-
-  // optional uint32 tower_kills = 14;
-  inline bool has_tower_kills() const;
-  inline void clear_tower_kills();
-  static const int kTowerKillsFieldNumber = 14;
-  inline ::google::protobuf::uint32 tower_kills() const;
-  inline void set_tower_kills(::google::protobuf::uint32 value);
-
-  // optional uint32 roshan_kills = 15;
-  inline bool has_roshan_kills() const;
-  inline void clear_roshan_kills();
-  static const int kRoshanKillsFieldNumber = 15;
-  inline ::google::protobuf::uint32 roshan_kills() const;
-  inline void set_roshan_kills(::google::protobuf::uint32 value);
-
-  // optional uint32 team_id = 16;
-  inline bool has_team_id() const;
-  inline void clear_team_id();
-  static const int kTeamIdFieldNumber = 16;
-  inline ::google::protobuf::uint32 team_id() const;
-  inline void set_team_id(::google::protobuf::uint32 value);
-
-  // optional uint32 league_id = 17;
-  inline bool has_league_id() const;
-  inline void clear_league_id();
-  static const int kLeagueIdFieldNumber = 17;
-  inline ::google::protobuf::uint32 league_id() const;
-  inline void set_league_id(::google::protobuf::uint32 value);
-
-  // optional uint32 delay = 18;
-  inline bool has_delay() const;
-  inline void clear_delay();
-  static const int kDelayFieldNumber = 18;
-  inline ::google::protobuf::uint32 delay() const;
-  inline void set_delay(::google::protobuf::uint32 value);
-
-  // @@protoc_insertion_point(class_scope:CMsgDOTAFantasyPlayerStats)
+  // @@protoc_insertion_point(class_scope:CMsgDOTAFantasyFinalPlayerStats)
  private:
-  inline void set_has_player_account_id();
-  inline void clear_has_player_account_id();
-  inline void set_has_match_id();
-  inline void clear_has_match_id();
-  inline void set_has_match_completed();
-  inline void clear_has_match_completed();
-  inline void set_has_level();
-  inline void clear_has_level();
-  inline void set_has_kills();
-  inline void clear_has_kills();
-  inline void set_has_deaths();
-  inline void clear_has_deaths();
-  inline void set_has_assists();
-  inline void clear_has_assists();
-  inline void set_has_last_hits();
-  inline void clear_has_last_hits();
-  inline void set_has_denies();
-  inline void clear_has_denies();
-  inline void set_has_gpm();
-  inline void clear_has_gpm();
-  inline void set_has_xppm();
-  inline void clear_has_xppm();
-  inline void set_has_stuns();
-  inline void clear_has_stuns();
-  inline void set_has_healing();
-  inline void clear_has_healing();
-  inline void set_has_tower_kills();
-  inline void clear_has_tower_kills();
-  inline void set_has_roshan_kills();
-  inline void clear_has_roshan_kills();
-  inline void set_has_team_id();
-  inline void clear_has_team_id();
-  inline void set_has_league_id();
-  inline void clear_has_league_id();
-  inline void set_has_delay();
-  inline void clear_has_delay();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
   ::google::protobuf::uint32 _has_bits_[1];
   mutable int _cached_size_;
-  ::google::protobuf::uint64 match_id_;
-  ::google::protobuf::uint32 player_account_id_;
-  bool match_completed_;
-  ::google::protobuf::uint32 level_;
-  ::google::protobuf::uint32 kills_;
-  ::google::protobuf::uint32 deaths_;
-  ::google::protobuf::uint32 assists_;
-  ::google::protobuf::uint32 last_hits_;
-  ::google::protobuf::uint32 denies_;
-  float gpm_;
-  float xppm_;
-  float stuns_;
-  float healing_;
-  ::google::protobuf::uint32 tower_kills_;
-  ::google::protobuf::uint32 roshan_kills_;
-  ::google::protobuf::uint32 team_id_;
-  ::google::protobuf::uint32 league_id_;
-  ::google::protobuf::uint32 delay_;
+  ::google::protobuf::RepeatedPtrField< ::CMsgDOTAFantasyPlayerStats > stats_;
   friend void  protobuf_AddDesc_dota_5fgcmessages_5fserver_2eproto();
   friend void protobuf_AssignDesc_dota_5fgcmessages_5fserver_2eproto();
   friend void protobuf_ShutdownFile_dota_5fgcmessages_5fserver_2eproto();
 
   void InitAsDefaultInstance();
-  static CMsgDOTAFantasyPlayerStats* default_instance_;
+  static CMsgDOTAFantasyFinalPlayerStats* default_instance_;
+};
+// -------------------------------------------------------------------
+
+class CMsgDOTAFantasyLivePlayerStats : public ::google::protobuf::Message {
+ public:
+  CMsgDOTAFantasyLivePlayerStats();
+  virtual ~CMsgDOTAFantasyLivePlayerStats();
+
+  CMsgDOTAFantasyLivePlayerStats(const CMsgDOTAFantasyLivePlayerStats& from);
+
+  inline CMsgDOTAFantasyLivePlayerStats& operator=(const CMsgDOTAFantasyLivePlayerStats& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+    return _unknown_fields_;
+  }
+
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+    return &_unknown_fields_;
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const CMsgDOTAFantasyLivePlayerStats& default_instance();
+
+  void Swap(CMsgDOTAFantasyLivePlayerStats* other);
+
+  // implements Message ----------------------------------------------
+
+  CMsgDOTAFantasyLivePlayerStats* New() const;
+  void CopyFrom(const ::google::protobuf::Message& from);
+  void MergeFrom(const ::google::protobuf::Message& from);
+  void CopyFrom(const CMsgDOTAFantasyLivePlayerStats& from);
+  void MergeFrom(const CMsgDOTAFantasyLivePlayerStats& from);
+  void Clear();
+  bool IsInitialized() const;
+
+  int ByteSize() const;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input);
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  int GetCachedSize() const { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const;
+  public:
+  ::google::protobuf::Metadata GetMetadata() const;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // repeated .CMsgDOTAFantasyPlayerStats stats = 2;
+  inline int stats_size() const;
+  inline void clear_stats();
+  static const int kStatsFieldNumber = 2;
+  inline const ::CMsgDOTAFantasyPlayerStats& stats(int index) const;
+  inline ::CMsgDOTAFantasyPlayerStats* mutable_stats(int index);
+  inline ::CMsgDOTAFantasyPlayerStats* add_stats();
+  inline const ::google::protobuf::RepeatedPtrField< ::CMsgDOTAFantasyPlayerStats >&
+      stats() const;
+  inline ::google::protobuf::RepeatedPtrField< ::CMsgDOTAFantasyPlayerStats >*
+      mutable_stats();
+
+  // @@protoc_insertion_point(class_scope:CMsgDOTAFantasyLivePlayerStats)
+ private:
+
+  ::google::protobuf::UnknownFieldSet _unknown_fields_;
+
+  ::google::protobuf::uint32 _has_bits_[1];
+  mutable int _cached_size_;
+  ::google::protobuf::RepeatedPtrField< ::CMsgDOTAFantasyPlayerStats > stats_;
+  friend void  protobuf_AddDesc_dota_5fgcmessages_5fserver_2eproto();
+  friend void protobuf_AssignDesc_dota_5fgcmessages_5fserver_2eproto();
+  friend void protobuf_ShutdownFile_dota_5fgcmessages_5fserver_2eproto();
+
+  void InitAsDefaultInstance();
+  static CMsgDOTAFantasyLivePlayerStats* default_instance_;
 };
 // -------------------------------------------------------------------
 
@@ -2684,26 +2454,26 @@ class CMsgGameMatchSignOut_CTeam_CPlayer : public ::google::protobuf::Message {
   inline ::google::protobuf::uint32 level() const;
   inline void set_level(::google::protobuf::uint32 value);
 
-  // optional uint32 hero_damage = 16;
-  inline bool has_hero_damage() const;
-  inline void clear_hero_damage();
-  static const int kHeroDamageFieldNumber = 16;
-  inline ::google::protobuf::uint32 hero_damage() const;
-  inline void set_hero_damage(::google::protobuf::uint32 value);
+  // optional uint32 scaled_hero_damage = 16;
+  inline bool has_scaled_hero_damage() const;
+  inline void clear_scaled_hero_damage();
+  static const int kScaledHeroDamageFieldNumber = 16;
+  inline ::google::protobuf::uint32 scaled_hero_damage() const;
+  inline void set_scaled_hero_damage(::google::protobuf::uint32 value);
 
-  // optional uint32 tower_damage = 17;
-  inline bool has_tower_damage() const;
-  inline void clear_tower_damage();
-  static const int kTowerDamageFieldNumber = 17;
-  inline ::google::protobuf::uint32 tower_damage() const;
-  inline void set_tower_damage(::google::protobuf::uint32 value);
+  // optional uint32 scaled_tower_damage = 17;
+  inline bool has_scaled_tower_damage() const;
+  inline void clear_scaled_tower_damage();
+  static const int kScaledTowerDamageFieldNumber = 17;
+  inline ::google::protobuf::uint32 scaled_tower_damage() const;
+  inline void set_scaled_tower_damage(::google::protobuf::uint32 value);
 
-  // optional uint32 hero_healing = 18;
-  inline bool has_hero_healing() const;
-  inline void clear_hero_healing();
-  static const int kHeroHealingFieldNumber = 18;
-  inline ::google::protobuf::uint32 hero_healing() const;
-  inline void set_hero_healing(::google::protobuf::uint32 value);
+  // optional uint32 scaled_hero_healing = 18;
+  inline bool has_scaled_hero_healing() const;
+  inline void clear_scaled_hero_healing();
+  static const int kScaledHeroHealingFieldNumber = 18;
+  inline ::google::protobuf::uint32 scaled_hero_healing() const;
+  inline void set_scaled_hero_healing(::google::protobuf::uint32 value);
 
   // optional uint32 time_last_seen = 19;
   inline bool has_time_last_seen() const;
@@ -2782,6 +2552,34 @@ class CMsgGameMatchSignOut_CTeam_CPlayer : public ::google::protobuf::Message {
   inline ::google::protobuf::uint32 misses() const;
   inline void set_misses(::google::protobuf::uint32 value);
 
+  // optional uint32 net_worth = 34;
+  inline bool has_net_worth() const;
+  inline void clear_net_worth();
+  static const int kNetWorthFieldNumber = 34;
+  inline ::google::protobuf::uint32 net_worth() const;
+  inline void set_net_worth(::google::protobuf::uint32 value);
+
+  // optional uint32 hero_damage = 37;
+  inline bool has_hero_damage() const;
+  inline void clear_hero_damage();
+  static const int kHeroDamageFieldNumber = 37;
+  inline ::google::protobuf::uint32 hero_damage() const;
+  inline void set_hero_damage(::google::protobuf::uint32 value);
+
+  // optional uint32 tower_damage = 38;
+  inline bool has_tower_damage() const;
+  inline void clear_tower_damage();
+  static const int kTowerDamageFieldNumber = 38;
+  inline ::google::protobuf::uint32 tower_damage() const;
+  inline void set_tower_damage(::google::protobuf::uint32 value);
+
+  // optional uint32 hero_healing = 39;
+  inline bool has_hero_healing() const;
+  inline void clear_hero_healing();
+  static const int kHeroHealingFieldNumber = 39;
+  inline ::google::protobuf::uint32 hero_healing() const;
+  inline void set_hero_healing(::google::protobuf::uint32 value);
+
   // repeated .CMatchPlayerAbilityUpgrade ability_upgrades = 32;
   inline int ability_upgrades_size() const;
   inline void clear_ability_upgrades();
@@ -2806,12 +2604,17 @@ class CMsgGameMatchSignOut_CTeam_CPlayer : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedPtrField< ::CMatchAdditionalUnitInventory >*
       mutable_additional_units_inventory();
 
-  // optional uint32 net_worth = 34;
-  inline bool has_net_worth() const;
-  inline void clear_net_worth();
-  static const int kNetWorthFieldNumber = 34;
-  inline ::google::protobuf::uint32 net_worth() const;
-  inline void set_net_worth(::google::protobuf::uint32 value);
+  // repeated .CMatchPlayerPermanentBuff permanent_buffs = 40;
+  inline int permanent_buffs_size() const;
+  inline void clear_permanent_buffs();
+  static const int kPermanentBuffsFieldNumber = 40;
+  inline const ::CMatchPlayerPermanentBuff& permanent_buffs(int index) const;
+  inline ::CMatchPlayerPermanentBuff* mutable_permanent_buffs(int index);
+  inline ::CMatchPlayerPermanentBuff* add_permanent_buffs();
+  inline const ::google::protobuf::RepeatedPtrField< ::CMatchPlayerPermanentBuff >&
+      permanent_buffs() const;
+  inline ::google::protobuf::RepeatedPtrField< ::CMatchPlayerPermanentBuff >*
+      mutable_permanent_buffs();
 
   // optional .CMsgGameMatchSignOut.CTeam.CPlayer.CCustomGameData custom_game_data = 35;
   inline bool has_custom_game_data() const;
@@ -2821,6 +2624,25 @@ class CMsgGameMatchSignOut_CTeam_CPlayer : public ::google::protobuf::Message {
   inline ::CMsgGameMatchSignOut_CTeam_CPlayer_CCustomGameData* mutable_custom_game_data();
   inline ::CMsgGameMatchSignOut_CTeam_CPlayer_CCustomGameData* release_custom_game_data();
   inline void set_allocated_custom_game_data(::CMsgGameMatchSignOut_CTeam_CPlayer_CCustomGameData* custom_game_data);
+
+  // optional uint32 match_player_flags = 36;
+  inline bool has_match_player_flags() const;
+  inline void clear_match_player_flags();
+  static const int kMatchPlayerFlagsFieldNumber = 36;
+  inline ::google::protobuf::uint32 match_player_flags() const;
+  inline void set_match_player_flags(::google::protobuf::uint32 value);
+
+  // repeated uint32 talent_ability_ids = 41;
+  inline int talent_ability_ids_size() const;
+  inline void clear_talent_ability_ids();
+  static const int kTalentAbilityIdsFieldNumber = 41;
+  inline ::google::protobuf::uint32 talent_ability_ids(int index) const;
+  inline void set_talent_ability_ids(int index, ::google::protobuf::uint32 value);
+  inline void add_talent_ability_ids(::google::protobuf::uint32 value);
+  inline const ::google::protobuf::RepeatedField< ::google::protobuf::uint32 >&
+      talent_ability_ids() const;
+  inline ::google::protobuf::RepeatedField< ::google::protobuf::uint32 >*
+      mutable_talent_ability_ids();
 
   // @@protoc_insertion_point(class_scope:CMsgGameMatchSignOut.CTeam.CPlayer)
  private:
@@ -2850,12 +2672,12 @@ class CMsgGameMatchSignOut_CTeam_CPlayer : public ::google::protobuf::Message {
   inline void clear_has_gold_spent();
   inline void set_has_level();
   inline void clear_has_level();
-  inline void set_has_hero_damage();
-  inline void clear_has_hero_damage();
-  inline void set_has_tower_damage();
-  inline void clear_has_tower_damage();
-  inline void set_has_hero_healing();
-  inline void clear_has_hero_healing();
+  inline void set_has_scaled_hero_damage();
+  inline void clear_has_scaled_hero_damage();
+  inline void set_has_scaled_tower_damage();
+  inline void clear_has_scaled_tower_damage();
+  inline void set_has_scaled_hero_healing();
+  inline void clear_has_scaled_hero_healing();
   inline void set_has_time_last_seen();
   inline void clear_has_time_last_seen();
   inline void set_has_support_ability_value();
@@ -2880,13 +2702,20 @@ class CMsgGameMatchSignOut_CTeam_CPlayer : public ::google::protobuf::Message {
   inline void clear_has_misses();
   inline void set_has_net_worth();
   inline void clear_has_net_worth();
+  inline void set_has_hero_damage();
+  inline void clear_has_hero_damage();
+  inline void set_has_tower_damage();
+  inline void clear_has_tower_damage();
+  inline void set_has_hero_healing();
+  inline void clear_has_hero_healing();
   inline void set_has_custom_game_data();
   inline void clear_has_custom_game_data();
+  inline void set_has_match_player_flags();
+  inline void clear_has_match_player_flags();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
-  ::google::protobuf::uint32 _has_bits_[1];
-  mutable int _cached_size_;
+  ::google::protobuf::uint32 _has_bits_[2];
   ::google::protobuf::uint64 steam_id_;
   ::google::protobuf::RepeatedField< ::google::protobuf::uint32 > items_;
   ::google::protobuf::uint32 hero_id_;
@@ -2901,9 +2730,9 @@ class CMsgGameMatchSignOut_CTeam_CPlayer : public ::google::protobuf::Message {
   ::google::protobuf::uint32 xp_per_minute_;
   ::google::protobuf::uint32 gold_spent_;
   ::google::protobuf::uint32 level_;
-  ::google::protobuf::uint32 hero_damage_;
-  ::google::protobuf::uint32 tower_damage_;
-  ::google::protobuf::uint32 hero_healing_;
+  ::google::protobuf::uint32 scaled_hero_damage_;
+  ::google::protobuf::uint32 scaled_tower_damage_;
+  ::google::protobuf::uint32 scaled_hero_healing_;
   ::google::protobuf::uint32 time_last_seen_;
   ::google::protobuf::uint64 party_id_;
   ::google::protobuf::uint32 support_ability_value_;
@@ -2914,11 +2743,18 @@ class CMsgGameMatchSignOut_CTeam_CPlayer : public ::google::protobuf::Message {
   ::google::protobuf::uint32 support_gold_;
   ::google::protobuf::uint32 claimed_denies_;
   ::google::protobuf::uint32 claimed_misses_;
-  ::google::protobuf::RepeatedPtrField< ::CMatchPlayerAbilityUpgrade > ability_upgrades_;
   ::google::protobuf::uint32 misses_;
   ::google::protobuf::uint32 net_worth_;
+  ::google::protobuf::uint32 hero_damage_;
+  ::google::protobuf::uint32 tower_damage_;
+  ::google::protobuf::RepeatedPtrField< ::CMatchPlayerAbilityUpgrade > ability_upgrades_;
   ::google::protobuf::RepeatedPtrField< ::CMatchAdditionalUnitInventory > additional_units_inventory_;
+  ::google::protobuf::uint32 hero_healing_;
+  ::google::protobuf::uint32 match_player_flags_;
+  ::google::protobuf::RepeatedPtrField< ::CMatchPlayerPermanentBuff > permanent_buffs_;
   ::CMsgGameMatchSignOut_CTeam_CPlayer_CCustomGameData* custom_game_data_;
+  ::google::protobuf::RepeatedField< ::google::protobuf::uint32 > talent_ability_ids_;
+  mutable int _cached_size_;
   friend void  protobuf_AddDesc_dota_5fgcmessages_5fserver_2eproto();
   friend void protobuf_AssignDesc_dota_5fgcmessages_5fserver_2eproto();
   friend void protobuf_ShutdownFile_dota_5fgcmessages_5fserver_2eproto();
@@ -3490,10 +3326,10 @@ class CMsgGameMatchSignOut : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedPtrField< ::CMatchHeroSelectEvent >*
       mutable_picks_bans();
 
-  // repeated .CMsgDOTAFantasyPlayerStats fantasy_stats = 16;
+  // repeated .CMsgDOTAFantasyPlayerStats fantasy_stats = 41;
   inline int fantasy_stats_size() const;
   inline void clear_fantasy_stats();
-  static const int kFantasyStatsFieldNumber = 16;
+  static const int kFantasyStatsFieldNumber = 41;
   inline const ::CMsgDOTAFantasyPlayerStats& fantasy_stats(int index) const;
   inline ::CMsgDOTAFantasyPlayerStats* mutable_fantasy_stats(int index);
   inline ::CMsgDOTAFantasyPlayerStats* add_fantasy_stats();
@@ -3668,6 +3504,32 @@ class CMsgGameMatchSignOut : public ::google::protobuf::Message {
   inline ::CMsgGameMatchSignOut_CCustomGameData* release_custom_game_data();
   inline void set_allocated_custom_game_data(::CMsgGameMatchSignOut_CCustomGameData* custom_game_data);
 
+  // optional uint32 match_flags = 38;
+  inline bool has_match_flags() const;
+  inline void clear_match_flags();
+  static const int kMatchFlagsFieldNumber = 38;
+  inline ::google::protobuf::uint32 match_flags() const;
+  inline void set_match_flags(::google::protobuf::uint32 value);
+
+  // repeated uint32 team_scores = 39;
+  inline int team_scores_size() const;
+  inline void clear_team_scores();
+  static const int kTeamScoresFieldNumber = 39;
+  inline ::google::protobuf::uint32 team_scores(int index) const;
+  inline void set_team_scores(int index, ::google::protobuf::uint32 value);
+  inline void add_team_scores(::google::protobuf::uint32 value);
+  inline const ::google::protobuf::RepeatedField< ::google::protobuf::uint32 >&
+      team_scores() const;
+  inline ::google::protobuf::RepeatedField< ::google::protobuf::uint32 >*
+      mutable_team_scores();
+
+  // optional uint32 pre_game_duration = 40;
+  inline bool has_pre_game_duration() const;
+  inline void clear_pre_game_duration();
+  static const int kPreGameDurationFieldNumber = 40;
+  inline ::google::protobuf::uint32 pre_game_duration() const;
+  inline void set_pre_game_duration(::google::protobuf::uint32 value);
+
   // @@protoc_insertion_point(class_scope:CMsgGameMatchSignOut)
  private:
   inline void set_has_match_id();
@@ -3724,6 +3586,10 @@ class CMsgGameMatchSignOut : public ::google::protobuf::Message {
   inline void clear_has_bonus_gold_loser_total();
   inline void set_has_custom_game_data();
   inline void clear_has_custom_game_data();
+  inline void set_has_match_flags();
+  inline void clear_has_match_flags();
+  inline void set_has_pre_game_duration();
+  inline void clear_has_pre_game_duration();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
@@ -3764,6 +3630,9 @@ class CMsgGameMatchSignOut : public ::google::protobuf::Message {
   ::google::protobuf::int32 bonus_gold_loser_min20_;
   ::CMsgGameMatchSignOut_CCustomGameData* custom_game_data_;
   ::google::protobuf::uint32 bonus_gold_loser_total_;
+  ::google::protobuf::uint32 match_flags_;
+  ::google::protobuf::RepeatedField< ::google::protobuf::uint32 > team_scores_;
+  ::google::protobuf::uint32 pre_game_duration_;
   mutable int _cached_size_;
   friend void  protobuf_AddDesc_dota_5fgcmessages_5fserver_2eproto();
   friend void protobuf_AssignDesc_dota_5fgcmessages_5fserver_2eproto();
@@ -3876,95 +3745,6 @@ class CMsgSignOutDraftInfo : public ::google::protobuf::Message {
 };
 // -------------------------------------------------------------------
 
-class CMsgSignOutBotInfo_CMsgBotSlotDifficulty : public ::google::protobuf::Message {
- public:
-  CMsgSignOutBotInfo_CMsgBotSlotDifficulty();
-  virtual ~CMsgSignOutBotInfo_CMsgBotSlotDifficulty();
-
-  CMsgSignOutBotInfo_CMsgBotSlotDifficulty(const CMsgSignOutBotInfo_CMsgBotSlotDifficulty& from);
-
-  inline CMsgSignOutBotInfo_CMsgBotSlotDifficulty& operator=(const CMsgSignOutBotInfo_CMsgBotSlotDifficulty& from) {
-    CopyFrom(from);
-    return *this;
-  }
-
-  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
-    return _unknown_fields_;
-  }
-
-  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
-    return &_unknown_fields_;
-  }
-
-  static const ::google::protobuf::Descriptor* descriptor();
-  static const CMsgSignOutBotInfo_CMsgBotSlotDifficulty& default_instance();
-
-  void Swap(CMsgSignOutBotInfo_CMsgBotSlotDifficulty* other);
-
-  // implements Message ----------------------------------------------
-
-  CMsgSignOutBotInfo_CMsgBotSlotDifficulty* New() const;
-  void CopyFrom(const ::google::protobuf::Message& from);
-  void MergeFrom(const ::google::protobuf::Message& from);
-  void CopyFrom(const CMsgSignOutBotInfo_CMsgBotSlotDifficulty& from);
-  void MergeFrom(const CMsgSignOutBotInfo_CMsgBotSlotDifficulty& from);
-  void Clear();
-  bool IsInitialized() const;
-
-  int ByteSize() const;
-  bool MergePartialFromCodedStream(
-      ::google::protobuf::io::CodedInputStream* input);
-  void SerializeWithCachedSizes(
-      ::google::protobuf::io::CodedOutputStream* output) const;
-  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
-  int GetCachedSize() const { return _cached_size_; }
-  private:
-  void SharedCtor();
-  void SharedDtor();
-  void SetCachedSize(int size) const;
-  public:
-  ::google::protobuf::Metadata GetMetadata() const;
-
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-
-  // optional uint32 slot = 1;
-  inline bool has_slot() const;
-  inline void clear_slot();
-  static const int kSlotFieldNumber = 1;
-  inline ::google::protobuf::uint32 slot() const;
-  inline void set_slot(::google::protobuf::uint32 value);
-
-  // optional .DOTABotDifficulty bot_difficulty = 2 [default = BOT_DIFFICULTY_PASSIVE];
-  inline bool has_bot_difficulty() const;
-  inline void clear_bot_difficulty();
-  static const int kBotDifficultyFieldNumber = 2;
-  inline ::DOTABotDifficulty bot_difficulty() const;
-  inline void set_bot_difficulty(::DOTABotDifficulty value);
-
-  // @@protoc_insertion_point(class_scope:CMsgSignOutBotInfo.CMsgBotSlotDifficulty)
- private:
-  inline void set_has_slot();
-  inline void clear_has_slot();
-  inline void set_has_bot_difficulty();
-  inline void clear_has_bot_difficulty();
-
-  ::google::protobuf::UnknownFieldSet _unknown_fields_;
-
-  ::google::protobuf::uint32 _has_bits_[1];
-  mutable int _cached_size_;
-  ::google::protobuf::uint32 slot_;
-  int bot_difficulty_;
-  friend void  protobuf_AddDesc_dota_5fgcmessages_5fserver_2eproto();
-  friend void protobuf_AssignDesc_dota_5fgcmessages_5fserver_2eproto();
-  friend void protobuf_ShutdownFile_dota_5fgcmessages_5fserver_2eproto();
-
-  void InitAsDefaultInstance();
-  static CMsgSignOutBotInfo_CMsgBotSlotDifficulty* default_instance_;
-};
-// -------------------------------------------------------------------
-
 class CMsgSignOutBotInfo : public ::google::protobuf::Message {
  public:
   CMsgSignOutBotInfo();
@@ -4016,8 +3796,6 @@ class CMsgSignOutBotInfo : public ::google::protobuf::Message {
 
   // nested types ----------------------------------------------------
 
-  typedef CMsgSignOutBotInfo_CMsgBotSlotDifficulty CMsgBotSlotDifficulty;
-
   // accessors -------------------------------------------------------
 
   // optional bool allow_cheats = 1;
@@ -4027,12 +3805,12 @@ class CMsgSignOutBotInfo : public ::google::protobuf::Message {
   inline bool allow_cheats() const;
   inline void set_allow_cheats(bool value);
 
-  // optional .DOTABotDifficulty bot_difficulty = 2 [default = BOT_DIFFICULTY_PASSIVE];
-  inline bool has_bot_difficulty() const;
-  inline void clear_bot_difficulty();
-  static const int kBotDifficultyFieldNumber = 2;
-  inline ::DOTABotDifficulty bot_difficulty() const;
-  inline void set_bot_difficulty(::DOTABotDifficulty value);
+  // optional .DOTABotDifficulty bot_difficulty_radiant = 2 [default = BOT_DIFFICULTY_PASSIVE];
+  inline bool has_bot_difficulty_radiant() const;
+  inline void clear_bot_difficulty_radiant();
+  static const int kBotDifficultyRadiantFieldNumber = 2;
+  inline ::DOTABotDifficulty bot_difficulty_radiant() const;
+  inline void set_bot_difficulty_radiant(::DOTABotDifficulty value);
 
   // optional bool created_lobby = 3;
   inline bool has_created_lobby() const;
@@ -4041,35 +3819,32 @@ class CMsgSignOutBotInfo : public ::google::protobuf::Message {
   inline bool created_lobby() const;
   inline void set_created_lobby(bool value);
 
-  // repeated .CMsgSignOutBotInfo.CMsgBotSlotDifficulty bot_slot_difficulties = 4;
-  inline int bot_slot_difficulties_size() const;
-  inline void clear_bot_slot_difficulties();
-  static const int kBotSlotDifficultiesFieldNumber = 4;
-  inline const ::CMsgSignOutBotInfo_CMsgBotSlotDifficulty& bot_slot_difficulties(int index) const;
-  inline ::CMsgSignOutBotInfo_CMsgBotSlotDifficulty* mutable_bot_slot_difficulties(int index);
-  inline ::CMsgSignOutBotInfo_CMsgBotSlotDifficulty* add_bot_slot_difficulties();
-  inline const ::google::protobuf::RepeatedPtrField< ::CMsgSignOutBotInfo_CMsgBotSlotDifficulty >&
-      bot_slot_difficulties() const;
-  inline ::google::protobuf::RepeatedPtrField< ::CMsgSignOutBotInfo_CMsgBotSlotDifficulty >*
-      mutable_bot_slot_difficulties();
+  // optional .DOTABotDifficulty bot_difficulty_dire = 5 [default = BOT_DIFFICULTY_PASSIVE];
+  inline bool has_bot_difficulty_dire() const;
+  inline void clear_bot_difficulty_dire();
+  static const int kBotDifficultyDireFieldNumber = 5;
+  inline ::DOTABotDifficulty bot_difficulty_dire() const;
+  inline void set_bot_difficulty_dire(::DOTABotDifficulty value);
 
   // @@protoc_insertion_point(class_scope:CMsgSignOutBotInfo)
  private:
   inline void set_has_allow_cheats();
   inline void clear_has_allow_cheats();
-  inline void set_has_bot_difficulty();
-  inline void clear_has_bot_difficulty();
+  inline void set_has_bot_difficulty_radiant();
+  inline void clear_has_bot_difficulty_radiant();
   inline void set_has_created_lobby();
   inline void clear_has_created_lobby();
+  inline void set_has_bot_difficulty_dire();
+  inline void clear_has_bot_difficulty_dire();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
   ::google::protobuf::uint32 _has_bits_[1];
   mutable int _cached_size_;
-  int bot_difficulty_;
+  int bot_difficulty_radiant_;
   bool allow_cheats_;
   bool created_lobby_;
-  ::google::protobuf::RepeatedPtrField< ::CMsgSignOutBotInfo_CMsgBotSlotDifficulty > bot_slot_difficulties_;
+  int bot_difficulty_dire_;
   friend void  protobuf_AddDesc_dota_5fgcmessages_5fserver_2eproto();
   friend void protobuf_AssignDesc_dota_5fgcmessages_5fserver_2eproto();
   friend void protobuf_ShutdownFile_dota_5fgcmessages_5fserver_2eproto();
@@ -4765,6 +4540,205 @@ class CMsgGameMatchSignoutResponse_CAdditionalSignoutMsg : public ::google::prot
 };
 // -------------------------------------------------------------------
 
+class CMsgGameMatchSignoutResponse_PlayerMetadata : public ::google::protobuf::Message {
+ public:
+  CMsgGameMatchSignoutResponse_PlayerMetadata();
+  virtual ~CMsgGameMatchSignoutResponse_PlayerMetadata();
+
+  CMsgGameMatchSignoutResponse_PlayerMetadata(const CMsgGameMatchSignoutResponse_PlayerMetadata& from);
+
+  inline CMsgGameMatchSignoutResponse_PlayerMetadata& operator=(const CMsgGameMatchSignoutResponse_PlayerMetadata& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+    return _unknown_fields_;
+  }
+
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+    return &_unknown_fields_;
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const CMsgGameMatchSignoutResponse_PlayerMetadata& default_instance();
+
+  void Swap(CMsgGameMatchSignoutResponse_PlayerMetadata* other);
+
+  // implements Message ----------------------------------------------
+
+  CMsgGameMatchSignoutResponse_PlayerMetadata* New() const;
+  void CopyFrom(const ::google::protobuf::Message& from);
+  void MergeFrom(const ::google::protobuf::Message& from);
+  void CopyFrom(const CMsgGameMatchSignoutResponse_PlayerMetadata& from);
+  void MergeFrom(const CMsgGameMatchSignoutResponse_PlayerMetadata& from);
+  void Clear();
+  bool IsInitialized() const;
+
+  int ByteSize() const;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input);
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  int GetCachedSize() const { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const;
+  public:
+  ::google::protobuf::Metadata GetMetadata() const;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // optional uint32 hero_id = 1;
+  inline bool has_hero_id() const;
+  inline void clear_hero_id();
+  static const int kHeroIdFieldNumber = 1;
+  inline ::google::protobuf::uint32 hero_id() const;
+  inline void set_hero_id(::google::protobuf::uint32 value);
+
+  // optional uint32 avg_kills_x16 = 2;
+  inline bool has_avg_kills_x16() const;
+  inline void clear_avg_kills_x16();
+  static const int kAvgKillsX16FieldNumber = 2;
+  inline ::google::protobuf::uint32 avg_kills_x16() const;
+  inline void set_avg_kills_x16(::google::protobuf::uint32 value);
+
+  // optional uint32 avg_deaths_x16 = 3;
+  inline bool has_avg_deaths_x16() const;
+  inline void clear_avg_deaths_x16();
+  static const int kAvgDeathsX16FieldNumber = 3;
+  inline ::google::protobuf::uint32 avg_deaths_x16() const;
+  inline void set_avg_deaths_x16(::google::protobuf::uint32 value);
+
+  // optional uint32 avg_assists_x16 = 4;
+  inline bool has_avg_assists_x16() const;
+  inline void clear_avg_assists_x16();
+  static const int kAvgAssistsX16FieldNumber = 4;
+  inline ::google::protobuf::uint32 avg_assists_x16() const;
+  inline void set_avg_assists_x16(::google::protobuf::uint32 value);
+
+  // optional uint32 avg_gpm_x16 = 5;
+  inline bool has_avg_gpm_x16() const;
+  inline void clear_avg_gpm_x16();
+  static const int kAvgGpmX16FieldNumber = 5;
+  inline ::google::protobuf::uint32 avg_gpm_x16() const;
+  inline void set_avg_gpm_x16(::google::protobuf::uint32 value);
+
+  // optional uint32 avg_xpm_x16 = 6;
+  inline bool has_avg_xpm_x16() const;
+  inline void clear_avg_xpm_x16();
+  static const int kAvgXpmX16FieldNumber = 6;
+  inline ::google::protobuf::uint32 avg_xpm_x16() const;
+  inline void set_avg_xpm_x16(::google::protobuf::uint32 value);
+
+  // optional uint32 best_kills_x16 = 7;
+  inline bool has_best_kills_x16() const;
+  inline void clear_best_kills_x16();
+  static const int kBestKillsX16FieldNumber = 7;
+  inline ::google::protobuf::uint32 best_kills_x16() const;
+  inline void set_best_kills_x16(::google::protobuf::uint32 value);
+
+  // optional uint32 best_assists_x16 = 8;
+  inline bool has_best_assists_x16() const;
+  inline void clear_best_assists_x16();
+  static const int kBestAssistsX16FieldNumber = 8;
+  inline ::google::protobuf::uint32 best_assists_x16() const;
+  inline void set_best_assists_x16(::google::protobuf::uint32 value);
+
+  // optional uint32 best_gpm_x16 = 9;
+  inline bool has_best_gpm_x16() const;
+  inline void clear_best_gpm_x16();
+  static const int kBestGpmX16FieldNumber = 9;
+  inline ::google::protobuf::uint32 best_gpm_x16() const;
+  inline void set_best_gpm_x16(::google::protobuf::uint32 value);
+
+  // optional uint32 best_xpm_x16 = 10;
+  inline bool has_best_xpm_x16() const;
+  inline void clear_best_xpm_x16();
+  static const int kBestXpmX16FieldNumber = 10;
+  inline ::google::protobuf::uint32 best_xpm_x16() const;
+  inline void set_best_xpm_x16(::google::protobuf::uint32 value);
+
+  // optional uint32 win_streak = 11;
+  inline bool has_win_streak() const;
+  inline void clear_win_streak();
+  static const int kWinStreakFieldNumber = 11;
+  inline ::google::protobuf::uint32 win_streak() const;
+  inline void set_win_streak(::google::protobuf::uint32 value);
+
+  // optional uint32 best_win_streak = 12;
+  inline bool has_best_win_streak() const;
+  inline void clear_best_win_streak();
+  static const int kBestWinStreakFieldNumber = 12;
+  inline ::google::protobuf::uint32 best_win_streak() const;
+  inline void set_best_win_streak(::google::protobuf::uint32 value);
+
+  // optional uint32 games_played = 13;
+  inline bool has_games_played() const;
+  inline void clear_games_played();
+  static const int kGamesPlayedFieldNumber = 13;
+  inline ::google::protobuf::uint32 games_played() const;
+  inline void set_games_played(::google::protobuf::uint32 value);
+
+  // @@protoc_insertion_point(class_scope:CMsgGameMatchSignoutResponse.PlayerMetadata)
+ private:
+  inline void set_has_hero_id();
+  inline void clear_has_hero_id();
+  inline void set_has_avg_kills_x16();
+  inline void clear_has_avg_kills_x16();
+  inline void set_has_avg_deaths_x16();
+  inline void clear_has_avg_deaths_x16();
+  inline void set_has_avg_assists_x16();
+  inline void clear_has_avg_assists_x16();
+  inline void set_has_avg_gpm_x16();
+  inline void clear_has_avg_gpm_x16();
+  inline void set_has_avg_xpm_x16();
+  inline void clear_has_avg_xpm_x16();
+  inline void set_has_best_kills_x16();
+  inline void clear_has_best_kills_x16();
+  inline void set_has_best_assists_x16();
+  inline void clear_has_best_assists_x16();
+  inline void set_has_best_gpm_x16();
+  inline void clear_has_best_gpm_x16();
+  inline void set_has_best_xpm_x16();
+  inline void clear_has_best_xpm_x16();
+  inline void set_has_win_streak();
+  inline void clear_has_win_streak();
+  inline void set_has_best_win_streak();
+  inline void clear_has_best_win_streak();
+  inline void set_has_games_played();
+  inline void clear_has_games_played();
+
+  ::google::protobuf::UnknownFieldSet _unknown_fields_;
+
+  ::google::protobuf::uint32 _has_bits_[1];
+  mutable int _cached_size_;
+  ::google::protobuf::uint32 hero_id_;
+  ::google::protobuf::uint32 avg_kills_x16_;
+  ::google::protobuf::uint32 avg_deaths_x16_;
+  ::google::protobuf::uint32 avg_assists_x16_;
+  ::google::protobuf::uint32 avg_gpm_x16_;
+  ::google::protobuf::uint32 avg_xpm_x16_;
+  ::google::protobuf::uint32 best_kills_x16_;
+  ::google::protobuf::uint32 best_assists_x16_;
+  ::google::protobuf::uint32 best_gpm_x16_;
+  ::google::protobuf::uint32 best_xpm_x16_;
+  ::google::protobuf::uint32 win_streak_;
+  ::google::protobuf::uint32 best_win_streak_;
+  ::google::protobuf::uint32 games_played_;
+  friend void  protobuf_AddDesc_dota_5fgcmessages_5fserver_2eproto();
+  friend void protobuf_AssignDesc_dota_5fgcmessages_5fserver_2eproto();
+  friend void protobuf_ShutdownFile_dota_5fgcmessages_5fserver_2eproto();
+
+  void InitAsDefaultInstance();
+  static CMsgGameMatchSignoutResponse_PlayerMetadata* default_instance_;
+};
+// -------------------------------------------------------------------
+
 class CMsgGameMatchSignoutResponse : public ::google::protobuf::Message {
  public:
   CMsgGameMatchSignoutResponse();
@@ -4817,6 +4791,7 @@ class CMsgGameMatchSignoutResponse : public ::google::protobuf::Message {
   // nested types ----------------------------------------------------
 
   typedef CMsgGameMatchSignoutResponse_CAdditionalSignoutMsg CAdditionalSignoutMsg;
+  typedef CMsgGameMatchSignoutResponse_PlayerMetadata PlayerMetadata;
 
   // accessors -------------------------------------------------------
 
@@ -4877,6 +4852,34 @@ class CMsgGameMatchSignoutResponse : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedPtrField< ::CMsgGameMatchSignoutResponse_CAdditionalSignoutMsg >*
       mutable_additional_msgs();
 
+  // optional fixed32 metadata_private_key = 7;
+  inline bool has_metadata_private_key() const;
+  inline void clear_metadata_private_key();
+  static const int kMetadataPrivateKeyFieldNumber = 7;
+  inline ::google::protobuf::uint32 metadata_private_key() const;
+  inline void set_metadata_private_key(::google::protobuf::uint32 value);
+
+  // optional .CMsgDOTAMatch match_details = 8;
+  inline bool has_match_details() const;
+  inline void clear_match_details();
+  static const int kMatchDetailsFieldNumber = 8;
+  inline const ::CMsgDOTAMatch& match_details() const;
+  inline ::CMsgDOTAMatch* mutable_match_details();
+  inline ::CMsgDOTAMatch* release_match_details();
+  inline void set_allocated_match_details(::CMsgDOTAMatch* match_details);
+
+  // repeated .CMsgGameMatchSignoutResponse.PlayerMetadata players_metadata = 9;
+  inline int players_metadata_size() const;
+  inline void clear_players_metadata();
+  static const int kPlayersMetadataFieldNumber = 9;
+  inline const ::CMsgGameMatchSignoutResponse_PlayerMetadata& players_metadata(int index) const;
+  inline ::CMsgGameMatchSignoutResponse_PlayerMetadata* mutable_players_metadata(int index);
+  inline ::CMsgGameMatchSignoutResponse_PlayerMetadata* add_players_metadata();
+  inline const ::google::protobuf::RepeatedPtrField< ::CMsgGameMatchSignoutResponse_PlayerMetadata >&
+      players_metadata() const;
+  inline ::google::protobuf::RepeatedPtrField< ::CMsgGameMatchSignoutResponse_PlayerMetadata >*
+      mutable_players_metadata();
+
   // @@protoc_insertion_point(class_scope:CMsgGameMatchSignoutResponse)
  private:
   inline void set_has_match_id();
@@ -4885,6 +4888,10 @@ class CMsgGameMatchSignoutResponse : public ::google::protobuf::Message {
   inline void clear_has_replay_salt();
   inline void set_has_leagueid();
   inline void clear_has_leagueid();
+  inline void set_has_metadata_private_key();
+  inline void clear_has_metadata_private_key();
+  inline void set_has_match_details();
+  inline void clear_has_match_details();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
@@ -4896,12 +4903,97 @@ class CMsgGameMatchSignoutResponse : public ::google::protobuf::Message {
   ::google::protobuf::uint32 leagueid_;
   ::google::protobuf::RepeatedPtrField< ::CDOTALobbyMember > xp_reward_details_;
   ::google::protobuf::RepeatedPtrField< ::CMsgGameMatchSignoutResponse_CAdditionalSignoutMsg > additional_msgs_;
+  ::CMsgDOTAMatch* match_details_;
+  ::google::protobuf::RepeatedPtrField< ::CMsgGameMatchSignoutResponse_PlayerMetadata > players_metadata_;
+  ::google::protobuf::uint32 metadata_private_key_;
   friend void  protobuf_AddDesc_dota_5fgcmessages_5fserver_2eproto();
   friend void protobuf_AssignDesc_dota_5fgcmessages_5fserver_2eproto();
   friend void protobuf_ShutdownFile_dota_5fgcmessages_5fserver_2eproto();
 
   void InitAsDefaultInstance();
   static CMsgGameMatchSignoutResponse* default_instance_;
+};
+// -------------------------------------------------------------------
+
+class CMsgTimedRewardContainer : public ::google::protobuf::Message {
+ public:
+  CMsgTimedRewardContainer();
+  virtual ~CMsgTimedRewardContainer();
+
+  CMsgTimedRewardContainer(const CMsgTimedRewardContainer& from);
+
+  inline CMsgTimedRewardContainer& operator=(const CMsgTimedRewardContainer& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+    return _unknown_fields_;
+  }
+
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+    return &_unknown_fields_;
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const CMsgTimedRewardContainer& default_instance();
+
+  void Swap(CMsgTimedRewardContainer* other);
+
+  // implements Message ----------------------------------------------
+
+  CMsgTimedRewardContainer* New() const;
+  void CopyFrom(const ::google::protobuf::Message& from);
+  void MergeFrom(const ::google::protobuf::Message& from);
+  void CopyFrom(const CMsgTimedRewardContainer& from);
+  void MergeFrom(const CMsgTimedRewardContainer& from);
+  void Clear();
+  bool IsInitialized() const;
+
+  int ByteSize() const;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input);
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  int GetCachedSize() const { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const;
+  public:
+  ::google::protobuf::Metadata GetMetadata() const;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // repeated .CLobbyTimedRewardDetails timed_reward_details = 1;
+  inline int timed_reward_details_size() const;
+  inline void clear_timed_reward_details();
+  static const int kTimedRewardDetailsFieldNumber = 1;
+  inline const ::CLobbyTimedRewardDetails& timed_reward_details(int index) const;
+  inline ::CLobbyTimedRewardDetails* mutable_timed_reward_details(int index);
+  inline ::CLobbyTimedRewardDetails* add_timed_reward_details();
+  inline const ::google::protobuf::RepeatedPtrField< ::CLobbyTimedRewardDetails >&
+      timed_reward_details() const;
+  inline ::google::protobuf::RepeatedPtrField< ::CLobbyTimedRewardDetails >*
+      mutable_timed_reward_details();
+
+  // @@protoc_insertion_point(class_scope:CMsgTimedRewardContainer)
+ private:
+
+  ::google::protobuf::UnknownFieldSet _unknown_fields_;
+
+  ::google::protobuf::uint32 _has_bits_[1];
+  mutable int _cached_size_;
+  ::google::protobuf::RepeatedPtrField< ::CLobbyTimedRewardDetails > timed_reward_details_;
+  friend void  protobuf_AddDesc_dota_5fgcmessages_5fserver_2eproto();
+  friend void protobuf_AssignDesc_dota_5fgcmessages_5fserver_2eproto();
+  friend void protobuf_ShutdownFile_dota_5fgcmessages_5fserver_2eproto();
+
+  void InitAsDefaultInstance();
+  static CMsgTimedRewardContainer* default_instance_;
 };
 // -------------------------------------------------------------------
 
@@ -5110,214 +5202,6 @@ class CMsgGameMatchSignOutPermissionResponse : public ::google::protobuf::Messag
 
   void InitAsDefaultInstance();
   static CMsgGameMatchSignOutPermissionResponse* default_instance_;
-};
-// -------------------------------------------------------------------
-
-class CMsgGameChatLog_CChatLine : public ::google::protobuf::Message {
- public:
-  CMsgGameChatLog_CChatLine();
-  virtual ~CMsgGameChatLog_CChatLine();
-
-  CMsgGameChatLog_CChatLine(const CMsgGameChatLog_CChatLine& from);
-
-  inline CMsgGameChatLog_CChatLine& operator=(const CMsgGameChatLog_CChatLine& from) {
-    CopyFrom(from);
-    return *this;
-  }
-
-  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
-    return _unknown_fields_;
-  }
-
-  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
-    return &_unknown_fields_;
-  }
-
-  static const ::google::protobuf::Descriptor* descriptor();
-  static const CMsgGameChatLog_CChatLine& default_instance();
-
-  void Swap(CMsgGameChatLog_CChatLine* other);
-
-  // implements Message ----------------------------------------------
-
-  CMsgGameChatLog_CChatLine* New() const;
-  void CopyFrom(const ::google::protobuf::Message& from);
-  void MergeFrom(const ::google::protobuf::Message& from);
-  void CopyFrom(const CMsgGameChatLog_CChatLine& from);
-  void MergeFrom(const CMsgGameChatLog_CChatLine& from);
-  void Clear();
-  bool IsInitialized() const;
-
-  int ByteSize() const;
-  bool MergePartialFromCodedStream(
-      ::google::protobuf::io::CodedInputStream* input);
-  void SerializeWithCachedSizes(
-      ::google::protobuf::io::CodedOutputStream* output) const;
-  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
-  int GetCachedSize() const { return _cached_size_; }
-  private:
-  void SharedCtor();
-  void SharedDtor();
-  void SetCachedSize(int size) const;
-  public:
-  ::google::protobuf::Metadata GetMetadata() const;
-
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-
-  // optional uint32 account_id = 1;
-  inline bool has_account_id() const;
-  inline void clear_account_id();
-  static const int kAccountIdFieldNumber = 1;
-  inline ::google::protobuf::uint32 account_id() const;
-  inline void set_account_id(::google::protobuf::uint32 value);
-
-  // optional uint32 team_only = 2;
-  inline bool has_team_only() const;
-  inline void clear_team_only();
-  static const int kTeamOnlyFieldNumber = 2;
-  inline ::google::protobuf::uint32 team_only() const;
-  inline void set_team_only(::google::protobuf::uint32 value);
-
-  // optional string text = 3;
-  inline bool has_text() const;
-  inline void clear_text();
-  static const int kTextFieldNumber = 3;
-  inline const ::std::string& text() const;
-  inline void set_text(const ::std::string& value);
-  inline void set_text(const char* value);
-  inline void set_text(const char* value, size_t size);
-  inline ::std::string* mutable_text();
-  inline ::std::string* release_text();
-  inline void set_allocated_text(::std::string* text);
-
-  // optional uint32 game_time = 4;
-  inline bool has_game_time() const;
-  inline void clear_game_time();
-  static const int kGameTimeFieldNumber = 4;
-  inline ::google::protobuf::uint32 game_time() const;
-  inline void set_game_time(::google::protobuf::uint32 value);
-
-  // @@protoc_insertion_point(class_scope:CMsgGameChatLog.CChatLine)
- private:
-  inline void set_has_account_id();
-  inline void clear_has_account_id();
-  inline void set_has_team_only();
-  inline void clear_has_team_only();
-  inline void set_has_text();
-  inline void clear_has_text();
-  inline void set_has_game_time();
-  inline void clear_has_game_time();
-
-  ::google::protobuf::UnknownFieldSet _unknown_fields_;
-
-  ::google::protobuf::uint32 _has_bits_[1];
-  mutable int _cached_size_;
-  ::google::protobuf::uint32 account_id_;
-  ::google::protobuf::uint32 team_only_;
-  ::std::string* text_;
-  ::google::protobuf::uint32 game_time_;
-  friend void  protobuf_AddDesc_dota_5fgcmessages_5fserver_2eproto();
-  friend void protobuf_AssignDesc_dota_5fgcmessages_5fserver_2eproto();
-  friend void protobuf_ShutdownFile_dota_5fgcmessages_5fserver_2eproto();
-
-  void InitAsDefaultInstance();
-  static CMsgGameChatLog_CChatLine* default_instance_;
-};
-// -------------------------------------------------------------------
-
-class CMsgGameChatLog : public ::google::protobuf::Message {
- public:
-  CMsgGameChatLog();
-  virtual ~CMsgGameChatLog();
-
-  CMsgGameChatLog(const CMsgGameChatLog& from);
-
-  inline CMsgGameChatLog& operator=(const CMsgGameChatLog& from) {
-    CopyFrom(from);
-    return *this;
-  }
-
-  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
-    return _unknown_fields_;
-  }
-
-  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
-    return &_unknown_fields_;
-  }
-
-  static const ::google::protobuf::Descriptor* descriptor();
-  static const CMsgGameChatLog& default_instance();
-
-  void Swap(CMsgGameChatLog* other);
-
-  // implements Message ----------------------------------------------
-
-  CMsgGameChatLog* New() const;
-  void CopyFrom(const ::google::protobuf::Message& from);
-  void MergeFrom(const ::google::protobuf::Message& from);
-  void CopyFrom(const CMsgGameChatLog& from);
-  void MergeFrom(const CMsgGameChatLog& from);
-  void Clear();
-  bool IsInitialized() const;
-
-  int ByteSize() const;
-  bool MergePartialFromCodedStream(
-      ::google::protobuf::io::CodedInputStream* input);
-  void SerializeWithCachedSizes(
-      ::google::protobuf::io::CodedOutputStream* output) const;
-  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
-  int GetCachedSize() const { return _cached_size_; }
-  private:
-  void SharedCtor();
-  void SharedDtor();
-  void SetCachedSize(int size) const;
-  public:
-  ::google::protobuf::Metadata GetMetadata() const;
-
-  // nested types ----------------------------------------------------
-
-  typedef CMsgGameChatLog_CChatLine CChatLine;
-
-  // accessors -------------------------------------------------------
-
-  // optional uint64 match_id = 1;
-  inline bool has_match_id() const;
-  inline void clear_match_id();
-  static const int kMatchIdFieldNumber = 1;
-  inline ::google::protobuf::uint64 match_id() const;
-  inline void set_match_id(::google::protobuf::uint64 value);
-
-  // repeated .CMsgGameChatLog.CChatLine lines = 2;
-  inline int lines_size() const;
-  inline void clear_lines();
-  static const int kLinesFieldNumber = 2;
-  inline const ::CMsgGameChatLog_CChatLine& lines(int index) const;
-  inline ::CMsgGameChatLog_CChatLine* mutable_lines(int index);
-  inline ::CMsgGameChatLog_CChatLine* add_lines();
-  inline const ::google::protobuf::RepeatedPtrField< ::CMsgGameChatLog_CChatLine >&
-      lines() const;
-  inline ::google::protobuf::RepeatedPtrField< ::CMsgGameChatLog_CChatLine >*
-      mutable_lines();
-
-  // @@protoc_insertion_point(class_scope:CMsgGameChatLog)
- private:
-  inline void set_has_match_id();
-  inline void clear_has_match_id();
-
-  ::google::protobuf::UnknownFieldSet _unknown_fields_;
-
-  ::google::protobuf::uint32 _has_bits_[1];
-  mutable int _cached_size_;
-  ::google::protobuf::uint64 match_id_;
-  ::google::protobuf::RepeatedPtrField< ::CMsgGameChatLog_CChatLine > lines_;
-  friend void  protobuf_AddDesc_dota_5fgcmessages_5fserver_2eproto();
-  friend void protobuf_AssignDesc_dota_5fgcmessages_5fserver_2eproto();
-  friend void protobuf_ShutdownFile_dota_5fgcmessages_5fserver_2eproto();
-
-  void InitAsDefaultInstance();
-  static CMsgGameChatLog* default_instance_;
 };
 // -------------------------------------------------------------------
 
@@ -8584,12 +8468,30 @@ class CMsgDOTAAwardEventPoints : public ::google::protobuf::Message {
   inline ::google::protobuf::uint32 event_id() const;
   inline void set_event_id(::google::protobuf::uint32 value);
 
+  // optional uint32 timestamp = 5;
+  inline bool has_timestamp() const;
+  inline void clear_timestamp();
+  static const int kTimestampFieldNumber = 5;
+  inline ::google::protobuf::uint32 timestamp() const;
+  inline void set_timestamp(::google::protobuf::uint32 value);
+
+  // optional uint32 audit_action = 6;
+  inline bool has_audit_action() const;
+  inline void clear_audit_action();
+  static const int kAuditActionFieldNumber = 6;
+  inline ::google::protobuf::uint32 audit_action() const;
+  inline void set_audit_action(::google::protobuf::uint32 value);
+
   // @@protoc_insertion_point(class_scope:CMsgDOTAAwardEventPoints)
  private:
   inline void set_has_match_id();
   inline void clear_has_match_id();
   inline void set_has_event_id();
   inline void clear_has_event_id();
+  inline void set_has_timestamp();
+  inline void clear_has_timestamp();
+  inline void set_has_audit_action();
+  inline void clear_has_audit_action();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
@@ -8598,6 +8500,8 @@ class CMsgDOTAAwardEventPoints : public ::google::protobuf::Message {
   ::google::protobuf::RepeatedPtrField< ::CMsgDOTAAwardEventPoints_AwardPoints > award_points_;
   ::google::protobuf::uint64 match_id_;
   ::google::protobuf::uint32 event_id_;
+  ::google::protobuf::uint32 timestamp_;
+  ::google::protobuf::uint32 audit_action_;
   friend void  protobuf_AddDesc_dota_5fgcmessages_5fserver_2eproto();
   friend void protobuf_AssignDesc_dota_5fgcmessages_5fserver_2eproto();
   friend void protobuf_ShutdownFile_dota_5fgcmessages_5fserver_2eproto();
@@ -8815,199 +8719,6 @@ class CMsgServerToGCSignoutAwardAdditionalDrops : public ::google::protobuf::Mes
 
   void InitAsDefaultInstance();
   static CMsgServerToGCSignoutAwardAdditionalDrops* default_instance_;
-};
-// -------------------------------------------------------------------
-
-class CMsgDOTAUpdateTI4HeroQuest_Player : public ::google::protobuf::Message {
- public:
-  CMsgDOTAUpdateTI4HeroQuest_Player();
-  virtual ~CMsgDOTAUpdateTI4HeroQuest_Player();
-
-  CMsgDOTAUpdateTI4HeroQuest_Player(const CMsgDOTAUpdateTI4HeroQuest_Player& from);
-
-  inline CMsgDOTAUpdateTI4HeroQuest_Player& operator=(const CMsgDOTAUpdateTI4HeroQuest_Player& from) {
-    CopyFrom(from);
-    return *this;
-  }
-
-  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
-    return _unknown_fields_;
-  }
-
-  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
-    return &_unknown_fields_;
-  }
-
-  static const ::google::protobuf::Descriptor* descriptor();
-  static const CMsgDOTAUpdateTI4HeroQuest_Player& default_instance();
-
-  void Swap(CMsgDOTAUpdateTI4HeroQuest_Player* other);
-
-  // implements Message ----------------------------------------------
-
-  CMsgDOTAUpdateTI4HeroQuest_Player* New() const;
-  void CopyFrom(const ::google::protobuf::Message& from);
-  void MergeFrom(const ::google::protobuf::Message& from);
-  void CopyFrom(const CMsgDOTAUpdateTI4HeroQuest_Player& from);
-  void MergeFrom(const CMsgDOTAUpdateTI4HeroQuest_Player& from);
-  void Clear();
-  bool IsInitialized() const;
-
-  int ByteSize() const;
-  bool MergePartialFromCodedStream(
-      ::google::protobuf::io::CodedInputStream* input);
-  void SerializeWithCachedSizes(
-      ::google::protobuf::io::CodedOutputStream* output) const;
-  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
-  int GetCachedSize() const { return _cached_size_; }
-  private:
-  void SharedCtor();
-  void SharedDtor();
-  void SetCachedSize(int size) const;
-  public:
-  ::google::protobuf::Metadata GetMetadata() const;
-
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-
-  // optional uint32 account_id = 1;
-  inline bool has_account_id() const;
-  inline void clear_account_id();
-  static const int kAccountIdFieldNumber = 1;
-  inline ::google::protobuf::uint32 account_id() const;
-  inline void set_account_id(::google::protobuf::uint32 value);
-
-  // optional uint32 hero_id = 2;
-  inline bool has_hero_id() const;
-  inline void clear_hero_id();
-  static const int kHeroIdFieldNumber = 2;
-  inline ::google::protobuf::uint32 hero_id() const;
-  inline void set_hero_id(::google::protobuf::uint32 value);
-
-  // @@protoc_insertion_point(class_scope:CMsgDOTAUpdateTI4HeroQuest.Player)
- private:
-  inline void set_has_account_id();
-  inline void clear_has_account_id();
-  inline void set_has_hero_id();
-  inline void clear_has_hero_id();
-
-  ::google::protobuf::UnknownFieldSet _unknown_fields_;
-
-  ::google::protobuf::uint32 _has_bits_[1];
-  mutable int _cached_size_;
-  ::google::protobuf::uint32 account_id_;
-  ::google::protobuf::uint32 hero_id_;
-  friend void  protobuf_AddDesc_dota_5fgcmessages_5fserver_2eproto();
-  friend void protobuf_AssignDesc_dota_5fgcmessages_5fserver_2eproto();
-  friend void protobuf_ShutdownFile_dota_5fgcmessages_5fserver_2eproto();
-
-  void InitAsDefaultInstance();
-  static CMsgDOTAUpdateTI4HeroQuest_Player* default_instance_;
-};
-// -------------------------------------------------------------------
-
-class CMsgDOTAUpdateTI4HeroQuest : public ::google::protobuf::Message {
- public:
-  CMsgDOTAUpdateTI4HeroQuest();
-  virtual ~CMsgDOTAUpdateTI4HeroQuest();
-
-  CMsgDOTAUpdateTI4HeroQuest(const CMsgDOTAUpdateTI4HeroQuest& from);
-
-  inline CMsgDOTAUpdateTI4HeroQuest& operator=(const CMsgDOTAUpdateTI4HeroQuest& from) {
-    CopyFrom(from);
-    return *this;
-  }
-
-  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
-    return _unknown_fields_;
-  }
-
-  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
-    return &_unknown_fields_;
-  }
-
-  static const ::google::protobuf::Descriptor* descriptor();
-  static const CMsgDOTAUpdateTI4HeroQuest& default_instance();
-
-  void Swap(CMsgDOTAUpdateTI4HeroQuest* other);
-
-  // implements Message ----------------------------------------------
-
-  CMsgDOTAUpdateTI4HeroQuest* New() const;
-  void CopyFrom(const ::google::protobuf::Message& from);
-  void MergeFrom(const ::google::protobuf::Message& from);
-  void CopyFrom(const CMsgDOTAUpdateTI4HeroQuest& from);
-  void MergeFrom(const CMsgDOTAUpdateTI4HeroQuest& from);
-  void Clear();
-  bool IsInitialized() const;
-
-  int ByteSize() const;
-  bool MergePartialFromCodedStream(
-      ::google::protobuf::io::CodedInputStream* input);
-  void SerializeWithCachedSizes(
-      ::google::protobuf::io::CodedOutputStream* output) const;
-  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
-  int GetCachedSize() const { return _cached_size_; }
-  private:
-  void SharedCtor();
-  void SharedDtor();
-  void SetCachedSize(int size) const;
-  public:
-  ::google::protobuf::Metadata GetMetadata() const;
-
-  // nested types ----------------------------------------------------
-
-  typedef CMsgDOTAUpdateTI4HeroQuest_Player Player;
-
-  // accessors -------------------------------------------------------
-
-  // repeated .CMsgDOTAUpdateTI4HeroQuest.Player players = 1;
-  inline int players_size() const;
-  inline void clear_players();
-  static const int kPlayersFieldNumber = 1;
-  inline const ::CMsgDOTAUpdateTI4HeroQuest_Player& players(int index) const;
-  inline ::CMsgDOTAUpdateTI4HeroQuest_Player* mutable_players(int index);
-  inline ::CMsgDOTAUpdateTI4HeroQuest_Player* add_players();
-  inline const ::google::protobuf::RepeatedPtrField< ::CMsgDOTAUpdateTI4HeroQuest_Player >&
-      players() const;
-  inline ::google::protobuf::RepeatedPtrField< ::CMsgDOTAUpdateTI4HeroQuest_Player >*
-      mutable_players();
-
-  // optional fixed32 match_start_time = 2;
-  inline bool has_match_start_time() const;
-  inline void clear_match_start_time();
-  static const int kMatchStartTimeFieldNumber = 2;
-  inline ::google::protobuf::uint32 match_start_time() const;
-  inline void set_match_start_time(::google::protobuf::uint32 value);
-
-  // optional uint64 match_id = 3;
-  inline bool has_match_id() const;
-  inline void clear_match_id();
-  static const int kMatchIdFieldNumber = 3;
-  inline ::google::protobuf::uint64 match_id() const;
-  inline void set_match_id(::google::protobuf::uint64 value);
-
-  // @@protoc_insertion_point(class_scope:CMsgDOTAUpdateTI4HeroQuest)
- private:
-  inline void set_has_match_start_time();
-  inline void clear_has_match_start_time();
-  inline void set_has_match_id();
-  inline void clear_has_match_id();
-
-  ::google::protobuf::UnknownFieldSet _unknown_fields_;
-
-  ::google::protobuf::uint32 _has_bits_[1];
-  mutable int _cached_size_;
-  ::google::protobuf::RepeatedPtrField< ::CMsgDOTAUpdateTI4HeroQuest_Player > players_;
-  ::google::protobuf::uint64 match_id_;
-  ::google::protobuf::uint32 match_start_time_;
-  friend void  protobuf_AddDesc_dota_5fgcmessages_5fserver_2eproto();
-  friend void protobuf_AssignDesc_dota_5fgcmessages_5fserver_2eproto();
-  friend void protobuf_ShutdownFile_dota_5fgcmessages_5fserver_2eproto();
-
-  void InitAsDefaultInstance();
-  static CMsgDOTAUpdateTI4HeroQuest* default_instance_;
 };
 // -------------------------------------------------------------------
 
@@ -12405,209 +12116,6 @@ class CMsgServerToGCLockCharmTrading : public ::google::protobuf::Message {
 };
 // -------------------------------------------------------------------
 
-class CMsgDOTACNY2015EventPointUsage_PointUsage : public ::google::protobuf::Message {
- public:
-  CMsgDOTACNY2015EventPointUsage_PointUsage();
-  virtual ~CMsgDOTACNY2015EventPointUsage_PointUsage();
-
-  CMsgDOTACNY2015EventPointUsage_PointUsage(const CMsgDOTACNY2015EventPointUsage_PointUsage& from);
-
-  inline CMsgDOTACNY2015EventPointUsage_PointUsage& operator=(const CMsgDOTACNY2015EventPointUsage_PointUsage& from) {
-    CopyFrom(from);
-    return *this;
-  }
-
-  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
-    return _unknown_fields_;
-  }
-
-  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
-    return &_unknown_fields_;
-  }
-
-  static const ::google::protobuf::Descriptor* descriptor();
-  static const CMsgDOTACNY2015EventPointUsage_PointUsage& default_instance();
-
-  void Swap(CMsgDOTACNY2015EventPointUsage_PointUsage* other);
-
-  // implements Message ----------------------------------------------
-
-  CMsgDOTACNY2015EventPointUsage_PointUsage* New() const;
-  void CopyFrom(const ::google::protobuf::Message& from);
-  void MergeFrom(const ::google::protobuf::Message& from);
-  void CopyFrom(const CMsgDOTACNY2015EventPointUsage_PointUsage& from);
-  void MergeFrom(const CMsgDOTACNY2015EventPointUsage_PointUsage& from);
-  void Clear();
-  bool IsInitialized() const;
-
-  int ByteSize() const;
-  bool MergePartialFromCodedStream(
-      ::google::protobuf::io::CodedInputStream* input);
-  void SerializeWithCachedSizes(
-      ::google::protobuf::io::CodedOutputStream* output) const;
-  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
-  int GetCachedSize() const { return _cached_size_; }
-  private:
-  void SharedCtor();
-  void SharedDtor();
-  void SetCachedSize(int size) const;
-  public:
-  ::google::protobuf::Metadata GetMetadata() const;
-
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-
-  // repeated uint32 path = 1;
-  inline int path_size() const;
-  inline void clear_path();
-  static const int kPathFieldNumber = 1;
-  inline ::google::protobuf::uint32 path(int index) const;
-  inline void set_path(int index, ::google::protobuf::uint32 value);
-  inline void add_path(::google::protobuf::uint32 value);
-  inline const ::google::protobuf::RepeatedField< ::google::protobuf::uint32 >&
-      path() const;
-  inline ::google::protobuf::RepeatedField< ::google::protobuf::uint32 >*
-      mutable_path();
-
-  // repeated uint32 path_level = 2;
-  inline int path_level_size() const;
-  inline void clear_path_level();
-  static const int kPathLevelFieldNumber = 2;
-  inline ::google::protobuf::uint32 path_level(int index) const;
-  inline void set_path_level(int index, ::google::protobuf::uint32 value);
-  inline void add_path_level(::google::protobuf::uint32 value);
-  inline const ::google::protobuf::RepeatedField< ::google::protobuf::uint32 >&
-      path_level() const;
-  inline ::google::protobuf::RepeatedField< ::google::protobuf::uint32 >*
-      mutable_path_level();
-
-  // repeated uint32 ability_points_spent = 3;
-  inline int ability_points_spent_size() const;
-  inline void clear_ability_points_spent();
-  static const int kAbilityPointsSpentFieldNumber = 3;
-  inline ::google::protobuf::uint32 ability_points_spent(int index) const;
-  inline void set_ability_points_spent(int index, ::google::protobuf::uint32 value);
-  inline void add_ability_points_spent(::google::protobuf::uint32 value);
-  inline const ::google::protobuf::RepeatedField< ::google::protobuf::uint32 >&
-      ability_points_spent() const;
-  inline ::google::protobuf::RepeatedField< ::google::protobuf::uint32 >*
-      mutable_ability_points_spent();
-
-  // @@protoc_insertion_point(class_scope:CMsgDOTACNY2015EventPointUsage.PointUsage)
- private:
-
-  ::google::protobuf::UnknownFieldSet _unknown_fields_;
-
-  ::google::protobuf::uint32 _has_bits_[1];
-  mutable int _cached_size_;
-  ::google::protobuf::RepeatedField< ::google::protobuf::uint32 > path_;
-  ::google::protobuf::RepeatedField< ::google::protobuf::uint32 > path_level_;
-  ::google::protobuf::RepeatedField< ::google::protobuf::uint32 > ability_points_spent_;
-  friend void  protobuf_AddDesc_dota_5fgcmessages_5fserver_2eproto();
-  friend void protobuf_AssignDesc_dota_5fgcmessages_5fserver_2eproto();
-  friend void protobuf_ShutdownFile_dota_5fgcmessages_5fserver_2eproto();
-
-  void InitAsDefaultInstance();
-  static CMsgDOTACNY2015EventPointUsage_PointUsage* default_instance_;
-};
-// -------------------------------------------------------------------
-
-class CMsgDOTACNY2015EventPointUsage : public ::google::protobuf::Message {
- public:
-  CMsgDOTACNY2015EventPointUsage();
-  virtual ~CMsgDOTACNY2015EventPointUsage();
-
-  CMsgDOTACNY2015EventPointUsage(const CMsgDOTACNY2015EventPointUsage& from);
-
-  inline CMsgDOTACNY2015EventPointUsage& operator=(const CMsgDOTACNY2015EventPointUsage& from) {
-    CopyFrom(from);
-    return *this;
-  }
-
-  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
-    return _unknown_fields_;
-  }
-
-  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
-    return &_unknown_fields_;
-  }
-
-  static const ::google::protobuf::Descriptor* descriptor();
-  static const CMsgDOTACNY2015EventPointUsage& default_instance();
-
-  void Swap(CMsgDOTACNY2015EventPointUsage* other);
-
-  // implements Message ----------------------------------------------
-
-  CMsgDOTACNY2015EventPointUsage* New() const;
-  void CopyFrom(const ::google::protobuf::Message& from);
-  void MergeFrom(const ::google::protobuf::Message& from);
-  void CopyFrom(const CMsgDOTACNY2015EventPointUsage& from);
-  void MergeFrom(const CMsgDOTACNY2015EventPointUsage& from);
-  void Clear();
-  bool IsInitialized() const;
-
-  int ByteSize() const;
-  bool MergePartialFromCodedStream(
-      ::google::protobuf::io::CodedInputStream* input);
-  void SerializeWithCachedSizes(
-      ::google::protobuf::io::CodedOutputStream* output) const;
-  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
-  int GetCachedSize() const { return _cached_size_; }
-  private:
-  void SharedCtor();
-  void SharedDtor();
-  void SetCachedSize(int size) const;
-  public:
-  ::google::protobuf::Metadata GetMetadata() const;
-
-  // nested types ----------------------------------------------------
-
-  typedef CMsgDOTACNY2015EventPointUsage_PointUsage PointUsage;
-
-  // accessors -------------------------------------------------------
-
-  // optional .CMsgDOTACNY2015EventPointUsage.PointUsage winning_team_usage = 1;
-  inline bool has_winning_team_usage() const;
-  inline void clear_winning_team_usage();
-  static const int kWinningTeamUsageFieldNumber = 1;
-  inline const ::CMsgDOTACNY2015EventPointUsage_PointUsage& winning_team_usage() const;
-  inline ::CMsgDOTACNY2015EventPointUsage_PointUsage* mutable_winning_team_usage();
-  inline ::CMsgDOTACNY2015EventPointUsage_PointUsage* release_winning_team_usage();
-  inline void set_allocated_winning_team_usage(::CMsgDOTACNY2015EventPointUsage_PointUsage* winning_team_usage);
-
-  // optional .CMsgDOTACNY2015EventPointUsage.PointUsage losing_team_usage = 2;
-  inline bool has_losing_team_usage() const;
-  inline void clear_losing_team_usage();
-  static const int kLosingTeamUsageFieldNumber = 2;
-  inline const ::CMsgDOTACNY2015EventPointUsage_PointUsage& losing_team_usage() const;
-  inline ::CMsgDOTACNY2015EventPointUsage_PointUsage* mutable_losing_team_usage();
-  inline ::CMsgDOTACNY2015EventPointUsage_PointUsage* release_losing_team_usage();
-  inline void set_allocated_losing_team_usage(::CMsgDOTACNY2015EventPointUsage_PointUsage* losing_team_usage);
-
-  // @@protoc_insertion_point(class_scope:CMsgDOTACNY2015EventPointUsage)
- private:
-  inline void set_has_winning_team_usage();
-  inline void clear_has_winning_team_usage();
-  inline void set_has_losing_team_usage();
-  inline void clear_has_losing_team_usage();
-
-  ::google::protobuf::UnknownFieldSet _unknown_fields_;
-
-  ::google::protobuf::uint32 _has_bits_[1];
-  mutable int _cached_size_;
-  ::CMsgDOTACNY2015EventPointUsage_PointUsage* winning_team_usage_;
-  ::CMsgDOTACNY2015EventPointUsage_PointUsage* losing_team_usage_;
-  friend void  protobuf_AddDesc_dota_5fgcmessages_5fserver_2eproto();
-  friend void protobuf_AssignDesc_dota_5fgcmessages_5fserver_2eproto();
-  friend void protobuf_ShutdownFile_dota_5fgcmessages_5fserver_2eproto();
-
-  void InitAsDefaultInstance();
-  static CMsgDOTACNY2015EventPointUsage* default_instance_;
-};
-// -------------------------------------------------------------------
-
 class CMsgSignOutUpdatePlayerChallenge_Challenge : public ::google::protobuf::Message {
  public:
   CMsgSignOutUpdatePlayerChallenge_Challenge();
@@ -12675,12 +12183,30 @@ class CMsgSignOutUpdatePlayerChallenge_Challenge : public ::google::protobuf::Me
   inline ::google::protobuf::uint32 sequence_id() const;
   inline void set_sequence_id(::google::protobuf::uint32 value);
 
+  // optional uint32 progress = 4;
+  inline bool has_progress() const;
+  inline void clear_progress();
+  static const int kProgressFieldNumber = 4;
+  inline ::google::protobuf::uint32 progress() const;
+  inline void set_progress(::google::protobuf::uint32 value);
+
+  // optional uint32 challenge_rank = 5;
+  inline bool has_challenge_rank() const;
+  inline void clear_challenge_rank();
+  static const int kChallengeRankFieldNumber = 5;
+  inline ::google::protobuf::uint32 challenge_rank() const;
+  inline void set_challenge_rank(::google::protobuf::uint32 value);
+
   // @@protoc_insertion_point(class_scope:CMsgSignOutUpdatePlayerChallenge.Challenge)
  private:
   inline void set_has_event_id();
   inline void clear_has_event_id();
   inline void set_has_sequence_id();
   inline void clear_has_sequence_id();
+  inline void set_has_progress();
+  inline void clear_has_progress();
+  inline void set_has_challenge_rank();
+  inline void clear_has_challenge_rank();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
@@ -12688,6 +12214,8 @@ class CMsgSignOutUpdatePlayerChallenge_Challenge : public ::google::protobuf::Me
   mutable int _cached_size_;
   ::google::protobuf::uint32 event_id_;
   ::google::protobuf::uint32 sequence_id_;
+  ::google::protobuf::uint32 progress_;
+  ::google::protobuf::uint32 challenge_rank_;
   friend void  protobuf_AddDesc_dota_5fgcmessages_5fserver_2eproto();
   friend void protobuf_AssignDesc_dota_5fgcmessages_5fserver_2eproto();
   friend void protobuf_ShutdownFile_dota_5fgcmessages_5fserver_2eproto();
@@ -12790,12 +12318,21 @@ class CMsgSignOutUpdatePlayerChallenge : public ::google::protobuf::Message {
   inline ::google::protobuf::uint64 match_id() const;
   inline void set_match_id(::google::protobuf::uint64 value);
 
+  // optional uint32 hero_id = 5;
+  inline bool has_hero_id() const;
+  inline void clear_hero_id();
+  static const int kHeroIdFieldNumber = 5;
+  inline ::google::protobuf::uint32 hero_id() const;
+  inline void set_hero_id(::google::protobuf::uint32 value);
+
   // @@protoc_insertion_point(class_scope:CMsgSignOutUpdatePlayerChallenge)
  private:
   inline void set_has_account_id();
   inline void clear_has_account_id();
   inline void set_has_match_id();
   inline void clear_has_match_id();
+  inline void set_has_hero_id();
+  inline void clear_has_hero_id();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
@@ -12803,8 +12340,9 @@ class CMsgSignOutUpdatePlayerChallenge : public ::google::protobuf::Message {
   mutable int _cached_size_;
   ::google::protobuf::RepeatedPtrField< ::CMsgSignOutUpdatePlayerChallenge_Challenge > completed_;
   ::google::protobuf::RepeatedPtrField< ::CMsgSignOutUpdatePlayerChallenge_Challenge > rerolled_;
-  ::google::protobuf::uint64 match_id_;
   ::google::protobuf::uint32 account_id_;
+  ::google::protobuf::uint32 hero_id_;
+  ::google::protobuf::uint64 match_id_;
   friend void  protobuf_AddDesc_dota_5fgcmessages_5fserver_2eproto();
   friend void protobuf_AssignDesc_dota_5fgcmessages_5fserver_2eproto();
   friend void protobuf_ShutdownFile_dota_5fgcmessages_5fserver_2eproto();
@@ -13379,12 +12917,12 @@ class CMsgSignOutWagerStats_Player : public ::google::protobuf::Message {
   inline ::google::protobuf::uint32 account_id() const;
   inline void set_account_id(::google::protobuf::uint32 value);
 
-  // optional sint32 winnings = 2;
+  // optional uint32 winnings = 2;
   inline bool has_winnings() const;
   inline void clear_winnings();
   static const int kWinningsFieldNumber = 2;
-  inline ::google::protobuf::int32 winnings() const;
-  inline void set_winnings(::google::protobuf::int32 value);
+  inline ::google::protobuf::uint32 winnings() const;
+  inline void set_winnings(::google::protobuf::uint32 value);
 
   // optional uint32 max_wager = 3;
   inline bool has_max_wager() const;
@@ -13392,6 +12930,13 @@ class CMsgSignOutWagerStats_Player : public ::google::protobuf::Message {
   static const int kMaxWagerFieldNumber = 3;
   inline ::google::protobuf::uint32 max_wager() const;
   inline void set_max_wager(::google::protobuf::uint32 value);
+
+  // optional uint32 wager = 4;
+  inline bool has_wager() const;
+  inline void clear_wager();
+  static const int kWagerFieldNumber = 4;
+  inline ::google::protobuf::uint32 wager() const;
+  inline void set_wager(::google::protobuf::uint32 value);
 
   // @@protoc_insertion_point(class_scope:CMsgSignOutWagerStats.Player)
  private:
@@ -13401,14 +12946,17 @@ class CMsgSignOutWagerStats_Player : public ::google::protobuf::Message {
   inline void clear_has_winnings();
   inline void set_has_max_wager();
   inline void clear_has_max_wager();
+  inline void set_has_wager();
+  inline void clear_has_wager();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
   ::google::protobuf::uint32 _has_bits_[1];
   mutable int _cached_size_;
   ::google::protobuf::uint32 account_id_;
-  ::google::protobuf::int32 winnings_;
+  ::google::protobuf::uint32 winnings_;
   ::google::protobuf::uint32 max_wager_;
+  ::google::protobuf::uint32 wager_;
   friend void  protobuf_AddDesc_dota_5fgcmessages_5fserver_2eproto();
   friend void protobuf_AssignDesc_dota_5fgcmessages_5fserver_2eproto();
   friend void protobuf_ShutdownFile_dota_5fgcmessages_5fserver_2eproto();
@@ -13510,94 +13058,1437 @@ class CMsgSignOutWagerStats : public ::google::protobuf::Message {
   void InitAsDefaultInstance();
   static CMsgSignOutWagerStats* default_instance_;
 };
+// -------------------------------------------------------------------
+
+class CMsgSignOutXPCoins_Player : public ::google::protobuf::Message {
+ public:
+  CMsgSignOutXPCoins_Player();
+  virtual ~CMsgSignOutXPCoins_Player();
+
+  CMsgSignOutXPCoins_Player(const CMsgSignOutXPCoins_Player& from);
+
+  inline CMsgSignOutXPCoins_Player& operator=(const CMsgSignOutXPCoins_Player& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+    return _unknown_fields_;
+  }
+
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+    return &_unknown_fields_;
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const CMsgSignOutXPCoins_Player& default_instance();
+
+  void Swap(CMsgSignOutXPCoins_Player* other);
+
+  // implements Message ----------------------------------------------
+
+  CMsgSignOutXPCoins_Player* New() const;
+  void CopyFrom(const ::google::protobuf::Message& from);
+  void MergeFrom(const ::google::protobuf::Message& from);
+  void CopyFrom(const CMsgSignOutXPCoins_Player& from);
+  void MergeFrom(const CMsgSignOutXPCoins_Player& from);
+  void Clear();
+  bool IsInitialized() const;
+
+  int ByteSize() const;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input);
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  int GetCachedSize() const { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const;
+  public:
+  ::google::protobuf::Metadata GetMetadata() const;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // optional uint32 account_id = 1;
+  inline bool has_account_id() const;
+  inline void clear_account_id();
+  static const int kAccountIdFieldNumber = 1;
+  inline ::google::protobuf::uint32 account_id() const;
+  inline void set_account_id(::google::protobuf::uint32 value);
+
+  // optional uint32 xp_gained = 2;
+  inline bool has_xp_gained() const;
+  inline void clear_xp_gained();
+  static const int kXpGainedFieldNumber = 2;
+  inline ::google::protobuf::uint32 xp_gained() const;
+  inline void set_xp_gained(::google::protobuf::uint32 value);
+
+  // optional uint32 coins_spent = 3;
+  inline bool has_coins_spent() const;
+  inline void clear_coins_spent();
+  static const int kCoinsSpentFieldNumber = 3;
+  inline ::google::protobuf::uint32 coins_spent() const;
+  inline void set_coins_spent(::google::protobuf::uint32 value);
+
+  // @@protoc_insertion_point(class_scope:CMsgSignOutXPCoins.Player)
+ private:
+  inline void set_has_account_id();
+  inline void clear_has_account_id();
+  inline void set_has_xp_gained();
+  inline void clear_has_xp_gained();
+  inline void set_has_coins_spent();
+  inline void clear_has_coins_spent();
+
+  ::google::protobuf::UnknownFieldSet _unknown_fields_;
+
+  ::google::protobuf::uint32 _has_bits_[1];
+  mutable int _cached_size_;
+  ::google::protobuf::uint32 account_id_;
+  ::google::protobuf::uint32 xp_gained_;
+  ::google::protobuf::uint32 coins_spent_;
+  friend void  protobuf_AddDesc_dota_5fgcmessages_5fserver_2eproto();
+  friend void protobuf_AssignDesc_dota_5fgcmessages_5fserver_2eproto();
+  friend void protobuf_ShutdownFile_dota_5fgcmessages_5fserver_2eproto();
+
+  void InitAsDefaultInstance();
+  static CMsgSignOutXPCoins_Player* default_instance_;
+};
+// -------------------------------------------------------------------
+
+class CMsgSignOutXPCoins : public ::google::protobuf::Message {
+ public:
+  CMsgSignOutXPCoins();
+  virtual ~CMsgSignOutXPCoins();
+
+  CMsgSignOutXPCoins(const CMsgSignOutXPCoins& from);
+
+  inline CMsgSignOutXPCoins& operator=(const CMsgSignOutXPCoins& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+    return _unknown_fields_;
+  }
+
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+    return &_unknown_fields_;
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const CMsgSignOutXPCoins& default_instance();
+
+  void Swap(CMsgSignOutXPCoins* other);
+
+  // implements Message ----------------------------------------------
+
+  CMsgSignOutXPCoins* New() const;
+  void CopyFrom(const ::google::protobuf::Message& from);
+  void MergeFrom(const ::google::protobuf::Message& from);
+  void CopyFrom(const CMsgSignOutXPCoins& from);
+  void MergeFrom(const CMsgSignOutXPCoins& from);
+  void Clear();
+  bool IsInitialized() const;
+
+  int ByteSize() const;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input);
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  int GetCachedSize() const { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const;
+  public:
+  ::google::protobuf::Metadata GetMetadata() const;
+
+  // nested types ----------------------------------------------------
+
+  typedef CMsgSignOutXPCoins_Player Player;
+
+  // accessors -------------------------------------------------------
+
+  // repeated .CMsgSignOutXPCoins.Player players = 1;
+  inline int players_size() const;
+  inline void clear_players();
+  static const int kPlayersFieldNumber = 1;
+  inline const ::CMsgSignOutXPCoins_Player& players(int index) const;
+  inline ::CMsgSignOutXPCoins_Player* mutable_players(int index);
+  inline ::CMsgSignOutXPCoins_Player* add_players();
+  inline const ::google::protobuf::RepeatedPtrField< ::CMsgSignOutXPCoins_Player >&
+      players() const;
+  inline ::google::protobuf::RepeatedPtrField< ::CMsgSignOutXPCoins_Player >*
+      mutable_players();
+
+  // optional uint32 event_id = 2;
+  inline bool has_event_id() const;
+  inline void clear_event_id();
+  static const int kEventIdFieldNumber = 2;
+  inline ::google::protobuf::uint32 event_id() const;
+  inline void set_event_id(::google::protobuf::uint32 value);
+
+  // optional uint64 match_id = 3;
+  inline bool has_match_id() const;
+  inline void clear_match_id();
+  static const int kMatchIdFieldNumber = 3;
+  inline ::google::protobuf::uint64 match_id() const;
+  inline void set_match_id(::google::protobuf::uint64 value);
+
+  // optional uint32 timestamp = 4;
+  inline bool has_timestamp() const;
+  inline void clear_timestamp();
+  static const int kTimestampFieldNumber = 4;
+  inline ::google::protobuf::uint32 timestamp() const;
+  inline void set_timestamp(::google::protobuf::uint32 value);
+
+  // @@protoc_insertion_point(class_scope:CMsgSignOutXPCoins)
+ private:
+  inline void set_has_event_id();
+  inline void clear_has_event_id();
+  inline void set_has_match_id();
+  inline void clear_has_match_id();
+  inline void set_has_timestamp();
+  inline void clear_has_timestamp();
+
+  ::google::protobuf::UnknownFieldSet _unknown_fields_;
+
+  ::google::protobuf::uint32 _has_bits_[1];
+  mutable int _cached_size_;
+  ::google::protobuf::RepeatedPtrField< ::CMsgSignOutXPCoins_Player > players_;
+  ::google::protobuf::uint64 match_id_;
+  ::google::protobuf::uint32 event_id_;
+  ::google::protobuf::uint32 timestamp_;
+  friend void  protobuf_AddDesc_dota_5fgcmessages_5fserver_2eproto();
+  friend void protobuf_AssignDesc_dota_5fgcmessages_5fserver_2eproto();
+  friend void protobuf_ShutdownFile_dota_5fgcmessages_5fserver_2eproto();
+
+  void InitAsDefaultInstance();
+  static CMsgSignOutXPCoins* default_instance_;
+};
+// -------------------------------------------------------------------
+
+class CMsgSignOutCommunityGoalProgress_EventGoalIncrement : public ::google::protobuf::Message {
+ public:
+  CMsgSignOutCommunityGoalProgress_EventGoalIncrement();
+  virtual ~CMsgSignOutCommunityGoalProgress_EventGoalIncrement();
+
+  CMsgSignOutCommunityGoalProgress_EventGoalIncrement(const CMsgSignOutCommunityGoalProgress_EventGoalIncrement& from);
+
+  inline CMsgSignOutCommunityGoalProgress_EventGoalIncrement& operator=(const CMsgSignOutCommunityGoalProgress_EventGoalIncrement& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+    return _unknown_fields_;
+  }
+
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+    return &_unknown_fields_;
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const CMsgSignOutCommunityGoalProgress_EventGoalIncrement& default_instance();
+
+  void Swap(CMsgSignOutCommunityGoalProgress_EventGoalIncrement* other);
+
+  // implements Message ----------------------------------------------
+
+  CMsgSignOutCommunityGoalProgress_EventGoalIncrement* New() const;
+  void CopyFrom(const ::google::protobuf::Message& from);
+  void MergeFrom(const ::google::protobuf::Message& from);
+  void CopyFrom(const CMsgSignOutCommunityGoalProgress_EventGoalIncrement& from);
+  void MergeFrom(const CMsgSignOutCommunityGoalProgress_EventGoalIncrement& from);
+  void Clear();
+  bool IsInitialized() const;
+
+  int ByteSize() const;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input);
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  int GetCachedSize() const { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const;
+  public:
+  ::google::protobuf::Metadata GetMetadata() const;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // optional uint32 event_goal_id = 1;
+  inline bool has_event_goal_id() const;
+  inline void clear_event_goal_id();
+  static const int kEventGoalIdFieldNumber = 1;
+  inline ::google::protobuf::uint32 event_goal_id() const;
+  inline void set_event_goal_id(::google::protobuf::uint32 value);
+
+  // optional uint32 increment_amount = 2;
+  inline bool has_increment_amount() const;
+  inline void clear_increment_amount();
+  static const int kIncrementAmountFieldNumber = 2;
+  inline ::google::protobuf::uint32 increment_amount() const;
+  inline void set_increment_amount(::google::protobuf::uint32 value);
+
+  // @@protoc_insertion_point(class_scope:CMsgSignOutCommunityGoalProgress.EventGoalIncrement)
+ private:
+  inline void set_has_event_goal_id();
+  inline void clear_has_event_goal_id();
+  inline void set_has_increment_amount();
+  inline void clear_has_increment_amount();
+
+  ::google::protobuf::UnknownFieldSet _unknown_fields_;
+
+  ::google::protobuf::uint32 _has_bits_[1];
+  mutable int _cached_size_;
+  ::google::protobuf::uint32 event_goal_id_;
+  ::google::protobuf::uint32 increment_amount_;
+  friend void  protobuf_AddDesc_dota_5fgcmessages_5fserver_2eproto();
+  friend void protobuf_AssignDesc_dota_5fgcmessages_5fserver_2eproto();
+  friend void protobuf_ShutdownFile_dota_5fgcmessages_5fserver_2eproto();
+
+  void InitAsDefaultInstance();
+  static CMsgSignOutCommunityGoalProgress_EventGoalIncrement* default_instance_;
+};
+// -------------------------------------------------------------------
+
+class CMsgSignOutCommunityGoalProgress : public ::google::protobuf::Message {
+ public:
+  CMsgSignOutCommunityGoalProgress();
+  virtual ~CMsgSignOutCommunityGoalProgress();
+
+  CMsgSignOutCommunityGoalProgress(const CMsgSignOutCommunityGoalProgress& from);
+
+  inline CMsgSignOutCommunityGoalProgress& operator=(const CMsgSignOutCommunityGoalProgress& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+    return _unknown_fields_;
+  }
+
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+    return &_unknown_fields_;
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const CMsgSignOutCommunityGoalProgress& default_instance();
+
+  void Swap(CMsgSignOutCommunityGoalProgress* other);
+
+  // implements Message ----------------------------------------------
+
+  CMsgSignOutCommunityGoalProgress* New() const;
+  void CopyFrom(const ::google::protobuf::Message& from);
+  void MergeFrom(const ::google::protobuf::Message& from);
+  void CopyFrom(const CMsgSignOutCommunityGoalProgress& from);
+  void MergeFrom(const CMsgSignOutCommunityGoalProgress& from);
+  void Clear();
+  bool IsInitialized() const;
+
+  int ByteSize() const;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input);
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  int GetCachedSize() const { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const;
+  public:
+  ::google::protobuf::Metadata GetMetadata() const;
+
+  // nested types ----------------------------------------------------
+
+  typedef CMsgSignOutCommunityGoalProgress_EventGoalIncrement EventGoalIncrement;
+
+  // accessors -------------------------------------------------------
+
+  // optional uint32 event_id = 1;
+  inline bool has_event_id() const;
+  inline void clear_event_id();
+  static const int kEventIdFieldNumber = 1;
+  inline ::google::protobuf::uint32 event_id() const;
+  inline void set_event_id(::google::protobuf::uint32 value);
+
+  // repeated .CMsgSignOutCommunityGoalProgress.EventGoalIncrement event_increments = 2;
+  inline int event_increments_size() const;
+  inline void clear_event_increments();
+  static const int kEventIncrementsFieldNumber = 2;
+  inline const ::CMsgSignOutCommunityGoalProgress_EventGoalIncrement& event_increments(int index) const;
+  inline ::CMsgSignOutCommunityGoalProgress_EventGoalIncrement* mutable_event_increments(int index);
+  inline ::CMsgSignOutCommunityGoalProgress_EventGoalIncrement* add_event_increments();
+  inline const ::google::protobuf::RepeatedPtrField< ::CMsgSignOutCommunityGoalProgress_EventGoalIncrement >&
+      event_increments() const;
+  inline ::google::protobuf::RepeatedPtrField< ::CMsgSignOutCommunityGoalProgress_EventGoalIncrement >*
+      mutable_event_increments();
+
+  // @@protoc_insertion_point(class_scope:CMsgSignOutCommunityGoalProgress)
+ private:
+  inline void set_has_event_id();
+  inline void clear_has_event_id();
+
+  ::google::protobuf::UnknownFieldSet _unknown_fields_;
+
+  ::google::protobuf::uint32 _has_bits_[1];
+  mutable int _cached_size_;
+  ::google::protobuf::RepeatedPtrField< ::CMsgSignOutCommunityGoalProgress_EventGoalIncrement > event_increments_;
+  ::google::protobuf::uint32 event_id_;
+  friend void  protobuf_AddDesc_dota_5fgcmessages_5fserver_2eproto();
+  friend void protobuf_AssignDesc_dota_5fgcmessages_5fserver_2eproto();
+  friend void protobuf_ShutdownFile_dota_5fgcmessages_5fserver_2eproto();
+
+  void InitAsDefaultInstance();
+  static CMsgSignOutCommunityGoalProgress* default_instance_;
+};
+// -------------------------------------------------------------------
+
+class CMsgServerToGCPostMatchTip : public ::google::protobuf::Message {
+ public:
+  CMsgServerToGCPostMatchTip();
+  virtual ~CMsgServerToGCPostMatchTip();
+
+  CMsgServerToGCPostMatchTip(const CMsgServerToGCPostMatchTip& from);
+
+  inline CMsgServerToGCPostMatchTip& operator=(const CMsgServerToGCPostMatchTip& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+    return _unknown_fields_;
+  }
+
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+    return &_unknown_fields_;
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const CMsgServerToGCPostMatchTip& default_instance();
+
+  void Swap(CMsgServerToGCPostMatchTip* other);
+
+  // implements Message ----------------------------------------------
+
+  CMsgServerToGCPostMatchTip* New() const;
+  void CopyFrom(const ::google::protobuf::Message& from);
+  void MergeFrom(const ::google::protobuf::Message& from);
+  void CopyFrom(const CMsgServerToGCPostMatchTip& from);
+  void MergeFrom(const CMsgServerToGCPostMatchTip& from);
+  void Clear();
+  bool IsInitialized() const;
+
+  int ByteSize() const;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input);
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  int GetCachedSize() const { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const;
+  public:
+  ::google::protobuf::Metadata GetMetadata() const;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // optional uint32 event_id = 1;
+  inline bool has_event_id() const;
+  inline void clear_event_id();
+  static const int kEventIdFieldNumber = 1;
+  inline ::google::protobuf::uint32 event_id() const;
+  inline void set_event_id(::google::protobuf::uint32 value);
+
+  // optional uint64 match_id = 2;
+  inline bool has_match_id() const;
+  inline void clear_match_id();
+  static const int kMatchIdFieldNumber = 2;
+  inline ::google::protobuf::uint64 match_id() const;
+  inline void set_match_id(::google::protobuf::uint64 value);
+
+  // optional uint32 tipper_account_id = 3;
+  inline bool has_tipper_account_id() const;
+  inline void clear_tipper_account_id();
+  static const int kTipperAccountIdFieldNumber = 3;
+  inline ::google::protobuf::uint32 tipper_account_id() const;
+  inline void set_tipper_account_id(::google::protobuf::uint32 value);
+
+  // optional uint32 recipient_account_id = 4;
+  inline bool has_recipient_account_id() const;
+  inline void clear_recipient_account_id();
+  static const int kRecipientAccountIdFieldNumber = 4;
+  inline ::google::protobuf::uint32 recipient_account_id() const;
+  inline void set_recipient_account_id(::google::protobuf::uint32 value);
+
+  // optional uint32 tip_amount = 5;
+  inline bool has_tip_amount() const;
+  inline void clear_tip_amount();
+  static const int kTipAmountFieldNumber = 5;
+  inline ::google::protobuf::uint32 tip_amount() const;
+  inline void set_tip_amount(::google::protobuf::uint32 value);
+
+  // @@protoc_insertion_point(class_scope:CMsgServerToGCPostMatchTip)
+ private:
+  inline void set_has_event_id();
+  inline void clear_has_event_id();
+  inline void set_has_match_id();
+  inline void clear_has_match_id();
+  inline void set_has_tipper_account_id();
+  inline void clear_has_tipper_account_id();
+  inline void set_has_recipient_account_id();
+  inline void clear_has_recipient_account_id();
+  inline void set_has_tip_amount();
+  inline void clear_has_tip_amount();
+
+  ::google::protobuf::UnknownFieldSet _unknown_fields_;
+
+  ::google::protobuf::uint32 _has_bits_[1];
+  mutable int _cached_size_;
+  ::google::protobuf::uint64 match_id_;
+  ::google::protobuf::uint32 event_id_;
+  ::google::protobuf::uint32 tipper_account_id_;
+  ::google::protobuf::uint32 recipient_account_id_;
+  ::google::protobuf::uint32 tip_amount_;
+  friend void  protobuf_AddDesc_dota_5fgcmessages_5fserver_2eproto();
+  friend void protobuf_AssignDesc_dota_5fgcmessages_5fserver_2eproto();
+  friend void protobuf_ShutdownFile_dota_5fgcmessages_5fserver_2eproto();
+
+  void InitAsDefaultInstance();
+  static CMsgServerToGCPostMatchTip* default_instance_;
+};
+// -------------------------------------------------------------------
+
+class CMsgServerToGCPostMatchTipResponse : public ::google::protobuf::Message {
+ public:
+  CMsgServerToGCPostMatchTipResponse();
+  virtual ~CMsgServerToGCPostMatchTipResponse();
+
+  CMsgServerToGCPostMatchTipResponse(const CMsgServerToGCPostMatchTipResponse& from);
+
+  inline CMsgServerToGCPostMatchTipResponse& operator=(const CMsgServerToGCPostMatchTipResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+    return _unknown_fields_;
+  }
+
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+    return &_unknown_fields_;
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const CMsgServerToGCPostMatchTipResponse& default_instance();
+
+  void Swap(CMsgServerToGCPostMatchTipResponse* other);
+
+  // implements Message ----------------------------------------------
+
+  CMsgServerToGCPostMatchTipResponse* New() const;
+  void CopyFrom(const ::google::protobuf::Message& from);
+  void MergeFrom(const ::google::protobuf::Message& from);
+  void CopyFrom(const CMsgServerToGCPostMatchTipResponse& from);
+  void MergeFrom(const CMsgServerToGCPostMatchTipResponse& from);
+  void Clear();
+  bool IsInitialized() const;
+
+  int ByteSize() const;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input);
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  int GetCachedSize() const { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const;
+  public:
+  ::google::protobuf::Metadata GetMetadata() const;
+
+  // nested types ----------------------------------------------------
+
+  typedef CMsgServerToGCPostMatchTipResponse_Result Result;
+  static const Result SUCCESS = CMsgServerToGCPostMatchTipResponse_Result_SUCCESS;
+  static const Result FAILURE = CMsgServerToGCPostMatchTipResponse_Result_FAILURE;
+  static inline bool Result_IsValid(int value) {
+    return CMsgServerToGCPostMatchTipResponse_Result_IsValid(value);
+  }
+  static const Result Result_MIN =
+    CMsgServerToGCPostMatchTipResponse_Result_Result_MIN;
+  static const Result Result_MAX =
+    CMsgServerToGCPostMatchTipResponse_Result_Result_MAX;
+  static const int Result_ARRAYSIZE =
+    CMsgServerToGCPostMatchTipResponse_Result_Result_ARRAYSIZE;
+  static inline const ::google::protobuf::EnumDescriptor*
+  Result_descriptor() {
+    return CMsgServerToGCPostMatchTipResponse_Result_descriptor();
+  }
+  static inline const ::std::string& Result_Name(Result value) {
+    return CMsgServerToGCPostMatchTipResponse_Result_Name(value);
+  }
+  static inline bool Result_Parse(const ::std::string& name,
+      Result* value) {
+    return CMsgServerToGCPostMatchTipResponse_Result_Parse(name, value);
+  }
+
+  // accessors -------------------------------------------------------
+
+  // optional uint64 match_id = 1;
+  inline bool has_match_id() const;
+  inline void clear_match_id();
+  static const int kMatchIdFieldNumber = 1;
+  inline ::google::protobuf::uint64 match_id() const;
+  inline void set_match_id(::google::protobuf::uint64 value);
+
+  // optional uint32 tipper_account_id = 2;
+  inline bool has_tipper_account_id() const;
+  inline void clear_tipper_account_id();
+  static const int kTipperAccountIdFieldNumber = 2;
+  inline ::google::protobuf::uint32 tipper_account_id() const;
+  inline void set_tipper_account_id(::google::protobuf::uint32 value);
+
+  // optional uint32 recipient_account_id = 3;
+  inline bool has_recipient_account_id() const;
+  inline void clear_recipient_account_id();
+  static const int kRecipientAccountIdFieldNumber = 3;
+  inline ::google::protobuf::uint32 recipient_account_id() const;
+  inline void set_recipient_account_id(::google::protobuf::uint32 value);
+
+  // optional .CMsgServerToGCPostMatchTipResponse.Result result = 4 [default = SUCCESS];
+  inline bool has_result() const;
+  inline void clear_result();
+  static const int kResultFieldNumber = 4;
+  inline ::CMsgServerToGCPostMatchTipResponse_Result result() const;
+  inline void set_result(::CMsgServerToGCPostMatchTipResponse_Result value);
+
+  // @@protoc_insertion_point(class_scope:CMsgServerToGCPostMatchTipResponse)
+ private:
+  inline void set_has_match_id();
+  inline void clear_has_match_id();
+  inline void set_has_tipper_account_id();
+  inline void clear_has_tipper_account_id();
+  inline void set_has_recipient_account_id();
+  inline void clear_has_recipient_account_id();
+  inline void set_has_result();
+  inline void clear_has_result();
+
+  ::google::protobuf::UnknownFieldSet _unknown_fields_;
+
+  ::google::protobuf::uint32 _has_bits_[1];
+  mutable int _cached_size_;
+  ::google::protobuf::uint64 match_id_;
+  ::google::protobuf::uint32 tipper_account_id_;
+  ::google::protobuf::uint32 recipient_account_id_;
+  int result_;
+  friend void  protobuf_AddDesc_dota_5fgcmessages_5fserver_2eproto();
+  friend void protobuf_AssignDesc_dota_5fgcmessages_5fserver_2eproto();
+  friend void protobuf_ShutdownFile_dota_5fgcmessages_5fserver_2eproto();
+
+  void InitAsDefaultInstance();
+  static CMsgServerToGCPostMatchTipResponse* default_instance_;
+};
+// -------------------------------------------------------------------
+
+class CMsgServerToGCStartCompendiumInGamePredictions : public ::google::protobuf::Message {
+ public:
+  CMsgServerToGCStartCompendiumInGamePredictions();
+  virtual ~CMsgServerToGCStartCompendiumInGamePredictions();
+
+  CMsgServerToGCStartCompendiumInGamePredictions(const CMsgServerToGCStartCompendiumInGamePredictions& from);
+
+  inline CMsgServerToGCStartCompendiumInGamePredictions& operator=(const CMsgServerToGCStartCompendiumInGamePredictions& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+    return _unknown_fields_;
+  }
+
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+    return &_unknown_fields_;
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const CMsgServerToGCStartCompendiumInGamePredictions& default_instance();
+
+  void Swap(CMsgServerToGCStartCompendiumInGamePredictions* other);
+
+  // implements Message ----------------------------------------------
+
+  CMsgServerToGCStartCompendiumInGamePredictions* New() const;
+  void CopyFrom(const ::google::protobuf::Message& from);
+  void MergeFrom(const ::google::protobuf::Message& from);
+  void CopyFrom(const CMsgServerToGCStartCompendiumInGamePredictions& from);
+  void MergeFrom(const CMsgServerToGCStartCompendiumInGamePredictions& from);
+  void Clear();
+  bool IsInitialized() const;
+
+  int ByteSize() const;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input);
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  int GetCachedSize() const { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const;
+  public:
+  ::google::protobuf::Metadata GetMetadata() const;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // optional uint32 league_id = 1;
+  inline bool has_league_id() const;
+  inline void clear_league_id();
+  static const int kLeagueIdFieldNumber = 1;
+  inline ::google::protobuf::uint32 league_id() const;
+  inline void set_league_id(::google::protobuf::uint32 value);
+
+  // optional uint64 match_id = 2;
+  inline bool has_match_id() const;
+  inline void clear_match_id();
+  static const int kMatchIdFieldNumber = 2;
+  inline ::google::protobuf::uint64 match_id() const;
+  inline void set_match_id(::google::protobuf::uint64 value);
+
+  // optional float hltv_delay = 3;
+  inline bool has_hltv_delay() const;
+  inline void clear_hltv_delay();
+  static const int kHltvDelayFieldNumber = 3;
+  inline float hltv_delay() const;
+  inline void set_hltv_delay(float value);
+
+  // repeated uint32 prediction_ids = 4;
+  inline int prediction_ids_size() const;
+  inline void clear_prediction_ids();
+  static const int kPredictionIdsFieldNumber = 4;
+  inline ::google::protobuf::uint32 prediction_ids(int index) const;
+  inline void set_prediction_ids(int index, ::google::protobuf::uint32 value);
+  inline void add_prediction_ids(::google::protobuf::uint32 value);
+  inline const ::google::protobuf::RepeatedField< ::google::protobuf::uint32 >&
+      prediction_ids() const;
+  inline ::google::protobuf::RepeatedField< ::google::protobuf::uint32 >*
+      mutable_prediction_ids();
+
+  // @@protoc_insertion_point(class_scope:CMsgServerToGCStartCompendiumInGamePredictions)
+ private:
+  inline void set_has_league_id();
+  inline void clear_has_league_id();
+  inline void set_has_match_id();
+  inline void clear_has_match_id();
+  inline void set_has_hltv_delay();
+  inline void clear_has_hltv_delay();
+
+  ::google::protobuf::UnknownFieldSet _unknown_fields_;
+
+  ::google::protobuf::uint32 _has_bits_[1];
+  mutable int _cached_size_;
+  ::google::protobuf::uint64 match_id_;
+  ::google::protobuf::uint32 league_id_;
+  float hltv_delay_;
+  ::google::protobuf::RepeatedField< ::google::protobuf::uint32 > prediction_ids_;
+  friend void  protobuf_AddDesc_dota_5fgcmessages_5fserver_2eproto();
+  friend void protobuf_AssignDesc_dota_5fgcmessages_5fserver_2eproto();
+  friend void protobuf_ShutdownFile_dota_5fgcmessages_5fserver_2eproto();
+
+  void InitAsDefaultInstance();
+  static CMsgServerToGCStartCompendiumInGamePredictions* default_instance_;
+};
+// -------------------------------------------------------------------
+
+class CMsgServerToGCStartCompendiumInGamePredictionsResponse : public ::google::protobuf::Message {
+ public:
+  CMsgServerToGCStartCompendiumInGamePredictionsResponse();
+  virtual ~CMsgServerToGCStartCompendiumInGamePredictionsResponse();
+
+  CMsgServerToGCStartCompendiumInGamePredictionsResponse(const CMsgServerToGCStartCompendiumInGamePredictionsResponse& from);
+
+  inline CMsgServerToGCStartCompendiumInGamePredictionsResponse& operator=(const CMsgServerToGCStartCompendiumInGamePredictionsResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+    return _unknown_fields_;
+  }
+
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+    return &_unknown_fields_;
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const CMsgServerToGCStartCompendiumInGamePredictionsResponse& default_instance();
+
+  void Swap(CMsgServerToGCStartCompendiumInGamePredictionsResponse* other);
+
+  // implements Message ----------------------------------------------
+
+  CMsgServerToGCStartCompendiumInGamePredictionsResponse* New() const;
+  void CopyFrom(const ::google::protobuf::Message& from);
+  void MergeFrom(const ::google::protobuf::Message& from);
+  void CopyFrom(const CMsgServerToGCStartCompendiumInGamePredictionsResponse& from);
+  void MergeFrom(const CMsgServerToGCStartCompendiumInGamePredictionsResponse& from);
+  void Clear();
+  bool IsInitialized() const;
+
+  int ByteSize() const;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input);
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  int GetCachedSize() const { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const;
+  public:
+  ::google::protobuf::Metadata GetMetadata() const;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // optional bool result = 1;
+  inline bool has_result() const;
+  inline void clear_result();
+  static const int kResultFieldNumber = 1;
+  inline bool result() const;
+  inline void set_result(bool value);
+
+  // @@protoc_insertion_point(class_scope:CMsgServerToGCStartCompendiumInGamePredictionsResponse)
+ private:
+  inline void set_has_result();
+  inline void clear_has_result();
+
+  ::google::protobuf::UnknownFieldSet _unknown_fields_;
+
+  ::google::protobuf::uint32 _has_bits_[1];
+  mutable int _cached_size_;
+  bool result_;
+  friend void  protobuf_AddDesc_dota_5fgcmessages_5fserver_2eproto();
+  friend void protobuf_AssignDesc_dota_5fgcmessages_5fserver_2eproto();
+  friend void protobuf_ShutdownFile_dota_5fgcmessages_5fserver_2eproto();
+
+  void InitAsDefaultInstance();
+  static CMsgServerToGCStartCompendiumInGamePredictionsResponse* default_instance_;
+};
+// -------------------------------------------------------------------
+
+class CMsgServerToGCCloseCompendiumInGamePredictionVoting : public ::google::protobuf::Message {
+ public:
+  CMsgServerToGCCloseCompendiumInGamePredictionVoting();
+  virtual ~CMsgServerToGCCloseCompendiumInGamePredictionVoting();
+
+  CMsgServerToGCCloseCompendiumInGamePredictionVoting(const CMsgServerToGCCloseCompendiumInGamePredictionVoting& from);
+
+  inline CMsgServerToGCCloseCompendiumInGamePredictionVoting& operator=(const CMsgServerToGCCloseCompendiumInGamePredictionVoting& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+    return _unknown_fields_;
+  }
+
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+    return &_unknown_fields_;
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const CMsgServerToGCCloseCompendiumInGamePredictionVoting& default_instance();
+
+  void Swap(CMsgServerToGCCloseCompendiumInGamePredictionVoting* other);
+
+  // implements Message ----------------------------------------------
+
+  CMsgServerToGCCloseCompendiumInGamePredictionVoting* New() const;
+  void CopyFrom(const ::google::protobuf::Message& from);
+  void MergeFrom(const ::google::protobuf::Message& from);
+  void CopyFrom(const CMsgServerToGCCloseCompendiumInGamePredictionVoting& from);
+  void MergeFrom(const CMsgServerToGCCloseCompendiumInGamePredictionVoting& from);
+  void Clear();
+  bool IsInitialized() const;
+
+  int ByteSize() const;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input);
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  int GetCachedSize() const { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const;
+  public:
+  ::google::protobuf::Metadata GetMetadata() const;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // optional uint64 match_id = 1;
+  inline bool has_match_id() const;
+  inline void clear_match_id();
+  static const int kMatchIdFieldNumber = 1;
+  inline ::google::protobuf::uint64 match_id() const;
+  inline void set_match_id(::google::protobuf::uint64 value);
+
+  // @@protoc_insertion_point(class_scope:CMsgServerToGCCloseCompendiumInGamePredictionVoting)
+ private:
+  inline void set_has_match_id();
+  inline void clear_has_match_id();
+
+  ::google::protobuf::UnknownFieldSet _unknown_fields_;
+
+  ::google::protobuf::uint32 _has_bits_[1];
+  mutable int _cached_size_;
+  ::google::protobuf::uint64 match_id_;
+  friend void  protobuf_AddDesc_dota_5fgcmessages_5fserver_2eproto();
+  friend void protobuf_AssignDesc_dota_5fgcmessages_5fserver_2eproto();
+  friend void protobuf_ShutdownFile_dota_5fgcmessages_5fserver_2eproto();
+
+  void InitAsDefaultInstance();
+  static CMsgServerToGCCloseCompendiumInGamePredictionVoting* default_instance_;
+};
+// -------------------------------------------------------------------
+
+class CMsgServerToGCCloseCompendiumInGamePredictionVotingResponse : public ::google::protobuf::Message {
+ public:
+  CMsgServerToGCCloseCompendiumInGamePredictionVotingResponse();
+  virtual ~CMsgServerToGCCloseCompendiumInGamePredictionVotingResponse();
+
+  CMsgServerToGCCloseCompendiumInGamePredictionVotingResponse(const CMsgServerToGCCloseCompendiumInGamePredictionVotingResponse& from);
+
+  inline CMsgServerToGCCloseCompendiumInGamePredictionVotingResponse& operator=(const CMsgServerToGCCloseCompendiumInGamePredictionVotingResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+    return _unknown_fields_;
+  }
+
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+    return &_unknown_fields_;
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const CMsgServerToGCCloseCompendiumInGamePredictionVotingResponse& default_instance();
+
+  void Swap(CMsgServerToGCCloseCompendiumInGamePredictionVotingResponse* other);
+
+  // implements Message ----------------------------------------------
+
+  CMsgServerToGCCloseCompendiumInGamePredictionVotingResponse* New() const;
+  void CopyFrom(const ::google::protobuf::Message& from);
+  void MergeFrom(const ::google::protobuf::Message& from);
+  void CopyFrom(const CMsgServerToGCCloseCompendiumInGamePredictionVotingResponse& from);
+  void MergeFrom(const CMsgServerToGCCloseCompendiumInGamePredictionVotingResponse& from);
+  void Clear();
+  bool IsInitialized() const;
+
+  int ByteSize() const;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input);
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  int GetCachedSize() const { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const;
+  public:
+  ::google::protobuf::Metadata GetMetadata() const;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // optional bool result = 1;
+  inline bool has_result() const;
+  inline void clear_result();
+  static const int kResultFieldNumber = 1;
+  inline bool result() const;
+  inline void set_result(bool value);
+
+  // @@protoc_insertion_point(class_scope:CMsgServerToGCCloseCompendiumInGamePredictionVotingResponse)
+ private:
+  inline void set_has_result();
+  inline void clear_has_result();
+
+  ::google::protobuf::UnknownFieldSet _unknown_fields_;
+
+  ::google::protobuf::uint32 _has_bits_[1];
+  mutable int _cached_size_;
+  bool result_;
+  friend void  protobuf_AddDesc_dota_5fgcmessages_5fserver_2eproto();
+  friend void protobuf_AssignDesc_dota_5fgcmessages_5fserver_2eproto();
+  friend void protobuf_ShutdownFile_dota_5fgcmessages_5fserver_2eproto();
+
+  void InitAsDefaultInstance();
+  static CMsgServerToGCCloseCompendiumInGamePredictionVotingResponse* default_instance_;
+};
+// -------------------------------------------------------------------
+
+class CMsgServerToGCEndCompendiumInGamePredictions : public ::google::protobuf::Message {
+ public:
+  CMsgServerToGCEndCompendiumInGamePredictions();
+  virtual ~CMsgServerToGCEndCompendiumInGamePredictions();
+
+  CMsgServerToGCEndCompendiumInGamePredictions(const CMsgServerToGCEndCompendiumInGamePredictions& from);
+
+  inline CMsgServerToGCEndCompendiumInGamePredictions& operator=(const CMsgServerToGCEndCompendiumInGamePredictions& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+    return _unknown_fields_;
+  }
+
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+    return &_unknown_fields_;
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const CMsgServerToGCEndCompendiumInGamePredictions& default_instance();
+
+  void Swap(CMsgServerToGCEndCompendiumInGamePredictions* other);
+
+  // implements Message ----------------------------------------------
+
+  CMsgServerToGCEndCompendiumInGamePredictions* New() const;
+  void CopyFrom(const ::google::protobuf::Message& from);
+  void MergeFrom(const ::google::protobuf::Message& from);
+  void CopyFrom(const CMsgServerToGCEndCompendiumInGamePredictions& from);
+  void MergeFrom(const CMsgServerToGCEndCompendiumInGamePredictions& from);
+  void Clear();
+  bool IsInitialized() const;
+
+  int ByteSize() const;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input);
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  int GetCachedSize() const { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const;
+  public:
+  ::google::protobuf::Metadata GetMetadata() const;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // optional uint64 match_id = 1;
+  inline bool has_match_id() const;
+  inline void clear_match_id();
+  static const int kMatchIdFieldNumber = 1;
+  inline ::google::protobuf::uint64 match_id() const;
+  inline void set_match_id(::google::protobuf::uint64 value);
+
+  // @@protoc_insertion_point(class_scope:CMsgServerToGCEndCompendiumInGamePredictions)
+ private:
+  inline void set_has_match_id();
+  inline void clear_has_match_id();
+
+  ::google::protobuf::UnknownFieldSet _unknown_fields_;
+
+  ::google::protobuf::uint32 _has_bits_[1];
+  mutable int _cached_size_;
+  ::google::protobuf::uint64 match_id_;
+  friend void  protobuf_AddDesc_dota_5fgcmessages_5fserver_2eproto();
+  friend void protobuf_AssignDesc_dota_5fgcmessages_5fserver_2eproto();
+  friend void protobuf_ShutdownFile_dota_5fgcmessages_5fserver_2eproto();
+
+  void InitAsDefaultInstance();
+  static CMsgServerToGCEndCompendiumInGamePredictions* default_instance_;
+};
+// -------------------------------------------------------------------
+
+class CMsgServerToGCEndCompendiumInGamePredictionsResponse : public ::google::protobuf::Message {
+ public:
+  CMsgServerToGCEndCompendiumInGamePredictionsResponse();
+  virtual ~CMsgServerToGCEndCompendiumInGamePredictionsResponse();
+
+  CMsgServerToGCEndCompendiumInGamePredictionsResponse(const CMsgServerToGCEndCompendiumInGamePredictionsResponse& from);
+
+  inline CMsgServerToGCEndCompendiumInGamePredictionsResponse& operator=(const CMsgServerToGCEndCompendiumInGamePredictionsResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+    return _unknown_fields_;
+  }
+
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+    return &_unknown_fields_;
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const CMsgServerToGCEndCompendiumInGamePredictionsResponse& default_instance();
+
+  void Swap(CMsgServerToGCEndCompendiumInGamePredictionsResponse* other);
+
+  // implements Message ----------------------------------------------
+
+  CMsgServerToGCEndCompendiumInGamePredictionsResponse* New() const;
+  void CopyFrom(const ::google::protobuf::Message& from);
+  void MergeFrom(const ::google::protobuf::Message& from);
+  void CopyFrom(const CMsgServerToGCEndCompendiumInGamePredictionsResponse& from);
+  void MergeFrom(const CMsgServerToGCEndCompendiumInGamePredictionsResponse& from);
+  void Clear();
+  bool IsInitialized() const;
+
+  int ByteSize() const;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input);
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  int GetCachedSize() const { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const;
+  public:
+  ::google::protobuf::Metadata GetMetadata() const;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // optional bool result = 1;
+  inline bool has_result() const;
+  inline void clear_result();
+  static const int kResultFieldNumber = 1;
+  inline bool result() const;
+  inline void set_result(bool value);
+
+  // @@protoc_insertion_point(class_scope:CMsgServerToGCEndCompendiumInGamePredictionsResponse)
+ private:
+  inline void set_has_result();
+  inline void clear_has_result();
+
+  ::google::protobuf::UnknownFieldSet _unknown_fields_;
+
+  ::google::protobuf::uint32 _has_bits_[1];
+  mutable int _cached_size_;
+  bool result_;
+  friend void  protobuf_AddDesc_dota_5fgcmessages_5fserver_2eproto();
+  friend void protobuf_AssignDesc_dota_5fgcmessages_5fserver_2eproto();
+  friend void protobuf_ShutdownFile_dota_5fgcmessages_5fserver_2eproto();
+
+  void InitAsDefaultInstance();
+  static CMsgServerToGCEndCompendiumInGamePredictionsResponse* default_instance_;
+};
+// -------------------------------------------------------------------
+
+class CMsgServerToGCCompendiumInGamePredictionResults_PredictionResult : public ::google::protobuf::Message {
+ public:
+  CMsgServerToGCCompendiumInGamePredictionResults_PredictionResult();
+  virtual ~CMsgServerToGCCompendiumInGamePredictionResults_PredictionResult();
+
+  CMsgServerToGCCompendiumInGamePredictionResults_PredictionResult(const CMsgServerToGCCompendiumInGamePredictionResults_PredictionResult& from);
+
+  inline CMsgServerToGCCompendiumInGamePredictionResults_PredictionResult& operator=(const CMsgServerToGCCompendiumInGamePredictionResults_PredictionResult& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+    return _unknown_fields_;
+  }
+
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+    return &_unknown_fields_;
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const CMsgServerToGCCompendiumInGamePredictionResults_PredictionResult& default_instance();
+
+  void Swap(CMsgServerToGCCompendiumInGamePredictionResults_PredictionResult* other);
+
+  // implements Message ----------------------------------------------
+
+  CMsgServerToGCCompendiumInGamePredictionResults_PredictionResult* New() const;
+  void CopyFrom(const ::google::protobuf::Message& from);
+  void MergeFrom(const ::google::protobuf::Message& from);
+  void CopyFrom(const CMsgServerToGCCompendiumInGamePredictionResults_PredictionResult& from);
+  void MergeFrom(const CMsgServerToGCCompendiumInGamePredictionResults_PredictionResult& from);
+  void Clear();
+  bool IsInitialized() const;
+
+  int ByteSize() const;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input);
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  int GetCachedSize() const { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const;
+  public:
+  ::google::protobuf::Metadata GetMetadata() const;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // optional uint32 prediction_id = 1;
+  inline bool has_prediction_id() const;
+  inline void clear_prediction_id();
+  static const int kPredictionIdFieldNumber = 1;
+  inline ::google::protobuf::uint32 prediction_id() const;
+  inline void set_prediction_id(::google::protobuf::uint32 value);
+
+  // optional uint32 prediction_value = 2;
+  inline bool has_prediction_value() const;
+  inline void clear_prediction_value();
+  static const int kPredictionValueFieldNumber = 2;
+  inline ::google::protobuf::uint32 prediction_value() const;
+  inline void set_prediction_value(::google::protobuf::uint32 value);
+
+  // optional bool prediction_value_is_mask = 3;
+  inline bool has_prediction_value_is_mask() const;
+  inline void clear_prediction_value_is_mask();
+  static const int kPredictionValueIsMaskFieldNumber = 3;
+  inline bool prediction_value_is_mask() const;
+  inline void set_prediction_value_is_mask(bool value);
+
+  // @@protoc_insertion_point(class_scope:CMsgServerToGCCompendiumInGamePredictionResults.PredictionResult)
+ private:
+  inline void set_has_prediction_id();
+  inline void clear_has_prediction_id();
+  inline void set_has_prediction_value();
+  inline void clear_has_prediction_value();
+  inline void set_has_prediction_value_is_mask();
+  inline void clear_has_prediction_value_is_mask();
+
+  ::google::protobuf::UnknownFieldSet _unknown_fields_;
+
+  ::google::protobuf::uint32 _has_bits_[1];
+  mutable int _cached_size_;
+  ::google::protobuf::uint32 prediction_id_;
+  ::google::protobuf::uint32 prediction_value_;
+  bool prediction_value_is_mask_;
+  friend void  protobuf_AddDesc_dota_5fgcmessages_5fserver_2eproto();
+  friend void protobuf_AssignDesc_dota_5fgcmessages_5fserver_2eproto();
+  friend void protobuf_ShutdownFile_dota_5fgcmessages_5fserver_2eproto();
+
+  void InitAsDefaultInstance();
+  static CMsgServerToGCCompendiumInGamePredictionResults_PredictionResult* default_instance_;
+};
+// -------------------------------------------------------------------
+
+class CMsgServerToGCCompendiumInGamePredictionResults : public ::google::protobuf::Message {
+ public:
+  CMsgServerToGCCompendiumInGamePredictionResults();
+  virtual ~CMsgServerToGCCompendiumInGamePredictionResults();
+
+  CMsgServerToGCCompendiumInGamePredictionResults(const CMsgServerToGCCompendiumInGamePredictionResults& from);
+
+  inline CMsgServerToGCCompendiumInGamePredictionResults& operator=(const CMsgServerToGCCompendiumInGamePredictionResults& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+    return _unknown_fields_;
+  }
+
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+    return &_unknown_fields_;
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const CMsgServerToGCCompendiumInGamePredictionResults& default_instance();
+
+  void Swap(CMsgServerToGCCompendiumInGamePredictionResults* other);
+
+  // implements Message ----------------------------------------------
+
+  CMsgServerToGCCompendiumInGamePredictionResults* New() const;
+  void CopyFrom(const ::google::protobuf::Message& from);
+  void MergeFrom(const ::google::protobuf::Message& from);
+  void CopyFrom(const CMsgServerToGCCompendiumInGamePredictionResults& from);
+  void MergeFrom(const CMsgServerToGCCompendiumInGamePredictionResults& from);
+  void Clear();
+  bool IsInitialized() const;
+
+  int ByteSize() const;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input);
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  int GetCachedSize() const { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const;
+  public:
+  ::google::protobuf::Metadata GetMetadata() const;
+
+  // nested types ----------------------------------------------------
+
+  typedef CMsgServerToGCCompendiumInGamePredictionResults_PredictionResult PredictionResult;
+
+  // accessors -------------------------------------------------------
+
+  // optional uint64 match_id = 1;
+  inline bool has_match_id() const;
+  inline void clear_match_id();
+  static const int kMatchIdFieldNumber = 1;
+  inline ::google::protobuf::uint64 match_id() const;
+  inline void set_match_id(::google::protobuf::uint64 value);
+
+  // repeated .CMsgServerToGCCompendiumInGamePredictionResults.PredictionResult results = 2;
+  inline int results_size() const;
+  inline void clear_results();
+  static const int kResultsFieldNumber = 2;
+  inline const ::CMsgServerToGCCompendiumInGamePredictionResults_PredictionResult& results(int index) const;
+  inline ::CMsgServerToGCCompendiumInGamePredictionResults_PredictionResult* mutable_results(int index);
+  inline ::CMsgServerToGCCompendiumInGamePredictionResults_PredictionResult* add_results();
+  inline const ::google::protobuf::RepeatedPtrField< ::CMsgServerToGCCompendiumInGamePredictionResults_PredictionResult >&
+      results() const;
+  inline ::google::protobuf::RepeatedPtrField< ::CMsgServerToGCCompendiumInGamePredictionResults_PredictionResult >*
+      mutable_results();
+
+  // @@protoc_insertion_point(class_scope:CMsgServerToGCCompendiumInGamePredictionResults)
+ private:
+  inline void set_has_match_id();
+  inline void clear_has_match_id();
+
+  ::google::protobuf::UnknownFieldSet _unknown_fields_;
+
+  ::google::protobuf::uint32 _has_bits_[1];
+  mutable int _cached_size_;
+  ::google::protobuf::uint64 match_id_;
+  ::google::protobuf::RepeatedPtrField< ::CMsgServerToGCCompendiumInGamePredictionResults_PredictionResult > results_;
+  friend void  protobuf_AddDesc_dota_5fgcmessages_5fserver_2eproto();
+  friend void protobuf_AssignDesc_dota_5fgcmessages_5fserver_2eproto();
+  friend void protobuf_ShutdownFile_dota_5fgcmessages_5fserver_2eproto();
+
+  void InitAsDefaultInstance();
+  static CMsgServerToGCCompendiumInGamePredictionResults* default_instance_;
+};
+// -------------------------------------------------------------------
+
+class CMsgServerToGCCompendiumInGamePredictionResultsResponse : public ::google::protobuf::Message {
+ public:
+  CMsgServerToGCCompendiumInGamePredictionResultsResponse();
+  virtual ~CMsgServerToGCCompendiumInGamePredictionResultsResponse();
+
+  CMsgServerToGCCompendiumInGamePredictionResultsResponse(const CMsgServerToGCCompendiumInGamePredictionResultsResponse& from);
+
+  inline CMsgServerToGCCompendiumInGamePredictionResultsResponse& operator=(const CMsgServerToGCCompendiumInGamePredictionResultsResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+    return _unknown_fields_;
+  }
+
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+    return &_unknown_fields_;
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const CMsgServerToGCCompendiumInGamePredictionResultsResponse& default_instance();
+
+  void Swap(CMsgServerToGCCompendiumInGamePredictionResultsResponse* other);
+
+  // implements Message ----------------------------------------------
+
+  CMsgServerToGCCompendiumInGamePredictionResultsResponse* New() const;
+  void CopyFrom(const ::google::protobuf::Message& from);
+  void MergeFrom(const ::google::protobuf::Message& from);
+  void CopyFrom(const CMsgServerToGCCompendiumInGamePredictionResultsResponse& from);
+  void MergeFrom(const CMsgServerToGCCompendiumInGamePredictionResultsResponse& from);
+  void Clear();
+  bool IsInitialized() const;
+
+  int ByteSize() const;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input);
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  int GetCachedSize() const { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const;
+  public:
+  ::google::protobuf::Metadata GetMetadata() const;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // optional bool result = 1;
+  inline bool has_result() const;
+  inline void clear_result();
+  static const int kResultFieldNumber = 1;
+  inline bool result() const;
+  inline void set_result(bool value);
+
+  // @@protoc_insertion_point(class_scope:CMsgServerToGCCompendiumInGamePredictionResultsResponse)
+ private:
+  inline void set_has_result();
+  inline void clear_has_result();
+
+  ::google::protobuf::UnknownFieldSet _unknown_fields_;
+
+  ::google::protobuf::uint32 _has_bits_[1];
+  mutable int _cached_size_;
+  bool result_;
+  friend void  protobuf_AddDesc_dota_5fgcmessages_5fserver_2eproto();
+  friend void protobuf_AssignDesc_dota_5fgcmessages_5fserver_2eproto();
+  friend void protobuf_ShutdownFile_dota_5fgcmessages_5fserver_2eproto();
+
+  void InitAsDefaultInstance();
+  static CMsgServerToGCCompendiumInGamePredictionResultsResponse* default_instance_;
+};
 // ===================================================================
 
 
 // ===================================================================
-
-// CMsgSpawnLootGreevil
-
-// optional bool rare = 1;
-inline bool CMsgSpawnLootGreevil::has_rare() const {
-  return (_has_bits_[0] & 0x00000001u) != 0;
-}
-inline void CMsgSpawnLootGreevil::set_has_rare() {
-  _has_bits_[0] |= 0x00000001u;
-}
-inline void CMsgSpawnLootGreevil::clear_has_rare() {
-  _has_bits_[0] &= ~0x00000001u;
-}
-inline void CMsgSpawnLootGreevil::clear_rare() {
-  rare_ = false;
-  clear_has_rare();
-}
-inline bool CMsgSpawnLootGreevil::rare() const {
-  // @@protoc_insertion_point(field_get:CMsgSpawnLootGreevil.rare)
-  return rare_;
-}
-inline void CMsgSpawnLootGreevil::set_rare(bool value) {
-  set_has_rare();
-  rare_ = value;
-  // @@protoc_insertion_point(field_set:CMsgSpawnLootGreevil.rare)
-}
-
-// -------------------------------------------------------------------
-
-// CMsgDismissLootGreevil
-
-// optional bool killed = 2;
-inline bool CMsgDismissLootGreevil::has_killed() const {
-  return (_has_bits_[0] & 0x00000001u) != 0;
-}
-inline void CMsgDismissLootGreevil::set_has_killed() {
-  _has_bits_[0] |= 0x00000001u;
-}
-inline void CMsgDismissLootGreevil::clear_has_killed() {
-  _has_bits_[0] &= ~0x00000001u;
-}
-inline void CMsgDismissLootGreevil::clear_killed() {
-  killed_ = false;
-  clear_has_killed();
-}
-inline bool CMsgDismissLootGreevil::killed() const {
-  // @@protoc_insertion_point(field_get:CMsgDismissLootGreevil.killed)
-  return killed_;
-}
-inline void CMsgDismissLootGreevil::set_killed(bool value) {
-  set_has_killed();
-  killed_ = value;
-  // @@protoc_insertion_point(field_set:CMsgDismissLootGreevil.killed)
-}
-
-// optional bool rare = 3;
-inline bool CMsgDismissLootGreevil::has_rare() const {
-  return (_has_bits_[0] & 0x00000002u) != 0;
-}
-inline void CMsgDismissLootGreevil::set_has_rare() {
-  _has_bits_[0] |= 0x00000002u;
-}
-inline void CMsgDismissLootGreevil::clear_has_rare() {
-  _has_bits_[0] &= ~0x00000002u;
-}
-inline void CMsgDismissLootGreevil::clear_rare() {
-  rare_ = false;
-  clear_has_rare();
-}
-inline bool CMsgDismissLootGreevil::rare() const {
-  // @@protoc_insertion_point(field_get:CMsgDismissLootGreevil.rare)
-  return rare_;
-}
-inline void CMsgDismissLootGreevil::set_rare(bool value) {
-  set_has_rare();
-  rare_ = value;
-  // @@protoc_insertion_point(field_set:CMsgDismissLootGreevil.rare)
-}
-
-// -------------------------------------------------------------------
-
-// CMsgDismissLootGreevilResponse
-
-// -------------------------------------------------------------------
 
 // CMsgPoorNetworkConditions_Player
 
@@ -13882,15 +14773,39 @@ inline void CMsgGameserverCrash::set_custom_game_id(::google::protobuf::uint64 v
   // @@protoc_insertion_point(field_set:CMsgGameserverCrash.custom_game_id)
 }
 
-// optional fixed64 server_steam_id = 5;
-inline bool CMsgGameserverCrash::has_server_steam_id() const {
+// optional uint32 tournament_id = 12;
+inline bool CMsgGameserverCrash::has_tournament_id() const {
   return (_has_bits_[0] & 0x00000020u) != 0;
 }
-inline void CMsgGameserverCrash::set_has_server_steam_id() {
+inline void CMsgGameserverCrash::set_has_tournament_id() {
   _has_bits_[0] |= 0x00000020u;
 }
-inline void CMsgGameserverCrash::clear_has_server_steam_id() {
+inline void CMsgGameserverCrash::clear_has_tournament_id() {
   _has_bits_[0] &= ~0x00000020u;
+}
+inline void CMsgGameserverCrash::clear_tournament_id() {
+  tournament_id_ = 0u;
+  clear_has_tournament_id();
+}
+inline ::google::protobuf::uint32 CMsgGameserverCrash::tournament_id() const {
+  // @@protoc_insertion_point(field_get:CMsgGameserverCrash.tournament_id)
+  return tournament_id_;
+}
+inline void CMsgGameserverCrash::set_tournament_id(::google::protobuf::uint32 value) {
+  set_has_tournament_id();
+  tournament_id_ = value;
+  // @@protoc_insertion_point(field_set:CMsgGameserverCrash.tournament_id)
+}
+
+// optional fixed64 server_steam_id = 5;
+inline bool CMsgGameserverCrash::has_server_steam_id() const {
+  return (_has_bits_[0] & 0x00000040u) != 0;
+}
+inline void CMsgGameserverCrash::set_has_server_steam_id() {
+  _has_bits_[0] |= 0x00000040u;
+}
+inline void CMsgGameserverCrash::clear_has_server_steam_id() {
+  _has_bits_[0] &= ~0x00000040u;
 }
 inline void CMsgGameserverCrash::clear_server_steam_id() {
   server_steam_id_ = GOOGLE_ULONGLONG(0);
@@ -13908,13 +14823,13 @@ inline void CMsgGameserverCrash::set_server_steam_id(::google::protobuf::uint64 
 
 // optional fixed32 server_public_ip_addr = 6;
 inline bool CMsgGameserverCrash::has_server_public_ip_addr() const {
-  return (_has_bits_[0] & 0x00000040u) != 0;
+  return (_has_bits_[0] & 0x00000080u) != 0;
 }
 inline void CMsgGameserverCrash::set_has_server_public_ip_addr() {
-  _has_bits_[0] |= 0x00000040u;
+  _has_bits_[0] |= 0x00000080u;
 }
 inline void CMsgGameserverCrash::clear_has_server_public_ip_addr() {
-  _has_bits_[0] &= ~0x00000040u;
+  _has_bits_[0] &= ~0x00000080u;
 }
 inline void CMsgGameserverCrash::clear_server_public_ip_addr() {
   server_public_ip_addr_ = 0u;
@@ -13932,13 +14847,13 @@ inline void CMsgGameserverCrash::set_server_public_ip_addr(::google::protobuf::u
 
 // optional uint32 server_port = 7;
 inline bool CMsgGameserverCrash::has_server_port() const {
-  return (_has_bits_[0] & 0x00000080u) != 0;
+  return (_has_bits_[0] & 0x00000100u) != 0;
 }
 inline void CMsgGameserverCrash::set_has_server_port() {
-  _has_bits_[0] |= 0x00000080u;
+  _has_bits_[0] |= 0x00000100u;
 }
 inline void CMsgGameserverCrash::clear_has_server_port() {
-  _has_bits_[0] &= ~0x00000080u;
+  _has_bits_[0] &= ~0x00000100u;
 }
 inline void CMsgGameserverCrash::clear_server_port() {
   server_port_ = 0u;
@@ -13956,13 +14871,13 @@ inline void CMsgGameserverCrash::set_server_port(::google::protobuf::uint32 valu
 
 // optional uint32 server_cluster = 8;
 inline bool CMsgGameserverCrash::has_server_cluster() const {
-  return (_has_bits_[0] & 0x00000100u) != 0;
+  return (_has_bits_[0] & 0x00000200u) != 0;
 }
 inline void CMsgGameserverCrash::set_has_server_cluster() {
-  _has_bits_[0] |= 0x00000100u;
+  _has_bits_[0] |= 0x00000200u;
 }
 inline void CMsgGameserverCrash::clear_has_server_cluster() {
-  _has_bits_[0] &= ~0x00000100u;
+  _has_bits_[0] &= ~0x00000200u;
 }
 inline void CMsgGameserverCrash::clear_server_cluster() {
   server_cluster_ = 0u;
@@ -13980,13 +14895,13 @@ inline void CMsgGameserverCrash::set_server_cluster(::google::protobuf::uint32 v
 
 // optional uint32 pid = 9;
 inline bool CMsgGameserverCrash::has_pid() const {
-  return (_has_bits_[0] & 0x00000200u) != 0;
+  return (_has_bits_[0] & 0x00000400u) != 0;
 }
 inline void CMsgGameserverCrash::set_has_pid() {
-  _has_bits_[0] |= 0x00000200u;
+  _has_bits_[0] |= 0x00000400u;
 }
 inline void CMsgGameserverCrash::clear_has_pid() {
-  _has_bits_[0] &= ~0x00000200u;
+  _has_bits_[0] &= ~0x00000400u;
 }
 inline void CMsgGameserverCrash::clear_pid() {
   pid_ = 0u;
@@ -14004,13 +14919,13 @@ inline void CMsgGameserverCrash::set_pid(::google::protobuf::uint32 value) {
 
 // optional uint32 engine = 10;
 inline bool CMsgGameserverCrash::has_engine() const {
-  return (_has_bits_[0] & 0x00000400u) != 0;
+  return (_has_bits_[0] & 0x00000800u) != 0;
 }
 inline void CMsgGameserverCrash::set_has_engine() {
-  _has_bits_[0] |= 0x00000400u;
+  _has_bits_[0] |= 0x00000800u;
 }
 inline void CMsgGameserverCrash::clear_has_engine() {
-  _has_bits_[0] &= ~0x00000400u;
+  _has_bits_[0] &= ~0x00000800u;
 }
 inline void CMsgGameserverCrash::clear_engine() {
   engine_ = 0u;
@@ -14233,39 +15148,15 @@ inline void CMsgConnectedPlayers::set_game_state(::DOTA_GameState value) {
   // @@protoc_insertion_point(field_set:CMsgConnectedPlayers.game_state)
 }
 
-// optional uint32 tower_state = 4;
-inline bool CMsgConnectedPlayers::has_tower_state() const {
-  return (_has_bits_[0] & 0x00000008u) != 0;
-}
-inline void CMsgConnectedPlayers::set_has_tower_state() {
-  _has_bits_[0] |= 0x00000008u;
-}
-inline void CMsgConnectedPlayers::clear_has_tower_state() {
-  _has_bits_[0] &= ~0x00000008u;
-}
-inline void CMsgConnectedPlayers::clear_tower_state() {
-  tower_state_ = 0u;
-  clear_has_tower_state();
-}
-inline ::google::protobuf::uint32 CMsgConnectedPlayers::tower_state() const {
-  // @@protoc_insertion_point(field_get:CMsgConnectedPlayers.tower_state)
-  return tower_state_;
-}
-inline void CMsgConnectedPlayers::set_tower_state(::google::protobuf::uint32 value) {
-  set_has_tower_state();
-  tower_state_ = value;
-  // @@protoc_insertion_point(field_set:CMsgConnectedPlayers.tower_state)
-}
-
 // optional bool first_blood_happened = 6;
 inline bool CMsgConnectedPlayers::has_first_blood_happened() const {
-  return (_has_bits_[0] & 0x00000010u) != 0;
+  return (_has_bits_[0] & 0x00000008u) != 0;
 }
 inline void CMsgConnectedPlayers::set_has_first_blood_happened() {
-  _has_bits_[0] |= 0x00000010u;
+  _has_bits_[0] |= 0x00000008u;
 }
 inline void CMsgConnectedPlayers::clear_has_first_blood_happened() {
-  _has_bits_[0] &= ~0x00000010u;
+  _has_bits_[0] &= ~0x00000008u;
 }
 inline void CMsgConnectedPlayers::clear_first_blood_happened() {
   first_blood_happened_ = false;
@@ -14283,13 +15174,13 @@ inline void CMsgConnectedPlayers::set_first_blood_happened(bool value) {
 
 // optional bool legacy_mass_disconnect = 9;
 inline bool CMsgConnectedPlayers::has_legacy_mass_disconnect() const {
-  return (_has_bits_[0] & 0x00000020u) != 0;
+  return (_has_bits_[0] & 0x00000010u) != 0;
 }
 inline void CMsgConnectedPlayers::set_has_legacy_mass_disconnect() {
-  _has_bits_[0] |= 0x00000020u;
+  _has_bits_[0] |= 0x00000010u;
 }
 inline void CMsgConnectedPlayers::clear_has_legacy_mass_disconnect() {
-  _has_bits_[0] &= ~0x00000020u;
+  _has_bits_[0] &= ~0x00000010u;
 }
 inline void CMsgConnectedPlayers::clear_legacy_mass_disconnect() {
   legacy_mass_disconnect_ = false;
@@ -14307,13 +15198,13 @@ inline void CMsgConnectedPlayers::set_legacy_mass_disconnect(bool value) {
 
 // optional .CMsgPoorNetworkConditions poor_network_conditions = 10;
 inline bool CMsgConnectedPlayers::has_poor_network_conditions() const {
-  return (_has_bits_[0] & 0x00000040u) != 0;
+  return (_has_bits_[0] & 0x00000020u) != 0;
 }
 inline void CMsgConnectedPlayers::set_has_poor_network_conditions() {
-  _has_bits_[0] |= 0x00000040u;
+  _has_bits_[0] |= 0x00000020u;
 }
 inline void CMsgConnectedPlayers::clear_has_poor_network_conditions() {
-  _has_bits_[0] &= ~0x00000040u;
+  _has_bits_[0] &= ~0x00000020u;
 }
 inline void CMsgConnectedPlayers::clear_poor_network_conditions() {
   if (poor_network_conditions_ != NULL) poor_network_conditions_->::CMsgPoorNetworkConditions::Clear();
@@ -14348,13 +15239,13 @@ inline void CMsgConnectedPlayers::set_allocated_poor_network_conditions(::CMsgPo
 
 // optional .CMsgConnectedPlayers.SendReason send_reason = 8 [default = INVALID];
 inline bool CMsgConnectedPlayers::has_send_reason() const {
-  return (_has_bits_[0] & 0x00000080u) != 0;
+  return (_has_bits_[0] & 0x00000040u) != 0;
 }
 inline void CMsgConnectedPlayers::set_has_send_reason() {
-  _has_bits_[0] |= 0x00000080u;
+  _has_bits_[0] |= 0x00000040u;
 }
 inline void CMsgConnectedPlayers::clear_has_send_reason() {
-  _has_bits_[0] &= ~0x00000080u;
+  _has_bits_[0] &= ~0x00000040u;
 }
 inline void CMsgConnectedPlayers::clear_send_reason() {
   send_reason_ = 0;
@@ -14373,13 +15264,13 @@ inline void CMsgConnectedPlayers::set_send_reason(::CMsgConnectedPlayers_SendRea
 
 // optional uint32 radiant_kills = 11;
 inline bool CMsgConnectedPlayers::has_radiant_kills() const {
-  return (_has_bits_[0] & 0x00000100u) != 0;
+  return (_has_bits_[0] & 0x00000080u) != 0;
 }
 inline void CMsgConnectedPlayers::set_has_radiant_kills() {
-  _has_bits_[0] |= 0x00000100u;
+  _has_bits_[0] |= 0x00000080u;
 }
 inline void CMsgConnectedPlayers::clear_has_radiant_kills() {
-  _has_bits_[0] &= ~0x00000100u;
+  _has_bits_[0] &= ~0x00000080u;
 }
 inline void CMsgConnectedPlayers::clear_radiant_kills() {
   radiant_kills_ = 0u;
@@ -14397,13 +15288,13 @@ inline void CMsgConnectedPlayers::set_radiant_kills(::google::protobuf::uint32 v
 
 // optional uint32 dire_kills = 12;
 inline bool CMsgConnectedPlayers::has_dire_kills() const {
-  return (_has_bits_[0] & 0x00000200u) != 0;
+  return (_has_bits_[0] & 0x00000100u) != 0;
 }
 inline void CMsgConnectedPlayers::set_has_dire_kills() {
-  _has_bits_[0] |= 0x00000200u;
+  _has_bits_[0] |= 0x00000100u;
 }
 inline void CMsgConnectedPlayers::clear_has_dire_kills() {
-  _has_bits_[0] &= ~0x00000200u;
+  _has_bits_[0] &= ~0x00000100u;
 }
 inline void CMsgConnectedPlayers::clear_dire_kills() {
   dire_kills_ = 0u;
@@ -14419,28 +15310,52 @@ inline void CMsgConnectedPlayers::set_dire_kills(::google::protobuf::uint32 valu
   // @@protoc_insertion_point(field_set:CMsgConnectedPlayers.dire_kills)
 }
 
-// optional uint32 barracks_state = 13;
-inline bool CMsgConnectedPlayers::has_barracks_state() const {
+// optional int32 radiant_lead = 14;
+inline bool CMsgConnectedPlayers::has_radiant_lead() const {
+  return (_has_bits_[0] & 0x00000200u) != 0;
+}
+inline void CMsgConnectedPlayers::set_has_radiant_lead() {
+  _has_bits_[0] |= 0x00000200u;
+}
+inline void CMsgConnectedPlayers::clear_has_radiant_lead() {
+  _has_bits_[0] &= ~0x00000200u;
+}
+inline void CMsgConnectedPlayers::clear_radiant_lead() {
+  radiant_lead_ = 0;
+  clear_has_radiant_lead();
+}
+inline ::google::protobuf::int32 CMsgConnectedPlayers::radiant_lead() const {
+  // @@protoc_insertion_point(field_get:CMsgConnectedPlayers.radiant_lead)
+  return radiant_lead_;
+}
+inline void CMsgConnectedPlayers::set_radiant_lead(::google::protobuf::int32 value) {
+  set_has_radiant_lead();
+  radiant_lead_ = value;
+  // @@protoc_insertion_point(field_set:CMsgConnectedPlayers.radiant_lead)
+}
+
+// optional uint32 building_state = 15;
+inline bool CMsgConnectedPlayers::has_building_state() const {
   return (_has_bits_[0] & 0x00000400u) != 0;
 }
-inline void CMsgConnectedPlayers::set_has_barracks_state() {
+inline void CMsgConnectedPlayers::set_has_building_state() {
   _has_bits_[0] |= 0x00000400u;
 }
-inline void CMsgConnectedPlayers::clear_has_barracks_state() {
+inline void CMsgConnectedPlayers::clear_has_building_state() {
   _has_bits_[0] &= ~0x00000400u;
 }
-inline void CMsgConnectedPlayers::clear_barracks_state() {
-  barracks_state_ = 0u;
-  clear_has_barracks_state();
+inline void CMsgConnectedPlayers::clear_building_state() {
+  building_state_ = 0u;
+  clear_has_building_state();
 }
-inline ::google::protobuf::uint32 CMsgConnectedPlayers::barracks_state() const {
-  // @@protoc_insertion_point(field_get:CMsgConnectedPlayers.barracks_state)
-  return barracks_state_;
+inline ::google::protobuf::uint32 CMsgConnectedPlayers::building_state() const {
+  // @@protoc_insertion_point(field_get:CMsgConnectedPlayers.building_state)
+  return building_state_;
 }
-inline void CMsgConnectedPlayers::set_barracks_state(::google::protobuf::uint32 value) {
-  set_has_barracks_state();
-  barracks_state_ = value;
-  // @@protoc_insertion_point(field_set:CMsgConnectedPlayers.barracks_state)
+inline void CMsgConnectedPlayers::set_building_state(::google::protobuf::uint32 value) {
+  set_has_building_state();
+  building_state_ = value;
+  // @@protoc_insertion_point(field_set:CMsgConnectedPlayers.building_state)
 }
 
 // -------------------------------------------------------------------
@@ -15028,6 +15943,31 @@ inline void CMsgGameServerInfo::set_server_cluster(::google::protobuf::uint32 va
   // @@protoc_insertion_point(field_set:CMsgGameServerInfo.server_cluster)
 }
 
+// optional .CMsgGameServerInfo.CustomGames allow_custom_games = 23 [default = BOTH];
+inline bool CMsgGameServerInfo::has_allow_custom_games() const {
+  return (_has_bits_[0] & 0x00400000u) != 0;
+}
+inline void CMsgGameServerInfo::set_has_allow_custom_games() {
+  _has_bits_[0] |= 0x00400000u;
+}
+inline void CMsgGameServerInfo::clear_has_allow_custom_games() {
+  _has_bits_[0] &= ~0x00400000u;
+}
+inline void CMsgGameServerInfo::clear_allow_custom_games() {
+  allow_custom_games_ = 0;
+  clear_has_allow_custom_games();
+}
+inline ::CMsgGameServerInfo_CustomGames CMsgGameServerInfo::allow_custom_games() const {
+  // @@protoc_insertion_point(field_get:CMsgGameServerInfo.allow_custom_games)
+  return static_cast< ::CMsgGameServerInfo_CustomGames >(allow_custom_games_);
+}
+inline void CMsgGameServerInfo::set_allow_custom_games(::CMsgGameServerInfo_CustomGames value) {
+  assert(::CMsgGameServerInfo_CustomGames_IsValid(value));
+  set_has_allow_custom_games();
+  allow_custom_games_ = value;
+  // @@protoc_insertion_point(field_set:CMsgGameServerInfo.allow_custom_games)
+}
+
 // -------------------------------------------------------------------
 
 // CMsgLeaverDetected
@@ -15242,438 +16182,70 @@ inline void CMsgLeaverDetectedResponse::set_result(::google::protobuf::uint32 va
 
 // -------------------------------------------------------------------
 
-// CMsgDOTAFantasyPlayerStats
+// CMsgDOTAFantasyFinalPlayerStats
 
-// optional uint32 player_account_id = 1;
-inline bool CMsgDOTAFantasyPlayerStats::has_player_account_id() const {
-  return (_has_bits_[0] & 0x00000001u) != 0;
+// repeated .CMsgDOTAFantasyPlayerStats stats = 2;
+inline int CMsgDOTAFantasyFinalPlayerStats::stats_size() const {
+  return stats_.size();
 }
-inline void CMsgDOTAFantasyPlayerStats::set_has_player_account_id() {
-  _has_bits_[0] |= 0x00000001u;
+inline void CMsgDOTAFantasyFinalPlayerStats::clear_stats() {
+  stats_.Clear();
 }
-inline void CMsgDOTAFantasyPlayerStats::clear_has_player_account_id() {
-  _has_bits_[0] &= ~0x00000001u;
+inline const ::CMsgDOTAFantasyPlayerStats& CMsgDOTAFantasyFinalPlayerStats::stats(int index) const {
+  // @@protoc_insertion_point(field_get:CMsgDOTAFantasyFinalPlayerStats.stats)
+  return stats_.Get(index);
 }
-inline void CMsgDOTAFantasyPlayerStats::clear_player_account_id() {
-  player_account_id_ = 0u;
-  clear_has_player_account_id();
+inline ::CMsgDOTAFantasyPlayerStats* CMsgDOTAFantasyFinalPlayerStats::mutable_stats(int index) {
+  // @@protoc_insertion_point(field_mutable:CMsgDOTAFantasyFinalPlayerStats.stats)
+  return stats_.Mutable(index);
 }
-inline ::google::protobuf::uint32 CMsgDOTAFantasyPlayerStats::player_account_id() const {
-  // @@protoc_insertion_point(field_get:CMsgDOTAFantasyPlayerStats.player_account_id)
-  return player_account_id_;
+inline ::CMsgDOTAFantasyPlayerStats* CMsgDOTAFantasyFinalPlayerStats::add_stats() {
+  // @@protoc_insertion_point(field_add:CMsgDOTAFantasyFinalPlayerStats.stats)
+  return stats_.Add();
 }
-inline void CMsgDOTAFantasyPlayerStats::set_player_account_id(::google::protobuf::uint32 value) {
-  set_has_player_account_id();
-  player_account_id_ = value;
-  // @@protoc_insertion_point(field_set:CMsgDOTAFantasyPlayerStats.player_account_id)
+inline const ::google::protobuf::RepeatedPtrField< ::CMsgDOTAFantasyPlayerStats >&
+CMsgDOTAFantasyFinalPlayerStats::stats() const {
+  // @@protoc_insertion_point(field_list:CMsgDOTAFantasyFinalPlayerStats.stats)
+  return stats_;
 }
-
-// optional uint64 match_id = 2;
-inline bool CMsgDOTAFantasyPlayerStats::has_match_id() const {
-  return (_has_bits_[0] & 0x00000002u) != 0;
-}
-inline void CMsgDOTAFantasyPlayerStats::set_has_match_id() {
-  _has_bits_[0] |= 0x00000002u;
-}
-inline void CMsgDOTAFantasyPlayerStats::clear_has_match_id() {
-  _has_bits_[0] &= ~0x00000002u;
-}
-inline void CMsgDOTAFantasyPlayerStats::clear_match_id() {
-  match_id_ = GOOGLE_ULONGLONG(0);
-  clear_has_match_id();
-}
-inline ::google::protobuf::uint64 CMsgDOTAFantasyPlayerStats::match_id() const {
-  // @@protoc_insertion_point(field_get:CMsgDOTAFantasyPlayerStats.match_id)
-  return match_id_;
-}
-inline void CMsgDOTAFantasyPlayerStats::set_match_id(::google::protobuf::uint64 value) {
-  set_has_match_id();
-  match_id_ = value;
-  // @@protoc_insertion_point(field_set:CMsgDOTAFantasyPlayerStats.match_id)
+inline ::google::protobuf::RepeatedPtrField< ::CMsgDOTAFantasyPlayerStats >*
+CMsgDOTAFantasyFinalPlayerStats::mutable_stats() {
+  // @@protoc_insertion_point(field_mutable_list:CMsgDOTAFantasyFinalPlayerStats.stats)
+  return &stats_;
 }
 
-// optional bool match_completed = 3;
-inline bool CMsgDOTAFantasyPlayerStats::has_match_completed() const {
-  return (_has_bits_[0] & 0x00000004u) != 0;
-}
-inline void CMsgDOTAFantasyPlayerStats::set_has_match_completed() {
-  _has_bits_[0] |= 0x00000004u;
-}
-inline void CMsgDOTAFantasyPlayerStats::clear_has_match_completed() {
-  _has_bits_[0] &= ~0x00000004u;
-}
-inline void CMsgDOTAFantasyPlayerStats::clear_match_completed() {
-  match_completed_ = false;
-  clear_has_match_completed();
-}
-inline bool CMsgDOTAFantasyPlayerStats::match_completed() const {
-  // @@protoc_insertion_point(field_get:CMsgDOTAFantasyPlayerStats.match_completed)
-  return match_completed_;
-}
-inline void CMsgDOTAFantasyPlayerStats::set_match_completed(bool value) {
-  set_has_match_completed();
-  match_completed_ = value;
-  // @@protoc_insertion_point(field_set:CMsgDOTAFantasyPlayerStats.match_completed)
-}
+// -------------------------------------------------------------------
 
-// optional uint32 level = 4;
-inline bool CMsgDOTAFantasyPlayerStats::has_level() const {
-  return (_has_bits_[0] & 0x00000008u) != 0;
-}
-inline void CMsgDOTAFantasyPlayerStats::set_has_level() {
-  _has_bits_[0] |= 0x00000008u;
-}
-inline void CMsgDOTAFantasyPlayerStats::clear_has_level() {
-  _has_bits_[0] &= ~0x00000008u;
-}
-inline void CMsgDOTAFantasyPlayerStats::clear_level() {
-  level_ = 0u;
-  clear_has_level();
-}
-inline ::google::protobuf::uint32 CMsgDOTAFantasyPlayerStats::level() const {
-  // @@protoc_insertion_point(field_get:CMsgDOTAFantasyPlayerStats.level)
-  return level_;
-}
-inline void CMsgDOTAFantasyPlayerStats::set_level(::google::protobuf::uint32 value) {
-  set_has_level();
-  level_ = value;
-  // @@protoc_insertion_point(field_set:CMsgDOTAFantasyPlayerStats.level)
-}
+// CMsgDOTAFantasyLivePlayerStats
 
-// optional uint32 kills = 5;
-inline bool CMsgDOTAFantasyPlayerStats::has_kills() const {
-  return (_has_bits_[0] & 0x00000010u) != 0;
-}
-inline void CMsgDOTAFantasyPlayerStats::set_has_kills() {
-  _has_bits_[0] |= 0x00000010u;
-}
-inline void CMsgDOTAFantasyPlayerStats::clear_has_kills() {
-  _has_bits_[0] &= ~0x00000010u;
-}
-inline void CMsgDOTAFantasyPlayerStats::clear_kills() {
-  kills_ = 0u;
-  clear_has_kills();
-}
-inline ::google::protobuf::uint32 CMsgDOTAFantasyPlayerStats::kills() const {
-  // @@protoc_insertion_point(field_get:CMsgDOTAFantasyPlayerStats.kills)
-  return kills_;
-}
-inline void CMsgDOTAFantasyPlayerStats::set_kills(::google::protobuf::uint32 value) {
-  set_has_kills();
-  kills_ = value;
-  // @@protoc_insertion_point(field_set:CMsgDOTAFantasyPlayerStats.kills)
-}
-
-// optional uint32 deaths = 6;
-inline bool CMsgDOTAFantasyPlayerStats::has_deaths() const {
-  return (_has_bits_[0] & 0x00000020u) != 0;
-}
-inline void CMsgDOTAFantasyPlayerStats::set_has_deaths() {
-  _has_bits_[0] |= 0x00000020u;
-}
-inline void CMsgDOTAFantasyPlayerStats::clear_has_deaths() {
-  _has_bits_[0] &= ~0x00000020u;
-}
-inline void CMsgDOTAFantasyPlayerStats::clear_deaths() {
-  deaths_ = 0u;
-  clear_has_deaths();
-}
-inline ::google::protobuf::uint32 CMsgDOTAFantasyPlayerStats::deaths() const {
-  // @@protoc_insertion_point(field_get:CMsgDOTAFantasyPlayerStats.deaths)
-  return deaths_;
-}
-inline void CMsgDOTAFantasyPlayerStats::set_deaths(::google::protobuf::uint32 value) {
-  set_has_deaths();
-  deaths_ = value;
-  // @@protoc_insertion_point(field_set:CMsgDOTAFantasyPlayerStats.deaths)
-}
-
-// optional uint32 assists = 7;
-inline bool CMsgDOTAFantasyPlayerStats::has_assists() const {
-  return (_has_bits_[0] & 0x00000040u) != 0;
-}
-inline void CMsgDOTAFantasyPlayerStats::set_has_assists() {
-  _has_bits_[0] |= 0x00000040u;
-}
-inline void CMsgDOTAFantasyPlayerStats::clear_has_assists() {
-  _has_bits_[0] &= ~0x00000040u;
-}
-inline void CMsgDOTAFantasyPlayerStats::clear_assists() {
-  assists_ = 0u;
-  clear_has_assists();
-}
-inline ::google::protobuf::uint32 CMsgDOTAFantasyPlayerStats::assists() const {
-  // @@protoc_insertion_point(field_get:CMsgDOTAFantasyPlayerStats.assists)
-  return assists_;
-}
-inline void CMsgDOTAFantasyPlayerStats::set_assists(::google::protobuf::uint32 value) {
-  set_has_assists();
-  assists_ = value;
-  // @@protoc_insertion_point(field_set:CMsgDOTAFantasyPlayerStats.assists)
-}
-
-// optional uint32 last_hits = 8;
-inline bool CMsgDOTAFantasyPlayerStats::has_last_hits() const {
-  return (_has_bits_[0] & 0x00000080u) != 0;
-}
-inline void CMsgDOTAFantasyPlayerStats::set_has_last_hits() {
-  _has_bits_[0] |= 0x00000080u;
-}
-inline void CMsgDOTAFantasyPlayerStats::clear_has_last_hits() {
-  _has_bits_[0] &= ~0x00000080u;
-}
-inline void CMsgDOTAFantasyPlayerStats::clear_last_hits() {
-  last_hits_ = 0u;
-  clear_has_last_hits();
-}
-inline ::google::protobuf::uint32 CMsgDOTAFantasyPlayerStats::last_hits() const {
-  // @@protoc_insertion_point(field_get:CMsgDOTAFantasyPlayerStats.last_hits)
-  return last_hits_;
-}
-inline void CMsgDOTAFantasyPlayerStats::set_last_hits(::google::protobuf::uint32 value) {
-  set_has_last_hits();
-  last_hits_ = value;
-  // @@protoc_insertion_point(field_set:CMsgDOTAFantasyPlayerStats.last_hits)
-}
-
-// optional uint32 denies = 9;
-inline bool CMsgDOTAFantasyPlayerStats::has_denies() const {
-  return (_has_bits_[0] & 0x00000100u) != 0;
-}
-inline void CMsgDOTAFantasyPlayerStats::set_has_denies() {
-  _has_bits_[0] |= 0x00000100u;
-}
-inline void CMsgDOTAFantasyPlayerStats::clear_has_denies() {
-  _has_bits_[0] &= ~0x00000100u;
-}
-inline void CMsgDOTAFantasyPlayerStats::clear_denies() {
-  denies_ = 0u;
-  clear_has_denies();
-}
-inline ::google::protobuf::uint32 CMsgDOTAFantasyPlayerStats::denies() const {
-  // @@protoc_insertion_point(field_get:CMsgDOTAFantasyPlayerStats.denies)
-  return denies_;
-}
-inline void CMsgDOTAFantasyPlayerStats::set_denies(::google::protobuf::uint32 value) {
-  set_has_denies();
-  denies_ = value;
-  // @@protoc_insertion_point(field_set:CMsgDOTAFantasyPlayerStats.denies)
-}
-
-// optional float gpm = 10;
-inline bool CMsgDOTAFantasyPlayerStats::has_gpm() const {
-  return (_has_bits_[0] & 0x00000200u) != 0;
-}
-inline void CMsgDOTAFantasyPlayerStats::set_has_gpm() {
-  _has_bits_[0] |= 0x00000200u;
-}
-inline void CMsgDOTAFantasyPlayerStats::clear_has_gpm() {
-  _has_bits_[0] &= ~0x00000200u;
-}
-inline void CMsgDOTAFantasyPlayerStats::clear_gpm() {
-  gpm_ = 0;
-  clear_has_gpm();
-}
-inline float CMsgDOTAFantasyPlayerStats::gpm() const {
-  // @@protoc_insertion_point(field_get:CMsgDOTAFantasyPlayerStats.gpm)
-  return gpm_;
-}
-inline void CMsgDOTAFantasyPlayerStats::set_gpm(float value) {
-  set_has_gpm();
-  gpm_ = value;
-  // @@protoc_insertion_point(field_set:CMsgDOTAFantasyPlayerStats.gpm)
-}
-
-// optional float xppm = 11;
-inline bool CMsgDOTAFantasyPlayerStats::has_xppm() const {
-  return (_has_bits_[0] & 0x00000400u) != 0;
-}
-inline void CMsgDOTAFantasyPlayerStats::set_has_xppm() {
-  _has_bits_[0] |= 0x00000400u;
-}
-inline void CMsgDOTAFantasyPlayerStats::clear_has_xppm() {
-  _has_bits_[0] &= ~0x00000400u;
-}
-inline void CMsgDOTAFantasyPlayerStats::clear_xppm() {
-  xppm_ = 0;
-  clear_has_xppm();
-}
-inline float CMsgDOTAFantasyPlayerStats::xppm() const {
-  // @@protoc_insertion_point(field_get:CMsgDOTAFantasyPlayerStats.xppm)
-  return xppm_;
-}
-inline void CMsgDOTAFantasyPlayerStats::set_xppm(float value) {
-  set_has_xppm();
-  xppm_ = value;
-  // @@protoc_insertion_point(field_set:CMsgDOTAFantasyPlayerStats.xppm)
-}
-
-// optional float stuns = 12;
-inline bool CMsgDOTAFantasyPlayerStats::has_stuns() const {
-  return (_has_bits_[0] & 0x00000800u) != 0;
-}
-inline void CMsgDOTAFantasyPlayerStats::set_has_stuns() {
-  _has_bits_[0] |= 0x00000800u;
-}
-inline void CMsgDOTAFantasyPlayerStats::clear_has_stuns() {
-  _has_bits_[0] &= ~0x00000800u;
-}
-inline void CMsgDOTAFantasyPlayerStats::clear_stuns() {
-  stuns_ = 0;
-  clear_has_stuns();
-}
-inline float CMsgDOTAFantasyPlayerStats::stuns() const {
-  // @@protoc_insertion_point(field_get:CMsgDOTAFantasyPlayerStats.stuns)
-  return stuns_;
-}
-inline void CMsgDOTAFantasyPlayerStats::set_stuns(float value) {
-  set_has_stuns();
-  stuns_ = value;
-  // @@protoc_insertion_point(field_set:CMsgDOTAFantasyPlayerStats.stuns)
-}
-
-// optional float healing = 13;
-inline bool CMsgDOTAFantasyPlayerStats::has_healing() const {
-  return (_has_bits_[0] & 0x00001000u) != 0;
-}
-inline void CMsgDOTAFantasyPlayerStats::set_has_healing() {
-  _has_bits_[0] |= 0x00001000u;
-}
-inline void CMsgDOTAFantasyPlayerStats::clear_has_healing() {
-  _has_bits_[0] &= ~0x00001000u;
-}
-inline void CMsgDOTAFantasyPlayerStats::clear_healing() {
-  healing_ = 0;
-  clear_has_healing();
-}
-inline float CMsgDOTAFantasyPlayerStats::healing() const {
-  // @@protoc_insertion_point(field_get:CMsgDOTAFantasyPlayerStats.healing)
-  return healing_;
-}
-inline void CMsgDOTAFantasyPlayerStats::set_healing(float value) {
-  set_has_healing();
-  healing_ = value;
-  // @@protoc_insertion_point(field_set:CMsgDOTAFantasyPlayerStats.healing)
-}
-
-// optional uint32 tower_kills = 14;
-inline bool CMsgDOTAFantasyPlayerStats::has_tower_kills() const {
-  return (_has_bits_[0] & 0x00002000u) != 0;
-}
-inline void CMsgDOTAFantasyPlayerStats::set_has_tower_kills() {
-  _has_bits_[0] |= 0x00002000u;
-}
-inline void CMsgDOTAFantasyPlayerStats::clear_has_tower_kills() {
-  _has_bits_[0] &= ~0x00002000u;
-}
-inline void CMsgDOTAFantasyPlayerStats::clear_tower_kills() {
-  tower_kills_ = 0u;
-  clear_has_tower_kills();
-}
-inline ::google::protobuf::uint32 CMsgDOTAFantasyPlayerStats::tower_kills() const {
-  // @@protoc_insertion_point(field_get:CMsgDOTAFantasyPlayerStats.tower_kills)
-  return tower_kills_;
-}
-inline void CMsgDOTAFantasyPlayerStats::set_tower_kills(::google::protobuf::uint32 value) {
-  set_has_tower_kills();
-  tower_kills_ = value;
-  // @@protoc_insertion_point(field_set:CMsgDOTAFantasyPlayerStats.tower_kills)
-}
-
-// optional uint32 roshan_kills = 15;
-inline bool CMsgDOTAFantasyPlayerStats::has_roshan_kills() const {
-  return (_has_bits_[0] & 0x00004000u) != 0;
-}
-inline void CMsgDOTAFantasyPlayerStats::set_has_roshan_kills() {
-  _has_bits_[0] |= 0x00004000u;
-}
-inline void CMsgDOTAFantasyPlayerStats::clear_has_roshan_kills() {
-  _has_bits_[0] &= ~0x00004000u;
-}
-inline void CMsgDOTAFantasyPlayerStats::clear_roshan_kills() {
-  roshan_kills_ = 0u;
-  clear_has_roshan_kills();
-}
-inline ::google::protobuf::uint32 CMsgDOTAFantasyPlayerStats::roshan_kills() const {
-  // @@protoc_insertion_point(field_get:CMsgDOTAFantasyPlayerStats.roshan_kills)
-  return roshan_kills_;
-}
-inline void CMsgDOTAFantasyPlayerStats::set_roshan_kills(::google::protobuf::uint32 value) {
-  set_has_roshan_kills();
-  roshan_kills_ = value;
-  // @@protoc_insertion_point(field_set:CMsgDOTAFantasyPlayerStats.roshan_kills)
-}
-
-// optional uint32 team_id = 16;
-inline bool CMsgDOTAFantasyPlayerStats::has_team_id() const {
-  return (_has_bits_[0] & 0x00008000u) != 0;
-}
-inline void CMsgDOTAFantasyPlayerStats::set_has_team_id() {
-  _has_bits_[0] |= 0x00008000u;
-}
-inline void CMsgDOTAFantasyPlayerStats::clear_has_team_id() {
-  _has_bits_[0] &= ~0x00008000u;
-}
-inline void CMsgDOTAFantasyPlayerStats::clear_team_id() {
-  team_id_ = 0u;
-  clear_has_team_id();
-}
-inline ::google::protobuf::uint32 CMsgDOTAFantasyPlayerStats::team_id() const {
-  // @@protoc_insertion_point(field_get:CMsgDOTAFantasyPlayerStats.team_id)
-  return team_id_;
-}
-inline void CMsgDOTAFantasyPlayerStats::set_team_id(::google::protobuf::uint32 value) {
-  set_has_team_id();
-  team_id_ = value;
-  // @@protoc_insertion_point(field_set:CMsgDOTAFantasyPlayerStats.team_id)
-}
-
-// optional uint32 league_id = 17;
-inline bool CMsgDOTAFantasyPlayerStats::has_league_id() const {
-  return (_has_bits_[0] & 0x00010000u) != 0;
-}
-inline void CMsgDOTAFantasyPlayerStats::set_has_league_id() {
-  _has_bits_[0] |= 0x00010000u;
-}
-inline void CMsgDOTAFantasyPlayerStats::clear_has_league_id() {
-  _has_bits_[0] &= ~0x00010000u;
-}
-inline void CMsgDOTAFantasyPlayerStats::clear_league_id() {
-  league_id_ = 0u;
-  clear_has_league_id();
-}
-inline ::google::protobuf::uint32 CMsgDOTAFantasyPlayerStats::league_id() const {
-  // @@protoc_insertion_point(field_get:CMsgDOTAFantasyPlayerStats.league_id)
-  return league_id_;
-}
-inline void CMsgDOTAFantasyPlayerStats::set_league_id(::google::protobuf::uint32 value) {
-  set_has_league_id();
-  league_id_ = value;
-  // @@protoc_insertion_point(field_set:CMsgDOTAFantasyPlayerStats.league_id)
-}
-
-// optional uint32 delay = 18;
-inline bool CMsgDOTAFantasyPlayerStats::has_delay() const {
-  return (_has_bits_[0] & 0x00020000u) != 0;
-}
-inline void CMsgDOTAFantasyPlayerStats::set_has_delay() {
-  _has_bits_[0] |= 0x00020000u;
-}
-inline void CMsgDOTAFantasyPlayerStats::clear_has_delay() {
-  _has_bits_[0] &= ~0x00020000u;
-}
-inline void CMsgDOTAFantasyPlayerStats::clear_delay() {
-  delay_ = 0u;
-  clear_has_delay();
-}
-inline ::google::protobuf::uint32 CMsgDOTAFantasyPlayerStats::delay() const {
-  // @@protoc_insertion_point(field_get:CMsgDOTAFantasyPlayerStats.delay)
-  return delay_;
-}
-inline void CMsgDOTAFantasyPlayerStats::set_delay(::google::protobuf::uint32 value) {
-  set_has_delay();
-  delay_ = value;
-  // @@protoc_insertion_point(field_set:CMsgDOTAFantasyPlayerStats.delay)
+// repeated .CMsgDOTAFantasyPlayerStats stats = 2;
+inline int CMsgDOTAFantasyLivePlayerStats::stats_size() const {
+  return stats_.size();
+}
+inline void CMsgDOTAFantasyLivePlayerStats::clear_stats() {
+  stats_.Clear();
+}
+inline const ::CMsgDOTAFantasyPlayerStats& CMsgDOTAFantasyLivePlayerStats::stats(int index) const {
+  // @@protoc_insertion_point(field_get:CMsgDOTAFantasyLivePlayerStats.stats)
+  return stats_.Get(index);
+}
+inline ::CMsgDOTAFantasyPlayerStats* CMsgDOTAFantasyLivePlayerStats::mutable_stats(int index) {
+  // @@protoc_insertion_point(field_mutable:CMsgDOTAFantasyLivePlayerStats.stats)
+  return stats_.Mutable(index);
+}
+inline ::CMsgDOTAFantasyPlayerStats* CMsgDOTAFantasyLivePlayerStats::add_stats() {
+  // @@protoc_insertion_point(field_add:CMsgDOTAFantasyLivePlayerStats.stats)
+  return stats_.Add();
+}
+inline const ::google::protobuf::RepeatedPtrField< ::CMsgDOTAFantasyPlayerStats >&
+CMsgDOTAFantasyLivePlayerStats::stats() const {
+  // @@protoc_insertion_point(field_list:CMsgDOTAFantasyLivePlayerStats.stats)
+  return stats_;
+}
+inline ::google::protobuf::RepeatedPtrField< ::CMsgDOTAFantasyPlayerStats >*
+CMsgDOTAFantasyLivePlayerStats::mutable_stats() {
+  // @@protoc_insertion_point(field_mutable_list:CMsgDOTAFantasyLivePlayerStats.stats)
+  return &stats_;
 }
 
 // -------------------------------------------------------------------
@@ -16384,76 +16956,76 @@ inline void CMsgGameMatchSignOut_CTeam_CPlayer::set_level(::google::protobuf::ui
   // @@protoc_insertion_point(field_set:CMsgGameMatchSignOut.CTeam.CPlayer.level)
 }
 
-// optional uint32 hero_damage = 16;
-inline bool CMsgGameMatchSignOut_CTeam_CPlayer::has_hero_damage() const {
+// optional uint32 scaled_hero_damage = 16;
+inline bool CMsgGameMatchSignOut_CTeam_CPlayer::has_scaled_hero_damage() const {
   return (_has_bits_[0] & 0x00004000u) != 0;
 }
-inline void CMsgGameMatchSignOut_CTeam_CPlayer::set_has_hero_damage() {
+inline void CMsgGameMatchSignOut_CTeam_CPlayer::set_has_scaled_hero_damage() {
   _has_bits_[0] |= 0x00004000u;
 }
-inline void CMsgGameMatchSignOut_CTeam_CPlayer::clear_has_hero_damage() {
+inline void CMsgGameMatchSignOut_CTeam_CPlayer::clear_has_scaled_hero_damage() {
   _has_bits_[0] &= ~0x00004000u;
 }
-inline void CMsgGameMatchSignOut_CTeam_CPlayer::clear_hero_damage() {
-  hero_damage_ = 0u;
-  clear_has_hero_damage();
+inline void CMsgGameMatchSignOut_CTeam_CPlayer::clear_scaled_hero_damage() {
+  scaled_hero_damage_ = 0u;
+  clear_has_scaled_hero_damage();
 }
-inline ::google::protobuf::uint32 CMsgGameMatchSignOut_CTeam_CPlayer::hero_damage() const {
-  // @@protoc_insertion_point(field_get:CMsgGameMatchSignOut.CTeam.CPlayer.hero_damage)
-  return hero_damage_;
+inline ::google::protobuf::uint32 CMsgGameMatchSignOut_CTeam_CPlayer::scaled_hero_damage() const {
+  // @@protoc_insertion_point(field_get:CMsgGameMatchSignOut.CTeam.CPlayer.scaled_hero_damage)
+  return scaled_hero_damage_;
 }
-inline void CMsgGameMatchSignOut_CTeam_CPlayer::set_hero_damage(::google::protobuf::uint32 value) {
-  set_has_hero_damage();
-  hero_damage_ = value;
-  // @@protoc_insertion_point(field_set:CMsgGameMatchSignOut.CTeam.CPlayer.hero_damage)
+inline void CMsgGameMatchSignOut_CTeam_CPlayer::set_scaled_hero_damage(::google::protobuf::uint32 value) {
+  set_has_scaled_hero_damage();
+  scaled_hero_damage_ = value;
+  // @@protoc_insertion_point(field_set:CMsgGameMatchSignOut.CTeam.CPlayer.scaled_hero_damage)
 }
 
-// optional uint32 tower_damage = 17;
-inline bool CMsgGameMatchSignOut_CTeam_CPlayer::has_tower_damage() const {
+// optional uint32 scaled_tower_damage = 17;
+inline bool CMsgGameMatchSignOut_CTeam_CPlayer::has_scaled_tower_damage() const {
   return (_has_bits_[0] & 0x00008000u) != 0;
 }
-inline void CMsgGameMatchSignOut_CTeam_CPlayer::set_has_tower_damage() {
+inline void CMsgGameMatchSignOut_CTeam_CPlayer::set_has_scaled_tower_damage() {
   _has_bits_[0] |= 0x00008000u;
 }
-inline void CMsgGameMatchSignOut_CTeam_CPlayer::clear_has_tower_damage() {
+inline void CMsgGameMatchSignOut_CTeam_CPlayer::clear_has_scaled_tower_damage() {
   _has_bits_[0] &= ~0x00008000u;
 }
-inline void CMsgGameMatchSignOut_CTeam_CPlayer::clear_tower_damage() {
-  tower_damage_ = 0u;
-  clear_has_tower_damage();
+inline void CMsgGameMatchSignOut_CTeam_CPlayer::clear_scaled_tower_damage() {
+  scaled_tower_damage_ = 0u;
+  clear_has_scaled_tower_damage();
 }
-inline ::google::protobuf::uint32 CMsgGameMatchSignOut_CTeam_CPlayer::tower_damage() const {
-  // @@protoc_insertion_point(field_get:CMsgGameMatchSignOut.CTeam.CPlayer.tower_damage)
-  return tower_damage_;
+inline ::google::protobuf::uint32 CMsgGameMatchSignOut_CTeam_CPlayer::scaled_tower_damage() const {
+  // @@protoc_insertion_point(field_get:CMsgGameMatchSignOut.CTeam.CPlayer.scaled_tower_damage)
+  return scaled_tower_damage_;
 }
-inline void CMsgGameMatchSignOut_CTeam_CPlayer::set_tower_damage(::google::protobuf::uint32 value) {
-  set_has_tower_damage();
-  tower_damage_ = value;
-  // @@protoc_insertion_point(field_set:CMsgGameMatchSignOut.CTeam.CPlayer.tower_damage)
+inline void CMsgGameMatchSignOut_CTeam_CPlayer::set_scaled_tower_damage(::google::protobuf::uint32 value) {
+  set_has_scaled_tower_damage();
+  scaled_tower_damage_ = value;
+  // @@protoc_insertion_point(field_set:CMsgGameMatchSignOut.CTeam.CPlayer.scaled_tower_damage)
 }
 
-// optional uint32 hero_healing = 18;
-inline bool CMsgGameMatchSignOut_CTeam_CPlayer::has_hero_healing() const {
+// optional uint32 scaled_hero_healing = 18;
+inline bool CMsgGameMatchSignOut_CTeam_CPlayer::has_scaled_hero_healing() const {
   return (_has_bits_[0] & 0x00010000u) != 0;
 }
-inline void CMsgGameMatchSignOut_CTeam_CPlayer::set_has_hero_healing() {
+inline void CMsgGameMatchSignOut_CTeam_CPlayer::set_has_scaled_hero_healing() {
   _has_bits_[0] |= 0x00010000u;
 }
-inline void CMsgGameMatchSignOut_CTeam_CPlayer::clear_has_hero_healing() {
+inline void CMsgGameMatchSignOut_CTeam_CPlayer::clear_has_scaled_hero_healing() {
   _has_bits_[0] &= ~0x00010000u;
 }
-inline void CMsgGameMatchSignOut_CTeam_CPlayer::clear_hero_healing() {
-  hero_healing_ = 0u;
-  clear_has_hero_healing();
+inline void CMsgGameMatchSignOut_CTeam_CPlayer::clear_scaled_hero_healing() {
+  scaled_hero_healing_ = 0u;
+  clear_has_scaled_hero_healing();
 }
-inline ::google::protobuf::uint32 CMsgGameMatchSignOut_CTeam_CPlayer::hero_healing() const {
-  // @@protoc_insertion_point(field_get:CMsgGameMatchSignOut.CTeam.CPlayer.hero_healing)
-  return hero_healing_;
+inline ::google::protobuf::uint32 CMsgGameMatchSignOut_CTeam_CPlayer::scaled_hero_healing() const {
+  // @@protoc_insertion_point(field_get:CMsgGameMatchSignOut.CTeam.CPlayer.scaled_hero_healing)
+  return scaled_hero_healing_;
 }
-inline void CMsgGameMatchSignOut_CTeam_CPlayer::set_hero_healing(::google::protobuf::uint32 value) {
-  set_has_hero_healing();
-  hero_healing_ = value;
-  // @@protoc_insertion_point(field_set:CMsgGameMatchSignOut.CTeam.CPlayer.hero_healing)
+inline void CMsgGameMatchSignOut_CTeam_CPlayer::set_scaled_hero_healing(::google::protobuf::uint32 value) {
+  set_has_scaled_hero_healing();
+  scaled_hero_healing_ = value;
+  // @@protoc_insertion_point(field_set:CMsgGameMatchSignOut.CTeam.CPlayer.scaled_hero_healing)
 }
 
 // optional uint32 time_last_seen = 19;
@@ -16720,6 +17292,102 @@ inline void CMsgGameMatchSignOut_CTeam_CPlayer::set_misses(::google::protobuf::u
   // @@protoc_insertion_point(field_set:CMsgGameMatchSignOut.CTeam.CPlayer.misses)
 }
 
+// optional uint32 net_worth = 34;
+inline bool CMsgGameMatchSignOut_CTeam_CPlayer::has_net_worth() const {
+  return (_has_bits_[0] & 0x10000000u) != 0;
+}
+inline void CMsgGameMatchSignOut_CTeam_CPlayer::set_has_net_worth() {
+  _has_bits_[0] |= 0x10000000u;
+}
+inline void CMsgGameMatchSignOut_CTeam_CPlayer::clear_has_net_worth() {
+  _has_bits_[0] &= ~0x10000000u;
+}
+inline void CMsgGameMatchSignOut_CTeam_CPlayer::clear_net_worth() {
+  net_worth_ = 0u;
+  clear_has_net_worth();
+}
+inline ::google::protobuf::uint32 CMsgGameMatchSignOut_CTeam_CPlayer::net_worth() const {
+  // @@protoc_insertion_point(field_get:CMsgGameMatchSignOut.CTeam.CPlayer.net_worth)
+  return net_worth_;
+}
+inline void CMsgGameMatchSignOut_CTeam_CPlayer::set_net_worth(::google::protobuf::uint32 value) {
+  set_has_net_worth();
+  net_worth_ = value;
+  // @@protoc_insertion_point(field_set:CMsgGameMatchSignOut.CTeam.CPlayer.net_worth)
+}
+
+// optional uint32 hero_damage = 37;
+inline bool CMsgGameMatchSignOut_CTeam_CPlayer::has_hero_damage() const {
+  return (_has_bits_[0] & 0x20000000u) != 0;
+}
+inline void CMsgGameMatchSignOut_CTeam_CPlayer::set_has_hero_damage() {
+  _has_bits_[0] |= 0x20000000u;
+}
+inline void CMsgGameMatchSignOut_CTeam_CPlayer::clear_has_hero_damage() {
+  _has_bits_[0] &= ~0x20000000u;
+}
+inline void CMsgGameMatchSignOut_CTeam_CPlayer::clear_hero_damage() {
+  hero_damage_ = 0u;
+  clear_has_hero_damage();
+}
+inline ::google::protobuf::uint32 CMsgGameMatchSignOut_CTeam_CPlayer::hero_damage() const {
+  // @@protoc_insertion_point(field_get:CMsgGameMatchSignOut.CTeam.CPlayer.hero_damage)
+  return hero_damage_;
+}
+inline void CMsgGameMatchSignOut_CTeam_CPlayer::set_hero_damage(::google::protobuf::uint32 value) {
+  set_has_hero_damage();
+  hero_damage_ = value;
+  // @@protoc_insertion_point(field_set:CMsgGameMatchSignOut.CTeam.CPlayer.hero_damage)
+}
+
+// optional uint32 tower_damage = 38;
+inline bool CMsgGameMatchSignOut_CTeam_CPlayer::has_tower_damage() const {
+  return (_has_bits_[0] & 0x40000000u) != 0;
+}
+inline void CMsgGameMatchSignOut_CTeam_CPlayer::set_has_tower_damage() {
+  _has_bits_[0] |= 0x40000000u;
+}
+inline void CMsgGameMatchSignOut_CTeam_CPlayer::clear_has_tower_damage() {
+  _has_bits_[0] &= ~0x40000000u;
+}
+inline void CMsgGameMatchSignOut_CTeam_CPlayer::clear_tower_damage() {
+  tower_damage_ = 0u;
+  clear_has_tower_damage();
+}
+inline ::google::protobuf::uint32 CMsgGameMatchSignOut_CTeam_CPlayer::tower_damage() const {
+  // @@protoc_insertion_point(field_get:CMsgGameMatchSignOut.CTeam.CPlayer.tower_damage)
+  return tower_damage_;
+}
+inline void CMsgGameMatchSignOut_CTeam_CPlayer::set_tower_damage(::google::protobuf::uint32 value) {
+  set_has_tower_damage();
+  tower_damage_ = value;
+  // @@protoc_insertion_point(field_set:CMsgGameMatchSignOut.CTeam.CPlayer.tower_damage)
+}
+
+// optional uint32 hero_healing = 39;
+inline bool CMsgGameMatchSignOut_CTeam_CPlayer::has_hero_healing() const {
+  return (_has_bits_[0] & 0x80000000u) != 0;
+}
+inline void CMsgGameMatchSignOut_CTeam_CPlayer::set_has_hero_healing() {
+  _has_bits_[0] |= 0x80000000u;
+}
+inline void CMsgGameMatchSignOut_CTeam_CPlayer::clear_has_hero_healing() {
+  _has_bits_[0] &= ~0x80000000u;
+}
+inline void CMsgGameMatchSignOut_CTeam_CPlayer::clear_hero_healing() {
+  hero_healing_ = 0u;
+  clear_has_hero_healing();
+}
+inline ::google::protobuf::uint32 CMsgGameMatchSignOut_CTeam_CPlayer::hero_healing() const {
+  // @@protoc_insertion_point(field_get:CMsgGameMatchSignOut.CTeam.CPlayer.hero_healing)
+  return hero_healing_;
+}
+inline void CMsgGameMatchSignOut_CTeam_CPlayer::set_hero_healing(::google::protobuf::uint32 value) {
+  set_has_hero_healing();
+  hero_healing_ = value;
+  // @@protoc_insertion_point(field_set:CMsgGameMatchSignOut.CTeam.CPlayer.hero_healing)
+}
+
 // repeated .CMatchPlayerAbilityUpgrade ability_upgrades = 32;
 inline int CMsgGameMatchSignOut_CTeam_CPlayer::ability_upgrades_size() const {
   return ability_upgrades_.size();
@@ -16780,39 +17448,45 @@ CMsgGameMatchSignOut_CTeam_CPlayer::mutable_additional_units_inventory() {
   return &additional_units_inventory_;
 }
 
-// optional uint32 net_worth = 34;
-inline bool CMsgGameMatchSignOut_CTeam_CPlayer::has_net_worth() const {
-  return (_has_bits_[0] & 0x40000000u) != 0;
+// repeated .CMatchPlayerPermanentBuff permanent_buffs = 40;
+inline int CMsgGameMatchSignOut_CTeam_CPlayer::permanent_buffs_size() const {
+  return permanent_buffs_.size();
 }
-inline void CMsgGameMatchSignOut_CTeam_CPlayer::set_has_net_worth() {
-  _has_bits_[0] |= 0x40000000u;
+inline void CMsgGameMatchSignOut_CTeam_CPlayer::clear_permanent_buffs() {
+  permanent_buffs_.Clear();
 }
-inline void CMsgGameMatchSignOut_CTeam_CPlayer::clear_has_net_worth() {
-  _has_bits_[0] &= ~0x40000000u;
+inline const ::CMatchPlayerPermanentBuff& CMsgGameMatchSignOut_CTeam_CPlayer::permanent_buffs(int index) const {
+  // @@protoc_insertion_point(field_get:CMsgGameMatchSignOut.CTeam.CPlayer.permanent_buffs)
+  return permanent_buffs_.Get(index);
 }
-inline void CMsgGameMatchSignOut_CTeam_CPlayer::clear_net_worth() {
-  net_worth_ = 0u;
-  clear_has_net_worth();
+inline ::CMatchPlayerPermanentBuff* CMsgGameMatchSignOut_CTeam_CPlayer::mutable_permanent_buffs(int index) {
+  // @@protoc_insertion_point(field_mutable:CMsgGameMatchSignOut.CTeam.CPlayer.permanent_buffs)
+  return permanent_buffs_.Mutable(index);
 }
-inline ::google::protobuf::uint32 CMsgGameMatchSignOut_CTeam_CPlayer::net_worth() const {
-  // @@protoc_insertion_point(field_get:CMsgGameMatchSignOut.CTeam.CPlayer.net_worth)
-  return net_worth_;
+inline ::CMatchPlayerPermanentBuff* CMsgGameMatchSignOut_CTeam_CPlayer::add_permanent_buffs() {
+  // @@protoc_insertion_point(field_add:CMsgGameMatchSignOut.CTeam.CPlayer.permanent_buffs)
+  return permanent_buffs_.Add();
 }
-inline void CMsgGameMatchSignOut_CTeam_CPlayer::set_net_worth(::google::protobuf::uint32 value) {
-  set_has_net_worth();
-  net_worth_ = value;
-  // @@protoc_insertion_point(field_set:CMsgGameMatchSignOut.CTeam.CPlayer.net_worth)
+inline const ::google::protobuf::RepeatedPtrField< ::CMatchPlayerPermanentBuff >&
+CMsgGameMatchSignOut_CTeam_CPlayer::permanent_buffs() const {
+  // @@protoc_insertion_point(field_list:CMsgGameMatchSignOut.CTeam.CPlayer.permanent_buffs)
+  return permanent_buffs_;
+}
+inline ::google::protobuf::RepeatedPtrField< ::CMatchPlayerPermanentBuff >*
+CMsgGameMatchSignOut_CTeam_CPlayer::mutable_permanent_buffs() {
+  // @@protoc_insertion_point(field_mutable_list:CMsgGameMatchSignOut.CTeam.CPlayer.permanent_buffs)
+  return &permanent_buffs_;
 }
 
 // optional .CMsgGameMatchSignOut.CTeam.CPlayer.CCustomGameData custom_game_data = 35;
 inline bool CMsgGameMatchSignOut_CTeam_CPlayer::has_custom_game_data() const {
-  return (_has_bits_[0] & 0x80000000u) != 0;
+  return (_has_bits_[1] & 0x00000008u) != 0;
 }
 inline void CMsgGameMatchSignOut_CTeam_CPlayer::set_has_custom_game_data() {
-  _has_bits_[0] |= 0x80000000u;
+  _has_bits_[1] |= 0x00000008u;
 }
 inline void CMsgGameMatchSignOut_CTeam_CPlayer::clear_has_custom_game_data() {
-  _has_bits_[0] &= ~0x80000000u;
+  _has_bits_[1] &= ~0x00000008u;
 }
 inline void CMsgGameMatchSignOut_CTeam_CPlayer::clear_custom_game_data() {
   if (custom_game_data_ != NULL) custom_game_data_->::CMsgGameMatchSignOut_CTeam_CPlayer_CCustomGameData::Clear();
@@ -16843,6 +17517,60 @@ inline void CMsgGameMatchSignOut_CTeam_CPlayer::set_allocated_custom_game_data(:
     clear_has_custom_game_data();
   }
   // @@protoc_insertion_point(field_set_allocated:CMsgGameMatchSignOut.CTeam.CPlayer.custom_game_data)
+}
+
+// optional uint32 match_player_flags = 36;
+inline bool CMsgGameMatchSignOut_CTeam_CPlayer::has_match_player_flags() const {
+  return (_has_bits_[1] & 0x00000010u) != 0;
+}
+inline void CMsgGameMatchSignOut_CTeam_CPlayer::set_has_match_player_flags() {
+  _has_bits_[1] |= 0x00000010u;
+}
+inline void CMsgGameMatchSignOut_CTeam_CPlayer::clear_has_match_player_flags() {
+  _has_bits_[1] &= ~0x00000010u;
+}
+inline void CMsgGameMatchSignOut_CTeam_CPlayer::clear_match_player_flags() {
+  match_player_flags_ = 0u;
+  clear_has_match_player_flags();
+}
+inline ::google::protobuf::uint32 CMsgGameMatchSignOut_CTeam_CPlayer::match_player_flags() const {
+  // @@protoc_insertion_point(field_get:CMsgGameMatchSignOut.CTeam.CPlayer.match_player_flags)
+  return match_player_flags_;
+}
+inline void CMsgGameMatchSignOut_CTeam_CPlayer::set_match_player_flags(::google::protobuf::uint32 value) {
+  set_has_match_player_flags();
+  match_player_flags_ = value;
+  // @@protoc_insertion_point(field_set:CMsgGameMatchSignOut.CTeam.CPlayer.match_player_flags)
+}
+
+// repeated uint32 talent_ability_ids = 41;
+inline int CMsgGameMatchSignOut_CTeam_CPlayer::talent_ability_ids_size() const {
+  return talent_ability_ids_.size();
+}
+inline void CMsgGameMatchSignOut_CTeam_CPlayer::clear_talent_ability_ids() {
+  talent_ability_ids_.Clear();
+}
+inline ::google::protobuf::uint32 CMsgGameMatchSignOut_CTeam_CPlayer::talent_ability_ids(int index) const {
+  // @@protoc_insertion_point(field_get:CMsgGameMatchSignOut.CTeam.CPlayer.talent_ability_ids)
+  return talent_ability_ids_.Get(index);
+}
+inline void CMsgGameMatchSignOut_CTeam_CPlayer::set_talent_ability_ids(int index, ::google::protobuf::uint32 value) {
+  talent_ability_ids_.Set(index, value);
+  // @@protoc_insertion_point(field_set:CMsgGameMatchSignOut.CTeam.CPlayer.talent_ability_ids)
+}
+inline void CMsgGameMatchSignOut_CTeam_CPlayer::add_talent_ability_ids(::google::protobuf::uint32 value) {
+  talent_ability_ids_.Add(value);
+  // @@protoc_insertion_point(field_add:CMsgGameMatchSignOut.CTeam.CPlayer.talent_ability_ids)
+}
+inline const ::google::protobuf::RepeatedField< ::google::protobuf::uint32 >&
+CMsgGameMatchSignOut_CTeam_CPlayer::talent_ability_ids() const {
+  // @@protoc_insertion_point(field_list:CMsgGameMatchSignOut.CTeam.CPlayer.talent_ability_ids)
+  return talent_ability_ids_;
+}
+inline ::google::protobuf::RepeatedField< ::google::protobuf::uint32 >*
+CMsgGameMatchSignOut_CTeam_CPlayer::mutable_talent_ability_ids() {
+  // @@protoc_insertion_point(field_mutable_list:CMsgGameMatchSignOut.CTeam.CPlayer.talent_ability_ids)
+  return &talent_ability_ids_;
 }
 
 // -------------------------------------------------------------------
@@ -17557,7 +18285,7 @@ CMsgGameMatchSignOut::mutable_picks_bans() {
   return &picks_bans_;
 }
 
-// repeated .CMsgDOTAFantasyPlayerStats fantasy_stats = 16;
+// repeated .CMsgDOTAFantasyPlayerStats fantasy_stats = 41;
 inline int CMsgGameMatchSignOut::fantasy_stats_size() const {
   return fantasy_stats_.size();
 }
@@ -18143,6 +18871,84 @@ inline void CMsgGameMatchSignOut::set_allocated_custom_game_data(::CMsgGameMatch
   // @@protoc_insertion_point(field_set_allocated:CMsgGameMatchSignOut.custom_game_data)
 }
 
+// optional uint32 match_flags = 38;
+inline bool CMsgGameMatchSignOut::has_match_flags() const {
+  return (_has_bits_[1] & 0x00000010u) != 0;
+}
+inline void CMsgGameMatchSignOut::set_has_match_flags() {
+  _has_bits_[1] |= 0x00000010u;
+}
+inline void CMsgGameMatchSignOut::clear_has_match_flags() {
+  _has_bits_[1] &= ~0x00000010u;
+}
+inline void CMsgGameMatchSignOut::clear_match_flags() {
+  match_flags_ = 0u;
+  clear_has_match_flags();
+}
+inline ::google::protobuf::uint32 CMsgGameMatchSignOut::match_flags() const {
+  // @@protoc_insertion_point(field_get:CMsgGameMatchSignOut.match_flags)
+  return match_flags_;
+}
+inline void CMsgGameMatchSignOut::set_match_flags(::google::protobuf::uint32 value) {
+  set_has_match_flags();
+  match_flags_ = value;
+  // @@protoc_insertion_point(field_set:CMsgGameMatchSignOut.match_flags)
+}
+
+// repeated uint32 team_scores = 39;
+inline int CMsgGameMatchSignOut::team_scores_size() const {
+  return team_scores_.size();
+}
+inline void CMsgGameMatchSignOut::clear_team_scores() {
+  team_scores_.Clear();
+}
+inline ::google::protobuf::uint32 CMsgGameMatchSignOut::team_scores(int index) const {
+  // @@protoc_insertion_point(field_get:CMsgGameMatchSignOut.team_scores)
+  return team_scores_.Get(index);
+}
+inline void CMsgGameMatchSignOut::set_team_scores(int index, ::google::protobuf::uint32 value) {
+  team_scores_.Set(index, value);
+  // @@protoc_insertion_point(field_set:CMsgGameMatchSignOut.team_scores)
+}
+inline void CMsgGameMatchSignOut::add_team_scores(::google::protobuf::uint32 value) {
+  team_scores_.Add(value);
+  // @@protoc_insertion_point(field_add:CMsgGameMatchSignOut.team_scores)
+}
+inline const ::google::protobuf::RepeatedField< ::google::protobuf::uint32 >&
+CMsgGameMatchSignOut::team_scores() const {
+  // @@protoc_insertion_point(field_list:CMsgGameMatchSignOut.team_scores)
+  return team_scores_;
+}
+inline ::google::protobuf::RepeatedField< ::google::protobuf::uint32 >*
+CMsgGameMatchSignOut::mutable_team_scores() {
+  // @@protoc_insertion_point(field_mutable_list:CMsgGameMatchSignOut.team_scores)
+  return &team_scores_;
+}
+
+// optional uint32 pre_game_duration = 40;
+inline bool CMsgGameMatchSignOut::has_pre_game_duration() const {
+  return (_has_bits_[1] & 0x00000040u) != 0;
+}
+inline void CMsgGameMatchSignOut::set_has_pre_game_duration() {
+  _has_bits_[1] |= 0x00000040u;
+}
+inline void CMsgGameMatchSignOut::clear_has_pre_game_duration() {
+  _has_bits_[1] &= ~0x00000040u;
+}
+inline void CMsgGameMatchSignOut::clear_pre_game_duration() {
+  pre_game_duration_ = 0u;
+  clear_has_pre_game_duration();
+}
+inline ::google::protobuf::uint32 CMsgGameMatchSignOut::pre_game_duration() const {
+  // @@protoc_insertion_point(field_get:CMsgGameMatchSignOut.pre_game_duration)
+  return pre_game_duration_;
+}
+inline void CMsgGameMatchSignOut::set_pre_game_duration(::google::protobuf::uint32 value) {
+  set_has_pre_game_duration();
+  pre_game_duration_ = value;
+  // @@protoc_insertion_point(field_set:CMsgGameMatchSignOut.pre_game_duration)
+}
+
 // -------------------------------------------------------------------
 
 // CMsgSignOutDraftInfo
@@ -18227,59 +19033,6 @@ CMsgSignOutDraftInfo::mutable_picks_bans() {
 
 // -------------------------------------------------------------------
 
-// CMsgSignOutBotInfo_CMsgBotSlotDifficulty
-
-// optional uint32 slot = 1;
-inline bool CMsgSignOutBotInfo_CMsgBotSlotDifficulty::has_slot() const {
-  return (_has_bits_[0] & 0x00000001u) != 0;
-}
-inline void CMsgSignOutBotInfo_CMsgBotSlotDifficulty::set_has_slot() {
-  _has_bits_[0] |= 0x00000001u;
-}
-inline void CMsgSignOutBotInfo_CMsgBotSlotDifficulty::clear_has_slot() {
-  _has_bits_[0] &= ~0x00000001u;
-}
-inline void CMsgSignOutBotInfo_CMsgBotSlotDifficulty::clear_slot() {
-  slot_ = 0u;
-  clear_has_slot();
-}
-inline ::google::protobuf::uint32 CMsgSignOutBotInfo_CMsgBotSlotDifficulty::slot() const {
-  // @@protoc_insertion_point(field_get:CMsgSignOutBotInfo.CMsgBotSlotDifficulty.slot)
-  return slot_;
-}
-inline void CMsgSignOutBotInfo_CMsgBotSlotDifficulty::set_slot(::google::protobuf::uint32 value) {
-  set_has_slot();
-  slot_ = value;
-  // @@protoc_insertion_point(field_set:CMsgSignOutBotInfo.CMsgBotSlotDifficulty.slot)
-}
-
-// optional .DOTABotDifficulty bot_difficulty = 2 [default = BOT_DIFFICULTY_PASSIVE];
-inline bool CMsgSignOutBotInfo_CMsgBotSlotDifficulty::has_bot_difficulty() const {
-  return (_has_bits_[0] & 0x00000002u) != 0;
-}
-inline void CMsgSignOutBotInfo_CMsgBotSlotDifficulty::set_has_bot_difficulty() {
-  _has_bits_[0] |= 0x00000002u;
-}
-inline void CMsgSignOutBotInfo_CMsgBotSlotDifficulty::clear_has_bot_difficulty() {
-  _has_bits_[0] &= ~0x00000002u;
-}
-inline void CMsgSignOutBotInfo_CMsgBotSlotDifficulty::clear_bot_difficulty() {
-  bot_difficulty_ = 0;
-  clear_has_bot_difficulty();
-}
-inline ::DOTABotDifficulty CMsgSignOutBotInfo_CMsgBotSlotDifficulty::bot_difficulty() const {
-  // @@protoc_insertion_point(field_get:CMsgSignOutBotInfo.CMsgBotSlotDifficulty.bot_difficulty)
-  return static_cast< ::DOTABotDifficulty >(bot_difficulty_);
-}
-inline void CMsgSignOutBotInfo_CMsgBotSlotDifficulty::set_bot_difficulty(::DOTABotDifficulty value) {
-  assert(::DOTABotDifficulty_IsValid(value));
-  set_has_bot_difficulty();
-  bot_difficulty_ = value;
-  // @@protoc_insertion_point(field_set:CMsgSignOutBotInfo.CMsgBotSlotDifficulty.bot_difficulty)
-}
-
-// -------------------------------------------------------------------
-
 // CMsgSignOutBotInfo
 
 // optional bool allow_cheats = 1;
@@ -18306,29 +19059,29 @@ inline void CMsgSignOutBotInfo::set_allow_cheats(bool value) {
   // @@protoc_insertion_point(field_set:CMsgSignOutBotInfo.allow_cheats)
 }
 
-// optional .DOTABotDifficulty bot_difficulty = 2 [default = BOT_DIFFICULTY_PASSIVE];
-inline bool CMsgSignOutBotInfo::has_bot_difficulty() const {
+// optional .DOTABotDifficulty bot_difficulty_radiant = 2 [default = BOT_DIFFICULTY_PASSIVE];
+inline bool CMsgSignOutBotInfo::has_bot_difficulty_radiant() const {
   return (_has_bits_[0] & 0x00000002u) != 0;
 }
-inline void CMsgSignOutBotInfo::set_has_bot_difficulty() {
+inline void CMsgSignOutBotInfo::set_has_bot_difficulty_radiant() {
   _has_bits_[0] |= 0x00000002u;
 }
-inline void CMsgSignOutBotInfo::clear_has_bot_difficulty() {
+inline void CMsgSignOutBotInfo::clear_has_bot_difficulty_radiant() {
   _has_bits_[0] &= ~0x00000002u;
 }
-inline void CMsgSignOutBotInfo::clear_bot_difficulty() {
-  bot_difficulty_ = 0;
-  clear_has_bot_difficulty();
+inline void CMsgSignOutBotInfo::clear_bot_difficulty_radiant() {
+  bot_difficulty_radiant_ = 0;
+  clear_has_bot_difficulty_radiant();
 }
-inline ::DOTABotDifficulty CMsgSignOutBotInfo::bot_difficulty() const {
-  // @@protoc_insertion_point(field_get:CMsgSignOutBotInfo.bot_difficulty)
-  return static_cast< ::DOTABotDifficulty >(bot_difficulty_);
+inline ::DOTABotDifficulty CMsgSignOutBotInfo::bot_difficulty_radiant() const {
+  // @@protoc_insertion_point(field_get:CMsgSignOutBotInfo.bot_difficulty_radiant)
+  return static_cast< ::DOTABotDifficulty >(bot_difficulty_radiant_);
 }
-inline void CMsgSignOutBotInfo::set_bot_difficulty(::DOTABotDifficulty value) {
+inline void CMsgSignOutBotInfo::set_bot_difficulty_radiant(::DOTABotDifficulty value) {
   assert(::DOTABotDifficulty_IsValid(value));
-  set_has_bot_difficulty();
-  bot_difficulty_ = value;
-  // @@protoc_insertion_point(field_set:CMsgSignOutBotInfo.bot_difficulty)
+  set_has_bot_difficulty_radiant();
+  bot_difficulty_radiant_ = value;
+  // @@protoc_insertion_point(field_set:CMsgSignOutBotInfo.bot_difficulty_radiant)
 }
 
 // optional bool created_lobby = 3;
@@ -18355,34 +19108,29 @@ inline void CMsgSignOutBotInfo::set_created_lobby(bool value) {
   // @@protoc_insertion_point(field_set:CMsgSignOutBotInfo.created_lobby)
 }
 
-// repeated .CMsgSignOutBotInfo.CMsgBotSlotDifficulty bot_slot_difficulties = 4;
-inline int CMsgSignOutBotInfo::bot_slot_difficulties_size() const {
-  return bot_slot_difficulties_.size();
+// optional .DOTABotDifficulty bot_difficulty_dire = 5 [default = BOT_DIFFICULTY_PASSIVE];
+inline bool CMsgSignOutBotInfo::has_bot_difficulty_dire() const {
+  return (_has_bits_[0] & 0x00000008u) != 0;
 }
-inline void CMsgSignOutBotInfo::clear_bot_slot_difficulties() {
-  bot_slot_difficulties_.Clear();
+inline void CMsgSignOutBotInfo::set_has_bot_difficulty_dire() {
+  _has_bits_[0] |= 0x00000008u;
 }
-inline const ::CMsgSignOutBotInfo_CMsgBotSlotDifficulty& CMsgSignOutBotInfo::bot_slot_difficulties(int index) const {
-  // @@protoc_insertion_point(field_get:CMsgSignOutBotInfo.bot_slot_difficulties)
-  return bot_slot_difficulties_.Get(index);
+inline void CMsgSignOutBotInfo::clear_has_bot_difficulty_dire() {
+  _has_bits_[0] &= ~0x00000008u;
 }
-inline ::CMsgSignOutBotInfo_CMsgBotSlotDifficulty* CMsgSignOutBotInfo::mutable_bot_slot_difficulties(int index) {
-  // @@protoc_insertion_point(field_mutable:CMsgSignOutBotInfo.bot_slot_difficulties)
-  return bot_slot_difficulties_.Mutable(index);
+inline void CMsgSignOutBotInfo::clear_bot_difficulty_dire() {
+  bot_difficulty_dire_ = 0;
+  clear_has_bot_difficulty_dire();
 }
-inline ::CMsgSignOutBotInfo_CMsgBotSlotDifficulty* CMsgSignOutBotInfo::add_bot_slot_difficulties() {
-  // @@protoc_insertion_point(field_add:CMsgSignOutBotInfo.bot_slot_difficulties)
-  return bot_slot_difficulties_.Add();
+inline ::DOTABotDifficulty CMsgSignOutBotInfo::bot_difficulty_dire() const {
+  // @@protoc_insertion_point(field_get:CMsgSignOutBotInfo.bot_difficulty_dire)
+  return static_cast< ::DOTABotDifficulty >(bot_difficulty_dire_);
 }
-inline const ::google::protobuf::RepeatedPtrField< ::CMsgSignOutBotInfo_CMsgBotSlotDifficulty >&
-CMsgSignOutBotInfo::bot_slot_difficulties() const {
-  // @@protoc_insertion_point(field_list:CMsgSignOutBotInfo.bot_slot_difficulties)
-  return bot_slot_difficulties_;
-}
-inline ::google::protobuf::RepeatedPtrField< ::CMsgSignOutBotInfo_CMsgBotSlotDifficulty >*
-CMsgSignOutBotInfo::mutable_bot_slot_difficulties() {
-  // @@protoc_insertion_point(field_mutable_list:CMsgSignOutBotInfo.bot_slot_difficulties)
-  return &bot_slot_difficulties_;
+inline void CMsgSignOutBotInfo::set_bot_difficulty_dire(::DOTABotDifficulty value) {
+  assert(::DOTABotDifficulty_IsValid(value));
+  set_has_bot_difficulty_dire();
+  bot_difficulty_dire_ = value;
+  // @@protoc_insertion_point(field_set:CMsgSignOutBotInfo.bot_difficulty_dire)
 }
 
 // -------------------------------------------------------------------
@@ -19421,6 +20169,322 @@ inline void CMsgGameMatchSignoutResponse_CAdditionalSignoutMsg::set_allocated_co
 
 // -------------------------------------------------------------------
 
+// CMsgGameMatchSignoutResponse_PlayerMetadata
+
+// optional uint32 hero_id = 1;
+inline bool CMsgGameMatchSignoutResponse_PlayerMetadata::has_hero_id() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+inline void CMsgGameMatchSignoutResponse_PlayerMetadata::set_has_hero_id() {
+  _has_bits_[0] |= 0x00000001u;
+}
+inline void CMsgGameMatchSignoutResponse_PlayerMetadata::clear_has_hero_id() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+inline void CMsgGameMatchSignoutResponse_PlayerMetadata::clear_hero_id() {
+  hero_id_ = 0u;
+  clear_has_hero_id();
+}
+inline ::google::protobuf::uint32 CMsgGameMatchSignoutResponse_PlayerMetadata::hero_id() const {
+  // @@protoc_insertion_point(field_get:CMsgGameMatchSignoutResponse.PlayerMetadata.hero_id)
+  return hero_id_;
+}
+inline void CMsgGameMatchSignoutResponse_PlayerMetadata::set_hero_id(::google::protobuf::uint32 value) {
+  set_has_hero_id();
+  hero_id_ = value;
+  // @@protoc_insertion_point(field_set:CMsgGameMatchSignoutResponse.PlayerMetadata.hero_id)
+}
+
+// optional uint32 avg_kills_x16 = 2;
+inline bool CMsgGameMatchSignoutResponse_PlayerMetadata::has_avg_kills_x16() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+inline void CMsgGameMatchSignoutResponse_PlayerMetadata::set_has_avg_kills_x16() {
+  _has_bits_[0] |= 0x00000002u;
+}
+inline void CMsgGameMatchSignoutResponse_PlayerMetadata::clear_has_avg_kills_x16() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+inline void CMsgGameMatchSignoutResponse_PlayerMetadata::clear_avg_kills_x16() {
+  avg_kills_x16_ = 0u;
+  clear_has_avg_kills_x16();
+}
+inline ::google::protobuf::uint32 CMsgGameMatchSignoutResponse_PlayerMetadata::avg_kills_x16() const {
+  // @@protoc_insertion_point(field_get:CMsgGameMatchSignoutResponse.PlayerMetadata.avg_kills_x16)
+  return avg_kills_x16_;
+}
+inline void CMsgGameMatchSignoutResponse_PlayerMetadata::set_avg_kills_x16(::google::protobuf::uint32 value) {
+  set_has_avg_kills_x16();
+  avg_kills_x16_ = value;
+  // @@protoc_insertion_point(field_set:CMsgGameMatchSignoutResponse.PlayerMetadata.avg_kills_x16)
+}
+
+// optional uint32 avg_deaths_x16 = 3;
+inline bool CMsgGameMatchSignoutResponse_PlayerMetadata::has_avg_deaths_x16() const {
+  return (_has_bits_[0] & 0x00000004u) != 0;
+}
+inline void CMsgGameMatchSignoutResponse_PlayerMetadata::set_has_avg_deaths_x16() {
+  _has_bits_[0] |= 0x00000004u;
+}
+inline void CMsgGameMatchSignoutResponse_PlayerMetadata::clear_has_avg_deaths_x16() {
+  _has_bits_[0] &= ~0x00000004u;
+}
+inline void CMsgGameMatchSignoutResponse_PlayerMetadata::clear_avg_deaths_x16() {
+  avg_deaths_x16_ = 0u;
+  clear_has_avg_deaths_x16();
+}
+inline ::google::protobuf::uint32 CMsgGameMatchSignoutResponse_PlayerMetadata::avg_deaths_x16() const {
+  // @@protoc_insertion_point(field_get:CMsgGameMatchSignoutResponse.PlayerMetadata.avg_deaths_x16)
+  return avg_deaths_x16_;
+}
+inline void CMsgGameMatchSignoutResponse_PlayerMetadata::set_avg_deaths_x16(::google::protobuf::uint32 value) {
+  set_has_avg_deaths_x16();
+  avg_deaths_x16_ = value;
+  // @@protoc_insertion_point(field_set:CMsgGameMatchSignoutResponse.PlayerMetadata.avg_deaths_x16)
+}
+
+// optional uint32 avg_assists_x16 = 4;
+inline bool CMsgGameMatchSignoutResponse_PlayerMetadata::has_avg_assists_x16() const {
+  return (_has_bits_[0] & 0x00000008u) != 0;
+}
+inline void CMsgGameMatchSignoutResponse_PlayerMetadata::set_has_avg_assists_x16() {
+  _has_bits_[0] |= 0x00000008u;
+}
+inline void CMsgGameMatchSignoutResponse_PlayerMetadata::clear_has_avg_assists_x16() {
+  _has_bits_[0] &= ~0x00000008u;
+}
+inline void CMsgGameMatchSignoutResponse_PlayerMetadata::clear_avg_assists_x16() {
+  avg_assists_x16_ = 0u;
+  clear_has_avg_assists_x16();
+}
+inline ::google::protobuf::uint32 CMsgGameMatchSignoutResponse_PlayerMetadata::avg_assists_x16() const {
+  // @@protoc_insertion_point(field_get:CMsgGameMatchSignoutResponse.PlayerMetadata.avg_assists_x16)
+  return avg_assists_x16_;
+}
+inline void CMsgGameMatchSignoutResponse_PlayerMetadata::set_avg_assists_x16(::google::protobuf::uint32 value) {
+  set_has_avg_assists_x16();
+  avg_assists_x16_ = value;
+  // @@protoc_insertion_point(field_set:CMsgGameMatchSignoutResponse.PlayerMetadata.avg_assists_x16)
+}
+
+// optional uint32 avg_gpm_x16 = 5;
+inline bool CMsgGameMatchSignoutResponse_PlayerMetadata::has_avg_gpm_x16() const {
+  return (_has_bits_[0] & 0x00000010u) != 0;
+}
+inline void CMsgGameMatchSignoutResponse_PlayerMetadata::set_has_avg_gpm_x16() {
+  _has_bits_[0] |= 0x00000010u;
+}
+inline void CMsgGameMatchSignoutResponse_PlayerMetadata::clear_has_avg_gpm_x16() {
+  _has_bits_[0] &= ~0x00000010u;
+}
+inline void CMsgGameMatchSignoutResponse_PlayerMetadata::clear_avg_gpm_x16() {
+  avg_gpm_x16_ = 0u;
+  clear_has_avg_gpm_x16();
+}
+inline ::google::protobuf::uint32 CMsgGameMatchSignoutResponse_PlayerMetadata::avg_gpm_x16() const {
+  // @@protoc_insertion_point(field_get:CMsgGameMatchSignoutResponse.PlayerMetadata.avg_gpm_x16)
+  return avg_gpm_x16_;
+}
+inline void CMsgGameMatchSignoutResponse_PlayerMetadata::set_avg_gpm_x16(::google::protobuf::uint32 value) {
+  set_has_avg_gpm_x16();
+  avg_gpm_x16_ = value;
+  // @@protoc_insertion_point(field_set:CMsgGameMatchSignoutResponse.PlayerMetadata.avg_gpm_x16)
+}
+
+// optional uint32 avg_xpm_x16 = 6;
+inline bool CMsgGameMatchSignoutResponse_PlayerMetadata::has_avg_xpm_x16() const {
+  return (_has_bits_[0] & 0x00000020u) != 0;
+}
+inline void CMsgGameMatchSignoutResponse_PlayerMetadata::set_has_avg_xpm_x16() {
+  _has_bits_[0] |= 0x00000020u;
+}
+inline void CMsgGameMatchSignoutResponse_PlayerMetadata::clear_has_avg_xpm_x16() {
+  _has_bits_[0] &= ~0x00000020u;
+}
+inline void CMsgGameMatchSignoutResponse_PlayerMetadata::clear_avg_xpm_x16() {
+  avg_xpm_x16_ = 0u;
+  clear_has_avg_xpm_x16();
+}
+inline ::google::protobuf::uint32 CMsgGameMatchSignoutResponse_PlayerMetadata::avg_xpm_x16() const {
+  // @@protoc_insertion_point(field_get:CMsgGameMatchSignoutResponse.PlayerMetadata.avg_xpm_x16)
+  return avg_xpm_x16_;
+}
+inline void CMsgGameMatchSignoutResponse_PlayerMetadata::set_avg_xpm_x16(::google::protobuf::uint32 value) {
+  set_has_avg_xpm_x16();
+  avg_xpm_x16_ = value;
+  // @@protoc_insertion_point(field_set:CMsgGameMatchSignoutResponse.PlayerMetadata.avg_xpm_x16)
+}
+
+// optional uint32 best_kills_x16 = 7;
+inline bool CMsgGameMatchSignoutResponse_PlayerMetadata::has_best_kills_x16() const {
+  return (_has_bits_[0] & 0x00000040u) != 0;
+}
+inline void CMsgGameMatchSignoutResponse_PlayerMetadata::set_has_best_kills_x16() {
+  _has_bits_[0] |= 0x00000040u;
+}
+inline void CMsgGameMatchSignoutResponse_PlayerMetadata::clear_has_best_kills_x16() {
+  _has_bits_[0] &= ~0x00000040u;
+}
+inline void CMsgGameMatchSignoutResponse_PlayerMetadata::clear_best_kills_x16() {
+  best_kills_x16_ = 0u;
+  clear_has_best_kills_x16();
+}
+inline ::google::protobuf::uint32 CMsgGameMatchSignoutResponse_PlayerMetadata::best_kills_x16() const {
+  // @@protoc_insertion_point(field_get:CMsgGameMatchSignoutResponse.PlayerMetadata.best_kills_x16)
+  return best_kills_x16_;
+}
+inline void CMsgGameMatchSignoutResponse_PlayerMetadata::set_best_kills_x16(::google::protobuf::uint32 value) {
+  set_has_best_kills_x16();
+  best_kills_x16_ = value;
+  // @@protoc_insertion_point(field_set:CMsgGameMatchSignoutResponse.PlayerMetadata.best_kills_x16)
+}
+
+// optional uint32 best_assists_x16 = 8;
+inline bool CMsgGameMatchSignoutResponse_PlayerMetadata::has_best_assists_x16() const {
+  return (_has_bits_[0] & 0x00000080u) != 0;
+}
+inline void CMsgGameMatchSignoutResponse_PlayerMetadata::set_has_best_assists_x16() {
+  _has_bits_[0] |= 0x00000080u;
+}
+inline void CMsgGameMatchSignoutResponse_PlayerMetadata::clear_has_best_assists_x16() {
+  _has_bits_[0] &= ~0x00000080u;
+}
+inline void CMsgGameMatchSignoutResponse_PlayerMetadata::clear_best_assists_x16() {
+  best_assists_x16_ = 0u;
+  clear_has_best_assists_x16();
+}
+inline ::google::protobuf::uint32 CMsgGameMatchSignoutResponse_PlayerMetadata::best_assists_x16() const {
+  // @@protoc_insertion_point(field_get:CMsgGameMatchSignoutResponse.PlayerMetadata.best_assists_x16)
+  return best_assists_x16_;
+}
+inline void CMsgGameMatchSignoutResponse_PlayerMetadata::set_best_assists_x16(::google::protobuf::uint32 value) {
+  set_has_best_assists_x16();
+  best_assists_x16_ = value;
+  // @@protoc_insertion_point(field_set:CMsgGameMatchSignoutResponse.PlayerMetadata.best_assists_x16)
+}
+
+// optional uint32 best_gpm_x16 = 9;
+inline bool CMsgGameMatchSignoutResponse_PlayerMetadata::has_best_gpm_x16() const {
+  return (_has_bits_[0] & 0x00000100u) != 0;
+}
+inline void CMsgGameMatchSignoutResponse_PlayerMetadata::set_has_best_gpm_x16() {
+  _has_bits_[0] |= 0x00000100u;
+}
+inline void CMsgGameMatchSignoutResponse_PlayerMetadata::clear_has_best_gpm_x16() {
+  _has_bits_[0] &= ~0x00000100u;
+}
+inline void CMsgGameMatchSignoutResponse_PlayerMetadata::clear_best_gpm_x16() {
+  best_gpm_x16_ = 0u;
+  clear_has_best_gpm_x16();
+}
+inline ::google::protobuf::uint32 CMsgGameMatchSignoutResponse_PlayerMetadata::best_gpm_x16() const {
+  // @@protoc_insertion_point(field_get:CMsgGameMatchSignoutResponse.PlayerMetadata.best_gpm_x16)
+  return best_gpm_x16_;
+}
+inline void CMsgGameMatchSignoutResponse_PlayerMetadata::set_best_gpm_x16(::google::protobuf::uint32 value) {
+  set_has_best_gpm_x16();
+  best_gpm_x16_ = value;
+  // @@protoc_insertion_point(field_set:CMsgGameMatchSignoutResponse.PlayerMetadata.best_gpm_x16)
+}
+
+// optional uint32 best_xpm_x16 = 10;
+inline bool CMsgGameMatchSignoutResponse_PlayerMetadata::has_best_xpm_x16() const {
+  return (_has_bits_[0] & 0x00000200u) != 0;
+}
+inline void CMsgGameMatchSignoutResponse_PlayerMetadata::set_has_best_xpm_x16() {
+  _has_bits_[0] |= 0x00000200u;
+}
+inline void CMsgGameMatchSignoutResponse_PlayerMetadata::clear_has_best_xpm_x16() {
+  _has_bits_[0] &= ~0x00000200u;
+}
+inline void CMsgGameMatchSignoutResponse_PlayerMetadata::clear_best_xpm_x16() {
+  best_xpm_x16_ = 0u;
+  clear_has_best_xpm_x16();
+}
+inline ::google::protobuf::uint32 CMsgGameMatchSignoutResponse_PlayerMetadata::best_xpm_x16() const {
+  // @@protoc_insertion_point(field_get:CMsgGameMatchSignoutResponse.PlayerMetadata.best_xpm_x16)
+  return best_xpm_x16_;
+}
+inline void CMsgGameMatchSignoutResponse_PlayerMetadata::set_best_xpm_x16(::google::protobuf::uint32 value) {
+  set_has_best_xpm_x16();
+  best_xpm_x16_ = value;
+  // @@protoc_insertion_point(field_set:CMsgGameMatchSignoutResponse.PlayerMetadata.best_xpm_x16)
+}
+
+// optional uint32 win_streak = 11;
+inline bool CMsgGameMatchSignoutResponse_PlayerMetadata::has_win_streak() const {
+  return (_has_bits_[0] & 0x00000400u) != 0;
+}
+inline void CMsgGameMatchSignoutResponse_PlayerMetadata::set_has_win_streak() {
+  _has_bits_[0] |= 0x00000400u;
+}
+inline void CMsgGameMatchSignoutResponse_PlayerMetadata::clear_has_win_streak() {
+  _has_bits_[0] &= ~0x00000400u;
+}
+inline void CMsgGameMatchSignoutResponse_PlayerMetadata::clear_win_streak() {
+  win_streak_ = 0u;
+  clear_has_win_streak();
+}
+inline ::google::protobuf::uint32 CMsgGameMatchSignoutResponse_PlayerMetadata::win_streak() const {
+  // @@protoc_insertion_point(field_get:CMsgGameMatchSignoutResponse.PlayerMetadata.win_streak)
+  return win_streak_;
+}
+inline void CMsgGameMatchSignoutResponse_PlayerMetadata::set_win_streak(::google::protobuf::uint32 value) {
+  set_has_win_streak();
+  win_streak_ = value;
+  // @@protoc_insertion_point(field_set:CMsgGameMatchSignoutResponse.PlayerMetadata.win_streak)
+}
+
+// optional uint32 best_win_streak = 12;
+inline bool CMsgGameMatchSignoutResponse_PlayerMetadata::has_best_win_streak() const {
+  return (_has_bits_[0] & 0x00000800u) != 0;
+}
+inline void CMsgGameMatchSignoutResponse_PlayerMetadata::set_has_best_win_streak() {
+  _has_bits_[0] |= 0x00000800u;
+}
+inline void CMsgGameMatchSignoutResponse_PlayerMetadata::clear_has_best_win_streak() {
+  _has_bits_[0] &= ~0x00000800u;
+}
+inline void CMsgGameMatchSignoutResponse_PlayerMetadata::clear_best_win_streak() {
+  best_win_streak_ = 0u;
+  clear_has_best_win_streak();
+}
+inline ::google::protobuf::uint32 CMsgGameMatchSignoutResponse_PlayerMetadata::best_win_streak() const {
+  // @@protoc_insertion_point(field_get:CMsgGameMatchSignoutResponse.PlayerMetadata.best_win_streak)
+  return best_win_streak_;
+}
+inline void CMsgGameMatchSignoutResponse_PlayerMetadata::set_best_win_streak(::google::protobuf::uint32 value) {
+  set_has_best_win_streak();
+  best_win_streak_ = value;
+  // @@protoc_insertion_point(field_set:CMsgGameMatchSignoutResponse.PlayerMetadata.best_win_streak)
+}
+
+// optional uint32 games_played = 13;
+inline bool CMsgGameMatchSignoutResponse_PlayerMetadata::has_games_played() const {
+  return (_has_bits_[0] & 0x00001000u) != 0;
+}
+inline void CMsgGameMatchSignoutResponse_PlayerMetadata::set_has_games_played() {
+  _has_bits_[0] |= 0x00001000u;
+}
+inline void CMsgGameMatchSignoutResponse_PlayerMetadata::clear_has_games_played() {
+  _has_bits_[0] &= ~0x00001000u;
+}
+inline void CMsgGameMatchSignoutResponse_PlayerMetadata::clear_games_played() {
+  games_played_ = 0u;
+  clear_has_games_played();
+}
+inline ::google::protobuf::uint32 CMsgGameMatchSignoutResponse_PlayerMetadata::games_played() const {
+  // @@protoc_insertion_point(field_get:CMsgGameMatchSignoutResponse.PlayerMetadata.games_played)
+  return games_played_;
+}
+inline void CMsgGameMatchSignoutResponse_PlayerMetadata::set_games_played(::google::protobuf::uint32 value) {
+  set_has_games_played();
+  games_played_ = value;
+  // @@protoc_insertion_point(field_set:CMsgGameMatchSignoutResponse.PlayerMetadata.games_played)
+}
+
+// -------------------------------------------------------------------
+
 // CMsgGameMatchSignoutResponse
 
 // optional uint64 match_id = 1;
@@ -19583,6 +20647,135 @@ inline ::google::protobuf::RepeatedPtrField< ::CMsgGameMatchSignoutResponse_CAdd
 CMsgGameMatchSignoutResponse::mutable_additional_msgs() {
   // @@protoc_insertion_point(field_mutable_list:CMsgGameMatchSignoutResponse.additional_msgs)
   return &additional_msgs_;
+}
+
+// optional fixed32 metadata_private_key = 7;
+inline bool CMsgGameMatchSignoutResponse::has_metadata_private_key() const {
+  return (_has_bits_[0] & 0x00000040u) != 0;
+}
+inline void CMsgGameMatchSignoutResponse::set_has_metadata_private_key() {
+  _has_bits_[0] |= 0x00000040u;
+}
+inline void CMsgGameMatchSignoutResponse::clear_has_metadata_private_key() {
+  _has_bits_[0] &= ~0x00000040u;
+}
+inline void CMsgGameMatchSignoutResponse::clear_metadata_private_key() {
+  metadata_private_key_ = 0u;
+  clear_has_metadata_private_key();
+}
+inline ::google::protobuf::uint32 CMsgGameMatchSignoutResponse::metadata_private_key() const {
+  // @@protoc_insertion_point(field_get:CMsgGameMatchSignoutResponse.metadata_private_key)
+  return metadata_private_key_;
+}
+inline void CMsgGameMatchSignoutResponse::set_metadata_private_key(::google::protobuf::uint32 value) {
+  set_has_metadata_private_key();
+  metadata_private_key_ = value;
+  // @@protoc_insertion_point(field_set:CMsgGameMatchSignoutResponse.metadata_private_key)
+}
+
+// optional .CMsgDOTAMatch match_details = 8;
+inline bool CMsgGameMatchSignoutResponse::has_match_details() const {
+  return (_has_bits_[0] & 0x00000080u) != 0;
+}
+inline void CMsgGameMatchSignoutResponse::set_has_match_details() {
+  _has_bits_[0] |= 0x00000080u;
+}
+inline void CMsgGameMatchSignoutResponse::clear_has_match_details() {
+  _has_bits_[0] &= ~0x00000080u;
+}
+inline void CMsgGameMatchSignoutResponse::clear_match_details() {
+  if (match_details_ != NULL) match_details_->::CMsgDOTAMatch::Clear();
+  clear_has_match_details();
+}
+inline const ::CMsgDOTAMatch& CMsgGameMatchSignoutResponse::match_details() const {
+  // @@protoc_insertion_point(field_get:CMsgGameMatchSignoutResponse.match_details)
+  return match_details_ != NULL ? *match_details_ : *default_instance_->match_details_;
+}
+inline ::CMsgDOTAMatch* CMsgGameMatchSignoutResponse::mutable_match_details() {
+  set_has_match_details();
+  if (match_details_ == NULL) match_details_ = new ::CMsgDOTAMatch;
+  // @@protoc_insertion_point(field_mutable:CMsgGameMatchSignoutResponse.match_details)
+  return match_details_;
+}
+inline ::CMsgDOTAMatch* CMsgGameMatchSignoutResponse::release_match_details() {
+  clear_has_match_details();
+  ::CMsgDOTAMatch* temp = match_details_;
+  match_details_ = NULL;
+  return temp;
+}
+inline void CMsgGameMatchSignoutResponse::set_allocated_match_details(::CMsgDOTAMatch* match_details) {
+  delete match_details_;
+  match_details_ = match_details;
+  if (match_details) {
+    set_has_match_details();
+  } else {
+    clear_has_match_details();
+  }
+  // @@protoc_insertion_point(field_set_allocated:CMsgGameMatchSignoutResponse.match_details)
+}
+
+// repeated .CMsgGameMatchSignoutResponse.PlayerMetadata players_metadata = 9;
+inline int CMsgGameMatchSignoutResponse::players_metadata_size() const {
+  return players_metadata_.size();
+}
+inline void CMsgGameMatchSignoutResponse::clear_players_metadata() {
+  players_metadata_.Clear();
+}
+inline const ::CMsgGameMatchSignoutResponse_PlayerMetadata& CMsgGameMatchSignoutResponse::players_metadata(int index) const {
+  // @@protoc_insertion_point(field_get:CMsgGameMatchSignoutResponse.players_metadata)
+  return players_metadata_.Get(index);
+}
+inline ::CMsgGameMatchSignoutResponse_PlayerMetadata* CMsgGameMatchSignoutResponse::mutable_players_metadata(int index) {
+  // @@protoc_insertion_point(field_mutable:CMsgGameMatchSignoutResponse.players_metadata)
+  return players_metadata_.Mutable(index);
+}
+inline ::CMsgGameMatchSignoutResponse_PlayerMetadata* CMsgGameMatchSignoutResponse::add_players_metadata() {
+  // @@protoc_insertion_point(field_add:CMsgGameMatchSignoutResponse.players_metadata)
+  return players_metadata_.Add();
+}
+inline const ::google::protobuf::RepeatedPtrField< ::CMsgGameMatchSignoutResponse_PlayerMetadata >&
+CMsgGameMatchSignoutResponse::players_metadata() const {
+  // @@protoc_insertion_point(field_list:CMsgGameMatchSignoutResponse.players_metadata)
+  return players_metadata_;
+}
+inline ::google::protobuf::RepeatedPtrField< ::CMsgGameMatchSignoutResponse_PlayerMetadata >*
+CMsgGameMatchSignoutResponse::mutable_players_metadata() {
+  // @@protoc_insertion_point(field_mutable_list:CMsgGameMatchSignoutResponse.players_metadata)
+  return &players_metadata_;
+}
+
+// -------------------------------------------------------------------
+
+// CMsgTimedRewardContainer
+
+// repeated .CLobbyTimedRewardDetails timed_reward_details = 1;
+inline int CMsgTimedRewardContainer::timed_reward_details_size() const {
+  return timed_reward_details_.size();
+}
+inline void CMsgTimedRewardContainer::clear_timed_reward_details() {
+  timed_reward_details_.Clear();
+}
+inline const ::CLobbyTimedRewardDetails& CMsgTimedRewardContainer::timed_reward_details(int index) const {
+  // @@protoc_insertion_point(field_get:CMsgTimedRewardContainer.timed_reward_details)
+  return timed_reward_details_.Get(index);
+}
+inline ::CLobbyTimedRewardDetails* CMsgTimedRewardContainer::mutable_timed_reward_details(int index) {
+  // @@protoc_insertion_point(field_mutable:CMsgTimedRewardContainer.timed_reward_details)
+  return timed_reward_details_.Mutable(index);
+}
+inline ::CLobbyTimedRewardDetails* CMsgTimedRewardContainer::add_timed_reward_details() {
+  // @@protoc_insertion_point(field_add:CMsgTimedRewardContainer.timed_reward_details)
+  return timed_reward_details_.Add();
+}
+inline const ::google::protobuf::RepeatedPtrField< ::CLobbyTimedRewardDetails >&
+CMsgTimedRewardContainer::timed_reward_details() const {
+  // @@protoc_insertion_point(field_list:CMsgTimedRewardContainer.timed_reward_details)
+  return timed_reward_details_;
+}
+inline ::google::protobuf::RepeatedPtrField< ::CLobbyTimedRewardDetails >*
+CMsgTimedRewardContainer::mutable_timed_reward_details() {
+  // @@protoc_insertion_point(field_mutable_list:CMsgTimedRewardContainer.timed_reward_details)
+  return &timed_reward_details_;
 }
 
 // -------------------------------------------------------------------
@@ -19759,216 +20952,6 @@ inline void CMsgGameMatchSignOutPermissionResponse::set_retry_delay_seconds(::go
   set_has_retry_delay_seconds();
   retry_delay_seconds_ = value;
   // @@protoc_insertion_point(field_set:CMsgGameMatchSignOutPermissionResponse.retry_delay_seconds)
-}
-
-// -------------------------------------------------------------------
-
-// CMsgGameChatLog_CChatLine
-
-// optional uint32 account_id = 1;
-inline bool CMsgGameChatLog_CChatLine::has_account_id() const {
-  return (_has_bits_[0] & 0x00000001u) != 0;
-}
-inline void CMsgGameChatLog_CChatLine::set_has_account_id() {
-  _has_bits_[0] |= 0x00000001u;
-}
-inline void CMsgGameChatLog_CChatLine::clear_has_account_id() {
-  _has_bits_[0] &= ~0x00000001u;
-}
-inline void CMsgGameChatLog_CChatLine::clear_account_id() {
-  account_id_ = 0u;
-  clear_has_account_id();
-}
-inline ::google::protobuf::uint32 CMsgGameChatLog_CChatLine::account_id() const {
-  // @@protoc_insertion_point(field_get:CMsgGameChatLog.CChatLine.account_id)
-  return account_id_;
-}
-inline void CMsgGameChatLog_CChatLine::set_account_id(::google::protobuf::uint32 value) {
-  set_has_account_id();
-  account_id_ = value;
-  // @@protoc_insertion_point(field_set:CMsgGameChatLog.CChatLine.account_id)
-}
-
-// optional uint32 team_only = 2;
-inline bool CMsgGameChatLog_CChatLine::has_team_only() const {
-  return (_has_bits_[0] & 0x00000002u) != 0;
-}
-inline void CMsgGameChatLog_CChatLine::set_has_team_only() {
-  _has_bits_[0] |= 0x00000002u;
-}
-inline void CMsgGameChatLog_CChatLine::clear_has_team_only() {
-  _has_bits_[0] &= ~0x00000002u;
-}
-inline void CMsgGameChatLog_CChatLine::clear_team_only() {
-  team_only_ = 0u;
-  clear_has_team_only();
-}
-inline ::google::protobuf::uint32 CMsgGameChatLog_CChatLine::team_only() const {
-  // @@protoc_insertion_point(field_get:CMsgGameChatLog.CChatLine.team_only)
-  return team_only_;
-}
-inline void CMsgGameChatLog_CChatLine::set_team_only(::google::protobuf::uint32 value) {
-  set_has_team_only();
-  team_only_ = value;
-  // @@protoc_insertion_point(field_set:CMsgGameChatLog.CChatLine.team_only)
-}
-
-// optional string text = 3;
-inline bool CMsgGameChatLog_CChatLine::has_text() const {
-  return (_has_bits_[0] & 0x00000004u) != 0;
-}
-inline void CMsgGameChatLog_CChatLine::set_has_text() {
-  _has_bits_[0] |= 0x00000004u;
-}
-inline void CMsgGameChatLog_CChatLine::clear_has_text() {
-  _has_bits_[0] &= ~0x00000004u;
-}
-inline void CMsgGameChatLog_CChatLine::clear_text() {
-  if (text_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    text_->clear();
-  }
-  clear_has_text();
-}
-inline const ::std::string& CMsgGameChatLog_CChatLine::text() const {
-  // @@protoc_insertion_point(field_get:CMsgGameChatLog.CChatLine.text)
-  return *text_;
-}
-inline void CMsgGameChatLog_CChatLine::set_text(const ::std::string& value) {
-  set_has_text();
-  if (text_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    text_ = new ::std::string;
-  }
-  text_->assign(value);
-  // @@protoc_insertion_point(field_set:CMsgGameChatLog.CChatLine.text)
-}
-inline void CMsgGameChatLog_CChatLine::set_text(const char* value) {
-  set_has_text();
-  if (text_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    text_ = new ::std::string;
-  }
-  text_->assign(value);
-  // @@protoc_insertion_point(field_set_char:CMsgGameChatLog.CChatLine.text)
-}
-inline void CMsgGameChatLog_CChatLine::set_text(const char* value, size_t size) {
-  set_has_text();
-  if (text_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    text_ = new ::std::string;
-  }
-  text_->assign(reinterpret_cast<const char*>(value), size);
-  // @@protoc_insertion_point(field_set_pointer:CMsgGameChatLog.CChatLine.text)
-}
-inline ::std::string* CMsgGameChatLog_CChatLine::mutable_text() {
-  set_has_text();
-  if (text_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    text_ = new ::std::string;
-  }
-  // @@protoc_insertion_point(field_mutable:CMsgGameChatLog.CChatLine.text)
-  return text_;
-}
-inline ::std::string* CMsgGameChatLog_CChatLine::release_text() {
-  clear_has_text();
-  if (text_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    return NULL;
-  } else {
-    ::std::string* temp = text_;
-    text_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-    return temp;
-  }
-}
-inline void CMsgGameChatLog_CChatLine::set_allocated_text(::std::string* text) {
-  if (text_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    delete text_;
-  }
-  if (text) {
-    set_has_text();
-    text_ = text;
-  } else {
-    clear_has_text();
-    text_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  }
-  // @@protoc_insertion_point(field_set_allocated:CMsgGameChatLog.CChatLine.text)
-}
-
-// optional uint32 game_time = 4;
-inline bool CMsgGameChatLog_CChatLine::has_game_time() const {
-  return (_has_bits_[0] & 0x00000008u) != 0;
-}
-inline void CMsgGameChatLog_CChatLine::set_has_game_time() {
-  _has_bits_[0] |= 0x00000008u;
-}
-inline void CMsgGameChatLog_CChatLine::clear_has_game_time() {
-  _has_bits_[0] &= ~0x00000008u;
-}
-inline void CMsgGameChatLog_CChatLine::clear_game_time() {
-  game_time_ = 0u;
-  clear_has_game_time();
-}
-inline ::google::protobuf::uint32 CMsgGameChatLog_CChatLine::game_time() const {
-  // @@protoc_insertion_point(field_get:CMsgGameChatLog.CChatLine.game_time)
-  return game_time_;
-}
-inline void CMsgGameChatLog_CChatLine::set_game_time(::google::protobuf::uint32 value) {
-  set_has_game_time();
-  game_time_ = value;
-  // @@protoc_insertion_point(field_set:CMsgGameChatLog.CChatLine.game_time)
-}
-
-// -------------------------------------------------------------------
-
-// CMsgGameChatLog
-
-// optional uint64 match_id = 1;
-inline bool CMsgGameChatLog::has_match_id() const {
-  return (_has_bits_[0] & 0x00000001u) != 0;
-}
-inline void CMsgGameChatLog::set_has_match_id() {
-  _has_bits_[0] |= 0x00000001u;
-}
-inline void CMsgGameChatLog::clear_has_match_id() {
-  _has_bits_[0] &= ~0x00000001u;
-}
-inline void CMsgGameChatLog::clear_match_id() {
-  match_id_ = GOOGLE_ULONGLONG(0);
-  clear_has_match_id();
-}
-inline ::google::protobuf::uint64 CMsgGameChatLog::match_id() const {
-  // @@protoc_insertion_point(field_get:CMsgGameChatLog.match_id)
-  return match_id_;
-}
-inline void CMsgGameChatLog::set_match_id(::google::protobuf::uint64 value) {
-  set_has_match_id();
-  match_id_ = value;
-  // @@protoc_insertion_point(field_set:CMsgGameChatLog.match_id)
-}
-
-// repeated .CMsgGameChatLog.CChatLine lines = 2;
-inline int CMsgGameChatLog::lines_size() const {
-  return lines_.size();
-}
-inline void CMsgGameChatLog::clear_lines() {
-  lines_.Clear();
-}
-inline const ::CMsgGameChatLog_CChatLine& CMsgGameChatLog::lines(int index) const {
-  // @@protoc_insertion_point(field_get:CMsgGameChatLog.lines)
-  return lines_.Get(index);
-}
-inline ::CMsgGameChatLog_CChatLine* CMsgGameChatLog::mutable_lines(int index) {
-  // @@protoc_insertion_point(field_mutable:CMsgGameChatLog.lines)
-  return lines_.Mutable(index);
-}
-inline ::CMsgGameChatLog_CChatLine* CMsgGameChatLog::add_lines() {
-  // @@protoc_insertion_point(field_add:CMsgGameChatLog.lines)
-  return lines_.Add();
-}
-inline const ::google::protobuf::RepeatedPtrField< ::CMsgGameChatLog_CChatLine >&
-CMsgGameChatLog::lines() const {
-  // @@protoc_insertion_point(field_list:CMsgGameChatLog.lines)
-  return lines_;
-}
-inline ::google::protobuf::RepeatedPtrField< ::CMsgGameChatLog_CChatLine >*
-CMsgGameChatLog::mutable_lines() {
-  // @@protoc_insertion_point(field_mutable_list:CMsgGameChatLog.lines)
-  return &lines_;
 }
 
 // -------------------------------------------------------------------
@@ -23229,6 +24212,54 @@ inline void CMsgDOTAAwardEventPoints::set_event_id(::google::protobuf::uint32 va
   // @@protoc_insertion_point(field_set:CMsgDOTAAwardEventPoints.event_id)
 }
 
+// optional uint32 timestamp = 5;
+inline bool CMsgDOTAAwardEventPoints::has_timestamp() const {
+  return (_has_bits_[0] & 0x00000008u) != 0;
+}
+inline void CMsgDOTAAwardEventPoints::set_has_timestamp() {
+  _has_bits_[0] |= 0x00000008u;
+}
+inline void CMsgDOTAAwardEventPoints::clear_has_timestamp() {
+  _has_bits_[0] &= ~0x00000008u;
+}
+inline void CMsgDOTAAwardEventPoints::clear_timestamp() {
+  timestamp_ = 0u;
+  clear_has_timestamp();
+}
+inline ::google::protobuf::uint32 CMsgDOTAAwardEventPoints::timestamp() const {
+  // @@protoc_insertion_point(field_get:CMsgDOTAAwardEventPoints.timestamp)
+  return timestamp_;
+}
+inline void CMsgDOTAAwardEventPoints::set_timestamp(::google::protobuf::uint32 value) {
+  set_has_timestamp();
+  timestamp_ = value;
+  // @@protoc_insertion_point(field_set:CMsgDOTAAwardEventPoints.timestamp)
+}
+
+// optional uint32 audit_action = 6;
+inline bool CMsgDOTAAwardEventPoints::has_audit_action() const {
+  return (_has_bits_[0] & 0x00000010u) != 0;
+}
+inline void CMsgDOTAAwardEventPoints::set_has_audit_action() {
+  _has_bits_[0] |= 0x00000010u;
+}
+inline void CMsgDOTAAwardEventPoints::clear_has_audit_action() {
+  _has_bits_[0] &= ~0x00000010u;
+}
+inline void CMsgDOTAAwardEventPoints::clear_audit_action() {
+  audit_action_ = 0u;
+  clear_has_audit_action();
+}
+inline ::google::protobuf::uint32 CMsgDOTAAwardEventPoints::audit_action() const {
+  // @@protoc_insertion_point(field_get:CMsgDOTAAwardEventPoints.audit_action)
+  return audit_action_;
+}
+inline void CMsgDOTAAwardEventPoints::set_audit_action(::google::protobuf::uint32 value) {
+  set_has_audit_action();
+  audit_action_ = value;
+  // @@protoc_insertion_point(field_set:CMsgDOTAAwardEventPoints.audit_action)
+}
+
 // -------------------------------------------------------------------
 
 // CMsgServerToGCSignoutAwardAdditionalDrops_AdditionalDrops
@@ -23443,140 +24474,6 @@ inline void CMsgServerToGCSignoutAwardAdditionalDrops::set_match_id(::google::pr
   set_has_match_id();
   match_id_ = value;
   // @@protoc_insertion_point(field_set:CMsgServerToGCSignoutAwardAdditionalDrops.match_id)
-}
-
-// -------------------------------------------------------------------
-
-// CMsgDOTAUpdateTI4HeroQuest_Player
-
-// optional uint32 account_id = 1;
-inline bool CMsgDOTAUpdateTI4HeroQuest_Player::has_account_id() const {
-  return (_has_bits_[0] & 0x00000001u) != 0;
-}
-inline void CMsgDOTAUpdateTI4HeroQuest_Player::set_has_account_id() {
-  _has_bits_[0] |= 0x00000001u;
-}
-inline void CMsgDOTAUpdateTI4HeroQuest_Player::clear_has_account_id() {
-  _has_bits_[0] &= ~0x00000001u;
-}
-inline void CMsgDOTAUpdateTI4HeroQuest_Player::clear_account_id() {
-  account_id_ = 0u;
-  clear_has_account_id();
-}
-inline ::google::protobuf::uint32 CMsgDOTAUpdateTI4HeroQuest_Player::account_id() const {
-  // @@protoc_insertion_point(field_get:CMsgDOTAUpdateTI4HeroQuest.Player.account_id)
-  return account_id_;
-}
-inline void CMsgDOTAUpdateTI4HeroQuest_Player::set_account_id(::google::protobuf::uint32 value) {
-  set_has_account_id();
-  account_id_ = value;
-  // @@protoc_insertion_point(field_set:CMsgDOTAUpdateTI4HeroQuest.Player.account_id)
-}
-
-// optional uint32 hero_id = 2;
-inline bool CMsgDOTAUpdateTI4HeroQuest_Player::has_hero_id() const {
-  return (_has_bits_[0] & 0x00000002u) != 0;
-}
-inline void CMsgDOTAUpdateTI4HeroQuest_Player::set_has_hero_id() {
-  _has_bits_[0] |= 0x00000002u;
-}
-inline void CMsgDOTAUpdateTI4HeroQuest_Player::clear_has_hero_id() {
-  _has_bits_[0] &= ~0x00000002u;
-}
-inline void CMsgDOTAUpdateTI4HeroQuest_Player::clear_hero_id() {
-  hero_id_ = 0u;
-  clear_has_hero_id();
-}
-inline ::google::protobuf::uint32 CMsgDOTAUpdateTI4HeroQuest_Player::hero_id() const {
-  // @@protoc_insertion_point(field_get:CMsgDOTAUpdateTI4HeroQuest.Player.hero_id)
-  return hero_id_;
-}
-inline void CMsgDOTAUpdateTI4HeroQuest_Player::set_hero_id(::google::protobuf::uint32 value) {
-  set_has_hero_id();
-  hero_id_ = value;
-  // @@protoc_insertion_point(field_set:CMsgDOTAUpdateTI4HeroQuest.Player.hero_id)
-}
-
-// -------------------------------------------------------------------
-
-// CMsgDOTAUpdateTI4HeroQuest
-
-// repeated .CMsgDOTAUpdateTI4HeroQuest.Player players = 1;
-inline int CMsgDOTAUpdateTI4HeroQuest::players_size() const {
-  return players_.size();
-}
-inline void CMsgDOTAUpdateTI4HeroQuest::clear_players() {
-  players_.Clear();
-}
-inline const ::CMsgDOTAUpdateTI4HeroQuest_Player& CMsgDOTAUpdateTI4HeroQuest::players(int index) const {
-  // @@protoc_insertion_point(field_get:CMsgDOTAUpdateTI4HeroQuest.players)
-  return players_.Get(index);
-}
-inline ::CMsgDOTAUpdateTI4HeroQuest_Player* CMsgDOTAUpdateTI4HeroQuest::mutable_players(int index) {
-  // @@protoc_insertion_point(field_mutable:CMsgDOTAUpdateTI4HeroQuest.players)
-  return players_.Mutable(index);
-}
-inline ::CMsgDOTAUpdateTI4HeroQuest_Player* CMsgDOTAUpdateTI4HeroQuest::add_players() {
-  // @@protoc_insertion_point(field_add:CMsgDOTAUpdateTI4HeroQuest.players)
-  return players_.Add();
-}
-inline const ::google::protobuf::RepeatedPtrField< ::CMsgDOTAUpdateTI4HeroQuest_Player >&
-CMsgDOTAUpdateTI4HeroQuest::players() const {
-  // @@protoc_insertion_point(field_list:CMsgDOTAUpdateTI4HeroQuest.players)
-  return players_;
-}
-inline ::google::protobuf::RepeatedPtrField< ::CMsgDOTAUpdateTI4HeroQuest_Player >*
-CMsgDOTAUpdateTI4HeroQuest::mutable_players() {
-  // @@protoc_insertion_point(field_mutable_list:CMsgDOTAUpdateTI4HeroQuest.players)
-  return &players_;
-}
-
-// optional fixed32 match_start_time = 2;
-inline bool CMsgDOTAUpdateTI4HeroQuest::has_match_start_time() const {
-  return (_has_bits_[0] & 0x00000002u) != 0;
-}
-inline void CMsgDOTAUpdateTI4HeroQuest::set_has_match_start_time() {
-  _has_bits_[0] |= 0x00000002u;
-}
-inline void CMsgDOTAUpdateTI4HeroQuest::clear_has_match_start_time() {
-  _has_bits_[0] &= ~0x00000002u;
-}
-inline void CMsgDOTAUpdateTI4HeroQuest::clear_match_start_time() {
-  match_start_time_ = 0u;
-  clear_has_match_start_time();
-}
-inline ::google::protobuf::uint32 CMsgDOTAUpdateTI4HeroQuest::match_start_time() const {
-  // @@protoc_insertion_point(field_get:CMsgDOTAUpdateTI4HeroQuest.match_start_time)
-  return match_start_time_;
-}
-inline void CMsgDOTAUpdateTI4HeroQuest::set_match_start_time(::google::protobuf::uint32 value) {
-  set_has_match_start_time();
-  match_start_time_ = value;
-  // @@protoc_insertion_point(field_set:CMsgDOTAUpdateTI4HeroQuest.match_start_time)
-}
-
-// optional uint64 match_id = 3;
-inline bool CMsgDOTAUpdateTI4HeroQuest::has_match_id() const {
-  return (_has_bits_[0] & 0x00000004u) != 0;
-}
-inline void CMsgDOTAUpdateTI4HeroQuest::set_has_match_id() {
-  _has_bits_[0] |= 0x00000004u;
-}
-inline void CMsgDOTAUpdateTI4HeroQuest::clear_has_match_id() {
-  _has_bits_[0] &= ~0x00000004u;
-}
-inline void CMsgDOTAUpdateTI4HeroQuest::clear_match_id() {
-  match_id_ = GOOGLE_ULONGLONG(0);
-  clear_has_match_id();
-}
-inline ::google::protobuf::uint64 CMsgDOTAUpdateTI4HeroQuest::match_id() const {
-  // @@protoc_insertion_point(field_get:CMsgDOTAUpdateTI4HeroQuest.match_id)
-  return match_id_;
-}
-inline void CMsgDOTAUpdateTI4HeroQuest::set_match_id(::google::protobuf::uint64 value) {
-  set_has_match_id();
-  match_id_ = value;
-  // @@protoc_insertion_point(field_set:CMsgDOTAUpdateTI4HeroQuest.match_id)
 }
 
 // -------------------------------------------------------------------
@@ -26035,186 +26932,6 @@ inline void CMsgServerToGCLockCharmTrading::set_item_id(::google::protobuf::uint
 
 // -------------------------------------------------------------------
 
-// CMsgDOTACNY2015EventPointUsage_PointUsage
-
-// repeated uint32 path = 1;
-inline int CMsgDOTACNY2015EventPointUsage_PointUsage::path_size() const {
-  return path_.size();
-}
-inline void CMsgDOTACNY2015EventPointUsage_PointUsage::clear_path() {
-  path_.Clear();
-}
-inline ::google::protobuf::uint32 CMsgDOTACNY2015EventPointUsage_PointUsage::path(int index) const {
-  // @@protoc_insertion_point(field_get:CMsgDOTACNY2015EventPointUsage.PointUsage.path)
-  return path_.Get(index);
-}
-inline void CMsgDOTACNY2015EventPointUsage_PointUsage::set_path(int index, ::google::protobuf::uint32 value) {
-  path_.Set(index, value);
-  // @@protoc_insertion_point(field_set:CMsgDOTACNY2015EventPointUsage.PointUsage.path)
-}
-inline void CMsgDOTACNY2015EventPointUsage_PointUsage::add_path(::google::protobuf::uint32 value) {
-  path_.Add(value);
-  // @@protoc_insertion_point(field_add:CMsgDOTACNY2015EventPointUsage.PointUsage.path)
-}
-inline const ::google::protobuf::RepeatedField< ::google::protobuf::uint32 >&
-CMsgDOTACNY2015EventPointUsage_PointUsage::path() const {
-  // @@protoc_insertion_point(field_list:CMsgDOTACNY2015EventPointUsage.PointUsage.path)
-  return path_;
-}
-inline ::google::protobuf::RepeatedField< ::google::protobuf::uint32 >*
-CMsgDOTACNY2015EventPointUsage_PointUsage::mutable_path() {
-  // @@protoc_insertion_point(field_mutable_list:CMsgDOTACNY2015EventPointUsage.PointUsage.path)
-  return &path_;
-}
-
-// repeated uint32 path_level = 2;
-inline int CMsgDOTACNY2015EventPointUsage_PointUsage::path_level_size() const {
-  return path_level_.size();
-}
-inline void CMsgDOTACNY2015EventPointUsage_PointUsage::clear_path_level() {
-  path_level_.Clear();
-}
-inline ::google::protobuf::uint32 CMsgDOTACNY2015EventPointUsage_PointUsage::path_level(int index) const {
-  // @@protoc_insertion_point(field_get:CMsgDOTACNY2015EventPointUsage.PointUsage.path_level)
-  return path_level_.Get(index);
-}
-inline void CMsgDOTACNY2015EventPointUsage_PointUsage::set_path_level(int index, ::google::protobuf::uint32 value) {
-  path_level_.Set(index, value);
-  // @@protoc_insertion_point(field_set:CMsgDOTACNY2015EventPointUsage.PointUsage.path_level)
-}
-inline void CMsgDOTACNY2015EventPointUsage_PointUsage::add_path_level(::google::protobuf::uint32 value) {
-  path_level_.Add(value);
-  // @@protoc_insertion_point(field_add:CMsgDOTACNY2015EventPointUsage.PointUsage.path_level)
-}
-inline const ::google::protobuf::RepeatedField< ::google::protobuf::uint32 >&
-CMsgDOTACNY2015EventPointUsage_PointUsage::path_level() const {
-  // @@protoc_insertion_point(field_list:CMsgDOTACNY2015EventPointUsage.PointUsage.path_level)
-  return path_level_;
-}
-inline ::google::protobuf::RepeatedField< ::google::protobuf::uint32 >*
-CMsgDOTACNY2015EventPointUsage_PointUsage::mutable_path_level() {
-  // @@protoc_insertion_point(field_mutable_list:CMsgDOTACNY2015EventPointUsage.PointUsage.path_level)
-  return &path_level_;
-}
-
-// repeated uint32 ability_points_spent = 3;
-inline int CMsgDOTACNY2015EventPointUsage_PointUsage::ability_points_spent_size() const {
-  return ability_points_spent_.size();
-}
-inline void CMsgDOTACNY2015EventPointUsage_PointUsage::clear_ability_points_spent() {
-  ability_points_spent_.Clear();
-}
-inline ::google::protobuf::uint32 CMsgDOTACNY2015EventPointUsage_PointUsage::ability_points_spent(int index) const {
-  // @@protoc_insertion_point(field_get:CMsgDOTACNY2015EventPointUsage.PointUsage.ability_points_spent)
-  return ability_points_spent_.Get(index);
-}
-inline void CMsgDOTACNY2015EventPointUsage_PointUsage::set_ability_points_spent(int index, ::google::protobuf::uint32 value) {
-  ability_points_spent_.Set(index, value);
-  // @@protoc_insertion_point(field_set:CMsgDOTACNY2015EventPointUsage.PointUsage.ability_points_spent)
-}
-inline void CMsgDOTACNY2015EventPointUsage_PointUsage::add_ability_points_spent(::google::protobuf::uint32 value) {
-  ability_points_spent_.Add(value);
-  // @@protoc_insertion_point(field_add:CMsgDOTACNY2015EventPointUsage.PointUsage.ability_points_spent)
-}
-inline const ::google::protobuf::RepeatedField< ::google::protobuf::uint32 >&
-CMsgDOTACNY2015EventPointUsage_PointUsage::ability_points_spent() const {
-  // @@protoc_insertion_point(field_list:CMsgDOTACNY2015EventPointUsage.PointUsage.ability_points_spent)
-  return ability_points_spent_;
-}
-inline ::google::protobuf::RepeatedField< ::google::protobuf::uint32 >*
-CMsgDOTACNY2015EventPointUsage_PointUsage::mutable_ability_points_spent() {
-  // @@protoc_insertion_point(field_mutable_list:CMsgDOTACNY2015EventPointUsage.PointUsage.ability_points_spent)
-  return &ability_points_spent_;
-}
-
-// -------------------------------------------------------------------
-
-// CMsgDOTACNY2015EventPointUsage
-
-// optional .CMsgDOTACNY2015EventPointUsage.PointUsage winning_team_usage = 1;
-inline bool CMsgDOTACNY2015EventPointUsage::has_winning_team_usage() const {
-  return (_has_bits_[0] & 0x00000001u) != 0;
-}
-inline void CMsgDOTACNY2015EventPointUsage::set_has_winning_team_usage() {
-  _has_bits_[0] |= 0x00000001u;
-}
-inline void CMsgDOTACNY2015EventPointUsage::clear_has_winning_team_usage() {
-  _has_bits_[0] &= ~0x00000001u;
-}
-inline void CMsgDOTACNY2015EventPointUsage::clear_winning_team_usage() {
-  if (winning_team_usage_ != NULL) winning_team_usage_->::CMsgDOTACNY2015EventPointUsage_PointUsage::Clear();
-  clear_has_winning_team_usage();
-}
-inline const ::CMsgDOTACNY2015EventPointUsage_PointUsage& CMsgDOTACNY2015EventPointUsage::winning_team_usage() const {
-  // @@protoc_insertion_point(field_get:CMsgDOTACNY2015EventPointUsage.winning_team_usage)
-  return winning_team_usage_ != NULL ? *winning_team_usage_ : *default_instance_->winning_team_usage_;
-}
-inline ::CMsgDOTACNY2015EventPointUsage_PointUsage* CMsgDOTACNY2015EventPointUsage::mutable_winning_team_usage() {
-  set_has_winning_team_usage();
-  if (winning_team_usage_ == NULL) winning_team_usage_ = new ::CMsgDOTACNY2015EventPointUsage_PointUsage;
-  // @@protoc_insertion_point(field_mutable:CMsgDOTACNY2015EventPointUsage.winning_team_usage)
-  return winning_team_usage_;
-}
-inline ::CMsgDOTACNY2015EventPointUsage_PointUsage* CMsgDOTACNY2015EventPointUsage::release_winning_team_usage() {
-  clear_has_winning_team_usage();
-  ::CMsgDOTACNY2015EventPointUsage_PointUsage* temp = winning_team_usage_;
-  winning_team_usage_ = NULL;
-  return temp;
-}
-inline void CMsgDOTACNY2015EventPointUsage::set_allocated_winning_team_usage(::CMsgDOTACNY2015EventPointUsage_PointUsage* winning_team_usage) {
-  delete winning_team_usage_;
-  winning_team_usage_ = winning_team_usage;
-  if (winning_team_usage) {
-    set_has_winning_team_usage();
-  } else {
-    clear_has_winning_team_usage();
-  }
-  // @@protoc_insertion_point(field_set_allocated:CMsgDOTACNY2015EventPointUsage.winning_team_usage)
-}
-
-// optional .CMsgDOTACNY2015EventPointUsage.PointUsage losing_team_usage = 2;
-inline bool CMsgDOTACNY2015EventPointUsage::has_losing_team_usage() const {
-  return (_has_bits_[0] & 0x00000002u) != 0;
-}
-inline void CMsgDOTACNY2015EventPointUsage::set_has_losing_team_usage() {
-  _has_bits_[0] |= 0x00000002u;
-}
-inline void CMsgDOTACNY2015EventPointUsage::clear_has_losing_team_usage() {
-  _has_bits_[0] &= ~0x00000002u;
-}
-inline void CMsgDOTACNY2015EventPointUsage::clear_losing_team_usage() {
-  if (losing_team_usage_ != NULL) losing_team_usage_->::CMsgDOTACNY2015EventPointUsage_PointUsage::Clear();
-  clear_has_losing_team_usage();
-}
-inline const ::CMsgDOTACNY2015EventPointUsage_PointUsage& CMsgDOTACNY2015EventPointUsage::losing_team_usage() const {
-  // @@protoc_insertion_point(field_get:CMsgDOTACNY2015EventPointUsage.losing_team_usage)
-  return losing_team_usage_ != NULL ? *losing_team_usage_ : *default_instance_->losing_team_usage_;
-}
-inline ::CMsgDOTACNY2015EventPointUsage_PointUsage* CMsgDOTACNY2015EventPointUsage::mutable_losing_team_usage() {
-  set_has_losing_team_usage();
-  if (losing_team_usage_ == NULL) losing_team_usage_ = new ::CMsgDOTACNY2015EventPointUsage_PointUsage;
-  // @@protoc_insertion_point(field_mutable:CMsgDOTACNY2015EventPointUsage.losing_team_usage)
-  return losing_team_usage_;
-}
-inline ::CMsgDOTACNY2015EventPointUsage_PointUsage* CMsgDOTACNY2015EventPointUsage::release_losing_team_usage() {
-  clear_has_losing_team_usage();
-  ::CMsgDOTACNY2015EventPointUsage_PointUsage* temp = losing_team_usage_;
-  losing_team_usage_ = NULL;
-  return temp;
-}
-inline void CMsgDOTACNY2015EventPointUsage::set_allocated_losing_team_usage(::CMsgDOTACNY2015EventPointUsage_PointUsage* losing_team_usage) {
-  delete losing_team_usage_;
-  losing_team_usage_ = losing_team_usage;
-  if (losing_team_usage) {
-    set_has_losing_team_usage();
-  } else {
-    clear_has_losing_team_usage();
-  }
-  // @@protoc_insertion_point(field_set_allocated:CMsgDOTACNY2015EventPointUsage.losing_team_usage)
-}
-
-// -------------------------------------------------------------------
-
 // CMsgSignOutUpdatePlayerChallenge_Challenge
 
 // optional uint32 event_id = 1;
@@ -26263,6 +26980,54 @@ inline void CMsgSignOutUpdatePlayerChallenge_Challenge::set_sequence_id(::google
   set_has_sequence_id();
   sequence_id_ = value;
   // @@protoc_insertion_point(field_set:CMsgSignOutUpdatePlayerChallenge.Challenge.sequence_id)
+}
+
+// optional uint32 progress = 4;
+inline bool CMsgSignOutUpdatePlayerChallenge_Challenge::has_progress() const {
+  return (_has_bits_[0] & 0x00000004u) != 0;
+}
+inline void CMsgSignOutUpdatePlayerChallenge_Challenge::set_has_progress() {
+  _has_bits_[0] |= 0x00000004u;
+}
+inline void CMsgSignOutUpdatePlayerChallenge_Challenge::clear_has_progress() {
+  _has_bits_[0] &= ~0x00000004u;
+}
+inline void CMsgSignOutUpdatePlayerChallenge_Challenge::clear_progress() {
+  progress_ = 0u;
+  clear_has_progress();
+}
+inline ::google::protobuf::uint32 CMsgSignOutUpdatePlayerChallenge_Challenge::progress() const {
+  // @@protoc_insertion_point(field_get:CMsgSignOutUpdatePlayerChallenge.Challenge.progress)
+  return progress_;
+}
+inline void CMsgSignOutUpdatePlayerChallenge_Challenge::set_progress(::google::protobuf::uint32 value) {
+  set_has_progress();
+  progress_ = value;
+  // @@protoc_insertion_point(field_set:CMsgSignOutUpdatePlayerChallenge.Challenge.progress)
+}
+
+// optional uint32 challenge_rank = 5;
+inline bool CMsgSignOutUpdatePlayerChallenge_Challenge::has_challenge_rank() const {
+  return (_has_bits_[0] & 0x00000008u) != 0;
+}
+inline void CMsgSignOutUpdatePlayerChallenge_Challenge::set_has_challenge_rank() {
+  _has_bits_[0] |= 0x00000008u;
+}
+inline void CMsgSignOutUpdatePlayerChallenge_Challenge::clear_has_challenge_rank() {
+  _has_bits_[0] &= ~0x00000008u;
+}
+inline void CMsgSignOutUpdatePlayerChallenge_Challenge::clear_challenge_rank() {
+  challenge_rank_ = 0u;
+  clear_has_challenge_rank();
+}
+inline ::google::protobuf::uint32 CMsgSignOutUpdatePlayerChallenge_Challenge::challenge_rank() const {
+  // @@protoc_insertion_point(field_get:CMsgSignOutUpdatePlayerChallenge.Challenge.challenge_rank)
+  return challenge_rank_;
+}
+inline void CMsgSignOutUpdatePlayerChallenge_Challenge::set_challenge_rank(::google::protobuf::uint32 value) {
+  set_has_challenge_rank();
+  challenge_rank_ = value;
+  // @@protoc_insertion_point(field_set:CMsgSignOutUpdatePlayerChallenge.Challenge.challenge_rank)
 }
 
 // -------------------------------------------------------------------
@@ -26375,6 +27140,30 @@ inline void CMsgSignOutUpdatePlayerChallenge::set_match_id(::google::protobuf::u
   set_has_match_id();
   match_id_ = value;
   // @@protoc_insertion_point(field_set:CMsgSignOutUpdatePlayerChallenge.match_id)
+}
+
+// optional uint32 hero_id = 5;
+inline bool CMsgSignOutUpdatePlayerChallenge::has_hero_id() const {
+  return (_has_bits_[0] & 0x00000010u) != 0;
+}
+inline void CMsgSignOutUpdatePlayerChallenge::set_has_hero_id() {
+  _has_bits_[0] |= 0x00000010u;
+}
+inline void CMsgSignOutUpdatePlayerChallenge::clear_has_hero_id() {
+  _has_bits_[0] &= ~0x00000010u;
+}
+inline void CMsgSignOutUpdatePlayerChallenge::clear_hero_id() {
+  hero_id_ = 0u;
+  clear_has_hero_id();
+}
+inline ::google::protobuf::uint32 CMsgSignOutUpdatePlayerChallenge::hero_id() const {
+  // @@protoc_insertion_point(field_get:CMsgSignOutUpdatePlayerChallenge.hero_id)
+  return hero_id_;
+}
+inline void CMsgSignOutUpdatePlayerChallenge::set_hero_id(::google::protobuf::uint32 value) {
+  set_has_hero_id();
+  hero_id_ = value;
+  // @@protoc_insertion_point(field_set:CMsgSignOutUpdatePlayerChallenge.hero_id)
 }
 
 // -------------------------------------------------------------------
@@ -26814,7 +27603,7 @@ inline void CMsgSignOutWagerStats_Player::set_account_id(::google::protobuf::uin
   // @@protoc_insertion_point(field_set:CMsgSignOutWagerStats.Player.account_id)
 }
 
-// optional sint32 winnings = 2;
+// optional uint32 winnings = 2;
 inline bool CMsgSignOutWagerStats_Player::has_winnings() const {
   return (_has_bits_[0] & 0x00000002u) != 0;
 }
@@ -26825,14 +27614,14 @@ inline void CMsgSignOutWagerStats_Player::clear_has_winnings() {
   _has_bits_[0] &= ~0x00000002u;
 }
 inline void CMsgSignOutWagerStats_Player::clear_winnings() {
-  winnings_ = 0;
+  winnings_ = 0u;
   clear_has_winnings();
 }
-inline ::google::protobuf::int32 CMsgSignOutWagerStats_Player::winnings() const {
+inline ::google::protobuf::uint32 CMsgSignOutWagerStats_Player::winnings() const {
   // @@protoc_insertion_point(field_get:CMsgSignOutWagerStats.Player.winnings)
   return winnings_;
 }
-inline void CMsgSignOutWagerStats_Player::set_winnings(::google::protobuf::int32 value) {
+inline void CMsgSignOutWagerStats_Player::set_winnings(::google::protobuf::uint32 value) {
   set_has_winnings();
   winnings_ = value;
   // @@protoc_insertion_point(field_set:CMsgSignOutWagerStats.Player.winnings)
@@ -26860,6 +27649,30 @@ inline void CMsgSignOutWagerStats_Player::set_max_wager(::google::protobuf::uint
   set_has_max_wager();
   max_wager_ = value;
   // @@protoc_insertion_point(field_set:CMsgSignOutWagerStats.Player.max_wager)
+}
+
+// optional uint32 wager = 4;
+inline bool CMsgSignOutWagerStats_Player::has_wager() const {
+  return (_has_bits_[0] & 0x00000008u) != 0;
+}
+inline void CMsgSignOutWagerStats_Player::set_has_wager() {
+  _has_bits_[0] |= 0x00000008u;
+}
+inline void CMsgSignOutWagerStats_Player::clear_has_wager() {
+  _has_bits_[0] &= ~0x00000008u;
+}
+inline void CMsgSignOutWagerStats_Player::clear_wager() {
+  wager_ = 0u;
+  clear_has_wager();
+}
+inline ::google::protobuf::uint32 CMsgSignOutWagerStats_Player::wager() const {
+  // @@protoc_insertion_point(field_get:CMsgSignOutWagerStats.Player.wager)
+  return wager_;
+}
+inline void CMsgSignOutWagerStats_Player::set_wager(::google::protobuf::uint32 value) {
+  set_has_wager();
+  wager_ = value;
+  // @@protoc_insertion_point(field_set:CMsgSignOutWagerStats.Player.wager)
 }
 
 // -------------------------------------------------------------------
@@ -26920,6 +27733,931 @@ inline void CMsgSignOutWagerStats::set_event_id(::google::protobuf::uint32 value
   // @@protoc_insertion_point(field_set:CMsgSignOutWagerStats.event_id)
 }
 
+// -------------------------------------------------------------------
+
+// CMsgSignOutXPCoins_Player
+
+// optional uint32 account_id = 1;
+inline bool CMsgSignOutXPCoins_Player::has_account_id() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+inline void CMsgSignOutXPCoins_Player::set_has_account_id() {
+  _has_bits_[0] |= 0x00000001u;
+}
+inline void CMsgSignOutXPCoins_Player::clear_has_account_id() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+inline void CMsgSignOutXPCoins_Player::clear_account_id() {
+  account_id_ = 0u;
+  clear_has_account_id();
+}
+inline ::google::protobuf::uint32 CMsgSignOutXPCoins_Player::account_id() const {
+  // @@protoc_insertion_point(field_get:CMsgSignOutXPCoins.Player.account_id)
+  return account_id_;
+}
+inline void CMsgSignOutXPCoins_Player::set_account_id(::google::protobuf::uint32 value) {
+  set_has_account_id();
+  account_id_ = value;
+  // @@protoc_insertion_point(field_set:CMsgSignOutXPCoins.Player.account_id)
+}
+
+// optional uint32 xp_gained = 2;
+inline bool CMsgSignOutXPCoins_Player::has_xp_gained() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+inline void CMsgSignOutXPCoins_Player::set_has_xp_gained() {
+  _has_bits_[0] |= 0x00000002u;
+}
+inline void CMsgSignOutXPCoins_Player::clear_has_xp_gained() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+inline void CMsgSignOutXPCoins_Player::clear_xp_gained() {
+  xp_gained_ = 0u;
+  clear_has_xp_gained();
+}
+inline ::google::protobuf::uint32 CMsgSignOutXPCoins_Player::xp_gained() const {
+  // @@protoc_insertion_point(field_get:CMsgSignOutXPCoins.Player.xp_gained)
+  return xp_gained_;
+}
+inline void CMsgSignOutXPCoins_Player::set_xp_gained(::google::protobuf::uint32 value) {
+  set_has_xp_gained();
+  xp_gained_ = value;
+  // @@protoc_insertion_point(field_set:CMsgSignOutXPCoins.Player.xp_gained)
+}
+
+// optional uint32 coins_spent = 3;
+inline bool CMsgSignOutXPCoins_Player::has_coins_spent() const {
+  return (_has_bits_[0] & 0x00000004u) != 0;
+}
+inline void CMsgSignOutXPCoins_Player::set_has_coins_spent() {
+  _has_bits_[0] |= 0x00000004u;
+}
+inline void CMsgSignOutXPCoins_Player::clear_has_coins_spent() {
+  _has_bits_[0] &= ~0x00000004u;
+}
+inline void CMsgSignOutXPCoins_Player::clear_coins_spent() {
+  coins_spent_ = 0u;
+  clear_has_coins_spent();
+}
+inline ::google::protobuf::uint32 CMsgSignOutXPCoins_Player::coins_spent() const {
+  // @@protoc_insertion_point(field_get:CMsgSignOutXPCoins.Player.coins_spent)
+  return coins_spent_;
+}
+inline void CMsgSignOutXPCoins_Player::set_coins_spent(::google::protobuf::uint32 value) {
+  set_has_coins_spent();
+  coins_spent_ = value;
+  // @@protoc_insertion_point(field_set:CMsgSignOutXPCoins.Player.coins_spent)
+}
+
+// -------------------------------------------------------------------
+
+// CMsgSignOutXPCoins
+
+// repeated .CMsgSignOutXPCoins.Player players = 1;
+inline int CMsgSignOutXPCoins::players_size() const {
+  return players_.size();
+}
+inline void CMsgSignOutXPCoins::clear_players() {
+  players_.Clear();
+}
+inline const ::CMsgSignOutXPCoins_Player& CMsgSignOutXPCoins::players(int index) const {
+  // @@protoc_insertion_point(field_get:CMsgSignOutXPCoins.players)
+  return players_.Get(index);
+}
+inline ::CMsgSignOutXPCoins_Player* CMsgSignOutXPCoins::mutable_players(int index) {
+  // @@protoc_insertion_point(field_mutable:CMsgSignOutXPCoins.players)
+  return players_.Mutable(index);
+}
+inline ::CMsgSignOutXPCoins_Player* CMsgSignOutXPCoins::add_players() {
+  // @@protoc_insertion_point(field_add:CMsgSignOutXPCoins.players)
+  return players_.Add();
+}
+inline const ::google::protobuf::RepeatedPtrField< ::CMsgSignOutXPCoins_Player >&
+CMsgSignOutXPCoins::players() const {
+  // @@protoc_insertion_point(field_list:CMsgSignOutXPCoins.players)
+  return players_;
+}
+inline ::google::protobuf::RepeatedPtrField< ::CMsgSignOutXPCoins_Player >*
+CMsgSignOutXPCoins::mutable_players() {
+  // @@protoc_insertion_point(field_mutable_list:CMsgSignOutXPCoins.players)
+  return &players_;
+}
+
+// optional uint32 event_id = 2;
+inline bool CMsgSignOutXPCoins::has_event_id() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+inline void CMsgSignOutXPCoins::set_has_event_id() {
+  _has_bits_[0] |= 0x00000002u;
+}
+inline void CMsgSignOutXPCoins::clear_has_event_id() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+inline void CMsgSignOutXPCoins::clear_event_id() {
+  event_id_ = 0u;
+  clear_has_event_id();
+}
+inline ::google::protobuf::uint32 CMsgSignOutXPCoins::event_id() const {
+  // @@protoc_insertion_point(field_get:CMsgSignOutXPCoins.event_id)
+  return event_id_;
+}
+inline void CMsgSignOutXPCoins::set_event_id(::google::protobuf::uint32 value) {
+  set_has_event_id();
+  event_id_ = value;
+  // @@protoc_insertion_point(field_set:CMsgSignOutXPCoins.event_id)
+}
+
+// optional uint64 match_id = 3;
+inline bool CMsgSignOutXPCoins::has_match_id() const {
+  return (_has_bits_[0] & 0x00000004u) != 0;
+}
+inline void CMsgSignOutXPCoins::set_has_match_id() {
+  _has_bits_[0] |= 0x00000004u;
+}
+inline void CMsgSignOutXPCoins::clear_has_match_id() {
+  _has_bits_[0] &= ~0x00000004u;
+}
+inline void CMsgSignOutXPCoins::clear_match_id() {
+  match_id_ = GOOGLE_ULONGLONG(0);
+  clear_has_match_id();
+}
+inline ::google::protobuf::uint64 CMsgSignOutXPCoins::match_id() const {
+  // @@protoc_insertion_point(field_get:CMsgSignOutXPCoins.match_id)
+  return match_id_;
+}
+inline void CMsgSignOutXPCoins::set_match_id(::google::protobuf::uint64 value) {
+  set_has_match_id();
+  match_id_ = value;
+  // @@protoc_insertion_point(field_set:CMsgSignOutXPCoins.match_id)
+}
+
+// optional uint32 timestamp = 4;
+inline bool CMsgSignOutXPCoins::has_timestamp() const {
+  return (_has_bits_[0] & 0x00000008u) != 0;
+}
+inline void CMsgSignOutXPCoins::set_has_timestamp() {
+  _has_bits_[0] |= 0x00000008u;
+}
+inline void CMsgSignOutXPCoins::clear_has_timestamp() {
+  _has_bits_[0] &= ~0x00000008u;
+}
+inline void CMsgSignOutXPCoins::clear_timestamp() {
+  timestamp_ = 0u;
+  clear_has_timestamp();
+}
+inline ::google::protobuf::uint32 CMsgSignOutXPCoins::timestamp() const {
+  // @@protoc_insertion_point(field_get:CMsgSignOutXPCoins.timestamp)
+  return timestamp_;
+}
+inline void CMsgSignOutXPCoins::set_timestamp(::google::protobuf::uint32 value) {
+  set_has_timestamp();
+  timestamp_ = value;
+  // @@protoc_insertion_point(field_set:CMsgSignOutXPCoins.timestamp)
+}
+
+// -------------------------------------------------------------------
+
+// CMsgSignOutCommunityGoalProgress_EventGoalIncrement
+
+// optional uint32 event_goal_id = 1;
+inline bool CMsgSignOutCommunityGoalProgress_EventGoalIncrement::has_event_goal_id() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+inline void CMsgSignOutCommunityGoalProgress_EventGoalIncrement::set_has_event_goal_id() {
+  _has_bits_[0] |= 0x00000001u;
+}
+inline void CMsgSignOutCommunityGoalProgress_EventGoalIncrement::clear_has_event_goal_id() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+inline void CMsgSignOutCommunityGoalProgress_EventGoalIncrement::clear_event_goal_id() {
+  event_goal_id_ = 0u;
+  clear_has_event_goal_id();
+}
+inline ::google::protobuf::uint32 CMsgSignOutCommunityGoalProgress_EventGoalIncrement::event_goal_id() const {
+  // @@protoc_insertion_point(field_get:CMsgSignOutCommunityGoalProgress.EventGoalIncrement.event_goal_id)
+  return event_goal_id_;
+}
+inline void CMsgSignOutCommunityGoalProgress_EventGoalIncrement::set_event_goal_id(::google::protobuf::uint32 value) {
+  set_has_event_goal_id();
+  event_goal_id_ = value;
+  // @@protoc_insertion_point(field_set:CMsgSignOutCommunityGoalProgress.EventGoalIncrement.event_goal_id)
+}
+
+// optional uint32 increment_amount = 2;
+inline bool CMsgSignOutCommunityGoalProgress_EventGoalIncrement::has_increment_amount() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+inline void CMsgSignOutCommunityGoalProgress_EventGoalIncrement::set_has_increment_amount() {
+  _has_bits_[0] |= 0x00000002u;
+}
+inline void CMsgSignOutCommunityGoalProgress_EventGoalIncrement::clear_has_increment_amount() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+inline void CMsgSignOutCommunityGoalProgress_EventGoalIncrement::clear_increment_amount() {
+  increment_amount_ = 0u;
+  clear_has_increment_amount();
+}
+inline ::google::protobuf::uint32 CMsgSignOutCommunityGoalProgress_EventGoalIncrement::increment_amount() const {
+  // @@protoc_insertion_point(field_get:CMsgSignOutCommunityGoalProgress.EventGoalIncrement.increment_amount)
+  return increment_amount_;
+}
+inline void CMsgSignOutCommunityGoalProgress_EventGoalIncrement::set_increment_amount(::google::protobuf::uint32 value) {
+  set_has_increment_amount();
+  increment_amount_ = value;
+  // @@protoc_insertion_point(field_set:CMsgSignOutCommunityGoalProgress.EventGoalIncrement.increment_amount)
+}
+
+// -------------------------------------------------------------------
+
+// CMsgSignOutCommunityGoalProgress
+
+// optional uint32 event_id = 1;
+inline bool CMsgSignOutCommunityGoalProgress::has_event_id() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+inline void CMsgSignOutCommunityGoalProgress::set_has_event_id() {
+  _has_bits_[0] |= 0x00000001u;
+}
+inline void CMsgSignOutCommunityGoalProgress::clear_has_event_id() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+inline void CMsgSignOutCommunityGoalProgress::clear_event_id() {
+  event_id_ = 0u;
+  clear_has_event_id();
+}
+inline ::google::protobuf::uint32 CMsgSignOutCommunityGoalProgress::event_id() const {
+  // @@protoc_insertion_point(field_get:CMsgSignOutCommunityGoalProgress.event_id)
+  return event_id_;
+}
+inline void CMsgSignOutCommunityGoalProgress::set_event_id(::google::protobuf::uint32 value) {
+  set_has_event_id();
+  event_id_ = value;
+  // @@protoc_insertion_point(field_set:CMsgSignOutCommunityGoalProgress.event_id)
+}
+
+// repeated .CMsgSignOutCommunityGoalProgress.EventGoalIncrement event_increments = 2;
+inline int CMsgSignOutCommunityGoalProgress::event_increments_size() const {
+  return event_increments_.size();
+}
+inline void CMsgSignOutCommunityGoalProgress::clear_event_increments() {
+  event_increments_.Clear();
+}
+inline const ::CMsgSignOutCommunityGoalProgress_EventGoalIncrement& CMsgSignOutCommunityGoalProgress::event_increments(int index) const {
+  // @@protoc_insertion_point(field_get:CMsgSignOutCommunityGoalProgress.event_increments)
+  return event_increments_.Get(index);
+}
+inline ::CMsgSignOutCommunityGoalProgress_EventGoalIncrement* CMsgSignOutCommunityGoalProgress::mutable_event_increments(int index) {
+  // @@protoc_insertion_point(field_mutable:CMsgSignOutCommunityGoalProgress.event_increments)
+  return event_increments_.Mutable(index);
+}
+inline ::CMsgSignOutCommunityGoalProgress_EventGoalIncrement* CMsgSignOutCommunityGoalProgress::add_event_increments() {
+  // @@protoc_insertion_point(field_add:CMsgSignOutCommunityGoalProgress.event_increments)
+  return event_increments_.Add();
+}
+inline const ::google::protobuf::RepeatedPtrField< ::CMsgSignOutCommunityGoalProgress_EventGoalIncrement >&
+CMsgSignOutCommunityGoalProgress::event_increments() const {
+  // @@protoc_insertion_point(field_list:CMsgSignOutCommunityGoalProgress.event_increments)
+  return event_increments_;
+}
+inline ::google::protobuf::RepeatedPtrField< ::CMsgSignOutCommunityGoalProgress_EventGoalIncrement >*
+CMsgSignOutCommunityGoalProgress::mutable_event_increments() {
+  // @@protoc_insertion_point(field_mutable_list:CMsgSignOutCommunityGoalProgress.event_increments)
+  return &event_increments_;
+}
+
+// -------------------------------------------------------------------
+
+// CMsgServerToGCPostMatchTip
+
+// optional uint32 event_id = 1;
+inline bool CMsgServerToGCPostMatchTip::has_event_id() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+inline void CMsgServerToGCPostMatchTip::set_has_event_id() {
+  _has_bits_[0] |= 0x00000001u;
+}
+inline void CMsgServerToGCPostMatchTip::clear_has_event_id() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+inline void CMsgServerToGCPostMatchTip::clear_event_id() {
+  event_id_ = 0u;
+  clear_has_event_id();
+}
+inline ::google::protobuf::uint32 CMsgServerToGCPostMatchTip::event_id() const {
+  // @@protoc_insertion_point(field_get:CMsgServerToGCPostMatchTip.event_id)
+  return event_id_;
+}
+inline void CMsgServerToGCPostMatchTip::set_event_id(::google::protobuf::uint32 value) {
+  set_has_event_id();
+  event_id_ = value;
+  // @@protoc_insertion_point(field_set:CMsgServerToGCPostMatchTip.event_id)
+}
+
+// optional uint64 match_id = 2;
+inline bool CMsgServerToGCPostMatchTip::has_match_id() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+inline void CMsgServerToGCPostMatchTip::set_has_match_id() {
+  _has_bits_[0] |= 0x00000002u;
+}
+inline void CMsgServerToGCPostMatchTip::clear_has_match_id() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+inline void CMsgServerToGCPostMatchTip::clear_match_id() {
+  match_id_ = GOOGLE_ULONGLONG(0);
+  clear_has_match_id();
+}
+inline ::google::protobuf::uint64 CMsgServerToGCPostMatchTip::match_id() const {
+  // @@protoc_insertion_point(field_get:CMsgServerToGCPostMatchTip.match_id)
+  return match_id_;
+}
+inline void CMsgServerToGCPostMatchTip::set_match_id(::google::protobuf::uint64 value) {
+  set_has_match_id();
+  match_id_ = value;
+  // @@protoc_insertion_point(field_set:CMsgServerToGCPostMatchTip.match_id)
+}
+
+// optional uint32 tipper_account_id = 3;
+inline bool CMsgServerToGCPostMatchTip::has_tipper_account_id() const {
+  return (_has_bits_[0] & 0x00000004u) != 0;
+}
+inline void CMsgServerToGCPostMatchTip::set_has_tipper_account_id() {
+  _has_bits_[0] |= 0x00000004u;
+}
+inline void CMsgServerToGCPostMatchTip::clear_has_tipper_account_id() {
+  _has_bits_[0] &= ~0x00000004u;
+}
+inline void CMsgServerToGCPostMatchTip::clear_tipper_account_id() {
+  tipper_account_id_ = 0u;
+  clear_has_tipper_account_id();
+}
+inline ::google::protobuf::uint32 CMsgServerToGCPostMatchTip::tipper_account_id() const {
+  // @@protoc_insertion_point(field_get:CMsgServerToGCPostMatchTip.tipper_account_id)
+  return tipper_account_id_;
+}
+inline void CMsgServerToGCPostMatchTip::set_tipper_account_id(::google::protobuf::uint32 value) {
+  set_has_tipper_account_id();
+  tipper_account_id_ = value;
+  // @@protoc_insertion_point(field_set:CMsgServerToGCPostMatchTip.tipper_account_id)
+}
+
+// optional uint32 recipient_account_id = 4;
+inline bool CMsgServerToGCPostMatchTip::has_recipient_account_id() const {
+  return (_has_bits_[0] & 0x00000008u) != 0;
+}
+inline void CMsgServerToGCPostMatchTip::set_has_recipient_account_id() {
+  _has_bits_[0] |= 0x00000008u;
+}
+inline void CMsgServerToGCPostMatchTip::clear_has_recipient_account_id() {
+  _has_bits_[0] &= ~0x00000008u;
+}
+inline void CMsgServerToGCPostMatchTip::clear_recipient_account_id() {
+  recipient_account_id_ = 0u;
+  clear_has_recipient_account_id();
+}
+inline ::google::protobuf::uint32 CMsgServerToGCPostMatchTip::recipient_account_id() const {
+  // @@protoc_insertion_point(field_get:CMsgServerToGCPostMatchTip.recipient_account_id)
+  return recipient_account_id_;
+}
+inline void CMsgServerToGCPostMatchTip::set_recipient_account_id(::google::protobuf::uint32 value) {
+  set_has_recipient_account_id();
+  recipient_account_id_ = value;
+  // @@protoc_insertion_point(field_set:CMsgServerToGCPostMatchTip.recipient_account_id)
+}
+
+// optional uint32 tip_amount = 5;
+inline bool CMsgServerToGCPostMatchTip::has_tip_amount() const {
+  return (_has_bits_[0] & 0x00000010u) != 0;
+}
+inline void CMsgServerToGCPostMatchTip::set_has_tip_amount() {
+  _has_bits_[0] |= 0x00000010u;
+}
+inline void CMsgServerToGCPostMatchTip::clear_has_tip_amount() {
+  _has_bits_[0] &= ~0x00000010u;
+}
+inline void CMsgServerToGCPostMatchTip::clear_tip_amount() {
+  tip_amount_ = 0u;
+  clear_has_tip_amount();
+}
+inline ::google::protobuf::uint32 CMsgServerToGCPostMatchTip::tip_amount() const {
+  // @@protoc_insertion_point(field_get:CMsgServerToGCPostMatchTip.tip_amount)
+  return tip_amount_;
+}
+inline void CMsgServerToGCPostMatchTip::set_tip_amount(::google::protobuf::uint32 value) {
+  set_has_tip_amount();
+  tip_amount_ = value;
+  // @@protoc_insertion_point(field_set:CMsgServerToGCPostMatchTip.tip_amount)
+}
+
+// -------------------------------------------------------------------
+
+// CMsgServerToGCPostMatchTipResponse
+
+// optional uint64 match_id = 1;
+inline bool CMsgServerToGCPostMatchTipResponse::has_match_id() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+inline void CMsgServerToGCPostMatchTipResponse::set_has_match_id() {
+  _has_bits_[0] |= 0x00000001u;
+}
+inline void CMsgServerToGCPostMatchTipResponse::clear_has_match_id() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+inline void CMsgServerToGCPostMatchTipResponse::clear_match_id() {
+  match_id_ = GOOGLE_ULONGLONG(0);
+  clear_has_match_id();
+}
+inline ::google::protobuf::uint64 CMsgServerToGCPostMatchTipResponse::match_id() const {
+  // @@protoc_insertion_point(field_get:CMsgServerToGCPostMatchTipResponse.match_id)
+  return match_id_;
+}
+inline void CMsgServerToGCPostMatchTipResponse::set_match_id(::google::protobuf::uint64 value) {
+  set_has_match_id();
+  match_id_ = value;
+  // @@protoc_insertion_point(field_set:CMsgServerToGCPostMatchTipResponse.match_id)
+}
+
+// optional uint32 tipper_account_id = 2;
+inline bool CMsgServerToGCPostMatchTipResponse::has_tipper_account_id() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+inline void CMsgServerToGCPostMatchTipResponse::set_has_tipper_account_id() {
+  _has_bits_[0] |= 0x00000002u;
+}
+inline void CMsgServerToGCPostMatchTipResponse::clear_has_tipper_account_id() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+inline void CMsgServerToGCPostMatchTipResponse::clear_tipper_account_id() {
+  tipper_account_id_ = 0u;
+  clear_has_tipper_account_id();
+}
+inline ::google::protobuf::uint32 CMsgServerToGCPostMatchTipResponse::tipper_account_id() const {
+  // @@protoc_insertion_point(field_get:CMsgServerToGCPostMatchTipResponse.tipper_account_id)
+  return tipper_account_id_;
+}
+inline void CMsgServerToGCPostMatchTipResponse::set_tipper_account_id(::google::protobuf::uint32 value) {
+  set_has_tipper_account_id();
+  tipper_account_id_ = value;
+  // @@protoc_insertion_point(field_set:CMsgServerToGCPostMatchTipResponse.tipper_account_id)
+}
+
+// optional uint32 recipient_account_id = 3;
+inline bool CMsgServerToGCPostMatchTipResponse::has_recipient_account_id() const {
+  return (_has_bits_[0] & 0x00000004u) != 0;
+}
+inline void CMsgServerToGCPostMatchTipResponse::set_has_recipient_account_id() {
+  _has_bits_[0] |= 0x00000004u;
+}
+inline void CMsgServerToGCPostMatchTipResponse::clear_has_recipient_account_id() {
+  _has_bits_[0] &= ~0x00000004u;
+}
+inline void CMsgServerToGCPostMatchTipResponse::clear_recipient_account_id() {
+  recipient_account_id_ = 0u;
+  clear_has_recipient_account_id();
+}
+inline ::google::protobuf::uint32 CMsgServerToGCPostMatchTipResponse::recipient_account_id() const {
+  // @@protoc_insertion_point(field_get:CMsgServerToGCPostMatchTipResponse.recipient_account_id)
+  return recipient_account_id_;
+}
+inline void CMsgServerToGCPostMatchTipResponse::set_recipient_account_id(::google::protobuf::uint32 value) {
+  set_has_recipient_account_id();
+  recipient_account_id_ = value;
+  // @@protoc_insertion_point(field_set:CMsgServerToGCPostMatchTipResponse.recipient_account_id)
+}
+
+// optional .CMsgServerToGCPostMatchTipResponse.Result result = 4 [default = SUCCESS];
+inline bool CMsgServerToGCPostMatchTipResponse::has_result() const {
+  return (_has_bits_[0] & 0x00000008u) != 0;
+}
+inline void CMsgServerToGCPostMatchTipResponse::set_has_result() {
+  _has_bits_[0] |= 0x00000008u;
+}
+inline void CMsgServerToGCPostMatchTipResponse::clear_has_result() {
+  _has_bits_[0] &= ~0x00000008u;
+}
+inline void CMsgServerToGCPostMatchTipResponse::clear_result() {
+  result_ = 0;
+  clear_has_result();
+}
+inline ::CMsgServerToGCPostMatchTipResponse_Result CMsgServerToGCPostMatchTipResponse::result() const {
+  // @@protoc_insertion_point(field_get:CMsgServerToGCPostMatchTipResponse.result)
+  return static_cast< ::CMsgServerToGCPostMatchTipResponse_Result >(result_);
+}
+inline void CMsgServerToGCPostMatchTipResponse::set_result(::CMsgServerToGCPostMatchTipResponse_Result value) {
+  assert(::CMsgServerToGCPostMatchTipResponse_Result_IsValid(value));
+  set_has_result();
+  result_ = value;
+  // @@protoc_insertion_point(field_set:CMsgServerToGCPostMatchTipResponse.result)
+}
+
+// -------------------------------------------------------------------
+
+// CMsgServerToGCStartCompendiumInGamePredictions
+
+// optional uint32 league_id = 1;
+inline bool CMsgServerToGCStartCompendiumInGamePredictions::has_league_id() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+inline void CMsgServerToGCStartCompendiumInGamePredictions::set_has_league_id() {
+  _has_bits_[0] |= 0x00000001u;
+}
+inline void CMsgServerToGCStartCompendiumInGamePredictions::clear_has_league_id() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+inline void CMsgServerToGCStartCompendiumInGamePredictions::clear_league_id() {
+  league_id_ = 0u;
+  clear_has_league_id();
+}
+inline ::google::protobuf::uint32 CMsgServerToGCStartCompendiumInGamePredictions::league_id() const {
+  // @@protoc_insertion_point(field_get:CMsgServerToGCStartCompendiumInGamePredictions.league_id)
+  return league_id_;
+}
+inline void CMsgServerToGCStartCompendiumInGamePredictions::set_league_id(::google::protobuf::uint32 value) {
+  set_has_league_id();
+  league_id_ = value;
+  // @@protoc_insertion_point(field_set:CMsgServerToGCStartCompendiumInGamePredictions.league_id)
+}
+
+// optional uint64 match_id = 2;
+inline bool CMsgServerToGCStartCompendiumInGamePredictions::has_match_id() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+inline void CMsgServerToGCStartCompendiumInGamePredictions::set_has_match_id() {
+  _has_bits_[0] |= 0x00000002u;
+}
+inline void CMsgServerToGCStartCompendiumInGamePredictions::clear_has_match_id() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+inline void CMsgServerToGCStartCompendiumInGamePredictions::clear_match_id() {
+  match_id_ = GOOGLE_ULONGLONG(0);
+  clear_has_match_id();
+}
+inline ::google::protobuf::uint64 CMsgServerToGCStartCompendiumInGamePredictions::match_id() const {
+  // @@protoc_insertion_point(field_get:CMsgServerToGCStartCompendiumInGamePredictions.match_id)
+  return match_id_;
+}
+inline void CMsgServerToGCStartCompendiumInGamePredictions::set_match_id(::google::protobuf::uint64 value) {
+  set_has_match_id();
+  match_id_ = value;
+  // @@protoc_insertion_point(field_set:CMsgServerToGCStartCompendiumInGamePredictions.match_id)
+}
+
+// optional float hltv_delay = 3;
+inline bool CMsgServerToGCStartCompendiumInGamePredictions::has_hltv_delay() const {
+  return (_has_bits_[0] & 0x00000004u) != 0;
+}
+inline void CMsgServerToGCStartCompendiumInGamePredictions::set_has_hltv_delay() {
+  _has_bits_[0] |= 0x00000004u;
+}
+inline void CMsgServerToGCStartCompendiumInGamePredictions::clear_has_hltv_delay() {
+  _has_bits_[0] &= ~0x00000004u;
+}
+inline void CMsgServerToGCStartCompendiumInGamePredictions::clear_hltv_delay() {
+  hltv_delay_ = 0;
+  clear_has_hltv_delay();
+}
+inline float CMsgServerToGCStartCompendiumInGamePredictions::hltv_delay() const {
+  // @@protoc_insertion_point(field_get:CMsgServerToGCStartCompendiumInGamePredictions.hltv_delay)
+  return hltv_delay_;
+}
+inline void CMsgServerToGCStartCompendiumInGamePredictions::set_hltv_delay(float value) {
+  set_has_hltv_delay();
+  hltv_delay_ = value;
+  // @@protoc_insertion_point(field_set:CMsgServerToGCStartCompendiumInGamePredictions.hltv_delay)
+}
+
+// repeated uint32 prediction_ids = 4;
+inline int CMsgServerToGCStartCompendiumInGamePredictions::prediction_ids_size() const {
+  return prediction_ids_.size();
+}
+inline void CMsgServerToGCStartCompendiumInGamePredictions::clear_prediction_ids() {
+  prediction_ids_.Clear();
+}
+inline ::google::protobuf::uint32 CMsgServerToGCStartCompendiumInGamePredictions::prediction_ids(int index) const {
+  // @@protoc_insertion_point(field_get:CMsgServerToGCStartCompendiumInGamePredictions.prediction_ids)
+  return prediction_ids_.Get(index);
+}
+inline void CMsgServerToGCStartCompendiumInGamePredictions::set_prediction_ids(int index, ::google::protobuf::uint32 value) {
+  prediction_ids_.Set(index, value);
+  // @@protoc_insertion_point(field_set:CMsgServerToGCStartCompendiumInGamePredictions.prediction_ids)
+}
+inline void CMsgServerToGCStartCompendiumInGamePredictions::add_prediction_ids(::google::protobuf::uint32 value) {
+  prediction_ids_.Add(value);
+  // @@protoc_insertion_point(field_add:CMsgServerToGCStartCompendiumInGamePredictions.prediction_ids)
+}
+inline const ::google::protobuf::RepeatedField< ::google::protobuf::uint32 >&
+CMsgServerToGCStartCompendiumInGamePredictions::prediction_ids() const {
+  // @@protoc_insertion_point(field_list:CMsgServerToGCStartCompendiumInGamePredictions.prediction_ids)
+  return prediction_ids_;
+}
+inline ::google::protobuf::RepeatedField< ::google::protobuf::uint32 >*
+CMsgServerToGCStartCompendiumInGamePredictions::mutable_prediction_ids() {
+  // @@protoc_insertion_point(field_mutable_list:CMsgServerToGCStartCompendiumInGamePredictions.prediction_ids)
+  return &prediction_ids_;
+}
+
+// -------------------------------------------------------------------
+
+// CMsgServerToGCStartCompendiumInGamePredictionsResponse
+
+// optional bool result = 1;
+inline bool CMsgServerToGCStartCompendiumInGamePredictionsResponse::has_result() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+inline void CMsgServerToGCStartCompendiumInGamePredictionsResponse::set_has_result() {
+  _has_bits_[0] |= 0x00000001u;
+}
+inline void CMsgServerToGCStartCompendiumInGamePredictionsResponse::clear_has_result() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+inline void CMsgServerToGCStartCompendiumInGamePredictionsResponse::clear_result() {
+  result_ = false;
+  clear_has_result();
+}
+inline bool CMsgServerToGCStartCompendiumInGamePredictionsResponse::result() const {
+  // @@protoc_insertion_point(field_get:CMsgServerToGCStartCompendiumInGamePredictionsResponse.result)
+  return result_;
+}
+inline void CMsgServerToGCStartCompendiumInGamePredictionsResponse::set_result(bool value) {
+  set_has_result();
+  result_ = value;
+  // @@protoc_insertion_point(field_set:CMsgServerToGCStartCompendiumInGamePredictionsResponse.result)
+}
+
+// -------------------------------------------------------------------
+
+// CMsgServerToGCCloseCompendiumInGamePredictionVoting
+
+// optional uint64 match_id = 1;
+inline bool CMsgServerToGCCloseCompendiumInGamePredictionVoting::has_match_id() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+inline void CMsgServerToGCCloseCompendiumInGamePredictionVoting::set_has_match_id() {
+  _has_bits_[0] |= 0x00000001u;
+}
+inline void CMsgServerToGCCloseCompendiumInGamePredictionVoting::clear_has_match_id() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+inline void CMsgServerToGCCloseCompendiumInGamePredictionVoting::clear_match_id() {
+  match_id_ = GOOGLE_ULONGLONG(0);
+  clear_has_match_id();
+}
+inline ::google::protobuf::uint64 CMsgServerToGCCloseCompendiumInGamePredictionVoting::match_id() const {
+  // @@protoc_insertion_point(field_get:CMsgServerToGCCloseCompendiumInGamePredictionVoting.match_id)
+  return match_id_;
+}
+inline void CMsgServerToGCCloseCompendiumInGamePredictionVoting::set_match_id(::google::protobuf::uint64 value) {
+  set_has_match_id();
+  match_id_ = value;
+  // @@protoc_insertion_point(field_set:CMsgServerToGCCloseCompendiumInGamePredictionVoting.match_id)
+}
+
+// -------------------------------------------------------------------
+
+// CMsgServerToGCCloseCompendiumInGamePredictionVotingResponse
+
+// optional bool result = 1;
+inline bool CMsgServerToGCCloseCompendiumInGamePredictionVotingResponse::has_result() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+inline void CMsgServerToGCCloseCompendiumInGamePredictionVotingResponse::set_has_result() {
+  _has_bits_[0] |= 0x00000001u;
+}
+inline void CMsgServerToGCCloseCompendiumInGamePredictionVotingResponse::clear_has_result() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+inline void CMsgServerToGCCloseCompendiumInGamePredictionVotingResponse::clear_result() {
+  result_ = false;
+  clear_has_result();
+}
+inline bool CMsgServerToGCCloseCompendiumInGamePredictionVotingResponse::result() const {
+  // @@protoc_insertion_point(field_get:CMsgServerToGCCloseCompendiumInGamePredictionVotingResponse.result)
+  return result_;
+}
+inline void CMsgServerToGCCloseCompendiumInGamePredictionVotingResponse::set_result(bool value) {
+  set_has_result();
+  result_ = value;
+  // @@protoc_insertion_point(field_set:CMsgServerToGCCloseCompendiumInGamePredictionVotingResponse.result)
+}
+
+// -------------------------------------------------------------------
+
+// CMsgServerToGCEndCompendiumInGamePredictions
+
+// optional uint64 match_id = 1;
+inline bool CMsgServerToGCEndCompendiumInGamePredictions::has_match_id() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+inline void CMsgServerToGCEndCompendiumInGamePredictions::set_has_match_id() {
+  _has_bits_[0] |= 0x00000001u;
+}
+inline void CMsgServerToGCEndCompendiumInGamePredictions::clear_has_match_id() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+inline void CMsgServerToGCEndCompendiumInGamePredictions::clear_match_id() {
+  match_id_ = GOOGLE_ULONGLONG(0);
+  clear_has_match_id();
+}
+inline ::google::protobuf::uint64 CMsgServerToGCEndCompendiumInGamePredictions::match_id() const {
+  // @@protoc_insertion_point(field_get:CMsgServerToGCEndCompendiumInGamePredictions.match_id)
+  return match_id_;
+}
+inline void CMsgServerToGCEndCompendiumInGamePredictions::set_match_id(::google::protobuf::uint64 value) {
+  set_has_match_id();
+  match_id_ = value;
+  // @@protoc_insertion_point(field_set:CMsgServerToGCEndCompendiumInGamePredictions.match_id)
+}
+
+// -------------------------------------------------------------------
+
+// CMsgServerToGCEndCompendiumInGamePredictionsResponse
+
+// optional bool result = 1;
+inline bool CMsgServerToGCEndCompendiumInGamePredictionsResponse::has_result() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+inline void CMsgServerToGCEndCompendiumInGamePredictionsResponse::set_has_result() {
+  _has_bits_[0] |= 0x00000001u;
+}
+inline void CMsgServerToGCEndCompendiumInGamePredictionsResponse::clear_has_result() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+inline void CMsgServerToGCEndCompendiumInGamePredictionsResponse::clear_result() {
+  result_ = false;
+  clear_has_result();
+}
+inline bool CMsgServerToGCEndCompendiumInGamePredictionsResponse::result() const {
+  // @@protoc_insertion_point(field_get:CMsgServerToGCEndCompendiumInGamePredictionsResponse.result)
+  return result_;
+}
+inline void CMsgServerToGCEndCompendiumInGamePredictionsResponse::set_result(bool value) {
+  set_has_result();
+  result_ = value;
+  // @@protoc_insertion_point(field_set:CMsgServerToGCEndCompendiumInGamePredictionsResponse.result)
+}
+
+// -------------------------------------------------------------------
+
+// CMsgServerToGCCompendiumInGamePredictionResults_PredictionResult
+
+// optional uint32 prediction_id = 1;
+inline bool CMsgServerToGCCompendiumInGamePredictionResults_PredictionResult::has_prediction_id() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+inline void CMsgServerToGCCompendiumInGamePredictionResults_PredictionResult::set_has_prediction_id() {
+  _has_bits_[0] |= 0x00000001u;
+}
+inline void CMsgServerToGCCompendiumInGamePredictionResults_PredictionResult::clear_has_prediction_id() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+inline void CMsgServerToGCCompendiumInGamePredictionResults_PredictionResult::clear_prediction_id() {
+  prediction_id_ = 0u;
+  clear_has_prediction_id();
+}
+inline ::google::protobuf::uint32 CMsgServerToGCCompendiumInGamePredictionResults_PredictionResult::prediction_id() const {
+  // @@protoc_insertion_point(field_get:CMsgServerToGCCompendiumInGamePredictionResults.PredictionResult.prediction_id)
+  return prediction_id_;
+}
+inline void CMsgServerToGCCompendiumInGamePredictionResults_PredictionResult::set_prediction_id(::google::protobuf::uint32 value) {
+  set_has_prediction_id();
+  prediction_id_ = value;
+  // @@protoc_insertion_point(field_set:CMsgServerToGCCompendiumInGamePredictionResults.PredictionResult.prediction_id)
+}
+
+// optional uint32 prediction_value = 2;
+inline bool CMsgServerToGCCompendiumInGamePredictionResults_PredictionResult::has_prediction_value() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+inline void CMsgServerToGCCompendiumInGamePredictionResults_PredictionResult::set_has_prediction_value() {
+  _has_bits_[0] |= 0x00000002u;
+}
+inline void CMsgServerToGCCompendiumInGamePredictionResults_PredictionResult::clear_has_prediction_value() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+inline void CMsgServerToGCCompendiumInGamePredictionResults_PredictionResult::clear_prediction_value() {
+  prediction_value_ = 0u;
+  clear_has_prediction_value();
+}
+inline ::google::protobuf::uint32 CMsgServerToGCCompendiumInGamePredictionResults_PredictionResult::prediction_value() const {
+  // @@protoc_insertion_point(field_get:CMsgServerToGCCompendiumInGamePredictionResults.PredictionResult.prediction_value)
+  return prediction_value_;
+}
+inline void CMsgServerToGCCompendiumInGamePredictionResults_PredictionResult::set_prediction_value(::google::protobuf::uint32 value) {
+  set_has_prediction_value();
+  prediction_value_ = value;
+  // @@protoc_insertion_point(field_set:CMsgServerToGCCompendiumInGamePredictionResults.PredictionResult.prediction_value)
+}
+
+// optional bool prediction_value_is_mask = 3;
+inline bool CMsgServerToGCCompendiumInGamePredictionResults_PredictionResult::has_prediction_value_is_mask() const {
+  return (_has_bits_[0] & 0x00000004u) != 0;
+}
+inline void CMsgServerToGCCompendiumInGamePredictionResults_PredictionResult::set_has_prediction_value_is_mask() {
+  _has_bits_[0] |= 0x00000004u;
+}
+inline void CMsgServerToGCCompendiumInGamePredictionResults_PredictionResult::clear_has_prediction_value_is_mask() {
+  _has_bits_[0] &= ~0x00000004u;
+}
+inline void CMsgServerToGCCompendiumInGamePredictionResults_PredictionResult::clear_prediction_value_is_mask() {
+  prediction_value_is_mask_ = false;
+  clear_has_prediction_value_is_mask();
+}
+inline bool CMsgServerToGCCompendiumInGamePredictionResults_PredictionResult::prediction_value_is_mask() const {
+  // @@protoc_insertion_point(field_get:CMsgServerToGCCompendiumInGamePredictionResults.PredictionResult.prediction_value_is_mask)
+  return prediction_value_is_mask_;
+}
+inline void CMsgServerToGCCompendiumInGamePredictionResults_PredictionResult::set_prediction_value_is_mask(bool value) {
+  set_has_prediction_value_is_mask();
+  prediction_value_is_mask_ = value;
+  // @@protoc_insertion_point(field_set:CMsgServerToGCCompendiumInGamePredictionResults.PredictionResult.prediction_value_is_mask)
+}
+
+// -------------------------------------------------------------------
+
+// CMsgServerToGCCompendiumInGamePredictionResults
+
+// optional uint64 match_id = 1;
+inline bool CMsgServerToGCCompendiumInGamePredictionResults::has_match_id() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+inline void CMsgServerToGCCompendiumInGamePredictionResults::set_has_match_id() {
+  _has_bits_[0] |= 0x00000001u;
+}
+inline void CMsgServerToGCCompendiumInGamePredictionResults::clear_has_match_id() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+inline void CMsgServerToGCCompendiumInGamePredictionResults::clear_match_id() {
+  match_id_ = GOOGLE_ULONGLONG(0);
+  clear_has_match_id();
+}
+inline ::google::protobuf::uint64 CMsgServerToGCCompendiumInGamePredictionResults::match_id() const {
+  // @@protoc_insertion_point(field_get:CMsgServerToGCCompendiumInGamePredictionResults.match_id)
+  return match_id_;
+}
+inline void CMsgServerToGCCompendiumInGamePredictionResults::set_match_id(::google::protobuf::uint64 value) {
+  set_has_match_id();
+  match_id_ = value;
+  // @@protoc_insertion_point(field_set:CMsgServerToGCCompendiumInGamePredictionResults.match_id)
+}
+
+// repeated .CMsgServerToGCCompendiumInGamePredictionResults.PredictionResult results = 2;
+inline int CMsgServerToGCCompendiumInGamePredictionResults::results_size() const {
+  return results_.size();
+}
+inline void CMsgServerToGCCompendiumInGamePredictionResults::clear_results() {
+  results_.Clear();
+}
+inline const ::CMsgServerToGCCompendiumInGamePredictionResults_PredictionResult& CMsgServerToGCCompendiumInGamePredictionResults::results(int index) const {
+  // @@protoc_insertion_point(field_get:CMsgServerToGCCompendiumInGamePredictionResults.results)
+  return results_.Get(index);
+}
+inline ::CMsgServerToGCCompendiumInGamePredictionResults_PredictionResult* CMsgServerToGCCompendiumInGamePredictionResults::mutable_results(int index) {
+  // @@protoc_insertion_point(field_mutable:CMsgServerToGCCompendiumInGamePredictionResults.results)
+  return results_.Mutable(index);
+}
+inline ::CMsgServerToGCCompendiumInGamePredictionResults_PredictionResult* CMsgServerToGCCompendiumInGamePredictionResults::add_results() {
+  // @@protoc_insertion_point(field_add:CMsgServerToGCCompendiumInGamePredictionResults.results)
+  return results_.Add();
+}
+inline const ::google::protobuf::RepeatedPtrField< ::CMsgServerToGCCompendiumInGamePredictionResults_PredictionResult >&
+CMsgServerToGCCompendiumInGamePredictionResults::results() const {
+  // @@protoc_insertion_point(field_list:CMsgServerToGCCompendiumInGamePredictionResults.results)
+  return results_;
+}
+inline ::google::protobuf::RepeatedPtrField< ::CMsgServerToGCCompendiumInGamePredictionResults_PredictionResult >*
+CMsgServerToGCCompendiumInGamePredictionResults::mutable_results() {
+  // @@protoc_insertion_point(field_mutable_list:CMsgServerToGCCompendiumInGamePredictionResults.results)
+  return &results_;
+}
+
+// -------------------------------------------------------------------
+
+// CMsgServerToGCCompendiumInGamePredictionResultsResponse
+
+// optional bool result = 1;
+inline bool CMsgServerToGCCompendiumInGamePredictionResultsResponse::has_result() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+inline void CMsgServerToGCCompendiumInGamePredictionResultsResponse::set_has_result() {
+  _has_bits_[0] |= 0x00000001u;
+}
+inline void CMsgServerToGCCompendiumInGamePredictionResultsResponse::clear_has_result() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+inline void CMsgServerToGCCompendiumInGamePredictionResultsResponse::clear_result() {
+  result_ = false;
+  clear_has_result();
+}
+inline bool CMsgServerToGCCompendiumInGamePredictionResultsResponse::result() const {
+  // @@protoc_insertion_point(field_get:CMsgServerToGCCompendiumInGamePredictionResultsResponse.result)
+  return result_;
+}
+inline void CMsgServerToGCCompendiumInGamePredictionResultsResponse::set_result(bool value) {
+  set_has_result();
+  result_ = value;
+  // @@protoc_insertion_point(field_set:CMsgServerToGCCompendiumInGamePredictionResultsResponse.result)
+}
+
 
 // @@protoc_insertion_point(namespace_scope)
 
@@ -26937,6 +28675,11 @@ template <>
 inline const EnumDescriptor* GetEnumDescriptor< ::CMsgGameServerInfo_ServerType>() {
   return ::CMsgGameServerInfo_ServerType_descriptor();
 }
+template <> struct is_proto_enum< ::CMsgGameServerInfo_CustomGames> : ::google::protobuf::internal::true_type {};
+template <>
+inline const EnumDescriptor* GetEnumDescriptor< ::CMsgGameServerInfo_CustomGames>() {
+  return ::CMsgGameServerInfo_CustomGames_descriptor();
+}
 template <> struct is_proto_enum< ::CMsgDOTALiveScoreboardUpdate_Team_Player_DOTAUltimateState> : ::google::protobuf::internal::true_type {};
 template <>
 inline const EnumDescriptor* GetEnumDescriptor< ::CMsgDOTALiveScoreboardUpdate_Team_Player_DOTAUltimateState>() {
@@ -26951,6 +28694,11 @@ template <> struct is_proto_enum< ::CMsgGCToServerPredictionResult_Prediction_ER
 template <>
 inline const EnumDescriptor* GetEnumDescriptor< ::CMsgGCToServerPredictionResult_Prediction_EResult>() {
   return ::CMsgGCToServerPredictionResult_Prediction_EResult_descriptor();
+}
+template <> struct is_proto_enum< ::CMsgServerToGCPostMatchTipResponse_Result> : ::google::protobuf::internal::true_type {};
+template <>
+inline const EnumDescriptor* GetEnumDescriptor< ::CMsgServerToGCPostMatchTipResponse_Result>() {
+  return ::CMsgServerToGCPostMatchTipResponse_Result_descriptor();
 }
 template <> struct is_proto_enum< ::EPoorNetworkConditionsType> : ::google::protobuf::internal::true_type {};
 template <>

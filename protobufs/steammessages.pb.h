@@ -117,17 +117,19 @@ class CMsgDPPartnerMicroTxns;
 class CMsgDPPartnerMicroTxns_PartnerMicroTxn;
 class CMsgDPPartnerMicroTxns_PartnerInfo;
 class CMsgDPPartnerMicroTxnsResponse;
+class CMsgGCHVacVerificationChange;
 
 enum CMsgGCRoutingInfo_RoutingMethod {
   CMsgGCRoutingInfo_RoutingMethod_RANDOM = 0,
   CMsgGCRoutingInfo_RoutingMethod_DISCARD = 1,
   CMsgGCRoutingInfo_RoutingMethod_CLIENT_STEAMID = 2,
   CMsgGCRoutingInfo_RoutingMethod_PROTOBUF_FIELD_UINT64 = 3,
-  CMsgGCRoutingInfo_RoutingMethod_WEBAPI_PARAM_UINT64 = 4
+  CMsgGCRoutingInfo_RoutingMethod_WEBAPI_PARAM = 4,
+  CMsgGCRoutingInfo_RoutingMethod_WEBAPI_PARAM_STEAMID_ACCOUNTID = 5
 };
 bool CMsgGCRoutingInfo_RoutingMethod_IsValid(int value);
 const CMsgGCRoutingInfo_RoutingMethod CMsgGCRoutingInfo_RoutingMethod_RoutingMethod_MIN = CMsgGCRoutingInfo_RoutingMethod_RANDOM;
-const CMsgGCRoutingInfo_RoutingMethod CMsgGCRoutingInfo_RoutingMethod_RoutingMethod_MAX = CMsgGCRoutingInfo_RoutingMethod_WEBAPI_PARAM_UINT64;
+const CMsgGCRoutingInfo_RoutingMethod CMsgGCRoutingInfo_RoutingMethod_RoutingMethod_MAX = CMsgGCRoutingInfo_RoutingMethod_WEBAPI_PARAM_STEAMID_ACCOUNTID;
 const int CMsgGCRoutingInfo_RoutingMethod_RoutingMethod_ARRAYSIZE = CMsgGCRoutingInfo_RoutingMethod_RoutingMethod_MAX + 1;
 
 const ::google::protobuf::EnumDescriptor* CMsgGCRoutingInfo_RoutingMethod_descriptor();
@@ -211,11 +213,12 @@ enum GCProtoBufMsgSrc {
   GCProtoBufMsgSrc_FromSystem = 1,
   GCProtoBufMsgSrc_FromSteamID = 2,
   GCProtoBufMsgSrc_FromGC = 3,
-  GCProtoBufMsgSrc_ReplySystem = 4
+  GCProtoBufMsgSrc_ReplySystem = 4,
+  GCProtoBufMsgSrc_SpoofedSteamID = 5
 };
 bool GCProtoBufMsgSrc_IsValid(int value);
 const GCProtoBufMsgSrc GCProtoBufMsgSrc_MIN = GCProtoBufMsgSrc_Unspecified;
-const GCProtoBufMsgSrc GCProtoBufMsgSrc_MAX = GCProtoBufMsgSrc_ReplySystem;
+const GCProtoBufMsgSrc GCProtoBufMsgSrc_MAX = GCProtoBufMsgSrc_SpoofedSteamID;
 const int GCProtoBufMsgSrc_ARRAYSIZE = GCProtoBufMsgSrc_MAX + 1;
 
 const ::google::protobuf::EnumDescriptor* GCProtoBufMsgSrc_descriptor();
@@ -1516,13 +1519,6 @@ class CMsgNotifyWatchdog : public ::google::protobuf::Message {
   inline ::google::protobuf::uint32 alert_type() const;
   inline void set_alert_type(::google::protobuf::uint32 value);
 
-  // optional uint32 alert_destination = 3;
-  inline bool has_alert_destination() const;
-  inline void clear_alert_destination();
-  static const int kAlertDestinationFieldNumber = 3;
-  inline ::google::protobuf::uint32 alert_destination() const;
-  inline void set_alert_destination(::google::protobuf::uint32 value);
-
   // optional bool critical = 4;
   inline bool has_critical() const;
   inline void clear_critical();
@@ -1556,14 +1552,24 @@ class CMsgNotifyWatchdog : public ::google::protobuf::Message {
   inline ::std::string* release_text();
   inline void set_allocated_text(::std::string* text);
 
+  // optional string recipient = 12;
+  inline bool has_recipient() const;
+  inline void clear_recipient();
+  static const int kRecipientFieldNumber = 12;
+  inline const ::std::string& recipient() const;
+  inline void set_recipient(const ::std::string& value);
+  inline void set_recipient(const char* value);
+  inline void set_recipient(const char* value, size_t size);
+  inline ::std::string* mutable_recipient();
+  inline ::std::string* release_recipient();
+  inline void set_allocated_recipient(::std::string* recipient);
+
   // @@protoc_insertion_point(class_scope:CMsgNotifyWatchdog)
  private:
   inline void set_has_source();
   inline void clear_has_source();
   inline void set_has_alert_type();
   inline void clear_has_alert_type();
-  inline void set_has_alert_destination();
-  inline void clear_has_alert_destination();
   inline void set_has_critical();
   inline void clear_has_critical();
   inline void set_has_time();
@@ -1572,6 +1578,8 @@ class CMsgNotifyWatchdog : public ::google::protobuf::Message {
   inline void clear_has_appid();
   inline void set_has_text();
   inline void clear_has_text();
+  inline void set_has_recipient();
+  inline void clear_has_recipient();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
@@ -1579,11 +1587,11 @@ class CMsgNotifyWatchdog : public ::google::protobuf::Message {
   mutable int _cached_size_;
   ::google::protobuf::uint32 source_;
   ::google::protobuf::uint32 alert_type_;
-  ::google::protobuf::uint32 alert_destination_;
   bool critical_;
   ::google::protobuf::uint32 time_;
-  ::google::protobuf::uint32 appid_;
   ::std::string* text_;
+  ::std::string* recipient_;
+  ::google::protobuf::uint32 appid_;
   friend void  protobuf_AddDesc_steammessages_2eproto();
   friend void protobuf_AssignDesc_steammessages_2eproto();
   friend void protobuf_ShutdownFile_steammessages_2eproto();
@@ -5814,6 +5822,55 @@ class CGCSystemMsg_GetAccountDetails_Response : public ::google::protobuf::Messa
   inline ::google::protobuf::uint32 account_creation_time() const;
   inline void set_account_creation_time(::google::protobuf::uint32 value);
 
+  // optional bool is_steamguard_enabled = 27;
+  inline bool has_is_steamguard_enabled() const;
+  inline void clear_is_steamguard_enabled();
+  static const int kIsSteamguardEnabledFieldNumber = 27;
+  inline bool is_steamguard_enabled() const;
+  inline void set_is_steamguard_enabled(bool value);
+
+  // optional bool is_phone_verified = 28;
+  inline bool has_is_phone_verified() const;
+  inline void clear_is_phone_verified();
+  static const int kIsPhoneVerifiedFieldNumber = 28;
+  inline bool is_phone_verified() const;
+  inline void set_is_phone_verified(bool value);
+
+  // optional bool is_two_factor_auth_enabled = 29;
+  inline bool has_is_two_factor_auth_enabled() const;
+  inline void clear_is_two_factor_auth_enabled();
+  static const int kIsTwoFactorAuthEnabledFieldNumber = 29;
+  inline bool is_two_factor_auth_enabled() const;
+  inline void set_is_two_factor_auth_enabled(bool value);
+
+  // optional uint32 two_factor_enabled_time = 30;
+  inline bool has_two_factor_enabled_time() const;
+  inline void clear_two_factor_enabled_time();
+  static const int kTwoFactorEnabledTimeFieldNumber = 30;
+  inline ::google::protobuf::uint32 two_factor_enabled_time() const;
+  inline void set_two_factor_enabled_time(::google::protobuf::uint32 value);
+
+  // optional uint32 phone_verification_time = 31;
+  inline bool has_phone_verification_time() const;
+  inline void clear_phone_verification_time();
+  static const int kPhoneVerificationTimeFieldNumber = 31;
+  inline ::google::protobuf::uint32 phone_verification_time() const;
+  inline void set_phone_verification_time(::google::protobuf::uint32 value);
+
+  // optional uint64 phone_id = 33;
+  inline bool has_phone_id() const;
+  inline void clear_phone_id();
+  static const int kPhoneIdFieldNumber = 33;
+  inline ::google::protobuf::uint64 phone_id() const;
+  inline void set_phone_id(::google::protobuf::uint64 value);
+
+  // optional bool is_phone_identifying = 34;
+  inline bool has_is_phone_identifying() const;
+  inline void clear_is_phone_identifying();
+  static const int kIsPhoneIdentifyingFieldNumber = 34;
+  inline bool is_phone_identifying() const;
+  inline void set_is_phone_identifying(bool value);
+
   // @@protoc_insertion_point(class_scope:CGCSystemMsg_GetAccountDetails_Response)
  private:
   inline void set_has_eresult_deprecated();
@@ -5866,6 +5923,20 @@ class CGCSystemMsg_GetAccountDetails_Response : public ::google::protobuf::Messa
   inline void clear_has_friend_count();
   inline void set_has_account_creation_time();
   inline void clear_has_account_creation_time();
+  inline void set_has_is_steamguard_enabled();
+  inline void clear_has_is_steamguard_enabled();
+  inline void set_has_is_phone_verified();
+  inline void clear_has_is_phone_verified();
+  inline void set_has_is_two_factor_auth_enabled();
+  inline void clear_has_is_two_factor_auth_enabled();
+  inline void set_has_two_factor_enabled_time();
+  inline void clear_has_two_factor_enabled_time();
+  inline void set_has_phone_verification_time();
+  inline void clear_has_phone_verification_time();
+  inline void set_has_phone_id();
+  inline void clear_has_phone_id();
+  inline void set_has_is_phone_identifying();
+  inline void clear_has_is_phone_identifying();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
@@ -5888,14 +5959,21 @@ class CGCSystemMsg_GetAccountDetails_Response : public ::google::protobuf::Messa
   bool is_low_violence_;
   bool is_account_locked_down_;
   bool is_community_banned_;
-  bool is_trade_banned_;
   ::google::protobuf::uint32 trade_ban_expiration_;
   ::google::protobuf::uint32 accountid_;
-  ::google::protobuf::uint32 suspension_end_time_;
   ::std::string* currency_;
+  ::google::protobuf::uint32 suspension_end_time_;
   ::google::protobuf::uint32 steam_level_;
   ::google::protobuf::uint32 friend_count_;
+  bool is_trade_banned_;
+  bool is_steamguard_enabled_;
+  bool is_phone_verified_;
+  bool is_two_factor_auth_enabled_;
   ::google::protobuf::uint32 account_creation_time_;
+  ::google::protobuf::uint32 two_factor_enabled_time_;
+  ::google::protobuf::uint64 phone_id_;
+  ::google::protobuf::uint32 phone_verification_time_;
+  bool is_phone_identifying_;
   friend void  protobuf_AddDesc_steammessages_2eproto();
   friend void protobuf_AssignDesc_steammessages_2eproto();
   friend void protobuf_ShutdownFile_steammessages_2eproto();
@@ -6416,16 +6494,26 @@ class CMsgGCGetAppFriendsList : public ::google::protobuf::Message {
   inline ::google::protobuf::uint64 steamid() const;
   inline void set_steamid(::google::protobuf::uint64 value);
 
+  // optional bool include_friendship_timestamps = 2;
+  inline bool has_include_friendship_timestamps() const;
+  inline void clear_include_friendship_timestamps();
+  static const int kIncludeFriendshipTimestampsFieldNumber = 2;
+  inline bool include_friendship_timestamps() const;
+  inline void set_include_friendship_timestamps(bool value);
+
   // @@protoc_insertion_point(class_scope:CMsgGCGetAppFriendsList)
  private:
   inline void set_has_steamid();
   inline void clear_has_steamid();
+  inline void set_has_include_friendship_timestamps();
+  inline void clear_has_include_friendship_timestamps();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
   ::google::protobuf::uint32 _has_bits_[1];
   mutable int _cached_size_;
   ::google::protobuf::uint64 steamid_;
+  bool include_friendship_timestamps_;
   friend void  protobuf_AddDesc_steammessages_2eproto();
   friend void protobuf_AssignDesc_steammessages_2eproto();
   friend void protobuf_ShutdownFile_steammessages_2eproto();
@@ -6507,6 +6595,18 @@ class CMsgGCGetAppFriendsList_Response : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedField< ::google::protobuf::uint64 >*
       mutable_steamids();
 
+  // repeated fixed32 friendship_timestamps = 3;
+  inline int friendship_timestamps_size() const;
+  inline void clear_friendship_timestamps();
+  static const int kFriendshipTimestampsFieldNumber = 3;
+  inline ::google::protobuf::uint32 friendship_timestamps(int index) const;
+  inline void set_friendship_timestamps(int index, ::google::protobuf::uint32 value);
+  inline void add_friendship_timestamps(::google::protobuf::uint32 value);
+  inline const ::google::protobuf::RepeatedField< ::google::protobuf::uint32 >&
+      friendship_timestamps() const;
+  inline ::google::protobuf::RepeatedField< ::google::protobuf::uint32 >*
+      mutable_friendship_timestamps();
+
   // @@protoc_insertion_point(class_scope:CMsgGCGetAppFriendsList_Response)
  private:
   inline void set_has_success();
@@ -6517,6 +6617,7 @@ class CMsgGCGetAppFriendsList_Response : public ::google::protobuf::Message {
   ::google::protobuf::uint32 _has_bits_[1];
   mutable int _cached_size_;
   ::google::protobuf::RepeatedField< ::google::protobuf::uint64 > steamids_;
+  ::google::protobuf::RepeatedField< ::google::protobuf::uint32 > friendship_timestamps_;
   bool success_;
   friend void  protobuf_AddDesc_steammessages_2eproto();
   friend void protobuf_AssignDesc_steammessages_2eproto();
@@ -6820,15 +6921,30 @@ class CMsgGCMsgMasterSetDirectory_Response : public ::google::protobuf::Message 
   inline ::google::protobuf::int32 eresult() const;
   inline void set_eresult(::google::protobuf::int32 value);
 
+  // optional string message = 2;
+  inline bool has_message() const;
+  inline void clear_message();
+  static const int kMessageFieldNumber = 2;
+  inline const ::std::string& message() const;
+  inline void set_message(const ::std::string& value);
+  inline void set_message(const char* value);
+  inline void set_message(const char* value, size_t size);
+  inline ::std::string* mutable_message();
+  inline ::std::string* release_message();
+  inline void set_allocated_message(::std::string* message);
+
   // @@protoc_insertion_point(class_scope:CMsgGCMsgMasterSetDirectory_Response)
  private:
   inline void set_has_eresult();
   inline void clear_has_eresult();
+  inline void set_has_message();
+  inline void clear_has_message();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
   ::google::protobuf::uint32 _has_bits_[1];
   mutable int _cached_size_;
+  ::std::string* message_;
   ::google::protobuf::int32 eresult_;
   friend void  protobuf_AddDesc_steammessages_2eproto();
   friend void protobuf_AssignDesc_steammessages_2eproto();
@@ -7449,7 +7565,8 @@ class CMsgGCRoutingInfo : public ::google::protobuf::Message {
   static const RoutingMethod DISCARD = CMsgGCRoutingInfo_RoutingMethod_DISCARD;
   static const RoutingMethod CLIENT_STEAMID = CMsgGCRoutingInfo_RoutingMethod_CLIENT_STEAMID;
   static const RoutingMethod PROTOBUF_FIELD_UINT64 = CMsgGCRoutingInfo_RoutingMethod_PROTOBUF_FIELD_UINT64;
-  static const RoutingMethod WEBAPI_PARAM_UINT64 = CMsgGCRoutingInfo_RoutingMethod_WEBAPI_PARAM_UINT64;
+  static const RoutingMethod WEBAPI_PARAM = CMsgGCRoutingInfo_RoutingMethod_WEBAPI_PARAM;
+  static const RoutingMethod WEBAPI_PARAM_STEAMID_ACCOUNTID = CMsgGCRoutingInfo_RoutingMethod_WEBAPI_PARAM_STEAMID_ACCOUNTID;
   static inline bool RoutingMethod_IsValid(int value) {
     return CMsgGCRoutingInfo_RoutingMethod_IsValid(value);
   }
@@ -9389,6 +9506,105 @@ class CMsgDPPartnerMicroTxnsResponse : public ::google::protobuf::Message {
 
   void InitAsDefaultInstance();
   static CMsgDPPartnerMicroTxnsResponse* default_instance_;
+};
+// -------------------------------------------------------------------
+
+class CMsgGCHVacVerificationChange : public ::google::protobuf::Message {
+ public:
+  CMsgGCHVacVerificationChange();
+  virtual ~CMsgGCHVacVerificationChange();
+
+  CMsgGCHVacVerificationChange(const CMsgGCHVacVerificationChange& from);
+
+  inline CMsgGCHVacVerificationChange& operator=(const CMsgGCHVacVerificationChange& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+    return _unknown_fields_;
+  }
+
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+    return &_unknown_fields_;
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const CMsgGCHVacVerificationChange& default_instance();
+
+  void Swap(CMsgGCHVacVerificationChange* other);
+
+  // implements Message ----------------------------------------------
+
+  CMsgGCHVacVerificationChange* New() const;
+  void CopyFrom(const ::google::protobuf::Message& from);
+  void MergeFrom(const ::google::protobuf::Message& from);
+  void CopyFrom(const CMsgGCHVacVerificationChange& from);
+  void MergeFrom(const CMsgGCHVacVerificationChange& from);
+  void Clear();
+  bool IsInitialized() const;
+
+  int ByteSize() const;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input);
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  int GetCachedSize() const { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const;
+  public:
+  ::google::protobuf::Metadata GetMetadata() const;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // optional fixed64 steamid = 1;
+  inline bool has_steamid() const;
+  inline void clear_steamid();
+  static const int kSteamidFieldNumber = 1;
+  inline ::google::protobuf::uint64 steamid() const;
+  inline void set_steamid(::google::protobuf::uint64 value);
+
+  // optional uint32 appid = 2;
+  inline bool has_appid() const;
+  inline void clear_appid();
+  static const int kAppidFieldNumber = 2;
+  inline ::google::protobuf::uint32 appid() const;
+  inline void set_appid(::google::protobuf::uint32 value);
+
+  // optional bool is_verified = 3;
+  inline bool has_is_verified() const;
+  inline void clear_is_verified();
+  static const int kIsVerifiedFieldNumber = 3;
+  inline bool is_verified() const;
+  inline void set_is_verified(bool value);
+
+  // @@protoc_insertion_point(class_scope:CMsgGCHVacVerificationChange)
+ private:
+  inline void set_has_steamid();
+  inline void clear_has_steamid();
+  inline void set_has_appid();
+  inline void clear_has_appid();
+  inline void set_has_is_verified();
+  inline void clear_has_is_verified();
+
+  ::google::protobuf::UnknownFieldSet _unknown_fields_;
+
+  ::google::protobuf::uint32 _has_bits_[1];
+  mutable int _cached_size_;
+  ::google::protobuf::uint64 steamid_;
+  ::google::protobuf::uint32 appid_;
+  bool is_verified_;
+  friend void  protobuf_AddDesc_steammessages_2eproto();
+  friend void protobuf_AssignDesc_steammessages_2eproto();
+  friend void protobuf_ShutdownFile_steammessages_2eproto();
+
+  void InitAsDefaultInstance();
+  static CMsgGCHVacVerificationChange* default_instance_;
 };
 // ===================================================================
 
@@ -11454,39 +11670,15 @@ inline void CMsgNotifyWatchdog::set_alert_type(::google::protobuf::uint32 value)
   // @@protoc_insertion_point(field_set:CMsgNotifyWatchdog.alert_type)
 }
 
-// optional uint32 alert_destination = 3;
-inline bool CMsgNotifyWatchdog::has_alert_destination() const {
-  return (_has_bits_[0] & 0x00000004u) != 0;
-}
-inline void CMsgNotifyWatchdog::set_has_alert_destination() {
-  _has_bits_[0] |= 0x00000004u;
-}
-inline void CMsgNotifyWatchdog::clear_has_alert_destination() {
-  _has_bits_[0] &= ~0x00000004u;
-}
-inline void CMsgNotifyWatchdog::clear_alert_destination() {
-  alert_destination_ = 0u;
-  clear_has_alert_destination();
-}
-inline ::google::protobuf::uint32 CMsgNotifyWatchdog::alert_destination() const {
-  // @@protoc_insertion_point(field_get:CMsgNotifyWatchdog.alert_destination)
-  return alert_destination_;
-}
-inline void CMsgNotifyWatchdog::set_alert_destination(::google::protobuf::uint32 value) {
-  set_has_alert_destination();
-  alert_destination_ = value;
-  // @@protoc_insertion_point(field_set:CMsgNotifyWatchdog.alert_destination)
-}
-
 // optional bool critical = 4;
 inline bool CMsgNotifyWatchdog::has_critical() const {
-  return (_has_bits_[0] & 0x00000008u) != 0;
+  return (_has_bits_[0] & 0x00000004u) != 0;
 }
 inline void CMsgNotifyWatchdog::set_has_critical() {
-  _has_bits_[0] |= 0x00000008u;
+  _has_bits_[0] |= 0x00000004u;
 }
 inline void CMsgNotifyWatchdog::clear_has_critical() {
-  _has_bits_[0] &= ~0x00000008u;
+  _has_bits_[0] &= ~0x00000004u;
 }
 inline void CMsgNotifyWatchdog::clear_critical() {
   critical_ = false;
@@ -11504,13 +11696,13 @@ inline void CMsgNotifyWatchdog::set_critical(bool value) {
 
 // optional uint32 time = 5;
 inline bool CMsgNotifyWatchdog::has_time() const {
-  return (_has_bits_[0] & 0x00000010u) != 0;
+  return (_has_bits_[0] & 0x00000008u) != 0;
 }
 inline void CMsgNotifyWatchdog::set_has_time() {
-  _has_bits_[0] |= 0x00000010u;
+  _has_bits_[0] |= 0x00000008u;
 }
 inline void CMsgNotifyWatchdog::clear_has_time() {
-  _has_bits_[0] &= ~0x00000010u;
+  _has_bits_[0] &= ~0x00000008u;
 }
 inline void CMsgNotifyWatchdog::clear_time() {
   time_ = 0u;
@@ -11528,13 +11720,13 @@ inline void CMsgNotifyWatchdog::set_time(::google::protobuf::uint32 value) {
 
 // optional uint32 appid = 6;
 inline bool CMsgNotifyWatchdog::has_appid() const {
-  return (_has_bits_[0] & 0x00000020u) != 0;
+  return (_has_bits_[0] & 0x00000010u) != 0;
 }
 inline void CMsgNotifyWatchdog::set_has_appid() {
-  _has_bits_[0] |= 0x00000020u;
+  _has_bits_[0] |= 0x00000010u;
 }
 inline void CMsgNotifyWatchdog::clear_has_appid() {
-  _has_bits_[0] &= ~0x00000020u;
+  _has_bits_[0] &= ~0x00000010u;
 }
 inline void CMsgNotifyWatchdog::clear_appid() {
   appid_ = 0u;
@@ -11552,13 +11744,13 @@ inline void CMsgNotifyWatchdog::set_appid(::google::protobuf::uint32 value) {
 
 // optional string text = 7;
 inline bool CMsgNotifyWatchdog::has_text() const {
-  return (_has_bits_[0] & 0x00000040u) != 0;
+  return (_has_bits_[0] & 0x00000020u) != 0;
 }
 inline void CMsgNotifyWatchdog::set_has_text() {
-  _has_bits_[0] |= 0x00000040u;
+  _has_bits_[0] |= 0x00000020u;
 }
 inline void CMsgNotifyWatchdog::clear_has_text() {
-  _has_bits_[0] &= ~0x00000040u;
+  _has_bits_[0] &= ~0x00000020u;
 }
 inline void CMsgNotifyWatchdog::clear_text() {
   if (text_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
@@ -11624,6 +11816,82 @@ inline void CMsgNotifyWatchdog::set_allocated_text(::std::string* text) {
     text_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   }
   // @@protoc_insertion_point(field_set_allocated:CMsgNotifyWatchdog.text)
+}
+
+// optional string recipient = 12;
+inline bool CMsgNotifyWatchdog::has_recipient() const {
+  return (_has_bits_[0] & 0x00000040u) != 0;
+}
+inline void CMsgNotifyWatchdog::set_has_recipient() {
+  _has_bits_[0] |= 0x00000040u;
+}
+inline void CMsgNotifyWatchdog::clear_has_recipient() {
+  _has_bits_[0] &= ~0x00000040u;
+}
+inline void CMsgNotifyWatchdog::clear_recipient() {
+  if (recipient_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    recipient_->clear();
+  }
+  clear_has_recipient();
+}
+inline const ::std::string& CMsgNotifyWatchdog::recipient() const {
+  // @@protoc_insertion_point(field_get:CMsgNotifyWatchdog.recipient)
+  return *recipient_;
+}
+inline void CMsgNotifyWatchdog::set_recipient(const ::std::string& value) {
+  set_has_recipient();
+  if (recipient_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    recipient_ = new ::std::string;
+  }
+  recipient_->assign(value);
+  // @@protoc_insertion_point(field_set:CMsgNotifyWatchdog.recipient)
+}
+inline void CMsgNotifyWatchdog::set_recipient(const char* value) {
+  set_has_recipient();
+  if (recipient_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    recipient_ = new ::std::string;
+  }
+  recipient_->assign(value);
+  // @@protoc_insertion_point(field_set_char:CMsgNotifyWatchdog.recipient)
+}
+inline void CMsgNotifyWatchdog::set_recipient(const char* value, size_t size) {
+  set_has_recipient();
+  if (recipient_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    recipient_ = new ::std::string;
+  }
+  recipient_->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:CMsgNotifyWatchdog.recipient)
+}
+inline ::std::string* CMsgNotifyWatchdog::mutable_recipient() {
+  set_has_recipient();
+  if (recipient_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    recipient_ = new ::std::string;
+  }
+  // @@protoc_insertion_point(field_mutable:CMsgNotifyWatchdog.recipient)
+  return recipient_;
+}
+inline ::std::string* CMsgNotifyWatchdog::release_recipient() {
+  clear_has_recipient();
+  if (recipient_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    return NULL;
+  } else {
+    ::std::string* temp = recipient_;
+    recipient_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    return temp;
+  }
+}
+inline void CMsgNotifyWatchdog::set_allocated_recipient(::std::string* recipient) {
+  if (recipient_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete recipient_;
+  }
+  if (recipient) {
+    set_has_recipient();
+    recipient_ = recipient;
+  } else {
+    clear_has_recipient();
+    recipient_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_set_allocated:CMsgNotifyWatchdog.recipient)
 }
 
 // -------------------------------------------------------------------
@@ -16192,6 +16460,174 @@ inline void CGCSystemMsg_GetAccountDetails_Response::set_account_creation_time(:
   // @@protoc_insertion_point(field_set:CGCSystemMsg_GetAccountDetails_Response.account_creation_time)
 }
 
+// optional bool is_steamguard_enabled = 27;
+inline bool CGCSystemMsg_GetAccountDetails_Response::has_is_steamguard_enabled() const {
+  return (_has_bits_[0] & 0x02000000u) != 0;
+}
+inline void CGCSystemMsg_GetAccountDetails_Response::set_has_is_steamguard_enabled() {
+  _has_bits_[0] |= 0x02000000u;
+}
+inline void CGCSystemMsg_GetAccountDetails_Response::clear_has_is_steamguard_enabled() {
+  _has_bits_[0] &= ~0x02000000u;
+}
+inline void CGCSystemMsg_GetAccountDetails_Response::clear_is_steamguard_enabled() {
+  is_steamguard_enabled_ = false;
+  clear_has_is_steamguard_enabled();
+}
+inline bool CGCSystemMsg_GetAccountDetails_Response::is_steamguard_enabled() const {
+  // @@protoc_insertion_point(field_get:CGCSystemMsg_GetAccountDetails_Response.is_steamguard_enabled)
+  return is_steamguard_enabled_;
+}
+inline void CGCSystemMsg_GetAccountDetails_Response::set_is_steamguard_enabled(bool value) {
+  set_has_is_steamguard_enabled();
+  is_steamguard_enabled_ = value;
+  // @@protoc_insertion_point(field_set:CGCSystemMsg_GetAccountDetails_Response.is_steamguard_enabled)
+}
+
+// optional bool is_phone_verified = 28;
+inline bool CGCSystemMsg_GetAccountDetails_Response::has_is_phone_verified() const {
+  return (_has_bits_[0] & 0x04000000u) != 0;
+}
+inline void CGCSystemMsg_GetAccountDetails_Response::set_has_is_phone_verified() {
+  _has_bits_[0] |= 0x04000000u;
+}
+inline void CGCSystemMsg_GetAccountDetails_Response::clear_has_is_phone_verified() {
+  _has_bits_[0] &= ~0x04000000u;
+}
+inline void CGCSystemMsg_GetAccountDetails_Response::clear_is_phone_verified() {
+  is_phone_verified_ = false;
+  clear_has_is_phone_verified();
+}
+inline bool CGCSystemMsg_GetAccountDetails_Response::is_phone_verified() const {
+  // @@protoc_insertion_point(field_get:CGCSystemMsg_GetAccountDetails_Response.is_phone_verified)
+  return is_phone_verified_;
+}
+inline void CGCSystemMsg_GetAccountDetails_Response::set_is_phone_verified(bool value) {
+  set_has_is_phone_verified();
+  is_phone_verified_ = value;
+  // @@protoc_insertion_point(field_set:CGCSystemMsg_GetAccountDetails_Response.is_phone_verified)
+}
+
+// optional bool is_two_factor_auth_enabled = 29;
+inline bool CGCSystemMsg_GetAccountDetails_Response::has_is_two_factor_auth_enabled() const {
+  return (_has_bits_[0] & 0x08000000u) != 0;
+}
+inline void CGCSystemMsg_GetAccountDetails_Response::set_has_is_two_factor_auth_enabled() {
+  _has_bits_[0] |= 0x08000000u;
+}
+inline void CGCSystemMsg_GetAccountDetails_Response::clear_has_is_two_factor_auth_enabled() {
+  _has_bits_[0] &= ~0x08000000u;
+}
+inline void CGCSystemMsg_GetAccountDetails_Response::clear_is_two_factor_auth_enabled() {
+  is_two_factor_auth_enabled_ = false;
+  clear_has_is_two_factor_auth_enabled();
+}
+inline bool CGCSystemMsg_GetAccountDetails_Response::is_two_factor_auth_enabled() const {
+  // @@protoc_insertion_point(field_get:CGCSystemMsg_GetAccountDetails_Response.is_two_factor_auth_enabled)
+  return is_two_factor_auth_enabled_;
+}
+inline void CGCSystemMsg_GetAccountDetails_Response::set_is_two_factor_auth_enabled(bool value) {
+  set_has_is_two_factor_auth_enabled();
+  is_two_factor_auth_enabled_ = value;
+  // @@protoc_insertion_point(field_set:CGCSystemMsg_GetAccountDetails_Response.is_two_factor_auth_enabled)
+}
+
+// optional uint32 two_factor_enabled_time = 30;
+inline bool CGCSystemMsg_GetAccountDetails_Response::has_two_factor_enabled_time() const {
+  return (_has_bits_[0] & 0x10000000u) != 0;
+}
+inline void CGCSystemMsg_GetAccountDetails_Response::set_has_two_factor_enabled_time() {
+  _has_bits_[0] |= 0x10000000u;
+}
+inline void CGCSystemMsg_GetAccountDetails_Response::clear_has_two_factor_enabled_time() {
+  _has_bits_[0] &= ~0x10000000u;
+}
+inline void CGCSystemMsg_GetAccountDetails_Response::clear_two_factor_enabled_time() {
+  two_factor_enabled_time_ = 0u;
+  clear_has_two_factor_enabled_time();
+}
+inline ::google::protobuf::uint32 CGCSystemMsg_GetAccountDetails_Response::two_factor_enabled_time() const {
+  // @@protoc_insertion_point(field_get:CGCSystemMsg_GetAccountDetails_Response.two_factor_enabled_time)
+  return two_factor_enabled_time_;
+}
+inline void CGCSystemMsg_GetAccountDetails_Response::set_two_factor_enabled_time(::google::protobuf::uint32 value) {
+  set_has_two_factor_enabled_time();
+  two_factor_enabled_time_ = value;
+  // @@protoc_insertion_point(field_set:CGCSystemMsg_GetAccountDetails_Response.two_factor_enabled_time)
+}
+
+// optional uint32 phone_verification_time = 31;
+inline bool CGCSystemMsg_GetAccountDetails_Response::has_phone_verification_time() const {
+  return (_has_bits_[0] & 0x20000000u) != 0;
+}
+inline void CGCSystemMsg_GetAccountDetails_Response::set_has_phone_verification_time() {
+  _has_bits_[0] |= 0x20000000u;
+}
+inline void CGCSystemMsg_GetAccountDetails_Response::clear_has_phone_verification_time() {
+  _has_bits_[0] &= ~0x20000000u;
+}
+inline void CGCSystemMsg_GetAccountDetails_Response::clear_phone_verification_time() {
+  phone_verification_time_ = 0u;
+  clear_has_phone_verification_time();
+}
+inline ::google::protobuf::uint32 CGCSystemMsg_GetAccountDetails_Response::phone_verification_time() const {
+  // @@protoc_insertion_point(field_get:CGCSystemMsg_GetAccountDetails_Response.phone_verification_time)
+  return phone_verification_time_;
+}
+inline void CGCSystemMsg_GetAccountDetails_Response::set_phone_verification_time(::google::protobuf::uint32 value) {
+  set_has_phone_verification_time();
+  phone_verification_time_ = value;
+  // @@protoc_insertion_point(field_set:CGCSystemMsg_GetAccountDetails_Response.phone_verification_time)
+}
+
+// optional uint64 phone_id = 33;
+inline bool CGCSystemMsg_GetAccountDetails_Response::has_phone_id() const {
+  return (_has_bits_[0] & 0x40000000u) != 0;
+}
+inline void CGCSystemMsg_GetAccountDetails_Response::set_has_phone_id() {
+  _has_bits_[0] |= 0x40000000u;
+}
+inline void CGCSystemMsg_GetAccountDetails_Response::clear_has_phone_id() {
+  _has_bits_[0] &= ~0x40000000u;
+}
+inline void CGCSystemMsg_GetAccountDetails_Response::clear_phone_id() {
+  phone_id_ = GOOGLE_ULONGLONG(0);
+  clear_has_phone_id();
+}
+inline ::google::protobuf::uint64 CGCSystemMsg_GetAccountDetails_Response::phone_id() const {
+  // @@protoc_insertion_point(field_get:CGCSystemMsg_GetAccountDetails_Response.phone_id)
+  return phone_id_;
+}
+inline void CGCSystemMsg_GetAccountDetails_Response::set_phone_id(::google::protobuf::uint64 value) {
+  set_has_phone_id();
+  phone_id_ = value;
+  // @@protoc_insertion_point(field_set:CGCSystemMsg_GetAccountDetails_Response.phone_id)
+}
+
+// optional bool is_phone_identifying = 34;
+inline bool CGCSystemMsg_GetAccountDetails_Response::has_is_phone_identifying() const {
+  return (_has_bits_[0] & 0x80000000u) != 0;
+}
+inline void CGCSystemMsg_GetAccountDetails_Response::set_has_is_phone_identifying() {
+  _has_bits_[0] |= 0x80000000u;
+}
+inline void CGCSystemMsg_GetAccountDetails_Response::clear_has_is_phone_identifying() {
+  _has_bits_[0] &= ~0x80000000u;
+}
+inline void CGCSystemMsg_GetAccountDetails_Response::clear_is_phone_identifying() {
+  is_phone_identifying_ = false;
+  clear_has_is_phone_identifying();
+}
+inline bool CGCSystemMsg_GetAccountDetails_Response::is_phone_identifying() const {
+  // @@protoc_insertion_point(field_get:CGCSystemMsg_GetAccountDetails_Response.is_phone_identifying)
+  return is_phone_identifying_;
+}
+inline void CGCSystemMsg_GetAccountDetails_Response::set_is_phone_identifying(bool value) {
+  set_has_is_phone_identifying();
+  is_phone_identifying_ = value;
+  // @@protoc_insertion_point(field_set:CGCSystemMsg_GetAccountDetails_Response.is_phone_identifying)
+}
+
 // -------------------------------------------------------------------
 
 // CMsgGCGetPersonaNames
@@ -16526,6 +16962,30 @@ inline void CMsgGCGetAppFriendsList::set_steamid(::google::protobuf::uint64 valu
   // @@protoc_insertion_point(field_set:CMsgGCGetAppFriendsList.steamid)
 }
 
+// optional bool include_friendship_timestamps = 2;
+inline bool CMsgGCGetAppFriendsList::has_include_friendship_timestamps() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+inline void CMsgGCGetAppFriendsList::set_has_include_friendship_timestamps() {
+  _has_bits_[0] |= 0x00000002u;
+}
+inline void CMsgGCGetAppFriendsList::clear_has_include_friendship_timestamps() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+inline void CMsgGCGetAppFriendsList::clear_include_friendship_timestamps() {
+  include_friendship_timestamps_ = false;
+  clear_has_include_friendship_timestamps();
+}
+inline bool CMsgGCGetAppFriendsList::include_friendship_timestamps() const {
+  // @@protoc_insertion_point(field_get:CMsgGCGetAppFriendsList.include_friendship_timestamps)
+  return include_friendship_timestamps_;
+}
+inline void CMsgGCGetAppFriendsList::set_include_friendship_timestamps(bool value) {
+  set_has_include_friendship_timestamps();
+  include_friendship_timestamps_ = value;
+  // @@protoc_insertion_point(field_set:CMsgGCGetAppFriendsList.include_friendship_timestamps)
+}
+
 // -------------------------------------------------------------------
 
 // CMsgGCGetAppFriendsList_Response
@@ -16582,6 +17042,36 @@ inline ::google::protobuf::RepeatedField< ::google::protobuf::uint64 >*
 CMsgGCGetAppFriendsList_Response::mutable_steamids() {
   // @@protoc_insertion_point(field_mutable_list:CMsgGCGetAppFriendsList_Response.steamids)
   return &steamids_;
+}
+
+// repeated fixed32 friendship_timestamps = 3;
+inline int CMsgGCGetAppFriendsList_Response::friendship_timestamps_size() const {
+  return friendship_timestamps_.size();
+}
+inline void CMsgGCGetAppFriendsList_Response::clear_friendship_timestamps() {
+  friendship_timestamps_.Clear();
+}
+inline ::google::protobuf::uint32 CMsgGCGetAppFriendsList_Response::friendship_timestamps(int index) const {
+  // @@protoc_insertion_point(field_get:CMsgGCGetAppFriendsList_Response.friendship_timestamps)
+  return friendship_timestamps_.Get(index);
+}
+inline void CMsgGCGetAppFriendsList_Response::set_friendship_timestamps(int index, ::google::protobuf::uint32 value) {
+  friendship_timestamps_.Set(index, value);
+  // @@protoc_insertion_point(field_set:CMsgGCGetAppFriendsList_Response.friendship_timestamps)
+}
+inline void CMsgGCGetAppFriendsList_Response::add_friendship_timestamps(::google::protobuf::uint32 value) {
+  friendship_timestamps_.Add(value);
+  // @@protoc_insertion_point(field_add:CMsgGCGetAppFriendsList_Response.friendship_timestamps)
+}
+inline const ::google::protobuf::RepeatedField< ::google::protobuf::uint32 >&
+CMsgGCGetAppFriendsList_Response::friendship_timestamps() const {
+  // @@protoc_insertion_point(field_list:CMsgGCGetAppFriendsList_Response.friendship_timestamps)
+  return friendship_timestamps_;
+}
+inline ::google::protobuf::RepeatedField< ::google::protobuf::uint32 >*
+CMsgGCGetAppFriendsList_Response::mutable_friendship_timestamps() {
+  // @@protoc_insertion_point(field_mutable_list:CMsgGCGetAppFriendsList_Response.friendship_timestamps)
+  return &friendship_timestamps_;
 }
 
 // -------------------------------------------------------------------
@@ -17000,6 +17490,82 @@ inline void CMsgGCMsgMasterSetDirectory_Response::set_eresult(::google::protobuf
   set_has_eresult();
   eresult_ = value;
   // @@protoc_insertion_point(field_set:CMsgGCMsgMasterSetDirectory_Response.eresult)
+}
+
+// optional string message = 2;
+inline bool CMsgGCMsgMasterSetDirectory_Response::has_message() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+inline void CMsgGCMsgMasterSetDirectory_Response::set_has_message() {
+  _has_bits_[0] |= 0x00000002u;
+}
+inline void CMsgGCMsgMasterSetDirectory_Response::clear_has_message() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+inline void CMsgGCMsgMasterSetDirectory_Response::clear_message() {
+  if (message_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    message_->clear();
+  }
+  clear_has_message();
+}
+inline const ::std::string& CMsgGCMsgMasterSetDirectory_Response::message() const {
+  // @@protoc_insertion_point(field_get:CMsgGCMsgMasterSetDirectory_Response.message)
+  return *message_;
+}
+inline void CMsgGCMsgMasterSetDirectory_Response::set_message(const ::std::string& value) {
+  set_has_message();
+  if (message_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    message_ = new ::std::string;
+  }
+  message_->assign(value);
+  // @@protoc_insertion_point(field_set:CMsgGCMsgMasterSetDirectory_Response.message)
+}
+inline void CMsgGCMsgMasterSetDirectory_Response::set_message(const char* value) {
+  set_has_message();
+  if (message_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    message_ = new ::std::string;
+  }
+  message_->assign(value);
+  // @@protoc_insertion_point(field_set_char:CMsgGCMsgMasterSetDirectory_Response.message)
+}
+inline void CMsgGCMsgMasterSetDirectory_Response::set_message(const char* value, size_t size) {
+  set_has_message();
+  if (message_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    message_ = new ::std::string;
+  }
+  message_->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:CMsgGCMsgMasterSetDirectory_Response.message)
+}
+inline ::std::string* CMsgGCMsgMasterSetDirectory_Response::mutable_message() {
+  set_has_message();
+  if (message_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    message_ = new ::std::string;
+  }
+  // @@protoc_insertion_point(field_mutable:CMsgGCMsgMasterSetDirectory_Response.message)
+  return message_;
+}
+inline ::std::string* CMsgGCMsgMasterSetDirectory_Response::release_message() {
+  clear_has_message();
+  if (message_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    return NULL;
+  } else {
+    ::std::string* temp = message_;
+    message_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    return temp;
+  }
+}
+inline void CMsgGCMsgMasterSetDirectory_Response::set_allocated_message(::std::string* message) {
+  if (message_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete message_;
+  }
+  if (message) {
+    set_has_message();
+    message_ = message;
+  } else {
+    clear_has_message();
+    message_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_set_allocated:CMsgGCMsgMasterSetDirectory_Response.message)
 }
 
 // -------------------------------------------------------------------
@@ -19610,6 +20176,82 @@ inline void CMsgDPPartnerMicroTxnsResponse::set_eerrorcode(::CMsgDPPartnerMicroT
   set_has_eerrorcode();
   eerrorcode_ = value;
   // @@protoc_insertion_point(field_set:CMsgDPPartnerMicroTxnsResponse.eerrorcode)
+}
+
+// -------------------------------------------------------------------
+
+// CMsgGCHVacVerificationChange
+
+// optional fixed64 steamid = 1;
+inline bool CMsgGCHVacVerificationChange::has_steamid() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+inline void CMsgGCHVacVerificationChange::set_has_steamid() {
+  _has_bits_[0] |= 0x00000001u;
+}
+inline void CMsgGCHVacVerificationChange::clear_has_steamid() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+inline void CMsgGCHVacVerificationChange::clear_steamid() {
+  steamid_ = GOOGLE_ULONGLONG(0);
+  clear_has_steamid();
+}
+inline ::google::protobuf::uint64 CMsgGCHVacVerificationChange::steamid() const {
+  // @@protoc_insertion_point(field_get:CMsgGCHVacVerificationChange.steamid)
+  return steamid_;
+}
+inline void CMsgGCHVacVerificationChange::set_steamid(::google::protobuf::uint64 value) {
+  set_has_steamid();
+  steamid_ = value;
+  // @@protoc_insertion_point(field_set:CMsgGCHVacVerificationChange.steamid)
+}
+
+// optional uint32 appid = 2;
+inline bool CMsgGCHVacVerificationChange::has_appid() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+inline void CMsgGCHVacVerificationChange::set_has_appid() {
+  _has_bits_[0] |= 0x00000002u;
+}
+inline void CMsgGCHVacVerificationChange::clear_has_appid() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+inline void CMsgGCHVacVerificationChange::clear_appid() {
+  appid_ = 0u;
+  clear_has_appid();
+}
+inline ::google::protobuf::uint32 CMsgGCHVacVerificationChange::appid() const {
+  // @@protoc_insertion_point(field_get:CMsgGCHVacVerificationChange.appid)
+  return appid_;
+}
+inline void CMsgGCHVacVerificationChange::set_appid(::google::protobuf::uint32 value) {
+  set_has_appid();
+  appid_ = value;
+  // @@protoc_insertion_point(field_set:CMsgGCHVacVerificationChange.appid)
+}
+
+// optional bool is_verified = 3;
+inline bool CMsgGCHVacVerificationChange::has_is_verified() const {
+  return (_has_bits_[0] & 0x00000004u) != 0;
+}
+inline void CMsgGCHVacVerificationChange::set_has_is_verified() {
+  _has_bits_[0] |= 0x00000004u;
+}
+inline void CMsgGCHVacVerificationChange::clear_has_is_verified() {
+  _has_bits_[0] &= ~0x00000004u;
+}
+inline void CMsgGCHVacVerificationChange::clear_is_verified() {
+  is_verified_ = false;
+  clear_has_is_verified();
+}
+inline bool CMsgGCHVacVerificationChange::is_verified() const {
+  // @@protoc_insertion_point(field_get:CMsgGCHVacVerificationChange.is_verified)
+  return is_verified_;
+}
+inline void CMsgGCHVacVerificationChange::set_is_verified(bool value) {
+  set_has_is_verified();
+  is_verified_ = value;
+  // @@protoc_insertion_point(field_set:CMsgGCHVacVerificationChange.is_verified)
 }
 
 

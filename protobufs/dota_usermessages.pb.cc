@@ -212,6 +212,12 @@ const ::google::protobuf::internal::GeneratedMessageReflection*
 const ::google::protobuf::Descriptor* CDOTAUserMsg_ParticleManager_ChangeControlPointAttachment_descriptor_ = NULL;
 const ::google::protobuf::internal::GeneratedMessageReflection*
   CDOTAUserMsg_ParticleManager_ChangeControlPointAttachment_reflection_ = NULL;
+const ::google::protobuf::Descriptor* CDOTAUserMsg_ParticleManager_UpdateEntityPosition_descriptor_ = NULL;
+const ::google::protobuf::internal::GeneratedMessageReflection*
+  CDOTAUserMsg_ParticleManager_UpdateEntityPosition_reflection_ = NULL;
+const ::google::protobuf::Descriptor* CDOTAUserMsg_ParticleManager_SetParticleFoWProperties_descriptor_ = NULL;
+const ::google::protobuf::internal::GeneratedMessageReflection*
+  CDOTAUserMsg_ParticleManager_SetParticleFoWProperties_reflection_ = NULL;
 const ::google::protobuf::Descriptor* CDOTAUserMsg_OverheadEvent_descriptor_ = NULL;
 const ::google::protobuf::internal::GeneratedMessageReflection*
   CDOTAUserMsg_OverheadEvent_reflection_ = NULL;
@@ -392,11 +398,39 @@ const ::google::protobuf::internal::GeneratedMessageReflection*
 const ::google::protobuf::Descriptor* CDOTAUserMsg_ProjectionEvent_descriptor_ = NULL;
 const ::google::protobuf::internal::GeneratedMessageReflection*
   CDOTAUserMsg_ProjectionEvent_reflection_ = NULL;
+const ::google::protobuf::Descriptor* CDOTAUserMsg_XPAlert_descriptor_ = NULL;
+const ::google::protobuf::internal::GeneratedMessageReflection*
+  CDOTAUserMsg_XPAlert_reflection_ = NULL;
+const ::google::protobuf::Descriptor* CDOTAUserMsg_UpdateQuestProgress_descriptor_ = NULL;
+const ::google::protobuf::internal::GeneratedMessageReflection*
+  CDOTAUserMsg_UpdateQuestProgress_reflection_ = NULL;
+const ::google::protobuf::Descriptor* CDOTAUserMsg_QuestStatus_descriptor_ = NULL;
+const ::google::protobuf::internal::GeneratedMessageReflection*
+  CDOTAUserMsg_QuestStatus_reflection_ = NULL;
+const ::google::protobuf::Descriptor* CDOTAUserMsg_SuggestHeroPick_descriptor_ = NULL;
+const ::google::protobuf::internal::GeneratedMessageReflection*
+  CDOTAUserMsg_SuggestHeroPick_reflection_ = NULL;
+const ::google::protobuf::Descriptor* CDOTAUserMsg_SuggestHeroRole_descriptor_ = NULL;
+const ::google::protobuf::internal::GeneratedMessageReflection*
+  CDOTAUserMsg_SuggestHeroRole_reflection_ = NULL;
+const ::google::protobuf::Descriptor* CDOTAUserMsg_KillcamDamageTaken_descriptor_ = NULL;
+const ::google::protobuf::internal::GeneratedMessageReflection*
+  CDOTAUserMsg_KillcamDamageTaken_reflection_ = NULL;
+const ::google::protobuf::Descriptor* CDOTAUserMsg_SelectPenaltyGold_descriptor_ = NULL;
+const ::google::protobuf::internal::GeneratedMessageReflection*
+  CDOTAUserMsg_SelectPenaltyGold_reflection_ = NULL;
+const ::google::protobuf::Descriptor* CDOTAUserMsg_RollDiceResult_descriptor_ = NULL;
+const ::google::protobuf::internal::GeneratedMessageReflection*
+  CDOTAUserMsg_RollDiceResult_reflection_ = NULL;
+const ::google::protobuf::Descriptor* CDOTAUserMsg_FlipCoinResult_descriptor_ = NULL;
+const ::google::protobuf::internal::GeneratedMessageReflection*
+  CDOTAUserMsg_FlipCoinResult_reflection_ = NULL;
 const ::google::protobuf::EnumDescriptor* EDotaUserMessages_descriptor_ = NULL;
 const ::google::protobuf::EnumDescriptor* DOTA_CHAT_MESSAGE_descriptor_ = NULL;
 const ::google::protobuf::EnumDescriptor* DOTA_NO_BATTLE_POINTS_REASONS_descriptor_ = NULL;
 const ::google::protobuf::EnumDescriptor* DOTA_CHAT_INFORMATIONAL_descriptor_ = NULL;
 const ::google::protobuf::EnumDescriptor* DOTA_ABILITY_PING_TYPE_descriptor_ = NULL;
+const ::google::protobuf::EnumDescriptor* DOTA_REPLAY_STATE_EVENT_descriptor_ = NULL;
 const ::google::protobuf::EnumDescriptor* EDotaEntityMessages_descriptor_ = NULL;
 const ::google::protobuf::EnumDescriptor* DOTA_PARTICLE_MESSAGE_descriptor_ = NULL;
 const ::google::protobuf::EnumDescriptor* DOTA_OVERHEAD_ALERT_descriptor_ = NULL;
@@ -431,8 +465,9 @@ void protobuf_AssignDesc_dota_5fusermessages_2eproto() {
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(CDOTAUserMsg_AIDebugLine));
   CDOTAUserMsg_Ping_descriptor_ = file->message_type(1);
-  static const int CDOTAUserMsg_Ping_offsets_[1] = {
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CDOTAUserMsg_Ping, message_),
+  static const int CDOTAUserMsg_Ping_offsets_[2] = {
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CDOTAUserMsg_Ping, ping_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CDOTAUserMsg_Ping, loss_),
   };
   CDOTAUserMsg_Ping_reflection_ =
     new ::google::protobuf::internal::GeneratedMessageReflection(
@@ -501,9 +536,9 @@ void protobuf_AssignDesc_dota_5fusermessages_2eproto() {
   CDOTAUserMsg_BotChat_descriptor_ = file->message_type(5);
   static const int CDOTAUserMsg_BotChat_offsets_[4] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CDOTAUserMsg_BotChat, player_id_),
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CDOTAUserMsg_BotChat, format_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CDOTAUserMsg_BotChat, message_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CDOTAUserMsg_BotChat, target_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CDOTAUserMsg_BotChat, team_only_),
   };
   CDOTAUserMsg_BotChat_reflection_ =
     new ::google::protobuf::internal::GeneratedMessageReflection(
@@ -550,10 +585,11 @@ void protobuf_AssignDesc_dota_5fusermessages_2eproto() {
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(CDOTAUserMsg_MiniKillCamInfo));
   CDOTAUserMsg_MiniKillCamInfo_Attacker_descriptor_ = CDOTAUserMsg_MiniKillCamInfo_descriptor_->nested_type(0);
-  static const int CDOTAUserMsg_MiniKillCamInfo_Attacker_offsets_[3] = {
+  static const int CDOTAUserMsg_MiniKillCamInfo_Attacker_offsets_[4] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CDOTAUserMsg_MiniKillCamInfo_Attacker, attacker_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CDOTAUserMsg_MiniKillCamInfo_Attacker, total_damage_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CDOTAUserMsg_MiniKillCamInfo_Attacker, abilities_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CDOTAUserMsg_MiniKillCamInfo_Attacker, attacker_name_),
   };
   CDOTAUserMsg_MiniKillCamInfo_Attacker_reflection_ =
     new ::google::protobuf::internal::GeneratedMessageReflection(
@@ -837,15 +873,16 @@ void protobuf_AssignDesc_dota_5fusermessages_2eproto() {
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(CDOTAUserMsg_MinimapDebugPoint));
   CDOTAUserMsg_CreateLinearProjectile_descriptor_ = file->message_type(23);
-  static const int CDOTAUserMsg_CreateLinearProjectile_offsets_[8] = {
+  static const int CDOTAUserMsg_CreateLinearProjectile_offsets_[9] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CDOTAUserMsg_CreateLinearProjectile, origin_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CDOTAUserMsg_CreateLinearProjectile, velocity_),
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CDOTAUserMsg_CreateLinearProjectile, latency_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CDOTAUserMsg_CreateLinearProjectile, entindex_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CDOTAUserMsg_CreateLinearProjectile, particle_index_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CDOTAUserMsg_CreateLinearProjectile, handle_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CDOTAUserMsg_CreateLinearProjectile, acceleration_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CDOTAUserMsg_CreateLinearProjectile, max_speed_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CDOTAUserMsg_CreateLinearProjectile, fow_radius_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CDOTAUserMsg_CreateLinearProjectile, sticky_fow_reveal_),
   };
   CDOTAUserMsg_CreateLinearProjectile_reflection_ =
     new ::google::protobuf::internal::GeneratedMessageReflection(
@@ -929,10 +966,11 @@ void protobuf_AssignDesc_dota_5fusermessages_2eproto() {
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(CDOTAUserMsg_SpectatorPlayerUnitOrders));
   CDOTAUserMsg_NevermoreRequiem_descriptor_ = file->message_type(28);
-  static const int CDOTAUserMsg_NevermoreRequiem_offsets_[3] = {
+  static const int CDOTAUserMsg_NevermoreRequiem_offsets_[4] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CDOTAUserMsg_NevermoreRequiem, entity_handle_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CDOTAUserMsg_NevermoreRequiem, lines_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CDOTAUserMsg_NevermoreRequiem, origin_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CDOTAUserMsg_NevermoreRequiem, reverse_),
   };
   CDOTAUserMsg_NevermoreRequiem_reflection_ =
     new ::google::protobuf::internal::GeneratedMessageReflection(
@@ -1173,11 +1211,12 @@ void protobuf_AssignDesc_dota_5fusermessages_2eproto() {
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(CDOTAUserMsg_UnitEvent_SpeechMute));
   CDOTAUserMsg_UnitEvent_AddGesture_descriptor_ = CDOTAUserMsg_UnitEvent_descriptor_->nested_type(2);
-  static const int CDOTAUserMsg_UnitEvent_AddGesture_offsets_[4] = {
+  static const int CDOTAUserMsg_UnitEvent_AddGesture_offsets_[5] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CDOTAUserMsg_UnitEvent_AddGesture, activity_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CDOTAUserMsg_UnitEvent_AddGesture, slot_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CDOTAUserMsg_UnitEvent_AddGesture, fade_in_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CDOTAUserMsg_UnitEvent_AddGesture, fade_out_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CDOTAUserMsg_UnitEvent_AddGesture, playback_rate_),
   };
   CDOTAUserMsg_UnitEvent_AddGesture_reflection_ =
     new ::google::protobuf::internal::GeneratedMessageReflection(
@@ -1272,7 +1311,7 @@ void protobuf_AssignDesc_dota_5fusermessages_2eproto() {
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(CDOTAUserMsg_ItemFound));
   CDOTAUserMsg_ParticleManager_descriptor_ = file->message_type(40);
-  static const int CDOTAUserMsg_ParticleManager_offsets_[15] = {
+  static const int CDOTAUserMsg_ParticleManager_offsets_[17] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CDOTAUserMsg_ParticleManager, type_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CDOTAUserMsg_ParticleManager, index_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CDOTAUserMsg_ParticleManager, release_particle_index_),
@@ -1288,6 +1327,8 @@ void protobuf_AssignDesc_dota_5fusermessages_2eproto() {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CDOTAUserMsg_ParticleManager, update_particle_should_draw_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CDOTAUserMsg_ParticleManager, update_particle_set_frozen_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CDOTAUserMsg_ParticleManager, change_control_point_attachment_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CDOTAUserMsg_ParticleManager, update_entity_position_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CDOTAUserMsg_ParticleManager, set_particle_fow_properties_),
   };
   CDOTAUserMsg_ParticleManager_reflection_ =
     new ::google::protobuf::internal::GeneratedMessageReflection(
@@ -1512,6 +1553,39 @@ void protobuf_AssignDesc_dota_5fusermessages_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(CDOTAUserMsg_ParticleManager_ChangeControlPointAttachment));
+  CDOTAUserMsg_ParticleManager_UpdateEntityPosition_descriptor_ = CDOTAUserMsg_ParticleManager_descriptor_->nested_type(13);
+  static const int CDOTAUserMsg_ParticleManager_UpdateEntityPosition_offsets_[2] = {
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CDOTAUserMsg_ParticleManager_UpdateEntityPosition, entity_handle_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CDOTAUserMsg_ParticleManager_UpdateEntityPosition, position_),
+  };
+  CDOTAUserMsg_ParticleManager_UpdateEntityPosition_reflection_ =
+    new ::google::protobuf::internal::GeneratedMessageReflection(
+      CDOTAUserMsg_ParticleManager_UpdateEntityPosition_descriptor_,
+      CDOTAUserMsg_ParticleManager_UpdateEntityPosition::default_instance_,
+      CDOTAUserMsg_ParticleManager_UpdateEntityPosition_offsets_,
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CDOTAUserMsg_ParticleManager_UpdateEntityPosition, _has_bits_[0]),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CDOTAUserMsg_ParticleManager_UpdateEntityPosition, _unknown_fields_),
+      -1,
+      ::google::protobuf::DescriptorPool::generated_pool(),
+      ::google::protobuf::MessageFactory::generated_factory(),
+      sizeof(CDOTAUserMsg_ParticleManager_UpdateEntityPosition));
+  CDOTAUserMsg_ParticleManager_SetParticleFoWProperties_descriptor_ = CDOTAUserMsg_ParticleManager_descriptor_->nested_type(14);
+  static const int CDOTAUserMsg_ParticleManager_SetParticleFoWProperties_offsets_[3] = {
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CDOTAUserMsg_ParticleManager_SetParticleFoWProperties, fow_control_point_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CDOTAUserMsg_ParticleManager_SetParticleFoWProperties, fow_control_point2_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CDOTAUserMsg_ParticleManager_SetParticleFoWProperties, fow_radius_),
+  };
+  CDOTAUserMsg_ParticleManager_SetParticleFoWProperties_reflection_ =
+    new ::google::protobuf::internal::GeneratedMessageReflection(
+      CDOTAUserMsg_ParticleManager_SetParticleFoWProperties_descriptor_,
+      CDOTAUserMsg_ParticleManager_SetParticleFoWProperties::default_instance_,
+      CDOTAUserMsg_ParticleManager_SetParticleFoWProperties_offsets_,
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CDOTAUserMsg_ParticleManager_SetParticleFoWProperties, _has_bits_[0]),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CDOTAUserMsg_ParticleManager_SetParticleFoWProperties, _unknown_fields_),
+      -1,
+      ::google::protobuf::DescriptorPool::generated_pool(),
+      ::google::protobuf::MessageFactory::generated_factory(),
+      sizeof(CDOTAUserMsg_ParticleManager_SetParticleFoWProperties));
   CDOTAUserMsg_OverheadEvent_descriptor_ = file->message_type(41);
   static const int CDOTAUserMsg_OverheadEvent_offsets_[5] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CDOTAUserMsg_OverheadEvent, message_type_),
@@ -1858,7 +1932,7 @@ void protobuf_AssignDesc_dota_5fusermessages_2eproto() {
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(CDOTAUserMsg_ClientLoadGridNav));
   CDOTAUserMsg_TE_Projectile_descriptor_ = file->message_type(62);
-  static const int CDOTAUserMsg_TE_Projectile_offsets_[10] = {
+  static const int CDOTAUserMsg_TE_Projectile_offsets_[11] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CDOTAUserMsg_TE_Projectile, hsource_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CDOTAUserMsg_TE_Projectile, htarget_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CDOTAUserMsg_TE_Projectile, movespeed_),
@@ -1869,6 +1943,7 @@ void protobuf_AssignDesc_dota_5fusermessages_2eproto() {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CDOTAUserMsg_TE_Projectile, isevaded_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CDOTAUserMsg_TE_Projectile, expiretime_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CDOTAUserMsg_TE_Projectile, maximpacttime_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CDOTAUserMsg_TE_Projectile, colorgemcolor_),
   };
   CDOTAUserMsg_TE_Projectile_reflection_ =
     new ::google::protobuf::internal::GeneratedMessageReflection(
@@ -1882,7 +1957,7 @@ void protobuf_AssignDesc_dota_5fusermessages_2eproto() {
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(CDOTAUserMsg_TE_Projectile));
   CDOTAUserMsg_TE_ProjectileLoc_descriptor_ = file->message_type(63);
-  static const int CDOTAUserMsg_TE_ProjectileLoc_offsets_[9] = {
+  static const int CDOTAUserMsg_TE_ProjectileLoc_offsets_[10] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CDOTAUserMsg_TE_ProjectileLoc, vsourceloc_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CDOTAUserMsg_TE_ProjectileLoc, htarget_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CDOTAUserMsg_TE_ProjectileLoc, movespeed_),
@@ -1892,6 +1967,7 @@ void protobuf_AssignDesc_dota_5fusermessages_2eproto() {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CDOTAUserMsg_TE_ProjectileLoc, isevaded_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CDOTAUserMsg_TE_ProjectileLoc, expiretime_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CDOTAUserMsg_TE_ProjectileLoc, vtargetloc_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CDOTAUserMsg_TE_ProjectileLoc, colorgemcolor_),
   };
   CDOTAUserMsg_TE_ProjectileLoc_reflection_ =
     new ::google::protobuf::internal::GeneratedMessageReflection(
@@ -2562,19 +2638,176 @@ void protobuf_AssignDesc_dota_5fusermessages_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(CDOTAUserMsg_ProjectionEvent));
+  CDOTAUserMsg_XPAlert_descriptor_ = file->message_type(97);
+  static const int CDOTAUserMsg_XPAlert_offsets_[2] = {
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CDOTAUserMsg_XPAlert, player_id_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CDOTAUserMsg_XPAlert, target_entindex_),
+  };
+  CDOTAUserMsg_XPAlert_reflection_ =
+    new ::google::protobuf::internal::GeneratedMessageReflection(
+      CDOTAUserMsg_XPAlert_descriptor_,
+      CDOTAUserMsg_XPAlert::default_instance_,
+      CDOTAUserMsg_XPAlert_offsets_,
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CDOTAUserMsg_XPAlert, _has_bits_[0]),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CDOTAUserMsg_XPAlert, _unknown_fields_),
+      -1,
+      ::google::protobuf::DescriptorPool::generated_pool(),
+      ::google::protobuf::MessageFactory::generated_factory(),
+      sizeof(CDOTAUserMsg_XPAlert));
+  CDOTAUserMsg_UpdateQuestProgress_descriptor_ = file->message_type(98);
+  static const int CDOTAUserMsg_UpdateQuestProgress_offsets_[1] = {
+  };
+  CDOTAUserMsg_UpdateQuestProgress_reflection_ =
+    new ::google::protobuf::internal::GeneratedMessageReflection(
+      CDOTAUserMsg_UpdateQuestProgress_descriptor_,
+      CDOTAUserMsg_UpdateQuestProgress::default_instance_,
+      CDOTAUserMsg_UpdateQuestProgress_offsets_,
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CDOTAUserMsg_UpdateQuestProgress, _has_bits_[0]),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CDOTAUserMsg_UpdateQuestProgress, _unknown_fields_),
+      -1,
+      ::google::protobuf::DescriptorPool::generated_pool(),
+      ::google::protobuf::MessageFactory::generated_factory(),
+      sizeof(CDOTAUserMsg_UpdateQuestProgress));
+  CDOTAUserMsg_QuestStatus_descriptor_ = file->message_type(99);
+  static const int CDOTAUserMsg_QuestStatus_offsets_[8] = {
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CDOTAUserMsg_QuestStatus, player_id_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CDOTAUserMsg_QuestStatus, quest_id_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CDOTAUserMsg_QuestStatus, challenge_id_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CDOTAUserMsg_QuestStatus, progress_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CDOTAUserMsg_QuestStatus, goal_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CDOTAUserMsg_QuestStatus, query_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CDOTAUserMsg_QuestStatus, fail_gametime_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CDOTAUserMsg_QuestStatus, item_id_),
+  };
+  CDOTAUserMsg_QuestStatus_reflection_ =
+    new ::google::protobuf::internal::GeneratedMessageReflection(
+      CDOTAUserMsg_QuestStatus_descriptor_,
+      CDOTAUserMsg_QuestStatus::default_instance_,
+      CDOTAUserMsg_QuestStatus_offsets_,
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CDOTAUserMsg_QuestStatus, _has_bits_[0]),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CDOTAUserMsg_QuestStatus, _unknown_fields_),
+      -1,
+      ::google::protobuf::DescriptorPool::generated_pool(),
+      ::google::protobuf::MessageFactory::generated_factory(),
+      sizeof(CDOTAUserMsg_QuestStatus));
+  CDOTAUserMsg_SuggestHeroPick_descriptor_ = file->message_type(100);
+  static const int CDOTAUserMsg_SuggestHeroPick_offsets_[2] = {
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CDOTAUserMsg_SuggestHeroPick, player_id_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CDOTAUserMsg_SuggestHeroPick, hero_id_),
+  };
+  CDOTAUserMsg_SuggestHeroPick_reflection_ =
+    new ::google::protobuf::internal::GeneratedMessageReflection(
+      CDOTAUserMsg_SuggestHeroPick_descriptor_,
+      CDOTAUserMsg_SuggestHeroPick::default_instance_,
+      CDOTAUserMsg_SuggestHeroPick_offsets_,
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CDOTAUserMsg_SuggestHeroPick, _has_bits_[0]),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CDOTAUserMsg_SuggestHeroPick, _unknown_fields_),
+      -1,
+      ::google::protobuf::DescriptorPool::generated_pool(),
+      ::google::protobuf::MessageFactory::generated_factory(),
+      sizeof(CDOTAUserMsg_SuggestHeroPick));
+  CDOTAUserMsg_SuggestHeroRole_descriptor_ = file->message_type(101);
+  static const int CDOTAUserMsg_SuggestHeroRole_offsets_[2] = {
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CDOTAUserMsg_SuggestHeroRole, player_id_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CDOTAUserMsg_SuggestHeroRole, hero_role_),
+  };
+  CDOTAUserMsg_SuggestHeroRole_reflection_ =
+    new ::google::protobuf::internal::GeneratedMessageReflection(
+      CDOTAUserMsg_SuggestHeroRole_descriptor_,
+      CDOTAUserMsg_SuggestHeroRole::default_instance_,
+      CDOTAUserMsg_SuggestHeroRole_offsets_,
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CDOTAUserMsg_SuggestHeroRole, _has_bits_[0]),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CDOTAUserMsg_SuggestHeroRole, _unknown_fields_),
+      -1,
+      ::google::protobuf::DescriptorPool::generated_pool(),
+      ::google::protobuf::MessageFactory::generated_factory(),
+      sizeof(CDOTAUserMsg_SuggestHeroRole));
+  CDOTAUserMsg_KillcamDamageTaken_descriptor_ = file->message_type(102);
+  static const int CDOTAUserMsg_KillcamDamageTaken_offsets_[6] = {
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CDOTAUserMsg_KillcamDamageTaken, player_id_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CDOTAUserMsg_KillcamDamageTaken, damage_taken_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CDOTAUserMsg_KillcamDamageTaken, item_type_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CDOTAUserMsg_KillcamDamageTaken, item_id_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CDOTAUserMsg_KillcamDamageTaken, hero_name_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CDOTAUserMsg_KillcamDamageTaken, damage_color_),
+  };
+  CDOTAUserMsg_KillcamDamageTaken_reflection_ =
+    new ::google::protobuf::internal::GeneratedMessageReflection(
+      CDOTAUserMsg_KillcamDamageTaken_descriptor_,
+      CDOTAUserMsg_KillcamDamageTaken::default_instance_,
+      CDOTAUserMsg_KillcamDamageTaken_offsets_,
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CDOTAUserMsg_KillcamDamageTaken, _has_bits_[0]),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CDOTAUserMsg_KillcamDamageTaken, _unknown_fields_),
+      -1,
+      ::google::protobuf::DescriptorPool::generated_pool(),
+      ::google::protobuf::MessageFactory::generated_factory(),
+      sizeof(CDOTAUserMsg_KillcamDamageTaken));
+  CDOTAUserMsg_SelectPenaltyGold_descriptor_ = file->message_type(103);
+  static const int CDOTAUserMsg_SelectPenaltyGold_offsets_[2] = {
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CDOTAUserMsg_SelectPenaltyGold, player_id_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CDOTAUserMsg_SelectPenaltyGold, cost_),
+  };
+  CDOTAUserMsg_SelectPenaltyGold_reflection_ =
+    new ::google::protobuf::internal::GeneratedMessageReflection(
+      CDOTAUserMsg_SelectPenaltyGold_descriptor_,
+      CDOTAUserMsg_SelectPenaltyGold::default_instance_,
+      CDOTAUserMsg_SelectPenaltyGold_offsets_,
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CDOTAUserMsg_SelectPenaltyGold, _has_bits_[0]),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CDOTAUserMsg_SelectPenaltyGold, _unknown_fields_),
+      -1,
+      ::google::protobuf::DescriptorPool::generated_pool(),
+      ::google::protobuf::MessageFactory::generated_factory(),
+      sizeof(CDOTAUserMsg_SelectPenaltyGold));
+  CDOTAUserMsg_RollDiceResult_descriptor_ = file->message_type(104);
+  static const int CDOTAUserMsg_RollDiceResult_offsets_[5] = {
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CDOTAUserMsg_RollDiceResult, player_id_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CDOTAUserMsg_RollDiceResult, channel_type_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CDOTAUserMsg_RollDiceResult, roll_min_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CDOTAUserMsg_RollDiceResult, roll_max_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CDOTAUserMsg_RollDiceResult, result_),
+  };
+  CDOTAUserMsg_RollDiceResult_reflection_ =
+    new ::google::protobuf::internal::GeneratedMessageReflection(
+      CDOTAUserMsg_RollDiceResult_descriptor_,
+      CDOTAUserMsg_RollDiceResult::default_instance_,
+      CDOTAUserMsg_RollDiceResult_offsets_,
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CDOTAUserMsg_RollDiceResult, _has_bits_[0]),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CDOTAUserMsg_RollDiceResult, _unknown_fields_),
+      -1,
+      ::google::protobuf::DescriptorPool::generated_pool(),
+      ::google::protobuf::MessageFactory::generated_factory(),
+      sizeof(CDOTAUserMsg_RollDiceResult));
+  CDOTAUserMsg_FlipCoinResult_descriptor_ = file->message_type(105);
+  static const int CDOTAUserMsg_FlipCoinResult_offsets_[3] = {
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CDOTAUserMsg_FlipCoinResult, player_id_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CDOTAUserMsg_FlipCoinResult, channel_type_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CDOTAUserMsg_FlipCoinResult, result_),
+  };
+  CDOTAUserMsg_FlipCoinResult_reflection_ =
+    new ::google::protobuf::internal::GeneratedMessageReflection(
+      CDOTAUserMsg_FlipCoinResult_descriptor_,
+      CDOTAUserMsg_FlipCoinResult::default_instance_,
+      CDOTAUserMsg_FlipCoinResult_offsets_,
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CDOTAUserMsg_FlipCoinResult, _has_bits_[0]),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CDOTAUserMsg_FlipCoinResult, _unknown_fields_),
+      -1,
+      ::google::protobuf::DescriptorPool::generated_pool(),
+      ::google::protobuf::MessageFactory::generated_factory(),
+      sizeof(CDOTAUserMsg_FlipCoinResult));
   EDotaUserMessages_descriptor_ = file->enum_type(0);
   DOTA_CHAT_MESSAGE_descriptor_ = file->enum_type(1);
   DOTA_NO_BATTLE_POINTS_REASONS_descriptor_ = file->enum_type(2);
   DOTA_CHAT_INFORMATIONAL_descriptor_ = file->enum_type(3);
   DOTA_ABILITY_PING_TYPE_descriptor_ = file->enum_type(4);
-  EDotaEntityMessages_descriptor_ = file->enum_type(5);
-  DOTA_PARTICLE_MESSAGE_descriptor_ = file->enum_type(6);
-  DOTA_OVERHEAD_ALERT_descriptor_ = file->enum_type(7);
-  DOTA_POSITION_CATEGORY_descriptor_ = file->enum_type(8);
-  DOTA_ABILITY_TARGET_TYPE_descriptor_ = file->enum_type(9);
-  EHeroStatType_descriptor_ = file->enum_type(10);
-  EPlayerVoiceListenState_descriptor_ = file->enum_type(11);
-  EProjectionEvent_descriptor_ = file->enum_type(12);
+  DOTA_REPLAY_STATE_EVENT_descriptor_ = file->enum_type(5);
+  EDotaEntityMessages_descriptor_ = file->enum_type(6);
+  DOTA_PARTICLE_MESSAGE_descriptor_ = file->enum_type(7);
+  DOTA_OVERHEAD_ALERT_descriptor_ = file->enum_type(8);
+  DOTA_POSITION_CATEGORY_descriptor_ = file->enum_type(9);
+  DOTA_ABILITY_TARGET_TYPE_descriptor_ = file->enum_type(10);
+  EHeroStatType_descriptor_ = file->enum_type(11);
+  EPlayerVoiceListenState_descriptor_ = file->enum_type(12);
+  EProjectionEvent_descriptor_ = file->enum_type(13);
 }
 
 namespace {
@@ -2716,6 +2949,10 @@ void protobuf_RegisterTypes(const ::std::string&) {
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
     CDOTAUserMsg_ParticleManager_ChangeControlPointAttachment_descriptor_, &CDOTAUserMsg_ParticleManager_ChangeControlPointAttachment::default_instance());
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
+    CDOTAUserMsg_ParticleManager_UpdateEntityPosition_descriptor_, &CDOTAUserMsg_ParticleManager_UpdateEntityPosition::default_instance());
+  ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
+    CDOTAUserMsg_ParticleManager_SetParticleFoWProperties_descriptor_, &CDOTAUserMsg_ParticleManager_SetParticleFoWProperties::default_instance());
+  ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
     CDOTAUserMsg_OverheadEvent_descriptor_, &CDOTAUserMsg_OverheadEvent::default_instance());
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
     CDOTAUserMsg_TutorialTipInfo_descriptor_, &CDOTAUserMsg_TutorialTipInfo::default_instance());
@@ -2835,6 +3072,24 @@ void protobuf_RegisterTypes(const ::std::string&) {
     CDOTAUserMsg_ProjectionAbility_descriptor_, &CDOTAUserMsg_ProjectionAbility::default_instance());
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
     CDOTAUserMsg_ProjectionEvent_descriptor_, &CDOTAUserMsg_ProjectionEvent::default_instance());
+  ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
+    CDOTAUserMsg_XPAlert_descriptor_, &CDOTAUserMsg_XPAlert::default_instance());
+  ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
+    CDOTAUserMsg_UpdateQuestProgress_descriptor_, &CDOTAUserMsg_UpdateQuestProgress::default_instance());
+  ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
+    CDOTAUserMsg_QuestStatus_descriptor_, &CDOTAUserMsg_QuestStatus::default_instance());
+  ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
+    CDOTAUserMsg_SuggestHeroPick_descriptor_, &CDOTAUserMsg_SuggestHeroPick::default_instance());
+  ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
+    CDOTAUserMsg_SuggestHeroRole_descriptor_, &CDOTAUserMsg_SuggestHeroRole::default_instance());
+  ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
+    CDOTAUserMsg_KillcamDamageTaken_descriptor_, &CDOTAUserMsg_KillcamDamageTaken::default_instance());
+  ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
+    CDOTAUserMsg_SelectPenaltyGold_descriptor_, &CDOTAUserMsg_SelectPenaltyGold::default_instance());
+  ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
+    CDOTAUserMsg_RollDiceResult_descriptor_, &CDOTAUserMsg_RollDiceResult::default_instance());
+  ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
+    CDOTAUserMsg_FlipCoinResult_descriptor_, &CDOTAUserMsg_FlipCoinResult::default_instance());
 }
 
 }  // namespace
@@ -2968,6 +3223,10 @@ void protobuf_ShutdownFile_dota_5fusermessages_2eproto() {
   delete CDOTAUserMsg_ParticleManager_UpdateParticleShouldDraw_reflection_;
   delete CDOTAUserMsg_ParticleManager_ChangeControlPointAttachment::default_instance_;
   delete CDOTAUserMsg_ParticleManager_ChangeControlPointAttachment_reflection_;
+  delete CDOTAUserMsg_ParticleManager_UpdateEntityPosition::default_instance_;
+  delete CDOTAUserMsg_ParticleManager_UpdateEntityPosition_reflection_;
+  delete CDOTAUserMsg_ParticleManager_SetParticleFoWProperties::default_instance_;
+  delete CDOTAUserMsg_ParticleManager_SetParticleFoWProperties_reflection_;
   delete CDOTAUserMsg_OverheadEvent::default_instance_;
   delete CDOTAUserMsg_OverheadEvent_reflection_;
   delete CDOTAUserMsg_TutorialTipInfo::default_instance_;
@@ -3088,6 +3347,24 @@ void protobuf_ShutdownFile_dota_5fusermessages_2eproto() {
   delete CDOTAUserMsg_ProjectionAbility_reflection_;
   delete CDOTAUserMsg_ProjectionEvent::default_instance_;
   delete CDOTAUserMsg_ProjectionEvent_reflection_;
+  delete CDOTAUserMsg_XPAlert::default_instance_;
+  delete CDOTAUserMsg_XPAlert_reflection_;
+  delete CDOTAUserMsg_UpdateQuestProgress::default_instance_;
+  delete CDOTAUserMsg_UpdateQuestProgress_reflection_;
+  delete CDOTAUserMsg_QuestStatus::default_instance_;
+  delete CDOTAUserMsg_QuestStatus_reflection_;
+  delete CDOTAUserMsg_SuggestHeroPick::default_instance_;
+  delete CDOTAUserMsg_SuggestHeroPick_reflection_;
+  delete CDOTAUserMsg_SuggestHeroRole::default_instance_;
+  delete CDOTAUserMsg_SuggestHeroRole_reflection_;
+  delete CDOTAUserMsg_KillcamDamageTaken::default_instance_;
+  delete CDOTAUserMsg_KillcamDamageTaken_reflection_;
+  delete CDOTAUserMsg_SelectPenaltyGold::default_instance_;
+  delete CDOTAUserMsg_SelectPenaltyGold_reflection_;
+  delete CDOTAUserMsg_RollDiceResult::default_instance_;
+  delete CDOTAUserMsg_RollDiceResult_reflection_;
+  delete CDOTAUserMsg_FlipCoinResult::default_instance_;
+  delete CDOTAUserMsg_FlipCoinResult_reflection_;
 }
 
 void protobuf_AddDesc_dota_5fusermessages_2eproto() {
@@ -3102,570 +3379,627 @@ void protobuf_AddDesc_dota_5fusermessages_2eproto() {
     "\n\027dota_usermessages.proto\032\026networkbasety"
     "pes.proto\032\031dota_commonmessages.proto\"+\n\030"
     "CDOTAUserMsg_AIDebugLine\022\017\n\007message\030\001 \001("
-    "\t\"$\n\021CDOTAUserMsg_Ping\022\017\n\007message\030\001 \001(\t\""
-    ",\n\027CDOTAUserMsg_SwapVerify\022\021\n\tplayer_id\030"
-    "\001 \001(\r\"\217\002\n\026CDOTAUserMsg_ChatEvent\0226\n\004type"
-    "\030\001 \002(\0162\022.DOTA_CHAT_MESSAGE:\024CHAT_MESSAGE"
-    "_INVALID\022\r\n\005value\030\002 \001(\r\022\026\n\nplayerid_1\030\003 "
-    "\001(\021:\002-1\022\026\n\nplayerid_2\030\004 \001(\021:\002-1\022\026\n\nplaye"
-    "rid_3\030\005 \001(\021:\002-1\022\026\n\nplayerid_4\030\006 \001(\021:\002-1\022"
-    "\026\n\nplayerid_5\030\007 \001(\021:\002-1\022\026\n\nplayerid_6\030\010 "
-    "\001(\021:\002-1\022\016\n\006value2\030\t \001(\r\022\016\n\006value3\030\n \001(\r\""
-    "!\n\037CDOTAUserMsg_CombatLogShowDeath\"Z\n\024CD"
-    "OTAUserMsg_BotChat\022\021\n\tplayer_id\030\001 \001(\r\022\016\n"
-    "\006format\030\002 \001(\t\022\017\n\007message\030\003 \001(\t\022\016\n\006target"
-    "\030\004 \001(\t\"q\n CDOTAUserMsg_CombatHeroPositio"
-    "ns\022\r\n\005index\030\001 \001(\r\022\014\n\004time\030\002 \001(\005\022 \n\tworld"
-    "_pos\030\003 \001(\0132\r.CMsgVector2D\022\016\n\006health\030\004 \001("
-    "\005\"\375\001\n\034CDOTAUserMsg_MiniKillCamInfo\0229\n\tat"
-    "tackers\030\001 \003(\0132&.CDOTAUserMsg_MiniKillCam"
-    "Info.Attacker\032\241\001\n\010Attacker\022\020\n\010attacker\030\001"
-    " \001(\r\022\024\n\014total_damage\030\002 \001(\005\022A\n\tabilities\030"
-    "\003 \003(\0132..CDOTAUserMsg_MiniKillCamInfo.Att"
-    "acker.Ability\032*\n\007Ability\022\017\n\007ability\030\001 \001("
-    "\r\022\016\n\006damage\030\002 \001(\005\"@\n\035CDOTAUserMsg_Global"
-    "LightColor\022\r\n\005color\030\001 \001(\r\022\020\n\010duration\030\002 "
-    "\001(\002\"U\n!CDOTAUserMsg_GlobalLightDirection"
-    "\022\036\n\tdirection\030\001 \001(\0132\013.CMsgVector\022\020\n\010dura"
-    "tion\030\002 \001(\002\"]\n\031CDOTAUserMsg_LocationPing\022"
-    "\021\n\tplayer_id\030\001 \001(\r\022-\n\rlocation_ping\030\002 \001("
-    "\0132\026.CDOTAMsg_LocationPing\"T\n\026CDOTAUserMs"
-    "g_ItemAlert\022\021\n\tplayer_id\030\001 \001(\r\022\'\n\nitem_a"
-    "lert\030\002 \001(\0132\023.CDOTAMsg_ItemAlert\"m\n\033CDOTA"
-    "UserMsg_EnemyItemAlert\022\021\n\tplayer_id\030\001 \001("
-    "\r\022\030\n\020target_player_id\030\002 \001(\r\022\016\n\006itemid\030\003 "
-    "\001(\005\022\021\n\trune_type\030\004 \001(\r\"\204\001\n\032CDOTAUserMsg_"
-    "ModifierAlert\022\021\n\tplayer_id\030\001 \001(\r\022\022\n\nclas"
-    "s_name\030\002 \001(\t\022\023\n\013stack_count\030\003 \001(\r\022\021\n\tis_"
-    "debuff\030\004 \001(\010\022\027\n\017target_entindex\030\005 \001(\r\"F\n"
-    "\030CDOTAUserMsg_HPManaAlert\022\021\n\tplayer_id\030\001"
-    " \001(\r\022\027\n\017target_entindex\030\002 \001(\r\">\n\027CDOTAUs"
-    "erMsg_GlyphAlert\022\021\n\tplayer_id\030\001 \001(\r\022\020\n\010n"
-    "egative\030\002 \001(\010\"[\n\036CDOTAUserMsg_WillPurcha"
-    "seAlert\022\016\n\006itemid\030\001 \001(\005\022\021\n\tplayer_id\030\002 \001"
-    "(\005\022\026\n\016gold_remaining\030\003 \001(\r\"3\n\036CDOTAUserM"
-    "sg_BuyBackStateAlert\022\021\n\tplayer_id\030\001 \001(\005\""
-    "V\n\032CDOTAUserMsg_QuickBuyAlert\022\021\n\tplayer_"
-    "id\030\001 \001(\005\022\016\n\006itemid\030\002 \001(\005\022\025\n\rgold_require"
-    "d\030\003 \001(\005\"m\n\037CDOTAUserMsg_CourierKilledAle"
-    "rt\022\014\n\004team\030\001 \001(\r\022\022\n\ngold_value\030\002 \001(\r\022\025\n\r"
-    "entity_handle\030\003 \001(\005\022\021\n\ttimestamp\030\004 \001(\005\"n"
-    "\n\031CDOTAUserMsg_MinimapEvent\022\022\n\nevent_typ"
-    "e\030\001 \001(\005\022\025\n\rentity_handle\030\002 \001(\005\022\t\n\001x\030\003 \001("
-    "\005\022\t\n\001y\030\004 \001(\005\022\020\n\010duration\030\005 \001(\005\"M\n\024CDOTAU"
-    "serMsg_MapLine\022\021\n\tplayer_id\030\001 \001(\005\022\"\n\007map"
-    "line\030\002 \001(\0132\021.CDOTAMsg_MapLine\"}\n\036CDOTAUs"
-    "erMsg_MinimapDebugPoint\022\035\n\010location\030\001 \001("
-    "\0132\013.CMsgVector\022\r\n\005color\030\002 \001(\r\022\014\n\004size\030\003 "
-    "\001(\005\022\020\n\010duration\030\004 \001(\002\022\r\n\005index\030\005 \001(\005\"\346\001\n"
-    "#CDOTAUserMsg_CreateLinearProjectile\022\033\n\006"
-    "origin\030\001 \001(\0132\013.CMsgVector\022\037\n\010velocity\030\002 "
-    "\001(\0132\r.CMsgVector2D\022\017\n\007latency\030\003 \001(\005\022\020\n\010e"
-    "ntindex\030\004 \001(\005\022\026\n\016particle_index\030\005 \001(\004\022\016\n"
-    "\006handle\030\006 \001(\005\022#\n\014acceleration\030\007 \001(\0132\r.CM"
-    "sgVector2D\022\021\n\tmax_speed\030\010 \001(\002\"6\n$CDOTAUs"
-    "erMsg_DestroyLinearProjectile\022\016\n\006handle\030"
-    "\001 \001(\005\"O\n%CDOTAUserMsg_DodgeTrackingProje"
-    "ctiles\022\020\n\010entindex\030\001 \002(\005\022\024\n\014attacks_only"
-    "\030\002 \001(\010\"_\n!CDOTAUserMsg_SpectatorPlayerCl"
-    "ick\022\020\n\010entindex\030\001 \002(\005\022\022\n\norder_type\030\002 \001("
-    "\005\022\024\n\014target_index\030\003 \001(\005\"\321\001\n&CDOTAUserMsg"
-    "_SpectatorPlayerUnitOrders\022\020\n\010entindex\030\001"
-    " \001(\005\022\022\n\norder_type\030\002 \001(\005\022\r\n\005units\030\003 \003(\005\022"
-    "\024\n\014target_index\030\004 \001(\005\022\025\n\rability_index\030\005"
-    " \001(\005\022\035\n\010position\030\006 \001(\0132\013.CMsgVector\022\r\n\005q"
-    "ueue\030\007 \001(\010\022\027\n\017sequence_number\030\010 \001(\005\"b\n\035C"
-    "DOTAUserMsg_NevermoreRequiem\022\025\n\rentity_h"
-    "andle\030\001 \001(\005\022\r\n\005lines\030\002 \001(\005\022\033\n\006origin\030\003 \001"
-    "(\0132\013.CMsgVector\".\n\033CDOTAUserMsg_InvalidC"
-    "ommand\022\017\n\007message\030\001 \001(\t\")\n\025CDOTAUserMsg_"
-    "HudError\022\020\n\010order_id\030\001 \001(\005\"c\n\033CDOTAUserM"
-    "sg_SharedCooldown\022\020\n\010entindex\030\001 \001(\005\022\014\n\004n"
-    "ame\030\002 \001(\t\022\020\n\010cooldown\030\003 \001(\002\022\022\n\nname_inde"
-    "x\030\004 \001(\005\"/\n\037CDOTAUserMsg_SetNextAutobuyIt"
-    "em\022\014\n\004name\030\001 \001(\t\"X\n\033CDOTAUserMsg_Hallowe"
-    "enDrops\022\021\n\titem_defs\030\001 \003(\r\022\022\n\nplayer_ids"
-    "\030\002 \003(\r\022\022\n\nprize_list\030\003 \001(\r\"\223\003\n\035CDOTAUser"
-    "Msg_PredictionResult\022\022\n\naccount_id\030\001 \001(\r"
-    "\022\020\n\010match_id\030\002 \001(\004\022\017\n\007correct\030\003 \001(\010\022>\n\013p"
-    "redictions\030\004 \003(\0132).CDOTAUserMsg_Predicti"
-    "onResult.Prediction\032\372\001\n\nPrediction\022\020\n\010it"
-    "em_def\030\001 \001(\r\022\023\n\013num_correct\030\002 \001(\r\022\021\n\tnum"
-    "_fails\030\003 \001(\r\022X\n\006result\030\004 \001(\01621.CDOTAUser"
-    "Msg_PredictionResult.Prediction.EResult:"
-    "\025k_eResult_ItemGranted\022\031\n\021granted_item_d"
-    "efs\030\006 \003(\r\"=\n\007EResult\022\031\n\025k_eResult_ItemGr"
-    "anted\020\001\022\027\n\023k_eResult_Destroyed\020\002\"\376\001\n\034CDO"
-    "TAResponseQuerySerialized\0221\n\005facts\030\001 \003(\013"
-    "2\".CDOTAResponseQuerySerialized.Fact\032\252\001\n"
-    "\004Fact\022\013\n\003key\030\001 \002(\005\022F\n\007valtype\030\002 \002(\0162,.CD"
-    "OTAResponseQuerySerialized.Fact.ValueTyp"
-    "e:\007NUMERIC\022\023\n\013val_numeric\030\003 \001(\002\022\022\n\nval_s"
-    "tring\030\004 \001(\t\"$\n\tValueType\022\013\n\007NUMERIC\020\001\022\n\n"
-    "\006STRING\020\002\"\220\001\n\030CDOTASpeechMatchOnClient\022\017"
-    "\n\007concept\030\001 \001(\005\022\026\n\016recipient_type\030\002 \001(\005\022"
-    "4\n\rresponsequery\030\003 \001(\0132\035.CDOTAResponseQu"
-    "erySerialized\022\025\n\nrandomseed\030\004 \001(\017:\0010\"\350\006\n"
-    "\026CDOTAUserMsg_UnitEvent\0228\n\010msg_type\030\001 \002("
-    "\0162\024.EDotaEntityMessages:\020DOTA_UNIT_SPEEC"
-    "H\022\024\n\014entity_index\030\002 \002(\005\022.\n\006speech\030\003 \001(\0132"
-    "\036.CDOTAUserMsg_UnitEvent.Speech\0227\n\013speec"
-    "h_mute\030\004 \001(\0132\".CDOTAUserMsg_UnitEvent.Sp"
-    "eechMute\0227\n\013add_gesture\030\005 \001(\0132\".CDOTAUse"
-    "rMsg_UnitEvent.AddGesture\022=\n\016remove_gest"
-    "ure\030\006 \001(\0132%.CDOTAUserMsg_UnitEvent.Remov"
-    "eGesture\0229\n\014blood_impact\030\007 \001(\0132#.CDOTAUs"
-    "erMsg_UnitEvent.BloodImpact\0229\n\014fade_gest"
-    "ure\030\010 \001(\0132#.CDOTAUserMsg_UnitEvent.FadeG"
-    "esture\0229\n\026speech_match_on_client\030\t \001(\0132\031"
-    ".CDOTASpeechMatchOnClient\032k\n\006Speech\022\017\n\007c"
-    "oncept\030\001 \001(\005\022\020\n\010response\030\002 \001(\t\022\026\n\016recipi"
-    "ent_type\030\003 \001(\005\022\r\n\005level\030\004 \001(\005\022\027\n\010muteabl"
-    "e\030\005 \001(\010:\005false\032 \n\nSpeechMute\022\022\n\005delay\030\001 "
-    "\001(\002:\0030.5\032W\n\nAddGesture\022\020\n\010activity\030\001 \001(\005"
-    "\022\014\n\004slot\030\002 \001(\005\022\022\n\007fade_in\030\003 \001(\002:\0010\022\025\n\010fa"
-    "de_out\030\004 \001(\002:\0030.1\032!\n\rRemoveGesture\022\020\n\010ac"
-    "tivity\030\001 \001(\005\032@\n\013BloodImpact\022\r\n\005scale\030\001 \001"
-    "(\005\022\020\n\010x_normal\030\002 \001(\005\022\020\n\010y_normal\030\003 \001(\005\032\037"
-    "\n\013FadeGesture\022\020\n\010activity\030\001 \001(\005\"0\n\032CDOTA"
-    "UserMsg_ItemPurchased\022\022\n\nitem_index\030\001 \001("
-    "\005\"j\n\026CDOTAUserMsg_ItemFound\022\016\n\006player\030\001 "
-    "\001(\005\022\017\n\007quality\030\002 \001(\005\022\016\n\006rarity\030\003 \001(\005\022\016\n\006"
-    "method\030\004 \001(\005\022\017\n\007itemdef\030\005 \001(\005\"\376\021\n\034CDOTAU"
-    "serMsg_ParticleManager\022H\n\004type\030\001 \002(\0162\026.D"
-    "OTA_PARTICLE_MESSAGE:\"DOTA_PARTICLE_MANA"
-    "GER_EVENT_CREATE\022\r\n\005index\030\002 \002(\r\022R\n\026relea"
-    "se_particle_index\030\003 \001(\01322.CDOTAUserMsg_P"
-    "articleManager.ReleaseParticleIndex\022E\n\017c"
-    "reate_particle\030\004 \001(\0132,.CDOTAUserMsg_Part"
-    "icleManager.CreateParticle\022G\n\020destroy_pa"
-    "rticle\030\005 \001(\0132-.CDOTAUserMsg_ParticleMana"
-    "ger.DestroyParticle\022Z\n\032destroy_particle_"
-    "involving\030\006 \001(\01326.CDOTAUserMsg_ParticleM"
-    "anager.DestroyParticleInvolving\022E\n\017updat"
-    "e_particle\030\007 \001(\0132,.CDOTAUserMsg_Particle"
-    "Manager.UpdateParticle\022L\n\023update_particl"
-    "e_fwd\030\010 \001(\0132/.CDOTAUserMsg_ParticleManag"
-    "er.UpdateParticleFwd\022R\n\026update_particle_"
-    "orient\030\t \001(\01322.CDOTAUserMsg_ParticleMana"
-    "ger.UpdateParticleOrient\022V\n\030update_parti"
-    "cle_fallback\030\n \001(\01324.CDOTAUserMsg_Partic"
-    "leManager.UpdateParticleFallback\022R\n\026upda"
-    "te_particle_offset\030\013 \001(\01322.CDOTAUserMsg_"
-    "ParticleManager.UpdateParticleOffset\022L\n\023"
-    "update_particle_ent\030\014 \001(\0132/.CDOTAUserMsg"
-    "_ParticleManager.UpdateParticleEnt\022[\n\033up"
-    "date_particle_should_draw\030\016 \001(\01326.CDOTAU"
-    "serMsg_ParticleManager.UpdateParticleSho"
-    "uldDraw\022Y\n\032update_particle_set_frozen\030\017 "
-    "\001(\01325.CDOTAUserMsg_ParticleManager.Updat"
-    "eParticleSetFrozen\022c\n\037change_control_poi"
-    "nt_attachment\030\020 \001(\0132:.CDOTAUserMsg_Parti"
-    "cleManager.ChangeControlPointAttachment\032"
-    "\026\n\024ReleaseParticleIndex\032~\n\016CreateParticl"
-    "e\022\033\n\023particle_name_index\030\001 \001(\006\022\023\n\013attach"
-    "_type\030\002 \001(\005\022\025\n\rentity_handle\030\003 \001(\005\022#\n\033en"
-    "tity_handle_for_modifiers\030\004 \001(\005\032.\n\017Destr"
-    "oyParticle\022\033\n\023destroy_immediately\030\001 \001(\010\032"
-    "N\n\030DestroyParticleInvolving\022\033\n\023destroy_i"
-    "mmediately\030\001 \001(\010\022\025\n\rentity_handle\030\003 \001(\005\032"
-    "F\n\016UpdateParticle\022\025\n\rcontrol_point\030\001 \001(\005"
-    "\022\035\n\010position\030\002 \001(\0132\013.CMsgVector\032H\n\021Updat"
-    "eParticleFwd\022\025\n\rcontrol_point\030\001 \001(\005\022\034\n\007f"
-    "orward\030\002 \001(\0132\013.CMsgVector\032\200\001\n\024UpdatePart"
-    "icleOrient\022\025\n\rcontrol_point\030\001 \001(\005\022\034\n\007for"
-    "ward\030\002 \001(\0132\013.CMsgVector\022\032\n\005right\030\003 \001(\0132\013"
-    ".CMsgVector\022\027\n\002up\030\004 \001(\0132\013.CMsgVector\032N\n\026"
-    "UpdateParticleFallback\022\025\n\rcontrol_point\030"
-    "\001 \001(\005\022\035\n\010position\030\002 \001(\0132\013.CMsgVector\032Q\n\024"
-    "UpdateParticleOffset\022\025\n\rcontrol_point\030\001 "
-    "\001(\005\022\"\n\rorigin_offset\030\002 \001(\0132\013.CMsgVector\032"
-    "\255\001\n\021UpdateParticleEnt\022\025\n\rcontrol_point\030\001"
-    " \001(\005\022\025\n\rentity_handle\030\002 \001(\005\022\023\n\013attach_ty"
-    "pe\030\003 \001(\005\022\022\n\nattachment\030\004 \001(\005\022&\n\021fallback"
-    "_position\030\005 \001(\0132\013.CMsgVector\022\031\n\021include_"
-    "wearables\030\006 \001(\010\032-\n\027UpdateParticleSetFroz"
-    "en\022\022\n\nset_frozen\030\001 \001(\010\032/\n\030UpdateParticle"
-    "ShouldDraw\022\023\n\013should_draw\030\001 \001(\010\032e\n\034Chang"
-    "eControlPointAttachment\022\026\n\016attachment_ol"
-    "d\030\001 \001(\005\022\026\n\016attachment_new\030\002 \001(\005\022\025\n\rentit"
-    "y_handle\030\003 \001(\005\"\305\001\n\032CDOTAUserMsg_Overhead"
-    "Event\022\?\n\014message_type\030\001 \002(\0162\024.DOTA_OVERH"
-    "EAD_ALERT:\023OVERHEAD_ALERT_GOLD\022\r\n\005value\030"
-    "\002 \001(\005\022\036\n\026target_player_entindex\030\003 \001(\005\022\027\n"
-    "\017target_entindex\030\004 \001(\005\022\036\n\026source_player_"
-    "entindex\030\005 \001(\005\">\n\034CDOTAUserMsg_TutorialT"
-    "ipInfo\022\014\n\004name\030\001 \001(\t\022\020\n\010progress\030\002 \001(\005\"]"
-    "\n\033CDOTAUserMsg_TutorialFinish\022\017\n\007heading"
-    "\030\001 \001(\t\022\016\n\006emblem\030\002 \001(\t\022\014\n\004body\030\003 \001(\t\022\017\n\007"
-    "success\030\004 \001(\010\"&\n$CDOTAUserMsg_TutorialMi"
-    "nimapPosition\"_\n\037CDOTAUserMsg_SendGeneri"
-    "cToolTip\022\r\n\005title\030\001 \001(\t\022\014\n\004text\030\002 \001(\t\022\020\n"
-    "\010entindex\030\003 \001(\005\022\r\n\005close\030\004 \001(\010\"S\n\026CDOTAU"
-    "serMsg_WorldLine\022\021\n\tplayer_id\030\001 \001(\005\022&\n\tw"
-    "orldline\030\002 \001(\0132\023.CDOTAMsg_WorldLine\"\223\001\n\026"
-    "CDOTAUserMsg_ChatWheel\022;\n\014chat_message\030\001"
-    " \001(\0162\026.EDOTAChatWheelMessage:\rk_EDOTA_CW"
-    "_Ok\022\021\n\tplayer_id\030\002 \001(\r\022\022\n\naccount_id\030\003 \001"
-    "(\r\022\025\n\rparam_hero_id\030\004 \001(\r\"]\n\035CDOTAUserMs"
-    "g_ReceivedXmasGift\022\021\n\tplayer_id\030\001 \001(\005\022\021\n"
-    "\titem_name\030\002 \001(\t\022\026\n\016inventory_slot\030\003 \001(\005"
-    "\"\244\001\n\027CDOTAUserMsg_ShowSurvey\022\021\n\tsurvey_i"
-    "d\030\001 \001(\005\022\020\n\010match_id\030\002 \001(\r\022\026\n\016response_st"
-    "yle\030\003 \001(\t\022\030\n\020teammate_hero_id\030\004 \001(\r\022\025\n\rt"
-    "eammate_name\030\005 \001(\t\022\033\n\023teammate_account_i"
-    "d\030\006 \001(\r\"5\n CDOTAUserMsg_UpdateSharedCont"
-    "ent\022\021\n\tslot_type\030\001 \001(\005\"!\n\037CDOTAUserMsg_T"
-    "utorialRequestExp\".\n\031CDOTAUserMsg_Tutori"
-    "alFade\022\021\n\ttgt_alpha\030\001 \001(\005\"x\n CDOTAUserMs"
-    "g_TutorialPingMinimap\022\021\n\tplayer_id\030\001 \001(\r"
-    "\022\r\n\005pos_x\030\002 \001(\002\022\r\n\005pos_y\030\003 \001(\002\022\r\n\005pos_z\030"
-    "\004 \001(\002\022\024\n\014entity_index\030\005 \001(\005\"3\n\"CDOTAUser"
-    "Msg_GamerulesStateChanged\022\r\n\005state\030\001 \001(\r"
-    "\"E\n\035CDOTAUserMsg_AddQuestLogEntry\022\020\n\010npc"
-    "_name\030\001 \001(\t\022\022\n\nnpc_dialog\030\002 \001(\t\"[\n\032CDOTA"
-    "UserMsg_SendStatPopup\022\021\n\tplayer_id\030\001 \001(\005"
-    "\022*\n\tstatpopup\030\002 \001(\0132\027.CDOTAMsg_SendStatP"
-    "opup\"C\n\034CDOTAUserMsg_SendRoshanPopup\022\021\n\t"
-    "reclaimed\030\001 \001(\010\022\020\n\010gametime\030\002 \001(\005\"L\n\032CDO"
-    "TAUserMsg_SendFinalGold\022\025\n\rreliable_gold"
-    "\030\001 \003(\r\022\027\n\017unreliable_gold\030\002 \003(\r\"K\n\026CDOTA"
-    "UserMsg_CustomMsg\022\017\n\007message\030\001 \001(\t\022\021\n\tpl"
-    "ayer_id\030\002 \001(\005\022\r\n\005value\030\003 \001(\005\"X\n\031CDOTAUse"
-    "rMsg_CoachHUDPing\022\021\n\tplayer_id\030\001 \001(\r\022(\n\010"
-    "hud_ping\030\002 \001(\0132\026.CDOTAMsg_CoachHUDPing\" "
-    "\n\036CDOTAUserMsg_ClientLoadGridNav\"\353\001\n\032CDO"
-    "TAUserMsg_TE_Projectile\022\017\n\007hSource\030\001 \001(\005"
-    "\022\017\n\007hTarget\030\002 \001(\005\022\021\n\tmoveSpeed\030\003 \001(\005\022\030\n\020"
-    "sourceAttachment\030\004 \001(\005\022\034\n\024particleSystem"
-    "Handle\030\005 \001(\003\022\021\n\tdodgeable\030\006 \001(\010\022\020\n\010isAtt"
-    "ack\030\007 \001(\010\022\020\n\010isEvaded\030\010 \001(\010\022\022\n\nexpireTim"
-    "e\030\t \001(\002\022\025\n\rmaximpacttime\030\n \001(\002\"\356\001\n\035CDOTA"
-    "UserMsg_TE_ProjectileLoc\022\037\n\nvSourceLoc\030\001"
-    " \001(\0132\013.CMsgVector\022\017\n\007hTarget\030\002 \001(\005\022\021\n\tmo"
-    "veSpeed\030\003 \001(\005\022\034\n\024particleSystemHandle\030\004 "
-    "\001(\003\022\021\n\tdodgeable\030\005 \001(\010\022\020\n\010isAttack\030\006 \001(\010"
-    "\022\020\n\010isEvaded\030\010 \001(\010\022\022\n\nexpireTime\030\t \001(\002\022\037"
-    "\n\nvTargetLoc\030\n \001(\0132\013.CMsgVector\"b\n\037CDOTA"
-    "UserMsg_TE_DotaBloodImpact\022\016\n\006entity\030\001 \001"
-    "(\005\022\r\n\005scale\030\002 \001(\002\022\017\n\007xnormal\030\003 \001(\002\022\017\n\007yn"
-    "ormal\030\004 \001(\002\"\313\001\n\030CDOTAUserMsg_AbilityPing"
-    "\022\021\n\tplayer_id\030\001 \001(\r\022\022\n\nability_id\030\002 \001(\r\022"
-    "9\n\004type\030\003 \001(\0162\027.DOTA_ABILITY_PING_TYPE:\022"
-    "ABILITY_PING_READY\022\030\n\020cooldown_seconds\030\004"
-    " \001(\r\022\r\n\005level\030\005 \001(\r\022\017\n\007passive\030\006 \001(\010\022\023\n\013"
-    "mana_needed\030\007 \001(\r\"\221\001\n\035CDOTAUserMsg_TE_Un"
-    "itAnimation\022\016\n\006entity\030\001 \001(\005\022\027\n\017sequenceV"
-    "ariant\030\002 \001(\005\022\024\n\014playbackrate\030\003 \001(\002\022\021\n\tca"
-    "stpoint\030\004 \001(\002\022\014\n\004type\030\005 \001(\005\022\020\n\010activity\030"
-    "\006 \001(\005\"@\n CDOTAUserMsg_TE_UnitAnimationEn"
-    "d\022\016\n\006entity\030\001 \001(\005\022\014\n\004snap\030\002 \001(\010\"\221\001\n\035CDOT"
-    "AUserMsg_ShowGenericPopup\022\016\n\006header\030\001 \002("
-    "\t\022\014\n\004body\030\002 \002(\t\022\016\n\006param1\030\003 \001(\t\022\016\n\006param"
-    "2\030\004 \001(\t\022\023\n\013tint_screen\030\005 \001(\010\022\035\n\025show_no_"
-    "other_dialogs\030\006 \001(\010\"`\n\026CDOTAUserMsg_Vote"
-    "Start\022\r\n\005title\030\001 \001(\t\022\020\n\010duration\030\002 \001(\002\022\024"
-    "\n\014choice_count\030\003 \001(\005\022\017\n\007choices\030\004 \003(\t\"0\n"
-    "\027CDOTAUserMsg_VoteUpdate\022\025\n\rchoice_count"
-    "s\030\001 \003(\005\"/\n\024CDOTAUserMsg_VoteEnd\022\027\n\017selec"
-    "ted_choice\030\001 \001(\005\"\214\001\n\037CDOTAUserMsg_Booste"
-    "rStatePlayer\022\021\n\tplayer_id\030\001 \001(\r\022\r\n\005bonus"
-    "\030\002 \001(\002\022\023\n\013event_bonus\030\003 \001(\002\022\025\n\rbonus_ite"
-    "m_id\030\004 \001(\r\022\033\n\023event_bonus_item_id\030\005 \001(\r\""
-    "V\n\031CDOTAUserMsg_BoosterState\0229\n\017boosted_"
-    "players\030\001 \003(\0132 .CDOTAUserMsg_BoosterStat"
-    "ePlayer\")\n\026CDOTAUserMsg_PlayerMMR\022\017\n\003mmr"
-    "\030\001 \003(\021B\002\020\001\"Y\n\031CDOTAUserMsg_AbilitySteal\022"
-    "\021\n\tplayer_id\030\001 \001(\r\022\022\n\nability_id\030\002 \001(\r\022\025"
-    "\n\rability_level\030\003 \001(\r\"f\n\034CDOTAUserMsg_St"
-    "atsHeroLookup\022\021\n\tplayer_id\030\001 \001(\005\022\017\n\007hero"
-    "_id\030\002 \001(\005\022\021\n\thero_name\030\003 \001(\t\022\017\n\007persona\030"
-    "\004 \001(\t\"\372\001\n\"CDOTAUserMsg_StatsHeroPosition"
-    "Info\022\030\n\020average_position\030\001 \001(\002\022J\n\020positi"
-    "on_details\030\002 \003(\01320.CDOTAUserMsg_StatsHer"
-    "oPositionInfo.PositionPair\032n\n\014PositionPa"
-    "ir\022F\n\021position_category\030\001 \001(\0162\027.DOTA_POS"
-    "ITION_CATEGORY:\022DOTA_POSITION_NONE\022\026\n\016po"
-    "sition_count\030\002 \001(\r\"\217\003\n#CDOTAUserMsg_Stat"
-    "sHeroMinuteDetails\022\021\n\tlast_hits\030\001 \001(\r\022\022\n"
-    "\nhero_kills\030\002 \001(\r\022\023\n\013hero_damage\030\003 \001(\r\022\024"
-    "\n\014tower_damage\030\004 \001(\r\022:\n\rposition_info\030\005 "
-    "\001(\0132#.CDOTAUserMsg_StatsHeroPositionInfo"
-    "\022\020\n\010total_xp\030\006 \001(\r\022\021\n\tnet_worth\030\007 \001(\r\022\034\n"
-    "\024harvested_creep_gold\030\010 \001(\r\022\024\n\014claimed_f"
-    "arm\030\t \001(\r\022\024\n\014wards_placed\030\n \001(\r\022\027\n\017runes"
-    "_collected\030\013 \001(\r\022\020\n\010tps_used\030\014 \001(\r\022\022\n\nma"
-    "na_spent\030\r \003(\r\022\027\n\017damage_absorbed\030\016 \003(\r\022"
-    "\023\n\013damage_done\030\017 \003(\r\"\347\003\n#CDOTAUserMsg_St"
-    "atsTeamMinuteDetails\022:\n\014player_stats\030\001 \003"
-    "(\0132$.CDOTAUserMsg_StatsHeroMinuteDetails"
-    "\022\023\n\013tower_kills\030\002 \001(\r\022\025\n\rbarrack_kills\030\003"
-    " \001(\r\022!\n\031available_lane_creep_gold\030\004 \001(\r\022"
-    "\032\n\022balance_kill_value\030\005 \001(\r\022\033\n\023balance_t"
-    "ower_value\030\006 \001(\r\022\036\n\026balance_barracks_val"
-    "ue\030\007 \001(\r\022\032\n\022balance_gold_value\030\010 \001(\r\022\030\n\020"
-    "balance_xp_value\030\t \001(\r\022R\n\020lane_performan"
-    "ce\030\n \003(\01328.CDOTAUserMsg_StatsTeamMinuteD"
-    "etails.LocationPerformance\032R\n\023LocationPe"
-    "rformance\022\031\n\021location_category\030\001 \001(\r\022\021\n\t"
-    "stat_type\030\002 \001(\r\022\r\n\005value\030\003 \001(\r\"\254\001\n!CDOTA"
-    "UserMsg_StatsPlayerKillShare\022\021\n\tplayer_i"
-    "d\030\001 \001(\005\022\032\n\022kill_share_percent\030\002 \001(\002\022\024\n\014p"
-    "layer_loc_x\030\003 \001(\002\022\024\n\014player_loc_y\030\004 \001(\002\022"
-    "\026\n\016health_percent\030\005 \001(\002\022\024\n\014mana_percent\030"
-    "\006 \001(\002\"\304\001\n\035CDOTAUserMsg_StatsKillDetails\022"
-    "\021\n\tvictim_id\030\001 \001(\r\0227\n\013kill_shares\030\002 \003(\0132"
-    "\".CDOTAUserMsg_StatsPlayerKillShare\022\026\n\016d"
-    "amage_to_kill\030\003 \001(\r\022\030\n\020effective_health\030"
-    "\004 \001(\r\022\022\n\ndeath_time\030\005 \001(\002\022\021\n\tkiller_id\030\006"
-    " \001(\r\"\213\006\n\036CDOTAUserMsg_StatsMatchDetails\022"
-    "2\n\013hero_lookup\030\001 \003(\0132\035.CDOTAUserMsg_Stat"
-    "sHeroLookup\022;\n\rradiant_stats\030\002 \003(\0132$.CDO"
-    "TAUserMsg_StatsTeamMinuteDetails\0228\n\ndire"
-    "_stats\030\003 \003(\0132$.CDOTAUserMsg_StatsTeamMin"
-    "uteDetails\0225\n\rradiant_kills\030\004 \003(\0132\036.CDOT"
-    "AUserMsg_StatsKillDetails\0222\n\ndire_kills\030"
-    "\005 \003(\0132\036.CDOTAUserMsg_StatsKillDetails\022U\n"
-    "\rfight_details\030\006 \003(\0132>.CDOTAUserMsg_Stat"
-    "sMatchDetails.CDOTAUserMsg_StatsFightDet"
-    "ails\032p\n\"CDOTAUserMsg_StatsFightTeamDetai"
-    "ls\022\024\n\014participants\030\001 \003(\r\022\016\n\006deaths\030\002 \003(\r"
-    "\022\022\n\ngold_delta\030\003 \001(\r\022\020\n\010xp_delta\030\004 \001(\r\032\211"
-    "\002\n\036CDOTAUserMsg_StatsFightDetails\022\022\n\nsta"
-    "rt_time\030\001 \001(\002\022\020\n\010end_time\030\002 \001(\002\022a\n\025radia"
-    "nt_fight_details\030\003 \001(\0132B.CDOTAUserMsg_St"
-    "atsMatchDetails.CDOTAUserMsg_StatsFightT"
-    "eamDetails\022^\n\022dire_fight_details\030\004 \001(\0132B"
-    ".CDOTAUserMsg_StatsMatchDetails.CDOTAUse"
-    "rMsg_StatsFightTeamDetails\"4\n\026CDOTAUserM"
-    "sg_MiniTaunt\022\032\n\022taunting_player_id\030\001 \001(\r"
-    "\"0\n\031CDOTAUserMsg_SpeechBubble\022\023\n\013destroy"
-    "_all\030\001 \001(\010\"g\n CDOTAUserMsg_CustomHeaderM"
-    "essage\022\021\n\tplayer_id\030\001 \001(\r\022\020\n\010duration\030\002 "
-    "\001(\002\022\017\n\007message\030\003 \001(\t\022\r\n\005value\030\004 \001(\005\"v\n\023C"
-    "MsgHeroAbilityStat\0227\n\tstat_type\030\001 \001(\0162\016."
-    "EHeroStatType:\024k_EHeroStatType_None\022\021\n\ti"
-    "nt_value\030\002 \001(\005\022\023\n\013float_value\030\003 \001(\002\"d\n\034C"
-    "MsgCombatAnalyzerPlayerStat\022\022\n\naccount_i"
-    "d\030\001 \001(\r\0220\n\022hero_ability_stats\030\002 \003(\0132\024.CM"
-    "sgHeroAbilityStat\"`\n\027CMsgCombatAnalyzerS"
-    "tats\022\020\n\010match_id\030\001 \001(\004\0223\n\014player_stats\030\002"
-    " \003(\0132\035.CMsgCombatAnalyzerPlayerStat\"W\n\026C"
-    "DOTAUserMsg_BeastChat\022\014\n\004team\030\001 \001(\r\022\016\n\006f"
-    "ormat\030\002 \001(\t\022\017\n\007message\030\003 \001(\t\022\016\n\006target\030\004"
-    " \001(\t\"a\n$CDOTAUserMsg_CustomHudElement_Cr"
-    "eate\022\022\n\nelement_id\030\001 \001(\t\022\027\n\017layout_filen"
-    "ame\030\002 \001(\t\022\014\n\004data\030\003 \001(\014\"`\n$CDOTAUserMsg_"
-    "CustomHudElement_Modify\022\022\n\nelement_id\030\001 "
-    "\001(\t\022\026\n\016modify_visible\030\002 \001(\010\022\014\n\004data\030\003 \001("
-    "\014\";\n%CDOTAUserMsg_CustomHudElement_Destr"
-    "oy\022\022\n\nelement_id\030\001 \001(\t\"F\n\"CDOTAUserMsg_C"
-    "ompendiumStatePlayer\022\021\n\tplayer_id\030\001 \001(\r\022"
-    "\r\n\005level\030\002 \001(\r\"_\n\034CDOTAUserMsg_Compendiu"
-    "mState\022\?\n\022compendium_players\030\001 \003(\0132#.CDO"
-    "TAUserMsg_CompendiumStatePlayer\"\334\001\n\036CDOT"
-    "AUserMsg_ProjectionAbility\022\022\n\nability_id"
-    "\030\001 \001(\r\022\030\n\020caster_ent_index\030\002 \001(\005\022\023\n\013cast"
-    "er_team\030\003 \001(\005\022\023\n\013channel_end\030\004 \001(\010\022\033\n\006or"
-    "igin\030\005 \001(\0132\013.CMsgVector\022\031\n\021track_caster_"
-    "only\030\006 \001(\010\022\020\n\010end_time\030\007 \001(\002\022\030\n\020victim_e"
-    "nt_index\030\010 \001(\005\"a\n\034CDOTAUserMsg_Projectio"
-    "nEvent\0223\n\010event_id\030\001 \001(\0162\021.EProjectionEv"
-    "ent:\016ePE_FirstBlood\022\014\n\004team\030\002 \001(\r*\341\024\n\021ED"
-    "otaUserMessages\022\037\n\032DOTA_UM_AddUnitToSele"
-    "ction\020\320\003\022\030\n\023DOTA_UM_AIDebugLine\020\321\003\022\026\n\021DO"
-    "TA_UM_ChatEvent\020\322\003\022 \n\033DOTA_UM_CombatHero"
-    "Positions\020\323\003\022\032\n\025DOTA_UM_CombatLogData\020\324\003"
-    "\022\037\n\032DOTA_UM_CombatLogShowDeath\020\326\003\022#\n\036DOT"
-    "A_UM_CreateLinearProjectile\020\327\003\022$\n\037DOTA_U"
-    "M_DestroyLinearProjectile\020\330\003\022%\n DOTA_UM_"
-    "DodgeTrackingProjectiles\020\331\003\022\035\n\030DOTA_UM_G"
-    "lobalLightColor\020\332\003\022!\n\034DOTA_UM_GlobalLigh"
-    "tDirection\020\333\003\022\033\n\026DOTA_UM_InvalidCommand\020"
-    "\334\003\022\031\n\024DOTA_UM_LocationPing\020\335\003\022\024\n\017DOTA_UM"
-    "_MapLine\020\336\003\022\034\n\027DOTA_UM_MiniKillCamInfo\020\337"
-    "\003\022\036\n\031DOTA_UM_MinimapDebugPoint\020\340\003\022\031\n\024DOT"
-    "A_UM_MinimapEvent\020\341\003\022\035\n\030DOTA_UM_Nevermor"
-    "eRequiem\020\342\003\022\032\n\025DOTA_UM_OverheadEvent\020\343\003\022"
-    "\037\n\032DOTA_UM_SetNextAutobuyItem\020\344\003\022\033\n\026DOTA"
-    "_UM_SharedCooldown\020\345\003\022!\n\034DOTA_UM_Spectat"
-    "orPlayerClick\020\346\003\022\034\n\027DOTA_UM_TutorialTipI"
-    "nfo\020\347\003\022\026\n\021DOTA_UM_UnitEvent\020\350\003\022\034\n\027DOTA_U"
-    "M_ParticleManager\020\351\003\022\024\n\017DOTA_UM_BotChat\020"
-    "\352\003\022\025\n\020DOTA_UM_HudError\020\353\003\022\032\n\025DOTA_UM_Ite"
-    "mPurchased\020\354\003\022\021\n\014DOTA_UM_Ping\020\355\003\022\026\n\021DOTA"
-    "_UM_ItemFound\020\356\003\022\"\n\035DOTA_UM_CharacterSpe"
-    "akConcept\020\357\003\022\027\n\022DOTA_UM_SwapVerify\020\360\003\022\026\n"
-    "\021DOTA_UM_WorldLine\020\361\003\022\033\n\026DOTA_UM_Tournam"
-    "entDrop\020\362\003\022\026\n\021DOTA_UM_ItemAlert\020\363\003\022\033\n\026DO"
-    "TA_UM_HalloweenDrops\020\364\003\022\026\n\021DOTA_UM_ChatW"
-    "heel\020\365\003\022\035\n\030DOTA_UM_ReceivedXmasGift\020\366\003\022 "
-    "\n\033DOTA_UM_UpdateSharedContent\020\367\003\022\037\n\032DOTA"
-    "_UM_TutorialRequestExp\020\370\003\022 \n\033DOTA_UM_Tut"
-    "orialPingMinimap\020\371\003\022\"\n\035DOTA_UM_Gamerules"
-    "StateChanged\020\372\003\022\027\n\022DOTA_UM_ShowSurvey\020\373\003"
-    "\022\031\n\024DOTA_UM_TutorialFade\020\374\003\022\035\n\030DOTA_UM_A"
-    "ddQuestLogEntry\020\375\003\022\032\n\025DOTA_UM_SendStatPo"
-    "pup\020\376\003\022\033\n\026DOTA_UM_TutorialFinish\020\377\003\022\034\n\027D"
-    "OTA_UM_SendRoshanPopup\020\200\004\022\037\n\032DOTA_UM_Sen"
-    "dGenericToolTip\020\201\004\022\032\n\025DOTA_UM_SendFinalG"
-    "old\020\202\004\022\026\n\021DOTA_UM_CustomMsg\020\203\004\022\031\n\024DOTA_U"
-    "M_CoachHUDPing\020\204\004\022\036\n\031DOTA_UM_ClientLoadG"
-    "ridNav\020\205\004\022\032\n\025DOTA_UM_TE_Projectile\020\206\004\022\035\n"
-    "\030DOTA_UM_TE_ProjectileLoc\020\207\004\022\037\n\032DOTA_UM_"
-    "TE_DotaBloodImpact\020\210\004\022\035\n\030DOTA_UM_TE_Unit"
-    "Animation\020\211\004\022 \n\033DOTA_UM_TE_UnitAnimation"
-    "End\020\212\004\022\030\n\023DOTA_UM_AbilityPing\020\213\004\022\035\n\030DOTA"
-    "_UM_ShowGenericPopup\020\214\004\022\026\n\021DOTA_UM_VoteS"
-    "tart\020\215\004\022\027\n\022DOTA_UM_VoteUpdate\020\216\004\022\024\n\017DOTA"
-    "_UM_VoteEnd\020\217\004\022\031\n\024DOTA_UM_BoosterState\020\220"
-    "\004\022\036\n\031DOTA_UM_WillPurchaseAlert\020\221\004\022$\n\037DOT"
-    "A_UM_TutorialMinimapPosition\020\222\004\022\026\n\021DOTA_"
-    "UM_PlayerMMR\020\223\004\022\031\n\024DOTA_UM_AbilitySteal\020"
-    "\224\004\022\037\n\032DOTA_UM_CourierKilledAlert\020\225\004\022\033\n\026D"
-    "OTA_UM_EnemyItemAlert\020\226\004\022\036\n\031DOTA_UM_Stat"
-    "sMatchDetails\020\227\004\022\026\n\021DOTA_UM_MiniTaunt\020\230\004"
-    "\022\036\n\031DOTA_UM_BuyBackStateAlert\020\231\004\022\031\n\024DOTA"
-    "_UM_SpeechBubble\020\232\004\022 \n\033DOTA_UM_CustomHea"
-    "derMessage\020\233\004\022\032\n\025DOTA_UM_QuickBuyAlert\020\234"
-    "\004\022\035\n\030DOTA_UM_StatsHeroDetails\020\235\004\022\035\n\030DOTA"
-    "_UM_PredictionResult\020\236\004\022\032\n\025DOTA_UM_Modif"
-    "ierAlert\020\237\004\022\030\n\023DOTA_UM_HPManaAlert\020\240\004\022\027\n"
-    "\022DOTA_UM_GlyphAlert\020\241\004\022\026\n\021DOTA_UM_BeastC"
-    "hat\020\242\004\022&\n!DOTA_UM_SpectatorPlayerUnitOrd"
-    "ers\020\243\004\022$\n\037DOTA_UM_CustomHudElement_Creat"
-    "e\020\244\004\022$\n\037DOTA_UM_CustomHudElement_Modify\020"
-    "\245\004\022%\n DOTA_UM_CustomHudElement_Destroy\020\246"
-    "\004\022\034\n\027DOTA_UM_CompendiumState\020\247\004\022\036\n\031DOTA_"
-    "UM_ProjectionAbility\020\250\004\022\034\n\027DOTA_UM_Proje"
-    "ctionEvent\020\251\004*\364\030\n\021DOTA_CHAT_MESSAGE\022!\n\024C"
-    "HAT_MESSAGE_INVALID\020\377\377\377\377\377\377\377\377\377\001\022\032\n\026CHAT_M"
-    "ESSAGE_HERO_KILL\020\000\022\032\n\026CHAT_MESSAGE_HERO_"
-    "DENY\020\001\022\036\n\032CHAT_MESSAGE_BARRACKS_KILL\020\002\022\033"
-    "\n\027CHAT_MESSAGE_TOWER_KILL\020\003\022\033\n\027CHAT_MESS"
-    "AGE_TOWER_DENY\020\004\022\033\n\027CHAT_MESSAGE_FIRSTBL"
-    "OOD\020\005\022\034\n\030CHAT_MESSAGE_STREAK_KILL\020\006\022\030\n\024C"
-    "HAT_MESSAGE_BUYBACK\020\007\022\026\n\022CHAT_MESSAGE_AE"
-    "GIS\020\010\022\034\n\030CHAT_MESSAGE_ROSHAN_KILL\020\t\022\035\n\031C"
-    "HAT_MESSAGE_COURIER_LOST\020\n\022\"\n\036CHAT_MESSA"
-    "GE_COURIER_RESPAWNED\020\013\022\033\n\027CHAT_MESSAGE_G"
-    "LYPH_USED\020\014\022\036\n\032CHAT_MESSAGE_ITEM_PURCHAS"
-    "E\020\r\022\030\n\024CHAT_MESSAGE_CONNECT\020\016\022\033\n\027CHAT_ME"
-    "SSAGE_DISCONNECT\020\017\022.\n*CHAT_MESSAGE_DISCO"
-    "NNECT_WAIT_FOR_RECONNECT\020\020\022*\n&CHAT_MESSA"
-    "GE_DISCONNECT_TIME_REMAINING\020\021\0221\n-CHAT_M"
-    "ESSAGE_DISCONNECT_TIME_REMAINING_PLURAL\020"
-    "\022\022\032\n\026CHAT_MESSAGE_RECONNECT\020\023\022\034\n\030CHAT_ME"
-    "SSAGE_PLAYER_LEFT\020\024\022\036\n\032CHAT_MESSAGE_SAFE"
-    "_TO_LEAVE\020\025\022\034\n\030CHAT_MESSAGE_RUNE_PICKUP\020"
-    "\026\022\034\n\030CHAT_MESSAGE_RUNE_BOTTLE\020\027\022\031\n\025CHAT_"
-    "MESSAGE_INTHEBAG\020\030\022\033\n\027CHAT_MESSAGE_SECRE"
-    "TSHOP\020\031\022#\n\037CHAT_MESSAGE_ITEM_AUTOPURCHAS"
-    "ED\020\032\022\037\n\033CHAT_MESSAGE_ITEMS_COMBINED\020\033\022\035\n"
-    "\031CHAT_MESSAGE_SUPER_CREEPS\020\034\022%\n!CHAT_MES"
-    "SAGE_CANT_USE_ACTION_ITEM\020\035\022\"\n\036CHAT_MESS"
-    "AGE_CHARGES_EXHAUSTED\020\036\022\032\n\026CHAT_MESSAGE_"
-    "CANTPAUSE\020\037\022\035\n\031CHAT_MESSAGE_NOPAUSESLEFT"
-    "\020 \022\035\n\031CHAT_MESSAGE_CANTPAUSEYET\020!\022\027\n\023CHA"
-    "T_MESSAGE_PAUSED\020\"\022\"\n\036CHAT_MESSAGE_UNPAU"
-    "SE_COUNTDOWN\020#\022\031\n\025CHAT_MESSAGE_UNPAUSED\020"
-    "$\022\036\n\032CHAT_MESSAGE_AUTO_UNPAUSED\020%\022\032\n\026CHA"
-    "T_MESSAGE_YOUPAUSED\020&\022 \n\034CHAT_MESSAGE_CA"
-    "NTUNPAUSETEAM\020\'\022\"\n\036CHAT_MESSAGE_VOICE_TE"
-    "XT_BANNED\020)\022.\n*CHAT_MESSAGE_SPECTATORS_W"
-    "ATCHING_THIS_GAME\020*\022 \n\034CHAT_MESSAGE_REPO"
-    "RT_REMINDER\020+\022\032\n\026CHAT_MESSAGE_ECON_ITEM\020"
-    ",\022\026\n\022CHAT_MESSAGE_TAUNT\020-\022\027\n\023CHAT_MESSAG"
-    "E_RANDOM\020.\022\030\n\024CHAT_MESSAGE_RD_TURN\020/\022 \n\034"
-    "CHAT_MESSAGE_DROP_RATE_BONUS\0201\022!\n\035CHAT_M"
-    "ESSAGE_NO_BATTLE_POINTS\0202\022\035\n\031CHAT_MESSAG"
-    "E_DENIED_AEGIS\0203\022\036\n\032CHAT_MESSAGE_INFORMA"
-    "TIONAL\0204\022\035\n\031CHAT_MESSAGE_AEGIS_STOLEN\0205\022"
-    "\035\n\031CHAT_MESSAGE_ROSHAN_CANDY\0206\022\034\n\030CHAT_M"
-    "ESSAGE_ITEM_GIFTED\0207\022\'\n#CHAT_MESSAGE_HER"
-    "O_KILL_WITH_GREEVIL\0208\022(\n$CHAT_MESSAGE_HO"
-    "LDOUT_TOWER_DESTROYED\0209\022\'\n#CHAT_MESSAGE_"
-    "HOLDOUT_WALL_DESTROYED\020:\022&\n\"CHAT_MESSAGE"
-    "_HOLDOUT_WALL_FINISHED\020;\022)\n%CHAT_MESSAGE"
-    "_PLAYER_LEFT_LIMITED_HERO\020>\0221\n-CHAT_MESS"
-    "AGE_ABANDON_LIMITED_HERO_EXPLANATION\020\?\022("
-    "\n$CHAT_MESSAGE_DISCONNECT_LIMITED_HERO\020@"
-    "\0223\n/CHAT_MESSAGE_LOW_PRIORITY_COMPLETED_"
-    "EXPLANATION\020A\022,\n(CHAT_MESSAGE_RECRUITMEN"
-    "T_DROP_RATE_BONUS\020B\0221\n-CHAT_MESSAGE_FROS"
-    "TIVUS_SHINING_BOOSTER_ACTIVE\020C\022 \n\034CHAT_M"
-    "ESSAGE_PLAYER_LEFT_AFK\020I\0222\n.CHAT_MESSAGE"
-    "_PLAYER_LEFT_DISCONNECTED_TOO_LONG\020J\022!\n\035"
-    "CHAT_MESSAGE_PLAYER_ABANDONED\020K\022%\n!CHAT_"
-    "MESSAGE_PLAYER_ABANDONED_AFK\020L\0227\n3CHAT_M"
-    "ESSAGE_PLAYER_ABANDONED_DISCONNECTED_TOO"
-    "_LONG\020M\022#\n\037CHAT_MESSAGE_WILL_NOT_BE_SCOR"
-    "ED\020N\022*\n&CHAT_MESSAGE_WILL_NOT_BE_SCORED_"
-    "RANKED\020O\022+\n\'CHAT_MESSAGE_WILL_NOT_BE_SCO"
-    "RED_NETWORK\020P\0222\n.CHAT_MESSAGE_WILL_NOT_B"
-    "E_SCORED_NETWORK_RANKED\020Q\022)\n%CHAT_MESSAG"
-    "E_CAN_QUIT_WITHOUT_ABANDON\020R\022:\n6CHAT_MES"
-    "SAGE_RANKED_GAME_STILL_SCORED_LEAVERS_GE"
-    "T_LOSS\020S\0228\n4CHAT_MESSAGE_ABANDON_RANKED_"
-    "BEFORE_FIRST_BLOOD_PARTY\020T\022!\n\035CHAT_MESSA"
-    "GE_COMPENDIUM_LEVEL\020U\022*\n&CHAT_MESSAGE_VI"
-    "CTORY_PREDICTION_STREAK\020V\022\"\n\036CHAT_MESSAG"
-    "E_ASSASSIN_ANNOUNCE\020W\022!\n\035CHAT_MESSAGE_AS"
-    "SASSIN_SUCCESS\020X\022 \n\034CHAT_MESSAGE_ASSASSI"
-    "N_DENIED\020Y\0227\n3CHAT_MESSAGE_VICTORY_PREDI"
-    "CTION_SINGLE_USER_CONFIRM\020Z\022\034\n\030CHAT_MESS"
-    "AGE_EFFIGY_KILL\020[\022+\n\'CHAT_MESSAGE_VOICE_"
-    "TEXT_BANNED_OVERFLOW\020\\\022\"\n\036CHAT_MESSAGE_Y"
-    "EAR_BEAST_KILLED\020]\022 \n\034CHAT_MESSAGE_PAUSE"
-    "_COUNTDOWN\020^\022\036\n\032CHAT_MESSAGE_COINS_WAGER"
-    "ED\020_*\262\001\n\035DOTA_NO_BATTLE_POINTS_REASONS\022%"
-    "\n!NO_BATTLE_POINTS_WRONG_LOBBY_TYPE\020\001\022\"\n"
-    "\036NO_BATTLE_POINTS_PRACTICE_BOTS\020\002\022#\n\037NO_"
-    "BATTLE_POINTS_CHEATS_ENABLED\020\003\022!\n\035NO_BAT"
-    "TLE_POINTS_LOW_PRIORITY\020\004*\250\001\n\027DOTA_CHAT_"
-    "INFORMATIONAL\022!\n\035INFO_COOP_BATTLE_POINTS"
-    "_RULES\020\001\022#\n\037INFO_FROSTIVUS_ABANDON_REMIN"
-    "DER\020\002\022\030\n\024INFO_RANKED_REMINDER\020\003\022+\n\'INFO_"
-    "COOP_LOW_PRIORITY_PASSIVE_REMINDER\020\004*\226\001\n"
-    "\026DOTA_ABILITY_PING_TYPE\022\026\n\022ABILITY_PING_"
-    "READY\020\001\022\025\n\021ABILITY_PING_MANA\020\002\022\031\n\025ABILIT"
-    "Y_PING_COOLDOWN\020\003\022\026\n\022ABILITY_PING_ENEMY\020"
-    "\004\022\032\n\026ABILITY_PING_UNLEARNED\020\005*\345\001\n\023EDotaE"
-    "ntityMessages\022\024\n\020DOTA_UNIT_SPEECH\020\000\022\031\n\025D"
-    "OTA_UNIT_SPEECH_MUTE\020\001\022\031\n\025DOTA_UNIT_ADD_"
-    "GESTURE\020\002\022\034\n\030DOTA_UNIT_REMOVE_GESTURE\020\003\022"
-    "!\n\035DOTA_UNIT_REMOVE_ALL_GESTURES\020\004\022\032\n\026DO"
-    "TA_UNIT_FADE_GESTURE\020\006\022%\n!DOTA_UNIT_SPEE"
-    "CH_CLIENTSIDE_RULES\020\007*\233\005\n\025DOTA_PARTICLE_"
-    "MESSAGE\022&\n\"DOTA_PARTICLE_MANAGER_EVENT_C"
-    "REATE\020\000\022&\n\"DOTA_PARTICLE_MANAGER_EVENT_U"
-    "PDATE\020\001\022.\n*DOTA_PARTICLE_MANAGER_EVENT_U"
-    "PDATE_FORWARD\020\002\0222\n.DOTA_PARTICLE_MANAGER"
-    "_EVENT_UPDATE_ORIENTATION\020\003\022/\n+DOTA_PART"
-    "ICLE_MANAGER_EVENT_UPDATE_FALLBACK\020\004\022*\n&"
-    "DOTA_PARTICLE_MANAGER_EVENT_UPDATE_ENT\020\005"
-    "\022-\n)DOTA_PARTICLE_MANAGER_EVENT_UPDATE_O"
-    "FFSET\020\006\022\'\n#DOTA_PARTICLE_MANAGER_EVENT_D"
-    "ESTROY\020\007\0221\n-DOTA_PARTICLE_MANAGER_EVENT_"
-    "DESTROY_INVOLVING\020\010\022\'\n#DOTA_PARTICLE_MAN"
-    "AGER_EVENT_RELEASE\020\t\022\'\n#DOTA_PARTICLE_MA"
-    "NAGER_EVENT_LATENCY\020\n\022+\n\'DOTA_PARTICLE_M"
-    "ANAGER_EVENT_SHOULD_DRAW\020\013\022&\n\"DOTA_PARTI"
-    "CLE_MANAGER_EVENT_FROZEN\020\014\022\?\n;DOTA_PARTI"
-    "CLE_MANAGER_EVENT_CHANGE_CONTROL_POINT_A"
-    "TTACHMENT\020\r*\356\003\n\023DOTA_OVERHEAD_ALERT\022\027\n\023O"
-    "VERHEAD_ALERT_GOLD\020\000\022\027\n\023OVERHEAD_ALERT_D"
-    "ENY\020\001\022\033\n\027OVERHEAD_ALERT_CRITICAL\020\002\022\025\n\021OV"
-    "ERHEAD_ALERT_XP\020\003\022%\n!OVERHEAD_ALERT_BONU"
-    "S_SPELL_DAMAGE\020\004\022\027\n\023OVERHEAD_ALERT_MISS\020"
-    "\005\022\031\n\025OVERHEAD_ALERT_DAMAGE\020\006\022\030\n\024OVERHEAD"
-    "_ALERT_EVADE\020\007\022\030\n\024OVERHEAD_ALERT_BLOCK\020\010"
-    "\022&\n\"OVERHEAD_ALERT_BONUS_POISON_DAMAGE\020\t"
-    "\022\027\n\023OVERHEAD_ALERT_HEAL\020\n\022\033\n\027OVERHEAD_AL"
-    "ERT_MANA_ADD\020\013\022\034\n\030OVERHEAD_ALERT_MANA_LO"
-    "SS\020\014\022!\n\035OVERHEAD_ALERT_LAST_HIT_EARLY\020\r\022"
-    "!\n\035OVERHEAD_ALERT_LAST_HIT_CLOSE\020\016\022 \n\034OV"
-    "ERHEAD_ALERT_LAST_HIT_MISS\020\017*\201\004\n\026DOTA_PO"
+    "\t\"/\n\021CDOTAUserMsg_Ping\022\014\n\004ping\030\002 \001(\r\022\014\n\004"
+    "loss\030\003 \001(\r\",\n\027CDOTAUserMsg_SwapVerify\022\021\n"
+    "\tplayer_id\030\001 \001(\r\"\217\002\n\026CDOTAUserMsg_ChatEv"
+    "ent\0226\n\004type\030\001 \002(\0162\022.DOTA_CHAT_MESSAGE:\024C"
+    "HAT_MESSAGE_INVALID\022\r\n\005value\030\002 \001(\r\022\026\n\npl"
+    "ayerid_1\030\003 \001(\021:\002-1\022\026\n\nplayerid_2\030\004 \001(\021:\002"
+    "-1\022\026\n\nplayerid_3\030\005 \001(\021:\002-1\022\026\n\nplayerid_4"
+    "\030\006 \001(\021:\002-1\022\026\n\nplayerid_5\030\007 \001(\021:\002-1\022\026\n\npl"
+    "ayerid_6\030\010 \001(\021:\002-1\022\016\n\006value2\030\t \001(\r\022\016\n\006va"
+    "lue3\030\n \001(\r\"!\n\037CDOTAUserMsg_CombatLogShow"
+    "Death\"]\n\024CDOTAUserMsg_BotChat\022\021\n\tplayer_"
+    "id\030\001 \001(\r\022\017\n\007message\030\003 \001(\t\022\016\n\006target\030\004 \001("
+    "\t\022\021\n\tteam_only\030\005 \001(\010\"q\n CDOTAUserMsg_Com"
+    "batHeroPositions\022\r\n\005index\030\001 \001(\r\022\014\n\004time\030"
+    "\002 \001(\005\022 \n\tworld_pos\030\003 \001(\0132\r.CMsgVector2D\022"
+    "\016\n\006health\030\004 \001(\005\"\224\002\n\034CDOTAUserMsg_MiniKil"
+    "lCamInfo\0229\n\tattackers\030\001 \003(\0132&.CDOTAUserM"
+    "sg_MiniKillCamInfo.Attacker\032\270\001\n\010Attacker"
+    "\022\020\n\010attacker\030\001 \001(\r\022\024\n\014total_damage\030\002 \001(\005"
+    "\022A\n\tabilities\030\003 \003(\0132..CDOTAUserMsg_MiniK"
+    "illCamInfo.Attacker.Ability\022\025\n\rattacker_"
+    "name\030\004 \001(\t\032*\n\007Ability\022\017\n\007ability\030\001 \001(\r\022\016"
+    "\n\006damage\030\002 \001(\005\"@\n\035CDOTAUserMsg_GlobalLig"
+    "htColor\022\r\n\005color\030\001 \001(\r\022\020\n\010duration\030\002 \001(\002"
+    "\"U\n!CDOTAUserMsg_GlobalLightDirection\022\036\n"
+    "\tdirection\030\001 \001(\0132\013.CMsgVector\022\020\n\010duratio"
+    "n\030\002 \001(\002\"]\n\031CDOTAUserMsg_LocationPing\022\021\n\t"
+    "player_id\030\001 \001(\r\022-\n\rlocation_ping\030\002 \001(\0132\026"
+    ".CDOTAMsg_LocationPing\"T\n\026CDOTAUserMsg_I"
+    "temAlert\022\021\n\tplayer_id\030\001 \001(\r\022\'\n\nitem_aler"
+    "t\030\002 \001(\0132\023.CDOTAMsg_ItemAlert\"m\n\033CDOTAUse"
+    "rMsg_EnemyItemAlert\022\021\n\tplayer_id\030\001 \001(\r\022\030"
+    "\n\020target_player_id\030\002 \001(\r\022\016\n\006itemid\030\003 \001(\005"
+    "\022\021\n\trune_type\030\004 \001(\r\"\204\001\n\032CDOTAUserMsg_Mod"
+    "ifierAlert\022\021\n\tplayer_id\030\001 \001(\r\022\022\n\nclass_n"
+    "ame\030\002 \001(\t\022\023\n\013stack_count\030\003 \001(\r\022\021\n\tis_deb"
+    "uff\030\004 \001(\010\022\027\n\017target_entindex\030\005 \001(\r\"F\n\030CD"
+    "OTAUserMsg_HPManaAlert\022\021\n\tplayer_id\030\001 \001("
+    "\r\022\027\n\017target_entindex\030\002 \001(\r\">\n\027CDOTAUserM"
+    "sg_GlyphAlert\022\021\n\tplayer_id\030\001 \001(\r\022\020\n\010nega"
+    "tive\030\002 \001(\010\"[\n\036CDOTAUserMsg_WillPurchaseA"
+    "lert\022\016\n\006itemid\030\001 \001(\005\022\021\n\tplayer_id\030\002 \001(\005\022"
+    "\026\n\016gold_remaining\030\003 \001(\r\"3\n\036CDOTAUserMsg_"
+    "BuyBackStateAlert\022\021\n\tplayer_id\030\001 \001(\005\"V\n\032"
+    "CDOTAUserMsg_QuickBuyAlert\022\021\n\tplayer_id\030"
+    "\001 \001(\005\022\016\n\006itemid\030\002 \001(\005\022\025\n\rgold_required\030\003"
+    " \001(\005\"m\n\037CDOTAUserMsg_CourierKilledAlert\022"
+    "\014\n\004team\030\001 \001(\r\022\022\n\ngold_value\030\002 \001(\r\022\025\n\rent"
+    "ity_handle\030\003 \001(\005\022\021\n\ttimestamp\030\004 \001(\005\"n\n\031C"
+    "DOTAUserMsg_MinimapEvent\022\022\n\nevent_type\030\001"
+    " \001(\005\022\025\n\rentity_handle\030\002 \001(\005\022\t\n\001x\030\003 \001(\005\022\t"
+    "\n\001y\030\004 \001(\005\022\020\n\010duration\030\005 \001(\005\"M\n\024CDOTAUser"
+    "Msg_MapLine\022\021\n\tplayer_id\030\001 \001(\005\022\"\n\007maplin"
+    "e\030\002 \001(\0132\021.CDOTAMsg_MapLine\"}\n\036CDOTAUserM"
+    "sg_MinimapDebugPoint\022\035\n\010location\030\001 \001(\0132\013"
+    ".CMsgVector\022\r\n\005color\030\002 \001(\r\022\014\n\004size\030\003 \001(\005"
+    "\022\020\n\010duration\030\004 \001(\002\022\r\n\005index\030\005 \001(\005\"\204\002\n#CD"
+    "OTAUserMsg_CreateLinearProjectile\022\033\n\006ori"
+    "gin\030\001 \001(\0132\013.CMsgVector\022\037\n\010velocity\030\002 \001(\013"
+    "2\r.CMsgVector2D\022\020\n\010entindex\030\004 \001(\005\022\026\n\016par"
+    "ticle_index\030\005 \001(\004\022\016\n\006handle\030\006 \001(\005\022#\n\014acc"
+    "eleration\030\007 \001(\0132\r.CMsgVector2D\022\021\n\tmax_sp"
+    "eed\030\010 \001(\002\022\022\n\nfow_radius\030\t \001(\002\022\031\n\021sticky_"
+    "fow_reveal\030\n \001(\010\"6\n$CDOTAUserMsg_Destroy"
+    "LinearProjectile\022\016\n\006handle\030\001 \001(\005\"O\n%CDOT"
+    "AUserMsg_DodgeTrackingProjectiles\022\020\n\010ent"
+    "index\030\001 \002(\005\022\024\n\014attacks_only\030\002 \001(\010\"_\n!CDO"
+    "TAUserMsg_SpectatorPlayerClick\022\020\n\010entind"
+    "ex\030\001 \002(\005\022\022\n\norder_type\030\002 \001(\005\022\024\n\014target_i"
+    "ndex\030\003 \001(\005\"\321\001\n&CDOTAUserMsg_SpectatorPla"
+    "yerUnitOrders\022\020\n\010entindex\030\001 \001(\005\022\022\n\norder"
+    "_type\030\002 \001(\005\022\r\n\005units\030\003 \003(\005\022\024\n\014target_ind"
+    "ex\030\004 \001(\005\022\025\n\rability_index\030\005 \001(\005\022\035\n\010posit"
+    "ion\030\006 \001(\0132\013.CMsgVector\022\r\n\005queue\030\007 \001(\010\022\027\n"
+    "\017sequence_number\030\010 \001(\005\"s\n\035CDOTAUserMsg_N"
+    "evermoreRequiem\022\025\n\rentity_handle\030\001 \001(\005\022\r"
+    "\n\005lines\030\002 \001(\005\022\033\n\006origin\030\003 \001(\0132\013.CMsgVect"
+    "or\022\017\n\007reverse\030\004 \001(\010\".\n\033CDOTAUserMsg_Inva"
+    "lidCommand\022\017\n\007message\030\001 \001(\t\")\n\025CDOTAUser"
+    "Msg_HudError\022\020\n\010order_id\030\001 \001(\005\"c\n\033CDOTAU"
+    "serMsg_SharedCooldown\022\020\n\010entindex\030\001 \001(\005\022"
+    "\014\n\004name\030\002 \001(\t\022\020\n\010cooldown\030\003 \001(\002\022\022\n\nname_"
+    "index\030\004 \001(\005\"/\n\037CDOTAUserMsg_SetNextAutob"
+    "uyItem\022\014\n\004name\030\001 \001(\t\"X\n\033CDOTAUserMsg_Hal"
+    "loweenDrops\022\021\n\titem_defs\030\001 \003(\r\022\022\n\nplayer"
+    "_ids\030\002 \003(\r\022\022\n\nprize_list\030\003 \001(\r\"\223\003\n\035CDOTA"
+    "UserMsg_PredictionResult\022\022\n\naccount_id\030\001"
+    " \001(\r\022\020\n\010match_id\030\002 \001(\004\022\017\n\007correct\030\003 \001(\010\022"
+    ">\n\013predictions\030\004 \003(\0132).CDOTAUserMsg_Pred"
+    "ictionResult.Prediction\032\372\001\n\nPrediction\022\020"
+    "\n\010item_def\030\001 \001(\r\022\023\n\013num_correct\030\002 \001(\r\022\021\n"
+    "\tnum_fails\030\003 \001(\r\022X\n\006result\030\004 \001(\01621.CDOTA"
+    "UserMsg_PredictionResult.Prediction.ERes"
+    "ult:\025k_eResult_ItemGranted\022\031\n\021granted_it"
+    "em_defs\030\006 \003(\r\"=\n\007EResult\022\031\n\025k_eResult_It"
+    "emGranted\020\001\022\027\n\023k_eResult_Destroyed\020\002\"\376\001\n"
+    "\034CDOTAResponseQuerySerialized\0221\n\005facts\030\001"
+    " \003(\0132\".CDOTAResponseQuerySerialized.Fact"
+    "\032\252\001\n\004Fact\022\013\n\003key\030\001 \002(\005\022F\n\007valtype\030\002 \002(\0162"
+    ",.CDOTAResponseQuerySerialized.Fact.Valu"
+    "eType:\007NUMERIC\022\023\n\013val_numeric\030\003 \001(\002\022\022\n\nv"
+    "al_string\030\004 \001(\t\"$\n\tValueType\022\013\n\007NUMERIC\020"
+    "\001\022\n\n\006STRING\020\002\"\220\001\n\030CDOTASpeechMatchOnClie"
+    "nt\022\017\n\007concept\030\001 \001(\005\022\026\n\016recipient_type\030\002 "
+    "\001(\005\0224\n\rresponsequery\030\003 \001(\0132\035.CDOTARespon"
+    "seQuerySerialized\022\025\n\nrandomseed\030\004 \001(\017:\0010"
+    "\"\202\007\n\026CDOTAUserMsg_UnitEvent\0228\n\010msg_type\030"
+    "\001 \002(\0162\024.EDotaEntityMessages:\020DOTA_UNIT_S"
+    "PEECH\022\024\n\014entity_index\030\002 \002(\005\022.\n\006speech\030\003 "
+    "\001(\0132\036.CDOTAUserMsg_UnitEvent.Speech\0227\n\013s"
+    "peech_mute\030\004 \001(\0132\".CDOTAUserMsg_UnitEven"
+    "t.SpeechMute\0227\n\013add_gesture\030\005 \001(\0132\".CDOT"
+    "AUserMsg_UnitEvent.AddGesture\022=\n\016remove_"
+    "gesture\030\006 \001(\0132%.CDOTAUserMsg_UnitEvent.R"
+    "emoveGesture\0229\n\014blood_impact\030\007 \001(\0132#.CDO"
+    "TAUserMsg_UnitEvent.BloodImpact\0229\n\014fade_"
+    "gesture\030\010 \001(\0132#.CDOTAUserMsg_UnitEvent.F"
+    "adeGesture\0229\n\026speech_match_on_client\030\t \001"
+    "(\0132\031.CDOTASpeechMatchOnClient\032k\n\006Speech\022"
+    "\017\n\007concept\030\001 \001(\005\022\020\n\010response\030\002 \001(\t\022\026\n\016re"
+    "cipient_type\030\003 \001(\005\022\r\n\005level\030\004 \001(\005\022\027\n\010mut"
+    "eable\030\005 \001(\010:\005false\032 \n\nSpeechMute\022\022\n\005dela"
+    "y\030\001 \001(\002:\0030.5\032q\n\nAddGesture\022\020\n\010activity\030\001"
+    " \001(\005\022\014\n\004slot\030\002 \001(\005\022\022\n\007fade_in\030\003 \001(\002:\0010\022\025"
+    "\n\010fade_out\030\004 \001(\002:\0030.1\022\030\n\rplayback_rate\030\005"
+    " \001(\002:\0011\032!\n\rRemoveGesture\022\020\n\010activity\030\001 \001"
+    "(\005\032@\n\013BloodImpact\022\r\n\005scale\030\001 \001(\005\022\020\n\010x_no"
+    "rmal\030\002 \001(\005\022\020\n\010y_normal\030\003 \001(\005\032\037\n\013FadeGest"
+    "ure\022\020\n\010activity\030\001 \001(\005\"0\n\032CDOTAUserMsg_It"
+    "emPurchased\022\022\n\nitem_index\030\001 \001(\005\"j\n\026CDOTA"
+    "UserMsg_ItemFound\022\016\n\006player\030\001 \001(\005\022\017\n\007qua"
+    "lity\030\002 \001(\005\022\016\n\006rarity\030\003 \001(\005\022\016\n\006method\030\004 \001"
+    "(\005\022\017\n\007itemdef\030\005 \001(\005\"\344\024\n\034CDOTAUserMsg_Par"
+    "ticleManager\022H\n\004type\030\001 \002(\0162\026.DOTA_PARTIC"
+    "LE_MESSAGE:\"DOTA_PARTICLE_MANAGER_EVENT_"
+    "CREATE\022\r\n\005index\030\002 \002(\r\022R\n\026release_particl"
+    "e_index\030\003 \001(\01322.CDOTAUserMsg_ParticleMan"
+    "ager.ReleaseParticleIndex\022E\n\017create_part"
+    "icle\030\004 \001(\0132,.CDOTAUserMsg_ParticleManage"
+    "r.CreateParticle\022G\n\020destroy_particle\030\005 \001"
+    "(\0132-.CDOTAUserMsg_ParticleManager.Destro"
+    "yParticle\022Z\n\032destroy_particle_involving\030"
+    "\006 \001(\01326.CDOTAUserMsg_ParticleManager.Des"
+    "troyParticleInvolving\022E\n\017update_particle"
+    "\030\007 \001(\0132,.CDOTAUserMsg_ParticleManager.Up"
+    "dateParticle\022L\n\023update_particle_fwd\030\010 \001("
+    "\0132/.CDOTAUserMsg_ParticleManager.UpdateP"
+    "articleFwd\022R\n\026update_particle_orient\030\t \001"
+    "(\01322.CDOTAUserMsg_ParticleManager.Update"
+    "ParticleOrient\022V\n\030update_particle_fallba"
+    "ck\030\n \001(\01324.CDOTAUserMsg_ParticleManager."
+    "UpdateParticleFallback\022R\n\026update_particl"
+    "e_offset\030\013 \001(\01322.CDOTAUserMsg_ParticleMa"
+    "nager.UpdateParticleOffset\022L\n\023update_par"
+    "ticle_ent\030\014 \001(\0132/.CDOTAUserMsg_ParticleM"
+    "anager.UpdateParticleEnt\022[\n\033update_parti"
+    "cle_should_draw\030\016 \001(\01326.CDOTAUserMsg_Par"
+    "ticleManager.UpdateParticleShouldDraw\022Y\n"
+    "\032update_particle_set_frozen\030\017 \001(\01325.CDOT"
+    "AUserMsg_ParticleManager.UpdateParticleS"
+    "etFrozen\022c\n\037change_control_point_attachm"
+    "ent\030\020 \001(\0132:.CDOTAUserMsg_ParticleManager"
+    ".ChangeControlPointAttachment\022R\n\026update_"
+    "entity_position\030\021 \001(\01322.CDOTAUserMsg_Par"
+    "ticleManager.UpdateEntityPosition\022[\n\033set"
+    "_particle_fow_properties\030\022 \001(\01326.CDOTAUs"
+    "erMsg_ParticleManager.SetParticleFoWProp"
+    "erties\032\026\n\024ReleaseParticleIndex\032~\n\016Create"
+    "Particle\022\033\n\023particle_name_index\030\001 \001(\006\022\023\n"
+    "\013attach_type\030\002 \001(\005\022\025\n\rentity_handle\030\003 \001("
+    "\005\022#\n\033entity_handle_for_modifiers\030\004 \001(\005\032."
+    "\n\017DestroyParticle\022\033\n\023destroy_immediately"
+    "\030\001 \001(\010\032N\n\030DestroyParticleInvolving\022\033\n\023de"
+    "stroy_immediately\030\001 \001(\010\022\025\n\rentity_handle"
+    "\030\003 \001(\005\032F\n\016UpdateParticle\022\025\n\rcontrol_poin"
+    "t\030\001 \001(\005\022\035\n\010position\030\002 \001(\0132\013.CMsgVector\032H"
+    "\n\021UpdateParticleFwd\022\025\n\rcontrol_point\030\001 \001"
+    "(\005\022\034\n\007forward\030\002 \001(\0132\013.CMsgVector\032\200\001\n\024Upd"
+    "ateParticleOrient\022\025\n\rcontrol_point\030\001 \001(\005"
+    "\022\034\n\007forward\030\002 \001(\0132\013.CMsgVector\022\032\n\005right\030"
+    "\003 \001(\0132\013.CMsgVector\022\027\n\002up\030\004 \001(\0132\013.CMsgVec"
+    "tor\032N\n\026UpdateParticleFallback\022\025\n\rcontrol"
+    "_point\030\001 \001(\005\022\035\n\010position\030\002 \001(\0132\013.CMsgVec"
+    "tor\032Q\n\024UpdateParticleOffset\022\025\n\rcontrol_p"
+    "oint\030\001 \001(\005\022\"\n\rorigin_offset\030\002 \001(\0132\013.CMsg"
+    "Vector\032\255\001\n\021UpdateParticleEnt\022\025\n\rcontrol_"
+    "point\030\001 \001(\005\022\025\n\rentity_handle\030\002 \001(\005\022\023\n\013at"
+    "tach_type\030\003 \001(\005\022\022\n\nattachment\030\004 \001(\005\022&\n\021f"
+    "allback_position\030\005 \001(\0132\013.CMsgVector\022\031\n\021i"
+    "nclude_wearables\030\006 \001(\010\032-\n\027UpdateParticle"
+    "SetFrozen\022\022\n\nset_frozen\030\001 \001(\010\032/\n\030UpdateP"
+    "articleShouldDraw\022\023\n\013should_draw\030\001 \001(\010\032e"
+    "\n\034ChangeControlPointAttachment\022\026\n\016attach"
+    "ment_old\030\001 \001(\005\022\026\n\016attachment_new\030\002 \001(\005\022\025"
+    "\n\rentity_handle\030\003 \001(\005\032L\n\024UpdateEntityPos"
+    "ition\022\025\n\rentity_handle\030\001 \001(\005\022\035\n\010position"
+    "\030\002 \001(\0132\013.CMsgVector\032e\n\030SetParticleFoWPro"
+    "perties\022\031\n\021fow_control_point\030\001 \001(\005\022\032\n\022fo"
+    "w_control_point2\030\002 \001(\005\022\022\n\nfow_radius\030\003 \001"
+    "(\002\"\305\001\n\032CDOTAUserMsg_OverheadEvent\022\?\n\014mes"
+    "sage_type\030\001 \002(\0162\024.DOTA_OVERHEAD_ALERT:\023O"
+    "VERHEAD_ALERT_GOLD\022\r\n\005value\030\002 \001(\005\022\036\n\026tar"
+    "get_player_entindex\030\003 \001(\005\022\027\n\017target_enti"
+    "ndex\030\004 \001(\005\022\036\n\026source_player_entindex\030\005 \001"
+    "(\005\">\n\034CDOTAUserMsg_TutorialTipInfo\022\014\n\004na"
+    "me\030\001 \001(\t\022\020\n\010progress\030\002 \001(\005\"]\n\033CDOTAUserM"
+    "sg_TutorialFinish\022\017\n\007heading\030\001 \001(\t\022\016\n\006em"
+    "blem\030\002 \001(\t\022\014\n\004body\030\003 \001(\t\022\017\n\007success\030\004 \001("
+    "\010\"&\n$CDOTAUserMsg_TutorialMinimapPositio"
+    "n\"_\n\037CDOTAUserMsg_SendGenericToolTip\022\r\n\005"
+    "title\030\001 \001(\t\022\014\n\004text\030\002 \001(\t\022\020\n\010entindex\030\003 "
+    "\001(\005\022\r\n\005close\030\004 \001(\010\"S\n\026CDOTAUserMsg_World"
+    "Line\022\021\n\tplayer_id\030\001 \001(\005\022&\n\tworldline\030\002 \001"
+    "(\0132\023.CDOTAMsg_WorldLine\"\223\001\n\026CDOTAUserMsg"
+    "_ChatWheel\022;\n\014chat_message\030\001 \001(\0162\026.EDOTA"
+    "ChatWheelMessage:\rk_EDOTA_CW_Ok\022\021\n\tplaye"
+    "r_id\030\002 \001(\r\022\022\n\naccount_id\030\003 \001(\r\022\025\n\rparam_"
+    "hero_id\030\004 \001(\r\"]\n\035CDOTAUserMsg_ReceivedXm"
+    "asGift\022\021\n\tplayer_id\030\001 \001(\005\022\021\n\titem_name\030\002"
+    " \001(\t\022\026\n\016inventory_slot\030\003 \001(\005\"\244\001\n\027CDOTAUs"
+    "erMsg_ShowSurvey\022\021\n\tsurvey_id\030\001 \001(\005\022\020\n\010m"
+    "atch_id\030\002 \001(\004\022\026\n\016response_style\030\003 \001(\t\022\030\n"
+    "\020teammate_hero_id\030\004 \001(\r\022\025\n\rteammate_name"
+    "\030\005 \001(\t\022\033\n\023teammate_account_id\030\006 \001(\r\"5\n C"
+    "DOTAUserMsg_UpdateSharedContent\022\021\n\tslot_"
+    "type\030\001 \001(\005\"!\n\037CDOTAUserMsg_TutorialReque"
+    "stExp\".\n\031CDOTAUserMsg_TutorialFade\022\021\n\ttg"
+    "t_alpha\030\001 \001(\005\"x\n CDOTAUserMsg_TutorialPi"
+    "ngMinimap\022\021\n\tplayer_id\030\001 \001(\r\022\r\n\005pos_x\030\002 "
+    "\001(\002\022\r\n\005pos_y\030\003 \001(\002\022\r\n\005pos_z\030\004 \001(\002\022\024\n\014ent"
+    "ity_index\030\005 \001(\005\"3\n\"CDOTAUserMsg_Gamerule"
+    "sStateChanged\022\r\n\005state\030\001 \001(\r\"E\n\035CDOTAUse"
+    "rMsg_AddQuestLogEntry\022\020\n\010npc_name\030\001 \001(\t\022"
+    "\022\n\nnpc_dialog\030\002 \001(\t\"[\n\032CDOTAUserMsg_Send"
+    "StatPopup\022\021\n\tplayer_id\030\001 \001(\005\022*\n\tstatpopu"
+    "p\030\002 \001(\0132\027.CDOTAMsg_SendStatPopup\"C\n\034CDOT"
+    "AUserMsg_SendRoshanPopup\022\021\n\treclaimed\030\001 "
+    "\001(\010\022\020\n\010gametime\030\002 \001(\005\"L\n\032CDOTAUserMsg_Se"
+    "ndFinalGold\022\025\n\rreliable_gold\030\001 \003(\r\022\027\n\017un"
+    "reliable_gold\030\002 \003(\r\"K\n\026CDOTAUserMsg_Cust"
+    "omMsg\022\017\n\007message\030\001 \001(\t\022\021\n\tplayer_id\030\002 \001("
+    "\005\022\r\n\005value\030\003 \001(\005\"X\n\031CDOTAUserMsg_CoachHU"
+    "DPing\022\021\n\tplayer_id\030\001 \001(\r\022(\n\010hud_ping\030\002 \001"
+    "(\0132\026.CDOTAMsg_CoachHUDPing\" \n\036CDOTAUserM"
+    "sg_ClientLoadGridNav\"\202\002\n\032CDOTAUserMsg_TE"
+    "_Projectile\022\017\n\007hSource\030\001 \001(\005\022\017\n\007hTarget\030"
+    "\002 \001(\005\022\021\n\tmoveSpeed\030\003 \001(\005\022\030\n\020sourceAttach"
+    "ment\030\004 \001(\005\022\034\n\024particleSystemHandle\030\005 \001(\003"
+    "\022\021\n\tdodgeable\030\006 \001(\010\022\020\n\010isAttack\030\007 \001(\010\022\020\n"
+    "\010isEvaded\030\010 \001(\010\022\022\n\nexpireTime\030\t \001(\002\022\025\n\rm"
+    "aximpacttime\030\n \001(\002\022\025\n\rcolorgemcolor\030\013 \001("
+    "\007\"\205\002\n\035CDOTAUserMsg_TE_ProjectileLoc\022\037\n\nv"
+    "SourceLoc\030\001 \001(\0132\013.CMsgVector\022\017\n\007hTarget\030"
+    "\002 \001(\005\022\021\n\tmoveSpeed\030\003 \001(\005\022\034\n\024particleSyst"
+    "emHandle\030\004 \001(\003\022\021\n\tdodgeable\030\005 \001(\010\022\020\n\010isA"
+    "ttack\030\006 \001(\010\022\020\n\010isEvaded\030\010 \001(\010\022\022\n\nexpireT"
+    "ime\030\t \001(\002\022\037\n\nvTargetLoc\030\n \001(\0132\013.CMsgVect"
+    "or\022\025\n\rcolorgemcolor\030\013 \001(\007\"b\n\037CDOTAUserMs"
+    "g_TE_DotaBloodImpact\022\016\n\006entity\030\001 \001(\005\022\r\n\005"
+    "scale\030\002 \001(\002\022\017\n\007xnormal\030\003 \001(\002\022\017\n\007ynormal\030"
+    "\004 \001(\002\"\313\001\n\030CDOTAUserMsg_AbilityPing\022\021\n\tpl"
+    "ayer_id\030\001 \001(\r\022\022\n\nability_id\030\002 \001(\r\0229\n\004typ"
+    "e\030\003 \001(\0162\027.DOTA_ABILITY_PING_TYPE:\022ABILIT"
+    "Y_PING_READY\022\030\n\020cooldown_seconds\030\004 \001(\r\022\r"
+    "\n\005level\030\005 \001(\r\022\017\n\007passive\030\006 \001(\010\022\023\n\013mana_n"
+    "eeded\030\007 \001(\r\"\221\001\n\035CDOTAUserMsg_TE_UnitAnim"
+    "ation\022\016\n\006entity\030\001 \001(\005\022\027\n\017sequenceVariant"
+    "\030\002 \001(\005\022\024\n\014playbackrate\030\003 \001(\002\022\021\n\tcastpoin"
+    "t\030\004 \001(\002\022\014\n\004type\030\005 \001(\005\022\020\n\010activity\030\006 \001(\005\""
+    "@\n CDOTAUserMsg_TE_UnitAnimationEnd\022\016\n\006e"
+    "ntity\030\001 \001(\005\022\014\n\004snap\030\002 \001(\010\"\221\001\n\035CDOTAUserM"
+    "sg_ShowGenericPopup\022\016\n\006header\030\001 \002(\t\022\014\n\004b"
+    "ody\030\002 \002(\t\022\016\n\006param1\030\003 \001(\t\022\016\n\006param2\030\004 \001("
+    "\t\022\023\n\013tint_screen\030\005 \001(\010\022\035\n\025show_no_other_"
+    "dialogs\030\006 \001(\010\"`\n\026CDOTAUserMsg_VoteStart\022"
+    "\r\n\005title\030\001 \001(\t\022\020\n\010duration\030\002 \001(\002\022\024\n\014choi"
+    "ce_count\030\003 \001(\005\022\017\n\007choices\030\004 \003(\t\"0\n\027CDOTA"
+    "UserMsg_VoteUpdate\022\025\n\rchoice_counts\030\001 \003("
+    "\005\"/\n\024CDOTAUserMsg_VoteEnd\022\027\n\017selected_ch"
+    "oice\030\001 \001(\005\"\214\001\n\037CDOTAUserMsg_BoosterState"
+    "Player\022\021\n\tplayer_id\030\001 \001(\r\022\r\n\005bonus\030\002 \001(\002"
+    "\022\023\n\013event_bonus\030\003 \001(\002\022\025\n\rbonus_item_id\030\004"
+    " \001(\r\022\033\n\023event_bonus_item_id\030\005 \001(\r\"V\n\031CDO"
+    "TAUserMsg_BoosterState\0229\n\017boosted_player"
+    "s\030\001 \003(\0132 .CDOTAUserMsg_BoosterStatePlaye"
+    "r\")\n\026CDOTAUserMsg_PlayerMMR\022\017\n\003mmr\030\001 \003(\021"
+    "B\002\020\001\"Y\n\031CDOTAUserMsg_AbilitySteal\022\021\n\tpla"
+    "yer_id\030\001 \001(\r\022\022\n\nability_id\030\002 \001(\r\022\025\n\rabil"
+    "ity_level\030\003 \001(\r\"f\n\034CDOTAUserMsg_StatsHer"
+    "oLookup\022\021\n\tplayer_id\030\001 \001(\005\022\017\n\007hero_id\030\002 "
+    "\001(\005\022\021\n\thero_name\030\003 \001(\t\022\017\n\007persona\030\004 \001(\t\""
+    "\372\001\n\"CDOTAUserMsg_StatsHeroPositionInfo\022\030"
+    "\n\020average_position\030\001 \001(\002\022J\n\020position_det"
+    "ails\030\002 \003(\01320.CDOTAUserMsg_StatsHeroPosit"
+    "ionInfo.PositionPair\032n\n\014PositionPair\022F\n\021"
+    "position_category\030\001 \001(\0162\027.DOTA_POSITION_"
+    "CATEGORY:\022DOTA_POSITION_NONE\022\026\n\016position"
+    "_count\030\002 \001(\r\"\217\003\n#CDOTAUserMsg_StatsHeroM"
+    "inuteDetails\022\021\n\tlast_hits\030\001 \001(\r\022\022\n\nhero_"
+    "kills\030\002 \001(\r\022\023\n\013hero_damage\030\003 \001(\r\022\024\n\014towe"
+    "r_damage\030\004 \001(\r\022:\n\rposition_info\030\005 \001(\0132#."
+    "CDOTAUserMsg_StatsHeroPositionInfo\022\020\n\010to"
+    "tal_xp\030\006 \001(\r\022\021\n\tnet_worth\030\007 \001(\r\022\034\n\024harve"
+    "sted_creep_gold\030\010 \001(\r\022\024\n\014claimed_farm\030\t "
+    "\001(\r\022\024\n\014wards_placed\030\n \001(\r\022\027\n\017runes_colle"
+    "cted\030\013 \001(\r\022\020\n\010tps_used\030\014 \001(\r\022\022\n\nmana_spe"
+    "nt\030\r \003(\r\022\027\n\017damage_absorbed\030\016 \003(\r\022\023\n\013dam"
+    "age_done\030\017 \003(\r\"\347\003\n#CDOTAUserMsg_StatsTea"
+    "mMinuteDetails\022:\n\014player_stats\030\001 \003(\0132$.C"
+    "DOTAUserMsg_StatsHeroMinuteDetails\022\023\n\013to"
+    "wer_kills\030\002 \001(\r\022\025\n\rbarrack_kills\030\003 \001(\r\022!"
+    "\n\031available_lane_creep_gold\030\004 \001(\r\022\032\n\022bal"
+    "ance_kill_value\030\005 \001(\r\022\033\n\023balance_tower_v"
+    "alue\030\006 \001(\r\022\036\n\026balance_barracks_value\030\007 \001"
+    "(\r\022\032\n\022balance_gold_value\030\010 \001(\r\022\030\n\020balanc"
+    "e_xp_value\030\t \001(\r\022R\n\020lane_performance\030\n \003"
+    "(\01328.CDOTAUserMsg_StatsTeamMinuteDetails"
+    ".LocationPerformance\032R\n\023LocationPerforma"
+    "nce\022\031\n\021location_category\030\001 \001(\r\022\021\n\tstat_t"
+    "ype\030\002 \001(\r\022\r\n\005value\030\003 \001(\r\"\254\001\n!CDOTAUserMs"
+    "g_StatsPlayerKillShare\022\021\n\tplayer_id\030\001 \001("
+    "\005\022\032\n\022kill_share_percent\030\002 \001(\002\022\024\n\014player_"
+    "loc_x\030\003 \001(\002\022\024\n\014player_loc_y\030\004 \001(\002\022\026\n\016hea"
+    "lth_percent\030\005 \001(\002\022\024\n\014mana_percent\030\006 \001(\002\""
+    "\304\001\n\035CDOTAUserMsg_StatsKillDetails\022\021\n\tvic"
+    "tim_id\030\001 \001(\r\0227\n\013kill_shares\030\002 \003(\0132\".CDOT"
+    "AUserMsg_StatsPlayerKillShare\022\026\n\016damage_"
+    "to_kill\030\003 \001(\r\022\030\n\020effective_health\030\004 \001(\r\022"
+    "\022\n\ndeath_time\030\005 \001(\002\022\021\n\tkiller_id\030\006 \001(\r\"\213"
+    "\006\n\036CDOTAUserMsg_StatsMatchDetails\0222\n\013her"
+    "o_lookup\030\001 \003(\0132\035.CDOTAUserMsg_StatsHeroL"
+    "ookup\022;\n\rradiant_stats\030\002 \003(\0132$.CDOTAUser"
+    "Msg_StatsTeamMinuteDetails\0228\n\ndire_stats"
+    "\030\003 \003(\0132$.CDOTAUserMsg_StatsTeamMinuteDet"
+    "ails\0225\n\rradiant_kills\030\004 \003(\0132\036.CDOTAUserM"
+    "sg_StatsKillDetails\0222\n\ndire_kills\030\005 \003(\0132"
+    "\036.CDOTAUserMsg_StatsKillDetails\022U\n\rfight"
+    "_details\030\006 \003(\0132>.CDOTAUserMsg_StatsMatch"
+    "Details.CDOTAUserMsg_StatsFightDetails\032p"
+    "\n\"CDOTAUserMsg_StatsFightTeamDetails\022\024\n\014"
+    "participants\030\001 \003(\r\022\016\n\006deaths\030\002 \003(\r\022\022\n\ngo"
+    "ld_delta\030\003 \001(\r\022\020\n\010xp_delta\030\004 \001(\r\032\211\002\n\036CDO"
+    "TAUserMsg_StatsFightDetails\022\022\n\nstart_tim"
+    "e\030\001 \001(\002\022\020\n\010end_time\030\002 \001(\002\022a\n\025radiant_fig"
+    "ht_details\030\003 \001(\0132B.CDOTAUserMsg_StatsMat"
+    "chDetails.CDOTAUserMsg_StatsFightTeamDet"
+    "ails\022^\n\022dire_fight_details\030\004 \001(\0132B.CDOTA"
+    "UserMsg_StatsMatchDetails.CDOTAUserMsg_S"
+    "tatsFightTeamDetails\"4\n\026CDOTAUserMsg_Min"
+    "iTaunt\022\032\n\022taunting_player_id\030\001 \001(\r\"0\n\031CD"
+    "OTAUserMsg_SpeechBubble\022\023\n\013destroy_all\030\001"
+    " \001(\010\"g\n CDOTAUserMsg_CustomHeaderMessage"
+    "\022\021\n\tplayer_id\030\001 \001(\r\022\020\n\010duration\030\002 \001(\002\022\017\n"
+    "\007message\030\003 \001(\t\022\r\n\005value\030\004 \001(\005\"v\n\023CMsgHer"
+    "oAbilityStat\0227\n\tstat_type\030\001 \001(\0162\016.EHeroS"
+    "tatType:\024k_EHeroStatType_None\022\021\n\tint_val"
+    "ue\030\002 \001(\005\022\023\n\013float_value\030\003 \001(\002\"d\n\034CMsgCom"
+    "batAnalyzerPlayerStat\022\022\n\naccount_id\030\001 \001("
+    "\r\0220\n\022hero_ability_stats\030\002 \003(\0132\024.CMsgHero"
+    "AbilityStat\"`\n\027CMsgCombatAnalyzerStats\022\020"
+    "\n\010match_id\030\001 \001(\004\0223\n\014player_stats\030\002 \003(\0132\035"
+    ".CMsgCombatAnalyzerPlayerStat\"W\n\026CDOTAUs"
+    "erMsg_BeastChat\022\014\n\004team\030\001 \001(\r\022\016\n\006format\030"
+    "\002 \001(\t\022\017\n\007message\030\003 \001(\t\022\016\n\006target\030\004 \001(\t\"a"
+    "\n$CDOTAUserMsg_CustomHudElement_Create\022\022"
+    "\n\nelement_id\030\001 \001(\t\022\027\n\017layout_filename\030\002 "
+    "\001(\t\022\014\n\004data\030\003 \001(\014\"`\n$CDOTAUserMsg_Custom"
+    "HudElement_Modify\022\022\n\nelement_id\030\001 \001(\t\022\026\n"
+    "\016modify_visible\030\002 \001(\010\022\014\n\004data\030\003 \001(\014\";\n%C"
+    "DOTAUserMsg_CustomHudElement_Destroy\022\022\n\n"
+    "element_id\030\001 \001(\t\"F\n\"CDOTAUserMsg_Compend"
+    "iumStatePlayer\022\021\n\tplayer_id\030\001 \001(\r\022\r\n\005lev"
+    "el\030\002 \001(\r\"_\n\034CDOTAUserMsg_CompendiumState"
+    "\022\?\n\022compendium_players\030\001 \003(\0132#.CDOTAUser"
+    "Msg_CompendiumStatePlayer\"\334\001\n\036CDOTAUserM"
+    "sg_ProjectionAbility\022\022\n\nability_id\030\001 \001(\r"
+    "\022\030\n\020caster_ent_index\030\002 \001(\005\022\023\n\013caster_tea"
+    "m\030\003 \001(\005\022\023\n\013channel_end\030\004 \001(\010\022\033\n\006origin\030\005"
+    " \001(\0132\013.CMsgVector\022\031\n\021track_caster_only\030\006"
+    " \001(\010\022\020\n\010end_time\030\007 \001(\002\022\030\n\020victim_ent_ind"
+    "ex\030\010 \001(\005\"a\n\034CDOTAUserMsg_ProjectionEvent"
+    "\0223\n\010event_id\030\001 \001(\0162\021.EProjectionEvent:\016e"
+    "PE_FirstBlood\022\014\n\004team\030\002 \001(\r\"B\n\024CDOTAUser"
+    "Msg_XPAlert\022\021\n\tplayer_id\030\001 \001(\r\022\027\n\017target"
+    "_entindex\030\002 \001(\r\"\"\n CDOTAUserMsg_UpdateQu"
+    "estProgress\"\254\001\n\030CDOTAUserMsg_QuestStatus"
+    "\022\021\n\tplayer_id\030\001 \002(\r\022\020\n\010quest_id\030\002 \001(\r\022\024\n"
+    "\014challenge_id\030\003 \001(\r\022\020\n\010progress\030\004 \001(\r\022\014\n"
+    "\004goal\030\005 \001(\r\022\r\n\005query\030\006 \001(\r\022\025\n\rfail_gamet"
+    "ime\030\007 \001(\002\022\017\n\007item_id\030\010 \001(\r\"B\n\034CDOTAUserM"
+    "sg_SuggestHeroPick\022\021\n\tplayer_id\030\001 \002(\r\022\017\n"
+    "\007hero_id\030\002 \001(\r\"D\n\034CDOTAUserMsg_SuggestHe"
+    "roRole\022\021\n\tplayer_id\030\001 \002(\r\022\021\n\thero_role\030\002"
+    " \001(\t\"\227\001\n\037CDOTAUserMsg_KillcamDamageTaken"
+    "\022\021\n\tplayer_id\030\001 \002(\r\022\024\n\014damage_taken\030\002 \001("
+    "\r\022\021\n\titem_type\030\003 \001(\r\022\017\n\007item_id\030\004 \001(\r\022\021\n"
+    "\thero_name\030\005 \001(\t\022\024\n\014damage_color\030\006 \001(\t\"A"
+    "\n\036CDOTAUserMsg_SelectPenaltyGold\022\021\n\tplay"
+    "er_id\030\001 \002(\r\022\014\n\004cost\030\002 \001(\021\"z\n\033CDOTAUserMs"
+    "g_RollDiceResult\022\021\n\tplayer_id\030\001 \001(\r\022\024\n\014c"
+    "hannel_type\030\002 \001(\r\022\020\n\010roll_min\030\003 \001(\r\022\020\n\010r"
+    "oll_max\030\004 \001(\r\022\016\n\006result\030\005 \001(\r\"V\n\033CDOTAUs"
+    "erMsg_FlipCoinResult\022\021\n\tplayer_id\030\001 \001(\r\022"
+    "\024\n\014channel_type\030\002 \001(\r\022\016\n\006result\030\003 \001(\010*\301\027"
+    "\n\021EDotaUserMessages\022\037\n\032DOTA_UM_AddUnitTo"
+    "Selection\020\320\003\022\030\n\023DOTA_UM_AIDebugLine\020\321\003\022\026"
+    "\n\021DOTA_UM_ChatEvent\020\322\003\022 \n\033DOTA_UM_Combat"
+    "HeroPositions\020\323\003\022\032\n\025DOTA_UM_CombatLogDat"
+    "a\020\324\003\022\037\n\032DOTA_UM_CombatLogShowDeath\020\326\003\022#\n"
+    "\036DOTA_UM_CreateLinearProjectile\020\327\003\022$\n\037DO"
+    "TA_UM_DestroyLinearProjectile\020\330\003\022%\n DOTA"
+    "_UM_DodgeTrackingProjectiles\020\331\003\022\035\n\030DOTA_"
+    "UM_GlobalLightColor\020\332\003\022!\n\034DOTA_UM_Global"
+    "LightDirection\020\333\003\022\033\n\026DOTA_UM_InvalidComm"
+    "and\020\334\003\022\031\n\024DOTA_UM_LocationPing\020\335\003\022\024\n\017DOT"
+    "A_UM_MapLine\020\336\003\022\034\n\027DOTA_UM_MiniKillCamIn"
+    "fo\020\337\003\022\036\n\031DOTA_UM_MinimapDebugPoint\020\340\003\022\031\n"
+    "\024DOTA_UM_MinimapEvent\020\341\003\022\035\n\030DOTA_UM_Neve"
+    "rmoreRequiem\020\342\003\022\032\n\025DOTA_UM_OverheadEvent"
+    "\020\343\003\022\037\n\032DOTA_UM_SetNextAutobuyItem\020\344\003\022\033\n\026"
+    "DOTA_UM_SharedCooldown\020\345\003\022!\n\034DOTA_UM_Spe"
+    "ctatorPlayerClick\020\346\003\022\034\n\027DOTA_UM_Tutorial"
+    "TipInfo\020\347\003\022\026\n\021DOTA_UM_UnitEvent\020\350\003\022\034\n\027DO"
+    "TA_UM_ParticleManager\020\351\003\022\024\n\017DOTA_UM_BotC"
+    "hat\020\352\003\022\025\n\020DOTA_UM_HudError\020\353\003\022\032\n\025DOTA_UM"
+    "_ItemPurchased\020\354\003\022\021\n\014DOTA_UM_Ping\020\355\003\022\026\n\021"
+    "DOTA_UM_ItemFound\020\356\003\022\"\n\035DOTA_UM_Characte"
+    "rSpeakConcept\020\357\003\022\027\n\022DOTA_UM_SwapVerify\020\360"
+    "\003\022\026\n\021DOTA_UM_WorldLine\020\361\003\022\033\n\026DOTA_UM_Tou"
+    "rnamentDrop\020\362\003\022\026\n\021DOTA_UM_ItemAlert\020\363\003\022\033"
+    "\n\026DOTA_UM_HalloweenDrops\020\364\003\022\026\n\021DOTA_UM_C"
+    "hatWheel\020\365\003\022\035\n\030DOTA_UM_ReceivedXmasGift\020"
+    "\366\003\022 \n\033DOTA_UM_UpdateSharedContent\020\367\003\022\037\n\032"
+    "DOTA_UM_TutorialRequestExp\020\370\003\022 \n\033DOTA_UM"
+    "_TutorialPingMinimap\020\371\003\022\"\n\035DOTA_UM_Gamer"
+    "ulesStateChanged\020\372\003\022\027\n\022DOTA_UM_ShowSurve"
+    "y\020\373\003\022\031\n\024DOTA_UM_TutorialFade\020\374\003\022\035\n\030DOTA_"
+    "UM_AddQuestLogEntry\020\375\003\022\032\n\025DOTA_UM_SendSt"
+    "atPopup\020\376\003\022\033\n\026DOTA_UM_TutorialFinish\020\377\003\022"
+    "\034\n\027DOTA_UM_SendRoshanPopup\020\200\004\022\037\n\032DOTA_UM"
+    "_SendGenericToolTip\020\201\004\022\032\n\025DOTA_UM_SendFi"
+    "nalGold\020\202\004\022\026\n\021DOTA_UM_CustomMsg\020\203\004\022\031\n\024DO"
+    "TA_UM_CoachHUDPing\020\204\004\022\036\n\031DOTA_UM_ClientL"
+    "oadGridNav\020\205\004\022\032\n\025DOTA_UM_TE_Projectile\020\206"
+    "\004\022\035\n\030DOTA_UM_TE_ProjectileLoc\020\207\004\022\037\n\032DOTA"
+    "_UM_TE_DotaBloodImpact\020\210\004\022\035\n\030DOTA_UM_TE_"
+    "UnitAnimation\020\211\004\022 \n\033DOTA_UM_TE_UnitAnima"
+    "tionEnd\020\212\004\022\030\n\023DOTA_UM_AbilityPing\020\213\004\022\035\n\030"
+    "DOTA_UM_ShowGenericPopup\020\214\004\022\026\n\021DOTA_UM_V"
+    "oteStart\020\215\004\022\027\n\022DOTA_UM_VoteUpdate\020\216\004\022\024\n\017"
+    "DOTA_UM_VoteEnd\020\217\004\022\031\n\024DOTA_UM_BoosterSta"
+    "te\020\220\004\022\036\n\031DOTA_UM_WillPurchaseAlert\020\221\004\022$\n"
+    "\037DOTA_UM_TutorialMinimapPosition\020\222\004\022\026\n\021D"
+    "OTA_UM_PlayerMMR\020\223\004\022\031\n\024DOTA_UM_AbilitySt"
+    "eal\020\224\004\022\037\n\032DOTA_UM_CourierKilledAlert\020\225\004\022"
+    "\033\n\026DOTA_UM_EnemyItemAlert\020\226\004\022\036\n\031DOTA_UM_"
+    "StatsMatchDetails\020\227\004\022\026\n\021DOTA_UM_MiniTaun"
+    "t\020\230\004\022\036\n\031DOTA_UM_BuyBackStateAlert\020\231\004\022\031\n\024"
+    "DOTA_UM_SpeechBubble\020\232\004\022 \n\033DOTA_UM_Custo"
+    "mHeaderMessage\020\233\004\022\032\n\025DOTA_UM_QuickBuyAle"
+    "rt\020\234\004\022\035\n\030DOTA_UM_StatsHeroDetails\020\235\004\022\035\n\030"
+    "DOTA_UM_PredictionResult\020\236\004\022\032\n\025DOTA_UM_M"
+    "odifierAlert\020\237\004\022\030\n\023DOTA_UM_HPManaAlert\020\240"
+    "\004\022\027\n\022DOTA_UM_GlyphAlert\020\241\004\022\026\n\021DOTA_UM_Be"
+    "astChat\020\242\004\022&\n!DOTA_UM_SpectatorPlayerUni"
+    "tOrders\020\243\004\022$\n\037DOTA_UM_CustomHudElement_C"
+    "reate\020\244\004\022$\n\037DOTA_UM_CustomHudElement_Mod"
+    "ify\020\245\004\022%\n DOTA_UM_CustomHudElement_Destr"
+    "oy\020\246\004\022\034\n\027DOTA_UM_CompendiumState\020\247\004\022\036\n\031D"
+    "OTA_UM_ProjectionAbility\020\250\004\022\034\n\027DOTA_UM_P"
+    "rojectionEvent\020\251\004\022\036\n\031DOTA_UM_CombatLogDa"
+    "taHLTV\020\252\004\022\024\n\017DOTA_UM_XPAlert\020\253\004\022 \n\033DOTA_"
+    "UM_UpdateQuestProgress\020\254\004\022\032\n\025DOTA_UM_Mat"
+    "chMetadata\020\255\004\022\031\n\024DOTA_UM_MatchDetails\020\256\004"
+    "\022\030\n\023DOTA_UM_QuestStatus\020\257\004\022\034\n\027DOTA_UM_Su"
+    "ggestHeroPick\020\260\004\022\034\n\027DOTA_UM_SuggestHeroR"
+    "ole\020\261\004\022\037\n\032DOTA_UM_KillcamDamageTaken\020\262\004\022"
+    "\036\n\031DOTA_UM_SelectPenaltyGold\020\263\004\022\033\n\026DOTA_"
+    "UM_RollDiceResult\020\264\004\022\033\n\026DOTA_UM_FlipCoin"
+    "Result\020\265\004*\224\032\n\021DOTA_CHAT_MESSAGE\022!\n\024CHAT_"
+    "MESSAGE_INVALID\020\377\377\377\377\377\377\377\377\377\001\022\032\n\026CHAT_MESSA"
+    "GE_HERO_KILL\020\000\022\032\n\026CHAT_MESSAGE_HERO_DENY"
+    "\020\001\022\036\n\032CHAT_MESSAGE_BARRACKS_KILL\020\002\022\033\n\027CH"
+    "AT_MESSAGE_TOWER_KILL\020\003\022\033\n\027CHAT_MESSAGE_"
+    "TOWER_DENY\020\004\022\033\n\027CHAT_MESSAGE_FIRSTBLOOD\020"
+    "\005\022\034\n\030CHAT_MESSAGE_STREAK_KILL\020\006\022\030\n\024CHAT_"
+    "MESSAGE_BUYBACK\020\007\022\026\n\022CHAT_MESSAGE_AEGIS\020"
+    "\010\022\034\n\030CHAT_MESSAGE_ROSHAN_KILL\020\t\022\035\n\031CHAT_"
+    "MESSAGE_COURIER_LOST\020\n\022\"\n\036CHAT_MESSAGE_C"
+    "OURIER_RESPAWNED\020\013\022\033\n\027CHAT_MESSAGE_GLYPH"
+    "_USED\020\014\022\036\n\032CHAT_MESSAGE_ITEM_PURCHASE\020\r\022"
+    "\030\n\024CHAT_MESSAGE_CONNECT\020\016\022\033\n\027CHAT_MESSAG"
+    "E_DISCONNECT\020\017\022.\n*CHAT_MESSAGE_DISCONNEC"
+    "T_WAIT_FOR_RECONNECT\020\020\022*\n&CHAT_MESSAGE_D"
+    "ISCONNECT_TIME_REMAINING\020\021\0221\n-CHAT_MESSA"
+    "GE_DISCONNECT_TIME_REMAINING_PLURAL\020\022\022\032\n"
+    "\026CHAT_MESSAGE_RECONNECT\020\023\022\034\n\030CHAT_MESSAG"
+    "E_PLAYER_LEFT\020\024\022\036\n\032CHAT_MESSAGE_SAFE_TO_"
+    "LEAVE\020\025\022\034\n\030CHAT_MESSAGE_RUNE_PICKUP\020\026\022\034\n"
+    "\030CHAT_MESSAGE_RUNE_BOTTLE\020\027\022\031\n\025CHAT_MESS"
+    "AGE_INTHEBAG\020\030\022\033\n\027CHAT_MESSAGE_SECRETSHO"
+    "P\020\031\022#\n\037CHAT_MESSAGE_ITEM_AUTOPURCHASED\020\032"
+    "\022\037\n\033CHAT_MESSAGE_ITEMS_COMBINED\020\033\022\035\n\031CHA"
+    "T_MESSAGE_SUPER_CREEPS\020\034\022%\n!CHAT_MESSAGE"
+    "_CANT_USE_ACTION_ITEM\020\035\022\"\n\036CHAT_MESSAGE_"
+    "CHARGES_EXHAUSTED\020\036\022\032\n\026CHAT_MESSAGE_CANT"
+    "PAUSE\020\037\022\035\n\031CHAT_MESSAGE_NOPAUSESLEFT\020 \022\035"
+    "\n\031CHAT_MESSAGE_CANTPAUSEYET\020!\022\027\n\023CHAT_ME"
+    "SSAGE_PAUSED\020\"\022\"\n\036CHAT_MESSAGE_UNPAUSE_C"
+    "OUNTDOWN\020#\022\031\n\025CHAT_MESSAGE_UNPAUSED\020$\022\036\n"
+    "\032CHAT_MESSAGE_AUTO_UNPAUSED\020%\022\032\n\026CHAT_ME"
+    "SSAGE_YOUPAUSED\020&\022 \n\034CHAT_MESSAGE_CANTUN"
+    "PAUSETEAM\020\'\022\"\n\036CHAT_MESSAGE_VOICE_TEXT_B"
+    "ANNED\020)\022.\n*CHAT_MESSAGE_SPECTATORS_WATCH"
+    "ING_THIS_GAME\020*\022 \n\034CHAT_MESSAGE_REPORT_R"
+    "EMINDER\020+\022\032\n\026CHAT_MESSAGE_ECON_ITEM\020,\022\026\n"
+    "\022CHAT_MESSAGE_TAUNT\020-\022\027\n\023CHAT_MESSAGE_RA"
+    "NDOM\020.\022\030\n\024CHAT_MESSAGE_RD_TURN\020/\022 \n\034CHAT"
+    "_MESSAGE_DROP_RATE_BONUS\0201\022!\n\035CHAT_MESSA"
+    "GE_NO_BATTLE_POINTS\0202\022\035\n\031CHAT_MESSAGE_DE"
+    "NIED_AEGIS\0203\022\036\n\032CHAT_MESSAGE_INFORMATION"
+    "AL\0204\022\035\n\031CHAT_MESSAGE_AEGIS_STOLEN\0205\022\035\n\031C"
+    "HAT_MESSAGE_ROSHAN_CANDY\0206\022\034\n\030CHAT_MESSA"
+    "GE_ITEM_GIFTED\0207\022\'\n#CHAT_MESSAGE_HERO_KI"
+    "LL_WITH_GREEVIL\0208\022(\n$CHAT_MESSAGE_HOLDOU"
+    "T_TOWER_DESTROYED\0209\022\'\n#CHAT_MESSAGE_HOLD"
+    "OUT_WALL_DESTROYED\020:\022&\n\"CHAT_MESSAGE_HOL"
+    "DOUT_WALL_FINISHED\020;\022)\n%CHAT_MESSAGE_PLA"
+    "YER_LEFT_LIMITED_HERO\020>\0221\n-CHAT_MESSAGE_"
+    "ABANDON_LIMITED_HERO_EXPLANATION\020\?\022(\n$CH"
+    "AT_MESSAGE_DISCONNECT_LIMITED_HERO\020@\0223\n/"
+    "CHAT_MESSAGE_LOW_PRIORITY_COMPLETED_EXPL"
+    "ANATION\020A\022,\n(CHAT_MESSAGE_RECRUITMENT_DR"
+    "OP_RATE_BONUS\020B\0221\n-CHAT_MESSAGE_FROSTIVU"
+    "S_SHINING_BOOSTER_ACTIVE\020C\022 \n\034CHAT_MESSA"
+    "GE_PLAYER_LEFT_AFK\020I\0222\n.CHAT_MESSAGE_PLA"
+    "YER_LEFT_DISCONNECTED_TOO_LONG\020J\022!\n\035CHAT"
+    "_MESSAGE_PLAYER_ABANDONED\020K\022%\n!CHAT_MESS"
+    "AGE_PLAYER_ABANDONED_AFK\020L\0227\n3CHAT_MESSA"
+    "GE_PLAYER_ABANDONED_DISCONNECTED_TOO_LON"
+    "G\020M\022#\n\037CHAT_MESSAGE_WILL_NOT_BE_SCORED\020N"
+    "\022*\n&CHAT_MESSAGE_WILL_NOT_BE_SCORED_RANK"
+    "ED\020O\022+\n\'CHAT_MESSAGE_WILL_NOT_BE_SCORED_"
+    "NETWORK\020P\0222\n.CHAT_MESSAGE_WILL_NOT_BE_SC"
+    "ORED_NETWORK_RANKED\020Q\022)\n%CHAT_MESSAGE_CA"
+    "N_QUIT_WITHOUT_ABANDON\020R\022:\n6CHAT_MESSAGE"
+    "_RANKED_GAME_STILL_SCORED_LEAVERS_GET_LO"
+    "SS\020S\0228\n4CHAT_MESSAGE_ABANDON_RANKED_BEFO"
+    "RE_FIRST_BLOOD_PARTY\020T\022!\n\035CHAT_MESSAGE_C"
+    "OMPENDIUM_LEVEL\020U\022*\n&CHAT_MESSAGE_VICTOR"
+    "Y_PREDICTION_STREAK\020V\022\"\n\036CHAT_MESSAGE_AS"
+    "SASSIN_ANNOUNCE\020W\022!\n\035CHAT_MESSAGE_ASSASS"
+    "IN_SUCCESS\020X\022 \n\034CHAT_MESSAGE_ASSASSIN_DE"
+    "NIED\020Y\0227\n3CHAT_MESSAGE_VICTORY_PREDICTIO"
+    "N_SINGLE_USER_CONFIRM\020Z\022\034\n\030CHAT_MESSAGE_"
+    "EFFIGY_KILL\020[\022+\n\'CHAT_MESSAGE_VOICE_TEXT"
+    "_BANNED_OVERFLOW\020\\\022\"\n\036CHAT_MESSAGE_YEAR_"
+    "BEAST_KILLED\020]\022 \n\034CHAT_MESSAGE_PAUSE_COU"
+    "NTDOWN\020^\022\036\n\032CHAT_MESSAGE_COINS_WAGERED\020_"
+    "\022#\n\037CHAT_MESSAGE_HERO_NOMINATED_BAN\020`\022\034\n"
+    "\030CHAT_MESSAGE_HERO_BANNED\020a\022\037\n\033CHAT_MESS"
+    "AGE_HERO_BAN_COUNT\020b\022\036\n\032CHAT_MESSAGE_RIV"
+    "ER_PAINTED\020c\022\032\n\026CHAT_MESSAGE_SCAN_USED\020d"
+    "*\262\001\n\035DOTA_NO_BATTLE_POINTS_REASONS\022%\n!NO"
+    "_BATTLE_POINTS_WRONG_LOBBY_TYPE\020\001\022\"\n\036NO_"
+    "BATTLE_POINTS_PRACTICE_BOTS\020\002\022#\n\037NO_BATT"
+    "LE_POINTS_CHEATS_ENABLED\020\003\022!\n\035NO_BATTLE_"
+    "POINTS_LOW_PRIORITY\020\004*\250\001\n\027DOTA_CHAT_INFO"
+    "RMATIONAL\022!\n\035INFO_COOP_BATTLE_POINTS_RUL"
+    "ES\020\001\022#\n\037INFO_FROSTIVUS_ABANDON_REMINDER\020"
+    "\002\022\030\n\024INFO_RANKED_REMINDER\020\003\022+\n\'INFO_COOP"
+    "_LOW_PRIORITY_PASSIVE_REMINDER\020\004*\226\001\n\026DOT"
+    "A_ABILITY_PING_TYPE\022\026\n\022ABILITY_PING_READ"
+    "Y\020\001\022\025\n\021ABILITY_PING_MANA\020\002\022\031\n\025ABILITY_PI"
+    "NG_COOLDOWN\020\003\022\026\n\022ABILITY_PING_ENEMY\020\004\022\032\n"
+    "\026ABILITY_PING_UNLEARNED\020\005*\273\001\n\027DOTA_REPLA"
+    "Y_STATE_EVENT\022&\n\"DOTA_REPLAY_STATE_EVENT"
+    "_GAME_START\020\001\022)\n%DOTA_REPLAY_STATE_EVENT"
+    "_STARTING_HORN\020\002\022\'\n#DOTA_REPLAY_STATE_EV"
+    "ENT_FIRST_BLOOD\020\003\022$\n DOTA_REPLAY_STATE_E"
+    "VENT_SHOWCASE\020\004*\345\001\n\023EDotaEntityMessages\022"
+    "\024\n\020DOTA_UNIT_SPEECH\020\000\022\031\n\025DOTA_UNIT_SPEEC"
+    "H_MUTE\020\001\022\031\n\025DOTA_UNIT_ADD_GESTURE\020\002\022\034\n\030D"
+    "OTA_UNIT_REMOVE_GESTURE\020\003\022!\n\035DOTA_UNIT_R"
+    "EMOVE_ALL_GESTURES\020\004\022\032\n\026DOTA_UNIT_FADE_G"
+    "ESTURE\020\006\022%\n!DOTA_UNIT_SPEECH_CLIENTSIDE_"
+    "RULES\020\007*\207\006\n\025DOTA_PARTICLE_MESSAGE\022&\n\"DOT"
+    "A_PARTICLE_MANAGER_EVENT_CREATE\020\000\022&\n\"DOT"
+    "A_PARTICLE_MANAGER_EVENT_UPDATE\020\001\022.\n*DOT"
+    "A_PARTICLE_MANAGER_EVENT_UPDATE_FORWARD\020"
+    "\002\0222\n.DOTA_PARTICLE_MANAGER_EVENT_UPDATE_"
+    "ORIENTATION\020\003\022/\n+DOTA_PARTICLE_MANAGER_E"
+    "VENT_UPDATE_FALLBACK\020\004\022*\n&DOTA_PARTICLE_"
+    "MANAGER_EVENT_UPDATE_ENT\020\005\022-\n)DOTA_PARTI"
+    "CLE_MANAGER_EVENT_UPDATE_OFFSET\020\006\022\'\n#DOT"
+    "A_PARTICLE_MANAGER_EVENT_DESTROY\020\007\0221\n-DO"
+    "TA_PARTICLE_MANAGER_EVENT_DESTROY_INVOLV"
+    "ING\020\010\022\'\n#DOTA_PARTICLE_MANAGER_EVENT_REL"
+    "EASE\020\t\022\'\n#DOTA_PARTICLE_MANAGER_EVENT_LA"
+    "TENCY\020\n\022+\n\'DOTA_PARTICLE_MANAGER_EVENT_S"
+    "HOULD_DRAW\020\013\022&\n\"DOTA_PARTICLE_MANAGER_EV"
+    "ENT_FROZEN\020\014\022\?\n;DOTA_PARTICLE_MANAGER_EV"
+    "ENT_CHANGE_CONTROL_POINT_ATTACHMENT\020\r\0226\n"
+    "2DOTA_PARTICLE_MANAGER_EVENT_UPDATE_ENTI"
+    "TY_POSITION\020\016\0222\n.DOTA_PARTICLE_MANAGER_E"
+    "VENT_SET_FOW_PROPERTIES\020\017*\330\004\n\023DOTA_OVERH"
+    "EAD_ALERT\022\027\n\023OVERHEAD_ALERT_GOLD\020\000\022\027\n\023OV"
+    "ERHEAD_ALERT_DENY\020\001\022\033\n\027OVERHEAD_ALERT_CR"
+    "ITICAL\020\002\022\025\n\021OVERHEAD_ALERT_XP\020\003\022%\n!OVERH"
+    "EAD_ALERT_BONUS_SPELL_DAMAGE\020\004\022\027\n\023OVERHE"
+    "AD_ALERT_MISS\020\005\022\031\n\025OVERHEAD_ALERT_DAMAGE"
+    "\020\006\022\030\n\024OVERHEAD_ALERT_EVADE\020\007\022\030\n\024OVERHEAD"
+    "_ALERT_BLOCK\020\010\022&\n\"OVERHEAD_ALERT_BONUS_P"
+    "OISON_DAMAGE\020\t\022\027\n\023OVERHEAD_ALERT_HEAL\020\n\022"
+    "\033\n\027OVERHEAD_ALERT_MANA_ADD\020\013\022\034\n\030OVERHEAD"
+    "_ALERT_MANA_LOSS\020\014\022!\n\035OVERHEAD_ALERT_LAS"
+    "T_HIT_EARLY\020\r\022!\n\035OVERHEAD_ALERT_LAST_HIT"
+    "_CLOSE\020\016\022 \n\034OVERHEAD_ALERT_LAST_HIT_MISS"
+    "\020\017\022 \n\034OVERHEAD_ALERT_MAGICAL_BLOCK\020\020\022\"\n\036"
+    "OVERHEAD_ALERT_INCOMING_DAMAGE\020\021\022\"\n\036OVER"
+    "HEAD_ALERT_OUTGOING_DAMAGE\020\022*\201\004\n\026DOTA_PO"
     "SITION_CATEGORY\022\026\n\022DOTA_POSITION_NONE\020\000\022"
     "\035\n\031DOTA_POSITION_BOTTOM_LANE\020\001\022\032\n\026DOTA_P"
     "OSITION_MID_LANE\020\002\022\032\n\026DOTA_POSITION_TOP_"
@@ -3724,8 +4058,9 @@ void protobuf_AddDesc_dota_5fusermessages_2eproto() {
     "ch\020D\022\034\n\030kPVLS_AllowFellowStudent\020E\022\034\n\030kP"
     "VLS_AllowTalkerIsCoach\020F\022\034\n\030kPVLS_AllowC"
     "oachHearTeam\020G\022\027\n\023kPVLS_AllowSameTeam\020H\022"
-    "\027\n\023kPVLS_AllowShowcase\020I*&\n\020EProjectionE"
-    "vent\022\022\n\016ePE_FirstBlood\020\000B\005H\001\200\001\000", 25071);
+    "\027\n\023kPVLS_AllowShowcase\020I*B\n\020EProjectionE"
+    "vent\022\022\n\016ePE_FirstBlood\020\000\022\032\n\026ePE_Killstre"
+    "ak_godlike\020\001B\005H\001\200\001\000", 27379);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "dota_usermessages.proto", &protobuf_RegisterTypes);
   CDOTAUserMsg_AIDebugLine::default_instance_ = new CDOTAUserMsg_AIDebugLine();
@@ -3792,6 +4127,8 @@ void protobuf_AddDesc_dota_5fusermessages_2eproto() {
   CDOTAUserMsg_ParticleManager_UpdateParticleSetFrozen::default_instance_ = new CDOTAUserMsg_ParticleManager_UpdateParticleSetFrozen();
   CDOTAUserMsg_ParticleManager_UpdateParticleShouldDraw::default_instance_ = new CDOTAUserMsg_ParticleManager_UpdateParticleShouldDraw();
   CDOTAUserMsg_ParticleManager_ChangeControlPointAttachment::default_instance_ = new CDOTAUserMsg_ParticleManager_ChangeControlPointAttachment();
+  CDOTAUserMsg_ParticleManager_UpdateEntityPosition::default_instance_ = new CDOTAUserMsg_ParticleManager_UpdateEntityPosition();
+  CDOTAUserMsg_ParticleManager_SetParticleFoWProperties::default_instance_ = new CDOTAUserMsg_ParticleManager_SetParticleFoWProperties();
   CDOTAUserMsg_OverheadEvent::default_instance_ = new CDOTAUserMsg_OverheadEvent();
   CDOTAUserMsg_TutorialTipInfo::default_instance_ = new CDOTAUserMsg_TutorialTipInfo();
   CDOTAUserMsg_TutorialFinish::default_instance_ = new CDOTAUserMsg_TutorialFinish();
@@ -3852,6 +4189,15 @@ void protobuf_AddDesc_dota_5fusermessages_2eproto() {
   CDOTAUserMsg_CompendiumState::default_instance_ = new CDOTAUserMsg_CompendiumState();
   CDOTAUserMsg_ProjectionAbility::default_instance_ = new CDOTAUserMsg_ProjectionAbility();
   CDOTAUserMsg_ProjectionEvent::default_instance_ = new CDOTAUserMsg_ProjectionEvent();
+  CDOTAUserMsg_XPAlert::default_instance_ = new CDOTAUserMsg_XPAlert();
+  CDOTAUserMsg_UpdateQuestProgress::default_instance_ = new CDOTAUserMsg_UpdateQuestProgress();
+  CDOTAUserMsg_QuestStatus::default_instance_ = new CDOTAUserMsg_QuestStatus();
+  CDOTAUserMsg_SuggestHeroPick::default_instance_ = new CDOTAUserMsg_SuggestHeroPick();
+  CDOTAUserMsg_SuggestHeroRole::default_instance_ = new CDOTAUserMsg_SuggestHeroRole();
+  CDOTAUserMsg_KillcamDamageTaken::default_instance_ = new CDOTAUserMsg_KillcamDamageTaken();
+  CDOTAUserMsg_SelectPenaltyGold::default_instance_ = new CDOTAUserMsg_SelectPenaltyGold();
+  CDOTAUserMsg_RollDiceResult::default_instance_ = new CDOTAUserMsg_RollDiceResult();
+  CDOTAUserMsg_FlipCoinResult::default_instance_ = new CDOTAUserMsg_FlipCoinResult();
   CDOTAUserMsg_AIDebugLine::default_instance_->InitAsDefaultInstance();
   CDOTAUserMsg_Ping::default_instance_->InitAsDefaultInstance();
   CDOTAUserMsg_SwapVerify::default_instance_->InitAsDefaultInstance();
@@ -3916,6 +4262,8 @@ void protobuf_AddDesc_dota_5fusermessages_2eproto() {
   CDOTAUserMsg_ParticleManager_UpdateParticleSetFrozen::default_instance_->InitAsDefaultInstance();
   CDOTAUserMsg_ParticleManager_UpdateParticleShouldDraw::default_instance_->InitAsDefaultInstance();
   CDOTAUserMsg_ParticleManager_ChangeControlPointAttachment::default_instance_->InitAsDefaultInstance();
+  CDOTAUserMsg_ParticleManager_UpdateEntityPosition::default_instance_->InitAsDefaultInstance();
+  CDOTAUserMsg_ParticleManager_SetParticleFoWProperties::default_instance_->InitAsDefaultInstance();
   CDOTAUserMsg_OverheadEvent::default_instance_->InitAsDefaultInstance();
   CDOTAUserMsg_TutorialTipInfo::default_instance_->InitAsDefaultInstance();
   CDOTAUserMsg_TutorialFinish::default_instance_->InitAsDefaultInstance();
@@ -3976,6 +4324,15 @@ void protobuf_AddDesc_dota_5fusermessages_2eproto() {
   CDOTAUserMsg_CompendiumState::default_instance_->InitAsDefaultInstance();
   CDOTAUserMsg_ProjectionAbility::default_instance_->InitAsDefaultInstance();
   CDOTAUserMsg_ProjectionEvent::default_instance_->InitAsDefaultInstance();
+  CDOTAUserMsg_XPAlert::default_instance_->InitAsDefaultInstance();
+  CDOTAUserMsg_UpdateQuestProgress::default_instance_->InitAsDefaultInstance();
+  CDOTAUserMsg_QuestStatus::default_instance_->InitAsDefaultInstance();
+  CDOTAUserMsg_SuggestHeroPick::default_instance_->InitAsDefaultInstance();
+  CDOTAUserMsg_SuggestHeroRole::default_instance_->InitAsDefaultInstance();
+  CDOTAUserMsg_KillcamDamageTaken::default_instance_->InitAsDefaultInstance();
+  CDOTAUserMsg_SelectPenaltyGold::default_instance_->InitAsDefaultInstance();
+  CDOTAUserMsg_RollDiceResult::default_instance_->InitAsDefaultInstance();
+  CDOTAUserMsg_FlipCoinResult::default_instance_->InitAsDefaultInstance();
   ::google::protobuf::internal::OnShutdown(&protobuf_ShutdownFile_dota_5fusermessages_2eproto);
 }
 
@@ -4080,6 +4437,18 @@ bool EDotaUserMessages_IsValid(int value) {
     case 551:
     case 552:
     case 553:
+    case 554:
+    case 555:
+    case 556:
+    case 557:
+    case 558:
+    case 559:
+    case 560:
+    case 561:
+    case 562:
+    case 563:
+    case 564:
+    case 565:
       return true;
     default:
       return false;
@@ -4180,6 +4549,11 @@ bool DOTA_CHAT_MESSAGE_IsValid(int value) {
     case 93:
     case 94:
     case 95:
+    case 96:
+    case 97:
+    case 98:
+    case 99:
+    case 100:
       return true;
     default:
       return false;
@@ -4235,6 +4609,22 @@ bool DOTA_ABILITY_PING_TYPE_IsValid(int value) {
   }
 }
 
+const ::google::protobuf::EnumDescriptor* DOTA_REPLAY_STATE_EVENT_descriptor() {
+  protobuf_AssignDescriptorsOnce();
+  return DOTA_REPLAY_STATE_EVENT_descriptor_;
+}
+bool DOTA_REPLAY_STATE_EVENT_IsValid(int value) {
+  switch(value) {
+    case 1:
+    case 2:
+    case 3:
+    case 4:
+      return true;
+    default:
+      return false;
+  }
+}
+
 const ::google::protobuf::EnumDescriptor* EDotaEntityMessages_descriptor() {
   protobuf_AssignDescriptorsOnce();
   return EDotaEntityMessages_descriptor_;
@@ -4274,6 +4664,8 @@ bool DOTA_PARTICLE_MESSAGE_IsValid(int value) {
     case 11:
     case 12:
     case 13:
+    case 14:
+    case 15:
       return true;
     default:
       return false;
@@ -4302,6 +4694,9 @@ bool DOTA_OVERHEAD_ALERT_IsValid(int value) {
     case 13:
     case 14:
     case 15:
+    case 16:
+    case 17:
+    case 18:
       return true;
     default:
       return false;
@@ -4425,6 +4820,7 @@ const ::google::protobuf::EnumDescriptor* EProjectionEvent_descriptor() {
 bool EProjectionEvent_IsValid(int value) {
   switch(value) {
     case 0:
+    case 1:
       return true;
     default:
       return false;
@@ -4678,7 +5074,8 @@ void CDOTAUserMsg_AIDebugLine::Swap(CDOTAUserMsg_AIDebugLine* other) {
 // ===================================================================
 
 #ifndef _MSC_VER
-const int CDOTAUserMsg_Ping::kMessageFieldNumber;
+const int CDOTAUserMsg_Ping::kPingFieldNumber;
+const int CDOTAUserMsg_Ping::kLossFieldNumber;
 #endif  // !_MSC_VER
 
 CDOTAUserMsg_Ping::CDOTAUserMsg_Ping()
@@ -4698,9 +5095,9 @@ CDOTAUserMsg_Ping::CDOTAUserMsg_Ping(const CDOTAUserMsg_Ping& from)
 }
 
 void CDOTAUserMsg_Ping::SharedCtor() {
-  ::google::protobuf::internal::GetEmptyString();
   _cached_size_ = 0;
-  message_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  ping_ = 0u;
+  loss_ = 0u;
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
 
@@ -4710,9 +5107,6 @@ CDOTAUserMsg_Ping::~CDOTAUserMsg_Ping() {
 }
 
 void CDOTAUserMsg_Ping::SharedDtor() {
-  if (message_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    delete message_;
-  }
   if (this != default_instance_) {
   }
 }
@@ -4739,11 +5133,21 @@ CDOTAUserMsg_Ping* CDOTAUserMsg_Ping::New() const {
 }
 
 void CDOTAUserMsg_Ping::Clear() {
-  if (has_message()) {
-    if (message_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-      message_->clear();
-    }
-  }
+#define OFFSET_OF_FIELD_(f) (reinterpret_cast<char*>(      \
+  &reinterpret_cast<CDOTAUserMsg_Ping*>(16)->f) - \
+   reinterpret_cast<char*>(16))
+
+#define ZR_(first, last) do {                              \
+    size_t f = OFFSET_OF_FIELD_(first);                    \
+    size_t n = OFFSET_OF_FIELD_(last) - f + sizeof(last);  \
+    ::memset(&first, 0, n);                                \
+  } while (0)
+
+  ZR_(ping_, loss_);
+
+#undef OFFSET_OF_FIELD_
+#undef ZR_
+
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
   mutable_unknown_fields()->Clear();
 }
@@ -4758,15 +5162,28 @@ bool CDOTAUserMsg_Ping::MergePartialFromCodedStream(
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // optional string message = 1;
-      case 1: {
-        if (tag == 10) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->mutable_message()));
-          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-            this->message().data(), this->message().length(),
-            ::google::protobuf::internal::WireFormat::PARSE,
-            "message");
+      // optional uint32 ping = 2;
+      case 2: {
+        if (tag == 16) {
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                 input, &ping_)));
+          set_has_ping();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(24)) goto parse_loss;
+        break;
+      }
+
+      // optional uint32 loss = 3;
+      case 3: {
+        if (tag == 24) {
+         parse_loss:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                 input, &loss_)));
+          set_has_loss();
         } else {
           goto handle_unusual;
         }
@@ -4799,14 +5216,14 @@ failure:
 void CDOTAUserMsg_Ping::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
   // @@protoc_insertion_point(serialize_start:CDOTAUserMsg_Ping)
-  // optional string message = 1;
-  if (has_message()) {
-    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-      this->message().data(), this->message().length(),
-      ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "message");
-    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      1, this->message(), output);
+  // optional uint32 ping = 2;
+  if (has_ping()) {
+    ::google::protobuf::internal::WireFormatLite::WriteUInt32(2, this->ping(), output);
+  }
+
+  // optional uint32 loss = 3;
+  if (has_loss()) {
+    ::google::protobuf::internal::WireFormatLite::WriteUInt32(3, this->loss(), output);
   }
 
   if (!unknown_fields().empty()) {
@@ -4819,15 +5236,14 @@ void CDOTAUserMsg_Ping::SerializeWithCachedSizes(
 ::google::protobuf::uint8* CDOTAUserMsg_Ping::SerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
   // @@protoc_insertion_point(serialize_to_array_start:CDOTAUserMsg_Ping)
-  // optional string message = 1;
-  if (has_message()) {
-    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-      this->message().data(), this->message().length(),
-      ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "message");
-    target =
-      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        1, this->message(), target);
+  // optional uint32 ping = 2;
+  if (has_ping()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(2, this->ping(), target);
+  }
+
+  // optional uint32 loss = 3;
+  if (has_loss()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(3, this->loss(), target);
   }
 
   if (!unknown_fields().empty()) {
@@ -4842,11 +5258,18 @@ int CDOTAUserMsg_Ping::ByteSize() const {
   int total_size = 0;
 
   if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
-    // optional string message = 1;
-    if (has_message()) {
+    // optional uint32 ping = 2;
+    if (has_ping()) {
       total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::StringSize(
-          this->message());
+        ::google::protobuf::internal::WireFormatLite::UInt32Size(
+          this->ping());
+    }
+
+    // optional uint32 loss = 3;
+    if (has_loss()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::UInt32Size(
+          this->loss());
     }
 
   }
@@ -4876,8 +5299,11 @@ void CDOTAUserMsg_Ping::MergeFrom(const ::google::protobuf::Message& from) {
 void CDOTAUserMsg_Ping::MergeFrom(const CDOTAUserMsg_Ping& from) {
   GOOGLE_CHECK_NE(&from, this);
   if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
-    if (from.has_message()) {
-      set_message(from.message());
+    if (from.has_ping()) {
+      set_ping(from.ping());
+    }
+    if (from.has_loss()) {
+      set_loss(from.loss());
     }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
@@ -4902,7 +5328,8 @@ bool CDOTAUserMsg_Ping::IsInitialized() const {
 
 void CDOTAUserMsg_Ping::Swap(CDOTAUserMsg_Ping* other) {
   if (other != this) {
-    std::swap(message_, other->message_);
+    std::swap(ping_, other->ping_);
+    std::swap(loss_, other->loss_);
     std::swap(_has_bits_[0], other->_has_bits_[0]);
     _unknown_fields_.Swap(&other->_unknown_fields_);
     std::swap(_cached_size_, other->_cached_size_);
@@ -5917,9 +6344,9 @@ void CDOTAUserMsg_CombatLogShowDeath::Swap(CDOTAUserMsg_CombatLogShowDeath* othe
 
 #ifndef _MSC_VER
 const int CDOTAUserMsg_BotChat::kPlayerIdFieldNumber;
-const int CDOTAUserMsg_BotChat::kFormatFieldNumber;
 const int CDOTAUserMsg_BotChat::kMessageFieldNumber;
 const int CDOTAUserMsg_BotChat::kTargetFieldNumber;
+const int CDOTAUserMsg_BotChat::kTeamOnlyFieldNumber;
 #endif  // !_MSC_VER
 
 CDOTAUserMsg_BotChat::CDOTAUserMsg_BotChat()
@@ -5942,9 +6369,9 @@ void CDOTAUserMsg_BotChat::SharedCtor() {
   ::google::protobuf::internal::GetEmptyString();
   _cached_size_ = 0;
   player_id_ = 0u;
-  format_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   message_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   target_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  team_only_ = false;
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
 
@@ -5954,9 +6381,6 @@ CDOTAUserMsg_BotChat::~CDOTAUserMsg_BotChat() {
 }
 
 void CDOTAUserMsg_BotChat::SharedDtor() {
-  if (format_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    delete format_;
-  }
   if (message_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
     delete message_;
   }
@@ -5989,13 +6413,18 @@ CDOTAUserMsg_BotChat* CDOTAUserMsg_BotChat::New() const {
 }
 
 void CDOTAUserMsg_BotChat::Clear() {
+#define OFFSET_OF_FIELD_(f) (reinterpret_cast<char*>(      \
+  &reinterpret_cast<CDOTAUserMsg_BotChat*>(16)->f) - \
+   reinterpret_cast<char*>(16))
+
+#define ZR_(first, last) do {                              \
+    size_t f = OFFSET_OF_FIELD_(first);                    \
+    size_t n = OFFSET_OF_FIELD_(last) - f + sizeof(last);  \
+    ::memset(&first, 0, n);                                \
+  } while (0)
+
   if (_has_bits_[0 / 32] & 15) {
-    player_id_ = 0u;
-    if (has_format()) {
-      if (format_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-        format_->clear();
-      }
-    }
+    ZR_(player_id_, team_only_);
     if (has_message()) {
       if (message_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
         message_->clear();
@@ -6007,6 +6436,10 @@ void CDOTAUserMsg_BotChat::Clear() {
       }
     }
   }
+
+#undef OFFSET_OF_FIELD_
+#undef ZR_
+
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
   mutable_unknown_fields()->Clear();
 }
@@ -6028,23 +6461,6 @@ bool CDOTAUserMsg_BotChat::MergePartialFromCodedStream(
                    ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
                  input, &player_id_)));
           set_has_player_id();
-        } else {
-          goto handle_unusual;
-        }
-        if (input->ExpectTag(18)) goto parse_format;
-        break;
-      }
-
-      // optional string format = 2;
-      case 2: {
-        if (tag == 18) {
-         parse_format:
-          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->mutable_format()));
-          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-            this->format().data(), this->format().length(),
-            ::google::protobuf::internal::WireFormat::PARSE,
-            "format");
         } else {
           goto handle_unusual;
         }
@@ -6082,6 +6498,21 @@ bool CDOTAUserMsg_BotChat::MergePartialFromCodedStream(
         } else {
           goto handle_unusual;
         }
+        if (input->ExpectTag(40)) goto parse_team_only;
+        break;
+      }
+
+      // optional bool team_only = 5;
+      case 5: {
+        if (tag == 40) {
+         parse_team_only:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   bool, ::google::protobuf::internal::WireFormatLite::TYPE_BOOL>(
+                 input, &team_only_)));
+          set_has_team_only();
+        } else {
+          goto handle_unusual;
+        }
         if (input->ExpectAtEnd()) goto success;
         break;
       }
@@ -6116,16 +6547,6 @@ void CDOTAUserMsg_BotChat::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteUInt32(1, this->player_id(), output);
   }
 
-  // optional string format = 2;
-  if (has_format()) {
-    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-      this->format().data(), this->format().length(),
-      ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "format");
-    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      2, this->format(), output);
-  }
-
   // optional string message = 3;
   if (has_message()) {
     ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
@@ -6146,6 +6567,11 @@ void CDOTAUserMsg_BotChat::SerializeWithCachedSizes(
       4, this->target(), output);
   }
 
+  // optional bool team_only = 5;
+  if (has_team_only()) {
+    ::google::protobuf::internal::WireFormatLite::WriteBool(5, this->team_only(), output);
+  }
+
   if (!unknown_fields().empty()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
@@ -6159,17 +6585,6 @@ void CDOTAUserMsg_BotChat::SerializeWithCachedSizes(
   // optional uint32 player_id = 1;
   if (has_player_id()) {
     target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(1, this->player_id(), target);
-  }
-
-  // optional string format = 2;
-  if (has_format()) {
-    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-      this->format().data(), this->format().length(),
-      ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "format");
-    target =
-      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        2, this->format(), target);
   }
 
   // optional string message = 3;
@@ -6194,6 +6609,11 @@ void CDOTAUserMsg_BotChat::SerializeWithCachedSizes(
         4, this->target(), target);
   }
 
+  // optional bool team_only = 5;
+  if (has_team_only()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(5, this->team_only(), target);
+  }
+
   if (!unknown_fields().empty()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
@@ -6213,13 +6633,6 @@ int CDOTAUserMsg_BotChat::ByteSize() const {
           this->player_id());
     }
 
-    // optional string format = 2;
-    if (has_format()) {
-      total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::StringSize(
-          this->format());
-    }
-
     // optional string message = 3;
     if (has_message()) {
       total_size += 1 +
@@ -6232,6 +6645,11 @@ int CDOTAUserMsg_BotChat::ByteSize() const {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::StringSize(
           this->target());
+    }
+
+    // optional bool team_only = 5;
+    if (has_team_only()) {
+      total_size += 1 + 1;
     }
 
   }
@@ -6264,14 +6682,14 @@ void CDOTAUserMsg_BotChat::MergeFrom(const CDOTAUserMsg_BotChat& from) {
     if (from.has_player_id()) {
       set_player_id(from.player_id());
     }
-    if (from.has_format()) {
-      set_format(from.format());
-    }
     if (from.has_message()) {
       set_message(from.message());
     }
     if (from.has_target()) {
       set_target(from.target());
+    }
+    if (from.has_team_only()) {
+      set_team_only(from.team_only());
     }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
@@ -6297,9 +6715,9 @@ bool CDOTAUserMsg_BotChat::IsInitialized() const {
 void CDOTAUserMsg_BotChat::Swap(CDOTAUserMsg_BotChat* other) {
   if (other != this) {
     std::swap(player_id_, other->player_id_);
-    std::swap(format_, other->format_);
     std::swap(message_, other->message_);
     std::swap(target_, other->target_);
+    std::swap(team_only_, other->team_only_);
     std::swap(_has_bits_[0], other->_has_bits_[0]);
     _unknown_fields_.Swap(&other->_unknown_fields_);
     std::swap(_cached_size_, other->_cached_size_);
@@ -6954,6 +7372,7 @@ void CDOTAUserMsg_MiniKillCamInfo_Attacker_Ability::Swap(CDOTAUserMsg_MiniKillCa
 const int CDOTAUserMsg_MiniKillCamInfo_Attacker::kAttackerFieldNumber;
 const int CDOTAUserMsg_MiniKillCamInfo_Attacker::kTotalDamageFieldNumber;
 const int CDOTAUserMsg_MiniKillCamInfo_Attacker::kAbilitiesFieldNumber;
+const int CDOTAUserMsg_MiniKillCamInfo_Attacker::kAttackerNameFieldNumber;
 #endif  // !_MSC_VER
 
 CDOTAUserMsg_MiniKillCamInfo_Attacker::CDOTAUserMsg_MiniKillCamInfo_Attacker()
@@ -6973,9 +7392,11 @@ CDOTAUserMsg_MiniKillCamInfo_Attacker::CDOTAUserMsg_MiniKillCamInfo_Attacker(con
 }
 
 void CDOTAUserMsg_MiniKillCamInfo_Attacker::SharedCtor() {
+  ::google::protobuf::internal::GetEmptyString();
   _cached_size_ = 0;
   attacker_ = 0u;
   total_damage_ = 0;
+  attacker_name_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
 
@@ -6985,6 +7406,9 @@ CDOTAUserMsg_MiniKillCamInfo_Attacker::~CDOTAUserMsg_MiniKillCamInfo_Attacker() 
 }
 
 void CDOTAUserMsg_MiniKillCamInfo_Attacker::SharedDtor() {
+  if (attacker_name_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete attacker_name_;
+  }
   if (this != default_instance_) {
   }
 }
@@ -7021,7 +7445,14 @@ void CDOTAUserMsg_MiniKillCamInfo_Attacker::Clear() {
     ::memset(&first, 0, n);                                \
   } while (0)
 
-  ZR_(attacker_, total_damage_);
+  if (_has_bits_[0 / 32] & 11) {
+    ZR_(attacker_, total_damage_);
+    if (has_attacker_name()) {
+      if (attacker_name_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+        attacker_name_->clear();
+      }
+    }
+  }
 
 #undef OFFSET_OF_FIELD_
 #undef ZR_
@@ -7080,6 +7511,23 @@ bool CDOTAUserMsg_MiniKillCamInfo_Attacker::MergePartialFromCodedStream(
           goto handle_unusual;
         }
         if (input->ExpectTag(26)) goto parse_abilities;
+        if (input->ExpectTag(34)) goto parse_attacker_name;
+        break;
+      }
+
+      // optional string attacker_name = 4;
+      case 4: {
+        if (tag == 34) {
+         parse_attacker_name:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_attacker_name()));
+          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+            this->attacker_name().data(), this->attacker_name().length(),
+            ::google::protobuf::internal::WireFormat::PARSE,
+            "attacker_name");
+        } else {
+          goto handle_unusual;
+        }
         if (input->ExpectAtEnd()) goto success;
         break;
       }
@@ -7125,6 +7573,16 @@ void CDOTAUserMsg_MiniKillCamInfo_Attacker::SerializeWithCachedSizes(
       3, this->abilities(i), output);
   }
 
+  // optional string attacker_name = 4;
+  if (has_attacker_name()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->attacker_name().data(), this->attacker_name().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "attacker_name");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      4, this->attacker_name(), output);
+  }
+
   if (!unknown_fields().empty()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
@@ -7152,6 +7610,17 @@ void CDOTAUserMsg_MiniKillCamInfo_Attacker::SerializeWithCachedSizes(
         3, this->abilities(i), target);
   }
 
+  // optional string attacker_name = 4;
+  if (has_attacker_name()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->attacker_name().data(), this->attacker_name().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "attacker_name");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        4, this->attacker_name(), target);
+  }
+
   if (!unknown_fields().empty()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
@@ -7176,6 +7645,13 @@ int CDOTAUserMsg_MiniKillCamInfo_Attacker::ByteSize() const {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::Int32Size(
           this->total_damage());
+    }
+
+    // optional string attacker_name = 4;
+    if (has_attacker_name()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::StringSize(
+          this->attacker_name());
     }
 
   }
@@ -7220,6 +7696,9 @@ void CDOTAUserMsg_MiniKillCamInfo_Attacker::MergeFrom(const CDOTAUserMsg_MiniKil
     if (from.has_total_damage()) {
       set_total_damage(from.total_damage());
     }
+    if (from.has_attacker_name()) {
+      set_attacker_name(from.attacker_name());
+    }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
 }
@@ -7246,6 +7725,7 @@ void CDOTAUserMsg_MiniKillCamInfo_Attacker::Swap(CDOTAUserMsg_MiniKillCamInfo_At
     std::swap(attacker_, other->attacker_);
     std::swap(total_damage_, other->total_damage_);
     abilities_.Swap(&other->abilities_);
+    std::swap(attacker_name_, other->attacker_name_);
     std::swap(_has_bits_[0], other->_has_bits_[0]);
     _unknown_fields_.Swap(&other->_unknown_fields_);
     std::swap(_cached_size_, other->_cached_size_);
@@ -12113,12 +12593,13 @@ void CDOTAUserMsg_MinimapDebugPoint::Swap(CDOTAUserMsg_MinimapDebugPoint* other)
 #ifndef _MSC_VER
 const int CDOTAUserMsg_CreateLinearProjectile::kOriginFieldNumber;
 const int CDOTAUserMsg_CreateLinearProjectile::kVelocityFieldNumber;
-const int CDOTAUserMsg_CreateLinearProjectile::kLatencyFieldNumber;
 const int CDOTAUserMsg_CreateLinearProjectile::kEntindexFieldNumber;
 const int CDOTAUserMsg_CreateLinearProjectile::kParticleIndexFieldNumber;
 const int CDOTAUserMsg_CreateLinearProjectile::kHandleFieldNumber;
 const int CDOTAUserMsg_CreateLinearProjectile::kAccelerationFieldNumber;
 const int CDOTAUserMsg_CreateLinearProjectile::kMaxSpeedFieldNumber;
+const int CDOTAUserMsg_CreateLinearProjectile::kFowRadiusFieldNumber;
+const int CDOTAUserMsg_CreateLinearProjectile::kStickyFowRevealFieldNumber;
 #endif  // !_MSC_VER
 
 CDOTAUserMsg_CreateLinearProjectile::CDOTAUserMsg_CreateLinearProjectile()
@@ -12144,12 +12625,13 @@ void CDOTAUserMsg_CreateLinearProjectile::SharedCtor() {
   _cached_size_ = 0;
   origin_ = NULL;
   velocity_ = NULL;
-  latency_ = 0;
   entindex_ = 0;
   particle_index_ = GOOGLE_ULONGLONG(0);
   handle_ = 0;
   acceleration_ = NULL;
   max_speed_ = 0;
+  fow_radius_ = 0;
+  sticky_fow_reveal_ = false;
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
 
@@ -12199,8 +12681,8 @@ void CDOTAUserMsg_CreateLinearProjectile::Clear() {
   } while (0)
 
   if (_has_bits_[0 / 32] & 255) {
-    ZR_(latency_, particle_index_);
-    ZR_(handle_, max_speed_);
+    ZR_(particle_index_, handle_);
+    ZR_(max_speed_, fow_radius_);
     if (has_origin()) {
       if (origin_ != NULL) origin_->::CMsgVector::Clear();
     }
@@ -12211,6 +12693,7 @@ void CDOTAUserMsg_CreateLinearProjectile::Clear() {
       if (acceleration_ != NULL) acceleration_->::CMsgVector2D::Clear();
     }
   }
+  sticky_fow_reveal_ = false;
 
 #undef OFFSET_OF_FIELD_
 #undef ZR_
@@ -12247,21 +12730,6 @@ bool CDOTAUserMsg_CreateLinearProjectile::MergePartialFromCodedStream(
          parse_velocity:
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
                input, mutable_velocity()));
-        } else {
-          goto handle_unusual;
-        }
-        if (input->ExpectTag(24)) goto parse_latency;
-        break;
-      }
-
-      // optional int32 latency = 3;
-      case 3: {
-        if (tag == 24) {
-         parse_latency:
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
-                 input, &latency_)));
-          set_has_latency();
         } else {
           goto handle_unusual;
         }
@@ -12338,6 +12806,36 @@ bool CDOTAUserMsg_CreateLinearProjectile::MergePartialFromCodedStream(
         } else {
           goto handle_unusual;
         }
+        if (input->ExpectTag(77)) goto parse_fow_radius;
+        break;
+      }
+
+      // optional float fow_radius = 9;
+      case 9: {
+        if (tag == 77) {
+         parse_fow_radius:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
+                 input, &fow_radius_)));
+          set_has_fow_radius();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(80)) goto parse_sticky_fow_reveal;
+        break;
+      }
+
+      // optional bool sticky_fow_reveal = 10;
+      case 10: {
+        if (tag == 80) {
+         parse_sticky_fow_reveal:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   bool, ::google::protobuf::internal::WireFormatLite::TYPE_BOOL>(
+                 input, &sticky_fow_reveal_)));
+          set_has_sticky_fow_reveal();
+        } else {
+          goto handle_unusual;
+        }
         if (input->ExpectAtEnd()) goto success;
         break;
       }
@@ -12379,11 +12877,6 @@ void CDOTAUserMsg_CreateLinearProjectile::SerializeWithCachedSizes(
       2, this->velocity(), output);
   }
 
-  // optional int32 latency = 3;
-  if (has_latency()) {
-    ::google::protobuf::internal::WireFormatLite::WriteInt32(3, this->latency(), output);
-  }
-
   // optional int32 entindex = 4;
   if (has_entindex()) {
     ::google::protobuf::internal::WireFormatLite::WriteInt32(4, this->entindex(), output);
@@ -12410,6 +12903,16 @@ void CDOTAUserMsg_CreateLinearProjectile::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteFloat(8, this->max_speed(), output);
   }
 
+  // optional float fow_radius = 9;
+  if (has_fow_radius()) {
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(9, this->fow_radius(), output);
+  }
+
+  // optional bool sticky_fow_reveal = 10;
+  if (has_sticky_fow_reveal()) {
+    ::google::protobuf::internal::WireFormatLite::WriteBool(10, this->sticky_fow_reveal(), output);
+  }
+
   if (!unknown_fields().empty()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
@@ -12432,11 +12935,6 @@ void CDOTAUserMsg_CreateLinearProjectile::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
         2, this->velocity(), target);
-  }
-
-  // optional int32 latency = 3;
-  if (has_latency()) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(3, this->latency(), target);
   }
 
   // optional int32 entindex = 4;
@@ -12466,6 +12964,16 @@ void CDOTAUserMsg_CreateLinearProjectile::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(8, this->max_speed(), target);
   }
 
+  // optional float fow_radius = 9;
+  if (has_fow_radius()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(9, this->fow_radius(), target);
+  }
+
+  // optional bool sticky_fow_reveal = 10;
+  if (has_sticky_fow_reveal()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(10, this->sticky_fow_reveal(), target);
+  }
+
   if (!unknown_fields().empty()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
@@ -12490,13 +12998,6 @@ int CDOTAUserMsg_CreateLinearProjectile::ByteSize() const {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
           this->velocity());
-    }
-
-    // optional int32 latency = 3;
-    if (has_latency()) {
-      total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::Int32Size(
-          this->latency());
     }
 
     // optional int32 entindex = 4;
@@ -12532,6 +13033,18 @@ int CDOTAUserMsg_CreateLinearProjectile::ByteSize() const {
       total_size += 1 + 4;
     }
 
+    // optional float fow_radius = 9;
+    if (has_fow_radius()) {
+      total_size += 1 + 4;
+    }
+
+  }
+  if (_has_bits_[8 / 32] & (0xffu << (8 % 32))) {
+    // optional bool sticky_fow_reveal = 10;
+    if (has_sticky_fow_reveal()) {
+      total_size += 1 + 1;
+    }
+
   }
   if (!unknown_fields().empty()) {
     total_size +=
@@ -12565,9 +13078,6 @@ void CDOTAUserMsg_CreateLinearProjectile::MergeFrom(const CDOTAUserMsg_CreateLin
     if (from.has_velocity()) {
       mutable_velocity()->::CMsgVector2D::MergeFrom(from.velocity());
     }
-    if (from.has_latency()) {
-      set_latency(from.latency());
-    }
     if (from.has_entindex()) {
       set_entindex(from.entindex());
     }
@@ -12582,6 +13092,14 @@ void CDOTAUserMsg_CreateLinearProjectile::MergeFrom(const CDOTAUserMsg_CreateLin
     }
     if (from.has_max_speed()) {
       set_max_speed(from.max_speed());
+    }
+    if (from.has_fow_radius()) {
+      set_fow_radius(from.fow_radius());
+    }
+  }
+  if (from._has_bits_[8 / 32] & (0xffu << (8 % 32))) {
+    if (from.has_sticky_fow_reveal()) {
+      set_sticky_fow_reveal(from.sticky_fow_reveal());
     }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
@@ -12608,12 +13126,13 @@ void CDOTAUserMsg_CreateLinearProjectile::Swap(CDOTAUserMsg_CreateLinearProjecti
   if (other != this) {
     std::swap(origin_, other->origin_);
     std::swap(velocity_, other->velocity_);
-    std::swap(latency_, other->latency_);
     std::swap(entindex_, other->entindex_);
     std::swap(particle_index_, other->particle_index_);
     std::swap(handle_, other->handle_);
     std::swap(acceleration_, other->acceleration_);
     std::swap(max_speed_, other->max_speed_);
+    std::swap(fow_radius_, other->fow_radius_);
+    std::swap(sticky_fow_reveal_, other->sticky_fow_reveal_);
     std::swap(_has_bits_[0], other->_has_bits_[0]);
     _unknown_fields_.Swap(&other->_unknown_fields_);
     std::swap(_cached_size_, other->_cached_size_);
@@ -13960,6 +14479,7 @@ void CDOTAUserMsg_SpectatorPlayerUnitOrders::Swap(CDOTAUserMsg_SpectatorPlayerUn
 const int CDOTAUserMsg_NevermoreRequiem::kEntityHandleFieldNumber;
 const int CDOTAUserMsg_NevermoreRequiem::kLinesFieldNumber;
 const int CDOTAUserMsg_NevermoreRequiem::kOriginFieldNumber;
+const int CDOTAUserMsg_NevermoreRequiem::kReverseFieldNumber;
 #endif  // !_MSC_VER
 
 CDOTAUserMsg_NevermoreRequiem::CDOTAUserMsg_NevermoreRequiem()
@@ -13984,6 +14504,7 @@ void CDOTAUserMsg_NevermoreRequiem::SharedCtor() {
   entity_handle_ = 0;
   lines_ = 0;
   origin_ = NULL;
+  reverse_ = false;
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
 
@@ -14030,11 +14551,12 @@ void CDOTAUserMsg_NevermoreRequiem::Clear() {
     ::memset(&first, 0, n);                                \
   } while (0)
 
-  if (_has_bits_[0 / 32] & 7) {
+  if (_has_bits_[0 / 32] & 15) {
     ZR_(entity_handle_, lines_);
     if (has_origin()) {
       if (origin_ != NULL) origin_->::CMsgVector::Clear();
     }
+    reverse_ = false;
   }
 
 #undef OFFSET_OF_FIELD_
@@ -14092,6 +14614,21 @@ bool CDOTAUserMsg_NevermoreRequiem::MergePartialFromCodedStream(
         } else {
           goto handle_unusual;
         }
+        if (input->ExpectTag(32)) goto parse_reverse;
+        break;
+      }
+
+      // optional bool reverse = 4;
+      case 4: {
+        if (tag == 32) {
+         parse_reverse:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   bool, ::google::protobuf::internal::WireFormatLite::TYPE_BOOL>(
+                 input, &reverse_)));
+          set_has_reverse();
+        } else {
+          goto handle_unusual;
+        }
         if (input->ExpectAtEnd()) goto success;
         break;
       }
@@ -14137,6 +14674,11 @@ void CDOTAUserMsg_NevermoreRequiem::SerializeWithCachedSizes(
       3, this->origin(), output);
   }
 
+  // optional bool reverse = 4;
+  if (has_reverse()) {
+    ::google::protobuf::internal::WireFormatLite::WriteBool(4, this->reverse(), output);
+  }
+
   if (!unknown_fields().empty()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
@@ -14162,6 +14704,11 @@ void CDOTAUserMsg_NevermoreRequiem::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
         3, this->origin(), target);
+  }
+
+  // optional bool reverse = 4;
+  if (has_reverse()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(4, this->reverse(), target);
   }
 
   if (!unknown_fields().empty()) {
@@ -14195,6 +14742,11 @@ int CDOTAUserMsg_NevermoreRequiem::ByteSize() const {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
           this->origin());
+    }
+
+    // optional bool reverse = 4;
+    if (has_reverse()) {
+      total_size += 1 + 1;
     }
 
   }
@@ -14233,6 +14785,9 @@ void CDOTAUserMsg_NevermoreRequiem::MergeFrom(const CDOTAUserMsg_NevermoreRequie
     if (from.has_origin()) {
       mutable_origin()->::CMsgVector::MergeFrom(from.origin());
     }
+    if (from.has_reverse()) {
+      set_reverse(from.reverse());
+    }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
 }
@@ -14259,6 +14814,7 @@ void CDOTAUserMsg_NevermoreRequiem::Swap(CDOTAUserMsg_NevermoreRequiem* other) {
     std::swap(entity_handle_, other->entity_handle_);
     std::swap(lines_, other->lines_);
     std::swap(origin_, other->origin_);
+    std::swap(reverse_, other->reverse_);
     std::swap(_has_bits_[0], other->_has_bits_[0]);
     _unknown_fields_.Swap(&other->_unknown_fields_);
     std::swap(_cached_size_, other->_cached_size_);
@@ -18046,6 +18602,7 @@ const int CDOTAUserMsg_UnitEvent_AddGesture::kActivityFieldNumber;
 const int CDOTAUserMsg_UnitEvent_AddGesture::kSlotFieldNumber;
 const int CDOTAUserMsg_UnitEvent_AddGesture::kFadeInFieldNumber;
 const int CDOTAUserMsg_UnitEvent_AddGesture::kFadeOutFieldNumber;
+const int CDOTAUserMsg_UnitEvent_AddGesture::kPlaybackRateFieldNumber;
 #endif  // !_MSC_VER
 
 CDOTAUserMsg_UnitEvent_AddGesture::CDOTAUserMsg_UnitEvent_AddGesture()
@@ -18070,6 +18627,7 @@ void CDOTAUserMsg_UnitEvent_AddGesture::SharedCtor() {
   slot_ = 0;
   fade_in_ = 0;
   fade_out_ = 0.1f;
+  playback_rate_ = 1;
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
 
@@ -18115,9 +18673,10 @@ void CDOTAUserMsg_UnitEvent_AddGesture::Clear() {
     ::memset(&first, 0, n);                                \
   } while (0)
 
-  if (_has_bits_[0 / 32] & 15) {
+  if (_has_bits_[0 / 32] & 31) {
     ZR_(activity_, fade_in_);
     fade_out_ = 0.1f;
+    playback_rate_ = 1;
   }
 
 #undef OFFSET_OF_FIELD_
@@ -18192,6 +18751,21 @@ bool CDOTAUserMsg_UnitEvent_AddGesture::MergePartialFromCodedStream(
         } else {
           goto handle_unusual;
         }
+        if (input->ExpectTag(45)) goto parse_playback_rate;
+        break;
+      }
+
+      // optional float playback_rate = 5 [default = 1];
+      case 5: {
+        if (tag == 45) {
+         parse_playback_rate:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
+                 input, &playback_rate_)));
+          set_has_playback_rate();
+        } else {
+          goto handle_unusual;
+        }
         if (input->ExpectAtEnd()) goto success;
         break;
       }
@@ -18241,6 +18815,11 @@ void CDOTAUserMsg_UnitEvent_AddGesture::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteFloat(4, this->fade_out(), output);
   }
 
+  // optional float playback_rate = 5 [default = 1];
+  if (has_playback_rate()) {
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(5, this->playback_rate(), output);
+  }
+
   if (!unknown_fields().empty()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
@@ -18269,6 +18848,11 @@ void CDOTAUserMsg_UnitEvent_AddGesture::SerializeWithCachedSizes(
   // optional float fade_out = 4 [default = 0.1];
   if (has_fade_out()) {
     target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(4, this->fade_out(), target);
+  }
+
+  // optional float playback_rate = 5 [default = 1];
+  if (has_playback_rate()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(5, this->playback_rate(), target);
   }
 
   if (!unknown_fields().empty()) {
@@ -18304,6 +18888,11 @@ int CDOTAUserMsg_UnitEvent_AddGesture::ByteSize() const {
 
     // optional float fade_out = 4 [default = 0.1];
     if (has_fade_out()) {
+      total_size += 1 + 4;
+    }
+
+    // optional float playback_rate = 5 [default = 1];
+    if (has_playback_rate()) {
       total_size += 1 + 4;
     }
 
@@ -18346,6 +18935,9 @@ void CDOTAUserMsg_UnitEvent_AddGesture::MergeFrom(const CDOTAUserMsg_UnitEvent_A
     if (from.has_fade_out()) {
       set_fade_out(from.fade_out());
     }
+    if (from.has_playback_rate()) {
+      set_playback_rate(from.playback_rate());
+    }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
 }
@@ -18373,6 +18965,7 @@ void CDOTAUserMsg_UnitEvent_AddGesture::Swap(CDOTAUserMsg_UnitEvent_AddGesture* 
     std::swap(slot_, other->slot_);
     std::swap(fade_in_, other->fade_in_);
     std::swap(fade_out_, other->fade_out_);
+    std::swap(playback_rate_, other->playback_rate_);
     std::swap(_has_bits_[0], other->_has_bits_[0]);
     _unknown_fields_.Swap(&other->_unknown_fields_);
     std::swap(_cached_size_, other->_cached_size_);
@@ -23984,6 +24577,584 @@ void CDOTAUserMsg_ParticleManager_ChangeControlPointAttachment::Swap(CDOTAUserMs
 // -------------------------------------------------------------------
 
 #ifndef _MSC_VER
+const int CDOTAUserMsg_ParticleManager_UpdateEntityPosition::kEntityHandleFieldNumber;
+const int CDOTAUserMsg_ParticleManager_UpdateEntityPosition::kPositionFieldNumber;
+#endif  // !_MSC_VER
+
+CDOTAUserMsg_ParticleManager_UpdateEntityPosition::CDOTAUserMsg_ParticleManager_UpdateEntityPosition()
+  : ::google::protobuf::Message() {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:CDOTAUserMsg_ParticleManager.UpdateEntityPosition)
+}
+
+void CDOTAUserMsg_ParticleManager_UpdateEntityPosition::InitAsDefaultInstance() {
+  position_ = const_cast< ::CMsgVector*>(&::CMsgVector::default_instance());
+}
+
+CDOTAUserMsg_ParticleManager_UpdateEntityPosition::CDOTAUserMsg_ParticleManager_UpdateEntityPosition(const CDOTAUserMsg_ParticleManager_UpdateEntityPosition& from)
+  : ::google::protobuf::Message() {
+  SharedCtor();
+  MergeFrom(from);
+  // @@protoc_insertion_point(copy_constructor:CDOTAUserMsg_ParticleManager.UpdateEntityPosition)
+}
+
+void CDOTAUserMsg_ParticleManager_UpdateEntityPosition::SharedCtor() {
+  _cached_size_ = 0;
+  entity_handle_ = 0;
+  position_ = NULL;
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+}
+
+CDOTAUserMsg_ParticleManager_UpdateEntityPosition::~CDOTAUserMsg_ParticleManager_UpdateEntityPosition() {
+  // @@protoc_insertion_point(destructor:CDOTAUserMsg_ParticleManager.UpdateEntityPosition)
+  SharedDtor();
+}
+
+void CDOTAUserMsg_ParticleManager_UpdateEntityPosition::SharedDtor() {
+  if (this != default_instance_) {
+    delete position_;
+  }
+}
+
+void CDOTAUserMsg_ParticleManager_UpdateEntityPosition::SetCachedSize(int size) const {
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+}
+const ::google::protobuf::Descriptor* CDOTAUserMsg_ParticleManager_UpdateEntityPosition::descriptor() {
+  protobuf_AssignDescriptorsOnce();
+  return CDOTAUserMsg_ParticleManager_UpdateEntityPosition_descriptor_;
+}
+
+const CDOTAUserMsg_ParticleManager_UpdateEntityPosition& CDOTAUserMsg_ParticleManager_UpdateEntityPosition::default_instance() {
+  if (default_instance_ == NULL) protobuf_AddDesc_dota_5fusermessages_2eproto();
+  return *default_instance_;
+}
+
+CDOTAUserMsg_ParticleManager_UpdateEntityPosition* CDOTAUserMsg_ParticleManager_UpdateEntityPosition::default_instance_ = NULL;
+
+CDOTAUserMsg_ParticleManager_UpdateEntityPosition* CDOTAUserMsg_ParticleManager_UpdateEntityPosition::New() const {
+  return new CDOTAUserMsg_ParticleManager_UpdateEntityPosition;
+}
+
+void CDOTAUserMsg_ParticleManager_UpdateEntityPosition::Clear() {
+  if (_has_bits_[0 / 32] & 3) {
+    entity_handle_ = 0;
+    if (has_position()) {
+      if (position_ != NULL) position_->::CMsgVector::Clear();
+    }
+  }
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+  mutable_unknown_fields()->Clear();
+}
+
+bool CDOTAUserMsg_ParticleManager_UpdateEntityPosition::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:CDOTAUserMsg_ParticleManager.UpdateEntityPosition)
+  for (;;) {
+    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoff(127);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // optional int32 entity_handle = 1;
+      case 1: {
+        if (tag == 8) {
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
+                 input, &entity_handle_)));
+          set_has_entity_handle();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(18)) goto parse_position;
+        break;
+      }
+
+      // optional .CMsgVector position = 2;
+      case 2: {
+        if (tag == 18) {
+         parse_position:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+               input, mutable_position()));
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectAtEnd()) goto success;
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0 ||
+            ::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, mutable_unknown_fields()));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:CDOTAUserMsg_ParticleManager.UpdateEntityPosition)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:CDOTAUserMsg_ParticleManager.UpdateEntityPosition)
+  return false;
+#undef DO_
+}
+
+void CDOTAUserMsg_ParticleManager_UpdateEntityPosition::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:CDOTAUserMsg_ParticleManager.UpdateEntityPosition)
+  // optional int32 entity_handle = 1;
+  if (has_entity_handle()) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(1, this->entity_handle(), output);
+  }
+
+  // optional .CMsgVector position = 2;
+  if (has_position()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      2, this->position(), output);
+  }
+
+  if (!unknown_fields().empty()) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        unknown_fields(), output);
+  }
+  // @@protoc_insertion_point(serialize_end:CDOTAUserMsg_ParticleManager.UpdateEntityPosition)
+}
+
+::google::protobuf::uint8* CDOTAUserMsg_ParticleManager_UpdateEntityPosition::SerializeWithCachedSizesToArray(
+    ::google::protobuf::uint8* target) const {
+  // @@protoc_insertion_point(serialize_to_array_start:CDOTAUserMsg_ParticleManager.UpdateEntityPosition)
+  // optional int32 entity_handle = 1;
+  if (has_entity_handle()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(1, this->entity_handle(), target);
+  }
+
+  // optional .CMsgVector position = 2;
+  if (has_position()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      WriteMessageNoVirtualToArray(
+        2, this->position(), target);
+  }
+
+  if (!unknown_fields().empty()) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        unknown_fields(), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:CDOTAUserMsg_ParticleManager.UpdateEntityPosition)
+  return target;
+}
+
+int CDOTAUserMsg_ParticleManager_UpdateEntityPosition::ByteSize() const {
+  int total_size = 0;
+
+  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    // optional int32 entity_handle = 1;
+    if (has_entity_handle()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::Int32Size(
+          this->entity_handle());
+    }
+
+    // optional .CMsgVector position = 2;
+    if (has_position()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+          this->position());
+    }
+
+  }
+  if (!unknown_fields().empty()) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        unknown_fields());
+  }
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = total_size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+  return total_size;
+}
+
+void CDOTAUserMsg_ParticleManager_UpdateEntityPosition::MergeFrom(const ::google::protobuf::Message& from) {
+  GOOGLE_CHECK_NE(&from, this);
+  const CDOTAUserMsg_ParticleManager_UpdateEntityPosition* source =
+    ::google::protobuf::internal::dynamic_cast_if_available<const CDOTAUserMsg_ParticleManager_UpdateEntityPosition*>(
+      &from);
+  if (source == NULL) {
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+    MergeFrom(*source);
+  }
+}
+
+void CDOTAUserMsg_ParticleManager_UpdateEntityPosition::MergeFrom(const CDOTAUserMsg_ParticleManager_UpdateEntityPosition& from) {
+  GOOGLE_CHECK_NE(&from, this);
+  if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    if (from.has_entity_handle()) {
+      set_entity_handle(from.entity_handle());
+    }
+    if (from.has_position()) {
+      mutable_position()->::CMsgVector::MergeFrom(from.position());
+    }
+  }
+  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
+}
+
+void CDOTAUserMsg_ParticleManager_UpdateEntityPosition::CopyFrom(const ::google::protobuf::Message& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void CDOTAUserMsg_ParticleManager_UpdateEntityPosition::CopyFrom(const CDOTAUserMsg_ParticleManager_UpdateEntityPosition& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool CDOTAUserMsg_ParticleManager_UpdateEntityPosition::IsInitialized() const {
+
+  return true;
+}
+
+void CDOTAUserMsg_ParticleManager_UpdateEntityPosition::Swap(CDOTAUserMsg_ParticleManager_UpdateEntityPosition* other) {
+  if (other != this) {
+    std::swap(entity_handle_, other->entity_handle_);
+    std::swap(position_, other->position_);
+    std::swap(_has_bits_[0], other->_has_bits_[0]);
+    _unknown_fields_.Swap(&other->_unknown_fields_);
+    std::swap(_cached_size_, other->_cached_size_);
+  }
+}
+
+::google::protobuf::Metadata CDOTAUserMsg_ParticleManager_UpdateEntityPosition::GetMetadata() const {
+  protobuf_AssignDescriptorsOnce();
+  ::google::protobuf::Metadata metadata;
+  metadata.descriptor = CDOTAUserMsg_ParticleManager_UpdateEntityPosition_descriptor_;
+  metadata.reflection = CDOTAUserMsg_ParticleManager_UpdateEntityPosition_reflection_;
+  return metadata;
+}
+
+
+// -------------------------------------------------------------------
+
+#ifndef _MSC_VER
+const int CDOTAUserMsg_ParticleManager_SetParticleFoWProperties::kFowControlPointFieldNumber;
+const int CDOTAUserMsg_ParticleManager_SetParticleFoWProperties::kFowControlPoint2FieldNumber;
+const int CDOTAUserMsg_ParticleManager_SetParticleFoWProperties::kFowRadiusFieldNumber;
+#endif  // !_MSC_VER
+
+CDOTAUserMsg_ParticleManager_SetParticleFoWProperties::CDOTAUserMsg_ParticleManager_SetParticleFoWProperties()
+  : ::google::protobuf::Message() {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:CDOTAUserMsg_ParticleManager.SetParticleFoWProperties)
+}
+
+void CDOTAUserMsg_ParticleManager_SetParticleFoWProperties::InitAsDefaultInstance() {
+}
+
+CDOTAUserMsg_ParticleManager_SetParticleFoWProperties::CDOTAUserMsg_ParticleManager_SetParticleFoWProperties(const CDOTAUserMsg_ParticleManager_SetParticleFoWProperties& from)
+  : ::google::protobuf::Message() {
+  SharedCtor();
+  MergeFrom(from);
+  // @@protoc_insertion_point(copy_constructor:CDOTAUserMsg_ParticleManager.SetParticleFoWProperties)
+}
+
+void CDOTAUserMsg_ParticleManager_SetParticleFoWProperties::SharedCtor() {
+  _cached_size_ = 0;
+  fow_control_point_ = 0;
+  fow_control_point2_ = 0;
+  fow_radius_ = 0;
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+}
+
+CDOTAUserMsg_ParticleManager_SetParticleFoWProperties::~CDOTAUserMsg_ParticleManager_SetParticleFoWProperties() {
+  // @@protoc_insertion_point(destructor:CDOTAUserMsg_ParticleManager.SetParticleFoWProperties)
+  SharedDtor();
+}
+
+void CDOTAUserMsg_ParticleManager_SetParticleFoWProperties::SharedDtor() {
+  if (this != default_instance_) {
+  }
+}
+
+void CDOTAUserMsg_ParticleManager_SetParticleFoWProperties::SetCachedSize(int size) const {
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+}
+const ::google::protobuf::Descriptor* CDOTAUserMsg_ParticleManager_SetParticleFoWProperties::descriptor() {
+  protobuf_AssignDescriptorsOnce();
+  return CDOTAUserMsg_ParticleManager_SetParticleFoWProperties_descriptor_;
+}
+
+const CDOTAUserMsg_ParticleManager_SetParticleFoWProperties& CDOTAUserMsg_ParticleManager_SetParticleFoWProperties::default_instance() {
+  if (default_instance_ == NULL) protobuf_AddDesc_dota_5fusermessages_2eproto();
+  return *default_instance_;
+}
+
+CDOTAUserMsg_ParticleManager_SetParticleFoWProperties* CDOTAUserMsg_ParticleManager_SetParticleFoWProperties::default_instance_ = NULL;
+
+CDOTAUserMsg_ParticleManager_SetParticleFoWProperties* CDOTAUserMsg_ParticleManager_SetParticleFoWProperties::New() const {
+  return new CDOTAUserMsg_ParticleManager_SetParticleFoWProperties;
+}
+
+void CDOTAUserMsg_ParticleManager_SetParticleFoWProperties::Clear() {
+#define OFFSET_OF_FIELD_(f) (reinterpret_cast<char*>(      \
+  &reinterpret_cast<CDOTAUserMsg_ParticleManager_SetParticleFoWProperties*>(16)->f) - \
+   reinterpret_cast<char*>(16))
+
+#define ZR_(first, last) do {                              \
+    size_t f = OFFSET_OF_FIELD_(first);                    \
+    size_t n = OFFSET_OF_FIELD_(last) - f + sizeof(last);  \
+    ::memset(&first, 0, n);                                \
+  } while (0)
+
+  ZR_(fow_control_point_, fow_radius_);
+
+#undef OFFSET_OF_FIELD_
+#undef ZR_
+
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+  mutable_unknown_fields()->Clear();
+}
+
+bool CDOTAUserMsg_ParticleManager_SetParticleFoWProperties::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:CDOTAUserMsg_ParticleManager.SetParticleFoWProperties)
+  for (;;) {
+    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoff(127);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // optional int32 fow_control_point = 1;
+      case 1: {
+        if (tag == 8) {
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
+                 input, &fow_control_point_)));
+          set_has_fow_control_point();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(16)) goto parse_fow_control_point2;
+        break;
+      }
+
+      // optional int32 fow_control_point2 = 2;
+      case 2: {
+        if (tag == 16) {
+         parse_fow_control_point2:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
+                 input, &fow_control_point2_)));
+          set_has_fow_control_point2();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(29)) goto parse_fow_radius;
+        break;
+      }
+
+      // optional float fow_radius = 3;
+      case 3: {
+        if (tag == 29) {
+         parse_fow_radius:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
+                 input, &fow_radius_)));
+          set_has_fow_radius();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectAtEnd()) goto success;
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0 ||
+            ::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, mutable_unknown_fields()));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:CDOTAUserMsg_ParticleManager.SetParticleFoWProperties)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:CDOTAUserMsg_ParticleManager.SetParticleFoWProperties)
+  return false;
+#undef DO_
+}
+
+void CDOTAUserMsg_ParticleManager_SetParticleFoWProperties::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:CDOTAUserMsg_ParticleManager.SetParticleFoWProperties)
+  // optional int32 fow_control_point = 1;
+  if (has_fow_control_point()) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(1, this->fow_control_point(), output);
+  }
+
+  // optional int32 fow_control_point2 = 2;
+  if (has_fow_control_point2()) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(2, this->fow_control_point2(), output);
+  }
+
+  // optional float fow_radius = 3;
+  if (has_fow_radius()) {
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(3, this->fow_radius(), output);
+  }
+
+  if (!unknown_fields().empty()) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        unknown_fields(), output);
+  }
+  // @@protoc_insertion_point(serialize_end:CDOTAUserMsg_ParticleManager.SetParticleFoWProperties)
+}
+
+::google::protobuf::uint8* CDOTAUserMsg_ParticleManager_SetParticleFoWProperties::SerializeWithCachedSizesToArray(
+    ::google::protobuf::uint8* target) const {
+  // @@protoc_insertion_point(serialize_to_array_start:CDOTAUserMsg_ParticleManager.SetParticleFoWProperties)
+  // optional int32 fow_control_point = 1;
+  if (has_fow_control_point()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(1, this->fow_control_point(), target);
+  }
+
+  // optional int32 fow_control_point2 = 2;
+  if (has_fow_control_point2()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(2, this->fow_control_point2(), target);
+  }
+
+  // optional float fow_radius = 3;
+  if (has_fow_radius()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(3, this->fow_radius(), target);
+  }
+
+  if (!unknown_fields().empty()) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        unknown_fields(), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:CDOTAUserMsg_ParticleManager.SetParticleFoWProperties)
+  return target;
+}
+
+int CDOTAUserMsg_ParticleManager_SetParticleFoWProperties::ByteSize() const {
+  int total_size = 0;
+
+  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    // optional int32 fow_control_point = 1;
+    if (has_fow_control_point()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::Int32Size(
+          this->fow_control_point());
+    }
+
+    // optional int32 fow_control_point2 = 2;
+    if (has_fow_control_point2()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::Int32Size(
+          this->fow_control_point2());
+    }
+
+    // optional float fow_radius = 3;
+    if (has_fow_radius()) {
+      total_size += 1 + 4;
+    }
+
+  }
+  if (!unknown_fields().empty()) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        unknown_fields());
+  }
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = total_size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+  return total_size;
+}
+
+void CDOTAUserMsg_ParticleManager_SetParticleFoWProperties::MergeFrom(const ::google::protobuf::Message& from) {
+  GOOGLE_CHECK_NE(&from, this);
+  const CDOTAUserMsg_ParticleManager_SetParticleFoWProperties* source =
+    ::google::protobuf::internal::dynamic_cast_if_available<const CDOTAUserMsg_ParticleManager_SetParticleFoWProperties*>(
+      &from);
+  if (source == NULL) {
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+    MergeFrom(*source);
+  }
+}
+
+void CDOTAUserMsg_ParticleManager_SetParticleFoWProperties::MergeFrom(const CDOTAUserMsg_ParticleManager_SetParticleFoWProperties& from) {
+  GOOGLE_CHECK_NE(&from, this);
+  if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    if (from.has_fow_control_point()) {
+      set_fow_control_point(from.fow_control_point());
+    }
+    if (from.has_fow_control_point2()) {
+      set_fow_control_point2(from.fow_control_point2());
+    }
+    if (from.has_fow_radius()) {
+      set_fow_radius(from.fow_radius());
+    }
+  }
+  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
+}
+
+void CDOTAUserMsg_ParticleManager_SetParticleFoWProperties::CopyFrom(const ::google::protobuf::Message& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void CDOTAUserMsg_ParticleManager_SetParticleFoWProperties::CopyFrom(const CDOTAUserMsg_ParticleManager_SetParticleFoWProperties& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool CDOTAUserMsg_ParticleManager_SetParticleFoWProperties::IsInitialized() const {
+
+  return true;
+}
+
+void CDOTAUserMsg_ParticleManager_SetParticleFoWProperties::Swap(CDOTAUserMsg_ParticleManager_SetParticleFoWProperties* other) {
+  if (other != this) {
+    std::swap(fow_control_point_, other->fow_control_point_);
+    std::swap(fow_control_point2_, other->fow_control_point2_);
+    std::swap(fow_radius_, other->fow_radius_);
+    std::swap(_has_bits_[0], other->_has_bits_[0]);
+    _unknown_fields_.Swap(&other->_unknown_fields_);
+    std::swap(_cached_size_, other->_cached_size_);
+  }
+}
+
+::google::protobuf::Metadata CDOTAUserMsg_ParticleManager_SetParticleFoWProperties::GetMetadata() const {
+  protobuf_AssignDescriptorsOnce();
+  ::google::protobuf::Metadata metadata;
+  metadata.descriptor = CDOTAUserMsg_ParticleManager_SetParticleFoWProperties_descriptor_;
+  metadata.reflection = CDOTAUserMsg_ParticleManager_SetParticleFoWProperties_reflection_;
+  return metadata;
+}
+
+
+// -------------------------------------------------------------------
+
+#ifndef _MSC_VER
 const int CDOTAUserMsg_ParticleManager::kTypeFieldNumber;
 const int CDOTAUserMsg_ParticleManager::kIndexFieldNumber;
 const int CDOTAUserMsg_ParticleManager::kReleaseParticleIndexFieldNumber;
@@ -23999,6 +25170,8 @@ const int CDOTAUserMsg_ParticleManager::kUpdateParticleEntFieldNumber;
 const int CDOTAUserMsg_ParticleManager::kUpdateParticleShouldDrawFieldNumber;
 const int CDOTAUserMsg_ParticleManager::kUpdateParticleSetFrozenFieldNumber;
 const int CDOTAUserMsg_ParticleManager::kChangeControlPointAttachmentFieldNumber;
+const int CDOTAUserMsg_ParticleManager::kUpdateEntityPositionFieldNumber;
+const int CDOTAUserMsg_ParticleManager::kSetParticleFowPropertiesFieldNumber;
 #endif  // !_MSC_VER
 
 CDOTAUserMsg_ParticleManager::CDOTAUserMsg_ParticleManager()
@@ -24021,6 +25194,8 @@ void CDOTAUserMsg_ParticleManager::InitAsDefaultInstance() {
   update_particle_should_draw_ = const_cast< ::CDOTAUserMsg_ParticleManager_UpdateParticleShouldDraw*>(&::CDOTAUserMsg_ParticleManager_UpdateParticleShouldDraw::default_instance());
   update_particle_set_frozen_ = const_cast< ::CDOTAUserMsg_ParticleManager_UpdateParticleSetFrozen*>(&::CDOTAUserMsg_ParticleManager_UpdateParticleSetFrozen::default_instance());
   change_control_point_attachment_ = const_cast< ::CDOTAUserMsg_ParticleManager_ChangeControlPointAttachment*>(&::CDOTAUserMsg_ParticleManager_ChangeControlPointAttachment::default_instance());
+  update_entity_position_ = const_cast< ::CDOTAUserMsg_ParticleManager_UpdateEntityPosition*>(&::CDOTAUserMsg_ParticleManager_UpdateEntityPosition::default_instance());
+  set_particle_fow_properties_ = const_cast< ::CDOTAUserMsg_ParticleManager_SetParticleFoWProperties*>(&::CDOTAUserMsg_ParticleManager_SetParticleFoWProperties::default_instance());
 }
 
 CDOTAUserMsg_ParticleManager::CDOTAUserMsg_ParticleManager(const CDOTAUserMsg_ParticleManager& from)
@@ -24047,6 +25222,8 @@ void CDOTAUserMsg_ParticleManager::SharedCtor() {
   update_particle_should_draw_ = NULL;
   update_particle_set_frozen_ = NULL;
   change_control_point_attachment_ = NULL;
+  update_entity_position_ = NULL;
+  set_particle_fow_properties_ = NULL;
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
 
@@ -24070,6 +25247,8 @@ void CDOTAUserMsg_ParticleManager::SharedDtor() {
     delete update_particle_should_draw_;
     delete update_particle_set_frozen_;
     delete change_control_point_attachment_;
+    delete update_entity_position_;
+    delete set_particle_fow_properties_;
   }
 }
 
@@ -24126,7 +25305,7 @@ void CDOTAUserMsg_ParticleManager::Clear() {
       if (update_particle_fwd_ != NULL) update_particle_fwd_->::CDOTAUserMsg_ParticleManager_UpdateParticleFwd::Clear();
     }
   }
-  if (_has_bits_[8 / 32] & 32512) {
+  if (_has_bits_[8 / 32] & 65280) {
     if (has_update_particle_orient()) {
       if (update_particle_orient_ != NULL) update_particle_orient_->::CDOTAUserMsg_ParticleManager_UpdateParticleOrient::Clear();
     }
@@ -24148,6 +25327,12 @@ void CDOTAUserMsg_ParticleManager::Clear() {
     if (has_change_control_point_attachment()) {
       if (change_control_point_attachment_ != NULL) change_control_point_attachment_->::CDOTAUserMsg_ParticleManager_ChangeControlPointAttachment::Clear();
     }
+    if (has_update_entity_position()) {
+      if (update_entity_position_ != NULL) update_entity_position_->::CDOTAUserMsg_ParticleManager_UpdateEntityPosition::Clear();
+    }
+  }
+  if (has_set_particle_fow_properties()) {
+    if (set_particle_fow_properties_ != NULL) set_particle_fow_properties_->::CDOTAUserMsg_ParticleManager_SetParticleFoWProperties::Clear();
   }
 
 #undef OFFSET_OF_FIELD_
@@ -24366,6 +25551,32 @@ bool CDOTAUserMsg_ParticleManager::MergePartialFromCodedStream(
         } else {
           goto handle_unusual;
         }
+        if (input->ExpectTag(138)) goto parse_update_entity_position;
+        break;
+      }
+
+      // optional .CDOTAUserMsg_ParticleManager.UpdateEntityPosition update_entity_position = 17;
+      case 17: {
+        if (tag == 138) {
+         parse_update_entity_position:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+               input, mutable_update_entity_position()));
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(146)) goto parse_set_particle_fow_properties;
+        break;
+      }
+
+      // optional .CDOTAUserMsg_ParticleManager.SetParticleFoWProperties set_particle_fow_properties = 18;
+      case 18: {
+        if (tag == 146) {
+         parse_set_particle_fow_properties:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+               input, mutable_set_particle_fow_properties()));
+        } else {
+          goto handle_unusual;
+        }
         if (input->ExpectAtEnd()) goto success;
         break;
       }
@@ -24484,6 +25695,18 @@ void CDOTAUserMsg_ParticleManager::SerializeWithCachedSizes(
       16, this->change_control_point_attachment(), output);
   }
 
+  // optional .CDOTAUserMsg_ParticleManager.UpdateEntityPosition update_entity_position = 17;
+  if (has_update_entity_position()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      17, this->update_entity_position(), output);
+  }
+
+  // optional .CDOTAUserMsg_ParticleManager.SetParticleFoWProperties set_particle_fow_properties = 18;
+  if (has_set_particle_fow_properties()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      18, this->set_particle_fow_properties(), output);
+  }
+
   if (!unknown_fields().empty()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
@@ -24594,6 +25817,20 @@ void CDOTAUserMsg_ParticleManager::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
         16, this->change_control_point_attachment(), target);
+  }
+
+  // optional .CDOTAUserMsg_ParticleManager.UpdateEntityPosition update_entity_position = 17;
+  if (has_update_entity_position()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      WriteMessageNoVirtualToArray(
+        17, this->update_entity_position(), target);
+  }
+
+  // optional .CDOTAUserMsg_ParticleManager.SetParticleFoWProperties set_particle_fow_properties = 18;
+  if (has_set_particle_fow_properties()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      WriteMessageNoVirtualToArray(
+        18, this->set_particle_fow_properties(), target);
   }
 
   if (!unknown_fields().empty()) {
@@ -24714,6 +25951,22 @@ int CDOTAUserMsg_ParticleManager::ByteSize() const {
           this->change_control_point_attachment());
     }
 
+    // optional .CDOTAUserMsg_ParticleManager.UpdateEntityPosition update_entity_position = 17;
+    if (has_update_entity_position()) {
+      total_size += 2 +
+        ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+          this->update_entity_position());
+    }
+
+  }
+  if (_has_bits_[16 / 32] & (0xffu << (16 % 32))) {
+    // optional .CDOTAUserMsg_ParticleManager.SetParticleFoWProperties set_particle_fow_properties = 18;
+    if (has_set_particle_fow_properties()) {
+      total_size += 2 +
+        ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+          this->set_particle_fow_properties());
+    }
+
   }
   if (!unknown_fields().empty()) {
     total_size +=
@@ -24788,6 +26041,14 @@ void CDOTAUserMsg_ParticleManager::MergeFrom(const CDOTAUserMsg_ParticleManager&
     if (from.has_change_control_point_attachment()) {
       mutable_change_control_point_attachment()->::CDOTAUserMsg_ParticleManager_ChangeControlPointAttachment::MergeFrom(from.change_control_point_attachment());
     }
+    if (from.has_update_entity_position()) {
+      mutable_update_entity_position()->::CDOTAUserMsg_ParticleManager_UpdateEntityPosition::MergeFrom(from.update_entity_position());
+    }
+  }
+  if (from._has_bits_[16 / 32] & (0xffu << (16 % 32))) {
+    if (from.has_set_particle_fow_properties()) {
+      mutable_set_particle_fow_properties()->::CDOTAUserMsg_ParticleManager_SetParticleFoWProperties::MergeFrom(from.set_particle_fow_properties());
+    }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
 }
@@ -24827,6 +26088,8 @@ void CDOTAUserMsg_ParticleManager::Swap(CDOTAUserMsg_ParticleManager* other) {
     std::swap(update_particle_should_draw_, other->update_particle_should_draw_);
     std::swap(update_particle_set_frozen_, other->update_particle_set_frozen_);
     std::swap(change_control_point_attachment_, other->change_control_point_attachment_);
+    std::swap(update_entity_position_, other->update_entity_position_);
+    std::swap(set_particle_fow_properties_, other->set_particle_fow_properties_);
     std::swap(_has_bits_[0], other->_has_bits_[0]);
     _unknown_fields_.Swap(&other->_unknown_fields_);
     std::swap(_cached_size_, other->_cached_size_);
@@ -27481,7 +28744,7 @@ void CDOTAUserMsg_ShowSurvey::SharedCtor() {
   ::google::protobuf::internal::GetEmptyString();
   _cached_size_ = 0;
   survey_id_ = 0;
-  match_id_ = 0u;
+  match_id_ = GOOGLE_ULONGLONG(0);
   response_style_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   teammate_hero_id_ = 0u;
   teammate_name_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
@@ -27538,8 +28801,7 @@ void CDOTAUserMsg_ShowSurvey::Clear() {
   } while (0)
 
   if (_has_bits_[0 / 32] & 63) {
-    ZR_(survey_id_, match_id_);
-    ZR_(teammate_hero_id_, teammate_account_id_);
+    ZR_(match_id_, teammate_hero_id_);
     if (has_response_style()) {
       if (response_style_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
         response_style_->clear();
@@ -27550,6 +28812,7 @@ void CDOTAUserMsg_ShowSurvey::Clear() {
         teammate_name_->clear();
       }
     }
+    teammate_account_id_ = 0u;
   }
 
 #undef OFFSET_OF_FIELD_
@@ -27583,12 +28846,12 @@ bool CDOTAUserMsg_ShowSurvey::MergePartialFromCodedStream(
         break;
       }
 
-      // optional uint32 match_id = 2;
+      // optional uint64 match_id = 2;
       case 2: {
         if (tag == 16) {
          parse_match_id:
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                   ::google::protobuf::uint64, ::google::protobuf::internal::WireFormatLite::TYPE_UINT64>(
                  input, &match_id_)));
           set_has_match_id();
         } else {
@@ -27692,9 +28955,9 @@ void CDOTAUserMsg_ShowSurvey::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt32(1, this->survey_id(), output);
   }
 
-  // optional uint32 match_id = 2;
+  // optional uint64 match_id = 2;
   if (has_match_id()) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt32(2, this->match_id(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteUInt64(2, this->match_id(), output);
   }
 
   // optional string response_style = 3;
@@ -27742,9 +29005,9 @@ void CDOTAUserMsg_ShowSurvey::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(1, this->survey_id(), target);
   }
 
-  // optional uint32 match_id = 2;
+  // optional uint64 match_id = 2;
   if (has_match_id()) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(2, this->match_id(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt64ToArray(2, this->match_id(), target);
   }
 
   // optional string response_style = 3;
@@ -27798,10 +29061,10 @@ int CDOTAUserMsg_ShowSurvey::ByteSize() const {
           this->survey_id());
     }
 
-    // optional uint32 match_id = 2;
+    // optional uint64 match_id = 2;
     if (has_match_id()) {
       total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::UInt32Size(
+        ::google::protobuf::internal::WireFormatLite::UInt64Size(
           this->match_id());
     }
 
@@ -31051,6 +32314,7 @@ const int CDOTAUserMsg_TE_Projectile::kIsAttackFieldNumber;
 const int CDOTAUserMsg_TE_Projectile::kIsEvadedFieldNumber;
 const int CDOTAUserMsg_TE_Projectile::kExpireTimeFieldNumber;
 const int CDOTAUserMsg_TE_Projectile::kMaximpacttimeFieldNumber;
+const int CDOTAUserMsg_TE_Projectile::kColorgemcolorFieldNumber;
 #endif  // !_MSC_VER
 
 CDOTAUserMsg_TE_Projectile::CDOTAUserMsg_TE_Projectile()
@@ -31081,6 +32345,7 @@ void CDOTAUserMsg_TE_Projectile::SharedCtor() {
   isevaded_ = false;
   expiretime_ = 0;
   maximpacttime_ = 0;
+  colorgemcolor_ = 0u;
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
 
@@ -31129,7 +32394,7 @@ void CDOTAUserMsg_TE_Projectile::Clear() {
   if (_has_bits_[0 / 32] & 255) {
     ZR_(hsource_, isevaded_);
   }
-  ZR_(expiretime_, maximpacttime_);
+  ZR_(expiretime_, colorgemcolor_);
 
 #undef OFFSET_OF_FIELD_
 #undef ZR_
@@ -31293,6 +32558,21 @@ bool CDOTAUserMsg_TE_Projectile::MergePartialFromCodedStream(
         } else {
           goto handle_unusual;
         }
+        if (input->ExpectTag(93)) goto parse_colorgemcolor;
+        break;
+      }
+
+      // optional fixed32 colorgemcolor = 11;
+      case 11: {
+        if (tag == 93) {
+         parse_colorgemcolor:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_FIXED32>(
+                 input, &colorgemcolor_)));
+          set_has_colorgemcolor();
+        } else {
+          goto handle_unusual;
+        }
         if (input->ExpectAtEnd()) goto success;
         break;
       }
@@ -31372,6 +32652,11 @@ void CDOTAUserMsg_TE_Projectile::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteFloat(10, this->maximpacttime(), output);
   }
 
+  // optional fixed32 colorgemcolor = 11;
+  if (has_colorgemcolor()) {
+    ::google::protobuf::internal::WireFormatLite::WriteFixed32(11, this->colorgemcolor(), output);
+  }
+
   if (!unknown_fields().empty()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
@@ -31430,6 +32715,11 @@ void CDOTAUserMsg_TE_Projectile::SerializeWithCachedSizes(
   // optional float maximpacttime = 10;
   if (has_maximpacttime()) {
     target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(10, this->maximpacttime(), target);
+  }
+
+  // optional fixed32 colorgemcolor = 11;
+  if (has_colorgemcolor()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteFixed32ToArray(11, this->colorgemcolor(), target);
   }
 
   if (!unknown_fields().empty()) {
@@ -31506,6 +32796,11 @@ int CDOTAUserMsg_TE_Projectile::ByteSize() const {
       total_size += 1 + 4;
     }
 
+    // optional fixed32 colorgemcolor = 11;
+    if (has_colorgemcolor()) {
+      total_size += 1 + 4;
+    }
+
   }
   if (!unknown_fields().empty()) {
     total_size +=
@@ -31565,6 +32860,9 @@ void CDOTAUserMsg_TE_Projectile::MergeFrom(const CDOTAUserMsg_TE_Projectile& fro
     if (from.has_maximpacttime()) {
       set_maximpacttime(from.maximpacttime());
     }
+    if (from.has_colorgemcolor()) {
+      set_colorgemcolor(from.colorgemcolor());
+    }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
 }
@@ -31598,6 +32896,7 @@ void CDOTAUserMsg_TE_Projectile::Swap(CDOTAUserMsg_TE_Projectile* other) {
     std::swap(isevaded_, other->isevaded_);
     std::swap(expiretime_, other->expiretime_);
     std::swap(maximpacttime_, other->maximpacttime_);
+    std::swap(colorgemcolor_, other->colorgemcolor_);
     std::swap(_has_bits_[0], other->_has_bits_[0]);
     _unknown_fields_.Swap(&other->_unknown_fields_);
     std::swap(_cached_size_, other->_cached_size_);
@@ -31625,6 +32924,7 @@ const int CDOTAUserMsg_TE_ProjectileLoc::kIsAttackFieldNumber;
 const int CDOTAUserMsg_TE_ProjectileLoc::kIsEvadedFieldNumber;
 const int CDOTAUserMsg_TE_ProjectileLoc::kExpireTimeFieldNumber;
 const int CDOTAUserMsg_TE_ProjectileLoc::kVTargetLocFieldNumber;
+const int CDOTAUserMsg_TE_ProjectileLoc::kColorgemcolorFieldNumber;
 #endif  // !_MSC_VER
 
 CDOTAUserMsg_TE_ProjectileLoc::CDOTAUserMsg_TE_ProjectileLoc()
@@ -31656,6 +32956,7 @@ void CDOTAUserMsg_TE_ProjectileLoc::SharedCtor() {
   isevaded_ = false;
   expiretime_ = 0;
   vtargetloc_ = NULL;
+  colorgemcolor_ = 0u;
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
 
@@ -31709,8 +33010,11 @@ void CDOTAUserMsg_TE_ProjectileLoc::Clear() {
       if (vsourceloc_ != NULL) vsourceloc_->::CMsgVector::Clear();
     }
   }
-  if (has_vtargetloc()) {
-    if (vtargetloc_ != NULL) vtargetloc_->::CMsgVector::Clear();
+  if (_has_bits_[8 / 32] & 768) {
+    if (has_vtargetloc()) {
+      if (vtargetloc_ != NULL) vtargetloc_->::CMsgVector::Clear();
+    }
+    colorgemcolor_ = 0u;
   }
 
 #undef OFFSET_OF_FIELD_
@@ -31856,6 +33160,21 @@ bool CDOTAUserMsg_TE_ProjectileLoc::MergePartialFromCodedStream(
         } else {
           goto handle_unusual;
         }
+        if (input->ExpectTag(93)) goto parse_colorgemcolor;
+        break;
+      }
+
+      // optional fixed32 colorgemcolor = 11;
+      case 11: {
+        if (tag == 93) {
+         parse_colorgemcolor:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_FIXED32>(
+                 input, &colorgemcolor_)));
+          set_has_colorgemcolor();
+        } else {
+          goto handle_unusual;
+        }
         if (input->ExpectAtEnd()) goto success;
         break;
       }
@@ -31932,6 +33251,11 @@ void CDOTAUserMsg_TE_ProjectileLoc::SerializeWithCachedSizes(
       10, this->vtargetloc(), output);
   }
 
+  // optional fixed32 colorgemcolor = 11;
+  if (has_colorgemcolor()) {
+    ::google::protobuf::internal::WireFormatLite::WriteFixed32(11, this->colorgemcolor(), output);
+  }
+
   if (!unknown_fields().empty()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
@@ -31989,6 +33313,11 @@ void CDOTAUserMsg_TE_ProjectileLoc::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
         10, this->vtargetloc(), target);
+  }
+
+  // optional fixed32 colorgemcolor = 11;
+  if (has_colorgemcolor()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteFixed32ToArray(11, this->colorgemcolor(), target);
   }
 
   if (!unknown_fields().empty()) {
@@ -32060,6 +33389,11 @@ int CDOTAUserMsg_TE_ProjectileLoc::ByteSize() const {
           this->vtargetloc());
     }
 
+    // optional fixed32 colorgemcolor = 11;
+    if (has_colorgemcolor()) {
+      total_size += 1 + 4;
+    }
+
   }
   if (!unknown_fields().empty()) {
     total_size +=
@@ -32116,6 +33450,9 @@ void CDOTAUserMsg_TE_ProjectileLoc::MergeFrom(const CDOTAUserMsg_TE_ProjectileLo
     if (from.has_vtargetloc()) {
       mutable_vtargetloc()->::CMsgVector::MergeFrom(from.vtargetloc());
     }
+    if (from.has_colorgemcolor()) {
+      set_colorgemcolor(from.colorgemcolor());
+    }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
 }
@@ -32148,6 +33485,7 @@ void CDOTAUserMsg_TE_ProjectileLoc::Swap(CDOTAUserMsg_TE_ProjectileLoc* other) {
     std::swap(isevaded_, other->isevaded_);
     std::swap(expiretime_, other->expiretime_);
     std::swap(vtargetloc_, other->vtargetloc_);
+    std::swap(colorgemcolor_, other->colorgemcolor_);
     std::swap(_has_bits_[0], other->_has_bits_[0]);
     _unknown_fields_.Swap(&other->_unknown_fields_);
     std::swap(_cached_size_, other->_cached_size_);
@@ -45051,6 +46389,2964 @@ void CDOTAUserMsg_ProjectionEvent::Swap(CDOTAUserMsg_ProjectionEvent* other) {
   ::google::protobuf::Metadata metadata;
   metadata.descriptor = CDOTAUserMsg_ProjectionEvent_descriptor_;
   metadata.reflection = CDOTAUserMsg_ProjectionEvent_reflection_;
+  return metadata;
+}
+
+
+// ===================================================================
+
+#ifndef _MSC_VER
+const int CDOTAUserMsg_XPAlert::kPlayerIdFieldNumber;
+const int CDOTAUserMsg_XPAlert::kTargetEntindexFieldNumber;
+#endif  // !_MSC_VER
+
+CDOTAUserMsg_XPAlert::CDOTAUserMsg_XPAlert()
+  : ::google::protobuf::Message() {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:CDOTAUserMsg_XPAlert)
+}
+
+void CDOTAUserMsg_XPAlert::InitAsDefaultInstance() {
+}
+
+CDOTAUserMsg_XPAlert::CDOTAUserMsg_XPAlert(const CDOTAUserMsg_XPAlert& from)
+  : ::google::protobuf::Message() {
+  SharedCtor();
+  MergeFrom(from);
+  // @@protoc_insertion_point(copy_constructor:CDOTAUserMsg_XPAlert)
+}
+
+void CDOTAUserMsg_XPAlert::SharedCtor() {
+  _cached_size_ = 0;
+  player_id_ = 0u;
+  target_entindex_ = 0u;
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+}
+
+CDOTAUserMsg_XPAlert::~CDOTAUserMsg_XPAlert() {
+  // @@protoc_insertion_point(destructor:CDOTAUserMsg_XPAlert)
+  SharedDtor();
+}
+
+void CDOTAUserMsg_XPAlert::SharedDtor() {
+  if (this != default_instance_) {
+  }
+}
+
+void CDOTAUserMsg_XPAlert::SetCachedSize(int size) const {
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+}
+const ::google::protobuf::Descriptor* CDOTAUserMsg_XPAlert::descriptor() {
+  protobuf_AssignDescriptorsOnce();
+  return CDOTAUserMsg_XPAlert_descriptor_;
+}
+
+const CDOTAUserMsg_XPAlert& CDOTAUserMsg_XPAlert::default_instance() {
+  if (default_instance_ == NULL) protobuf_AddDesc_dota_5fusermessages_2eproto();
+  return *default_instance_;
+}
+
+CDOTAUserMsg_XPAlert* CDOTAUserMsg_XPAlert::default_instance_ = NULL;
+
+CDOTAUserMsg_XPAlert* CDOTAUserMsg_XPAlert::New() const {
+  return new CDOTAUserMsg_XPAlert;
+}
+
+void CDOTAUserMsg_XPAlert::Clear() {
+#define OFFSET_OF_FIELD_(f) (reinterpret_cast<char*>(      \
+  &reinterpret_cast<CDOTAUserMsg_XPAlert*>(16)->f) - \
+   reinterpret_cast<char*>(16))
+
+#define ZR_(first, last) do {                              \
+    size_t f = OFFSET_OF_FIELD_(first);                    \
+    size_t n = OFFSET_OF_FIELD_(last) - f + sizeof(last);  \
+    ::memset(&first, 0, n);                                \
+  } while (0)
+
+  ZR_(player_id_, target_entindex_);
+
+#undef OFFSET_OF_FIELD_
+#undef ZR_
+
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+  mutable_unknown_fields()->Clear();
+}
+
+bool CDOTAUserMsg_XPAlert::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:CDOTAUserMsg_XPAlert)
+  for (;;) {
+    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoff(127);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // optional uint32 player_id = 1;
+      case 1: {
+        if (tag == 8) {
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                 input, &player_id_)));
+          set_has_player_id();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(16)) goto parse_target_entindex;
+        break;
+      }
+
+      // optional uint32 target_entindex = 2;
+      case 2: {
+        if (tag == 16) {
+         parse_target_entindex:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                 input, &target_entindex_)));
+          set_has_target_entindex();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectAtEnd()) goto success;
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0 ||
+            ::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, mutable_unknown_fields()));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:CDOTAUserMsg_XPAlert)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:CDOTAUserMsg_XPAlert)
+  return false;
+#undef DO_
+}
+
+void CDOTAUserMsg_XPAlert::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:CDOTAUserMsg_XPAlert)
+  // optional uint32 player_id = 1;
+  if (has_player_id()) {
+    ::google::protobuf::internal::WireFormatLite::WriteUInt32(1, this->player_id(), output);
+  }
+
+  // optional uint32 target_entindex = 2;
+  if (has_target_entindex()) {
+    ::google::protobuf::internal::WireFormatLite::WriteUInt32(2, this->target_entindex(), output);
+  }
+
+  if (!unknown_fields().empty()) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        unknown_fields(), output);
+  }
+  // @@protoc_insertion_point(serialize_end:CDOTAUserMsg_XPAlert)
+}
+
+::google::protobuf::uint8* CDOTAUserMsg_XPAlert::SerializeWithCachedSizesToArray(
+    ::google::protobuf::uint8* target) const {
+  // @@protoc_insertion_point(serialize_to_array_start:CDOTAUserMsg_XPAlert)
+  // optional uint32 player_id = 1;
+  if (has_player_id()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(1, this->player_id(), target);
+  }
+
+  // optional uint32 target_entindex = 2;
+  if (has_target_entindex()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(2, this->target_entindex(), target);
+  }
+
+  if (!unknown_fields().empty()) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        unknown_fields(), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:CDOTAUserMsg_XPAlert)
+  return target;
+}
+
+int CDOTAUserMsg_XPAlert::ByteSize() const {
+  int total_size = 0;
+
+  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    // optional uint32 player_id = 1;
+    if (has_player_id()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::UInt32Size(
+          this->player_id());
+    }
+
+    // optional uint32 target_entindex = 2;
+    if (has_target_entindex()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::UInt32Size(
+          this->target_entindex());
+    }
+
+  }
+  if (!unknown_fields().empty()) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        unknown_fields());
+  }
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = total_size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+  return total_size;
+}
+
+void CDOTAUserMsg_XPAlert::MergeFrom(const ::google::protobuf::Message& from) {
+  GOOGLE_CHECK_NE(&from, this);
+  const CDOTAUserMsg_XPAlert* source =
+    ::google::protobuf::internal::dynamic_cast_if_available<const CDOTAUserMsg_XPAlert*>(
+      &from);
+  if (source == NULL) {
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+    MergeFrom(*source);
+  }
+}
+
+void CDOTAUserMsg_XPAlert::MergeFrom(const CDOTAUserMsg_XPAlert& from) {
+  GOOGLE_CHECK_NE(&from, this);
+  if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    if (from.has_player_id()) {
+      set_player_id(from.player_id());
+    }
+    if (from.has_target_entindex()) {
+      set_target_entindex(from.target_entindex());
+    }
+  }
+  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
+}
+
+void CDOTAUserMsg_XPAlert::CopyFrom(const ::google::protobuf::Message& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void CDOTAUserMsg_XPAlert::CopyFrom(const CDOTAUserMsg_XPAlert& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool CDOTAUserMsg_XPAlert::IsInitialized() const {
+
+  return true;
+}
+
+void CDOTAUserMsg_XPAlert::Swap(CDOTAUserMsg_XPAlert* other) {
+  if (other != this) {
+    std::swap(player_id_, other->player_id_);
+    std::swap(target_entindex_, other->target_entindex_);
+    std::swap(_has_bits_[0], other->_has_bits_[0]);
+    _unknown_fields_.Swap(&other->_unknown_fields_);
+    std::swap(_cached_size_, other->_cached_size_);
+  }
+}
+
+::google::protobuf::Metadata CDOTAUserMsg_XPAlert::GetMetadata() const {
+  protobuf_AssignDescriptorsOnce();
+  ::google::protobuf::Metadata metadata;
+  metadata.descriptor = CDOTAUserMsg_XPAlert_descriptor_;
+  metadata.reflection = CDOTAUserMsg_XPAlert_reflection_;
+  return metadata;
+}
+
+
+// ===================================================================
+
+#ifndef _MSC_VER
+#endif  // !_MSC_VER
+
+CDOTAUserMsg_UpdateQuestProgress::CDOTAUserMsg_UpdateQuestProgress()
+  : ::google::protobuf::Message() {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:CDOTAUserMsg_UpdateQuestProgress)
+}
+
+void CDOTAUserMsg_UpdateQuestProgress::InitAsDefaultInstance() {
+}
+
+CDOTAUserMsg_UpdateQuestProgress::CDOTAUserMsg_UpdateQuestProgress(const CDOTAUserMsg_UpdateQuestProgress& from)
+  : ::google::protobuf::Message() {
+  SharedCtor();
+  MergeFrom(from);
+  // @@protoc_insertion_point(copy_constructor:CDOTAUserMsg_UpdateQuestProgress)
+}
+
+void CDOTAUserMsg_UpdateQuestProgress::SharedCtor() {
+  _cached_size_ = 0;
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+}
+
+CDOTAUserMsg_UpdateQuestProgress::~CDOTAUserMsg_UpdateQuestProgress() {
+  // @@protoc_insertion_point(destructor:CDOTAUserMsg_UpdateQuestProgress)
+  SharedDtor();
+}
+
+void CDOTAUserMsg_UpdateQuestProgress::SharedDtor() {
+  if (this != default_instance_) {
+  }
+}
+
+void CDOTAUserMsg_UpdateQuestProgress::SetCachedSize(int size) const {
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+}
+const ::google::protobuf::Descriptor* CDOTAUserMsg_UpdateQuestProgress::descriptor() {
+  protobuf_AssignDescriptorsOnce();
+  return CDOTAUserMsg_UpdateQuestProgress_descriptor_;
+}
+
+const CDOTAUserMsg_UpdateQuestProgress& CDOTAUserMsg_UpdateQuestProgress::default_instance() {
+  if (default_instance_ == NULL) protobuf_AddDesc_dota_5fusermessages_2eproto();
+  return *default_instance_;
+}
+
+CDOTAUserMsg_UpdateQuestProgress* CDOTAUserMsg_UpdateQuestProgress::default_instance_ = NULL;
+
+CDOTAUserMsg_UpdateQuestProgress* CDOTAUserMsg_UpdateQuestProgress::New() const {
+  return new CDOTAUserMsg_UpdateQuestProgress;
+}
+
+void CDOTAUserMsg_UpdateQuestProgress::Clear() {
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+  mutable_unknown_fields()->Clear();
+}
+
+bool CDOTAUserMsg_UpdateQuestProgress::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:CDOTAUserMsg_UpdateQuestProgress)
+  for (;;) {
+    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoff(127);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+  handle_unusual:
+    if (tag == 0 ||
+        ::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+        ::google::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {
+      goto success;
+    }
+    DO_(::google::protobuf::internal::WireFormat::SkipField(
+          input, tag, mutable_unknown_fields()));
+  }
+success:
+  // @@protoc_insertion_point(parse_success:CDOTAUserMsg_UpdateQuestProgress)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:CDOTAUserMsg_UpdateQuestProgress)
+  return false;
+#undef DO_
+}
+
+void CDOTAUserMsg_UpdateQuestProgress::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:CDOTAUserMsg_UpdateQuestProgress)
+  if (!unknown_fields().empty()) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        unknown_fields(), output);
+  }
+  // @@protoc_insertion_point(serialize_end:CDOTAUserMsg_UpdateQuestProgress)
+}
+
+::google::protobuf::uint8* CDOTAUserMsg_UpdateQuestProgress::SerializeWithCachedSizesToArray(
+    ::google::protobuf::uint8* target) const {
+  // @@protoc_insertion_point(serialize_to_array_start:CDOTAUserMsg_UpdateQuestProgress)
+  if (!unknown_fields().empty()) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        unknown_fields(), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:CDOTAUserMsg_UpdateQuestProgress)
+  return target;
+}
+
+int CDOTAUserMsg_UpdateQuestProgress::ByteSize() const {
+  int total_size = 0;
+
+  if (!unknown_fields().empty()) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        unknown_fields());
+  }
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = total_size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+  return total_size;
+}
+
+void CDOTAUserMsg_UpdateQuestProgress::MergeFrom(const ::google::protobuf::Message& from) {
+  GOOGLE_CHECK_NE(&from, this);
+  const CDOTAUserMsg_UpdateQuestProgress* source =
+    ::google::protobuf::internal::dynamic_cast_if_available<const CDOTAUserMsg_UpdateQuestProgress*>(
+      &from);
+  if (source == NULL) {
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+    MergeFrom(*source);
+  }
+}
+
+void CDOTAUserMsg_UpdateQuestProgress::MergeFrom(const CDOTAUserMsg_UpdateQuestProgress& from) {
+  GOOGLE_CHECK_NE(&from, this);
+  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
+}
+
+void CDOTAUserMsg_UpdateQuestProgress::CopyFrom(const ::google::protobuf::Message& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void CDOTAUserMsg_UpdateQuestProgress::CopyFrom(const CDOTAUserMsg_UpdateQuestProgress& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool CDOTAUserMsg_UpdateQuestProgress::IsInitialized() const {
+
+  return true;
+}
+
+void CDOTAUserMsg_UpdateQuestProgress::Swap(CDOTAUserMsg_UpdateQuestProgress* other) {
+  if (other != this) {
+    _unknown_fields_.Swap(&other->_unknown_fields_);
+    std::swap(_cached_size_, other->_cached_size_);
+  }
+}
+
+::google::protobuf::Metadata CDOTAUserMsg_UpdateQuestProgress::GetMetadata() const {
+  protobuf_AssignDescriptorsOnce();
+  ::google::protobuf::Metadata metadata;
+  metadata.descriptor = CDOTAUserMsg_UpdateQuestProgress_descriptor_;
+  metadata.reflection = CDOTAUserMsg_UpdateQuestProgress_reflection_;
+  return metadata;
+}
+
+
+// ===================================================================
+
+#ifndef _MSC_VER
+const int CDOTAUserMsg_QuestStatus::kPlayerIdFieldNumber;
+const int CDOTAUserMsg_QuestStatus::kQuestIdFieldNumber;
+const int CDOTAUserMsg_QuestStatus::kChallengeIdFieldNumber;
+const int CDOTAUserMsg_QuestStatus::kProgressFieldNumber;
+const int CDOTAUserMsg_QuestStatus::kGoalFieldNumber;
+const int CDOTAUserMsg_QuestStatus::kQueryFieldNumber;
+const int CDOTAUserMsg_QuestStatus::kFailGametimeFieldNumber;
+const int CDOTAUserMsg_QuestStatus::kItemIdFieldNumber;
+#endif  // !_MSC_VER
+
+CDOTAUserMsg_QuestStatus::CDOTAUserMsg_QuestStatus()
+  : ::google::protobuf::Message() {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:CDOTAUserMsg_QuestStatus)
+}
+
+void CDOTAUserMsg_QuestStatus::InitAsDefaultInstance() {
+}
+
+CDOTAUserMsg_QuestStatus::CDOTAUserMsg_QuestStatus(const CDOTAUserMsg_QuestStatus& from)
+  : ::google::protobuf::Message() {
+  SharedCtor();
+  MergeFrom(from);
+  // @@protoc_insertion_point(copy_constructor:CDOTAUserMsg_QuestStatus)
+}
+
+void CDOTAUserMsg_QuestStatus::SharedCtor() {
+  _cached_size_ = 0;
+  player_id_ = 0u;
+  quest_id_ = 0u;
+  challenge_id_ = 0u;
+  progress_ = 0u;
+  goal_ = 0u;
+  query_ = 0u;
+  fail_gametime_ = 0;
+  item_id_ = 0u;
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+}
+
+CDOTAUserMsg_QuestStatus::~CDOTAUserMsg_QuestStatus() {
+  // @@protoc_insertion_point(destructor:CDOTAUserMsg_QuestStatus)
+  SharedDtor();
+}
+
+void CDOTAUserMsg_QuestStatus::SharedDtor() {
+  if (this != default_instance_) {
+  }
+}
+
+void CDOTAUserMsg_QuestStatus::SetCachedSize(int size) const {
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+}
+const ::google::protobuf::Descriptor* CDOTAUserMsg_QuestStatus::descriptor() {
+  protobuf_AssignDescriptorsOnce();
+  return CDOTAUserMsg_QuestStatus_descriptor_;
+}
+
+const CDOTAUserMsg_QuestStatus& CDOTAUserMsg_QuestStatus::default_instance() {
+  if (default_instance_ == NULL) protobuf_AddDesc_dota_5fusermessages_2eproto();
+  return *default_instance_;
+}
+
+CDOTAUserMsg_QuestStatus* CDOTAUserMsg_QuestStatus::default_instance_ = NULL;
+
+CDOTAUserMsg_QuestStatus* CDOTAUserMsg_QuestStatus::New() const {
+  return new CDOTAUserMsg_QuestStatus;
+}
+
+void CDOTAUserMsg_QuestStatus::Clear() {
+#define OFFSET_OF_FIELD_(f) (reinterpret_cast<char*>(      \
+  &reinterpret_cast<CDOTAUserMsg_QuestStatus*>(16)->f) - \
+   reinterpret_cast<char*>(16))
+
+#define ZR_(first, last) do {                              \
+    size_t f = OFFSET_OF_FIELD_(first);                    \
+    size_t n = OFFSET_OF_FIELD_(last) - f + sizeof(last);  \
+    ::memset(&first, 0, n);                                \
+  } while (0)
+
+  if (_has_bits_[0 / 32] & 255) {
+    ZR_(player_id_, item_id_);
+  }
+
+#undef OFFSET_OF_FIELD_
+#undef ZR_
+
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+  mutable_unknown_fields()->Clear();
+}
+
+bool CDOTAUserMsg_QuestStatus::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:CDOTAUserMsg_QuestStatus)
+  for (;;) {
+    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoff(127);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // required uint32 player_id = 1;
+      case 1: {
+        if (tag == 8) {
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                 input, &player_id_)));
+          set_has_player_id();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(16)) goto parse_quest_id;
+        break;
+      }
+
+      // optional uint32 quest_id = 2;
+      case 2: {
+        if (tag == 16) {
+         parse_quest_id:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                 input, &quest_id_)));
+          set_has_quest_id();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(24)) goto parse_challenge_id;
+        break;
+      }
+
+      // optional uint32 challenge_id = 3;
+      case 3: {
+        if (tag == 24) {
+         parse_challenge_id:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                 input, &challenge_id_)));
+          set_has_challenge_id();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(32)) goto parse_progress;
+        break;
+      }
+
+      // optional uint32 progress = 4;
+      case 4: {
+        if (tag == 32) {
+         parse_progress:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                 input, &progress_)));
+          set_has_progress();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(40)) goto parse_goal;
+        break;
+      }
+
+      // optional uint32 goal = 5;
+      case 5: {
+        if (tag == 40) {
+         parse_goal:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                 input, &goal_)));
+          set_has_goal();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(48)) goto parse_query;
+        break;
+      }
+
+      // optional uint32 query = 6;
+      case 6: {
+        if (tag == 48) {
+         parse_query:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                 input, &query_)));
+          set_has_query();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(61)) goto parse_fail_gametime;
+        break;
+      }
+
+      // optional float fail_gametime = 7;
+      case 7: {
+        if (tag == 61) {
+         parse_fail_gametime:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
+                 input, &fail_gametime_)));
+          set_has_fail_gametime();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(64)) goto parse_item_id;
+        break;
+      }
+
+      // optional uint32 item_id = 8;
+      case 8: {
+        if (tag == 64) {
+         parse_item_id:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                 input, &item_id_)));
+          set_has_item_id();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectAtEnd()) goto success;
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0 ||
+            ::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, mutable_unknown_fields()));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:CDOTAUserMsg_QuestStatus)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:CDOTAUserMsg_QuestStatus)
+  return false;
+#undef DO_
+}
+
+void CDOTAUserMsg_QuestStatus::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:CDOTAUserMsg_QuestStatus)
+  // required uint32 player_id = 1;
+  if (has_player_id()) {
+    ::google::protobuf::internal::WireFormatLite::WriteUInt32(1, this->player_id(), output);
+  }
+
+  // optional uint32 quest_id = 2;
+  if (has_quest_id()) {
+    ::google::protobuf::internal::WireFormatLite::WriteUInt32(2, this->quest_id(), output);
+  }
+
+  // optional uint32 challenge_id = 3;
+  if (has_challenge_id()) {
+    ::google::protobuf::internal::WireFormatLite::WriteUInt32(3, this->challenge_id(), output);
+  }
+
+  // optional uint32 progress = 4;
+  if (has_progress()) {
+    ::google::protobuf::internal::WireFormatLite::WriteUInt32(4, this->progress(), output);
+  }
+
+  // optional uint32 goal = 5;
+  if (has_goal()) {
+    ::google::protobuf::internal::WireFormatLite::WriteUInt32(5, this->goal(), output);
+  }
+
+  // optional uint32 query = 6;
+  if (has_query()) {
+    ::google::protobuf::internal::WireFormatLite::WriteUInt32(6, this->query(), output);
+  }
+
+  // optional float fail_gametime = 7;
+  if (has_fail_gametime()) {
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(7, this->fail_gametime(), output);
+  }
+
+  // optional uint32 item_id = 8;
+  if (has_item_id()) {
+    ::google::protobuf::internal::WireFormatLite::WriteUInt32(8, this->item_id(), output);
+  }
+
+  if (!unknown_fields().empty()) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        unknown_fields(), output);
+  }
+  // @@protoc_insertion_point(serialize_end:CDOTAUserMsg_QuestStatus)
+}
+
+::google::protobuf::uint8* CDOTAUserMsg_QuestStatus::SerializeWithCachedSizesToArray(
+    ::google::protobuf::uint8* target) const {
+  // @@protoc_insertion_point(serialize_to_array_start:CDOTAUserMsg_QuestStatus)
+  // required uint32 player_id = 1;
+  if (has_player_id()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(1, this->player_id(), target);
+  }
+
+  // optional uint32 quest_id = 2;
+  if (has_quest_id()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(2, this->quest_id(), target);
+  }
+
+  // optional uint32 challenge_id = 3;
+  if (has_challenge_id()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(3, this->challenge_id(), target);
+  }
+
+  // optional uint32 progress = 4;
+  if (has_progress()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(4, this->progress(), target);
+  }
+
+  // optional uint32 goal = 5;
+  if (has_goal()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(5, this->goal(), target);
+  }
+
+  // optional uint32 query = 6;
+  if (has_query()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(6, this->query(), target);
+  }
+
+  // optional float fail_gametime = 7;
+  if (has_fail_gametime()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(7, this->fail_gametime(), target);
+  }
+
+  // optional uint32 item_id = 8;
+  if (has_item_id()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(8, this->item_id(), target);
+  }
+
+  if (!unknown_fields().empty()) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        unknown_fields(), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:CDOTAUserMsg_QuestStatus)
+  return target;
+}
+
+int CDOTAUserMsg_QuestStatus::ByteSize() const {
+  int total_size = 0;
+
+  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    // required uint32 player_id = 1;
+    if (has_player_id()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::UInt32Size(
+          this->player_id());
+    }
+
+    // optional uint32 quest_id = 2;
+    if (has_quest_id()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::UInt32Size(
+          this->quest_id());
+    }
+
+    // optional uint32 challenge_id = 3;
+    if (has_challenge_id()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::UInt32Size(
+          this->challenge_id());
+    }
+
+    // optional uint32 progress = 4;
+    if (has_progress()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::UInt32Size(
+          this->progress());
+    }
+
+    // optional uint32 goal = 5;
+    if (has_goal()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::UInt32Size(
+          this->goal());
+    }
+
+    // optional uint32 query = 6;
+    if (has_query()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::UInt32Size(
+          this->query());
+    }
+
+    // optional float fail_gametime = 7;
+    if (has_fail_gametime()) {
+      total_size += 1 + 4;
+    }
+
+    // optional uint32 item_id = 8;
+    if (has_item_id()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::UInt32Size(
+          this->item_id());
+    }
+
+  }
+  if (!unknown_fields().empty()) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        unknown_fields());
+  }
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = total_size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+  return total_size;
+}
+
+void CDOTAUserMsg_QuestStatus::MergeFrom(const ::google::protobuf::Message& from) {
+  GOOGLE_CHECK_NE(&from, this);
+  const CDOTAUserMsg_QuestStatus* source =
+    ::google::protobuf::internal::dynamic_cast_if_available<const CDOTAUserMsg_QuestStatus*>(
+      &from);
+  if (source == NULL) {
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+    MergeFrom(*source);
+  }
+}
+
+void CDOTAUserMsg_QuestStatus::MergeFrom(const CDOTAUserMsg_QuestStatus& from) {
+  GOOGLE_CHECK_NE(&from, this);
+  if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    if (from.has_player_id()) {
+      set_player_id(from.player_id());
+    }
+    if (from.has_quest_id()) {
+      set_quest_id(from.quest_id());
+    }
+    if (from.has_challenge_id()) {
+      set_challenge_id(from.challenge_id());
+    }
+    if (from.has_progress()) {
+      set_progress(from.progress());
+    }
+    if (from.has_goal()) {
+      set_goal(from.goal());
+    }
+    if (from.has_query()) {
+      set_query(from.query());
+    }
+    if (from.has_fail_gametime()) {
+      set_fail_gametime(from.fail_gametime());
+    }
+    if (from.has_item_id()) {
+      set_item_id(from.item_id());
+    }
+  }
+  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
+}
+
+void CDOTAUserMsg_QuestStatus::CopyFrom(const ::google::protobuf::Message& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void CDOTAUserMsg_QuestStatus::CopyFrom(const CDOTAUserMsg_QuestStatus& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool CDOTAUserMsg_QuestStatus::IsInitialized() const {
+  if ((_has_bits_[0] & 0x00000001) != 0x00000001) return false;
+
+  return true;
+}
+
+void CDOTAUserMsg_QuestStatus::Swap(CDOTAUserMsg_QuestStatus* other) {
+  if (other != this) {
+    std::swap(player_id_, other->player_id_);
+    std::swap(quest_id_, other->quest_id_);
+    std::swap(challenge_id_, other->challenge_id_);
+    std::swap(progress_, other->progress_);
+    std::swap(goal_, other->goal_);
+    std::swap(query_, other->query_);
+    std::swap(fail_gametime_, other->fail_gametime_);
+    std::swap(item_id_, other->item_id_);
+    std::swap(_has_bits_[0], other->_has_bits_[0]);
+    _unknown_fields_.Swap(&other->_unknown_fields_);
+    std::swap(_cached_size_, other->_cached_size_);
+  }
+}
+
+::google::protobuf::Metadata CDOTAUserMsg_QuestStatus::GetMetadata() const {
+  protobuf_AssignDescriptorsOnce();
+  ::google::protobuf::Metadata metadata;
+  metadata.descriptor = CDOTAUserMsg_QuestStatus_descriptor_;
+  metadata.reflection = CDOTAUserMsg_QuestStatus_reflection_;
+  return metadata;
+}
+
+
+// ===================================================================
+
+#ifndef _MSC_VER
+const int CDOTAUserMsg_SuggestHeroPick::kPlayerIdFieldNumber;
+const int CDOTAUserMsg_SuggestHeroPick::kHeroIdFieldNumber;
+#endif  // !_MSC_VER
+
+CDOTAUserMsg_SuggestHeroPick::CDOTAUserMsg_SuggestHeroPick()
+  : ::google::protobuf::Message() {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:CDOTAUserMsg_SuggestHeroPick)
+}
+
+void CDOTAUserMsg_SuggestHeroPick::InitAsDefaultInstance() {
+}
+
+CDOTAUserMsg_SuggestHeroPick::CDOTAUserMsg_SuggestHeroPick(const CDOTAUserMsg_SuggestHeroPick& from)
+  : ::google::protobuf::Message() {
+  SharedCtor();
+  MergeFrom(from);
+  // @@protoc_insertion_point(copy_constructor:CDOTAUserMsg_SuggestHeroPick)
+}
+
+void CDOTAUserMsg_SuggestHeroPick::SharedCtor() {
+  _cached_size_ = 0;
+  player_id_ = 0u;
+  hero_id_ = 0u;
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+}
+
+CDOTAUserMsg_SuggestHeroPick::~CDOTAUserMsg_SuggestHeroPick() {
+  // @@protoc_insertion_point(destructor:CDOTAUserMsg_SuggestHeroPick)
+  SharedDtor();
+}
+
+void CDOTAUserMsg_SuggestHeroPick::SharedDtor() {
+  if (this != default_instance_) {
+  }
+}
+
+void CDOTAUserMsg_SuggestHeroPick::SetCachedSize(int size) const {
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+}
+const ::google::protobuf::Descriptor* CDOTAUserMsg_SuggestHeroPick::descriptor() {
+  protobuf_AssignDescriptorsOnce();
+  return CDOTAUserMsg_SuggestHeroPick_descriptor_;
+}
+
+const CDOTAUserMsg_SuggestHeroPick& CDOTAUserMsg_SuggestHeroPick::default_instance() {
+  if (default_instance_ == NULL) protobuf_AddDesc_dota_5fusermessages_2eproto();
+  return *default_instance_;
+}
+
+CDOTAUserMsg_SuggestHeroPick* CDOTAUserMsg_SuggestHeroPick::default_instance_ = NULL;
+
+CDOTAUserMsg_SuggestHeroPick* CDOTAUserMsg_SuggestHeroPick::New() const {
+  return new CDOTAUserMsg_SuggestHeroPick;
+}
+
+void CDOTAUserMsg_SuggestHeroPick::Clear() {
+#define OFFSET_OF_FIELD_(f) (reinterpret_cast<char*>(      \
+  &reinterpret_cast<CDOTAUserMsg_SuggestHeroPick*>(16)->f) - \
+   reinterpret_cast<char*>(16))
+
+#define ZR_(first, last) do {                              \
+    size_t f = OFFSET_OF_FIELD_(first);                    \
+    size_t n = OFFSET_OF_FIELD_(last) - f + sizeof(last);  \
+    ::memset(&first, 0, n);                                \
+  } while (0)
+
+  ZR_(player_id_, hero_id_);
+
+#undef OFFSET_OF_FIELD_
+#undef ZR_
+
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+  mutable_unknown_fields()->Clear();
+}
+
+bool CDOTAUserMsg_SuggestHeroPick::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:CDOTAUserMsg_SuggestHeroPick)
+  for (;;) {
+    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoff(127);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // required uint32 player_id = 1;
+      case 1: {
+        if (tag == 8) {
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                 input, &player_id_)));
+          set_has_player_id();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(16)) goto parse_hero_id;
+        break;
+      }
+
+      // optional uint32 hero_id = 2;
+      case 2: {
+        if (tag == 16) {
+         parse_hero_id:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                 input, &hero_id_)));
+          set_has_hero_id();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectAtEnd()) goto success;
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0 ||
+            ::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, mutable_unknown_fields()));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:CDOTAUserMsg_SuggestHeroPick)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:CDOTAUserMsg_SuggestHeroPick)
+  return false;
+#undef DO_
+}
+
+void CDOTAUserMsg_SuggestHeroPick::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:CDOTAUserMsg_SuggestHeroPick)
+  // required uint32 player_id = 1;
+  if (has_player_id()) {
+    ::google::protobuf::internal::WireFormatLite::WriteUInt32(1, this->player_id(), output);
+  }
+
+  // optional uint32 hero_id = 2;
+  if (has_hero_id()) {
+    ::google::protobuf::internal::WireFormatLite::WriteUInt32(2, this->hero_id(), output);
+  }
+
+  if (!unknown_fields().empty()) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        unknown_fields(), output);
+  }
+  // @@protoc_insertion_point(serialize_end:CDOTAUserMsg_SuggestHeroPick)
+}
+
+::google::protobuf::uint8* CDOTAUserMsg_SuggestHeroPick::SerializeWithCachedSizesToArray(
+    ::google::protobuf::uint8* target) const {
+  // @@protoc_insertion_point(serialize_to_array_start:CDOTAUserMsg_SuggestHeroPick)
+  // required uint32 player_id = 1;
+  if (has_player_id()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(1, this->player_id(), target);
+  }
+
+  // optional uint32 hero_id = 2;
+  if (has_hero_id()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(2, this->hero_id(), target);
+  }
+
+  if (!unknown_fields().empty()) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        unknown_fields(), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:CDOTAUserMsg_SuggestHeroPick)
+  return target;
+}
+
+int CDOTAUserMsg_SuggestHeroPick::ByteSize() const {
+  int total_size = 0;
+
+  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    // required uint32 player_id = 1;
+    if (has_player_id()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::UInt32Size(
+          this->player_id());
+    }
+
+    // optional uint32 hero_id = 2;
+    if (has_hero_id()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::UInt32Size(
+          this->hero_id());
+    }
+
+  }
+  if (!unknown_fields().empty()) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        unknown_fields());
+  }
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = total_size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+  return total_size;
+}
+
+void CDOTAUserMsg_SuggestHeroPick::MergeFrom(const ::google::protobuf::Message& from) {
+  GOOGLE_CHECK_NE(&from, this);
+  const CDOTAUserMsg_SuggestHeroPick* source =
+    ::google::protobuf::internal::dynamic_cast_if_available<const CDOTAUserMsg_SuggestHeroPick*>(
+      &from);
+  if (source == NULL) {
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+    MergeFrom(*source);
+  }
+}
+
+void CDOTAUserMsg_SuggestHeroPick::MergeFrom(const CDOTAUserMsg_SuggestHeroPick& from) {
+  GOOGLE_CHECK_NE(&from, this);
+  if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    if (from.has_player_id()) {
+      set_player_id(from.player_id());
+    }
+    if (from.has_hero_id()) {
+      set_hero_id(from.hero_id());
+    }
+  }
+  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
+}
+
+void CDOTAUserMsg_SuggestHeroPick::CopyFrom(const ::google::protobuf::Message& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void CDOTAUserMsg_SuggestHeroPick::CopyFrom(const CDOTAUserMsg_SuggestHeroPick& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool CDOTAUserMsg_SuggestHeroPick::IsInitialized() const {
+  if ((_has_bits_[0] & 0x00000001) != 0x00000001) return false;
+
+  return true;
+}
+
+void CDOTAUserMsg_SuggestHeroPick::Swap(CDOTAUserMsg_SuggestHeroPick* other) {
+  if (other != this) {
+    std::swap(player_id_, other->player_id_);
+    std::swap(hero_id_, other->hero_id_);
+    std::swap(_has_bits_[0], other->_has_bits_[0]);
+    _unknown_fields_.Swap(&other->_unknown_fields_);
+    std::swap(_cached_size_, other->_cached_size_);
+  }
+}
+
+::google::protobuf::Metadata CDOTAUserMsg_SuggestHeroPick::GetMetadata() const {
+  protobuf_AssignDescriptorsOnce();
+  ::google::protobuf::Metadata metadata;
+  metadata.descriptor = CDOTAUserMsg_SuggestHeroPick_descriptor_;
+  metadata.reflection = CDOTAUserMsg_SuggestHeroPick_reflection_;
+  return metadata;
+}
+
+
+// ===================================================================
+
+#ifndef _MSC_VER
+const int CDOTAUserMsg_SuggestHeroRole::kPlayerIdFieldNumber;
+const int CDOTAUserMsg_SuggestHeroRole::kHeroRoleFieldNumber;
+#endif  // !_MSC_VER
+
+CDOTAUserMsg_SuggestHeroRole::CDOTAUserMsg_SuggestHeroRole()
+  : ::google::protobuf::Message() {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:CDOTAUserMsg_SuggestHeroRole)
+}
+
+void CDOTAUserMsg_SuggestHeroRole::InitAsDefaultInstance() {
+}
+
+CDOTAUserMsg_SuggestHeroRole::CDOTAUserMsg_SuggestHeroRole(const CDOTAUserMsg_SuggestHeroRole& from)
+  : ::google::protobuf::Message() {
+  SharedCtor();
+  MergeFrom(from);
+  // @@protoc_insertion_point(copy_constructor:CDOTAUserMsg_SuggestHeroRole)
+}
+
+void CDOTAUserMsg_SuggestHeroRole::SharedCtor() {
+  ::google::protobuf::internal::GetEmptyString();
+  _cached_size_ = 0;
+  player_id_ = 0u;
+  hero_role_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+}
+
+CDOTAUserMsg_SuggestHeroRole::~CDOTAUserMsg_SuggestHeroRole() {
+  // @@protoc_insertion_point(destructor:CDOTAUserMsg_SuggestHeroRole)
+  SharedDtor();
+}
+
+void CDOTAUserMsg_SuggestHeroRole::SharedDtor() {
+  if (hero_role_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete hero_role_;
+  }
+  if (this != default_instance_) {
+  }
+}
+
+void CDOTAUserMsg_SuggestHeroRole::SetCachedSize(int size) const {
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+}
+const ::google::protobuf::Descriptor* CDOTAUserMsg_SuggestHeroRole::descriptor() {
+  protobuf_AssignDescriptorsOnce();
+  return CDOTAUserMsg_SuggestHeroRole_descriptor_;
+}
+
+const CDOTAUserMsg_SuggestHeroRole& CDOTAUserMsg_SuggestHeroRole::default_instance() {
+  if (default_instance_ == NULL) protobuf_AddDesc_dota_5fusermessages_2eproto();
+  return *default_instance_;
+}
+
+CDOTAUserMsg_SuggestHeroRole* CDOTAUserMsg_SuggestHeroRole::default_instance_ = NULL;
+
+CDOTAUserMsg_SuggestHeroRole* CDOTAUserMsg_SuggestHeroRole::New() const {
+  return new CDOTAUserMsg_SuggestHeroRole;
+}
+
+void CDOTAUserMsg_SuggestHeroRole::Clear() {
+  if (_has_bits_[0 / 32] & 3) {
+    player_id_ = 0u;
+    if (has_hero_role()) {
+      if (hero_role_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+        hero_role_->clear();
+      }
+    }
+  }
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+  mutable_unknown_fields()->Clear();
+}
+
+bool CDOTAUserMsg_SuggestHeroRole::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:CDOTAUserMsg_SuggestHeroRole)
+  for (;;) {
+    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoff(127);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // required uint32 player_id = 1;
+      case 1: {
+        if (tag == 8) {
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                 input, &player_id_)));
+          set_has_player_id();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(18)) goto parse_hero_role;
+        break;
+      }
+
+      // optional string hero_role = 2;
+      case 2: {
+        if (tag == 18) {
+         parse_hero_role:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_hero_role()));
+          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+            this->hero_role().data(), this->hero_role().length(),
+            ::google::protobuf::internal::WireFormat::PARSE,
+            "hero_role");
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectAtEnd()) goto success;
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0 ||
+            ::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, mutable_unknown_fields()));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:CDOTAUserMsg_SuggestHeroRole)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:CDOTAUserMsg_SuggestHeroRole)
+  return false;
+#undef DO_
+}
+
+void CDOTAUserMsg_SuggestHeroRole::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:CDOTAUserMsg_SuggestHeroRole)
+  // required uint32 player_id = 1;
+  if (has_player_id()) {
+    ::google::protobuf::internal::WireFormatLite::WriteUInt32(1, this->player_id(), output);
+  }
+
+  // optional string hero_role = 2;
+  if (has_hero_role()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->hero_role().data(), this->hero_role().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "hero_role");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      2, this->hero_role(), output);
+  }
+
+  if (!unknown_fields().empty()) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        unknown_fields(), output);
+  }
+  // @@protoc_insertion_point(serialize_end:CDOTAUserMsg_SuggestHeroRole)
+}
+
+::google::protobuf::uint8* CDOTAUserMsg_SuggestHeroRole::SerializeWithCachedSizesToArray(
+    ::google::protobuf::uint8* target) const {
+  // @@protoc_insertion_point(serialize_to_array_start:CDOTAUserMsg_SuggestHeroRole)
+  // required uint32 player_id = 1;
+  if (has_player_id()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(1, this->player_id(), target);
+  }
+
+  // optional string hero_role = 2;
+  if (has_hero_role()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->hero_role().data(), this->hero_role().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "hero_role");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        2, this->hero_role(), target);
+  }
+
+  if (!unknown_fields().empty()) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        unknown_fields(), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:CDOTAUserMsg_SuggestHeroRole)
+  return target;
+}
+
+int CDOTAUserMsg_SuggestHeroRole::ByteSize() const {
+  int total_size = 0;
+
+  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    // required uint32 player_id = 1;
+    if (has_player_id()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::UInt32Size(
+          this->player_id());
+    }
+
+    // optional string hero_role = 2;
+    if (has_hero_role()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::StringSize(
+          this->hero_role());
+    }
+
+  }
+  if (!unknown_fields().empty()) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        unknown_fields());
+  }
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = total_size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+  return total_size;
+}
+
+void CDOTAUserMsg_SuggestHeroRole::MergeFrom(const ::google::protobuf::Message& from) {
+  GOOGLE_CHECK_NE(&from, this);
+  const CDOTAUserMsg_SuggestHeroRole* source =
+    ::google::protobuf::internal::dynamic_cast_if_available<const CDOTAUserMsg_SuggestHeroRole*>(
+      &from);
+  if (source == NULL) {
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+    MergeFrom(*source);
+  }
+}
+
+void CDOTAUserMsg_SuggestHeroRole::MergeFrom(const CDOTAUserMsg_SuggestHeroRole& from) {
+  GOOGLE_CHECK_NE(&from, this);
+  if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    if (from.has_player_id()) {
+      set_player_id(from.player_id());
+    }
+    if (from.has_hero_role()) {
+      set_hero_role(from.hero_role());
+    }
+  }
+  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
+}
+
+void CDOTAUserMsg_SuggestHeroRole::CopyFrom(const ::google::protobuf::Message& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void CDOTAUserMsg_SuggestHeroRole::CopyFrom(const CDOTAUserMsg_SuggestHeroRole& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool CDOTAUserMsg_SuggestHeroRole::IsInitialized() const {
+  if ((_has_bits_[0] & 0x00000001) != 0x00000001) return false;
+
+  return true;
+}
+
+void CDOTAUserMsg_SuggestHeroRole::Swap(CDOTAUserMsg_SuggestHeroRole* other) {
+  if (other != this) {
+    std::swap(player_id_, other->player_id_);
+    std::swap(hero_role_, other->hero_role_);
+    std::swap(_has_bits_[0], other->_has_bits_[0]);
+    _unknown_fields_.Swap(&other->_unknown_fields_);
+    std::swap(_cached_size_, other->_cached_size_);
+  }
+}
+
+::google::protobuf::Metadata CDOTAUserMsg_SuggestHeroRole::GetMetadata() const {
+  protobuf_AssignDescriptorsOnce();
+  ::google::protobuf::Metadata metadata;
+  metadata.descriptor = CDOTAUserMsg_SuggestHeroRole_descriptor_;
+  metadata.reflection = CDOTAUserMsg_SuggestHeroRole_reflection_;
+  return metadata;
+}
+
+
+// ===================================================================
+
+#ifndef _MSC_VER
+const int CDOTAUserMsg_KillcamDamageTaken::kPlayerIdFieldNumber;
+const int CDOTAUserMsg_KillcamDamageTaken::kDamageTakenFieldNumber;
+const int CDOTAUserMsg_KillcamDamageTaken::kItemTypeFieldNumber;
+const int CDOTAUserMsg_KillcamDamageTaken::kItemIdFieldNumber;
+const int CDOTAUserMsg_KillcamDamageTaken::kHeroNameFieldNumber;
+const int CDOTAUserMsg_KillcamDamageTaken::kDamageColorFieldNumber;
+#endif  // !_MSC_VER
+
+CDOTAUserMsg_KillcamDamageTaken::CDOTAUserMsg_KillcamDamageTaken()
+  : ::google::protobuf::Message() {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:CDOTAUserMsg_KillcamDamageTaken)
+}
+
+void CDOTAUserMsg_KillcamDamageTaken::InitAsDefaultInstance() {
+}
+
+CDOTAUserMsg_KillcamDamageTaken::CDOTAUserMsg_KillcamDamageTaken(const CDOTAUserMsg_KillcamDamageTaken& from)
+  : ::google::protobuf::Message() {
+  SharedCtor();
+  MergeFrom(from);
+  // @@protoc_insertion_point(copy_constructor:CDOTAUserMsg_KillcamDamageTaken)
+}
+
+void CDOTAUserMsg_KillcamDamageTaken::SharedCtor() {
+  ::google::protobuf::internal::GetEmptyString();
+  _cached_size_ = 0;
+  player_id_ = 0u;
+  damage_taken_ = 0u;
+  item_type_ = 0u;
+  item_id_ = 0u;
+  hero_name_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  damage_color_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+}
+
+CDOTAUserMsg_KillcamDamageTaken::~CDOTAUserMsg_KillcamDamageTaken() {
+  // @@protoc_insertion_point(destructor:CDOTAUserMsg_KillcamDamageTaken)
+  SharedDtor();
+}
+
+void CDOTAUserMsg_KillcamDamageTaken::SharedDtor() {
+  if (hero_name_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete hero_name_;
+  }
+  if (damage_color_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete damage_color_;
+  }
+  if (this != default_instance_) {
+  }
+}
+
+void CDOTAUserMsg_KillcamDamageTaken::SetCachedSize(int size) const {
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+}
+const ::google::protobuf::Descriptor* CDOTAUserMsg_KillcamDamageTaken::descriptor() {
+  protobuf_AssignDescriptorsOnce();
+  return CDOTAUserMsg_KillcamDamageTaken_descriptor_;
+}
+
+const CDOTAUserMsg_KillcamDamageTaken& CDOTAUserMsg_KillcamDamageTaken::default_instance() {
+  if (default_instance_ == NULL) protobuf_AddDesc_dota_5fusermessages_2eproto();
+  return *default_instance_;
+}
+
+CDOTAUserMsg_KillcamDamageTaken* CDOTAUserMsg_KillcamDamageTaken::default_instance_ = NULL;
+
+CDOTAUserMsg_KillcamDamageTaken* CDOTAUserMsg_KillcamDamageTaken::New() const {
+  return new CDOTAUserMsg_KillcamDamageTaken;
+}
+
+void CDOTAUserMsg_KillcamDamageTaken::Clear() {
+#define OFFSET_OF_FIELD_(f) (reinterpret_cast<char*>(      \
+  &reinterpret_cast<CDOTAUserMsg_KillcamDamageTaken*>(16)->f) - \
+   reinterpret_cast<char*>(16))
+
+#define ZR_(first, last) do {                              \
+    size_t f = OFFSET_OF_FIELD_(first);                    \
+    size_t n = OFFSET_OF_FIELD_(last) - f + sizeof(last);  \
+    ::memset(&first, 0, n);                                \
+  } while (0)
+
+  if (_has_bits_[0 / 32] & 63) {
+    ZR_(player_id_, item_id_);
+    if (has_hero_name()) {
+      if (hero_name_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+        hero_name_->clear();
+      }
+    }
+    if (has_damage_color()) {
+      if (damage_color_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+        damage_color_->clear();
+      }
+    }
+  }
+
+#undef OFFSET_OF_FIELD_
+#undef ZR_
+
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+  mutable_unknown_fields()->Clear();
+}
+
+bool CDOTAUserMsg_KillcamDamageTaken::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:CDOTAUserMsg_KillcamDamageTaken)
+  for (;;) {
+    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoff(127);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // required uint32 player_id = 1;
+      case 1: {
+        if (tag == 8) {
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                 input, &player_id_)));
+          set_has_player_id();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(16)) goto parse_damage_taken;
+        break;
+      }
+
+      // optional uint32 damage_taken = 2;
+      case 2: {
+        if (tag == 16) {
+         parse_damage_taken:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                 input, &damage_taken_)));
+          set_has_damage_taken();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(24)) goto parse_item_type;
+        break;
+      }
+
+      // optional uint32 item_type = 3;
+      case 3: {
+        if (tag == 24) {
+         parse_item_type:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                 input, &item_type_)));
+          set_has_item_type();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(32)) goto parse_item_id;
+        break;
+      }
+
+      // optional uint32 item_id = 4;
+      case 4: {
+        if (tag == 32) {
+         parse_item_id:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                 input, &item_id_)));
+          set_has_item_id();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(42)) goto parse_hero_name;
+        break;
+      }
+
+      // optional string hero_name = 5;
+      case 5: {
+        if (tag == 42) {
+         parse_hero_name:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_hero_name()));
+          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+            this->hero_name().data(), this->hero_name().length(),
+            ::google::protobuf::internal::WireFormat::PARSE,
+            "hero_name");
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(50)) goto parse_damage_color;
+        break;
+      }
+
+      // optional string damage_color = 6;
+      case 6: {
+        if (tag == 50) {
+         parse_damage_color:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_damage_color()));
+          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+            this->damage_color().data(), this->damage_color().length(),
+            ::google::protobuf::internal::WireFormat::PARSE,
+            "damage_color");
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectAtEnd()) goto success;
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0 ||
+            ::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, mutable_unknown_fields()));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:CDOTAUserMsg_KillcamDamageTaken)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:CDOTAUserMsg_KillcamDamageTaken)
+  return false;
+#undef DO_
+}
+
+void CDOTAUserMsg_KillcamDamageTaken::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:CDOTAUserMsg_KillcamDamageTaken)
+  // required uint32 player_id = 1;
+  if (has_player_id()) {
+    ::google::protobuf::internal::WireFormatLite::WriteUInt32(1, this->player_id(), output);
+  }
+
+  // optional uint32 damage_taken = 2;
+  if (has_damage_taken()) {
+    ::google::protobuf::internal::WireFormatLite::WriteUInt32(2, this->damage_taken(), output);
+  }
+
+  // optional uint32 item_type = 3;
+  if (has_item_type()) {
+    ::google::protobuf::internal::WireFormatLite::WriteUInt32(3, this->item_type(), output);
+  }
+
+  // optional uint32 item_id = 4;
+  if (has_item_id()) {
+    ::google::protobuf::internal::WireFormatLite::WriteUInt32(4, this->item_id(), output);
+  }
+
+  // optional string hero_name = 5;
+  if (has_hero_name()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->hero_name().data(), this->hero_name().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "hero_name");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      5, this->hero_name(), output);
+  }
+
+  // optional string damage_color = 6;
+  if (has_damage_color()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->damage_color().data(), this->damage_color().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "damage_color");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      6, this->damage_color(), output);
+  }
+
+  if (!unknown_fields().empty()) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        unknown_fields(), output);
+  }
+  // @@protoc_insertion_point(serialize_end:CDOTAUserMsg_KillcamDamageTaken)
+}
+
+::google::protobuf::uint8* CDOTAUserMsg_KillcamDamageTaken::SerializeWithCachedSizesToArray(
+    ::google::protobuf::uint8* target) const {
+  // @@protoc_insertion_point(serialize_to_array_start:CDOTAUserMsg_KillcamDamageTaken)
+  // required uint32 player_id = 1;
+  if (has_player_id()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(1, this->player_id(), target);
+  }
+
+  // optional uint32 damage_taken = 2;
+  if (has_damage_taken()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(2, this->damage_taken(), target);
+  }
+
+  // optional uint32 item_type = 3;
+  if (has_item_type()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(3, this->item_type(), target);
+  }
+
+  // optional uint32 item_id = 4;
+  if (has_item_id()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(4, this->item_id(), target);
+  }
+
+  // optional string hero_name = 5;
+  if (has_hero_name()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->hero_name().data(), this->hero_name().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "hero_name");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        5, this->hero_name(), target);
+  }
+
+  // optional string damage_color = 6;
+  if (has_damage_color()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->damage_color().data(), this->damage_color().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "damage_color");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        6, this->damage_color(), target);
+  }
+
+  if (!unknown_fields().empty()) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        unknown_fields(), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:CDOTAUserMsg_KillcamDamageTaken)
+  return target;
+}
+
+int CDOTAUserMsg_KillcamDamageTaken::ByteSize() const {
+  int total_size = 0;
+
+  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    // required uint32 player_id = 1;
+    if (has_player_id()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::UInt32Size(
+          this->player_id());
+    }
+
+    // optional uint32 damage_taken = 2;
+    if (has_damage_taken()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::UInt32Size(
+          this->damage_taken());
+    }
+
+    // optional uint32 item_type = 3;
+    if (has_item_type()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::UInt32Size(
+          this->item_type());
+    }
+
+    // optional uint32 item_id = 4;
+    if (has_item_id()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::UInt32Size(
+          this->item_id());
+    }
+
+    // optional string hero_name = 5;
+    if (has_hero_name()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::StringSize(
+          this->hero_name());
+    }
+
+    // optional string damage_color = 6;
+    if (has_damage_color()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::StringSize(
+          this->damage_color());
+    }
+
+  }
+  if (!unknown_fields().empty()) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        unknown_fields());
+  }
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = total_size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+  return total_size;
+}
+
+void CDOTAUserMsg_KillcamDamageTaken::MergeFrom(const ::google::protobuf::Message& from) {
+  GOOGLE_CHECK_NE(&from, this);
+  const CDOTAUserMsg_KillcamDamageTaken* source =
+    ::google::protobuf::internal::dynamic_cast_if_available<const CDOTAUserMsg_KillcamDamageTaken*>(
+      &from);
+  if (source == NULL) {
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+    MergeFrom(*source);
+  }
+}
+
+void CDOTAUserMsg_KillcamDamageTaken::MergeFrom(const CDOTAUserMsg_KillcamDamageTaken& from) {
+  GOOGLE_CHECK_NE(&from, this);
+  if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    if (from.has_player_id()) {
+      set_player_id(from.player_id());
+    }
+    if (from.has_damage_taken()) {
+      set_damage_taken(from.damage_taken());
+    }
+    if (from.has_item_type()) {
+      set_item_type(from.item_type());
+    }
+    if (from.has_item_id()) {
+      set_item_id(from.item_id());
+    }
+    if (from.has_hero_name()) {
+      set_hero_name(from.hero_name());
+    }
+    if (from.has_damage_color()) {
+      set_damage_color(from.damage_color());
+    }
+  }
+  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
+}
+
+void CDOTAUserMsg_KillcamDamageTaken::CopyFrom(const ::google::protobuf::Message& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void CDOTAUserMsg_KillcamDamageTaken::CopyFrom(const CDOTAUserMsg_KillcamDamageTaken& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool CDOTAUserMsg_KillcamDamageTaken::IsInitialized() const {
+  if ((_has_bits_[0] & 0x00000001) != 0x00000001) return false;
+
+  return true;
+}
+
+void CDOTAUserMsg_KillcamDamageTaken::Swap(CDOTAUserMsg_KillcamDamageTaken* other) {
+  if (other != this) {
+    std::swap(player_id_, other->player_id_);
+    std::swap(damage_taken_, other->damage_taken_);
+    std::swap(item_type_, other->item_type_);
+    std::swap(item_id_, other->item_id_);
+    std::swap(hero_name_, other->hero_name_);
+    std::swap(damage_color_, other->damage_color_);
+    std::swap(_has_bits_[0], other->_has_bits_[0]);
+    _unknown_fields_.Swap(&other->_unknown_fields_);
+    std::swap(_cached_size_, other->_cached_size_);
+  }
+}
+
+::google::protobuf::Metadata CDOTAUserMsg_KillcamDamageTaken::GetMetadata() const {
+  protobuf_AssignDescriptorsOnce();
+  ::google::protobuf::Metadata metadata;
+  metadata.descriptor = CDOTAUserMsg_KillcamDamageTaken_descriptor_;
+  metadata.reflection = CDOTAUserMsg_KillcamDamageTaken_reflection_;
+  return metadata;
+}
+
+
+// ===================================================================
+
+#ifndef _MSC_VER
+const int CDOTAUserMsg_SelectPenaltyGold::kPlayerIdFieldNumber;
+const int CDOTAUserMsg_SelectPenaltyGold::kCostFieldNumber;
+#endif  // !_MSC_VER
+
+CDOTAUserMsg_SelectPenaltyGold::CDOTAUserMsg_SelectPenaltyGold()
+  : ::google::protobuf::Message() {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:CDOTAUserMsg_SelectPenaltyGold)
+}
+
+void CDOTAUserMsg_SelectPenaltyGold::InitAsDefaultInstance() {
+}
+
+CDOTAUserMsg_SelectPenaltyGold::CDOTAUserMsg_SelectPenaltyGold(const CDOTAUserMsg_SelectPenaltyGold& from)
+  : ::google::protobuf::Message() {
+  SharedCtor();
+  MergeFrom(from);
+  // @@protoc_insertion_point(copy_constructor:CDOTAUserMsg_SelectPenaltyGold)
+}
+
+void CDOTAUserMsg_SelectPenaltyGold::SharedCtor() {
+  _cached_size_ = 0;
+  player_id_ = 0u;
+  cost_ = 0;
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+}
+
+CDOTAUserMsg_SelectPenaltyGold::~CDOTAUserMsg_SelectPenaltyGold() {
+  // @@protoc_insertion_point(destructor:CDOTAUserMsg_SelectPenaltyGold)
+  SharedDtor();
+}
+
+void CDOTAUserMsg_SelectPenaltyGold::SharedDtor() {
+  if (this != default_instance_) {
+  }
+}
+
+void CDOTAUserMsg_SelectPenaltyGold::SetCachedSize(int size) const {
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+}
+const ::google::protobuf::Descriptor* CDOTAUserMsg_SelectPenaltyGold::descriptor() {
+  protobuf_AssignDescriptorsOnce();
+  return CDOTAUserMsg_SelectPenaltyGold_descriptor_;
+}
+
+const CDOTAUserMsg_SelectPenaltyGold& CDOTAUserMsg_SelectPenaltyGold::default_instance() {
+  if (default_instance_ == NULL) protobuf_AddDesc_dota_5fusermessages_2eproto();
+  return *default_instance_;
+}
+
+CDOTAUserMsg_SelectPenaltyGold* CDOTAUserMsg_SelectPenaltyGold::default_instance_ = NULL;
+
+CDOTAUserMsg_SelectPenaltyGold* CDOTAUserMsg_SelectPenaltyGold::New() const {
+  return new CDOTAUserMsg_SelectPenaltyGold;
+}
+
+void CDOTAUserMsg_SelectPenaltyGold::Clear() {
+#define OFFSET_OF_FIELD_(f) (reinterpret_cast<char*>(      \
+  &reinterpret_cast<CDOTAUserMsg_SelectPenaltyGold*>(16)->f) - \
+   reinterpret_cast<char*>(16))
+
+#define ZR_(first, last) do {                              \
+    size_t f = OFFSET_OF_FIELD_(first);                    \
+    size_t n = OFFSET_OF_FIELD_(last) - f + sizeof(last);  \
+    ::memset(&first, 0, n);                                \
+  } while (0)
+
+  ZR_(player_id_, cost_);
+
+#undef OFFSET_OF_FIELD_
+#undef ZR_
+
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+  mutable_unknown_fields()->Clear();
+}
+
+bool CDOTAUserMsg_SelectPenaltyGold::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:CDOTAUserMsg_SelectPenaltyGold)
+  for (;;) {
+    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoff(127);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // required uint32 player_id = 1;
+      case 1: {
+        if (tag == 8) {
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                 input, &player_id_)));
+          set_has_player_id();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(16)) goto parse_cost;
+        break;
+      }
+
+      // optional sint32 cost = 2;
+      case 2: {
+        if (tag == 16) {
+         parse_cost:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_SINT32>(
+                 input, &cost_)));
+          set_has_cost();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectAtEnd()) goto success;
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0 ||
+            ::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, mutable_unknown_fields()));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:CDOTAUserMsg_SelectPenaltyGold)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:CDOTAUserMsg_SelectPenaltyGold)
+  return false;
+#undef DO_
+}
+
+void CDOTAUserMsg_SelectPenaltyGold::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:CDOTAUserMsg_SelectPenaltyGold)
+  // required uint32 player_id = 1;
+  if (has_player_id()) {
+    ::google::protobuf::internal::WireFormatLite::WriteUInt32(1, this->player_id(), output);
+  }
+
+  // optional sint32 cost = 2;
+  if (has_cost()) {
+    ::google::protobuf::internal::WireFormatLite::WriteSInt32(2, this->cost(), output);
+  }
+
+  if (!unknown_fields().empty()) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        unknown_fields(), output);
+  }
+  // @@protoc_insertion_point(serialize_end:CDOTAUserMsg_SelectPenaltyGold)
+}
+
+::google::protobuf::uint8* CDOTAUserMsg_SelectPenaltyGold::SerializeWithCachedSizesToArray(
+    ::google::protobuf::uint8* target) const {
+  // @@protoc_insertion_point(serialize_to_array_start:CDOTAUserMsg_SelectPenaltyGold)
+  // required uint32 player_id = 1;
+  if (has_player_id()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(1, this->player_id(), target);
+  }
+
+  // optional sint32 cost = 2;
+  if (has_cost()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteSInt32ToArray(2, this->cost(), target);
+  }
+
+  if (!unknown_fields().empty()) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        unknown_fields(), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:CDOTAUserMsg_SelectPenaltyGold)
+  return target;
+}
+
+int CDOTAUserMsg_SelectPenaltyGold::ByteSize() const {
+  int total_size = 0;
+
+  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    // required uint32 player_id = 1;
+    if (has_player_id()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::UInt32Size(
+          this->player_id());
+    }
+
+    // optional sint32 cost = 2;
+    if (has_cost()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::SInt32Size(
+          this->cost());
+    }
+
+  }
+  if (!unknown_fields().empty()) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        unknown_fields());
+  }
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = total_size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+  return total_size;
+}
+
+void CDOTAUserMsg_SelectPenaltyGold::MergeFrom(const ::google::protobuf::Message& from) {
+  GOOGLE_CHECK_NE(&from, this);
+  const CDOTAUserMsg_SelectPenaltyGold* source =
+    ::google::protobuf::internal::dynamic_cast_if_available<const CDOTAUserMsg_SelectPenaltyGold*>(
+      &from);
+  if (source == NULL) {
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+    MergeFrom(*source);
+  }
+}
+
+void CDOTAUserMsg_SelectPenaltyGold::MergeFrom(const CDOTAUserMsg_SelectPenaltyGold& from) {
+  GOOGLE_CHECK_NE(&from, this);
+  if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    if (from.has_player_id()) {
+      set_player_id(from.player_id());
+    }
+    if (from.has_cost()) {
+      set_cost(from.cost());
+    }
+  }
+  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
+}
+
+void CDOTAUserMsg_SelectPenaltyGold::CopyFrom(const ::google::protobuf::Message& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void CDOTAUserMsg_SelectPenaltyGold::CopyFrom(const CDOTAUserMsg_SelectPenaltyGold& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool CDOTAUserMsg_SelectPenaltyGold::IsInitialized() const {
+  if ((_has_bits_[0] & 0x00000001) != 0x00000001) return false;
+
+  return true;
+}
+
+void CDOTAUserMsg_SelectPenaltyGold::Swap(CDOTAUserMsg_SelectPenaltyGold* other) {
+  if (other != this) {
+    std::swap(player_id_, other->player_id_);
+    std::swap(cost_, other->cost_);
+    std::swap(_has_bits_[0], other->_has_bits_[0]);
+    _unknown_fields_.Swap(&other->_unknown_fields_);
+    std::swap(_cached_size_, other->_cached_size_);
+  }
+}
+
+::google::protobuf::Metadata CDOTAUserMsg_SelectPenaltyGold::GetMetadata() const {
+  protobuf_AssignDescriptorsOnce();
+  ::google::protobuf::Metadata metadata;
+  metadata.descriptor = CDOTAUserMsg_SelectPenaltyGold_descriptor_;
+  metadata.reflection = CDOTAUserMsg_SelectPenaltyGold_reflection_;
+  return metadata;
+}
+
+
+// ===================================================================
+
+#ifndef _MSC_VER
+const int CDOTAUserMsg_RollDiceResult::kPlayerIdFieldNumber;
+const int CDOTAUserMsg_RollDiceResult::kChannelTypeFieldNumber;
+const int CDOTAUserMsg_RollDiceResult::kRollMinFieldNumber;
+const int CDOTAUserMsg_RollDiceResult::kRollMaxFieldNumber;
+const int CDOTAUserMsg_RollDiceResult::kResultFieldNumber;
+#endif  // !_MSC_VER
+
+CDOTAUserMsg_RollDiceResult::CDOTAUserMsg_RollDiceResult()
+  : ::google::protobuf::Message() {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:CDOTAUserMsg_RollDiceResult)
+}
+
+void CDOTAUserMsg_RollDiceResult::InitAsDefaultInstance() {
+}
+
+CDOTAUserMsg_RollDiceResult::CDOTAUserMsg_RollDiceResult(const CDOTAUserMsg_RollDiceResult& from)
+  : ::google::protobuf::Message() {
+  SharedCtor();
+  MergeFrom(from);
+  // @@protoc_insertion_point(copy_constructor:CDOTAUserMsg_RollDiceResult)
+}
+
+void CDOTAUserMsg_RollDiceResult::SharedCtor() {
+  _cached_size_ = 0;
+  player_id_ = 0u;
+  channel_type_ = 0u;
+  roll_min_ = 0u;
+  roll_max_ = 0u;
+  result_ = 0u;
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+}
+
+CDOTAUserMsg_RollDiceResult::~CDOTAUserMsg_RollDiceResult() {
+  // @@protoc_insertion_point(destructor:CDOTAUserMsg_RollDiceResult)
+  SharedDtor();
+}
+
+void CDOTAUserMsg_RollDiceResult::SharedDtor() {
+  if (this != default_instance_) {
+  }
+}
+
+void CDOTAUserMsg_RollDiceResult::SetCachedSize(int size) const {
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+}
+const ::google::protobuf::Descriptor* CDOTAUserMsg_RollDiceResult::descriptor() {
+  protobuf_AssignDescriptorsOnce();
+  return CDOTAUserMsg_RollDiceResult_descriptor_;
+}
+
+const CDOTAUserMsg_RollDiceResult& CDOTAUserMsg_RollDiceResult::default_instance() {
+  if (default_instance_ == NULL) protobuf_AddDesc_dota_5fusermessages_2eproto();
+  return *default_instance_;
+}
+
+CDOTAUserMsg_RollDiceResult* CDOTAUserMsg_RollDiceResult::default_instance_ = NULL;
+
+CDOTAUserMsg_RollDiceResult* CDOTAUserMsg_RollDiceResult::New() const {
+  return new CDOTAUserMsg_RollDiceResult;
+}
+
+void CDOTAUserMsg_RollDiceResult::Clear() {
+#define OFFSET_OF_FIELD_(f) (reinterpret_cast<char*>(      \
+  &reinterpret_cast<CDOTAUserMsg_RollDiceResult*>(16)->f) - \
+   reinterpret_cast<char*>(16))
+
+#define ZR_(first, last) do {                              \
+    size_t f = OFFSET_OF_FIELD_(first);                    \
+    size_t n = OFFSET_OF_FIELD_(last) - f + sizeof(last);  \
+    ::memset(&first, 0, n);                                \
+  } while (0)
+
+  if (_has_bits_[0 / 32] & 31) {
+    ZR_(player_id_, result_);
+  }
+
+#undef OFFSET_OF_FIELD_
+#undef ZR_
+
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+  mutable_unknown_fields()->Clear();
+}
+
+bool CDOTAUserMsg_RollDiceResult::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:CDOTAUserMsg_RollDiceResult)
+  for (;;) {
+    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoff(127);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // optional uint32 player_id = 1;
+      case 1: {
+        if (tag == 8) {
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                 input, &player_id_)));
+          set_has_player_id();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(16)) goto parse_channel_type;
+        break;
+      }
+
+      // optional uint32 channel_type = 2;
+      case 2: {
+        if (tag == 16) {
+         parse_channel_type:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                 input, &channel_type_)));
+          set_has_channel_type();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(24)) goto parse_roll_min;
+        break;
+      }
+
+      // optional uint32 roll_min = 3;
+      case 3: {
+        if (tag == 24) {
+         parse_roll_min:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                 input, &roll_min_)));
+          set_has_roll_min();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(32)) goto parse_roll_max;
+        break;
+      }
+
+      // optional uint32 roll_max = 4;
+      case 4: {
+        if (tag == 32) {
+         parse_roll_max:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                 input, &roll_max_)));
+          set_has_roll_max();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(40)) goto parse_result;
+        break;
+      }
+
+      // optional uint32 result = 5;
+      case 5: {
+        if (tag == 40) {
+         parse_result:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                 input, &result_)));
+          set_has_result();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectAtEnd()) goto success;
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0 ||
+            ::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, mutable_unknown_fields()));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:CDOTAUserMsg_RollDiceResult)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:CDOTAUserMsg_RollDiceResult)
+  return false;
+#undef DO_
+}
+
+void CDOTAUserMsg_RollDiceResult::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:CDOTAUserMsg_RollDiceResult)
+  // optional uint32 player_id = 1;
+  if (has_player_id()) {
+    ::google::protobuf::internal::WireFormatLite::WriteUInt32(1, this->player_id(), output);
+  }
+
+  // optional uint32 channel_type = 2;
+  if (has_channel_type()) {
+    ::google::protobuf::internal::WireFormatLite::WriteUInt32(2, this->channel_type(), output);
+  }
+
+  // optional uint32 roll_min = 3;
+  if (has_roll_min()) {
+    ::google::protobuf::internal::WireFormatLite::WriteUInt32(3, this->roll_min(), output);
+  }
+
+  // optional uint32 roll_max = 4;
+  if (has_roll_max()) {
+    ::google::protobuf::internal::WireFormatLite::WriteUInt32(4, this->roll_max(), output);
+  }
+
+  // optional uint32 result = 5;
+  if (has_result()) {
+    ::google::protobuf::internal::WireFormatLite::WriteUInt32(5, this->result(), output);
+  }
+
+  if (!unknown_fields().empty()) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        unknown_fields(), output);
+  }
+  // @@protoc_insertion_point(serialize_end:CDOTAUserMsg_RollDiceResult)
+}
+
+::google::protobuf::uint8* CDOTAUserMsg_RollDiceResult::SerializeWithCachedSizesToArray(
+    ::google::protobuf::uint8* target) const {
+  // @@protoc_insertion_point(serialize_to_array_start:CDOTAUserMsg_RollDiceResult)
+  // optional uint32 player_id = 1;
+  if (has_player_id()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(1, this->player_id(), target);
+  }
+
+  // optional uint32 channel_type = 2;
+  if (has_channel_type()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(2, this->channel_type(), target);
+  }
+
+  // optional uint32 roll_min = 3;
+  if (has_roll_min()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(3, this->roll_min(), target);
+  }
+
+  // optional uint32 roll_max = 4;
+  if (has_roll_max()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(4, this->roll_max(), target);
+  }
+
+  // optional uint32 result = 5;
+  if (has_result()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(5, this->result(), target);
+  }
+
+  if (!unknown_fields().empty()) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        unknown_fields(), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:CDOTAUserMsg_RollDiceResult)
+  return target;
+}
+
+int CDOTAUserMsg_RollDiceResult::ByteSize() const {
+  int total_size = 0;
+
+  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    // optional uint32 player_id = 1;
+    if (has_player_id()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::UInt32Size(
+          this->player_id());
+    }
+
+    // optional uint32 channel_type = 2;
+    if (has_channel_type()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::UInt32Size(
+          this->channel_type());
+    }
+
+    // optional uint32 roll_min = 3;
+    if (has_roll_min()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::UInt32Size(
+          this->roll_min());
+    }
+
+    // optional uint32 roll_max = 4;
+    if (has_roll_max()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::UInt32Size(
+          this->roll_max());
+    }
+
+    // optional uint32 result = 5;
+    if (has_result()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::UInt32Size(
+          this->result());
+    }
+
+  }
+  if (!unknown_fields().empty()) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        unknown_fields());
+  }
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = total_size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+  return total_size;
+}
+
+void CDOTAUserMsg_RollDiceResult::MergeFrom(const ::google::protobuf::Message& from) {
+  GOOGLE_CHECK_NE(&from, this);
+  const CDOTAUserMsg_RollDiceResult* source =
+    ::google::protobuf::internal::dynamic_cast_if_available<const CDOTAUserMsg_RollDiceResult*>(
+      &from);
+  if (source == NULL) {
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+    MergeFrom(*source);
+  }
+}
+
+void CDOTAUserMsg_RollDiceResult::MergeFrom(const CDOTAUserMsg_RollDiceResult& from) {
+  GOOGLE_CHECK_NE(&from, this);
+  if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    if (from.has_player_id()) {
+      set_player_id(from.player_id());
+    }
+    if (from.has_channel_type()) {
+      set_channel_type(from.channel_type());
+    }
+    if (from.has_roll_min()) {
+      set_roll_min(from.roll_min());
+    }
+    if (from.has_roll_max()) {
+      set_roll_max(from.roll_max());
+    }
+    if (from.has_result()) {
+      set_result(from.result());
+    }
+  }
+  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
+}
+
+void CDOTAUserMsg_RollDiceResult::CopyFrom(const ::google::protobuf::Message& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void CDOTAUserMsg_RollDiceResult::CopyFrom(const CDOTAUserMsg_RollDiceResult& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool CDOTAUserMsg_RollDiceResult::IsInitialized() const {
+
+  return true;
+}
+
+void CDOTAUserMsg_RollDiceResult::Swap(CDOTAUserMsg_RollDiceResult* other) {
+  if (other != this) {
+    std::swap(player_id_, other->player_id_);
+    std::swap(channel_type_, other->channel_type_);
+    std::swap(roll_min_, other->roll_min_);
+    std::swap(roll_max_, other->roll_max_);
+    std::swap(result_, other->result_);
+    std::swap(_has_bits_[0], other->_has_bits_[0]);
+    _unknown_fields_.Swap(&other->_unknown_fields_);
+    std::swap(_cached_size_, other->_cached_size_);
+  }
+}
+
+::google::protobuf::Metadata CDOTAUserMsg_RollDiceResult::GetMetadata() const {
+  protobuf_AssignDescriptorsOnce();
+  ::google::protobuf::Metadata metadata;
+  metadata.descriptor = CDOTAUserMsg_RollDiceResult_descriptor_;
+  metadata.reflection = CDOTAUserMsg_RollDiceResult_reflection_;
+  return metadata;
+}
+
+
+// ===================================================================
+
+#ifndef _MSC_VER
+const int CDOTAUserMsg_FlipCoinResult::kPlayerIdFieldNumber;
+const int CDOTAUserMsg_FlipCoinResult::kChannelTypeFieldNumber;
+const int CDOTAUserMsg_FlipCoinResult::kResultFieldNumber;
+#endif  // !_MSC_VER
+
+CDOTAUserMsg_FlipCoinResult::CDOTAUserMsg_FlipCoinResult()
+  : ::google::protobuf::Message() {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:CDOTAUserMsg_FlipCoinResult)
+}
+
+void CDOTAUserMsg_FlipCoinResult::InitAsDefaultInstance() {
+}
+
+CDOTAUserMsg_FlipCoinResult::CDOTAUserMsg_FlipCoinResult(const CDOTAUserMsg_FlipCoinResult& from)
+  : ::google::protobuf::Message() {
+  SharedCtor();
+  MergeFrom(from);
+  // @@protoc_insertion_point(copy_constructor:CDOTAUserMsg_FlipCoinResult)
+}
+
+void CDOTAUserMsg_FlipCoinResult::SharedCtor() {
+  _cached_size_ = 0;
+  player_id_ = 0u;
+  channel_type_ = 0u;
+  result_ = false;
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+}
+
+CDOTAUserMsg_FlipCoinResult::~CDOTAUserMsg_FlipCoinResult() {
+  // @@protoc_insertion_point(destructor:CDOTAUserMsg_FlipCoinResult)
+  SharedDtor();
+}
+
+void CDOTAUserMsg_FlipCoinResult::SharedDtor() {
+  if (this != default_instance_) {
+  }
+}
+
+void CDOTAUserMsg_FlipCoinResult::SetCachedSize(int size) const {
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+}
+const ::google::protobuf::Descriptor* CDOTAUserMsg_FlipCoinResult::descriptor() {
+  protobuf_AssignDescriptorsOnce();
+  return CDOTAUserMsg_FlipCoinResult_descriptor_;
+}
+
+const CDOTAUserMsg_FlipCoinResult& CDOTAUserMsg_FlipCoinResult::default_instance() {
+  if (default_instance_ == NULL) protobuf_AddDesc_dota_5fusermessages_2eproto();
+  return *default_instance_;
+}
+
+CDOTAUserMsg_FlipCoinResult* CDOTAUserMsg_FlipCoinResult::default_instance_ = NULL;
+
+CDOTAUserMsg_FlipCoinResult* CDOTAUserMsg_FlipCoinResult::New() const {
+  return new CDOTAUserMsg_FlipCoinResult;
+}
+
+void CDOTAUserMsg_FlipCoinResult::Clear() {
+#define OFFSET_OF_FIELD_(f) (reinterpret_cast<char*>(      \
+  &reinterpret_cast<CDOTAUserMsg_FlipCoinResult*>(16)->f) - \
+   reinterpret_cast<char*>(16))
+
+#define ZR_(first, last) do {                              \
+    size_t f = OFFSET_OF_FIELD_(first);                    \
+    size_t n = OFFSET_OF_FIELD_(last) - f + sizeof(last);  \
+    ::memset(&first, 0, n);                                \
+  } while (0)
+
+  ZR_(player_id_, result_);
+
+#undef OFFSET_OF_FIELD_
+#undef ZR_
+
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+  mutable_unknown_fields()->Clear();
+}
+
+bool CDOTAUserMsg_FlipCoinResult::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:CDOTAUserMsg_FlipCoinResult)
+  for (;;) {
+    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoff(127);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // optional uint32 player_id = 1;
+      case 1: {
+        if (tag == 8) {
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                 input, &player_id_)));
+          set_has_player_id();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(16)) goto parse_channel_type;
+        break;
+      }
+
+      // optional uint32 channel_type = 2;
+      case 2: {
+        if (tag == 16) {
+         parse_channel_type:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                 input, &channel_type_)));
+          set_has_channel_type();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(24)) goto parse_result;
+        break;
+      }
+
+      // optional bool result = 3;
+      case 3: {
+        if (tag == 24) {
+         parse_result:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   bool, ::google::protobuf::internal::WireFormatLite::TYPE_BOOL>(
+                 input, &result_)));
+          set_has_result();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectAtEnd()) goto success;
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0 ||
+            ::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, mutable_unknown_fields()));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:CDOTAUserMsg_FlipCoinResult)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:CDOTAUserMsg_FlipCoinResult)
+  return false;
+#undef DO_
+}
+
+void CDOTAUserMsg_FlipCoinResult::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:CDOTAUserMsg_FlipCoinResult)
+  // optional uint32 player_id = 1;
+  if (has_player_id()) {
+    ::google::protobuf::internal::WireFormatLite::WriteUInt32(1, this->player_id(), output);
+  }
+
+  // optional uint32 channel_type = 2;
+  if (has_channel_type()) {
+    ::google::protobuf::internal::WireFormatLite::WriteUInt32(2, this->channel_type(), output);
+  }
+
+  // optional bool result = 3;
+  if (has_result()) {
+    ::google::protobuf::internal::WireFormatLite::WriteBool(3, this->result(), output);
+  }
+
+  if (!unknown_fields().empty()) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        unknown_fields(), output);
+  }
+  // @@protoc_insertion_point(serialize_end:CDOTAUserMsg_FlipCoinResult)
+}
+
+::google::protobuf::uint8* CDOTAUserMsg_FlipCoinResult::SerializeWithCachedSizesToArray(
+    ::google::protobuf::uint8* target) const {
+  // @@protoc_insertion_point(serialize_to_array_start:CDOTAUserMsg_FlipCoinResult)
+  // optional uint32 player_id = 1;
+  if (has_player_id()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(1, this->player_id(), target);
+  }
+
+  // optional uint32 channel_type = 2;
+  if (has_channel_type()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(2, this->channel_type(), target);
+  }
+
+  // optional bool result = 3;
+  if (has_result()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(3, this->result(), target);
+  }
+
+  if (!unknown_fields().empty()) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        unknown_fields(), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:CDOTAUserMsg_FlipCoinResult)
+  return target;
+}
+
+int CDOTAUserMsg_FlipCoinResult::ByteSize() const {
+  int total_size = 0;
+
+  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    // optional uint32 player_id = 1;
+    if (has_player_id()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::UInt32Size(
+          this->player_id());
+    }
+
+    // optional uint32 channel_type = 2;
+    if (has_channel_type()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::UInt32Size(
+          this->channel_type());
+    }
+
+    // optional bool result = 3;
+    if (has_result()) {
+      total_size += 1 + 1;
+    }
+
+  }
+  if (!unknown_fields().empty()) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        unknown_fields());
+  }
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = total_size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+  return total_size;
+}
+
+void CDOTAUserMsg_FlipCoinResult::MergeFrom(const ::google::protobuf::Message& from) {
+  GOOGLE_CHECK_NE(&from, this);
+  const CDOTAUserMsg_FlipCoinResult* source =
+    ::google::protobuf::internal::dynamic_cast_if_available<const CDOTAUserMsg_FlipCoinResult*>(
+      &from);
+  if (source == NULL) {
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+    MergeFrom(*source);
+  }
+}
+
+void CDOTAUserMsg_FlipCoinResult::MergeFrom(const CDOTAUserMsg_FlipCoinResult& from) {
+  GOOGLE_CHECK_NE(&from, this);
+  if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    if (from.has_player_id()) {
+      set_player_id(from.player_id());
+    }
+    if (from.has_channel_type()) {
+      set_channel_type(from.channel_type());
+    }
+    if (from.has_result()) {
+      set_result(from.result());
+    }
+  }
+  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
+}
+
+void CDOTAUserMsg_FlipCoinResult::CopyFrom(const ::google::protobuf::Message& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void CDOTAUserMsg_FlipCoinResult::CopyFrom(const CDOTAUserMsg_FlipCoinResult& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool CDOTAUserMsg_FlipCoinResult::IsInitialized() const {
+
+  return true;
+}
+
+void CDOTAUserMsg_FlipCoinResult::Swap(CDOTAUserMsg_FlipCoinResult* other) {
+  if (other != this) {
+    std::swap(player_id_, other->player_id_);
+    std::swap(channel_type_, other->channel_type_);
+    std::swap(result_, other->result_);
+    std::swap(_has_bits_[0], other->_has_bits_[0]);
+    _unknown_fields_.Swap(&other->_unknown_fields_);
+    std::swap(_cached_size_, other->_cached_size_);
+  }
+}
+
+::google::protobuf::Metadata CDOTAUserMsg_FlipCoinResult::GetMetadata() const {
+  protobuf_AssignDescriptorsOnce();
+  ::google::protobuf::Metadata metadata;
+  metadata.descriptor = CDOTAUserMsg_FlipCoinResult_descriptor_;
+  metadata.reflection = CDOTAUserMsg_FlipCoinResult_reflection_;
   return metadata;
 }
 

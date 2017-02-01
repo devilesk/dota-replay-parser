@@ -94,7 +94,7 @@ void protobuf_AssignDesc_gameevents_2eproto() {
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(CMsgVDebugGameSessionIDEvent));
   CMsgPlaceDecalEvent_descriptor_ = file->message_type(1);
-  static const int CMsgPlaceDecalEvent_offsets_[13] = {
+  static const int CMsgPlaceDecalEvent_offsets_[14] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgPlaceDecalEvent, position_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgPlaceDecalEvent, normal_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgPlaceDecalEvent, saxis_),
@@ -108,6 +108,7 @@ void protobuf_AssignDesc_gameevents_2eproto() {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgPlaceDecalEvent, skeletoninstancehash_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgPlaceDecalEvent, boneindex_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgPlaceDecalEvent, translucenthit_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgPlaceDecalEvent, is_adjacent_),
   };
   CMsgPlaceDecalEvent_reflection_ =
     new ::google::protobuf::internal::GeneratedMessageReflection(
@@ -271,12 +272,13 @@ void protobuf_AssignDesc_gameevents_2eproto() {
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(CMsgSource1LegacyGameEvent_key_t));
   CMsgSosStartSoundEvent_descriptor_ = file->message_type(8);
-  static const int CMsgSosStartSoundEvent_offsets_[5] = {
+  static const int CMsgSosStartSoundEvent_offsets_[6] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgSosStartSoundEvent, soundevent_guid_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgSosStartSoundEvent, soundevent_hash_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgSosStartSoundEvent, source_entity_index_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgSosStartSoundEvent, seed_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgSosStartSoundEvent, packed_params_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CMsgSosStartSoundEvent, start_time_),
   };
   CMsgSosStartSoundEvent_reflection_ =
     new ::google::protobuf::internal::GeneratedMessageReflection(
@@ -446,7 +448,7 @@ void protobuf_AddDesc_gameevents_2eproto() {
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
     "\n\020gameevents.proto\032\026networkbasetypes.pro"
     "to\"G\n\034CMsgVDebugGameSessionIDEvent\022\020\n\010cl"
-    "ientid\030\001 \001(\005\022\025\n\rgamesessionid\030\002 \001(\t\"\271\002\n\023"
+    "ientid\030\001 \001(\005\022\025\n\rgamesessionid\030\002 \001(\t\"\316\002\n\023"
     "CMsgPlaceDecalEvent\022\035\n\010position\030\001 \001(\0132\013."
     "CMsgVector\022\033\n\006normal\030\002 \001(\0132\013.CMsgVector\022"
     "\032\n\005saxis\030\003 \001(\0132\013.CMsgVector\022\032\n\022decalmate"
@@ -454,50 +456,51 @@ void protobuf_AddDesc_gameevents_2eproto() {
     "\006 \001(\007\022\r\n\005width\030\007 \001(\002\022\016\n\006height\030\010 \001(\002\022\r\n\005"
     "depth\030\t \001(\002\022\031\n\021entityhandleindex\030\n \001(\r\022\034"
     "\n\024skeletoninstancehash\030\013 \001(\007\022\021\n\tboneinde"
-    "x\030\014 \001(\005\022\026\n\016translucenthit\030\r \001(\010\"1\n\031CMsgC"
-    "learWorldDecalsEvent\022\024\n\014flagstoclear\030\001 \001"
-    "(\r\"2\n\032CMsgClearEntityDecalsEvent\022\024\n\014flag"
-    "stoclear\030\001 \001(\r\"x\n\'CMsgClearDecalsForSkel"
-    "etonInstanceEvent\022\024\n\014flagstoclear\030\001 \001(\r\022"
-    "\031\n\021entityhandleindex\030\002 \001(\r\022\034\n\024skeletonin"
-    "stancehash\030\003 \001(\r\"\354\001\n\036CMsgSource1LegacyGa"
-    "meEventList\022A\n\013descriptors\030\001 \003(\0132,.CMsgS"
-    "ource1LegacyGameEventList.descriptor_t\032#"
-    "\n\005key_t\022\014\n\004type\030\001 \001(\005\022\014\n\004name\030\002 \001(\t\032b\n\014d"
-    "escriptor_t\022\017\n\007eventid\030\001 \001(\005\022\014\n\004name\030\002 \001"
-    "(\t\0223\n\004keys\030\003 \003(\0132%.CMsgSource1LegacyGame"
-    "EventList.key_t\"K\n\035CMsgSource1LegacyList"
-    "enEvents\022\022\n\nplayerslot\030\001 \001(\005\022\026\n\016eventarr"
-    "aybits\030\002 \003(\r\"\216\002\n\032CMsgSource1LegacyGameEv"
-    "ent\022\022\n\nevent_name\030\001 \001(\t\022\017\n\007eventid\030\002 \001(\005"
-    "\022/\n\004keys\030\003 \003(\0132!.CMsgSource1LegacyGameEv"
-    "ent.key_t\032\231\001\n\005key_t\022\014\n\004type\030\001 \001(\005\022\022\n\nval"
-    "_string\030\002 \001(\t\022\021\n\tval_float\030\003 \001(\002\022\020\n\010val_"
-    "long\030\004 \001(\005\022\021\n\tval_short\030\005 \001(\005\022\020\n\010val_byt"
-    "e\030\006 \001(\005\022\020\n\010val_bool\030\007 \001(\010\022\022\n\nval_uint64\030"
-    "\010 \001(\004\"\214\001\n\026CMsgSosStartSoundEvent\022\027\n\017soun"
-    "devent_guid\030\001 \001(\005\022\027\n\017soundevent_hash\030\002 \001"
-    "(\007\022\033\n\023source_entity_index\030\003 \001(\005\022\014\n\004seed\030"
-    "\004 \001(\005\022\025\n\rpacked_params\030\005 \001(\014\"0\n\025CMsgSosS"
-    "topSoundEvent\022\027\n\017soundevent_guid\030\001 \001(\005\"Q"
-    "\n\031CMsgSosStopSoundEventHash\022\027\n\017soundeven"
-    "t_hash\030\001 \001(\007\022\033\n\023source_entity_index\030\002 \001("
-    "\005\"L\n\032CMsgSosSetSoundEventParams\022\027\n\017sound"
-    "event_guid\030\001 \001(\005\022\025\n\rpacked_params\030\005 \001(\014\""
-    "I\n\034CMsgSosSetLibraryStackFields\022\022\n\nstack"
-    "_hash\030\001 \001(\007\022\025\n\rpacked_fields\030\005 \001(\014*\267\003\n\017E"
-    "BaseGameEvents\022 \n\033GE_VDebugGameSessionID"
-    "Event\020\310\001\022\027\n\022GE_PlaceDecalEvent\020\311\001\022\035\n\030GE_"
-    "ClearWorldDecalsEvent\020\312\001\022\036\n\031GE_ClearEnti"
-    "tyDecalsEvent\020\313\001\022+\n&GE_ClearDecalsForSke"
-    "letonInstanceEvent\020\314\001\022\"\n\035GE_Source1Legac"
-    "yGameEventList\020\315\001\022!\n\034GE_Source1LegacyLis"
-    "tenEvents\020\316\001\022\036\n\031GE_Source1LegacyGameEven"
-    "t\020\317\001\022\032\n\025GE_SosStartSoundEvent\020\320\001\022\031\n\024GE_S"
-    "osStopSoundEvent\020\321\001\022\036\n\031GE_SosSetSoundEve"
-    "ntParams\020\322\001\022 \n\033GE_SosSetLibraryStackFiel"
-    "ds\020\323\001\022\035\n\030GE_SosStopSoundEventHash\020\324\001B\005H\001"
-    "\200\001\000", 2123);
+    "x\030\014 \001(\005\022\026\n\016translucenthit\030\r \001(\010\022\023\n\013is_ad"
+    "jacent\030\016 \001(\010\"1\n\031CMsgClearWorldDecalsEven"
+    "t\022\024\n\014flagstoclear\030\001 \001(\r\"2\n\032CMsgClearEnti"
+    "tyDecalsEvent\022\024\n\014flagstoclear\030\001 \001(\r\"x\n\'C"
+    "MsgClearDecalsForSkeletonInstanceEvent\022\024"
+    "\n\014flagstoclear\030\001 \001(\r\022\031\n\021entityhandleinde"
+    "x\030\002 \001(\r\022\034\n\024skeletoninstancehash\030\003 \001(\r\"\354\001"
+    "\n\036CMsgSource1LegacyGameEventList\022A\n\013desc"
+    "riptors\030\001 \003(\0132,.CMsgSource1LegacyGameEve"
+    "ntList.descriptor_t\032#\n\005key_t\022\014\n\004type\030\001 \001"
+    "(\005\022\014\n\004name\030\002 \001(\t\032b\n\014descriptor_t\022\017\n\007even"
+    "tid\030\001 \001(\005\022\014\n\004name\030\002 \001(\t\0223\n\004keys\030\003 \003(\0132%."
+    "CMsgSource1LegacyGameEventList.key_t\"K\n\035"
+    "CMsgSource1LegacyListenEvents\022\022\n\nplayers"
+    "lot\030\001 \001(\005\022\026\n\016eventarraybits\030\002 \003(\r\"\216\002\n\032CM"
+    "sgSource1LegacyGameEvent\022\022\n\nevent_name\030\001"
+    " \001(\t\022\017\n\007eventid\030\002 \001(\005\022/\n\004keys\030\003 \003(\0132!.CM"
+    "sgSource1LegacyGameEvent.key_t\032\231\001\n\005key_t"
+    "\022\014\n\004type\030\001 \001(\005\022\022\n\nval_string\030\002 \001(\t\022\021\n\tva"
+    "l_float\030\003 \001(\002\022\020\n\010val_long\030\004 \001(\005\022\021\n\tval_s"
+    "hort\030\005 \001(\005\022\020\n\010val_byte\030\006 \001(\005\022\020\n\010val_bool"
+    "\030\007 \001(\010\022\022\n\nval_uint64\030\010 \001(\004\"\240\001\n\026CMsgSosSt"
+    "artSoundEvent\022\027\n\017soundevent_guid\030\001 \001(\005\022\027"
+    "\n\017soundevent_hash\030\002 \001(\007\022\033\n\023source_entity"
+    "_index\030\003 \001(\005\022\014\n\004seed\030\004 \001(\005\022\025\n\rpacked_par"
+    "ams\030\005 \001(\014\022\022\n\nstart_time\030\006 \001(\002\"0\n\025CMsgSos"
+    "StopSoundEvent\022\027\n\017soundevent_guid\030\001 \001(\005\""
+    "Q\n\031CMsgSosStopSoundEventHash\022\027\n\017soundeve"
+    "nt_hash\030\001 \001(\007\022\033\n\023source_entity_index\030\002 \001"
+    "(\005\"L\n\032CMsgSosSetSoundEventParams\022\027\n\017soun"
+    "devent_guid\030\001 \001(\005\022\025\n\rpacked_params\030\005 \001(\014"
+    "\"I\n\034CMsgSosSetLibraryStackFields\022\022\n\nstac"
+    "k_hash\030\001 \001(\007\022\025\n\rpacked_fields\030\005 \001(\014*\267\003\n\017"
+    "EBaseGameEvents\022 \n\033GE_VDebugGameSessionI"
+    "DEvent\020\310\001\022\027\n\022GE_PlaceDecalEvent\020\311\001\022\035\n\030GE"
+    "_ClearWorldDecalsEvent\020\312\001\022\036\n\031GE_ClearEnt"
+    "ityDecalsEvent\020\313\001\022+\n&GE_ClearDecalsForSk"
+    "eletonInstanceEvent\020\314\001\022\"\n\035GE_Source1Lega"
+    "cyGameEventList\020\315\001\022!\n\034GE_Source1LegacyLi"
+    "stenEvents\020\316\001\022\036\n\031GE_Source1LegacyGameEve"
+    "nt\020\317\001\022\032\n\025GE_SosStartSoundEvent\020\320\001\022\031\n\024GE_"
+    "SosStopSoundEvent\020\321\001\022\036\n\031GE_SosSetSoundEv"
+    "entParams\020\322\001\022 \n\033GE_SosSetLibraryStackFie"
+    "lds\020\323\001\022\035\n\030GE_SosStopSoundEventHash\020\324\001B\005H"
+    "\001\200\001\000", 2164);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "gameevents.proto", &protobuf_RegisterTypes);
   CMsgVDebugGameSessionIDEvent::default_instance_ = new CMsgVDebugGameSessionIDEvent();
@@ -867,6 +870,7 @@ const int CMsgPlaceDecalEvent::kEntityhandleindexFieldNumber;
 const int CMsgPlaceDecalEvent::kSkeletoninstancehashFieldNumber;
 const int CMsgPlaceDecalEvent::kBoneindexFieldNumber;
 const int CMsgPlaceDecalEvent::kTranslucenthitFieldNumber;
+const int CMsgPlaceDecalEvent::kIsAdjacentFieldNumber;
 #endif  // !_MSC_VER
 
 CMsgPlaceDecalEvent::CMsgPlaceDecalEvent()
@@ -903,6 +907,7 @@ void CMsgPlaceDecalEvent::SharedCtor() {
   skeletoninstancehash_ = 0u;
   boneindex_ = 0;
   translucenthit_ = false;
+  is_adjacent_ = false;
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
 
@@ -963,8 +968,8 @@ void CMsgPlaceDecalEvent::Clear() {
       if (saxis_ != NULL) saxis_->::CMsgVector::Clear();
     }
   }
-  if (_has_bits_[8 / 32] & 7936) {
-    ZR_(depth_, translucenthit_);
+  if (_has_bits_[8 / 32] & 16128) {
+    ZR_(depth_, is_adjacent_);
   }
 
 #undef OFFSET_OF_FIELD_
@@ -1168,6 +1173,21 @@ bool CMsgPlaceDecalEvent::MergePartialFromCodedStream(
         } else {
           goto handle_unusual;
         }
+        if (input->ExpectTag(112)) goto parse_is_adjacent;
+        break;
+      }
+
+      // optional bool is_adjacent = 14;
+      case 14: {
+        if (tag == 112) {
+         parse_is_adjacent:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   bool, ::google::protobuf::internal::WireFormatLite::TYPE_BOOL>(
+                 input, &is_adjacent_)));
+          set_has_is_adjacent();
+        } else {
+          goto handle_unusual;
+        }
         if (input->ExpectAtEnd()) goto success;
         break;
       }
@@ -1265,6 +1285,11 @@ void CMsgPlaceDecalEvent::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteBool(13, this->translucenthit(), output);
   }
 
+  // optional bool is_adjacent = 14;
+  if (has_is_adjacent()) {
+    ::google::protobuf::internal::WireFormatLite::WriteBool(14, this->is_adjacent(), output);
+  }
+
   if (!unknown_fields().empty()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
@@ -1344,6 +1369,11 @@ void CMsgPlaceDecalEvent::SerializeWithCachedSizes(
   // optional bool translucenthit = 13;
   if (has_translucenthit()) {
     target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(13, this->translucenthit(), target);
+  }
+
+  // optional bool is_adjacent = 14;
+  if (has_is_adjacent()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(14, this->is_adjacent(), target);
   }
 
   if (!unknown_fields().empty()) {
@@ -1439,6 +1469,11 @@ int CMsgPlaceDecalEvent::ByteSize() const {
       total_size += 1 + 1;
     }
 
+    // optional bool is_adjacent = 14;
+    if (has_is_adjacent()) {
+      total_size += 1 + 1;
+    }
+
   }
   if (!unknown_fields().empty()) {
     total_size +=
@@ -1507,6 +1542,9 @@ void CMsgPlaceDecalEvent::MergeFrom(const CMsgPlaceDecalEvent& from) {
     if (from.has_translucenthit()) {
       set_translucenthit(from.translucenthit());
     }
+    if (from.has_is_adjacent()) {
+      set_is_adjacent(from.is_adjacent());
+    }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
 }
@@ -1543,6 +1581,7 @@ void CMsgPlaceDecalEvent::Swap(CMsgPlaceDecalEvent* other) {
     std::swap(skeletoninstancehash_, other->skeletoninstancehash_);
     std::swap(boneindex_, other->boneindex_);
     std::swap(translucenthit_, other->translucenthit_);
+    std::swap(is_adjacent_, other->is_adjacent_);
     std::swap(_has_bits_[0], other->_has_bits_[0]);
     _unknown_fields_.Swap(&other->_unknown_fields_);
     std::swap(_cached_size_, other->_cached_size_);
@@ -4260,6 +4299,7 @@ const int CMsgSosStartSoundEvent::kSoundeventHashFieldNumber;
 const int CMsgSosStartSoundEvent::kSourceEntityIndexFieldNumber;
 const int CMsgSosStartSoundEvent::kSeedFieldNumber;
 const int CMsgSosStartSoundEvent::kPackedParamsFieldNumber;
+const int CMsgSosStartSoundEvent::kStartTimeFieldNumber;
 #endif  // !_MSC_VER
 
 CMsgSosStartSoundEvent::CMsgSosStartSoundEvent()
@@ -4286,6 +4326,7 @@ void CMsgSosStartSoundEvent::SharedCtor() {
   source_entity_index_ = 0;
   seed_ = 0;
   packed_params_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  start_time_ = 0;
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
 
@@ -4334,13 +4375,14 @@ void CMsgSosStartSoundEvent::Clear() {
     ::memset(&first, 0, n);                                \
   } while (0)
 
-  if (_has_bits_[0 / 32] & 31) {
+  if (_has_bits_[0 / 32] & 63) {
     ZR_(soundevent_guid_, seed_);
     if (has_packed_params()) {
       if (packed_params_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
         packed_params_->clear();
       }
     }
+    start_time_ = 0;
   }
 
 #undef OFFSET_OF_FIELD_
@@ -4428,6 +4470,21 @@ bool CMsgSosStartSoundEvent::MergePartialFromCodedStream(
         } else {
           goto handle_unusual;
         }
+        if (input->ExpectTag(53)) goto parse_start_time;
+        break;
+      }
+
+      // optional float start_time = 6;
+      case 6: {
+        if (tag == 53) {
+         parse_start_time:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
+                 input, &start_time_)));
+          set_has_start_time();
+        } else {
+          goto handle_unusual;
+        }
         if (input->ExpectAtEnd()) goto success;
         break;
       }
@@ -4483,6 +4540,11 @@ void CMsgSosStartSoundEvent::SerializeWithCachedSizes(
       5, this->packed_params(), output);
   }
 
+  // optional float start_time = 6;
+  if (has_start_time()) {
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(6, this->start_time(), output);
+  }
+
   if (!unknown_fields().empty()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
@@ -4518,6 +4580,11 @@ void CMsgSosStartSoundEvent::SerializeWithCachedSizes(
     target =
       ::google::protobuf::internal::WireFormatLite::WriteBytesToArray(
         5, this->packed_params(), target);
+  }
+
+  // optional float start_time = 6;
+  if (has_start_time()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(6, this->start_time(), target);
   }
 
   if (!unknown_fields().empty()) {
@@ -4565,6 +4632,11 @@ int CMsgSosStartSoundEvent::ByteSize() const {
           this->packed_params());
     }
 
+    // optional float start_time = 6;
+    if (has_start_time()) {
+      total_size += 1 + 4;
+    }
+
   }
   if (!unknown_fields().empty()) {
     total_size +=
@@ -4607,6 +4679,9 @@ void CMsgSosStartSoundEvent::MergeFrom(const CMsgSosStartSoundEvent& from) {
     if (from.has_packed_params()) {
       set_packed_params(from.packed_params());
     }
+    if (from.has_start_time()) {
+      set_start_time(from.start_time());
+    }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
 }
@@ -4635,6 +4710,7 @@ void CMsgSosStartSoundEvent::Swap(CMsgSosStartSoundEvent* other) {
     std::swap(source_entity_index_, other->source_entity_index_);
     std::swap(seed_, other->seed_);
     std::swap(packed_params_, other->packed_params_);
+    std::swap(start_time_, other->start_time_);
     std::swap(_has_bits_[0], other->_has_bits_[0]);
     _unknown_fields_.Swap(&other->_unknown_fields_);
     std::swap(_cached_size_, other->_cached_size_);

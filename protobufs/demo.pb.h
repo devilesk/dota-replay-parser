@@ -576,12 +576,12 @@ class CGameInfo_CDotaGameInfo : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // optional uint32 match_id = 1;
+  // optional uint64 match_id = 1;
   inline bool has_match_id() const;
   inline void clear_match_id();
   static const int kMatchIdFieldNumber = 1;
-  inline ::google::protobuf::uint32 match_id() const;
-  inline void set_match_id(::google::protobuf::uint32 value);
+  inline ::google::protobuf::uint64 match_id() const;
+  inline void set_match_id(::google::protobuf::uint64 value);
 
   // optional int32 game_mode = 2;
   inline bool has_game_mode() const;
@@ -698,17 +698,17 @@ class CGameInfo_CDotaGameInfo : public ::google::protobuf::Message {
 
   ::google::protobuf::uint32 _has_bits_[1];
   mutable int _cached_size_;
-  ::google::protobuf::uint32 match_id_;
+  ::google::protobuf::uint64 match_id_;
   ::google::protobuf::int32 game_mode_;
-  ::google::protobuf::RepeatedPtrField< ::CGameInfo_CDotaGameInfo_CPlayerInfo > player_info_;
   ::google::protobuf::int32 game_winner_;
-  ::google::protobuf::uint32 leagueid_;
+  ::google::protobuf::RepeatedPtrField< ::CGameInfo_CDotaGameInfo_CPlayerInfo > player_info_;
   ::google::protobuf::RepeatedPtrField< ::CGameInfo_CDotaGameInfo_CHeroSelectEvent > picks_bans_;
+  ::google::protobuf::uint32 leagueid_;
   ::google::protobuf::uint32 radiant_team_id_;
-  ::google::protobuf::uint32 dire_team_id_;
   ::std::string* radiant_team_tag_;
-  ::std::string* dire_team_tag_;
+  ::google::protobuf::uint32 dire_team_id_;
   ::google::protobuf::uint32 end_time_;
+  ::std::string* dire_team_tag_;
   friend void  protobuf_AddDesc_demo_2eproto();
   friend void protobuf_AssignDesc_demo_2eproto();
   friend void protobuf_ShutdownFile_demo_2eproto();
@@ -3251,7 +3251,7 @@ inline void CGameInfo_CDotaGameInfo_CHeroSelectEvent::set_hero_id(::google::prot
 
 // CGameInfo_CDotaGameInfo
 
-// optional uint32 match_id = 1;
+// optional uint64 match_id = 1;
 inline bool CGameInfo_CDotaGameInfo::has_match_id() const {
   return (_has_bits_[0] & 0x00000001u) != 0;
 }
@@ -3262,14 +3262,14 @@ inline void CGameInfo_CDotaGameInfo::clear_has_match_id() {
   _has_bits_[0] &= ~0x00000001u;
 }
 inline void CGameInfo_CDotaGameInfo::clear_match_id() {
-  match_id_ = 0u;
+  match_id_ = GOOGLE_ULONGLONG(0);
   clear_has_match_id();
 }
-inline ::google::protobuf::uint32 CGameInfo_CDotaGameInfo::match_id() const {
+inline ::google::protobuf::uint64 CGameInfo_CDotaGameInfo::match_id() const {
   // @@protoc_insertion_point(field_get:CGameInfo.CDotaGameInfo.match_id)
   return match_id_;
 }
-inline void CGameInfo_CDotaGameInfo::set_match_id(::google::protobuf::uint32 value) {
+inline void CGameInfo_CDotaGameInfo::set_match_id(::google::protobuf::uint64 value) {
   set_has_match_id();
   match_id_ = value;
   // @@protoc_insertion_point(field_set:CGameInfo.CDotaGameInfo.match_id)
