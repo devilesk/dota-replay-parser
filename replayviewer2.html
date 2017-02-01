@@ -45,41 +45,7 @@ function handleFiles(files) {
           console.log('h', parser.getCurrentTickState().heroes.size());
           //console.log('replayTick', parser.replayTick);
       }
-      /*var c = 0;
-      while (parser.good()) {
-        parser.read();
-        //console.log(parser.tick);
-        //console.log(parser.packetEntities);
-        //console.log(parser.packetEntities.size());
-        //console.log(parser.getPacketEntities2());
-        //console.log(parser.getPacketEntitiesSize());
-        //console.log(parser.getPacketEntities2().size());
-        var packetEntities = parser.getPacketEntities();
-        //console.log(packetEntities.size());
-        for (var i = 0; i < packetEntities.size(); i++) {
-            var el = packetEntities.get(i);
-            
-            if (el.className.startsWith("CDOTA_Unit_Hero_")) {
-                var lifeState = el.getUint64("m_lifeState");
-                console.log(el.className, lifeState);
-            }
-            
-            var properties = el.getProperties();
-            for (var j = 0; j < 10; j++) {
-                var playerName = el.getString("m_vecPlayerData.000" + j + ".m_iszPlayerName");
-                //if (playerName) console.log(playerName);
-            }
-            if (properties.hasString("m_vecPlayerData.0000.m_iszPlayerName")) {
-                console.log(el.getString("m_vecPlayerData.0000.m_iszPlayerName"));
-            }
-            properties.delete();
-            el.delete();
-            //console.log(el.index);
-        }
-        packetEntities.delete();
-        //if (c == 200) break;
-        c++;
-      }*/
+      
       console.log('done');
     }, 0);
   }
