@@ -15,6 +15,7 @@
     
     <script src="replayviewer.js"></script>
     <script type='text/javascript'>
+            Module.addOnPreMain(function() {
 if(window.FileReader) {
   document.getElementById("file-input").addEventListener("change", fileselect, false);
 }
@@ -74,10 +75,11 @@ function writeFile(fileName, fileData) {
           xhr.responseType = 'arraybuffer';
           xhr.send(null);
         })();*/
-        
+
     console.log(Module);
     var parser = new Module['ReplayViewer']();
     console.log(parser);
+    });
 </script>
   </body>
 </html>
