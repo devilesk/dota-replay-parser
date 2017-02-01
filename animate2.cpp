@@ -83,6 +83,7 @@ TickState ReplayViewer::getCurrentTickState() {
   
   tickState.game.isPaused = isPaused;
   tickState.game.state = gameState;
+  tickState.tick = p.tick;
   
   if (isPaused) return tickState;
   
@@ -90,7 +91,9 @@ TickState ReplayViewer::getCurrentTickState() {
     p.read();
   }
   
-  /*for(auto& kv : p.packetEntities) {
+  tickState.tick = p.tick;
+  
+  for(auto& kv : p.packetEntities) {
     if (isPrefix(kv.second->className, "CDOTA_Unit_Hero_")) {
       HeroState hero;
       
@@ -259,6 +262,7 @@ TickState ReplayViewer::getCurrentTickState() {
       kv.second->fetchInt32("CDOTAGamerules.m_iActiveTeam", activeTeam);
       kv.second->fetchInt32("CDOTAGamerules.m_iStartingTeam", startingTeam);
 
+      tickState.game.state = _gameState;
       tickState.game.time = _gameTime;
       tickState.game.startTime = gameStartTime;
       tickState.game.preGameStartTime = preGameStartTime;
@@ -417,7 +421,7 @@ TickState ReplayViewer::getCurrentTickState() {
         tickState.playerResources.push_back(playerResource);
       }
     }
-  }*/
+  }
   
   return tickState;
 }

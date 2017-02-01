@@ -37,8 +37,10 @@ function handleFiles(files) {
       parser.open(file.name);
       //parser.readHeader();
       //console.log(parser.getCurrentTickState());
-      parser.replayTick = 1000;
+      console.log('replayTick', parser.replayTick);
+      parser.setTick(3000);
       console.log(parser.getCurrentTickState());
+      console.log('replayTick', parser.replayTick);
       /*var c = 0;
       while (parser.good()) {
         parser.read();
