@@ -37,10 +37,14 @@ function handleFiles(files) {
       parser.open(file.name);
       //parser.readHeader();
       //console.log(parser.getCurrentTickState());
-      console.log('replayTick', parser.replayTick);
-      parser.setTick(3000);
-      console.log(parser.getCurrentTickState());
-      console.log('replayTick', parser.replayTick);
+      while (parser.good()) {
+        parser.replayTick+=100;
+          console.log('replayTick', parser.replayTick);
+          //console.log(parser.getCurrentTickState());
+          console.log('b', parser.getCurrentTickState().buildings.size());
+          console.log('h', parser.getCurrentTickState().heroes.size());
+          //console.log('replayTick', parser.replayTick);
+      }
       /*var c = 0;
       while (parser.good()) {
         parser.read();

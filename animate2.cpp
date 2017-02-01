@@ -274,6 +274,10 @@ TickState ReplayViewer::getCurrentTickState() {
       tickState.game.activeTeam = (int)activeTeam;
       tickState.game.startingTeam = (int)startingTeam;
     
+      if (gameState != _gameState) {
+        gameState = (int)_gameState;
+      }
+      
       if (gameState >= 4) continue;
       for (int i = 0; i < 10; ++i) {
         std::string n = "000" + std::to_string(i);
@@ -444,6 +448,7 @@ EMSCRIPTEN_BINDINGS(ReplayViewer) {
     class_<ReplayViewer>("ReplayViewer")
         .constructor()
         .function("open", &ReplayViewer::open)
+        .function("good", &ReplayViewer::good)
         .function("setTick", &ReplayViewer::setTick)
         .function("skipToNextFullPacket", &ReplayViewer::skipToNextFullPacket)
         .function("getCurrentTickState", &ReplayViewer::getCurrentTickState)

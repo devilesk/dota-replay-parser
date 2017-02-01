@@ -134,6 +134,8 @@ class ReplayViewer {
     
     void open(std::string path);
     
+    bool good() { return p.good(); };
+    
     void setTick(int tick);
     
     int changePlayback(int state);
