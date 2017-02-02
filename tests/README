@@ -1,9 +1,0 @@
-em++ snappytest.cpp -L/home/devilesk/snappy /home/devilesk/snappy/.libs/libsnappy.so -o snappytest.html -I/home/devilesk/snappy
-
-g++ -std=c++11 protobuftest.cpp -I/home/devilesk/snappy -lsnappy
-
-em++ protobuftest.cpp -I /home/devilesk/snappy -I /home/devilesk/protobuf-emscripten/src /home/devilesk/snappy/.libs/libsnappy.so -o protobuftest.html
-
-em++ protobuftest.cpp -I /home/devilesk/snappy -I /home/devilesk/protobuf-emscripten/src /home/devilesk/snappy/.libs/libsnappy.so -o protobuftest.html --preload-file 1781962623_source2.dem -s ALLOW_MEMORY_GROWTH=1
-
-em++ protobuftest.cpp -I /home/devilesk/snappy -I /home/devilesk/protobuf-emscripten/src /home/devilesk/snappy/.libs/libsnappy.so -o protobuftest.html --preload-file 1781962623_source2.dem -s ALLOW_MEMORY_GROWTH=1 -O2

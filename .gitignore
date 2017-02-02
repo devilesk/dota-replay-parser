@@ -1,9 +1,2 @@
-parser
-parser.data
-parser.mem
-parser.html
-parser.js
-parser.html.mem
+*.dem
 *.bc
-*.txt
-classdump
