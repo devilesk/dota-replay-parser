@@ -1,85 +1,63 @@
 <!doctype html>
 <html lang="en-us">
-  <head>
+<head>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>Replay Viewer</title>
     <style>
 
     </style>
-  </head>
-  <body>
+</head>
+<body>
     <div id="file-input-container" class="hidden">
       <div id="dropbox">Drop a replay file here or <input type="file" id="file-input" value="" autocomplete="off"></div>
     </div>
     
-    <script src="replayviewer.js"></script>
-    <script type='text/javascript'>
-            Module.addOnPreMain(function() {
-if(window.FileReader) {
-  document.getElementById("file-input").addEventListener("change", fileselect, false);
-}
-function fileselect() {
-  handleFiles(this.files);
-}
+    
+<script type='text/javascript'>
+var Module = {
+    onRuntimeInitialized: function() {
+        console.log(Module, FS);
+        
+        if (window.FileReader) {
+            document.getElementById("file-input").addEventListener("change", function () {
+                handleFiles(this.files);
+            }, false);
+        }
 
-var fileData;
-function handleFiles(files) {
-  var fileList = files; /* now you can work with the file list */
-  var reader = new FileReader();
-  file = files[0];
-  console.log(file);
-  reader.onload = function(e) {
-    console.log('file read', reader.result.slice(0, 8));
-    fileData = reader.result;
-    setTimeout(function () {
-      writeFile(file.name, fileData);
-      console.log('parser', parser, file.name);
-      parser.open(file.name);
-      //parser.readHeader();
-      //console.log(parser.getCurrentTickState());
-      while (parser.good()) {
-        parser.replayTick+=100;
-          console.log('replayTick', parser.replayTick);
-          //console.log(parser.getCurrentTickState());
-          console.log('b', parser.getCurrentTickState().buildings.size());
-          console.log('h', parser.getCurrentTickState().heroes.size());
-          //console.log('replayTick', parser.replayTick);
-      }
-      
-      console.log('done');
-    }, 0);
-  }
-  reader.readAsArrayBuffer(file);
-}
+        function handleFiles(files) {
+            var reader = new FileReader();
+            var file = files[0];
+            console.log(file);
+            reader.onload = function(e) {
+                console.log('file read', reader.result.slice(0, 8));
+                writeFile(file.name, reader.result);
+                var parser = new Module['ReplayViewer']();
+                console.log('parser', parser, file.name);
+                parser.open(file.name);
+                while (parser.good()) {
+                    parser.replayTick += 100;
+                    console.log('replayTick', parser.replayTick);
+                    console.log('buildings', parser.getCurrentTickState().buildings.size());
+                    console.log('heroes', parser.getCurrentTickState().heroes.size());
+                }
+                parser.delete();
+                console.log('done');
+            }
+            reader.readAsArrayBuffer(file);
+        }
 
-function writeFile(fileName, fileData) {
-  var stream = FS.open(fileName, 'w+');
-  var data = new Uint8Array(fileData);
-  console.log('data length', data.length);
-  FS.write(stream, data, 0, data.length, 0);
-  FS.close(stream);
-  console.log(fileName, 'written');
-}
-
-
-        /*(function() {
-          var memoryInitializer = 'replayviewer.js.mem';
-          if (typeof Module['locateFile'] === 'function') {
-            memoryInitializer = Module['locateFile'](memoryInitializer);
-          } else if (Module['memoryInitializerPrefixURL']) {
-            memoryInitializer = Module['memoryInitializerPrefixURL'] + memoryInitializer;
-          }
-          var xhr = Module['memoryInitializerRequest'] = new XMLHttpRequest();
-          xhr.open('GET', memoryInitializer, true);
-          xhr.responseType = 'arraybuffer';
-          xhr.send(null);
-        })();*/
-
-    console.log(Module);
-    var parser = new Module['ReplayViewer']();
-    console.log(parser);
-    });
+        function writeFile(fileName, fileData) {
+            var stream = FS.open(fileName, 'w+');
+            var data = new Uint8Array(fileData);
+            console.log('data length', data.length);
+            FS.write(stream, data, 0, data.length, 0);
+            FS.close(stream);
+            console.log(fileName, 'written');
+        }
+    }
+};
 </script>
-  </body>
+<script src="replayviewer.js"></script>
+</body>
 </html>
