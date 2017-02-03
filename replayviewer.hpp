@@ -136,6 +136,8 @@ class ReplayViewer {
     
     bool good() { return p.good(); };
     
+    int getStopTick() { return (int)p.stopTick; };
+    
     void setTick(int tick);
     
     int changePlayback(int state);

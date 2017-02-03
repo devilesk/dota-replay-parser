@@ -35,6 +35,7 @@ var Module = {
                 var parser = new Module['ReplayViewer']();
                 console.log('parser', parser, file.name);
                 parser.open(file.name);
+                console.log('stopTick', parser.getStopTick());
                 while (parser.good()) {
                     parser.replayTick += 100;
                     console.log('replayTick', parser.replayTick);
