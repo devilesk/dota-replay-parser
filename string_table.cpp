@@ -7,7 +7,7 @@ void Parser::onCDemoStringTables(const CDemoStringTables* string_table) {
     if (stringTables.nameIndex.find(tbl.table_name()) != stringTables.nameIndex.end() &&
         stringTables.tables.find(stringTables.nameIndex[tbl.table_name()]) != stringTables.tables.end()) {
       StringTable* stringTable = stringTables.tables[stringTables.nameIndex[tbl.table_name()]];
-      
+
       for (int i = 0; i < tbl.items_size(); ++i) {
         if (stringTable->items.find(i) != stringTable->items.end()) {
           stringTable->items[i]->key = tbl.items(i).str();
@@ -22,7 +22,7 @@ void Parser::onCDemoStringTables(const CDemoStringTables* string_table) {
           stringTable->items[i] = item;
         }
       }
-      
+
       for (int i = 0; i < tbl.items_clientside_size(); ++i) {
         if (stringTable->items.find(i) != stringTable->items.end()) {
           stringTable->items[i]->key = tbl.items_clientside(i).str();
@@ -37,7 +37,7 @@ void Parser::onCDemoStringTables(const CDemoStringTables* string_table) {
           stringTable->items[i] = item;
         }
       }
-      
+
       if (stringTable->name.compare("instancebaseline") == 0) {
         updateInstanceBaseline();
         //std::cout << "stringTable->name instancebaseline\n";
@@ -52,7 +52,7 @@ void Parser::onCDemoStringTables(const CDemoStringTables* string_table) {
 void Parser::onCSVCMsg_CreateStringTable(const char* buffer, int size) {
   CSVCMsg_CreateStringTable data;
   data.ParseFromArray(buffer, size);
-      
+
   //std::cout << "nextIndex: " << std::to_string(stringTables.nextIndex) << "\n";
   //std::cout << "name: " << data.name() << "\n";
   //std::cout << "user_data_fixed_size: " << std::to_string(data.user_data_fixed_size()) << "\n";
@@ -64,6 +64,9 @@ void Parser::onCSVCMsg_CreateStringTable(const char* buffer, int size) {
     data.user_data_fixed_size(),
     data.user_data_size()
   };
+
+  string_table->items.reserve(512);
+
   stringTables.nextIndex += 1;
   const std::string &buffer2 = data.string_data();
   //std::cout << "is_compressed: " << std::to_string(data.data_compressed()) << "\n";
@@ -95,7 +98,7 @@ void Parser::onCSVCMsg_CreateStringTable(const char* buffer, int size) {
 void Parser::onCSVCMsg_UpdateStringTable(const char* buffer, int size) {
   CSVCMsg_UpdateStringTable data;
   data.ParseFromArray(buffer, size);
-  
+
   StringTable* t;
   // TODO: integrate
   if (stringTables.tables.find(data.table_id()) != stringTables.tables.end()) {
@@ -104,15 +107,15 @@ void Parser::onCSVCMsg_UpdateStringTable(const char* buffer, int size) {
   else {
     //std::cout << "missing string table " << std::to_string(data.table_id()) << "\n";
   }
-  
+
   //std::cout << "tick=" << std::to_string(tick) << " name=" << t->name << " changedEntries=" << std::to_string(data.num_changed_entries()) << " bufflen=" << std::to_string(data.string_data().length()) << "\n";
-  
+
   std::vector<StringTableItem*> items;
   parseStringTable(data.string_data().c_str(), data.string_data().length(), data.num_changed_entries(), t->userDataFixedSize, t->userDataSize, items);
-  
+
   for (auto& item: items) {
     int index = item->index;
-    
+
     if (t->items.find(index) != t->items.end()) {
       // XXX TODO: Sometimes ActiveModifiers change keys, which is suspicous...
       if (item->key.compare("") != 0 && item->key.compare(t->items[index]->key) != 0) {
@@ -130,7 +133,7 @@ void Parser::onCSVCMsg_UpdateStringTable(const char* buffer, int size) {
       t->items[index] = item;
     }
   }
-  
+
   // Apply the updates to baseline state
   if (t->name.compare("instancebaseline") == 0) {
     updateInstanceBaseline();
@@ -142,7 +145,7 @@ void parseStringTable(const char* buffer, int buffer_size, int num_updates, bool
   dota::bitstream stream(std::string(buffer, buffer_size));
   uint32_t index = -1;
   std::vector<std::string> keys;
-  
+
 	// Loop through entries in the data structure
 	//
 	// Each entry is a tuple consisting of {index, key, value}
@@ -156,7 +159,7 @@ void parseStringTable(const char* buffer, int buffer_size, int num_updates, bool
   for (int i = 0; i < num_updates; ++i) {
     std::string key = "";
     std::string value;
-    
+
 		// Read a boolean to determine whether the operation is an increment or
 		// has a fixed index position. A fixed index position of zero should be
 		// the last data in the buffer, and indicates that all data has been read.
@@ -168,7 +171,7 @@ void parseStringTable(const char* buffer, int buffer_size, int num_updates, bool
       index = stream.nReadVarUInt32() + 1;
     }
     //std::cout << "index: " << std::to_string(index) << "\n";
-    
+
     // Some values have keys, some don't.
     bool hasKey = stream.read(1);
     //std::cout << "hasKey: " << std::to_string(hasKey) << "\n";
@@ -202,14 +205,14 @@ void parseStringTable(const char* buffer, int buffer_size, int num_updates, bool
         stream.nReadString(tmpBuf, 1024);
         key = std::string(tmpBuf);
       }
-      
+
       if (keys.size() >= 32) {
         keys.erase(keys.begin());
       }
       //std::cout << "key: " << key << "\n";
       keys.push_back(key);
     }
-    
+
     // Some entries have a value.
     bool hasValue = stream.read(1);
     //std::cout << "hasValue: " << std::to_string(hasValue) << "\n";
