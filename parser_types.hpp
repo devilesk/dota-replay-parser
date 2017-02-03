@@ -41,6 +41,8 @@ struct StringTables {
 	int nextIndex;
   StringTables() {
     nextIndex = 0;
+    tables.reserve(32);
+    nameIndex.reserve(32);
   }
 };
 
@@ -63,7 +65,11 @@ struct dt_field;
 class Properties {
   public:
     std::unordered_map<std::string, value_type> KV;
-  
+
+    Properties() {
+        KV.reserve(256);
+    }
+
     void merge(Properties* p2);
     bool fetch(const std::string &k, value_type& v);
     bool fetchBool(const std::string &k, bool& v);
@@ -170,7 +176,7 @@ class PacketEntity {
     Properties* properties;
     int serial;
     dt* flatTbl;
-    
+
     bool fetch(const std::string &k, value_type& v);
     bool fetchBool(const std::string &k, bool& v);
     bool fetchInt32(const std::string &k, int32_t& v);
@@ -227,7 +233,7 @@ class Parser {
     int classIdSize;
     bool processPacketEntities;
     bool syncTick;
-    
+
     Parser() {
       pos = 0;
       tick = 0;
@@ -237,7 +243,7 @@ class Parser {
       processPacketEntities = true;
       syncTick = false;
     };
-    
+
     void open(std::string path);
     void readHeader();
     inline bool good() const {
@@ -253,7 +259,7 @@ class Parser {
     void skipTo(uint32_t tick);
     void seekToFullPacket(int _tick);
     void generateFullPacketCache();
-    
+
     //uint32_t onCSVCMsg_CreateStringTable(CSVCMsg_CreateStringTable* data);
     //uint32_t onCSVCMsg_ServerInfo(CSVCMsg_ServerInfo* data);
     uint32_t updateInstanceBaseline();
@@ -265,11 +271,11 @@ class Parser {
     //uint32_t parseClassInfo(CDemoClassInfo*);
     uint32_t parseStringTables(const CDemoStringTables*);
     uint32_t parsePendingMessage(pendingMessage* msg);
-    
+
     void onCDemoPacket(const CDemoPacket* packet);
     void onCDemoFullPacket(const CDemoFullPacket* packet);
     void onCDemoStringTables(const CDemoStringTables* string_table);
-    
+
     void onCDemoStop(const char* buffer, int size);
     void onCDemoFileHeader(const char* buffer, int size);
     void onCDemoFileInfo(const char* buffer, int size);
