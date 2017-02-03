@@ -1,0 +1,19 @@
+{
+  "name": "dota-replay-parser",
+  "version": "0.1.0",
+  "description": "A dota replay parser compiled to Javascript using Emscripten.",
+  "main": "replayviewer.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/devilesk/dota-replay-parser.git"
+  },
+  "author": "devilesk",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/devilesk/dota-replay-parser/issues"
+  },
+  "homepage": "https://github.com/devilesk/dota-replay-parser#readme"
+}

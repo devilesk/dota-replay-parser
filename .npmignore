@@ -1,0 +1,6 @@
+*.dem
+*.bc
+NOTES
+*.hpp
+*.cpp
+protobufs/
