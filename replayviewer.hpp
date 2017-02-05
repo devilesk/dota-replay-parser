@@ -12,6 +12,7 @@ struct Point2f {
 };
 
 struct HeroState {
+  int entId;
   bool isIllusion;
   Point2f pos;
   std::string className;
@@ -20,6 +21,7 @@ struct HeroState {
 };
 
 struct CreepState {
+  int entId;
   bool isWaitingToSpawn;
   int lifeState;
   int team;
@@ -27,12 +29,14 @@ struct CreepState {
 };
 
 struct WardState {
+  int entId;
   int team;
   std::string className;
   Point2f pos;
 };
 
 struct CourierState {
+  int entId;
   int lifeState;
   bool isFlying;
   Point2f pos;
@@ -40,6 +44,7 @@ struct CourierState {
 };
 
 struct BuildingState {
+  int entId;
   int team;
   std::string className;
   Point2f pos;
@@ -48,11 +53,13 @@ struct BuildingState {
 };
 
 struct ItemState {
+  int entId;
   std::string name;
   bool isEmpty;
 };
 
 struct AbilityState {
+  int entId;
   std::string name;
   int level;
   float cooldown;
@@ -74,6 +81,7 @@ struct PlayerResourceState {
 };
 
 struct GameState {
+  int entId;
   bool isPaused;
   int state;
   float time;
@@ -91,6 +99,7 @@ struct GameState {
 };
 
 struct TeamState {
+  int entId;
   std::vector<int> reliableGold;
   std::vector<int> unreliableGold;
 };

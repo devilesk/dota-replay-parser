@@ -97,6 +97,8 @@ TickState ReplayViewer::getCurrentTickState() {
     if (isPrefix(kv.second->className, "CDOTA_Unit_Hero_")) {
       HeroState hero;
       
+      hero.entId = kv.first;
+      
       uint64_t lifeState;
       if (!kv.second->fetchUint64("m_lifeState", lifeState)) continue;
       hero.lifeState = (int)lifeState;
@@ -126,6 +128,8 @@ TickState ReplayViewer::getCurrentTickState() {
     else if (isPrefix(kv.second->className, "CDOTA_Unit_Courier")) {
       CourierState courier;
       
+      courier.entId = kv.first;
+      
       uint64_t lifeState;
       if (!kv.second->fetchUint64("m_lifeState", lifeState)) continue;
       courier.lifeState = (int)lifeState;
@@ -153,6 +157,8 @@ TickState ReplayViewer::getCurrentTickState() {
     }
     else if (isPrefix(kv.second->className, "CDOTA_BaseNPC_Creep")) {
       CreepState creep;
+      
+      creep.entId = kv.first;
       
       bool isWaitingToSpawn;
       if (!kv.second->fetchBool("m_bIsWaitingToSpawn", isWaitingToSpawn)) continue;
@@ -186,6 +192,8 @@ TickState ReplayViewer::getCurrentTickState() {
       
       BuildingState building;
       
+      building.entId = kv.first;
+      
       uint64_t team;
       getTeam(kv.second, team);
       building.team = (int)team;
@@ -213,6 +221,8 @@ TickState ReplayViewer::getCurrentTickState() {
     }
     else if (isPrefix(kv.second->className, "CDOTA_NPC_Observer_Ward")) {
       WardState ward;
+      
+      ward.entId = kv.first;
       
       uint64_t team;
       getTeam(kv.second, team);
@@ -262,6 +272,7 @@ TickState ReplayViewer::getCurrentTickState() {
       kv.second->fetchInt32("CDOTAGamerules.m_iActiveTeam", activeTeam);
       kv.second->fetchInt32("CDOTAGamerules.m_iStartingTeam", startingTeam);
 
+      tickState.game.entId = kv.first;
       tickState.game.state = _gameState;
       tickState.game.time = _gameTime;
       tickState.game.startTime = gameStartTime;
@@ -299,6 +310,7 @@ TickState ReplayViewer::getCurrentTickState() {
     
     }
     else if (isPrefix(kv.second->className, "CDOTA_DataDire")) {
+      tickState.dire.entId = kv.first;
       for (int i = 0; i < 5; ++i) {
         std::string n = "000" + std::to_string(i);
         int32_t goldUnreliable;
@@ -310,6 +322,7 @@ TickState ReplayViewer::getCurrentTickState() {
       }
     }
     else if (isPrefix(kv.second->className, "CDOTA_DataRadiant")) {
+      tickState.radiant.entId = kv.first;
       for (int i = 0; i < 5; ++i) {
         std::string n = "000" + std::to_string(i);
         int32_t goldUnreliable;
@@ -370,6 +383,7 @@ TickState ReplayViewer::getCurrentTickState() {
           uint32_t abilityEntityId;
           if (!p.packetEntities[heroEntId]->fetchUint32("m_hAbilities." + m, abilityEntityId)) continue;
           abilityEntityId = abilityEntityId & 2047;
+          ability.entId = abilityEntityId;
           if (abilityEntityId != 2047) {
             if (p.packetEntities.find(abilityEntityId) == p.packetEntities.end()) continue;
             int32_t abilityEntNameIndex;
@@ -405,6 +419,7 @@ TickState ReplayViewer::getCurrentTickState() {
           }
           
           itemEntId = itemEntId & 2047;
+          item.entId = itemEntId;
           if (itemEntId == 2047) {
             item.isEmpty = true;
           }
@@ -463,6 +478,7 @@ EMSCRIPTEN_BINDINGS(ReplayViewer) {
         ;
         
     value_object<HeroState>("HeroState")
+        .field("entId", &HeroState::entId)
         .field("isIllusion", &HeroState::isIllusion)
         .field("pos", &HeroState::pos)
         .field("className", &HeroState::className)
@@ -471,6 +487,7 @@ EMSCRIPTEN_BINDINGS(ReplayViewer) {
         ;
         
     value_object<CreepState>("CreepState")
+        .field("entId", &CreepState::entId)
         .field("isWaitingToSpawn", &CreepState::isWaitingToSpawn)
         .field("lifeState", &CreepState::lifeState)
         .field("team", &CreepState::team)
@@ -478,12 +495,14 @@ EMSCRIPTEN_BINDINGS(ReplayViewer) {
         ;
         
     value_object<WardState>("WardState")
+        .field("entId", &WardState::entId)
         .field("team", &WardState::team)
         .field("className", &WardState::className)
         .field("pos", &WardState::pos)
         ;
         
     value_object<CourierState>("CourierState")
+        .field("entId", &CourierState::entId)
         .field("lifeState", &CourierState::lifeState)
         .field("isFlying", &CourierState::isFlying)
         .field("pos", &CourierState::pos)
@@ -491,6 +510,7 @@ EMSCRIPTEN_BINDINGS(ReplayViewer) {
         ;
         
     value_object<BuildingState>("BuildingState")
+        .field("entId", &BuildingState::entId)
         .field("team", &BuildingState::team)
         .field("className", &BuildingState::className)
         .field("pos", &BuildingState::pos)
@@ -499,11 +519,13 @@ EMSCRIPTEN_BINDINGS(ReplayViewer) {
         ;
         
     value_object<ItemState>("ItemState")
+        .field("entId", &ItemState::entId)
         .field("name", &ItemState::name)
         .field("isEmpty", &ItemState::isEmpty)
         ;
         
     value_object<AbilityState>("AbilityState")
+        .field("entId", &AbilityState::entId)
         .field("name", &AbilityState::name)
         .field("level", &AbilityState::level)
         .field("cooldown", &AbilityState::cooldown)
@@ -525,6 +547,7 @@ EMSCRIPTEN_BINDINGS(ReplayViewer) {
         ;
         
     value_object<GameState>("GameState")
+        .field("entId", &GameState::entId)
         .field("isPaused", &GameState::isPaused)
         .field("state", &GameState::state)
         .field("time", &GameState::time)
@@ -542,6 +565,7 @@ EMSCRIPTEN_BINDINGS(ReplayViewer) {
         ;
         
     value_object<TeamState>("TeamState")
+        .field("entId", &TeamState::entId)
         .field("reliableGold", &TeamState::reliableGold)
         .field("unreliableGold", &TeamState::unreliableGold)
         ;
