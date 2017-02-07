@@ -8,7 +8,7 @@ std::string asString(value_type value) {
     return ret;
 }
 
-std::shared_ptr<Properties> readProperties(dota::bitstream &stream, dt* serializer) {  
+std::shared_ptr<Properties> readProperties(dota::bitstream &stream, std::shared_ptr<dt> serializer) {  
   // Return type
   std::shared_ptr<Properties> result = std::make_shared<Properties>(Properties {});
   

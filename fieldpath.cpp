@@ -1,6 +1,6 @@
 #include "fieldpath.hpp"
 
-fieldpath newFieldpath(dt* parentTbl, HuffmanTree* huf) {
+fieldpath newFieldpath(std::shared_ptr<dt> parentTbl, HuffmanTree* huf) {
   fieldpath fp = {
     parentTbl,
     std::vector<fieldpath_field*>(),
@@ -122,7 +122,7 @@ void walk(dota::bitstream &r, fieldpath* fp) {
 }
 
 void addField(fieldpath* fp) {
-  dt* cDt = fp->parent;
+  auto cDt = fp->parent;
   std::string name;
   int i;
 

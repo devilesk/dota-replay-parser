@@ -11,7 +11,7 @@
 extern std::vector<fieldpathOp> fieldpathLookup;
 
 // Initialize a fieldpath object
-fieldpath newFieldpath(dt* parentTbl, HuffmanTree* huf);
+fieldpath newFieldpath(std::shared_ptr<dt> parentTbl, HuffmanTree* huf);
 
 // Walk an encoded fieldpath based on a huffman tree
 void walk(dota::bitstream &r, fieldpath* fp);

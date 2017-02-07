@@ -94,6 +94,6 @@ class propertyToString : public boost::static_visitor<> {
 
 std::string asString(value_type value);
 
-std::shared_ptr<Properties> readProperties(dota::bitstream &stream, dt* serializer);
+std::shared_ptr<Properties> readProperties(dota::bitstream &stream, std::shared_ptr<dt> serializer);
 
 #endif /* _PROPERTY_HPP_ */

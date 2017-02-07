@@ -61,6 +61,7 @@ typedef boost::variant<
 > value_type;
 
 struct dt_field;
+struct dt;
 
 class Properties {
   public:
@@ -119,7 +120,7 @@ struct dt_field {
 // Field is always filled, table only for sub-tables
 struct dt_property {
   struct dt_field* field;
-  struct dt* table;
+  std::shared_ptr<dt> table;
 };
 
 // A single datatable
@@ -146,7 +147,7 @@ struct fieldpath_field {
 
 // A fieldpath, used to walk through the flattened table hierarchy
 struct fieldpath {
-  dt* parent;
+  std::shared_ptr<dt> parent;
 	std::vector<fieldpath_field*> fields;
 	std::vector<int> index;
 	HuffmanTree* tree;
@@ -162,7 +163,7 @@ struct fieldpathOp {
 
 // The flattened serializers object
 struct flattened_serializers {
-  std::unordered_map< std::string, std::unordered_map<int, dt*> > serializers;
+  std::unordered_map< std::string, std::unordered_map<int, std::shared_ptr<dt>> > serializers;
   PropertySerializerTable* pst;
   uint32_t build;
 };
@@ -175,7 +176,7 @@ class PacketEntity {
     std::shared_ptr<Properties> classBaseline;
     std::shared_ptr<Properties> properties;
     int serial;
-    dt* flatTbl;
+    std::shared_ptr<dt> flatTbl;
 
     bool fetch(const std::string &k, value_type& v);
     bool fetchBool(const std::string &k, bool& v);
@@ -222,7 +223,7 @@ class Parser {
     std::unordered_map<int, std::string> classInfo;
     std::unordered_map<int, std::shared_ptr<Properties>> classBaselines;
     bool hasClassInfo;
-    std::unordered_map< std::string, std::unordered_map<int, dt*> > serializers;
+    std::unordered_map< std::string, std::unordered_map<int, std::shared_ptr<dt>> > serializers;
     std::unordered_map< int, std::shared_ptr<PacketEntity> > packetEntities;
     std::vector< packetEntityHandler > packetEntityHandlers;
     StringTables stringTables;

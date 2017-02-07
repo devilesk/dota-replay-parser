@@ -1,8 +1,8 @@
 #include "flattened_serializers.hpp"
 
 // NOT FULLY IMPLEMENTED
-dt* recurseTable(flattened_serializers* sers, CSVCMsg_FlattenedSerializer* msg, const ProtoFlattenedSerializer_t* serializer) {
-  dt* datatable = new dt();
+std::shared_ptr<dt> recurseTable(flattened_serializers* sers, CSVCMsg_FlattenedSerializer* msg, const ProtoFlattenedSerializer_t* serializer) {
+  auto datatable = std::make_shared<dt>(dt {});
   datatable->name = msg->symbols(serializer->serializer_name_sym());
   datatable->version = serializer->serializer_version();
   datatable->properties = std::vector<dt_property*>();
@@ -50,12 +50,12 @@ dt* recurseTable(flattened_serializers* sers, CSVCMsg_FlattenedSerializer* msg, 
 
     // Optional: Adjust array fields
     if (prop->field->serializer->isArray) {
-      dt* tmpDt = new dt {
+      auto tmpDt = std::make_shared<dt>(dt {
         prop->field->name,
         -1,
         0,
         std::vector<dt_property*>()
-      };
+      });
       //std::cout << "isArray prop.field.name: " << prop.field.name << "\n";
       
       // Add each array field to the table
@@ -90,7 +90,7 @@ dt* recurseTable(flattened_serializers* sers, CSVCMsg_FlattenedSerializer* msg, 
         if (prop->table != nullptr) {
           //std::cout << "prop->table != nullptr\n";
           //std::cout << "prop->table->name" << prop->table->name << "\n";
-          dt* nTable = new dt();
+          auto nTable = std::make_shared<dt>(dt {});
           *nTable = *prop->table;
           char buf2[5];
           sprintf(buf2, "%04d", i);
@@ -126,7 +126,7 @@ flattened_serializers Parser::parseSendTables(CDemoSendTables* sendTables, Prope
   
   //std::unordered_map< std::string, std::unordered_map<int, dt> > serializers;
   flattened_serializers fs = {
-    std::unordered_map< std::string, std::unordered_map<int, dt*> >(),
+    std::unordered_map< std::string, std::unordered_map<int, std::shared_ptr<dt>> >(),
     pst,
     GameBuild
   };
@@ -138,7 +138,7 @@ flattened_serializers Parser::parseSendTables(CDemoSendTables* sendTables, Prope
     std::string sName = msg.symbols(serializer.serializer_name_sym());
     int sVer = serializer.serializer_version();
     if (fs.serializers.find(sName) == fs.serializers.end()) {
-      fs.serializers[sName] = std::unordered_map<int, dt*>();
+      fs.serializers[sName] = std::unordered_map<int, std::shared_ptr<dt>>();
     }
     //std::cout << "add table named to fs.serializers: " << datatable.name << "\n";
     fs.serializers[sName][sVer] = recurseTable(&fs, &msg, &serializer);
