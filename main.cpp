@@ -1,6 +1,6 @@
-#include "parser.hpp"
+#include "replayviewer.hpp"
 
-Parser p;
+ReplayViewer r;
 
 int main(int argc, char **argv) {
     if (argc < 2) {
@@ -10,11 +10,13 @@ int main(int argc, char **argv) {
 
     std::string path(argv[1]);
     
-    p.open(path);
-    p.readHeader();
-    p.handle();
+    r.open(path);
+    while (r.good()) {
+        r.setReplayTick(r.getReplayTick() + 100);
+        r.getCurrentTickState();
+    }
     
-    std::cout << "Last tick: " << std::to_string(p.tick) << "\n";
+    std::cout << "Last tick: " << std::to_string(r.getReplayTick()) << "\n";
     
     google::protobuf::ShutdownProtobufLibrary();
     
