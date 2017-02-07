@@ -108,7 +108,7 @@ TickState ReplayViewer::getCurrentTickState() {
             hero.isIllusion = (replicatingOtherHeroModel & 2047) != 2047;
             
             Point2f pos;
-            if (!getCoordinates(kv.second, pos)) {
+            if (!getCoordinates(kv.second.get(), pos)) {
                 continue;
             }
             else {
@@ -139,7 +139,7 @@ TickState ReplayViewer::getCurrentTickState() {
             courier.isFlying = isFlying;
         
             Point2f pos;
-            if (!getCoordinates(kv.second, pos)) {
+            if (!getCoordinates(kv.second.get(), pos)) {
                 continue;
             }
             else {
@@ -170,11 +170,11 @@ TickState ReplayViewer::getCurrentTickState() {
             if (lifeState != 0) continue;
             
             uint64_t team;
-            getTeam(kv.second, team);
+            getTeam(kv.second.get(), team);
             creep.team = (int)team;
 
             Point2f pos;
-            if (!getCoordinates(kv.second, pos)) {
+            if (!getCoordinates(kv.second.get(), pos)) {
                 continue;
             }
             else {
@@ -194,13 +194,13 @@ TickState ReplayViewer::getCurrentTickState() {
             building.entId = kv.first;
             
             uint64_t team;
-            getTeam(kv.second, team);
+            getTeam(kv.second.get(), team);
             building.team = (int)team;
 
             building.className = kv.second->className;
             
             Point2f pos;
-            if (!getCoordinates(kv.second, pos)) {
+            if (!getCoordinates(kv.second.get(), pos)) {
                 continue;
             }
             else {
@@ -224,13 +224,13 @@ TickState ReplayViewer::getCurrentTickState() {
             ward.entId = kv.first;
             
             uint64_t team;
-            getTeam(kv.second, team);
+            getTeam(kv.second.get(), team);
             ward.team = (int)team;
 
             ward.className = kv.second->className;
             
             Point2f pos;
-            if (!getCoordinates(kv.second, pos)) {
+            if (!getCoordinates(kv.second.get(), pos)) {
                 continue;
             }
             else {
