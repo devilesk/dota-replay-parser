@@ -464,6 +464,7 @@ EMSCRIPTEN_BINDINGS(ReplayViewer) {
         .constructor()
         .function("open", &ReplayViewer::open)
         .function("good", &ReplayViewer::good)
+        .function("handle", &ReplayViewer::handle)
         .function("setTick", &ReplayViewer::setTick)
         .function("getStopTick", &ReplayViewer::getStopTick)
         .function("skipToNextFullPacket", &ReplayViewer::skipToNextFullPacket)

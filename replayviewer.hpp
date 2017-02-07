@@ -144,6 +144,7 @@ class ReplayViewer {
     void open(std::string path);
     
     bool good() { return p.good(); };
+    void handle() { p.handle(); };
     
     int getStopTick() { return (int)p.stopTick; };
     
