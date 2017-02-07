@@ -164,7 +164,7 @@ struct fieldpathOp {
 // The flattened serializers object
 struct flattened_serializers {
   std::unordered_map< std::string, std::unordered_map<int, std::shared_ptr<dt>> > serializers;
-  PropertySerializerTable* pst;
+  std::shared_ptr<PropertySerializerTable> pst;
   uint32_t build;
 };
 
@@ -265,7 +265,7 @@ class Parser {
     //uint32_t onCSVCMsg_ServerInfo(CSVCMsg_ServerInfo* data);
     uint32_t updateInstanceBaseline();
     uint32_t updateInstanceBaselineItem(StringTableItem* item);
-    flattened_serializers parseSendTables(CDemoSendTables* sendTables, PropertySerializerTable* pst);
+    flattened_serializers parseSendTables(CDemoSendTables* sendTables, std::shared_ptr<PropertySerializerTable> pst);
     void readMessageHeader(const char* buffer, int &pos, uint32_t& cmd, uint32_t& _tick, uint32_t& size, bool& compressed);
     void readMessage(const char* buffer, int &pos);
     void parseMessage(int cmd, int tick, int size, const char* buffer);

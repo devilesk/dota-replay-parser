@@ -11,6 +11,6 @@
 
 void fillSerializer(PropertySerializerTable* pst, dt_field* field);
 std::shared_ptr<PropertySerializer> GetPropertySerializerByName(PropertySerializerTable* pst, const std::string &name);
-PropertySerializerTable* getDefaultPropertySerializerTable();
+std::shared_ptr<PropertySerializerTable> getDefaultPropertySerializerTable();
 
 #endif /* _PROPERTY_SERIALIZERS_HPP_ */

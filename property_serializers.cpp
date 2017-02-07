@@ -1,9 +1,9 @@
 #include "property_serializers.hpp"
 
-PropertySerializerTable* getDefaultPropertySerializerTable() {
-  PropertySerializerTable* pst = new PropertySerializerTable {
+std::shared_ptr<PropertySerializerTable> getDefaultPropertySerializerTable() {
+  auto pst = std::make_shared<PropertySerializerTable>(PropertySerializerTable {
     std::unordered_map< std::string, std::shared_ptr<PropertySerializer>>()
-  };
+  });
   return pst;
 }
 

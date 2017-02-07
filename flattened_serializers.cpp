@@ -32,7 +32,7 @@ std::shared_ptr<dt> recurseTable(flattened_serializers* sers, CSVCMsg_FlattenedS
 
     // Fill the serializer
     //sers.pst.FillSerializer(prop.Field)
-    fillSerializer(sers->pst, prop->field.get());
+    fillSerializer(sers->pst.get(), prop->field.get());
     
     // Optional: Attach encoder
     if (pField.has_var_encoder_sym()) {
@@ -108,7 +108,7 @@ std::shared_ptr<dt> recurseTable(flattened_serializers* sers, CSVCMsg_FlattenedS
   return datatable;
 }
 
-flattened_serializers Parser::parseSendTables(CDemoSendTables* sendTables, PropertySerializerTable* pst) {
+flattened_serializers Parser::parseSendTables(CDemoSendTables* sendTables, std::shared_ptr<PropertySerializerTable> pst) {
   //std::cout << "parsing DEM_SendTables\n";
   uint32_t size;
   const std::string &data = sendTables->data();
