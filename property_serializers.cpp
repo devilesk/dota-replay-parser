@@ -2,7 +2,7 @@
 
 PropertySerializerTable* getDefaultPropertySerializerTable() {
   PropertySerializerTable* pst = new PropertySerializerTable {
-    std::unordered_map< std::string, PropertySerializer*>()
+    std::unordered_map< std::string, std::shared_ptr<PropertySerializer>>()
   };
   return pst;
 }
@@ -12,25 +12,25 @@ std::regex matchVector = std::regex("CUtlVector\\<\\s(.*)\\s>$");
 
 void fillSerializer(PropertySerializerTable* pst, dt_field* field) {
   if (field->name.compare("m_flSimulationTime") == 0) {
-    field->serializer = new PropertySerializer {
+    field->serializer = std::make_shared<PropertySerializer>(PropertySerializer {
       decodeSimTime,
       nullptr,
       false,
       0,
       nullptr,
       "unkown"
-    };
+    });
     return;
   }
   else if (field->name.compare("m_flAnimTime") == 0) {
-    field->serializer = new PropertySerializer {
+    field->serializer = std::make_shared<PropertySerializer>(PropertySerializer {
       decodeSimTime,
       nullptr,
       false,
       0,
       nullptr,
       "unkown"
-    };
+    });
     return;
   }
   
@@ -45,7 +45,7 @@ void fillSerializer(PropertySerializerTable* pst, dt_field* field) {
   field->serializer = GetPropertySerializerByName(pst, field->type);
 }
 
-PropertySerializer* GetPropertySerializerByName(PropertySerializerTable* pst, const std::string &name) {
+std::shared_ptr<PropertySerializer> GetPropertySerializerByName(PropertySerializerTable* pst, const std::string &name) {
   if (pst->serializers.find(name) != pst->serializers.end()) {
     return pst->serializers[name];
   }
@@ -128,35 +128,31 @@ PropertySerializer* GetPropertySerializerByName(PropertySerializerTable* pst, co
     uint32_t length = std::stoi(match[2], nullptr);
     
     if (pst->serializers.find(typeName) == pst->serializers.end()) {
-      PropertySerializer* serializer = GetPropertySerializerByName(pst, typeName);
-      pst->serializers[typeName] = serializer;
+      pst->serializers[typeName] = GetPropertySerializerByName(pst, typeName);
     }
     
-    PropertySerializer* ps = new PropertySerializer {
+    pst->serializers[name] = std::make_shared<PropertySerializer>(PropertySerializer {
       pst->serializers[typeName]->decode,
       decoderContainer,
       true,
       length,
       pst->serializers[typeName],
       typeName
-    };
-    
-    pst->serializers[name] = ps;
+    });
     
     return pst->serializers[name];
   }
   
   if (std::regex_search (name, match, matchVector)) {
-    PropertySerializer* ps = new PropertySerializer {
+    
+    pst->serializers[name] = std::make_shared<PropertySerializer>(PropertySerializer {
       decoder,
       decoderContainer,
       true,
       1024,
-      new PropertySerializer(),
+      std::make_shared<PropertySerializer>(PropertySerializer {}),
       ""
-    };
-    
-    pst->serializers[name] = ps;
+    });
     
     return pst->serializers[name];
   }
@@ -165,20 +161,17 @@ PropertySerializer* GetPropertySerializerByName(PropertySerializerTable* pst, co
     std::string typeName = "C_DOTA_ItemStockInfo";
     
     if (pst->serializers.find(typeName) == pst->serializers.end()) {
-      PropertySerializer* serializer = GetPropertySerializerByName(pst, typeName);
-      pst->serializers[typeName] = serializer;
+      pst->serializers[typeName] = GetPropertySerializerByName(pst, typeName);
     }
     
-    PropertySerializer* ps = new PropertySerializer {
+    pst->serializers[name] = std::make_shared<PropertySerializer>(PropertySerializer {
       pst->serializers[typeName]->decode,
       decoderContainer,
       true,
       8,
       pst->serializers[typeName],
       typeName
-    };
-    
-    pst->serializers[name] = ps;
+    });
     
     return pst->serializers[name];
   }
@@ -187,20 +180,17 @@ PropertySerializer* GetPropertySerializerByName(PropertySerializerTable* pst, co
     std::string typeName = "CDOTA_AbilityDraftAbilityState";
     
     if (pst->serializers.find(typeName) == pst->serializers.end()) {
-      PropertySerializer* serializer = GetPropertySerializerByName(pst, typeName);
-      pst->serializers[typeName] = serializer;
+      pst->serializers[typeName] = GetPropertySerializerByName(pst, typeName);
     }
     
-    PropertySerializer* ps = new PropertySerializer {
+    pst->serializers[name] = std::make_shared<PropertySerializer>(PropertySerializer {
       pst->serializers[typeName]->decode,
       decoderContainer,
       true,
       48,
       pst->serializers[typeName],
       typeName
-    };
-    
-    pst->serializers[name] = ps;
+    });
     
     return pst->serializers[name];
   }
@@ -208,16 +198,14 @@ PropertySerializer* GetPropertySerializerByName(PropertySerializerTable* pst, co
   if (name.compare("m_SpeechBubbles") == 0) {
     std::string typeName = "m_SpeechBubbles";
     
-    PropertySerializer* ps = new PropertySerializer {
+    pst->serializers[name] = std::make_shared<PropertySerializer>(PropertySerializer {
       decoder,
       decoderContainer,
       true,
       5,
       nullptr,
       typeName
-    };
-    
-    pst->serializers[name] = ps;
+    });
     
     return pst->serializers[name];
   }
@@ -225,29 +213,24 @@ PropertySerializer* GetPropertySerializerByName(PropertySerializerTable* pst, co
   if (name.compare("DOTA_PlayerChallengeInfo") == 0) {
     std::string typeName = "DOTA_PlayerChallengeInfo";
     
-    PropertySerializer* ps = new PropertySerializer {
+    pst->serializers[name] = std::make_shared<PropertySerializer>(PropertySerializer {
       decoder,
       decoderContainer,
       true,
       30,
       nullptr,
       typeName
-    };
-    
-    pst->serializers[name] = ps;
+    });
     
     return pst->serializers[name];
   }
-  
-  // potential memory leak?
-  PropertySerializer* ps = new PropertySerializer {
+
+  return std::make_shared<PropertySerializer>(PropertySerializer {
     decoder,
     decoderContainer,
     false,
     0,
     nullptr,
     "unknown"
-  };
-  
-  return ps;
+  });
 }

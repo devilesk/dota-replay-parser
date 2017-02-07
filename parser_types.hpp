@@ -85,7 +85,7 @@ struct PropertySerializer {
   value_type (*decodeContainer)(dota::bitstream &stream, dt_field* f);
   bool isArray;
   uint32_t length;
-  PropertySerializer* arraySerializer;
+  std::shared_ptr<PropertySerializer> arraySerializer;
   std::string name;
   /*PropertySerializer() {
     decode = nullptr;
@@ -94,7 +94,7 @@ struct PropertySerializer {
 };
 
 struct PropertySerializerTable {
-  std::unordered_map< std::string, PropertySerializer*> serializers;
+  std::unordered_map< std::string, std::shared_ptr<PropertySerializer>> serializers;
 };
 
 // A datatable field
@@ -112,7 +112,7 @@ struct dt_field {
   float high_value;
   bool has_high_value;
   int version;
-  PropertySerializer* serializer;
+  std::shared_ptr<PropertySerializer> serializer;
   uint32_t build;
 };
 
