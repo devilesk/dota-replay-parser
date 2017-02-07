@@ -148,7 +148,7 @@ struct fieldpath_field {
 // A fieldpath, used to walk through the flattened table hierarchy
 struct fieldpath {
   std::shared_ptr<dt> parent;
-	std::vector<fieldpath_field*> fields;
+	std::vector<std::shared_ptr<fieldpath_field>> fields;
 	std::vector<int> index;
 	HuffmanTree* tree;
 	bool finished;

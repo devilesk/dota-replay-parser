@@ -32,7 +32,6 @@ std::shared_ptr<Properties> readProperties(dota::bitstream &stream, std::shared_
     else {
       result->KV[f->name] = f->field->serializer->decode(stream, f->field.get());
     }
-    delete f;
   }
   
   return result;

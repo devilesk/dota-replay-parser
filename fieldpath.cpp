@@ -3,7 +3,7 @@
 fieldpath newFieldpath(std::shared_ptr<dt> parentTbl, HuffmanTree* huf) {
   fieldpath fp = {
     parentTbl,
-    std::vector<fieldpath_field*>(),
+    std::vector<std::shared_ptr<fieldpath_field>>(),
     std::vector<int>(),
     huf,
     false
@@ -157,10 +157,10 @@ void addField(fieldpath* fp) {
   //std::cout << "name: " << name << "\n";
   //std::cout << "fp->index[i]: " << std::to_string(fp->index[i]) << "\n";
   //std::cout << "cDt.Properties[fp.index[i]].Field.Name: " << cDt->properties[fp->index[i]].field.name << "\n";
-  fp->fields.push_back(new fieldpath_field {
+  fp->fields.push_back(std::make_shared<fieldpath_field>(fieldpath_field {
     name + cDt->properties[fp->index[i]]->field->name,
     cDt->properties[fp->index[i]]->field
-  });
+  }));
 }
 
 HuffmanTree newFieldpathHuffman() {
