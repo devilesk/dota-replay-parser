@@ -28,7 +28,7 @@ struct StringTableItem {
 struct StringTable {
 	int index;
 	std::string name;
-	std::unordered_map<int, StringTableItem*> items;
+	std::unordered_map<int, std::shared_ptr<StringTableItem>> items;
 	bool userDataFixedSize;
 	int userDataSize;
 };
