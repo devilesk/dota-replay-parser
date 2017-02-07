@@ -138,9 +138,6 @@ void Parser::seekToFullPacket(int _tick) {
     // for now we fully parse all of them anyway with read()
     
     // clear all entities
-    for(auto& kv : packetEntities) {
-      delete kv.second->properties;
-    }
     packetEntities.clear();
   
     // parse full packet

@@ -44,9 +44,6 @@ void Parser::onCSVCMsg_PacketEntities(const char* buffer, int size) {
   // Updates pending
   std::vector<packetEntityUpdate> updates;
   
-  // deleted entities
-  std::vector<std::shared_ptr<PacketEntity>> deletes;
-  
   dota::bitstream stream(data.entity_data());
   int index = -1;
   std::shared_ptr<PacketEntity> pe;
@@ -85,7 +82,7 @@ void Parser::onCSVCMsg_PacketEntities(const char* buffer, int size) {
     
     //std::cout << "update type is " << std::to_string(eventType) << " to " << std::to_string(index) << "\n";
     
-    Properties* props;
+    std::shared_ptr<Properties> props;
     
     // Proceed based on the update type
     switch(eventType) {
@@ -94,7 +91,7 @@ void Parser::onCSVCMsg_PacketEntities(const char* buffer, int size) {
         pe = std::make_shared<PacketEntity>(PacketEntity {});
         pe->index = index;
         pe->classId = (int)(stream.read(classIdSize));
-        pe->properties = new Properties();
+        pe->properties = std::make_shared<Properties>(Properties {});
         pe->serial = (int)(stream.read(17));
         //std::cout << "classIdSize " << std::to_string(classIdSize) << "\n";
         
@@ -130,8 +127,7 @@ void Parser::onCSVCMsg_PacketEntities(const char* buffer, int size) {
         
         // Read properties
         props = readProperties(stream, pe->flatTbl);
-        pe->properties->merge(props);
-        delete props;
+        pe->properties->merge(props.get());
         break;
       case EntityEventType_Update:
         // Find the existing packetEntity
@@ -144,8 +140,7 @@ void Parser::onCSVCMsg_PacketEntities(const char* buffer, int size) {
         
         // Read properties and update the packetEntity
         props = readProperties(stream, pe->flatTbl);
-        pe->properties->merge(props);
-        delete props;
+        pe->properties->merge(props.get());
         break;
       case EntityEventType_Delete:
         /*if (packetEntities.find(index) == packetEntities.end()) {
@@ -155,7 +150,6 @@ void Parser::onCSVCMsg_PacketEntities(const char* buffer, int size) {
         if (packetEntities.find(index) != packetEntities.end()) {
           pe = packetEntities[index];
         }
-        deletes.push_back(pe);
         //delete packetEntities[index];
         packetEntities.erase(index);
         
@@ -187,10 +181,5 @@ void Parser::onCSVCMsg_PacketEntities(const char* buffer, int size) {
     for(std::vector<packetEntityHandler>::iterator fn = packetEntityHandlers.begin(); fn != packetEntityHandlers.end(); ++fn) {
         (*fn)(it->pe.get(), it->t);
     }
-  }
-  
-  // free deleted entities
-  for (auto & p : deletes) {
-    delete p->properties;
   }
 }

@@ -8,9 +8,9 @@ std::string asString(value_type value) {
     return ret;
 }
 
-Properties* readProperties(dota::bitstream &stream, dt* serializer) {  
+std::shared_ptr<Properties> readProperties(dota::bitstream &stream, dt* serializer) {  
   // Return type
-  Properties* result = new Properties();
+  std::shared_ptr<Properties> result = std::make_shared<Properties>(Properties {});
   
   // Create fieldpath
   fieldpath fp = newFieldpath(serializer, &huf);

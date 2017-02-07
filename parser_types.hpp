@@ -172,8 +172,8 @@ class PacketEntity {
     int index;
     int classId;
     std::string className;
-    Properties* classBaseline;
-    Properties* properties;
+    std::shared_ptr<Properties> classBaseline;
+    std::shared_ptr<Properties> properties;
     int serial;
     dt* flatTbl;
 
@@ -220,7 +220,7 @@ class Parser {
   public:
     std::vector<uint32_t> fpackcachetick;
     std::unordered_map<int, std::string> classInfo;
-    std::unordered_map<int, Properties*> classBaselines;
+    std::unordered_map<int, std::shared_ptr<Properties>> classBaselines;
     bool hasClassInfo;
     std::unordered_map< std::string, std::unordered_map<int, dt*> > serializers;
     std::unordered_map< int, std::shared_ptr<PacketEntity> > packetEntities;

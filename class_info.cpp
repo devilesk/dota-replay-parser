@@ -67,13 +67,13 @@ uint32_t Parser::updateInstanceBaselineItem(StringTableItem* item) {
     //std::cout << "item.value.length(): " << std::to_string(item->value.length()) << "\n";
     dota::bitstream stream(item->value);
     //std::cout << "stream size: " << std::to_string(stream.end()) << "\n";
-    if (classBaselines.find(classId) == classBaselines.end()) {
+    /*if (classBaselines.find(classId) == classBaselines.end()) {
       delete classBaselines[classId];
-    }
+    }*/
     classBaselines[classId] = readProperties(stream, serializers[className][0]);
   }
   else if (classBaselines.find(classId) == classBaselines.end()) {
-    classBaselines[classId] = new Properties();
+    classBaselines[classId] = std::make_shared<Properties>(Properties {});
   }
   return 0;
 }
