@@ -128,7 +128,7 @@ struct dt {
   std::string name;
   int flags;
   int version;
-  std::vector<dt_property*> properties;
+  std::vector<std::shared_ptr<dt_property>> properties;
 };
 
 struct HuffmanTree {

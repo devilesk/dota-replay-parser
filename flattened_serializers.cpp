@@ -5,13 +5,13 @@ std::shared_ptr<dt> recurseTable(flattened_serializers* sers, CSVCMsg_FlattenedS
   auto datatable = std::make_shared<dt>(dt {});
   datatable->name = msg->symbols(serializer->serializer_name_sym());
   datatable->version = serializer->serializer_version();
-  datatable->properties = std::vector<dt_property*>();
+  datatable->properties = std::vector<std::shared_ptr<dt_property>>();
   for (int i = 0; i < serializer->fields_index_size(); ++i) {
     const ProtoFlattenedSerializerField_t &pField = msg->fields(serializer->fields_index(i));
-    dt_property* prop = new dt_property {
+    auto prop = std::make_shared<dt_property>(dt_property {
       nullptr,
       nullptr
-    };
+    });
     prop->field = new dt_field {
       msg->symbols(pField.var_name_sym()),
       "",
@@ -54,7 +54,7 @@ std::shared_ptr<dt> recurseTable(flattened_serializers* sers, CSVCMsg_FlattenedS
         prop->field->name,
         -1,
         0,
-        std::vector<dt_property*>()
+        std::vector<std::shared_ptr<dt_property>>()
       });
       //std::cout << "isArray prop.field.name: " << prop.field.name << "\n";
       
@@ -65,7 +65,7 @@ std::shared_ptr<dt> recurseTable(flattened_serializers* sers, CSVCMsg_FlattenedS
         std::string n = std::string(buf, 4);
         //std::cout << "n: " << n << "\n";
         
-        tmpDt->properties.push_back(new dt_property {
+        tmpDt->properties.push_back(std::make_shared<dt_property>(dt_property {
           new dt_field {
             n,
             prop->field->encoder,
@@ -84,7 +84,7 @@ std::shared_ptr<dt> recurseTable(flattened_serializers* sers, CSVCMsg_FlattenedS
             prop->field->build
           },
           prop->table // This carries on the actual table instead of overriding it
-        });
+        }));
         
         // Copy parent prop to rename it's name according to the array index
         if (prop->table != nullptr) {
