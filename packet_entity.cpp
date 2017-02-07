@@ -45,11 +45,11 @@ void Parser::onCSVCMsg_PacketEntities(const char* buffer, int size) {
   std::vector<packetEntityUpdate> updates;
   
   // deleted entities
-  std::vector<PacketEntity*> deletes;
+  std::vector<std::shared_ptr<PacketEntity>> deletes;
   
   dota::bitstream stream(data.entity_data());
   int index = -1;
-  PacketEntity* pe = nullptr;
+  std::shared_ptr<PacketEntity> pe;
   bool ok = false;
   
   // Iterate over all entries
@@ -91,7 +91,7 @@ void Parser::onCSVCMsg_PacketEntities(const char* buffer, int size) {
     switch(eventType) {
       case EntityEventType_Create:
         // Create a new PacketEntity.
-        pe = new PacketEntity();
+        pe = std::make_shared<PacketEntity>(PacketEntity {});
         pe->index = index;
         pe->classId = (int)(stream.read(classIdSize));
         pe->properties = new Properties();
@@ -185,13 +185,12 @@ void Parser::onCSVCMsg_PacketEntities(const char* buffer, int size) {
 	// only after all updates have been processed to ensure consistent state.
   for(std::vector<packetEntityUpdate>::iterator it = updates.begin(); it != updates.end(); ++it) {
     for(std::vector<packetEntityHandler>::iterator fn = packetEntityHandlers.begin(); fn != packetEntityHandlers.end(); ++fn) {
-        (*fn)(it->pe, it->t);
+        (*fn)(it->pe.get(), it->t);
     }
   }
   
   // free deleted entities
   for (auto & p : deletes) {
     delete p->properties;
-    delete p;
   }
 }

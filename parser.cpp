@@ -140,7 +140,6 @@ void Parser::seekToFullPacket(int _tick) {
     // clear all entities
     for(auto& kv : packetEntities) {
       delete kv.second->properties;
-      delete kv.second;
     }
     packetEntities.clear();
   

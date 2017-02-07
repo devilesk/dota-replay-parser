@@ -195,7 +195,7 @@ enum EntityEventType {
 };
 
 struct packetEntityUpdate {
-  PacketEntity* pe;
+  std::shared_ptr<PacketEntity> pe;
   EntityEventType t;
 };
 
@@ -223,7 +223,7 @@ class Parser {
     std::unordered_map<int, Properties*> classBaselines;
     bool hasClassInfo;
     std::unordered_map< std::string, std::unordered_map<int, dt*> > serializers;
-    std::unordered_map< int, PacketEntity* > packetEntities;
+    std::unordered_map< int, std::shared_ptr<PacketEntity> > packetEntities;
     std::vector< packetEntityHandler > packetEntityHandlers;
     StringTables stringTables;
     uint32_t GameBuild;
