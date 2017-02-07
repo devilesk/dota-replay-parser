@@ -13,15 +13,15 @@ extern const uint32_t qff_encode_zero;
 extern const uint32_t qff_encode_integers;
 
 struct QuantizedFloatDecoder {
-	dt_field* field; // points to datatable field
-	float low;  // Gets recomputed for round up / down
-	float high;
-	float highLowMul;
-	float decMul;
-	float offset;
-	uint32_t bitcount;
-	uint32_t flags;
-	bool noScale;
+    dt_field* field; // points to datatable field
+    float low;  // Gets recomputed for round up / down
+    float high;
+    float highLowMul;
+    float decMul;
+    float offset;
+    uint32_t bitcount;
+    uint32_t flags;
+    bool noScale;
 };
 
 void validateFlags(QuantizedFloatDecoder* qfd);

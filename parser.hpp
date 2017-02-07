@@ -41,7 +41,7 @@ int packet_priority(int type);
 bool compare_packet_priority(const pendingMessage &i, const pendingMessage &j);
 
 inline bool isPrefix(std::string const &s1, std::string const &s2) {
-  return s1.length() >= s2.length() && (0 == s1.compare(0, s2.length(), s2, 0, s2.length()));
+    return s1.length() >= s2.length() && (0 == s1.compare(0, s2.length(), s2, 0, s2.length()));
 }
 
 void entityHandler(PacketEntity* pe, EntityEventType t);
