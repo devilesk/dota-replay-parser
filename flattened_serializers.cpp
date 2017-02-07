@@ -12,7 +12,7 @@ std::shared_ptr<dt> recurseTable(flattened_serializers* sers, CSVCMsg_FlattenedS
       nullptr,
       nullptr
     });
-    prop->field = new dt_field {
+    prop->field = std::make_shared<dt_field>(dt_field {
       msg->symbols(pField.var_name_sym()),
       "",
       msg->symbols(pField.var_type_sym()),
@@ -28,11 +28,11 @@ std::shared_ptr<dt> recurseTable(flattened_serializers* sers, CSVCMsg_FlattenedS
       pField.field_serializer_version(),
       nullptr,
       sers->build
-    };
+    });
 
     // Fill the serializer
     //sers.pst.FillSerializer(prop.Field)
-    fillSerializer(sers->pst, prop->field);
+    fillSerializer(sers->pst, prop->field.get());
     
     // Optional: Attach encoder
     if (pField.has_var_encoder_sym()) {
@@ -66,7 +66,7 @@ std::shared_ptr<dt> recurseTable(flattened_serializers* sers, CSVCMsg_FlattenedS
         //std::cout << "n: " << n << "\n";
         
         tmpDt->properties.push_back(std::make_shared<dt_property>(dt_property {
-          new dt_field {
+          std::make_shared<dt_field>(dt_field {
             n,
             prop->field->encoder,
             prop->field->serializer->name,
@@ -82,7 +82,7 @@ std::shared_ptr<dt> recurseTable(flattened_serializers* sers, CSVCMsg_FlattenedS
             prop->field->version,
             prop->field->serializer->arraySerializer,
             prop->field->build
-          },
+          }),
           prop->table // This carries on the actual table instead of overriding it
         }));
         

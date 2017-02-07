@@ -24,13 +24,13 @@ std::shared_ptr<Properties> readProperties(dota::bitstream &stream, std::shared_
     //std::cout << "f->field->name: " << f->field->name << "\n";
     //std::cout << "f->field->serializer->name: " << f->field->serializer->name << "\n";
     if (f->field->serializer->decodeContainer != nullptr) {
-      result->KV[f->name] = f->field->serializer->decodeContainer(stream, f->field);
+      result->KV[f->name] = f->field->serializer->decodeContainer(stream, f->field.get());
     }
     else if (f->field->serializer->decode == nullptr) {
       result->KV[f->name] = stream.nReadVarUInt32();
     }
     else {
-      result->KV[f->name] = f->field->serializer->decode(stream, f->field);
+      result->KV[f->name] = f->field->serializer->decode(stream, f->field.get());
     }
     delete f;
   }

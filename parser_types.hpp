@@ -119,7 +119,7 @@ struct dt_field {
 
 // Field is always filled, table only for sub-tables
 struct dt_property {
-  struct dt_field* field;
+  std::shared_ptr<dt_field> field;
   std::shared_ptr<dt> table;
 };
 
@@ -142,7 +142,7 @@ struct HuffmanTree {
 // A single field to be read
 struct fieldpath_field {
 	std::string name;
-	dt_field* field;
+	std::shared_ptr<dt_field> field;
 };
 
 // A fieldpath, used to walk through the flattened table hierarchy
