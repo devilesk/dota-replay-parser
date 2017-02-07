@@ -6,7 +6,7 @@ void Parser::onCDemoStringTables(const CDemoStringTables* string_table) {
     //std::cout << "tbl.table_name: " << tbl.table_name() << "\n";
     if (stringTables.nameIndex.find(tbl.table_name()) != stringTables.nameIndex.end() &&
         stringTables.tables.find(stringTables.nameIndex[tbl.table_name()]) != stringTables.tables.end()) {
-      StringTable* stringTable = stringTables.tables[stringTables.nameIndex[tbl.table_name()]];
+      auto stringTable = stringTables.tables[stringTables.nameIndex[tbl.table_name()]];
 
       for (int i = 0; i < tbl.items_size(); ++i) {
         if (stringTable->items.find(i) != stringTable->items.end()) {
@@ -55,13 +55,13 @@ void Parser::onCSVCMsg_CreateStringTable(const char* buffer, int size) {
   //std::cout << "name: " << data.name() << "\n";
   //std::cout << "user_data_fixed_size: " << std::to_string(data.user_data_fixed_size()) << "\n";
   //std::cout << "user_data_size: " << std::to_string(data.user_data_size()) << "\n";
-  StringTable* string_table = new StringTable {
+  auto string_table = std::make_shared<StringTable>(StringTable {
     stringTables.nextIndex,
     data.name(),
     std::unordered_map<int, std::shared_ptr<StringTableItem>>(),
     data.user_data_fixed_size(),
     data.user_data_size()
-  };
+  });
 
   string_table->items.reserve(512);
 
@@ -97,7 +97,7 @@ void Parser::onCSVCMsg_UpdateStringTable(const char* buffer, int size) {
   CSVCMsg_UpdateStringTable data;
   data.ParseFromArray(buffer, size);
 
-  StringTable* t;
+  std::shared_ptr<StringTable> t;
   // TODO: integrate
   if (stringTables.tables.find(data.table_id()) != stringTables.tables.end()) {
     t = stringTables.tables[data.table_id()];

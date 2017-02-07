@@ -44,7 +44,7 @@ uint32_t Parser::updateInstanceBaseline() {
   //std::cout << "updateInstanceBaseline\n";
   if (!hasClassInfo) return 0;
   if (stringTables.nameIndex.find("instancebaseline") == stringTables.nameIndex.end() || stringTables.tables.find(stringTables.nameIndex["instancebaseline"]) == stringTables.tables.end()) return 0;
-  StringTable* stringTable = stringTables.tables[stringTables.nameIndex["instancebaseline"]];
+  auto stringTable = stringTables.tables[stringTables.nameIndex["instancebaseline"]];
   for(auto const &ent : stringTable->items) {
     updateInstanceBaselineItem(ent.second.get());
   }

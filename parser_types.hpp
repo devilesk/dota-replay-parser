@@ -36,7 +36,7 @@ struct StringTable {
 // Holds and maintains the string table information for an
 // instance of the Parser.
 struct StringTables {
-  std::unordered_map<int, StringTable*> tables;
+  std::unordered_map<int, std::shared_ptr<StringTable>> tables;
   std::unordered_map<std::string, int> nameIndex;
 	int nextIndex;
   StringTables() {
