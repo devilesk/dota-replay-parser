@@ -2,10 +2,12 @@
 
 // NOT FULLY IMPLEMENTED
 std::shared_ptr<dt> recurseTable(flattened_serializers* sers, CSVCMsg_FlattenedSerializer* msg, const ProtoFlattenedSerializer_t* serializer) {
-    auto datatable = std::make_shared<dt>(dt {});
-    datatable->name = msg->symbols(serializer->serializer_name_sym());
-    datatable->version = serializer->serializer_version();
-    datatable->properties = std::vector<std::shared_ptr<dt_property>>();
+    auto datatable = std::make_shared<dt>(dt {
+        msg->symbols(serializer->serializer_name_sym()),
+        0,
+        serializer->serializer_version(),
+        std::vector<std::shared_ptr<dt_property>>()
+    });
     for (int i = 0; i < serializer->fields_index_size(); ++i) {
         const ProtoFlattenedSerializerField_t &pField = msg->fields(serializer->fields_index(i));
         auto prop = std::make_shared<dt_property>(dt_property {
@@ -90,12 +92,15 @@ std::shared_ptr<dt> recurseTable(flattened_serializers* sers, CSVCMsg_FlattenedS
                 if (prop->table != nullptr) {
                     //std::cout << "prop->table != nullptr\n";
                     //std::cout << "prop->table->name" << prop->table->name << "\n";
-                    auto nTable = std::make_shared<dt>(dt {});
-                    *nTable = *prop->table;
+
                     char buf2[5];
                     sprintf(buf2, "%04d", i);
-                    std::string n = std::string(buf2, 4);
-                    nTable->name = n;
+                    auto nTable = std::make_shared<dt>(dt {
+                        std::string(buf2, 4),
+                        prop->table->flags,
+                        prop->table->version,
+                        prop->table->properties
+                    });
                     //std::cout << "nTable->name: " << n << "\n";
                     tmpDt->properties.back()->table = nTable;
                     //std::cout << "tmpDt->properties[tmpDt->properties.size() - 1]->table->name" << tmpDt->properties[tmpDt->properties.size() - 1]->table->name << "\n";

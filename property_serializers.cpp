@@ -152,7 +152,14 @@ std::shared_ptr<PropertySerializer> GetPropertySerializerByName(PropertySerializ
             decoderContainer,
             true,
             1024,
-            std::make_shared<PropertySerializer>(PropertySerializer {}),
+            std::make_shared<PropertySerializer>(PropertySerializer {
+                nullptr,
+                nullptr,
+                false,
+                0,
+                nullptr,
+                ""
+            }),
             ""
         });
         

@@ -71,7 +71,7 @@ HuffmanTree buildTree(int symFreqs[], int size) {
 }
 
 void print_node(HuffmanTree* node) {
-    //std::cout << "weight: " << std::to_string(node->weight) << "\n";
-    //std::cout << "isLeaf: " << std::to_string(node->isLeaf) << "\n";
-    //std::cout << "value: " << std::to_string(node->value) << "\n";
+    std::cout << "weight: " << std::to_string(node->weight) << "\n";
+    std::cout << "isLeaf: " << std::to_string(node->isLeaf) << "\n";
+    std::cout << "value: " << std::to_string(node->value) << "\n";
 }

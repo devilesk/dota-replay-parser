@@ -1,15 +1,15 @@
 #include "property_decoder.hpp"
 
-value_type decodeLeUint64(dota::bitstream &stream, dt_field* f) {
+value_type decodeLeUint64(dota::bitstream &stream, dt_field*) {
     return stream.nReadBeUInt64();
 }
-value_type decodeHandle(dota::bitstream &stream, dt_field* f) {
+value_type decodeHandle(dota::bitstream &stream, dt_field*) {
     return stream.nReadVarUInt32();
 }
-value_type decodeByte(dota::bitstream &stream, dt_field* f) {
+value_type decodeByte(dota::bitstream &stream, dt_field*) {
     return stream.read(8);
 }
-value_type decodeShort(dota::bitstream &stream, dt_field* f) {
+value_type decodeShort(dota::bitstream &stream, dt_field*) {
     return stream.read(16);
 }
 value_type decodeUnsigned(dota::bitstream &stream, dt_field* f) {
@@ -18,21 +18,21 @@ value_type decodeUnsigned(dota::bitstream &stream, dt_field* f) {
     }
     return stream.nReadVarUInt64();
 }
-value_type decodeSigned(dota::bitstream &stream, dt_field* f) {
+value_type decodeSigned(dota::bitstream &stream, dt_field*) {
     return stream.nReadVarSInt32();
 }
-value_type decodeSigned64(dota::bitstream &stream, dt_field* f) {
+value_type decodeSigned64(dota::bitstream &stream, dt_field*) {
     return stream.nReadVarSInt64();
 }
-value_type decodeFixed32(dota::bitstream &stream, dt_field* f) {
+value_type decodeFixed32(dota::bitstream &stream, dt_field*) {
     return stream.read(32);
 }
-value_type decodeFixed64(dota::bitstream &stream, dt_field* f) {
+value_type decodeFixed64(dota::bitstream &stream, dt_field*) {
     uint64_t ret = (uint64_t)stream.read(32);
     ret = (ret << 32) | (uint64_t)stream.read(32);
     return ret;
 }
-value_type decodeBoolean(dota::bitstream &stream, dt_field* f) {
+value_type decodeBoolean(dota::bitstream &stream, dt_field*) {
     return stream.read(1) != 0;
 }
 value_type decodeFloat(dota::bitstream &stream, dt_field* f) {
@@ -46,7 +46,7 @@ value_type decodeFloat(dota::bitstream &stream, dt_field* f) {
     
     return decodeQuantized(stream, f);
 }
-value_type decodeFloatNoscale(dota::bitstream &stream, dt_field* f) {
+value_type decodeFloatNoscale(dota::bitstream &stream, dt_field*) {
     static_assert(sizeof(float) == sizeof(uint32_t), "size of float not equal to size of uint32_t");
     uint32_t value = stream.read(32);
     float* pFloat = reinterpret_cast<float*>(&value);
@@ -70,19 +70,19 @@ value_type decodeQuantized(dota::bitstream &stream, dt_field* f) {
     
     return decode(q, stream);
 }
-value_type decodeSimTime(dota::bitstream &stream, dt_field* f) {
+value_type decodeSimTime(dota::bitstream &stream, dt_field*) {
     return (float)(stream.nReadVarUInt32()) * (1.0 / 30);
 }
-value_type decodeString(dota::bitstream &stream, dt_field* f) {
+value_type decodeString(dota::bitstream &stream, dt_field*) {
     char buf[1024];
     stream.nReadString(buf, 1024);
     std::string ret = std::string(buf);
     return ret;
 }
-value_type decodeVector(dota::bitstream &stream, dt_field* f) {
+value_type decodeVector(dota::bitstream &stream, dt_field*) {
     return stream.nReadVarUInt32();
 }
-value_type decodeClass(dota::bitstream &stream, dt_field* f) {
+value_type decodeClass(dota::bitstream &stream, dt_field*) {
     return stream.nReadVarUInt32();
 }
 value_type decodeFVector(dota::bitstream &stream, dt_field* f) {
@@ -94,10 +94,10 @@ value_type decodeFVector(dota::bitstream &stream, dt_field* f) {
     std::vector<float> ret { (float)boost::get<float>(decodeFloat(stream, f)), (float)boost::get<float>(decodeFloat(stream, f)), (float)boost::get<float>(decodeFloat(stream, f)) };
     return ret;
 }
-value_type decodeNop(dota::bitstream &stream, dt_field* f) {
+value_type decodeNop(dota::bitstream &, dt_field*) {
     return 0;
 }
-value_type decodePointer(dota::bitstream &stream, dt_field* f) {
+value_type decodePointer(dota::bitstream &stream, dt_field*) {
     // Seems to be encoded as a single bit, not sure what to make of it
     if (stream.read(1) == 0) {
         //std::cout << "Figure out how this works\n";
@@ -153,12 +153,12 @@ value_type decodeQAngle(dota::bitstream &stream, dt_field* f) {
     //std::cout << "No valid encoding determined\n";
     return ret;
 }
-value_type decodeComponent(dota::bitstream &stream, dt_field* f) {
+value_type decodeComponent(dota::bitstream &stream, dt_field*) {
     //std::cout << "Bitcount: " << std::to_string(f->bit_count) << ", Low: " << std::to_string(f->low_value) << ", High: " << std::to_string(f->high_value) << ", Flags: " << std::to_string(f->flags) << "\n";
 
     return stream.read(1);
 }
-value_type decodeHSequence(dota::bitstream &stream, dt_field* f) {
+value_type decodeHSequence(dota::bitstream &stream, dt_field*) {
     // wrong, just testing
     return stream.read(1);
 }
