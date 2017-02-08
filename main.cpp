@@ -12,7 +12,7 @@ int main(int argc, char **argv) {
     
     r.open(path);
     while (r.good()) {
-        r.setReplayTick(r.getReplayTick() + 100);
+        r.setReplayTick(r.getReplayTick()+1);
         r.getCurrentTickState();
     }
     
