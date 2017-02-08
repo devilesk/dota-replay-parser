@@ -47,7 +47,7 @@ void Parser::onCSVCMsg_PacketEntities(const char* buffer, int size) {
     dota::bitstream stream(data.entity_data());
     int index = -1;
     std::shared_ptr<PacketEntity> pe;
-    bool ok = false;
+    //bool ok = false;
     
     // Iterate over all entries
     for (int i = 0; i < (int)(data.updated_entries()); ++i) {

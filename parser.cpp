@@ -42,8 +42,9 @@ void Parser::readHeader() {
     // of the demo file. We may need them in the future, but not so far.
     pos += 8;
 
-    uint32_t cmd;
-    cmd = readVarUInt32(&buffer[pos], pos);
+    //uint32_t cmd;
+    //cmd = readVarUInt32(&buffer[pos], pos);
+    readVarUInt32(&buffer[pos], pos);
 
     tick = readVarUInt32(&buffer[pos], pos);
 
@@ -78,7 +79,7 @@ void Parser::generateFullPacketCache() {
     uint32_t cmd;
     uint32_t t;
     uint32_t size;
-    bool compressed;
+    //bool compressed;
     uint32_t p;
     
     do {
@@ -127,8 +128,8 @@ void Parser::seekToFullPacket(int _tick) {
     }
 
     // seek to the fullpacket closest to desired tick
-    for (int i = 0; i < fpackcachetick.size(); ++i) {
-        if (fpackcachetick[i] >= _tick) {
+    for (int i = 0; (uint32_t)i < fpackcachetick.size(); ++i) {
+        if (fpackcachetick[i] >= (uint32_t)_tick) {
             break;
         }
         
@@ -167,7 +168,6 @@ void Parser::readMessageHeader(const char* buffer, int &pos, uint32_t& cmd, uint
 }
 
 void Parser::readMessage(const char* buffer, int &pos) {
-    char* uBuffer;
     uint32_t cmd;
     uint32_t _tick;
     uint32_t size;

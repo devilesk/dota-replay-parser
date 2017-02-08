@@ -200,7 +200,7 @@ namespace dota {
              *
              * n corresponds to the number of bits in the sendprop.
              */
-            int32_t nReadSInt(const size_type n) {
+            /*int32_t nReadSInt(const size_type n) {
                 int32_t ret = read(n);
                 const uint32_t sign = 1 << (n - 1);
 
@@ -208,7 +208,7 @@ namespace dota {
                     ret = ret - sign - sign;
 
                 return ret;
-            }
+            }*/
 
             /**
              * Read a normalized float from the stream.

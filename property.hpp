@@ -8,6 +8,8 @@
 #include "parser_types.hpp"
 #include "fieldpath.hpp"
 
+value_type decodeString(dota::bitstream &stream, dt_field* f);
+
 class propertyToString : public boost::static_visitor<> {
     private:
         /** String to fill */

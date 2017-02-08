@@ -203,7 +203,7 @@ QuantizedFloatDecoder initQFD(dt_field* f) {
         uint32_t bc = qfd.bitcount;
         
         //for 1 == 1 {
-            if ((1 << (uint32_t)bc) > range2) {
+            if ((uint32_t)(1 << (uint32_t)bc) > range2) {
                 //break;
             }
             else {

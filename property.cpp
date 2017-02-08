@@ -14,15 +14,12 @@ std::shared_ptr<Properties> readProperties(dota::bitstream &stream, std::shared_
     
     // Create fieldpath
     fieldpath fp = newFieldpath(serializer, &huf);
-    
+
     // Get a list of the included fields
     walk(stream, &fp);
-    
+
     // iterate all the fields and set their corresponding values
     for (auto& f: fp.fields) {
-        //std::cout << "f->name: " << f->name << "\n";
-        //std::cout << "f->field->name: " << f->field->name << "\n";
-        //std::cout << "f->field->serializer->name: " << f->field->serializer->name << "\n";
         if (f->field->serializer->decodeContainer != nullptr) {
             result->KV[f->name] = f->field->serializer->decodeContainer(stream, f->field.get());
         }

@@ -14,7 +14,7 @@ void ReplayViewer::setTick(int tick) {
 
 int ReplayViewer::skipToNextFullPacket(int direction) {
     uint32_t tick = 0;
-    for (int i = 0; i < p.fpackcachetick.size(); ++i) {
+    for (int i = 0; (uint32_t)i < p.fpackcachetick.size(); ++i) {
         if (direction == -1) {
             if (p.fpackcachetick[i] >= p.tick) {
                 break;
@@ -86,7 +86,7 @@ TickState ReplayViewer::getCurrentTickState() {
     
     if (isPaused) return tickState;
     
-    while (p.good() && p.tick < replayTick) {
+    while (p.good() && p.tick < (uint32_t)replayTick) {
         p.read();
     }
     
