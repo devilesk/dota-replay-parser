@@ -9,7 +9,7 @@
 CXX = g++
 
 # define any compile-time flags
-CXXFLAGS = -Wall -g -std=c++11
+CXXFLAGS = -std=c++11 -Wall -Wextra -Werror
 
 # define any directories containing header files other than /usr/include
 #
@@ -41,16 +41,16 @@ OBJS = $(SRCS:.cpp=.o)
 # define the executable file 
 MAIN = parser
 
-#
-# The following part of the makefile is generic; it can be used to 
-# build any executable just by changing the definitions above and by
-# deleting dependencies appended to the file from 'make depend'
-#
-
-.PHONY: depend clean
+.PHONY: debug clean
 
 all: $(MAIN)
 	@echo  parser has been compiled
+
+debug: CXXFLAGS += -g
+debug: $(MAIN)
+
+release: CXXFLAGS += -O3
+release: $(MAIN)
 
 $(MAIN): $(OBJS) 
 	$(CXX) $(CXXFLAGS) $(INCLUDES) -o $(MAIN) $(OBJS) $(LFLAGS) $(LIBS)
@@ -64,8 +64,3 @@ $(MAIN): $(OBJS)
 
 clean:
 	$(RM) *.o *~ $(MAIN)
-
-depend: $(SRCS)
-	makedepend $(INCLUDES) $^
-
-# DO NOT DELETE THIS LINE -- make depend needs it
