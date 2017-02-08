@@ -41,16 +41,15 @@ void fillSerializer(PropertySerializerTable* pst, dt_field* field) {
             field->high_value = (float)8192.0;
         }
     }
-    
+    //std::cout << "fillSerializer, name: " << field->name << ", type: " << field->type << "\n";
     field->serializer = GetPropertySerializerByName(pst, field->type);
 }
 
-std::shared_ptr<PropertySerializer> GetPropertySerializerByName(PropertySerializerTable* pst, const std::string &name) {
+std::shared_ptr<PropertySerializer> GetPropertySerializerByName(PropertySerializerTable* pst, const std::string &name) {    
     if (pst->serializers.find(name) != pst->serializers.end()) {
         return pst->serializers[name];
     }
     
-    //std::cout << "name: " << name << " comp:" << std::to_string(name.compare("uint16") == 0) << "\n";
     // TODO: decoder stuff
     value_type (*decoder)(dota::bitstream &stream, dt_field* f) = nullptr;
     value_type (*decoderContainer)(dota::bitstream &stream, dt_field* f) = nullptr;
@@ -128,11 +127,14 @@ std::shared_ptr<PropertySerializer> GetPropertySerializerByName(PropertySerializ
         uint32_t length = std::stoi(match[2], nullptr);
         
         if (pst->serializers.find(typeName) == pst->serializers.end()) {
-            pst->serializers[typeName] = GetPropertySerializerByName(pst, typeName);
+            auto serializer  = GetPropertySerializerByName(pst, typeName);
+            pst->serializers[typeName] = serializer;
         }
         
+        decoder = pst->serializers[typeName]->decode;
+        
         pst->serializers[name] = std::make_shared<PropertySerializer>(PropertySerializer {
-            pst->serializers[typeName]->decode,
+            decoder,
             decoderContainer,
             true,
             length,
@@ -161,11 +163,14 @@ std::shared_ptr<PropertySerializer> GetPropertySerializerByName(PropertySerializ
         std::string typeName = "C_DOTA_ItemStockInfo";
         
         if (pst->serializers.find(typeName) == pst->serializers.end()) {
-            pst->serializers[typeName] = GetPropertySerializerByName(pst, typeName);
+            auto serializer  = GetPropertySerializerByName(pst, typeName);
+            pst->serializers[typeName] = serializer;
         }
         
+        decoder = pst->serializers[typeName]->decode;
+        
         pst->serializers[name] = std::make_shared<PropertySerializer>(PropertySerializer {
-            pst->serializers[typeName]->decode,
+            decoder,
             decoderContainer,
             true,
             8,
@@ -180,11 +185,14 @@ std::shared_ptr<PropertySerializer> GetPropertySerializerByName(PropertySerializ
         std::string typeName = "CDOTA_AbilityDraftAbilityState";
         
         if (pst->serializers.find(typeName) == pst->serializers.end()) {
-            pst->serializers[typeName] = GetPropertySerializerByName(pst, typeName);
+            auto serializer  = GetPropertySerializerByName(pst, typeName);
+            pst->serializers[typeName] = serializer;
         }
         
+        decoder = pst->serializers[typeName]->decode;
+        
         pst->serializers[name] = std::make_shared<PropertySerializer>(PropertySerializer {
-            pst->serializers[typeName]->decode,
+            decoder,
             decoderContainer,
             true,
             48,
@@ -225,7 +233,7 @@ std::shared_ptr<PropertySerializer> GetPropertySerializerByName(PropertySerializ
         return pst->serializers[name];
     }
 
-    return std::make_shared<PropertySerializer>(PropertySerializer {
+    pst->serializers[name] = std::make_shared<PropertySerializer>(PropertySerializer {
         decoder,
         decoderContainer,
         false,
@@ -233,4 +241,6 @@ std::shared_ptr<PropertySerializer> GetPropertySerializerByName(PropertySerializ
         nullptr,
         "unknown"
     });
+    
+    return pst->serializers[name];
 }
