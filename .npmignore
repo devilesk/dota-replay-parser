@@ -1,6 +1,9 @@
+*.log
+*.o
 *.dem
 *.bc
 NOTES
+parser
 *.hpp
 *.cpp
 protobufs/
