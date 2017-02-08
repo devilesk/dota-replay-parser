@@ -411,15 +411,15 @@ TickState ReplayViewer::getCurrentTickState() {
                 for (int j = 0; j < 14; ++j) {
                     ItemState item;
                     
-                    std::string k = "000" + std::to_string(j);
+                    char buf[5];
+                    sprintf(buf, "%04d", j);
+                    std::string k = std::string(buf, 4);
                     uint32_t itemEntId;
                     if (!p.packetEntities[heroEntId]->fetchUint32("m_hItems." + k, itemEntId)) {
                         item.isEmpty = true;
                     }
-                    std::cout << "itemEntId1: " << std::to_string(itemEntId) << std::endl;
                     itemEntId = itemEntId & 2047;
                     item.entId = itemEntId;
-                    std::cout << "itemEntId2: " << std::to_string(itemEntId) << std::endl;
                     if (itemEntId == 2047) {
                         item.isEmpty = true;
                     }
@@ -429,14 +429,8 @@ TickState ReplayViewer::getCurrentTickState() {
                         int32_t itemEntNameIndex;
                         if (!p.packetEntities[itemEntId]->fetchInt32("CEntityIdentity.m_nameStringableIndex", itemEntNameIndex)) continue;
                         
-                        std::cout << "itemEntNameIndex: " << std::to_string(itemEntNameIndex) << std::endl;
-                        
-                        auto entityNamesTable = p.stringTables.tables[p.stringTables.nameIndex["EntityNames"]];
+                        auto entityNamesTable = p.stringTables.tables[p.stringTables.nameIndex["EntityNames"]];                        
                         const std::string& itemEntName = entityNamesTable->items[itemEntNameIndex]->key;
-                        
-                        std::cout << entityNamesTable->items[itemEntNameIndex]->key << std::endl;
-                        
-                        std::cout << itemEntName << std::endl;
                         
                         item.name = itemEntName;
                     }
