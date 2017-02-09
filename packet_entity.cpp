@@ -85,7 +85,7 @@ void Parser::onCSVCMsg_PacketEntities(const char* buffer, int size) {
         // Proceed based on the update type
         switch(eventType) {
             case EntityEventType_Create:
-                // Create a new PacketEntity.
+                // Create a PacketEntity.
                 pe = std::make_shared<PacketEntity>(PacketEntity {
                     index,
                     (int)(stream.read(classIdSize)),

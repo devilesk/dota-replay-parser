@@ -135,7 +135,7 @@ float decode(QuantizedFloatDecoder* qfd, dota::bitstream &stream) {
     return qfd->low + (qfd->high - qfd->low) * (float)(stream.read((int)(qfd->bitcount))) * qfd->decMul;
 }
 
-// Creates a new quantized float decoder based on given field
+// Creates a quantized float decoder based on given field
 QuantizedFloatDecoder initQFD(dt_field* f) {
     QuantizedFloatDecoder qfd;
     qfd.field = f;

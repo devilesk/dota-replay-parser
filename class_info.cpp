@@ -58,9 +58,7 @@ uint32_t Parser::updateInstanceBaselineItem(StringTableItem* item) {
     std::string className = classInfo[classId];
     //std::cout << "className: " << className << "\n";
     /*if (classBaselines.find(classId) == classBaselines.end()) {
-        //p->classBaselines[classId] = //new properties
         classBaselines[classId] = Properties();
-        //std::cout << "new properties: " << std::to_string(classId) << "\n";
     }*/
     //std::cout << "serializer name: " << serializer[0].name << "\n";
     if (item->value.length() > 0) {

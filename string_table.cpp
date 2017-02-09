@@ -126,7 +126,7 @@ void Parser::onCSVCMsg_UpdateStringTable(const char* buffer, int size) {
             }
         }
         else {
-            //std::cout << "tick=" << std::to_string(tick) << " name=" << t->name << " insert new item " << std::to_string(index) << " key " << it->key << "\n";
+            //std::cout << "tick=" << std::to_string(tick) << " name=" << t->name << " insert item " << std::to_string(index) << " key " << it->key << "\n";
             t->items[index] = item;
         }
     }
