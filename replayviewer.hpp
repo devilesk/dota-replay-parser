@@ -145,6 +145,7 @@ class ReplayViewer {
         
         bool good() { return p.good(); };
         void handle() { p.handle(); };
+        void test();
         
         int getStopTick() { return (int)p.stopTick; };
         

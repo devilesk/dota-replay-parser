@@ -140,8 +140,8 @@ flattened_serializers Parser::parseSendTables(CDemoSendTables* sendTables, std::
     
     for (int i = 0; i < msg.serializers_size(); ++i) {
         const ProtoFlattenedSerializer_t &serializer = msg.serializers(i);
-        std::string sName = msg.symbols(serializer.serializer_name_sym());
-        int sVer = serializer.serializer_version();
+        const std::string &sName = msg.symbols(serializer.serializer_name_sym());
+        const int &sVer = serializer.serializer_version();
         if (fs.serializers.find(sName) == fs.serializers.end()) {
             fs.serializers[sName] = std::unordered_map<int, std::shared_ptr<dt>>();
         }

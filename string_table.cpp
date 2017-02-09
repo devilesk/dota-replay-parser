@@ -6,7 +6,7 @@ void Parser::onCDemoStringTables(const CDemoStringTables* string_table) {
         //std::cout << "tbl.table_name: " << tbl.table_name() << "\n";
         if (stringTables.nameIndex.find(tbl.table_name()) != stringTables.nameIndex.end() &&
                 stringTables.tables.find(stringTables.nameIndex[tbl.table_name()]) != stringTables.tables.end()) {
-            auto stringTable = stringTables.tables[stringTables.nameIndex[tbl.table_name()]];
+            auto& stringTable = stringTables.tables[stringTables.nameIndex[tbl.table_name()]];
 
             for (int i = 0; i < tbl.items_size(); ++i) {
                 if (stringTable->items.find(i) != stringTable->items.end()) {

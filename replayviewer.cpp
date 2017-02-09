@@ -6,6 +6,14 @@ void ReplayViewer::open(std::string path) {
     p.readHeader();
 }
 
+void ReplayViewer::test() {
+    while (p.good()) {
+        setReplayTick(getReplayTick()+1);
+        std::cout << std::to_string(replayTick) << "\n";
+        getCurrentTickState();
+    }
+}
+
 void ReplayViewer::setTick(int tick) {
     p.skipTo(tick);
     replayTick = tick;

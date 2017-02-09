@@ -44,7 +44,7 @@ uint32_t Parser::updateInstanceBaseline() {
     //std::cout << "updateInstanceBaseline\n";
     if (!hasClassInfo) return 0;
     if (stringTables.nameIndex.find("instancebaseline") == stringTables.nameIndex.end() || stringTables.tables.find(stringTables.nameIndex["instancebaseline"]) == stringTables.tables.end()) return 0;
-    auto stringTable = stringTables.tables[stringTables.nameIndex["instancebaseline"]];
+    auto& stringTable = stringTables.tables[stringTables.nameIndex["instancebaseline"]];
     for(auto const &ent : stringTable->items) {
         updateInstanceBaselineItem(ent.second.get());
     }
@@ -55,7 +55,7 @@ uint32_t Parser::updateInstanceBaselineItem(StringTableItem* item) {
     //std::cout << "updateInstanceBaselineItem\n";
     int classId = std::stoi(item->key);
     //std::cout << "classId: " << std::to_string(classId) << "\n";
-    std::string className = classInfo[classId];
+    const std::string& className = classInfo[classId];
     //std::cout << "className: " << className << "\n";
     /*if (classBaselines.find(classId) == classBaselines.end()) {
         classBaselines[classId] = Properties();
