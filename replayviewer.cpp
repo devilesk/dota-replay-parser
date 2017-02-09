@@ -387,10 +387,8 @@ TickState ReplayViewer::getCurrentTickState() {
                         if (p.packetEntities.find(abilityEntityId) == p.packetEntities.end()) continue;
                         int32_t abilityEntNameIndex;
                         p.packetEntities[abilityEntityId]->fetchInt32("CEntityIdentity.m_nameStringableIndex", abilityEntNameIndex);
-                        auto entityNamesTable = p.stringTables.tables[p.stringTables.nameIndex["EntityNames"]];
-                        const std::string& abilityEntName = entityNamesTable->items[abilityEntNameIndex]->key;
-                        
-                        ability.name = abilityEntName;
+                        const auto& entityNamesTable = p.stringTables.tables[p.stringTables.nameIndex["EntityNames"]];
+                        ability.name = entityNamesTable->items[abilityEntNameIndex]->key;
                         
                         int32_t abilityLevel;
                         if (p.packetEntities[abilityEntityId]->fetchInt32("m_iLevel", abilityLevel)) {
@@ -429,10 +427,8 @@ TickState ReplayViewer::getCurrentTickState() {
                         int32_t itemEntNameIndex;
                         if (!p.packetEntities[itemEntId]->fetchInt32("CEntityIdentity.m_nameStringableIndex", itemEntNameIndex)) continue;
                         
-                        auto entityNamesTable = p.stringTables.tables[p.stringTables.nameIndex["EntityNames"]];                        
-                        const std::string& itemEntName = entityNamesTable->items[itemEntNameIndex]->key;
-                        
-                        item.name = itemEntName;
+                        const auto& entityNamesTable = p.stringTables.tables[p.stringTables.nameIndex["EntityNames"]];                        
+                        item.name = entityNamesTable->items[itemEntNameIndex]->key;
                     }
                     
                     playerResource.items.push_back(item);
