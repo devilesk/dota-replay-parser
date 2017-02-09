@@ -36,11 +36,11 @@ At this point it might be good to update the protos in the protobufs directory. 
 Now to actually compile the replay parser with emscripten. Run the following commands. You'll need to change the library include paths based on where your dependencies are.
 
 ```
-em++ -o parser.bc -std=c++11 parser.cpp packet_entity.cpp message_lookup.cpp huffman.cpp property_serializers.cpp string_table.cpp class_info.cpp flattened_serializers.cpp fieldpath.cpp quantizedfloat.cpp property.cpp property_decoder.cpp bitstream.cpp protobufs/demo.pb.cc protobufs/netmessages.pb.cc protobufs/networkbasetypes.pb.cc protobufs/network_connection.pb.cc protobufs/usermessages.pb.cc -I /home/devilesk/snappy -I /home/devilesk/protobuf-emscripten/2.6.1/src -I /usr/local/include -s ALLOW_MEMORY_GROWTH=1 -O3
+em++ -o parser.bc -std=c++11 parser.cpp packet_entity.cpp message_lookup.cpp huffman.cpp property_serializers.cpp string_table.cpp class_info.cpp flattened_serializers.cpp fieldpath.cpp quantizedfloat.cpp property.cpp property_decoder.cpp bitstream.cpp protobufs/demo.pb.cc protobufs/netmessages.pb.cc protobufs/networkbasetypes.pb.cc protobufs/network_connection.pb.cc protobufs/usermessages.pb.cc -I /home/devilesk/snappy -I /home/devilesk/protobuf-emscripten/2.6.1/src -I /usr/local/include -s TOTAL_MEMORY=512000000 -O3
 
-em++ -o replayviewer.bc -std=c++11 replayviewer.cpp -I /home/devilesk/snappy -I /home/devilesk/protobuf-emscripten/2.6.1/src -I /usr/local/include -s ALLOW_MEMORY_GROWTH=1 -O3
+em++ -o replayviewer.bc -std=c++11 binding.cpp replayviewer.cpp -I /home/devilesk/snappy -I /home/devilesk/protobuf-emscripten/2.6.1/src -I /usr/local/include -s TOTAL_MEMORY=512000000 -O3
 
-em++ --bind -std=c++11 parser.bc replayviewer.bc -o replayviewer.js -I /home/devilesk/snappy -I /home/devilesk/protobuf-emscripten/2.6.1/src -I /usr/local/include /home/devilesk/protobuf-emscripten/2.6.1/src/.libs/libprotobuf.so.9.0.1 /home/devilesk/snappy/.libs/libsnappy.so -s ALLOW_MEMORY_GROWTH=1 -O3
+em++ --bind -std=c++11 parser.bc replayviewer.bc -o replayviewer.js -I /home/devilesk/snappy -I /home/devilesk/protobuf-emscripten/2.6.1/src -I /usr/local/include /home/devilesk/protobuf-emscripten/2.6.1/src/.libs/libprotobuf.so.9.0.1 /home/devilesk/snappy/.libs/libsnappy.so -s TOTAL_MEMORY=512000000 -O3
 ```
 
 The first two commands generate two bitcode files, parser.bc and replayviewer.bc. The last command links them together along with the other libraries and outputs the javascript library `replayviewer.js` and `replayviewer.js.mem`.
