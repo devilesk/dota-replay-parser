@@ -28,7 +28,7 @@ var Module = {
         function handleFiles(files) {
             var reader = new FileReader();
             var file = files[0];
-            console.log(file);
+            console.log(file.name);
             reader.onload = function(e) {
                 console.log('file read', reader.result.slice(0, 8));
                 writeFile(file.name, reader.result);
@@ -36,7 +36,40 @@ var Module = {
                 console.log('parser', parser, file.name);
                 parser.open(file.name);
                 console.log('stopTick', parser.getStopTick());
-                while (parser.good()) {
+
+                function run() {
+                    if (parser.good()) {
+                        parser.replayTick += 1;
+                        console.log(parser.replayTick);
+                        var tickState = parser.getCurrentTickState();
+                        // delete all the vector members or else memory is leaked
+                        tickState.buildings.delete();
+                        tickState.couriers.delete();
+                        tickState.creeps.delete();
+                        tickState.heroes.delete();
+                        tickState.game.bans.delete();
+                        tickState.game.picks.delete();
+                        tickState.dire.reliableGold.delete();
+                        tickState.dire.unreliableGold.delete();
+                        tickState.radiant.reliableGold.delete();
+                        tickState.radiant.unreliableGold.delete();
+                        tickState.wards.delete();
+                        for (var i = 0; i < tickState.playerResources.size(); i++) {
+                            var player = tickState.playerResources.get(i);
+                            player.items.delete();
+                            player.abilities.delete();
+                        }
+                        tickState.playerResources.delete();
+                        setTimeout(run, 0);
+                    }
+                    else {
+                        parser.delete();
+                        console.log('done');
+                    }
+                }
+                run();
+                
+                /*while (parser.good()) {
                     parser.replayTick += 1;
                     console.log(parser.replayTick);
                     var tickState = parser.getCurrentTickState();
@@ -60,9 +93,11 @@ var Module = {
                     tickState.playerResources.delete();
                 }
                 parser.delete();
-                console.log('done');
+                console.log('done');*/
             }
+            console.log('reading file');
             reader.readAsArrayBuffer(file);
+            console.log('read file done.');
         }
 
         function writeFile(fileName, fileData) {
