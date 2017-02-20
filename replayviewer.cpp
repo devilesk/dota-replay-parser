@@ -130,6 +130,21 @@ TickState ReplayViewer::getCurrentTickState() {
                 hero.health = (int)health;
             }
             
+            int32_t maxHealth;
+            if (kv.second->fetchInt32("m_iMaxHealth", maxHealth)) {
+                hero.maxHealth = (int)maxHealth;
+            }
+            
+            float mana;
+            if (kv.second->fetchFloat32("m_flMana", mana)) {
+                hero.mana = (float)mana;
+            }
+            
+            float maxMana;
+            if (kv.second->fetchFloat32("m_flMaxMana", maxMana)) {
+                hero.maxMana = (float)maxMana;
+            }
+            
             tickState.heroes.push_back(hero);
         }
         else if (isPrefix(kv.second->className, "CDOTA_Unit_Courier")) {

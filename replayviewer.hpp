@@ -18,6 +18,9 @@ struct HeroState {
     std::string className;
     int lifeState;
     int health;
+    int maxHealth;
+    float mana;
+    float maxMana;
 };
 
 struct CreepState {

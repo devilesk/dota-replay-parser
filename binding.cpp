@@ -42,6 +42,9 @@ EMSCRIPTEN_BINDINGS(ReplayViewer) {
         .field("className", &HeroState::className)
         .field("lifeState", &HeroState::lifeState)
         .field("health", &HeroState::health)
+        .field("maxHealth", &HeroState::maxHealth)
+        .field("mana", &HeroState::mana)
+        .field("maxMana", &HeroState::maxMana)
         ;
             
     value_object<CreepState>("CreepState")
